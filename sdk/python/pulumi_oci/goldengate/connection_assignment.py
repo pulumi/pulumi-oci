@@ -233,6 +233,13 @@ class ConnectionAssignment(pulumi.CustomResource):
                  is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
+        This resource provides the Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/goldengate/latest/ConnectionAssignment
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/goldengate
+
+        Creates a new Connection Assignment.
+
         ## Example Usage
 
         ```python
@@ -270,6 +277,13 @@ class ConnectionAssignment(pulumi.CustomResource):
                  args: ConnectionAssignmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/goldengate/latest/ConnectionAssignment
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/goldengate
+
+        Creates a new Connection Assignment.
+
         ## Example Usage
 
         ```python

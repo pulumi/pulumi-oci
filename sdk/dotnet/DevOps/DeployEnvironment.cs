@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps
 {
     /// <summary>
+    /// This resource provides the Deploy Environment resource in Oracle Cloud Infrastructure Devops service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/DeployEnvironment
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+    /// 
+    /// Creates a new deployment environment.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -63,7 +70,7 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// ## Import
     /// 
-    /// DeployEnvironments can be imported using the `id`, e.g.
+    /// DeployEnvironments can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DevOps/deployEnvironment:DeployEnvironment test_deploy_environment "id"

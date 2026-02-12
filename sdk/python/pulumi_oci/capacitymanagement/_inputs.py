@@ -69,60 +69,55 @@ __all__ = [
     'GetOccmDemandSignalsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class OccAvailabilityCatalogDetailArgsDict(TypedDict):
-        available_quantity: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The quantity of resource currently available that the customer can request.
-        """
-        catalog_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the availability catalog.
-        """
-        date_expected_capacity_handover: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
-        """
-        date_final_customer_order: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
-        """
-        demanded_quantity: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The quantity of resource currently demanded by the customer.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
-        """
-        resource_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the resource that the customer can request.
-        """
-        resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The different types of resources against which customers can place capacity requests.
-        """
-        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        total_available_quantity: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The total quantity of resource that the customer can request.
-        """
-        unit: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unit in which the resource available is measured.
-        """
-        workload_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of workload (Generic/ROW).
-        """
-elif False:
-    OccAvailabilityCatalogDetailArgsDict: TypeAlias = Mapping[str, Any]
+class OccAvailabilityCatalogDetailArgsDict(TypedDict):
+    available_quantity: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The quantity of resource currently available that the customer can request.
+    """
+    catalog_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the availability catalog.
+    """
+    date_expected_capacity_handover: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
+    """
+    date_final_customer_order: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
+    """
+    demanded_quantity: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The quantity of resource currently demanded by the customer.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
+    """
+    resource_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the resource that the customer can request.
+    """
+    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The different types of resources against which customers can place capacity requests.
+    """
+    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+    """
+    total_available_quantity: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The total quantity of resource that the customer can request.
+    """
+    unit: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unit in which the resource available is measured.
+    """
+    workload_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of workload (Generic/ROW).
+    """
 
 @pulumi.input_type
 class OccAvailabilityCatalogDetailArgs:
@@ -323,14 +318,11 @@ class OccAvailabilityCatalogDetailArgs:
         pulumi.set(self, "workload_type", value)
 
 
-if not MYPY:
-    class OccAvailabilityCatalogMetadataDetailsArgsDict(TypedDict):
-        format_version: pulumi.Input[_builtins.str]
-        """
-        The version for the format of the catalog file being uploaded.
-        """
-elif False:
-    OccAvailabilityCatalogMetadataDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class OccAvailabilityCatalogMetadataDetailsArgsDict(TypedDict):
+    format_version: pulumi.Input[_builtins.str]
+    """
+    The version for the format of the catalog file being uploaded.
+    """
 
 @pulumi.input_type
 class OccAvailabilityCatalogMetadataDetailsArgs:
@@ -354,54 +346,51 @@ class OccAvailabilityCatalogMetadataDetailsArgs:
         pulumi.set(self, "format_version", value)
 
 
-if not MYPY:
-    class OccCapacityRequestDetailArgsDict(TypedDict):
-        demand_quantity: pulumi.Input[_builtins.str]
-        """
-        The number of compute server's with name <resourceName> required by the user.
-        """
-        resource_name: pulumi.Input[_builtins.str]
-        """
-        The name of the COMPUTE server shape for which the request is made. Do not use CAPACITY_CONSTRAINT as the resource name.
-        """
-        resource_type: pulumi.Input[_builtins.str]
-        """
-        The type of the resource against which the user wants to place a capacity request.
-        """
-        workload_type: pulumi.Input[_builtins.str]
-        """
-        The type of the workload (Generic/ROW).
-        """
-        actual_handover_quantity: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The actual handed over quantity of resources at the time of request resolution.
-        """
-        associated_occ_handover_resource_block_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgsDict']]]]
-        """
-        A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
-        """
-        availability_domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
-        """
-        date_actual_handover: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date on which the actual handover quantity of resources is delivered.
-        """
-        date_expected_handover: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date on which the latest increment to supplied quantity of resources was delivered.
-        """
-        expected_handover_quantity: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The incremental quantity of resources supplied as the provisioning is underway.
-        """
-        source_workload_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The WorkloadType from where capacity request are to be transferred.
-        """
-elif False:
-    OccCapacityRequestDetailArgsDict: TypeAlias = Mapping[str, Any]
+class OccCapacityRequestDetailArgsDict(TypedDict):
+    demand_quantity: pulumi.Input[_builtins.str]
+    """
+    The number of compute server's with name <resourceName> required by the user.
+    """
+    resource_name: pulumi.Input[_builtins.str]
+    """
+    The name of the COMPUTE server shape for which the request is made. Do not use CAPACITY_CONSTRAINT as the resource name.
+    """
+    resource_type: pulumi.Input[_builtins.str]
+    """
+    The type of the resource against which the user wants to place a capacity request.
+    """
+    workload_type: pulumi.Input[_builtins.str]
+    """
+    The type of the workload (Generic/ROW).
+    """
+    actual_handover_quantity: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The actual handed over quantity of resources at the time of request resolution.
+    """
+    associated_occ_handover_resource_block_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgsDict']]]]
+    """
+    A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+    """
+    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+    """
+    date_actual_handover: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date on which the actual handover quantity of resources is delivered.
+    """
+    date_expected_handover: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date on which the latest increment to supplied quantity of resources was delivered.
+    """
+    expected_handover_quantity: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The incremental quantity of resources supplied as the provisioning is underway.
+    """
+    source_workload_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The WorkloadType from where capacity request are to be transferred.
+    """
 
 @pulumi.input_type
 class OccCapacityRequestDetailArgs:
@@ -582,18 +571,15 @@ class OccCapacityRequestDetailArgs:
         pulumi.set(self, "source_workload_type", value)
 
 
-if not MYPY:
-    class OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgsDict(TypedDict):
-        handover_quantity: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The total quantity of the resource that was made available to the customer as part of this resource block
-        """
-        occ_handover_resource_block_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the handed over resource block.
-        """
-elif False:
-    OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgsDict: TypeAlias = Mapping[str, Any]
+class OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgsDict(TypedDict):
+    handover_quantity: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The total quantity of the resource that was made available to the customer as part of this resource block
+    """
+    occ_handover_resource_block_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the handed over resource block.
+    """
 
 @pulumi.input_type
 class OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs:
@@ -634,34 +620,31 @@ class OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs:
         pulumi.set(self, "occ_handover_resource_block_id", value)
 
 
-if not MYPY:
-    class OccCapacityRequestPatchOperationArgsDict(TypedDict):
-        from_: pulumi.Input[_builtins.str]
-        """
-        (Updatable)
-        """
-        operation: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The operation can be one of these values: `INSERT`, `INSERT_MULTIPLE`, `MERGE`, `MOVE`, `PROHIBIT`, `REMOVE`, `REPLACE`, `REQUIRE`
-        """
-        selection: pulumi.Input[_builtins.str]
-        """
-        (Updatable)
-        """
-        value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
-        """
-        (Updatable)
-        """
-        position: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable)
-        """
-        selected_item: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable)
-        """
-elif False:
-    OccCapacityRequestPatchOperationArgsDict: TypeAlias = Mapping[str, Any]
+class OccCapacityRequestPatchOperationArgsDict(TypedDict):
+    from_: pulumi.Input[_builtins.str]
+    """
+    (Updatable)
+    """
+    operation: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The operation can be one of these values: `INSERT`, `INSERT_MULTIPLE`, `MERGE`, `MOVE`, `PROHIBIT`, `REMOVE`, `REPLACE`, `REQUIRE`
+    """
+    selection: pulumi.Input[_builtins.str]
+    """
+    (Updatable)
+    """
+    value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+    """
+    (Updatable)
+    """
+    position: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable)
+    """
+    selected_item: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable)
+    """
 
 @pulumi.input_type
 class OccCapacityRequestPatchOperationArgs:
@@ -762,30 +745,27 @@ class OccCapacityRequestPatchOperationArgs:
         pulumi.set(self, "selected_item", value)
 
 
-if not MYPY:
-    class OccCustomerGroupCustomersListArgsDict(TypedDict):
-        display_name: pulumi.Input[_builtins.str]
-        """
-        The display name for the customer.
-        """
-        tenancy_id: pulumi.Input[_builtins.str]
-        """
-        The OCID of the tenancy belonging to the customer.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The description about the customer group.
-        """
-        occ_customer_group_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the customer group.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        To determine whether the customer is enabled/disabled.
-        """
-elif False:
-    OccCustomerGroupCustomersListArgsDict: TypeAlias = Mapping[str, Any]
+class OccCustomerGroupCustomersListArgsDict(TypedDict):
+    display_name: pulumi.Input[_builtins.str]
+    """
+    The display name for the customer.
+    """
+    tenancy_id: pulumi.Input[_builtins.str]
+    """
+    The OCID of the tenancy belonging to the customer.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The description about the customer group.
+    """
+    occ_customer_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the customer group.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    To determine whether the customer is enabled/disabled.
+    """
 
 @pulumi.input_type
 class OccCustomerGroupCustomersListArgs:
@@ -872,13 +852,10 @@ class OccCustomerGroupCustomersListArgs:
         pulumi.set(self, "status", value)
 
 
-if not MYPY:
-    class GetInternalNamespaceOccOverviewsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInternalNamespaceOccOverviewsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInternalNamespaceOccOverviewsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInternalNamespaceOccOverviewsFilterArgs:
@@ -919,13 +896,10 @@ class GetInternalNamespaceOccOverviewsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetInternalOccAvailabilityCatalogsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInternalOccAvailabilityCatalogsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInternalOccAvailabilityCatalogsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInternalOccAvailabilityCatalogsFilterArgs:
@@ -966,13 +940,10 @@ class GetInternalOccAvailabilityCatalogsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetInternalOccHandoverResourceBlockDetailsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInternalOccHandoverResourceBlockDetailsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInternalOccHandoverResourceBlockDetailsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInternalOccHandoverResourceBlockDetailsFilterArgs:
@@ -1013,13 +984,10 @@ class GetInternalOccHandoverResourceBlockDetailsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetInternalOccHandoverResourceBlocksFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInternalOccHandoverResourceBlocksFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInternalOccHandoverResourceBlocksFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInternalOccHandoverResourceBlocksFilterArgs:
@@ -1060,16 +1028,13 @@ class GetInternalOccHandoverResourceBlocksFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetInternalOccmDemandSignalCatalogResourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A query parameter to filter the list of demand signal catalog resource based on the resource name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInternalOccmDemandSignalCatalogResourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInternalOccmDemandSignalCatalogResourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A query parameter to filter the list of demand signal catalog resource based on the resource name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInternalOccmDemandSignalCatalogResourcesFilterArgs:
@@ -1116,13 +1081,10 @@ class GetInternalOccmDemandSignalCatalogResourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetInternalOccmDemandSignalCatalogsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInternalOccmDemandSignalCatalogsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInternalOccmDemandSignalCatalogsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInternalOccmDemandSignalCatalogsFilterArgs:
@@ -1163,13 +1125,10 @@ class GetInternalOccmDemandSignalCatalogsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetInternalOccmDemandSignalDeliveriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInternalOccmDemandSignalDeliveriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInternalOccmDemandSignalDeliveriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInternalOccmDemandSignalDeliveriesFilterArgs:
@@ -1210,13 +1169,10 @@ class GetInternalOccmDemandSignalDeliveriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetInternalOccmDemandSignalItemsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInternalOccmDemandSignalItemsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInternalOccmDemandSignalItemsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInternalOccmDemandSignalItemsFilterArgs:
@@ -1257,13 +1213,10 @@ class GetInternalOccmDemandSignalItemsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetInternalOccmDemandSignalsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInternalOccmDemandSignalsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInternalOccmDemandSignalsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInternalOccmDemandSignalsFilterArgs:
@@ -1304,13 +1257,10 @@ class GetInternalOccmDemandSignalsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNamespaceOccOverviewsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNamespaceOccOverviewsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNamespaceOccOverviewsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNamespaceOccOverviewsFilterArgs:
@@ -1351,13 +1301,10 @@ class GetNamespaceOccOverviewsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOccAvailabilityCatalogOccAvailabilitiesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOccAvailabilityCatalogOccAvailabilitiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOccAvailabilityCatalogOccAvailabilitiesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs:
@@ -1398,13 +1345,10 @@ class GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOccAvailabilityCatalogsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOccAvailabilityCatalogsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOccAvailabilityCatalogsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOccAvailabilityCatalogsFilterArgs:
@@ -1445,13 +1389,10 @@ class GetOccAvailabilityCatalogsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOccCapacityRequestsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOccCapacityRequestsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOccCapacityRequestsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOccCapacityRequestsFilterArgs:
@@ -1492,13 +1433,10 @@ class GetOccCapacityRequestsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOccCustomerGroupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOccCustomerGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOccCustomerGroupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOccCustomerGroupsFilterArgs:
@@ -1539,13 +1477,10 @@ class GetOccCustomerGroupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOccHandoverResourceBlockDetailsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOccHandoverResourceBlockDetailsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOccHandoverResourceBlockDetailsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOccHandoverResourceBlockDetailsFilterArgs:
@@ -1586,13 +1521,10 @@ class GetOccHandoverResourceBlockDetailsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOccHandoverResourceBlocksFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOccHandoverResourceBlocksFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOccHandoverResourceBlocksFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOccHandoverResourceBlocksFilterArgs:
@@ -1633,16 +1565,13 @@ class GetOccHandoverResourceBlocksFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOccmDemandSignalCatalogResourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A query parameter to filter the list of demand signal catalog resource based on the resource name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOccmDemandSignalCatalogResourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOccmDemandSignalCatalogResourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A query parameter to filter the list of demand signal catalog resource based on the resource name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOccmDemandSignalCatalogResourcesFilterArgs:
@@ -1689,13 +1618,10 @@ class GetOccmDemandSignalCatalogResourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOccmDemandSignalDeliveriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOccmDemandSignalDeliveriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOccmDemandSignalDeliveriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOccmDemandSignalDeliveriesFilterArgs:
@@ -1736,13 +1662,10 @@ class GetOccmDemandSignalDeliveriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOccmDemandSignalItemsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOccmDemandSignalItemsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOccmDemandSignalItemsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOccmDemandSignalItemsFilterArgs:
@@ -1783,13 +1706,10 @@ class GetOccmDemandSignalItemsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOccmDemandSignalsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOccmDemandSignalsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOccmDemandSignalsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOccmDemandSignalsFilterArgs:

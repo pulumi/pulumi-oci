@@ -363,6 +363,13 @@ class EnterpriseManagerBridge(pulumi.CustomResource):
                  object_storage_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Enterprise Manager Bridge resource in Oracle Cloud Infrastructure Opsi service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/operations-insights/latest/EnterpriseManagerBridge
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/osi
+
+        Create a Enterprise Manager bridge in Operations Insights.
+
         ## Example Usage
 
         ```python
@@ -410,6 +417,13 @@ class EnterpriseManagerBridge(pulumi.CustomResource):
                  args: EnterpriseManagerBridgeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Enterprise Manager Bridge resource in Oracle Cloud Infrastructure Opsi service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/operations-insights/latest/EnterpriseManagerBridge
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/osi
+
+        Create a Enterprise Manager bridge in Operations Insights.
+
         ## Example Usage
 
         ```python

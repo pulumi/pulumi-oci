@@ -350,6 +350,17 @@ class Stream(pulumi.CustomResource):
                  stream_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Stream resource in Oracle Cloud Infrastructure Streaming service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/streaming
+
+        Starts the provisioning of a new stream.
+        The stream will be created in the given compartment id or stream pool id, depending on which parameter is specified.
+        Compartment id and stream pool id cannot be specified at the same time.
+        To track the progress of the provisioning, you can periodically call [GetStream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream/GetStream).
+        In the response, the `lifecycleState` parameter of the [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream/) object tells you its current state.
+
         ## Example Usage
 
         ```python
@@ -397,6 +408,17 @@ class Stream(pulumi.CustomResource):
                  args: StreamArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Stream resource in Oracle Cloud Infrastructure Streaming service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/streaming
+
+        Starts the provisioning of a new stream.
+        The stream will be created in the given compartment id or stream pool id, depending on which parameter is specified.
+        Compartment id and stream pool id cannot be specified at the same time.
+        To track the progress of the provisioning, you can periodically call [GetStream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream/GetStream).
+        In the response, the `lifecycleState` parameter of the [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream/) object tells you its current state.
+
         ## Example Usage
 
         ```python

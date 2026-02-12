@@ -824,6 +824,13 @@ class DbSystem(pulumi.CustomResource):
                  system_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Db System resource in Oracle Cloud Infrastructure Psql service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/postgresql/latest/DbSystem
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/psql
+
+        Creates a new database system.
+
         ## Example Usage
 
         ```python
@@ -942,6 +949,13 @@ class DbSystem(pulumi.CustomResource):
                  args: DbSystemArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Db System resource in Oracle Cloud Infrastructure Psql service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/postgresql/latest/DbSystem
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/psql
+
+        Creates a new database system.
+
         ## Example Usage
 
         ```python

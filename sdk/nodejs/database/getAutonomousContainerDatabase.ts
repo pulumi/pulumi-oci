@@ -109,6 +109,9 @@ export interface GetAutonomousContainerDatabaseResult {
      * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     readonly dbSplitThreshold: number;
+    /**
+     * **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     */
     readonly dbUniqueName: string;
     /**
      * Oracle AI Database version of the Autonomous Container Database.

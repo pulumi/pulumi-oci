@@ -10,6 +10,15 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.HealthChecks
 {
     /// <summary>
+    /// This resource provides the Ping Monitor resource in Oracle Cloud Infrastructure Health Checks service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/healthchecks/latest/PingMonitor
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/health_checks
+    /// 
+    /// Creates a ping monitor. Vantage points will be automatically selected if not specified,
+    /// and probes will be initiated from each vantage point to each of the targets at the frequency
+    /// specified by `intervalInSeconds`.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -46,7 +55,7 @@ namespace Pulumi.Oci.HealthChecks
     /// 
     /// ## Import
     /// 
-    /// PingMonitors can be imported using the `id`, e.g.
+    /// PingMonitors can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:HealthChecks/pingMonitor:PingMonitor test_ping_monitor "id"

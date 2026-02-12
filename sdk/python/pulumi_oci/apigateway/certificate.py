@@ -456,6 +456,13 @@ class Certificate(pulumi.CustomResource):
                  private_key: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Certificate resource in Oracle Cloud Infrastructure API Gateway service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/api-gateway/latest/Certificate
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/api_gateway
+
+        Creates a new Certificate.
+
         ## Example Usage
 
         ```python
@@ -510,6 +517,13 @@ class Certificate(pulumi.CustomResource):
                  args: CertificateArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Certificate resource in Oracle Cloud Infrastructure API Gateway service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/api-gateway/latest/Certificate
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/api_gateway
+
+        Creates a new Certificate.
+
         ## Example Usage
 
         ```python

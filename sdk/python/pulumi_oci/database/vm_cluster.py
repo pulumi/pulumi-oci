@@ -49,6 +49,7 @@ class VmClusterArgs:
         """
         The set of arguments for constructing a VmCluster resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpu_core_count` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the VM cluster. The name does not need to be unique.
         :param pulumi.Input[_builtins.str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
@@ -135,6 +136,9 @@ class VmClusterArgs:
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> pulumi.Input[_builtins.int]:
+        """
+        (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpu_core_count` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
+        """
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
@@ -464,6 +468,7 @@ class _VmClusterState:
         :param pulumi.Input['VmClusterCloudAutomationUpdateDetailsArgs'] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpu_core_count` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
         :param pulumi.Input[_builtins.int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input['VmClusterDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[_builtins.float] data_storage_size_in_gb: (Updatable) The data disk group size to be allocated in GBs.
@@ -622,6 +627,9 @@ class _VmClusterState:
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpu_core_count` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
+        """
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
@@ -1032,6 +1040,13 @@ class VmCluster(pulumi.CustomResource):
                  vm_cluster_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/VmCluster
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates an Exadata Cloud@Customer VM cluster.
+
         ## Example Usage
 
         ```python
@@ -1096,6 +1111,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict']] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpu_core_count` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
         :param pulumi.Input[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[_builtins.float] data_storage_size_in_gb: (Updatable) The data disk group size to be allocated in GBs.
         :param pulumi.Input[_builtins.float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
@@ -1129,6 +1145,13 @@ class VmCluster(pulumi.CustomResource):
                  args: VmClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/VmCluster
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates an Exadata Cloud@Customer VM cluster.
+
         ## Example Usage
 
         ```python
@@ -1345,6 +1368,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict']] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpu_core_count` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
         :param pulumi.Input[_builtins.int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[_builtins.float] data_storage_size_in_gb: (Updatable) The data disk group size to be allocated in GBs.
@@ -1456,6 +1480,9 @@ class VmCluster(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> pulumi.Output[_builtins.int]:
+        """
+        (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpu_core_count` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
+        """
         return pulumi.get(self, "cpu_core_count")
 
     @_builtins.property

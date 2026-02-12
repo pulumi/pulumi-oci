@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Task Schedule resource in Oracle Cloud Infrastructure Jms service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/jms/latest/TaskSchedule
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/jms
+ *
+ * Create a task schedule using the information provided.
+ *
  * ## Example Usage
  *
  * ```typescript

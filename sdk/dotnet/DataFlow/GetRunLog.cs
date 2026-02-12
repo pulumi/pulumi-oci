@@ -99,6 +99,10 @@ namespace Pulumi.Oci.DataFlow
 
     public sealed class GetRunLogArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Encodes the downloaded content in base64. It is recommended to set this to `True` for binary content to avoid corrupting the zip file in Terraform state. The default value is `False` to preserve backwards compatibility with Terraform v0.11 configurations.
+        /// If passing the base64 encoded content to a `LocalFile` resource, please use the `ContentBase64` attribute of the `LocalFile` resource.
+        /// </summary>
         [Input("base64EncodeContent")]
         public bool? Base64EncodeContent { get; set; }
 
@@ -122,6 +126,10 @@ namespace Pulumi.Oci.DataFlow
 
     public sealed class GetRunLogInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Encodes the downloaded content in base64. It is recommended to set this to `True` for binary content to avoid corrupting the zip file in Terraform state. The default value is `False` to preserve backwards compatibility with Terraform v0.11 configurations.
+        /// If passing the base64 encoded content to a `LocalFile` resource, please use the `ContentBase64` attribute of the `LocalFile` resource.
+        /// </summary>
         [Input("base64EncodeContent")]
         public Input<bool>? Base64EncodeContent { get; set; }
 

@@ -44,9 +44,17 @@ public final class PrivateApplicationPackageDetailsArgs extends com.pulumi.resou
         return this.version;
     }
 
+    /**
+     * Base-64 payload of the Terraform zip package.
+     * 
+     */
     @Import(name="zipFileBase64encoded", required=true)
     private Output<String> zipFileBase64encoded;
 
+    /**
+     * @return Base-64 payload of the Terraform zip package.
+     * 
+     */
     public Output<String> zipFileBase64encoded() {
         return this.zipFileBase64encoded;
     }
@@ -119,11 +127,23 @@ public final class PrivateApplicationPackageDetailsArgs extends com.pulumi.resou
             return version(Output.of(version));
         }
 
+        /**
+         * @param zipFileBase64encoded Base-64 payload of the Terraform zip package.
+         * 
+         * @return builder
+         * 
+         */
         public Builder zipFileBase64encoded(Output<String> zipFileBase64encoded) {
             $.zipFileBase64encoded = zipFileBase64encoded;
             return this;
         }
 
+        /**
+         * @param zipFileBase64encoded Base-64 payload of the Terraform zip package.
+         * 
+         * @return builder
+         * 
+         */
         public Builder zipFileBase64encoded(String zipFileBase64encoded) {
             return zipFileBase64encoded(Output.of(zipFileBase64encoded));
         }

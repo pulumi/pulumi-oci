@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Configuration resource in Oracle Cloud Infrastructure Audit service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/audit/latest/Configuration
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/audit
+ *
  * ## Example Usage
  *
  * ```typescript

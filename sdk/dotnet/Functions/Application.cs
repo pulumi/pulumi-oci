@@ -10,6 +10,15 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Functions
 {
     /// <summary>
+    /// This resource provides the Application resource in Oracle Cloud Infrastructure Functions service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/functions/latest/Application
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/functions
+    /// 
+    /// Creates a new application.
+    /// 
+    /// **NOTE:** Terraform will take 5 minutes after destroying an application due to a known service issue. Refer [here](https://docs.cloud.oracle.com/iaas/Content/Functions/Tasks/functionsdeleting.htm)
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -61,7 +70,7 @@ namespace Pulumi.Oci.Functions
     /// 
     /// ## Import
     /// 
-    /// Applications can be imported using the `id`, e.g.
+    /// Applications can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Functions/application:Application test_application "id"

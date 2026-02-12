@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
+    /// This resource provides the App resource in Oracle Cloud Infrastructure Identity Domains service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/App
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+    /// 
+    /// Create an App
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -478,7 +485,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Import
     /// 
-    /// Apps can be imported using the `id`, e.g.
+    /// Apps can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Identity/domainsApp:DomainsApp test_app "idcsEndpoint/{idcsEndpoint}/apps/{appId}"
@@ -1104,6 +1111,9 @@ namespace Pulumi.Oci.Identity
         [Output("errorPageUrl")]
         public Output<string> ErrorPageUrl { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+        /// </summary>
         [Output("forceDelete")]
         public Output<bool?> ForceDelete { get; private set; } = null!;
 
@@ -2826,6 +2836,9 @@ namespace Pulumi.Oci.Identity
         [Input("errorPageUrl")]
         public Input<string>? ErrorPageUrl { get; set; }
 
+        /// <summary>
+        /// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+        /// </summary>
         [Input("forceDelete")]
         public Input<bool>? ForceDelete { get; set; }
 
@@ -4479,6 +4492,9 @@ namespace Pulumi.Oci.Identity
         [Input("errorPageUrl")]
         public Input<string>? ErrorPageUrl { get; set; }
 
+        /// <summary>
+        /// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+        /// </summary>
         [Input("forceDelete")]
         public Input<bool>? ForceDelete { get; set; }
 

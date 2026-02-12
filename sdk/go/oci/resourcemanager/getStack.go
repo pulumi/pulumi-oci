@@ -61,7 +61,8 @@ type GetStackArgs struct {
 // A collection of values returned by getStack.
 type GetStackResult struct {
 	// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the compartment where the stack is located.
-	CompartmentId string                 `pulumi:"compartmentId"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// Location of the Terraform configuration.
 	ConfigSources []GetStackConfigSource `pulumi:"configSources"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -77,11 +78,13 @@ type GetStackResult struct {
 	// The current lifecycle state of the stack. For more information about stack lifecycle states in Resource Manager, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
 	State string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags       map[string]string `pulumi:"systemTags"`
-	TerraformVersion string            `pulumi:"terraformVersion"`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The version of Terraform specified for the stack. Example: `1.5.x`
+	TerraformVersion string `pulumi:"terraformVersion"`
 	// The date and time at which the stack was created. Format is defined by RFC3339. Example: `2020-01-25T21:10:29.600Z`
-	TimeCreated string            `pulumi:"timeCreated"`
-	Variables   map[string]string `pulumi:"variables"`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Terraform variables associated with this resource. Maximum number of variables supported is 250. The maximum size of each variable, including both name and value, is 8192 bytes. Example: `{"CompartmentId": "compartment-id-value"}`
+	Variables map[string]string `pulumi:"variables"`
 }
 
 func GetStackOutput(ctx *pulumi.Context, args GetStackOutputArgs, opts ...pulumi.InvokeOption) GetStackResultOutput {
@@ -123,6 +126,7 @@ func (o GetStackResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStackResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Location of the Terraform configuration.
 func (o GetStackResultOutput) ConfigSources() GetStackConfigSourceArrayOutput {
 	return o.ApplyT(func(v GetStackResult) []GetStackConfigSource { return v.ConfigSources }).(GetStackConfigSourceArrayOutput)
 }
@@ -166,6 +170,7 @@ func (o GetStackResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetStackResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
+// The version of Terraform specified for the stack. Example: `1.5.x`
 func (o GetStackResultOutput) TerraformVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStackResult) string { return v.TerraformVersion }).(pulumi.StringOutput)
 }
@@ -175,6 +180,7 @@ func (o GetStackResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStackResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// Terraform variables associated with this resource. Maximum number of variables supported is 250. The maximum size of each variable, including both name and value, is 8192 bytes. Example: `{"CompartmentId": "compartment-id-value"}`
 func (o GetStackResultOutput) Variables() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetStackResult) map[string]string { return v.Variables }).(pulumi.StringMapOutput)
 }

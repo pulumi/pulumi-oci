@@ -635,6 +635,23 @@ class DatabaseUpgrade(pulumi.CustomResource):
                  database_upgrade_source_details: Optional[pulumi.Input[Union['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs', 'DatabaseUpgradeDatabaseUpgradeSourceDetailsArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Database Upgrade resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/DatabaseUpgrade
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Upgrades the specified Oracle Database instance.
+
+        Database upgrade requires source to be `DB_VERSION` or `DB_SOFTWARE_IMAGE`.
+        	`db_home.0.db_version` is updated to target DB version specified in the upgrade request.
+        	To avoid a force new create of the db_home on the next apply, add the following to the resource
+        	```	lifecycle {
+        	   	ignore_changes = [
+        	   		db_home.0.db_version,
+        	   	]
+        	}
+        	```
+
         ## Example Usage
 
         ```python
@@ -670,6 +687,23 @@ class DatabaseUpgrade(pulumi.CustomResource):
                  args: DatabaseUpgradeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Database Upgrade resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/DatabaseUpgrade
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Upgrades the specified Oracle Database instance.
+
+        Database upgrade requires source to be `DB_VERSION` or `DB_SOFTWARE_IMAGE`.
+        	`db_home.0.db_version` is updated to target DB version specified in the upgrade request.
+        	To avoid a force new create of the db_home on the next apply, add the following to the resource
+        	```	lifecycle {
+        	   	ignore_changes = [
+        	   		db_home.0.db_version,
+        	   	]
+        	}
+        	```
+
         ## Example Usage
 
         ```python

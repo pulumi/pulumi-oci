@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Security Question Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/SecurityQuestionSetting
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+    /// 
+    /// Replace a security question setting.
     /// 
     /// ## Import
     /// 
-    /// SecurityQuestionSettings can be imported using the `id`, e.g.
+    /// SecurityQuestionSettings can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Identity/domainsSecurityQuestionSetting:DomainsSecurityQuestionSetting test_security_question_setting "idcsEndpoint/{idcsEndpoint}/securityQuestionSettings/{securityQuestionSettingId}"

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FleetAppsManagement
 {
     /// <summary>
+    /// This resource provides the Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/SchedulerDefinition
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+    /// 
+    /// Create a SchedulerDefinition to perform lifecycle operations.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -92,7 +99,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     /// 
     /// ## Import
     /// 
-    /// SchedulerDefinitions can be imported using the `id`, e.g.
+    /// SchedulerDefinitions can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:FleetAppsManagement/schedulerDefinition:SchedulerDefinition test_scheduler_definition "id"

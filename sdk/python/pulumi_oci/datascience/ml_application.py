@@ -300,6 +300,13 @@ class MlApplication(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Ml Application resource in Oracle Cloud Infrastructure Data Science service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/MlApplication
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+
+        Creates a new MlApplication.
+
         ## Example Usage
 
         ```python
@@ -345,6 +352,13 @@ class MlApplication(pulumi.CustomResource):
                  args: MlApplicationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Ml Application resource in Oracle Cloud Infrastructure Data Science service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/MlApplication
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+
+        Creates a new MlApplication.
+
         ## Example Usage
 
         ```python

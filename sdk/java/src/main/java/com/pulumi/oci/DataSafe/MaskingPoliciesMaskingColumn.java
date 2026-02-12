@@ -17,6 +17,32 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Masking Policies Masking Column resource in Oracle Cloud Infrastructure Data Safe service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/MaskingPoliciesMaskingColumn
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+ * 
+ * Creates a new masking column in the specified masking policy. Use this operation
+ * to add parent columns only. It automatically adds the child columns from the
+ * associated sensitive data model or target database. If you provide the
+ * sensitiveTypeId attribute but not the maskingFormats attribute, it automatically
+ * assigns the default masking format associated with the specified sensitive type.
+ * Alternatively, if you provide the maskingFormats attribute, the specified masking
+ * formats are assigned to the column.
+ * 
+ * Using the maskingFormats attribute, you can assign one or more masking formats
+ * to a column. You need to specify a condition as part of each masking format. It
+ * enables you to do &lt;a href=&#34;https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html&#34;&gt;conditional masking&lt;/a&gt;
+ * so that you can mask the column data values differently using different
+ * masking conditions. A masking format can have one or more format entries. The
+ * combined output of all the format entries is used for masking. It provides the
+ * flexibility to define a masking format that can generate different parts of a data
+ * value separately and then combine them to get the final data value for masking.
+ * 
+ * You can use the maskingColumnGroup attribute to group the columns that you would
+ * like to mask together. It enables you to do &lt;a href=&#34;https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037&#34;&gt;group or compound masking&lt;/a&gt; that ensures that the
+ * masked data across the columns in a group continue to retain the same logical relationship.
+ * 
  * ## Example Usage
  * 
  * <pre>

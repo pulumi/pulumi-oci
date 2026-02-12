@@ -7,6 +7,34 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Tag resource in Oracle Cloud Infrastructure Identity service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/Tag
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+ *
+ * Creates a new tag in the specified tag namespace.
+ *
+ * The tag requires either the OCID or the name of the tag namespace that will contain this
+ * tag definition.
+ *
+ * You must specify a *name* for the tag, which must be unique across all tags in the tag namespace
+ * and cannot be changed. The name can contain any ASCII character except the space (_) or period (.) characters.
+ * Names are case insensitive. That means, for example, "myTag" and "mytag" are not allowed in the same namespace.
+ * If you specify a name that's already in use in the tag namespace, a 409 error is returned.
+ *
+ * The tag must have a *description*. It does not have to be unique, and you can change it with
+ * [UpdateTag](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/Tag/UpdateTag).
+ *
+ * The tag must have a value type, which is specified with a validator. Tags can use either a
+ * static value or a list of possible values. Static values are entered by a user applying the tag
+ * to a resource. Lists are created by you and the user must apply a value from the list. Lists
+ * are validiated.
+ *
+ * * If no `validator` is set, the user applying the tag to a resource can type in a static
+ *   value or leave the tag value empty.
+ * * If a `validator` is set, the user applying the tag to a resource must select from a list
+ *   of values that you supply with [EnumTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/EnumTagDefinitionValidator).
+ *
  * ## Example Usage
  *
  * ```typescript

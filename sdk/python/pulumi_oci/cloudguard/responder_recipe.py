@@ -422,7 +422,13 @@ class ResponderRecipe(pulumi.CustomResource):
                  source_responder_recipe_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/ResponderRecipe
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+
+        Creates a responder recipe (ResponderRecipe resource), from values passed in a
+        CreateResponderRecipeDetails resource.
 
         ## Import
 
@@ -459,7 +465,13 @@ class ResponderRecipe(pulumi.CustomResource):
                  args: ResponderRecipeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/ResponderRecipe
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+
+        Creates a responder recipe (ResponderRecipe resource), from values passed in a
+        CreateResponderRecipeDetails resource.
 
         ## Import
 

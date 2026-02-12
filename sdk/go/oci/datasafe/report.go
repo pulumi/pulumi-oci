@@ -12,7 +12,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## Example Usage
+// This resource provides the Report resource in Oracle Cloud Infrastructure Data Safe service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/Report
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+//
+// Updates the specified report. Only tags can be updated.
 //
 // ## Import
 //

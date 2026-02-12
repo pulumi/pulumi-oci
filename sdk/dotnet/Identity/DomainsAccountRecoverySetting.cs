@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Account Recovery Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/AccountRecoverySetting
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+    /// 
+    /// Replace an account recovery setting.
     /// 
     /// ## Import
     /// 
-    /// AccountRecoverySettings can be imported using the `id`, e.g.
+    /// AccountRecoverySettings can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting test_account_recovery_setting "idcsEndpoint/{idcsEndpoint}/accountRecoverySettings/{accountRecoverySettingId}"

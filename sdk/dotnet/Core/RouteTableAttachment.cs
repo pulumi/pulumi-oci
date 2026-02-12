@@ -35,7 +35,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Import
     /// 
-    /// Route Table Attachment can be imported using the `id`, e.g.
+    /// Route Table Attachment can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Core/routeTableAttachment:RouteTableAttachment test_route_table_attachment "{subnetId}/{routeTableId}"

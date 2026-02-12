@@ -287,9 +287,17 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         return Optional.ofNullable(this.dbSplitThreshold);
     }
 
+    /**
+     * **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     * 
+     */
     @Import(name="dbUniqueName")
     private @Nullable Output<String> dbUniqueName;
 
+    /**
+     * @return **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     * 
+     */
     public Optional<Output<String>> dbUniqueName() {
         return Optional.ofNullable(this.dbUniqueName);
     }
@@ -871,9 +879,17 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         return Optional.ofNullable(this.peerCloudAutonomousVmClusterId);
     }
 
+    /**
+     * **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     * 
+     */
     @Import(name="peerDbUniqueName")
     private @Nullable Output<String> peerDbUniqueName;
 
+    /**
+     * @return **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     * 
+     */
     public Optional<Output<String>> peerDbUniqueName() {
         return Optional.ofNullable(this.peerDbUniqueName);
     }
@@ -1716,11 +1732,23 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
             return dbSplitThreshold(Output.of(dbSplitThreshold));
         }
 
+        /**
+         * @param dbUniqueName **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dbUniqueName(@Nullable Output<String> dbUniqueName) {
             $.dbUniqueName = dbUniqueName;
             return this;
         }
 
+        /**
+         * @param dbUniqueName **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dbUniqueName(String dbUniqueName) {
             return dbUniqueName(Output.of(dbUniqueName));
         }
@@ -2562,11 +2590,23 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
             return peerCloudAutonomousVmClusterId(Output.of(peerCloudAutonomousVmClusterId));
         }
 
+        /**
+         * @param peerDbUniqueName **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+         * 
+         * @return builder
+         * 
+         */
         public Builder peerDbUniqueName(@Nullable Output<String> peerDbUniqueName) {
             $.peerDbUniqueName = peerDbUniqueName;
             return this;
         }
 
+        /**
+         * @param peerDbUniqueName **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+         * 
+         * @return builder
+         * 
+         */
         public Builder peerDbUniqueName(String peerDbUniqueName) {
             return peerDbUniqueName(Output.of(peerDbUniqueName));
         }

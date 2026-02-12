@@ -15,6 +15,13 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Configuration resource in Oracle Cloud Infrastructure License Manager service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/licensemanager/latest/Configuration
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/license_manager
+ * 
+ * Updates the configuration for the compartment.
+ * 
  * ## Example Usage
  * 
  * <pre>

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas
 {
     /// <summary>
+    /// This resource provides the Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/waas/latest/HttpRedirect
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/web_application_acceleration_and_security
+    /// 
+    /// Creates a new HTTP Redirect on the WAF edge.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -49,7 +56,7 @@ namespace Pulumi.Oci.Waas
     /// 
     /// ## Import
     /// 
-    /// HttpRedirects can be imported using the `id`, e.g.
+    /// HttpRedirects can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect "id"

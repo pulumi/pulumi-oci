@@ -15,6 +15,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Agent Plugin resource in Oracle Cloud Infrastructure Cloud Bridge service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/OCB/latest/AgentPlugin
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudBridge
+ * 
+ * Updates the plugin.
+ * 
  * ## Example Usage
  * 
  * <pre>

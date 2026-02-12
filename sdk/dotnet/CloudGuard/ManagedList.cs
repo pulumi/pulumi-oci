@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/ManagedList
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+    /// 
+    /// Creates a new ManagedList resource.
     /// 
     /// ## Import
     /// 
-    /// ManagedLists can be imported using the `id`, e.g.
+    /// ManagedLists can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:CloudGuard/managedList:ManagedList test_managed_list "id"

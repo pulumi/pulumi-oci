@@ -755,6 +755,13 @@ class Instance(pulumi.CustomResource):
                  waf_primary_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/oce/latest/OceInstance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a new OceInstance.
+
         ## Example Usage
 
         ```python
@@ -824,6 +831,13 @@ class Instance(pulumi.CustomResource):
                  args: InstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/oce/latest/OceInstance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a new OceInstance.
+
         ## Example Usage
 
         ```python

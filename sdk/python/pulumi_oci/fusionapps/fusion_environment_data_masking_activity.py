@@ -169,6 +169,13 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
                  is_resume_data_masking: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
+        This resource provides the Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fusion-applications/latest/FusionEnvironmentDataMaskingActivity
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fusionapps
+
+        Creates a new DataMaskingActivity.
+
         ## Example Usage
 
         ```python
@@ -204,6 +211,13 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
                  args: FusionEnvironmentDataMaskingActivityArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fusion-applications/latest/FusionEnvironmentDataMaskingActivity
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fusionapps
+
+        Creates a new DataMaskingActivity.
+
         ## Example Usage
 
         ```python

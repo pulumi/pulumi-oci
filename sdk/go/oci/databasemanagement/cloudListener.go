@@ -12,7 +12,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## Example Usage
+// This resource provides the Cloud Listener resource in Oracle Cloud Infrastructure Database Management service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/CloudListener
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+//
+// Updates the cloud listener specified by `cloudListenerId`.
 //
 // ## Import
 //

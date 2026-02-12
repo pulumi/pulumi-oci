@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Logging
 {
     /// <summary>
+    /// This resource provides the Log Group resource in Oracle Cloud Infrastructure Logging service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logging-management/latest/LogGroup
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/logging
+    /// 
+    /// Create a new log group with a unique display name. This call fails
+    /// if the log group is already created with the same displayName in the compartment.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -40,7 +48,7 @@ namespace Pulumi.Oci.Logging
     /// 
     /// ## Import
     /// 
-    /// LogGroups can be imported using the `id`, e.g.
+    /// LogGroups can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Logging/logGroup:LogGroup test_log_group "id"

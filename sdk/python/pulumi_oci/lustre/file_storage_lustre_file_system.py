@@ -690,6 +690,13 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Lustre File System resource in Oracle Cloud Infrastructure Lustre File Storage service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/lustre/latest/LustreFileSystem
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/lustre_file_storage
+
+        Creates a Lustre file system.
+
         ## Example Usage
 
         ```python
@@ -759,6 +766,13 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
                  args: FileStorageLustreFileSystemArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Lustre File System resource in Oracle Cloud Infrastructure Lustre File Storage service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/lustre/latest/LustreFileSystem
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/lustre_file_storage
+
+        Creates a Lustre file system.
+
         ## Example Usage
 
         ```python

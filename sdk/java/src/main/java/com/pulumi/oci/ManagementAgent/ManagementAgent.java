@@ -22,6 +22,11 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/management-agent/latest/ManagementAgent
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/management_agent
+ * 
  * ## Example Usage
  * 
  * <pre>
@@ -131,9 +136,35 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
     public Output<Map<String,String>> definedTags() {
         return this.definedTags;
     }
+    /**
+     * (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     * Management Agent resources are not created or destroyed by terraform.
+     * 
+     * Management Agents should be created using on premise installation, or OCA plugin for Management Agent. See [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html).
+     * 
+     * Destroy operation in terraform will not delete the Management Agent, this must be performed by steps indicated in [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html). Destroy will remove the resource from terraform state only.
+     * 
+     */
     @Export(name="deployPluginsIds", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> deployPluginsIds;
 
+    /**
+     * @return (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     * Management Agent resources are not created or destroyed by terraform.
+     * 
+     * Management Agents should be created using on premise installation, or OCA plugin for Management Agent. See [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html).
+     * 
+     * Destroy operation in terraform will not delete the Management Agent, this must be performed by steps indicated in [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html). Destroy will remove the resource from terraform state only.
+     * 
+     */
     public Output<Optional<List<String>>> deployPluginsIds() {
         return Codegen.optional(this.deployPluginsIds);
     }

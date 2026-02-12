@@ -1081,9 +1081,17 @@ public final class DomainsAppArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.errorPageUrl);
     }
 
+    /**
+     * (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+     * 
+     */
     @Import(name="forceDelete")
     private @Nullable Output<Boolean> forceDelete;
 
+    /**
+     * @return (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+     * 
+     */
     public Optional<Output<Boolean>> forceDelete() {
         return Optional.ofNullable(this.forceDelete);
     }
@@ -4573,11 +4581,23 @@ public final class DomainsAppArgs extends com.pulumi.resources.ResourceArgs {
             return errorPageUrl(Output.of(errorPageUrl));
         }
 
+        /**
+         * @param forceDelete (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder forceDelete(@Nullable Output<Boolean> forceDelete) {
             $.forceDelete = forceDelete;
             return this;
         }
 
+        /**
+         * @param forceDelete (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder forceDelete(Boolean forceDelete) {
             return forceDelete(Output.of(forceDelete));
         }

@@ -15,6 +15,13 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Peer resource in Oracle Cloud Infrastructure Blockchain service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/blockchain/latest/Peer
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/blockchain
+ * 
+ * Create Blockchain Platform Peer
+ * 
  * ## Example Usage
  * 
  * <pre>

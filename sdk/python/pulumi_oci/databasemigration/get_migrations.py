@@ -389,6 +389,12 @@ class AwaitableGetMigrationsResult(GetMigrationsResult):
 def get_migrations(migration_id: Optional[_builtins.str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMigrationsResult:
     """
+    This data source provides the list of Migrations in Oracle Cloud Infrastructure Database Migration service.
+
+    List all Migrations.
+
+    Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+
     ## Example Usage
     """
     __args__ = dict()
@@ -430,6 +436,12 @@ def get_migrations(migration_id: Optional[_builtins.str] = None,
 def get_migrations_output(migration_id: Optional[pulumi.Input[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMigrationsResult]:
     """
+    This data source provides the list of Migrations in Oracle Cloud Infrastructure Database Migration service.
+
+    List all Migrations.
+
+    Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+
     ## Example Usage
     """
     __args__ = dict()

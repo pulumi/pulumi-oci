@@ -96,6 +96,9 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         [Input("version")]
         public Input<string>? Version { get; set; }
 
+        /// <summary>
+        /// File path to the directory to use for running Terraform. If not specified, the root directory is used.
+        /// </summary>
         [Input("workingDirectory")]
         public Input<string>? WorkingDirectory { get; set; }
 

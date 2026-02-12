@@ -433,6 +433,13 @@ class Usage(pulumi.CustomResource):
                  time_usage_started: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Usage resource in Oracle Cloud Infrastructure Metering Computation service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/usage/latest/Usage
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/metering_computation
+
+        Returns usage for the given account.
+
         ## Example Usage
 
         ```python
@@ -490,6 +497,13 @@ class Usage(pulumi.CustomResource):
                  args: UsageArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Usage resource in Oracle Cloud Infrastructure Metering Computation service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/usage/latest/Usage
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/metering_computation
+
+        Returns usage for the given account.
+
         ## Example Usage
 
         ```python

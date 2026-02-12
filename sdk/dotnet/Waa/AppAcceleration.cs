@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waa
 {
     /// <summary>
+    /// This resource provides the Web App Acceleration resource in Oracle Cloud Infrastructure Waa service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/waa/latest/WebAppAcceleration
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/web_app_acceleration
+    /// 
+    /// Creates a new WebAppAcceleration.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -43,7 +50,7 @@ namespace Pulumi.Oci.Waa
     /// 
     /// ## Import
     /// 
-    /// WebAppAccelerations can be imported using the `id`, e.g.
+    /// WebAppAccelerations can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Waa/appAcceleration:AppAcceleration test_web_app_acceleration "id"

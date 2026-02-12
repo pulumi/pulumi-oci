@@ -171,6 +171,15 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
                  objective: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Cloud Vm Cluster Iorm Config resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/CloudVmClusterIormConfig
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Updates IORM settings for the specified Cloud Vm Cluster.
+
+        The [UpdateCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/UpdateCloudVmClusterIormConfig/) API is used for Cloud Vm Cluster.
+
         ## Example Usage
 
         ```python
@@ -207,6 +216,15 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
                  args: CloudVmClusterIormConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Cloud Vm Cluster Iorm Config resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/CloudVmClusterIormConfig
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Updates IORM settings for the specified Cloud Vm Cluster.
+
+        The [UpdateCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/UpdateCloudVmClusterIormConfig/) API is used for Cloud Vm Cluster.
+
         ## Example Usage
 
         ```python

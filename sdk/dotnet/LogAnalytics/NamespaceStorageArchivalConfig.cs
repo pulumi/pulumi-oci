@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics
 {
     /// <summary>
+    /// This resource provides the Namespace Storage Archival Config resource in Oracle Cloud Infrastructure Log Analytics service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/NamespaceStorageArchivalConfig
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+    /// 
+    /// This API updates the archiving configuration
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

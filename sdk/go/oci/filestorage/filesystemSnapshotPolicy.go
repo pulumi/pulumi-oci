@@ -12,6 +12,17 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/filestorage/latest/FilesystemSnapshotPolicy
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+//
+// Creates a new file system snapshot policy in the specified compartment and
+// availability domain.
+//
+// After you create a file system snapshot policy, you can associate it with
+// file systems.
+//
 // ## Example Usage
 //
 // ```go

@@ -99,6 +99,9 @@ namespace Pulumi.Oci.RecoveryMod
 
     public sealed class GetProtectedDatabaseFetchConfigurationArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Encodes the downloaded config in base64. It is recommended to set this to `True` to avoid corrupting the file in Terraform state. The default value is `True`.
+        /// </summary>
         [Input("base64EncodeContent")]
         public bool? Base64EncodeContent { get; set; }
 
@@ -122,6 +125,9 @@ namespace Pulumi.Oci.RecoveryMod
 
     public sealed class GetProtectedDatabaseFetchConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Encodes the downloaded config in base64. It is recommended to set this to `True` to avoid corrupting the file in Terraform state. The default value is `True`.
+        /// </summary>
         [Input("base64EncodeContent")]
         public Input<bool>? Base64EncodeContent { get; set; }
 

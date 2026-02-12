@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ManagementAgent
 {
     /// <summary>
+    /// This resource provides the Management Agent Data Source resource in Oracle Cloud Infrastructure Management Agent service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/management-agent/latest/ManagementAgentDataSource
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/management_agent
+    /// 
+    /// Datasource creation request to given Management Agent.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -50,7 +57,7 @@ namespace Pulumi.Oci.ManagementAgent
     /// 
     /// ## Import
     /// 
-    /// ManagementAgentDataSources can be imported using the `id`, e.g.
+    /// ManagementAgentDataSources can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource test_management_agent_data_source "managementAgents/{managementAgentId}/dataSources/{key}"

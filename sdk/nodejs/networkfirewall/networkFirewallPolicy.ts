@@ -5,6 +5,37 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Network Firewall Policy resource in Oracle Cloud Infrastructure Network Firewall service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/network-firewall/latest/NetworkFirewallPolicy
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_firewall
+ *
+ * Creates a new Network Firewall Policy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkFirewallPolicy = new oci.networkfirewall.NetworkFirewallPolicy("test_network_firewall_policy", {
+ *     compartmentId: compartmentId,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     displayName: networkFirewallPolicyDisplayName,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ * });
+ * ```
+ *
+ * ## Note
+ *
+ * * We are introducing significant enhancements in network firewall policy. The policy components have been decomposed to support higher limits.
+ * * Network firewall policies created using older versions will not be accessible using this version. Older policies will continue to function using older SDKs.
+ * * To access the policies using the latest version of terraform, upgrade the older policies to use the latest features using CLI, SDKs, or console. Once upgraded, the policy can't be rolled back to the older version. Refer [here](https://docs.oracle.com/en-us/iaas/Content/network-firewall/upgrade.htm) for further details on this.
+ *
  * ## Import
  *
  * NetworkFirewallPolicies can be imported using the `id`, e.g.

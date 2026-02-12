@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Log Analytics Entity Associations Remove resource in Oracle Cloud Infrastructure Log Analytics service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsEntity/RemoveEntityAssociations
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+ *
+ * Delete association between input source log analytics entity and destination entities.
+ *
  * ## Example Usage
  *
  * ```typescript

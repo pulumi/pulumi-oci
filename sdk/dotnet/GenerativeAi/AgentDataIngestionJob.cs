@@ -10,6 +10,15 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GenerativeAi
 {
     /// <summary>
+    /// This resource provides the Data Ingestion Job resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/latest/DataIngestionJob
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai_agent
+    /// 
+    /// **CreateDataIngestionJob**
+    /// 
+    /// Creates a data ingestion job.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,7 +50,7 @@ namespace Pulumi.Oci.GenerativeAi
     /// 
     /// ## Import
     /// 
-    /// DataIngestionJobs can be imported using the `id`, e.g.
+    /// DataIngestionJobs can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:GenerativeAi/agentDataIngestionJob:AgentDataIngestionJob test_data_ingestion_job "id"

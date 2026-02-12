@@ -10,6 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
+    /// This resource provides the Idp Group Mapping resource in Oracle Cloud Infrastructure Identity service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/IdpGroupMapping
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+    /// 
+    /// **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
+    /// 
+    /// Creates a single mapping between an IdP group and an IAM Service
+    /// [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/).
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -32,7 +42,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Import
     /// 
-    /// IdpGroupMappings can be imported using the `id`, e.g.
+    /// IdpGroupMappings can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Identity/idpGroupMapping:IdpGroupMapping test_idp_group_mapping "identityProviders/{identityProviderId}/groupMappings/{mappingId}"

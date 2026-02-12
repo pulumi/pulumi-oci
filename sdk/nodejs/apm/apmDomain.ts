@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Apm Domain resource in Oracle Cloud Infrastructure Application Performance Monitoring service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/apm-control-plane/latest/ApmDomain
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/apm
+ *
+ * Creates a new APM domain.
+ *
  * ## Example Usage
  *
  * ```typescript

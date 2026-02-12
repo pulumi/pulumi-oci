@@ -10,6 +10,15 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DemandSignal
 {
     /// <summary>
+    /// This resource provides the Occ Demand Signal resource in Oracle Cloud Infrastructure Demand Signal service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/occds/latest/OccDemandSignal
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/demand_signal
+    /// 
+    /// Creates a OccDemandSignal.
+    /// 
+    ///   Updates the data of an OccDemandSignal.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -71,7 +80,7 @@ namespace Pulumi.Oci.DemandSignal
     /// 
     /// ## Import
     /// 
-    /// OccDemandSignals can be imported using the `id`, e.g.
+    /// OccDemandSignals can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DemandSignal/occDemandSignal:OccDemandSignal test_occ_demand_signal "id"

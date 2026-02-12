@@ -524,6 +524,13 @@ class DbmulticloudOracleDbGcpIdentityConnector(pulumi.CustomResource):
                  resource_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Oracle Db Gcp Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/latest/OracleDbGcpIdentityConnector
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dbmulticloud
+
+        Creates Oracle DB GCP Identity Connector resource.
+
         ## Example Usage
 
         ```python
@@ -581,6 +588,13 @@ class DbmulticloudOracleDbGcpIdentityConnector(pulumi.CustomResource):
                  args: DbmulticloudOracleDbGcpIdentityConnectorArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Oracle Db Gcp Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/latest/OracleDbGcpIdentityConnector
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dbmulticloud
+
+        Creates Oracle DB GCP Identity Connector resource.
+
         ## Example Usage
 
         ```python

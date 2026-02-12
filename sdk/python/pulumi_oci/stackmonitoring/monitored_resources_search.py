@@ -831,6 +831,13 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Monitored Resources Search resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoredResourcesSearch
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+
+        Gets a list of all monitored resources in a compartment for the given search criteria.
+
         ## Example Usage
 
         ```python
@@ -914,6 +921,13 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
                  args: MonitoredResourcesSearchArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Monitored Resources Search resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoredResourcesSearch
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+
+        Gets a list of all monitored resources in a compartment for the given search criteria.
+
         ## Example Usage
 
         ```python

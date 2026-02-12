@@ -444,6 +444,7 @@ class DomainsAppArgs:
                * returned: default
                * type: string
                * uniqueness: none
+        :param pulumi.Input[_builtins.bool] force_delete: (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
         :param pulumi.Input[_builtins.str] home_page_url: (Updatable) Home Page URL
                
                **Added In:** 19.2.1
@@ -1874,6 +1875,9 @@ class DomainsAppArgs:
     @_builtins.property
     @pulumi.getter(name="forceDelete")
     def force_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+        """
         return pulumi.get(self, "force_delete")
 
     @force_delete.setter
@@ -3656,6 +3660,7 @@ class _DomainsAppState:
                * returned: default
                * type: string
                * uniqueness: none
+        :param pulumi.Input[_builtins.bool] force_delete: (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
         :param pulumi.Input[Sequence[pulumi.Input['DomainsAppGrantedAppRoleArgs']]] granted_app_roles: (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
                
                **SCIM++ Properties:**
@@ -5502,6 +5507,9 @@ class _DomainsAppState:
     @_builtins.property
     @pulumi.getter(name="forceDelete")
     def force_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+        """
         return pulumi.get(self, "force_delete")
 
     @force_delete.setter
@@ -7244,6 +7252,13 @@ class DomainsApp(pulumi.CustomResource):
                  urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the App resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/App
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create an App
+
         ## Example Usage
 
         ```python
@@ -7901,6 +7916,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
+        :param pulumi.Input[_builtins.bool] force_delete: (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
         :param pulumi.Input[_builtins.str] home_page_url: (Updatable) Home Page URL
                
                **Added In:** 19.2.1
@@ -8470,6 +8486,13 @@ class DomainsApp(pulumi.CustomResource):
                  args: DomainsAppArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the App resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/App
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create an App
+
         ## Example Usage
 
         ```python
@@ -9618,6 +9641,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
+        :param pulumi.Input[_builtins.bool] force_delete: (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppGrantedAppRoleArgs', 'DomainsAppGrantedAppRoleArgsDict']]]] granted_app_roles: (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
                
                **SCIM++ Properties:**
@@ -11187,6 +11211,9 @@ class DomainsApp(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="forceDelete")
     def force_delete(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+        """
         return pulumi.get(self, "force_delete")
 
     @_builtins.property

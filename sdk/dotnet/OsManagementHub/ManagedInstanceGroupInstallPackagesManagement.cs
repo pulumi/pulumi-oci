@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
+    /// This resource provides the Managed Instance Group Install Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ManagedInstanceGroupInstallPackagesManagement
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+    /// 
+    /// Installs the specified packages on each managed instance in a managed instance group. The package must be compatible with the instances in the group.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -37,7 +44,7 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// ## Import
     /// 
-    /// ManagedInstanceGroupInstallPackagesManagement can be imported using the `id`, e.g.
+    /// ManagedInstanceGroupInstallPackagesManagement can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:OsManagementHub/managedInstanceGroupInstallPackagesManagement:ManagedInstanceGroupInstallPackagesManagement test_managed_instance_group_install_packages_management "id"

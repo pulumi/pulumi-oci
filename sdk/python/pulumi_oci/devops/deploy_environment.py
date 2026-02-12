@@ -515,6 +515,13 @@ class DeployEnvironment(pulumi.CustomResource):
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Deploy Environment resource in Oracle Cloud Infrastructure Devops service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/DeployEnvironment
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+
+        Creates a new deployment environment.
+
         ## Example Usage
 
         ```python
@@ -583,6 +590,13 @@ class DeployEnvironment(pulumi.CustomResource):
                  args: DeployEnvironmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Deploy Environment resource in Oracle Cloud Infrastructure Devops service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/DeployEnvironment
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+
+        Creates a new deployment environment.
+
         ## Example Usage
 
         ```python

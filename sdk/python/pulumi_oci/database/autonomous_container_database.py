@@ -80,6 +80,7 @@ class AutonomousContainerDatabaseArgs:
         :param pulumi.Input[_builtins.str] database_software_image_id: The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[_builtins.int] db_split_threshold: The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        :param pulumi.Input[_builtins.str] db_unique_name: **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
         :param pulumi.Input[_builtins.str] db_version: The base version for the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] distribution_affinity: Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
@@ -100,6 +101,7 @@ class AutonomousContainerDatabaseArgs:
         :param pulumi.Input[_builtins.str] peer_autonomous_exadata_infrastructure_id: *No longer used.* This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         :param pulumi.Input[_builtins.str] peer_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
         :param pulumi.Input[_builtins.str] peer_cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+        :param pulumi.Input[_builtins.str] peer_db_unique_name: **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
         :param pulumi.Input[_builtins.str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[_builtins.int] reinstate_trigger: (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] service_level_agreement_type: The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
@@ -350,6 +352,9 @@ class AutonomousContainerDatabaseArgs:
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+        """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
@@ -608,6 +613,9 @@ class AutonomousContainerDatabaseArgs:
     @_builtins.property
     @pulumi.getter(name="peerDbUniqueName")
     def peer_db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+        """
         return pulumi.get(self, "peer_db_unique_name")
 
     @peer_db_unique_name.setter
@@ -838,6 +846,7 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardArgs']]] dataguards: The properties that define Autonomous Container Databases Dataguard.
         :param pulumi.Input[_builtins.str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[_builtins.int] db_split_threshold: The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        :param pulumi.Input[_builtins.str] db_unique_name: **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
         :param pulumi.Input[_builtins.str] db_version: The base version for the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name for the Autonomous Container Database.
@@ -876,6 +885,7 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[_builtins.str] peer_autonomous_exadata_infrastructure_id: *No longer used.* This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         :param pulumi.Input[_builtins.str] peer_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
         :param pulumi.Input[_builtins.str] peer_cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+        :param pulumi.Input[_builtins.str] peer_db_unique_name: **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
         :param pulumi.Input[_builtins.str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.float]]] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
         :param pulumi.Input[_builtins.float] provisioned_cpus: The number of CPUs provisioned in an Autonomous Container Database.
@@ -1270,6 +1280,9 @@ class _AutonomousContainerDatabaseState:
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+        """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
@@ -1744,6 +1757,9 @@ class _AutonomousContainerDatabaseState:
     @_builtins.property
     @pulumi.getter(name="peerDbUniqueName")
     def peer_db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+        """
         return pulumi.get(self, "peer_db_unique_name")
 
     @peer_db_unique_name.setter
@@ -2069,6 +2085,13 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  vm_failover_reservation: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
+        This resource provides the Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
+
         ## Example Usage
 
         ```python
@@ -2192,6 +2215,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] database_software_image_id: The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[_builtins.int] db_split_threshold: The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        :param pulumi.Input[_builtins.str] db_unique_name: **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
         :param pulumi.Input[_builtins.str] db_version: The base version for the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name for the Autonomous Container Database.
@@ -2214,6 +2238,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] peer_autonomous_exadata_infrastructure_id: *No longer used.* This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         :param pulumi.Input[_builtins.str] peer_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
         :param pulumi.Input[_builtins.str] peer_cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+        :param pulumi.Input[_builtins.str] peer_db_unique_name: **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
         :param pulumi.Input[_builtins.str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[_builtins.int] reinstate_trigger: (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] service_level_agreement_type: The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
@@ -2235,6 +2260,13 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  args: AutonomousContainerDatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
+
         ## Example Usage
 
         ```python
@@ -2613,6 +2645,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseDataguardArgs', 'AutonomousContainerDatabaseDataguardArgsDict']]]] dataguards: The properties that define Autonomous Container Databases Dataguard.
         :param pulumi.Input[_builtins.str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[_builtins.int] db_split_threshold: The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        :param pulumi.Input[_builtins.str] db_unique_name: **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
         :param pulumi.Input[_builtins.str] db_version: The base version for the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name for the Autonomous Container Database.
@@ -2651,6 +2684,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] peer_autonomous_exadata_infrastructure_id: *No longer used.* This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         :param pulumi.Input[_builtins.str] peer_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
         :param pulumi.Input[_builtins.str] peer_cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+        :param pulumi.Input[_builtins.str] peer_db_unique_name: **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
         :param pulumi.Input[_builtins.str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.float]]] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
         :param pulumi.Input[_builtins.float] provisioned_cpus: The number of CPUs provisioned in an Autonomous Container Database.
@@ -2902,6 +2936,9 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> pulumi.Output[_builtins.str]:
+        """
+        **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+        """
         return pulumi.get(self, "db_unique_name")
 
     @_builtins.property
@@ -3216,6 +3253,9 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="peerDbUniqueName")
     def peer_db_unique_name(self) -> pulumi.Output[_builtins.str]:
+        """
+        **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+        """
         return pulumi.get(self, "peer_db_unique_name")
 
     @_builtins.property

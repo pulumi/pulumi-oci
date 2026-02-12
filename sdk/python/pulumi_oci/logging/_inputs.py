@@ -91,20 +91,15 @@ __all__ = [
     'GetUnifiedAgentConfigurationsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class LogConfigurationArgsDict(TypedDict):
-        source: pulumi.Input['LogConfigurationSourceArgsDict']
-        """
-        The source the log object comes from.
-        """
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the compartment that the resource belongs to.
-        """
-elif False:
-    LogConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class LogConfigurationArgsDict(TypedDict):
+    source: pulumi.Input['LogConfigurationSourceArgsDict']
+    """
+    The source the log object comes from.
+    """
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the compartment that the resource belongs to.
+    """
 
 @pulumi.input_type
 class LogConfigurationArgs:
@@ -144,31 +139,28 @@ class LogConfigurationArgs:
         pulumi.set(self, "compartment_id", value)
 
 
-if not MYPY:
-    class LogConfigurationSourceArgsDict(TypedDict):
-        category: pulumi.Input[_builtins.str]
-        """
-        Log object category.
-        """
-        resource: pulumi.Input[_builtins.str]
-        """
-        The unique identifier of the resource emitting the log.
-        """
-        service: pulumi.Input[_builtins.str]
-        """
-        Service generating log.
-        """
-        source_type: pulumi.Input[_builtins.str]
-        """
-        The log source.
-        * **OCISERVICE:** Oracle Service.
-        """
-        parameters: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Log category parameters are stored here.
-        """
-elif False:
-    LogConfigurationSourceArgsDict: TypeAlias = Mapping[str, Any]
+class LogConfigurationSourceArgsDict(TypedDict):
+    category: pulumi.Input[_builtins.str]
+    """
+    Log object category.
+    """
+    resource: pulumi.Input[_builtins.str]
+    """
+    The unique identifier of the resource emitting the log.
+    """
+    service: pulumi.Input[_builtins.str]
+    """
+    Service generating log.
+    """
+    source_type: pulumi.Input[_builtins.str]
+    """
+    The log source.
+    * **OCISERVICE:** Oracle Service.
+    """
+    parameters: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Log category parameters are stored here.
+    """
 
 @pulumi.input_type
 class LogConfigurationSourceArgs:
@@ -255,14 +247,11 @@ class LogConfigurationSourceArgs:
         pulumi.set(self, "parameters", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationGroupAssociationArgsDict(TypedDict):
-        group_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) list of group/dynamic group ids associated with this configuration.
-        """
-elif False:
-    UnifiedAgentConfigurationGroupAssociationArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationGroupAssociationArgsDict(TypedDict):
+    group_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) list of group/dynamic group ids associated with this configuration.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationGroupAssociationArgs:
@@ -287,30 +276,27 @@ class UnifiedAgentConfigurationGroupAssociationArgs:
         pulumi.set(self, "group_lists", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationArgsDict(TypedDict):
-        configuration_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of Unified Agent service configuration.
-        """
-        application_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgsDict']]]]
-        """
-        (Updatable) Unified Agent monitoring application configuration details.
-        """
-        destination: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationArgsDict']]
-        """
-        (Updatable) Logging destination object.
-        """
-        sources: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceArgsDict']]]]
-        """
-        (Updatable) Logging source object.
-        """
-        unified_agent_configuration_filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgsDict']]]]
-        """
-        (Updatable) Logging filter object.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationArgsDict(TypedDict):
+    configuration_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of Unified Agent service configuration.
+    """
+    application_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgsDict']]]]
+    """
+    (Updatable) Unified Agent monitoring application configuration details.
+    """
+    destination: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationArgsDict']]
+    """
+    (Updatable) Logging destination object.
+    """
+    sources: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceArgsDict']]]]
+    """
+    (Updatable) Logging source object.
+    """
+    unified_agent_configuration_filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgsDict']]]]
+    """
+    (Updatable) Logging filter object.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationArgs:
@@ -398,30 +384,27 @@ class UnifiedAgentConfigurationServiceConfigurationArgs:
         pulumi.set(self, "unified_agent_configuration_filters", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgsDict(TypedDict):
-        destination: pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgsDict']
-        """
-        (Updatable) Kubernetes destination object.
-        """
-        source_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of source of metrics
-        """
-        source: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgsDict']]
-        """
-        (Updatable) Kubernetes source object.
-        """
-        sources: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgsDict']]]]
-        """
-        (Updatable) Tail log source objects.
-        """
-        unified_agent_configuration_filter: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgsDict']]
-        """
-        (Updatable) Kubernetes filter object
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgsDict(TypedDict):
+    destination: pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgsDict']
+    """
+    (Updatable) Kubernetes destination object.
+    """
+    source_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of source of metrics
+    """
+    source: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgsDict']]
+    """
+    (Updatable) Kubernetes source object.
+    """
+    sources: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgsDict']]]]
+    """
+    (Updatable) Tail log source objects.
+    """
+    unified_agent_configuration_filter: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgsDict']]
+    """
+    (Updatable) Kubernetes filter object
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs:
@@ -508,18 +491,15 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs:
         pulumi.set(self, "unified_agent_configuration_filter", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the compartment that the resource belongs to.
-        """
-        metrics_namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Namespace to which metrics will be emitted.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the compartment that the resource belongs to.
+    """
+    metrics_namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Namespace to which metrics will be emitted.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs:
@@ -560,30 +540,27 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDesti
         pulumi.set(self, "metrics_namespace", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgsDict(TypedDict):
-        advanced_options: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgsDict']]
-        """
-        (Updatable) Advanced options for logging configuration
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Unique name for the source.
-        """
-        parser: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgsDict']]
-        """
-        (Updatable) Source parser object.
-        """
-        paths: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Absolute paths for log source files. Wildcards can be used.
-        """
-        source_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Unified schema logging source type.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgsDict(TypedDict):
+    advanced_options: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgsDict']]
+    """
+    (Updatable) Advanced options for logging configuration
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Unique name for the source.
+    """
+    parser: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgsDict']]
+    """
+    (Updatable) Source parser object.
+    """
+    paths: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Absolute paths for log source files. Wildcards can be used.
+    """
+    source_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Unified schema logging source type.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs:
@@ -672,14 +649,11 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
         pulumi.set(self, "source_type", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgsDict(TypedDict):
-        is_read_from_head: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgsDict(TypedDict):
+    is_read_from_head: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs:
@@ -704,136 +678,133 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
         pulumi.set(self, "is_read_from_head", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgsDict(TypedDict):
-        parser_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of fluent parser.
-        """
-        delimiter: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) CSV delimiter.
-        """
-        expression: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Regex pattern.
-        """
-        field_time_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
-        """
-        format_firstline: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) First line pattern format.
-        """
-        formats: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Mutiline pattern format.
-        """
-        grok_failure_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Grok failure key.
-        """
-        grok_name_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Grok name key.
-        """
-        is_estimate_current_event: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
-        """
-        is_keep_time_key: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, keep the time field in the record.
-        """
-        is_merge_cri_fields: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If you don't need stream or logtag fields, set this to false.
-        """
-        is_null_empty_string: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, an empty string field is replaced with a null value.
-        """
-        is_support_colonless_ident: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
-        """
-        is_with_priority: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
-        """
-        keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) CSV keys.
-        """
-        message_format: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Syslog message format.
-        """
-        message_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies the field name to contain logs.
-        """
-        multi_line_start_regexp: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Multiline start regexp pattern.
-        """
-        nested_parser: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgsDict']]
-        """
-        (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
-        """
-        null_value_pattern: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specify the null value pattern.
-        """
-        parse_nested: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, a separator parameter can be further defined.
-        """
-        patterns: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgsDict']]]]
-        """
-        (Updatable) Grok pattern object.
-        """
-        record_input: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgsDict']]
-        """
-        (Updatable) record section of openmetrics parser.
-        """
-        rfc5424time_format: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) RFC 5424 time format.
-        """
-        separator: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Keys of adjacent levels are joined by the separator.
-        """
-        syslog_parser_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Syslog parser type.
-        """
-        time_format: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Process time value using the specified format.
-        """
-        time_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) JSON parser time type.
-        """
-        timeout_in_milliseconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
-        """
-        types: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
+class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgsDict(TypedDict):
+    parser_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of fluent parser.
+    """
+    delimiter: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) CSV delimiter.
+    """
+    expression: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Regex pattern.
+    """
+    field_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
+    """
+    format_firstline: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) First line pattern format.
+    """
+    formats: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Mutiline pattern format.
+    """
+    grok_failure_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Grok failure key.
+    """
+    grok_name_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Grok name key.
+    """
+    is_estimate_current_event: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
+    """
+    is_keep_time_key: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, keep the time field in the record.
+    """
+    is_merge_cri_fields: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If you don't need stream or logtag fields, set this to false.
+    """
+    is_null_empty_string: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, an empty string field is replaced with a null value.
+    """
+    is_support_colonless_ident: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
+    """
+    is_with_priority: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
+    """
+    keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) CSV keys.
+    """
+    message_format: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Syslog message format.
+    """
+    message_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies the field name to contain logs.
+    """
+    multi_line_start_regexp: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Multiline start regexp pattern.
+    """
+    nested_parser: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgsDict']]
+    """
+    (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+    """
+    null_value_pattern: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specify the null value pattern.
+    """
+    parse_nested: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, a separator parameter can be further defined.
+    """
+    patterns: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgsDict']]]]
+    """
+    (Updatable) Grok pattern object.
+    """
+    record_input: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgsDict']]
+    """
+    (Updatable) record section of openmetrics parser.
+    """
+    rfc5424time_format: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) RFC 5424 time format.
+    """
+    separator: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Keys of adjacent levels are joined by the separator.
+    """
+    syslog_parser_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Syslog parser type.
+    """
+    time_format: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Process time value using the specified format.
+    """
+    time_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) JSON parser time type.
+    """
+    timeout_in_milliseconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+    """
+    types: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
 
-        This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+    This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
 
-        is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+    is parsed as: 1362020400 (2013/02/28/ 12:00:00)
 
-        record: { "host"   : "192.168.0.1", "req_id" : "111", "user"   : "-" }
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgsDict: TypeAlias = Mapping[str, Any]
+    record: { "host"   : "192.168.0.1", "req_id" : "111", "user"   : "-" }
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs:
@@ -1333,34 +1304,31 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
         pulumi.set(self, "types", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgsDict(TypedDict):
-        field_time_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Specify the time field for the event time. If the event doesn't have this field, the current time is used.
-        """
-        is_keep_time_key: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, keep the time field in the record.
-        """
-        parse_nested: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, a separator parameter can be further defined.
-        """
-        separator: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Keys of adjacent levels are joined by the separator.
-        """
-        time_format: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Process time value using the specified format.
-        """
-        time_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) JSON parser time type.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgsDict(TypedDict):
+    field_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+    """
+    is_keep_time_key: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, keep the time field in the record.
+    """
+    parse_nested: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, a separator parameter can be further defined.
+    """
+    separator: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Keys of adjacent levels are joined by the separator.
+    """
+    time_format: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Process time value using the specified format.
+    """
+    time_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) JSON parser time type.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs:
@@ -1465,30 +1433,27 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
         pulumi.set(self, "time_type", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgsDict(TypedDict):
-        field_time_format: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Process value using the specified format. This is available only when time_type is a string.
-        """
-        field_time_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
-        """
-        field_time_zone: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name key to tag this Grok pattern.
-        """
-        pattern: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The Grok pattern.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgsDict(TypedDict):
+    field_time_format: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Process value using the specified format. This is available only when time_type is a string.
+    """
+    field_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+    """
+    field_time_zone: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name key to tag this Grok pattern.
+    """
+    pattern: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The Grok pattern.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs:
@@ -1577,22 +1542,19 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
         pulumi.set(self, "pattern", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgsDict(TypedDict):
-        dimensions: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Dimensions to be added for metrics.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Namespace to emit metrics.
-        """
-        resource_group: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Resource group to emit metrics.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgsDict(TypedDict):
+    dimensions: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Dimensions to be added for metrics.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Namespace to emit metrics.
+    """
+    resource_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Resource group to emit metrics.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs:
@@ -1649,26 +1611,23 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
         pulumi.set(self, "resource_group", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgsDict(TypedDict):
-        allow_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) List of metrics regex to be allowed.
-        """
-        deny_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) List of metrics regex to be denied.
-        """
-        filter_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Unified schema logging filter type.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Unique name for the filter.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgsDict(TypedDict):
+    allow_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) List of metrics regex to be allowed.
+    """
+    deny_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) List of metrics regex to be denied.
+    """
+    filter_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Unified schema logging filter type.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Unique name for the filter.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs:
@@ -1741,18 +1700,15 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifi
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationDestinationArgsDict(TypedDict):
-        log_object_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The OCID of the resource.
-        """
-        operational_metrics_configuration: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgsDict']]
-        """
-        (Updatable) Unified monitoring agent operational metrics configuration object.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationDestinationArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationDestinationArgsDict(TypedDict):
+    log_object_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The OCID of the resource.
+    """
+    operational_metrics_configuration: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgsDict']]
+    """
+    (Updatable) Unified monitoring agent operational metrics configuration object.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationDestinationArgs:
@@ -1792,18 +1748,15 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationArgs:
         pulumi.set(self, "operational_metrics_configuration", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgsDict(TypedDict):
-        destination: pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgsDict']
-        """
-        (Updatable) Unified monitoring agent operational metrics destination object.
-        """
-        source: pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgsDict']
-        """
-        (Updatable) Unified monitoring agent operational metrics source object.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgsDict(TypedDict):
+    destination: pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgsDict']
+    """
+    (Updatable) Unified monitoring agent operational metrics destination object.
+    """
+    source: pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgsDict']
+    """
+    (Updatable) Unified monitoring agent operational metrics source object.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs:
@@ -1842,14 +1795,11 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
         pulumi.set(self, "source", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgsDict(TypedDict):
-        compartment_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The OCID of the compartment that the resource belongs to.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgsDict(TypedDict):
+    compartment_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The OCID of the compartment that the resource belongs to.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgs:
@@ -1873,22 +1823,19 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
         pulumi.set(self, "compartment_id", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgsDict(TypedDict):
-        record_input: pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgsDict']
-        """
-        (Updatable) Record section of OperationalMetricsSource object.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the unified monitoring agent operational metrics source object.
-        """
-        metrics: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) List of unified monitoring agent operational metrics.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgsDict(TypedDict):
+    record_input: pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgsDict']
+    """
+    (Updatable) Record section of OperationalMetricsSource object.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the unified monitoring agent operational metrics source object.
+    """
+    metrics: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) List of unified monitoring agent operational metrics.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgs:
@@ -1943,18 +1890,15 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
         pulumi.set(self, "metrics", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgsDict(TypedDict):
-        namespace: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Namespace to emit the operational metrics.
-        """
-        resource_group: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Resource group to emit the operational metrics.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgsDict(TypedDict):
+    namespace: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Namespace to emit the operational metrics.
+    """
+    resource_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Resource group to emit the operational metrics.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs:
@@ -1994,38 +1938,35 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
         pulumi.set(self, "resource_group", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationSourceArgsDict(TypedDict):
-        source_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Unified schema logging source type.
-        """
-        advanced_options: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgsDict']]
-        """
-        (Updatable) Advanced options for logging configuration
-        """
-        channels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Windows event log channels.
-        """
-        custom_plugin: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) User customized source plugin.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Unique name for the source.
-        """
-        parser: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserArgsDict']]
-        """
-        (Updatable) Source parser object.
-        """
-        paths: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Absolute paths for log source files. Wildcards can be used.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationSourceArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationSourceArgsDict(TypedDict):
+    source_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Unified schema logging source type.
+    """
+    advanced_options: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgsDict']]
+    """
+    (Updatable) Advanced options for logging configuration
+    """
+    channels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Windows event log channels.
+    """
+    custom_plugin: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) User customized source plugin.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Unique name for the source.
+    """
+    parser: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserArgsDict']]
+    """
+    (Updatable) Source parser object.
+    """
+    paths: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Absolute paths for log source files. Wildcards can be used.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationSourceArgs:
@@ -2145,14 +2086,11 @@ class UnifiedAgentConfigurationServiceConfigurationSourceArgs:
         pulumi.set(self, "paths", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgsDict(TypedDict):
-        is_read_from_head: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgsDict(TypedDict):
+    is_read_from_head: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs:
@@ -2177,136 +2115,133 @@ class UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs:
         pulumi.set(self, "is_read_from_head", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationSourceParserArgsDict(TypedDict):
-        parser_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of fluent parser.
-        """
-        delimiter: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) CSV delimiter.
-        """
-        expression: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Regex pattern.
-        """
-        field_time_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
-        """
-        format_firstline: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) First line pattern format.
-        """
-        formats: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Mutiline pattern format.
-        """
-        grok_failure_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Grok failure key.
-        """
-        grok_name_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Grok name key.
-        """
-        is_estimate_current_event: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
-        """
-        is_keep_time_key: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, keep the time field in the record.
-        """
-        is_merge_cri_fields: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If you don't need stream or logtag fields, set this to false.
-        """
-        is_null_empty_string: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, an empty string field is replaced with a null value.
-        """
-        is_support_colonless_ident: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
-        """
-        is_with_priority: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
-        """
-        keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) CSV keys.
-        """
-        message_format: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Syslog message format.
-        """
-        message_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies the field name to contain logs.
-        """
-        multi_line_start_regexp: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Multiline start regexp pattern.
-        """
-        nested_parser: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgsDict']]
-        """
-        (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
-        """
-        null_value_pattern: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specify the null value pattern.
-        """
-        parse_nested: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, a separator parameter can be further defined.
-        """
-        patterns: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgsDict']]]]
-        """
-        (Updatable) Grok pattern object.
-        """
-        record_input: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgsDict']]
-        """
-        (Updatable) record section of openmetrics parser.
-        """
-        rfc5424time_format: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) RFC 5424 time format.
-        """
-        separator: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Keys of adjacent levels are joined by the separator.
-        """
-        syslog_parser_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Syslog parser type.
-        """
-        time_format: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Process time value using the specified format.
-        """
-        time_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) JSON parser time type.
-        """
-        timeout_in_milliseconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
-        """
-        types: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
+class UnifiedAgentConfigurationServiceConfigurationSourceParserArgsDict(TypedDict):
+    parser_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of fluent parser.
+    """
+    delimiter: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) CSV delimiter.
+    """
+    expression: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Regex pattern.
+    """
+    field_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
+    """
+    format_firstline: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) First line pattern format.
+    """
+    formats: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Mutiline pattern format.
+    """
+    grok_failure_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Grok failure key.
+    """
+    grok_name_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Grok name key.
+    """
+    is_estimate_current_event: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
+    """
+    is_keep_time_key: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, keep the time field in the record.
+    """
+    is_merge_cri_fields: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If you don't need stream or logtag fields, set this to false.
+    """
+    is_null_empty_string: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, an empty string field is replaced with a null value.
+    """
+    is_support_colonless_ident: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
+    """
+    is_with_priority: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
+    """
+    keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) CSV keys.
+    """
+    message_format: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Syslog message format.
+    """
+    message_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies the field name to contain logs.
+    """
+    multi_line_start_regexp: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Multiline start regexp pattern.
+    """
+    nested_parser: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgsDict']]
+    """
+    (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+    """
+    null_value_pattern: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specify the null value pattern.
+    """
+    parse_nested: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, a separator parameter can be further defined.
+    """
+    patterns: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgsDict']]]]
+    """
+    (Updatable) Grok pattern object.
+    """
+    record_input: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgsDict']]
+    """
+    (Updatable) record section of openmetrics parser.
+    """
+    rfc5424time_format: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) RFC 5424 time format.
+    """
+    separator: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Keys of adjacent levels are joined by the separator.
+    """
+    syslog_parser_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Syslog parser type.
+    """
+    time_format: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Process time value using the specified format.
+    """
+    time_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) JSON parser time type.
+    """
+    timeout_in_milliseconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+    """
+    types: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
 
-        This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+    This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
 
-        is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+    is parsed as: 1362020400 (2013/02/28/ 12:00:00)
 
-        record: { "host"   : "192.168.0.1", "req_id" : "111", "user"   : "-" }
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationSourceParserArgsDict: TypeAlias = Mapping[str, Any]
+    record: { "host"   : "192.168.0.1", "req_id" : "111", "user"   : "-" }
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs:
@@ -2806,34 +2741,31 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs:
         pulumi.set(self, "types", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgsDict(TypedDict):
-        field_time_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Specify the time field for the event time. If the event doesn't have this field, the current time is used.
-        """
-        is_keep_time_key: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, keep the time field in the record.
-        """
-        parse_nested: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, a separator parameter can be further defined.
-        """
-        separator: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Keys of adjacent levels are joined by the separator.
-        """
-        time_format: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Process time value using the specified format.
-        """
-        time_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) JSON parser time type.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgsDict(TypedDict):
+    field_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+    """
+    is_keep_time_key: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, keep the time field in the record.
+    """
+    parse_nested: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, a separator parameter can be further defined.
+    """
+    separator: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Keys of adjacent levels are joined by the separator.
+    """
+    time_format: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Process time value using the specified format.
+    """
+    time_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) JSON parser time type.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs:
@@ -2938,30 +2870,27 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs:
         pulumi.set(self, "time_type", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgsDict(TypedDict):
-        field_time_format: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Process value using the specified format. This is available only when time_type is a string.
-        """
-        field_time_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
-        """
-        field_time_zone: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name key to tag this Grok pattern.
-        """
-        pattern: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The Grok pattern.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgsDict(TypedDict):
+    field_time_format: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Process value using the specified format. This is available only when time_type is a string.
+    """
+    field_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+    """
+    field_time_zone: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name key to tag this Grok pattern.
+    """
+    pattern: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The Grok pattern.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs:
@@ -3050,22 +2979,19 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs:
         pulumi.set(self, "pattern", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgsDict(TypedDict):
-        dimensions: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Dimensions to be added for metrics.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Namespace to emit metrics.
-        """
-        resource_group: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Resource group to emit metrics.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgsDict(TypedDict):
+    dimensions: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Dimensions to be added for metrics.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Namespace to emit metrics.
+    """
+    resource_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Resource group to emit metrics.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs:
@@ -3122,106 +3048,103 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs:
         pulumi.set(self, "resource_group", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgsDict(TypedDict):
-        filter_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Unified schema logging filter type.
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Unique name for the filter.
-        """
-        allow_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgsDict']]]]
-        """
-        (Updatable) A list of filtering rules to include logs
-        """
-        custom_filter_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Type of the custom filter
-        """
-        custom_sections: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgsDict']]]]
-        """
-        (Updatable) List of custom sections in custom filter
-        """
-        deny_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgsDict']]]]
-        """
-        (Updatable) A list of filtering rules to reject logs
-        """
-        emit_invalid_record_to_error: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable. If you want to ignore these errors, set this to false.
-        """
-        hash_value_field: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Store the parsed values as a hash value in a field.
-        """
-        inject_key_prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Store the parsed values with the specified key name prefix.
-        """
-        is_auto_typecast_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, automatically casts the field types.
-        """
-        is_renew_record_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, it modifies a new empty hash
-        """
-        is_ruby_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) When set to true, the full Ruby syntax is enabled in the ${} expression.
-        """
-        keep_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true
-        """
-        key_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The field name in the record to parse.
-        """
-        params: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Parameters of the custom filter
-        """
-        parser: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgsDict']]
-        """
-        (Updatable) Source parser object.
-        """
-        record_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgsDict']]]]
-        """
-        (Updatable) Add new key-value pairs in logs
-        """
-        remove_key_name_field: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, remove the keyName field when parsing is succeeded.
-        """
-        remove_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of keys to delete
-        """
-        renew_time_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Overwrites the time of logs with this value, this value must be a Unix timestamp.
-        """
-        replace_invalid_sequence: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, the invalid string is replaced with safe characters and is re-parsed.
-        """
-        reserve_data: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, keep the original key-value pair in the parsed result.
-        """
-        reserve_time: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, keep the original event time in the parsed result.
+class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgsDict(TypedDict):
+    filter_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Unified schema logging filter type.
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Unique name for the filter.
+    """
+    allow_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgsDict']]]]
+    """
+    (Updatable) A list of filtering rules to include logs
+    """
+    custom_filter_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Type of the custom filter
+    """
+    custom_sections: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgsDict']]]]
+    """
+    (Updatable) List of custom sections in custom filter
+    """
+    deny_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgsDict']]]]
+    """
+    (Updatable) A list of filtering rules to reject logs
+    """
+    emit_invalid_record_to_error: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable. If you want to ignore these errors, set this to false.
+    """
+    hash_value_field: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Store the parsed values as a hash value in a field.
+    """
+    inject_key_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Store the parsed values with the specified key name prefix.
+    """
+    is_auto_typecast_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, automatically casts the field types.
+    """
+    is_renew_record_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, it modifies a new empty hash
+    """
+    is_ruby_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) When set to true, the full Ruby syntax is enabled in the ${} expression.
+    """
+    keep_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true
+    """
+    key_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The field name in the record to parse.
+    """
+    params: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Parameters of the custom filter
+    """
+    parser: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgsDict']]
+    """
+    (Updatable) Source parser object.
+    """
+    record_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgsDict']]]]
+    """
+    (Updatable) Add new key-value pairs in logs
+    """
+    remove_key_name_field: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, remove the keyName field when parsing is succeeded.
+    """
+    remove_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of keys to delete
+    """
+    renew_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Overwrites the time of logs with this value, this value must be a Unix timestamp.
+    """
+    replace_invalid_sequence: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, the invalid string is replaced with safe characters and is re-parsed.
+    """
+    reserve_data: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, keep the original key-value pair in the parsed result.
+    """
+    reserve_time: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, keep the original event time in the parsed result.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs:
@@ -3604,18 +3527,15 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         pulumi.set(self, "reserve_time", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The field name to which the regular expression is applied
-        """
-        pattern: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The regular expression
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The field name to which the regular expression is applied
+    """
+    pattern: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The regular expression
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs:
@@ -3656,18 +3576,15 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         pulumi.set(self, "pattern", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the custom section
-        """
-        params: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Parameters in the custom section
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the custom section
+    """
+    params: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Parameters in the custom section
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs:
@@ -3708,18 +3625,15 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         pulumi.set(self, "params", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The field name to which the regular expression is applied
-        """
-        pattern: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The regular expression
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The field name to which the regular expression is applied
+    """
+    pattern: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The regular expression
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs:
@@ -3760,136 +3674,133 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         pulumi.set(self, "pattern", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgsDict(TypedDict):
-        parser_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of fluent parser.
-        """
-        delimiter: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) CSV delimiter.
-        """
-        expression: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Regex pattern.
-        """
-        field_time_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
-        """
-        format_firstline: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) First line pattern format.
-        """
-        formats: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Mutiline pattern format.
-        """
-        grok_failure_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Grok failure key.
-        """
-        grok_name_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Grok name key.
-        """
-        is_estimate_current_event: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
-        """
-        is_keep_time_key: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, keep the time field in the record.
-        """
-        is_merge_cri_fields: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If you don't need stream or logtag fields, set this to false.
-        """
-        is_null_empty_string: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, an empty string field is replaced with a null value.
-        """
-        is_support_colonless_ident: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
-        """
-        is_with_priority: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
-        """
-        keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) CSV keys.
-        """
-        message_format: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Syslog message format.
-        """
-        message_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies the field name to contain logs.
-        """
-        multi_line_start_regexp: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Multiline start regexp pattern.
-        """
-        nested_parser: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgsDict']]
-        """
-        (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
-        """
-        null_value_pattern: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specify the null value pattern.
-        """
-        parse_nested: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, a separator parameter can be further defined.
-        """
-        patterns: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgsDict']]]]
-        """
-        (Updatable) Grok pattern object.
-        """
-        record_input: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgsDict']]
-        """
-        (Updatable) record section of openmetrics parser.
-        """
-        rfc5424time_format: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) RFC 5424 time format.
-        """
-        separator: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Keys of adjacent levels are joined by the separator.
-        """
-        syslog_parser_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Syslog parser type.
-        """
-        time_format: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Process time value using the specified format.
-        """
-        time_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) JSON parser time type.
-        """
-        timeout_in_milliseconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
-        """
-        types: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
+class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgsDict(TypedDict):
+    parser_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of fluent parser.
+    """
+    delimiter: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) CSV delimiter.
+    """
+    expression: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Regex pattern.
+    """
+    field_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
+    """
+    format_firstline: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) First line pattern format.
+    """
+    formats: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Mutiline pattern format.
+    """
+    grok_failure_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Grok failure key.
+    """
+    grok_name_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Grok name key.
+    """
+    is_estimate_current_event: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
+    """
+    is_keep_time_key: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, keep the time field in the record.
+    """
+    is_merge_cri_fields: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If you don't need stream or logtag fields, set this to false.
+    """
+    is_null_empty_string: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, an empty string field is replaced with a null value.
+    """
+    is_support_colonless_ident: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
+    """
+    is_with_priority: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
+    """
+    keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) CSV keys.
+    """
+    message_format: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Syslog message format.
+    """
+    message_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies the field name to contain logs.
+    """
+    multi_line_start_regexp: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Multiline start regexp pattern.
+    """
+    nested_parser: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgsDict']]
+    """
+    (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+    """
+    null_value_pattern: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specify the null value pattern.
+    """
+    parse_nested: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, a separator parameter can be further defined.
+    """
+    patterns: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgsDict']]]]
+    """
+    (Updatable) Grok pattern object.
+    """
+    record_input: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgsDict']]
+    """
+    (Updatable) record section of openmetrics parser.
+    """
+    rfc5424time_format: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) RFC 5424 time format.
+    """
+    separator: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Keys of adjacent levels are joined by the separator.
+    """
+    syslog_parser_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Syslog parser type.
+    """
+    time_format: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Process time value using the specified format.
+    """
+    time_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) JSON parser time type.
+    """
+    timeout_in_milliseconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+    """
+    types: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
 
-        This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+    This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
 
-        is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+    is parsed as: 1362020400 (2013/02/28/ 12:00:00)
 
-        record: { "host"   : "192.168.0.1", "req_id" : "111", "user"   : "-" }
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgsDict: TypeAlias = Mapping[str, Any]
+    record: { "host"   : "192.168.0.1", "req_id" : "111", "user"   : "-" }
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs:
@@ -4389,34 +4300,31 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         pulumi.set(self, "types", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgsDict(TypedDict):
-        field_time_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Specify the time field for the event time. If the event doesn't have this field, the current time is used.
-        """
-        is_keep_time_key: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, keep the time field in the record.
-        """
-        parse_nested: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, a separator parameter can be further defined.
-        """
-        separator: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Keys of adjacent levels are joined by the separator.
-        """
-        time_format: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Process time value using the specified format.
-        """
-        time_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) JSON parser time type.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgsDict(TypedDict):
+    field_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+    """
+    is_keep_time_key: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, keep the time field in the record.
+    """
+    parse_nested: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, a separator parameter can be further defined.
+    """
+    separator: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Keys of adjacent levels are joined by the separator.
+    """
+    time_format: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Process time value using the specified format.
+    """
+    time_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) JSON parser time type.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs:
@@ -4521,30 +4429,27 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         pulumi.set(self, "time_type", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgsDict(TypedDict):
-        field_time_format: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Process value using the specified format. This is available only when time_type is a string.
-        """
-        field_time_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
-        """
-        field_time_zone: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name key to tag this Grok pattern.
-        """
-        pattern: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The Grok pattern.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgsDict(TypedDict):
+    field_time_format: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Process value using the specified format. This is available only when time_type is a string.
+    """
+    field_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+    """
+    field_time_zone: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name key to tag this Grok pattern.
+    """
+    pattern: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The Grok pattern.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs:
@@ -4633,22 +4538,19 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         pulumi.set(self, "pattern", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgsDict(TypedDict):
-        dimensions: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Dimensions to be added for metrics.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Namespace to emit metrics.
-        """
-        resource_group: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Resource group to emit metrics.
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgsDict(TypedDict):
+    dimensions: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Dimensions to be added for metrics.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Namespace to emit metrics.
+    """
+    resource_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Resource group to emit metrics.
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs:
@@ -4705,18 +4607,15 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         pulumi.set(self, "resource_group", value)
 
 
-if not MYPY:
-    class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A new key
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A new value
-        """
-elif False:
-    UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A new key
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A new value
+    """
 
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs:
@@ -4757,13 +4656,10 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class GetLogGroupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetLogGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetLogGroupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetLogGroupsFilterArgs:
@@ -4804,16 +4700,13 @@ class GetLogGroupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetLogSavedSearchesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Resource name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetLogSavedSearchesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetLogSavedSearchesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Resource name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetLogSavedSearchesFilterArgs:
@@ -4860,13 +4753,10 @@ class GetLogSavedSearchesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetLogsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetLogsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetLogsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetLogsFilterArgs:
@@ -4907,16 +4797,13 @@ class GetLogsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetUnifiedAgentConfigurationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name key to tag this Grok pattern.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetUnifiedAgentConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetUnifiedAgentConfigurationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name key to tag this Grok pattern.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetUnifiedAgentConfigurationsFilterArgs:

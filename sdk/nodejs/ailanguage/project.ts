@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Project resource in Oracle Cloud Infrastructure Ai Language service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/language/latest/Project
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiLanguage
+ *
+ * Creates a new Project.
+ *
  * ## Example Usage
  *
  * ```typescript

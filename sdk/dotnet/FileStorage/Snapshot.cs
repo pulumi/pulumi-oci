@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FileStorage
 {
     /// <summary>
+    /// This resource provides the Snapshot resource in Oracle Cloud Infrastructure File Storage service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/filestorage/latest/Snapshot
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a new snapshot of the specified file system. You
+    /// can access the snapshot at `.snapshot/&lt;name&gt;`.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -50,7 +58,7 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// ## Import
     /// 
-    /// Snapshots can be imported using the `id`, e.g.
+    /// Snapshots can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:FileStorage/snapshot:Snapshot test_snapshot "id"

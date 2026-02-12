@@ -15,6 +15,15 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Connect Harness resource in Oracle Cloud Infrastructure Streaming service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/streaming
+ * 
+ * Starts the provisioning of a new connect harness.
+ * To track the progress of the provisioning, you can periodically call [GetConnectHarness].
+ * In the response, the `lifecycleState` parameter of the [ConnectHarness](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/) object tells you its current state.
+ * 
  * ## Example Usage
  * 
  * <pre>

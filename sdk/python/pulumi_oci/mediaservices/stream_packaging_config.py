@@ -423,6 +423,13 @@ class StreamPackagingConfig(pulumi.CustomResource):
                  stream_packaging_format: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dms/latest/StreamPackagingConfig
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/media_services
+
+        Creates a new Packaging Configuration.
+
         ## Example Usage
 
         ```python
@@ -483,6 +490,13 @@ class StreamPackagingConfig(pulumi.CustomResource):
                  args: StreamPackagingConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dms/latest/StreamPackagingConfig
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/media_services
+
+        Creates a new Packaging Configuration.
+
         ## Example Usage
 
         ```python

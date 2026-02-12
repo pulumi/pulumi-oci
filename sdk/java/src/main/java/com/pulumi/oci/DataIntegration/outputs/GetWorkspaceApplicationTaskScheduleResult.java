@@ -25,6 +25,10 @@ public final class GetWorkspaceApplicationTaskScheduleResult {
      * 
      */
     private String authMode;
+    /**
+     * @return The information about the configuration provider.First level keys to this delegate map should be in the order first &#34;bindings&#34; then &#34;childProviders&#34;.refer terraform Example.
+     * 
+     */
     private String configProviderDelegate;
     /**
      * @return The description of the aggregator.
@@ -154,6 +158,10 @@ public final class GetWorkspaceApplicationTaskScheduleResult {
     public String authMode() {
         return this.authMode;
     }
+    /**
+     * @return The information about the configuration provider.First level keys to this delegate map should be in the order first &#34;bindings&#34; then &#34;childProviders&#34;.refer terraform Example.
+     * 
+     */
     public String configProviderDelegate() {
         return this.configProviderDelegate;
     }

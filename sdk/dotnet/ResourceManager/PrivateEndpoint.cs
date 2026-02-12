@@ -10,6 +10,15 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ResourceManager
 {
     /// <summary>
+    /// This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/resourcemanager/latest/PrivateEndpoint
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/resourcemanager
+    /// 
+    /// Creates a private endpoint in the specified compartment.
+    /// For more information, see
+    /// [Creating a Private Endpoint](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-private-endpoints.htm).
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -46,7 +55,7 @@ namespace Pulumi.Oci.ResourceManager
     /// 
     /// ## Import
     /// 
-    /// PrivateEndpoints can be imported using the `id`, e.g.
+    /// PrivateEndpoints can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:ResourceManager/privateEndpoint:PrivateEndpoint test_private_endpoint "id"

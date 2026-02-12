@@ -12,6 +12,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/management-agent/latest/ManagementAgent
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/management_agent
+//
 // ## Example Usage
 //
 // ```go
@@ -59,7 +64,17 @@ type ManagementAgent struct {
 	DataSourceLists        ManagementAgentDataSourceListArrayOutput        `pulumi:"dataSourceLists"`
 	DataSourceSummaryLists ManagementAgentDataSourceSummaryListArrayOutput `pulumi:"dataSourceSummaryLists"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags      pulumi.StringMapOutput   `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
+	// (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	//
+	// Management Agent resources are not created or destroyed by terraform.
+	//
+	// Management Agents should be created using on premise installation, or OCA plugin for Management Agent. See [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html).
+	//
+	// Destroy operation in terraform will not delete the Management Agent, this must be performed by steps indicated in [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html). Destroy will remove the resource from terraform state only.
 	DeployPluginsIds pulumi.StringArrayOutput `pulumi:"deployPluginsIds"`
 	// (Updatable) New displayName of Agent.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
@@ -151,8 +166,18 @@ type managementAgentState struct {
 	DataSourceLists        []ManagementAgentDataSourceList        `pulumi:"dataSourceLists"`
 	DataSourceSummaryLists []ManagementAgentDataSourceSummaryList `pulumi:"dataSourceSummaryLists"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags      map[string]string `pulumi:"definedTags"`
-	DeployPluginsIds []string          `pulumi:"deployPluginsIds"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	//
+	// Management Agent resources are not created or destroyed by terraform.
+	//
+	// Management Agents should be created using on premise installation, or OCA plugin for Management Agent. See [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html).
+	//
+	// Destroy operation in terraform will not delete the Management Agent, this must be performed by steps indicated in [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html). Destroy will remove the resource from terraform state only.
+	DeployPluginsIds []string `pulumi:"deployPluginsIds"`
 	// (Updatable) New displayName of Agent.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -211,7 +236,17 @@ type ManagementAgentState struct {
 	DataSourceLists        ManagementAgentDataSourceListArrayInput
 	DataSourceSummaryLists ManagementAgentDataSourceSummaryListArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags      pulumi.StringMapInput
+	DefinedTags pulumi.StringMapInput
+	// (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	//
+	// Management Agent resources are not created or destroyed by terraform.
+	//
+	// Management Agents should be created using on premise installation, or OCA plugin for Management Agent. See [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html).
+	//
+	// Destroy operation in terraform will not delete the Management Agent, this must be performed by steps indicated in [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html). Destroy will remove the resource from terraform state only.
 	DeployPluginsIds pulumi.StringArrayInput
 	// (Updatable) New displayName of Agent.
 	DisplayName pulumi.StringPtrInput
@@ -268,8 +303,18 @@ func (ManagementAgentState) ElementType() reflect.Type {
 
 type managementAgentArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags      map[string]string `pulumi:"definedTags"`
-	DeployPluginsIds []string          `pulumi:"deployPluginsIds"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	//
+	// Management Agent resources are not created or destroyed by terraform.
+	//
+	// Management Agents should be created using on premise installation, or OCA plugin for Management Agent. See [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html).
+	//
+	// Destroy operation in terraform will not delete the Management Agent, this must be performed by steps indicated in [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html). Destroy will remove the resource from terraform state only.
+	DeployPluginsIds []string `pulumi:"deployPluginsIds"`
 	// (Updatable) New displayName of Agent.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -281,7 +326,17 @@ type managementAgentArgs struct {
 // The set of arguments for constructing a ManagementAgent resource.
 type ManagementAgentArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags      pulumi.StringMapInput
+	DefinedTags pulumi.StringMapInput
+	// (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	//
+	// Management Agent resources are not created or destroyed by terraform.
+	//
+	// Management Agents should be created using on premise installation, or OCA plugin for Management Agent. See [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html).
+	//
+	// Destroy operation in terraform will not delete the Management Agent, this must be performed by steps indicated in [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html). Destroy will remove the resource from terraform state only.
 	DeployPluginsIds pulumi.StringArrayInput
 	// (Updatable) New displayName of Agent.
 	DisplayName pulumi.StringPtrInput
@@ -404,6 +459,16 @@ func (o ManagementAgentOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *ManagementAgent) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+//
+// Management Agent resources are not created or destroyed by terraform.
+//
+// Management Agents should be created using on premise installation, or OCA plugin for Management Agent. See [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html).
+//
+// Destroy operation in terraform will not delete the Management Agent, this must be performed by steps indicated in [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html). Destroy will remove the resource from terraform state only.
 func (o ManagementAgentOutput) DeployPluginsIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ManagementAgent) pulumi.StringArrayOutput { return v.DeployPluginsIds }).(pulumi.StringArrayOutput)
 }

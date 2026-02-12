@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.UsageProxy
 {
     /// <summary>
+    /// This resource provides the Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/usage-proxy/latest/SubscriptionRedeemableUser
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/usage_proxy
+    /// 
+    /// Adds the list of redeemable user summary for a subscription ID.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,7 +48,7 @@ namespace Pulumi.Oci.UsageProxy
     /// 
     /// ## Import
     /// 
-    /// SubscriptionRedeemableUsers can be imported using the `id`, e.g.
+    /// SubscriptionRedeemableUsers can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser test_subscription_redeemable_user "subscriptions/{subscriptionId}/redeemableUsers/tenancyId/{tenancyId}"

@@ -578,6 +578,13 @@ class Runbook(pulumi.CustomResource):
                  runbook_version: Optional[pulumi.Input[Union['RunbookRunbookVersionArgs', 'RunbookRunbookVersionArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Runbook resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/Runbook
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+
+        Creates a runbook.
+
         ## Example Usage
 
         ```python
@@ -774,6 +781,13 @@ class Runbook(pulumi.CustomResource):
                  args: RunbookArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Runbook resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/Runbook
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+
+        Creates a runbook.
+
         ## Example Usage
 
         ```python

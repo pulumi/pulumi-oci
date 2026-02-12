@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Target Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/ocm/latest/TargetAsset
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudMigrations
+ *
+ * Creates a target asset.
+ *
  * ## Example Usage
  *
  * ```typescript

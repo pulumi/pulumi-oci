@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Budget
 {
     /// <summary>
+    /// This resource provides the Cost Alert Subscription resource in Oracle Cloud Infrastructure Budget service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/budgets/latest/CostAlertSubscription
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/budget
+    /// 
+    /// Creates a new CostAlert Subscription.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,7 +48,7 @@ namespace Pulumi.Oci.Budget
     /// 
     /// ## Import
     /// 
-    /// CostAlertSubscriptions can be imported using the `id`, e.g.
+    /// CostAlertSubscriptions can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Budget/costAlertSubscription:CostAlertSubscription test_cost_alert_subscription "id"

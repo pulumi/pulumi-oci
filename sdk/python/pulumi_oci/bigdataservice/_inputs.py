@@ -157,20 +157,15 @@ __all__ = [
     'GetBdsInstancesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class AutoScalingConfigurationPolicyArgsDict(TypedDict):
-        policy_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
-        """
-        rules: pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgsDict']]]
-        """
-        (Updatable) The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
-        """
-elif False:
-    AutoScalingConfigurationPolicyArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyArgsDict(TypedDict):
+    policy_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+    """
+    rules: pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgsDict']]]
+    """
+    (Updatable) The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyArgs:
@@ -209,50 +204,47 @@ class AutoScalingConfigurationPolicyArgs:
         pulumi.set(self, "rules", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyDetailsArgsDict(TypedDict):
-        policy_type: pulumi.Input[_builtins.str]
-        """
-        Type of autoscaling policy.
-        """
-        action_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of autoscaling action to take.
-        """
-        scale_down_config: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleDownConfigArgsDict']]
-        """
-        (Updatable) Configration for a metric based vertical scale-down policy.
-        """
-        scale_in_config: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigArgsDict']]
-        """
-        (Updatable) Configration for a metric based horizontal scale-in policy.
-        """
-        scale_out_config: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigArgsDict']]
-        """
-        (Updatable) Configration for a metric based horizontal scale-out policy.
-        """
-        scale_up_config: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigArgsDict']]
-        """
-        (Updatable) Configration for a metric based vertical scale-up policy.
-        """
-        schedule_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailArgsDict']]]]
-        """
-        (Updatable) Details of a horizontal scaling schedule.
-        """
-        timezone: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The time zone of the execution schedule, in IANA time zone database name format
+class AutoScalingConfigurationPolicyDetailsArgsDict(TypedDict):
+    policy_type: pulumi.Input[_builtins.str]
+    """
+    Type of autoscaling policy.
+    """
+    action_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of autoscaling action to take.
+    """
+    scale_down_config: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleDownConfigArgsDict']]
+    """
+    (Updatable) Configration for a metric based vertical scale-down policy.
+    """
+    scale_in_config: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigArgsDict']]
+    """
+    (Updatable) Configration for a metric based horizontal scale-in policy.
+    """
+    scale_out_config: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigArgsDict']]
+    """
+    (Updatable) Configration for a metric based horizontal scale-out policy.
+    """
+    scale_up_config: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigArgsDict']]
+    """
+    (Updatable) Configration for a metric based vertical scale-up policy.
+    """
+    schedule_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailArgsDict']]]]
+    """
+    (Updatable) Details of a horizontal scaling schedule.
+    """
+    timezone: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The time zone of the execution schedule, in IANA time zone database name format
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        trigger_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of autoscaling trigger.
-        """
-elif False:
-    AutoScalingConfigurationPolicyDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    trigger_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of autoscaling trigger.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyDetailsArgs:
@@ -412,30 +404,27 @@ class AutoScalingConfigurationPolicyDetailsArgs:
         pulumi.set(self, "trigger_type", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyDetailsScaleDownConfigArgsDict(TypedDict):
-        memory_step_size: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
-        """
-        metric: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgsDict']]
-        """
-        (Updatable) Metric and threshold details for triggering an autoscale action.
-        """
-        min_memory_per_node: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
-        """
-        min_ocpus_per_node: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
-        """
-        ocpu_step_size: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
-        """
-elif False:
-    AutoScalingConfigurationPolicyDetailsScaleDownConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyDetailsScaleDownConfigArgsDict(TypedDict):
+    memory_step_size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
+    """
+    metric: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgsDict']]
+    """
+    (Updatable) Metric and threshold details for triggering an autoscale action.
+    """
+    min_memory_per_node: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+    """
+    min_ocpus_per_node: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+    """
+    ocpu_step_size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs:
@@ -524,18 +513,15 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs:
         pulumi.set(self, "ocpu_step_size", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgsDict(TypedDict):
-        metric_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
-        """
-        threshold: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgsDict']]
-        """
-        (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
-        """
-elif False:
-    AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgsDict(TypedDict):
+    metric_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
+    """
+    threshold: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgsDict']]
+    """
+    (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs:
@@ -576,22 +562,19 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs:
         pulumi.set(self, "threshold", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgsDict(TypedDict):
-        duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
-        """
-        operator: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
-        """
-        value: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Integer non-negative value. 0 < value < 100
-        """
-elif False:
-    AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgsDict(TypedDict):
+    duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+    """
+    operator: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+    """
+    value: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Integer non-negative value. 0 < value < 100
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs:
@@ -648,22 +631,19 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyDetailsScaleInConfigArgsDict(TypedDict):
-        metric: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgsDict']]
-        """
-        (Updatable) Metric and threshold details for triggering an autoscale action.
-        """
-        min_node_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) This value is the minimum number of nodes the cluster can be scaled-in to.
-        """
-        step_size: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) This value is the number of nodes to remove during a scale-in event.
-        """
-elif False:
-    AutoScalingConfigurationPolicyDetailsScaleInConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyDetailsScaleInConfigArgsDict(TypedDict):
+    metric: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgsDict']]
+    """
+    (Updatable) Metric and threshold details for triggering an autoscale action.
+    """
+    min_node_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) This value is the minimum number of nodes the cluster can be scaled-in to.
+    """
+    step_size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) This value is the number of nodes to remove during a scale-in event.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyDetailsScaleInConfigArgs:
@@ -720,18 +700,15 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigArgs:
         pulumi.set(self, "step_size", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgsDict(TypedDict):
-        metric_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
-        """
-        threshold: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgsDict']]
-        """
-        (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
-        """
-elif False:
-    AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgsDict(TypedDict):
+    metric_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
+    """
+    threshold: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgsDict']]
+    """
+    (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs:
@@ -772,22 +749,19 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs:
         pulumi.set(self, "threshold", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgsDict(TypedDict):
-        duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
-        """
-        operator: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
-        """
-        value: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Integer non-negative value. 0 < value < 100
-        """
-elif False:
-    AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgsDict(TypedDict):
+    duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+    """
+    operator: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+    """
+    value: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Integer non-negative value. 0 < value < 100
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs:
@@ -844,22 +818,19 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyDetailsScaleOutConfigArgsDict(TypedDict):
-        max_node_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) This value is the maximum number of nodes the cluster can be scaled-out to.
-        """
-        metric: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgsDict']]
-        """
-        (Updatable) Metric and threshold details for triggering an autoscale action.
-        """
-        step_size: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) This value is the number of nodes to add during a scale-out event.
-        """
-elif False:
-    AutoScalingConfigurationPolicyDetailsScaleOutConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyDetailsScaleOutConfigArgsDict(TypedDict):
+    max_node_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) This value is the maximum number of nodes the cluster can be scaled-out to.
+    """
+    metric: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgsDict']]
+    """
+    (Updatable) Metric and threshold details for triggering an autoscale action.
+    """
+    step_size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) This value is the number of nodes to add during a scale-out event.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs:
@@ -916,18 +887,15 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs:
         pulumi.set(self, "step_size", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgsDict(TypedDict):
-        metric_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
-        """
-        threshold: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgsDict']]
-        """
-        (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
-        """
-elif False:
-    AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgsDict(TypedDict):
+    metric_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
+    """
+    threshold: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgsDict']]
+    """
+    (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs:
@@ -968,22 +936,19 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs:
         pulumi.set(self, "threshold", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgsDict(TypedDict):
-        duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
-        """
-        operator: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
-        """
-        value: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Integer non-negative value. 0 < value < 100
-        """
-elif False:
-    AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgsDict(TypedDict):
+    duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+    """
+    operator: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+    """
+    value: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Integer non-negative value. 0 < value < 100
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs:
@@ -1040,30 +1005,27 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyDetailsScaleUpConfigArgsDict(TypedDict):
-        max_memory_per_node: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
-        """
-        max_ocpus_per_node: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
-        """
-        memory_step_size: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
-        """
-        metric: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgsDict']]
-        """
-        (Updatable) Metric and threshold details for triggering an autoscale action.
-        """
-        ocpu_step_size: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
-        """
-elif False:
-    AutoScalingConfigurationPolicyDetailsScaleUpConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyDetailsScaleUpConfigArgsDict(TypedDict):
+    max_memory_per_node: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+    """
+    max_ocpus_per_node: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+    """
+    memory_step_size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+    """
+    metric: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgsDict']]
+    """
+    (Updatable) Metric and threshold details for triggering an autoscale action.
+    """
+    ocpu_step_size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs:
@@ -1152,18 +1114,15 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs:
         pulumi.set(self, "ocpu_step_size", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgsDict(TypedDict):
-        metric_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
-        """
-        threshold: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgsDict']]
-        """
-        (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
-        """
-elif False:
-    AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgsDict(TypedDict):
+    metric_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
+    """
+    threshold: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgsDict']]
+    """
+    (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs:
@@ -1204,22 +1163,19 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs:
         pulumi.set(self, "threshold", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgsDict(TypedDict):
-        duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
-        """
-        operator: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
-        """
-        value: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Integer non-negative value. 0 < value < 100
-        """
-elif False:
-    AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgsDict(TypedDict):
+    duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+    """
+    operator: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+    """
+    value: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Integer non-negative value. 0 < value < 100
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs:
@@ -1276,22 +1232,19 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyDetailsScheduleDetailArgsDict(TypedDict):
-        schedule_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of schedule.
-        """
-        time_and_horizontal_scaling_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgsDict']]]]
-        """
-        (Updatable) Time of day and horizontal scaling configuration.
-        """
-        time_and_vertical_scaling_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgsDict']]]]
-        """
-        (Updatable) Time of day and vertical scaling configuration
-        """
-elif False:
-    AutoScalingConfigurationPolicyDetailsScheduleDetailArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyDetailsScheduleDetailArgsDict(TypedDict):
+    schedule_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of schedule.
+    """
+    time_and_horizontal_scaling_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgsDict']]]]
+    """
+    (Updatable) Time of day and horizontal scaling configuration.
+    """
+    time_and_vertical_scaling_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgsDict']]]]
+    """
+    (Updatable) Time of day and vertical scaling configuration
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs:
@@ -1348,18 +1301,15 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs:
         pulumi.set(self, "time_and_vertical_scaling_configs", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgsDict(TypedDict):
-        target_node_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) This value is the desired number of nodes in the cluster.
-        """
-        time_recurrence: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
-        """
-elif False:
-    AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgsDict(TypedDict):
+    target_node_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) This value is the desired number of nodes in the cluster.
+    """
+    time_recurrence: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs:
@@ -1400,26 +1350,23 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalin
         pulumi.set(self, "time_recurrence", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgsDict(TypedDict):
-        target_memory_per_node: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
-        """
-        target_ocpus_per_node: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
-        """
-        target_shape: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
-        """
-        time_recurrence: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
-        """
-elif False:
-    AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgsDict(TypedDict):
+    target_memory_per_node: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
+    """
+    target_ocpus_per_node: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
+    """
+    target_shape: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
+    """
+    time_recurrence: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs:
@@ -1492,18 +1439,15 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingC
         pulumi.set(self, "time_recurrence", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyRuleArgsDict(TypedDict):
-        action: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
-        """
-        metric: pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgsDict']
-        """
-        (Updatable) Metric and threshold details for triggering an autoscale action.
-        """
-elif False:
-    AutoScalingConfigurationPolicyRuleArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyRuleArgsDict(TypedDict):
+    action: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
+    """
+    metric: pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgsDict']
+    """
+    (Updatable) Metric and threshold details for triggering an autoscale action.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyRuleArgs:
@@ -1542,18 +1486,15 @@ class AutoScalingConfigurationPolicyRuleArgs:
         pulumi.set(self, "metric", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyRuleMetricArgsDict(TypedDict):
-        metric_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
-        """
-        threshold: pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict']
-        """
-        (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
-        """
-elif False:
-    AutoScalingConfigurationPolicyRuleMetricArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyRuleMetricArgsDict(TypedDict):
+    metric_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
+    """
+    threshold: pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict']
+    """
+    (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyRuleMetricArgs:
@@ -1592,22 +1533,19 @@ class AutoScalingConfigurationPolicyRuleMetricArgs:
         pulumi.set(self, "threshold", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict(TypedDict):
-        duration_in_minutes: pulumi.Input[_builtins.int]
-        """
-        (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
-        """
-        operator: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
-        """
-        value: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Integer non-negative value. 0 < value < 100
-        """
-elif False:
-    AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict(TypedDict):
+    duration_in_minutes: pulumi.Input[_builtins.int]
+    """
+    (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+    """
+    operator: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+    """
+    value: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Integer non-negative value. 0 < value < 100
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
@@ -1661,22 +1599,19 @@ class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class BdsCapacityReportShapeAvailabilityArgsDict(TypedDict):
-        shape: pulumi.Input[_builtins.str]
-        """
-        The shape that you want to request a capacity report for.
-        """
-        domain_level_capacity_reports: NotRequired[pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgsDict']]]]
-        """
-        Information about the capacity in each domain.
-        """
-        shape_config: NotRequired[pulumi.Input['BdsCapacityReportShapeAvailabilityShapeConfigArgsDict']]
-        """
-        The shape configuration requested for the node.
-        """
-elif False:
-    BdsCapacityReportShapeAvailabilityArgsDict: TypeAlias = Mapping[str, Any]
+class BdsCapacityReportShapeAvailabilityArgsDict(TypedDict):
+    shape: pulumi.Input[_builtins.str]
+    """
+    The shape that you want to request a capacity report for.
+    """
+    domain_level_capacity_reports: NotRequired[pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgsDict']]]]
+    """
+    Information about the capacity in each domain.
+    """
+    shape_config: NotRequired[pulumi.Input['BdsCapacityReportShapeAvailabilityShapeConfigArgsDict']]
+    """
+    The shape configuration requested for the node.
+    """
 
 @pulumi.input_type
 class BdsCapacityReportShapeAvailabilityArgs:
@@ -1732,26 +1667,23 @@ class BdsCapacityReportShapeAvailabilityArgs:
         pulumi.set(self, "shape_config", value)
 
 
-if not MYPY:
-    class BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgsDict(TypedDict):
-        availability_domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The availability domain for the capacity report.
-        """
-        capacity_availabilities: NotRequired[pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgsDict']]]]
-        """
-        Information about the available capacity for a shape.
-        """
-        domain_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of domain level for the capacity report.
-        """
-        fault_domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The fault domain for the capacity report.
-        """
-elif False:
-    BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgsDict: TypeAlias = Mapping[str, Any]
+class BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgsDict(TypedDict):
+    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The availability domain for the capacity report.
+    """
+    capacity_availabilities: NotRequired[pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgsDict']]]]
+    """
+    Information about the available capacity for a shape.
+    """
+    domain_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of domain level for the capacity report.
+    """
+    fault_domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The fault domain for the capacity report.
+    """
 
 @pulumi.input_type
 class BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgs:
@@ -1824,18 +1756,15 @@ class BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgs:
         pulumi.set(self, "fault_domain", value)
 
 
-if not MYPY:
-    class BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgsDict(TypedDict):
-        availability_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A flag denoting whether capacity is available.
-        """
-        available_count: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The total number of new cluster nodes that can be created with the specified shape configuration.
-        """
-elif False:
-    BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgsDict: TypeAlias = Mapping[str, Any]
+class BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgsDict(TypedDict):
+    availability_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A flag denoting whether capacity is available.
+    """
+    available_count: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The total number of new cluster nodes that can be created with the specified shape configuration.
+    """
 
 @pulumi.input_type
 class BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgs:
@@ -1876,26 +1805,23 @@ class BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailab
         pulumi.set(self, "available_count", value)
 
 
-if not MYPY:
-    class BdsCapacityReportShapeAvailabilityShapeConfigArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total amount of memory available to the node, in gigabytes.
-        """
-        nvmes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available. This parameter is used only for dense shapes.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of OCPUs available to the node.
+class BdsCapacityReportShapeAvailabilityShapeConfigArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total amount of memory available to the node, in gigabytes.
+    """
+    nvmes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of NVMe drives to be used for storage. A single drive has 6.8 TB available. This parameter is used only for dense shapes.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of OCPUs available to the node.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    BdsCapacityReportShapeAvailabilityShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class BdsCapacityReportShapeAvailabilityShapeConfigArgs:
@@ -1960,18 +1886,15 @@ class BdsCapacityReportShapeAvailabilityShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class BdsInstanceBdsClusterVersionSummaryArgsDict(TypedDict):
-        bds_version: pulumi.Input[_builtins.str]
-        """
-        BDS version to be used for cluster creation
-        """
-        odh_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        ODH version to be used for cluster creation
-        """
-elif False:
-    BdsInstanceBdsClusterVersionSummaryArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceBdsClusterVersionSummaryArgsDict(TypedDict):
+    bds_version: pulumi.Input[_builtins.str]
+    """
+    BDS version to be used for cluster creation
+    """
+    odh_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    ODH version to be used for cluster creation
+    """
 
 @pulumi.input_type
 class BdsInstanceBdsClusterVersionSummaryArgs:
@@ -2011,42 +1934,39 @@ class BdsInstanceBdsClusterVersionSummaryArgs:
         pulumi.set(self, "odh_version", value)
 
 
-if not MYPY:
-    class BdsInstanceCloudSqlDetailArgsDict(TypedDict):
-        shape: pulumi.Input[_builtins.str]
-        """
-        Shape of the node
-        """
-        block_volume_size_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
-        ip_address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        IP address of the node
-        """
-        is_kerberos_mapped_to_database_users: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Boolean flag specifying whether or not are Kerberos principals mapped to database users.
-        """
-        kerberos_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailKerberosDetailArgsDict']]]]
-        """
-        Details about Kerberos principals
-        """
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total amount of memory available to the node, in gigabytes.
-        """
-        nvmes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of OCPUs available to the node.
-        """
-elif False:
-    BdsInstanceCloudSqlDetailArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceCloudSqlDetailArgsDict(TypedDict):
+    shape: pulumi.Input[_builtins.str]
+    """
+    Shape of the node
+    """
+    block_volume_size_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+    """
+    ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    IP address of the node
+    """
+    is_kerberos_mapped_to_database_users: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Boolean flag specifying whether or not are Kerberos principals mapped to database users.
+    """
+    kerberos_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailKerberosDetailArgsDict']]]]
+    """
+    Details about Kerberos principals
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total amount of memory available to the node, in gigabytes.
+    """
+    nvmes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of OCPUs available to the node.
+    """
 
 @pulumi.input_type
 class BdsInstanceCloudSqlDetailArgs:
@@ -2182,18 +2102,15 @@ class BdsInstanceCloudSqlDetailArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class BdsInstanceCloudSqlDetailKerberosDetailArgsDict(TypedDict):
-        keytab_file: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Location of the keytab file
-        """
-        principal_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the Kerberos principal
-        """
-elif False:
-    BdsInstanceCloudSqlDetailKerberosDetailArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceCloudSqlDetailKerberosDetailArgsDict(TypedDict):
+    keytab_file: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Location of the keytab file
+    """
+    principal_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the Kerberos principal
+    """
 
 @pulumi.input_type
 class BdsInstanceCloudSqlDetailKerberosDetailArgs:
@@ -2234,70 +2151,67 @@ class BdsInstanceCloudSqlDetailKerberosDetailArgs:
         pulumi.set(self, "principal_name", value)
 
 
-if not MYPY:
-    class BdsInstanceClusterDetailArgsDict(TypedDict):
-        ambari_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL of Ambari
-        """
-        bd_cell_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Cloud SQL cell version.
-        """
-        bda_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        BDA version installed in the cluster
-        """
-        bdm_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Big Data Manager version installed in the cluster.
-        """
-        bds_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Big Data Service version installed in the cluster.
-        """
-        big_data_manager_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL of Big Data Manager.
-        """
-        cloudera_manager_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL of Cloudera Manager
-        """
-        csql_cell_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Big Data SQL version.
-        """
-        db_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Cloud SQL query server database version.
-        """
-        hue_server_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL of the Hue server.
-        """
-        jupyter_hub_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL of the Jupyterhub.
-        """
-        odh_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-        """
-        os_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        BDS-assigned Operating System version for the node.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time the BDS instance was created. An RFC3339 formatted datetime string
-        """
-        time_refreshed: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
-        """
-elif False:
-    BdsInstanceClusterDetailArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceClusterDetailArgsDict(TypedDict):
+    ambari_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL of Ambari
+    """
+    bd_cell_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Cloud SQL cell version.
+    """
+    bda_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    BDA version installed in the cluster
+    """
+    bdm_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Big Data Manager version installed in the cluster.
+    """
+    bds_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Big Data Service version installed in the cluster.
+    """
+    big_data_manager_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL of Big Data Manager.
+    """
+    cloudera_manager_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL of Cloudera Manager
+    """
+    csql_cell_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Big Data SQL version.
+    """
+    db_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Cloud SQL query server database version.
+    """
+    hue_server_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL of the Hue server.
+    """
+    jupyter_hub_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL of the Jupyterhub.
+    """
+    odh_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+    """
+    os_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    BDS-assigned Operating System version for the node.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the BDS instance was created. An RFC3339 formatted datetime string
+    """
+    time_refreshed: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
+    """
 
 @pulumi.input_type
 class BdsInstanceClusterDetailArgs:
@@ -2546,27 +2460,24 @@ class BdsInstanceClusterDetailArgs:
         pulumi.set(self, "time_refreshed", value)
 
 
-if not MYPY:
-    class BdsInstanceComputeOnlyWorkerNodeArgsDict(TypedDict):
-        number_of_nodes: pulumi.Input[_builtins.int]
-        """
-        Number of nodes that forming the cluster
-        """
-        shape: pulumi.Input[_builtins.str]
-        """
-        Shape of the node
-        """
-        subnet_id: pulumi.Input[_builtins.str]
-        """
-        The OCID of the subnet in which the node should be created
-        """
-        block_volume_size_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
-        shape_config: NotRequired[pulumi.Input['BdsInstanceComputeOnlyWorkerNodeShapeConfigArgsDict']]
-elif False:
-    BdsInstanceComputeOnlyWorkerNodeArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceComputeOnlyWorkerNodeArgsDict(TypedDict):
+    number_of_nodes: pulumi.Input[_builtins.int]
+    """
+    Number of nodes that forming the cluster
+    """
+    shape: pulumi.Input[_builtins.str]
+    """
+    Shape of the node
+    """
+    subnet_id: pulumi.Input[_builtins.str]
+    """
+    The OCID of the subnet in which the node should be created
+    """
+    block_volume_size_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+    """
+    shape_config: NotRequired[pulumi.Input['BdsInstanceComputeOnlyWorkerNodeShapeConfigArgsDict']]
 
 @pulumi.input_type
 class BdsInstanceComputeOnlyWorkerNodeArgs:
@@ -2648,22 +2559,19 @@ class BdsInstanceComputeOnlyWorkerNodeArgs:
         pulumi.set(self, "shape_config", value)
 
 
-if not MYPY:
-    class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total amount of memory available to the node, in gigabytes.
-        """
-        nvmes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of OCPUs available to the node.
-        """
-elif False:
-    BdsInstanceComputeOnlyWorkerNodeShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total amount of memory available to the node, in gigabytes.
+    """
+    nvmes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of OCPUs available to the node.
+    """
 
 @pulumi.input_type
 class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs:
@@ -2720,27 +2628,24 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class BdsInstanceEdgeNodeArgsDict(TypedDict):
-        number_of_nodes: pulumi.Input[_builtins.int]
-        """
-        Number of nodes that forming the cluster
-        """
-        shape: pulumi.Input[_builtins.str]
-        """
-        Shape of the node
-        """
-        subnet_id: pulumi.Input[_builtins.str]
-        """
-        The OCID of the subnet in which the node should be created
-        """
-        block_volume_size_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
-        shape_config: NotRequired[pulumi.Input['BdsInstanceEdgeNodeShapeConfigArgsDict']]
-elif False:
-    BdsInstanceEdgeNodeArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceEdgeNodeArgsDict(TypedDict):
+    number_of_nodes: pulumi.Input[_builtins.int]
+    """
+    Number of nodes that forming the cluster
+    """
+    shape: pulumi.Input[_builtins.str]
+    """
+    Shape of the node
+    """
+    subnet_id: pulumi.Input[_builtins.str]
+    """
+    The OCID of the subnet in which the node should be created
+    """
+    block_volume_size_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+    """
+    shape_config: NotRequired[pulumi.Input['BdsInstanceEdgeNodeShapeConfigArgsDict']]
 
 @pulumi.input_type
 class BdsInstanceEdgeNodeArgs:
@@ -2822,22 +2727,19 @@ class BdsInstanceEdgeNodeArgs:
         pulumi.set(self, "shape_config", value)
 
 
-if not MYPY:
-    class BdsInstanceEdgeNodeShapeConfigArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total amount of memory available to the node, in gigabytes.
-        """
-        nvmes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of OCPUs available to the node.
-        """
-elif False:
-    BdsInstanceEdgeNodeShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceEdgeNodeShapeConfigArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total amount of memory available to the node, in gigabytes.
+    """
+    nvmes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of OCPUs available to the node.
+    """
 
 @pulumi.input_type
 class BdsInstanceEdgeNodeShapeConfigArgs:
@@ -2894,26 +2796,23 @@ class BdsInstanceEdgeNodeShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgsDict(TypedDict):
-        is_posix_attributes_addition_required: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        whether to append POSIX attributes to IAM users
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Lifecycle state of the UPST config
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
-        """
-elif False:
-    BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgsDict(TypedDict):
+    is_posix_attributes_addition_required: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    whether to append POSIX attributes to IAM users
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Lifecycle state of the UPST config
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+    """
 
 @pulumi.input_type
 class BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs:
@@ -2986,14 +2885,11 @@ class BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs:
         pulumi.set(self, "time_updated", value)
 
 
-if not MYPY:
-    class BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgsDict(TypedDict):
-        is_posix_attributes_addition_required: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) whether posix attribute needs to be appended to users, required for updating IAM user sync configuration
-        """
-elif False:
-    BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgsDict(TypedDict):
+    is_posix_attributes_addition_required: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) whether posix attribute needs to be appended to users, required for updating IAM user sync configuration
+    """
 
 @pulumi.input_type
 class BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs:
@@ -3018,46 +2914,43 @@ class BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs:
         pulumi.set(self, "is_posix_attributes_addition_required", value)
 
 
-if not MYPY:
-    class BdsInstanceIdentityConfigurationUpstConfigurationArgsDict(TypedDict):
-        keytab_content: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The kerberos keytab content used for creating identity propagation trust config, in base64 format
-        """
-        master_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Master Encryption key used for encrypting token exchange keytab.
-        """
-        secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Secret ID for token exchange keytab
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Lifecycle state of the UPST config
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
-        """
-        time_token_exchange_keytab_last_refreshed: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
-        """
-        token_exchange_principal_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Token exchange kerberos Principal name in cluster
-        """
-        vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The instance OCID of the node, which is the resource from which the node backup was acquired.
-        """
-elif False:
-    BdsInstanceIdentityConfigurationUpstConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceIdentityConfigurationUpstConfigurationArgsDict(TypedDict):
+    keytab_content: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The kerberos keytab content used for creating identity propagation trust config, in base64 format
+    """
+    master_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Master Encryption key used for encrypting token exchange keytab.
+    """
+    secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Secret ID for token exchange keytab
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Lifecycle state of the UPST config
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
+    """
+    time_token_exchange_keytab_last_refreshed: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
+    """
+    token_exchange_principal_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Token exchange kerberos Principal name in cluster
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The instance OCID of the node, which is the resource from which the node backup was acquired.
+    """
 
 @pulumi.input_type
 class BdsInstanceIdentityConfigurationUpstConfigurationArgs:
@@ -3210,18 +3103,15 @@ class BdsInstanceIdentityConfigurationUpstConfigurationArgs:
         pulumi.set(self, "vault_id", value)
 
 
-if not MYPY:
-    class BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgsDict(TypedDict):
-        master_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the master encryption key in vault for encrypting token exchange service principal keytab, required for activating UPST config
-        """
-        vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the vault to store token exchange service principal keyta, required for activating UPST config
-        """
-elif False:
-    BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgsDict(TypedDict):
+    master_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the master encryption key in vault for encrypting token exchange service principal keytab, required for activating UPST config
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the vault to store token exchange service principal keyta, required for activating UPST config
+    """
 
 @pulumi.input_type
 class BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs:
@@ -3262,27 +3152,24 @@ class BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs:
         pulumi.set(self, "vault_id", value)
 
 
-if not MYPY:
-    class BdsInstanceKafkaBrokerNodeArgsDict(TypedDict):
-        number_of_kafka_nodes: pulumi.Input[_builtins.int]
-        shape: pulumi.Input[_builtins.str]
-        """
-        Shape of the node
-        """
-        subnet_id: pulumi.Input[_builtins.str]
-        """
-        The OCID of the subnet in which the node should be created
-        """
-        block_volume_size_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
-        shape_config: NotRequired[pulumi.Input['BdsInstanceKafkaBrokerNodeShapeConfigArgsDict']]
-        """
-        The shape configuration requested for the node.
-        """
-elif False:
-    BdsInstanceKafkaBrokerNodeArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceKafkaBrokerNodeArgsDict(TypedDict):
+    number_of_kafka_nodes: pulumi.Input[_builtins.int]
+    shape: pulumi.Input[_builtins.str]
+    """
+    Shape of the node
+    """
+    subnet_id: pulumi.Input[_builtins.str]
+    """
+    The OCID of the subnet in which the node should be created
+    """
+    block_volume_size_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+    """
+    shape_config: NotRequired[pulumi.Input['BdsInstanceKafkaBrokerNodeShapeConfigArgsDict']]
+    """
+    The shape configuration requested for the node.
+    """
 
 @pulumi.input_type
 class BdsInstanceKafkaBrokerNodeArgs:
@@ -3364,22 +3251,19 @@ class BdsInstanceKafkaBrokerNodeArgs:
         pulumi.set(self, "shape_config", value)
 
 
-if not MYPY:
-    class BdsInstanceKafkaBrokerNodeShapeConfigArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total amount of memory available to the node, in gigabytes
-        """
-        nvmes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of OCPUs available to the node.
-        """
-elif False:
-    BdsInstanceKafkaBrokerNodeShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceKafkaBrokerNodeShapeConfigArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total amount of memory available to the node, in gigabytes
+    """
+    nvmes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of OCPUs available to the node.
+    """
 
 @pulumi.input_type
 class BdsInstanceKafkaBrokerNodeShapeConfigArgs:
@@ -3436,30 +3320,27 @@ class BdsInstanceKafkaBrokerNodeShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class BdsInstanceMasterNodeArgsDict(TypedDict):
-        number_of_nodes: pulumi.Input[_builtins.int]
-        """
-        The amount of master nodes should be created.
-        """
-        shape: pulumi.Input[_builtins.str]
-        """
-        Shape of the node
-        """
-        subnet_id: pulumi.Input[_builtins.str]
-        """
-        The OCID of the subnet in which the node should be created
-        """
-        block_volume_size_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
-        shape_config: NotRequired[pulumi.Input['BdsInstanceMasterNodeShapeConfigArgsDict']]
-        """
-        The shape configuration requested for the node.
-        """
-elif False:
-    BdsInstanceMasterNodeArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceMasterNodeArgsDict(TypedDict):
+    number_of_nodes: pulumi.Input[_builtins.int]
+    """
+    The amount of master nodes should be created.
+    """
+    shape: pulumi.Input[_builtins.str]
+    """
+    Shape of the node
+    """
+    subnet_id: pulumi.Input[_builtins.str]
+    """
+    The OCID of the subnet in which the node should be created
+    """
+    block_volume_size_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+    """
+    shape_config: NotRequired[pulumi.Input['BdsInstanceMasterNodeShapeConfigArgsDict']]
+    """
+    The shape configuration requested for the node.
+    """
 
 @pulumi.input_type
 class BdsInstanceMasterNodeArgs:
@@ -3545,22 +3426,19 @@ class BdsInstanceMasterNodeArgs:
         pulumi.set(self, "shape_config", value)
 
 
-if not MYPY:
-    class BdsInstanceMasterNodeShapeConfigArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total amount of memory available to the node, in gigabytes
-        """
-        nvmes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of OCPUs available to the node.
-        """
-elif False:
-    BdsInstanceMasterNodeShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceMasterNodeShapeConfigArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total amount of memory available to the node, in gigabytes
+    """
+    nvmes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of OCPUs available to the node.
+    """
 
 @pulumi.input_type
 class BdsInstanceMasterNodeShapeConfigArgs:
@@ -3617,18 +3495,15 @@ class BdsInstanceMasterNodeShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class BdsInstanceNetworkConfigArgsDict(TypedDict):
-        cidr_block: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The CIDR IP address block of the VCN.
-        """
-        is_nat_gateway_required: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) A boolean flag whether to configure a NAT gateway.
-        """
-elif False:
-    BdsInstanceNetworkConfigArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceNetworkConfigArgsDict(TypedDict):
+    cidr_block: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The CIDR IP address block of the VCN.
+    """
+    is_nat_gateway_required: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) A boolean flag whether to configure a NAT gateway.
+    """
 
 @pulumi.input_type
 class BdsInstanceNetworkConfigArgs:
@@ -3669,98 +3544,95 @@ class BdsInstanceNetworkConfigArgs:
         pulumi.set(self, "is_nat_gateway_required", value)
 
 
-if not MYPY:
-    class BdsInstanceNodeArgsDict(TypedDict):
-        attached_block_volumes: NotRequired[pulumi.Input[Sequence[pulumi.Input['BdsInstanceNodeAttachedBlockVolumeArgsDict']]]]
-        """
-        The list of block volumes attached to a given node.
-        """
-        availability_domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the availability domain the node is running in
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of the BDS instance
-        """
-        fault_domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the fault domain the node is running in
-        """
-        hostname: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The fully-qualified hostname (FQDN) of the node
-        """
-        image_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the image from which the node was created
-        """
-        instance_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the underlying compute instance
-        """
-        ip_address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        IP address of the node
-        """
-        is_reboot_required: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
-        """
-        local_disks_total_size_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
-        """
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total amount of memory available to the node, in gigabytes.
-        """
-        node_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Big Data Service cluster node type.
-        """
-        nvmes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of OCPUs available to the node.
-        """
-        odh_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
-        """
-        os_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        BDS-assigned Operating System version for the node.
-        """
-        shape: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Shape of the node.
-        """
-        ssh_fingerprint: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The fingerprint of the SSH key used for node access
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the subnet in which the node will be created.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time the BDS instance was created. An RFC3339 formatted datetime string
-        """
-        time_maintenance_reboot_due: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
-        """
-elif False:
-    BdsInstanceNodeArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceNodeArgsDict(TypedDict):
+    attached_block_volumes: NotRequired[pulumi.Input[Sequence[pulumi.Input['BdsInstanceNodeAttachedBlockVolumeArgsDict']]]]
+    """
+    The list of block volumes attached to a given node.
+    """
+    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the availability domain the node is running in
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of the BDS instance
+    """
+    fault_domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the fault domain the node is running in
+    """
+    hostname: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The fully-qualified hostname (FQDN) of the node
+    """
+    image_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the image from which the node was created
+    """
+    instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the underlying compute instance
+    """
+    ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    IP address of the node
+    """
+    is_reboot_required: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+    """
+    local_disks_total_size_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total amount of memory available to the node, in gigabytes.
+    """
+    node_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Big Data Service cluster node type.
+    """
+    nvmes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of OCPUs available to the node.
+    """
+    odh_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+    """
+    os_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    BDS-assigned Operating System version for the node.
+    """
+    shape: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Shape of the node.
+    """
+    ssh_fingerprint: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The fingerprint of the SSH key used for node access
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the subnet in which the node will be created.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the BDS instance was created. An RFC3339 formatted datetime string
+    """
+    time_maintenance_reboot_due: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+    """
 
 @pulumi.input_type
 class BdsInstanceNodeArgs:
@@ -4121,18 +3993,15 @@ class BdsInstanceNodeArgs:
         pulumi.set(self, "time_maintenance_reboot_due", value)
 
 
-if not MYPY:
-    class BdsInstanceNodeAttachedBlockVolumeArgsDict(TypedDict):
-        volume_attachment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the volume attachment.
-        """
-        volume_size_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The size of the volume in GBs.
-        """
-elif False:
-    BdsInstanceNodeAttachedBlockVolumeArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceNodeAttachedBlockVolumeArgsDict(TypedDict):
+    volume_attachment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the volume attachment.
+    """
+    volume_size_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The size of the volume in GBs.
+    """
 
 @pulumi.input_type
 class BdsInstanceNodeAttachedBlockVolumeArgs:
@@ -4173,22 +4042,19 @@ class BdsInstanceNodeAttachedBlockVolumeArgs:
         pulumi.set(self, "volume_size_in_gbs", value)
 
 
-if not MYPY:
-    class BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict(TypedDict):
-        level_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
-        """
-        node_host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Host name of the node to create backup configuration.
-        """
-        node_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created. Accepted values are MASTER and UTILITY.
-        """
-elif False:
-    BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict(TypedDict):
+    level_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+    """
+    node_host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Host name of the node to create backup configuration.
+    """
+    node_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created. Accepted values are MASTER and UTILITY.
+    """
 
 @pulumi.input_type
 class BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs:
@@ -4244,26 +4110,23 @@ class BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs:
         pulumi.set(self, "node_type", value)
 
 
-if not MYPY:
-    class BdsInstanceNodeBackupLevelTypeDetailsArgsDict(TypedDict):
-        level_type: pulumi.Input[_builtins.str]
-        """
-        Type of level used to trigger the creation of a new node backup.
-        """
-        node_host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Host name of the node to create backup.
-        """
-        node_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Type of the node or nodes of the node backup which are going to be created.
+class BdsInstanceNodeBackupLevelTypeDetailsArgsDict(TypedDict):
+    level_type: pulumi.Input[_builtins.str]
+    """
+    Type of level used to trigger the creation of a new node backup.
+    """
+    node_host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Host name of the node to create backup.
+    """
+    node_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Type of the node or nodes of the node backup which are going to be created.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    BdsInstanceNodeBackupLevelTypeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class BdsInstanceNodeBackupLevelTypeDetailsArgs:
@@ -4327,22 +4190,19 @@ class BdsInstanceNodeBackupLevelTypeDetailsArgs:
         pulumi.set(self, "node_type", value)
 
 
-if not MYPY:
-    class BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict(TypedDict):
-        level_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration. Accepted values are NODE_LEVEL and NODE_TYPE_LEVEL.
-        """
-        node_host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Host name of the node to create backup configuration.
-        """
-        node_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
-        """
-elif False:
-    BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict(TypedDict):
+    level_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration. Accepted values are NODE_LEVEL and NODE_TYPE_LEVEL.
+    """
+    node_host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Host name of the node to create backup configuration.
+    """
+    node_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+    """
 
 @pulumi.input_type
 class BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs:
@@ -4398,22 +4258,19 @@ class BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs:
         pulumi.set(self, "node_type", value)
 
 
-if not MYPY:
-    class BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict(TypedDict):
-        certificate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Certificate value in string format
-        """
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Fully qualified domain name (FQDN) of the host
-        """
-        private_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Private key of the provided certificate
-        """
-elif False:
-    BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict(TypedDict):
+    certificate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Certificate value in string format
+    """
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Fully qualified domain name (FQDN) of the host
+    """
+    private_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Private key of the provided certificate
+    """
 
 @pulumi.input_type
 class BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs:
@@ -4470,34 +4327,31 @@ class BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs:
         pulumi.set(self, "private_key", value)
 
 
-if not MYPY:
-    class BdsInstanceOsPatchActionPatchingConfigsArgsDict(TypedDict):
-        patching_config_strategy: pulumi.Input[_builtins.str]
-        """
-        Type of strategy used for detailed patching configuration
-        """
-        batch_size: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        How many nodes to be patched in each iteration.
-        """
-        tolerance_threshold_per_batch: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
-        """
-        tolerance_threshold_per_domain: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
-        """
-        wait_time_between_batch_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The wait time between batches in seconds.
-        """
-        wait_time_between_domain_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The wait time between AD/FD in seconds.
-        """
-elif False:
-    BdsInstanceOsPatchActionPatchingConfigsArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceOsPatchActionPatchingConfigsArgsDict(TypedDict):
+    patching_config_strategy: pulumi.Input[_builtins.str]
+    """
+    Type of strategy used for detailed patching configuration
+    """
+    batch_size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    How many nodes to be patched in each iteration.
+    """
+    tolerance_threshold_per_batch: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+    """
+    tolerance_threshold_per_domain: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+    """
+    wait_time_between_batch_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The wait time between batches in seconds.
+    """
+    wait_time_between_domain_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The wait time between AD/FD in seconds.
+    """
 
 @pulumi.input_type
 class BdsInstanceOsPatchActionPatchingConfigsArgs:
@@ -4601,34 +4455,31 @@ class BdsInstanceOsPatchActionPatchingConfigsArgs:
         pulumi.set(self, "wait_time_between_domain_in_seconds", value)
 
 
-if not MYPY:
-    class BdsInstancePatchActionPatchingConfigArgsDict(TypedDict):
-        patching_config_strategy: pulumi.Input[_builtins.str]
-        """
-        Type of strategy used for detailed patching configuration
-        """
-        batch_size: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        How many nodes to be patched in each iteration.
-        """
-        tolerance_threshold_per_batch: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
-        """
-        tolerance_threshold_per_domain: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
-        """
-        wait_time_between_batch_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The wait time between batches in seconds.
-        """
-        wait_time_between_domain_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The wait time between AD/FD in seconds.
-        """
-elif False:
-    BdsInstancePatchActionPatchingConfigArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstancePatchActionPatchingConfigArgsDict(TypedDict):
+    patching_config_strategy: pulumi.Input[_builtins.str]
+    """
+    Type of strategy used for detailed patching configuration
+    """
+    batch_size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    How many nodes to be patched in each iteration.
+    """
+    tolerance_threshold_per_batch: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+    """
+    tolerance_threshold_per_domain: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+    """
+    wait_time_between_batch_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The wait time between batches in seconds.
+    """
+    wait_time_between_domain_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The wait time between AD/FD in seconds.
+    """
 
 @pulumi.input_type
 class BdsInstancePatchActionPatchingConfigArgs:
@@ -4732,11 +4583,8 @@ class BdsInstancePatchActionPatchingConfigArgs:
         pulumi.set(self, "wait_time_between_domain_in_seconds", value)
 
 
-if not MYPY:
-    class BdsInstanceStartClusterShapeConfigArgsDict(TypedDict):
-        node_type_shape_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgsDict']]]]
-elif False:
-    BdsInstanceStartClusterShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceStartClusterShapeConfigArgsDict(TypedDict):
+    node_type_shape_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgsDict']]]]
 
 @pulumi.input_type
 class BdsInstanceStartClusterShapeConfigArgs:
@@ -4755,18 +4603,15 @@ class BdsInstanceStartClusterShapeConfigArgs:
         pulumi.set(self, "node_type_shape_configs", value)
 
 
-if not MYPY:
-    class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgsDict(TypedDict):
-        node_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        BDS instance node type
-        """
-        shape: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Shape of the node
-        """
-elif False:
-    BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgsDict(TypedDict):
+    node_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    BDS instance node type
+    """
+    shape: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Shape of the node
+    """
 
 @pulumi.input_type
 class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs:
@@ -4807,30 +4652,27 @@ class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs:
         pulumi.set(self, "shape", value)
 
 
-if not MYPY:
-    class BdsInstanceUtilNodeArgsDict(TypedDict):
-        number_of_nodes: pulumi.Input[_builtins.int]
-        """
-        The amount of utility nodes should be created.
-        """
-        shape: pulumi.Input[_builtins.str]
-        """
-        Shape of the node
-        """
-        subnet_id: pulumi.Input[_builtins.str]
-        """
-        The OCID of the subnet in which the node should be created
-        """
-        block_volume_size_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
-        shape_config: NotRequired[pulumi.Input['BdsInstanceUtilNodeShapeConfigArgsDict']]
-        """
-        The shape configuration requested for the node.
-        """
-elif False:
-    BdsInstanceUtilNodeArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceUtilNodeArgsDict(TypedDict):
+    number_of_nodes: pulumi.Input[_builtins.int]
+    """
+    The amount of utility nodes should be created.
+    """
+    shape: pulumi.Input[_builtins.str]
+    """
+    Shape of the node
+    """
+    subnet_id: pulumi.Input[_builtins.str]
+    """
+    The OCID of the subnet in which the node should be created
+    """
+    block_volume_size_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+    """
+    shape_config: NotRequired[pulumi.Input['BdsInstanceUtilNodeShapeConfigArgsDict']]
+    """
+    The shape configuration requested for the node.
+    """
 
 @pulumi.input_type
 class BdsInstanceUtilNodeArgs:
@@ -4916,22 +4758,19 @@ class BdsInstanceUtilNodeArgs:
         pulumi.set(self, "shape_config", value)
 
 
-if not MYPY:
-    class BdsInstanceUtilNodeShapeConfigArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total amount of memory available to the node, in gigabytes
-        """
-        nvmes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of OCPUs available to the node.
-        """
-elif False:
-    BdsInstanceUtilNodeShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceUtilNodeShapeConfigArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total amount of memory available to the node, in gigabytes
+    """
+    nvmes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of OCPUs available to the node.
+    """
 
 @pulumi.input_type
 class BdsInstanceUtilNodeShapeConfigArgs:
@@ -4988,27 +4827,24 @@ class BdsInstanceUtilNodeShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class BdsInstanceWorkerNodeArgsDict(TypedDict):
-        number_of_nodes: pulumi.Input[_builtins.int]
-        """
-        Number of nodes that forming the cluster
-        """
-        shape: pulumi.Input[_builtins.str]
-        """
-        Shape of the node
-        """
-        subnet_id: pulumi.Input[_builtins.str]
-        """
-        The OCID of the subnet in which the node should be created
-        """
-        block_volume_size_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
-        shape_config: NotRequired[pulumi.Input['BdsInstanceWorkerNodeShapeConfigArgsDict']]
-elif False:
-    BdsInstanceWorkerNodeArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceWorkerNodeArgsDict(TypedDict):
+    number_of_nodes: pulumi.Input[_builtins.int]
+    """
+    Number of nodes that forming the cluster
+    """
+    shape: pulumi.Input[_builtins.str]
+    """
+    Shape of the node
+    """
+    subnet_id: pulumi.Input[_builtins.str]
+    """
+    The OCID of the subnet in which the node should be created
+    """
+    block_volume_size_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+    """
+    shape_config: NotRequired[pulumi.Input['BdsInstanceWorkerNodeShapeConfigArgsDict']]
 
 @pulumi.input_type
 class BdsInstanceWorkerNodeArgs:
@@ -5090,22 +4926,19 @@ class BdsInstanceWorkerNodeArgs:
         pulumi.set(self, "shape_config", value)
 
 
-if not MYPY:
-    class BdsInstanceWorkerNodeShapeConfigArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total amount of memory available to the node, in gigabytes.
-        """
-        nvmes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of OCPUs available to the node.
-        """
-elif False:
-    BdsInstanceWorkerNodeShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class BdsInstanceWorkerNodeShapeConfigArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total amount of memory available to the node, in gigabytes.
+    """
+    nvmes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of OCPUs available to the node.
+    """
 
 @pulumi.input_type
 class BdsInstanceWorkerNodeShapeConfigArgs:
@@ -5162,13 +4995,10 @@ class BdsInstanceWorkerNodeShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class GetAutoScalingConfigurationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutoScalingConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutoScalingConfigurationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutoScalingConfigurationsFilterArgs:
@@ -5209,13 +5039,10 @@ class GetAutoScalingConfigurationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBdsClusterVersionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBdsClusterVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBdsClusterVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBdsClusterVersionsFilterArgs:
@@ -5256,13 +5083,10 @@ class GetBdsClusterVersionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBdsInstanceApiKeysFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBdsInstanceApiKeysFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBdsInstanceApiKeysFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBdsInstanceApiKeysFilterArgs:
@@ -5303,13 +5127,10 @@ class GetBdsInstanceApiKeysFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBdsInstanceGetOsPatchFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBdsInstanceGetOsPatchFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBdsInstanceGetOsPatchFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBdsInstanceGetOsPatchFilterArgs:
@@ -5350,13 +5171,10 @@ class GetBdsInstanceGetOsPatchFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBdsInstanceIdentityConfigurationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBdsInstanceIdentityConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBdsInstanceIdentityConfigurationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBdsInstanceIdentityConfigurationsFilterArgs:
@@ -5397,13 +5215,10 @@ class GetBdsInstanceIdentityConfigurationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBdsInstanceListOsPatchesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBdsInstanceListOsPatchesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBdsInstanceListOsPatchesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBdsInstanceListOsPatchesFilterArgs:
@@ -5444,13 +5259,10 @@ class GetBdsInstanceListOsPatchesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBdsInstanceMetastoreConfigsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBdsInstanceMetastoreConfigsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBdsInstanceMetastoreConfigsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBdsInstanceMetastoreConfigsFilterArgs:
@@ -5491,13 +5303,10 @@ class GetBdsInstanceMetastoreConfigsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBdsInstanceNodeBackupConfigurationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBdsInstanceNodeBackupConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBdsInstanceNodeBackupConfigurationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBdsInstanceNodeBackupConfigurationsFilterArgs:
@@ -5538,13 +5347,10 @@ class GetBdsInstanceNodeBackupConfigurationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBdsInstanceNodeBackupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBdsInstanceNodeBackupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBdsInstanceNodeBackupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBdsInstanceNodeBackupsFilterArgs:
@@ -5585,13 +5391,10 @@ class GetBdsInstanceNodeBackupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBdsInstanceNodeReplaceConfigurationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBdsInstanceNodeReplaceConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBdsInstanceNodeReplaceConfigurationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBdsInstanceNodeReplaceConfigurationsFilterArgs:
@@ -5632,13 +5435,10 @@ class GetBdsInstanceNodeReplaceConfigurationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBdsInstancePatchHistoriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBdsInstancePatchHistoriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBdsInstancePatchHistoriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBdsInstancePatchHistoriesFilterArgs:
@@ -5679,13 +5479,10 @@ class GetBdsInstancePatchHistoriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBdsInstancePatchesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBdsInstancePatchesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBdsInstancePatchesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBdsInstancePatchesFilterArgs:
@@ -5726,13 +5523,10 @@ class GetBdsInstancePatchesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBdsInstanceResourcePrincipalConfigurationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBdsInstanceResourcePrincipalConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBdsInstanceResourcePrincipalConfigurationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBdsInstanceResourcePrincipalConfigurationsFilterArgs:
@@ -5773,13 +5567,10 @@ class GetBdsInstanceResourcePrincipalConfigurationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBdsInstanceSoftwareUpdatesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBdsInstanceSoftwareUpdatesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBdsInstanceSoftwareUpdatesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBdsInstanceSoftwareUpdatesFilterArgs:
@@ -5820,13 +5611,10 @@ class GetBdsInstanceSoftwareUpdatesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBdsInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBdsInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBdsInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBdsInstancesFilterArgs:

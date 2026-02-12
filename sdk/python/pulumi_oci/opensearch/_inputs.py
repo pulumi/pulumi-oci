@@ -39,28 +39,23 @@ __all__ = [
     'GetOpensearchVersionsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class ClusterCertificateConfigArgsDict(TypedDict):
-        cluster_certificate_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
-        """
-        dashboard_certificate_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
-        """
-        open_search_api_certificate_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) certificate to be used for OpenSearch cluster api communication
-        """
-        open_search_dashboard_certificate_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) certificate to be used for OpenSearch dashboard api communication
-        """
-elif False:
-    ClusterCertificateConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ClusterCertificateConfigArgsDict(TypedDict):
+    cluster_certificate_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+    """
+    dashboard_certificate_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+    """
+    open_search_api_certificate_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) certificate to be used for OpenSearch cluster api communication
+    """
+    open_search_dashboard_certificate_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) certificate to be used for OpenSearch dashboard api communication
+    """
 
 @pulumi.input_type
 class ClusterCertificateConfigArgs:
@@ -133,22 +128,19 @@ class ClusterCertificateConfigArgs:
         pulumi.set(self, "open_search_dashboard_certificate_id", value)
 
 
-if not MYPY:
-    class ClusterLoadBalancerConfigArgsDict(TypedDict):
-        load_balancer_service_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Load balancer service for OpenSearch and OpenDashboard load balancer. Default value is LOAD_BALANCER.
-        """
-        load_balancer_max_bandwidth_in_mbps: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
-        """
-        load_balancer_min_bandwidth_in_mbps: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Minimum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
-        """
-elif False:
-    ClusterLoadBalancerConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ClusterLoadBalancerConfigArgsDict(TypedDict):
+    load_balancer_service_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Load balancer service for OpenSearch and OpenDashboard load balancer. Default value is LOAD_BALANCER.
+    """
+    load_balancer_max_bandwidth_in_mbps: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+    """
+    load_balancer_min_bandwidth_in_mbps: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Minimum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+    """
 
 @pulumi.input_type
 class ClusterLoadBalancerConfigArgs:
@@ -204,26 +196,23 @@ class ClusterLoadBalancerConfigArgs:
         pulumi.set(self, "load_balancer_min_bandwidth_in_mbps", value)
 
 
-if not MYPY:
-    class ClusterMaintenanceDetailsArgsDict(TypedDict):
-        end_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        End time of the maintenance activity
-        """
-        notification_email_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The Email IDs given by the customer to get notified about maintenance activities
-        """
-        start_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Start time of the maintenance activity
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the cluster.
-        """
-elif False:
-    ClusterMaintenanceDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ClusterMaintenanceDetailsArgsDict(TypedDict):
+    end_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    End time of the maintenance activity
+    """
+    notification_email_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The Email IDs given by the customer to get notified about maintenance activities
+    """
+    start_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Start time of the maintenance activity
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the cluster.
+    """
 
 @pulumi.input_type
 class ClusterMaintenanceDetailsArgs:
@@ -296,18 +285,15 @@ class ClusterMaintenanceDetailsArgs:
         pulumi.set(self, "state", value)
 
 
-if not MYPY:
-    class ClusterOutboundClusterConfigArgsDict(TypedDict):
-        is_enabled: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Flag to indicate whether outbound cluster configuration is enabled
-        """
-        outbound_clusters: pulumi.Input[Sequence[pulumi.Input['ClusterOutboundClusterConfigOutboundClusterArgsDict']]]
-        """
-        (Updatable) List of outbound clusters to be connected to the inbound cluster
-        """
-elif False:
-    ClusterOutboundClusterConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ClusterOutboundClusterConfigArgsDict(TypedDict):
+    is_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Flag to indicate whether outbound cluster configuration is enabled
+    """
+    outbound_clusters: pulumi.Input[Sequence[pulumi.Input['ClusterOutboundClusterConfigOutboundClusterArgsDict']]]
+    """
+    (Updatable) List of outbound clusters to be connected to the inbound cluster
+    """
 
 @pulumi.input_type
 class ClusterOutboundClusterConfigArgs:
@@ -346,30 +332,27 @@ class ClusterOutboundClusterConfigArgs:
         pulumi.set(self, "outbound_clusters", value)
 
 
-if not MYPY:
-    class ClusterOutboundClusterConfigOutboundClusterArgsDict(TypedDict):
-        display_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the Outbound cluster. Avoid entering confidential information.
-        """
-        seed_cluster_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) OCID of the Outbound cluster
-        """
-        is_skip_unavailable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
-        """
-        mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Mode for the cross cluster connection
-        """
-        ping_schedule: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
-        """
-elif False:
-    ClusterOutboundClusterConfigOutboundClusterArgsDict: TypeAlias = Mapping[str, Any]
+class ClusterOutboundClusterConfigOutboundClusterArgsDict(TypedDict):
+    display_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the Outbound cluster. Avoid entering confidential information.
+    """
+    seed_cluster_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) OCID of the Outbound cluster
+    """
+    is_skip_unavailable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Flag to indicate whether to skip the Outbound cluster during cross cluster search, if it is unavailable
+    """
+    mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Mode for the cross cluster connection
+    """
+    ping_schedule: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Sets the time interval between regular application-level ping messages that are sent to try and keep outbound cluster connections alive. If set to -1, application-level ping messages to this outbound cluster are not sent. If unset, application-level ping messages are sent according to the global transport.ping_schedule setting, which defaults to -1 meaning that pings are not sent.
+    """
 
 @pulumi.input_type
 class ClusterOutboundClusterConfigOutboundClusterArgs:
@@ -456,18 +439,15 @@ class ClusterOutboundClusterConfigOutboundClusterArgs:
         pulumi.set(self, "ping_schedule", value)
 
 
-if not MYPY:
-    class ClusterReverseConnectionEndpointArgsDict(TypedDict):
-        customer_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The IP addresses of the endpoint in customer VCN
-        """
-        nat_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The NAT IP addresses of the endpoint in service VCN
-        """
-elif False:
-    ClusterReverseConnectionEndpointArgsDict: TypeAlias = Mapping[str, Any]
+class ClusterReverseConnectionEndpointArgsDict(TypedDict):
+    customer_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The IP addresses of the endpoint in customer VCN
+    """
+    nat_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The NAT IP addresses of the endpoint in service VCN
+    """
 
 @pulumi.input_type
 class ClusterReverseConnectionEndpointArgs:
@@ -508,38 +488,35 @@ class ClusterReverseConnectionEndpointArgs:
         pulumi.set(self, "nat_ip", value)
 
 
-if not MYPY:
-    class ClusterSecuritySamlConfigArgsDict(TypedDict):
-        idp_entity_id: pulumi.Input[_builtins.str]
-        """
-        The unique name for a identity provider entity
-        """
-        idp_metadata_content: pulumi.Input[_builtins.str]
-        """
-        The content of identity provider metadata
-        """
-        is_enabled: pulumi.Input[_builtins.bool]
-        """
-        A flag determine whether SAML is enabled
-        """
-        admin_backend_role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The backend role of admins who have all permissions like local master user
-        """
-        opendashboard_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The endpoint of opendashboard
-        """
-        roles_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The roles key is sued to get backend roles from SAML assertion
-        """
-        subject_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The subject key is used to get username from SAML assertion. By default, it is NameID
-        """
-elif False:
-    ClusterSecuritySamlConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ClusterSecuritySamlConfigArgsDict(TypedDict):
+    idp_entity_id: pulumi.Input[_builtins.str]
+    """
+    The unique name for a identity provider entity
+    """
+    idp_metadata_content: pulumi.Input[_builtins.str]
+    """
+    The content of identity provider metadata
+    """
+    is_enabled: pulumi.Input[_builtins.bool]
+    """
+    A flag determine whether SAML is enabled
+    """
+    admin_backend_role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The backend role of admins who have all permissions like local master user
+    """
+    opendashboard_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The endpoint of opendashboard
+    """
+    roles_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The roles key is sued to get backend roles from SAML assertion
+    """
+    subject_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The subject key is used to get username from SAML assertion. By default, it is NameID
+    """
 
 @pulumi.input_type
 class ClusterSecuritySamlConfigArgs:
@@ -657,18 +634,15 @@ class ClusterSecuritySamlConfigArgs:
         pulumi.set(self, "subject_key", value)
 
 
-if not MYPY:
-    class OpensearchClusterPipelineReverseConnectionEndpointArgsDict(TypedDict):
-        customer_fqdn: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The fully qualified domain name of the customerIp in the customer VCN
-        """
-        customer_ip: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The IPv4 address in the customer VCN
-        """
-elif False:
-    OpensearchClusterPipelineReverseConnectionEndpointArgsDict: TypeAlias = Mapping[str, Any]
+class OpensearchClusterPipelineReverseConnectionEndpointArgsDict(TypedDict):
+    customer_fqdn: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The fully qualified domain name of the customerIp in the customer VCN
+    """
+    customer_ip: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The IPv4 address in the customer VCN
+    """
 
 @pulumi.input_type
 class OpensearchClusterPipelineReverseConnectionEndpointArgs:
@@ -707,13 +681,10 @@ class OpensearchClusterPipelineReverseConnectionEndpointArgs:
         pulumi.set(self, "customer_ip", value)
 
 
-if not MYPY:
-    class GetOpensearchClusterPipelinesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOpensearchClusterPipelinesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOpensearchClusterPipelinesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOpensearchClusterPipelinesFilterArgs:
@@ -754,13 +725,10 @@ class GetOpensearchClusterPipelinesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOpensearchClustersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOpensearchClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOpensearchClustersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOpensearchClustersFilterArgs:
@@ -801,13 +769,10 @@ class GetOpensearchClustersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOpensearchVersionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOpensearchVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOpensearchVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOpensearchVersionsFilterArgs:

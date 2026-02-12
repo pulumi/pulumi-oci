@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Events
 {
     /// <summary>
+    /// This resource provides the Rule resource in Oracle Cloud Infrastructure Events service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/events/latest/Rule
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/events
+    /// 
+    /// Creates a new rule.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -57,7 +64,7 @@ namespace Pulumi.Oci.Events
     /// 
     /// ## Import
     /// 
-    /// Rules can be imported using the `id`, e.g.
+    /// Rules can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Events/rule:Rule test_rule "id"

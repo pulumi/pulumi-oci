@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/DatabaseSecurityConfig
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+    /// 
+    /// Updates the database security configuration.
     /// 
     /// ## Import
     /// 
-    /// DatabaseSecurityConfigs can be imported using the `id`, e.g.
+    /// DatabaseSecurityConfigs can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataSafe/databaseSecurityConfig:DatabaseSecurityConfig test_database_security_config "id"

@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the External Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalAsmInstance
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+    /// 
+    /// Updates the external ASM instance specified by `externalAsmInstanceId`.
     /// 
     /// ## Import
     /// 
-    /// ExternalAsmInstances can be imported using the `id`, e.g.
+    /// ExternalAsmInstances can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance test_external_asm_instance "id"

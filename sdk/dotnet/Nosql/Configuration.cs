@@ -10,6 +10,30 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Nosql
 {
     /// <summary>
+    /// This resource provides the Configuration resource in Oracle Cloud Infrastructure NoSQL Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/nosql-database/latest/Configuration
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/object_storage
+    /// 
+    /// Updates the service-level configuration.  The discriminator value
+    /// `UpdateConfigurationDetails.environment` must match the service's
+    /// environment type.
+    /// 
+    /// A configuration serves as a centralized repository for global parameters that
+    /// affect the NoSQL service. Currently, there is only one such parameter: a
+    /// customer-provided key for encrypting NoSQL data at rest.
+    /// 
+    /// The Customer-Managed Encryption Keys (CMEK) feature is exclusively available
+    /// in private NoSQL environments dedicated to a single tenancy, where the CMEK
+    /// option has been enabled. Updating the configuration of the default, regional,
+    /// multi-tenancy NoSQL service is not supported.
+    /// 
+    /// To specify the dedicated environment, set the environment variable
+    /// CLIENT_HOST_OVERRIDES=oci_nosql.NosqlClient=$ENDPOINT
+    /// Where $ENDPOINT is the endpoint of the dedicated NoSQL environment.
+    /// For example:
+    /// $ export CLIENT_HOST_OVERRIDES=oci_nosql.NosqlClient=https://acme-widgets.nosql.oci.oraclecloud.com
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -37,7 +61,7 @@ namespace Pulumi.Oci.Nosql
     /// 
     /// ## Import
     /// 
-    /// Configurations can be imported using the `id`, e.g.
+    /// Configurations can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Nosql/configuration:Configuration test_configuration "configuration/compartmentId/{compartmentId}"

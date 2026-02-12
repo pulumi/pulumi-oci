@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine
 {
     /// <summary>
+    /// This resource provides the Cluster resource in Oracle Cloud Infrastructure Container Engine service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/containerengine/latest/Cluster
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/container_engine
+    /// 
+    /// Create a new cluster.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -134,7 +141,7 @@ namespace Pulumi.Oci.ContainerEngine
     /// 
     /// ## Import
     /// 
-    /// Clusters can be imported using the `id`, e.g.
+    /// Clusters can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:ContainerEngine/cluster:Cluster test_cluster "id"

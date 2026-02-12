@@ -10,6 +10,25 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FileStorage
 {
     /// <summary>
+    /// This resource provides the Export Set resource in Oracle Cloud Infrastructure File Storage service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/filestorage/latest/ExportSet
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// The ExportSet resource cannot be directly created or destroyed. An export set is created by the service automatically when a mount target is created.
+    /// When a mount target is deleted, the export set associated with it is also deleted automatically.
+    /// 
+    /// You can use this resource for managing existing export sets from within Terraform. The resource exposes the following updatable attributes:
+    /// 
+    ///     DisplayName
+    ///     MaxFsStatBytes
+    ///     MaxFsStatFiles
+    /// 
+    /// Any other updates to the behavior of ExportSet require updating the parent mount target. If you intend to manage ExportSet with Terraform, you should import the MountTarget resource as well.
+    /// The MountTarget resource includes the MountTargetId attribute, which is required for updates to export_set.
+    /// 
+    /// Only one export set resource should be created per mount target.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -33,7 +52,7 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// ## Import
     /// 
-    /// ExportSets can be imported using the `id`, e.g.
+    /// ExportSets can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:FileStorage/exportSet:ExportSet test_export_set "id"

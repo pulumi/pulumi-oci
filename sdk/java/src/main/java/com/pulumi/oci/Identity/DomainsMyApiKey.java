@@ -22,6 +22,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/MyApiKey
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+ * 
+ * Add a user&#39;s own API key.
+ * 
  * ## Example Usage
  * 
  * <pre>

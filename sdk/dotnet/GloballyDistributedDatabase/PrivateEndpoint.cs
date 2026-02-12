@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GloballyDistributedDatabase
 {
     /// <summary>
+    /// This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Globally Distributed Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/latest/PrivateEndpoint
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/globally_distributed_database
+    /// 
+    /// Creates a PrivateEndpoint.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -42,7 +49,7 @@ namespace Pulumi.Oci.GloballyDistributedDatabase
     /// 
     /// ## Import
     /// 
-    /// PrivateEndpoints can be imported using the `id`, e.g.
+    /// PrivateEndpoints can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:GloballyDistributedDatabase/privateEndpoint:PrivateEndpoint test_private_endpoint "id"

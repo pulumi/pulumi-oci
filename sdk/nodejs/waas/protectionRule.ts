@@ -7,6 +7,15 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/waas/latest/ProtectionRule
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/web_application_acceleration_and_security
+ *
+ * Updates the action for each specified protection rule. Requests can either be allowed, blocked, or trigger an alert if they meet the parameters of an applied rule. For more information on protection rules, see [WAF Protection Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafprotectionrules.htm).
+ * This operation can update or disable protection rules depending on the structure of the request body.
+ * Protection rules can be updated by changing the properties of the protection rule object with the rule's key specified in the key field.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -27,7 +36,6 @@ import * as utilities from "../utilities";
  * ## Import
  *
  * ProtectionRules can be imported using the `id`, e.g.
- *
  * ```sh
  * $ pulumi import oci:Waas/protectionRule:ProtectionRule test_protection_rule "waasPolicyId/{waasPolicyId}/key/{key}"
  * ```

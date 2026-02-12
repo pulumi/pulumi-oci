@@ -7,7 +7,12 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * ## Example Usage
+ * This resource provides the Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-tools/latest/DatabaseToolsConnection
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databaseTools
+ *
+ * Creates a new Database Tools connection.
  *
  * ## Import
  *

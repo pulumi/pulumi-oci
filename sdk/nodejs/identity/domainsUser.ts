@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/User
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+ *
+ * Create a user.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -474,6 +481,9 @@ export class DomainsUser extends pulumi.CustomResource {
      * * uniqueness: none
      */
     declare public readonly externalId: pulumi.Output<string>;
+    /**
+     * (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+     */
     declare public readonly forceDelete: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
@@ -1255,6 +1265,9 @@ export interface DomainsUserState {
      * * uniqueness: none
      */
     externalId?: pulumi.Input<string>;
+    /**
+     * (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+     */
     forceDelete?: pulumi.Input<boolean>;
     /**
      * (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
@@ -1841,6 +1854,9 @@ export interface DomainsUserArgs {
      * * uniqueness: none
      */
     externalId?: pulumi.Input<string>;
+    /**
+     * (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+     */
     forceDelete?: pulumi.Input<boolean>;
     /**
      * The basic endpoint for the identity domain

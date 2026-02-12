@@ -608,6 +608,13 @@ class ManagementAgentDataSource(pulumi.CustomResource):
                  url: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Management Agent Data Source resource in Oracle Cloud Infrastructure Management Agent service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/management-agent/latest/ManagementAgentDataSource
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/management_agent
+
+        Datasource creation request to given Management Agent.
+
         ## Example Usage
 
         ```python
@@ -670,6 +677,13 @@ class ManagementAgentDataSource(pulumi.CustomResource):
                  args: ManagementAgentDataSourceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Management Agent Data Source resource in Oracle Cloud Infrastructure Management Agent service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/management-agent/latest/ManagementAgentDataSource
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/management_agent
+
+        Datasource creation request to given Management Agent.
+
         ## Example Usage
 
         ```python

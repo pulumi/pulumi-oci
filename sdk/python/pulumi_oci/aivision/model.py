@@ -675,6 +675,13 @@ class Model(pulumi.CustomResource):
                  validation_dataset: Optional[pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Model resource in Oracle Cloud Infrastructure Ai Vision service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vision/latest/Model
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiVision
+
+        Create a new model.
+
         ## Example Usage
 
         ```python
@@ -746,6 +753,13 @@ class Model(pulumi.CustomResource):
                  args: ModelArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Model resource in Oracle Cloud Infrastructure Ai Vision service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vision/latest/Model
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiVision
+
+        Create a new model.
+
         ## Example Usage
 
         ```python

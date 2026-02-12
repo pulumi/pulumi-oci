@@ -200,6 +200,13 @@ class SubscriptionMapping(pulumi.CustomResource):
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Subscription Mapping resource in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/organizations/latest/SubscriptionMapping
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/tenantmanagercontrolplane
+
+        Assign the tenancy record identified by the compartment ID to the given subscription ID.
+
         ## Example Usage
 
         ```python
@@ -235,6 +242,13 @@ class SubscriptionMapping(pulumi.CustomResource):
                  args: SubscriptionMappingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Subscription Mapping resource in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/organizations/latest/SubscriptionMapping
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/tenantmanagercontrolplane
+
+        Assign the tenancy record identified by the compartment ID to the given subscription ID.
+
         ## Example Usage
 
         ```python

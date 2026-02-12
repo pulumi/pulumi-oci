@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LicenseManager
 {
     /// <summary>
+    /// This resource provides the License Record resource in Oracle Cloud Infrastructure License Manager service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/licensemanager/latest/LicenseRecord
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/license_manager
+    /// 
+    /// Creates a new license record for the given product license ID.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -45,7 +52,7 @@ namespace Pulumi.Oci.LicenseManager
     /// 
     /// ## Import
     /// 
-    /// LicenseRecords can be imported using the `id`, e.g.
+    /// LicenseRecords can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:LicenseManager/licenseRecord:LicenseRecord test_license_record "id"

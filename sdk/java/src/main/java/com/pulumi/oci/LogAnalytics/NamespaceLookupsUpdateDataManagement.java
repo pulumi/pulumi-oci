@@ -15,6 +15,13 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Namespace Lookups Update Data Management resource in Oracle Cloud Infrastructure Log Analytics service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/NamespaceLookupsUpdateDataManagement
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+ * 
+ * Updates the lookup content. The csv file containing the content to be updated is passed in as binary data in the request.
+ * 
  * ## Example Usage
  * 
  * <pre>

@@ -10,6 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oda
 {
     /// <summary>
+    /// This resource provides the Oda Private Endpoint Scan Proxy resource in Oracle Cloud Infrastructure Digital Assistant service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/digital-assistant/latest/OdaPrivateEndpointScanProxy
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/oracle_digital_assistant
+    /// 
+    /// Starts an asynchronous job to create an ODA Private Endpoint Scan Proxy.
+    /// 
+    /// To monitor the status of the job, take the `opc-work-request-id` response
+    /// header value and use it to call `GET /workRequests/{workRequestID}`.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,7 +51,7 @@ namespace Pulumi.Oci.Oda
     /// 
     /// ## Import
     /// 
-    /// OdaPrivateEndpointScanProxies can be imported using the `id`, e.g.
+    /// OdaPrivateEndpointScanProxies can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Oda/odaPrivateEndpointScanProxy:OdaPrivateEndpointScanProxy test_oda_private_endpoint_scan_proxy "odaPrivateEndpoints/{odaPrivateEndpointId}/odaPrivateEndpointScanProxies/{odaPrivateEndpointScanProxyId}"

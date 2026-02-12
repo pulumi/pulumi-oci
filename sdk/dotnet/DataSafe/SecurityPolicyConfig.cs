@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
+    /// This resource provides the Security Policy Config resource in Oracle Cloud Infrastructure Data Safe service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/SecurityPolicyConfig
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+    /// 
+    /// Creates a new security policy configuration resource.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -51,7 +58,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Import
     /// 
-    /// SecurityPolicyConfigs can be imported using the `id`, e.g.
+    /// SecurityPolicyConfigs can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataSafe/securityPolicyConfig:SecurityPolicyConfig test_security_policy_config "id"

@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Project resource in Oracle Cloud Infrastructure Devops service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/Project
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+//
+// Creates a new project.
+//
 // ## Example Usage
 //
 // ```go

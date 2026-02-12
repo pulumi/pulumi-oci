@@ -18,6 +18,14 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Database Management resource in Oracle Cloud Infrastructure Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/CloudDatabaseManagement
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+ * Enable / Update / Disable database management for the specified Oracle Database instance.
+ * 
+ * Database Management requires `USER_NAME`, `PASSWORD_SECRET_ID` and `PRIVATE_END_POINT_ID`.
+ * `database.0.database_management_config` is updated to appropriate managementType and managementStatus for the specified Oracle Database instance.
+ * 
  * ## Example Usage
  * 
  * <pre>

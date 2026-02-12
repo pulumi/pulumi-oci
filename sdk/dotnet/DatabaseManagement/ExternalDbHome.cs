@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the External Db Home resource in Oracle Cloud Infrastructure Database Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalDbHome
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+    /// 
+    /// Updates the external DB home specified by `externalDbHomeId`.
     /// 
     /// ## Import
     /// 
-    /// ExternalDbHomes can be imported using the `id`, e.g.
+    /// ExternalDbHomes can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DatabaseManagement/externalDbHome:ExternalDbHome test_external_db_home "id"

@@ -1457,7 +1457,12 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                  user_allowed_to_set_recovery_email: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Identity Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/IdentitySetting
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Replace an Identity setting.
 
         ## Import
 
@@ -1613,7 +1618,12 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                  args: DomainsIdentitySettingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Identity Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/IdentitySetting
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Replace an Identity setting.
 
         ## Import
 

@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Remediation Run resource in Oracle Cloud Infrastructure Adm service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/adm/latest/RemediationRun
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/adm
+ *
+ * Creates a new remediation run.
+ *
  * ## Example Usage
  *
  * ```typescript

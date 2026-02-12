@@ -31,7 +31,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Import
     /// 
-    /// DiscoveryJobsResults can be imported using the `id`, e.g.
+    /// DiscoveryJobsResults can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult test_discovery_jobs_result "discoveryJobs/{discoveryJobId}/results/{resultKey}"

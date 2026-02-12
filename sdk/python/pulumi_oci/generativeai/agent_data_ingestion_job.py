@@ -378,6 +378,15 @@ class AgentDataIngestionJob(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Data Ingestion Job resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/latest/DataIngestionJob
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai_agent
+
+        **CreateDataIngestionJob**
+
+        Creates a data ingestion job.
+
         ## Example Usage
 
         ```python
@@ -425,6 +434,15 @@ class AgentDataIngestionJob(pulumi.CustomResource):
                  args: AgentDataIngestionJobArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Data Ingestion Job resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/latest/DataIngestionJob
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai_agent
+
+        **CreateDataIngestionJob**
+
+        Creates a data ingestion job.
+
         ## Example Usage
 
         ```python

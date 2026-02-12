@@ -7,6 +7,14 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Occ Capacity Request resource in Oracle Cloud Infrastructure Capacity Management service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/occcm/latest/OccCapacityRequest
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/capacity_management
+ *
+ * Create Capacity Request.
+ *   Updates the OccCapacityRequest by evaluating a sequence of instructions.
+ *
  * ## Example Usage
  *
  * ```typescript

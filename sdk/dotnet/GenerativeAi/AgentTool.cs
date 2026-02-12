@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GenerativeAi
 {
     /// <summary>
+    /// This resource provides the Tool resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/latest/Tool
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai_agent
+    /// 
+    /// Creates a tool.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -126,7 +133,7 @@ namespace Pulumi.Oci.GenerativeAi
     /// 
     /// ## Import
     /// 
-    /// Tools can be imported using the `id`, e.g.
+    /// Tools can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:GenerativeAi/agentTool:AgentTool test_tool "id"

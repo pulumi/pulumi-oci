@@ -16,6 +16,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/functions/latest/InvokeFunction
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/functions
+ * 
+ * Invokes a function
+ * 
  * ## Example Usage
  * 
  * <pre>
@@ -61,9 +68,17 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Functions/invokeFunction:InvokeFunction")
 public class InvokeFunction extends com.pulumi.resources.CustomResource {
+    /**
+     * Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
+     * 
+     */
     @Export(name="base64EncodeContent", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> base64EncodeContent;
 
+    /**
+     * @return Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
+     * 
+     */
     public Output<Optional<Boolean>> base64EncodeContent() {
         return Codegen.optional(this.base64EncodeContent);
     }
@@ -163,9 +178,17 @@ public class InvokeFunction extends com.pulumi.resources.CustomResource {
     public Output<String> invokeFunctionBody() {
         return this.invokeFunctionBody;
     }
+    /**
+     * The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invokeFunctionBody` or `inputBodySourcePath` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+     * 
+     */
     @Export(name="invokeFunctionBodyBase64Encoded", refs={String.class}, tree="[0]")
     private Output<String> invokeFunctionBodyBase64Encoded;
 
+    /**
+     * @return The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invokeFunctionBody` or `inputBodySourcePath` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+     * 
+     */
     public Output<String> invokeFunctionBodyBase64Encoded() {
         return this.invokeFunctionBodyBase64Encoded;
     }

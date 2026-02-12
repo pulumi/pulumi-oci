@@ -27,44 +27,39 @@ __all__ = [
     'GetRecoveryServiceSubnetsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class ProtectedDatabaseMetricArgsDict(TypedDict):
-        backup_space_estimate_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
-        """
-        backup_space_used_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
-        """
-        current_retention_period_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Number of seconds backups are currently retained for this database.
-        """
-        db_size_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
-        """
-        is_redo_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-        """
-        minimum_recovery_needed_in_days: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Number of days of redo/archive to be applied to recover database.
-        """
-        retention_period_in_days: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The maximum number of days to retain backups for a protected database.
-        """
-        unprotected_window_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
-        """
-elif False:
-    ProtectedDatabaseMetricArgsDict: TypeAlias = Mapping[str, Any]
+class ProtectedDatabaseMetricArgsDict(TypedDict):
+    backup_space_estimate_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
+    """
+    backup_space_used_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
+    """
+    current_retention_period_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Number of seconds backups are currently retained for this database.
+    """
+    db_size_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
+    """
+    is_redo_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
+    """
+    minimum_recovery_needed_in_days: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Number of days of redo/archive to be applied to recover database.
+    """
+    retention_period_in_days: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The maximum number of days to retain backups for a protected database.
+    """
+    unprotected_window_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
+    """
 
 @pulumi.input_type
 class ProtectedDatabaseMetricArgs:
@@ -201,18 +196,15 @@ class ProtectedDatabaseMetricArgs:
         pulumi.set(self, "unprotected_window_in_seconds", value)
 
 
-if not MYPY:
-    class ProtectedDatabaseRecoveryServiceSubnetArgsDict(TypedDict):
-        recovery_service_subnet_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The recovery service subnet OCID.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the Protected Database.
-        """
-elif False:
-    ProtectedDatabaseRecoveryServiceSubnetArgsDict: TypeAlias = Mapping[str, Any]
+class ProtectedDatabaseRecoveryServiceSubnetArgsDict(TypedDict):
+    recovery_service_subnet_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The recovery service subnet OCID.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the Protected Database.
+    """
 
 @pulumi.input_type
 class ProtectedDatabaseRecoveryServiceSubnetArgs:
@@ -252,13 +244,10 @@ class ProtectedDatabaseRecoveryServiceSubnetArgs:
         pulumi.set(self, "state", value)
 
 
-if not MYPY:
-    class GetProtectedDatabasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetProtectedDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetProtectedDatabasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetProtectedDatabasesFilterArgs:
@@ -299,13 +288,10 @@ class GetProtectedDatabasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetProtectionPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetProtectionPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetProtectionPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetProtectionPoliciesFilterArgs:
@@ -346,13 +332,10 @@ class GetProtectionPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRecoveryServiceSubnetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRecoveryServiceSubnetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRecoveryServiceSubnetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRecoveryServiceSubnetsFilterArgs:

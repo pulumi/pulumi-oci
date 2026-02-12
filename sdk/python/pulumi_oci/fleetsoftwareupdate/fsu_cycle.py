@@ -758,6 +758,13 @@ class FsuCycle(pulumi.CustomResource):
                  upgrade_details: Optional[pulumi.Input[Union['FsuCycleUpgradeDetailsArgs', 'FsuCycleUpgradeDetailsArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Fsu Cycle resource in Oracle Cloud Infrastructure Fleet Software Update service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/edsfu/latest/FsuCycle
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleetsoftwareupdate
+
+        Creates a new Exadata Fleet Update Cycle.
+
         ## Example Usage
 
         ```python
@@ -857,6 +864,13 @@ class FsuCycle(pulumi.CustomResource):
                  args: FsuCycleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Fsu Cycle resource in Oracle Cloud Infrastructure Fleet Software Update service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/edsfu/latest/FsuCycle
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleetsoftwareupdate
+
+        Creates a new Exadata Fleet Update Cycle.
+
         ## Example Usage
 
         ```python

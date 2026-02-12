@@ -380,6 +380,13 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
                  target_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/TargetAlertPolicyAssociation
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Creates a new target-alert policy association to track a alert policy applied on target.
+
         ## Example Usage
 
         ```python
@@ -428,6 +435,13 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
                  args: TargetAlertPolicyAssociationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/TargetAlertPolicyAssociation
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Creates a new target-alert policy association to track a alert policy applied on target.
+
         ## Example Usage
 
         ```python

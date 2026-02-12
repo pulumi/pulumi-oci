@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard
 {
     /// <summary>
+    /// This resource provides the Wlp Agent resource in Oracle Cloud Infrastructure Cloud Guard service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/WlpAgent
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+    /// 
+    /// Creates and registers a WLP agent for an
+    /// on-premise resource.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,7 +49,7 @@ namespace Pulumi.Oci.CloudGuard
     /// 
     /// ## Import
     /// 
-    /// WlpAgents can be imported using the `id`, e.g.
+    /// WlpAgents can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:CloudGuard/wlpAgent:WlpAgent test_wlp_agent "id"

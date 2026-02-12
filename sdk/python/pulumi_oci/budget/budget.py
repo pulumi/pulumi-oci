@@ -684,6 +684,13 @@ class Budget(pulumi.CustomResource):
                  targets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Budget resource in Oracle Cloud Infrastructure Budget service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/budgets/latest/Budget
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/budget
+
+        Creates a new budget.
+
         ## Example Usage
 
         ```python
@@ -749,6 +756,13 @@ class Budget(pulumi.CustomResource):
                  args: BudgetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Budget resource in Oracle Cloud Infrastructure Budget service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/budgets/latest/Budget
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/budget
+
+        Creates a new budget.
+
         ## Example Usage
 
         ```python

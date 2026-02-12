@@ -7,6 +7,15 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai/latest/Endpoint
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai
+ *
+ * Creates an endpoint.
+ *
+ * The header contains an opc-work-request-id, which is the id for the WorkRequest that tracks the endpoint creation progress.
+ *
  * ## Example Usage
  *
  * ```typescript

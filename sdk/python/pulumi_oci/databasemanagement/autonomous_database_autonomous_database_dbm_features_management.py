@@ -155,6 +155,12 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
                  feature_details: Optional[pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Autonomous Database Autonomous Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+        Enables a Database Management feature for the specified Autonomous Database.
+
         ## Example Usage
 
         ```python
@@ -209,6 +215,12 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
                  args: AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Autonomous Database Autonomous Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+        Enables a Database Management feature for the specified Autonomous Database.
+
         ## Example Usage
 
         ```python

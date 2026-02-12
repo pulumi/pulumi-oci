@@ -403,7 +403,17 @@ class ResourceAction(pulumi.CustomResource):
                  time_status_end: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/advisor/latest/ResourceAction
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/optimizer
+
+        Updates the resource action that corresponds to the specified OCID.
+        Use this operation to implement the following actions:
+
+          * Postpone resource action
+          * Ignore resource action
+          * Reactivate resource action
 
         ## Import
 
@@ -432,7 +442,17 @@ class ResourceAction(pulumi.CustomResource):
                  args: ResourceActionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/advisor/latest/ResourceAction
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/optimizer
+
+        Updates the resource action that corresponds to the specified OCID.
+        Use this operation to implement the following actions:
+
+          * Postpone resource action
+          * Ignore resource action
+          * Reactivate resource action
 
         ## Import
 

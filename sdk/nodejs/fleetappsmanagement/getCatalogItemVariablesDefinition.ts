@@ -56,6 +56,9 @@ export interface GetCatalogItemVariablesDefinitionResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * Schema Document representing Schema.yaml (https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager_topic-schema.htm)
+     */
     readonly schemaDocuments: outputs.FleetAppsManagement.GetCatalogItemVariablesDefinitionSchemaDocument[];
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`

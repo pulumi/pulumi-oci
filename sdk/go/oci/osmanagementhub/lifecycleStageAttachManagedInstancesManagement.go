@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Lifecycle Stage Attach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/LifecycleStageAttachManagedInstancesManagement
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+//
+// Attaches (adds) managed instances to a lifecycle stage. Once added, you can apply operations to all managed instances in the lifecycle stage.
+//
 // ## Example Usage
 //
 // ```go

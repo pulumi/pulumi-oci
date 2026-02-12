@@ -36,7 +36,7 @@ namespace Pulumi.Oci.Jms
     /// 
     /// ## Import
     /// 
-    /// AnalyzeApplicationsConfigurations can be imported using the `id`, e.g.
+    /// AnalyzeApplicationsConfigurations can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Jms/utilsAnalyzeApplicationsConfiguration:UtilsAnalyzeApplicationsConfiguration test_analyze_applications_configuration "id"

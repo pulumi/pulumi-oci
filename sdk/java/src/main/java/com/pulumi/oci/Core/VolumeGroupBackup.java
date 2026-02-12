@@ -18,6 +18,14 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Volume Group Backup resource in Oracle Cloud Infrastructure Core service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/VolumeGroupBackup
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ * 
+ * Creates a new backup volume group of the specified volume group.
+ * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+ * 
  * ## Example Usage
  * 
  * <pre>

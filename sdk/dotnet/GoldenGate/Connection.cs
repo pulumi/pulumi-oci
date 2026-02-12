@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GoldenGate
 {
     /// <summary>
+    /// This resource provides the Connection resource in Oracle Cloud Infrastructure Golden Gate service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/goldengate/latest/Connection
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/goldengate
+    /// 
+    /// Creates a new Connection.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -192,7 +199,7 @@ namespace Pulumi.Oci.GoldenGate
     /// 
     /// ## Import
     /// 
-    /// Connections can be imported using the `id`, e.g.
+    /// Connections can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:GoldenGate/connection:Connection test_connection "id"

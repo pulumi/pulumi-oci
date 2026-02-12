@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine
 {
     /// <summary>
+    /// This resource provides the Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/containerengine/latest/NodePool
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/container_engine
+    /// 
+    /// Create a new node pool.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -119,7 +126,7 @@ namespace Pulumi.Oci.ContainerEngine
     /// 
     /// ## Import
     /// 
-    /// NodePools can be imported using the `id`, e.g.
+    /// NodePools can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:ContainerEngine/nodePool:NodePool test_node_pool "id"

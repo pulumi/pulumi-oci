@@ -12,6 +12,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Namespace Storage Enable Disable Archiving resource in Oracle Cloud Infrastructure Log Analytics service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/NamespaceStorageEnableDisableArchiving
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+// THis API enables archiving.
+//
 // ## Example Usage
 //
 // ```go

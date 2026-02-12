@@ -16,6 +16,13 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Log Analytics Entity Type resource in Oracle Cloud Infrastructure Log Analytics service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsEntityType
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+ * 
+ * Add custom log analytics entity type.
+ * 
  * ## Example Usage
  * 
  * <pre>

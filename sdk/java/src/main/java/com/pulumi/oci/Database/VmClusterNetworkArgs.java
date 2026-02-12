@@ -164,9 +164,17 @@ public final class VmClusterNetworkArgs extends com.pulumi.resources.ResourceArg
         return this.scans;
     }
 
+    /**
+     * (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster resource puts a VM Cluster Network in `REQUIRES_VALIDATION` state. This results in `After applying this step and refreshing, the plan was not empty` error and users should apply the terraform configuration again to validate the VM Cluster Network.
+     * 
+     */
     @Import(name="validateVmClusterNetwork")
     private @Nullable Output<Boolean> validateVmClusterNetwork;
 
+    /**
+     * @return (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster resource puts a VM Cluster Network in `REQUIRES_VALIDATION` state. This results in `After applying this step and refreshing, the plan was not empty` error and users should apply the terraform configuration again to validate the VM Cluster Network.
+     * 
+     */
     public Optional<Output<Boolean>> validateVmClusterNetwork() {
         return Optional.ofNullable(this.validateVmClusterNetwork);
     }
@@ -459,11 +467,23 @@ public final class VmClusterNetworkArgs extends com.pulumi.resources.ResourceArg
             return scans(List.of(scans));
         }
 
+        /**
+         * @param validateVmClusterNetwork (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster resource puts a VM Cluster Network in `REQUIRES_VALIDATION` state. This results in `After applying this step and refreshing, the plan was not empty` error and users should apply the terraform configuration again to validate the VM Cluster Network.
+         * 
+         * @return builder
+         * 
+         */
         public Builder validateVmClusterNetwork(@Nullable Output<Boolean> validateVmClusterNetwork) {
             $.validateVmClusterNetwork = validateVmClusterNetwork;
             return this;
         }
 
+        /**
+         * @param validateVmClusterNetwork (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster resource puts a VM Cluster Network in `REQUIRES_VALIDATION` state. This results in `After applying this step and refreshing, the plan was not empty` error and users should apply the terraform configuration again to validate the VM Cluster Network.
+         * 
+         * @return builder
+         * 
+         */
         public Builder validateVmClusterNetwork(Boolean validateVmClusterNetwork) {
             return validateVmClusterNetwork(Output.of(validateVmClusterNetwork));
         }

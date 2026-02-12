@@ -16,6 +16,20 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Exadata Iorm Config resource in Oracle Cloud Infrastructure Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ExadataIormConfig
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+ * 
+ * Updates IORM settings for the specified Exadata DB system.
+ * 
+ * **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
+ * 
+ * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
+ * 
+ * The [UpdateCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/UpdateCloudVmClusterIormConfig/) API is used for Exadata systems using the
+ * new resource model.
+ * 
  * ## Example Usage
  * 
  * <pre>

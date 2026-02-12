@@ -5,6 +5,12 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This data source provides details about a specific Stack Tf State resource in Oracle Cloud Infrastructure Resource Manager service.
+ *
+ * Returns the Terraform state for the specified stack.
+ * For more information, see
+ * [Getting a Stack State File](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-state.htm).
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -28,6 +34,9 @@ export function getStackTfState(args: GetStackTfStateArgs, opts?: pulumi.InvokeO
  * A collection of arguments for invoking getStackTfState.
  */
 export interface GetStackTfStateArgs {
+    /**
+     * The path and filename (relative to where Terraform is executing) to write the external statefile to.
+     */
     localPath: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
@@ -43,10 +52,19 @@ export interface GetStackTfStateResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * The path and filename (relative to where Terraform is executing) to write the external statefile to.
+     */
     readonly localPath: string;
     readonly stackId: string;
 }
 /**
+ * This data source provides details about a specific Stack Tf State resource in Oracle Cloud Infrastructure Resource Manager service.
+ *
+ * Returns the Terraform state for the specified stack.
+ * For more information, see
+ * [Getting a Stack State File](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-state.htm).
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -70,6 +88,9 @@ export function getStackTfStateOutput(args: GetStackTfStateOutputArgs, opts?: pu
  * A collection of arguments for invoking getStackTfState.
  */
 export interface GetStackTfStateOutputArgs {
+    /**
+     * The path and filename (relative to where Terraform is executing) to write the external statefile to.
+     */
     localPath: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.

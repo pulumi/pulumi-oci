@@ -66,7 +66,8 @@ type LookupWorkspaceApplicationTaskScheduleArgs struct {
 type LookupWorkspaceApplicationTaskScheduleResult struct {
 	ApplicationKey string `pulumi:"applicationKey"`
 	// The authorization mode for the task.
-	AuthMode               string `pulumi:"authMode"`
+	AuthMode string `pulumi:"authMode"`
+	// The information about the configuration provider.First level keys to this delegate map should be in the order first "bindings" then "childProviders".refer terraform Example.
 	ConfigProviderDelegate string `pulumi:"configProviderDelegate"`
 	// The description of the aggregator.
 	Description string `pulumi:"description"`
@@ -167,6 +168,7 @@ func (o LookupWorkspaceApplicationTaskScheduleResultOutput) AuthMode() pulumi.St
 	return o.ApplyT(func(v LookupWorkspaceApplicationTaskScheduleResult) string { return v.AuthMode }).(pulumi.StringOutput)
 }
 
+// The information about the configuration provider.First level keys to this delegate map should be in the order first "bindings" then "childProviders".refer terraform Example.
 func (o LookupWorkspaceApplicationTaskScheduleResultOutput) ConfigProviderDelegate() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupWorkspaceApplicationTaskScheduleResult) string { return v.ConfigProviderDelegate }).(pulumi.StringOutput)
 }

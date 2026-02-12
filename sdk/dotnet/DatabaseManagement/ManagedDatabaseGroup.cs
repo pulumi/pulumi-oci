@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
+    /// This resource provides the Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ManagedDatabaseGroup
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+    /// 
+    /// Creates a Managed Database Group. The group does not contain any
+    /// Managed Databases when it is created, and they must be added later.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -47,7 +55,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// ## Import
     /// 
-    /// ManagedDatabaseGroups can be imported using the `id`, e.g.
+    /// ManagedDatabaseGroups can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup test_managed_database_group "id"

@@ -5,6 +5,14 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Drg Route Table resource in Oracle Cloud Infrastructure Core service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/DrgRouteTable
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ *
+ * Creates a new DRG route table for the specified DRG. Assign the DRG route table to a DRG attachment
+ * using the `UpdateDrgAttachment` or `CreateDrgAttachment` operations.
+ *
  * ## Example Usage
  *
  * ```typescript

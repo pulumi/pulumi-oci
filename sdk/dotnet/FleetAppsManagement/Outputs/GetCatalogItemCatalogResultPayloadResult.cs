@@ -41,6 +41,9 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeExpires;
+        /// <summary>
+        /// File path to the directory to use for running Terraform. If not specified, the root directory is used.
+        /// </summary>
         public readonly string WorkingDirectory;
 
         [OutputConstructor]

@@ -17,6 +17,13 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Target Database Peer Target Database resource in Oracle Cloud Infrastructure Data Safe service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/TargetDatabasePeerTargetDatabase
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+ * 
+ * Creates the peer target database under the primary target database in Data Safe.
+ * 
  * ## Example Usage
  * 
  * <pre>

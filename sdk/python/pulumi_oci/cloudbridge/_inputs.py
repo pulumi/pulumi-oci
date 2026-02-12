@@ -61,48 +61,43 @@ __all__ = [
     'GetInventoriesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class AgentPluginListArgsDict(TypedDict):
-        agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Agent identifier.
-        """
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Plugin identifier, which can be renamed.
-        """
-        plugin_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Plugin version.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the Agent.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time when the Agent was created. An RFC3339 formatted datetime string.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time when the Agent was updated. An RFC3339 formatted datetime string.
-        """
-elif False:
-    AgentPluginListArgsDict: TypeAlias = Mapping[str, Any]
+class AgentPluginListArgsDict(TypedDict):
+    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Agent identifier.
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Plugin identifier, which can be renamed.
+    """
+    plugin_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Plugin version.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the Agent.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time when the Agent was created. An RFC3339 formatted datetime string.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time when the Agent was updated. An RFC3339 formatted datetime string.
+    """
 
 @pulumi.input_type
 class AgentPluginListArgs:
@@ -255,126 +250,123 @@ class AgentPluginListArgs:
         pulumi.set(self, "time_updated", value)
 
 
-if not MYPY:
-    class AssetComputeArgsDict(TypedDict):
-        connected_networks: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Number of connected networks.
-        """
-        cores_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Number of CPUs.
-        """
-        cpu_model: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) CPU model name.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Information about the asset.
-        """
-        disks: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetComputeDiskArgsDict']]]]
-        """
-        (Updatable) Lists the set of disks belonging to the virtual machine. This list is unordered.
-        """
-        disks_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Number of disks.
-        """
-        dns_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Fully Qualified DNS Name.
-        """
-        firmware: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Information about firmware type for this virtual machine.
-        """
-        gpu_devices: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetComputeGpuDeviceArgsDict']]]]
-        """
-        (Updatable) List of GPU devices attached to a virtual machine.
-        """
-        gpu_devices_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Number of GPU devices.
-        """
-        guest_state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Guest state.
-        """
-        hardware_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Hardware version.
-        """
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Host name of the VM.
-        """
-        is_pmem_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
-        """
-        is_tpm_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether Trusted Platform Module (TPM) is enabled.
-        """
-        latency_sensitivity: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Latency sensitivity.
-        """
-        memory_in_mbs: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Memory size in MBs.
-        """
-        nics: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetComputeNicArgsDict']]]]
-        """
-        (Updatable) List of network ethernet cards attached to a virtual machine.
-        """
-        nics_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Number of network ethernet cards.
-        """
-        nvdimm_controller: NotRequired[pulumi.Input['AssetComputeNvdimmControllerArgsDict']]
-        """
-        (Updatable) The asset's NVDIMM configuration.
-        """
-        nvdimms: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetComputeNvdimmArgsDict']]]]
-        """
-        (Updatable) The properties of the NVDIMMs attached to a virtual machine.
-        """
-        operating_system: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Operating system.
-        """
-        operating_system_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Operating system version.
-        """
-        pmem_in_mbs: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Pmem size in MBs.
-        """
-        power_state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The current power state of the virtual machine.
-        """
-        primary_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Primary IP address of the compute instance.
-        """
-        scsi_controller: NotRequired[pulumi.Input['AssetComputeScsiControllerArgsDict']]
-        """
-        (Updatable) The assets SCSI controller.
-        """
-        storage_provisioned_in_mbs: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Provision storage size in MBs.
-        """
-        threads_per_core_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Number of threads per core.
-        """
-elif False:
-    AssetComputeArgsDict: TypeAlias = Mapping[str, Any]
+class AssetComputeArgsDict(TypedDict):
+    connected_networks: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Number of connected networks.
+    """
+    cores_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Number of CPUs.
+    """
+    cpu_model: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) CPU model name.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Information about the asset.
+    """
+    disks: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetComputeDiskArgsDict']]]]
+    """
+    (Updatable) Lists the set of disks belonging to the virtual machine. This list is unordered.
+    """
+    disks_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Number of disks.
+    """
+    dns_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Fully Qualified DNS Name.
+    """
+    firmware: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Information about firmware type for this virtual machine.
+    """
+    gpu_devices: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetComputeGpuDeviceArgsDict']]]]
+    """
+    (Updatable) List of GPU devices attached to a virtual machine.
+    """
+    gpu_devices_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Number of GPU devices.
+    """
+    guest_state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Guest state.
+    """
+    hardware_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Hardware version.
+    """
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Host name of the VM.
+    """
+    is_pmem_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
+    """
+    is_tpm_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether Trusted Platform Module (TPM) is enabled.
+    """
+    latency_sensitivity: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Latency sensitivity.
+    """
+    memory_in_mbs: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Memory size in MBs.
+    """
+    nics: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetComputeNicArgsDict']]]]
+    """
+    (Updatable) List of network ethernet cards attached to a virtual machine.
+    """
+    nics_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Number of network ethernet cards.
+    """
+    nvdimm_controller: NotRequired[pulumi.Input['AssetComputeNvdimmControllerArgsDict']]
+    """
+    (Updatable) The asset's NVDIMM configuration.
+    """
+    nvdimms: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetComputeNvdimmArgsDict']]]]
+    """
+    (Updatable) The properties of the NVDIMMs attached to a virtual machine.
+    """
+    operating_system: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Operating system.
+    """
+    operating_system_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Operating system version.
+    """
+    pmem_in_mbs: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Pmem size in MBs.
+    """
+    power_state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The current power state of the virtual machine.
+    """
+    primary_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Primary IP address of the compute instance.
+    """
+    scsi_controller: NotRequired[pulumi.Input['AssetComputeScsiControllerArgsDict']]
+    """
+    (Updatable) The assets SCSI controller.
+    """
+    storage_provisioned_in_mbs: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Provision storage size in MBs.
+    """
+    threads_per_core_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Number of threads per core.
+    """
 
 @pulumi.input_type
 class AssetComputeArgs:
@@ -847,38 +839,35 @@ class AssetComputeArgs:
         pulumi.set(self, "threads_per_core_count", value)
 
 
-if not MYPY:
-    class AssetComputeDiskArgsDict(TypedDict):
-        boot_order: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Order of boot volumes.
-        """
-        location: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Location of the boot/data volume.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Disk name.
-        """
-        persistent_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The disk persistent mode.
-        """
-        size_in_mbs: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The size of the volume in MBs.
-        """
-        uuid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Disk UUID for the virtual disk, if available.
-        """
-        uuid_lun: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Disk UUID LUN for the virtual disk, if available.
-        """
-elif False:
-    AssetComputeDiskArgsDict: TypeAlias = Mapping[str, Any]
+class AssetComputeDiskArgsDict(TypedDict):
+    boot_order: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Order of boot volumes.
+    """
+    location: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Location of the boot/data volume.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Disk name.
+    """
+    persistent_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The disk persistent mode.
+    """
+    size_in_mbs: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The size of the volume in MBs.
+    """
+    uuid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Disk UUID for the virtual disk, if available.
+    """
+    uuid_lun: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Disk UUID LUN for the virtual disk, if available.
+    """
 
 @pulumi.input_type
 class AssetComputeDiskArgs:
@@ -999,30 +988,27 @@ class AssetComputeDiskArgs:
         pulumi.set(self, "uuid_lun", value)
 
 
-if not MYPY:
-    class AssetComputeGpuDeviceArgsDict(TypedDict):
-        cores_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Number of GPU cores.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) GPU device description.
-        """
-        manufacturer: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The manufacturer of GPU.
-        """
-        memory_in_mbs: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) GPU memory size in MBs.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) GPU device name.
-        """
-elif False:
-    AssetComputeGpuDeviceArgsDict: TypeAlias = Mapping[str, Any]
+class AssetComputeGpuDeviceArgsDict(TypedDict):
+    cores_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Number of GPU cores.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) GPU device description.
+    """
+    manufacturer: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The manufacturer of GPU.
+    """
+    memory_in_mbs: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) GPU memory size in MBs.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) GPU device name.
+    """
 
 @pulumi.input_type
 class AssetComputeGpuDeviceArgs:
@@ -1111,34 +1097,31 @@ class AssetComputeGpuDeviceArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class AssetComputeNicArgsDict(TypedDict):
-        ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) List of IP addresses.
-        """
-        label: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Provides a label and summary information for the device.
-        """
-        mac_address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Mac address of the VM.
-        """
-        mac_address_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Mac address type.
-        """
-        network_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Network name.
-        """
-        switch_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Switch name.
-        """
-elif False:
-    AssetComputeNicArgsDict: TypeAlias = Mapping[str, Any]
+class AssetComputeNicArgsDict(TypedDict):
+    ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) List of IP addresses.
+    """
+    label: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Provides a label and summary information for the device.
+    """
+    mac_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Mac address of the VM.
+    """
+    mac_address_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Mac address type.
+    """
+    network_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Network name.
+    """
+    switch_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Switch name.
+    """
 
 @pulumi.input_type
 class AssetComputeNicArgs:
@@ -1243,22 +1226,19 @@ class AssetComputeNicArgs:
         pulumi.set(self, "switch_name", value)
 
 
-if not MYPY:
-    class AssetComputeNvdimmArgsDict(TypedDict):
-        controller_key: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Controller key.
-        """
-        label: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Provides a label and summary information for the device.
-        """
-        unit_number: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The unit number of NVDIMM.
-        """
-elif False:
-    AssetComputeNvdimmArgsDict: TypeAlias = Mapping[str, Any]
+class AssetComputeNvdimmArgsDict(TypedDict):
+    controller_key: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Controller key.
+    """
+    label: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Provides a label and summary information for the device.
+    """
+    unit_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The unit number of NVDIMM.
+    """
 
 @pulumi.input_type
 class AssetComputeNvdimmArgs:
@@ -1315,18 +1295,15 @@ class AssetComputeNvdimmArgs:
         pulumi.set(self, "unit_number", value)
 
 
-if not MYPY:
-    class AssetComputeNvdimmControllerArgsDict(TypedDict):
-        bus_number: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Bus number.
-        """
-        label: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Provides a label and summary information for the device.
-        """
-elif False:
-    AssetComputeNvdimmControllerArgsDict: TypeAlias = Mapping[str, Any]
+class AssetComputeNvdimmControllerArgsDict(TypedDict):
+    bus_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Bus number.
+    """
+    label: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Provides a label and summary information for the device.
+    """
 
 @pulumi.input_type
 class AssetComputeNvdimmControllerArgs:
@@ -1367,22 +1344,19 @@ class AssetComputeNvdimmControllerArgs:
         pulumi.set(self, "label", value)
 
 
-if not MYPY:
-    class AssetComputeScsiControllerArgsDict(TypedDict):
-        label: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Provides a label and summary information for the device.
-        """
-        shared_bus: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Shared bus.
-        """
-        unit_number: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The unit number of the SCSI controller.
-        """
-elif False:
-    AssetComputeScsiControllerArgsDict: TypeAlias = Mapping[str, Any]
+class AssetComputeScsiControllerArgsDict(TypedDict):
+    label: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Provides a label and summary information for the device.
+    """
+    shared_bus: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Shared bus.
+    """
+    unit_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The unit number of the SCSI controller.
+    """
 
 @pulumi.input_type
 class AssetComputeScsiControllerArgs:
@@ -1439,18 +1413,15 @@ class AssetComputeScsiControllerArgs:
         pulumi.set(self, "unit_number", value)
 
 
-if not MYPY:
-    class AssetSourceDiscoveryCredentialsArgsDict(TypedDict):
-        secret_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Authentication type
-        """
-elif False:
-    AssetSourceDiscoveryCredentialsArgsDict: TypeAlias = Mapping[str, Any]
+class AssetSourceDiscoveryCredentialsArgsDict(TypedDict):
+    secret_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Authentication type
+    """
 
 @pulumi.input_type
 class AssetSourceDiscoveryCredentialsArgs:
@@ -1489,18 +1460,15 @@ class AssetSourceDiscoveryCredentialsArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class AssetSourceReplicationCredentialsArgsDict(TypedDict):
-        secret_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Authentication type
-        """
-elif False:
-    AssetSourceReplicationCredentialsArgsDict: TypeAlias = Mapping[str, Any]
+class AssetSourceReplicationCredentialsArgsDict(TypedDict):
+    secret_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Authentication type
+    """
 
 @pulumi.input_type
 class AssetSourceReplicationCredentialsArgs:
@@ -1539,22 +1507,19 @@ class AssetSourceReplicationCredentialsArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class AssetVmArgsDict(TypedDict):
-        hypervisor_host: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Host name/IP address of VM on which the host is running.
-        """
-        hypervisor_vendor: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Hypervisor vendor.
-        """
-        hypervisor_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Hypervisor version.
-        """
-elif False:
-    AssetVmArgsDict: TypeAlias = Mapping[str, Any]
+class AssetVmArgsDict(TypedDict):
+    hypervisor_host: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Host name/IP address of VM on which the host is running.
+    """
+    hypervisor_vendor: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Hypervisor vendor.
+    """
+    hypervisor_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Hypervisor version.
+    """
 
 @pulumi.input_type
 class AssetVmArgs:
@@ -1611,22 +1576,19 @@ class AssetVmArgs:
         pulumi.set(self, "hypervisor_version", value)
 
 
-if not MYPY:
-    class AssetVmwareVcenterArgsDict(TypedDict):
-        data_center: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Data center name.
-        """
-        vcenter_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) vCenter unique key.
-        """
-        vcenter_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Dot-separated version string.
-        """
-elif False:
-    AssetVmwareVcenterArgsDict: TypeAlias = Mapping[str, Any]
+class AssetVmwareVcenterArgsDict(TypedDict):
+    data_center: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Data center name.
+    """
+    vcenter_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) vCenter unique key.
+    """
+    vcenter_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Dot-separated version string.
+    """
 
 @pulumi.input_type
 class AssetVmwareVcenterArgs:
@@ -1683,58 +1645,55 @@ class AssetVmwareVcenterArgs:
         pulumi.set(self, "vcenter_version", value)
 
 
-if not MYPY:
-    class AssetVmwareVmArgsDict(TypedDict):
-        cluster: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Cluster name.
-        """
-        customer_fields: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Customer fields.
-        """
-        customer_tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetVmwareVmCustomerTagArgsDict']]]]
-        """
-        (Updatable) Customer defined tags.
-        """
-        fault_tolerance_bandwidth: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Fault tolerance bandwidth.
-        """
-        fault_tolerance_secondary_latency: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Fault tolerance to secondary latency.
-        """
-        fault_tolerance_state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Fault tolerance state.
-        """
-        instance_uuid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) vCenter-specific identifier of the virtual machine.
-        """
-        is_disks_cbt_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates that change tracking is supported for virtual disks of this virtual machine. However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
-        """
-        is_disks_uuid_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether changed block tracking for this VM's disk is active.
-        """
-        path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Path directory of the asset.
-        """
-        vmware_tools_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) VMware tools status.
+class AssetVmwareVmArgsDict(TypedDict):
+    cluster: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Cluster name.
+    """
+    customer_fields: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Customer fields.
+    """
+    customer_tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetVmwareVmCustomerTagArgsDict']]]]
+    """
+    (Updatable) Customer defined tags.
+    """
+    fault_tolerance_bandwidth: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Fault tolerance bandwidth.
+    """
+    fault_tolerance_secondary_latency: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Fault tolerance to secondary latency.
+    """
+    fault_tolerance_state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Fault tolerance state.
+    """
+    instance_uuid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) vCenter-specific identifier of the virtual machine.
+    """
+    is_disks_cbt_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates that change tracking is supported for virtual disks of this virtual machine. However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
+    """
+    is_disks_uuid_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether changed block tracking for this VM's disk is active.
+    """
+    path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Path directory of the asset.
+    """
+    vmware_tools_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) VMware tools status.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    AssetVmwareVmArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class AssetVmwareVmArgs:
@@ -1927,18 +1886,15 @@ class AssetVmwareVmArgs:
         pulumi.set(self, "vmware_tools_status", value)
 
 
-if not MYPY:
-    class AssetVmwareVmCustomerTagArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The tag description.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The tag name.
-        """
-elif False:
-    AssetVmwareVmCustomerTagArgsDict: TypeAlias = Mapping[str, Any]
+class AssetVmwareVmCustomerTagArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The tag description.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The tag name.
+    """
 
 @pulumi.input_type
 class AssetVmwareVmCustomerTagArgs:
@@ -1979,13 +1935,10 @@ class AssetVmwareVmCustomerTagArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class GetAgentDependenciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAgentDependenciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAgentDependenciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAgentDependenciesFilterArgs:
@@ -2026,16 +1979,13 @@ class GetAgentDependenciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAgentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Plugin identifier, which can be renamed.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAgentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAgentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Plugin identifier, which can be renamed.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAgentsFilterArgs:
@@ -2082,13 +2032,10 @@ class GetAgentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetApplianceImagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetApplianceImagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetApplianceImagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetApplianceImagesFilterArgs:
@@ -2129,13 +2076,10 @@ class GetApplianceImagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAssetSourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAssetSourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAssetSourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAssetSourcesFilterArgs:
@@ -2176,16 +2120,13 @@ class GetAssetSourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAssetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The tag name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAssetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAssetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The tag name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAssetsFilterArgs:
@@ -2232,13 +2173,10 @@ class GetAssetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDiscoverySchedulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDiscoverySchedulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDiscoverySchedulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDiscoverySchedulesFilterArgs:
@@ -2279,13 +2217,10 @@ class GetDiscoverySchedulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetEnvironmentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetEnvironmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetEnvironmentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetEnvironmentsFilterArgs:
@@ -2326,13 +2261,10 @@ class GetEnvironmentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetInventoriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInventoriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInventoriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInventoriesFilterArgs:

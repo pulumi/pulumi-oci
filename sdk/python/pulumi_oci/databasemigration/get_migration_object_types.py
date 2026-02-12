@@ -85,6 +85,12 @@ def get_migration_object_types(connection_type: Optional[_builtins.str] = None,
                                filters: Optional[Sequence[Union['GetMigrationObjectTypesFilterArgs', 'GetMigrationObjectTypesFilterArgsDict']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMigrationObjectTypesResult:
     """
+    This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
+
+    Display sample object types to exclude or include for a Migration.
+
+    Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+
     ## Example Usage
 
     ```python
@@ -112,6 +118,12 @@ def get_migration_object_types_output(connection_type: Optional[pulumi.Input[_bu
                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMigrationObjectTypesFilterArgs', 'GetMigrationObjectTypesFilterArgsDict']]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMigrationObjectTypesResult]:
     """
+    This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
+
+    Display sample object types to exclude or include for a Migration.
+
+    Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+
     ## Example Usage
 
     ```python

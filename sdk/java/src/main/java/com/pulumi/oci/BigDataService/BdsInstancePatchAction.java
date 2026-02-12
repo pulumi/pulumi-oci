@@ -16,6 +16,13 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Bds Instance Patch Action resource in Oracle Cloud Infrastructure Big Data Service service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/bigdata/latest/BdsInstancePatchAction
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/big_data_service
+ * 
+ * Install the specified patch to this cluster.
+ * 
  * ## Example Usage
  * 
  * <pre>

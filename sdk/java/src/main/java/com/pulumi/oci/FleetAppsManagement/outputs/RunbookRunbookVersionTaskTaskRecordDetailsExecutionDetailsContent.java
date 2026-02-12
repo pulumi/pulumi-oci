@@ -17,6 +17,10 @@ public final class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsCon
      * 
      */
     private @Nullable String bucket;
+    /**
+     * @return Catalog Id having terraform package.
+     * 
+     */
     private @Nullable String catalogId;
     /**
      * @return md5 checksum of the artifact.
@@ -47,6 +51,10 @@ public final class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsCon
     public Optional<String> bucket() {
         return Optional.ofNullable(this.bucket);
     }
+    /**
+     * @return Catalog Id having terraform package.
+     * 
+     */
     public Optional<String> catalogId() {
         return Optional.ofNullable(this.catalogId);
     }

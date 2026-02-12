@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
+    /// This resource provides the Target Database resource in Oracle Cloud Infrastructure Data Safe service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/TargetDatabase
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+    /// 
+    /// Registers the specified database with Data Safe and creates a Data Safe target database in the Data Safe Console.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -102,7 +109,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Import
     /// 
-    /// TargetDatabases can be imported using the `id`, e.g.
+    /// TargetDatabases can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataSafe/targetDatabase:TargetDatabase test_target_database "id"

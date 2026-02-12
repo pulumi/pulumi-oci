@@ -414,6 +414,13 @@ class InstVbsInstance(pulumi.CustomResource):
                  resource_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/vbs_inst
+
+        Creates a new VbsInstance.
+
         ## Example Usage
 
         ```python
@@ -465,6 +472,13 @@ class InstVbsInstance(pulumi.CustomResource):
                  args: InstVbsInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/vbs_inst
+
+        Creates a new VbsInstance.
+
         ## Example Usage
 
         ```python

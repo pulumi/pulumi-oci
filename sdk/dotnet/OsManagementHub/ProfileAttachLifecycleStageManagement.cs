@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
+    /// This resource provides the Profile Attach Lifecycle Stage Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ProfileAttachLifecycleStageManagement
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+    /// 
+    /// Attaches the specified lifecycle stage to a profile.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -31,7 +38,7 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// ## Import
     /// 
-    /// ProfileAttachLifecycleStageManagement can be imported using the `id`, e.g.
+    /// ProfileAttachLifecycleStageManagement can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:OsManagementHub/profileAttachLifecycleStageManagement:ProfileAttachLifecycleStageManagement test_profile_attach_lifecycle_stage_management "id"

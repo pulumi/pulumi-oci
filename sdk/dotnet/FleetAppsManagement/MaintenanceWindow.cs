@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FleetAppsManagement
 {
     /// <summary>
+    /// This resource provides the Maintenance Window resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/MaintenanceWindow
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+    /// 
+    /// Create a maintenance window in Fleet Application Management.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -45,7 +52,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     /// 
     /// ## Import
     /// 
-    /// MaintenanceWindows can be imported using the `id`, e.g.
+    /// MaintenanceWindows can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:FleetAppsManagement/maintenanceWindow:MaintenanceWindow test_maintenance_window "id"

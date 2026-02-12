@@ -19,15 +19,10 @@ __all__ = [
     'GetSecretbundleVersionsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetSecretbundleVersionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecretbundleVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecretbundleVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecretbundleVersionsFilterArgs:

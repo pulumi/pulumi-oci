@@ -20,6 +20,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Workspace Import Request resource in Oracle Cloud Infrastructure Data Integration service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-integration/latest/WorkspaceImportRequest
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataintegration
+ * 
+ * Import Metadata Object
+ * 
  * ## Example Usage
  * 
  * <pre>

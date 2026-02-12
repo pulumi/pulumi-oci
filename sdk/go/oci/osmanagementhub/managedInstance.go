@@ -12,7 +12,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## Example Usage
+// This resource provides the Managed Instance resource in Oracle Cloud Infrastructure Os Management Hub service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ManagedInstance
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+//
+// Updates the specified managed instance information, such as description, ONS topic, and associated management station.
 //
 // ## Import
 //

@@ -15,6 +15,13 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Set Security Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/SetSecurityAssessmentBaseline
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+ * 
+ * Sets the saved security assessment as the baseline in the compartment where the the specified assessment resides. The security assessment needs to be of type &#39;SAVED&#39;.
+ * 
  * ## Example Usage
  * 
  * <pre>

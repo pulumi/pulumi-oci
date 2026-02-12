@@ -20,6 +20,71 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Esxi Host resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vmware/latest/EsxiHost
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/ocvp
+ * 
+ * Adds another ESXi host to an existing SDDC. The attributes of the specified
+ * `Sddc` determine the VMware software and other configuration settings used
+ * by the ESXi host.
+ * 
+ * Use the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/WorkRequest/) operations to track the
+ * creation of the ESXi host.
+ * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Ocvp.EsxiHost;
+ * import com.pulumi.oci.Ocvp.EsxiHostArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testEsxiHost = new EsxiHost("testEsxiHost", EsxiHostArgs.builder()
+ *             .clusterId(testCluster.id())
+ *             .billingDonorHostId(testBillingDonorHost.id())
+ *             .capacityReservationId(testCapacityReservation.id())
+ *             .computeAvailabilityDomain(esxiHostComputeAvailabilityDomain)
+ *             .currentCommitment(esxiHostCurrentCommitment)
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .displayName(esxiHostDisplayName)
+ *             .esxiSoftwareVersion(esxiHostEsxiSoftwareVersion)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .hostOcpuCount(esxiHostHostOcpuCount)
+ *             .hostShapeName(testShape.name())
+ *             .nextCommitment(esxiHostNextCommitment)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
+ * ## How to migrate from deprecated fields to new fields
+ * 
+ * 1. Before starting migration, back up your terraform state file.
+ * 2. Get the ESXi host OCID for the `oci.Ocvp.EsxiHost` resource you plan to migrate.
+ * 3. Remove the `oci.Ocvp.EsxiHost` resource from Terraform state via command: terraform state rm \&lt;resource address\&gt;
+ * 4. Update `oci.Ocvp.EsxiHost` resource config. Remove all deprecated fields and add corresponding new fields to the resource config.
+ * 5. Import `oci.Ocvp.EsxiHost` resource to Terraform state using command: terraform import \&lt;resource address\&gt; \&lt;ESXi host OCID\&gt;.
+ * 6. Run `pulumi preview` to check if there is any planned change for `oci.Ocvp.EsxiHost` resource. If there is any planned change, update `oci.Ocvp.EsxiHost` resource config until there is no planned change.
+ * 
  * ## Import
  * 
  * EsxiHosts can be imported using the `id`, e.g.
@@ -372,6 +437,8 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
         return this.nextCommitment;
     }
     /**
+     * (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `nextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
+     * 
      * @deprecated
      * The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
      * 
@@ -380,6 +447,10 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
     @Export(name="nextSku", refs={String.class}, tree="[0]")
     private Output<String> nextSku;
 
+    /**
+     * @return (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `nextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
+     * 
+     */
     public Output<String> nextSku() {
         return this.nextSku;
     }

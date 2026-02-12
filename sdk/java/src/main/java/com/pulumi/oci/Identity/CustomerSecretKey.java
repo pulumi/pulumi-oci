@@ -14,6 +14,23 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/CustomerSecretKey
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+ * 
+ * Creates a new secret key for the specified user. Secret keys are used for authentication with the Object Storage Service&#39;s Amazon S3
+ * compatible API. The secret key consists of an Access Key/Secret Key pair. For information, see
+ * [Managing User Credentials](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm).
+ * 
+ * You must specify a *description* for the secret key (although it can be an empty string). It does not
+ * have to be unique, and you can change it anytime with
+ * [UpdateCustomerSecretKey](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKeySummary/UpdateCustomerSecretKey).
+ * 
+ * Every user has permission to create a secret key for *their own user ID*. An administrator in your organization
+ * does not need to write a policy to give users this ability. To compare, administrators who have permission to the
+ * tenancy can use this operation to create a secret key for any user, including themselves.
+ * 
  * ## Example Usage
  * 
  * <pre>

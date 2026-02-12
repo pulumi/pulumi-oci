@@ -7,6 +7,11 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/management-agent/latest/ManagementAgent
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/management_agent
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -72,6 +77,18 @@ export class ManagementAgent extends pulumi.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
+    /**
+     * (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     *
+     * Management Agent resources are not created or destroyed by terraform.
+     *
+     * Management Agents should be created using on premise installation, or OCA plugin for Management Agent. See [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html).
+     *
+     * Destroy operation in terraform will not delete the Management Agent, this must be performed by steps indicated in [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html). Destroy will remove the resource from terraform state only.
+     */
     declare public readonly deployPluginsIds: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) New displayName of Agent.
@@ -272,6 +289,18 @@ export interface ManagementAgentState {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     *
+     * Management Agent resources are not created or destroyed by terraform.
+     *
+     * Management Agents should be created using on premise installation, or OCA plugin for Management Agent. See [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html).
+     *
+     * Destroy operation in terraform will not delete the Management Agent, this must be performed by steps indicated in [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html). Destroy will remove the resource from terraform state only.
+     */
     deployPluginsIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) New displayName of Agent.
@@ -376,6 +405,18 @@ export interface ManagementAgentArgs {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     *
+     * Management Agent resources are not created or destroyed by terraform.
+     *
+     * Management Agents should be created using on premise installation, or OCA plugin for Management Agent. See [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html).
+     *
+     * Destroy operation in terraform will not delete the Management Agent, this must be performed by steps indicated in [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html). Destroy will remove the resource from terraform state only.
+     */
     deployPluginsIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) New displayName of Agent.

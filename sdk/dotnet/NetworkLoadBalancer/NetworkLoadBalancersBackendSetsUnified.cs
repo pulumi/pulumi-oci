@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkLoadBalancer
 {
     /// <summary>
+    /// This resource provides the Network Load Balancers Backend Sets Unified resource in Oracle Cloud Infrastructure Network Load Balancer service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/latest/NetworkLoadBalancersBackendSetsUnified
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_load_balancer
+    /// 
+    /// Adds a backend set to a network load balancer.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -73,7 +80,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     /// 
     /// ## Import
     /// 
-    /// NetworkLoadBalancersBackendSetsUnified can be imported using the `id`, e.g.
+    /// NetworkLoadBalancersBackendSetsUnified can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified test_network_load_balancers_backend_sets_unified "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"

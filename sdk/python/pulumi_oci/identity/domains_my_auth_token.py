@@ -976,6 +976,13 @@ class DomainsMyAuthToken(pulumi.CustomResource):
                  user: Optional[pulumi.Input[Union['DomainsMyAuthTokenUserArgs', 'DomainsMyAuthTokenUserArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the My Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/MyAuthToken
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a user's own Auth token.
+
         ## Example Usage
 
         ```python
@@ -1103,6 +1110,13 @@ class DomainsMyAuthToken(pulumi.CustomResource):
                  args: DomainsMyAuthTokenArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the My Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/MyAuthToken
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a user's own Auth token.
+
         ## Example Usage
 
         ```python

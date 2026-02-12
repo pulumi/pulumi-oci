@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudBridge
 {
     /// <summary>
+    /// This resource provides the Agent resource in Oracle Cloud Infrastructure Cloud Bridge service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/OCB/latest/Agent
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudBridge
+    /// 
+    /// Creates an Agent.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -43,7 +50,7 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// ## Import
     /// 
-    /// Agents can be imported using the `id`, e.g.
+    /// Agents can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:CloudBridge/agent:Agent test_agent "id"

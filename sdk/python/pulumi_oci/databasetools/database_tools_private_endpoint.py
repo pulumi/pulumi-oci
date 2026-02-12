@@ -577,6 +577,13 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-tools/latest/DatabaseToolsPrivateEndpoint
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databaseTools
+
+        Creates a new Database Tools private endpoint.
+
         ## Example Usage
 
         ```python
@@ -639,6 +646,13 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
                  args: DatabaseToolsPrivateEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-tools/latest/DatabaseToolsPrivateEndpoint
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databaseTools
+
+        Creates a new Database Tools private endpoint.
+
         ## Example Usage
 
         ```python

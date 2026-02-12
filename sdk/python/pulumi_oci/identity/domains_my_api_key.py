@@ -922,6 +922,13 @@ class DomainsMyApiKey(pulumi.CustomResource):
                  user: Optional[pulumi.Input[Union['DomainsMyApiKeyUserArgs', 'DomainsMyApiKeyUserArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/MyApiKey
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Add a user's own API key.
+
         ## Example Usage
 
         ```python
@@ -1033,6 +1040,13 @@ class DomainsMyApiKey(pulumi.CustomResource):
                  args: DomainsMyApiKeyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/MyApiKey
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Add a user's own API key.
+
         ## Example Usage
 
         ```python

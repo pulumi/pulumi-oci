@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataIntegration
 {
     /// <summary>
+    /// This resource provides the Workspace Folder resource in Oracle Cloud Infrastructure Data Integration service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-integration/latest/WorkspaceFolder
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataintegration
+    /// 
+    /// Creates a folder in a project or in another folder, limited to two levels of folders. |
+    /// Folders are used to organize your design-time resources, such as tasks or data flows.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -45,7 +53,7 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// ## Import
     /// 
-    /// WorkspaceFolders can be imported using the `id`, e.g.
+    /// WorkspaceFolders can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataIntegration/workspaceFolder:WorkspaceFolder test_workspace_folder "workspaces/{workspaceId}/folders/{folderKey}"

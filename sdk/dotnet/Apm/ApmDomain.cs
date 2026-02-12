@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Apm
 {
     /// <summary>
+    /// This resource provides the Apm Domain resource in Oracle Cloud Infrastructure Application Performance Monitoring service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/apm-control-plane/latest/ApmDomain
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/apm
+    /// 
+    /// Creates a new APM domain.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,7 +48,7 @@ namespace Pulumi.Oci.Apm
     /// 
     /// ## Import
     /// 
-    /// ApmDomains can be imported using the `id`, e.g.
+    /// ApmDomains can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Apm/apmDomain:ApmDomain test_apm_domain "id"

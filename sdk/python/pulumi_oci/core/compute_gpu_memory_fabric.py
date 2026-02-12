@@ -511,7 +511,13 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
                  memory_fabric_preferences: Optional[pulumi.Input[Union['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs', 'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict']]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Compute Gpu Memory Fabric resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/ComputeGpuMemoryFabric
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Customer can update displayName, tags and  desired firmware bundle, recycle level for
+        compute GPU memory fabric record
 
         ## Import
 
@@ -537,7 +543,13 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
                  args: ComputeGpuMemoryFabricArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Compute Gpu Memory Fabric resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/ComputeGpuMemoryFabric
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Customer can update displayName, tags and  desired firmware bundle, recycle level for
+        compute GPU memory fabric record
 
         ## Import
 

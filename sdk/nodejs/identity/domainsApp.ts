@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the App resource in Oracle Cloud Infrastructure Identity Domains service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/App
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+ *
+ * Create an App
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -915,6 +922,9 @@ export class DomainsApp extends pulumi.CustomResource {
      * * uniqueness: none
      */
     declare public readonly errorPageUrl: pulumi.Output<string>;
+    /**
+     * (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+     */
     declare public readonly forceDelete: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
@@ -2718,6 +2728,9 @@ export interface DomainsAppState {
      * * uniqueness: none
      */
     errorPageUrl?: pulumi.Input<string>;
+    /**
+     * (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+     */
     forceDelete?: pulumi.Input<boolean>;
     /**
      * (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
@@ -4114,6 +4127,9 @@ export interface DomainsAppArgs {
      * * uniqueness: none
      */
     errorPageUrl?: pulumi.Input<string>;
+    /**
+     * (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+     */
     forceDelete?: pulumi.Input<boolean>;
     /**
      * (Updatable) Home Page URL

@@ -378,7 +378,12 @@ class CloudAsmInstance(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Cloud Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/CloudAsmInstance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+
+        Updates the cloud ASM instance specified by `cloudAsmInstanceId`.
 
         ## Import
 
@@ -405,7 +410,12 @@ class CloudAsmInstance(pulumi.CustomResource):
                  args: CloudAsmInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Cloud Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/CloudAsmInstance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+
+        Updates the cloud ASM instance specified by `cloudAsmInstanceId`.
 
         ## Import
 

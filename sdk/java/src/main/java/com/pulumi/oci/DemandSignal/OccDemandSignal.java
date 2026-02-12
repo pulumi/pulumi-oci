@@ -20,6 +20,15 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Occ Demand Signal resource in Oracle Cloud Infrastructure Demand Signal service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/occds/latest/OccDemandSignal
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/demand_signal
+ * 
+ * Creates a OccDemandSignal.
+ * 
+ *   Updates the data of an OccDemandSignal.
+ * 
  * ## Example Usage
  * 
  * <pre>

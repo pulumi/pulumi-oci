@@ -29,20 +29,15 @@ __all__ = [
     'GetAnalyticsInstancesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class AnalyticsInstanceCapacityArgsDict(TypedDict):
-        capacity_type: pulumi.Input[_builtins.str]
-        """
-        The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
-        """
-        capacity_value: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
-        """
-elif False:
-    AnalyticsInstanceCapacityArgsDict: TypeAlias = Mapping[str, Any]
+class AnalyticsInstanceCapacityArgsDict(TypedDict):
+    capacity_type: pulumi.Input[_builtins.str]
+    """
+    The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
+    """
+    capacity_value: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+    """
 
 @pulumi.input_type
 class AnalyticsInstanceCapacityArgs:
@@ -81,38 +76,35 @@ class AnalyticsInstanceCapacityArgs:
         pulumi.set(self, "capacity_value", value)
 
 
-if not MYPY:
-    class AnalyticsInstanceNetworkEndpointDetailsArgsDict(TypedDict):
-        network_endpoint_type: pulumi.Input[_builtins.str]
-        """
-        The type of network endpoint.
-        """
-        network_security_group_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Network Security Group OCIDs for an Analytics instance.
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The subnet OCID for the private endpoint.
-        """
-        vcn_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The VCN OCID for the private endpoint.
-        """
-        whitelisted_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Source IP addresses or IP address ranges in ingress rules.
-        """
-        whitelisted_services: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Oracle Cloud Services that are allowed to access this Analytics instance.
-        """
-        whitelisted_vcns: NotRequired[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgsDict']]]]
-        """
-        Virtual Cloud Networks allowed to access this network endpoint.
-        """
-elif False:
-    AnalyticsInstanceNetworkEndpointDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class AnalyticsInstanceNetworkEndpointDetailsArgsDict(TypedDict):
+    network_endpoint_type: pulumi.Input[_builtins.str]
+    """
+    The type of network endpoint.
+    """
+    network_security_group_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Network Security Group OCIDs for an Analytics instance.
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The subnet OCID for the private endpoint.
+    """
+    vcn_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The VCN OCID for the private endpoint.
+    """
+    whitelisted_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Source IP addresses or IP address ranges in ingress rules.
+    """
+    whitelisted_services: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Oracle Cloud Services that are allowed to access this Analytics instance.
+    """
+    whitelisted_vcns: NotRequired[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgsDict']]]]
+    """
+    Virtual Cloud Networks allowed to access this network endpoint.
+    """
 
 @pulumi.input_type
 class AnalyticsInstanceNetworkEndpointDetailsArgs:
@@ -232,18 +224,15 @@ class AnalyticsInstanceNetworkEndpointDetailsArgs:
         pulumi.set(self, "whitelisted_vcns", value)
 
 
-if not MYPY:
-    class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgsDict(TypedDict):
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Virtual Cloud Network OCID.
-        """
-        whitelisted_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Source IP addresses or IP address ranges in ingress rules.
-        """
-elif False:
-    AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgsDict: TypeAlias = Mapping[str, Any]
+class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Virtual Cloud Network OCID.
+    """
+    whitelisted_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Source IP addresses or IP address ranges in ingress rules.
+    """
 
 @pulumi.input_type
 class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs:
@@ -284,18 +273,15 @@ class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs:
         pulumi.set(self, "whitelisted_ips", value)
 
 
-if not MYPY:
-    class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgsDict(TypedDict):
-        dns_zone: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Description of private source dns zone.
-        """
-elif False:
-    AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgsDict: TypeAlias = Mapping[str, Any]
+class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgsDict(TypedDict):
+    dns_zone: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Description of private source dns zone.
+    """
 
 @pulumi.input_type
 class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs:
@@ -335,22 +321,19 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs:
         pulumi.set(self, "description", value)
 
 
-if not MYPY:
-    class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgsDict(TypedDict):
-        scan_hostname: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
-        """
-        scan_port: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Description of private source scan host zone.
-        """
-elif False:
-    AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgsDict: TypeAlias = Mapping[str, Any]
+class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgsDict(TypedDict):
+    scan_hostname: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+    """
+    scan_port: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Description of private source scan host zone.
+    """
 
 @pulumi.input_type
 class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs:
@@ -405,16 +388,13 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs:
         pulumi.set(self, "description", value)
 
 
-if not MYPY:
-    class GetAnalyticsInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the given name exactly.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAnalyticsInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAnalyticsInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the given name exactly.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAnalyticsInstancesFilterArgs:

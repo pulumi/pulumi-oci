@@ -7,7 +7,12 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * ## Example Usage
+ * This resource provides the Scheduled Query resource in Oracle Cloud Infrastructure Apm Traces service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/latest/ScheduledQuery
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/apm/apm_traces
+ *
+ * Create a scheduled query in the APM Domain.
  *
  * ## Import
  *

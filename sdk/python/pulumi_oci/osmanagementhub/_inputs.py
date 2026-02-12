@@ -211,72 +211,67 @@ __all__ = [
     'GetWindowsUpdatesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class EventDataArgsDict(TypedDict):
-        additional_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['EventDataAdditionalDetailArgsDict']]]]
-        """
-        Provides additional information for the work request associated with an event.
-        """
-        attempted_resolutions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The actions used to attempt fixing the error.
-        """
-        contents: NotRequired[pulumi.Input[Sequence[pulumi.Input['EventDataContentArgsDict']]]]
-        """
-        Provides information collected for the exploit attempt event.
-        """
-        error_cause: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The commands executed by the agent that caused the error.
-        """
-        error_log: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The output log of the error.
-        """
-        event_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of times the event has occurred.
-        """
-        event_fingerprint: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Fingerprint of the event.
-        """
-        health_state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Health state of the management station
-        """
-        operation_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of management station operation.
-        """
-        reason: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Reason for the event.
-        """
-        reboot_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Reboot status for the current event
-        """
-        resolution_log: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The log output after the resolutions.
-        """
-        resolution_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates if the event succeeded.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Status of the management station operation.
-        """
-        time_first_occurred: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time that the event first occurred.
-        """
-elif False:
-    EventDataArgsDict: TypeAlias = Mapping[str, Any]
+class EventDataArgsDict(TypedDict):
+    additional_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['EventDataAdditionalDetailArgsDict']]]]
+    """
+    Provides additional information for the work request associated with an event.
+    """
+    attempted_resolutions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The actions used to attempt fixing the error.
+    """
+    contents: NotRequired[pulumi.Input[Sequence[pulumi.Input['EventDataContentArgsDict']]]]
+    """
+    Provides information collected for the exploit attempt event.
+    """
+    error_cause: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The commands executed by the agent that caused the error.
+    """
+    error_log: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The output log of the error.
+    """
+    event_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of times the event has occurred.
+    """
+    event_fingerprint: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Fingerprint of the event.
+    """
+    health_state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Health state of the management station
+    """
+    operation_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of management station operation.
+    """
+    reason: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Reason for the event.
+    """
+    reboot_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Reboot status for the current event
+    """
+    resolution_log: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The log output after the resolutions.
+    """
+    resolution_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates if the event succeeded.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Status of the management station operation.
+    """
+    time_first_occurred: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time that the event first occurred.
+    """
 
 @pulumi.input_type
 class EventDataArgs:
@@ -525,26 +520,23 @@ class EventDataArgs:
         pulumi.set(self, "time_first_occurred", value)
 
 
-if not MYPY:
-    class EventDataAdditionalDetailArgsDict(TypedDict):
-        exploit_cves: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of CVEs in the exploit.
-        """
-        initiator_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that triggered the event, such as scheduled job id.
-        """
-        vmcores: NotRequired[pulumi.Input[Sequence[pulumi.Input['EventDataAdditionalDetailVmcoreArgsDict']]]]
-        """
-        Kernel event vmcore details
-        """
-        work_request_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of all work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the event.
-        """
-elif False:
-    EventDataAdditionalDetailArgsDict: TypeAlias = Mapping[str, Any]
+class EventDataAdditionalDetailArgsDict(TypedDict):
+    exploit_cves: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of CVEs in the exploit.
+    """
+    initiator_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that triggered the event, such as scheduled job id.
+    """
+    vmcores: NotRequired[pulumi.Input[Sequence[pulumi.Input['EventDataAdditionalDetailVmcoreArgsDict']]]]
+    """
+    Kernel event vmcore details
+    """
+    work_request_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of all work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the event.
+    """
 
 @pulumi.input_type
 class EventDataAdditionalDetailArgs:
@@ -617,18 +609,15 @@ class EventDataAdditionalDetailArgs:
         pulumi.set(self, "work_request_ids", value)
 
 
-if not MYPY:
-    class EventDataAdditionalDetailVmcoreArgsDict(TypedDict):
-        backtrace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Kernel vmcore backtrace.
-        """
-        component: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Kernel vmcore component.
-        """
-elif False:
-    EventDataAdditionalDetailVmcoreArgsDict: TypeAlias = Mapping[str, Any]
+class EventDataAdditionalDetailVmcoreArgsDict(TypedDict):
+    backtrace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Kernel vmcore backtrace.
+    """
+    component: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Kernel vmcore component.
+    """
 
 @pulumi.input_type
 class EventDataAdditionalDetailVmcoreArgs:
@@ -669,49 +658,46 @@ class EventDataAdditionalDetailVmcoreArgs:
         pulumi.set(self, "component", value)
 
 
-if not MYPY:
-    class EventDataContentArgsDict(TypedDict):
-        content_availability: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Crash content availability status:
-        * 'NOT_AVAILABLE' indicates the content is not available on the instance nor in the service
-        * 'AVAILABLE_ON_INSTANCE' indicates the content is only available on the instance.
-        * 'AVAILABLE_ON_SERVICE' indicates the content is only available on the service.
-        * 'AVAILABLE_ON_INSTANCE_AND_SERVICE' indicates the content is available both on the instance and the service
-        * 'AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS' indicates the content is available on the instance and its upload to the service is in progress.
-        """
-        content_location: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Location of the Kernel event content.
-        """
-        exploit_detection_log_content: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The content of the exploit detection log.
-        """
-        exploit_object_store_location: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The location of the exploit detection log within object storage.
-        """
-        size: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Size of the event content.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Event type:
-        * `KERNEL_OOPS` - Used to identify a kernel panic condition event
-        * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
-        * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
-        * `SOFTWARE_UPDATE` - Software updates - Packages
-        * `KSPLICE_UPDATE` - Ksplice updates
-        * `SOFTWARE_SOURCE` - Software source
-        * `AGENT` - Agent
-        * `MANAGEMENT_STATION` - Management Station
-        * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
-        * `REBOOT` - Reboot
-        """
-elif False:
-    EventDataContentArgsDict: TypeAlias = Mapping[str, Any]
+class EventDataContentArgsDict(TypedDict):
+    content_availability: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Crash content availability status:
+    * 'NOT_AVAILABLE' indicates the content is not available on the instance nor in the service
+    * 'AVAILABLE_ON_INSTANCE' indicates the content is only available on the instance.
+    * 'AVAILABLE_ON_SERVICE' indicates the content is only available on the service.
+    * 'AVAILABLE_ON_INSTANCE_AND_SERVICE' indicates the content is available both on the instance and the service
+    * 'AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS' indicates the content is available on the instance and its upload to the service is in progress.
+    """
+    content_location: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Location of the Kernel event content.
+    """
+    exploit_detection_log_content: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The content of the exploit detection log.
+    """
+    exploit_object_store_location: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The location of the exploit detection log within object storage.
+    """
+    size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Size of the event content.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Event type:
+    * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+    * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+    * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+    * `SOFTWARE_UPDATE` - Software updates - Packages
+    * `KSPLICE_UPDATE` - Ksplice updates
+    * `SOFTWARE_SOURCE` - Software source
+    * `AGENT` - Agent
+    * `MANAGEMENT_STATION` - Management Station
+    * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+    * `REBOOT` - Reboot
+    """
 
 @pulumi.input_type
 class EventDataContentArgs:
@@ -846,38 +832,35 @@ class EventDataContentArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class EventSystemDetailArgsDict(TypedDict):
-        architecture: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Architecture type.
-        """
-        ksplice_effective_kernel_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Version of the Ksplice effective kernel.
-        """
-        os_family: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Operating system type.
-        """
-        os_kernel_release: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Release of the kernel.
-        """
-        os_kernel_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Version of the kernel.
-        """
-        os_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the operating system.
-        """
-        os_system_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Version of the operating system.
-        """
-elif False:
-    EventSystemDetailArgsDict: TypeAlias = Mapping[str, Any]
+class EventSystemDetailArgsDict(TypedDict):
+    architecture: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Architecture type.
+    """
+    ksplice_effective_kernel_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Version of the Ksplice effective kernel.
+    """
+    os_family: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Operating system type.
+    """
+    os_kernel_release: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Release of the kernel.
+    """
+    os_kernel_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Version of the kernel.
+    """
+    os_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the operating system.
+    """
+    os_system_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Version of the operating system.
+    """
 
 @pulumi.input_type
 class EventSystemDetailArgs:
@@ -998,18 +981,15 @@ class EventSystemDetailArgs:
         pulumi.set(self, "os_system_version", value)
 
 
-if not MYPY:
-    class LifecycleEnvironmentManagedInstanceIdArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-        """
-elif False:
-    LifecycleEnvironmentManagedInstanceIdArgsDict: TypeAlias = Mapping[str, Any]
+class LifecycleEnvironmentManagedInstanceIdArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+    """
 
 @pulumi.input_type
 class LifecycleEnvironmentManagedInstanceIdArgs:
@@ -1050,82 +1030,79 @@ class LifecycleEnvironmentManagedInstanceIdArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class LifecycleEnvironmentStageArgsDict(TypedDict):
-        display_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
-        """
-        rank: pulumi.Input[_builtins.int]
-        """
-        User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
-        """
-        arch_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The CPU architecture of the managed instances in the lifecycle environment.
-        """
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
-        """
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-        """
-        lifecycle_environment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
-        """
-        location: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
-        """
-        managed_instance_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageManagedInstanceIdArgsDict']]]]
-        """
-        The list of managed instances associated with the lifecycle stage.
-        """
-        os_family: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The operating system of the managed instances in the lifecycle environment.
-        """
-        software_source_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageSoftwareSourceIdArgsDict']]]]
-        """
-        Provides identifying information for the specified software source.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the lifecycle environment.
-        """
-        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-        """
-        time_modified: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-        """
-        vendor_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The vendor of the operating system used by the managed instances in the lifecycle environment.
+class LifecycleEnvironmentStageArgsDict(TypedDict):
+    display_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+    """
+    rank: pulumi.Input[_builtins.int]
+    """
+    User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
+    """
+    arch_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The CPU architecture of the managed instances in the lifecycle environment.
+    """
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+    """
+    lifecycle_environment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
+    """
+    location: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
+    """
+    managed_instance_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageManagedInstanceIdArgsDict']]]]
+    """
+    The list of managed instances associated with the lifecycle stage.
+    """
+    os_family: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The operating system of the managed instances in the lifecycle environment.
+    """
+    software_source_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageSoftwareSourceIdArgsDict']]]]
+    """
+    Provides identifying information for the specified software source.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the lifecycle environment.
+    """
+    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+    """
+    time_modified: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+    """
+    vendor_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The vendor of the operating system used by the managed instances in the lifecycle environment.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    LifecycleEnvironmentStageArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class LifecycleEnvironmentStageArgs:
@@ -1412,18 +1389,15 @@ class LifecycleEnvironmentStageArgs:
         pulumi.set(self, "vendor_name", value)
 
 
-if not MYPY:
-    class LifecycleEnvironmentStageManagedInstanceIdArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-        """
-elif False:
-    LifecycleEnvironmentStageManagedInstanceIdArgsDict: TypeAlias = Mapping[str, Any]
+class LifecycleEnvironmentStageManagedInstanceIdArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+    """
 
 @pulumi.input_type
 class LifecycleEnvironmentStageManagedInstanceIdArgs:
@@ -1464,30 +1438,27 @@ class LifecycleEnvironmentStageManagedInstanceIdArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class LifecycleEnvironmentStageSoftwareSourceIdArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-        """
-        is_mandatory_for_autonomous_linux: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
-        """
-        software_source_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the software source.
-        """
-elif False:
-    LifecycleEnvironmentStageSoftwareSourceIdArgsDict: TypeAlias = Mapping[str, Any]
+class LifecycleEnvironmentStageSoftwareSourceIdArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+    """
+    is_mandatory_for_autonomous_linux: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+    """
+    software_source_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the software source.
+    """
 
 @pulumi.input_type
 class LifecycleEnvironmentStageSoftwareSourceIdArgs:
@@ -1576,18 +1547,15 @@ class LifecycleEnvironmentStageSoftwareSourceIdArgs:
         pulumi.set(self, "software_source_type", value)
 
 
-if not MYPY:
-    class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgsDict(TypedDict):
-        managed_instances: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        The list of managed instance OCIDs to be attached/detached.
-        """
-        work_request_details: NotRequired[pulumi.Input['LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict']]
-        """
-        Provides the name and description of the job.
-        """
-elif False:
-    LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgsDict(TypedDict):
+    managed_instances: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    The list of managed instance OCIDs to be attached/detached.
+    """
+    work_request_details: NotRequired[pulumi.Input['LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict']]
+    """
+    Provides the name and description of the job.
+    """
 
 @pulumi.input_type
 class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs:
@@ -1627,22 +1595,19 @@ class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs:
         pulumi.set(self, "work_request_details", value)
 
 
-if not MYPY:
-    class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User-specified information about the job. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs:
@@ -1691,18 +1656,15 @@ class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRe
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgsDict(TypedDict):
-        managed_instances: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        The list of managed instance OCIDs to be attached/detached.
-        """
-        work_request_details: NotRequired[pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict']]
-        """
-        Provides the name and description of the job.
-        """
-elif False:
-    LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgsDict(TypedDict):
+    managed_instances: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    The list of managed instance OCIDs to be attached/detached.
+    """
+    work_request_details: NotRequired[pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict']]
+    """
+    Provides the name and description of the job.
+    """
 
 @pulumi.input_type
 class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs:
@@ -1742,22 +1704,19 @@ class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs:
         pulumi.set(self, "work_request_details", value)
 
 
-if not MYPY:
-    class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User-specified information about the job. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs:
@@ -1806,22 +1765,19 @@ class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRe
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User-specified information about the job. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+class LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs:
@@ -1870,22 +1826,19 @@ class LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class LifecycleStageRebootManagementWorkRequestDetailsArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User-specified information about the job. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+class LifecycleStageRebootManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    LifecycleStageRebootManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class LifecycleStageRebootManagementWorkRequestDetailsArgs:
@@ -1934,18 +1887,15 @@ class LifecycleStageRebootManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class ManagedInstanceAutonomousSettingsArgsDict(TypedDict):
-        is_data_collection_authorized: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether Autonomous Linux will collect crash files.
-        """
-        scheduled_job_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
-        """
-elif False:
-    ManagedInstanceAutonomousSettingsArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedInstanceAutonomousSettingsArgsDict(TypedDict):
+    is_data_collection_authorized: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether Autonomous Linux will collect crash files.
+    """
+    scheduled_job_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+    """
 
 @pulumi.input_type
 class ManagedInstanceAutonomousSettingsArgs:
@@ -1986,22 +1936,19 @@ class ManagedInstanceAutonomousSettingsArgs:
         pulumi.set(self, "scheduled_job_id", value)
 
 
-if not MYPY:
-    class ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User-specified information about the job. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+class ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs:
@@ -2050,22 +1997,19 @@ class ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User-specified information about the job. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+class ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgs:
@@ -2114,18 +2058,15 @@ class ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class ManagedInstanceGroupAutonomousSettingsArgsDict(TypedDict):
-        is_data_collection_authorized: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether Autonomous Linux will collect crash files.
-        """
-        scheduled_job_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
-        """
-elif False:
-    ManagedInstanceGroupAutonomousSettingsArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedInstanceGroupAutonomousSettingsArgsDict(TypedDict):
+    is_data_collection_authorized: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether Autonomous Linux will collect crash files.
+    """
+    scheduled_job_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+    """
 
 @pulumi.input_type
 class ManagedInstanceGroupAutonomousSettingsArgs:
@@ -2166,22 +2107,19 @@ class ManagedInstanceGroupAutonomousSettingsArgs:
         pulumi.set(self, "scheduled_job_id", value)
 
 
-if not MYPY:
-    class ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User-specified information about the job. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+class ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs:
@@ -2230,22 +2168,19 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User-specified information about the job. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+class ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs:
@@ -2294,22 +2229,19 @@ class ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User-specified information about the job. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+class ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs:
@@ -2358,22 +2290,19 @@ class ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class ManagedInstanceGroupManageModuleStreamsManagementDisableArgsDict(TypedDict):
-        module_name: pulumi.Input[_builtins.str]
-        """
-        The name of a module.
-        """
-        stream_name: pulumi.Input[_builtins.str]
-        """
-        The name of a stream of the specified module.
-        """
-        software_source_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
-        """
-elif False:
-    ManagedInstanceGroupManageModuleStreamsManagementDisableArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedInstanceGroupManageModuleStreamsManagementDisableArgsDict(TypedDict):
+    module_name: pulumi.Input[_builtins.str]
+    """
+    The name of a module.
+    """
+    stream_name: pulumi.Input[_builtins.str]
+    """
+    The name of a stream of the specified module.
+    """
+    software_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+    """
 
 @pulumi.input_type
 class ManagedInstanceGroupManageModuleStreamsManagementDisableArgs:
@@ -2428,22 +2357,19 @@ class ManagedInstanceGroupManageModuleStreamsManagementDisableArgs:
         pulumi.set(self, "software_source_id", value)
 
 
-if not MYPY:
-    class ManagedInstanceGroupManageModuleStreamsManagementEnableArgsDict(TypedDict):
-        module_name: pulumi.Input[_builtins.str]
-        """
-        The name of a module.
-        """
-        stream_name: pulumi.Input[_builtins.str]
-        """
-        The name of a stream of the specified module.
-        """
-        software_source_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
-        """
-elif False:
-    ManagedInstanceGroupManageModuleStreamsManagementEnableArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedInstanceGroupManageModuleStreamsManagementEnableArgsDict(TypedDict):
+    module_name: pulumi.Input[_builtins.str]
+    """
+    The name of a module.
+    """
+    stream_name: pulumi.Input[_builtins.str]
+    """
+    The name of a stream of the specified module.
+    """
+    software_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+    """
 
 @pulumi.input_type
 class ManagedInstanceGroupManageModuleStreamsManagementEnableArgs:
@@ -2498,26 +2424,23 @@ class ManagedInstanceGroupManageModuleStreamsManagementEnableArgs:
         pulumi.set(self, "software_source_id", value)
 
 
-if not MYPY:
-    class ManagedInstanceGroupManageModuleStreamsManagementInstallArgsDict(TypedDict):
-        module_name: pulumi.Input[_builtins.str]
-        """
-        The name of a module.
-        """
-        profile_name: pulumi.Input[_builtins.str]
-        """
-        The name of a profile of the specified module stream.
-        """
-        stream_name: pulumi.Input[_builtins.str]
-        """
-        The name of a stream of the specified module.
-        """
-        software_source_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
-        """
-elif False:
-    ManagedInstanceGroupManageModuleStreamsManagementInstallArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedInstanceGroupManageModuleStreamsManagementInstallArgsDict(TypedDict):
+    module_name: pulumi.Input[_builtins.str]
+    """
+    The name of a module.
+    """
+    profile_name: pulumi.Input[_builtins.str]
+    """
+    The name of a profile of the specified module stream.
+    """
+    stream_name: pulumi.Input[_builtins.str]
+    """
+    The name of a stream of the specified module.
+    """
+    software_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+    """
 
 @pulumi.input_type
 class ManagedInstanceGroupManageModuleStreamsManagementInstallArgs:
@@ -2587,26 +2510,23 @@ class ManagedInstanceGroupManageModuleStreamsManagementInstallArgs:
         pulumi.set(self, "software_source_id", value)
 
 
-if not MYPY:
-    class ManagedInstanceGroupManageModuleStreamsManagementRemoveArgsDict(TypedDict):
-        module_name: pulumi.Input[_builtins.str]
-        """
-        The name of a module.
-        """
-        profile_name: pulumi.Input[_builtins.str]
-        """
-        The name of a profile of the specified module stream.
-        """
-        stream_name: pulumi.Input[_builtins.str]
-        """
-        The name of a stream of the specified module.
-        """
-        software_source_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
-        """
-elif False:
-    ManagedInstanceGroupManageModuleStreamsManagementRemoveArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedInstanceGroupManageModuleStreamsManagementRemoveArgsDict(TypedDict):
+    module_name: pulumi.Input[_builtins.str]
+    """
+    The name of a module.
+    """
+    profile_name: pulumi.Input[_builtins.str]
+    """
+    The name of a profile of the specified module stream.
+    """
+    stream_name: pulumi.Input[_builtins.str]
+    """
+    The name of a stream of the specified module.
+    """
+    software_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+    """
 
 @pulumi.input_type
 class ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs:
@@ -2676,22 +2596,19 @@ class ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs:
         pulumi.set(self, "software_source_id", value)
 
 
-if not MYPY:
-    class ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User-specified information about the job. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+class ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs:
@@ -2740,22 +2657,19 @@ class ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class ManagedInstanceGroupRebootManagementWorkRequestDetailsArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User-specified information about the job. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+class ManagedInstanceGroupRebootManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ManagedInstanceGroupRebootManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs:
@@ -2804,22 +2718,19 @@ class ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User-specified information about the job. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+class ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs:
@@ -2868,30 +2779,27 @@ class ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class ManagedInstanceGroupSoftwareSourceArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-        """
-        is_mandatory_for_autonomous_linux: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
-        """
-        software_source_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the software source.
-        """
-elif False:
-    ManagedInstanceGroupSoftwareSourceArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedInstanceGroupSoftwareSourceArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+    """
+    is_mandatory_for_autonomous_linux: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+    """
+    software_source_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the software source.
+    """
 
 @pulumi.input_type
 class ManagedInstanceGroupSoftwareSourceArgs:
@@ -2980,22 +2888,19 @@ class ManagedInstanceGroupSoftwareSourceArgs:
         pulumi.set(self, "software_source_type", value)
 
 
-if not MYPY:
-    class ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User-specified information about the job. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+class ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs:
@@ -3044,22 +2949,19 @@ class ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User-specified information about the job. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+class ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs:
@@ -3108,18 +3010,15 @@ class ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class ManagedInstanceLifecycleEnvironmentArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Software source name.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-        """
-elif False:
-    ManagedInstanceLifecycleEnvironmentArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedInstanceLifecycleEnvironmentArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Software source name.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+    """
 
 @pulumi.input_type
 class ManagedInstanceLifecycleEnvironmentArgs:
@@ -3160,18 +3059,15 @@ class ManagedInstanceLifecycleEnvironmentArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class ManagedInstanceLifecycleStageArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Software source name.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-        """
-elif False:
-    ManagedInstanceLifecycleStageArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedInstanceLifecycleStageArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Software source name.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+    """
 
 @pulumi.input_type
 class ManagedInstanceLifecycleStageArgs:
@@ -3212,18 +3108,15 @@ class ManagedInstanceLifecycleStageArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class ManagedInstanceManagedInstanceGroupArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Software source name.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-        """
-elif False:
-    ManagedInstanceManagedInstanceGroupArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedInstanceManagedInstanceGroupArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Software source name.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+    """
 
 @pulumi.input_type
 class ManagedInstanceManagedInstanceGroupArgs:
@@ -3264,22 +3157,19 @@ class ManagedInstanceManagedInstanceGroupArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class ManagedInstanceRebootManagementWorkRequestDetailsArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User-specified information about the job. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+class ManagedInstanceRebootManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ManagedInstanceRebootManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ManagedInstanceRebootManagementWorkRequestDetailsArgs:
@@ -3328,30 +3218,27 @@ class ManagedInstanceRebootManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class ManagedInstanceSoftwareSourceArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Software source name.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-        """
-        is_mandatory_for_autonomous_linux: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
-        """
-        software_source_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the software source.
-        """
-elif False:
-    ManagedInstanceSoftwareSourceArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedInstanceSoftwareSourceArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Software source name.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+    """
+    is_mandatory_for_autonomous_linux: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+    """
+    software_source_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the software source.
+    """
 
 @pulumi.input_type
 class ManagedInstanceSoftwareSourceArgs:
@@ -3440,22 +3327,19 @@ class ManagedInstanceSoftwareSourceArgs:
         pulumi.set(self, "software_source_type", value)
 
 
-if not MYPY:
-    class ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User-specified information about the job. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+class ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs:
@@ -3504,22 +3388,19 @@ class ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User-specified information about the job. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+class ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs:
@@ -3568,18 +3449,15 @@ class ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class ManagementStationHealthArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) User-specified description of the management station. Avoid entering confidential information.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the management station.
-        """
-elif False:
-    ManagementStationHealthArgsDict: TypeAlias = Mapping[str, Any]
+class ManagementStationHealthArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) User-specified description of the management station. Avoid entering confidential information.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the management station.
+    """
 
 @pulumi.input_type
 class ManagementStationHealthArgs:
@@ -3620,30 +3498,27 @@ class ManagementStationHealthArgs:
         pulumi.set(self, "state", value)
 
 
-if not MYPY:
-    class ManagementStationMirrorArgsDict(TypedDict):
-        directory: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Path to the data volume on the management station where software source mirrors are stored.
-        """
-        port: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Default mirror listening port for http.
-        """
-        sslport: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Default mirror listening port for https.
-        """
-        is_sslverify_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
-        """
-        sslcert: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Path to the SSL cerfificate.
-        """
-elif False:
-    ManagementStationMirrorArgsDict: TypeAlias = Mapping[str, Any]
+class ManagementStationMirrorArgsDict(TypedDict):
+    directory: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Path to the data volume on the management station where software source mirrors are stored.
+    """
+    port: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Default mirror listening port for http.
+    """
+    sslport: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Default mirror listening port for https.
+    """
+    is_sslverify_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+    """
+    sslcert: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Path to the SSL cerfificate.
+    """
 
 @pulumi.input_type
 class ManagementStationMirrorArgs:
@@ -3729,30 +3604,27 @@ class ManagementStationMirrorArgs:
         pulumi.set(self, "sslcert", value)
 
 
-if not MYPY:
-    class ManagementStationMirrorSyncStatusArgsDict(TypedDict):
-        failed: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Total number of software sources that failed to sync.
-        """
-        queued: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Total number of software sources that are queued for sync.
-        """
-        synced: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Total number of software sources that successfully synced.
-        """
-        syncing: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Total number of software sources currently syncing.
-        """
-        unsynced: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Total number of software sources that have not yet been synced.
-        """
-elif False:
-    ManagementStationMirrorSyncStatusArgsDict: TypeAlias = Mapping[str, Any]
+class ManagementStationMirrorSyncStatusArgsDict(TypedDict):
+    failed: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Total number of software sources that failed to sync.
+    """
+    queued: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Total number of software sources that are queued for sync.
+    """
+    synced: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Total number of software sources that successfully synced.
+    """
+    syncing: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Total number of software sources currently syncing.
+    """
+    unsynced: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Total number of software sources that have not yet been synced.
+    """
 
 @pulumi.input_type
 class ManagementStationMirrorSyncStatusArgs:
@@ -3841,18 +3713,15 @@ class ManagementStationMirrorSyncStatusArgs:
         pulumi.set(self, "unsynced", value)
 
 
-if not MYPY:
-    class ManagementStationPeerManagementStationArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
-        """
-elif False:
-    ManagementStationPeerManagementStationArgsDict: TypeAlias = Mapping[str, Any]
+class ManagementStationPeerManagementStationArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
+    """
 
 @pulumi.input_type
 class ManagementStationPeerManagementStationArgs:
@@ -3893,26 +3762,23 @@ class ManagementStationPeerManagementStationArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class ManagementStationProxyArgsDict(TypedDict):
-        is_enabled: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Indicates if the proxy should be enabled or disabled. Default is enabled.
-        """
-        forward: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The URL the proxy will forward to.
-        """
-        hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) List of hosts.
-        """
-        port: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Listening port used for the proxy.
-        """
-elif False:
-    ManagementStationProxyArgsDict: TypeAlias = Mapping[str, Any]
+class ManagementStationProxyArgsDict(TypedDict):
+    is_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Indicates if the proxy should be enabled or disabled. Default is enabled.
+    """
+    forward: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The URL the proxy will forward to.
+    """
+    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) List of hosts.
+    """
+    port: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Listening port used for the proxy.
+    """
 
 @pulumi.input_type
 class ManagementStationProxyArgs:
@@ -3984,18 +3850,15 @@ class ManagementStationProxyArgs:
         pulumi.set(self, "port", value)
 
 
-if not MYPY:
-    class ProfileLifecycleEnvironmentArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-        """
-elif False:
-    ProfileLifecycleEnvironmentArgsDict: TypeAlias = Mapping[str, Any]
+class ProfileLifecycleEnvironmentArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+    """
 
 @pulumi.input_type
 class ProfileLifecycleEnvironmentArgs:
@@ -4036,18 +3899,15 @@ class ProfileLifecycleEnvironmentArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class ProfileLifecycleStageArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-        """
-elif False:
-    ProfileLifecycleStageArgsDict: TypeAlias = Mapping[str, Any]
+class ProfileLifecycleStageArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+    """
 
 @pulumi.input_type
 class ProfileLifecycleStageArgs:
@@ -4088,18 +3948,15 @@ class ProfileLifecycleStageArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class ProfileManagedInstanceGroupArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-        """
-elif False:
-    ProfileManagedInstanceGroupArgsDict: TypeAlias = Mapping[str, Any]
+class ProfileManagedInstanceGroupArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+    """
 
 @pulumi.input_type
 class ProfileManagedInstanceGroupArgs:
@@ -4140,30 +3997,27 @@ class ProfileManagedInstanceGroupArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class ProfileSoftwareSourceArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) User-specified description of the registration profile.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-        """
-        is_mandatory_for_autonomous_linux: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
-        """
-        software_source_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the software source.
-        """
-elif False:
-    ProfileSoftwareSourceArgsDict: TypeAlias = Mapping[str, Any]
+class ProfileSoftwareSourceArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) User-specified description of the registration profile.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+    """
+    is_mandatory_for_autonomous_linux: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+    """
+    software_source_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the software source.
+    """
 
 @pulumi.input_type
 class ProfileSoftwareSourceArgs:
@@ -4252,38 +4106,35 @@ class ProfileSoftwareSourceArgs:
         pulumi.set(self, "software_source_type", value)
 
 
-if not MYPY:
-    class ScheduledJobOperationArgsDict(TypedDict):
-        operation_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of operation this scheduled job performs.
-        """
-        manage_module_streams_details: NotRequired[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsArgsDict']]
-        """
-        (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
-        """
-        package_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
-        """
-        reboot_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
-        """
-        software_source_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
-        """
-        switch_module_streams_details: NotRequired[pulumi.Input['ScheduledJobOperationSwitchModuleStreamsDetailsArgsDict']]
-        """
-        (Updatable) Provides the information used to update a module stream.
-        """
-        windows_update_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
-        """
-elif False:
-    ScheduledJobOperationArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduledJobOperationArgsDict(TypedDict):
+    operation_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of operation this scheduled job performs.
+    """
+    manage_module_streams_details: NotRequired[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsArgsDict']]
+    """
+    (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
+    """
+    package_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
+    """
+    reboot_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+    """
+    software_source_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
+    """
+    switch_module_streams_details: NotRequired[pulumi.Input['ScheduledJobOperationSwitchModuleStreamsDetailsArgsDict']]
+    """
+    (Updatable) Provides the information used to update a module stream.
+    """
+    windows_update_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
+    """
 
 @pulumi.input_type
 class ScheduledJobOperationArgs:
@@ -4403,26 +4254,23 @@ class ScheduledJobOperationArgs:
         pulumi.set(self, "windows_update_names", value)
 
 
-if not MYPY:
-    class ScheduledJobOperationManageModuleStreamsDetailsArgsDict(TypedDict):
-        disables: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsDisableArgsDict']]]]
-        """
-        (Updatable) The set of module streams to disable.
-        """
-        enables: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsEnableArgsDict']]]]
-        """
-        (Updatable) The set of module streams to enable.
-        """
-        installs: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsInstallArgsDict']]]]
-        """
-        (Updatable) The set of module stream profiles to install.
-        """
-        removes: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsRemoveArgsDict']]]]
-        """
-        (Updatable) The set of module stream profiles to remove.
-        """
-elif False:
-    ScheduledJobOperationManageModuleStreamsDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduledJobOperationManageModuleStreamsDetailsArgsDict(TypedDict):
+    disables: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsDisableArgsDict']]]]
+    """
+    (Updatable) The set of module streams to disable.
+    """
+    enables: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsEnableArgsDict']]]]
+    """
+    (Updatable) The set of module streams to enable.
+    """
+    installs: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsInstallArgsDict']]]]
+    """
+    (Updatable) The set of module stream profiles to install.
+    """
+    removes: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsRemoveArgsDict']]]]
+    """
+    (Updatable) The set of module stream profiles to remove.
+    """
 
 @pulumi.input_type
 class ScheduledJobOperationManageModuleStreamsDetailsArgs:
@@ -4495,22 +4343,19 @@ class ScheduledJobOperationManageModuleStreamsDetailsArgs:
         pulumi.set(self, "removes", value)
 
 
-if not MYPY:
-    class ScheduledJobOperationManageModuleStreamsDetailsDisableArgsDict(TypedDict):
-        module_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of a module.
-        """
-        stream_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of a stream of the specified module.
-        """
-        software_source_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
-        """
-elif False:
-    ScheduledJobOperationManageModuleStreamsDetailsDisableArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduledJobOperationManageModuleStreamsDetailsDisableArgsDict(TypedDict):
+    module_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of a module.
+    """
+    stream_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of a stream of the specified module.
+    """
+    software_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+    """
 
 @pulumi.input_type
 class ScheduledJobOperationManageModuleStreamsDetailsDisableArgs:
@@ -4565,22 +4410,19 @@ class ScheduledJobOperationManageModuleStreamsDetailsDisableArgs:
         pulumi.set(self, "software_source_id", value)
 
 
-if not MYPY:
-    class ScheduledJobOperationManageModuleStreamsDetailsEnableArgsDict(TypedDict):
-        module_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of a module.
-        """
-        stream_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of a stream of the specified module.
-        """
-        software_source_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
-        """
-elif False:
-    ScheduledJobOperationManageModuleStreamsDetailsEnableArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduledJobOperationManageModuleStreamsDetailsEnableArgsDict(TypedDict):
+    module_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of a module.
+    """
+    stream_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of a stream of the specified module.
+    """
+    software_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+    """
 
 @pulumi.input_type
 class ScheduledJobOperationManageModuleStreamsDetailsEnableArgs:
@@ -4635,26 +4477,23 @@ class ScheduledJobOperationManageModuleStreamsDetailsEnableArgs:
         pulumi.set(self, "software_source_id", value)
 
 
-if not MYPY:
-    class ScheduledJobOperationManageModuleStreamsDetailsInstallArgsDict(TypedDict):
-        module_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of a module.
-        """
-        profile_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of a profile of the specified module stream.
-        """
-        stream_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of a stream of the specified module.
-        """
-        software_source_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
-        """
-elif False:
-    ScheduledJobOperationManageModuleStreamsDetailsInstallArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduledJobOperationManageModuleStreamsDetailsInstallArgsDict(TypedDict):
+    module_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of a module.
+    """
+    profile_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of a profile of the specified module stream.
+    """
+    stream_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of a stream of the specified module.
+    """
+    software_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+    """
 
 @pulumi.input_type
 class ScheduledJobOperationManageModuleStreamsDetailsInstallArgs:
@@ -4724,26 +4563,23 @@ class ScheduledJobOperationManageModuleStreamsDetailsInstallArgs:
         pulumi.set(self, "software_source_id", value)
 
 
-if not MYPY:
-    class ScheduledJobOperationManageModuleStreamsDetailsRemoveArgsDict(TypedDict):
-        module_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of a module.
-        """
-        profile_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of a profile of the specified module stream.
-        """
-        stream_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of a stream of the specified module.
-        """
-        software_source_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
-        """
-elif False:
-    ScheduledJobOperationManageModuleStreamsDetailsRemoveArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduledJobOperationManageModuleStreamsDetailsRemoveArgsDict(TypedDict):
+    module_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of a module.
+    """
+    profile_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of a profile of the specified module stream.
+    """
+    stream_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of a stream of the specified module.
+    """
+    software_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+    """
 
 @pulumi.input_type
 class ScheduledJobOperationManageModuleStreamsDetailsRemoveArgs:
@@ -4813,22 +4649,19 @@ class ScheduledJobOperationManageModuleStreamsDetailsRemoveArgs:
         pulumi.set(self, "software_source_id", value)
 
 
-if not MYPY:
-    class ScheduledJobOperationSwitchModuleStreamsDetailsArgsDict(TypedDict):
-        module_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of a module.
-        """
-        stream_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of a stream of the specified module.
-        """
-        software_source_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
-        """
-elif False:
-    ScheduledJobOperationSwitchModuleStreamsDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduledJobOperationSwitchModuleStreamsDetailsArgsDict(TypedDict):
+    module_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of a module.
+    """
+    stream_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of a stream of the specified module.
+    """
+    software_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+    """
 
 @pulumi.input_type
 class ScheduledJobOperationSwitchModuleStreamsDetailsArgs:
@@ -4883,26 +4716,23 @@ class ScheduledJobOperationSwitchModuleStreamsDetailsArgs:
         pulumi.set(self, "software_source_id", value)
 
 
-if not MYPY:
-    class SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgsDict(TypedDict):
-        software_source_id: pulumi.Input[_builtins.str]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source.
+class SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgsDict(TypedDict):
+    software_source_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        availability: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Availability of the software source to instances in private data centers or third-party clouds.
-        """
-        availability_at_oci: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Availability of the software source to Oracle Cloud Infrastructure instances.
-        """
-elif False:
-    SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    availability: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Availability of the software source to instances in private data centers or third-party clouds.
+    """
+    availability_at_oci: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Availability of the software source to Oracle Cloud Infrastructure instances.
+    """
 
 @pulumi.input_type
 class SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs:
@@ -4966,22 +4796,19 @@ class SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs:
         pulumi.set(self, "availability_at_oci", value)
 
 
-if not MYPY:
-    class SoftwareSourceCustomSoftwareSourceFilterArgsDict(TypedDict):
-        module_stream_profile_filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgsDict']]]]
-        """
-        (Updatable) The list of module stream/profile filters.
-        """
-        package_filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgsDict']]]]
-        """
-        (Updatable) The list of package filters.
-        """
-        package_group_filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgsDict']]]]
-        """
-        (Updatable) The list of group filters.
-        """
-elif False:
-    SoftwareSourceCustomSoftwareSourceFilterArgsDict: TypeAlias = Mapping[str, Any]
+class SoftwareSourceCustomSoftwareSourceFilterArgsDict(TypedDict):
+    module_stream_profile_filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgsDict']]]]
+    """
+    (Updatable) The list of module stream/profile filters.
+    """
+    package_filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgsDict']]]]
+    """
+    (Updatable) The list of package filters.
+    """
+    package_group_filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgsDict']]]]
+    """
+    (Updatable) The list of group filters.
+    """
 
 @pulumi.input_type
 class SoftwareSourceCustomSoftwareSourceFilterArgs:
@@ -5038,26 +4865,23 @@ class SoftwareSourceCustomSoftwareSourceFilterArgs:
         pulumi.set(self, "package_group_filters", value)
 
 
-if not MYPY:
-    class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgsDict(TypedDict):
-        filter_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the filter.
-        """
-        module_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Module name.
-        """
-        profile_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Profile name.
-        """
-        stream_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Stream name.
-        """
-elif False:
-    SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgsDict: TypeAlias = Mapping[str, Any]
+class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgsDict(TypedDict):
+    filter_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the filter.
+    """
+    module_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Module name.
+    """
+    profile_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Profile name.
+    """
+    stream_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Stream name.
+    """
 
 @pulumi.input_type
 class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs:
@@ -5130,26 +4954,23 @@ class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs:
         pulumi.set(self, "stream_name", value)
 
 
-if not MYPY:
-    class SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgsDict(TypedDict):
-        filter_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the filter.
-        """
-        package_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The package name.
-        """
-        package_name_pattern: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The package name pattern.
-        """
-        package_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The package version, which is denoted by 'version-release', or 'epoch:version-release'.
-        """
-elif False:
-    SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgsDict: TypeAlias = Mapping[str, Any]
+class SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgsDict(TypedDict):
+    filter_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the filter.
+    """
+    package_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The package name.
+    """
+    package_name_pattern: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The package name pattern.
+    """
+    package_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The package version, which is denoted by 'version-release', or 'epoch:version-release'.
+    """
 
 @pulumi.input_type
 class SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs:
@@ -5222,18 +5043,15 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs:
         pulumi.set(self, "package_version", value)
 
 
-if not MYPY:
-    class SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgsDict(TypedDict):
-        filter_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the filter.
-        """
-        package_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) List of package group names.
-        """
-elif False:
-    SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgsDict: TypeAlias = Mapping[str, Any]
+class SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgsDict(TypedDict):
+    filter_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the filter.
+    """
+    package_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) List of package group names.
+    """
 
 @pulumi.input_type
 class SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs:
@@ -5274,22 +5092,19 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs:
         pulumi.set(self, "package_groups", value)
 
 
-if not MYPY:
-    class SoftwareSourceVendorSoftwareSourceArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) User-friendly name.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+class SoftwareSourceVendorSoftwareSourceArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) User-friendly name.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    SoftwareSourceVendorSoftwareSourceArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class SoftwareSourceVendorSoftwareSourceArgs:
@@ -5338,18 +5153,15 @@ class SoftwareSourceVendorSoftwareSourceArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class WorkRequestRerunManagementWorkRequestDetailsArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User-specified information about the job. Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-        """
-elif False:
-    WorkRequestRerunManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class WorkRequestRerunManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+    """
 
 @pulumi.input_type
 class WorkRequestRerunManagementWorkRequestDetailsArgs:
@@ -5390,13 +5202,10 @@ class WorkRequestRerunManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class GetEntitlementsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetEntitlementsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetEntitlementsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetEntitlementsFilterArgs:
@@ -5437,16 +5246,13 @@ class GetEntitlementsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetErrataFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetErrataFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetErrataFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetErrataFilterArgs:
@@ -5493,13 +5299,10 @@ class GetErrataFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetEventsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetEventsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetEventsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetEventsFilterArgs:
@@ -5540,13 +5343,10 @@ class GetEventsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetLifecycleEnvironmentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetLifecycleEnvironmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetLifecycleEnvironmentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetLifecycleEnvironmentsFilterArgs:
@@ -5587,13 +5387,10 @@ class GetLifecycleEnvironmentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetLifecycleStagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetLifecycleStagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetLifecycleStagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetLifecycleStagesFilterArgs:
@@ -5634,16 +5431,13 @@ class GetLifecycleStagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedInstanceAvailablePackagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Unique identifier for the package.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedInstanceAvailablePackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedInstanceAvailablePackagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique identifier for the package.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedInstanceAvailablePackagesFilterArgs:
@@ -5690,13 +5484,10 @@ class GetManagedInstanceAvailablePackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedInstanceAvailableSoftwareSourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedInstanceAvailableSoftwareSourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedInstanceAvailableSoftwareSourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedInstanceAvailableSoftwareSourcesFilterArgs:
@@ -5737,16 +5528,13 @@ class GetManagedInstanceAvailableSoftwareSourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedInstanceAvailableWindowsUpdatesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedInstanceAvailableWindowsUpdatesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedInstanceAvailableWindowsUpdatesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedInstanceAvailableWindowsUpdatesFilterArgs:
@@ -5793,16 +5581,13 @@ class GetManagedInstanceAvailableWindowsUpdatesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedInstanceErrataFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedInstanceErrataFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedInstanceErrataFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedInstanceErrataFilterArgs:
@@ -5849,16 +5634,13 @@ class GetManagedInstanceErrataFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedInstanceGroupAvailableModulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The resource name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedInstanceGroupAvailableModulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedInstanceGroupAvailableModulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The resource name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedInstanceGroupAvailableModulesFilterArgs:
@@ -5905,16 +5687,13 @@ class GetManagedInstanceGroupAvailableModulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedInstanceGroupAvailablePackagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Unique identifier for the package. Note that this is not an OCID.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedInstanceGroupAvailablePackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedInstanceGroupAvailablePackagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique identifier for the package. Note that this is not an OCID.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedInstanceGroupAvailablePackagesFilterArgs:
@@ -5961,13 +5740,10 @@ class GetManagedInstanceGroupAvailablePackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgs:
@@ -6008,16 +5784,13 @@ class GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedInstanceGroupInstalledPackagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the package that is installed on the managed instance group.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedInstanceGroupInstalledPackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedInstanceGroupInstalledPackagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the package that is installed on the managed instance group.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedInstanceGroupInstalledPackagesFilterArgs:
@@ -6064,16 +5837,13 @@ class GetManagedInstanceGroupInstalledPackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedInstanceGroupModulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The resource name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedInstanceGroupModulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedInstanceGroupModulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The resource name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedInstanceGroupModulesFilterArgs:
@@ -6120,13 +5890,10 @@ class GetManagedInstanceGroupModulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedInstanceGroupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedInstanceGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedInstanceGroupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedInstanceGroupsFilterArgs:
@@ -6167,16 +5934,13 @@ class GetManagedInstanceGroupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedInstanceInstalledPackagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Unique identifier for the package.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedInstanceInstalledPackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedInstanceInstalledPackagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique identifier for the package.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedInstanceInstalledPackagesFilterArgs:
@@ -6223,16 +5987,13 @@ class GetManagedInstanceInstalledPackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedInstanceInstalledWindowsUpdatesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedInstanceInstalledWindowsUpdatesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedInstanceInstalledWindowsUpdatesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedInstanceInstalledWindowsUpdatesFilterArgs:
@@ -6279,16 +6040,13 @@ class GetManagedInstanceInstalledWindowsUpdatesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedInstanceModulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The resource name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedInstanceModulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedInstanceModulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The resource name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedInstanceModulesFilterArgs:
@@ -6335,16 +6093,13 @@ class GetManagedInstanceModulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedInstanceUpdatablePackagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Unique identifier for the package.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedInstanceUpdatablePackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedInstanceUpdatablePackagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique identifier for the package.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedInstanceUpdatablePackagesFilterArgs:
@@ -6391,13 +6146,10 @@ class GetManagedInstanceUpdatablePackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedInstancesFilterArgs:
@@ -6438,13 +6190,10 @@ class GetManagedInstancesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagementStationMirrorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagementStationMirrorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagementStationMirrorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagementStationMirrorsFilterArgs:
@@ -6485,13 +6234,10 @@ class GetManagementStationMirrorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagementStationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagementStationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagementStationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagementStationsFilterArgs:
@@ -6532,13 +6278,10 @@ class GetManagementStationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetProfileAvailableSoftwareSourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetProfileAvailableSoftwareSourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetProfileAvailableSoftwareSourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetProfileAvailableSoftwareSourcesFilterArgs:
@@ -6579,13 +6322,10 @@ class GetProfileAvailableSoftwareSourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetProfilesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetProfilesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetProfilesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetProfilesFilterArgs:
@@ -6626,13 +6366,10 @@ class GetProfilesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetScheduledJobsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetScheduledJobsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetScheduledJobsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetScheduledJobsFilterArgs:
@@ -6673,13 +6410,10 @@ class GetScheduledJobsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSoftwarePackageSoftwareSourceFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSoftwarePackageSoftwareSourceFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSoftwarePackageSoftwareSourceFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSoftwarePackageSoftwareSourceFilterArgs:
@@ -6720,16 +6454,13 @@ class GetSoftwarePackageSoftwareSourceFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSoftwarePackagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Unique identifier for the package. Note that this is not an OCID.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSoftwarePackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSoftwarePackagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique identifier for the package. Note that this is not an OCID.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSoftwarePackagesFilterArgs:
@@ -6776,16 +6507,13 @@ class GetSoftwarePackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSoftwareSourceAvailableSoftwarePackagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Unique identifier for the package. Note that this is not an OCID.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSoftwareSourceAvailableSoftwarePackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSoftwareSourceAvailableSoftwarePackagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique identifier for the package. Note that this is not an OCID.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSoftwareSourceAvailableSoftwarePackagesFilterArgs:
@@ -6832,16 +6560,13 @@ class GetSoftwareSourceAvailableSoftwarePackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSoftwareSourceModuleStreamProfilesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the entity to be queried.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSoftwareSourceModuleStreamProfilesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSoftwareSourceModuleStreamProfilesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the entity to be queried.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSoftwareSourceModuleStreamProfilesFilterArgs:
@@ -6888,16 +6613,13 @@ class GetSoftwareSourceModuleStreamProfilesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSoftwareSourceModuleStreamsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the entity to be queried.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSoftwareSourceModuleStreamsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSoftwareSourceModuleStreamsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the entity to be queried.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSoftwareSourceModuleStreamsFilterArgs:
@@ -6944,16 +6666,13 @@ class GetSoftwareSourceModuleStreamsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSoftwareSourcePackageGroupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the entity to be queried.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSoftwareSourcePackageGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSoftwareSourcePackageGroupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the entity to be queried.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSoftwareSourcePackageGroupsFilterArgs:
@@ -7000,16 +6719,13 @@ class GetSoftwareSourcePackageGroupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSoftwareSourceSoftwarePackagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Unique identifier for the package. Note that this is not an OCID.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSoftwareSourceSoftwarePackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSoftwareSourceSoftwarePackagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique identifier for the package. Note that this is not an OCID.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSoftwareSourceSoftwarePackagesFilterArgs:
@@ -7056,16 +6772,13 @@ class GetSoftwareSourceSoftwarePackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSoftwareSourceVendorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the entity to be queried.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSoftwareSourceVendorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSoftwareSourceVendorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the entity to be queried.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSoftwareSourceVendorsFilterArgs:
@@ -7112,13 +6825,10 @@ class GetSoftwareSourceVendorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSoftwareSourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSoftwareSourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSoftwareSourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSoftwareSourcesFilterArgs:
@@ -7159,16 +6869,13 @@ class GetSoftwareSourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWindowsUpdatesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWindowsUpdatesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWindowsUpdatesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWindowsUpdatesFilterArgs:

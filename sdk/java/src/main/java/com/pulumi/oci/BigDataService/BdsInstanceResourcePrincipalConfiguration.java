@@ -17,6 +17,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Bds Instance Resource Principal Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/bigdata/latest/BdsInstanceResourcePrincipalConfiguration
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/big_data_service
+ * 
+ * Create a resource principal session token configuration.
+ * 
  * ## Example Usage
  * 
  * <pre>

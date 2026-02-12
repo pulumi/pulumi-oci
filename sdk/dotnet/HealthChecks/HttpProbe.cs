@@ -10,6 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.HealthChecks
 {
     /// <summary>
+    /// This resource provides the Http Probe resource in Oracle Cloud Infrastructure Health Checks service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/healthchecks/latest/HttpProbe
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/health_checks
+    /// 
+    /// Creates an on-demand HTTP probe. The location response header contains the URL for
+    /// fetching the probe results.
+    /// 
+    /// *Note:* On-demand probe configurations are not saved.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -38,7 +48,7 @@ namespace Pulumi.Oci.HealthChecks
     /// 
     /// ## Import
     /// 
-    /// HttpProbes can be imported using the `id`, e.g.
+    /// HttpProbes can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:HealthChecks/httpProbe:HttpProbe test_http_probe "id"

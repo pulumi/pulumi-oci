@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Addon resource in Oracle Cloud Infrastructure Container Engine service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/containerengine/latest/Addon
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/container_engine
+    /// 
+    /// Install the specified addon for a cluster.
     /// 
     /// ## Import
     /// 
-    /// Addons can be imported using the `id`, e.g.
+    /// Addons can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:ContainerEngine/addon:Addon test_addon "clusters/{clusterId}/addons/{addonName}"

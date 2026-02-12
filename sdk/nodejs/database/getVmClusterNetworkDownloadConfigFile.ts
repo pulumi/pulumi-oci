@@ -35,6 +35,9 @@ export function getVmClusterNetworkDownloadConfigFile(args: GetVmClusterNetworkD
  * A collection of arguments for invoking getVmClusterNetworkDownloadConfigFile.
  */
 export interface GetVmClusterNetworkDownloadConfigFileArgs {
+    /**
+     * Encodes the downloaded txt config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `false`.
+     */
     base64EncodeContent?: boolean;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -93,6 +96,9 @@ export function getVmClusterNetworkDownloadConfigFileOutput(args: GetVmClusterNe
  * A collection of arguments for invoking getVmClusterNetworkDownloadConfigFile.
  */
 export interface GetVmClusterNetworkDownloadConfigFileOutputArgs {
+    /**
+     * Encodes the downloaded txt config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `false`.
+     */
     base64EncodeContent?: pulumi.Input<boolean>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

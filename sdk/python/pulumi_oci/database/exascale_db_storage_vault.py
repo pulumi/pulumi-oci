@@ -628,6 +628,13 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Exascale Db Storage Vault resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ExascaleDbStorageVault
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates an Exadata Database Storage Vault
+
         ## Example Usage
 
         ```python
@@ -691,6 +698,13 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
                  args: ExascaleDbStorageVaultArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Exascale Db Storage Vault resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ExascaleDbStorageVault
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates an Exadata Database Storage Vault
+
         ## Example Usage
 
         ```python

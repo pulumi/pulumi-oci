@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
+    /// This resource provides the Cloud Db System resource in Oracle Cloud Infrastructure Database Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/CloudDbSystem
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+    /// 
+    /// Creates a cloud DB system and its related resources.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -50,7 +57,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// ## Import
     /// 
-    /// CloudDbSystems can be imported using the `id`, e.g.
+    /// CloudDbSystems can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DatabaseManagement/cloudDbSystem:CloudDbSystem test_cloud_db_system "id"

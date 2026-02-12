@@ -17,6 +17,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalDbSystemConnector
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+ * 
+ * Creates a new external connector.
+ * 
  * ## Example Usage
  * 
  * <pre>

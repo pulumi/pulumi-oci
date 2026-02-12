@@ -1540,6 +1540,13 @@ class MysqlDbSystem(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/mysql/latest/MysqlDbSystem
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/mysql
+
+        Creates and launches a DB System.
+
         ## Example Usage
 
         ```python
@@ -1718,6 +1725,13 @@ class MysqlDbSystem(pulumi.CustomResource):
                  args: MysqlDbSystemArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/mysql/latest/MysqlDbSystem
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/mysql
+
+        Creates and launches a DB System.
+
         ## Example Usage
 
         ```python

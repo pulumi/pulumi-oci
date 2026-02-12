@@ -43,16 +43,11 @@ __all__ = [
     'GetRedisClustersFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class OciCacheConfigSetConfigurationDetailsArgsDict(TypedDict):
-        items: pulumi.Input[Sequence[pulumi.Input['OciCacheConfigSetConfigurationDetailsItemArgsDict']]]
-        """
-        List of ConfigurationInfo objects.
-        """
-elif False:
-    OciCacheConfigSetConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class OciCacheConfigSetConfigurationDetailsArgsDict(TypedDict):
+    items: pulumi.Input[Sequence[pulumi.Input['OciCacheConfigSetConfigurationDetailsItemArgsDict']]]
+    """
+    List of ConfigurationInfo objects.
+    """
 
 @pulumi.input_type
 class OciCacheConfigSetConfigurationDetailsArgs:
@@ -76,18 +71,15 @@ class OciCacheConfigSetConfigurationDetailsArgs:
         pulumi.set(self, "items", value)
 
 
-if not MYPY:
-    class OciCacheConfigSetConfigurationDetailsItemArgsDict(TypedDict):
-        config_key: pulumi.Input[_builtins.str]
-        """
-        Key is the configuration key.
-        """
-        config_value: pulumi.Input[_builtins.str]
-        """
-        Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
-        """
-elif False:
-    OciCacheConfigSetConfigurationDetailsItemArgsDict: TypeAlias = Mapping[str, Any]
+class OciCacheConfigSetConfigurationDetailsItemArgsDict(TypedDict):
+    config_key: pulumi.Input[_builtins.str]
+    """
+    Key is the configuration key.
+    """
+    config_value: pulumi.Input[_builtins.str]
+    """
+    Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+    """
 
 @pulumi.input_type
 class OciCacheConfigSetConfigurationDetailsItemArgs:
@@ -126,14 +118,11 @@ class OciCacheConfigSetConfigurationDetailsItemArgs:
         pulumi.set(self, "config_value", value)
 
 
-if not MYPY:
-    class OciCacheConfigSetlistAssociatedOciCacheClusterItemArgsDict(TypedDict):
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
-        """
-elif False:
-    OciCacheConfigSetlistAssociatedOciCacheClusterItemArgsDict: TypeAlias = Mapping[str, Any]
+class OciCacheConfigSetlistAssociatedOciCacheClusterItemArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
+    """
 
 @pulumi.input_type
 class OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs:
@@ -158,18 +147,15 @@ class OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class OciCacheUserAuthenticationModeArgsDict(TypedDict):
-        authentication_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) This is Authentication Type of Oracle Cloud Infrastructure cache user
-        """
-        hashed_passwords: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
-        """
-elif False:
-    OciCacheUserAuthenticationModeArgsDict: TypeAlias = Mapping[str, Any]
+class OciCacheUserAuthenticationModeArgsDict(TypedDict):
+    authentication_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) This is Authentication Type of Oracle Cloud Infrastructure cache user
+    """
+    hashed_passwords: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
+    """
 
 @pulumi.input_type
 class OciCacheUserAuthenticationModeArgs:
@@ -209,14 +195,11 @@ class OciCacheUserAuthenticationModeArgs:
         pulumi.set(self, "hashed_passwords", value)
 
 
-if not MYPY:
-    class OciCacheUserGetRedisClusterOciCacheClusterArgsDict(TypedDict):
-        oci_cache_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the OciCacheCluster
-        """
-elif False:
-    OciCacheUserGetRedisClusterOciCacheClusterArgsDict: TypeAlias = Mapping[str, Any]
+class OciCacheUserGetRedisClusterOciCacheClusterArgsDict(TypedDict):
+    oci_cache_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the OciCacheCluster
+    """
 
 @pulumi.input_type
 class OciCacheUserGetRedisClusterOciCacheClusterArgs:
@@ -241,14 +224,11 @@ class OciCacheUserGetRedisClusterOciCacheClusterArgs:
         pulumi.set(self, "oci_cache_cluster_id", value)
 
 
-if not MYPY:
-    class RedisClusterGetOciCacheUserOciCacheUserArgsDict(TypedDict):
-        oci_cache_user_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the OciCacheUser
-        """
-elif False:
-    RedisClusterGetOciCacheUserOciCacheUserArgsDict: TypeAlias = Mapping[str, Any]
+class RedisClusterGetOciCacheUserOciCacheUserArgsDict(TypedDict):
+    oci_cache_user_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the OciCacheUser
+    """
 
 @pulumi.input_type
 class RedisClusterGetOciCacheUserOciCacheUserArgs:
@@ -273,14 +253,11 @@ class RedisClusterGetOciCacheUserOciCacheUserArgs:
         pulumi.set(self, "oci_cache_user_id", value)
 
 
-if not MYPY:
-    class RedisClusterNodeCollectionArgsDict(TypedDict):
-        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgsDict']]]]
-        """
-        Collection of node objects.
-        """
-elif False:
-    RedisClusterNodeCollectionArgsDict: TypeAlias = Mapping[str, Any]
+class RedisClusterNodeCollectionArgsDict(TypedDict):
+    items: NotRequired[pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgsDict']]]]
+    """
+    Collection of node objects.
+    """
 
 @pulumi.input_type
 class RedisClusterNodeCollectionArgs:
@@ -305,22 +282,19 @@ class RedisClusterNodeCollectionArgs:
         pulumi.set(self, "items", value)
 
 
-if not MYPY:
-    class RedisClusterNodeCollectionItemArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
-        private_endpoint_fqdn: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
-        """
-        private_endpoint_ip_address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The private IP address of the API endpoint to access a specific node.
-        """
-elif False:
-    RedisClusterNodeCollectionItemArgsDict: TypeAlias = Mapping[str, Any]
+class RedisClusterNodeCollectionItemArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+    """
+    private_endpoint_fqdn: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
+    """
+    private_endpoint_ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The private IP address of the API endpoint to access a specific node.
+    """
 
 @pulumi.input_type
 class RedisClusterNodeCollectionItemArgs:
@@ -377,13 +351,10 @@ class RedisClusterNodeCollectionItemArgs:
         pulumi.set(self, "private_endpoint_ip_address", value)
 
 
-if not MYPY:
-    class GetOciCacheConfigSetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOciCacheConfigSetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOciCacheConfigSetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOciCacheConfigSetsFilterArgs:
@@ -424,13 +395,10 @@ class GetOciCacheConfigSetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOciCacheDefaultConfigSetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOciCacheDefaultConfigSetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOciCacheDefaultConfigSetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOciCacheDefaultConfigSetsFilterArgs:
@@ -471,16 +439,13 @@ class GetOciCacheDefaultConfigSetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOciCacheUsersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return the resources that match with the given Oracle Cloud Infrastructure cache user name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOciCacheUsersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOciCacheUsersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return the resources that match with the given Oracle Cloud Infrastructure cache user name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOciCacheUsersFilterArgs:
@@ -527,13 +492,10 @@ class GetOciCacheUsersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRedisClusterNodesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRedisClusterNodesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRedisClusterNodesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRedisClusterNodesFilterArgs:
@@ -574,13 +536,10 @@ class GetRedisClusterNodesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRedisClustersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRedisClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRedisClustersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRedisClustersFilterArgs:

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Adm
 {
     /// <summary>
+    /// This resource provides the Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/adm/latest/RemediationRecipe
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/adm
+    /// 
+    /// Creates a new Remediation Recipe.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -79,7 +86,7 @@ namespace Pulumi.Oci.Adm
     /// 
     /// ## Import
     /// 
-    /// RemediationRecipes can be imported using the `id`, e.g.
+    /// RemediationRecipes can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Adm/remediationRecipe:RemediationRecipe test_remediation_recipe "id"

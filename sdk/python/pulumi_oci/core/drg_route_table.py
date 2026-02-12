@@ -334,6 +334,14 @@ class DrgRouteTable(pulumi.CustomResource):
                  remove_import_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
+        This resource provides the Drg Route Table resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/DrgRouteTable
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a new DRG route table for the specified DRG. Assign the DRG route table to a DRG attachment
+        using the `UpdateDrgAttachment` or `CreateDrgAttachment` operations.
+
         ## Example Usage
 
         ```python
@@ -382,6 +390,14 @@ class DrgRouteTable(pulumi.CustomResource):
                  args: DrgRouteTableArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Drg Route Table resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/DrgRouteTable
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a new DRG route table for the specified DRG. Assign the DRG route table to a DRG attachment
+        using the `UpdateDrgAttachment` or `CreateDrgAttachment` operations.
+
         ## Example Usage
 
         ```python

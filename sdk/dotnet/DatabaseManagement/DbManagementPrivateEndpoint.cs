@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
+    /// This resource provides the Db Management Private Endpoint resource in Oracle Cloud Infrastructure Database Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/DbManagementPrivateEndpoint
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+    /// 
+    /// Creates a new Database Management private endpoint.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -44,7 +51,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// ## Import
     /// 
-    /// DbManagementPrivateEndpoints can be imported using the `id`, e.g.
+    /// DbManagementPrivateEndpoints can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint test_db_management_private_endpoint "id"

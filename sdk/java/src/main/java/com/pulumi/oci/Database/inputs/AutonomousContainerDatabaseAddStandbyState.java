@@ -222,9 +222,17 @@ public final class AutonomousContainerDatabaseAddStandbyState extends com.pulumi
         return Optional.ofNullable(this.dbSplitThreshold);
     }
 
+    /**
+     * **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     * 
+     */
     @Import(name="dbUniqueName")
     private @Nullable Output<String> dbUniqueName;
 
+    /**
+     * @return **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     * 
+     */
     public Optional<Output<String>> dbUniqueName() {
         return Optional.ofNullable(this.dbUniqueName);
     }
@@ -1407,11 +1415,23 @@ public final class AutonomousContainerDatabaseAddStandbyState extends com.pulumi
             return dbSplitThreshold(Output.of(dbSplitThreshold));
         }
 
+        /**
+         * @param dbUniqueName **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dbUniqueName(@Nullable Output<String> dbUniqueName) {
             $.dbUniqueName = dbUniqueName;
             return this;
         }
 
+        /**
+         * @param dbUniqueName **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dbUniqueName(String dbUniqueName) {
             return dbUniqueName(Output.of(dbUniqueName));
         }

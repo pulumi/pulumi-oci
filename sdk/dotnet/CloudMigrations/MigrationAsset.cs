@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudMigrations
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Migration Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/ocm/latest/MigrationAsset
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudMigrations
+    /// 
+    /// Creates a migration asset.
     /// 
     /// ## Import
     /// 
-    /// MigrationAssets can be imported using the `id`, e.g.
+    /// MigrationAssets can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:CloudMigrations/migrationAsset:MigrationAsset test_migration_asset "id"

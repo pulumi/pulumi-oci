@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Import
     /// 
-    /// Users can be imported using the `id`, e.g.
+    /// Users can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement test_user_capabilities_management "capabilities/{userId}"

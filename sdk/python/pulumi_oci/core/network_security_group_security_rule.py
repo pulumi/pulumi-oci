@@ -487,6 +487,13 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
                  udp_options: Optional[pulumi.Input[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Network Security Group Security Rule resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroupSecurityRule
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Adds up to 25 security rules to the specified network security group. Adding more than 25 rules requires multiple operations.
+
         ## Example Usage
 
         ```python
@@ -564,6 +571,13 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
                  args: NetworkSecurityGroupSecurityRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Network Security Group Security Rule resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroupSecurityRule
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Adds up to 25 security rules to the specified network security group. Adding more than 25 rules requires multiple operations.
+
         ## Example Usage
 
         ```python

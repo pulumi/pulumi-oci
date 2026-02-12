@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Security Assessment Finding resource in Oracle Cloud Infrastructure Data Safe service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/SecurityAssessmentFinding
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+ *
+ *   Patches one or more findings in the specified template baseline type security assessment. Use it to modify max allowed risk level in template baseline.
+ *
  * ## Example Usage
  *
  * ```typescript

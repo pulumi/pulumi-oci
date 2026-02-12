@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
+    /// This resource provides the Lifecycle Stage Detach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/LifecycleStageDetachManagedInstancesManagement
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+    /// 
+    /// Detaches (removes) a managed instance from a lifecycle stage.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -39,7 +46,7 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// ## Import
     /// 
-    /// LifecycleStageDetachManagedInstancesManagement can be imported using the `id`, e.g.
+    /// LifecycleStageDetachManagedInstancesManagement can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:OsManagementHub/lifecycleStageDetachManagedInstancesManagement:LifecycleStageDetachManagedInstancesManagement test_lifecycle_stage_detach_managed_instances_management "id"

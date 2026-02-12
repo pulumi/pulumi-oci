@@ -57,6 +57,7 @@ class EsxiHostArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.float] host_ocpu_count: The OCPU count of the ESXi host.
         :param pulumi.Input[_builtins.str] host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
+        :param pulumi.Input[_builtins.str] next_sku: (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `next_sku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `next_commitment` instead.
         :param pulumi.Input[_builtins.str] non_upgraded_esxi_host_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         :param pulumi.Input[_builtins.str] sddc_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `Ocvp.EsxiHost` resource.  **Deprecated**. Please use `cluster_id` instead.
                
@@ -293,6 +294,9 @@ class EsxiHostArgs:
     @pulumi.getter(name="nextSku")
     @_utilities.deprecated("""The 'next_sku' field has been deprecated. It is no longer supported.""")
     def next_sku(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `next_sku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `next_commitment` instead.
+        """
         return pulumi.get(self, "next_sku")
 
     @next_sku.setter
@@ -408,6 +412,7 @@ class _EsxiHostState:
         :param pulumi.Input[_builtins.bool] is_billing_continuation_in_progress: Indicates whether this host is in the progress of billing continuation.
         :param pulumi.Input[_builtins.bool] is_billing_swapping_in_progress: Indicates whether this host is in the progress of swapping billing.
         :param pulumi.Input[_builtins.str] next_commitment: The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+        :param pulumi.Input[_builtins.str] next_sku: (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `next_sku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `next_commitment` instead.
         :param pulumi.Input[_builtins.str] non_upgraded_esxi_host_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         :param pulumi.Input[_builtins.str] replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
         :param pulumi.Input[_builtins.str] sddc_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `Ocvp.EsxiHost` resource.  **Deprecated**. Please use `cluster_id` instead.
@@ -805,6 +810,9 @@ class _EsxiHostState:
     @pulumi.getter(name="nextSku")
     @_utilities.deprecated("""The 'next_sku' field has been deprecated. It is no longer supported.""")
     def next_sku(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `next_sku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `next_commitment` instead.
+        """
         return pulumi.get(self, "next_sku")
 
     @next_sku.setter
@@ -964,6 +972,52 @@ class EsxiHost(pulumi.CustomResource):
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Esxi Host resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vmware/latest/EsxiHost
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/ocvp
+
+        Adds another ESXi host to an existing SDDC. The attributes of the specified
+        `Sddc` determine the VMware software and other configuration settings used
+        by the ESXi host.
+
+        Use the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/WorkRequest/) operations to track the
+        creation of the ESXi host.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_esxi_host = oci.ocvp.EsxiHost("test_esxi_host",
+            cluster_id=test_cluster["id"],
+            billing_donor_host_id=test_billing_donor_host["id"],
+            capacity_reservation_id=test_capacity_reservation["id"],
+            compute_availability_domain=esxi_host_compute_availability_domain,
+            current_commitment=esxi_host_current_commitment,
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=esxi_host_display_name,
+            esxi_software_version=esxi_host_esxi_software_version,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            host_ocpu_count=esxi_host_host_ocpu_count,
+            host_shape_name=test_shape["name"],
+            next_commitment=esxi_host_next_commitment)
+        ```
+
+        ## How to migrate from deprecated fields to new fields
+
+        1. Before starting migration, back up your terraform state file.
+        2. Get the ESXi host OCID for the `Ocvp.EsxiHost` resource you plan to migrate.
+        3. Remove the `Ocvp.EsxiHost` resource from Terraform state via command: terraform state rm \\<resource address\\>
+        4. Update `Ocvp.EsxiHost` resource config. Remove all deprecated fields and add corresponding new fields to the resource config.
+        5. Import `Ocvp.EsxiHost` resource to Terraform state using command: terraform import \\<resource address\\> \\<ESXi host OCID\\>.
+        6. Run `pulumi preview` to check if there is any planned change for `Ocvp.EsxiHost` resource. If there is any planned change, update `Ocvp.EsxiHost` resource config until there is no planned change.
+
         ## Import
 
         EsxiHosts can be imported using the `id`, e.g.
@@ -990,6 +1044,7 @@ class EsxiHost(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.float] host_ocpu_count: The OCPU count of the ESXi host.
         :param pulumi.Input[_builtins.str] host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
+        :param pulumi.Input[_builtins.str] next_sku: (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `next_sku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `next_commitment` instead.
         :param pulumi.Input[_builtins.str] non_upgraded_esxi_host_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         :param pulumi.Input[_builtins.str] sddc_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `Ocvp.EsxiHost` resource.  **Deprecated**. Please use `cluster_id` instead.
                
@@ -1005,6 +1060,52 @@ class EsxiHost(pulumi.CustomResource):
                  args: Optional[EsxiHostArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Esxi Host resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vmware/latest/EsxiHost
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/ocvp
+
+        Adds another ESXi host to an existing SDDC. The attributes of the specified
+        `Sddc` determine the VMware software and other configuration settings used
+        by the ESXi host.
+
+        Use the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/WorkRequest/) operations to track the
+        creation of the ESXi host.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_esxi_host = oci.ocvp.EsxiHost("test_esxi_host",
+            cluster_id=test_cluster["id"],
+            billing_donor_host_id=test_billing_donor_host["id"],
+            capacity_reservation_id=test_capacity_reservation["id"],
+            compute_availability_domain=esxi_host_compute_availability_domain,
+            current_commitment=esxi_host_current_commitment,
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=esxi_host_display_name,
+            esxi_software_version=esxi_host_esxi_software_version,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            host_ocpu_count=esxi_host_host_ocpu_count,
+            host_shape_name=test_shape["name"],
+            next_commitment=esxi_host_next_commitment)
+        ```
+
+        ## How to migrate from deprecated fields to new fields
+
+        1. Before starting migration, back up your terraform state file.
+        2. Get the ESXi host OCID for the `Ocvp.EsxiHost` resource you plan to migrate.
+        3. Remove the `Ocvp.EsxiHost` resource from Terraform state via command: terraform state rm \\<resource address\\>
+        4. Update `Ocvp.EsxiHost` resource config. Remove all deprecated fields and add corresponding new fields to the resource config.
+        5. Import `Ocvp.EsxiHost` resource to Terraform state using command: terraform import \\<resource address\\> \\<ESXi host OCID\\>.
+        6. Run `pulumi preview` to check if there is any planned change for `Ocvp.EsxiHost` resource. If there is any planned change, update `Ocvp.EsxiHost` resource config until there is no planned change.
+
         ## Import
 
         EsxiHosts can be imported using the `id`, e.g.
@@ -1168,6 +1269,7 @@ class EsxiHost(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_billing_continuation_in_progress: Indicates whether this host is in the progress of billing continuation.
         :param pulumi.Input[_builtins.bool] is_billing_swapping_in_progress: Indicates whether this host is in the progress of swapping billing.
         :param pulumi.Input[_builtins.str] next_commitment: The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+        :param pulumi.Input[_builtins.str] next_sku: (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `next_sku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `next_commitment` instead.
         :param pulumi.Input[_builtins.str] non_upgraded_esxi_host_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         :param pulumi.Input[_builtins.str] replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
         :param pulumi.Input[_builtins.str] sddc_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `Ocvp.EsxiHost` resource.  **Deprecated**. Please use `cluster_id` instead.
@@ -1421,6 +1523,9 @@ class EsxiHost(pulumi.CustomResource):
     @pulumi.getter(name="nextSku")
     @_utilities.deprecated("""The 'next_sku' field has been deprecated. It is no longer supported.""")
     def next_sku(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `next_sku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `next_commitment` instead.
+        """
         return pulumi.get(self, "next_sku")
 
     @_builtins.property

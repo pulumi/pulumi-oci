@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation
 {
     /// <summary>
+    /// This resource provides the Usage Carbon Emission resource in Oracle Cloud Infrastructure Metering Computation service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/usage/latest/UsageCarbonEmission
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/metering_computation
+    /// 
+    /// Returns carbon emission usage for the given account.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -48,7 +55,7 @@ namespace Pulumi.Oci.MeteringComputation
     /// 
     /// ## Import
     /// 
-    /// UsageCarbonEmissions can be imported using the `id`, e.g.
+    /// UsageCarbonEmissions can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission test_usage_carbon_emission "id"

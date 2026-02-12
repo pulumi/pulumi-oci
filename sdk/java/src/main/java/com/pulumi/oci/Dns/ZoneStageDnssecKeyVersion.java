@@ -14,6 +14,17 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Zone Stage Dnssec Key Version resource in Oracle Cloud Infrastructure DNS service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dns/latest/ZoneStageDnssecKeyVersion
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dns
+ * 
+ * Stages a new `DnssecKeyVersion` on the zone. Staging is a process that generates a new &#34;successor&#34; key version
+ * that replaces an existing &#34;predecessor&#34; key version.
+ * **Note:** A new key-signing key (KSK) version is inert until you update the parent zone DS records.
+ * 
+ * For more information, see the [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm) documentation.
+ * 
  * ## Example Usage
  * 
  * <pre>

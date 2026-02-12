@@ -35,16 +35,11 @@ __all__ = [
     'GetConfigsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class ConfigConfigArgsDict(TypedDict):
-        config_maps: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigConfigConfigMapArgsDict']]]]
-        """
-        (Updatable) Map of an agent configuration file.
-        """
-elif False:
-    ConfigConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigConfigArgsDict(TypedDict):
+    config_maps: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigConfigConfigMapArgsDict']]]]
+    """
+    (Updatable) Map of an agent configuration file.
+    """
 
 @pulumi.input_type
 class ConfigConfigArgs:
@@ -69,22 +64,19 @@ class ConfigConfigArgs:
         pulumi.set(self, "config_maps", value)
 
 
-if not MYPY:
-    class ConfigConfigConfigMapArgsDict(TypedDict):
-        body: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Base64 encoded agent configuration file.
-        """
-        content_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
-        """
-        file_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) An agent configuration file name.
-        """
-elif False:
-    ConfigConfigConfigMapArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigConfigConfigMapArgsDict(TypedDict):
+    body: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Base64 encoded agent configuration file.
+    """
+    content_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+    """
+    file_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) An agent configuration file name.
+    """
 
 @pulumi.input_type
 class ConfigConfigConfigMapArgs:
@@ -141,18 +133,15 @@ class ConfigConfigConfigMapArgs:
         pulumi.set(self, "file_name", value)
 
 
-if not MYPY:
-    class ConfigDimensionArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the dimension.
-        """
-        value_source: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The source to populate the dimension. This must not be specified.
-        """
-elif False:
-    ConfigDimensionArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigDimensionArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the dimension.
+    """
+    value_source: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The source to populate the dimension. This must not be specified.
+    """
 
 @pulumi.input_type
 class ConfigDimensionArgs:
@@ -193,26 +182,23 @@ class ConfigDimensionArgs:
         pulumi.set(self, "value_source", value)
 
 
-if not MYPY:
-    class ConfigInUseByArgsDict(TypedDict):
-        config_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of configuration item.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name by which a configuration entity is displayed to the end user.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-        """
-        options_group: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A string that specifies the group that an OPTIONS item belongs to.
-        """
-elif False:
-    ConfigInUseByArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigInUseByArgsDict(TypedDict):
+    config_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of configuration item.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name by which a configuration entity is displayed to the end user.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+    """
+    options_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A string that specifies the group that an OPTIONS item belongs to.
+    """
 
 @pulumi.input_type
 class ConfigInUseByArgs:
@@ -285,26 +271,23 @@ class ConfigInUseByArgs:
         pulumi.set(self, "options_group", value)
 
 
-if not MYPY:
-    class ConfigMetricArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A description of the metric.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the metric. This must be a known metric name.
-        """
-        unit: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The unit of the metric.
-        """
-        value_source: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) This must not be set.
-        """
-elif False:
-    ConfigMetricArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigMetricArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A description of the metric.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the metric. This must be a known metric name.
+    """
+    unit: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The unit of the metric.
+    """
+    value_source: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) This must not be set.
+    """
 
 @pulumi.input_type
 class ConfigMetricArgs:
@@ -377,14 +360,11 @@ class ConfigMetricArgs:
         pulumi.set(self, "value_source", value)
 
 
-if not MYPY:
-    class ConfigOverridesArgsDict(TypedDict):
-        override_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigOverridesOverrideListArgsDict']]]]
-        """
-        (Updatable)
-        """
-elif False:
-    ConfigOverridesArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigOverridesArgsDict(TypedDict):
+    override_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigOverridesOverrideListArgsDict']]]]
+    """
+    (Updatable)
+    """
 
 @pulumi.input_type
 class ConfigOverridesArgs:
@@ -409,18 +389,15 @@ class ConfigOverridesArgs:
         pulumi.set(self, "override_lists", value)
 
 
-if not MYPY:
-    class ConfigOverridesOverrideListArgsDict(TypedDict):
-        agent_filter: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The string that defines the Agent Filter expression.
-        """
-        override_map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
-        """
-elif False:
-    ConfigOverridesOverrideListArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigOverridesOverrideListArgsDict(TypedDict):
+    agent_filter: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The string that defines the Agent Filter expression.
+    """
+    override_map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+    """
 
 @pulumi.input_type
 class ConfigOverridesOverrideListArgs:
@@ -461,38 +438,35 @@ class ConfigOverridesOverrideListArgs:
         pulumi.set(self, "override_map", value)
 
 
-if not MYPY:
-    class ConfigRuleArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name by which a configuration entity is displayed to the end user.
-        """
-        filter_text: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The string that defines the Span Filter expression.
-        """
-        is_apply_to_error_spans: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
-        """
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
-        """
-        priority: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
-        """
-        satisfied_response_time: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
-        """
-        tolerating_response_time: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
-        """
-elif False:
-    ConfigRuleArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigRuleArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name by which a configuration entity is displayed to the end user.
+    """
+    filter_text: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The string that defines the Span Filter expression.
+    """
+    is_apply_to_error_spans: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
+    """
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
+    """
+    priority: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
+    """
+    satisfied_response_time: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
+    """
+    tolerating_response_time: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
+    """
 
 @pulumi.input_type
 class ConfigRuleArgs:
@@ -613,16 +587,13 @@ class ConfigRuleArgs:
         pulumi.set(self, "tolerating_response_time", value)
 
 
-if not MYPY:
-    class GetConfigsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the metric. This must be a known metric name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetConfigsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetConfigsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the metric. This must be a known metric name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetConfigsFilterArgs:

@@ -5,6 +5,18 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousDatabaseWallet
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+ *
+ * Creates and downloads a wallet for the specified Autonomous AI Database.
+ *
+ * If passing the base64 encoded content to a `localFile` resource, please use the `contentBase64` attribute of the `localFile` resource.
+ * See this example for more details.
+ *
+ * Recreate the resource to create and download a new wallet.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -56,6 +68,9 @@ export class AutonomousDatabaseWallet extends pulumi.CustomResource {
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     declare public readonly autonomousDatabaseId: pulumi.Output<string>;
+    /**
+     * Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+     */
     declare public readonly base64EncodeContent: pulumi.Output<boolean | undefined>;
     /**
      * content of the downloaded zipped wallet for the Autonomous Database. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
@@ -133,6 +148,9 @@ export interface AutonomousDatabaseWalletState {
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     autonomousDatabaseId?: pulumi.Input<string>;
+    /**
+     * Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+     */
     base64EncodeContent?: pulumi.Input<boolean>;
     /**
      * content of the downloaded zipped wallet for the Autonomous Database. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
@@ -170,6 +188,9 @@ export interface AutonomousDatabaseWalletArgs {
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     autonomousDatabaseId: pulumi.Input<string>;
+    /**
+     * Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+     */
     base64EncodeContent?: pulumi.Input<boolean>;
     /**
      * The type of wallet to generate.

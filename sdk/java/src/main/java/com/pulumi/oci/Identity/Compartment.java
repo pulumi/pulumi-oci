@@ -17,6 +17,30 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Compartment resource in Oracle Cloud Infrastructure Identity service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/Compartment
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+ * 
+ * Creates a new compartment in the specified compartment.
+ * 
+ * **Important:** Unless `enableDelete` is explicitly set to true:
+ * * Terraform will not delete compartments on destroy, and
+ * * For backwards compatibility, an existing compartment (not including root compartment) with the same name will be automatically imported into the state. Properties of the existing compartment will be updated to what is defined in the new configuration. This can cause a problem if multiple Terraform configurations are using the same compartment, but, for example, specify a different compartment description.
+ * 
+ * Specify the parent compartment&#39;s OCID as the compartment ID in the request object. Remember that the tenancy
+ * is simply the root compartment. For information about OCIDs, see
+ * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+ * 
+ * You must also specify a *name* for the compartment, which must be unique across all compartments in
+ * your tenancy. You can use this name or the OCID when writing policies that apply
+ * to the compartment. For more information about policies, see
+ * [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm).
+ * 
+ * You must also specify a *description* for the compartment (although it can be an empty string). It does
+ * not have to be unique, and you can change it anytime with
+ * [UpdateCompartment](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Compartment/UpdateCompartment).
+ * 
  * ## Example Usage
  * 
  * <pre>

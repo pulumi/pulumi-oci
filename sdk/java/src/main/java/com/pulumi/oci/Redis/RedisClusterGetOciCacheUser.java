@@ -16,6 +16,13 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Redis Cluster Get Oci Cache User resource in Oracle Cloud Infrastructure Redis service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/redis/latest/RedisClusterGetOciCacheUser
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
+ * 
+ * Gets a list of associated Oracle Cloud Infrastructure cache users for a redis cluster.
+ * 
  * ## Example Usage
  * 
  * <pre>

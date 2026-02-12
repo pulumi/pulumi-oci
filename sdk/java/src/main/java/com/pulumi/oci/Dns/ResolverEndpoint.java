@@ -17,6 +17,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dns/latest/ResolverEndpoint
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dns
+ * 
+ * Creates a new resolver endpoint in the same compartment as the resolver.
+ * 
  * ## Example Usage
  * 
  * <pre>
@@ -66,6 +73,7 @@ import javax.annotation.Nullable;
  * ```sh
  * $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint &#34;resolverId/{resolverId}/name/{resolverEndpointName}&#34;
  * ```
+ * 
  * For ResolverEndpoints created using `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
  * 
  * ```sh

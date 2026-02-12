@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Jms
 {
     /// <summary>
+    /// This resource provides the Java Download Token resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/jms-java-download/latest/JavaDownloadToken
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/jms_java_downloads
+    /// 
+    /// Creates a new JavaDownloadToken in the tenancy with specified attributes.
+    /// Ensure that you review the license terms before token generation. Visit the &lt;a href="https://www.oracle.com/java/technologies/downloads"/&gt;Oracle Java Downloads&lt;/a&gt; page to understand the license terms of the Java version for which you are generating a token. By generating a token, you agree to the associated license terms. See &lt;a href="https://www.oracle.com/cis/java/technologies/javase/jdk-faqs.html"&gt;Oracle JDK Licensing - FAQs&lt;/a&gt; for detailed information.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

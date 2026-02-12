@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CapacityManagement
 {
     /// <summary>
+    /// This resource provides the Occ Customer Group Occ Customer resource in Oracle Cloud Infrastructure Capacity Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/occcm/latest/OccCustomerGroupOccCustomer
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/capacity_management
+    /// 
+    /// Create customer.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -34,7 +41,7 @@ namespace Pulumi.Oci.CapacityManagement
     /// 
     /// ## Import
     /// 
-    /// OccCustomerGroupOccCustomers can be imported using the `id`, e.g.
+    /// OccCustomerGroupOccCustomers can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:CapacityManagement/occCustomerGroupOccCustomer:OccCustomerGroupOccCustomer test_occ_customer_group_occ_customer "id"

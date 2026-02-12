@@ -341,6 +341,13 @@ class KeyStore(pulumi.CustomResource):
                  type_details: Optional[pulumi.Input[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Key Store resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/KeyStore
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a Key Store.
+
         ## Example Usage
 
         ```python
@@ -386,6 +393,13 @@ class KeyStore(pulumi.CustomResource):
                  args: KeyStoreArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Key Store resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/KeyStore
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a Key Store.
+
         ## Example Usage
 
         ```python

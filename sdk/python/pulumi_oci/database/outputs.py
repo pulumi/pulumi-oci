@@ -17763,6 +17763,7 @@ class ExadbVmClusterNodeResource(dict):
                  node_id: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None):
         """
+        :param _builtins.str node_name: User provided identifier for each node. `node_name` only exists in Terraform config and state and does not exist in server side. It serves as a placeholder for a node before the node is provisioned. `node_name` 1) must be unique among all nodes 2) must not be an empty string 3) must not contain any space. 4) `node_resource` block can be removed to trigger a remove-node operation but `node_name` can not be changed.
         :param _builtins.str node_hostname: The host name for the node.
         :param _builtins.str node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the node.
         :param _builtins.str state: The current state of the Exadata VM cluster on Exascale Infrastructure.
@@ -17778,6 +17779,9 @@ class ExadbVmClusterNodeResource(dict):
     @_builtins.property
     @pulumi.getter(name="nodeName")
     def node_name(self) -> _builtins.str:
+        """
+        User provided identifier for each node. `node_name` only exists in Terraform config and state and does not exist in server side. It serves as a placeholder for a node before the node is provisioned. `node_name` 1) must be unique among all nodes 2) must not be an empty string 3) must not contain any space. 4) `node_resource` block can be removed to trigger a remove-node operation but `node_name` can not be changed.
+        """
         return pulumi.get(self, "node_name")
 
     @_builtins.property
@@ -23865,6 +23869,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardArgs'] dataguards: The properties that define Autonomous Container Databases Dataguard.
         :param _builtins.str db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param _builtins.int db_split_threshold: The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        :param _builtins.str db_unique_name: **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
         :param _builtins.str db_version: Oracle AI Database version of the Autonomous Container Database.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -24130,6 +24135,9 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> _builtins.str:
+        """
+        **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+        """
         return pulumi.get(self, "db_unique_name")
 
     @_builtins.property

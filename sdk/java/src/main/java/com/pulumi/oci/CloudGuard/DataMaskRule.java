@@ -17,6 +17,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/DataMaskRule
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+ * 
+ * Creates a new DataMaskRule resource definition.
+ * 
  * ## Example Usage
  * 
  * <pre>

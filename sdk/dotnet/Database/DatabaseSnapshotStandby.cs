@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// DatabaseSnapshotStandby can be imported using the `id`, e.g.
+    /// DatabaseSnapshotStandby can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/databaseSnapshotStandby:DatabaseSnapshotStandby test_database_snapshot_standby "id"

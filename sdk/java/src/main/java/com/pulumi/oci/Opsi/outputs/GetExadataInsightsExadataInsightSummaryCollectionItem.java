@@ -104,6 +104,10 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItem {
      * 
      */
     private String id;
+    /**
+     * @return Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight. This should be always set true when using terraform, when it is set to false member associations may be missing from the application.
+     * 
+     */
     private Boolean isAutoSyncEnabled;
     /**
      * @return true if virtualization is used in the Exadata system
@@ -269,6 +273,10 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItem {
     public String id() {
         return this.id;
     }
+    /**
+     * @return Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight. This should be always set true when using terraform, when it is set to false member associations may be missing from the application.
+     * 
+     */
     public Boolean isAutoSyncEnabled() {
         return this.isAutoSyncEnabled;
     }

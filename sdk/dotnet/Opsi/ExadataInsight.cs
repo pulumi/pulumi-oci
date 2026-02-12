@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opsi
 {
     /// <summary>
+    /// This resource provides the Exadata Insight resource in Oracle Cloud Infrastructure Opsi service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/operations-insights/latest/ExadataInsight
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/osi
+    /// 
+    /// Create an Exadata insight resource for an Exadata system in Operations Insights. The Exadata system will be enabled in Operations Insights. Exadata-related metric collection and analysis will be started.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -152,7 +159,7 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// ## Import
     /// 
-    /// ExadataInsights can be imported using the `id`, e.g.
+    /// ExadataInsights can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Opsi/exadataInsight:ExadataInsight test_exadata_insight "id"

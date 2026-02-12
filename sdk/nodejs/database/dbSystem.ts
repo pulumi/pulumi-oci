@@ -7,7 +7,24 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * ## Example Usage
+ * This resource provides the Db System resource in Oracle Cloud Infrastructure Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/DbSystem
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+ *
+ * Creates a new DB system in the specified compartment and availability domain. The Oracle
+ * Database edition that you specify applies to all the databases on that DB system. The selected edition cannot be changed.
+ *
+ * An initial database is created on the DB system based on the request parameters you provide and some default
+ * options. For detailed information about default options, see [Bare metal and virtual machine DB system default options.](https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/creatingDBsystem.htm#Default)
+ *
+ * **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
+ *
+ * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
+ *
+ * Use the [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure/) and [CreateCloudVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/CreateCloudVmCluster/) APIs to provision a new Exadata Cloud Service instance.
+ *
+ * **Important:** When `autoBackupEnabled` is not present in the configuration or set to true, the `autoBackupWindow` and `autoFullBackupWindow` will be ignored
  *
  * ## Import
  *
@@ -19,31 +36,26 @@ import * as utilities from "../utilities";
  *
  * Import is only supported for source=NONE
  *
- * `db_home.0.database.0.admin_password` is not returned by the service for security reasons. To avoid a force new of the db_home on the next apply, add the following to the resource:
+ * `db_home.0.database.0.admin_password` is not returned by the service for security reasons. To avoid a force new of the dbHome on the next apply, add the following to the resource:
  *
+ * ```sh
  *     lifecycle {
- *     
  *         ignore_changes = ["db_home.0.database.0.admin_password"]
- *     
  *     }
+ * ```
+ * You may also need to add `hostname` to the ignoreChanges list if you see a diff on a subsequent apply
  *
- * You may also need to add `hostname` to the ignore_changes list if you see a diff on a subsequent apply
+ * If the oci.Database.DbSystem being imported is missing a primary db_home, an empty placeholder for `dbHome` will be set in the Terraform state.
+ * To keep configurations consistent with the imported state, add an empty placeholder for `dbHome` to your configuration like this:
  *
- * If the oci_database_db_system being imported is missing a primary db_home, an empty placeholder for `db_home` will be set in the Terraform state.
- *
- * To keep configurations consistent with the imported state, add an empty placeholder for `db_home` to your configuration like this:
- *
- * # Add this placeholder into your oci_database_db_system configuration to indicate that the primary db home is empty.
- *
+ * ```sh
+ *   # Add this placeholder into your oci_database_db_system configuration to indicate that the primary db home is empty.
  *   db_home {
- *
  *     database {
- *     
  *       admin_password = ""
- *     
  *     }
- *
  *   }
+ * ```
  */
 export class DbSystem extends pulumi.CustomResource {
     /**

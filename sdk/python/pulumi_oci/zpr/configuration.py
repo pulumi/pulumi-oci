@@ -267,6 +267,14 @@ class Configuration(pulumi.CustomResource):
                  zpr_status: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Configuration resource in Oracle Cloud Infrastructure Zpr service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/latest/Configuration
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/zpr
+
+        Initiates the process to onboard ZPR
+        in a root compartment (the root compartment is the tenancy). It creates an object of ZPR configuration as part of onboarding.
+
         ## Example Usage
 
         ```python
@@ -310,6 +318,14 @@ class Configuration(pulumi.CustomResource):
                  args: ConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Configuration resource in Oracle Cloud Infrastructure Zpr service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/latest/Configuration
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/zpr
+
+        Initiates the process to onboard ZPR
+        in a root compartment (the root compartment is the tenancy). It creates an object of ZPR configuration as part of onboarding.
+
         ## Example Usage
 
         ```python

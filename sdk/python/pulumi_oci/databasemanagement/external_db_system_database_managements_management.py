@@ -153,6 +153,13 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
                  license_model: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the External Db System Database Managements Management resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalDbSystemDatabaseManagementsManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+        Enables Database Management service for all the components of the specified
+        external DB system (except databases).
+
         ## Example Usage
 
         ```python
@@ -182,6 +189,13 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
                  args: ExternalDbSystemDatabaseManagementsManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the External Db System Database Managements Management resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalDbSystemDatabaseManagementsManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+        Enables Database Management service for all the components of the specified
+        external DB system (except databases).
+
         ## Example Usage
 
         ```python

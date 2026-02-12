@@ -358,6 +358,13 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Fusion Environment Family resource in Oracle Cloud Infrastructure Fusion Apps service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fusion-applications/latest/FusionEnvironmentFamily
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fusionapps
+
+        Creates a new FusionEnvironmentFamily.
+
         ## Example Usage
 
         ```python
@@ -409,6 +416,13 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
                  args: FusionEnvironmentFamilyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Fusion Environment Family resource in Oracle Cloud Infrastructure Fusion Apps service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fusion-applications/latest/FusionEnvironmentFamily
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fusionapps
+
+        Creates a new FusionEnvironmentFamily.
+
         ## Example Usage
 
         ```python

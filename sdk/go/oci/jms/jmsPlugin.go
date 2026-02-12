@@ -12,6 +12,15 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Jms Plugin resource in Oracle Cloud Infrastructure Jms service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/jms/latest/JmsPlugin
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/jms
+//
+// Registers an agent's JmsPlugin, optionally attaching to an existing fleet of the tenancy.
+// JmsPlugins registered fleet-less are created with lifecycle state INACTIVE.
+// For the operation to be authorized, the agent must exist, and the authorized user requires JMS_PLUGIN_CREATE permission for the agent's compartment.
+//
 // ## Example Usage
 //
 // ```go

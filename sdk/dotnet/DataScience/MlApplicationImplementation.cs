@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience
 {
     /// <summary>
+    /// This resource provides the Ml Application Implementation resource in Oracle Cloud Infrastructure Data Science service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/MlApplicationImplementation
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+    /// 
+    /// Creates a new MlApplicationImplementation.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -68,7 +75,7 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// ## Import
     /// 
-    /// MlApplicationImplementations can be imported using the `id`, e.g.
+    /// MlApplicationImplementations can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataScience/mlApplicationImplementation:MlApplicationImplementation test_ml_application_implementation "id"

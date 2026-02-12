@@ -1267,6 +1267,16 @@ class Connection(pulumi.CustomResource):
                  wallet: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Connection resource in Oracle Cloud Infrastructure Database Migration service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-migration/latest/Connection
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemigration
+
+        Create a Database Connection resource that contains the details to connect to either a Source or Target Database
+        in the migration.
+
+        Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+
         ## Example Usage
 
         ```python
@@ -1369,6 +1379,16 @@ class Connection(pulumi.CustomResource):
                  args: ConnectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Connection resource in Oracle Cloud Infrastructure Database Migration service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-migration/latest/Connection
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemigration
+
+        Create a Database Connection resource that contains the details to connect to either a Source or Target Database
+        in the migration.
+
+        Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+
         ## Example Usage
 
         ```python

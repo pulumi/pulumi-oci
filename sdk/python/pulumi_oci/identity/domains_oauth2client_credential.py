@@ -1319,6 +1319,13 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
                  user: Optional[pulumi.Input[Union['DomainsOauth2clientCredentialUserArgs', 'DomainsOauth2clientCredentialUserArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/OAuth2ClientCredential
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Add a user's OAuth2 client credentials.
+
         ## Example Usage
 
         ```python
@@ -1491,6 +1498,13 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
                  args: DomainsOauth2clientCredentialArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/OAuth2ClientCredential
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Add a user's OAuth2 client credentials.
+
         ## Example Usage
 
         ```python

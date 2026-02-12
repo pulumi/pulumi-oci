@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Desktops
 {
     /// <summary>
+    /// This resource provides the Desktop Pool resource in Oracle Cloud Infrastructure Desktops service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/secure-desktops/latest/DesktopPool
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/desktops
+    /// 
+    /// Creates a desktop pool with the given configuration parameters.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -113,7 +120,7 @@ namespace Pulumi.Oci.Desktops
     /// 
     /// ## Import
     /// 
-    /// DesktopPools can be imported using the `id`, e.g.
+    /// DesktopPools can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Desktops/desktopPool:DesktopPool test_desktop_pool "id"

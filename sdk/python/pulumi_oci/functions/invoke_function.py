@@ -30,6 +30,7 @@ class InvokeFunctionArgs:
         """
         The set of arguments for constructing a InvokeFunction resource.
         :param pulumi.Input[_builtins.str] function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
+        :param pulumi.Input[_builtins.bool] base64_encode_content: Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
         :param pulumi.Input[_builtins.str] fn_intent: An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
         :param pulumi.Input[_builtins.str] fn_invoke_type: Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
         :param pulumi.Input[_builtins.str] input_body_source_path: An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
@@ -37,6 +38,7 @@ class InvokeFunctionArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] invoke_function_body: The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
+        :param pulumi.Input[_builtins.str] invoke_function_body_base64_encoded: The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invoke_function_body` or `input_body_source_path` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
         :param pulumi.Input[_builtins.bool] is_dry_run: Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
         """
         pulumi.set(__self__, "function_id", function_id)
@@ -70,6 +72,9 @@ class InvokeFunctionArgs:
     @_builtins.property
     @pulumi.getter(name="base64EncodeContent")
     def base64_encode_content(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
+        """
         return pulumi.get(self, "base64_encode_content")
 
     @base64_encode_content.setter
@@ -130,6 +135,9 @@ class InvokeFunctionArgs:
     @_builtins.property
     @pulumi.getter(name="invokeFunctionBodyBase64Encoded")
     def invoke_function_body_base64_encoded(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invoke_function_body` or `input_body_source_path` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+        """
         return pulumi.get(self, "invoke_function_body_base64_encoded")
 
     @invoke_function_body_base64_encoded.setter
@@ -164,6 +172,7 @@ class _InvokeFunctionState:
                  is_dry_run: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering InvokeFunction resources.
+        :param pulumi.Input[_builtins.bool] base64_encode_content: Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
         :param pulumi.Input[_builtins.str] content: Content of the response string, if any. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
         :param pulumi.Input[_builtins.str] fn_intent: An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
         :param pulumi.Input[_builtins.str] fn_invoke_type: Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
@@ -173,6 +182,7 @@ class _InvokeFunctionState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] invoke_function_body: The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
+        :param pulumi.Input[_builtins.str] invoke_function_body_base64_encoded: The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invoke_function_body` or `input_body_source_path` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
         :param pulumi.Input[_builtins.bool] is_dry_run: Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
         """
         if base64_encode_content is not None:
@@ -199,6 +209,9 @@ class _InvokeFunctionState:
     @_builtins.property
     @pulumi.getter(name="base64EncodeContent")
     def base64_encode_content(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
+        """
         return pulumi.get(self, "base64_encode_content")
 
     @base64_encode_content.setter
@@ -292,6 +305,9 @@ class _InvokeFunctionState:
     @_builtins.property
     @pulumi.getter(name="invokeFunctionBodyBase64Encoded")
     def invoke_function_body_base64_encoded(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invoke_function_body` or `input_body_source_path` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+        """
         return pulumi.get(self, "invoke_function_body_base64_encoded")
 
     @invoke_function_body_base64_encoded.setter
@@ -327,6 +343,13 @@ class InvokeFunction(pulumi.CustomResource):
                  is_dry_run: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
+        This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/functions/latest/InvokeFunction
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/functions
+
+        Invokes a function
+
         ## Example Usage
 
         ```python
@@ -348,6 +371,7 @@ class InvokeFunction(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.bool] base64_encode_content: Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
         :param pulumi.Input[_builtins.str] fn_intent: An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
         :param pulumi.Input[_builtins.str] fn_invoke_type: Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
         :param pulumi.Input[_builtins.str] function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
@@ -356,6 +380,7 @@ class InvokeFunction(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] invoke_function_body: The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
+        :param pulumi.Input[_builtins.str] invoke_function_body_base64_encoded: The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invoke_function_body` or `input_body_source_path` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
         :param pulumi.Input[_builtins.bool] is_dry_run: Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
         """
         ...
@@ -365,6 +390,13 @@ class InvokeFunction(pulumi.CustomResource):
                  args: InvokeFunctionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/functions/latest/InvokeFunction
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/functions
+
+        Invokes a function
+
         ## Example Usage
 
         ```python
@@ -455,6 +487,7 @@ class InvokeFunction(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.bool] base64_encode_content: Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
         :param pulumi.Input[_builtins.str] content: Content of the response string, if any. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
         :param pulumi.Input[_builtins.str] fn_intent: An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
         :param pulumi.Input[_builtins.str] fn_invoke_type: Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
@@ -464,6 +497,7 @@ class InvokeFunction(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] invoke_function_body: The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
+        :param pulumi.Input[_builtins.str] invoke_function_body_base64_encoded: The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invoke_function_body` or `input_body_source_path` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
         :param pulumi.Input[_builtins.bool] is_dry_run: Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -485,6 +519,9 @@ class InvokeFunction(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="base64EncodeContent")
     def base64_encode_content(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
+        """
         return pulumi.get(self, "base64_encode_content")
 
     @_builtins.property
@@ -546,6 +583,9 @@ class InvokeFunction(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="invokeFunctionBodyBase64Encoded")
     def invoke_function_body_base64_encoded(self) -> pulumi.Output[_builtins.str]:
+        """
+        The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invoke_function_body` or `input_body_source_path` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+        """
         return pulumi.get(self, "invoke_function_body_base64_encoded")
 
     @_builtins.property

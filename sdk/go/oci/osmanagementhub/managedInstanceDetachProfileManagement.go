@@ -12,6 +12,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Managed Instance Detach Profile Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ManagedInstanceDetachProfileManagement
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+//
+// Detaches profile from a managed instance. After the profile has been removed,
+// the instance cannot be registered as a managed instance.
+//
 // ## Example Usage
 //
 // ```go

@@ -12,6 +12,33 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Public Ip resource in Oracle Cloud Infrastructure Core service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/PublicIp
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+//
+// Creates a public IP. Use the `lifetime` property to specify whether it's an ephemeral or
+// reserved public IP. For information about limits on how many you can create, see
+// [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+//
+// * **For an ephemeral public IP assigned to a private IP:** You must also specify a `privateIpId`
+// with the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary private IP you want to assign the public IP to. The public IP is
+// created in the same availability domain as the private IP. An ephemeral public IP must always be
+// assigned to a private IP, and only to the *primary* private IP on a VNIC, not a secondary
+// private IP. Exception: If you create a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/), Oracle
+// automatically assigns the NAT gateway a regional ephemeral public IP that you cannot remove.
+//
+// * **For a reserved public IP:** You may also optionally assign the public IP to a private
+// IP by specifying `privateIpId`. Or you can later assign the public IP with
+// [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
+//
+// **Note:** When assigning a public IP to a private IP, the private IP must not already have
+// a public IP with `lifecycleState` = ASSIGNING or ASSIGNED. If it does, an error is returned.
+//
+// Also, for reserved public IPs, the optional assignment part of this operation is
+// asynchronous. Poll the public IP's `lifecycleState` to determine if the assignment
+// succeeded.
+//
 // ## Example Usage
 //
 // ```go

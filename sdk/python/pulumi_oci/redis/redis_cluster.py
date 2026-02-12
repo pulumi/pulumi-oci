@@ -673,6 +673,13 @@ class RedisCluster(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/redis/latest/RedisCluster
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
+
+        Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
+
         ## Example Usage
 
         ```python
@@ -734,6 +741,13 @@ class RedisCluster(pulumi.CustomResource):
                  args: RedisClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/redis/latest/RedisCluster
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
+
+        Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
+
         ## Example Usage
 
         ```python

@@ -583,7 +583,12 @@ class ScheduledQuery(pulumi.CustomResource):
                  scheduled_query_text: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Scheduled Query resource in Oracle Cloud Infrastructure Apm Traces service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/latest/ScheduledQuery
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/apm/apm_traces
+
+        Create a scheduled query in the APM Domain.
 
         ## Import
 
@@ -621,7 +626,12 @@ class ScheduledQuery(pulumi.CustomResource):
                  args: ScheduledQueryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Scheduled Query resource in Oracle Cloud Infrastructure Apm Traces service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/latest/ScheduledQuery
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/apm/apm_traces
+
+        Create a scheduled query in the APM Domain.
 
         ## Import
 

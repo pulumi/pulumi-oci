@@ -638,6 +638,13 @@ class Function(pulumi.CustomResource):
                  trace_config: Optional[pulumi.Input[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Function resource in Oracle Cloud Infrastructure Functions service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/functions/latest/Function
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/functions
+
+        Creates a new function.
+
         ## Example Usage
 
         ```python
@@ -721,6 +728,13 @@ class Function(pulumi.CustomResource):
                  args: FunctionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Function resource in Oracle Cloud Infrastructure Functions service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/functions/latest/Function
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/functions
+
+        Creates a new function.
+
         ## Example Usage
 
         ```python

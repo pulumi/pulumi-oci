@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
+    /// This resource provides the Data Safe Private Endpoint resource in Oracle Cloud Infrastructure Data Safe service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/DataSafePrivateEndpoint
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+    /// 
+    /// Creates a new Data Safe private endpoint.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -44,7 +51,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Import
     /// 
-    /// DataSafePrivateEndpoints can be imported using the `id`, e.g.
+    /// DataSafePrivateEndpoints can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint test_data_safe_private_endpoint "id"

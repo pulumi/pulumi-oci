@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Tool resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/latest/Tool
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai_agent
+//
+// Creates a tool.
+//
 // ## Example Usage
 //
 // ```go

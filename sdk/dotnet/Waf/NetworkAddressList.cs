@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf
 {
     /// <summary>
+    /// This resource provides the Network Address List resource in Oracle Cloud Infrastructure Waf service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/waf/latest/NetworkAddressList
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/web_app_firewall
+    /// 
+    /// Creates a new NetworkAddressList.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -50,7 +57,7 @@ namespace Pulumi.Oci.Waf
     /// 
     /// ## Import
     /// 
-    /// NetworkAddressLists can be imported using the `id`, e.g.
+    /// NetworkAddressLists can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Waf/networkAddressList:NetworkAddressList test_network_address_list "id"

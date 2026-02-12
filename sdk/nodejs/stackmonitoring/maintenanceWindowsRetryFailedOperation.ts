@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Maintenance Windows Retry Failed Operation resource in Oracle Cloud Infrastructure Stack Monitoring service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MaintenanceWindowsRetryFailedOperation
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+ *
+ * Retry the last failed operation. The operation failed will be the most recent one. It won't apply for previous failed operations.
+ *
  * ## Example Usage
  *
  * ```typescript

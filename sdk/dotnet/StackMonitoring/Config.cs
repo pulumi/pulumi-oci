@@ -10,6 +10,19 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring
 {
     /// <summary>
+    /// This resource provides the Config resource in Oracle Cloud Infrastructure Stack Monitoring service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/Config
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+    /// 
+    /// Creates a configuration item, for example to define
+    /// whether resources of a specific type should be discovered automatically.
+    /// 
+    /// For example, when a new Management Agent gets registered in a certain compartment,
+    /// this Management Agent can potentially get promoted to a HOST resource.
+    /// The configuration item will determine if HOST resources in the selected compartment will be
+    /// discovered automatically.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -43,7 +56,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// ## Import
     /// 
-    /// Configs can be imported using the `id`, e.g.
+    /// Configs can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:StackMonitoring/config:Config test_config "id"

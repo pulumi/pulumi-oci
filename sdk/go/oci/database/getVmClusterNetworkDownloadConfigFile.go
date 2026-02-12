@@ -54,6 +54,7 @@ func GetVmClusterNetworkDownloadConfigFile(ctx *pulumi.Context, args *GetVmClust
 
 // A collection of arguments for invoking getVmClusterNetworkDownloadConfigFile.
 type GetVmClusterNetworkDownloadConfigFileArgs struct {
+	// Encodes the downloaded txt config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `false`.
 	Base64EncodeContent *bool `pulumi:"base64EncodeContent"`
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
@@ -83,6 +84,7 @@ func GetVmClusterNetworkDownloadConfigFileOutput(ctx *pulumi.Context, args GetVm
 
 // A collection of arguments for invoking getVmClusterNetworkDownloadConfigFile.
 type GetVmClusterNetworkDownloadConfigFileOutputArgs struct {
+	// Encodes the downloaded txt config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `false`.
 	Base64EncodeContent pulumi.BoolPtrInput `pulumi:"base64EncodeContent"`
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId pulumi.StringInput `pulumi:"exadataInfrastructureId"`

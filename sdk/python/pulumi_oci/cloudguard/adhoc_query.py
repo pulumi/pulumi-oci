@@ -308,6 +308,13 @@ class AdhocQuery(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Adhoc Query resource in Oracle Cloud Infrastructure Cloud Guard service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/AdhocQuery
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+
+        Creates a AdhocQuery resource.
+
         ## Example Usage
 
         ```python
@@ -360,6 +367,13 @@ class AdhocQuery(pulumi.CustomResource):
                  args: AdhocQueryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Adhoc Query resource in Oracle Cloud Infrastructure Cloud Guard service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/AdhocQuery
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+
+        Creates a AdhocQuery resource.
+
         ## Example Usage
 
         ```python

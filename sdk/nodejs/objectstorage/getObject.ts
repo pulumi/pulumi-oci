@@ -51,6 +51,10 @@ export function getObject(args: GetObjectArgs, opts?: pulumi.InvokeOptions): Pro
  * A collection of arguments for invoking getObject.
  */
 export interface GetObjectArgs {
+    /**
+     * Encodes the downloaded content in base64. It is recommended to set this to `true` for binary content to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+     * If passing the base64 encoded content to a `localFile` resource, please use the `contentBase64` attribute of the `localFile` resource.
+     */
     base64EncodeContent?: boolean;
     /**
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -209,6 +213,10 @@ export function getObjectOutput(args: GetObjectOutputArgs, opts?: pulumi.InvokeO
  * A collection of arguments for invoking getObject.
  */
 export interface GetObjectOutputArgs {
+    /**
+     * Encodes the downloaded content in base64. It is recommended to set this to `true` for binary content to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+     * If passing the base64 encoded content to a `localFile` resource, please use the `contentBase64` attribute of the `localFile` resource.
+     */
     base64EncodeContent?: pulumi.Input<boolean>;
     /**
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`

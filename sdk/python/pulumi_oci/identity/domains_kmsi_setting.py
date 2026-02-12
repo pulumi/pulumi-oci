@@ -1374,7 +1374,12 @@ class DomainsKmsiSetting(pulumi.CustomResource):
                  tou_prompt_disabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Kmsi Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/KmsiSetting
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Replace KmsiSettings
 
         ## Import
 
@@ -1526,7 +1531,12 @@ class DomainsKmsiSetting(pulumi.CustomResource):
                  args: DomainsKmsiSettingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Kmsi Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/KmsiSetting
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Replace KmsiSettings
 
         ## Import
 

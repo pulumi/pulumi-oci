@@ -305,9 +305,17 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         return Optional.ofNullable(this.dbSystemSecurityAttributes);
     }
 
+    /**
+     * (Updatable) if set to true the destroy operation will destroy the standby dbHome/dbSystem that is referenced in the Data Guard Association. The Data Guard Association gets destroyed when standby dbHome/dbSystem is terminated. Only `true` is supported at this time. If you change an argument that is used during the delete operation you must run `pulumi up` first so that that the change in the value is registered in the statefile before running `terraform destroy`. `terraform destroy` only looks at what is currently on the statefile and ignores the terraform configuration files.
+     * 
+     */
     @Import(name="deleteStandbyDbHomeOnDelete")
     private @Nullable Output<String> deleteStandbyDbHomeOnDelete;
 
+    /**
+     * @return (Updatable) if set to true the destroy operation will destroy the standby dbHome/dbSystem that is referenced in the Data Guard Association. The Data Guard Association gets destroyed when standby dbHome/dbSystem is terminated. Only `true` is supported at this time. If you change an argument that is used during the delete operation you must run `pulumi up` first so that that the change in the value is registered in the statefile before running `terraform destroy`. `terraform destroy` only looks at what is currently on the statefile and ignores the terraform configuration files.
+     * 
+     */
     public Optional<Output<String>> deleteStandbyDbHomeOnDelete() {
         return Optional.ofNullable(this.deleteStandbyDbHomeOnDelete);
     }
@@ -1280,11 +1288,23 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
             return dbSystemSecurityAttributes(Output.of(dbSystemSecurityAttributes));
         }
 
+        /**
+         * @param deleteStandbyDbHomeOnDelete (Updatable) if set to true the destroy operation will destroy the standby dbHome/dbSystem that is referenced in the Data Guard Association. The Data Guard Association gets destroyed when standby dbHome/dbSystem is terminated. Only `true` is supported at this time. If you change an argument that is used during the delete operation you must run `pulumi up` first so that that the change in the value is registered in the statefile before running `terraform destroy`. `terraform destroy` only looks at what is currently on the statefile and ignores the terraform configuration files.
+         * 
+         * @return builder
+         * 
+         */
         public Builder deleteStandbyDbHomeOnDelete(@Nullable Output<String> deleteStandbyDbHomeOnDelete) {
             $.deleteStandbyDbHomeOnDelete = deleteStandbyDbHomeOnDelete;
             return this;
         }
 
+        /**
+         * @param deleteStandbyDbHomeOnDelete (Updatable) if set to true the destroy operation will destroy the standby dbHome/dbSystem that is referenced in the Data Guard Association. The Data Guard Association gets destroyed when standby dbHome/dbSystem is terminated. Only `true` is supported at this time. If you change an argument that is used during the delete operation you must run `pulumi up` first so that that the change in the value is registered in the statefile before running `terraform destroy`. `terraform destroy` only looks at what is currently on the statefile and ignores the terraform configuration files.
+         * 
+         * @return builder
+         * 
+         */
         public Builder deleteStandbyDbHomeOnDelete(String deleteStandbyDbHomeOnDelete) {
             return deleteStandbyDbHomeOnDelete(Output.of(deleteStandbyDbHomeOnDelete));
         }

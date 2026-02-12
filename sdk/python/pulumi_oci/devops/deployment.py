@@ -579,7 +579,12 @@ class Deployment(pulumi.CustomResource):
                  trigger_new_devops_deployment: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Deployment resource in Oracle Cloud Infrastructure Devops service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/Deployment
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+
+        Creates a new deployment.
 
         ## Import
 
@@ -614,7 +619,12 @@ class Deployment(pulumi.CustomResource):
                  args: DeploymentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Deployment resource in Oracle Cloud Infrastructure Devops service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/Deployment
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+
+        Creates a new deployment.
 
         ## Import
 

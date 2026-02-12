@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Audit Trail resource in Oracle Cloud Infrastructure Data Safe service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/AuditTrail
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+    /// 
+    /// Updates one or more attributes of the specified audit trail.
     /// 
     /// ## Import
     /// 
-    /// AuditTrails can be imported using the `id`, e.g.
+    /// AuditTrails can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataSafe/auditTrail:AuditTrail test_audit_trail "id"

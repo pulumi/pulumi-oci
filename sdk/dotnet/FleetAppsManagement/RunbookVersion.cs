@@ -10,11 +10,22 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FleetAppsManagement
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Runbook Version resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/RunbookVersion
+    /// 
+    /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
+    /// Add RunbookVersion in Fleet Application Management.
+    /// ===
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+    /// &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
+    /// 
+    /// This resource provides the Runbook Version resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+    /// 
+    /// Add RunbookVersion in Fleet Application Management.
     /// 
     /// ## Import
     /// 
-    /// RunbookVersions can be imported using the `id`, e.g.
+    /// RunbookVersions can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:FleetAppsManagement/runbookVersion:RunbookVersion test_runbook_version "id"

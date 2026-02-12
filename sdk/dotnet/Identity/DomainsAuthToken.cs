@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
+    /// This resource provides the Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/AuthToken
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+    /// 
+    /// Create a user's Auth token.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -60,7 +67,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Import
     /// 
-    /// AuthTokens can be imported using the `id`, e.g.
+    /// AuthTokens can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Identity/domainsAuthToken:DomainsAuthToken test_auth_token "idcsEndpoint/{idcsEndpoint}/authTokens/{authTokenId}"

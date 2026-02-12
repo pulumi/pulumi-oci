@@ -7,6 +7,17 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Compute Capacity Reservation resource in Oracle Cloud Infrastructure Core service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReservation
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ *
+ * Creates a new compute capacity reservation in the specified compartment and availability domain.
+ * Compute capacity reservations let you reserve instances in a compartment.
+ * When you launch an instance using this reservation, you are assured that you have enough space for your instance,
+ * and you won't get out of capacity errors.
+ * For more information, see [Reserved Capacity](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+ *
  * ## Example Usage
  *
  * ```typescript

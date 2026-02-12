@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Artifacts
 {
     /// <summary>
+    /// This resource provides the Container Image Signature resource in Oracle Cloud Infrastructure Artifacts service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/registry/latest/ContainerImageSignature
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/artifacts
+    /// 
+    /// Upload a signature to an image.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -44,7 +51,7 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// ## Import
     /// 
-    /// ContainerImageSignatures can be imported using the `id`, e.g.
+    /// ContainerImageSignatures can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Artifacts/containerImageSignature:ContainerImageSignature test_container_image_signature "container/imageSignatures/{imageSignatureId}"

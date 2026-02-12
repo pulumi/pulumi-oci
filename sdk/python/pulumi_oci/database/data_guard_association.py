@@ -75,6 +75,7 @@ class DataGuardAssociationArgs:
                
                **The password MUST be the same as the primary admin password.**
         :param pulumi.Input[_builtins.str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[_builtins.str] delete_standby_db_home_on_delete: (Updatable) if set to true the destroy operation will destroy the standby dbHome/dbSystem that is referenced in the Data Guard Association. The Data Guard Association gets destroyed when standby dbHome/dbSystem is terminated. Only `true` is supported at this time. If you change an argument that is used during the delete operation you must run `pulumi up` first so that that the change in the value is registered in the statefile before running `terraform destroy`. `terraform destroy` only looks at what is currently on the statefile and ignores the terraform configuration files.
         :param pulumi.Input[_builtins.str] protection_mode: (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
                
                **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
@@ -261,6 +262,9 @@ class DataGuardAssociationArgs:
     @_builtins.property
     @pulumi.getter(name="deleteStandbyDbHomeOnDelete")
     def delete_standby_db_home_on_delete(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) if set to true the destroy operation will destroy the standby dbHome/dbSystem that is referenced in the Data Guard Association. The Data Guard Association gets destroyed when standby dbHome/dbSystem is terminated. Only `true` is supported at this time. If you change an argument that is used during the delete operation you must run `pulumi up` first so that that the change in the value is registered in the statefile before running `terraform destroy`. `terraform destroy` only looks at what is currently on the statefile and ignores the terraform configuration files.
+        """
         return pulumi.get(self, "delete_standby_db_home_on_delete")
 
     @delete_standby_db_home_on_delete.setter
@@ -810,6 +814,7 @@ class _DataGuardAssociationState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] db_system_security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        :param pulumi.Input[_builtins.str] delete_standby_db_home_on_delete: (Updatable) if set to true the destroy operation will destroy the standby dbHome/dbSystem that is referenced in the Data Guard Association. The Data Guard Association gets destroyed when standby dbHome/dbSystem is terminated. Only `true` is supported at this time. If you change an argument that is used during the delete operation you must run `pulumi up` first so that that the change in the value is registered in the statefile before running `terraform destroy`. `terraform destroy` only looks at what is currently on the statefile and ignores the terraform configuration files.
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
         :param pulumi.Input[_builtins.str] domain: A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
@@ -1201,6 +1206,9 @@ class _DataGuardAssociationState:
     @_builtins.property
     @pulumi.getter(name="deleteStandbyDbHomeOnDelete")
     def delete_standby_db_home_on_delete(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) if set to true the destroy operation will destroy the standby dbHome/dbSystem that is referenced in the Data Guard Association. The Data Guard Association gets destroyed when standby dbHome/dbSystem is terminated. Only `true` is supported at this time. If you change an argument that is used during the delete operation you must run `pulumi up` first so that that the change in the value is registered in the statefile before running `terraform destroy`. `terraform destroy` only looks at what is currently on the statefile and ignores the terraform configuration files.
+        """
         return pulumi.get(self, "delete_standby_db_home_on_delete")
 
     @delete_standby_db_home_on_delete.setter
@@ -1641,6 +1649,20 @@ class DataGuardAssociation(pulumi.CustomResource):
                  transport_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Data Guard Association resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/DataGuardAssociation
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a new Data Guard association.  A Data Guard association represents the replication relationship between the
+        specified database and a peer database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
+
+        All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
+        called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
+        You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
+        resource in the Console. For more information, see
+        [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
         ## Example Usage
 
         ```python
@@ -1720,6 +1742,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] db_system_security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        :param pulumi.Input[_builtins.str] delete_standby_db_home_on_delete: (Updatable) if set to true the destroy operation will destroy the standby dbHome/dbSystem that is referenced in the Data Guard Association. The Data Guard Association gets destroyed when standby dbHome/dbSystem is terminated. Only `true` is supported at this time. If you change an argument that is used during the delete operation you must run `pulumi up` first so that that the change in the value is registered in the statefile before running `terraform destroy`. `terraform destroy` only looks at what is currently on the statefile and ignores the terraform configuration files.
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
         :param pulumi.Input[_builtins.str] domain: A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
@@ -1777,6 +1800,20 @@ class DataGuardAssociation(pulumi.CustomResource):
                  args: DataGuardAssociationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Data Guard Association resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/DataGuardAssociation
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a new Data Guard association.  A Data Guard association represents the replication relationship between the
+        specified database and a peer database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
+
+        All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
+        called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
+        You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
+        resource in the Console. For more information, see
+        [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
         ## Example Usage
 
         ```python
@@ -2052,6 +2089,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] db_system_security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        :param pulumi.Input[_builtins.str] delete_standby_db_home_on_delete: (Updatable) if set to true the destroy operation will destroy the standby dbHome/dbSystem that is referenced in the Data Guard Association. The Data Guard Association gets destroyed when standby dbHome/dbSystem is terminated. Only `true` is supported at this time. If you change an argument that is used during the delete operation you must run `pulumi up` first so that that the change in the value is registered in the statefile before running `terraform destroy`. `terraform destroy` only looks at what is currently on the statefile and ignores the terraform configuration files.
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
         :param pulumi.Input[_builtins.str] domain: A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
@@ -2322,6 +2360,9 @@ class DataGuardAssociation(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="deleteStandbyDbHomeOnDelete")
     def delete_standby_db_home_on_delete(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) if set to true the destroy operation will destroy the standby dbHome/dbSystem that is referenced in the Data Guard Association. The Data Guard Association gets destroyed when standby dbHome/dbSystem is terminated. Only `true` is supported at this time. If you change an argument that is used during the delete operation you must run `pulumi up` first so that that the change in the value is registered in the statefile before running `terraform destroy`. `terraform destroy` only looks at what is currently on the statefile and ignores the terraform configuration files.
+        """
         return pulumi.get(self, "delete_standby_db_home_on_delete")
 
     @_builtins.property

@@ -894,6 +894,13 @@ class WorkspaceTask(pulumi.CustomResource):
                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Workspace Task resource in Oracle Cloud Infrastructure Data Integration service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-integration/latest/WorkspaceTask
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataintegration
+
+        Creates a new task ready for performing data integrations. There are specialized types of tasks that include data loader and integration tasks.
+
         ## Example Usage
 
         ```python
@@ -1645,6 +1652,13 @@ class WorkspaceTask(pulumi.CustomResource):
                  args: WorkspaceTaskArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Workspace Task resource in Oracle Cloud Infrastructure Data Integration service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-integration/latest/WorkspaceTask
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataintegration
+
+        Creates a new task ready for performing data integrations. There are specialized types of tasks that include data loader and integration tasks.
+
         ## Example Usage
 
         ```python

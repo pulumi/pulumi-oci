@@ -120,9 +120,17 @@ public final class CatalogItemCatalogResultPayloadArgs extends com.pulumi.resour
         return Optional.ofNullable(this.timeExpires);
     }
 
+    /**
+     * File path to the directory to use for running Terraform. If not specified, the root directory is used.
+     * 
+     */
     @Import(name="workingDirectory")
     private @Nullable Output<String> workingDirectory;
 
+    /**
+     * @return File path to the directory to use for running Terraform. If not specified, the root directory is used.
+     * 
+     */
     public Optional<Output<String>> workingDirectory() {
         return Optional.ofNullable(this.workingDirectory);
     }
@@ -305,11 +313,23 @@ public final class CatalogItemCatalogResultPayloadArgs extends com.pulumi.resour
             return timeExpires(Output.of(timeExpires));
         }
 
+        /**
+         * @param workingDirectory File path to the directory to use for running Terraform. If not specified, the root directory is used.
+         * 
+         * @return builder
+         * 
+         */
         public Builder workingDirectory(@Nullable Output<String> workingDirectory) {
             $.workingDirectory = workingDirectory;
             return this;
         }
 
+        /**
+         * @param workingDirectory File path to the directory to use for running Terraform. If not specified, the root directory is used.
+         * 
+         * @return builder
+         * 
+         */
         public Builder workingDirectory(String workingDirectory) {
             return workingDirectory(Output.of(workingDirectory));
         }

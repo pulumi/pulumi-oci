@@ -36,7 +36,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Import
     /// 
-    /// CalculateAuditVolumeCollected can be imported using the `id`, e.g.
+    /// CalculateAuditVolumeCollected can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataSafe/calculateAuditVolumeCollected:CalculateAuditVolumeCollected test_calculate_audit_volume_collected "id"

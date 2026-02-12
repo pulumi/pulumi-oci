@@ -17,9 +17,17 @@ public final class InvokeFunctionArgs extends com.pulumi.resources.ResourceArgs 
 
     public static final InvokeFunctionArgs Empty = new InvokeFunctionArgs();
 
+    /**
+     * Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
+     * 
+     */
     @Import(name="base64EncodeContent")
     private @Nullable Output<Boolean> base64EncodeContent;
 
+    /**
+     * @return Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
+     * 
+     */
     public Optional<Output<Boolean>> base64EncodeContent() {
         return Optional.ofNullable(this.base64EncodeContent);
     }
@@ -105,9 +113,17 @@ public final class InvokeFunctionArgs extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.invokeFunctionBody);
     }
 
+    /**
+     * The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invokeFunctionBody` or `inputBodySourcePath` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+     * 
+     */
     @Import(name="invokeFunctionBodyBase64Encoded")
     private @Nullable Output<String> invokeFunctionBodyBase64Encoded;
 
+    /**
+     * @return The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invokeFunctionBody` or `inputBodySourcePath` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+     * 
+     */
     public Optional<Output<String>> invokeFunctionBodyBase64Encoded() {
         return Optional.ofNullable(this.invokeFunctionBodyBase64Encoded);
     }
@@ -158,11 +174,23 @@ public final class InvokeFunctionArgs extends com.pulumi.resources.ResourceArgs 
             $ = new InvokeFunctionArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param base64EncodeContent Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder base64EncodeContent(@Nullable Output<Boolean> base64EncodeContent) {
             $.base64EncodeContent = base64EncodeContent;
             return this;
         }
 
+        /**
+         * @param base64EncodeContent Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder base64EncodeContent(Boolean base64EncodeContent) {
             return base64EncodeContent(Output.of(base64EncodeContent));
         }
@@ -278,11 +306,23 @@ public final class InvokeFunctionArgs extends com.pulumi.resources.ResourceArgs 
             return invokeFunctionBody(Output.of(invokeFunctionBody));
         }
 
+        /**
+         * @param invokeFunctionBodyBase64Encoded The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invokeFunctionBody` or `inputBodySourcePath` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+         * 
+         * @return builder
+         * 
+         */
         public Builder invokeFunctionBodyBase64Encoded(@Nullable Output<String> invokeFunctionBodyBase64Encoded) {
             $.invokeFunctionBodyBase64Encoded = invokeFunctionBodyBase64Encoded;
             return this;
         }
 
+        /**
+         * @param invokeFunctionBodyBase64Encoded The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invokeFunctionBody` or `inputBodySourcePath` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+         * 
+         * @return builder
+         * 
+         */
         public Builder invokeFunctionBodyBase64Encoded(String invokeFunctionBodyBase64Encoded) {
             return invokeFunctionBodyBase64Encoded(Output.of(invokeFunctionBodyBase64Encoded));
         }

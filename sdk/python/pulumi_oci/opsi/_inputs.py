@@ -79,36 +79,31 @@ __all__ = [
     'GetOpsiConfigurationsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class DatabaseInsightConnectionCredentialDetailsArgsDict(TypedDict):
-        credential_type: pulumi.Input[_builtins.str]
-        """
-        Credential type.
-        """
-        credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        database user role.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        database user name.
-        """
-elif False:
-    DatabaseInsightConnectionCredentialDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseInsightConnectionCredentialDetailsArgsDict(TypedDict):
+    credential_type: pulumi.Input[_builtins.str]
+    """
+    Credential type.
+    """
+    credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    database user role.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    database user name.
+    """
 
 @pulumi.input_type
 class DatabaseInsightConnectionCredentialDetailsArgs:
@@ -212,30 +207,27 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class DatabaseInsightConnectionDetailsArgsDict(TypedDict):
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the listener host that will be used to create the connect string to the database.
-        """
-        hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseInsightConnectionDetailsHostArgsDict']]]]
-        """
-        List of hosts and port for private endpoint accessed database resource.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Listener port number used for connection requests.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Protocol used for connection requests for private endpoint accssed database resource.
-        """
-        service_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Database service name used for connection requests.
-        """
-elif False:
-    DatabaseInsightConnectionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseInsightConnectionDetailsArgsDict(TypedDict):
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the listener host that will be used to create the connect string to the database.
+    """
+    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseInsightConnectionDetailsHostArgsDict']]]]
+    """
+    List of hosts and port for private endpoint accessed database resource.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Listener port number used for connection requests.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Protocol used for connection requests for private endpoint accssed database resource.
+    """
+    service_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Database service name used for connection requests.
+    """
 
 @pulumi.input_type
 class DatabaseInsightConnectionDetailsArgs:
@@ -324,18 +316,15 @@ class DatabaseInsightConnectionDetailsArgs:
         pulumi.set(self, "service_name", value)
 
 
-if not MYPY:
-    class DatabaseInsightConnectionDetailsHostArgsDict(TypedDict):
-        host_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Host IP used for connection requests for Cloud DB resource.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Listener port number used for connection requests for rivate endpoint accessed db resource.
-        """
-elif False:
-    DatabaseInsightConnectionDetailsHostArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseInsightConnectionDetailsHostArgsDict(TypedDict):
+    host_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Host IP used for connection requests for Cloud DB resource.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Listener port number used for connection requests for rivate endpoint accessed db resource.
+    """
 
 @pulumi.input_type
 class DatabaseInsightConnectionDetailsHostArgs:
@@ -376,38 +365,35 @@ class DatabaseInsightConnectionDetailsHostArgs:
         pulumi.set(self, "port", value)
 
 
-if not MYPY:
-    class DatabaseInsightCredentialDetailsArgsDict(TypedDict):
-        credential_type: pulumi.Input[_builtins.str]
-        """
-        CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
-        """
-        credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Credential source name that had been added in Management Agent wallet. This value is only required when credential set by CREDENTIALS_BY_SOURCE and is optional properties for the others.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in the Management Agent to connect the Autonomous Database.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        database user role.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        database user name.
-        """
-        wallet_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
-        """
-elif False:
-    DatabaseInsightCredentialDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseInsightCredentialDetailsArgsDict(TypedDict):
+    credential_type: pulumi.Input[_builtins.str]
+    """
+    CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+    """
+    credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Credential source name that had been added in Management Agent wallet. This value is only required when credential set by CREDENTIALS_BY_SOURCE and is optional properties for the others.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in the Management Agent to connect the Autonomous Database.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    database user role.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    database user name.
+    """
+    wallet_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+    """
 
 @pulumi.input_type
 class DatabaseInsightCredentialDetailsArgs:
@@ -527,38 +513,35 @@ class DatabaseInsightCredentialDetailsArgs:
         pulumi.set(self, "wallet_secret_id", value)
 
 
-if not MYPY:
-    class ExadataInsightMemberVmClusterDetailArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
-        dbm_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
-        """
-        member_autonomous_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgsDict']]]]
-        """
-        The autonomous databases that belong to the Autonomous VM Cluster
-        """
-        member_database_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgsDict']]]]
-        """
-        The databases that belong to the VM Cluster
-        """
-        opsi_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
-        """
-        vm_cluster_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Exadata VMCluster type
-        """
-        vmcluster_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
-        """
-elif False:
-    ExadataInsightMemberVmClusterDetailArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInsightMemberVmClusterDetailArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    """
+    dbm_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+    """
+    member_autonomous_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgsDict']]]]
+    """
+    The autonomous databases that belong to the Autonomous VM Cluster
+    """
+    member_database_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgsDict']]]]
+    """
+    The databases that belong to the VM Cluster
+    """
+    opsi_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+    """
+    vm_cluster_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Exadata VMCluster type
+    """
+    vmcluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
+    """
 
 @pulumi.input_type
 class ExadataInsightMemberVmClusterDetailArgs:
@@ -679,66 +662,63 @@ class ExadataInsightMemberVmClusterDetailArgs:
         pulumi.set(self, "vmcluster_id", value)
 
 
-if not MYPY:
-    class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Compartment Identifier of database
-        """
-        connection_credential_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgsDict']]
-        """
-        User credential details to connect to the database.
-        """
-        connection_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgsDict']]
-        """
-        Connection details to connect to the database. HostName, protocol, and port should be specified.
-        """
-        credential_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgsDict']]
-        """
-        User credential details to connect to the database.
-        """
-        database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        """
-        database_resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Oracle Cloud Infrastructure database resource type
-        """
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
-        deployment_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Database Deployment Type
-        """
-        entity_source: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Source of the database entity.
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
-        is_advanced_features_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Flag is to identify if advanced features for autonomous database is enabled or not
-        """
-        management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-        """
-        opsi_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
-        """
-        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-elif False:
-    ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Compartment Identifier of database
+    """
+    connection_credential_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgsDict']]
+    """
+    User credential details to connect to the database.
+    """
+    connection_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgsDict']]
+    """
+    Connection details to connect to the database. HostName, protocol, and port should be specified.
+    """
+    credential_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgsDict']]
+    """
+    User credential details to connect to the database.
+    """
+    database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+    """
+    database_resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Oracle Cloud Infrastructure database resource type
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+    """
+    deployment_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Database Deployment Type
+    """
+    entity_source: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Source of the database entity.
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+    """
+    is_advanced_features_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Flag is to identify if advanced features for autonomous database is enabled or not
+    """
+    management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+    """
+    opsi_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+    """
+    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+    """
 
 @pulumi.input_type
 class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs:
@@ -971,38 +951,35 @@ class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs:
         pulumi.set(self, "system_tags", value)
 
 
-if not MYPY:
-    class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgsDict(TypedDict):
-        credential_type: pulumi.Input[_builtins.str]
-        """
-        CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
-        """
-        credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        database user role.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        database user name.
-        """
-        wallet_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
-        """
-elif False:
-    ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgsDict(TypedDict):
+    credential_type: pulumi.Input[_builtins.str]
+    """
+    CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+    """
+    credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    database user role.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    database user name.
+    """
+    wallet_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+    """
 
 @pulumi.input_type
 class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs:
@@ -1122,26 +1099,23 @@ class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredent
         pulumi.set(self, "wallet_secret_id", value)
 
 
-if not MYPY:
-    class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgsDict(TypedDict):
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the listener host that will be used to create the connect string to the database.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Listener port number used for connection requests.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Protocol used for connection requests.
-        """
-        service_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Database service name used for connection requests.
-        """
-elif False:
-    ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgsDict(TypedDict):
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the listener host that will be used to create the connect string to the database.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Listener port number used for connection requests.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Protocol used for connection requests.
+    """
+    service_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Database service name used for connection requests.
+    """
 
 @pulumi.input_type
 class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgs:
@@ -1214,38 +1188,35 @@ class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetails
         pulumi.set(self, "service_name", value)
 
 
-if not MYPY:
-    class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgsDict(TypedDict):
-        credential_type: pulumi.Input[_builtins.str]
-        """
-        CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
-        """
-        credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        database user role.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        database user name.
-        """
-        wallet_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
-        """
-elif False:
-    ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgsDict(TypedDict):
+    credential_type: pulumi.Input[_builtins.str]
+    """
+    CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+    """
+    credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    database user role.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    database user name.
+    """
+    wallet_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+    """
 
 @pulumi.input_type
 class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgs:
@@ -1365,70 +1336,67 @@ class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetails
         pulumi.set(self, "wallet_secret_id", value)
 
 
-if not MYPY:
-    class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Compartment Identifier of database
-        """
-        connection_credential_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgsDict']]
-        """
-        User credential details to connect to the database.
-        """
-        connection_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgsDict']]
-        """
-        Connection details to connect to the database. HostName, protocol, and port should be specified.
-        """
-        credential_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgsDict']]
-        """
-        User credential details to connect to the database.
-        """
-        database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        """
-        database_resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Oracle Cloud Infrastructure database resource type
-        """
-        dbm_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
-        """
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
-        deployment_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Database Deployment Type (EXACS will be supported in the future)
-        """
-        entity_source: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Source of the database entity.
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
-        management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-        """
-        opsi_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
-        """
-        service_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Database service name used for connection requests.
-        """
-        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-elif False:
-    ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Compartment Identifier of database
+    """
+    connection_credential_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgsDict']]
+    """
+    User credential details to connect to the database.
+    """
+    connection_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgsDict']]
+    """
+    Connection details to connect to the database. HostName, protocol, and port should be specified.
+    """
+    credential_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgsDict']]
+    """
+    User credential details to connect to the database.
+    """
+    database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+    """
+    database_resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Oracle Cloud Infrastructure database resource type
+    """
+    dbm_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+    """
+    deployment_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Database Deployment Type (EXACS will be supported in the future)
+    """
+    entity_source: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Source of the database entity.
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+    """
+    management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+    """
+    opsi_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+    """
+    service_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Database service name used for connection requests.
+    """
+    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+    """
 
 @pulumi.input_type
 class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
@@ -1677,38 +1645,35 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
         pulumi.set(self, "system_tags", value)
 
 
-if not MYPY:
-    class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgsDict(TypedDict):
-        credential_type: pulumi.Input[_builtins.str]
-        """
-        CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
-        """
-        credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        database user role.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        database user name.
-        """
-        wallet_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
-        """
-elif False:
-    ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgsDict(TypedDict):
+    credential_type: pulumi.Input[_builtins.str]
+    """
+    CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+    """
+    credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    database user role.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    database user name.
+    """
+    wallet_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+    """
 
 @pulumi.input_type
 class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs:
@@ -1828,30 +1793,27 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentia
         pulumi.set(self, "wallet_secret_id", value)
 
 
-if not MYPY:
-    class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgsDict(TypedDict):
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the listener host that will be used to create the connect string to the database.
-        """
-        hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgsDict']]]]
-        """
-        List of hosts and port for private endpoint accessed database resource.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Listener port number used for connection requests.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Protocol used for connection requests for private endpoint accssed database resource.
-        """
-        service_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Database service name used for connection requests.
-        """
-elif False:
-    ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgsDict(TypedDict):
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the listener host that will be used to create the connect string to the database.
+    """
+    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgsDict']]]]
+    """
+    List of hosts and port for private endpoint accessed database resource.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Listener port number used for connection requests.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Protocol used for connection requests for private endpoint accssed database resource.
+    """
+    service_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Database service name used for connection requests.
+    """
 
 @pulumi.input_type
 class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs:
@@ -1940,18 +1902,15 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsAr
         pulumi.set(self, "service_name", value)
 
 
-if not MYPY:
-    class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgsDict(TypedDict):
-        host_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Host IP used for connection requests for Cloud DB resource.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Listener port number used for connection requests for rivate endpoint accessed db resource.
-        """
-elif False:
-    ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgsDict(TypedDict):
+    host_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Host IP used for connection requests for Cloud DB resource.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Listener port number used for connection requests for rivate endpoint accessed db resource.
+    """
 
 @pulumi.input_type
 class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs:
@@ -1992,38 +1951,35 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHo
         pulumi.set(self, "port", value)
 
 
-if not MYPY:
-    class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgsDict(TypedDict):
-        credential_type: pulumi.Input[_builtins.str]
-        """
-        CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
-        """
-        credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        database user role.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        database user name.
-        """
-        wallet_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
-        """
-elif False:
-    ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgsDict(TypedDict):
+    credential_type: pulumi.Input[_builtins.str]
+    """
+    CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+    """
+    credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    database user role.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    database user name.
+    """
+    wallet_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+    """
 
 @pulumi.input_type
 class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs:
@@ -2143,42 +2099,39 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
         pulumi.set(self, "wallet_secret_id", value)
 
 
-if not MYPY:
-    class NewsReportContentTypesArgsDict(TypedDict):
-        actionable_insights_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Supported resources for actionable insights content type.
-        """
-        capacity_planning_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Supported resources for capacity planning content type.
-        """
-        sql_insights_fleet_analysis_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Supported resources for SQL insights - fleet analysis content type.
-        """
-        sql_insights_performance_degradation_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Supported resources for SQL insights - performance degradation content type.
-        """
-        sql_insights_plan_changes_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Supported resources for SQL insights - plan changes content type.
-        """
-        sql_insights_top_databases_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Supported resources for SQL insights - top databases content type.
-        """
-        sql_insights_top_sql_by_insights_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Supported resources for SQL insights - top SQL by insights content type.
-        """
-        sql_insights_top_sql_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Supported resources for SQL insights - top SQL content type.
-        """
-elif False:
-    NewsReportContentTypesArgsDict: TypeAlias = Mapping[str, Any]
+class NewsReportContentTypesArgsDict(TypedDict):
+    actionable_insights_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Supported resources for actionable insights content type.
+    """
+    capacity_planning_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Supported resources for capacity planning content type.
+    """
+    sql_insights_fleet_analysis_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Supported resources for SQL insights - fleet analysis content type.
+    """
+    sql_insights_performance_degradation_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Supported resources for SQL insights - performance degradation content type.
+    """
+    sql_insights_plan_changes_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Supported resources for SQL insights - plan changes content type.
+    """
+    sql_insights_top_databases_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Supported resources for SQL insights - top databases content type.
+    """
+    sql_insights_top_sql_by_insights_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Supported resources for SQL insights - top SQL by insights content type.
+    """
+    sql_insights_top_sql_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Supported resources for SQL insights - top SQL content type.
+    """
 
 @pulumi.input_type
 class NewsReportContentTypesArgs:
@@ -2315,34 +2268,31 @@ class NewsReportContentTypesArgs:
         pulumi.set(self, "sql_insights_top_sql_resources", value)
 
 
-if not MYPY:
-    class OpsiConfigurationConfigItemArgsDict(TypedDict):
-        config_item_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of configuration item.
-        """
-        applicable_contexts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of contexts in Operations Insights where this configuration item is applicable.
-        """
-        default_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Value of configuration item.
-        """
-        metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataArgsDict']]]]
-        """
-        Configuration item metadata.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of configuration item.
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value of configuration item.
-        """
-elif False:
-    OpsiConfigurationConfigItemArgsDict: TypeAlias = Mapping[str, Any]
+class OpsiConfigurationConfigItemArgsDict(TypedDict):
+    config_item_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of configuration item.
+    """
+    applicable_contexts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of contexts in Operations Insights where this configuration item is applicable.
+    """
+    default_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Value of configuration item.
+    """
+    metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataArgsDict']]]]
+    """
+    Configuration item metadata.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of configuration item.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value of configuration item.
+    """
 
 @pulumi.input_type
 class OpsiConfigurationConfigItemArgs:
@@ -2446,34 +2396,31 @@ class OpsiConfigurationConfigItemArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class OpsiConfigurationConfigItemMetadataArgsDict(TypedDict):
-        config_item_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of configuration item.
-        """
-        data_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Description of OPSI configuration.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        """
-        unit_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataUnitDetailArgsDict']]]]
-        """
-        Unit details of configuration item.
-        """
-        value_input_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataValueInputDetailArgsDict']]]]
-        """
-        Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
-        """
-elif False:
-    OpsiConfigurationConfigItemMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class OpsiConfigurationConfigItemMetadataArgsDict(TypedDict):
+    config_item_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of configuration item.
+    """
+    data_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Description of OPSI configuration.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
+    """
+    unit_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataUnitDetailArgsDict']]]]
+    """
+    Unit details of configuration item.
+    """
+    value_input_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataValueInputDetailArgsDict']]]]
+    """
+    Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
+    """
 
 @pulumi.input_type
 class OpsiConfigurationConfigItemMetadataArgs:
@@ -2578,18 +2525,15 @@ class OpsiConfigurationConfigItemMetadataArgs:
         pulumi.set(self, "value_input_details", value)
 
 
-if not MYPY:
-    class OpsiConfigurationConfigItemMetadataUnitDetailArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        """
-        unit: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unit of configuration item.
-        """
-elif False:
-    OpsiConfigurationConfigItemMetadataUnitDetailArgsDict: TypeAlias = Mapping[str, Any]
+class OpsiConfigurationConfigItemMetadataUnitDetailArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
+    """
+    unit: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unit of configuration item.
+    """
 
 @pulumi.input_type
 class OpsiConfigurationConfigItemMetadataUnitDetailArgs:
@@ -2630,26 +2574,23 @@ class OpsiConfigurationConfigItemMetadataUnitDetailArgs:
         pulumi.set(self, "unit", value)
 
 
-if not MYPY:
-    class OpsiConfigurationConfigItemMetadataValueInputDetailArgsDict(TypedDict):
-        allowed_value_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Allowed value type of configuration item.
-        """
-        max_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Maximum value limit for the configuration item.
-        """
-        min_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Minimum value limit for the configuration item.
-        """
-        possible_values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Allowed values to pick for the configuration item.
-        """
-elif False:
-    OpsiConfigurationConfigItemMetadataValueInputDetailArgsDict: TypeAlias = Mapping[str, Any]
+class OpsiConfigurationConfigItemMetadataValueInputDetailArgsDict(TypedDict):
+    allowed_value_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Allowed value type of configuration item.
+    """
+    max_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Maximum value limit for the configuration item.
+    """
+    min_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Minimum value limit for the configuration item.
+    """
+    possible_values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Allowed values to pick for the configuration item.
+    """
 
 @pulumi.input_type
 class OpsiConfigurationConfigItemMetadataValueInputDetailArgs:
@@ -2722,13 +2663,10 @@ class OpsiConfigurationConfigItemMetadataValueInputDetailArgs:
         pulumi.set(self, "possible_values", value)
 
 
-if not MYPY:
-    class GetAwrHubAwrSnapshotsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAwrHubAwrSnapshotsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAwrHubAwrSnapshotsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAwrHubAwrSnapshotsFilterArgs:
@@ -2769,16 +2707,13 @@ class GetAwrHubAwrSnapshotsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAwrHubSourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Awr Hub source database name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAwrHubSourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAwrHubSourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Awr Hub source database name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAwrHubSourcesFilterArgs:
@@ -2825,13 +2760,10 @@ class GetAwrHubSourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAwrHubsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAwrHubsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAwrHubsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAwrHubsFilterArgs:
@@ -2872,13 +2804,10 @@ class GetAwrHubsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDatabaseInsightsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDatabaseInsightsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDatabaseInsightsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDatabaseInsightsFilterArgs:
@@ -2919,13 +2848,10 @@ class GetDatabaseInsightsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetEnterpriseManagerBridgesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetEnterpriseManagerBridgesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetEnterpriseManagerBridgesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetEnterpriseManagerBridgesFilterArgs:
@@ -2966,13 +2892,10 @@ class GetEnterpriseManagerBridgesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExadataInsightsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExadataInsightsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExadataInsightsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExadataInsightsFilterArgs:
@@ -3013,13 +2936,10 @@ class GetExadataInsightsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetHostInsightsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetHostInsightsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetHostInsightsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetHostInsightsFilterArgs:
@@ -3060,16 +2980,13 @@ class GetHostInsightsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNewsReportsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The news report name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNewsReportsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNewsReportsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The news report name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNewsReportsFilterArgs:
@@ -3116,13 +3033,10 @@ class GetNewsReportsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOperationsInsightsPrivateEndpointsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOperationsInsightsPrivateEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOperationsInsightsPrivateEndpointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOperationsInsightsPrivateEndpointsFilterArgs:
@@ -3163,16 +3077,13 @@ class GetOperationsInsightsPrivateEndpointsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOperationsInsightsWarehouseUsersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOperationsInsightsWarehouseUsersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOperationsInsightsWarehouseUsersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOperationsInsightsWarehouseUsersFilterArgs:
@@ -3219,13 +3130,10 @@ class GetOperationsInsightsWarehouseUsersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOperationsInsightsWarehousesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOperationsInsightsWarehousesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOperationsInsightsWarehousesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOperationsInsightsWarehousesFilterArgs:
@@ -3266,16 +3174,13 @@ class GetOperationsInsightsWarehousesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOpsiConfigurationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of configuration item.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOpsiConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOpsiConfigurationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of configuration item.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOpsiConfigurationsFilterArgs:

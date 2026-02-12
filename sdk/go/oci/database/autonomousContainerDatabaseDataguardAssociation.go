@@ -12,6 +12,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabaseDataguardAssociation
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+//
+// **Deprecated.** Use the [AddStandbyAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/AddStandbyAutonomousContainerDatabase) operation to create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
+// specified Autonomous Container database and a peer Autonomous Container database. For more information, see [Using Oracle Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/#articletitle.html).
+//
 // ## Example Usage
 //
 // ```go

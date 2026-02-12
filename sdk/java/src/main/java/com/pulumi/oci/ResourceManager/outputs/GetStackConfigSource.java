@@ -10,14 +10,30 @@ import java.util.Objects;
 
 @CustomType
 public final class GetStackConfigSource {
+    /**
+     * @return Specifies the `configSourceType` for uploading the Terraform configuration. Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
+     * 
+     */
     private String configSourceType;
+    /**
+     * @return File path to the directory from which Terraform runs. If not specified, we use the root directory.
+     * 
+     */
     private String workingDirectory;
     private String zipFileBase64encoded;
 
     private GetStackConfigSource() {}
+    /**
+     * @return Specifies the `configSourceType` for uploading the Terraform configuration. Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
+     * 
+     */
     public String configSourceType() {
         return this.configSourceType;
     }
+    /**
+     * @return File path to the directory from which Terraform runs. If not specified, we use the root directory.
+     * 
+     */
     public String workingDirectory() {
         return this.workingDirectory;
     }

@@ -16,6 +16,55 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Network Firewall Policy resource in Oracle Cloud Infrastructure Network Firewall service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/network-firewall/latest/NetworkFirewallPolicy
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_firewall
+ * 
+ * Creates a new Network Firewall Policy.
+ * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.NetworkFirewall.NetworkFirewallPolicy;
+ * import com.pulumi.oci.NetworkFirewall.NetworkFirewallPolicyArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testNetworkFirewallPolicy = new NetworkFirewallPolicy("testNetworkFirewallPolicy", NetworkFirewallPolicyArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .displayName(networkFirewallPolicyDisplayName)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
+ * ## Note
+ * 
+ * * We are introducing significant enhancements in network firewall policy. The policy components have been decomposed to support higher limits.
+ * * Network firewall policies created using older versions will not be accessible using this version. Older policies will continue to function using older SDKs.
+ * * To access the policies using the latest version of terraform, upgrade the older policies to use the latest features using CLI, SDKs, or console. Once upgraded, the policy can&#39;t be rolled back to the older version. Refer [here](https://docs.oracle.com/en-us/iaas/Content/network-firewall/upgrade.htm) for further details on this.
+ * 
  * ## Import
  * 
  * NetworkFirewallPolicies can be imported using the `id`, e.g.

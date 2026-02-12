@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Group resource in Oracle Cloud Infrastructure Identity Domains service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/Group
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+//
+// Create a group.
+//
 // ## Example Usage
 //
 // ```go
@@ -176,7 +183,8 @@ type DomainsGroup struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId  pulumi.StringOutput  `pulumi:"externalId"`
+	ExternalId pulumi.StringOutput `pulumi:"externalId"`
+	// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
 	ForceDelete pulumi.BoolPtrOutput `pulumi:"forceDelete"`
 	// (Updatable) The User or App who created the Resource
 	//
@@ -434,8 +442,9 @@ type domainsGroupState struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId  *string `pulumi:"externalId"`
-	ForceDelete *bool   `pulumi:"forceDelete"`
+	ExternalId *string `pulumi:"externalId"`
+	// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+	ForceDelete *bool `pulumi:"forceDelete"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -654,7 +663,8 @@ type DomainsGroupState struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId  pulumi.StringPtrInput
+	ExternalId pulumi.StringPtrInput
+	// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
 	ForceDelete pulumi.BoolPtrInput
 	// (Updatable) The User or App who created the Resource
 	//
@@ -842,8 +852,9 @@ type domainsGroupArgs struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId  *string `pulumi:"externalId"`
-	ForceDelete *bool   `pulumi:"forceDelete"`
+	ExternalId *string `pulumi:"externalId"`
+	// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+	ForceDelete *bool `pulumi:"forceDelete"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
 	// (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
@@ -958,7 +969,8 @@ type DomainsGroupArgs struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId  pulumi.StringPtrInput
+	ExternalId pulumi.StringPtrInput
+	// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
 	ForceDelete pulumi.BoolPtrInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
@@ -1220,6 +1232,7 @@ func (o DomainsGroupOutput) ExternalId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsGroup) pulumi.StringOutput { return v.ExternalId }).(pulumi.StringOutput)
 }
 
+// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
 func (o DomainsGroupOutput) ForceDelete() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DomainsGroup) pulumi.BoolPtrOutput { return v.ForceDelete }).(pulumi.BoolPtrOutput)
 }

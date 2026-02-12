@@ -479,6 +479,19 @@ class Fleet(pulumi.CustomResource):
                  operation_log: Optional[pulumi.Input[Union['FleetOperationLogArgs', 'FleetOperationLogArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Fleet resource in Oracle Cloud Infrastructure Jms service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/jms/latest/Fleet
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/jms
+
+        Create a new Fleet using the information provided.
+
+        `inventoryLog` is now a required parameter for CreateFleet API.
+        Update existing applications using this API
+        before July 15, 2022 to ensure the applications continue to work.
+        See the [Service Change Notice](https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#JMS) for more details.
+        Migrate existing fleets using the `UpdateFleet` API to set the `inventoryLog` parameter.
+
         ## Example Usage
 
         ```python
@@ -532,6 +545,19 @@ class Fleet(pulumi.CustomResource):
                  args: FleetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Fleet resource in Oracle Cloud Infrastructure Jms service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/jms/latest/Fleet
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/jms
+
+        Create a new Fleet using the information provided.
+
+        `inventoryLog` is now a required parameter for CreateFleet API.
+        Update existing applications using this API
+        before July 15, 2022 to ensure the applications continue to work.
+        See the [Service Change Notice](https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#JMS) for more details.
+        Migrate existing fleets using the `UpdateFleet` API to set the `inventoryLog` parameter.
+
         ## Example Usage
 
         ```python

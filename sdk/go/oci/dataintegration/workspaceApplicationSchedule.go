@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Workspace Application Schedule resource in Oracle Cloud Infrastructure Data Integration service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-integration/latest/WorkspaceApplicationSchedule
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataintegration
+//
+// # Endpoint to create a new schedule
+//
 // ## Example Usage
 //
 // ```go

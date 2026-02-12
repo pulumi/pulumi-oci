@@ -10,11 +10,17 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/ResponderRecipe
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+    /// 
+    /// Creates a responder recipe (ResponderRecipe resource), from values passed in a
+    /// CreateResponderRecipeDetails resource.
     /// 
     /// ## Import
     /// 
-    /// ResponderRecipes can be imported using the `id`, e.g.
+    /// ResponderRecipes can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:CloudGuard/responderRecipe:ResponderRecipe test_responder_recipe "id"

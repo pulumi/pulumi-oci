@@ -15,6 +15,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the App Catalog Subscription resource in Oracle Cloud Infrastructure Core service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/AppCatalogSubscription
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ * 
+ * Create a subscription for listing resource version for a compartment. It will take some time to propagate to all regions.
+ * 
  * ## Example Usage
  * 
  * <pre>

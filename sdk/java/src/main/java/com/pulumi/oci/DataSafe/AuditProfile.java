@@ -20,6 +20,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Audit Profile resource in Oracle Cloud Infrastructure Data Safe service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/AuditProfile
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+ * 
+ * Create a new audit profile resource for a target group. For a target database, it will update the auto created audit profile
+ * 
  * ## Example Usage
  * 
  * <pre>

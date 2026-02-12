@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/bigdata/latest/BdsInstanceApiKey
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/big_data_service
+ *
+ * Create an API key on behalf of the specified user.
+ *
  * ## Example Usage
  *
  * ```typescript

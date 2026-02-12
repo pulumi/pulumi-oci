@@ -37,20 +37,15 @@ __all__ = [
     'GetAutoScalingConfigurationsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class AutoScalingConfigurationAutoScalingResourcesArgsDict(TypedDict):
-        id: pulumi.Input[_builtins.str]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        The type of resource.
-        """
-elif False:
-    AutoScalingConfigurationAutoScalingResourcesArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationAutoScalingResourcesArgsDict(TypedDict):
+    id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    The type of resource.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationAutoScalingResourcesArgs:
@@ -89,43 +84,40 @@ class AutoScalingConfigurationAutoScalingResourcesArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyArgsDict(TypedDict):
-        policy_type: pulumi.Input[_builtins.str]
-        """
-        The type of autoscaling policy.
-        """
-        capacity: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyCapacityArgsDict']]
-        """
-        The capacity requirements of the autoscaling policy.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
-        execution_schedule: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyExecutionScheduleArgsDict']]
-        """
-        An execution schedule for an autoscaling policy.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        ID of the condition that is assigned after creation.
-        """
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether the autoscaling policy is enabled.
-        """
-        resource_action: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyResourceActionArgsDict']]
-        """
-        An action to run on a resource, such as stopping or starting an instance pool.
-        """
-        rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgsDict']]]]
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
-elif False:
-    AutoScalingConfigurationPolicyArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyArgsDict(TypedDict):
+    policy_type: pulumi.Input[_builtins.str]
+    """
+    The type of autoscaling policy.
+    """
+    capacity: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyCapacityArgsDict']]
+    """
+    The capacity requirements of the autoscaling policy.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+    """
+    execution_schedule: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyExecutionScheduleArgsDict']]
+    """
+    An execution schedule for an autoscaling policy.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    ID of the condition that is assigned after creation.
+    """
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether the autoscaling policy is enabled.
+    """
+    resource_action: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyResourceActionArgsDict']]
+    """
+    An action to run on a resource, such as stopping or starting an instance pool.
+    """
+    rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgsDict']]]]
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyArgs:
@@ -273,28 +265,25 @@ class AutoScalingConfigurationPolicyArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyCapacityArgsDict(TypedDict):
-        initial: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+class AutoScalingConfigurationPolicyCapacityArgsDict(TypedDict):
+    initial: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
 
-        For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule that's defined in the autoscaling policy.
-        """
-        max: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
+    For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule that's defined in the autoscaling policy.
+    """
+    max: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
 
-        For a schedule-based autoscaling policy, this value is not used.
-        """
-        min: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
+    For a schedule-based autoscaling policy, this value is not used.
+    """
+    min: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
 
-        For a schedule-based autoscaling policy, this value is not used.
-        """
-elif False:
-    AutoScalingConfigurationPolicyCapacityArgsDict: TypeAlias = Mapping[str, Any]
+    For a schedule-based autoscaling policy, this value is not used.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyCapacityArgs:
@@ -363,30 +352,27 @@ class AutoScalingConfigurationPolicyCapacityArgs:
         pulumi.set(self, "min", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyExecutionScheduleArgsDict(TypedDict):
-        expression: pulumi.Input[_builtins.str]
-        """
-        A cron expression that represents the time at which to execute the autoscaling policy.
+class AutoScalingConfigurationPolicyExecutionScheduleArgsDict(TypedDict):
+    expression: pulumi.Input[_builtins.str]
+    """
+    A cron expression that represents the time at which to execute the autoscaling policy.
 
-        Cron expressions have this format: `<second> <minute> <hour> <day of month> <month> <day of week> <year>`
+    Cron expressions have this format: `<second> <minute> <hour> <day of month> <month> <day of week> <year>`
 
-        You can use special characters that are supported with the Quartz cron implementation.
+    You can use special characters that are supported with the Quartz cron implementation.
 
-        You must specify `0` as the value for seconds.
+    You must specify `0` as the value for seconds.
 
-        Example: `0 15 10 ? * *`
-        """
-        timezone: pulumi.Input[_builtins.str]
-        """
-        The time zone for the execution schedule.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        The type of execution schedule.
-        """
-elif False:
-    AutoScalingConfigurationPolicyExecutionScheduleArgsDict: TypeAlias = Mapping[str, Any]
+    Example: `0 15 10 ? * *`
+    """
+    timezone: pulumi.Input[_builtins.str]
+    """
+    The time zone for the execution schedule.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    The type of execution schedule.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyExecutionScheduleArgs:
@@ -456,15 +442,12 @@ class AutoScalingConfigurationPolicyExecutionScheduleArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyResourceActionArgsDict(TypedDict):
-        action: pulumi.Input[_builtins.str]
-        action_type: pulumi.Input[_builtins.str]
-        """
-        The category of action to run on the resource.
-        """
-elif False:
-    AutoScalingConfigurationPolicyResourceActionArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyResourceActionArgsDict(TypedDict):
+    action: pulumi.Input[_builtins.str]
+    action_type: pulumi.Input[_builtins.str]
+    """
+    The category of action to run on the resource.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyResourceActionArgs:
@@ -499,23 +482,20 @@ class AutoScalingConfigurationPolicyResourceActionArgs:
         pulumi.set(self, "action_type", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyRuleArgsDict(TypedDict):
-        display_name: pulumi.Input[_builtins.str]
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
-        action: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyRuleActionArgsDict']]
-        """
-        The action to take when autoscaling is triggered.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        ID of the condition that is assigned after creation.
-        """
-        metric: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgsDict']]
-elif False:
-    AutoScalingConfigurationPolicyRuleArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyRuleArgsDict(TypedDict):
+    display_name: pulumi.Input[_builtins.str]
+    """
+    A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+    """
+    action: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyRuleActionArgsDict']]
+    """
+    The action to take when autoscaling is triggered.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    ID of the condition that is assigned after creation.
+    """
+    metric: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgsDict']]
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyRuleArgs:
@@ -583,18 +563,15 @@ class AutoScalingConfigurationPolicyRuleArgs:
         pulumi.set(self, "metric", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyRuleActionArgsDict(TypedDict):
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of action to take.
-        """
-        value: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
-        """
-elif False:
-    AutoScalingConfigurationPolicyRuleActionArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyRuleActionArgsDict(TypedDict):
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of action to take.
+    """
+    value: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyRuleActionArgs:
@@ -635,50 +612,47 @@ class AutoScalingConfigurationPolicyRuleActionArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyRuleMetricArgsDict(TypedDict):
-        metric_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the compartment containing the metrics.
-        """
-        metric_source: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Source of the metric data for creating the alarm used to trigger autoscaling actions.
+class AutoScalingConfigurationPolicyRuleMetricArgsDict(TypedDict):
+    metric_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the compartment containing the metrics.
+    """
+    metric_source: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Source of the metric data for creating the alarm used to trigger autoscaling actions.
 
-        The following values are supported:
-        * `COMPUTE_AGENT`: CPU or memory metrics emitted by the Compute Instance Monitoring plugin.
-        * `CUSTOM_QUERY`: A custom Monitoring Query Language (MQL) expression.
-        """
-        metric_type: NotRequired[pulumi.Input[_builtins.str]]
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The namespace for the query.
-        """
-        pending_duration: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+    The following values are supported:
+    * `COMPUTE_AGENT`: CPU or memory metrics emitted by the Compute Instance Monitoring plugin.
+    * `CUSTOM_QUERY`: A custom Monitoring Query Language (MQL) expression.
+    """
+    metric_type: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The namespace for the query.
+    """
+    pending_duration: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
 
-        The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
-        """
-        query: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+    The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+    """
+    query: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
 
-        Example of threshold alarm:
+    Example of threshold alarm:
 
-        -----
+    -----
 
-        CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+    CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
 
-        -----
-        """
-        resource_group: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The resource group for the query.
-        """
-        threshold: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict']]
-elif False:
-    AutoScalingConfigurationPolicyRuleMetricArgsDict: TypeAlias = Mapping[str, Any]
+    -----
+    """
+    resource_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The resource group for the query.
+    """
+    threshold: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict']]
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyRuleMetricArgs:
@@ -835,19 +809,16 @@ class AutoScalingConfigurationPolicyRuleMetricArgs:
         pulumi.set(self, "threshold", value)
 
 
-if not MYPY:
-    class AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict(TypedDict):
-        operator: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
-        """
-        value: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict: TypeAlias = Mapping[str, Any]
+class AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict(TypedDict):
+    operator: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
+    """
+    value: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
@@ -890,13 +861,10 @@ class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class GetAutoScalingConfigurationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutoScalingConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutoScalingConfigurationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutoScalingConfigurationsFilterArgs:

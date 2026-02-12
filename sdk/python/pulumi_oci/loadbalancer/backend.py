@@ -409,6 +409,13 @@ class Backend(pulumi.CustomResource):
                  weight: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
+        This resource provides the Backend resource in Oracle Cloud Infrastructure Load Balancer service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/loadbalancer/latest/Backend
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/load_balancer
+
+        Adds a backend server to a backend set.
+
         ## Example Usage
 
         ```python
@@ -466,6 +473,13 @@ class Backend(pulumi.CustomResource):
                  args: BackendArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Backend resource in Oracle Cloud Infrastructure Load Balancer service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/loadbalancer/latest/Backend
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/load_balancer
+
+        Adds a backend server to a backend set.
+
         ## Example Usage
 
         ```python

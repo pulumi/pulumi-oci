@@ -398,6 +398,13 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Ai Data Platform resource in Oracle Cloud Infrastructure Ai Data Platform service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/ai-data-platform/latest/AiDataPlatform
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a AiDataPlatform.
+
         ## Example Usage
 
         ```python
@@ -447,6 +454,13 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
                  args: AiDataPlatformAiDataPlatformArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Ai Data Platform resource in Oracle Cloud Infrastructure Ai Data Platform service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/ai-data-platform/latest/AiDataPlatform
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a AiDataPlatform.
+
         ## Example Usage
 
         ```python

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
+    /// This resource provides the Scheduled Job resource in Oracle Cloud Infrastructure Os Management Hub service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ScheduledJob
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+    /// 
+    /// Creates a new scheduled job.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -110,7 +117,7 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// ## Import
     /// 
-    /// ScheduledJobs can be imported using the `id`, e.g.
+    /// ScheduledJobs can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:OsManagementHub/scheduledJob:ScheduledJob test_scheduled_job "id"

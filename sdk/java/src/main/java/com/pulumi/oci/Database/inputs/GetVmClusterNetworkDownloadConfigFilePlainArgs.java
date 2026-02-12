@@ -16,9 +16,17 @@ public final class GetVmClusterNetworkDownloadConfigFilePlainArgs extends com.pu
 
     public static final GetVmClusterNetworkDownloadConfigFilePlainArgs Empty = new GetVmClusterNetworkDownloadConfigFilePlainArgs();
 
+    /**
+     * Encodes the downloaded txt config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `false`.
+     * 
+     */
     @Import(name="base64EncodeContent")
     private @Nullable Boolean base64EncodeContent;
 
+    /**
+     * @return Encodes the downloaded txt config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `false`.
+     * 
+     */
     public Optional<Boolean> base64EncodeContent() {
         return Optional.ofNullable(this.base64EncodeContent);
     }
@@ -79,6 +87,12 @@ public final class GetVmClusterNetworkDownloadConfigFilePlainArgs extends com.pu
             $ = new GetVmClusterNetworkDownloadConfigFilePlainArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param base64EncodeContent Encodes the downloaded txt config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `false`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder base64EncodeContent(@Nullable Boolean base64EncodeContent) {
             $.base64EncodeContent = base64EncodeContent;
             return this;

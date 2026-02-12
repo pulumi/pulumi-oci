@@ -29,24 +29,19 @@ __all__ = [
     'GetRepositoriesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class ContainerRepositoryReadmeArgsDict(TypedDict):
-        content: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Readme content. Avoid entering confidential information.
-        """
-        format: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Readme format. Supported formats are text/plain and text/markdown.
+class ContainerRepositoryReadmeArgsDict(TypedDict):
+    content: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Readme content. Avoid entering confidential information.
+    """
+    format: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Readme format. Supported formats are text/plain and text/markdown.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ContainerRepositoryReadmeArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ContainerRepositoryReadmeArgs:
@@ -93,13 +88,10 @@ class ContainerRepositoryReadmeArgs:
         pulumi.set(self, "format", value)
 
 
-if not MYPY:
-    class GetContainerImagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetContainerImagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetContainerImagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetContainerImagesFilterArgs:
@@ -140,13 +132,10 @@ class GetContainerImagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetContainerRepositoriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetContainerRepositoriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetContainerRepositoriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetContainerRepositoriesFilterArgs:
@@ -187,13 +176,10 @@ class GetContainerRepositoriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetContainerSignaturesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetContainerSignaturesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetContainerSignaturesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetContainerSignaturesFilterArgs:
@@ -234,13 +220,10 @@ class GetContainerSignaturesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetGenericArtifactsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetGenericArtifactsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetGenericArtifactsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetGenericArtifactsFilterArgs:
@@ -281,13 +264,10 @@ class GetGenericArtifactsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRepositoriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRepositoriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRepositoriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRepositoriesFilterArgs:

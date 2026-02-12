@@ -31,9 +31,17 @@ public final class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsCon
         return Optional.ofNullable(this.bucket);
     }
 
+    /**
+     * Catalog Id having terraform package.
+     * 
+     */
     @Import(name="catalogId")
     private @Nullable Output<String> catalogId;
 
+    /**
+     * @return Catalog Id having terraform package.
+     * 
+     */
     public Optional<Output<String>> catalogId() {
         return Optional.ofNullable(this.catalogId);
     }
@@ -148,11 +156,23 @@ public final class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsCon
             return bucket(Output.of(bucket));
         }
 
+        /**
+         * @param catalogId Catalog Id having terraform package.
+         * 
+         * @return builder
+         * 
+         */
         public Builder catalogId(@Nullable Output<String> catalogId) {
             $.catalogId = catalogId;
             return this;
         }
 
+        /**
+         * @param catalogId Catalog Id having terraform package.
+         * 
+         * @return builder
+         * 
+         */
         public Builder catalogId(String catalogId) {
             return catalogId(Output.of(catalogId));
         }

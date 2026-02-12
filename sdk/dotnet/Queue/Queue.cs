@@ -62,7 +62,7 @@ namespace Pulumi.Oci.Queue
     /// 
     /// ## Import
     /// 
-    /// Queues can be imported using the `id`, e.g.
+    /// Queues can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Queue/queue:Queue test_queue "id"

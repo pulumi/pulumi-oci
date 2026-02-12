@@ -15,6 +15,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-catalog/latest/DataAsset
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datacatalog
+ * 
+ * Create a new data asset.
+ * 
  * ## Example Usage
  * 
  * <pre>
@@ -161,9 +168,17 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    /**
+     * (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the &#34;default&#34; category. To determine the set of optional and required properties for a data asset type, a query can be done on &#39;/types?type=dataAsset&#39; that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it&#39;s properties, can be identified from this collection. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;host&#34;: &#34;host1&#34;, &#34;port&#34;: &#34;1521&#34;, &#34;database&#34;: &#34;orcl&#34;}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+     * 
+     */
     @Export(name="properties", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> properties;
 
+    /**
+     * @return (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the &#34;default&#34; category. To determine the set of optional and required properties for a data asset type, a query can be done on &#39;/types?type=dataAsset&#39; that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it&#39;s properties, can be identified from this collection. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;host&#34;: &#34;host1&#34;, &#34;port&#34;: &#34;1521&#34;, &#34;database&#34;: &#34;orcl&#34;}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+     * 
+     */
     public Output<Map<String,String>> properties() {
         return this.properties;
     }

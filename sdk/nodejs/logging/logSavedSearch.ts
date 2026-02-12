@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logging-management/latest/LogSavedSearch
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/logging
+ *
+ * Creates a new LogSavedSearch.
+ *
  * ## Example Usage
  *
  * ```typescript

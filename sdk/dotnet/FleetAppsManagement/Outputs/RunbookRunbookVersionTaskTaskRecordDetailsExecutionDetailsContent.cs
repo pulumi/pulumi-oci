@@ -17,6 +17,9 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// Bucket Name.
         /// </summary>
         public readonly string? Bucket;
+        /// <summary>
+        /// Catalog Id having terraform package.
+        /// </summary>
         public readonly string? CatalogId;
         /// <summary>
         /// md5 checksum of the artifact.

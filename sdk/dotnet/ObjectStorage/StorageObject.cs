@@ -10,6 +10,20 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ObjectStorage
 {
     /// <summary>
+    /// This resource provides the Object resource in Oracle Cloud Infrastructure Object Storage service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Object
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a new object or overwrites an existing object with the same name. The maximum object size allowed by
+    /// PutObject is 50 GiB.
+    /// 
+    /// See [Object Names](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/managingobjects.htm#namerequirements)
+    /// for object naming requirements.
+    /// 
+    /// See [Special Instructions for Object Storage PUT](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/signingrequests.htm#ObjectStoragePut)
+    /// for request signature requirements.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -42,7 +56,7 @@ namespace Pulumi.Oci.ObjectStorage
     /// 
     /// ## Import
     /// 
-    /// Objects can be imported using the `id`, e.g.
+    /// Objects can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:ObjectStorage/storageObject:StorageObject test_object "n/{namespaceName}/b/{bucketName}/o/{objectName}"

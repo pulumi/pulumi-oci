@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
+    /// This resource provides the Network Security Group resource in Oracle Cloud Infrastructure Core service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a new network security group for the specified VCN.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -40,7 +47,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Import
     /// 
-    /// NetworkSecurityGroups can be imported using the `id`, e.g.
+    /// NetworkSecurityGroups can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Core/networkSecurityGroup:NetworkSecurityGroup test_network_security_group "id"

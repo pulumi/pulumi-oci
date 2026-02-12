@@ -168,6 +168,13 @@ class RedisClusterGetOciCacheUser(pulumi.CustomResource):
                  redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Redis Cluster Get Oci Cache User resource in Oracle Cloud Infrastructure Redis service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/redis/latest/RedisClusterGetOciCacheUser
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
+
+        Gets a list of associated Oracle Cloud Infrastructure cache users for a redis cluster.
+
         ## Example Usage
 
         ```python
@@ -201,6 +208,13 @@ class RedisClusterGetOciCacheUser(pulumi.CustomResource):
                  args: RedisClusterGetOciCacheUserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Redis Cluster Get Oci Cache User resource in Oracle Cloud Infrastructure Redis service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/redis/latest/RedisClusterGetOciCacheUser
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
+
+        Gets a list of associated Oracle Cloud Infrastructure cache users for a redis cluster.
+
         ## Example Usage
 
         ```python

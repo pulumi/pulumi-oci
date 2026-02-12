@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudBridge
 {
     /// <summary>
+    /// This resource provides the Asset Source resource in Oracle Cloud Infrastructure Cloud Bridge service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/OCB/latest/AssetSource
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudBridge
+    /// 
+    /// Creates an asset source.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -58,7 +65,7 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// ## Import
     /// 
-    /// AssetSources can be imported using the `id`, e.g.
+    /// AssetSources can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:CloudBridge/assetSource:AssetSource test_asset_source "id"

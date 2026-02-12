@@ -33,6 +33,9 @@ export function getExadataInfrastructureDownloadConfigFile(args: GetExadataInfra
  * A collection of arguments for invoking getExadataInfrastructureDownloadConfigFile.
  */
 export interface GetExadataInfrastructureDownloadConfigFileArgs {
+    /**
+     * Encodes the downloaded zipped config in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false`.
+     */
     base64EncodeContent?: boolean;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -84,6 +87,9 @@ export function getExadataInfrastructureDownloadConfigFileOutput(args: GetExadat
  * A collection of arguments for invoking getExadataInfrastructureDownloadConfigFile.
  */
 export interface GetExadataInfrastructureDownloadConfigFileOutputArgs {
+    /**
+     * Encodes the downloaded zipped config in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false`.
+     */
     base64EncodeContent?: pulumi.Input<boolean>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

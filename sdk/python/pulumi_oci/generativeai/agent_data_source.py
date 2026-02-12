@@ -399,6 +399,13 @@ class AgentDataSource(pulumi.CustomResource):
                  metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/latest/DataSource
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai_agent
+
+        Creates a data source.
+
         ## Example Usage
 
         ```python
@@ -458,6 +465,13 @@ class AgentDataSource(pulumi.CustomResource):
                  args: AgentDataSourceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/latest/DataSource
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai_agent
+
+        Creates a data source.
+
         ## Example Usage
 
         ```python

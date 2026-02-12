@@ -437,6 +437,13 @@ class Listener(pulumi.CustomResource):
                  ssl_configuration: Optional[pulumi.Input[Union['ListenerSslConfigurationArgs', 'ListenerSslConfigurationArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Listener resource in Oracle Cloud Infrastructure Load Balancer service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/loadbalancer/latest/Listener
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/load_balancer
+
+        Adds a listener to a load balancer.
+
         ## Example Usage
 
         ```python
@@ -506,6 +513,13 @@ class Listener(pulumi.CustomResource):
                  args: ListenerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Listener resource in Oracle Cloud Infrastructure Load Balancer service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/loadbalancer/latest/Listener
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/load_balancer
+
+        Adds a listener to a load balancer.
+
         ## Example Usage
 
         ```python

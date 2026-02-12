@@ -230,6 +230,12 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
                  modify_database_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
+        This resource provides the Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/DatabaseDbmFeaturesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+        Enables a Database Management feature for the specified cloud database.
+
         ## Example Usage
 
         ```python
@@ -288,6 +294,12 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
                  args: DatabaseDbmFeaturesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/DatabaseDbmFeaturesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+        Enables a Database Management feature for the specified cloud database.
+
         ## Example Usage
 
         ```python

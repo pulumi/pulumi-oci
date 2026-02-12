@@ -651,6 +651,13 @@ class VolumeAttachment(pulumi.CustomResource):
                  volume_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Volume Attachment resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/VolumeAttachment
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Attaches the specified storage volume to the specified instance.
+
         ## Example Usage
 
         ```python
@@ -705,6 +712,13 @@ class VolumeAttachment(pulumi.CustomResource):
                  args: VolumeAttachmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Volume Attachment resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/VolumeAttachment
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Attaches the specified storage volume to the specified instance.
+
         ## Example Usage
 
         ```python

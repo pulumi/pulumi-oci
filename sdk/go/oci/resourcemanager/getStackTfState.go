@@ -11,6 +11,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This data source provides details about a specific Stack Tf State resource in Oracle Cloud Infrastructure Resource Manager service.
+//
+// Returns the Terraform state for the specified stack.
+// For more information, see
+// [Getting a Stack State File](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-state.htm).
+//
 // ## Example Usage
 //
 // ```go
@@ -48,6 +54,7 @@ func GetStackTfState(ctx *pulumi.Context, args *GetStackTfStateArgs, opts ...pul
 
 // A collection of arguments for invoking getStackTfState.
 type GetStackTfStateArgs struct {
+	// The path and filename (relative to where Terraform is executing) to write the external statefile to.
 	LocalPath string `pulumi:"localPath"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
 	StackId string `pulumi:"stackId"`
@@ -56,7 +63,8 @@ type GetStackTfStateArgs struct {
 // A collection of values returned by getStackTfState.
 type GetStackTfStateResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id        string `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// The path and filename (relative to where Terraform is executing) to write the external statefile to.
 	LocalPath string `pulumi:"localPath"`
 	StackId   string `pulumi:"stackId"`
 }
@@ -72,6 +80,7 @@ func GetStackTfStateOutput(ctx *pulumi.Context, args GetStackTfStateOutputArgs, 
 
 // A collection of arguments for invoking getStackTfState.
 type GetStackTfStateOutputArgs struct {
+	// The path and filename (relative to where Terraform is executing) to write the external statefile to.
 	LocalPath pulumi.StringInput `pulumi:"localPath"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
 	StackId pulumi.StringInput `pulumi:"stackId"`
@@ -101,6 +110,7 @@ func (o GetStackTfStateResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStackTfStateResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The path and filename (relative to where Terraform is executing) to write the external statefile to.
 func (o GetStackTfStateResultOutput) LocalPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStackTfStateResult) string { return v.LocalPath }).(pulumi.StringOutput)
 }

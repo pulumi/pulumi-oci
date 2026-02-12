@@ -12,6 +12,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/analytics/latest/AnalyticsInstance
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/analytics
+//
+// Create a new AnalyticsInstance in the specified compartment. The operation is long-running
+// and creates a new WorkRequest.
+//
 // ## Example Usage
 //
 // ```go

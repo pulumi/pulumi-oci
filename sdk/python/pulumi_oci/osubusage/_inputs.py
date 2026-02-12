@@ -21,18 +21,13 @@ __all__ = [
     'GetComputedUsagesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetCommitmentAggregatedsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Product name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCommitmentAggregatedsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCommitmentAggregatedsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Product name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCommitmentAggregatedsFilterArgs:
@@ -79,16 +74,13 @@ class GetCommitmentAggregatedsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetComputedUsagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Product name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetComputedUsagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetComputedUsagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Product name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetComputedUsagesFilterArgs:

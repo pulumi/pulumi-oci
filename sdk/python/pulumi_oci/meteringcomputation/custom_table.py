@@ -154,6 +154,13 @@ class CustomTable(pulumi.CustomResource):
                  saved_report_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Custom Table resource in Oracle Cloud Infrastructure Metering Computation service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/usage/latest/CustomTable
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/metering_computation
+
+        Returns the created custom table.
+
         ## Example Usage
 
         ```python
@@ -202,6 +209,13 @@ class CustomTable(pulumi.CustomResource):
                  args: CustomTableArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Custom Table resource in Oracle Cloud Infrastructure Metering Computation service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/usage/latest/CustomTable
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/metering_computation
+
+        Returns the created custom table.
+
         ## Example Usage
 
         ```python

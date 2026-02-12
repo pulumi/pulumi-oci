@@ -25,16 +25,11 @@ __all__ = [
     'GetClusterPlacementGroupsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class ClusterPlacementGroupCapabilitiesArgsDict(TypedDict):
-        items: pulumi.Input[Sequence[pulumi.Input['ClusterPlacementGroupCapabilitiesItemArgsDict']]]
-        """
-        The supported resources.
-        """
-elif False:
-    ClusterPlacementGroupCapabilitiesArgsDict: TypeAlias = Mapping[str, Any]
+class ClusterPlacementGroupCapabilitiesArgsDict(TypedDict):
+    items: pulumi.Input[Sequence[pulumi.Input['ClusterPlacementGroupCapabilitiesItemArgsDict']]]
+    """
+    The supported resources.
+    """
 
 @pulumi.input_type
 class ClusterPlacementGroupCapabilitiesArgs:
@@ -58,18 +53,15 @@ class ClusterPlacementGroupCapabilitiesArgs:
         pulumi.set(self, "items", value)
 
 
-if not MYPY:
-    class ClusterPlacementGroupCapabilitiesItemArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        The type of resource.
-        """
-        service: pulumi.Input[_builtins.str]
-        """
-        The service that the resource is part of.
-        """
-elif False:
-    ClusterPlacementGroupCapabilitiesItemArgsDict: TypeAlias = Mapping[str, Any]
+class ClusterPlacementGroupCapabilitiesItemArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    The type of resource.
+    """
+    service: pulumi.Input[_builtins.str]
+    """
+    The service that the resource is part of.
+    """
 
 @pulumi.input_type
 class ClusterPlacementGroupCapabilitiesItemArgs:
@@ -108,18 +100,15 @@ class ClusterPlacementGroupCapabilitiesItemArgs:
         pulumi.set(self, "service", value)
 
 
-if not MYPY:
-    class ClusterPlacementGroupPlacementInstructionArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        The type of placement instruction.
-        """
-        value: pulumi.Input[_builtins.str]
-        """
-        The value of the token designated for placement of the cluster placement group upon creation.
-        """
-elif False:
-    ClusterPlacementGroupPlacementInstructionArgsDict: TypeAlias = Mapping[str, Any]
+class ClusterPlacementGroupPlacementInstructionArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    The type of placement instruction.
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    The value of the token designated for placement of the cluster placement group upon creation.
+    """
 
 @pulumi.input_type
 class ClusterPlacementGroupPlacementInstructionArgs:
@@ -158,16 +147,13 @@ class ClusterPlacementGroupPlacementInstructionArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class GetClusterPlacementGroupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only the resources that match the entire display name specified.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetClusterPlacementGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetClusterPlacementGroupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only the resources that match the entire display name specified.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetClusterPlacementGroupsFilterArgs:

@@ -275,6 +275,13 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
                  username: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fusion-applications/latest/FusionEnvironmentAdminUser
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fusionapps
+
+        Create a FusionEnvironment admin user
+
         ## Example Usage
 
         ```python
@@ -318,6 +325,13 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
                  args: FusionEnvironmentAdminUserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fusion-applications/latest/FusionEnvironmentAdminUser
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fusionapps
+
+        Create a FusionEnvironment admin user
+
         ## Example Usage
 
         ```python

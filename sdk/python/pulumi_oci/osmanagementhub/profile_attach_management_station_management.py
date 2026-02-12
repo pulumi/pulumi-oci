@@ -120,6 +120,13 @@ class ProfileAttachManagementStationManagement(pulumi.CustomResource):
                  profile_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Profile Attach Management Station Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ProfileAttachManagementStationManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+
+        Attaches the specified management station to a profile.
+
         ## Example Usage
 
         ```python
@@ -155,6 +162,13 @@ class ProfileAttachManagementStationManagement(pulumi.CustomResource):
                  args: ProfileAttachManagementStationManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Profile Attach Management Station Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ProfileAttachManagementStationManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+
+        Attaches the specified management station to a profile.
+
         ## Example Usage
 
         ```python

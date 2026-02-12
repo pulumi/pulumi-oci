@@ -297,6 +297,13 @@ class AgentPlugin(pulumi.CustomResource):
                  plugin_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Agent Plugin resource in Oracle Cloud Infrastructure Cloud Bridge service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/OCB/latest/AgentPlugin
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudBridge
+
+        Updates the plugin.
+
         ## Example Usage
 
         ```python
@@ -334,6 +341,13 @@ class AgentPlugin(pulumi.CustomResource):
                  args: AgentPluginArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Agent Plugin resource in Oracle Cloud Infrastructure Cloud Bridge service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/OCB/latest/AgentPlugin
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudBridge
+
+        Updates the plugin.
+
         ## Example Usage
 
         ```python

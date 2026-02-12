@@ -14,7 +14,18 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * ## Example Usage
+ * This resource provides the Hostname resource in Oracle Cloud Infrastructure Load Balancer service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/loadbalancer/latest/Hostname
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/load_balancer
+ * 
+ * Adds a hostname resource to the specified load balancer. For more information, see
+ * [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
+ * 
+ * Set the terraform flag `lifecycle { createBeforeDestroy = true }` in your hostname to facilitate rotating hostnames.
+ * A hostname cannot be deleted if it is attached to another resource (a listener for example).
+ * Because hostnameNames in the listener is an updatable parameter, terraform will attempt to recreate the hostname first and then update the listener but the hostname cannot be deleted while it is attached to a listener so it will fail.
+ * Setting the flag makes it so that when a hostname is recreated, the new hostname will be created first before the old one gets deleted.
  * 
  * ## Import
  * 

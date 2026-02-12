@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/mysql/latest/MysqlBackup
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/mysql
+ *
+ * Create a backup of a DB System.
+ *
  * ## Example Usage
  *
  * ```typescript

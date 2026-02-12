@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudBridge
 {
     /// <summary>
+    /// This resource provides the Agent Dependency resource in Oracle Cloud Infrastructure Cloud Bridge service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/OCB/latest/AgentDependency
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudBridge
+    /// 
+    /// Creates an AgentDependency.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -46,7 +53,7 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// ## Import
     /// 
-    /// AgentDependencies can be imported using the `id`, e.g.
+    /// AgentDependencies can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:CloudBridge/agentDependency:AgentDependency test_agent_dependency "id"

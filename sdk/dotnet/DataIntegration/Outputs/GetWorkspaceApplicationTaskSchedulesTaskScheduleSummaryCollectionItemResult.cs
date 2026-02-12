@@ -21,6 +21,9 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// The authorization mode for the task.
         /// </summary>
         public readonly string AuthMode;
+        /// <summary>
+        /// The information about the configuration provider. First level keys to this delegate map should be in the order first "bindings" then "childProviders".refer terraform Example.
+        /// </summary>
         public readonly string ConfigProviderDelegate;
         /// <summary>
         /// The description of the aggregator.

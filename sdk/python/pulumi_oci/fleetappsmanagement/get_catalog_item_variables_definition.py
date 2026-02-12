@@ -79,6 +79,9 @@ class GetCatalogItemVariablesDefinitionResult:
     @_builtins.property
     @pulumi.getter(name="schemaDocuments")
     def schema_documents(self) -> Sequence['outputs.GetCatalogItemVariablesDefinitionSchemaDocumentResult']:
+        """
+        Schema Document representing Schema.yaml (https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager_topic-schema.htm)
+        """
         return pulumi.get(self, "schema_documents")
 
     @_builtins.property

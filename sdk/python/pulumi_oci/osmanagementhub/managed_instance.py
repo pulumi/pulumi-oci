@@ -799,7 +799,12 @@ class ManagedInstance(pulumi.CustomResource):
                  secondary_management_station_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Managed Instance resource in Oracle Cloud Infrastructure Os Management Hub service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ManagedInstance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+
+        Updates the specified managed instance information, such as description, ONS topic, and associated management station.
 
         ## Import
 
@@ -829,7 +834,12 @@ class ManagedInstance(pulumi.CustomResource):
                  args: ManagedInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Managed Instance resource in Oracle Cloud Infrastructure Os Management Hub service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ManagedInstance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+
+        Updates the specified managed instance information, such as description, ONS topic, and associated management station.
 
         ## Import
 

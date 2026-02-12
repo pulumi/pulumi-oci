@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
+    /// This resource provides the Network Security Group Security Rule resource in Oracle Cloud Infrastructure Core service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroupSecurityRule
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Adds up to 25 security rules to the specified network security group. Adding more than 25 rules requires multiple operations.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -69,7 +76,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Import
     /// 
-    /// NetworkSecurityGroupSecurityRule can be imported using the `id`, e.g.
+    /// NetworkSecurityGroupSecurityRule can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule test_network_security_group_security_rule "networkSecurityGroups/{networkSecurityGroupId}/securityRules/{securityRuleId}"

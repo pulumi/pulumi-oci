@@ -5,6 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Idp Group Mapping resource in Oracle Cloud Infrastructure Identity service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/IdpGroupMapping
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+ *
+ * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
+ *
+ * Creates a single mapping between an IdP group and an IAM Service
+ * [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/).
+ *
  * ## Example Usage
  *
  * ```typescript

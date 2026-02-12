@@ -332,6 +332,14 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/analytics/latest/AnalyticsInstancePrivateAccessChannel
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/analytics
+
+        Create a Private access Channel for the Analytics instance. The operation is long-running
+        and creates a new WorkRequest.
+
         ## Example Usage
 
         ```python
@@ -384,6 +392,14 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
                  args: AnalyticsInstancePrivateAccessChannelArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/analytics/latest/AnalyticsInstancePrivateAccessChannel
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/analytics
+
+        Create a Private access Channel for the Analytics instance. The operation is long-running
+        and creates a new WorkRequest.
+
         ## Example Usage
 
         ```python

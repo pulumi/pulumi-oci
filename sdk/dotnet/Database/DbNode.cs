@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Db Node resource in Oracle Cloud Infrastructure Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/DbNode
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+    /// 
+    /// Updates the specified database node.
     /// 
     /// ## Import
     /// 
-    /// DbNodes can be imported using the `id`, e.g.
+    /// DbNodes can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/dbNode:DbNode test_db_node "id"

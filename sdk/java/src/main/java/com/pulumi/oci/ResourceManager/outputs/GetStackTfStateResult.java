@@ -15,6 +15,10 @@ public final class GetStackTfStateResult {
      * 
      */
     private String id;
+    /**
+     * @return The path and filename (relative to where Terraform is executing) to write the external statefile to.
+     * 
+     */
     private String localPath;
     private String stackId;
 
@@ -26,6 +30,10 @@ public final class GetStackTfStateResult {
     public String id() {
         return this.id;
     }
+    /**
+     * @return The path and filename (relative to where Terraform is executing) to write the external statefile to.
+     * 
+     */
     public String localPath() {
         return this.localPath;
     }

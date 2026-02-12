@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Cloud Db Home resource in Oracle Cloud Infrastructure Database Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/CloudDbHome
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+    /// 
+    /// Updates the cloud DB home specified by `cloudDbHomeId`.
     /// 
     /// ## Import
     /// 
-    /// CloudDbHomes can be imported using the `id`, e.g.
+    /// CloudDbHomes can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DatabaseManagement/cloudDbHome:CloudDbHome test_cloud_db_home "id"

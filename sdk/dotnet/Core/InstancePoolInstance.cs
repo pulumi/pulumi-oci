@@ -10,6 +10,17 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
+    /// This resource provides the Instance Pool Instance resource in Oracle Cloud Infrastructure Core service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/InstancePoolInstance
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Attaches an instance to an instance pool. For information about the prerequisites
+    /// that an instance must meet before you can attach it to a pool, see
+    /// [Attaching an Instance to an Instance Pool](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/updatinginstancepool.htm#attach-instance).
+    /// 
+    /// Using this resource will impact the size of the instance pool, attach will increment the size of the pool
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -31,7 +42,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Import
     /// 
-    /// InstancePoolInstances can be imported using the `id`, e.g.
+    /// InstancePoolInstances can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Core/instancePoolInstance:InstancePoolInstance test_instance_pool_instance "instancePools/{instancePoolId}/instances/compartmentId/{compartmentId}"

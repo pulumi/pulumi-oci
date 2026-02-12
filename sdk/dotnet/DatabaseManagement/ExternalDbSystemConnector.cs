@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
+    /// This resource provides the External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalDbSystemConnector
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+    /// 
+    /// Creates a new external connector.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -32,7 +39,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// ## Import
     /// 
-    /// ExternalDbSystemConnectors can be imported using the `id`, e.g.
+    /// ExternalDbSystemConnectors can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector test_external_db_system_connector "id"

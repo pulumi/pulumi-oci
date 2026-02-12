@@ -568,6 +568,13 @@ class BackupDestination(pulumi.CustomResource):
                  vpc_users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Backup Destination resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/BackupDestination
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a backup destination in an Exadata Cloud@Customer system.
+
         ## Example Usage
 
         ```python
@@ -624,6 +631,13 @@ class BackupDestination(pulumi.CustomResource):
                  args: BackupDestinationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Backup Destination resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/BackupDestination
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a backup destination in an Exadata Cloud@Customer system.
+
         ## Example Usage
 
         ```python

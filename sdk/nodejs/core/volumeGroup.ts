@@ -7,6 +7,21 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Volume Group resource in Oracle Cloud Infrastructure Core service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/VolumeGroup
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ *
+ * Creates a new volume group in the specified compartment.
+ * A volume group is a collection of volumes and may be created from a list of volumes, cloning an existing
+ * volume group, or by restoring a volume group backup.
+ * You may optionally specify a *display name* for the volume group, which is simply a friendly name or
+ * description. It does not have to be unique, and you can change it. Avoid entering confidential information.
+ *
+ * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+ *
+ * Note: If the volume group is created from another volume group or from a volume group backup, a copy of the volumes from the source is made in your compartment. However, this is not automatically deleted by Terraform when this volume group is deleted. To track these volumes, you can import them into the terraform statefile and run terraform destroy. Alternatively, you can also use another interface like CLI, SDK, or Console to remove them manually.
+ *
  * ## Example Usage
  *
  * ```typescript

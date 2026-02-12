@@ -5,6 +5,17 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Sdm Masking Policy Difference resource in Oracle Cloud Infrastructure Data Safe service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/SdmMaskingPolicyDifference
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+ *
+ * Creates SDM masking policy difference for the specified masking policy. It finds the difference between
+ * masking columns of the masking policy and sensitive columns of the SDM. After performing this operation,
+ * you can use ListDifferenceColumns to view the difference columns, PatchSdmMaskingPolicyDifferenceColumns
+ * to specify the action you want perform on these columns, and then ApplySdmMaskingPolicyDifference to process the
+ * difference columns and apply them to the masking policy.
+ *
  * ## Example Usage
  *
  * ```typescript

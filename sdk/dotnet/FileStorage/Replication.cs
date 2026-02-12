@@ -10,6 +10,39 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FileStorage
 {
     /// <summary>
+    /// This resource provides the Replication resource in Oracle Cloud Infrastructure File Storage service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/filestorage/latest/Replication
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a new replication in the specified compartment.
+    /// Replications are the primary resource that governs the policy of cross-region replication between source
+    /// and target file systems. Replications are associated with a secondary resource called a [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget)
+    /// located in another availability domain.
+    /// The associated replication target resource is automatically created along with the replication resource.
+    /// The replication retrieves the delta of data between two snapshots of a source file system
+    /// and sends it to the associated `ReplicationTarget`, which retrieves the delta and applies it to the target
+    /// file system.
+    /// Only unexported file systems can be used as target file systems.
+    /// For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/FSreplication.htm).
+    /// 
+    /// For information about access control and compartments, see
+    /// [Overview of the IAM
+    /// Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+    /// 
+    /// For information about availability domains, see [Regions and
+    /// Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+    /// To get a list of availability domains, use the
+    /// `ListAvailabilityDomains` operation in the Identity and Access
+    /// Management Service API.
+    /// 
+    /// All Oracle Cloud Infrastructure Services resources, including
+    /// replications, get an Oracle-assigned, unique ID called an
+    /// Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+    /// When you create a resource, you can find its OCID in the response.
+    /// You can also retrieve a resource's OCID by using a List API operation on that resource
+    /// type, or by viewing the resource in the Console.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -52,7 +85,7 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// ## Import
     /// 
-    /// Replications can be imported using the `id`, e.g.
+    /// Replications can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:FileStorage/replication:Replication test_replication "id"

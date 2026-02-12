@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Redis
 {
     /// <summary>
+    /// This resource provides the Oci Cache Config Set resource in Oracle Cloud Infrastructure Redis service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/redis/latest/OciCacheConfigSet
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
+    /// 
+    /// Create a new Oracle Cloud Infrastructure Cache Config Set for the given Oracle Cloud Infrastructure cache engine version.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -52,7 +59,7 @@ namespace Pulumi.Oci.Redis
     /// 
     /// ## Import
     /// 
-    /// OciCacheConfigSets can be imported using the `id`, e.g.
+    /// OciCacheConfigSets can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Redis/ociCacheConfigSet:OciCacheConfigSet test_oci_cache_config_set "id"

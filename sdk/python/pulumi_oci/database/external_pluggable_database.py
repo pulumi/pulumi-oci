@@ -509,6 +509,14 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
                  source_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the External Pluggable Database resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ExternalPluggableDatabase
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Registers a new [ExternalPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails)
+        resource.
+
         ## Example Usage
 
         ```python
@@ -554,6 +562,14 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
                  args: ExternalPluggableDatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the External Pluggable Database resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ExternalPluggableDatabase
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Registers a new [ExternalPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails)
+        resource.
+
         ## Example Usage
 
         ```python

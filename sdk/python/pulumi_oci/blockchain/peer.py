@@ -267,6 +267,13 @@ class Peer(pulumi.CustomResource):
                  role: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Peer resource in Oracle Cloud Infrastructure Blockchain service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/blockchain/latest/Peer
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/blockchain
+
+        Create Blockchain Platform Peer
+
         ## Example Usage
 
         ```python
@@ -310,6 +317,13 @@ class Peer(pulumi.CustomResource):
                  args: PeerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Peer resource in Oracle Cloud Infrastructure Blockchain service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/blockchain/latest/Peer
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/blockchain
+
+        Create Blockchain Platform Peer
+
         ## Example Usage
 
         ```python

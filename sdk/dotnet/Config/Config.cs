@@ -84,6 +84,9 @@ namespace Pulumi.Oci
         }
 
         private static readonly __Value<ImmutableArray<string>> _ignoreDefinedTags = new __Value<ImmutableArray<string>>(() => __config.GetObject<ImmutableArray<string>>("ignoreDefinedTags"));
+        /// <summary>
+        /// (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
+        /// </summary>
         public static ImmutableArray<string> IgnoreDefinedTags
         {
             get => _ignoreDefinedTags.Get();

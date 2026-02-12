@@ -15,6 +15,12 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Namespace Ingest Time Rules Management resource in Oracle Cloud Infrastructure Log Analytics service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/NamespaceIngestTimeRulesManagement
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+ * Enables the specified ingest time rule.
+ * 
  * ## Example Usage
  * 
  * <pre>

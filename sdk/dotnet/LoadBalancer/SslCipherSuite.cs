@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer
 {
     /// <summary>
+    /// This resource provides the Ssl Cipher Suite resource in Oracle Cloud Infrastructure Load Balancer service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/loadbalancer/latest/SslCipherSuite
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/load_balancer
+    /// 
+    /// Creates a custom SSL cipher suite.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -32,7 +39,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// ## Import
     /// 
-    /// SslCipherSuites can be imported using the `id`, e.g.
+    /// SslCipherSuites can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:LoadBalancer/sslCipherSuite:SslCipherSuite test_ssl_cipher_suite "loadBalancers/{loadBalancerId}/sslCipherSuites/{name}"

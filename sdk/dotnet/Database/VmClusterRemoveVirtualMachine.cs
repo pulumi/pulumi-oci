@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
+    /// This resource provides the Vm Cluster Remove Virtual Machine resource in Oracle Cloud Infrastructure Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/VmClusterRemoveVirtualMachine
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+    /// 
+    /// Remove Virtual Machines from the VM cluster. Applies to Exadata Cloud@Customer instances only.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -37,7 +44,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// VmClusterRemoveVirtualMachine can be imported using the `id`, e.g.
+    /// VmClusterRemoveVirtualMachine can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine test_vm_cluster_remove_virtual_machine "id"

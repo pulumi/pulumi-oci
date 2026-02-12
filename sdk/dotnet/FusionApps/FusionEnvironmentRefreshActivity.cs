@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FusionApps
 {
     /// <summary>
+    /// This resource provides the Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fusion-applications/latest/FusionEnvironmentRefreshActivity
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fusionapps
+    /// 
+    /// Creates a new RefreshActivity.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -33,7 +40,7 @@ namespace Pulumi.Oci.FusionApps
     /// 
     /// ## Import
     /// 
-    /// FusionEnvironmentRefreshActivities can be imported using the `id`, e.g.
+    /// FusionEnvironmentRefreshActivities can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity test_fusion_environment_refresh_activity "fusionEnvironments/{fusionEnvironmentId}/refreshActivities/{refreshActivityId}"

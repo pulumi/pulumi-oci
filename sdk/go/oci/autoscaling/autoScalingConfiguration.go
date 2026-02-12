@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/autoscaling/latest/AutoScalingConfiguration
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/autoscaling
+//
+// Creates an autoscaling configuration.
+//
 // ## Example Usage
 //
 // ```go

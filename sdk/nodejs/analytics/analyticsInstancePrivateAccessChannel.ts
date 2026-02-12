@@ -7,6 +7,14 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/analytics/latest/AnalyticsInstancePrivateAccessChannel
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/analytics
+ *
+ * Create a Private access Channel for the Analytics instance. The operation is long-running
+ * and creates a new WorkRequest.
+ *
  * ## Example Usage
  *
  * ```typescript

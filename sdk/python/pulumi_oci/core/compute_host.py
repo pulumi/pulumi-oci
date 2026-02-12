@@ -556,7 +556,12 @@ class ComputeHost(pulumi.CustomResource):
                  configuration_action_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Compute Host resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/ComputeHost
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Customer can update the some fields for ComputeHost record
 
         ## Import
 
@@ -579,7 +584,12 @@ class ComputeHost(pulumi.CustomResource):
                  args: ComputeHostArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Compute Host resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/ComputeHost
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Customer can update the some fields for ComputeHost record
 
         ## Import
 

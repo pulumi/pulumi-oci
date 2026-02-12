@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
+    /// This resource provides the Digital Twin Adapter resource in Oracle Cloud Infrastructure Iot service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a new digital twin adapter.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -69,7 +76,7 @@ namespace Pulumi.Oci.Oci
     /// 
     /// ## Import
     /// 
-    /// DigitalTwinAdapters can be imported using the `id`, e.g.
+    /// DigitalTwinAdapters can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:oci/iotDigitalTwinAdapter:IotDigitalTwinAdapter test_digital_twin_adapter "id"

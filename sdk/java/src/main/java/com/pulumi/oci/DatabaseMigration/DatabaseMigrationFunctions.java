@@ -34,6 +34,12 @@ import java.util.concurrent.CompletableFuture;
 
 public final class DatabaseMigrationFunctions {
     /**
+     * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Database Connection details.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -72,6 +78,12 @@ public final class DatabaseMigrationFunctions {
         return getConnection(args, InvokeOptions.Empty);
     }
     /**
+     * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Database Connection details.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -110,6 +122,12 @@ public final class DatabaseMigrationFunctions {
         return getConnectionPlain(args, InvokeOptions.Empty);
     }
     /**
+     * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Database Connection details.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -148,6 +166,12 @@ public final class DatabaseMigrationFunctions {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getConnection:getConnection", TypeShape.of(GetConnectionResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Database Connection details.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -186,6 +210,12 @@ public final class DatabaseMigrationFunctions {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getConnection:getConnection", TypeShape.of(GetConnectionResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Database Connection details.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -224,6 +254,12 @@ public final class DatabaseMigrationFunctions {
         return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getConnection:getConnection", TypeShape.of(GetConnectionResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Connections in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Database Connections.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -267,6 +303,12 @@ public final class DatabaseMigrationFunctions {
         return getConnections(args, InvokeOptions.Empty);
     }
     /**
+     * This data source provides the list of Connections in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Database Connections.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -310,6 +352,12 @@ public final class DatabaseMigrationFunctions {
         return getConnectionsPlain(args, InvokeOptions.Empty);
     }
     /**
+     * This data source provides the list of Connections in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Database Connections.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -353,6 +401,12 @@ public final class DatabaseMigrationFunctions {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getConnections:getConnections", TypeShape.of(GetConnectionsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Connections in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Database Connections.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -396,6 +450,12 @@ public final class DatabaseMigrationFunctions {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getConnections:getConnections", TypeShape.of(GetConnectionsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Connections in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Database Connections.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -439,6 +499,12 @@ public final class DatabaseMigrationFunctions {
         return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getConnections:getConnections", TypeShape.of(GetConnectionsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Get the Pre-Migration Advisor report details
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -477,6 +543,12 @@ public final class DatabaseMigrationFunctions {
         return getJobAdvisorReport(args, InvokeOptions.Empty);
     }
     /**
+     * This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Get the Pre-Migration Advisor report details
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -515,6 +587,12 @@ public final class DatabaseMigrationFunctions {
         return getJobAdvisorReportPlain(args, InvokeOptions.Empty);
     }
     /**
+     * This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Get the Pre-Migration Advisor report details
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -553,6 +631,12 @@ public final class DatabaseMigrationFunctions {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", TypeShape.of(GetJobAdvisorReportResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Get the Pre-Migration Advisor report details
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -591,6 +675,12 @@ public final class DatabaseMigrationFunctions {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", TypeShape.of(GetJobAdvisorReportResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Get the Pre-Migration Advisor report details
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -839,6 +929,12 @@ public final class DatabaseMigrationFunctions {
         return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getJobOutput:getJobOutput", TypeShape.of(GetJobOutputResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Migration resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Migration details.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -877,6 +973,12 @@ public final class DatabaseMigrationFunctions {
         return getMigration(args, InvokeOptions.Empty);
     }
     /**
+     * This data source provides details about a specific Migration resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Migration details.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -915,6 +1017,12 @@ public final class DatabaseMigrationFunctions {
         return getMigrationPlain(args, InvokeOptions.Empty);
     }
     /**
+     * This data source provides details about a specific Migration resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Migration details.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -953,6 +1061,12 @@ public final class DatabaseMigrationFunctions {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigration:getMigration", TypeShape.of(GetMigrationResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Migration resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Migration details.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -991,6 +1105,12 @@ public final class DatabaseMigrationFunctions {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigration:getMigration", TypeShape.of(GetMigrationResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Migration resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Migration details.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -1029,6 +1149,12 @@ public final class DatabaseMigrationFunctions {
         return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getMigration:getMigration", TypeShape.of(GetMigrationResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display sample object types to exclude or include for a Migration.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -1067,6 +1193,12 @@ public final class DatabaseMigrationFunctions {
         return getMigrationObjectTypes(args, InvokeOptions.Empty);
     }
     /**
+     * This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display sample object types to exclude or include for a Migration.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -1105,6 +1237,12 @@ public final class DatabaseMigrationFunctions {
         return getMigrationObjectTypesPlain(args, InvokeOptions.Empty);
     }
     /**
+     * This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display sample object types to exclude or include for a Migration.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -1143,6 +1281,12 @@ public final class DatabaseMigrationFunctions {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", TypeShape.of(GetMigrationObjectTypesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display sample object types to exclude or include for a Migration.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -1181,6 +1325,12 @@ public final class DatabaseMigrationFunctions {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", TypeShape.of(GetMigrationObjectTypesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display sample object types to exclude or include for a Migration.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -1219,6 +1369,12 @@ public final class DatabaseMigrationFunctions {
         return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", TypeShape.of(GetMigrationObjectTypesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Migrations in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Migrations.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      */
@@ -1226,6 +1382,12 @@ public final class DatabaseMigrationFunctions {
         return getMigrations(args, InvokeOptions.Empty);
     }
     /**
+     * This data source provides the list of Migrations in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Migrations.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      */
@@ -1233,6 +1395,12 @@ public final class DatabaseMigrationFunctions {
         return getMigrationsPlain(args, InvokeOptions.Empty);
     }
     /**
+     * This data source provides the list of Migrations in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Migrations.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      */
@@ -1240,6 +1408,12 @@ public final class DatabaseMigrationFunctions {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigrations:getMigrations", TypeShape.of(GetMigrationsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Migrations in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Migrations.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      */
@@ -1247,6 +1421,12 @@ public final class DatabaseMigrationFunctions {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigrations:getMigrations", TypeShape.of(GetMigrationsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Migrations in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Migrations.
+     * 
+     * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+     * 
      * ## Example Usage
      * 
      */

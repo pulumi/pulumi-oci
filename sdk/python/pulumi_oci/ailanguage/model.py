@@ -447,6 +447,13 @@ class Model(pulumi.CustomResource):
                  training_dataset: Optional[pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Model resource in Oracle Cloud Infrastructure Ai Language service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/language/latest/Model
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiLanguage
+
+        Creates a new model for training and train the model with date provided.
+
         ## Example Usage
 
         ```python
@@ -535,6 +542,13 @@ class Model(pulumi.CustomResource):
                  args: ModelArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Model resource in Oracle Cloud Infrastructure Ai Language service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/language/latest/Model
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiLanguage
+
+        Creates a new model for training and train the model with date provided.
+
         ## Example Usage
 
         ```python

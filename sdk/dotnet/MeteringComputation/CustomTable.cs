@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation
 {
     /// <summary>
+    /// This resource provides the Custom Table resource in Oracle Cloud Infrastructure Metering Computation service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/usage/latest/CustomTable
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/metering_computation
+    /// 
+    /// Returns the created custom table.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -48,7 +55,7 @@ namespace Pulumi.Oci.MeteringComputation
     /// 
     /// ## Import
     /// 
-    /// CustomTables can be imported using the `id`, e.g.
+    /// CustomTables can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:MeteringComputation/customTable:CustomTable test_custom_table "id"

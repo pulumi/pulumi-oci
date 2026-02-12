@@ -5,6 +5,15 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/resourcemanager/latest/PrivateEndpoint
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/resourcemanager
+ *
+ * Creates a private endpoint in the specified compartment.
+ * For more information, see
+ * [Creating a Private Endpoint](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-private-endpoints.htm).
+ *
  * ## Example Usage
  *
  * ```typescript

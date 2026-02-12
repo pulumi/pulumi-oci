@@ -7,6 +7,14 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Export resource in Oracle Cloud Infrastructure File Storage service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/filestorage/latest/Export
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ *
+ * Creates a new export in the specified export set, path, and
+ * file system.
+ *
  * ## Example Usage
  *
  * ```typescript

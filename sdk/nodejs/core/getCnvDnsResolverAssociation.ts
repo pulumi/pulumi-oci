@@ -50,6 +50,12 @@ export interface GetCnvDnsResolverAssociationResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * The current state of the association. Resolver will be created when vcn is created. But the creation happens 
+     * asynchronously and may take longer because it is a background event that needs to run. The state will be PROVISIONING
+     * until the resolver is actually created. After the resolver is actually created, the state will be set to AVAILABLE. Users
+     * need to do a terraform refresh to poll and update the state file after sometime to get the dnsResolverId and state AVAILABLE.
+     */
     readonly state: string;
     /**
      * The OCID of the VCN in the association.

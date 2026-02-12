@@ -266,6 +266,13 @@ class RepositoryRef(pulumi.CustomResource):
                  repository_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Repository Ref resource in Oracle Cloud Infrastructure Devops service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/RepositoryRef
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+
+        Creates a new reference or updates an existing one. This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has '/'. This will be replaced by "/repositories/{repositoryId}/actions/createOrUpdateGitRef"
+
         ## Example Usage
 
         ```python
@@ -307,6 +314,13 @@ class RepositoryRef(pulumi.CustomResource):
                  args: RepositoryRefArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Repository Ref resource in Oracle Cloud Infrastructure Devops service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/RepositoryRef
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+
+        Creates a new reference or updates an existing one. This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has '/'. This will be replaced by "/repositories/{repositoryId}/actions/createOrUpdateGitRef"
+
         ## Example Usage
 
         ```python

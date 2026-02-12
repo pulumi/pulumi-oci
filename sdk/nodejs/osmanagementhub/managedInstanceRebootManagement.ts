@@ -7,6 +7,14 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Managed Instance Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ManagedInstanceRebootManagement
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+ *
+ * Initiates a reboot of the specified managed instance. You can also specify the number of minutes the service
+ * waits before marking the reboot operation as failed.
+ *
  * ## Example Usage
  *
  * ```typescript

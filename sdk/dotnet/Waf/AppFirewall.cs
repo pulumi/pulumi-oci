@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf
 {
     /// <summary>
+    /// This resource provides the Web App Firewall resource in Oracle Cloud Infrastructure Waf service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/waf/latest/WebAppFirewall
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/web_app_firewall
+    /// 
+    /// Creates a new WebAppFirewall.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -43,7 +50,7 @@ namespace Pulumi.Oci.Waf
     /// 
     /// ## Import
     /// 
-    /// WebAppFirewalls can be imported using the `id`, e.g.
+    /// WebAppFirewalls can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Waf/appFirewall:AppFirewall test_web_app_firewall "id"

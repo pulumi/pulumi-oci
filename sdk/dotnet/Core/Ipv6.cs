@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
+    /// This resource provides the Ipv6 resource in Oracle Cloud Infrastructure Core service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/Ipv6
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates an IPv6 for the specified VNIC.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -45,7 +52,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Import
     /// 
-    /// Ipv6 can be imported using the `id`, e.g.
+    /// Ipv6 can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Core/ipv6:Ipv6 test_ipv6 "id"

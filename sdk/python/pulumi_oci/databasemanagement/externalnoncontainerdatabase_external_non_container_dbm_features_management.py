@@ -155,6 +155,12 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(pulu
                  feature_details: Optional[pulumi.Input[Union['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Externalnoncontainerdatabase External Non Container Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+        Enables Database Management feature for the specified external non-container database.
+
         ## Example Usage
 
         ```python
@@ -196,6 +202,12 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(pulu
                  args: ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Externalnoncontainerdatabase External Non Container Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+        Enables Database Management feature for the specified external non-container database.
+
         ## Example Usage
 
         ```python

@@ -196,6 +196,9 @@ namespace Pulumi.Oci.Opsi
         /// Exadata insight identifier
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight. This should be always set true when using terraform, when it is set to false member associations may be missing from the application.
+        /// </summary>
         public readonly bool IsAutoSyncEnabled;
         /// <summary>
         /// true if virtualization is used in the Exadata system

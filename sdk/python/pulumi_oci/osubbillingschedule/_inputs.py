@@ -19,18 +19,13 @@ __all__ = [
     'GetBillingScheduleFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetBillingScheduleFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Product name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBillingScheduleFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBillingScheduleFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Product name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBillingScheduleFilterArgs:

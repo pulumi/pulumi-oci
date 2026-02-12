@@ -499,7 +499,12 @@ class MigrationAsset(pulumi.CustomResource):
                  snap_shot_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Migration Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/ocm/latest/MigrationAsset
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudMigrations
+
+        Creates a migration asset.
 
         ## Import
 
@@ -530,7 +535,12 @@ class MigrationAsset(pulumi.CustomResource):
                  args: MigrationAssetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Migration Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/ocm/latest/MigrationAsset
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudMigrations
+
+        Creates a migration asset.
 
         ## Import
 

@@ -500,6 +500,13 @@ class AuditPolicyManagement(pulumi.CustomResource):
                  target_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Audit Policy Management resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/AuditPolicyManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Updates the audit policy.
+
         ## Example Usage
 
         ```python
@@ -544,6 +551,13 @@ class AuditPolicyManagement(pulumi.CustomResource):
                  args: Optional[AuditPolicyManagementArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Audit Policy Management resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/AuditPolicyManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Updates the audit policy.
+
         ## Example Usage
 
         ```python

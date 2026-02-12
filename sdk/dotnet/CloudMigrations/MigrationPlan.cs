@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudMigrations
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Migration Plan resource in Oracle Cloud Infrastructure Cloud Migrations service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/ocm/latest/MigrationPlan
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudMigrations
+    /// 
+    /// Creates a migration plan.
     /// 
     /// ## Import
     /// 
-    /// MigrationPlans can be imported using the `id`, e.g.
+    /// MigrationPlans can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:CloudMigrations/migrationPlan:MigrationPlan test_migration_plan "id"

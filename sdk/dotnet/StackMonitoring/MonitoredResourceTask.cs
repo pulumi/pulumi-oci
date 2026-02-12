@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring
 {
     /// <summary>
+    /// This resource provides the Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoredResourceTask
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+    /// 
+    /// Create a new stack monitoring resource task.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -117,7 +124,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// ## Import
     /// 
-    /// MonitoredResourceTasks can be imported using the `id`, e.g.
+    /// MonitoredResourceTasks can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:StackMonitoring/monitoredResourceTask:MonitoredResourceTask test_monitored_resource_task "id"

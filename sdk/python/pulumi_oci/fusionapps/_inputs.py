@@ -37,32 +37,27 @@ __all__ = [
     'FusionEnvironmentRuleConditionArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class FusionEnvironmentAdminUserItemArgsDict(TypedDict):
-        email_address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The email address for the administrator.
-        """
-        first_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The administrator's first name.
-        """
-        last_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The administrator's last name.
-        """
-        username: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The username for the administrator.
+class FusionEnvironmentAdminUserItemArgsDict(TypedDict):
+    email_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The email address for the administrator.
+    """
+    first_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The administrator's first name.
+    """
+    last_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The administrator's last name.
+    """
+    username: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The username for the administrator.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    FusionEnvironmentAdminUserItemArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class FusionEnvironmentAdminUserItemArgs:
@@ -143,30 +138,27 @@ class FusionEnvironmentAdminUserItemArgs:
         pulumi.set(self, "username", value)
 
 
-if not MYPY:
-    class FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict(TypedDict):
-        email_address: pulumi.Input[_builtins.str]
-        """
-        The email address for the administrator.
-        """
-        first_name: pulumi.Input[_builtins.str]
-        """
-        The administrator's first name.
-        """
-        last_name: pulumi.Input[_builtins.str]
-        """
-        The administrator's last name.
-        """
-        username: pulumi.Input[_builtins.str]
-        """
-        The username for the administrator.
-        """
-        password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The password for the administrator.
-        """
-elif False:
-    FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict(TypedDict):
+    email_address: pulumi.Input[_builtins.str]
+    """
+    The email address for the administrator.
+    """
+    first_name: pulumi.Input[_builtins.str]
+    """
+    The administrator's first name.
+    """
+    last_name: pulumi.Input[_builtins.str]
+    """
+    The administrator's last name.
+    """
+    username: pulumi.Input[_builtins.str]
+    """
+    The username for the administrator.
+    """
+    password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The password for the administrator.
+    """
 
 @pulumi.input_type
 class FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs:
@@ -255,22 +247,19 @@ class FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs:
         pulumi.set(self, "password", value)
 
 
-if not MYPY:
-    class FusionEnvironmentFamilyFamilyMaintenancePolicyArgsDict(TypedDict):
-        concurrent_maintenance: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
-        """
-        is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) When True, monthly patching is enabled for the environment family.
-        """
-        quarterly_upgrade_begin_times: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The quarterly maintenance month group schedule of the Fusion environment family.
-        """
-elif False:
-    FusionEnvironmentFamilyFamilyMaintenancePolicyArgsDict: TypeAlias = Mapping[str, Any]
+class FusionEnvironmentFamilyFamilyMaintenancePolicyArgsDict(TypedDict):
+    concurrent_maintenance: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
+    """
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) When True, monthly patching is enabled for the environment family.
+    """
+    quarterly_upgrade_begin_times: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The quarterly maintenance month group schedule of the Fusion environment family.
+    """
 
 @pulumi.input_type
 class FusionEnvironmentFamilyFamilyMaintenancePolicyArgs:
@@ -327,17 +316,14 @@ class FusionEnvironmentFamilyFamilyMaintenancePolicyArgs:
         pulumi.set(self, "quarterly_upgrade_begin_times", value)
 
 
-if not MYPY:
-    class FusionEnvironmentKmsKeyInfoArgsDict(TypedDict):
-        active_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        active_key_version: NotRequired[pulumi.Input[_builtins.str]]
-        current_key_lifecycle_state: NotRequired[pulumi.Input[_builtins.str]]
-        scheduled_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        scheduled_key_status: NotRequired[pulumi.Input[_builtins.str]]
-        scheduled_key_version: NotRequired[pulumi.Input[_builtins.str]]
-        scheduled_lifecycle_state: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    FusionEnvironmentKmsKeyInfoArgsDict: TypeAlias = Mapping[str, Any]
+class FusionEnvironmentKmsKeyInfoArgsDict(TypedDict):
+    active_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    active_key_version: NotRequired[pulumi.Input[_builtins.str]]
+    current_key_lifecycle_state: NotRequired[pulumi.Input[_builtins.str]]
+    scheduled_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    scheduled_key_status: NotRequired[pulumi.Input[_builtins.str]]
+    scheduled_key_version: NotRequired[pulumi.Input[_builtins.str]]
+    scheduled_lifecycle_state: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class FusionEnvironmentKmsKeyInfoArgs:
@@ -428,22 +414,19 @@ class FusionEnvironmentKmsKeyInfoArgs:
         pulumi.set(self, "scheduled_lifecycle_state", value)
 
 
-if not MYPY:
-    class FusionEnvironmentMaintenancePolicyArgsDict(TypedDict):
-        environment_maintenance_override: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) User choice to upgrade both test and prod pods at the same time. Overrides fusion environment families'.
-        """
-        monthly_patching_override: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion environment is not patched monthly. This setting overrides the environment family setting. When not set, the environment follows the environment family policy.
-        """
-        quarterly_upgrade_begin_times: NotRequired[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgsDict']]]]
-        """
-        Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
-        """
-elif False:
-    FusionEnvironmentMaintenancePolicyArgsDict: TypeAlias = Mapping[str, Any]
+class FusionEnvironmentMaintenancePolicyArgsDict(TypedDict):
+    environment_maintenance_override: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) User choice to upgrade both test and prod pods at the same time. Overrides fusion environment families'.
+    """
+    monthly_patching_override: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion environment is not patched monthly. This setting overrides the environment family setting. When not set, the environment follows the environment family policy.
+    """
+    quarterly_upgrade_begin_times: NotRequired[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgsDict']]]]
+    """
+    Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
+    """
 
 @pulumi.input_type
 class FusionEnvironmentMaintenancePolicyArgs:
@@ -500,18 +483,15 @@ class FusionEnvironmentMaintenancePolicyArgs:
         pulumi.set(self, "quarterly_upgrade_begin_times", value)
 
 
-if not MYPY:
-    class FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgsDict(TypedDict):
-        begin_times_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The frequency and month when maintenance occurs for the Fusion environment.
-        """
-        override_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
-        """
-elif False:
-    FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgsDict: TypeAlias = Mapping[str, Any]
+class FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgsDict(TypedDict):
+    begin_times_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The frequency and month when maintenance occurs for the Fusion environment.
+    """
+    override_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
+    """
 
 @pulumi.input_type
 class FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs:
@@ -552,22 +532,19 @@ class FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs:
         pulumi.set(self, "override_type", value)
 
 
-if not MYPY:
-    class FusionEnvironmentRefreshArgsDict(TypedDict):
-        source_fusion_environment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The source environment id for the last refresh
-        """
-        time_finished: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time of when the last refresh finish
-        """
-        time_of_restoration_point: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The point of time of the latest DB backup for the last refresh
-        """
-elif False:
-    FusionEnvironmentRefreshArgsDict: TypeAlias = Mapping[str, Any]
+class FusionEnvironmentRefreshArgsDict(TypedDict):
+    source_fusion_environment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The source environment id for the last refresh
+    """
+    time_finished: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time of when the last refresh finish
+    """
+    time_of_restoration_point: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The point of time of the latest DB backup for the last refresh
+    """
 
 @pulumi.input_type
 class FusionEnvironmentRefreshArgs:
@@ -624,14 +601,11 @@ class FusionEnvironmentRefreshArgs:
         pulumi.set(self, "time_of_restoration_point", value)
 
 
-if not MYPY:
-    class FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgsDict(TypedDict):
-        refresh_issues: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Detail reasons of refresh failure or validation failure that needs to be shown to customer.
-        """
-elif False:
-    FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgsDict: TypeAlias = Mapping[str, Any]
+class FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgsDict(TypedDict):
+    refresh_issues: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Detail reasons of refresh failure or validation failure that needs to be shown to customer.
+    """
 
 @pulumi.input_type
 class FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs:
@@ -656,26 +630,23 @@ class FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs:
         pulumi.set(self, "refresh_issues", value)
 
 
-if not MYPY:
-    class FusionEnvironmentRuleArgsDict(TypedDict):
-        action: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Rule type
-        """
-        conditions: pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleConditionArgsDict']]]
-        """
-        (Updatable)
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.` 
+class FusionEnvironmentRuleArgsDict(TypedDict):
+    action: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Rule type
+    """
+    conditions: pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleConditionArgsDict']]]
+    """
+    (Updatable)
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.` 
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    FusionEnvironmentRuleArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class FusionEnvironmentRuleArgs:
@@ -738,18 +709,15 @@ class FusionEnvironmentRuleArgs:
         pulumi.set(self, "description", value)
 
 
-if not MYPY:
-    class FusionEnvironmentRuleConditionArgsDict(TypedDict):
-        attribute_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) RuleCondition type
-        """
-        attribute_value: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
-        """
-elif False:
-    FusionEnvironmentRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
+class FusionEnvironmentRuleConditionArgsDict(TypedDict):
+    attribute_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) RuleCondition type
+    """
+    attribute_value: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
+    """
 
 @pulumi.input_type
 class FusionEnvironmentRuleConditionArgs:

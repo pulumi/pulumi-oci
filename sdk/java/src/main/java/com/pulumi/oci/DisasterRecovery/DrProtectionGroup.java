@@ -21,6 +21,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/disaster-recovery/latest/DrProtectionGroup
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/disaster_recovery
+ * 
+ * Create a DR protection group.
+ * 
  * ## Example Usage
  * 
  * <pre>

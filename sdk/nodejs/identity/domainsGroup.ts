@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Group resource in Oracle Cloud Infrastructure Identity Domains service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/Group
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+ *
+ * Create a group.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -187,6 +194,9 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * uniqueness: none
      */
     declare public readonly externalId: pulumi.Output<string>;
+    /**
+     * (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+     */
     declare public readonly forceDelete: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
@@ -549,6 +559,9 @@ export interface DomainsGroupState {
      * * uniqueness: none
      */
     externalId?: pulumi.Input<string>;
+    /**
+     * (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+     */
     forceDelete?: pulumi.Input<boolean>;
     /**
      * (Updatable) The User or App who created the Resource
@@ -784,6 +797,9 @@ export interface DomainsGroupArgs {
      * * uniqueness: none
      */
     externalId?: pulumi.Input<string>;
+    /**
+     * (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+     */
     forceDelete?: pulumi.Input<boolean>;
     /**
      * The basic endpoint for the identity domain

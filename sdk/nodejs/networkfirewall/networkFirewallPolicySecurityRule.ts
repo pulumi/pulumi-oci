@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/network-firewall/latest/NetworkFirewallPolicySecurityRule
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_firewall
+ *
+ * Creates a new Security Rule for the Network Firewall Policy.
+ *
  * ## Example Usage
  *
  * ```typescript

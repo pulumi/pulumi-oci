@@ -29,6 +29,10 @@ public final class GetCatalogItemVariablesDefinitionResult {
      * 
      */
     private String id;
+    /**
+     * @return Schema Document representing Schema.yaml (https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager_topic-schema.htm)
+     * 
+     */
     private List<GetCatalogItemVariablesDefinitionSchemaDocument> schemaDocuments;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
@@ -61,6 +65,10 @@ public final class GetCatalogItemVariablesDefinitionResult {
     public String id() {
         return this.id;
     }
+    /**
+     * @return Schema Document representing Schema.yaml (https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager_topic-schema.htm)
+     * 
+     */
     public List<GetCatalogItemVariablesDefinitionSchemaDocument> schemaDocuments() {
         return this.schemaDocuments;
     }

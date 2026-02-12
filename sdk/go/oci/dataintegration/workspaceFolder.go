@@ -12,6 +12,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Workspace Folder resource in Oracle Cloud Infrastructure Data Integration service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-integration/latest/WorkspaceFolder
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataintegration
+//
+// Creates a folder in a project or in another folder, limited to two levels of folders. |
+// Folders are used to organize your design-time resources, such as tasks or data flows.
+//
 // ## Example Usage
 //
 // ```go

@@ -581,7 +581,12 @@ class Pipeline(pulumi.CustomResource):
                  storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineStorageMountConfigurationDetailsListArgs', 'PipelineStorageMountConfigurationDetailsListArgsDict']]]]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Pipeline resource in Oracle Cloud Infrastructure Data Science service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/Pipeline
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+
+        Creates a new Pipeline.
 
         ## Import
 
@@ -613,7 +618,12 @@ class Pipeline(pulumi.CustomResource):
                  args: PipelineArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Pipeline resource in Oracle Cloud Infrastructure Data Science service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/Pipeline
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+
+        Creates a new Pipeline.
 
         ## Import
 

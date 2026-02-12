@@ -425,6 +425,13 @@ class MediaWorkflow(pulumi.CustomResource):
                  tasks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowTaskArgs', 'MediaWorkflowTaskArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dms/latest/MediaWorkflow
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/media_services
+
+        Creates a new MediaWorkflow.
+
         ## Example Usage
 
         ```python
@@ -486,6 +493,13 @@ class MediaWorkflow(pulumi.CustomResource):
                  args: MediaWorkflowArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dms/latest/MediaWorkflow
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/media_services
+
+        Creates a new MediaWorkflow.
+
         ## Example Usage
 
         ```python

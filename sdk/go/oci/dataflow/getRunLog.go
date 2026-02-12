@@ -53,6 +53,8 @@ func GetRunLog(ctx *pulumi.Context, args *GetRunLogArgs, opts ...pulumi.InvokeOp
 
 // A collection of arguments for invoking getRunLog.
 type GetRunLogArgs struct {
+	// Encodes the downloaded content in base64. It is recommended to set this to `true` for binary content to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+	// If passing the base64 encoded content to a `localFile` resource, please use the `contentBase64` attribute of the `localFile` resource.
 	Base64EncodeContent *bool `pulumi:"base64EncodeContent"`
 	// The name of the log. Avoid entering confidential information.
 	Name string `pulumi:"name"`
@@ -84,6 +86,8 @@ func GetRunLogOutput(ctx *pulumi.Context, args GetRunLogOutputArgs, opts ...pulu
 
 // A collection of arguments for invoking getRunLog.
 type GetRunLogOutputArgs struct {
+	// Encodes the downloaded content in base64. It is recommended to set this to `true` for binary content to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+	// If passing the base64 encoded content to a `localFile` resource, please use the `contentBase64` attribute of the `localFile` resource.
 	Base64EncodeContent pulumi.BoolPtrInput `pulumi:"base64EncodeContent"`
 	// The name of the log. Avoid entering confidential information.
 	Name pulumi.StringInput `pulumi:"name"`

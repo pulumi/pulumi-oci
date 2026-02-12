@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OperatorAccessControl
 {
     /// <summary>
+    /// This resource provides the Operator Control Assignment resource in Oracle Cloud Infrastructure Operator Access Control service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/latest/OperatorControlAssignment
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/operator_access_control
+    /// 
+    /// Creates an Operator Control Assignment resource. In effect, this brings the target resource under the governance of the Operator Control for specified time duration.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -47,7 +54,7 @@ namespace Pulumi.Oci.OperatorAccessControl
     /// 
     /// ## Import
     /// 
-    /// OperatorControlAssignments can be imported using the `id`, e.g.
+    /// OperatorControlAssignments can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment test_operator_control_assignment "id"

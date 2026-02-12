@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Globally Distributed Database service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/latest/PrivateEndpoint
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/globally_distributed_database
+//
+// Creates a PrivateEndpoint.
+//
 // ## Example Usage
 //
 // ```go

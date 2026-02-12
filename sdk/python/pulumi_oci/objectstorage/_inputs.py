@@ -43,36 +43,31 @@ __all__ = [
     'GetReplicationSourcesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class BucketRetentionRuleArgsDict(TypedDict):
-        display_name: pulumi.Input[_builtins.str]
-        """
-        A user-specified name for the retention rule. Names can be helpful in identifying retention rules. The name should be unique. This attribute is a forcenew attribute
-        """
-        duration: NotRequired[pulumi.Input['BucketRetentionRuleDurationArgsDict']]
-        """
-        (Updatable)
-        """
-        retention_rule_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique identifier for the retention rule.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-        """
-        time_modified: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time that the retention rule was modified as per [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
-        time_rule_locked: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule is locked and can only be deleted by deleting the bucket. Once a rule is locked, only increases in the duration are allowed and no other properties can be changed. This property cannot be updated for rules that are in a locked state. Specifying it when a duration is not specified is considered an error.
-        """
-elif False:
-    BucketRetentionRuleArgsDict: TypeAlias = Mapping[str, Any]
+class BucketRetentionRuleArgsDict(TypedDict):
+    display_name: pulumi.Input[_builtins.str]
+    """
+    A user-specified name for the retention rule. Names can be helpful in identifying retention rules. The name should be unique. This attribute is a forcenew attribute
+    """
+    duration: NotRequired[pulumi.Input['BucketRetentionRuleDurationArgsDict']]
+    """
+    (Updatable)
+    """
+    retention_rule_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique identifier for the retention rule.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+    """
+    time_modified: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time that the retention rule was modified as per [RFC3339](https://tools.ietf.org/html/rfc3339).
+    """
+    time_rule_locked: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule is locked and can only be deleted by deleting the bucket. Once a rule is locked, only increases in the duration are allowed and no other properties can be changed. This property cannot be updated for rules that are in a locked state. Specifying it when a duration is not specified is considered an error.
+    """
 
 @pulumi.input_type
 class BucketRetentionRuleArgs:
@@ -176,18 +171,15 @@ class BucketRetentionRuleArgs:
         pulumi.set(self, "time_rule_locked", value)
 
 
-if not MYPY:
-    class BucketRetentionRuleDurationArgsDict(TypedDict):
-        time_amount: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
-        """
-        time_unit: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The unit that should be used to interpret timeAmount.
-        """
-elif False:
-    BucketRetentionRuleDurationArgsDict: TypeAlias = Mapping[str, Any]
+class BucketRetentionRuleDurationArgsDict(TypedDict):
+    time_amount: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
+    """
+    time_unit: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The unit that should be used to interpret timeAmount.
+    """
 
 @pulumi.input_type
 class BucketRetentionRuleDurationArgs:
@@ -226,42 +218,39 @@ class BucketRetentionRuleDurationArgs:
         pulumi.set(self, "time_unit", value)
 
 
-if not MYPY:
-    class ObjectLifecyclePolicyRuleArgsDict(TypedDict):
-        action: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers into the [Archive storage tier](https://docs.cloud.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm). Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive tier are left untouched. Rules using the action 'DELETE' permanently delete objects from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
-        """
-        is_enabled: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) A Boolean that determines whether this rule is currently enabled.
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the lifecycle rule to be applied.
-        """
-        time_amount: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified time.
-        """
-        time_unit: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC. 
+class ObjectLifecyclePolicyRuleArgsDict(TypedDict):
+    action: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers into the [Archive storage tier](https://docs.cloud.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm). Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive tier are left untouched. Rules using the action 'DELETE' permanently delete objects from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
+    """
+    is_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) A Boolean that determines whether this rule is currently enabled.
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the lifecycle rule to be applied.
+    """
+    time_amount: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified time.
+    """
+    time_unit: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC. 
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        object_name_filter: NotRequired[pulumi.Input['ObjectLifecyclePolicyRuleObjectNameFilterArgsDict']]
-        """
-        (Updatable) A filter that compares object names to a set of prefixes or patterns to determine if a rule applies to a given object. The filter can contain include glob patterns, exclude glob patterns and inclusion prefixes. The inclusion prefixes property is kept for backward compatibility. It is recommended to use inclusion patterns instead of prefixes. Exclusions take precedence over inclusions.
-        """
-        target: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The target of the object lifecycle policy rule. The values of target can be either "objects", "multipart-uploads" or "previous-object-versions". This field when declared as "objects" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for objects. This field when declared as "previous-object-versions" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects. This field when declared as "multipart-uploads" is used to specify the ABORT (only) rule for uncommitted multipart-uploads.
-        """
-elif False:
-    ObjectLifecyclePolicyRuleArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    object_name_filter: NotRequired[pulumi.Input['ObjectLifecyclePolicyRuleObjectNameFilterArgsDict']]
+    """
+    (Updatable) A filter that compares object names to a set of prefixes or patterns to determine if a rule applies to a given object. The filter can contain include glob patterns, exclude glob patterns and inclusion prefixes. The inclusion prefixes property is kept for backward compatibility. It is recommended to use inclusion patterns instead of prefixes. Exclusions take precedence over inclusions.
+    """
+    target: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The target of the object lifecycle policy rule. The values of target can be either "objects", "multipart-uploads" or "previous-object-versions". This field when declared as "objects" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for objects. This field when declared as "previous-object-versions" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects. This field when declared as "multipart-uploads" is used to specify the ABORT (only) rule for uncommitted multipart-uploads.
+    """
 
 @pulumi.input_type
 class ObjectLifecyclePolicyRuleArgs:
@@ -385,32 +374,29 @@ class ObjectLifecyclePolicyRuleArgs:
         pulumi.set(self, "target", value)
 
 
-if not MYPY:
-    class ObjectLifecyclePolicyRuleObjectNameFilterArgsDict(TypedDict):
-        exclusion_patterns: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
+class ObjectLifecyclePolicyRuleObjectNameFilterArgsDict(TypedDict):
+    exclusion_patterns: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
 
-        The special pattern characters have the following meanings:
+    The special pattern characters have the following meanings:
 
-        \\           Escapes the following character
-        *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
-        """
-        inclusion_patterns: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of glob patterns to match the object names to include. An empty array includes all objects in the bucket. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
+    \\           Escapes the following character
+    *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
+    """
+    inclusion_patterns: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of glob patterns to match the object names to include. An empty array includes all objects in the bucket. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
 
-        The special pattern characters have the following meanings:
+    The special pattern characters have the following meanings:
 
-        \\           Escapes the following character
-        *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
-        """
-        inclusion_prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
-        """
-elif False:
-    ObjectLifecyclePolicyRuleObjectNameFilterArgsDict: TypeAlias = Mapping[str, Any]
+    \\           Escapes the following character
+    *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
+    """
+    inclusion_prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
+    """
 
 @pulumi.input_type
 class ObjectLifecyclePolicyRuleObjectNameFilterArgs:
@@ -487,13 +473,10 @@ class ObjectLifecyclePolicyRuleObjectNameFilterArgs:
         pulumi.set(self, "inclusion_prefixes", value)
 
 
-if not MYPY:
-    class PrivateEndpointAccessTargetArgsDict(TypedDict):
-        bucket: pulumi.Input[_builtins.str]
-        compartment_id: pulumi.Input[_builtins.str]
-        namespace: pulumi.Input[_builtins.str]
-elif False:
-    PrivateEndpointAccessTargetArgsDict: TypeAlias = Mapping[str, Any]
+class PrivateEndpointAccessTargetArgsDict(TypedDict):
+    bucket: pulumi.Input[_builtins.str]
+    compartment_id: pulumi.Input[_builtins.str]
+    namespace: pulumi.Input[_builtins.str]
 
 @pulumi.input_type
 class PrivateEndpointAccessTargetArgs:
@@ -533,46 +516,43 @@ class PrivateEndpointAccessTargetArgs:
         pulumi.set(self, "namespace", value)
 
 
-if not MYPY:
-    class StorageObjectSourceUriDetailsArgsDict(TypedDict):
-        bucket: pulumi.Input[_builtins.str]
-        """
-        The name of the bucket for the source object.
-        """
-        namespace: pulumi.Input[_builtins.str]
-        """
-        The top-level namespace of the source object.
-        """
-        object: pulumi.Input[_builtins.str]
-        """
-        The name of the source object.
-        """
-        region: pulumi.Input[_builtins.str]
-        """
-        The region of the source object.
-        """
-        destination_object_if_match_etag: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The entity tag to match the target object.
-        """
-        destination_object_if_none_match_etag: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The entity tag to not match the target object.
-        """
-        source_object_if_match_etag: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The entity tag to match the source object.
-        """
-        source_version_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The version id of the object to be restored.
+class StorageObjectSourceUriDetailsArgsDict(TypedDict):
+    bucket: pulumi.Input[_builtins.str]
+    """
+    The name of the bucket for the source object.
+    """
+    namespace: pulumi.Input[_builtins.str]
+    """
+    The top-level namespace of the source object.
+    """
+    object: pulumi.Input[_builtins.str]
+    """
+    The name of the source object.
+    """
+    region: pulumi.Input[_builtins.str]
+    """
+    The region of the source object.
+    """
+    destination_object_if_match_etag: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The entity tag to match the target object.
+    """
+    destination_object_if_none_match_etag: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The entity tag to not match the target object.
+    """
+    source_object_if_match_etag: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The entity tag to match the source object.
+    """
+    source_version_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The version id of the object to be restored.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    StorageObjectSourceUriDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class StorageObjectSourceUriDetailsArgs:
@@ -713,16 +693,13 @@ class StorageObjectSourceUriDetailsArgs:
         pulumi.set(self, "source_version_id", value)
 
 
-if not MYPY:
-    class GetBucketSummariesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBucketSummariesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBucketSummariesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBucketSummariesFilterArgs:
@@ -769,16 +746,13 @@ class GetBucketSummariesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetObjectVersionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the object. Avoid entering confidential information. Example: test/object1.log
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetObjectVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetObjectVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the object. Avoid entering confidential information. Example: test/object1.log
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetObjectVersionsFilterArgs:
@@ -825,16 +799,13 @@ class GetObjectVersionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetObjectsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the object.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetObjectsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetObjectsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the object.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetObjectsFilterArgs:
@@ -881,16 +852,13 @@ class GetObjectsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPreauthrequestsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The user-provided name of the pre-authenticated request.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPreauthrequestsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPreauthrequestsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The user-provided name of the pre-authenticated request.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPreauthrequestsFilterArgs:
@@ -937,13 +905,10 @@ class GetPreauthrequestsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPrivateEndpointSummariesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPrivateEndpointSummariesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPrivateEndpointSummariesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPrivateEndpointSummariesFilterArgs:
@@ -984,16 +949,13 @@ class GetPrivateEndpointSummariesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetReplicationPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the policy.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetReplicationPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetReplicationPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the policy.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetReplicationPoliciesFilterArgs:
@@ -1040,13 +1002,10 @@ class GetReplicationPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetReplicationSourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetReplicationSourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetReplicationSourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetReplicationSourcesFilterArgs:

@@ -47,44 +47,39 @@ __all__ = [
     'GetNetworkLoadBalancersProtocolsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class BackendSetBackendArgsDict(TypedDict):
-        port: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The communication port for the backend server.  Example: `8080`
-        """
-        ip_address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
-        """
-        is_backup: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        """
-        is_drain: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
-        """
-        is_offline: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
-        """
-        target_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-        """
-        weight: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
-        """
-elif False:
-    BackendSetBackendArgsDict: TypeAlias = Mapping[str, Any]
+class BackendSetBackendArgsDict(TypedDict):
+    port: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The communication port for the backend server.  Example: `8080`
+    """
+    ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
+    """
+    is_backup: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
+    """
+    is_drain: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+    """
+    is_offline: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
+    """
+    target_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
+    """
+    weight: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
+    """
 
 @pulumi.input_type
 class BackendSetBackendArgs:
@@ -220,54 +215,51 @@ class BackendSetBackendArgs:
         pulumi.set(self, "weight", value)
 
 
-if not MYPY:
-    class BackendSetHealthCheckerArgsDict(TypedDict):
-        protocol: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
-        """
-        dns: NotRequired[pulumi.Input['BackendSetHealthCheckerDnsArgsDict']]
-        """
-        (Updatable) DNS healthcheck configurations.
-        """
-        interval_in_millis: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
-        """
-        request_data: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Base64 encoded pattern to be sent as UDP or TCP health check probe.
-        """
-        response_body_regex: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\\s)*$`
-        """
-        response_data: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Base64 encoded pattern to be validated as UDP or TCP health check probe response.
-        """
-        retries: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. The default value is 3.  Example: `3`
-        """
-        return_code: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as "200".  Example: `200`
-        """
-        timeout_in_millis: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
-        """
-        url_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The path against which to run the health check.  Example: `/healthcheck`
-        """
-elif False:
-    BackendSetHealthCheckerArgsDict: TypeAlias = Mapping[str, Any]
+class BackendSetHealthCheckerArgsDict(TypedDict):
+    protocol: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
+    """
+    dns: NotRequired[pulumi.Input['BackendSetHealthCheckerDnsArgsDict']]
+    """
+    (Updatable) DNS healthcheck configurations.
+    """
+    interval_in_millis: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+    """
+    request_data: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Base64 encoded pattern to be sent as UDP or TCP health check probe.
+    """
+    response_body_regex: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\\s)*$`
+    """
+    response_data: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Base64 encoded pattern to be validated as UDP or TCP health check probe response.
+    """
+    retries: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. The default value is 3.  Example: `3`
+    """
+    return_code: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as "200".  Example: `200`
+    """
+    timeout_in_millis: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
+    """
+    url_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The path against which to run the health check.  Example: `/healthcheck`
+    """
 
 @pulumi.input_type
 class BackendSetHealthCheckerArgs:
@@ -451,30 +443,27 @@ class BackendSetHealthCheckerArgs:
         pulumi.set(self, "url_path", value)
 
 
-if not MYPY:
-    class BackendSetHealthCheckerDnsArgsDict(TypedDict):
-        domain_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
-        """
-        query_class: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The class the dns health check query to use; either IN or CH.  Example: `IN`
-        """
-        query_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
-        """
-        rcodes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
-        """
-        transport_protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) DNS transport protocol; either UDP or TCP.  Example: `UDP`
-        """
-elif False:
-    BackendSetHealthCheckerDnsArgsDict: TypeAlias = Mapping[str, Any]
+class BackendSetHealthCheckerDnsArgsDict(TypedDict):
+    domain_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+    """
+    query_class: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The class the dns health check query to use; either IN or CH.  Example: `IN`
+    """
+    query_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+    """
+    rcodes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+    """
+    transport_protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) DNS transport protocol; either UDP or TCP.  Example: `UDP`
+    """
 
 @pulumi.input_type
 class BackendSetHealthCheckerDnsArgs:
@@ -562,26 +551,23 @@ class BackendSetHealthCheckerDnsArgs:
         pulumi.set(self, "transport_protocol", value)
 
 
-if not MYPY:
-    class NetworkLoadBalancerIpAddressArgsDict(TypedDict):
-        ip_address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An IP address.  Example: `192.168.0.3`
-        """
-        ip_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        IP version associated with the listener.
-        """
-        is_public: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether the IP address is public or private.
-        """
-        reserved_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerIpAddressReservedIpArgsDict']]]]
-        """
-        An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
-        """
-elif False:
-    NetworkLoadBalancerIpAddressArgsDict: TypeAlias = Mapping[str, Any]
+class NetworkLoadBalancerIpAddressArgsDict(TypedDict):
+    ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An IP address.  Example: `192.168.0.3`
+    """
+    ip_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    IP version associated with the listener.
+    """
+    is_public: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether the IP address is public or private.
+    """
+    reserved_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerIpAddressReservedIpArgsDict']]]]
+    """
+    An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
+    """
 
 @pulumi.input_type
 class NetworkLoadBalancerIpAddressArgs:
@@ -654,14 +640,11 @@ class NetworkLoadBalancerIpAddressArgs:
         pulumi.set(self, "reserved_ips", value)
 
 
-if not MYPY:
-    class NetworkLoadBalancerIpAddressReservedIpArgsDict(TypedDict):
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the reserved public IP address created with the virtual cloud network.
-        """
-elif False:
-    NetworkLoadBalancerIpAddressReservedIpArgsDict: TypeAlias = Mapping[str, Any]
+class NetworkLoadBalancerIpAddressReservedIpArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the reserved public IP address created with the virtual cloud network.
+    """
 
 @pulumi.input_type
 class NetworkLoadBalancerIpAddressReservedIpArgs:
@@ -686,22 +669,19 @@ class NetworkLoadBalancerIpAddressReservedIpArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class NetworkLoadBalancerReservedIpArgsDict(TypedDict):
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the reserved public IP address created with the virtual cloud network.
+class NetworkLoadBalancerReservedIpArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the reserved public IP address created with the virtual cloud network.
 
-        Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+    Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
 
-        Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+    Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
 
-        Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+    Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
 
-        Example: "ocid1.publicip.oc1.phx.unique_ID"
-        """
-elif False:
-    NetworkLoadBalancerReservedIpArgsDict: TypeAlias = Mapping[str, Any]
+    Example: "ocid1.publicip.oc1.phx.unique_ID"
+    """
 
 @pulumi.input_type
 class NetworkLoadBalancerReservedIpArgs:
@@ -742,42 +722,39 @@ class NetworkLoadBalancerReservedIpArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class NetworkLoadBalancersBackendSetsUnifiedBackendArgsDict(TypedDict):
-        port: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The communication port for the backend server.  Example: `8080`
-        """
-        ip_address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
-        """
-        is_backup: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        """
-        is_drain: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
-        """
-        is_offline: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
-        """
-        target_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-        """
-        weight: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
-        """
-elif False:
-    NetworkLoadBalancersBackendSetsUnifiedBackendArgsDict: TypeAlias = Mapping[str, Any]
+class NetworkLoadBalancersBackendSetsUnifiedBackendArgsDict(TypedDict):
+    port: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The communication port for the backend server.  Example: `8080`
+    """
+    ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
+    """
+    is_backup: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
+    """
+    is_drain: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+    """
+    is_offline: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
+    """
+    target_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
+    """
+    weight: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3`
+    """
 
 @pulumi.input_type
 class NetworkLoadBalancersBackendSetsUnifiedBackendArgs:
@@ -913,54 +890,51 @@ class NetworkLoadBalancersBackendSetsUnifiedBackendArgs:
         pulumi.set(self, "weight", value)
 
 
-if not MYPY:
-    class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgsDict(TypedDict):
-        protocol: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
-        """
-        dns: NotRequired[pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgsDict']]
-        """
-        (Updatable) DNS healthcheck configurations.
-        """
-        interval_in_millis: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
-        """
-        request_data: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Base64 encoded pattern to be sent as UDP or TCP health check probe.
-        """
-        response_body_regex: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\\s)*$`
-        """
-        response_data: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Base64 encoded pattern to be validated as UDP or TCP health check probe response.
-        """
-        retries: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. The default value is 3.  Example: `3`
-        """
-        return_code: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as "200".  Example: `200`
-        """
-        timeout_in_millis: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
-        """
-        url_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The path against which to run the health check.  Example: `/healthcheck`
-        """
-elif False:
-    NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgsDict: TypeAlias = Mapping[str, Any]
+class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgsDict(TypedDict):
+    protocol: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+    """
+    dns: NotRequired[pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgsDict']]
+    """
+    (Updatable) DNS healthcheck configurations.
+    """
+    interval_in_millis: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+    """
+    request_data: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Base64 encoded pattern to be sent as UDP or TCP health check probe.
+    """
+    response_body_regex: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\\s)*$`
+    """
+    response_data: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Base64 encoded pattern to be validated as UDP or TCP health check probe response.
+    """
+    retries: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. The default value is 3.  Example: `3`
+    """
+    return_code: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as "200".  Example: `200`
+    """
+    timeout_in_millis: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
+    """
+    url_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The path against which to run the health check.  Example: `/healthcheck`
+    """
 
 @pulumi.input_type
 class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs:
@@ -1144,30 +1118,27 @@ class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs:
         pulumi.set(self, "url_path", value)
 
 
-if not MYPY:
-    class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgsDict(TypedDict):
-        domain_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
-        """
-        query_class: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The class the dns health check query to use; either IN or CH.  Example: `IN`
-        """
-        query_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
-        """
-        rcodes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
-        """
-        transport_protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) DNS transport protocol; either UDP or TCP.  Example: `UDP`
-        """
-elif False:
-    NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgsDict: TypeAlias = Mapping[str, Any]
+class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgsDict(TypedDict):
+    domain_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+    """
+    query_class: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The class the dns health check query to use; either IN or CH.  Example: `IN`
+    """
+    query_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+    """
+    rcodes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+    """
+    transport_protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) DNS transport protocol; either UDP or TCP.  Example: `UDP`
+    """
 
 @pulumi.input_type
 class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs:
@@ -1255,16 +1226,13 @@ class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs:
         pulumi.set(self, "transport_protocol", value)
 
 
-if not MYPY:
-    class GetBackendSetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A user-friendly name for the backend set that must be unique and cannot be changed.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBackendSetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBackendSetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A user-friendly name for the backend set that must be unique and cannot be changed.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBackendSetsFilterArgs:
@@ -1311,16 +1279,13 @@ class GetBackendSetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBackendsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A read-only field showing the IP address/IP OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBackendsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBackendsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A read-only field showing the IP address/IP OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBackendsFilterArgs:
@@ -1367,16 +1332,13 @@ class GetBackendsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetListenersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetListenersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetListenersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetListenersFilterArgs:
@@ -1423,16 +1385,13 @@ class GetListenersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNetworkLoadBalancersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNetworkLoadBalancersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNetworkLoadBalancersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNetworkLoadBalancersFilterArgs:
@@ -1479,13 +1438,10 @@ class GetNetworkLoadBalancersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNetworkLoadBalancersPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNetworkLoadBalancersPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNetworkLoadBalancersPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNetworkLoadBalancersPoliciesFilterArgs:
@@ -1526,13 +1482,10 @@ class GetNetworkLoadBalancersPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNetworkLoadBalancersProtocolsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNetworkLoadBalancersProtocolsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNetworkLoadBalancersProtocolsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNetworkLoadBalancersProtocolsFilterArgs:

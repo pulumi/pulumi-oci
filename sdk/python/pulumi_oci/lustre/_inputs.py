@@ -27,20 +27,15 @@ __all__ = [
     'GetFileStorageObjectStorageLinksFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class FileStorageLustreFileSystemMaintenanceWindowArgsDict(TypedDict):
-        day_of_week: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Day of the week when the maintainence window starts.
-        """
-        time_start: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
-        """
-elif False:
-    FileStorageLustreFileSystemMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
+class FileStorageLustreFileSystemMaintenanceWindowArgsDict(TypedDict):
+    day_of_week: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Day of the week when the maintainence window starts.
+    """
+    time_start: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
+    """
 
 @pulumi.input_type
 class FileStorageLustreFileSystemMaintenanceWindowArgs:
@@ -81,26 +76,23 @@ class FileStorageLustreFileSystemMaintenanceWindowArgs:
         pulumi.set(self, "time_start", value)
 
 
-if not MYPY:
-    class FileStorageLustreFileSystemRootSquashConfigurationArgsDict(TypedDict):
-        client_exceptions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of NIDs allowed with this lustre file system not to be squashed. A maximum of 10 is allowed.
-        """
-        identity_squash: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Used when clients accessing the Lustre file system have their UID and GID remapped to `squashUid` and `squashGid`. If `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `NONE`.
-        """
-        squash_gid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The GID value to remap to when squashing a client GID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
-        """
-        squash_uid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The UID value to remap to when squashing a client UID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
-        """
-elif False:
-    FileStorageLustreFileSystemRootSquashConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class FileStorageLustreFileSystemRootSquashConfigurationArgsDict(TypedDict):
+    client_exceptions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of NIDs allowed with this lustre file system not to be squashed. A maximum of 10 is allowed.
+    """
+    identity_squash: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Used when clients accessing the Lustre file system have their UID and GID remapped to `squashUid` and `squashGid`. If `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `NONE`.
+    """
+    squash_gid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The GID value to remap to when squashing a client GID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
+    """
+    squash_uid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The UID value to remap to when squashing a client UID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
+    """
 
 @pulumi.input_type
 class FileStorageLustreFileSystemRootSquashConfigurationArgs:
@@ -173,13 +165,10 @@ class FileStorageLustreFileSystemRootSquashConfigurationArgs:
         pulumi.set(self, "squash_uid", value)
 
 
-if not MYPY:
-    class GetFileStorageLustreFileSystemsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFileStorageLustreFileSystemsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFileStorageLustreFileSystemsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFileStorageLustreFileSystemsFilterArgs:
@@ -220,13 +209,10 @@ class GetFileStorageLustreFileSystemsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFileStorageObjectStorageLinkSyncJobsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFileStorageObjectStorageLinkSyncJobsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFileStorageObjectStorageLinkSyncJobsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFileStorageObjectStorageLinkSyncJobsFilterArgs:
@@ -267,13 +253,10 @@ class GetFileStorageObjectStorageLinkSyncJobsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFileStorageObjectStorageLinksFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFileStorageObjectStorageLinksFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFileStorageObjectStorageLinksFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFileStorageObjectStorageLinksFilterArgs:

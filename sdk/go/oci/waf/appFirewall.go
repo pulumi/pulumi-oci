@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Web App Firewall resource in Oracle Cloud Infrastructure Waf service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/waf/latest/WebAppFirewall
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/web_app_firewall
+//
+// Creates a new WebAppFirewall.
+//
 // ## Example Usage
 //
 // ```go

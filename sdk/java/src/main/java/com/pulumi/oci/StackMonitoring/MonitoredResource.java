@@ -23,6 +23,15 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoredResource
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+ * 
+ * Creates a new monitored resource for the given resource type with the details and submits
+ * a work request for promoting the resource to agent. Once the resource is successfully
+ * added to agent, resource state will be marked active.
+ * 
  * ## Example Usage
  * 
  * <pre>

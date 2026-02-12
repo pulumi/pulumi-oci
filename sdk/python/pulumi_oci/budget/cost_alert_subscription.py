@@ -332,6 +332,13 @@ class CostAlertSubscription(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Cost Alert Subscription resource in Oracle Cloud Infrastructure Budget service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/budgets/latest/CostAlertSubscription
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/budget
+
+        Creates a new CostAlert Subscription.
+
         ## Example Usage
 
         ```python
@@ -379,6 +386,13 @@ class CostAlertSubscription(pulumi.CustomResource):
                  args: CostAlertSubscriptionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Cost Alert Subscription resource in Oracle Cloud Infrastructure Budget service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/budgets/latest/CostAlertSubscription
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/budget
+
+        Creates a new CostAlert Subscription.
+
         ## Example Usage
 
         ```python

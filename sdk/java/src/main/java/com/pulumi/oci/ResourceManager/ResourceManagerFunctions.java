@@ -1044,6 +1044,12 @@ public final class ResourceManagerFunctions {
         return Deployment.getInstance().invokeAsync("oci:ResourceManager/getStack:getStack", TypeShape.of(GetStackResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Stack Tf State resource in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Returns the Terraform state for the specified stack.
+     * For more information, see
+     * [Getting a Stack State File](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-state.htm).
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -1082,6 +1088,12 @@ public final class ResourceManagerFunctions {
         return getStackTfState(args, InvokeOptions.Empty);
     }
     /**
+     * This data source provides details about a specific Stack Tf State resource in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Returns the Terraform state for the specified stack.
+     * For more information, see
+     * [Getting a Stack State File](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-state.htm).
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -1120,6 +1132,12 @@ public final class ResourceManagerFunctions {
         return getStackTfStatePlain(args, InvokeOptions.Empty);
     }
     /**
+     * This data source provides details about a specific Stack Tf State resource in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Returns the Terraform state for the specified stack.
+     * For more information, see
+     * [Getting a Stack State File](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-state.htm).
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -1158,6 +1176,12 @@ public final class ResourceManagerFunctions {
         return Deployment.getInstance().invoke("oci:ResourceManager/getStackTfState:getStackTfState", TypeShape.of(GetStackTfStateResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Stack Tf State resource in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Returns the Terraform state for the specified stack.
+     * For more information, see
+     * [Getting a Stack State File](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-state.htm).
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -1196,6 +1220,12 @@ public final class ResourceManagerFunctions {
         return Deployment.getInstance().invoke("oci:ResourceManager/getStackTfState:getStackTfState", TypeShape.of(GetStackTfStateResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Stack Tf State resource in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Returns the Terraform state for the specified stack.
+     * For more information, see
+     * [Getting a Stack State File](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-state.htm).
+     * 
      * ## Example Usage
      * 
      * <pre>

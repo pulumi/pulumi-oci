@@ -11,6 +11,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Database Security Config Management resource in Oracle Cloud Infrastructure Data Safe service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/DatabaseSecurityConfigManagement
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+//
+// Updates the database security configuration.
+//
 // ## Example Usage
 //
 // ```go

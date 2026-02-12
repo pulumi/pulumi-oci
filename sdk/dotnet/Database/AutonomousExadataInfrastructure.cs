@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
+    /// This resource provides the Autonomous Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousExadataInfrastructure
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+    /// 
+    /// **Deprecated** To create a new Autonomous AI Database system on dedicated Exadata Infrastructure, use the [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure) and [CreateCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster) operations instead. Note that to create an Autonomous VM cluster, you must have an existing Exadata Infrastructure resource to contain the VM cluster.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -70,7 +77,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// AutonomousExadataInfrastructures can be imported using the `id`, e.g.
+    /// AutonomousExadataInfrastructures can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure test_autonomous_exadata_infrastructure "id"

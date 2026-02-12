@@ -109,6 +109,10 @@ public final class GetAutonomousContainerDatabaseResult {
      * 
      */
     private Integer dbSplitThreshold;
+    /**
+     * @return **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     * 
+     */
     private String dbUniqueName;
     /**
      * @return Oracle AI Database version of the Autonomous Container Database.
@@ -489,6 +493,10 @@ public final class GetAutonomousContainerDatabaseResult {
     public Integer dbSplitThreshold() {
         return this.dbSplitThreshold;
     }
+    /**
+     * @return **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     * 
+     */
     public String dbUniqueName() {
         return this.dbUniqueName;
     }

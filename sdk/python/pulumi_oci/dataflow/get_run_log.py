@@ -120,6 +120,8 @@ def get_run_log(base64_encode_content: Optional[_builtins.bool] = None,
     ```
 
 
+    :param _builtins.bool base64_encode_content: Encodes the downloaded content in base64. It is recommended to set this to `true` for binary content to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+           If passing the base64 encoded content to a `local_file` resource, please use the `content_base64` attribute of the `local_file` resource.
     :param _builtins.str name: The name of the log. Avoid entering confidential information.
     :param _builtins.str run_id: The unique ID for the run
     """
@@ -157,6 +159,8 @@ def get_run_log_output(base64_encode_content: Optional[pulumi.Input[Optional[_bu
     ```
 
 
+    :param _builtins.bool base64_encode_content: Encodes the downloaded content in base64. It is recommended to set this to `true` for binary content to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+           If passing the base64 encoded content to a `local_file` resource, please use the `content_base64` attribute of the `local_file` resource.
     :param _builtins.str name: The name of the log. Avoid entering confidential information.
     :param _builtins.str run_id: The unique ID for the run
     """

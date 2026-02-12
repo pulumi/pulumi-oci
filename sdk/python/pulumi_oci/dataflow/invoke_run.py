@@ -54,6 +54,7 @@ class InvokeRunArgs:
         :param pulumi.Input['InvokeRunApplicationLogConfigArgs'] application_log_config: Logging details of Application logs for Data Flow Run.
         :param pulumi.Input[_builtins.str] archive_uri: A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] arguments: The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
+        :param pulumi.Input[_builtins.bool] asynchronous: Flag to invoke run asynchronously. The default is true and Terraform provider will not wait for run resource to reach target state of `SUCCEEDED`, `FAILED` or `CANCELLED` before exiting. User must wait to perform operations that need resource to be in target states. Set this to false to override this behavior.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] configuration: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name that does not have to be unique. Avoid entering confidential information. If this value is not specified, it will be derived from the associated application's displayName or set by API using fileUri's application file name.
@@ -194,6 +195,9 @@ class InvokeRunArgs:
     @_builtins.property
     @pulumi.getter
     def asynchronous(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Flag to invoke run asynchronously. The default is true and Terraform provider will not wait for run resource to reach target state of `SUCCEEDED`, `FAILED` or `CANCELLED` before exiting. User must wait to perform operations that need resource to be in target states. Set this to false to override this behavior.
+        """
         return pulumi.get(self, "asynchronous")
 
     @asynchronous.setter
@@ -499,6 +503,7 @@ class _InvokeRunState:
         :param pulumi.Input['InvokeRunApplicationLogConfigArgs'] application_log_config: Logging details of Application logs for Data Flow Run.
         :param pulumi.Input[_builtins.str] archive_uri: A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] arguments: The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
+        :param pulumi.Input[_builtins.bool] asynchronous: Flag to invoke run asynchronously. The default is true and Terraform provider will not wait for run resource to reach target state of `SUCCEEDED`, `FAILED` or `CANCELLED` before exiting. User must wait to perform operations that need resource to be in target states. Set this to false to override this behavior.
         :param pulumi.Input[_builtins.str] class_name: The class for the application.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of a compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] configuration: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
@@ -686,6 +691,9 @@ class _InvokeRunState:
     @_builtins.property
     @pulumi.getter
     def asynchronous(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Flag to invoke run asynchronously. The default is true and Terraform provider will not wait for run resource to reach target state of `SUCCEEDED`, `FAILED` or `CANCELLED` before exiting. User must wait to perform operations that need resource to be in target states. Set this to false to override this behavior.
+        """
         return pulumi.get(self, "asynchronous")
 
     @asynchronous.setter
@@ -1211,6 +1219,13 @@ class InvokeRun(pulumi.CustomResource):
                  warehouse_bucket_uri: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Invoke Run resource in Oracle Cloud Infrastructure Data Flow service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-flow/latest/InvokeRun
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataflow
+
+        Creates a run for an application.
+
         ## Example Usage
 
         ```python
@@ -1279,6 +1294,7 @@ class InvokeRun(pulumi.CustomResource):
         :param pulumi.Input[Union['InvokeRunApplicationLogConfigArgs', 'InvokeRunApplicationLogConfigArgsDict']] application_log_config: Logging details of Application logs for Data Flow Run.
         :param pulumi.Input[_builtins.str] archive_uri: A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] arguments: The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
+        :param pulumi.Input[_builtins.bool] asynchronous: Flag to invoke run asynchronously. The default is true and Terraform provider will not wait for run resource to reach target state of `SUCCEEDED`, `FAILED` or `CANCELLED` before exiting. User must wait to perform operations that need resource to be in target states. Set this to false to override this behavior.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of a compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] configuration: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -1312,6 +1328,13 @@ class InvokeRun(pulumi.CustomResource):
                  args: InvokeRunArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Invoke Run resource in Oracle Cloud Infrastructure Data Flow service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-flow/latest/InvokeRun
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataflow
+
+        Creates a run for an application.
+
         ## Example Usage
 
         ```python
@@ -1537,6 +1560,7 @@ class InvokeRun(pulumi.CustomResource):
         :param pulumi.Input[Union['InvokeRunApplicationLogConfigArgs', 'InvokeRunApplicationLogConfigArgsDict']] application_log_config: Logging details of Application logs for Data Flow Run.
         :param pulumi.Input[_builtins.str] archive_uri: A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] arguments: The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
+        :param pulumi.Input[_builtins.bool] asynchronous: Flag to invoke run asynchronously. The default is true and Terraform provider will not wait for run resource to reach target state of `SUCCEEDED`, `FAILED` or `CANCELLED` before exiting. User must wait to perform operations that need resource to be in target states. Set this to false to override this behavior.
         :param pulumi.Input[_builtins.str] class_name: The class for the application.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of a compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] configuration: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
@@ -1668,6 +1692,9 @@ class InvokeRun(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter
     def asynchronous(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Flag to invoke run asynchronously. The default is true and Terraform provider will not wait for run resource to reach target state of `SUCCEEDED`, `FAILED` or `CANCELLED` before exiting. User must wait to perform operations that need resource to be in target states. Set this to false to override this behavior.
+        """
         return pulumi.get(self, "asynchronous")
 
     @_builtins.property

@@ -316,6 +316,26 @@ class NotificationTopic(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Notification Topic resource in Oracle Cloud Infrastructure Notifications service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a topic in the specified compartment. For general information about topics, see
+        [Managing Topics and Subscriptions](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm).
+
+        For the purposes of access control, you must provide the OCID of the compartment where you want the topic to reside.
+        For information about access control and compartments, see [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+
+        You must specify a display name for the topic.
+
+        All Oracle Cloud Infrastructure resources, including topics, get an Oracle-assigned, unique ID called an
+        Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response. You can also
+        retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the resource in the
+        Console. For more information, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+        Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
+
         ## Example Usage
 
         ```python
@@ -361,6 +381,26 @@ class NotificationTopic(pulumi.CustomResource):
                  args: NotificationTopicArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Notification Topic resource in Oracle Cloud Infrastructure Notifications service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a topic in the specified compartment. For general information about topics, see
+        [Managing Topics and Subscriptions](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm).
+
+        For the purposes of access control, you must provide the OCID of the compartment where you want the topic to reside.
+        For information about access control and compartments, see [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+
+        You must specify a display name for the topic.
+
+        All Oracle Cloud Infrastructure resources, including topics, get an Oracle-assigned, unique ID called an
+        Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response. You can also
+        retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the resource in the
+        Console. For more information, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+        Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
+
         ## Example Usage
 
         ```python

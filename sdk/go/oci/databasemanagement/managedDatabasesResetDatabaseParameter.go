@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Managed Databases Reset Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ManagedDatabasesResetDatabaseParameter
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+//
+// Resets database parameter values to their default or startup values.
+//
 // ## Example Usage
 //
 // ```go

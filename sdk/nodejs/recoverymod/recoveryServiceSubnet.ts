@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Recovery Service Subnet resource in Oracle Cloud Infrastructure Recovery service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/recovery-service/latest/RecoveryServiceSubnet
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/recovery
+ *
+ * Creates a new Recovery Service Subnet.
+ *
  * ## Example Usage
  *
  * ```typescript

@@ -24,7 +24,12 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * ## Example Usage
+ * This resource provides the Secret resource in Oracle Cloud Infrastructure Vault service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/secretmgmt/latest/Secret
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ * 
+ * Creates a new secret according to the details of the request.
  * 
  * ## Import
  * 

@@ -29,20 +29,15 @@ __all__ = [
     'GetStreamsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class StreamPoolCustomEncryptionKeyArgsDict(TypedDict):
-        kms_key_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Custom Encryption Key (Master Key) ocid.
-        """
-        key_state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Life cycle State of the custom key
-        """
-elif False:
-    StreamPoolCustomEncryptionKeyArgsDict: TypeAlias = Mapping[str, Any]
+class StreamPoolCustomEncryptionKeyArgsDict(TypedDict):
+    kms_key_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Custom Encryption Key (Master Key) ocid.
+    """
+    key_state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Life cycle State of the custom key
+    """
 
 @pulumi.input_type
 class StreamPoolCustomEncryptionKeyArgs:
@@ -82,26 +77,23 @@ class StreamPoolCustomEncryptionKeyArgs:
         pulumi.set(self, "key_state", value)
 
 
-if not MYPY:
-    class StreamPoolKafkaSettingsArgsDict(TypedDict):
-        auto_create_topics_enable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enable auto creation of topic on the server.
-        """
-        bootstrap_servers: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Bootstrap servers.
-        """
-        log_retention_hours: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of hours to keep a log file before deleting it (in hours).
-        """
-        num_partitions: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The default number of log partitions per topic.
-        """
-elif False:
-    StreamPoolKafkaSettingsArgsDict: TypeAlias = Mapping[str, Any]
+class StreamPoolKafkaSettingsArgsDict(TypedDict):
+    auto_create_topics_enable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enable auto creation of topic on the server.
+    """
+    bootstrap_servers: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Bootstrap servers.
+    """
+    log_retention_hours: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of hours to keep a log file before deleting it (in hours).
+    """
+    num_partitions: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The default number of log partitions per topic.
+    """
 
 @pulumi.input_type
 class StreamPoolKafkaSettingsArgs:
@@ -174,22 +166,19 @@ class StreamPoolKafkaSettingsArgs:
         pulumi.set(self, "num_partitions", value)
 
 
-if not MYPY:
-    class StreamPoolPrivateEndpointSettingsArgsDict(TypedDict):
-        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The optional list of network security groups to be used with the private endpoint of the stream pool. That value cannot be changed.
-        """
-        private_endpoint_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The optional private IP you want to be associated with your private stream pool. That parameter can only be specified when the subnetId parameter is set. It cannot be changed. The private IP needs to be part of the CIDR range of the specified subnetId or the creation will fail. If not specified a random IP inside the subnet will be chosen. After the stream pool is created, a custom FQDN, pointing to this private IP, is created. The FQDN is then used to access the service instead of the private IP.
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
-        """
-elif False:
-    StreamPoolPrivateEndpointSettingsArgsDict: TypeAlias = Mapping[str, Any]
+class StreamPoolPrivateEndpointSettingsArgsDict(TypedDict):
+    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The optional list of network security groups to be used with the private endpoint of the stream pool. That value cannot be changed.
+    """
+    private_endpoint_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The optional private IP you want to be associated with your private stream pool. That parameter can only be specified when the subnetId parameter is set. It cannot be changed. The private IP needs to be part of the CIDR range of the specified subnetId or the creation will fail. If not specified a random IP inside the subnet will be chosen. After the stream pool is created, a custom FQDN, pointing to this private IP, is created. The FQDN is then used to access the service instead of the private IP.
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
+    """
 
 @pulumi.input_type
 class StreamPoolPrivateEndpointSettingsArgs:
@@ -246,16 +235,13 @@ class StreamPoolPrivateEndpointSettingsArgs:
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class GetConnectHarnessesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the given name exactly.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetConnectHarnessesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetConnectHarnessesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the given name exactly.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetConnectHarnessesFilterArgs:
@@ -302,16 +288,13 @@ class GetConnectHarnessesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetStreamPoolsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the given name exactly.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetStreamPoolsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetStreamPoolsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the given name exactly.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetStreamPoolsFilterArgs:
@@ -358,16 +341,13 @@ class GetStreamPoolsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetStreamsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the given name exactly.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetStreamsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetStreamsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the given name exactly.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetStreamsFilterArgs:

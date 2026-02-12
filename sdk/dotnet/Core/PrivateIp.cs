@@ -10,6 +10,15 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
+    /// This resource provides the Private Ip resource in Oracle Cloud Infrastructure Core service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a secondary private IP for the specified VNIC.
+    /// For more information about secondary private IPs, see
+    /// [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -47,7 +56,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Import
     /// 
-    /// PrivateIps can be imported using the `id`, e.g.
+    /// PrivateIps can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Core/privateIp:PrivateIp test_private_ip "id"

@@ -1183,6 +1183,16 @@ class DomainsMyRequest(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyRequestTagArgs', 'DomainsMyRequestTagArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the My Request resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/MyRequest
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a Request
+
+        ** IMPORTANT **
+        In our latest release, the property `status` is changed to readonly. It will now be automatically handled by the system. Please remove any manual assignment to this property to use the latest version.
+
         ## Example Usage
 
         ```python
@@ -1321,6 +1331,16 @@ class DomainsMyRequest(pulumi.CustomResource):
                  args: DomainsMyRequestArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the My Request resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/MyRequest
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a Request
+
+        ** IMPORTANT **
+        In our latest release, the property `status` is changed to readonly. It will now be automatically handled by the system. Please remove any manual assignment to this property to use the latest version.
+
         ## Example Usage
 
         ```python

@@ -15,6 +15,13 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/goldengate/latest/ConnectionAssignment
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/goldengate
+ * 
+ * Creates a new Connection Assignment.
+ * 
  * ## Example Usage
  * 
  * <pre>

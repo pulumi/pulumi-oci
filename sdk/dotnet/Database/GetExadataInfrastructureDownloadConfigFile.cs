@@ -99,6 +99,9 @@ namespace Pulumi.Oci.Database
 
     public sealed class GetExadataInfrastructureDownloadConfigFileArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Encodes the downloaded zipped config in base64. It is recommended to set this to `True` to avoid corrupting the zip file in Terraform state. The default value is `False`.
+        /// </summary>
         [Input("base64EncodeContent")]
         public bool? Base64EncodeContent { get; set; }
 
@@ -116,6 +119,9 @@ namespace Pulumi.Oci.Database
 
     public sealed class GetExadataInfrastructureDownloadConfigFileInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Encodes the downloaded zipped config in base64. It is recommended to set this to `True` to avoid corrupting the zip file in Terraform state. The default value is `False`.
+        /// </summary>
         [Input("base64EncodeContent")]
         public Input<bool>? Base64EncodeContent { get; set; }
 

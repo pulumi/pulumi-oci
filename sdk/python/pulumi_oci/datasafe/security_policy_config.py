@@ -384,6 +384,13 @@ class SecurityPolicyConfig(pulumi.CustomResource):
                  unified_audit_policy_config: Optional[pulumi.Input[Union['SecurityPolicyConfigUnifiedAuditPolicyConfigArgs', 'SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Security Policy Config resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/SecurityPolicyConfig
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Creates a new security policy configuration resource.
+
         ## Example Usage
 
         ```python
@@ -437,6 +444,13 @@ class SecurityPolicyConfig(pulumi.CustomResource):
                  args: SecurityPolicyConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Security Policy Config resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/SecurityPolicyConfig
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Creates a new security policy configuration resource.
+
         ## Example Usage
 
         ```python

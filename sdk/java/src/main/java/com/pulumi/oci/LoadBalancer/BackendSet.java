@@ -22,6 +22,17 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Backend Set resource in Oracle Cloud Infrastructure Load Balancer service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/loadbalancer/latest/BackendSet
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/load_balancer
+ * 
+ * Adds a backend set to a load balancer.
+ * 
+ * ## Supported Aliases
+ * 
+ * * `ociLoadBalancerBackendset`
+ * 
  * ## Example Usage
  * 
  * <pre>

@@ -29,24 +29,19 @@ __all__ = [
     'GetScheduledQueriesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class ScheduledQueryScheduledQueryProcessingConfigurationArgsDict(TypedDict):
-        custom_metric: NotRequired[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgsDict']]
-        """
-        (Updatable) Definition of the Custom Metric.
-        """
-        object_storage: NotRequired[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgsDict']]
-        """
-        (Updatable) Definition of the object storage.
-        """
-        streaming: NotRequired[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgsDict']]
-        """
-        (Updatable) Definition of the Stream.
-        """
-elif False:
-    ScheduledQueryScheduledQueryProcessingConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduledQueryScheduledQueryProcessingConfigurationArgsDict(TypedDict):
+    custom_metric: NotRequired[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgsDict']]
+    """
+    (Updatable) Definition of the Custom Metric.
+    """
+    object_storage: NotRequired[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgsDict']]
+    """
+    (Updatable) Definition of the object storage.
+    """
+    streaming: NotRequired[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgsDict']]
+    """
+    (Updatable) Definition of the Stream.
+    """
 
 @pulumi.input_type
 class ScheduledQueryScheduledQueryProcessingConfigurationArgs:
@@ -103,42 +98,39 @@ class ScheduledQueryScheduledQueryProcessingConfigurationArgs:
         pulumi.set(self, "streaming", value)
 
 
-if not MYPY:
-    class ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the Custom Metric.
-        """
-        compartment: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Description of the Custom Metric.
-        """
-        is_anomaly_detection_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether anomaly Detection should be performed on the generated metric.
-        """
-        is_metric_published: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
-        """
-        resource_group: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Resource Group of the Custom Metric.
-        """
-        unit: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Unit in which the metric value is reported. For example 'ms'.
-        """
-elif False:
-    ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the Custom Metric.
+    """
+    compartment: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Description of the Custom Metric.
+    """
+    is_anomaly_detection_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether anomaly Detection should be performed on the generated metric.
+    """
+    is_metric_published: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+    """
+    resource_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Resource Group of the Custom Metric.
+    """
+    unit: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Unit in which the metric value is reported. For example 'ms'.
+    """
 
 @pulumi.input_type
 class ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs:
@@ -274,22 +266,19 @@ class ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs:
         pulumi.set(self, "unit", value)
 
 
-if not MYPY:
-    class ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgsDict(TypedDict):
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Bucket name in the object store.
-        """
-        name_space: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Namespace in the object store.
-        """
-        object_name_prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Object name prefix in the object store.
-        """
-elif False:
-    ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgsDict(TypedDict):
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Bucket name in the object store.
+    """
+    name_space: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Namespace in the object store.
+    """
+    object_name_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Object name prefix in the object store.
+    """
 
 @pulumi.input_type
 class ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs:
@@ -346,14 +335,11 @@ class ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs:
         pulumi.set(self, "object_name_prefix", value)
 
 
-if not MYPY:
-    class ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgsDict(TypedDict):
-        stream_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Stream Id.
-        """
-elif False:
-    ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgsDict(TypedDict):
+    stream_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Stream Id.
+    """
 
 @pulumi.input_type
 class ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs:
@@ -378,13 +364,10 @@ class ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs:
         pulumi.set(self, "stream_id", value)
 
 
-if not MYPY:
-    class GetQueryQuickPicksFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetQueryQuickPicksFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetQueryQuickPicksFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetQueryQuickPicksFilterArgs:
@@ -425,16 +408,13 @@ class GetQueryQuickPicksFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetScheduledQueriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the Custom Metric.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetScheduledQueriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetScheduledQueriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the Custom Metric.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetScheduledQueriesFilterArgs:

@@ -427,7 +427,12 @@ class CloudDbNode(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Cloud Db Node resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/CloudDbNode
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+
+        Updates the cloud DB node specified by `cloudDbNodeId`.
 
         ## Import
 
@@ -455,7 +460,12 @@ class CloudDbNode(pulumi.CustomResource):
                  args: CloudDbNodeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Cloud Db Node resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/CloudDbNode
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+
+        Updates the cloud DB node specified by `cloudDbNodeId`.
 
         ## Import
 

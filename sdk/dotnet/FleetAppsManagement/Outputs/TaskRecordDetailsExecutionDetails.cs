@@ -13,6 +13,9 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     [OutputType]
     public sealed class TaskRecordDetailsExecutionDetails
     {
+        /// <summary>
+        /// (Updatable) Catalog Id having terraform package.
+        /// </summary>
         public readonly string? CatalogId;
         /// <summary>
         /// (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.

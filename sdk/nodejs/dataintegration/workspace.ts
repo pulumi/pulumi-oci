@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Workspace resource in Oracle Cloud Infrastructure Data Integration service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-integration/latest/Workspace
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataintegration
+ *
+ * Creates a new Data Integration workspace ready for performing data integration tasks. To retrieve the OCID for the new workspace, use the opc-work-request-id returned by this API and call the [GetWorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/data-integration/latest/WorkRequest/GetWorkRequest) API.
+ *
  * ## Example Usage
  *
  * ```typescript

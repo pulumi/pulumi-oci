@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/waas/latest/HttpRedirect
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/web_application_acceleration_and_security
+//
+// Creates a new HTTP Redirect on the WAF edge.
+//
 // ## Example Usage
 //
 // ```go

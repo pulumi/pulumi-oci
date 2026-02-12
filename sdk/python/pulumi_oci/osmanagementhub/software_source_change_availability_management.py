@@ -74,6 +74,13 @@ class SoftwareSourceChangeAvailabilityManagement(pulumi.CustomResource):
                  software_source_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs', 'SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Software Source Change Availability Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/SoftwareSourceChangeAvailabilityManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+
+        Updates the availability for a list of specified software sources.
+
         ## Example Usage
 
         ```python
@@ -106,6 +113,13 @@ class SoftwareSourceChangeAvailabilityManagement(pulumi.CustomResource):
                  args: SoftwareSourceChangeAvailabilityManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Software Source Change Availability Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/SoftwareSourceChangeAvailabilityManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+
+        Updates the availability for a list of specified software sources.
+
         ## Example Usage
 
         ```python

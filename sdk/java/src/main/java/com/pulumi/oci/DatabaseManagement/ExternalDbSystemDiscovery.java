@@ -19,6 +19,15 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalDbSystemDiscovery
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+ * 
+ * Creates an external DB system discovery resource and initiates the discovery process.
+ * 
+ *   Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
+ * 
  * ## Example Usage
  * 
  * <pre>

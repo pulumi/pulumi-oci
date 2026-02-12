@@ -152,6 +152,13 @@ class LogAnalyticsEntityAssociationsRemove(pulumi.CustomResource):
                  namespace: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Log Analytics Entity Associations Remove resource in Oracle Cloud Infrastructure Log Analytics service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsEntity/RemoveEntityAssociations
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+
+        Delete association between input source log analytics entity and destination entities.
+
         ## Example Usage
 
         ```python
@@ -189,6 +196,13 @@ class LogAnalyticsEntityAssociationsRemove(pulumi.CustomResource):
                  args: LogAnalyticsEntityAssociationsRemoveArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Log Analytics Entity Associations Remove resource in Oracle Cloud Infrastructure Log Analytics service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsEntity/RemoveEntityAssociations
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+
+        Delete association between input source log analytics entity and destination entities.
+
         ## Example Usage
 
         ```python

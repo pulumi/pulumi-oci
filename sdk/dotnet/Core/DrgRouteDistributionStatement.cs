@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
+    /// This resource provides the Drg Route Distribution Statement resource in Oracle Cloud Infrastructure Core service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/DrgRouteDistributionStatement
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Adds one route distribution statement to the specified route distribution.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -38,7 +45,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Import
     /// 
-    /// DrgRouteDistributionStatement can be imported using the `id`, e.g.
+    /// DrgRouteDistributionStatement can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement test_drg_route_distribution_statement "drgRouteDistributions/{drgRouteDistributionId}/statements/{id}"

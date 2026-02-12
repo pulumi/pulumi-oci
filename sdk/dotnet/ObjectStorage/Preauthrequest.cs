@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ObjectStorage
 {
     /// <summary>
+    /// This resource provides the Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/PreauthenticatedRequest
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a pre-authenticated request specific to the bucket.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -36,7 +43,7 @@ namespace Pulumi.Oci.ObjectStorage
     /// 
     /// ## Import
     /// 
-    /// PreauthenticatedRequests can be imported using the `id`, e.g.
+    /// PreauthenticatedRequests can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:ObjectStorage/preauthrequest:Preauthrequest test_preauthenticated_request "n/{namespaceName}/b/{bucketName}/p/{parId}"

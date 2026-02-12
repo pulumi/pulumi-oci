@@ -37,18 +37,13 @@ __all__ = [
     'GetSubscriptionsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetAggregatedComputedUsagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Product name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAggregatedComputedUsagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAggregatedComputedUsagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Product name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAggregatedComputedUsagesFilterArgs:
@@ -95,16 +90,13 @@ class GetAggregatedComputedUsagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBillingSchedulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Product name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBillingSchedulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBillingSchedulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Product name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBillingSchedulesFilterArgs:
@@ -151,13 +143,10 @@ class GetBillingSchedulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCommitmentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCommitmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCommitmentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCommitmentsFilterArgs:
@@ -198,16 +187,13 @@ class GetCommitmentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetComputedUsagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Product name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetComputedUsagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetComputedUsagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Product name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetComputedUsagesFilterArgs:
@@ -254,16 +240,13 @@ class GetComputedUsagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetInvoiceLineComputedUsagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Product name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInvoiceLineComputedUsagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInvoiceLineComputedUsagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Product name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInvoiceLineComputedUsagesFilterArgs:
@@ -310,16 +293,13 @@ class GetInvoiceLineComputedUsagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetInvoicesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Payment Term name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInvoicesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInvoicesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Payment Term name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInvoicesFilterArgs:
@@ -366,16 +346,13 @@ class GetInvoicesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOrganizationSubscriptionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Currency name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOrganizationSubscriptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOrganizationSubscriptionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Currency name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOrganizationSubscriptionsFilterArgs:
@@ -422,16 +399,13 @@ class GetOrganizationSubscriptionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRatecardsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Product name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRatecardsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRatecardsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Product name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRatecardsFilterArgs:
@@ -478,16 +452,13 @@ class GetRatecardsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSubscribedServicesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Commercial name also called customer name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSubscribedServicesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSubscribedServicesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Commercial name also called customer name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSubscribedServicesFilterArgs:
@@ -534,16 +505,13 @@ class GetSubscribedServicesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSubscriptionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Product name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSubscriptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSubscriptionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Product name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSubscriptionsFilterArgs:

@@ -433,7 +433,12 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
                  sql_firewall_config: Optional[pulumi.Input[Union['DatabaseSecurityConfigSqlFirewallConfigArgs', 'DatabaseSecurityConfigSqlFirewallConfigArgsDict']]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/DatabaseSecurityConfig
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Updates the database security configuration.
 
         ## Import
 
@@ -465,7 +470,12 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
                  args: DatabaseSecurityConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/DatabaseSecurityConfig
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Updates the database security configuration.
 
         ## Import
 

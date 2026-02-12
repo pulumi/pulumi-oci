@@ -10,6 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
+    /// This resource provides the Smtp Credential resource in Oracle Cloud Infrastructure Identity service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/SmtpCredential
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+    /// 
+    /// Creates a new SMTP credential for the specified user. An SMTP credential has an SMTP user name and an SMTP password.
+    /// You must specify a *description* for the SMTP credential (although it can be an empty string). It does not
+    /// have to be unique, and you can change it anytime with
+    /// [UpdateSmtpCredential](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredentialSummary/UpdateSmtpCredential).
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -31,7 +41,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Import
     /// 
-    /// SmtpCredentials can be imported using the `id`, e.g.
+    /// SmtpCredentials can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Identity/smtpCredential:SmtpCredential test_smtp_credential "users/{userId}/smtpCredentials/{smtpCredentialId}"

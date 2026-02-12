@@ -21,6 +21,14 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/VmClusterNetwork
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+ * 
+ * Creates the VM cluster network. Applies to Exadata Cloud{@literal @}Customer instances only.
+ * To create a cloud VM cluster in an Exadata Cloud Service instance, use the [CreateCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/CreateCloudVmCluster) operation.
+ * 
  * ## Example Usage
  * 
  * <pre>
@@ -290,9 +298,17 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster resource puts a VM Cluster Network in `REQUIRES_VALIDATION` state. This results in `After applying this step and refreshing, the plan was not empty` error and users should apply the terraform configuration again to validate the VM Cluster Network.
+     * 
+     */
     @Export(name="validateVmClusterNetwork", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> validateVmClusterNetwork;
 
+    /**
+     * @return (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster resource puts a VM Cluster Network in `REQUIRES_VALIDATION` state. This results in `After applying this step and refreshing, the plan was not empty` error and users should apply the terraform configuration again to validate the VM Cluster Network.
+     * 
+     */
     public Output<Optional<Boolean>> validateVmClusterNetwork() {
         return Codegen.optional(this.validateVmClusterNetwork);
     }

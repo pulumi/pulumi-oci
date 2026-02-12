@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Integration
 {
     /// <summary>
+    /// This resource provides the Integration Instance resource in Oracle Cloud Infrastructure Integration service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/integration/latest/IntegrationInstance
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/integration
+    /// 
+    /// Creates a new Integration Instance.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -106,7 +113,7 @@ namespace Pulumi.Oci.Integration
     /// 
     /// ## Import
     /// 
-    /// IntegrationInstances can be imported using the `id`, e.g.
+    /// IntegrationInstances can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Integration/integrationInstance:IntegrationInstance test_integration_instance "id"

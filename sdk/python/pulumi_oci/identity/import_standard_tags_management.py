@@ -132,6 +132,14 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
                  standard_tag_namespace_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Import Standard Tags Management resource in Oracle Cloud Infrastructure Identity service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/ImportStandardTagsManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+
+        OCI will release Tag Namespaces that our customers can import.
+        These Tag Namespaces will provide Tags for our customers and Partners to provide consistency and enable data reporting.
+
         ## Example Usage
 
         ```python
@@ -167,6 +175,14 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
                  args: ImportStandardTagsManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Import Standard Tags Management resource in Oracle Cloud Infrastructure Identity service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/ImportStandardTagsManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+
+        OCI will release Tag Namespaces that our customers can import.
+        These Tag Namespaces will provide Tags for our customers and Partners to provide consistency and enable data reporting.
+
         ## Example Usage
 
         ```python

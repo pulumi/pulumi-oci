@@ -310,6 +310,13 @@ class StreamDistributionChannel(pulumi.CustomResource):
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StreamDistributionChannelLockArgs', 'StreamDistributionChannelLockArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Stream Distribution Channel resource in Oracle Cloud Infrastructure Media Services service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dms/latest/StreamDistributionChannel
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/media_services
+
+        Creates a new Stream Distribution Channel.
+
         ## Example Usage
 
         ```python
@@ -357,6 +364,13 @@ class StreamDistributionChannel(pulumi.CustomResource):
                  args: StreamDistributionChannelArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Stream Distribution Channel resource in Oracle Cloud Infrastructure Media Services service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dms/latest/StreamDistributionChannel
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/media_services
+
+        Creates a new Stream Distribution Channel.
+
         ## Example Usage
 
         ```python

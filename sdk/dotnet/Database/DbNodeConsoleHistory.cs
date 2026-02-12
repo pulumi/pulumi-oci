@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
+    /// This resource provides the Db Node Console History resource in Oracle Cloud Infrastructure Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/DbNodeConsoleHistory
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+    /// 
+    /// Captures the most recent serial console data (up to a megabyte) for the specified database node.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -36,7 +43,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// DbNodeConsoleHistories can be imported using the `id`, e.g.
+    /// DbNodeConsoleHistories can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory test_db_node_console_history "dbNodes/{dbNodeId}/consoleHistories/{consoleHistoryId}"

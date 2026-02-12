@@ -332,6 +332,13 @@ class Migration(pulumi.CustomResource):
                  replication_schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Migration resource in Oracle Cloud Infrastructure Cloud Migrations service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/ocm/latest/Migration
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudMigrations
+
+        Creates a migration.
+
         ## Example Usage
 
         ```python
@@ -379,6 +386,13 @@ class Migration(pulumi.CustomResource):
                  args: MigrationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Migration resource in Oracle Cloud Infrastructure Cloud Migrations service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/ocm/latest/Migration
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudMigrations
+
+        Creates a migration.
+
         ## Example Usage
 
         ```python

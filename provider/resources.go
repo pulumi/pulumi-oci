@@ -30,7 +30,7 @@ import (
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/util/contract"
 
-	"github.com/pulumi/pulumi-oci/provider/v3/pkg/version"
+	"github.com/pulumi/pulumi-oci/provider/v4/pkg/version"
 )
 
 // all of the token components used below.

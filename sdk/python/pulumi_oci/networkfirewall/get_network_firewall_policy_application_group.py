@@ -26,10 +26,13 @@ class GetNetworkFirewallPolicyApplicationGroupResult:
     """
     A collection of values returned by getNetworkFirewallPolicyApplicationGroup.
     """
-    def __init__(__self__, apps=None, id=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, total_apps=None):
+    def __init__(__self__, apps=None, description=None, id=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, total_apps=None):
         if apps and not isinstance(apps, list):
             raise TypeError("Expected argument 'apps' to be a list")
         pulumi.set(__self__, "apps", apps)
+        if description and not isinstance(description, str):
+            raise TypeError("Expected argument 'description' to be a str")
+        pulumi.set(__self__, "description", description)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -53,6 +56,14 @@ class GetNetworkFirewallPolicyApplicationGroupResult:
         List of apps in the group.
         """
         return pulumi.get(self, "apps")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the application list. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter
@@ -96,6 +107,7 @@ class AwaitableGetNetworkFirewallPolicyApplicationGroupResult(GetNetworkFirewall
             yield self
         return GetNetworkFirewallPolicyApplicationGroupResult(
             apps=self.apps,
+            description=self.description,
             id=self.id,
             name=self.name,
             network_firewall_policy_id=self.network_firewall_policy_id,
@@ -125,6 +137,7 @@ def get_network_firewall_policy_application_group(name: Optional[_builtins.str] 
 
     return AwaitableGetNetworkFirewallPolicyApplicationGroupResult(
         apps=pulumi.get(__ret__, 'apps'),
+        description=pulumi.get(__ret__, 'description'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
@@ -151,6 +164,7 @@ def get_network_firewall_policy_application_group_output(name: Optional[pulumi.I
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyApplicationGroup:getNetworkFirewallPolicyApplicationGroup', __args__, opts=opts, typ=GetNetworkFirewallPolicyApplicationGroupResult)
     return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyApplicationGroupResult(
         apps=pulumi.get(__response__, 'apps'),
+        description=pulumi.get(__response__, 'description'),
         id=pulumi.get(__response__, 'id'),
         name=pulumi.get(__response__, 'name'),
         network_firewall_policy_id=pulumi.get(__response__, 'network_firewall_policy_id'),

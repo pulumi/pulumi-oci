@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +19,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -44,6 +44,7 @@ import (
 //					MustEnablePrivateNat: pulumi.Any(networkFirewallNatConfigurationMustEnablePrivateNat),
 //				},
 //				NetworkSecurityGroupIds: pulumi.Any(networkFirewallNetworkSecurityGroupIds),
+//				Shape:                   pulumi.Any(networkFirewallShape),
 //			})
 //			if err != nil {
 //				return err
@@ -80,12 +81,14 @@ type NetworkFirewall struct {
 	Ipv6address pulumi.StringOutput `pulumi:"ipv6address"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// (Updatable) Nat Configuration request to use Nat feature on firewall.
+	// (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
 	NatConfiguration NetworkFirewallNatConfigurationOutput `pulumi:"natConfiguration"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
 	NetworkFirewallPolicyId pulumi.StringOutput `pulumi:"networkFirewallPolicyId"`
 	// (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 	NetworkSecurityGroupIds pulumi.StringArrayOutput `pulumi:"networkSecurityGroupIds"`
+	// (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
+	Shape pulumi.StringOutput `pulumi:"shape"`
 	// The current state of the Network Firewall.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
@@ -156,12 +159,14 @@ type networkFirewallState struct {
 	Ipv6address *string `pulumi:"ipv6address"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// (Updatable) Nat Configuration request to use Nat feature on firewall.
+	// (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
 	NatConfiguration *NetworkFirewallNatConfiguration `pulumi:"natConfiguration"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
 	NetworkFirewallPolicyId *string `pulumi:"networkFirewallPolicyId"`
 	// (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	// (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
+	Shape *string `pulumi:"shape"`
 	// The current state of the Network Firewall.
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
@@ -194,12 +199,14 @@ type NetworkFirewallState struct {
 	Ipv6address pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
 	LifecycleDetails pulumi.StringPtrInput
-	// (Updatable) Nat Configuration request to use Nat feature on firewall.
+	// (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
 	NatConfiguration NetworkFirewallNatConfigurationPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
 	NetworkFirewallPolicyId pulumi.StringPtrInput
 	// (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 	NetworkSecurityGroupIds pulumi.StringArrayInput
+	// (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
+	Shape pulumi.StringPtrInput
 	// The current state of the Network Firewall.
 	State pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
@@ -234,12 +241,14 @@ type networkFirewallArgs struct {
 	Ipv4address *string `pulumi:"ipv4address"`
 	// IPv6 address for the Network Firewall.
 	Ipv6address *string `pulumi:"ipv6address"`
-	// (Updatable) Nat Configuration request to use Nat feature on firewall.
+	// (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
 	NatConfiguration *NetworkFirewallNatConfiguration `pulumi:"natConfiguration"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
 	// (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	// (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
+	Shape *string `pulumi:"shape"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
 	//
 	// ** IMPORTANT **
@@ -263,12 +272,14 @@ type NetworkFirewallArgs struct {
 	Ipv4address pulumi.StringPtrInput
 	// IPv6 address for the Network Firewall.
 	Ipv6address pulumi.StringPtrInput
-	// (Updatable) Nat Configuration request to use Nat feature on firewall.
+	// (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
 	NatConfiguration NetworkFirewallNatConfigurationPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
 	NetworkFirewallPolicyId pulumi.StringInput
 	// (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 	NetworkSecurityGroupIds pulumi.StringArrayInput
+	// (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
+	Shape pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
 	//
 	// ** IMPORTANT **
@@ -403,7 +414,7 @@ func (o NetworkFirewallOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkFirewall) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// (Updatable) Nat Configuration request to use Nat feature on firewall.
+// (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
 func (o NetworkFirewallOutput) NatConfiguration() NetworkFirewallNatConfigurationOutput {
 	return o.ApplyT(func(v *NetworkFirewall) NetworkFirewallNatConfigurationOutput { return v.NatConfiguration }).(NetworkFirewallNatConfigurationOutput)
 }
@@ -416,6 +427,11 @@ func (o NetworkFirewallOutput) NetworkFirewallPolicyId() pulumi.StringOutput {
 // (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 func (o NetworkFirewallOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkFirewall) pulumi.StringArrayOutput { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
+func (o NetworkFirewallOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v *NetworkFirewall) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
 }
 
 // The current state of the Network Firewall.

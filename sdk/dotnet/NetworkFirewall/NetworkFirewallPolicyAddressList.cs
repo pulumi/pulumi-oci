@@ -26,6 +26,7 @@ namespace Pulumi.Oci.NetworkFirewall
     ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
     ///         Type = networkFirewallPolicyAddressListType,
     ///         Addresses = networkFirewallPolicyAddressListAddresses,
+    ///         Description = networkFirewallPolicyAddressListDescription,
     ///     });
     /// 
     /// });
@@ -47,6 +48,12 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         [Output("addresses")]
         public Output<ImmutableArray<string>> Addresses { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The description of the address list. This field can be used to add additional info.
+        /// </summary>
+        [Output("description")]
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// Unique name to identify the group of addresses to be used in the policy rules.
@@ -141,6 +148,12 @@ namespace Pulumi.Oci.NetworkFirewall
         }
 
         /// <summary>
+        /// (Updatable) The description of the address list. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        /// <summary>
         /// Unique name to identify the group of addresses to be used in the policy rules.
         /// </summary>
         [Input("name")]
@@ -181,6 +194,12 @@ namespace Pulumi.Oci.NetworkFirewall
             get => _addresses ?? (_addresses = new InputList<string>());
             set => _addresses = value;
         }
+
+        /// <summary>
+        /// (Updatable) The description of the address list. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
 
         /// <summary>
         /// Unique name to identify the group of addresses to be used in the policy rules.

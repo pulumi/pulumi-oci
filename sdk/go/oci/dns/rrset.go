@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +19,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/dns"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/dns"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -38,7 +38,6 @@ import (
 //						Ttl:    pulumi.Any(rrsetItemsTtl),
 //					},
 //				},
-//				Scope:  pulumi.Any(rrsetScope),
 //				ViewId: pulumi.Any(testView.Id),
 //			})
 //			if err != nil {
@@ -50,6 +49,10 @@ import (
 //
 // ```
 //
+// ## Behavior
+//
+// - Create returns HTTP 409 (Conflict) if the target RRSet already contains records. Use Update to modify an existing RRSet, or Delete to remove records.
+//
 // ## Import
 //
 // For legacy Rrsets that were created without using `scope`, these Rrsets can be imported using the `id`, e.g.
@@ -57,27 +60,19 @@ import (
 // ```sh
 // $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}"
 // ```
-// For Rrsets created using `scope` and `view_id`, these Rrsets can be imported using the `id`, e.g.
-//
-// ```sh
-// $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}"
-// ```
-// skip adding `{view_id}` at the end if Rrset was created without `view_id`.
+// Note: Legacy RRSet IDs that include scope/viewId remain accepted for import for backward compatibility; however, scope is no longer a supported argument on this resource.
 type Rrset struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) The OCID of the compartment the zone belongs to.
-	//
-	// This parameter is deprecated and should be omitted.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// Deprecated: Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain pulumi.StringOutput `pulumi:"domain"`
 	// (Updatable)
-	// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
 	Items RrsetItemArrayOutput `pulumi:"items"`
 	// The type of the target RRSet within the target zone.
 	Rtype pulumi.StringOutput `pulumi:"rtype"`
-	// Specifies to operate only on resources that have a matching DNS scope.
+	// Deprecated: Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 	// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 	ViewId pulumi.StringPtrOutput `pulumi:"viewId"`
@@ -127,18 +122,15 @@ func GetRrset(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Rrset resources.
 type rrsetState struct {
-	// (Updatable) The OCID of the compartment the zone belongs to.
-	//
-	// This parameter is deprecated and should be omitted.
+	// Deprecated: Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain *string `pulumi:"domain"`
 	// (Updatable)
-	// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
 	Items []RrsetItem `pulumi:"items"`
 	// The type of the target RRSet within the target zone.
 	Rtype *string `pulumi:"rtype"`
-	// Specifies to operate only on resources that have a matching DNS scope.
+	// Deprecated: Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
 	Scope *string `pulumi:"scope"`
 	// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 	ViewId *string `pulumi:"viewId"`
@@ -150,18 +142,15 @@ type rrsetState struct {
 }
 
 type RrsetState struct {
-	// (Updatable) The OCID of the compartment the zone belongs to.
-	//
-	// This parameter is deprecated and should be omitted.
+	// Deprecated: Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
 	CompartmentId pulumi.StringPtrInput
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain pulumi.StringPtrInput
 	// (Updatable)
-	// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
 	Items RrsetItemArrayInput
 	// The type of the target RRSet within the target zone.
 	Rtype pulumi.StringPtrInput
-	// Specifies to operate only on resources that have a matching DNS scope.
+	// Deprecated: Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
 	Scope pulumi.StringPtrInput
 	// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 	ViewId pulumi.StringPtrInput
@@ -177,18 +166,15 @@ func (RrsetState) ElementType() reflect.Type {
 }
 
 type rrsetArgs struct {
-	// (Updatable) The OCID of the compartment the zone belongs to.
-	//
-	// This parameter is deprecated and should be omitted.
+	// Deprecated: Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain string `pulumi:"domain"`
 	// (Updatable)
-	// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
 	Items []RrsetItem `pulumi:"items"`
 	// The type of the target RRSet within the target zone.
 	Rtype string `pulumi:"rtype"`
-	// Specifies to operate only on resources that have a matching DNS scope.
+	// Deprecated: Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
 	Scope *string `pulumi:"scope"`
 	// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 	ViewId *string `pulumi:"viewId"`
@@ -201,18 +187,15 @@ type rrsetArgs struct {
 
 // The set of arguments for constructing a Rrset resource.
 type RrsetArgs struct {
-	// (Updatable) The OCID of the compartment the zone belongs to.
-	//
-	// This parameter is deprecated and should be omitted.
+	// Deprecated: Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
 	CompartmentId pulumi.StringPtrInput
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain pulumi.StringInput
 	// (Updatable)
-	// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
 	Items RrsetItemArrayInput
 	// The type of the target RRSet within the target zone.
 	Rtype pulumi.StringInput
-	// Specifies to operate only on resources that have a matching DNS scope.
+	// Deprecated: Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
 	Scope pulumi.StringPtrInput
 	// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 	ViewId pulumi.StringPtrInput
@@ -310,11 +293,9 @@ func (o RrsetOutput) ToRrsetOutputWithContext(ctx context.Context) RrsetOutput {
 	return o
 }
 
-// (Updatable) The OCID of the compartment the zone belongs to.
-//
-// This parameter is deprecated and should be omitted.
-func (o RrsetOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Rrset) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+// Deprecated: Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
+func (o RrsetOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Rrset) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The target fully-qualified domain name (FQDN) within the target zone.
@@ -323,7 +304,6 @@ func (o RrsetOutput) Domain() pulumi.StringOutput {
 }
 
 // (Updatable)
-// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
 func (o RrsetOutput) Items() RrsetItemArrayOutput {
 	return o.ApplyT(func(v *Rrset) RrsetItemArrayOutput { return v.Items }).(RrsetItemArrayOutput)
 }
@@ -333,7 +313,7 @@ func (o RrsetOutput) Rtype() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rrset) pulumi.StringOutput { return v.Rtype }).(pulumi.StringOutput)
 }
 
-// Specifies to operate only on resources that have a matching DNS scope.
+// Deprecated: Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
 func (o RrsetOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Rrset) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }

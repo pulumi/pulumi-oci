@@ -31,6 +31,10 @@ public final class GetNamespaceScheduledTasksResult {
      * 
      */
     private String id;
+    /**
+     * @return The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
+     * 
+     */
     private String namespace;
     /**
      * @return The list of scheduled_task_collection.
@@ -74,6 +78,10 @@ public final class GetNamespaceScheduledTasksResult {
     public String id() {
         return this.id;
     }
+    /**
+     * @return The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
+     * 
+     */
     public String namespace() {
         return this.namespace;
     }

@@ -31,6 +31,21 @@ public final class CloudExadataInfrastructureExascaleConfigArgs extends com.pulu
     }
 
     /**
+     * Available storage size for VM storage on Exascale in GBs.
+     * 
+     */
+    @Import(name="availableVmStorageInGbs")
+    private @Nullable Output<Integer> availableVmStorageInGbs;
+
+    /**
+     * @return Available storage size for VM storage on Exascale in GBs.
+     * 
+     */
+    public Optional<Output<Integer>> availableVmStorageInGbs() {
+        return Optional.ofNullable(this.availableVmStorageInGbs);
+    }
+
+    /**
      * Storage size needed for Exascale in GBs.
      * 
      */
@@ -45,11 +60,28 @@ public final class CloudExadataInfrastructureExascaleConfigArgs extends com.pulu
         return Optional.ofNullable(this.totalStorageInGbs);
     }
 
+    /**
+     * Storage size needed for VM storage on Exascale in GBs.
+     * 
+     */
+    @Import(name="totalVmStorageInGbs")
+    private @Nullable Output<Integer> totalVmStorageInGbs;
+
+    /**
+     * @return Storage size needed for VM storage on Exascale in GBs.
+     * 
+     */
+    public Optional<Output<Integer>> totalVmStorageInGbs() {
+        return Optional.ofNullable(this.totalVmStorageInGbs);
+    }
+
     private CloudExadataInfrastructureExascaleConfigArgs() {}
 
     private CloudExadataInfrastructureExascaleConfigArgs(CloudExadataInfrastructureExascaleConfigArgs $) {
         this.availableStorageInGbs = $.availableStorageInGbs;
+        this.availableVmStorageInGbs = $.availableVmStorageInGbs;
         this.totalStorageInGbs = $.totalStorageInGbs;
+        this.totalVmStorageInGbs = $.totalVmStorageInGbs;
     }
 
     public static Builder builder() {
@@ -92,6 +124,27 @@ public final class CloudExadataInfrastructureExascaleConfigArgs extends com.pulu
         }
 
         /**
+         * @param availableVmStorageInGbs Available storage size for VM storage on Exascale in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availableVmStorageInGbs(@Nullable Output<Integer> availableVmStorageInGbs) {
+            $.availableVmStorageInGbs = availableVmStorageInGbs;
+            return this;
+        }
+
+        /**
+         * @param availableVmStorageInGbs Available storage size for VM storage on Exascale in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availableVmStorageInGbs(Integer availableVmStorageInGbs) {
+            return availableVmStorageInGbs(Output.of(availableVmStorageInGbs));
+        }
+
+        /**
          * @param totalStorageInGbs Storage size needed for Exascale in GBs.
          * 
          * @return builder
@@ -110,6 +163,27 @@ public final class CloudExadataInfrastructureExascaleConfigArgs extends com.pulu
          */
         public Builder totalStorageInGbs(Integer totalStorageInGbs) {
             return totalStorageInGbs(Output.of(totalStorageInGbs));
+        }
+
+        /**
+         * @param totalVmStorageInGbs Storage size needed for VM storage on Exascale in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder totalVmStorageInGbs(@Nullable Output<Integer> totalVmStorageInGbs) {
+            $.totalVmStorageInGbs = totalVmStorageInGbs;
+            return this;
+        }
+
+        /**
+         * @param totalVmStorageInGbs Storage size needed for VM storage on Exascale in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder totalVmStorageInGbs(Integer totalVmStorageInGbs) {
+            return totalVmStorageInGbs(Output.of(totalVmStorageInGbs));
         }
 
         public CloudExadataInfrastructureExascaleConfigArgs build() {

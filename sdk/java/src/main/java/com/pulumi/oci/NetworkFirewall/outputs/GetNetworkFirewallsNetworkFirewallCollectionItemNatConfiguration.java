@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration {
     /**
-     * @return To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+     * @return True indicates that NAT configuration is enabled. False indicates NAT configuration is disabled.
      * 
      */
     private Boolean mustEnablePrivateNat;
     /**
-     * @return An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn&#39;t be used for any other purpose in the subnet.
+     * @return An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn&#39;t be used for any other purpose in the subnet. This list contains IP addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
      * 
      */
     private List<String> natIpAddressLists;
 
     private GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration() {}
     /**
-     * @return To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+     * @return True indicates that NAT configuration is enabled. False indicates NAT configuration is disabled.
      * 
      */
     public Boolean mustEnablePrivateNat() {
         return this.mustEnablePrivateNat;
     }
     /**
-     * @return An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn&#39;t be used for any other purpose in the subnet.
+     * @return An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn&#39;t be used for any other purpose in the subnet. This list contains IP addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
      * 
      */
     public List<String> natIpAddressLists() {

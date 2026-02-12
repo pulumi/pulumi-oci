@@ -48,7 +48,7 @@ export interface GetLogAnalyticsLogGroupsArgs {
     displayName?: string;
     filters?: inputs.LogAnalytics.GetLogAnalyticsLogGroupsFilter[];
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: string;
 }
@@ -118,7 +118,7 @@ export interface GetLogAnalyticsLogGroupsOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetLogAnalyticsLogGroupsFilterArgs>[]>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
 }

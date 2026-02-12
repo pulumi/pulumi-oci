@@ -27,7 +27,7 @@ class GetVmClusterResult:
     """
     A collection of values returned by getVmCluster.
     """
-    def __init__(__self__, availability_domain=None, cloud_automation_update_details=None, compartment_id=None, compute_model=None, cpu_core_count=None, cpus_enabled=None, data_collection_options=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, exascale_db_storage_vault_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, id=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_patch_history_entry_id=None, license_model=None, lifecycle_details=None, memory_size_in_gbs=None, ocpu_count=None, ocpus_enabled=None, shape=None, ssh_public_keys=None, state=None, storage_management_type=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vm_cluster_id=None, vm_cluster_network_id=None, vm_cluster_type=None):
+    def __init__(__self__, availability_domain=None, cloud_automation_update_details=None, compartment_id=None, compute_model=None, cpu_core_count=None, cpus_enabled=None, data_collection_options=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, exascale_db_storage_vault_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, id=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_patch_history_entry_id=None, license_model=None, lifecycle_details=None, memory_size_in_gbs=None, ocpu_count=None, ocpus_enabled=None, shape=None, ssh_public_keys=None, state=None, storage_management_type=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vm_backup_storage_type=None, vm_cluster_id=None, vm_cluster_network_id=None, vm_cluster_type=None, vm_file_system_storage_type=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -133,6 +133,9 @@ class GetVmClusterResult:
         if time_zone and not isinstance(time_zone, str):
             raise TypeError("Expected argument 'time_zone' to be a str")
         pulumi.set(__self__, "time_zone", time_zone)
+        if vm_backup_storage_type and not isinstance(vm_backup_storage_type, str):
+            raise TypeError("Expected argument 'vm_backup_storage_type' to be a str")
+        pulumi.set(__self__, "vm_backup_storage_type", vm_backup_storage_type)
         if vm_cluster_id and not isinstance(vm_cluster_id, str):
             raise TypeError("Expected argument 'vm_cluster_id' to be a str")
         pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
@@ -142,6 +145,9 @@ class GetVmClusterResult:
         if vm_cluster_type and not isinstance(vm_cluster_type, str):
             raise TypeError("Expected argument 'vm_cluster_type' to be a str")
         pulumi.set(__self__, "vm_cluster_type", vm_cluster_type)
+        if vm_file_system_storage_type and not isinstance(vm_file_system_storage_type, str):
+            raise TypeError("Expected argument 'vm_file_system_storage_type' to be a str")
+        pulumi.set(__self__, "vm_file_system_storage_type", vm_file_system_storage_type)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -415,6 +421,14 @@ class GetVmClusterResult:
         return pulumi.get(self, "time_zone")
 
     @_builtins.property
+    @pulumi.getter(name="vmBackupStorageType")
+    def vm_backup_storage_type(self) -> _builtins.str:
+        """
+        Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
+        """
+        return pulumi.get(self, "vm_backup_storage_type")
+
+    @_builtins.property
     @pulumi.getter(name="vmClusterId")
     def vm_cluster_id(self) -> _builtins.str:
         return pulumi.get(self, "vm_cluster_id")
@@ -434,6 +448,14 @@ class GetVmClusterResult:
         The vmcluster type for the VM cluster/Cloud VM cluster.
         """
         return pulumi.get(self, "vm_cluster_type")
+
+    @_builtins.property
+    @pulumi.getter(name="vmFileSystemStorageType")
+    def vm_file_system_storage_type(self) -> _builtins.str:
+        """
+        Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+        """
+        return pulumi.get(self, "vm_file_system_storage_type")
 
 
 class AwaitableGetVmClusterResult(GetVmClusterResult):
@@ -477,9 +499,11 @@ class AwaitableGetVmClusterResult(GetVmClusterResult):
             system_version=self.system_version,
             time_created=self.time_created,
             time_zone=self.time_zone,
+            vm_backup_storage_type=self.vm_backup_storage_type,
             vm_cluster_id=self.vm_cluster_id,
             vm_cluster_network_id=self.vm_cluster_network_id,
-            vm_cluster_type=self.vm_cluster_type)
+            vm_cluster_type=self.vm_cluster_type,
+            vm_file_system_storage_type=self.vm_file_system_storage_type)
 
 
 def get_vm_cluster(vm_cluster_id: Optional[_builtins.str] = None,
@@ -542,9 +566,11 @@ def get_vm_cluster(vm_cluster_id: Optional[_builtins.str] = None,
         system_version=pulumi.get(__ret__, 'system_version'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'),
+        vm_backup_storage_type=pulumi.get(__ret__, 'vm_backup_storage_type'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'),
         vm_cluster_network_id=pulumi.get(__ret__, 'vm_cluster_network_id'),
-        vm_cluster_type=pulumi.get(__ret__, 'vm_cluster_type'))
+        vm_cluster_type=pulumi.get(__ret__, 'vm_cluster_type'),
+        vm_file_system_storage_type=pulumi.get(__ret__, 'vm_file_system_storage_type'))
 def get_vm_cluster_output(vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterResult]:
     """
@@ -604,6 +630,8 @@ def get_vm_cluster_output(vm_cluster_id: Optional[pulumi.Input[_builtins.str]] =
         system_version=pulumi.get(__response__, 'system_version'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_zone=pulumi.get(__response__, 'time_zone'),
+        vm_backup_storage_type=pulumi.get(__response__, 'vm_backup_storage_type'),
         vm_cluster_id=pulumi.get(__response__, 'vm_cluster_id'),
         vm_cluster_network_id=pulumi.get(__response__, 'vm_cluster_network_id'),
-        vm_cluster_type=pulumi.get(__response__, 'vm_cluster_type')))
+        vm_cluster_type=pulumi.get(__response__, 'vm_cluster_type'),
+        vm_file_system_storage_type=pulumi.get(__response__, 'vm_file_system_storage_type')))

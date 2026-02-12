@@ -27,7 +27,7 @@ class GetDesktopPoolResult:
     """
     A collection of values returned by getDesktopPool.
     """
-    def __init__(__self__, active_desktops=None, are_privileged_users=None, are_volumes_preserved=None, availability_domain=None, availability_policies=None, compartment_id=None, contact_details=None, defined_tags=None, description=None, desktop_pool_id=None, device_policies=None, display_name=None, freeform_tags=None, id=None, images=None, is_storage_enabled=None, maximum_size=None, network_configurations=None, nsg_ids=None, private_access_details=None, session_lifecycle_actions=None, shape_configs=None, shape_name=None, standby_size=None, state=None, storage_backup_policy_id=None, storage_size_in_gbs=None, time_created=None, time_start_scheduled=None, time_stop_scheduled=None, use_dedicated_vm_host=None):
+    def __init__(__self__, active_desktops=None, are_privileged_users=None, are_volumes_preserved=None, availability_domain=None, availability_policies=None, boot_volume_size_in_gbs=None, compartment_id=None, contact_details=None, defined_tags=None, description=None, desktop_pool_id=None, device_policies=None, display_name=None, freeform_tags=None, id=None, images=None, is_storage_enabled=None, maximum_size=None, network_configurations=None, nsg_ids=None, private_access_details=None, session_lifecycle_actions=None, shape_configs=None, shape_name=None, standby_size=None, state=None, storage_backup_policy_id=None, storage_size_in_gbs=None, time_created=None, time_start_scheduled=None, time_stop_scheduled=None, use_dedicated_vm_host=None):
         if active_desktops and not isinstance(active_desktops, int):
             raise TypeError("Expected argument 'active_desktops' to be a int")
         pulumi.set(__self__, "active_desktops", active_desktops)
@@ -43,6 +43,9 @@ class GetDesktopPoolResult:
         if availability_policies and not isinstance(availability_policies, list):
             raise TypeError("Expected argument 'availability_policies' to be a list")
         pulumi.set(__self__, "availability_policies", availability_policies)
+        if boot_volume_size_in_gbs and not isinstance(boot_volume_size_in_gbs, int):
+            raise TypeError("Expected argument 'boot_volume_size_in_gbs' to be a int")
+        pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -158,6 +161,14 @@ class GetDesktopPoolResult:
         Provides the start and stop schedule information for desktop availability of the desktop pool.
         """
         return pulumi.get(self, "availability_policies")
+
+    @_builtins.property
+    @pulumi.getter(name="bootVolumeSizeInGbs")
+    def boot_volume_size_in_gbs(self) -> _builtins.int:
+        """
+        The size in GBs of the boot volume for the desktop pool.
+        """
+        return pulumi.get(self, "boot_volume_size_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -377,6 +388,7 @@ class AwaitableGetDesktopPoolResult(GetDesktopPoolResult):
             are_volumes_preserved=self.are_volumes_preserved,
             availability_domain=self.availability_domain,
             availability_policies=self.availability_policies,
+            boot_volume_size_in_gbs=self.boot_volume_size_in_gbs,
             compartment_id=self.compartment_id,
             contact_details=self.contact_details,
             defined_tags=self.defined_tags,
@@ -435,6 +447,7 @@ def get_desktop_pool(desktop_pool_id: Optional[_builtins.str] = None,
         are_volumes_preserved=pulumi.get(__ret__, 'are_volumes_preserved'),
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
         availability_policies=pulumi.get(__ret__, 'availability_policies'),
+        boot_volume_size_in_gbs=pulumi.get(__ret__, 'boot_volume_size_in_gbs'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         contact_details=pulumi.get(__ret__, 'contact_details'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -490,6 +503,7 @@ def get_desktop_pool_output(desktop_pool_id: Optional[pulumi.Input[_builtins.str
         are_volumes_preserved=pulumi.get(__response__, 'are_volumes_preserved'),
         availability_domain=pulumi.get(__response__, 'availability_domain'),
         availability_policies=pulumi.get(__response__, 'availability_policies'),
+        boot_volume_size_in_gbs=pulumi.get(__response__, 'boot_volume_size_in_gbs'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         contact_details=pulumi.get(__response__, 'contact_details'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),

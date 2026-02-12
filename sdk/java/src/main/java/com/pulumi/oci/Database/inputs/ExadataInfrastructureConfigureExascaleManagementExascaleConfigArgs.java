@@ -30,6 +30,13 @@ public final class ExadataInfrastructureConfigureExascaleManagementExascaleConfi
         return Optional.ofNullable(this.availableStorageInGbs);
     }
 
+    @Import(name="availableVmStorageInGbs")
+    private @Nullable Output<Integer> availableVmStorageInGbs;
+
+    public Optional<Output<Integer>> availableVmStorageInGbs() {
+        return Optional.ofNullable(this.availableVmStorageInGbs);
+    }
+
     /**
      * Storage size needed for Exascale in GBs.
      * 
@@ -51,11 +58,20 @@ public final class ExadataInfrastructureConfigureExascaleManagementExascaleConfi
         return Optional.ofNullable(this.totalStorageInGbs);
     }
 
+    @Import(name="totalVmStorageInGbs")
+    private @Nullable Output<Integer> totalVmStorageInGbs;
+
+    public Optional<Output<Integer>> totalVmStorageInGbs() {
+        return Optional.ofNullable(this.totalVmStorageInGbs);
+    }
+
     private ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgs() {}
 
     private ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgs(ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgs $) {
         this.availableStorageInGbs = $.availableStorageInGbs;
+        this.availableVmStorageInGbs = $.availableVmStorageInGbs;
         this.totalStorageInGbs = $.totalStorageInGbs;
+        this.totalVmStorageInGbs = $.totalVmStorageInGbs;
     }
 
     public static Builder builder() {
@@ -97,6 +113,15 @@ public final class ExadataInfrastructureConfigureExascaleManagementExascaleConfi
             return availableStorageInGbs(Output.of(availableStorageInGbs));
         }
 
+        public Builder availableVmStorageInGbs(@Nullable Output<Integer> availableVmStorageInGbs) {
+            $.availableVmStorageInGbs = availableVmStorageInGbs;
+            return this;
+        }
+
+        public Builder availableVmStorageInGbs(Integer availableVmStorageInGbs) {
+            return availableVmStorageInGbs(Output.of(availableVmStorageInGbs));
+        }
+
         /**
          * @param totalStorageInGbs Storage size needed for Exascale in GBs.
          * 
@@ -122,6 +147,15 @@ public final class ExadataInfrastructureConfigureExascaleManagementExascaleConfi
          */
         public Builder totalStorageInGbs(Integer totalStorageInGbs) {
             return totalStorageInGbs(Output.of(totalStorageInGbs));
+        }
+
+        public Builder totalVmStorageInGbs(@Nullable Output<Integer> totalVmStorageInGbs) {
+            $.totalVmStorageInGbs = totalVmStorageInGbs;
+            return this;
+        }
+
+        public Builder totalVmStorageInGbs(Integer totalVmStorageInGbs) {
+            return totalVmStorageInGbs(Output.of(totalVmStorageInGbs));
         }
 
         public ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgs build() {

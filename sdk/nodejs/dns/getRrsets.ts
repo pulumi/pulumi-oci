@@ -11,9 +11,7 @@ import * as utilities from "../utilities";
  *
  * Gets a list of all rrsets in the specified zone.
  *
- * You can optionally filter the results using the listed parameters. When the zone name
- * is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
- * the viewId parameter is required.
+ * You can optionally filter the results using the listed parameters. When accessing a private zone by name, the `viewId` parameter is required.
  *
  * ## Example Usage
  *
@@ -26,7 +24,6 @@ import * as utilities from "../utilities";
  *     domain: rrsetDomain,
  *     domainContains: rrsetDomain,
  *     rtype: rrsetRtype,
- *     scope: rrsetScope,
  *     viewId: testView.id,
  * });
  * ```
@@ -61,9 +58,6 @@ export interface GetRrsetsArgs {
      * Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
      */
     rtype?: string;
-    /**
-     * Specifies to operate only on resources that have a matching DNS scope.
-     */
     scope?: string;
     /**
      * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
@@ -106,9 +100,7 @@ export interface GetRrsetsResult {
  *
  * Gets a list of all rrsets in the specified zone.
  *
- * You can optionally filter the results using the listed parameters. When the zone name
- * is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
- * the viewId parameter is required.
+ * You can optionally filter the results using the listed parameters. When accessing a private zone by name, the `viewId` parameter is required.
  *
  * ## Example Usage
  *
@@ -121,7 +113,6 @@ export interface GetRrsetsResult {
  *     domain: rrsetDomain,
  *     domainContains: rrsetDomain,
  *     rtype: rrsetRtype,
- *     scope: rrsetScope,
  *     viewId: testView.id,
  * });
  * ```
@@ -156,9 +147,6 @@ export interface GetRrsetsOutputArgs {
      * Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
      */
     rtype?: pulumi.Input<string>;
-    /**
-     * Specifies to operate only on resources that have a matching DNS scope.
-     */
     scope?: pulumi.Input<string>;
     /**
      * The OCID of the view the zone is associated with. Required when accessing a private zone by name.

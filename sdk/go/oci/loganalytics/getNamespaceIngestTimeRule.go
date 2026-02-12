@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -53,9 +53,9 @@ func LookupNamespaceIngestTimeRule(ctx *pulumi.Context, args *LookupNamespaceIng
 
 // A collection of arguments for invoking getNamespaceIngestTimeRule.
 type LookupNamespaceIngestTimeRuleArgs struct {
-	// Unique ocid of the ingest time rule.
+	// Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
 	IngestTimeRuleId string `pulumi:"ingestTimeRuleId"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -101,9 +101,9 @@ func LookupNamespaceIngestTimeRuleOutput(ctx *pulumi.Context, args LookupNamespa
 
 // A collection of arguments for invoking getNamespaceIngestTimeRule.
 type LookupNamespaceIngestTimeRuleOutputArgs struct {
-	// Unique ocid of the ingest time rule.
+	// Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
 	IngestTimeRuleId pulumi.StringInput `pulumi:"ingestTimeRuleId"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 }
 

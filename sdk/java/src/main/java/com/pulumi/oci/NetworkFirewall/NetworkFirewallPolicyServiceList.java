@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -44,6 +45,7 @@ import javax.annotation.Nullable;
  *             .name(networkFirewallPolicyServiceListName)
  *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
  *             .services(networkFirewallPolicyServiceListServices)
+ *             .description(networkFirewallPolicyServiceListDescription)
  *             .build());
  * 
  *     }
@@ -62,6 +64,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:NetworkFirewall/networkFirewallPolicyServiceList:NetworkFirewallPolicyServiceList")
 public class NetworkFirewallPolicyServiceList extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) The description of the service list. This field can be used to add additional info.
+     * 
+     */
+    @Export(name="description", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> description;
+
+    /**
+     * @return (Updatable) The description of the service list. This field can be used to add additional info.
+     * 
+     */
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
+    }
     /**
      * Name of the service Group.
      * 

@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +19,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/desktops"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/desktops"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -42,13 +42,14 @@ import (
 //				CompartmentId:  pulumi.Any(compartmentId),
 //				ContactDetails: pulumi.Any(desktopPoolContactDetails),
 //				DevicePolicy: &desktops.DesktopPoolDevicePolicyArgs{
-//					AudioMode:         pulumi.Any(desktopPoolDevicePolicyAudioMode),
-//					CdmMode:           pulumi.Any(desktopPoolDevicePolicyCdmMode),
-//					ClipboardMode:     pulumi.Any(desktopPoolDevicePolicyClipboardMode),
-//					IsDisplayEnabled:  pulumi.Any(desktopPoolDevicePolicyIsDisplayEnabled),
-//					IsKeyboardEnabled: pulumi.Any(desktopPoolDevicePolicyIsKeyboardEnabled),
-//					IsPointerEnabled:  pulumi.Any(desktopPoolDevicePolicyIsPointerEnabled),
-//					IsPrintingEnabled: pulumi.Any(desktopPoolDevicePolicyIsPrintingEnabled),
+//					AudioMode:           pulumi.Any(desktopPoolDevicePolicyAudioMode),
+//					CdmMode:             pulumi.Any(desktopPoolDevicePolicyCdmMode),
+//					ClipboardMode:       pulumi.Any(desktopPoolDevicePolicyClipboardMode),
+//					IsDisplayEnabled:    pulumi.Any(desktopPoolDevicePolicyIsDisplayEnabled),
+//					IsKeyboardEnabled:   pulumi.Any(desktopPoolDevicePolicyIsKeyboardEnabled),
+//					IsPointerEnabled:    pulumi.Any(desktopPoolDevicePolicyIsPointerEnabled),
+//					IsPrintingEnabled:   pulumi.Any(desktopPoolDevicePolicyIsPrintingEnabled),
+//					IsVideoInputEnabled: pulumi.Any(desktopPoolDevicePolicyIsVideoInputEnabled),
 //				},
 //				DisplayName: pulumi.Any(desktopPoolDisplayName),
 //				Image: &desktops.DesktopPoolImageArgs{
@@ -66,6 +67,7 @@ import (
 //				StandbySize:           pulumi.Any(desktopPoolStandbySize),
 //				StorageBackupPolicyId: pulumi.String("ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz"),
 //				StorageSizeInGbs:      pulumi.Any(desktopPoolStorageSizeInGbs),
+//				BootVolumeSizeInGbs:   pulumi.Any(desktopPoolBootVolumeSizeInGbs),
 //				AreVolumesPreserved:   pulumi.Any(desktopPoolAreVolumesPreserved),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
@@ -131,6 +133,8 @@ type DesktopPool struct {
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
 	AvailabilityPolicy DesktopPoolAvailabilityPolicyOutput `pulumi:"availabilityPolicy"`
+	// (Updatable) The size in GBs of the boot volume for the desktop pool.
+	BootVolumeSizeInGbs pulumi.IntOutput `pulumi:"bootVolumeSizeInGbs"`
 	// (Updatable) The OCID of the compartment which will contain the desktop pool.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Contact information of the desktop pool administrator. Avoid entering confidential information.
@@ -145,7 +149,7 @@ type DesktopPool struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
-	// Provides information about the desktop image.
+	// (Updatable) Provides information about the desktop image.
 	Image DesktopPoolImageOutput `pulumi:"image"`
 	// Indicates whether storage is enabled for the desktop pool.
 	IsStorageEnabled pulumi.BoolOutput `pulumi:"isStorageEnabled"`
@@ -269,6 +273,8 @@ type desktopPoolState struct {
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
 	AvailabilityPolicy *DesktopPoolAvailabilityPolicy `pulumi:"availabilityPolicy"`
+	// (Updatable) The size in GBs of the boot volume for the desktop pool.
+	BootVolumeSizeInGbs *int `pulumi:"bootVolumeSizeInGbs"`
 	// (Updatable) The OCID of the compartment which will contain the desktop pool.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Contact information of the desktop pool administrator. Avoid entering confidential information.
@@ -283,7 +289,7 @@ type desktopPoolState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Provides information about the desktop image.
+	// (Updatable) Provides information about the desktop image.
 	Image *DesktopPoolImage `pulumi:"image"`
 	// Indicates whether storage is enabled for the desktop pool.
 	IsStorageEnabled *bool `pulumi:"isStorageEnabled"`
@@ -333,6 +339,8 @@ type DesktopPoolState struct {
 	AvailabilityDomain pulumi.StringPtrInput
 	// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
 	AvailabilityPolicy DesktopPoolAvailabilityPolicyPtrInput
+	// (Updatable) The size in GBs of the boot volume for the desktop pool.
+	BootVolumeSizeInGbs pulumi.IntPtrInput
 	// (Updatable) The OCID of the compartment which will contain the desktop pool.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Contact information of the desktop pool administrator. Avoid entering confidential information.
@@ -347,7 +355,7 @@ type DesktopPoolState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// Provides information about the desktop image.
+	// (Updatable) Provides information about the desktop image.
 	Image DesktopPoolImagePtrInput
 	// Indicates whether storage is enabled for the desktop pool.
 	IsStorageEnabled pulumi.BoolPtrInput
@@ -399,6 +407,8 @@ type desktopPoolArgs struct {
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
 	AvailabilityPolicy DesktopPoolAvailabilityPolicy `pulumi:"availabilityPolicy"`
+	// (Updatable) The size in GBs of the boot volume for the desktop pool.
+	BootVolumeSizeInGbs *int `pulumi:"bootVolumeSizeInGbs"`
 	// (Updatable) The OCID of the compartment which will contain the desktop pool.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Contact information of the desktop pool administrator. Avoid entering confidential information.
@@ -413,7 +423,7 @@ type desktopPoolArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Provides information about the desktop image.
+	// (Updatable) Provides information about the desktop image.
 	Image DesktopPoolImage `pulumi:"image"`
 	// Indicates whether storage is enabled for the desktop pool.
 	IsStorageEnabled bool `pulumi:"isStorageEnabled"`
@@ -458,6 +468,8 @@ type DesktopPoolArgs struct {
 	AvailabilityDomain pulumi.StringInput
 	// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
 	AvailabilityPolicy DesktopPoolAvailabilityPolicyInput
+	// (Updatable) The size in GBs of the boot volume for the desktop pool.
+	BootVolumeSizeInGbs pulumi.IntPtrInput
 	// (Updatable) The OCID of the compartment which will contain the desktop pool.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Contact information of the desktop pool administrator. Avoid entering confidential information.
@@ -472,7 +484,7 @@ type DesktopPoolArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// Provides information about the desktop image.
+	// (Updatable) Provides information about the desktop image.
 	Image DesktopPoolImageInput
 	// Indicates whether storage is enabled for the desktop pool.
 	IsStorageEnabled pulumi.BoolInput
@@ -619,6 +631,11 @@ func (o DesktopPoolOutput) AvailabilityPolicy() DesktopPoolAvailabilityPolicyOut
 	return o.ApplyT(func(v *DesktopPool) DesktopPoolAvailabilityPolicyOutput { return v.AvailabilityPolicy }).(DesktopPoolAvailabilityPolicyOutput)
 }
 
+// (Updatable) The size in GBs of the boot volume for the desktop pool.
+func (o DesktopPoolOutput) BootVolumeSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v *DesktopPool) pulumi.IntOutput { return v.BootVolumeSizeInGbs }).(pulumi.IntOutput)
+}
+
 // (Updatable) The OCID of the compartment which will contain the desktop pool.
 func (o DesktopPoolOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DesktopPool) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -654,7 +671,7 @@ func (o DesktopPoolOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *DesktopPool) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Provides information about the desktop image.
+// (Updatable) Provides information about the desktop image.
 func (o DesktopPoolOutput) Image() DesktopPoolImageOutput {
 	return o.ApplyT(func(v *DesktopPool) DesktopPoolImageOutput { return v.Image }).(DesktopPoolImageOutput)
 }

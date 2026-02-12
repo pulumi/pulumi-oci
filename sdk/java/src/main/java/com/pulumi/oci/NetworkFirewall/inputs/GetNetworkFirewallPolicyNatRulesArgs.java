@@ -42,14 +42,14 @@ public final class GetNetworkFirewallPolicyNatRulesArgs extends com.pulumi.resou
     }
 
     /**
-     * Unique priority order for NAT Rules in the network firewall policy.
+     * Unique priority order for NAT rules in the Network Firewall policy.
      * 
      */
     @Import(name="natRulePriorityOrder")
     private @Nullable Output<Integer> natRulePriorityOrder;
 
     /**
-     * @return Unique priority order for NAT Rules in the network firewall policy.
+     * @return Unique priority order for NAT rules in the Network Firewall policy.
      * 
      */
     public Optional<Output<Integer>> natRulePriorityOrder() {
@@ -133,7 +133,7 @@ public final class GetNetworkFirewallPolicyNatRulesArgs extends com.pulumi.resou
         }
 
         /**
-         * @param natRulePriorityOrder Unique priority order for NAT Rules in the network firewall policy.
+         * @param natRulePriorityOrder Unique priority order for NAT rules in the Network Firewall policy.
          * 
          * @return builder
          * 
@@ -144,7 +144,7 @@ public final class GetNetworkFirewallPolicyNatRulesArgs extends com.pulumi.resou
         }
 
         /**
-         * @param natRulePriorityOrder Unique priority order for NAT Rules in the network firewall policy.
+         * @param natRulePriorityOrder Unique priority order for NAT rules in the Network Firewall policy.
          * 
          * @return builder
          * 

@@ -62,7 +62,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Output<string> Action { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+        /// (Updatable) Match criteria used in NAT rule used on the firewall policy.
         /// </summary>
         [Output("condition")]
         public Output<Outputs.NetworkFirewallPolicyNatRuleCondition> Condition { get; private set; } = null!;
@@ -86,7 +86,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Output<string> NetworkFirewallPolicyId { get; private set; } = null!;
 
         /// <summary>
-        /// OCID of the Network Firewall Policy this decryption profile belongs to.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
         /// </summary>
         [Output("parentResourceId")]
         public Output<string> ParentResourceId { get; private set; } = null!;
@@ -168,7 +168,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Input<string> Action { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+        /// (Updatable) Match criteria used in NAT rule used on the firewall policy.
         /// </summary>
         [Input("condition", required: true)]
         public Input<Inputs.NetworkFirewallPolicyNatRuleConditionArgs> Condition { get; set; } = null!;
@@ -224,7 +224,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Input<string>? Action { get; set; }
 
         /// <summary>
-        /// (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+        /// (Updatable) Match criteria used in NAT rule used on the firewall policy.
         /// </summary>
         [Input("condition")]
         public Input<Inputs.NetworkFirewallPolicyNatRuleConditionGetArgs>? Condition { get; set; }
@@ -248,7 +248,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Input<string>? NetworkFirewallPolicyId { get; set; }
 
         /// <summary>
-        /// OCID of the Network Firewall Policy this decryption profile belongs to.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
         /// </summary>
         [Input("parentResourceId")]
         public Input<string>? ParentResourceId { get; set; }

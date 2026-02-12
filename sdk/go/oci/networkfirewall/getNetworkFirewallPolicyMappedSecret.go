@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -36,7 +36,9 @@ type LookupNetworkFirewallPolicyMappedSecretArgs struct {
 
 // A collection of values returned by getNetworkFirewallPolicyMappedSecret.
 type LookupNetworkFirewallPolicyMappedSecretResult struct {
-	Id string `pulumi:"id"`
+	// The description of the mapped secret. This field can be used to add additional info.
+	Description string `pulumi:"description"`
+	Id          string `pulumi:"id"`
 	// Name of the secret.
 	Name                    string `pulumi:"name"`
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
@@ -88,6 +90,11 @@ func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) ToLookupNetworkFire
 
 func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) ToLookupNetworkFirewallPolicyMappedSecretResultOutputWithContext(ctx context.Context) LookupNetworkFirewallPolicyMappedSecretResultOutput {
 	return o
+}
+
+// The description of the mapped secret. This field can be used to add additional info.
+func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyMappedSecretResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) Id() pulumi.StringOutput {

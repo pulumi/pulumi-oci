@@ -55,11 +55,11 @@ export class NamespaceIngestTimeRulesManagement extends pulumi.CustomResource {
      */
     declare public readonly enableIngestTimeRule: pulumi.Output<boolean>;
     /**
-     * Unique ocid of the ingest time rule.
+     * Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
      */
     declare public readonly ingestTimeRuleId: pulumi.Output<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     declare public readonly namespace: pulumi.Output<string>;
 
@@ -112,11 +112,11 @@ export interface NamespaceIngestTimeRulesManagementState {
      */
     enableIngestTimeRule?: pulumi.Input<boolean>;
     /**
-     * Unique ocid of the ingest time rule.
+     * Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
      */
     ingestTimeRuleId?: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace?: pulumi.Input<string>;
 }
@@ -134,11 +134,11 @@ export interface NamespaceIngestTimeRulesManagementArgs {
      */
     enableIngestTimeRule: pulumi.Input<boolean>;
     /**
-     * Unique ocid of the ingest time rule.
+     * Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
      */
     ingestTimeRuleId: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
 }

@@ -41,6 +41,10 @@ export interface GetNetworkFirewallPolicyApplicationGroupResult {
      * List of apps in the group.
      */
     readonly apps: string[];
+    /**
+     * The description of the application list. This field can be used to add additional info.
+     */
+    readonly description: string;
     readonly id: string;
     /**
      * Name of the application Group.

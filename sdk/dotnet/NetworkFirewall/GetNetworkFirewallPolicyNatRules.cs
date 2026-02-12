@@ -14,7 +14,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// This data source provides the list of Network Firewall Policy Nat Rules in Oracle Cloud Infrastructure Network Firewall service.
         /// 
-        /// Returns a list of NAT Rules for the Network Firewall Policy.
+        /// Returns a list of [NAT rules](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
         /// 
         /// 
         /// ## Example Usage
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// This data source provides the list of Network Firewall Policy Nat Rules in Oracle Cloud Infrastructure Network Firewall service.
         /// 
-        /// Returns a list of NAT Rules for the Network Firewall Policy.
+        /// Returns a list of [NAT rules](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
         /// 
         /// 
         /// ## Example Usage
@@ -72,7 +72,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// This data source provides the list of Network Firewall Policy Nat Rules in Oracle Cloud Infrastructure Network Firewall service.
         /// 
-        /// Returns a list of NAT Rules for the Network Firewall Policy.
+        /// Returns a list of [NAT rules](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
         /// 
         /// 
         /// ## Example Usage
@@ -117,7 +117,7 @@ namespace Pulumi.Oci.NetworkFirewall
         }
 
         /// <summary>
-        /// Unique priority order for NAT Rules in the network firewall policy.
+        /// Unique priority order for NAT rules in the Network Firewall policy.
         /// </summary>
         [Input("natRulePriorityOrder")]
         public int? NatRulePriorityOrder { get; set; }
@@ -151,7 +151,7 @@ namespace Pulumi.Oci.NetworkFirewall
         }
 
         /// <summary>
-        /// Unique priority order for NAT Rules in the network firewall policy.
+        /// Unique priority order for NAT rules in the Network Firewall policy.
         /// </summary>
         [Input("natRulePriorityOrder")]
         public Input<int>? NatRulePriorityOrder { get; set; }

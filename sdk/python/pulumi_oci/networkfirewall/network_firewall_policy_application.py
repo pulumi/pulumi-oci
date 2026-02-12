@@ -22,23 +22,27 @@ class NetworkFirewallPolicyApplicationArgs:
                  icmp_type: pulumi.Input[_builtins.int],
                  network_firewall_policy_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  icmp_code: Optional[pulumi.Input[_builtins.int]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyApplication resource.
-        :param pulumi.Input[_builtins.int] icmp_type: (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        :param pulumi.Input[_builtins.int] icmp_type: (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] type: Describes the type of application. The accepted values are - * ICMP * ICMP_V6
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.int] icmp_code: (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the application. This field can be used to add additional info.
+        :param pulumi.Input[_builtins.int] icmp_code: (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         :param pulumi.Input[_builtins.str] name: Name of the application
         """
         pulumi.set(__self__, "icmp_type", icmp_type)
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         pulumi.set(__self__, "type", type)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if icmp_code is not None:
             pulumi.set(__self__, "icmp_code", icmp_code)
         if name is not None:
@@ -48,7 +52,7 @@ class NetworkFirewallPolicyApplicationArgs:
     @pulumi.getter(name="icmpType")
     def icmp_type(self) -> pulumi.Input[_builtins.int]:
         """
-        (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         """
         return pulumi.get(self, "icmp_type")
 
@@ -85,10 +89,22 @@ class NetworkFirewallPolicyApplicationArgs:
         pulumi.set(self, "type", value)
 
     @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The description of the application. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
     @pulumi.getter(name="icmpCode")
     def icmp_code(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         """
         return pulumi.get(self, "icmp_code")
 
@@ -112,6 +128,7 @@ class NetworkFirewallPolicyApplicationArgs:
 @pulumi.input_type
 class _NetworkFirewallPolicyApplicationState:
     def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  icmp_code: Optional[pulumi.Input[_builtins.int]] = None,
                  icmp_type: Optional[pulumi.Input[_builtins.int]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -120,8 +137,9 @@ class _NetworkFirewallPolicyApplicationState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyApplication resources.
-        :param pulumi.Input[_builtins.int] icmp_code: (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        :param pulumi.Input[_builtins.int] icmp_type: (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the application. This field can be used to add additional info.
+        :param pulumi.Input[_builtins.int] icmp_code: (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        :param pulumi.Input[_builtins.int] icmp_type: (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         :param pulumi.Input[_builtins.str] name: Name of the application
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this application belongs to.
@@ -131,6 +149,8 @@ class _NetworkFirewallPolicyApplicationState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if icmp_code is not None:
             pulumi.set(__self__, "icmp_code", icmp_code)
         if icmp_type is not None:
@@ -145,10 +165,22 @@ class _NetworkFirewallPolicyApplicationState:
             pulumi.set(__self__, "type", type)
 
     @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The description of the application. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
     @pulumi.getter(name="icmpCode")
     def icmp_code(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         """
         return pulumi.get(self, "icmp_code")
 
@@ -160,7 +192,7 @@ class _NetworkFirewallPolicyApplicationState:
     @pulumi.getter(name="icmpType")
     def icmp_type(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         """
         return pulumi.get(self, "icmp_type")
 
@@ -227,6 +259,7 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  icmp_code: Optional[pulumi.Input[_builtins.int]] = None,
                  icmp_type: Optional[pulumi.Input[_builtins.int]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -245,6 +278,7 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
             name=network_firewall_policy_application_name,
             network_firewall_policy_id=test_network_firewall_policy["id"],
             type=network_firewall_policy_application_type,
+            description=network_firewall_policy_application_description,
             icmp_code=network_firewall_policy_application_icmp_code)
         ```
 
@@ -258,8 +292,9 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.int] icmp_code: (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        :param pulumi.Input[_builtins.int] icmp_type: (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the application. This field can be used to add additional info.
+        :param pulumi.Input[_builtins.int] icmp_code: (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        :param pulumi.Input[_builtins.int] icmp_type: (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         :param pulumi.Input[_builtins.str] name: Name of the application
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] type: Describes the type of application. The accepted values are - * ICMP * ICMP_V6
@@ -286,6 +321,7 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
             name=network_firewall_policy_application_name,
             network_firewall_policy_id=test_network_firewall_policy["id"],
             type=network_firewall_policy_application_type,
+            description=network_firewall_policy_application_description,
             icmp_code=network_firewall_policy_application_icmp_code)
         ```
 
@@ -312,6 +348,7 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  icmp_code: Optional[pulumi.Input[_builtins.int]] = None,
                  icmp_type: Optional[pulumi.Input[_builtins.int]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -326,6 +363,7 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = NetworkFirewallPolicyApplicationArgs.__new__(NetworkFirewallPolicyApplicationArgs)
 
+            __props__.__dict__["description"] = description
             __props__.__dict__["icmp_code"] = icmp_code
             if icmp_type is None and not opts.urn:
                 raise TypeError("Missing required property 'icmp_type'")
@@ -348,6 +386,7 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
             icmp_code: Optional[pulumi.Input[_builtins.int]] = None,
             icmp_type: Optional[pulumi.Input[_builtins.int]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -361,8 +400,9 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.int] icmp_code: (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        :param pulumi.Input[_builtins.int] icmp_type: (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the application. This field can be used to add additional info.
+        :param pulumi.Input[_builtins.int] icmp_code: (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        :param pulumi.Input[_builtins.int] icmp_type: (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         :param pulumi.Input[_builtins.str] name: Name of the application
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this application belongs to.
@@ -376,6 +416,7 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
 
         __props__ = _NetworkFirewallPolicyApplicationState.__new__(_NetworkFirewallPolicyApplicationState)
 
+        __props__.__dict__["description"] = description
         __props__.__dict__["icmp_code"] = icmp_code
         __props__.__dict__["icmp_type"] = icmp_type
         __props__.__dict__["name"] = name
@@ -385,10 +426,18 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
         return NetworkFirewallPolicyApplication(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Updatable) The description of the application. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
     @pulumi.getter(name="icmpCode")
     def icmp_code(self) -> pulumi.Output[_builtins.int]:
         """
-        (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         """
         return pulumi.get(self, "icmp_code")
 
@@ -396,7 +445,7 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
     @pulumi.getter(name="icmpType")
     def icmp_type(self) -> pulumi.Output[_builtins.int]:
         """
-        (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         """
         return pulumi.get(self, "icmp_type")
 

@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +19,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -36,6 +36,19 @@ import (
 //					DataType:               pulumi.Any(namespaceScheduledTaskActionDataType),
 //					MetricExtraction: &loganalytics.NamespaceScheduledTaskActionMetricExtractionArgs{
 //						CompartmentId: pulumi.Any(compartmentId),
+//						MetricCollections: loganalytics.NamespaceScheduledTaskActionMetricExtractionMetricCollectionArray{
+//							&loganalytics.NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs{
+//								Dimensions: loganalytics.NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArray{
+//									&loganalytics.NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs{
+//										DimensionName:  pulumi.Any(namespaceScheduledTaskActionMetricExtractionMetricCollectionsDimensionsDimensionName),
+//										QueryFieldName: pulumi.Any(namespaceScheduledTaskActionMetricExtractionMetricCollectionsDimensionsQueryFieldName),
+//									},
+//								},
+//								MetricName:           pulumi.Any(testMetric.Name),
+//								MetricQueryFieldName: pulumi.Any(namespaceScheduledTaskActionMetricExtractionMetricCollectionsMetricQueryFieldName),
+//								QueryTableName:       pulumi.Any(testTable.Name),
+//							},
+//						},
 //						MetricName:    pulumi.Any(testMetric.Name),
 //						Namespace:     pulumi.Any(namespaceScheduledTaskActionMetricExtractionNamespace),
 //						ResourceGroup: pulumi.Any(namespaceScheduledTaskActionMetricExtractionResourceGroup),
@@ -57,6 +70,7 @@ import (
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
+//				Description: pulumi.Any(namespaceScheduledTaskDescription),
 //				DisplayName: pulumi.Any(namespaceScheduledTaskDisplayName),
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
@@ -66,8 +80,10 @@ import (
 //					Type:              namespaceScheduledTaskSchedulesType,
 //					Expression:        namespaceScheduledTaskSchedulesExpression,
 //					MisfirePolicy:     namespaceScheduledTaskSchedulesMisfirePolicy,
+//					QueryOffsetSecs:   namespaceScheduledTaskSchedulesQueryOffsetSecs,
 //					RecurringInterval: namespaceScheduledTaskSchedulesRecurringInterval,
 //					RepeatCount:       namespaceScheduledTaskSchedulesRepeatCount,
+//					TimeEnd:           namespaceScheduledTaskSchedulesTimeEnd,
 //					TimeZone:          namespaceScheduledTaskSchedulesTimeZone,
 //				},
 //				TaskType: pulumi.Any(namespaceScheduledTaskTaskType),
@@ -80,6 +96,32 @@ import (
 //	}
 //
 // ```
+//
+// ## Schedules
+//
+// There are parameters which require a specific constant value to be supplied.
+//
+// ### misfirePolicy
+//
+// #### 'RETRY_INDEFINITELY'
+// A constant which can be used with the misfirePolicy property of a Schedule. This constant has a value of “RETRY_INDEFINITELY”
+//
+// #### 'RETRY_ONCE'
+// A constant which can be used with the misfirePolicy property of a Schedule. This constant has a value of “RETRY_ONCE”
+//
+// #### 'SKIP'
+// A constant which can be used with the misfirePolicy property of a Schedule. This constant has a value of “SKIP”
+//
+// ### type
+//
+// #### 'AUTO'
+// A constant which can be used with the type property of a Schedule. This constant has a value of “AUTO”
+//
+// #### 'CRON'
+// A constant which can be used with the type property of a Schedule. This constant has a value of “CRON”
+//
+// #### 'FIXED_FREQUENCY'
+// A constant which can be used with the type property of a Schedule. This constant has a value of “FIXED_FREQUENCY”
 //
 // ## Import
 //
@@ -97,13 +139,15 @@ type NamespaceScheduledTask struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
+	// (Updatable) Description for this resource.
+	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Discriminator.
 	Kind pulumi.StringOutput `pulumi:"kind"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// Number of execution occurrences.
 	NumOccurrences pulumi.StringOutput `pulumi:"numOccurrences"`
@@ -114,7 +158,7 @@ type NamespaceScheduledTask struct {
 	Schedules NamespaceScheduledTaskSchedulesOutput `pulumi:"schedules"`
 	// The current state of the scheduled task.
 	State pulumi.StringOutput `pulumi:"state"`
-	// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+	// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
 	TaskStatus pulumi.StringOutput `pulumi:"taskStatus"`
 	// Task type.
 	//
@@ -125,7 +169,7 @@ type NamespaceScheduledTask struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the scheduled task was last updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+	// most recent Work Request Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
 	WorkRequestId pulumi.StringOutput `pulumi:"workRequestId"`
 }
 
@@ -183,13 +227,15 @@ type namespaceScheduledTaskState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// (Updatable) Description for this resource.
+	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Discriminator.
 	Kind *string `pulumi:"kind"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace *string `pulumi:"namespace"`
 	// Number of execution occurrences.
 	NumOccurrences *string `pulumi:"numOccurrences"`
@@ -200,7 +246,7 @@ type namespaceScheduledTaskState struct {
 	Schedules *NamespaceScheduledTaskSchedules `pulumi:"schedules"`
 	// The current state of the scheduled task.
 	State *string `pulumi:"state"`
-	// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+	// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
 	TaskStatus *string `pulumi:"taskStatus"`
 	// Task type.
 	//
@@ -211,7 +257,7 @@ type namespaceScheduledTaskState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the scheduled task was last updated, in the format defined by RFC3339.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+	// most recent Work Request Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
 	WorkRequestId *string `pulumi:"workRequestId"`
 }
 
@@ -222,13 +268,15 @@ type NamespaceScheduledTaskState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
+	// (Updatable) Description for this resource.
+	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) Discriminator.
 	Kind pulumi.StringPtrInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringPtrInput
 	// Number of execution occurrences.
 	NumOccurrences pulumi.StringPtrInput
@@ -239,7 +287,7 @@ type NamespaceScheduledTaskState struct {
 	Schedules NamespaceScheduledTaskSchedulesPtrInput
 	// The current state of the scheduled task.
 	State pulumi.StringPtrInput
-	// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+	// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
 	TaskStatus pulumi.StringPtrInput
 	// Task type.
 	//
@@ -250,7 +298,7 @@ type NamespaceScheduledTaskState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the scheduled task was last updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringPtrInput
-	// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+	// most recent Work Request Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
 	WorkRequestId pulumi.StringPtrInput
 }
 
@@ -265,13 +313,15 @@ type namespaceScheduledTaskArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// (Updatable) Description for this resource.
+	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Discriminator.
 	Kind string `pulumi:"kind"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 	// The ManagementSavedSearch id [OCID] to be accelerated.
 	SavedSearchId *string `pulumi:"savedSearchId"`
@@ -292,13 +342,15 @@ type NamespaceScheduledTaskArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
+	// (Updatable) Description for this resource.
+	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) Discriminator.
 	Kind pulumi.StringInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput
 	// The ManagementSavedSearch id [OCID] to be accelerated.
 	SavedSearchId pulumi.StringPtrInput
@@ -413,6 +465,11 @@ func (o NamespaceScheduledTaskOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// (Updatable) Description for this resource.
+func (o NamespaceScheduledTaskOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
 // (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
 func (o NamespaceScheduledTaskOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
@@ -428,7 +485,7 @@ func (o NamespaceScheduledTaskOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.Kind }).(pulumi.StringOutput)
 }
 
-// The Logging Analytics namespace used for the request.
+// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 func (o NamespaceScheduledTaskOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -457,7 +514,7 @@ func (o NamespaceScheduledTaskOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
 func (o NamespaceScheduledTaskOutput) TaskStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.TaskStatus }).(pulumi.StringOutput)
 }
@@ -480,7 +537,7 @@ func (o NamespaceScheduledTaskOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+// most recent Work Request Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
 func (o NamespaceScheduledTaskOutput) WorkRequestId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.WorkRequestId }).(pulumi.StringOutput)
 }

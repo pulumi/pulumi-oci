@@ -36,7 +36,7 @@ export function getNamespaceScheduledTask(args: GetNamespaceScheduledTaskArgs, o
  */
 export interface GetNamespaceScheduledTaskArgs {
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: string;
     /**
@@ -61,6 +61,10 @@ export interface GetNamespaceScheduledTaskResult {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     readonly definedTags: {[key: string]: string};
+    /**
+     * Description for this resource.
+     */
+    readonly description: string;
     /**
      * A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      */
@@ -99,7 +103,7 @@ export interface GetNamespaceScheduledTaskResult {
      */
     readonly state: string;
     /**
-     * Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+     * Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
      */
     readonly taskStatus: string;
     /**
@@ -149,7 +153,7 @@ export function getNamespaceScheduledTaskOutput(args: GetNamespaceScheduledTaskO
  */
 export interface GetNamespaceScheduledTaskOutputArgs {
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
     /**

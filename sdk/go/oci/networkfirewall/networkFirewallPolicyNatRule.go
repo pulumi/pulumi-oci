@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +19,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -64,7 +64,7 @@ type NetworkFirewallPolicyNatRule struct {
 	// (Updatable) action:
 	// * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
 	Action pulumi.StringOutput `pulumi:"action"`
-	// (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+	// (Updatable) Match criteria used in NAT rule used on the firewall policy.
 	Condition NetworkFirewallPolicyNatRuleConditionOutput `pulumi:"condition"`
 	// (Updatable) Description of a NAT rule. This field can be used to add additional info.
 	Description pulumi.StringPtrOutput `pulumi:"description"`
@@ -72,7 +72,7 @@ type NetworkFirewallPolicyNatRule struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
 	NetworkFirewallPolicyId pulumi.StringOutput `pulumi:"networkFirewallPolicyId"`
-	// OCID of the Network Firewall Policy this decryption profile belongs to.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
 	ParentResourceId pulumi.StringOutput `pulumi:"parentResourceId"`
 	// (Updatable) An object which defines the position of the rule.
 	Position NetworkFirewallPolicyNatRulePositionOutput `pulumi:"position"`
@@ -131,7 +131,7 @@ type networkFirewallPolicyNatRuleState struct {
 	// (Updatable) action:
 	// * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
 	Action *string `pulumi:"action"`
-	// (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+	// (Updatable) Match criteria used in NAT rule used on the firewall policy.
 	Condition *NetworkFirewallPolicyNatRuleCondition `pulumi:"condition"`
 	// (Updatable) Description of a NAT rule. This field can be used to add additional info.
 	Description *string `pulumi:"description"`
@@ -139,7 +139,7 @@ type networkFirewallPolicyNatRuleState struct {
 	Name *string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
 	NetworkFirewallPolicyId *string `pulumi:"networkFirewallPolicyId"`
-	// OCID of the Network Firewall Policy this decryption profile belongs to.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
 	ParentResourceId *string `pulumi:"parentResourceId"`
 	// (Updatable) An object which defines the position of the rule.
 	Position *NetworkFirewallPolicyNatRulePosition `pulumi:"position"`
@@ -157,7 +157,7 @@ type NetworkFirewallPolicyNatRuleState struct {
 	// (Updatable) action:
 	// * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
 	Action pulumi.StringPtrInput
-	// (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+	// (Updatable) Match criteria used in NAT rule used on the firewall policy.
 	Condition NetworkFirewallPolicyNatRuleConditionPtrInput
 	// (Updatable) Description of a NAT rule. This field can be used to add additional info.
 	Description pulumi.StringPtrInput
@@ -165,7 +165,7 @@ type NetworkFirewallPolicyNatRuleState struct {
 	Name pulumi.StringPtrInput
 	// Unique Network Firewall Policy identifier
 	NetworkFirewallPolicyId pulumi.StringPtrInput
-	// OCID of the Network Firewall Policy this decryption profile belongs to.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
 	ParentResourceId pulumi.StringPtrInput
 	// (Updatable) An object which defines the position of the rule.
 	Position NetworkFirewallPolicyNatRulePositionPtrInput
@@ -187,7 +187,7 @@ type networkFirewallPolicyNatRuleArgs struct {
 	// (Updatable) action:
 	// * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
 	Action string `pulumi:"action"`
-	// (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+	// (Updatable) Match criteria used in NAT rule used on the firewall policy.
 	Condition NetworkFirewallPolicyNatRuleCondition `pulumi:"condition"`
 	// (Updatable) Description of a NAT rule. This field can be used to add additional info.
 	Description *string `pulumi:"description"`
@@ -210,7 +210,7 @@ type NetworkFirewallPolicyNatRuleArgs struct {
 	// (Updatable) action:
 	// * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
 	Action pulumi.StringInput
-	// (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+	// (Updatable) Match criteria used in NAT rule used on the firewall policy.
 	Condition NetworkFirewallPolicyNatRuleConditionInput
 	// (Updatable) Description of a NAT rule. This field can be used to add additional info.
 	Description pulumi.StringPtrInput
@@ -321,7 +321,7 @@ func (o NetworkFirewallPolicyNatRuleOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicyNatRule) pulumi.StringOutput { return v.Action }).(pulumi.StringOutput)
 }
 
-// (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+// (Updatable) Match criteria used in NAT rule used on the firewall policy.
 func (o NetworkFirewallPolicyNatRuleOutput) Condition() NetworkFirewallPolicyNatRuleConditionOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicyNatRule) NetworkFirewallPolicyNatRuleConditionOutput { return v.Condition }).(NetworkFirewallPolicyNatRuleConditionOutput)
 }
@@ -341,7 +341,7 @@ func (o NetworkFirewallPolicyNatRuleOutput) NetworkFirewallPolicyId() pulumi.Str
 	return o.ApplyT(func(v *NetworkFirewallPolicyNatRule) pulumi.StringOutput { return v.NetworkFirewallPolicyId }).(pulumi.StringOutput)
 }
 
-// OCID of the Network Firewall Policy this decryption profile belongs to.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
 func (o NetworkFirewallPolicyNatRuleOutput) ParentResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicyNatRule) pulumi.StringOutput { return v.ParentResourceId }).(pulumi.StringOutput)
 }

@@ -52,7 +52,6 @@ import javax.annotation.Nullable;
  *                 .rtype(rrsetItemsRtype)
  *                 .ttl(rrsetItemsTtl)
  *                 .build())
- *             .scope(rrsetScope)
  *             .viewId(testView.id())
  *             .build());
  * 
@@ -61,6 +60,10 @@ import javax.annotation.Nullable;
  * }
  * </pre>
  * 
+ * ## Behavior
+ * 
+ * - Create returns HTTP 409 (Conflict) if the target RRSet already contains records. Use Update to modify an existing RRSet, or Delete to remove records.
+ * 
  * ## Import
  * 
  * For legacy Rrsets that were created without using `scope`, these Rrsets can be imported using the `id`, e.g.
@@ -68,33 +71,22 @@ import javax.annotation.Nullable;
  * ```sh
  * $ pulumi import oci:Dns/rrset:Rrset test_rrset &#34;zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}&#34;
  * ```
- * For Rrsets created using `scope` and `view_id`, these Rrsets can be imported using the `id`, e.g.
- * 
- * ```sh
- * $ pulumi import oci:Dns/rrset:Rrset test_rrset &#34;zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}&#34;
- * ```
- * skip adding `{view_id}` at the end if Rrset was created without `view_id`.
+ * Note: Legacy RRSet IDs that include scope/viewId remain accepted for import for backward compatibility; however, scope is no longer a supported argument on this resource.
  * 
  */
 @ResourceType(type="oci:Dns/rrset:Rrset")
 public class Rrset extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The OCID of the compartment the zone belongs to.
-     * 
-     * This parameter is deprecated and should be omitted.
+     * @deprecated
+     * Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
      * 
      */
+    @Deprecated /* Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release. */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
-    /**
-     * @return (Updatable) The OCID of the compartment the zone belongs to.
-     * 
-     * This parameter is deprecated and should be omitted.
-     * 
-     */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The target fully-qualified domain name (FQDN) within the target zone.
@@ -112,7 +104,6 @@ public class Rrset extends com.pulumi.resources.CustomResource {
     }
     /**
      * (Updatable)
-     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      * 
      */
     @Export(name="items", refs={List.class,RrsetItem.class}, tree="[0,1]")
@@ -120,7 +111,6 @@ public class Rrset extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable)
-     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      * 
      */
     public Output<List<RrsetItem>> items() {
@@ -141,16 +131,14 @@ public class Rrset extends com.pulumi.resources.CustomResource {
         return this.rtype;
     }
     /**
-     * Specifies to operate only on resources that have a matching DNS scope.
+     * @deprecated
+     * Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
      * 
      */
+    @Deprecated /* Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release. */
     @Export(name="scope", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> scope;
 
-    /**
-     * @return Specifies to operate only on resources that have a matching DNS scope.
-     * 
-     */
     public Output<Optional<String>> scope() {
         return Codegen.optional(this.scope);
     }

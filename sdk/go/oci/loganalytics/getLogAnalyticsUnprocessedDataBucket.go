@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -52,7 +52,7 @@ func GetLogAnalyticsUnprocessedDataBucket(ctx *pulumi.Context, args *GetLogAnaly
 
 // A collection of arguments for invoking getLogAnalyticsUnprocessedDataBucket.
 type GetLogAnalyticsUnprocessedDataBucketArgs struct {
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -83,7 +83,7 @@ func GetLogAnalyticsUnprocessedDataBucketOutput(ctx *pulumi.Context, args GetLog
 
 // A collection of arguments for invoking getLogAnalyticsUnprocessedDataBucket.
 type GetLogAnalyticsUnprocessedDataBucketOutputArgs struct {
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 }
 

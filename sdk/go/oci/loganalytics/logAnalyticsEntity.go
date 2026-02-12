@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +19,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -77,7 +77,7 @@ type LogAnalyticsEntity struct {
 	AreLogsCollected pulumi.BoolOutput `pulumi:"areLogsCollected"`
 	// The count of associated log sources for a given log analytics entity.
 	AssociatedSourcesCount pulumi.IntOutput `pulumi:"associatedSourcesCount"`
-	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+	// (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
 	CloudResourceId pulumi.StringOutput `pulumi:"cloudResourceId"`
 	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -103,7 +103,7 @@ type LogAnalyticsEntity struct {
 	Metadata LogAnalyticsEntityMetadataOutput `pulumi:"metadata"`
 	// (Updatable) Log analytics entity name.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
 	Properties pulumi.StringMapOutput `pulumi:"properties"`
@@ -167,7 +167,7 @@ type logAnalyticsEntityState struct {
 	AreLogsCollected *bool `pulumi:"areLogsCollected"`
 	// The count of associated log sources for a given log analytics entity.
 	AssociatedSourcesCount *int `pulumi:"associatedSourcesCount"`
-	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+	// (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
 	CloudResourceId *string `pulumi:"cloudResourceId"`
 	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -193,7 +193,7 @@ type logAnalyticsEntityState struct {
 	Metadata *LogAnalyticsEntityMetadata `pulumi:"metadata"`
 	// (Updatable) Log analytics entity name.
 	Name *string `pulumi:"name"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace *string `pulumi:"namespace"`
 	// (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
 	Properties map[string]string `pulumi:"properties"`
@@ -219,7 +219,7 @@ type LogAnalyticsEntityState struct {
 	AreLogsCollected pulumi.BoolPtrInput
 	// The count of associated log sources for a given log analytics entity.
 	AssociatedSourcesCount pulumi.IntPtrInput
-	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+	// (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
 	CloudResourceId pulumi.StringPtrInput
 	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringPtrInput
@@ -245,7 +245,7 @@ type LogAnalyticsEntityState struct {
 	Metadata LogAnalyticsEntityMetadataPtrInput
 	// (Updatable) Log analytics entity name.
 	Name pulumi.StringPtrInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringPtrInput
 	// (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
 	Properties pulumi.StringMapInput
@@ -271,7 +271,7 @@ func (LogAnalyticsEntityState) ElementType() reflect.Type {
 }
 
 type logAnalyticsEntityArgs struct {
-	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+	// (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
 	CloudResourceId *string `pulumi:"cloudResourceId"`
 	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
@@ -289,7 +289,7 @@ type logAnalyticsEntityArgs struct {
 	Metadata *LogAnalyticsEntityMetadata `pulumi:"metadata"`
 	// (Updatable) Log analytics entity name.
 	Name *string `pulumi:"name"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 	// (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
 	Properties map[string]string `pulumi:"properties"`
@@ -306,7 +306,7 @@ type logAnalyticsEntityArgs struct {
 
 // The set of arguments for constructing a LogAnalyticsEntity resource.
 type LogAnalyticsEntityArgs struct {
-	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+	// (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
 	CloudResourceId pulumi.StringPtrInput
 	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput
@@ -324,7 +324,7 @@ type LogAnalyticsEntityArgs struct {
 	Metadata LogAnalyticsEntityMetadataPtrInput
 	// (Updatable) Log analytics entity name.
 	Name pulumi.StringPtrInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput
 	// (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
 	Properties pulumi.StringMapInput
@@ -436,7 +436,7 @@ func (o LogAnalyticsEntityOutput) AssociatedSourcesCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.IntOutput { return v.AssociatedSourcesCount }).(pulumi.IntOutput)
 }
 
-// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+// (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
 func (o LogAnalyticsEntityOutput) CloudResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.CloudResourceId }).(pulumi.StringOutput)
 }
@@ -501,7 +501,7 @@ func (o LogAnalyticsEntityOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// The Logging Analytics namespace used for the request.
+// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 func (o LogAnalyticsEntityOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }

@@ -18,6 +18,21 @@ public final class NetworkFirewallPolicyServiceListState extends com.pulumi.reso
     public static final NetworkFirewallPolicyServiceListState Empty = new NetworkFirewallPolicyServiceListState();
 
     /**
+     * (Updatable) The description of the service list. This field can be used to add additional info.
+     * 
+     */
+    @Import(name="description")
+    private @Nullable Output<String> description;
+
+    /**
+     * @return (Updatable) The description of the service list. This field can be used to add additional info.
+     * 
+     */
+    public Optional<Output<String>> description() {
+        return Optional.ofNullable(this.description);
+    }
+
+    /**
      * Name of the service Group.
      * 
      */
@@ -101,6 +116,7 @@ public final class NetworkFirewallPolicyServiceListState extends com.pulumi.reso
     private NetworkFirewallPolicyServiceListState() {}
 
     private NetworkFirewallPolicyServiceListState(NetworkFirewallPolicyServiceListState $) {
+        this.description = $.description;
         this.name = $.name;
         this.networkFirewallPolicyId = $.networkFirewallPolicyId;
         this.parentResourceId = $.parentResourceId;
@@ -124,6 +140,27 @@ public final class NetworkFirewallPolicyServiceListState extends com.pulumi.reso
 
         public Builder(NetworkFirewallPolicyServiceListState defaults) {
             $ = new NetworkFirewallPolicyServiceListState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param description (Updatable) The description of the service list. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(@Nullable Output<String> description) {
+            $.description = description;
+            return this;
+        }
+
+        /**
+         * @param description (Updatable) The description of the service list. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(String description) {
+            return description(Output.of(description));
         }
 
         /**

@@ -46,6 +46,11 @@ public final class GetDesktopPoolsDesktopPoolCollectionItemDevicePolicy {
      * 
      */
     private Boolean isPrintingEnabled;
+    /**
+     * @return Indicates whether video input is enabled.
+     * 
+     */
+    private Boolean isVideoInputEnabled;
 
     private GetDesktopPoolsDesktopPoolCollectionItemDevicePolicy() {}
     /**
@@ -97,6 +102,13 @@ public final class GetDesktopPoolsDesktopPoolCollectionItemDevicePolicy {
     public Boolean isPrintingEnabled() {
         return this.isPrintingEnabled;
     }
+    /**
+     * @return Indicates whether video input is enabled.
+     * 
+     */
+    public Boolean isVideoInputEnabled() {
+        return this.isVideoInputEnabled;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -114,6 +126,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItemDevicePolicy {
         private Boolean isKeyboardEnabled;
         private Boolean isPointerEnabled;
         private Boolean isPrintingEnabled;
+        private Boolean isVideoInputEnabled;
         public Builder() {}
         public Builder(GetDesktopPoolsDesktopPoolCollectionItemDevicePolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -124,6 +137,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItemDevicePolicy {
     	      this.isKeyboardEnabled = defaults.isKeyboardEnabled;
     	      this.isPointerEnabled = defaults.isPointerEnabled;
     	      this.isPrintingEnabled = defaults.isPrintingEnabled;
+    	      this.isVideoInputEnabled = defaults.isVideoInputEnabled;
         }
 
         @CustomType.Setter
@@ -182,6 +196,14 @@ public final class GetDesktopPoolsDesktopPoolCollectionItemDevicePolicy {
             this.isPrintingEnabled = isPrintingEnabled;
             return this;
         }
+        @CustomType.Setter
+        public Builder isVideoInputEnabled(Boolean isVideoInputEnabled) {
+            if (isVideoInputEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDesktopPoolsDesktopPoolCollectionItemDevicePolicy", "isVideoInputEnabled");
+            }
+            this.isVideoInputEnabled = isVideoInputEnabled;
+            return this;
+        }
         public GetDesktopPoolsDesktopPoolCollectionItemDevicePolicy build() {
             final var _resultValue = new GetDesktopPoolsDesktopPoolCollectionItemDevicePolicy();
             _resultValue.audioMode = audioMode;
@@ -191,6 +213,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItemDevicePolicy {
             _resultValue.isKeyboardEnabled = isKeyboardEnabled;
             _resultValue.isPointerEnabled = isPointerEnabled;
             _resultValue.isPrintingEnabled = isPrintingEnabled;
+            _resultValue.isVideoInputEnabled = isVideoInputEnabled;
             return _resultValue;
         }
     }

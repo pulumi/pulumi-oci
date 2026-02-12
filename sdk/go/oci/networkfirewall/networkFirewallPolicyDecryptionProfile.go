@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +19,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -30,6 +30,7 @@ import (
 //				Name:                               pulumi.Any(networkFirewallPolicyDecryptionProfileName),
 //				NetworkFirewallPolicyId:            pulumi.Any(testNetworkFirewallPolicy.Id),
 //				Type:                               pulumi.Any(networkFirewallPolicyDecryptionProfileType),
+//				Description:                        pulumi.Any(networkFirewallPolicyDecryptionProfileDescription),
 //				AreCertificateExtensionsRestricted: pulumi.Any(networkFirewallPolicyDecryptionProfileAreCertificateExtensionsRestricted),
 //				IsAutoIncludeAltName:               pulumi.Any(networkFirewallPolicyDecryptionProfileIsAutoIncludeAltName),
 //				IsExpiredCertificateBlocked:        pulumi.Any(networkFirewallPolicyDecryptionProfileIsExpiredCertificateBlocked),
@@ -61,6 +62,8 @@ type NetworkFirewallPolicyDecryptionProfile struct {
 
 	// (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
 	AreCertificateExtensionsRestricted pulumi.BoolOutput `pulumi:"areCertificateExtensionsRestricted"`
+	// (Updatable) The description of the decryption profile. This field can be used to add additional info.
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
 	IsAutoIncludeAltName pulumi.BoolOutput `pulumi:"isAutoIncludeAltName"`
 	// (Updatable) Whether to block sessions if server's certificate is expired.
@@ -128,6 +131,8 @@ func GetNetworkFirewallPolicyDecryptionProfile(ctx *pulumi.Context,
 type networkFirewallPolicyDecryptionProfileState struct {
 	// (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
 	AreCertificateExtensionsRestricted *bool `pulumi:"areCertificateExtensionsRestricted"`
+	// (Updatable) The description of the decryption profile. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
 	IsAutoIncludeAltName *bool `pulumi:"isAutoIncludeAltName"`
 	// (Updatable) Whether to block sessions if server's certificate is expired.
@@ -160,6 +165,8 @@ type networkFirewallPolicyDecryptionProfileState struct {
 type NetworkFirewallPolicyDecryptionProfileState struct {
 	// (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
 	AreCertificateExtensionsRestricted pulumi.BoolPtrInput
+	// (Updatable) The description of the decryption profile. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
 	// (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
 	IsAutoIncludeAltName pulumi.BoolPtrInput
 	// (Updatable) Whether to block sessions if server's certificate is expired.
@@ -196,6 +203,8 @@ func (NetworkFirewallPolicyDecryptionProfileState) ElementType() reflect.Type {
 type networkFirewallPolicyDecryptionProfileArgs struct {
 	// (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
 	AreCertificateExtensionsRestricted *bool `pulumi:"areCertificateExtensionsRestricted"`
+	// (Updatable) The description of the decryption profile. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
 	IsAutoIncludeAltName *bool `pulumi:"isAutoIncludeAltName"`
 	// (Updatable) Whether to block sessions if server's certificate is expired.
@@ -227,6 +236,8 @@ type networkFirewallPolicyDecryptionProfileArgs struct {
 type NetworkFirewallPolicyDecryptionProfileArgs struct {
 	// (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
 	AreCertificateExtensionsRestricted pulumi.BoolPtrInput
+	// (Updatable) The description of the decryption profile. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
 	// (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
 	IsAutoIncludeAltName pulumi.BoolPtrInput
 	// (Updatable) Whether to block sessions if server's certificate is expired.
@@ -346,6 +357,11 @@ func (o NetworkFirewallPolicyDecryptionProfileOutput) AreCertificateExtensionsRe
 	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolOutput {
 		return v.AreCertificateExtensionsRestricted
 	}).(pulumi.BoolOutput)
+}
+
+// (Updatable) The description of the decryption profile. This field can be used to add additional info.
+func (o NetworkFirewallPolicyDecryptionProfileOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.

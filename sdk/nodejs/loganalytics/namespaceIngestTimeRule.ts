@@ -116,7 +116,7 @@ export class NamespaceIngestTimeRule extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly isEnabled: pulumi.Output<boolean>;
     /**
-     * The Logging Analytics namespace used for the request. 
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
      *
      * ** IMPORTANT **
@@ -236,7 +236,7 @@ export interface NamespaceIngestTimeRuleState {
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
-     * The Logging Analytics namespace used for the request. 
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
      *
      * ** IMPORTANT **
@@ -290,7 +290,7 @@ export interface NamespaceIngestTimeRuleArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The Logging Analytics namespace used for the request. 
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
      *
      * ** IMPORTANT **

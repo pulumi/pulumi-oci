@@ -45,11 +45,27 @@ public final class NamespaceStorageArchivalConfigArchivingConfigurationArgs exte
         return Optional.ofNullable(this.archivalStorageDuration);
     }
 
+    /**
+     * (Updatable) end time of the oldest active CoreGroup
+     * 
+     */
+    @Import(name="timeOldestActiveBucketEnded")
+    private @Nullable Output<String> timeOldestActiveBucketEnded;
+
+    /**
+     * @return (Updatable) end time of the oldest active CoreGroup
+     * 
+     */
+    public Optional<Output<String>> timeOldestActiveBucketEnded() {
+        return Optional.ofNullable(this.timeOldestActiveBucketEnded);
+    }
+
     private NamespaceStorageArchivalConfigArchivingConfigurationArgs() {}
 
     private NamespaceStorageArchivalConfigArchivingConfigurationArgs(NamespaceStorageArchivalConfigArchivingConfigurationArgs $) {
         this.activeStorageDuration = $.activeStorageDuration;
         this.archivalStorageDuration = $.archivalStorageDuration;
+        this.timeOldestActiveBucketEnded = $.timeOldestActiveBucketEnded;
     }
 
     public static Builder builder() {
@@ -110,6 +126,27 @@ public final class NamespaceStorageArchivalConfigArchivingConfigurationArgs exte
          */
         public Builder archivalStorageDuration(String archivalStorageDuration) {
             return archivalStorageDuration(Output.of(archivalStorageDuration));
+        }
+
+        /**
+         * @param timeOldestActiveBucketEnded (Updatable) end time of the oldest active CoreGroup
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeOldestActiveBucketEnded(@Nullable Output<String> timeOldestActiveBucketEnded) {
+            $.timeOldestActiveBucketEnded = timeOldestActiveBucketEnded;
+            return this;
+        }
+
+        /**
+         * @param timeOldestActiveBucketEnded (Updatable) end time of the oldest active CoreGroup
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeOldestActiveBucketEnded(String timeOldestActiveBucketEnded) {
+            return timeOldestActiveBucketEnded(Output.of(timeOldestActiveBucketEnded));
         }
 
         public NamespaceStorageArchivalConfigArchivingConfigurationArgs build() {

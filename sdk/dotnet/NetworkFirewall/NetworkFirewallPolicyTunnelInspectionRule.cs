@@ -31,6 +31,7 @@ namespace Pulumi.Oci.NetworkFirewall
     ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
     ///         Protocol = networkFirewallPolicyTunnelInspectionRuleProtocol,
     ///         Action = networkFirewallPolicyTunnelInspectionRuleAction,
+    ///         Description = networkFirewallPolicyTunnelInspectionRuleDescription,
     ///         Position = new Oci.NetworkFirewall.Inputs.NetworkFirewallPolicyTunnelInspectionRulePositionArgs
     ///         {
     ///             AfterRule = networkFirewallPolicyTunnelInspectionRulePositionAfterRule,
@@ -69,6 +70,12 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         [Output("condition")]
         public Output<Outputs.NetworkFirewallPolicyTunnelInspectionRuleCondition> Condition { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
+        /// </summary>
+        [Output("description")]
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// Name for the Tunnel Inspection Rule, must be unique within the policy.
@@ -178,6 +185,12 @@ namespace Pulumi.Oci.NetworkFirewall
         public Input<Inputs.NetworkFirewallPolicyTunnelInspectionRuleConditionArgs> Condition { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        /// <summary>
         /// Name for the Tunnel Inspection Rule, must be unique within the policy.
         /// </summary>
         [Input("name")]
@@ -233,6 +246,12 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         [Input("condition")]
         public Input<Inputs.NetworkFirewallPolicyTunnelInspectionRuleConditionGetArgs>? Condition { get; set; }
+
+        /// <summary>
+        /// (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
 
         /// <summary>
         /// Name for the Tunnel Inspection Rule, must be unique within the policy.

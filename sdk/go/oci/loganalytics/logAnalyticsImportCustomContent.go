@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +19,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -62,7 +62,7 @@ type LogAnalyticsImportCustomContent struct {
 	ImportCustomContentFile pulumi.StringOutput `pulumi:"importCustomContentFile"`
 	// A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
 	IsOverwrite pulumi.BoolOutput `pulumi:"isOverwrite"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// The parser names.
 	ParserNames pulumi.StringArrayOutput `pulumi:"parserNames"`
@@ -121,7 +121,7 @@ type logAnalyticsImportCustomContentState struct {
 	ImportCustomContentFile *string `pulumi:"importCustomContentFile"`
 	// A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
 	IsOverwrite *bool `pulumi:"isOverwrite"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace *string `pulumi:"namespace"`
 	// The parser names.
 	ParserNames []string `pulumi:"parserNames"`
@@ -145,7 +145,7 @@ type LogAnalyticsImportCustomContentState struct {
 	ImportCustomContentFile pulumi.StringPtrInput
 	// A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
 	IsOverwrite pulumi.BoolPtrInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringPtrInput
 	// The parser names.
 	ParserNames pulumi.StringArrayInput
@@ -167,7 +167,7 @@ type logAnalyticsImportCustomContentArgs struct {
 	ImportCustomContentFile string `pulumi:"importCustomContentFile"`
 	// A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
 	IsOverwrite *bool `pulumi:"isOverwrite"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -182,7 +182,7 @@ type LogAnalyticsImportCustomContentArgs struct {
 	ImportCustomContentFile pulumi.StringInput
 	// A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
 	IsOverwrite pulumi.BoolPtrInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput
 }
 
@@ -308,7 +308,7 @@ func (o LogAnalyticsImportCustomContentOutput) IsOverwrite() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogAnalyticsImportCustomContent) pulumi.BoolOutput { return v.IsOverwrite }).(pulumi.BoolOutput)
 }
 
-// The Logging Analytics namespace used for the request.
+// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 func (o LogAnalyticsImportCustomContentOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsImportCustomContent) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }

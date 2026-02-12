@@ -111,8 +111,8 @@ def get_namespace_field_usage(field_name: Optional[_builtins.str] = None,
     ```
 
 
-    :param _builtins.str field_name: The field name.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str field_name: The field name. Field name can be obtained by running 'oci log-analytics field list-fields --namespace-name <namespace>'. The json output 'name' parameter value contains the field name.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['fieldName'] = field_name
@@ -145,8 +145,8 @@ def get_namespace_field_usage_output(field_name: Optional[pulumi.Input[_builtins
     ```
 
 
-    :param _builtins.str field_name: The field name.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str field_name: The field name. Field name can be obtained by running 'oci log-analytics field list-fields --namespace-name <namespace>'. The json output 'name' parameter value contains the field name.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['fieldName'] = field_name

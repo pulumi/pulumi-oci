@@ -43,7 +43,7 @@ public final class GetNamespaceRulesResult {
      */
     private List<GetNamespaceRulesRuleSummaryCollection> ruleSummaryCollections;
     /**
-     * @return The current state of the logging analytics rule.
+     * @return The current state of the Log Analytics rule.
      * 
      */
     private @Nullable String state;
@@ -96,7 +96,7 @@ public final class GetNamespaceRulesResult {
         return this.ruleSummaryCollections;
     }
     /**
-     * @return The current state of the logging analytics rule.
+     * @return The current state of the Log Analytics rule.
      * 
      */
     public Optional<String> state() {

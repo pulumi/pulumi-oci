@@ -35,12 +35,15 @@ namespace Pulumi.Oci.Dns
     ///                 Ttl = rrsetItemsTtl,
     ///             },
     ///         },
-    ///         Scope = rrsetScope,
     ///         ViewId = testView.Id,
     ///     });
     /// 
     /// });
     /// ```
+    /// 
+    /// ## Behavior
+    /// 
+    /// - Create returns HTTP 409 (Conflict) if the target RRSet already contains records. Use Update to modify an existing RRSet, or Delete to remove records.
     /// 
     /// ## Import
     /// 
@@ -49,23 +52,13 @@ namespace Pulumi.Oci.Dns
     /// ```sh
     /// $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}"
     /// ```
-    /// For Rrsets created using `scope` and `view_id`, these Rrsets can be imported using the `id`, e.g.
-    /// 
-    /// ```sh
-    /// $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}"
-    /// ```
-    /// skip adding `{view_id}` at the end if Rrset was created without `view_id`.
+    /// Note: Legacy RRSet IDs that include scope/viewId remain accepted for import for backward compatibility; however, scope is no longer a supported argument on this resource.
     /// </summary>
     [OciResourceType("oci:Dns/rrset:Rrset")]
     public partial class Rrset : global::Pulumi.CustomResource
     {
-        /// <summary>
-        /// (Updatable) The OCID of the compartment the zone belongs to.
-        /// 
-        /// This parameter is deprecated and should be omitted.
-        /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The target fully-qualified domain name (FQDN) within the target zone.
@@ -74,8 +67,7 @@ namespace Pulumi.Oci.Dns
         public Output<string> Domain { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) 
-        /// **NOTE** Omitting `Items` at time of create will delete any existing records in the RRSet
+        /// (Updatable)
         /// </summary>
         [Output("items")]
         public Output<ImmutableArray<Outputs.RrsetItem>> Items { get; private set; } = null!;
@@ -86,9 +78,6 @@ namespace Pulumi.Oci.Dns
         [Output("rtype")]
         public Output<string> Rtype { get; private set; } = null!;
 
-        /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope.
-        /// </summary>
         [Output("scope")]
         public Output<string?> Scope { get; private set; } = null!;
 
@@ -154,11 +143,6 @@ namespace Pulumi.Oci.Dns
 
     public sealed class RrsetArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// (Updatable) The OCID of the compartment the zone belongs to.
-        /// 
-        /// This parameter is deprecated and should be omitted.
-        /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
@@ -172,8 +156,7 @@ namespace Pulumi.Oci.Dns
         private InputList<Inputs.RrsetItemArgs>? _items;
 
         /// <summary>
-        /// (Updatable) 
-        /// **NOTE** Omitting `Items` at time of create will delete any existing records in the RRSet
+        /// (Updatable)
         /// </summary>
         public InputList<Inputs.RrsetItemArgs> Items
         {
@@ -187,9 +170,6 @@ namespace Pulumi.Oci.Dns
         [Input("rtype", required: true)]
         public Input<string> Rtype { get; set; } = null!;
 
-        /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope.
-        /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
 
@@ -217,11 +197,6 @@ namespace Pulumi.Oci.Dns
 
     public sealed class RrsetState : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// (Updatable) The OCID of the compartment the zone belongs to.
-        /// 
-        /// This parameter is deprecated and should be omitted.
-        /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
@@ -235,8 +210,7 @@ namespace Pulumi.Oci.Dns
         private InputList<Inputs.RrsetItemGetArgs>? _items;
 
         /// <summary>
-        /// (Updatable) 
-        /// **NOTE** Omitting `Items` at time of create will delete any existing records in the RRSet
+        /// (Updatable)
         /// </summary>
         public InputList<Inputs.RrsetItemGetArgs> Items
         {
@@ -250,9 +224,6 @@ namespace Pulumi.Oci.Dns
         [Input("rtype")]
         public Input<string>? Rtype { get; set; }
 
-        /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope.
-        /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
 

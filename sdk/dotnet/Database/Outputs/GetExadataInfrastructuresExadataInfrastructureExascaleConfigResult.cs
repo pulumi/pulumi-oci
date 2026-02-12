@@ -18,18 +18,32 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int AvailableStorageInGbs;
         /// <summary>
+        /// Available storage size for VM storage on Exascale in GBs.
+        /// </summary>
+        public readonly int AvailableVmStorageInGbs;
+        /// <summary>
         /// Storage size needed for Exascale in GBs.
         /// </summary>
         public readonly int TotalStorageInGbs;
+        /// <summary>
+        /// Storage size needed for VM storage on Exascale in GBs.
+        /// </summary>
+        public readonly int TotalVmStorageInGbs;
 
         [OutputConstructor]
         private GetExadataInfrastructuresExadataInfrastructureExascaleConfigResult(
             int availableStorageInGbs,
 
-            int totalStorageInGbs)
+            int availableVmStorageInGbs,
+
+            int totalStorageInGbs,
+
+            int totalVmStorageInGbs)
         {
             AvailableStorageInGbs = availableStorageInGbs;
+            AvailableVmStorageInGbs = availableVmStorageInGbs;
             TotalStorageInGbs = totalStorageInGbs;
+            TotalVmStorageInGbs = totalVmStorageInGbs;
         }
     }
 }

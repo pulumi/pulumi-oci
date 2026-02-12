@@ -130,7 +130,7 @@ export interface GetLogAnalyticsEntitiesArgs {
      */
     nameContains?: string;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: string;
     /**
@@ -320,7 +320,7 @@ export interface GetLogAnalyticsEntitiesOutputArgs {
      */
     nameContains?: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
     /**

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
  *
- * Get NAT Rule by the given name in the context of network firewall policy.
+ * Get a [NAT rule](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) by the given name in the context of Network Firewall policy.
  *
  * ## Example Usage
  *
@@ -36,7 +36,7 @@ export function getNetworkFirewallPolicyNatRule(args: GetNetworkFirewallPolicyNa
  */
 export interface GetNetworkFirewallPolicyNatRuleArgs {
     /**
-     * Unique identifier for NAT Rules in the network firewall policy.
+     * Unique identifier for NAT rules in the Network Firewall policy.
      */
     natRuleName: string;
     /**
@@ -55,7 +55,7 @@ export interface GetNetworkFirewallPolicyNatRuleResult {
      */
     readonly action: string;
     /**
-     * Match criteria used in NAT Rule used on the firewall policy.
+     * Match criteria used in NAT rule used on the firewall policy.
      */
     readonly conditions: outputs.NetworkFirewall.GetNetworkFirewallPolicyNatRuleCondition[];
     /**
@@ -70,7 +70,7 @@ export interface GetNetworkFirewallPolicyNatRuleResult {
     readonly natRuleName: string;
     readonly networkFirewallPolicyId: string;
     /**
-     * OCID of the Network Firewall Policy this decryption profile belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
      */
     readonly parentResourceId: string;
     /**
@@ -90,7 +90,7 @@ export interface GetNetworkFirewallPolicyNatRuleResult {
 /**
  * This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
  *
- * Get NAT Rule by the given name in the context of network firewall policy.
+ * Get a [NAT rule](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) by the given name in the context of Network Firewall policy.
  *
  * ## Example Usage
  *
@@ -117,7 +117,7 @@ export function getNetworkFirewallPolicyNatRuleOutput(args: GetNetworkFirewallPo
  */
 export interface GetNetworkFirewallPolicyNatRuleOutputArgs {
     /**
-     * Unique identifier for NAT Rules in the network firewall policy.
+     * Unique identifier for NAT rules in the Network Firewall policy.
      */
     natRuleName: pulumi.Input<string>;
     /**

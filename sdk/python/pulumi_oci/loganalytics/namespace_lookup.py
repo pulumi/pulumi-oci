@@ -38,7 +38,7 @@ class NamespaceLookupArgs:
         """
         The set of arguments for constructing a NamespaceLookup resource.
         :param pulumi.Input[_builtins.str] lookup_name: The name of the lookup to operate on.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[_builtins.str] register_lookup_file: Path to the file containing data for lookup creation.
         :param pulumi.Input[_builtins.str] type: The lookup type. Valid values are Lookup, Dictionary or Module.
                
@@ -97,7 +97,7 @@ class NamespaceLookupArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -303,7 +303,7 @@ class _NamespaceLookupState:
         :param pulumi.Input[_builtins.str] lookup_reference: The lookup reference as an integer.
         :param pulumi.Input[_builtins.str] lookup_reference_string: The lookup reference as a string.
         :param pulumi.Input[_builtins.str] max_matches: (Updatable) The maximum number of matches.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[Sequence[pulumi.Input['NamespaceLookupReferringSourceArgs']]] referring_sources: AutoLookups
         :param pulumi.Input[_builtins.str] register_lookup_file: Path to the file containing data for lookup creation.
         :param pulumi.Input[Sequence[pulumi.Input['NamespaceLookupStatusSummaryArgs']]] status_summaries: StatusSummary
@@ -597,7 +597,7 @@ class _NamespaceLookupState:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -754,7 +754,7 @@ class NamespaceLookup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_hidden: A flag indicating whether or not the new lookup should be hidden.
         :param pulumi.Input[_builtins.str] lookup_name: The name of the lookup to operate on.
         :param pulumi.Input[_builtins.str] max_matches: (Updatable) The maximum number of matches.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[_builtins.str] register_lookup_file: Path to the file containing data for lookup creation.
         :param pulumi.Input[_builtins.str] type: The lookup type. Valid values are Lookup, Dictionary or Module.
                
@@ -950,7 +950,7 @@ class NamespaceLookup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lookup_reference: The lookup reference as an integer.
         :param pulumi.Input[_builtins.str] lookup_reference_string: The lookup reference as a string.
         :param pulumi.Input[_builtins.str] max_matches: (Updatable) The maximum number of matches.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[Sequence[pulumi.Input[Union['NamespaceLookupReferringSourceArgs', 'NamespaceLookupReferringSourceArgsDict']]]] referring_sources: AutoLookups
         :param pulumi.Input[_builtins.str] register_lookup_file: Path to the file containing data for lookup creation.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NamespaceLookupStatusSummaryArgs', 'NamespaceLookupStatusSummaryArgsDict']]]] status_summaries: StatusSummary
@@ -1148,7 +1148,7 @@ class NamespaceLookup(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 

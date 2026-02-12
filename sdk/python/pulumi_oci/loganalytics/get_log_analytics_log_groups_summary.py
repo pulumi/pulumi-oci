@@ -96,7 +96,7 @@ def get_log_analytics_log_groups_summary(compartment_id: Optional[_builtins.str]
 
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -129,7 +129,7 @@ def get_log_analytics_log_groups_summary_output(compartment_id: Optional[pulumi.
 
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

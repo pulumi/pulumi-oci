@@ -7,13 +7,13 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
 //
-// # This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
+// # This API gets the namespace details of a tenancy already onboarded in Log Analytics Application
 //
 // ## Example Usage
 //
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -52,13 +52,13 @@ func LookupNamespace(ctx *pulumi.Context, args *LookupNamespaceArgs, opts ...pul
 
 // A collection of arguments for invoking getNamespace.
 type LookupNamespaceArgs struct {
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 }
 
 // A collection of values returned by getNamespace.
 type LookupNamespaceResult struct {
-	// The is the tenancy ID
+	// This is the tenancy ID
 	CompartmentId string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
@@ -67,11 +67,13 @@ type LookupNamespaceResult struct {
 	// This indicates if the tenancy is data ever ingested
 	IsDataEverIngested bool `pulumi:"isDataEverIngested"`
 	IsLogsetEnabled    bool `pulumi:"isLogsetEnabled"`
-	// This indicates if the tenancy is onboarded to Logging Analytics
+	// This indicates if the tenancy is onboarded to Log Analytics
 	IsOnboarded bool `pulumi:"isOnboarded"`
 	// This is the namespace name of a tenancy
-	// * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
 	Namespace string `pulumi:"namespace"`
+	// The current state of the compartment.
+	// * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
+	State string `pulumi:"state"`
 }
 
 func LookupNamespaceOutput(ctx *pulumi.Context, args LookupNamespaceOutputArgs, opts ...pulumi.InvokeOption) LookupNamespaceResultOutput {
@@ -85,7 +87,7 @@ func LookupNamespaceOutput(ctx *pulumi.Context, args LookupNamespaceOutputArgs, 
 
 // A collection of arguments for invoking getNamespace.
 type LookupNamespaceOutputArgs struct {
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 }
 
@@ -108,7 +110,7 @@ func (o LookupNamespaceResultOutput) ToLookupNamespaceResultOutputWithContext(ct
 	return o
 }
 
-// The is the tenancy ID
+// This is the tenancy ID
 func (o LookupNamespaceResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNamespaceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -132,15 +134,20 @@ func (o LookupNamespaceResultOutput) IsLogsetEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupNamespaceResult) bool { return v.IsLogsetEnabled }).(pulumi.BoolOutput)
 }
 
-// This indicates if the tenancy is onboarded to Logging Analytics
+// This indicates if the tenancy is onboarded to Log Analytics
 func (o LookupNamespaceResultOutput) IsOnboarded() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupNamespaceResult) bool { return v.IsOnboarded }).(pulumi.BoolOutput)
 }
 
 // This is the namespace name of a tenancy
-// * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
 func (o LookupNamespaceResultOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNamespaceResult) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The current state of the compartment.
+// * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
+func (o LookupNamespaceResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNamespaceResult) string { return v.State }).(pulumi.StringOutput)
 }
 
 func init() {

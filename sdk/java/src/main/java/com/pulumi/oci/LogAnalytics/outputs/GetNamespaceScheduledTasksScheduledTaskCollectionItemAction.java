@@ -24,6 +24,10 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemAction {
      * 
      */
     private String dataType;
+    /**
+     * @return Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+     * 
+     */
     private List<GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction> metricExtractions;
     /**
      * @return the compartment OCID under which the data will be purged
@@ -71,6 +75,10 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemAction {
     public String dataType() {
         return this.dataType;
     }
+    /**
+     * @return Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+     * 
+     */
     public List<GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction> metricExtractions() {
         return this.metricExtractions;
     }

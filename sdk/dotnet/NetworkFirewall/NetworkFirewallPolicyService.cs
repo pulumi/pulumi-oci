@@ -23,6 +23,7 @@ namespace Pulumi.Oci.NetworkFirewall
     ///     var testNetworkFirewallPolicyService = new Oci.NetworkFirewall.NetworkFirewallPolicyService("test_network_firewall_policy_service", new()
     ///     {
     ///         Name = networkFirewallPolicyServiceName,
+    ///         Type = networkFirewallPolicyServiceType,
     ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
     ///         PortRanges = new[]
     ///         {
@@ -32,7 +33,7 @@ namespace Pulumi.Oci.NetworkFirewall
     ///                 MaximumPort = networkFirewallPolicyServicePortRangesMaximumPort,
     ///             },
     ///         },
-    ///         Type = networkFirewallPolicyServiceType,
+    ///         Description = networkFirewallPolicyServiceDescription,
     ///     });
     /// 
     /// });
@@ -49,6 +50,12 @@ namespace Pulumi.Oci.NetworkFirewall
     [OciResourceType("oci:NetworkFirewall/networkFirewallPolicyService:NetworkFirewallPolicyService")]
     public partial class NetworkFirewallPolicyService : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// (Updatable) The description of the service. This field can be used to add additional info.
+        /// </summary>
+        [Output("description")]
+        public Output<string?> Description { get; private set; } = null!;
+
         /// <summary>
         /// Name of the service
         /// </summary>
@@ -130,6 +137,12 @@ namespace Pulumi.Oci.NetworkFirewall
     public sealed class NetworkFirewallPolicyServiceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) The description of the service. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        /// <summary>
         /// Name of the service
         /// </summary>
         [Input("name")]
@@ -171,6 +184,12 @@ namespace Pulumi.Oci.NetworkFirewall
 
     public sealed class NetworkFirewallPolicyServiceState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) The description of the service. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
         /// <summary>
         /// Name of the service
         /// </summary>

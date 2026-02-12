@@ -188,7 +188,7 @@ def get_namespace_ingest_time_rules(compartment_id: Optional[_builtins.str] = No
     :param _builtins.str display_name: A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
     :param _builtins.str field_name: The field name used for filtering. Only rules using the specified field name will be returned.
     :param _builtins.str field_value: The field value used for filtering. Only rules using the specified field value will be returned.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
     """
     __args__ = dict()
@@ -249,7 +249,7 @@ def get_namespace_ingest_time_rules_output(compartment_id: Optional[pulumi.Input
     :param _builtins.str display_name: A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
     :param _builtins.str field_name: The field name used for filtering. Only rules using the specified field name will be returned.
     :param _builtins.str field_value: The field value used for filtering. Only rules using the specified field value will be returned.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
     """
     __args__ = dict()

@@ -17,6 +17,11 @@ public final class GetNetworkFirewallPolicyAddressListResult {
      * 
      */
     private List<String> addresses;
+    /**
+     * @return The description of the address list. This field can be used to add additional info.
+     * 
+     */
+    private String description;
     private String id;
     /**
      * @return Unique name to identify the group of addresses to be used in the policy rules.
@@ -47,6 +52,13 @@ public final class GetNetworkFirewallPolicyAddressListResult {
      */
     public List<String> addresses() {
         return this.addresses;
+    }
+    /**
+     * @return The description of the address list. This field can be used to add additional info.
+     * 
+     */
+    public String description() {
+        return this.description;
     }
     public String id() {
         return this.id;
@@ -93,6 +105,7 @@ public final class GetNetworkFirewallPolicyAddressListResult {
     @CustomType.Builder
     public static final class Builder {
         private List<String> addresses;
+        private String description;
         private String id;
         private String name;
         private String networkFirewallPolicyId;
@@ -103,6 +116,7 @@ public final class GetNetworkFirewallPolicyAddressListResult {
         public Builder(GetNetworkFirewallPolicyAddressListResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.addresses = defaults.addresses;
+    	      this.description = defaults.description;
     	      this.id = defaults.id;
     	      this.name = defaults.name;
     	      this.networkFirewallPolicyId = defaults.networkFirewallPolicyId;
@@ -121,6 +135,14 @@ public final class GetNetworkFirewallPolicyAddressListResult {
         }
         public Builder addresses(String... addresses) {
             return addresses(List.of(addresses));
+        }
+        @CustomType.Setter
+        public Builder description(String description) {
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyAddressListResult", "description");
+            }
+            this.description = description;
+            return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
@@ -173,6 +195,7 @@ public final class GetNetworkFirewallPolicyAddressListResult {
         public GetNetworkFirewallPolicyAddressListResult build() {
             final var _resultValue = new GetNetworkFirewallPolicyAddressListResult();
             _resultValue.addresses = addresses;
+            _resultValue.description = description;
             _resultValue.id = id;
             _resultValue.name = name;
             _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;

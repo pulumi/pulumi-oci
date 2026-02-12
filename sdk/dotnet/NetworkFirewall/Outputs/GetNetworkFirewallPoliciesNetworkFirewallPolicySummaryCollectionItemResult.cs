@@ -26,6 +26,10 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
+        /// The description of the network firewall policy. This field can be used to add additional info.
+        /// </summary>
+        public readonly string Description;
+        /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
         public readonly string DisplayName;
@@ -66,6 +70,8 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
             ImmutableDictionary<string, string> definedTags,
 
+            string description,
+
             string displayName,
 
             ImmutableDictionary<string, string> freeformTags,
@@ -85,6 +91,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
             AttachedNetworkFirewallCount = attachedNetworkFirewallCount;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
+            Description = description;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;

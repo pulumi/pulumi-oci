@@ -358,7 +358,7 @@ def get_namespace_lookup(lookup_name: Optional[_builtins.str] = None,
 
 
     :param _builtins.str lookup_name: The name of the lookup to operate on.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['lookupName'] = lookup_name
@@ -413,7 +413,7 @@ def get_namespace_lookup_output(lookup_name: Optional[pulumi.Input[_builtins.str
 
 
     :param _builtins.str lookup_name: The name of the lookup to operate on.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['lookupName'] = lookup_name

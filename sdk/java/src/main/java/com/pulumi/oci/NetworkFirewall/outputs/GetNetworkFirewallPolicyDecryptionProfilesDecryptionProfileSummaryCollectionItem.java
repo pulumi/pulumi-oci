@@ -8,6 +8,8 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem {
@@ -16,6 +18,11 @@ public final class GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSu
      * 
      */
     private Boolean areCertificateExtensionsRestricted;
+    /**
+     * @return The description of the decryption profile. This field can be used to add additional info.
+     * 
+     */
+    private @Nullable String description;
     /**
      * @return Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
      * 
@@ -84,6 +91,13 @@ public final class GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSu
      */
     public Boolean areCertificateExtensionsRestricted() {
         return this.areCertificateExtensionsRestricted;
+    }
+    /**
+     * @return The description of the decryption profile. This field can be used to add additional info.
+     * 
+     */
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
@@ -180,6 +194,7 @@ public final class GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSu
     @CustomType.Builder
     public static final class Builder {
         private Boolean areCertificateExtensionsRestricted;
+        private @Nullable String description;
         private Boolean isAutoIncludeAltName;
         private Boolean isExpiredCertificateBlocked;
         private Boolean isOutOfCapacityBlocked;
@@ -196,6 +211,7 @@ public final class GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSu
         public Builder(GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.areCertificateExtensionsRestricted = defaults.areCertificateExtensionsRestricted;
+    	      this.description = defaults.description;
     	      this.isAutoIncludeAltName = defaults.isAutoIncludeAltName;
     	      this.isExpiredCertificateBlocked = defaults.isExpiredCertificateBlocked;
     	      this.isOutOfCapacityBlocked = defaults.isOutOfCapacityBlocked;
@@ -216,6 +232,12 @@ public final class GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSu
               throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem", "areCertificateExtensionsRestricted");
             }
             this.areCertificateExtensionsRestricted = areCertificateExtensionsRestricted;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder description(@Nullable String description) {
+
+            this.description = description;
             return this;
         }
         @CustomType.Setter
@@ -317,6 +339,7 @@ public final class GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSu
         public GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem build() {
             final var _resultValue = new GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem();
             _resultValue.areCertificateExtensionsRestricted = areCertificateExtensionsRestricted;
+            _resultValue.description = description;
             _resultValue.isAutoIncludeAltName = isAutoIncludeAltName;
             _resultValue.isExpiredCertificateBlocked = isExpiredCertificateBlocked;
             _resultValue.isOutOfCapacityBlocked = isOutOfCapacityBlocked;

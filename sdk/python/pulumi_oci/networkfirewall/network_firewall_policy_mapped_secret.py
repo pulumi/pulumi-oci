@@ -24,6 +24,7 @@ class NetworkFirewallPolicyMappedSecretArgs:
                  type: pulumi.Input[_builtins.str],
                  vault_secret_id: pulumi.Input[_builtins.str],
                  version_number: pulumi.Input[_builtins.int],
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyMappedSecret resource.
@@ -38,6 +39,7 @@ class NetworkFirewallPolicyMappedSecretArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the mapped secret. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Unique name to identify the group of urls to be used in the policy rules.
         """
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
@@ -45,6 +47,8 @@ class NetworkFirewallPolicyMappedSecretArgs:
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vault_secret_id", vault_secret_id)
         pulumi.set(__self__, "version_number", version_number)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -116,6 +120,18 @@ class NetworkFirewallPolicyMappedSecretArgs:
 
     @_builtins.property
     @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The description of the mapped secret. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Unique name to identify the group of urls to be used in the policy rules.
@@ -130,6 +146,7 @@ class NetworkFirewallPolicyMappedSecretArgs:
 @pulumi.input_type
 class _NetworkFirewallPolicyMappedSecretState:
     def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -139,6 +156,7 @@ class _NetworkFirewallPolicyMappedSecretState:
                  version_number: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyMappedSecret resources.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the mapped secret. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Unique name to identify the group of urls to be used in the policy rules.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this Mapped Secret belongs to.
@@ -153,6 +171,8 @@ class _NetworkFirewallPolicyMappedSecretState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if network_firewall_policy_id is not None:
@@ -167,6 +187,18 @@ class _NetworkFirewallPolicyMappedSecretState:
             pulumi.set(__self__, "vault_secret_id", vault_secret_id)
         if version_number is not None:
             pulumi.set(__self__, "version_number", version_number)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The description of the mapped secret. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
@@ -265,6 +297,7 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  source: Optional[pulumi.Input[_builtins.str]] = None,
@@ -285,7 +318,8 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
             source=network_firewall_policy_mapped_secret_source,
             type=network_firewall_policy_mapped_secret_type,
             vault_secret_id=test_secret["id"],
-            version_number=network_firewall_policy_mapped_secret_version_number)
+            version_number=network_firewall_policy_mapped_secret_version_number,
+            description=network_firewall_policy_mapped_secret_description)
         ```
 
         ## Import
@@ -298,6 +332,7 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the mapped secret. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Unique name to identify the group of urls to be used in the policy rules.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] source: Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
@@ -330,7 +365,8 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
             source=network_firewall_policy_mapped_secret_source,
             type=network_firewall_policy_mapped_secret_type,
             vault_secret_id=test_secret["id"],
-            version_number=network_firewall_policy_mapped_secret_version_number)
+            version_number=network_firewall_policy_mapped_secret_version_number,
+            description=network_firewall_policy_mapped_secret_description)
         ```
 
         ## Import
@@ -356,6 +392,7 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  source: Optional[pulumi.Input[_builtins.str]] = None,
@@ -371,6 +408,7 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = NetworkFirewallPolicyMappedSecretArgs.__new__(NetworkFirewallPolicyMappedSecretArgs)
 
+            __props__.__dict__["description"] = description
             __props__.__dict__["name"] = name
             if network_firewall_policy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'network_firewall_policy_id'")
@@ -398,6 +436,7 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
             network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
             parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -412,6 +451,7 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the mapped secret. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Unique name to identify the group of urls to be used in the policy rules.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this Mapped Secret belongs to.
@@ -430,6 +470,7 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
 
         __props__ = _NetworkFirewallPolicyMappedSecretState.__new__(_NetworkFirewallPolicyMappedSecretState)
 
+        __props__.__dict__["description"] = description
         __props__.__dict__["name"] = name
         __props__.__dict__["network_firewall_policy_id"] = network_firewall_policy_id
         __props__.__dict__["parent_resource_id"] = parent_resource_id
@@ -438,6 +479,14 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
         __props__.__dict__["vault_secret_id"] = vault_secret_id
         __props__.__dict__["version_number"] = version_number
         return NetworkFirewallPolicyMappedSecret(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Updatable) The description of the mapped secret. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter

@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +19,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -33,6 +33,7 @@ import (
 //				Type:                    pulumi.Any(networkFirewallPolicyMappedSecretType),
 //				VaultSecretId:           pulumi.Any(testSecret.Id),
 //				VersionNumber:           pulumi.Any(networkFirewallPolicyMappedSecretVersionNumber),
+//				Description:             pulumi.Any(networkFirewallPolicyMappedSecretDescription),
 //			})
 //			if err != nil {
 //				return err
@@ -53,6 +54,8 @@ import (
 type NetworkFirewallPolicyMappedSecret struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) The description of the mapped secret. This field can be used to add additional info.
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// Unique name to identify the group of urls to be used in the policy rules.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -119,6 +122,8 @@ func GetNetworkFirewallPolicyMappedSecret(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NetworkFirewallPolicyMappedSecret resources.
 type networkFirewallPolicyMappedSecretState struct {
+	// (Updatable) The description of the mapped secret. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Unique name to identify the group of urls to be used in the policy rules.
 	Name *string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -141,6 +146,8 @@ type networkFirewallPolicyMappedSecretState struct {
 }
 
 type NetworkFirewallPolicyMappedSecretState struct {
+	// (Updatable) The description of the mapped secret. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
 	// Unique name to identify the group of urls to be used in the policy rules.
 	Name pulumi.StringPtrInput
 	// Unique Network Firewall Policy identifier
@@ -167,6 +174,8 @@ func (NetworkFirewallPolicyMappedSecretState) ElementType() reflect.Type {
 }
 
 type networkFirewallPolicyMappedSecretArgs struct {
+	// (Updatable) The description of the mapped secret. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Unique name to identify the group of urls to be used in the policy rules.
 	Name *string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -188,6 +197,8 @@ type networkFirewallPolicyMappedSecretArgs struct {
 
 // The set of arguments for constructing a NetworkFirewallPolicyMappedSecret resource.
 type NetworkFirewallPolicyMappedSecretArgs struct {
+	// (Updatable) The description of the mapped secret. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
 	// Unique name to identify the group of urls to be used in the policy rules.
 	Name pulumi.StringPtrInput
 	// Unique Network Firewall Policy identifier
@@ -292,6 +303,11 @@ func (o NetworkFirewallPolicyMappedSecretOutput) ToNetworkFirewallPolicyMappedSe
 
 func (o NetworkFirewallPolicyMappedSecretOutput) ToNetworkFirewallPolicyMappedSecretOutputWithContext(ctx context.Context) NetworkFirewallPolicyMappedSecretOutput {
 	return o
+}
+
+// (Updatable) The description of the mapped secret. This field can be used to add additional info.
+func (o NetworkFirewallPolicyMappedSecretOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyMappedSecret) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Unique name to identify the group of urls to be used in the policy rules.

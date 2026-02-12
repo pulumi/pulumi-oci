@@ -43,6 +43,11 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
      */
     private List<GetDesktopPoolsDesktopPoolCollectionItemAvailabilityPolicy> availabilityPolicies;
     /**
+     * @return The size in GBs of the boot volume for the desktop pool.
+     * 
+     */
+    private Integer bootVolumeSizeInGbs;
+    /**
      * @return The OCID of the compartment of the desktop pool.
      * 
      */
@@ -199,6 +204,13 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
      */
     public List<GetDesktopPoolsDesktopPoolCollectionItemAvailabilityPolicy> availabilityPolicies() {
         return this.availabilityPolicies;
+    }
+    /**
+     * @return The size in GBs of the boot volume for the desktop pool.
+     * 
+     */
+    public Integer bootVolumeSizeInGbs() {
+        return this.bootVolumeSizeInGbs;
     }
     /**
      * @return The OCID of the compartment of the desktop pool.
@@ -390,6 +402,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
         private Boolean areVolumesPreserved;
         private String availabilityDomain;
         private List<GetDesktopPoolsDesktopPoolCollectionItemAvailabilityPolicy> availabilityPolicies;
+        private Integer bootVolumeSizeInGbs;
         private String compartmentId;
         private String contactDetails;
         private Map<String,String> definedTags;
@@ -423,6 +436,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
     	      this.areVolumesPreserved = defaults.areVolumesPreserved;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.availabilityPolicies = defaults.availabilityPolicies;
+    	      this.bootVolumeSizeInGbs = defaults.bootVolumeSizeInGbs;
     	      this.compartmentId = defaults.compartmentId;
     	      this.contactDetails = defaults.contactDetails;
     	      this.definedTags = defaults.definedTags;
@@ -492,6 +506,14 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
         }
         public Builder availabilityPolicies(GetDesktopPoolsDesktopPoolCollectionItemAvailabilityPolicy... availabilityPolicies) {
             return availabilityPolicies(List.of(availabilityPolicies));
+        }
+        @CustomType.Setter
+        public Builder bootVolumeSizeInGbs(Integer bootVolumeSizeInGbs) {
+            if (bootVolumeSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDesktopPoolsDesktopPoolCollectionItem", "bootVolumeSizeInGbs");
+            }
+            this.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
+            return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -721,6 +743,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
             _resultValue.areVolumesPreserved = areVolumesPreserved;
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.availabilityPolicies = availabilityPolicies;
+            _resultValue.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
             _resultValue.compartmentId = compartmentId;
             _resultValue.contactDetails = contactDetails;
             _resultValue.definedTags = definedTags;

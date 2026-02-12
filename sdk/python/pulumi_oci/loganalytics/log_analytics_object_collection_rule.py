@@ -51,22 +51,22 @@ class LogAnalyticsObjectCollectionRuleArgs:
         """
         The set of arguments for constructing a LogAnalyticsObjectCollectionRule resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-        :param pulumi.Input[_builtins.str] log_group_id: (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] log_group_id: (Updatable) Log Analytics Log group OCID to associate the processed logs with.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[_builtins.str] os_bucket_name: Name of the Object Storage bucket.
         :param pulumi.Input[_builtins.str] os_namespace: Object Storage namespace.
         :param pulumi.Input[_builtins.str] char_encoding: (Updatable) An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
         :param pulumi.Input[_builtins.str] collection_type: The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
-        :param pulumi.Input[_builtins.str] entity_id: (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+        :param pulumi.Input[_builtins.str] entity_id: (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.
         :param pulumi.Input[_builtins.bool] is_force_historic_collection: Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
         :param pulumi.Input[_builtins.str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
         :param pulumi.Input[_builtins.str] log_set_ext_regex: (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
         :param pulumi.Input[_builtins.str] log_set_key: (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
-        :param pulumi.Input[_builtins.str] log_source_name: (Updatable) Name of the Logging Analytics Source to use for the processing.
+        :param pulumi.Input[_builtins.str] log_source_name: (Updatable) Name of the Log Analytics Source to use for the processing.
         :param pulumi.Input[_builtins.str] log_type: Type of files/objects in this object collection rule.
         :param pulumi.Input[_builtins.str] name: A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] object_name_filters: (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
@@ -75,7 +75,7 @@ class LogAnalyticsObjectCollectionRuleArgs:
         :param pulumi.Input[_builtins.str] poll_till: The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
         :param pulumi.Input[_builtins.str] stream_cursor_time: (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
         :param pulumi.Input[_builtins.str] stream_cursor_type: (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
-        :param pulumi.Input[_builtins.str] stream_id: (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        :param pulumi.Input[_builtins.str] stream_id: (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         :param pulumi.Input[_builtins.str] timezone: (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used. 
                
                
@@ -148,7 +148,7 @@ class LogAnalyticsObjectCollectionRuleArgs:
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+        (Updatable) Log Analytics Log group OCID to associate the processed logs with.
         """
         return pulumi.get(self, "log_group_id")
 
@@ -160,7 +160,7 @@ class LogAnalyticsObjectCollectionRuleArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -244,7 +244,7 @@ class LogAnalyticsObjectCollectionRuleArgs:
     @pulumi.getter(name="entityId")
     def entity_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+        (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
         """
         return pulumi.get(self, "entity_id")
 
@@ -328,7 +328,7 @@ class LogAnalyticsObjectCollectionRuleArgs:
     @pulumi.getter(name="logSourceName")
     def log_source_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Name of the Logging Analytics Source to use for the processing.
+        (Updatable) Name of the Log Analytics Source to use for the processing.
         """
         return pulumi.get(self, "log_source_name")
 
@@ -436,7 +436,7 @@ class LogAnalyticsObjectCollectionRuleArgs:
     @pulumi.getter(name="streamId")
     def stream_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         """
         return pulumi.get(self, "stream_id")
 
@@ -503,20 +503,20 @@ class _LogAnalyticsObjectCollectionRuleState:
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
-        :param pulumi.Input[_builtins.str] entity_id: (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+        :param pulumi.Input[_builtins.str] entity_id: (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.
         :param pulumi.Input[_builtins.bool] is_force_historic_collection: Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
         :param pulumi.Input[_builtins.str] last_collected_object: Last Collected Object for the rule
         :param pulumi.Input[_builtins.str] lifecycle_details: A detailed status of the life cycle state.
-        :param pulumi.Input[_builtins.str] log_group_id: (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+        :param pulumi.Input[_builtins.str] log_group_id: (Updatable) Log Analytics Log group OCID to associate the processed logs with.
         :param pulumi.Input[_builtins.str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
         :param pulumi.Input[_builtins.str] log_set_ext_regex: (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
         :param pulumi.Input[_builtins.str] log_set_key: (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
-        :param pulumi.Input[_builtins.str] log_source_name: (Updatable) Name of the Logging Analytics Source to use for the processing.
+        :param pulumi.Input[_builtins.str] log_source_name: (Updatable) Name of the Log Analytics Source to use for the processing.
         :param pulumi.Input[_builtins.str] log_type: Type of files/objects in this object collection rule.
         :param pulumi.Input[_builtins.str] name: A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] object_name_filters: (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
         :param pulumi.Input[_builtins.str] os_bucket_name: Name of the Object Storage bucket.
         :param pulumi.Input[_builtins.str] os_namespace: Object Storage namespace.
@@ -526,7 +526,7 @@ class _LogAnalyticsObjectCollectionRuleState:
         :param pulumi.Input[_builtins.str] state: The current state of the rule.
         :param pulumi.Input[_builtins.str] stream_cursor_time: (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
         :param pulumi.Input[_builtins.str] stream_cursor_type: (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
-        :param pulumi.Input[_builtins.str] stream_id: (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        :param pulumi.Input[_builtins.str] stream_id: (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         :param pulumi.Input[_builtins.str] time_created: The time when this rule was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time when this rule was last updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] timezone: (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used. 
@@ -664,7 +664,7 @@ class _LogAnalyticsObjectCollectionRuleState:
     @pulumi.getter(name="entityId")
     def entity_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+        (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
         """
         return pulumi.get(self, "entity_id")
 
@@ -736,7 +736,7 @@ class _LogAnalyticsObjectCollectionRuleState:
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+        (Updatable) Log Analytics Log group OCID to associate the processed logs with.
         """
         return pulumi.get(self, "log_group_id")
 
@@ -784,7 +784,7 @@ class _LogAnalyticsObjectCollectionRuleState:
     @pulumi.getter(name="logSourceName")
     def log_source_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Name of the Logging Analytics Source to use for the processing.
+        (Updatable) Name of the Log Analytics Source to use for the processing.
         """
         return pulumi.get(self, "log_source_name")
 
@@ -820,7 +820,7 @@ class _LogAnalyticsObjectCollectionRuleState:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -940,7 +940,7 @@ class _LogAnalyticsObjectCollectionRuleState:
     @pulumi.getter(name="streamId")
     def stream_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         """
         return pulumi.get(self, "stream_id")
 
@@ -1079,18 +1079,18 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
-        :param pulumi.Input[_builtins.str] entity_id: (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+        :param pulumi.Input[_builtins.str] entity_id: (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.
         :param pulumi.Input[_builtins.bool] is_force_historic_collection: Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
-        :param pulumi.Input[_builtins.str] log_group_id: (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+        :param pulumi.Input[_builtins.str] log_group_id: (Updatable) Log Analytics Log group OCID to associate the processed logs with.
         :param pulumi.Input[_builtins.str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
         :param pulumi.Input[_builtins.str] log_set_ext_regex: (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
         :param pulumi.Input[_builtins.str] log_set_key: (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
-        :param pulumi.Input[_builtins.str] log_source_name: (Updatable) Name of the Logging Analytics Source to use for the processing.
+        :param pulumi.Input[_builtins.str] log_source_name: (Updatable) Name of the Log Analytics Source to use for the processing.
         :param pulumi.Input[_builtins.str] log_type: Type of files/objects in this object collection rule.
         :param pulumi.Input[_builtins.str] name: A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] object_name_filters: (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
         :param pulumi.Input[_builtins.str] os_bucket_name: Name of the Object Storage bucket.
         :param pulumi.Input[_builtins.str] os_namespace: Object Storage namespace.
@@ -1099,7 +1099,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] poll_till: The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
         :param pulumi.Input[_builtins.str] stream_cursor_time: (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
         :param pulumi.Input[_builtins.str] stream_cursor_type: (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
-        :param pulumi.Input[_builtins.str] stream_id: (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        :param pulumi.Input[_builtins.str] stream_id: (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         :param pulumi.Input[_builtins.str] timezone: (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used. 
                
                
@@ -1308,20 +1308,20 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
-        :param pulumi.Input[_builtins.str] entity_id: (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+        :param pulumi.Input[_builtins.str] entity_id: (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.
         :param pulumi.Input[_builtins.bool] is_force_historic_collection: Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
         :param pulumi.Input[_builtins.str] last_collected_object: Last Collected Object for the rule
         :param pulumi.Input[_builtins.str] lifecycle_details: A detailed status of the life cycle state.
-        :param pulumi.Input[_builtins.str] log_group_id: (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+        :param pulumi.Input[_builtins.str] log_group_id: (Updatable) Log Analytics Log group OCID to associate the processed logs with.
         :param pulumi.Input[_builtins.str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
         :param pulumi.Input[_builtins.str] log_set_ext_regex: (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
         :param pulumi.Input[_builtins.str] log_set_key: (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
-        :param pulumi.Input[_builtins.str] log_source_name: (Updatable) Name of the Logging Analytics Source to use for the processing.
+        :param pulumi.Input[_builtins.str] log_source_name: (Updatable) Name of the Log Analytics Source to use for the processing.
         :param pulumi.Input[_builtins.str] log_type: Type of files/objects in this object collection rule.
         :param pulumi.Input[_builtins.str] name: A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] object_name_filters: (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
         :param pulumi.Input[_builtins.str] os_bucket_name: Name of the Object Storage bucket.
         :param pulumi.Input[_builtins.str] os_namespace: Object Storage namespace.
@@ -1331,7 +1331,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the rule.
         :param pulumi.Input[_builtins.str] stream_cursor_time: (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
         :param pulumi.Input[_builtins.str] stream_cursor_type: (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
-        :param pulumi.Input[_builtins.str] stream_id: (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        :param pulumi.Input[_builtins.str] stream_id: (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         :param pulumi.Input[_builtins.str] time_created: The time when this rule was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time when this rule was last updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] timezone: (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used. 
@@ -1422,7 +1422,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
     @pulumi.getter(name="entityId")
     def entity_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+        (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
         """
         return pulumi.get(self, "entity_id")
 
@@ -1470,7 +1470,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+        (Updatable) Log Analytics Log group OCID to associate the processed logs with.
         """
         return pulumi.get(self, "log_group_id")
 
@@ -1502,7 +1502,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
     @pulumi.getter(name="logSourceName")
     def log_source_name(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Name of the Logging Analytics Source to use for the processing.
+        (Updatable) Name of the Log Analytics Source to use for the processing.
         """
         return pulumi.get(self, "log_source_name")
 
@@ -1526,7 +1526,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -1606,7 +1606,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
     @pulumi.getter(name="streamId")
     def stream_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         """
         return pulumi.get(self, "stream_id")
 

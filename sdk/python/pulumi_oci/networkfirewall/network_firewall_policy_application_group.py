@@ -21,19 +21,23 @@ class NetworkFirewallPolicyApplicationGroupArgs:
     def __init__(__self__, *,
                  apps: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  network_firewall_policy_id: pulumi.Input[_builtins.str],
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyApplicationGroup resource.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] apps: (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] apps: (Updatable) Collection of application names.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the application group. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the application group.
         """
         pulumi.set(__self__, "apps", apps)
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -41,7 +45,7 @@ class NetworkFirewallPolicyApplicationGroupArgs:
     @pulumi.getter
     def apps(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
         """
-        (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+        (Updatable) Collection of application names.
         """
         return pulumi.get(self, "apps")
 
@@ -67,6 +71,18 @@ class NetworkFirewallPolicyApplicationGroupArgs:
 
     @_builtins.property
     @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The description of the application group. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Name of the application group.
@@ -82,13 +98,15 @@ class NetworkFirewallPolicyApplicationGroupArgs:
 class _NetworkFirewallPolicyApplicationGroupState:
     def __init__(__self__, *,
                  apps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
                  total_apps: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyApplicationGroup resources.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] apps: (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] apps: (Updatable) Collection of application names.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the application group. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the application group.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
                
@@ -100,6 +118,8 @@ class _NetworkFirewallPolicyApplicationGroupState:
         """
         if apps is not None:
             pulumi.set(__self__, "apps", apps)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if network_firewall_policy_id is not None:
@@ -113,13 +133,25 @@ class _NetworkFirewallPolicyApplicationGroupState:
     @pulumi.getter
     def apps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+        (Updatable) Collection of application names.
         """
         return pulumi.get(self, "apps")
 
     @apps.setter
     def apps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "apps", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The description of the application group. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
@@ -181,6 +213,7 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  apps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
@@ -194,7 +227,8 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
         test_network_firewall_policy_application_group = oci.networkfirewall.NetworkFirewallPolicyApplicationGroup("test_network_firewall_policy_application_group",
             apps=network_firewall_policy_application_group_apps,
             name=network_firewall_policy_application_group_name,
-            network_firewall_policy_id=test_network_firewall_policy["id"])
+            network_firewall_policy_id=test_network_firewall_policy["id"],
+            description=network_firewall_policy_application_group_description)
         ```
 
         ## Import
@@ -207,7 +241,8 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] apps: (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] apps: (Updatable) Collection of application names.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the application group. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the application group.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
                
@@ -231,7 +266,8 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
         test_network_firewall_policy_application_group = oci.networkfirewall.NetworkFirewallPolicyApplicationGroup("test_network_firewall_policy_application_group",
             apps=network_firewall_policy_application_group_apps,
             name=network_firewall_policy_application_group_name,
-            network_firewall_policy_id=test_network_firewall_policy["id"])
+            network_firewall_policy_id=test_network_firewall_policy["id"],
+            description=network_firewall_policy_application_group_description)
         ```
 
         ## Import
@@ -258,6 +294,7 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  apps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
@@ -272,6 +309,7 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
             if apps is None and not opts.urn:
                 raise TypeError("Missing required property 'apps'")
             __props__.__dict__["apps"] = apps
+            __props__.__dict__["description"] = description
             __props__.__dict__["name"] = name
             if network_firewall_policy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'network_firewall_policy_id'")
@@ -289,6 +327,7 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             apps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
             network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
             parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -300,7 +339,8 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] apps: (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] apps: (Updatable) Collection of application names.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the application group. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the application group.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
                
@@ -315,6 +355,7 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
         __props__ = _NetworkFirewallPolicyApplicationGroupState.__new__(_NetworkFirewallPolicyApplicationGroupState)
 
         __props__.__dict__["apps"] = apps
+        __props__.__dict__["description"] = description
         __props__.__dict__["name"] = name
         __props__.__dict__["network_firewall_policy_id"] = network_firewall_policy_id
         __props__.__dict__["parent_resource_id"] = parent_resource_id
@@ -325,9 +366,17 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
     @pulumi.getter
     def apps(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+        (Updatable) Collection of application names.
         """
         return pulumi.get(self, "apps")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Updatable) The description of the application group. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter

@@ -26,6 +26,10 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
+        /// Description for this resource.
+        /// </summary>
+        public readonly string Description;
+        /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
         public readonly string DisplayName;
@@ -39,7 +43,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         public readonly string Id;
         public readonly string Kind;
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         public readonly string Namespace;
         /// <summary>
@@ -60,7 +64,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+        /// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
         /// </summary>
         public readonly string TaskStatus;
         /// <summary>
@@ -87,6 +91,8 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
+
+            string description,
 
             string displayName,
 
@@ -121,6 +127,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
             Actions = actions;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
+            Description = description;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;

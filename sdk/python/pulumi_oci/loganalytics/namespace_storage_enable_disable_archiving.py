@@ -28,7 +28,7 @@ class NamespaceStorageEnableDisableArchivingArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         pulumi.set(__self__, "enable_archiving_tenant", enable_archiving_tenant)
         pulumi.set(__self__, "namespace", namespace)
@@ -53,7 +53,7 @@ class NamespaceStorageEnableDisableArchivingArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -76,7 +76,7 @@ class _NamespaceStorageEnableDisableArchivingState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] message: A human-readable success string.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         if enable_archiving_tenant is not None:
             pulumi.set(__self__, "enable_archiving_tenant", enable_archiving_tenant)
@@ -117,7 +117,7 @@ class _NamespaceStorageEnableDisableArchivingState:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -154,7 +154,7 @@ class NamespaceStorageEnableDisableArchiving(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         ...
     @overload
@@ -233,7 +233,7 @@ class NamespaceStorageEnableDisableArchiving(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] message: A human-readable success string.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -268,7 +268,7 @@ class NamespaceStorageEnableDisableArchiving(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 

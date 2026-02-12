@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -500,6 +500,8 @@ type DesktopPoolDevicePolicy struct {
 	IsPointerEnabled bool `pulumi:"isPointerEnabled"`
 	// (Updatable) Indicates whether printing is enabled.
 	IsPrintingEnabled bool `pulumi:"isPrintingEnabled"`
+	// (Updatable) Indicates whether video input is enabled.
+	IsVideoInputEnabled *bool `pulumi:"isVideoInputEnabled"`
 }
 
 // DesktopPoolDevicePolicyInput is an input type that accepts DesktopPoolDevicePolicyArgs and DesktopPoolDevicePolicyOutput values.
@@ -528,6 +530,8 @@ type DesktopPoolDevicePolicyArgs struct {
 	IsPointerEnabled pulumi.BoolInput `pulumi:"isPointerEnabled"`
 	// (Updatable) Indicates whether printing is enabled.
 	IsPrintingEnabled pulumi.BoolInput `pulumi:"isPrintingEnabled"`
+	// (Updatable) Indicates whether video input is enabled.
+	IsVideoInputEnabled pulumi.BoolPtrInput `pulumi:"isVideoInputEnabled"`
 }
 
 func (DesktopPoolDevicePolicyArgs) ElementType() reflect.Type {
@@ -642,6 +646,11 @@ func (o DesktopPoolDevicePolicyOutput) IsPrintingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v DesktopPoolDevicePolicy) bool { return v.IsPrintingEnabled }).(pulumi.BoolOutput)
 }
 
+// (Updatable) Indicates whether video input is enabled.
+func (o DesktopPoolDevicePolicyOutput) IsVideoInputEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DesktopPoolDevicePolicy) *bool { return v.IsVideoInputEnabled }).(pulumi.BoolPtrOutput)
+}
+
 type DesktopPoolDevicePolicyPtrOutput struct{ *pulumi.OutputState }
 
 func (DesktopPoolDevicePolicyPtrOutput) ElementType() reflect.Type {
@@ -736,8 +745,18 @@ func (o DesktopPoolDevicePolicyPtrOutput) IsPrintingEnabled() pulumi.BoolPtrOutp
 	}).(pulumi.BoolPtrOutput)
 }
 
+// (Updatable) Indicates whether video input is enabled.
+func (o DesktopPoolDevicePolicyPtrOutput) IsVideoInputEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DesktopPoolDevicePolicy) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsVideoInputEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
 type DesktopPoolImage struct {
-	// The OCID of the desktop image.
+	// (Updatable) The OCID of the desktop image.
 	ImageId string `pulumi:"imageId"`
 	// The name of the desktop image.
 	ImageName string `pulumi:"imageName"`
@@ -757,7 +776,7 @@ type DesktopPoolImageInput interface {
 }
 
 type DesktopPoolImageArgs struct {
-	// The OCID of the desktop image.
+	// (Updatable) The OCID of the desktop image.
 	ImageId pulumi.StringInput `pulumi:"imageId"`
 	// The name of the desktop image.
 	ImageName pulumi.StringInput `pulumi:"imageName"`
@@ -842,7 +861,7 @@ func (o DesktopPoolImageOutput) ToDesktopPoolImagePtrOutputWithContext(ctx conte
 	}).(DesktopPoolImagePtrOutput)
 }
 
-// The OCID of the desktop image.
+// (Updatable) The OCID of the desktop image.
 func (o DesktopPoolImageOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v DesktopPoolImage) string { return v.ImageId }).(pulumi.StringOutput)
 }
@@ -881,7 +900,7 @@ func (o DesktopPoolImagePtrOutput) Elem() DesktopPoolImageOutput {
 	}).(DesktopPoolImageOutput)
 }
 
-// The OCID of the desktop image.
+// (Updatable) The OCID of the desktop image.
 func (o DesktopPoolImagePtrOutput) ImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DesktopPoolImage) *string {
 		if v == nil {
@@ -1939,6 +1958,369 @@ func (o DesktopPoolShapeConfigPtrOutput) Ocpus() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type GetDesktopDesktopConnection struct {
+	// The platform on which the Secure Desktops client runs.
+	ClientPlatform string `pulumi:"clientPlatform"`
+	// The type of Secure Desktops client connected to a desktop.
+	ClientType string `pulumi:"clientType"`
+	// The version of the Secure Desktops client connected to a desktop, applicable only to the installed client type.
+	ClientVersion string `pulumi:"clientVersion"`
+	// Provides information about actions performed on a desktop, including type and time.
+	LastActions []GetDesktopDesktopConnectionLastAction `pulumi:"lastActions"`
+	// Provides information about actions performed on a desktop, including type and time.
+	NextActions []GetDesktopDesktopConnectionNextAction `pulumi:"nextActions"`
+	// The time when the last connection to a desktop started.
+	TimeConnected string `pulumi:"timeConnected"`
+	// The time when the last connection to a desktop ended.
+	TimeDisconnected string `pulumi:"timeDisconnected"`
+}
+
+// GetDesktopDesktopConnectionInput is an input type that accepts GetDesktopDesktopConnectionArgs and GetDesktopDesktopConnectionOutput values.
+// You can construct a concrete instance of `GetDesktopDesktopConnectionInput` via:
+//
+//	GetDesktopDesktopConnectionArgs{...}
+type GetDesktopDesktopConnectionInput interface {
+	pulumi.Input
+
+	ToGetDesktopDesktopConnectionOutput() GetDesktopDesktopConnectionOutput
+	ToGetDesktopDesktopConnectionOutputWithContext(context.Context) GetDesktopDesktopConnectionOutput
+}
+
+type GetDesktopDesktopConnectionArgs struct {
+	// The platform on which the Secure Desktops client runs.
+	ClientPlatform pulumi.StringInput `pulumi:"clientPlatform"`
+	// The type of Secure Desktops client connected to a desktop.
+	ClientType pulumi.StringInput `pulumi:"clientType"`
+	// The version of the Secure Desktops client connected to a desktop, applicable only to the installed client type.
+	ClientVersion pulumi.StringInput `pulumi:"clientVersion"`
+	// Provides information about actions performed on a desktop, including type and time.
+	LastActions GetDesktopDesktopConnectionLastActionArrayInput `pulumi:"lastActions"`
+	// Provides information about actions performed on a desktop, including type and time.
+	NextActions GetDesktopDesktopConnectionNextActionArrayInput `pulumi:"nextActions"`
+	// The time when the last connection to a desktop started.
+	TimeConnected pulumi.StringInput `pulumi:"timeConnected"`
+	// The time when the last connection to a desktop ended.
+	TimeDisconnected pulumi.StringInput `pulumi:"timeDisconnected"`
+}
+
+func (GetDesktopDesktopConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopDesktopConnection)(nil)).Elem()
+}
+
+func (i GetDesktopDesktopConnectionArgs) ToGetDesktopDesktopConnectionOutput() GetDesktopDesktopConnectionOutput {
+	return i.ToGetDesktopDesktopConnectionOutputWithContext(context.Background())
+}
+
+func (i GetDesktopDesktopConnectionArgs) ToGetDesktopDesktopConnectionOutputWithContext(ctx context.Context) GetDesktopDesktopConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopDesktopConnectionOutput)
+}
+
+// GetDesktopDesktopConnectionArrayInput is an input type that accepts GetDesktopDesktopConnectionArray and GetDesktopDesktopConnectionArrayOutput values.
+// You can construct a concrete instance of `GetDesktopDesktopConnectionArrayInput` via:
+//
+//	GetDesktopDesktopConnectionArray{ GetDesktopDesktopConnectionArgs{...} }
+type GetDesktopDesktopConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopDesktopConnectionArrayOutput() GetDesktopDesktopConnectionArrayOutput
+	ToGetDesktopDesktopConnectionArrayOutputWithContext(context.Context) GetDesktopDesktopConnectionArrayOutput
+}
+
+type GetDesktopDesktopConnectionArray []GetDesktopDesktopConnectionInput
+
+func (GetDesktopDesktopConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopDesktopConnection)(nil)).Elem()
+}
+
+func (i GetDesktopDesktopConnectionArray) ToGetDesktopDesktopConnectionArrayOutput() GetDesktopDesktopConnectionArrayOutput {
+	return i.ToGetDesktopDesktopConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopDesktopConnectionArray) ToGetDesktopDesktopConnectionArrayOutputWithContext(ctx context.Context) GetDesktopDesktopConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopDesktopConnectionArrayOutput)
+}
+
+type GetDesktopDesktopConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopDesktopConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopDesktopConnection)(nil)).Elem()
+}
+
+func (o GetDesktopDesktopConnectionOutput) ToGetDesktopDesktopConnectionOutput() GetDesktopDesktopConnectionOutput {
+	return o
+}
+
+func (o GetDesktopDesktopConnectionOutput) ToGetDesktopDesktopConnectionOutputWithContext(ctx context.Context) GetDesktopDesktopConnectionOutput {
+	return o
+}
+
+// The platform on which the Secure Desktops client runs.
+func (o GetDesktopDesktopConnectionOutput) ClientPlatform() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopDesktopConnection) string { return v.ClientPlatform }).(pulumi.StringOutput)
+}
+
+// The type of Secure Desktops client connected to a desktop.
+func (o GetDesktopDesktopConnectionOutput) ClientType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopDesktopConnection) string { return v.ClientType }).(pulumi.StringOutput)
+}
+
+// The version of the Secure Desktops client connected to a desktop, applicable only to the installed client type.
+func (o GetDesktopDesktopConnectionOutput) ClientVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopDesktopConnection) string { return v.ClientVersion }).(pulumi.StringOutput)
+}
+
+// Provides information about actions performed on a desktop, including type and time.
+func (o GetDesktopDesktopConnectionOutput) LastActions() GetDesktopDesktopConnectionLastActionArrayOutput {
+	return o.ApplyT(func(v GetDesktopDesktopConnection) []GetDesktopDesktopConnectionLastAction { return v.LastActions }).(GetDesktopDesktopConnectionLastActionArrayOutput)
+}
+
+// Provides information about actions performed on a desktop, including type and time.
+func (o GetDesktopDesktopConnectionOutput) NextActions() GetDesktopDesktopConnectionNextActionArrayOutput {
+	return o.ApplyT(func(v GetDesktopDesktopConnection) []GetDesktopDesktopConnectionNextAction { return v.NextActions }).(GetDesktopDesktopConnectionNextActionArrayOutput)
+}
+
+// The time when the last connection to a desktop started.
+func (o GetDesktopDesktopConnectionOutput) TimeConnected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopDesktopConnection) string { return v.TimeConnected }).(pulumi.StringOutput)
+}
+
+// The time when the last connection to a desktop ended.
+func (o GetDesktopDesktopConnectionOutput) TimeDisconnected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopDesktopConnection) string { return v.TimeDisconnected }).(pulumi.StringOutput)
+}
+
+type GetDesktopDesktopConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopDesktopConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopDesktopConnection)(nil)).Elem()
+}
+
+func (o GetDesktopDesktopConnectionArrayOutput) ToGetDesktopDesktopConnectionArrayOutput() GetDesktopDesktopConnectionArrayOutput {
+	return o
+}
+
+func (o GetDesktopDesktopConnectionArrayOutput) ToGetDesktopDesktopConnectionArrayOutputWithContext(ctx context.Context) GetDesktopDesktopConnectionArrayOutput {
+	return o
+}
+
+func (o GetDesktopDesktopConnectionArrayOutput) Index(i pulumi.IntInput) GetDesktopDesktopConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopDesktopConnection {
+		return vs[0].([]GetDesktopDesktopConnection)[vs[1].(int)]
+	}).(GetDesktopDesktopConnectionOutput)
+}
+
+type GetDesktopDesktopConnectionLastAction struct {
+	// An action performed on a desktop.
+	Action string `pulumi:"action"`
+	// The time of an action performed on a desktop.
+	TimeApplied string `pulumi:"timeApplied"`
+}
+
+// GetDesktopDesktopConnectionLastActionInput is an input type that accepts GetDesktopDesktopConnectionLastActionArgs and GetDesktopDesktopConnectionLastActionOutput values.
+// You can construct a concrete instance of `GetDesktopDesktopConnectionLastActionInput` via:
+//
+//	GetDesktopDesktopConnectionLastActionArgs{...}
+type GetDesktopDesktopConnectionLastActionInput interface {
+	pulumi.Input
+
+	ToGetDesktopDesktopConnectionLastActionOutput() GetDesktopDesktopConnectionLastActionOutput
+	ToGetDesktopDesktopConnectionLastActionOutputWithContext(context.Context) GetDesktopDesktopConnectionLastActionOutput
+}
+
+type GetDesktopDesktopConnectionLastActionArgs struct {
+	// An action performed on a desktop.
+	Action pulumi.StringInput `pulumi:"action"`
+	// The time of an action performed on a desktop.
+	TimeApplied pulumi.StringInput `pulumi:"timeApplied"`
+}
+
+func (GetDesktopDesktopConnectionLastActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopDesktopConnectionLastAction)(nil)).Elem()
+}
+
+func (i GetDesktopDesktopConnectionLastActionArgs) ToGetDesktopDesktopConnectionLastActionOutput() GetDesktopDesktopConnectionLastActionOutput {
+	return i.ToGetDesktopDesktopConnectionLastActionOutputWithContext(context.Background())
+}
+
+func (i GetDesktopDesktopConnectionLastActionArgs) ToGetDesktopDesktopConnectionLastActionOutputWithContext(ctx context.Context) GetDesktopDesktopConnectionLastActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopDesktopConnectionLastActionOutput)
+}
+
+// GetDesktopDesktopConnectionLastActionArrayInput is an input type that accepts GetDesktopDesktopConnectionLastActionArray and GetDesktopDesktopConnectionLastActionArrayOutput values.
+// You can construct a concrete instance of `GetDesktopDesktopConnectionLastActionArrayInput` via:
+//
+//	GetDesktopDesktopConnectionLastActionArray{ GetDesktopDesktopConnectionLastActionArgs{...} }
+type GetDesktopDesktopConnectionLastActionArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopDesktopConnectionLastActionArrayOutput() GetDesktopDesktopConnectionLastActionArrayOutput
+	ToGetDesktopDesktopConnectionLastActionArrayOutputWithContext(context.Context) GetDesktopDesktopConnectionLastActionArrayOutput
+}
+
+type GetDesktopDesktopConnectionLastActionArray []GetDesktopDesktopConnectionLastActionInput
+
+func (GetDesktopDesktopConnectionLastActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopDesktopConnectionLastAction)(nil)).Elem()
+}
+
+func (i GetDesktopDesktopConnectionLastActionArray) ToGetDesktopDesktopConnectionLastActionArrayOutput() GetDesktopDesktopConnectionLastActionArrayOutput {
+	return i.ToGetDesktopDesktopConnectionLastActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopDesktopConnectionLastActionArray) ToGetDesktopDesktopConnectionLastActionArrayOutputWithContext(ctx context.Context) GetDesktopDesktopConnectionLastActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopDesktopConnectionLastActionArrayOutput)
+}
+
+type GetDesktopDesktopConnectionLastActionOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopDesktopConnectionLastActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopDesktopConnectionLastAction)(nil)).Elem()
+}
+
+func (o GetDesktopDesktopConnectionLastActionOutput) ToGetDesktopDesktopConnectionLastActionOutput() GetDesktopDesktopConnectionLastActionOutput {
+	return o
+}
+
+func (o GetDesktopDesktopConnectionLastActionOutput) ToGetDesktopDesktopConnectionLastActionOutputWithContext(ctx context.Context) GetDesktopDesktopConnectionLastActionOutput {
+	return o
+}
+
+// An action performed on a desktop.
+func (o GetDesktopDesktopConnectionLastActionOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopDesktopConnectionLastAction) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// The time of an action performed on a desktop.
+func (o GetDesktopDesktopConnectionLastActionOutput) TimeApplied() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopDesktopConnectionLastAction) string { return v.TimeApplied }).(pulumi.StringOutput)
+}
+
+type GetDesktopDesktopConnectionLastActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopDesktopConnectionLastActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopDesktopConnectionLastAction)(nil)).Elem()
+}
+
+func (o GetDesktopDesktopConnectionLastActionArrayOutput) ToGetDesktopDesktopConnectionLastActionArrayOutput() GetDesktopDesktopConnectionLastActionArrayOutput {
+	return o
+}
+
+func (o GetDesktopDesktopConnectionLastActionArrayOutput) ToGetDesktopDesktopConnectionLastActionArrayOutputWithContext(ctx context.Context) GetDesktopDesktopConnectionLastActionArrayOutput {
+	return o
+}
+
+func (o GetDesktopDesktopConnectionLastActionArrayOutput) Index(i pulumi.IntInput) GetDesktopDesktopConnectionLastActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopDesktopConnectionLastAction {
+		return vs[0].([]GetDesktopDesktopConnectionLastAction)[vs[1].(int)]
+	}).(GetDesktopDesktopConnectionLastActionOutput)
+}
+
+type GetDesktopDesktopConnectionNextAction struct {
+	// An action performed on a desktop.
+	Action string `pulumi:"action"`
+	// The time of an action performed on a desktop.
+	TimeApplied string `pulumi:"timeApplied"`
+}
+
+// GetDesktopDesktopConnectionNextActionInput is an input type that accepts GetDesktopDesktopConnectionNextActionArgs and GetDesktopDesktopConnectionNextActionOutput values.
+// You can construct a concrete instance of `GetDesktopDesktopConnectionNextActionInput` via:
+//
+//	GetDesktopDesktopConnectionNextActionArgs{...}
+type GetDesktopDesktopConnectionNextActionInput interface {
+	pulumi.Input
+
+	ToGetDesktopDesktopConnectionNextActionOutput() GetDesktopDesktopConnectionNextActionOutput
+	ToGetDesktopDesktopConnectionNextActionOutputWithContext(context.Context) GetDesktopDesktopConnectionNextActionOutput
+}
+
+type GetDesktopDesktopConnectionNextActionArgs struct {
+	// An action performed on a desktop.
+	Action pulumi.StringInput `pulumi:"action"`
+	// The time of an action performed on a desktop.
+	TimeApplied pulumi.StringInput `pulumi:"timeApplied"`
+}
+
+func (GetDesktopDesktopConnectionNextActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopDesktopConnectionNextAction)(nil)).Elem()
+}
+
+func (i GetDesktopDesktopConnectionNextActionArgs) ToGetDesktopDesktopConnectionNextActionOutput() GetDesktopDesktopConnectionNextActionOutput {
+	return i.ToGetDesktopDesktopConnectionNextActionOutputWithContext(context.Background())
+}
+
+func (i GetDesktopDesktopConnectionNextActionArgs) ToGetDesktopDesktopConnectionNextActionOutputWithContext(ctx context.Context) GetDesktopDesktopConnectionNextActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopDesktopConnectionNextActionOutput)
+}
+
+// GetDesktopDesktopConnectionNextActionArrayInput is an input type that accepts GetDesktopDesktopConnectionNextActionArray and GetDesktopDesktopConnectionNextActionArrayOutput values.
+// You can construct a concrete instance of `GetDesktopDesktopConnectionNextActionArrayInput` via:
+//
+//	GetDesktopDesktopConnectionNextActionArray{ GetDesktopDesktopConnectionNextActionArgs{...} }
+type GetDesktopDesktopConnectionNextActionArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopDesktopConnectionNextActionArrayOutput() GetDesktopDesktopConnectionNextActionArrayOutput
+	ToGetDesktopDesktopConnectionNextActionArrayOutputWithContext(context.Context) GetDesktopDesktopConnectionNextActionArrayOutput
+}
+
+type GetDesktopDesktopConnectionNextActionArray []GetDesktopDesktopConnectionNextActionInput
+
+func (GetDesktopDesktopConnectionNextActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopDesktopConnectionNextAction)(nil)).Elem()
+}
+
+func (i GetDesktopDesktopConnectionNextActionArray) ToGetDesktopDesktopConnectionNextActionArrayOutput() GetDesktopDesktopConnectionNextActionArrayOutput {
+	return i.ToGetDesktopDesktopConnectionNextActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopDesktopConnectionNextActionArray) ToGetDesktopDesktopConnectionNextActionArrayOutputWithContext(ctx context.Context) GetDesktopDesktopConnectionNextActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopDesktopConnectionNextActionArrayOutput)
+}
+
+type GetDesktopDesktopConnectionNextActionOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopDesktopConnectionNextActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopDesktopConnectionNextAction)(nil)).Elem()
+}
+
+func (o GetDesktopDesktopConnectionNextActionOutput) ToGetDesktopDesktopConnectionNextActionOutput() GetDesktopDesktopConnectionNextActionOutput {
+	return o
+}
+
+func (o GetDesktopDesktopConnectionNextActionOutput) ToGetDesktopDesktopConnectionNextActionOutputWithContext(ctx context.Context) GetDesktopDesktopConnectionNextActionOutput {
+	return o
+}
+
+// An action performed on a desktop.
+func (o GetDesktopDesktopConnectionNextActionOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopDesktopConnectionNextAction) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// The time of an action performed on a desktop.
+func (o GetDesktopDesktopConnectionNextActionOutput) TimeApplied() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopDesktopConnectionNextAction) string { return v.TimeApplied }).(pulumi.StringOutput)
+}
+
+type GetDesktopDesktopConnectionNextActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopDesktopConnectionNextActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopDesktopConnectionNextAction)(nil)).Elem()
+}
+
+func (o GetDesktopDesktopConnectionNextActionArrayOutput) ToGetDesktopDesktopConnectionNextActionArrayOutput() GetDesktopDesktopConnectionNextActionArrayOutput {
+	return o
+}
+
+func (o GetDesktopDesktopConnectionNextActionArrayOutput) ToGetDesktopDesktopConnectionNextActionArrayOutputWithContext(ctx context.Context) GetDesktopDesktopConnectionNextActionArrayOutput {
+	return o
+}
+
+func (o GetDesktopDesktopConnectionNextActionArrayOutput) Index(i pulumi.IntInput) GetDesktopDesktopConnectionNextActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopDesktopConnectionNextAction {
+		return vs[0].([]GetDesktopDesktopConnectionNextAction)[vs[1].(int)]
+	}).(GetDesktopDesktopConnectionNextActionOutput)
+}
+
 type GetDesktopDevicePolicy struct {
 	// The audio mode. NONE: No access to the local audio devices is permitted. TODESKTOP: The user may record audio on their desktop.  FROMDESKTOP: The user may play audio on their desktop. FULL: The user may play and record audio on their desktop.
 	AudioMode string `pulumi:"audioMode"`
@@ -1954,6 +2336,8 @@ type GetDesktopDevicePolicy struct {
 	IsPointerEnabled bool `pulumi:"isPointerEnabled"`
 	// Indicates whether printing is enabled.
 	IsPrintingEnabled bool `pulumi:"isPrintingEnabled"`
+	// Indicates whether video input is enabled.
+	IsVideoInputEnabled bool `pulumi:"isVideoInputEnabled"`
 }
 
 // GetDesktopDevicePolicyInput is an input type that accepts GetDesktopDevicePolicyArgs and GetDesktopDevicePolicyOutput values.
@@ -1982,6 +2366,8 @@ type GetDesktopDevicePolicyArgs struct {
 	IsPointerEnabled pulumi.BoolInput `pulumi:"isPointerEnabled"`
 	// Indicates whether printing is enabled.
 	IsPrintingEnabled pulumi.BoolInput `pulumi:"isPrintingEnabled"`
+	// Indicates whether video input is enabled.
+	IsVideoInputEnabled pulumi.BoolInput `pulumi:"isVideoInputEnabled"`
 }
 
 func (GetDesktopDevicePolicyArgs) ElementType() reflect.Type {
@@ -2068,6 +2454,11 @@ func (o GetDesktopDevicePolicyOutput) IsPointerEnabled() pulumi.BoolOutput {
 // Indicates whether printing is enabled.
 func (o GetDesktopDevicePolicyOutput) IsPrintingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDesktopDevicePolicy) bool { return v.IsPrintingEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether video input is enabled.
+func (o GetDesktopDevicePolicyOutput) IsVideoInputEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDesktopDevicePolicy) bool { return v.IsVideoInputEnabled }).(pulumi.BoolOutput)
 }
 
 type GetDesktopDevicePolicyArrayOutput struct{ *pulumi.OutputState }
@@ -2735,10 +3126,14 @@ func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionArrayOutput) Index(i p
 type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+	DesktopConnections []GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection `pulumi:"desktopConnections"`
 	// The OCID of the desktop.
 	DesktopId string `pulumi:"desktopId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Provides information about the desktop image.
+	Images []GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImage `pulumi:"images"`
 	// The OCID of the compute resource used by this desktop.
 	InstanceId string `pulumi:"instanceId"`
 	// Indicates whether the desktop is assigned to a user.
@@ -2765,10 +3160,14 @@ type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemInput interface {
 type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+	DesktopConnections GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayInput `pulumi:"desktopConnections"`
 	// The OCID of the desktop.
 	DesktopId pulumi.StringInput `pulumi:"desktopId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Provides information about the desktop image.
+	Images GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayInput `pulumi:"images"`
 	// The OCID of the compute resource used by this desktop.
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
 	// Indicates whether the desktop is assigned to a user.
@@ -2837,6 +3236,13 @@ func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemOutput) DefinedTag
 	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemOutput) DesktopConnections() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput {
+	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem) []GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection {
+		return v.DesktopConnections
+	}).(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput)
+}
+
 // The OCID of the desktop.
 func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemOutput) DesktopId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem) string { return v.DesktopId }).(pulumi.StringOutput)
@@ -2847,6 +3253,13 @@ func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemOutput) FreeformTa
 	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem) map[string]string {
 		return v.FreeformTags
 	}).(pulumi.StringMapOutput)
+}
+
+// Provides information about the desktop image.
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemOutput) Images() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput {
+	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem) []GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImage {
+		return v.Images
+	}).(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput)
 }
 
 // The OCID of the compute resource used by this desktop.
@@ -2892,6 +3305,506 @@ func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemArrayOutput) Index
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem {
 		return vs[0].([]GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem)[vs[1].(int)]
 	}).(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemOutput)
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection struct {
+	// The platform on which the Secure Desktops client runs.
+	ClientPlatform string `pulumi:"clientPlatform"`
+	// The type of Secure Desktops client connected to a desktop.
+	ClientType string `pulumi:"clientType"`
+	// The version of the Secure Desktops client connected to a desktop, applicable only to the installed client type.
+	ClientVersion string `pulumi:"clientVersion"`
+	// Provides information about actions performed on a desktop, including type and time.
+	LastActions []GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastAction `pulumi:"lastActions"`
+	// Provides information about actions performed on a desktop, including type and time.
+	NextActions []GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextAction `pulumi:"nextActions"`
+	// The time when the last connection to a desktop started.
+	TimeConnected string `pulumi:"timeConnected"`
+	// The time when the last connection to a desktop ended.
+	TimeDisconnected string `pulumi:"timeDisconnected"`
+}
+
+// GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionInput is an input type that accepts GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArgs and GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput values.
+// You can construct a concrete instance of `GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionInput` via:
+//
+//	GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArgs{...}
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput
+	ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutputWithContext(context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArgs struct {
+	// The platform on which the Secure Desktops client runs.
+	ClientPlatform pulumi.StringInput `pulumi:"clientPlatform"`
+	// The type of Secure Desktops client connected to a desktop.
+	ClientType pulumi.StringInput `pulumi:"clientType"`
+	// The version of the Secure Desktops client connected to a desktop, applicable only to the installed client type.
+	ClientVersion pulumi.StringInput `pulumi:"clientVersion"`
+	// Provides information about actions performed on a desktop, including type and time.
+	LastActions GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayInput `pulumi:"lastActions"`
+	// Provides information about actions performed on a desktop, including type and time.
+	NextActions GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayInput `pulumi:"nextActions"`
+	// The time when the last connection to a desktop started.
+	TimeConnected pulumi.StringInput `pulumi:"timeConnected"`
+	// The time when the last connection to a desktop ended.
+	TimeDisconnected pulumi.StringInput `pulumi:"timeDisconnected"`
+}
+
+func (GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection)(nil)).Elem()
+}
+
+func (i GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArgs) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput {
+	return i.ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArgs) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutputWithContext(ctx context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput)
+}
+
+// GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayInput is an input type that accepts GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArray and GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput values.
+// You can construct a concrete instance of `GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayInput` via:
+//
+//	GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArray{ GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArgs{...} }
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput
+	ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutputWithContext(context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArray []GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionInput
+
+func (GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection)(nil)).Elem()
+}
+
+func (i GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArray) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput {
+	return i.ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArray) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutputWithContext(ctx context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput)
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection)(nil)).Elem()
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput {
+	return o
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutputWithContext(ctx context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput {
+	return o
+}
+
+// The platform on which the Secure Desktops client runs.
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput) ClientPlatform() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection) string {
+		return v.ClientPlatform
+	}).(pulumi.StringOutput)
+}
+
+// The type of Secure Desktops client connected to a desktop.
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput) ClientType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection) string {
+		return v.ClientType
+	}).(pulumi.StringOutput)
+}
+
+// The version of the Secure Desktops client connected to a desktop, applicable only to the installed client type.
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput) ClientVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection) string {
+		return v.ClientVersion
+	}).(pulumi.StringOutput)
+}
+
+// Provides information about actions performed on a desktop, including type and time.
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput) LastActions() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput {
+	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection) []GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastAction {
+		return v.LastActions
+	}).(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput)
+}
+
+// Provides information about actions performed on a desktop, including type and time.
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput) NextActions() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput {
+	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection) []GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextAction {
+		return v.NextActions
+	}).(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput)
+}
+
+// The time when the last connection to a desktop started.
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput) TimeConnected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection) string {
+		return v.TimeConnected
+	}).(pulumi.StringOutput)
+}
+
+// The time when the last connection to a desktop ended.
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput) TimeDisconnected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection) string {
+		return v.TimeDisconnected
+	}).(pulumi.StringOutput)
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection)(nil)).Elem()
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutputWithContext(ctx context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput) Index(i pulumi.IntInput) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection {
+		return vs[0].([]GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection)[vs[1].(int)]
+	}).(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput)
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastAction struct {
+	// An action performed on a desktop.
+	Action string `pulumi:"action"`
+	// The time of an action performed on a desktop.
+	TimeApplied string `pulumi:"timeApplied"`
+}
+
+// GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionInput is an input type that accepts GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArgs and GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput values.
+// You can construct a concrete instance of `GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionInput` via:
+//
+//	GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArgs{...}
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput
+	ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutputWithContext(context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArgs struct {
+	// An action performed on a desktop.
+	Action pulumi.StringInput `pulumi:"action"`
+	// The time of an action performed on a desktop.
+	TimeApplied pulumi.StringInput `pulumi:"timeApplied"`
+}
+
+func (GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastAction)(nil)).Elem()
+}
+
+func (i GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArgs) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput {
+	return i.ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArgs) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutputWithContext(ctx context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput)
+}
+
+// GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayInput is an input type that accepts GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArray and GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput values.
+// You can construct a concrete instance of `GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayInput` via:
+//
+//	GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArray{ GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArgs{...} }
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput
+	ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutputWithContext(context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArray []GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionInput
+
+func (GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastAction)(nil)).Elem()
+}
+
+func (i GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArray) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput {
+	return i.ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArray) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutputWithContext(ctx context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput)
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastAction)(nil)).Elem()
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput {
+	return o
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutputWithContext(ctx context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput {
+	return o
+}
+
+// An action performed on a desktop.
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastAction) string {
+		return v.Action
+	}).(pulumi.StringOutput)
+}
+
+// The time of an action performed on a desktop.
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput) TimeApplied() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastAction) string {
+		return v.TimeApplied
+	}).(pulumi.StringOutput)
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastAction)(nil)).Elem()
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutputWithContext(ctx context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput) Index(i pulumi.IntInput) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastAction {
+		return vs[0].([]GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastAction)[vs[1].(int)]
+	}).(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput)
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextAction struct {
+	// An action performed on a desktop.
+	Action string `pulumi:"action"`
+	// The time of an action performed on a desktop.
+	TimeApplied string `pulumi:"timeApplied"`
+}
+
+// GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionInput is an input type that accepts GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArgs and GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput values.
+// You can construct a concrete instance of `GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionInput` via:
+//
+//	GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArgs{...}
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput
+	ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutputWithContext(context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArgs struct {
+	// An action performed on a desktop.
+	Action pulumi.StringInput `pulumi:"action"`
+	// The time of an action performed on a desktop.
+	TimeApplied pulumi.StringInput `pulumi:"timeApplied"`
+}
+
+func (GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextAction)(nil)).Elem()
+}
+
+func (i GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArgs) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput {
+	return i.ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArgs) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutputWithContext(ctx context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput)
+}
+
+// GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayInput is an input type that accepts GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArray and GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput values.
+// You can construct a concrete instance of `GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayInput` via:
+//
+//	GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArray{ GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArgs{...} }
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput
+	ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutputWithContext(context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArray []GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionInput
+
+func (GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextAction)(nil)).Elem()
+}
+
+func (i GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArray) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput {
+	return i.ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArray) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutputWithContext(ctx context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput)
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextAction)(nil)).Elem()
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput {
+	return o
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutputWithContext(ctx context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput {
+	return o
+}
+
+// An action performed on a desktop.
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextAction) string {
+		return v.Action
+	}).(pulumi.StringOutput)
+}
+
+// The time of an action performed on a desktop.
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput) TimeApplied() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextAction) string {
+		return v.TimeApplied
+	}).(pulumi.StringOutput)
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextAction)(nil)).Elem()
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutputWithContext(ctx context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput) Index(i pulumi.IntInput) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextAction {
+		return vs[0].([]GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextAction)[vs[1].(int)]
+	}).(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput)
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImage struct {
+	// The OCID of the desktop image.
+	ImageId string `pulumi:"imageId"`
+	// The name of the desktop image.
+	ImageName string `pulumi:"imageName"`
+	// The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+	OperatingSystem string `pulumi:"operatingSystem"`
+}
+
+// GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageInput is an input type that accepts GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArgs and GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput values.
+// You can construct a concrete instance of `GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageInput` via:
+//
+//	GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArgs{...}
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput
+	ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutputWithContext(context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArgs struct {
+	// The OCID of the desktop image.
+	ImageId pulumi.StringInput `pulumi:"imageId"`
+	// The name of the desktop image.
+	ImageName pulumi.StringInput `pulumi:"imageName"`
+	// The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+	OperatingSystem pulumi.StringInput `pulumi:"operatingSystem"`
+}
+
+func (GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImage)(nil)).Elem()
+}
+
+func (i GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArgs) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput {
+	return i.ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArgs) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutputWithContext(ctx context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput)
+}
+
+// GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayInput is an input type that accepts GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArray and GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput values.
+// You can construct a concrete instance of `GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayInput` via:
+//
+//	GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArray{ GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArgs{...} }
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput
+	ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutputWithContext(context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArray []GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageInput
+
+func (GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImage)(nil)).Elem()
+}
+
+func (i GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArray) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput {
+	return i.ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArray) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutputWithContext(ctx context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput)
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImage)(nil)).Elem()
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput {
+	return o
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutputWithContext(ctx context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput {
+	return o
+}
+
+// The OCID of the desktop image.
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput) ImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImage) string { return v.ImageId }).(pulumi.StringOutput)
+}
+
+// The name of the desktop image.
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput) ImageName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImage) string { return v.ImageName }).(pulumi.StringOutput)
+}
+
+// The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput) OperatingSystem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImage) string { return v.OperatingSystem }).(pulumi.StringOutput)
+}
+
+type GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImage)(nil)).Elem()
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput() GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput) ToGetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutputWithContext(ctx context.Context) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput) Index(i pulumi.IntInput) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImage {
+		return vs[0].([]GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImage)[vs[1].(int)]
+	}).(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput)
 }
 
 type GetDesktopPoolDesktopsFilter struct {
@@ -3015,6 +3928,8 @@ type GetDesktopPoolDevicePolicy struct {
 	IsPointerEnabled bool `pulumi:"isPointerEnabled"`
 	// Indicates whether printing is enabled.
 	IsPrintingEnabled bool `pulumi:"isPrintingEnabled"`
+	// Indicates whether video input is enabled.
+	IsVideoInputEnabled bool `pulumi:"isVideoInputEnabled"`
 }
 
 // GetDesktopPoolDevicePolicyInput is an input type that accepts GetDesktopPoolDevicePolicyArgs and GetDesktopPoolDevicePolicyOutput values.
@@ -3043,6 +3958,8 @@ type GetDesktopPoolDevicePolicyArgs struct {
 	IsPointerEnabled pulumi.BoolInput `pulumi:"isPointerEnabled"`
 	// Indicates whether printing is enabled.
 	IsPrintingEnabled pulumi.BoolInput `pulumi:"isPrintingEnabled"`
+	// Indicates whether video input is enabled.
+	IsVideoInputEnabled pulumi.BoolInput `pulumi:"isVideoInputEnabled"`
 }
 
 func (GetDesktopPoolDevicePolicyArgs) ElementType() reflect.Type {
@@ -3129,6 +4046,11 @@ func (o GetDesktopPoolDevicePolicyOutput) IsPointerEnabled() pulumi.BoolOutput {
 // Indicates whether printing is enabled.
 func (o GetDesktopPoolDevicePolicyOutput) IsPrintingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDesktopPoolDevicePolicy) bool { return v.IsPrintingEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether video input is enabled.
+func (o GetDesktopPoolDevicePolicyOutput) IsVideoInputEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDesktopPoolDevicePolicy) bool { return v.IsVideoInputEnabled }).(pulumi.BoolOutput)
 }
 
 type GetDesktopPoolDevicePolicyArrayOutput struct{ *pulumi.OutputState }
@@ -4425,6 +5347,8 @@ type GetDesktopPoolsDesktopPoolCollectionItem struct {
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Provides the start and stop schedule information for desktop availability of the desktop pool.
 	AvailabilityPolicies []GetDesktopPoolsDesktopPoolCollectionItemAvailabilityPolicy `pulumi:"availabilityPolicies"`
+	// The size in GBs of the boot volume for the desktop pool.
+	BootVolumeSizeInGbs int `pulumi:"bootVolumeSizeInGbs"`
 	// The OCID of the compartment of the desktop pool.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Contact information of the desktop pool administrator. Avoid entering confidential information.
@@ -4498,6 +5422,8 @@ type GetDesktopPoolsDesktopPoolCollectionItemArgs struct {
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// Provides the start and stop schedule information for desktop availability of the desktop pool.
 	AvailabilityPolicies GetDesktopPoolsDesktopPoolCollectionItemAvailabilityPolicyArrayInput `pulumi:"availabilityPolicies"`
+	// The size in GBs of the boot volume for the desktop pool.
+	BootVolumeSizeInGbs pulumi.IntInput `pulumi:"bootVolumeSizeInGbs"`
 	// The OCID of the compartment of the desktop pool.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Contact information of the desktop pool administrator. Avoid entering confidential information.
@@ -4625,6 +5551,11 @@ func (o GetDesktopPoolsDesktopPoolCollectionItemOutput) AvailabilityPolicies() G
 	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItem) []GetDesktopPoolsDesktopPoolCollectionItemAvailabilityPolicy {
 		return v.AvailabilityPolicies
 	}).(GetDesktopPoolsDesktopPoolCollectionItemAvailabilityPolicyArrayOutput)
+}
+
+// The size in GBs of the boot volume for the desktop pool.
+func (o GetDesktopPoolsDesktopPoolCollectionItemOutput) BootVolumeSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItem) int { return v.BootVolumeSizeInGbs }).(pulumi.IntOutput)
 }
 
 // The OCID of the compartment of the desktop pool.
@@ -5129,6 +6060,8 @@ type GetDesktopPoolsDesktopPoolCollectionItemDevicePolicy struct {
 	IsPointerEnabled bool `pulumi:"isPointerEnabled"`
 	// Indicates whether printing is enabled.
 	IsPrintingEnabled bool `pulumi:"isPrintingEnabled"`
+	// Indicates whether video input is enabled.
+	IsVideoInputEnabled bool `pulumi:"isVideoInputEnabled"`
 }
 
 // GetDesktopPoolsDesktopPoolCollectionItemDevicePolicyInput is an input type that accepts GetDesktopPoolsDesktopPoolCollectionItemDevicePolicyArgs and GetDesktopPoolsDesktopPoolCollectionItemDevicePolicyOutput values.
@@ -5157,6 +6090,8 @@ type GetDesktopPoolsDesktopPoolCollectionItemDevicePolicyArgs struct {
 	IsPointerEnabled pulumi.BoolInput `pulumi:"isPointerEnabled"`
 	// Indicates whether printing is enabled.
 	IsPrintingEnabled pulumi.BoolInput `pulumi:"isPrintingEnabled"`
+	// Indicates whether video input is enabled.
+	IsVideoInputEnabled pulumi.BoolInput `pulumi:"isVideoInputEnabled"`
 }
 
 func (GetDesktopPoolsDesktopPoolCollectionItemDevicePolicyArgs) ElementType() reflect.Type {
@@ -5243,6 +6178,11 @@ func (o GetDesktopPoolsDesktopPoolCollectionItemDevicePolicyOutput) IsPointerEna
 // Indicates whether printing is enabled.
 func (o GetDesktopPoolsDesktopPoolCollectionItemDevicePolicyOutput) IsPrintingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemDevicePolicy) bool { return v.IsPrintingEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether video input is enabled.
+func (o GetDesktopPoolsDesktopPoolCollectionItemDevicePolicyOutput) IsVideoInputEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemDevicePolicy) bool { return v.IsVideoInputEnabled }).(pulumi.BoolOutput)
 }
 
 type GetDesktopPoolsDesktopPoolCollectionItemDevicePolicyArrayOutput struct{ *pulumi.OutputState }
@@ -6276,6 +7216,8 @@ func (o GetDesktopsDesktopCollectionArrayOutput) Index(i pulumi.IntInput) GetDes
 type GetDesktopsDesktopCollectionItem struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+	DesktopConnections []GetDesktopsDesktopCollectionItemDesktopConnection `pulumi:"desktopConnections"`
 	// A filter to return only results with the given displayName.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -6306,6 +7248,8 @@ type GetDesktopsDesktopCollectionItemInput interface {
 type GetDesktopsDesktopCollectionItemArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+	DesktopConnections GetDesktopsDesktopCollectionItemDesktopConnectionArrayInput `pulumi:"desktopConnections"`
 	// A filter to return only results with the given displayName.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -6378,6 +7322,13 @@ func (o GetDesktopsDesktopCollectionItemOutput) DefinedTags() pulumi.StringMapOu
 	return o.ApplyT(func(v GetDesktopsDesktopCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+func (o GetDesktopsDesktopCollectionItemOutput) DesktopConnections() GetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput {
+	return o.ApplyT(func(v GetDesktopsDesktopCollectionItem) []GetDesktopsDesktopCollectionItemDesktopConnection {
+		return v.DesktopConnections
+	}).(GetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput)
+}
+
 // A filter to return only results with the given displayName.
 func (o GetDesktopsDesktopCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopsDesktopCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -6431,6 +7382,373 @@ func (o GetDesktopsDesktopCollectionItemArrayOutput) Index(i pulumi.IntInput) Ge
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopsDesktopCollectionItem {
 		return vs[0].([]GetDesktopsDesktopCollectionItem)[vs[1].(int)]
 	}).(GetDesktopsDesktopCollectionItemOutput)
+}
+
+type GetDesktopsDesktopCollectionItemDesktopConnection struct {
+	// The platform on which the Secure Desktops client runs.
+	ClientPlatform string `pulumi:"clientPlatform"`
+	// The type of Secure Desktops client connected to a desktop.
+	ClientType string `pulumi:"clientType"`
+	// The version of the Secure Desktops client connected to a desktop, applicable only to the installed client type.
+	ClientVersion string `pulumi:"clientVersion"`
+	// Provides information about actions performed on a desktop, including type and time.
+	LastActions []GetDesktopsDesktopCollectionItemDesktopConnectionLastAction `pulumi:"lastActions"`
+	// Provides information about actions performed on a desktop, including type and time.
+	NextActions []GetDesktopsDesktopCollectionItemDesktopConnectionNextAction `pulumi:"nextActions"`
+	// The time when the last connection to a desktop started.
+	TimeConnected string `pulumi:"timeConnected"`
+	// The time when the last connection to a desktop ended.
+	TimeDisconnected string `pulumi:"timeDisconnected"`
+}
+
+// GetDesktopsDesktopCollectionItemDesktopConnectionInput is an input type that accepts GetDesktopsDesktopCollectionItemDesktopConnectionArgs and GetDesktopsDesktopCollectionItemDesktopConnectionOutput values.
+// You can construct a concrete instance of `GetDesktopsDesktopCollectionItemDesktopConnectionInput` via:
+//
+//	GetDesktopsDesktopCollectionItemDesktopConnectionArgs{...}
+type GetDesktopsDesktopCollectionItemDesktopConnectionInput interface {
+	pulumi.Input
+
+	ToGetDesktopsDesktopCollectionItemDesktopConnectionOutput() GetDesktopsDesktopCollectionItemDesktopConnectionOutput
+	ToGetDesktopsDesktopCollectionItemDesktopConnectionOutputWithContext(context.Context) GetDesktopsDesktopCollectionItemDesktopConnectionOutput
+}
+
+type GetDesktopsDesktopCollectionItemDesktopConnectionArgs struct {
+	// The platform on which the Secure Desktops client runs.
+	ClientPlatform pulumi.StringInput `pulumi:"clientPlatform"`
+	// The type of Secure Desktops client connected to a desktop.
+	ClientType pulumi.StringInput `pulumi:"clientType"`
+	// The version of the Secure Desktops client connected to a desktop, applicable only to the installed client type.
+	ClientVersion pulumi.StringInput `pulumi:"clientVersion"`
+	// Provides information about actions performed on a desktop, including type and time.
+	LastActions GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayInput `pulumi:"lastActions"`
+	// Provides information about actions performed on a desktop, including type and time.
+	NextActions GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayInput `pulumi:"nextActions"`
+	// The time when the last connection to a desktop started.
+	TimeConnected pulumi.StringInput `pulumi:"timeConnected"`
+	// The time when the last connection to a desktop ended.
+	TimeDisconnected pulumi.StringInput `pulumi:"timeDisconnected"`
+}
+
+func (GetDesktopsDesktopCollectionItemDesktopConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopsDesktopCollectionItemDesktopConnection)(nil)).Elem()
+}
+
+func (i GetDesktopsDesktopCollectionItemDesktopConnectionArgs) ToGetDesktopsDesktopCollectionItemDesktopConnectionOutput() GetDesktopsDesktopCollectionItemDesktopConnectionOutput {
+	return i.ToGetDesktopsDesktopCollectionItemDesktopConnectionOutputWithContext(context.Background())
+}
+
+func (i GetDesktopsDesktopCollectionItemDesktopConnectionArgs) ToGetDesktopsDesktopCollectionItemDesktopConnectionOutputWithContext(ctx context.Context) GetDesktopsDesktopCollectionItemDesktopConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopsDesktopCollectionItemDesktopConnectionOutput)
+}
+
+// GetDesktopsDesktopCollectionItemDesktopConnectionArrayInput is an input type that accepts GetDesktopsDesktopCollectionItemDesktopConnectionArray and GetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput values.
+// You can construct a concrete instance of `GetDesktopsDesktopCollectionItemDesktopConnectionArrayInput` via:
+//
+//	GetDesktopsDesktopCollectionItemDesktopConnectionArray{ GetDesktopsDesktopCollectionItemDesktopConnectionArgs{...} }
+type GetDesktopsDesktopCollectionItemDesktopConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput() GetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput
+	ToGetDesktopsDesktopCollectionItemDesktopConnectionArrayOutputWithContext(context.Context) GetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput
+}
+
+type GetDesktopsDesktopCollectionItemDesktopConnectionArray []GetDesktopsDesktopCollectionItemDesktopConnectionInput
+
+func (GetDesktopsDesktopCollectionItemDesktopConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopsDesktopCollectionItemDesktopConnection)(nil)).Elem()
+}
+
+func (i GetDesktopsDesktopCollectionItemDesktopConnectionArray) ToGetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput() GetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput {
+	return i.ToGetDesktopsDesktopCollectionItemDesktopConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopsDesktopCollectionItemDesktopConnectionArray) ToGetDesktopsDesktopCollectionItemDesktopConnectionArrayOutputWithContext(ctx context.Context) GetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput)
+}
+
+type GetDesktopsDesktopCollectionItemDesktopConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopsDesktopCollectionItemDesktopConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopsDesktopCollectionItemDesktopConnection)(nil)).Elem()
+}
+
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionOutput) ToGetDesktopsDesktopCollectionItemDesktopConnectionOutput() GetDesktopsDesktopCollectionItemDesktopConnectionOutput {
+	return o
+}
+
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionOutput) ToGetDesktopsDesktopCollectionItemDesktopConnectionOutputWithContext(ctx context.Context) GetDesktopsDesktopCollectionItemDesktopConnectionOutput {
+	return o
+}
+
+// The platform on which the Secure Desktops client runs.
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionOutput) ClientPlatform() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopsDesktopCollectionItemDesktopConnection) string { return v.ClientPlatform }).(pulumi.StringOutput)
+}
+
+// The type of Secure Desktops client connected to a desktop.
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionOutput) ClientType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopsDesktopCollectionItemDesktopConnection) string { return v.ClientType }).(pulumi.StringOutput)
+}
+
+// The version of the Secure Desktops client connected to a desktop, applicable only to the installed client type.
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionOutput) ClientVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopsDesktopCollectionItemDesktopConnection) string { return v.ClientVersion }).(pulumi.StringOutput)
+}
+
+// Provides information about actions performed on a desktop, including type and time.
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionOutput) LastActions() GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput {
+	return o.ApplyT(func(v GetDesktopsDesktopCollectionItemDesktopConnection) []GetDesktopsDesktopCollectionItemDesktopConnectionLastAction {
+		return v.LastActions
+	}).(GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput)
+}
+
+// Provides information about actions performed on a desktop, including type and time.
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionOutput) NextActions() GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput {
+	return o.ApplyT(func(v GetDesktopsDesktopCollectionItemDesktopConnection) []GetDesktopsDesktopCollectionItemDesktopConnectionNextAction {
+		return v.NextActions
+	}).(GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput)
+}
+
+// The time when the last connection to a desktop started.
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionOutput) TimeConnected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopsDesktopCollectionItemDesktopConnection) string { return v.TimeConnected }).(pulumi.StringOutput)
+}
+
+// The time when the last connection to a desktop ended.
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionOutput) TimeDisconnected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopsDesktopCollectionItemDesktopConnection) string { return v.TimeDisconnected }).(pulumi.StringOutput)
+}
+
+type GetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopsDesktopCollectionItemDesktopConnection)(nil)).Elem()
+}
+
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput) ToGetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput() GetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput {
+	return o
+}
+
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput) ToGetDesktopsDesktopCollectionItemDesktopConnectionArrayOutputWithContext(ctx context.Context) GetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput {
+	return o
+}
+
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput) Index(i pulumi.IntInput) GetDesktopsDesktopCollectionItemDesktopConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopsDesktopCollectionItemDesktopConnection {
+		return vs[0].([]GetDesktopsDesktopCollectionItemDesktopConnection)[vs[1].(int)]
+	}).(GetDesktopsDesktopCollectionItemDesktopConnectionOutput)
+}
+
+type GetDesktopsDesktopCollectionItemDesktopConnectionLastAction struct {
+	// An action performed on a desktop.
+	Action string `pulumi:"action"`
+	// The time of an action performed on a desktop.
+	TimeApplied string `pulumi:"timeApplied"`
+}
+
+// GetDesktopsDesktopCollectionItemDesktopConnectionLastActionInput is an input type that accepts GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArgs and GetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput values.
+// You can construct a concrete instance of `GetDesktopsDesktopCollectionItemDesktopConnectionLastActionInput` via:
+//
+//	GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArgs{...}
+type GetDesktopsDesktopCollectionItemDesktopConnectionLastActionInput interface {
+	pulumi.Input
+
+	ToGetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput() GetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput
+	ToGetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutputWithContext(context.Context) GetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput
+}
+
+type GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArgs struct {
+	// An action performed on a desktop.
+	Action pulumi.StringInput `pulumi:"action"`
+	// The time of an action performed on a desktop.
+	TimeApplied pulumi.StringInput `pulumi:"timeApplied"`
+}
+
+func (GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopsDesktopCollectionItemDesktopConnectionLastAction)(nil)).Elem()
+}
+
+func (i GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArgs) ToGetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput() GetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput {
+	return i.ToGetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutputWithContext(context.Background())
+}
+
+func (i GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArgs) ToGetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutputWithContext(ctx context.Context) GetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput)
+}
+
+// GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayInput is an input type that accepts GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArray and GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput values.
+// You can construct a concrete instance of `GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayInput` via:
+//
+//	GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArray{ GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArgs{...} }
+type GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput() GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput
+	ToGetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutputWithContext(context.Context) GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput
+}
+
+type GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArray []GetDesktopsDesktopCollectionItemDesktopConnectionLastActionInput
+
+func (GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopsDesktopCollectionItemDesktopConnectionLastAction)(nil)).Elem()
+}
+
+func (i GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArray) ToGetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput() GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput {
+	return i.ToGetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArray) ToGetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutputWithContext(ctx context.Context) GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput)
+}
+
+type GetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopsDesktopCollectionItemDesktopConnectionLastAction)(nil)).Elem()
+}
+
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput) ToGetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput() GetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput {
+	return o
+}
+
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput) ToGetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutputWithContext(ctx context.Context) GetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput {
+	return o
+}
+
+// An action performed on a desktop.
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopsDesktopCollectionItemDesktopConnectionLastAction) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// The time of an action performed on a desktop.
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput) TimeApplied() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopsDesktopCollectionItemDesktopConnectionLastAction) string { return v.TimeApplied }).(pulumi.StringOutput)
+}
+
+type GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopsDesktopCollectionItemDesktopConnectionLastAction)(nil)).Elem()
+}
+
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput) ToGetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput() GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput {
+	return o
+}
+
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput) ToGetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutputWithContext(ctx context.Context) GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput {
+	return o
+}
+
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput) Index(i pulumi.IntInput) GetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopsDesktopCollectionItemDesktopConnectionLastAction {
+		return vs[0].([]GetDesktopsDesktopCollectionItemDesktopConnectionLastAction)[vs[1].(int)]
+	}).(GetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput)
+}
+
+type GetDesktopsDesktopCollectionItemDesktopConnectionNextAction struct {
+	// An action performed on a desktop.
+	Action string `pulumi:"action"`
+	// The time of an action performed on a desktop.
+	TimeApplied string `pulumi:"timeApplied"`
+}
+
+// GetDesktopsDesktopCollectionItemDesktopConnectionNextActionInput is an input type that accepts GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArgs and GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput values.
+// You can construct a concrete instance of `GetDesktopsDesktopCollectionItemDesktopConnectionNextActionInput` via:
+//
+//	GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArgs{...}
+type GetDesktopsDesktopCollectionItemDesktopConnectionNextActionInput interface {
+	pulumi.Input
+
+	ToGetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput() GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput
+	ToGetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutputWithContext(context.Context) GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput
+}
+
+type GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArgs struct {
+	// An action performed on a desktop.
+	Action pulumi.StringInput `pulumi:"action"`
+	// The time of an action performed on a desktop.
+	TimeApplied pulumi.StringInput `pulumi:"timeApplied"`
+}
+
+func (GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopsDesktopCollectionItemDesktopConnectionNextAction)(nil)).Elem()
+}
+
+func (i GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArgs) ToGetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput() GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput {
+	return i.ToGetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutputWithContext(context.Background())
+}
+
+func (i GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArgs) ToGetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutputWithContext(ctx context.Context) GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput)
+}
+
+// GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayInput is an input type that accepts GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArray and GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput values.
+// You can construct a concrete instance of `GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayInput` via:
+//
+//	GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArray{ GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArgs{...} }
+type GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput() GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput
+	ToGetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutputWithContext(context.Context) GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput
+}
+
+type GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArray []GetDesktopsDesktopCollectionItemDesktopConnectionNextActionInput
+
+func (GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopsDesktopCollectionItemDesktopConnectionNextAction)(nil)).Elem()
+}
+
+func (i GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArray) ToGetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput() GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput {
+	return i.ToGetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArray) ToGetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutputWithContext(ctx context.Context) GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput)
+}
+
+type GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopsDesktopCollectionItemDesktopConnectionNextAction)(nil)).Elem()
+}
+
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput) ToGetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput() GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput {
+	return o
+}
+
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput) ToGetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutputWithContext(ctx context.Context) GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput {
+	return o
+}
+
+// An action performed on a desktop.
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopsDesktopCollectionItemDesktopConnectionNextAction) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// The time of an action performed on a desktop.
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput) TimeApplied() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopsDesktopCollectionItemDesktopConnectionNextAction) string { return v.TimeApplied }).(pulumi.StringOutput)
+}
+
+type GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopsDesktopCollectionItemDesktopConnectionNextAction)(nil)).Elem()
+}
+
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput) ToGetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput() GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput {
+	return o
+}
+
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput) ToGetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutputWithContext(ctx context.Context) GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput {
+	return o
+}
+
+func (o GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput) Index(i pulumi.IntInput) GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopsDesktopCollectionItemDesktopConnectionNextAction {
+		return vs[0].([]GetDesktopsDesktopCollectionItemDesktopConnectionNextAction)[vs[1].(int)]
+	}).(GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput)
 }
 
 type GetDesktopsFilter struct {
@@ -6562,6 +7880,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolSessionLifecycleActionsInactivityPtrInput)(nil)).Elem(), DesktopPoolSessionLifecycleActionsInactivityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolShapeConfigInput)(nil)).Elem(), DesktopPoolShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolShapeConfigPtrInput)(nil)).Elem(), DesktopPoolShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopDesktopConnectionInput)(nil)).Elem(), GetDesktopDesktopConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopDesktopConnectionArrayInput)(nil)).Elem(), GetDesktopDesktopConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopDesktopConnectionLastActionInput)(nil)).Elem(), GetDesktopDesktopConnectionLastActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopDesktopConnectionLastActionArrayInput)(nil)).Elem(), GetDesktopDesktopConnectionLastActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopDesktopConnectionNextActionInput)(nil)).Elem(), GetDesktopDesktopConnectionNextActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopDesktopConnectionNextActionArrayInput)(nil)).Elem(), GetDesktopDesktopConnectionNextActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopDevicePolicyInput)(nil)).Elem(), GetDesktopDevicePolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopDevicePolicyArrayInput)(nil)).Elem(), GetDesktopDevicePolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopHostingOptionInput)(nil)).Elem(), GetDesktopHostingOptionArgs{})
@@ -6578,6 +7902,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionArrayInput)(nil)).Elem(), GetDesktopPoolDesktopsDesktopPoolDesktopCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemInput)(nil)).Elem(), GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemArrayInput)(nil)).Elem(), GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionInput)(nil)).Elem(), GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayInput)(nil)).Elem(), GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionInput)(nil)).Elem(), GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayInput)(nil)).Elem(), GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionInput)(nil)).Elem(), GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayInput)(nil)).Elem(), GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageInput)(nil)).Elem(), GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayInput)(nil)).Elem(), GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolDesktopsFilterInput)(nil)).Elem(), GetDesktopPoolDesktopsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolDesktopsFilterArrayInput)(nil)).Elem(), GetDesktopPoolDesktopsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolDevicePolicyInput)(nil)).Elem(), GetDesktopPoolDevicePolicyArgs{})
@@ -6634,6 +7966,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsDesktopCollectionArrayInput)(nil)).Elem(), GetDesktopsDesktopCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsDesktopCollectionItemInput)(nil)).Elem(), GetDesktopsDesktopCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsDesktopCollectionItemArrayInput)(nil)).Elem(), GetDesktopsDesktopCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsDesktopCollectionItemDesktopConnectionInput)(nil)).Elem(), GetDesktopsDesktopCollectionItemDesktopConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsDesktopCollectionItemDesktopConnectionArrayInput)(nil)).Elem(), GetDesktopsDesktopCollectionItemDesktopConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsDesktopCollectionItemDesktopConnectionLastActionInput)(nil)).Elem(), GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayInput)(nil)).Elem(), GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsDesktopCollectionItemDesktopConnectionNextActionInput)(nil)).Elem(), GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayInput)(nil)).Elem(), GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsFilterInput)(nil)).Elem(), GetDesktopsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsFilterArrayInput)(nil)).Elem(), GetDesktopsFilterArray{})
 	pulumi.RegisterOutputType(DesktopPoolAvailabilityPolicyOutput{})
@@ -6658,6 +7996,12 @@ func init() {
 	pulumi.RegisterOutputType(DesktopPoolSessionLifecycleActionsInactivityPtrOutput{})
 	pulumi.RegisterOutputType(DesktopPoolShapeConfigOutput{})
 	pulumi.RegisterOutputType(DesktopPoolShapeConfigPtrOutput{})
+	pulumi.RegisterOutputType(GetDesktopDesktopConnectionOutput{})
+	pulumi.RegisterOutputType(GetDesktopDesktopConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopDesktopConnectionLastActionOutput{})
+	pulumi.RegisterOutputType(GetDesktopDesktopConnectionLastActionArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopDesktopConnectionNextActionOutput{})
+	pulumi.RegisterOutputType(GetDesktopDesktopConnectionNextActionArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopDevicePolicyOutput{})
 	pulumi.RegisterOutputType(GetDesktopDevicePolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopHostingOptionOutput{})
@@ -6674,6 +8018,14 @@ func init() {
 	pulumi.RegisterOutputType(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolDesktopsFilterOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolDesktopsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolDevicePolicyOutput{})
@@ -6730,6 +8082,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDesktopsDesktopCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopsDesktopCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetDesktopsDesktopCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopsDesktopCollectionItemDesktopConnectionOutput{})
+	pulumi.RegisterOutputType(GetDesktopsDesktopCollectionItemDesktopConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopsDesktopCollectionItemDesktopConnectionLastActionOutput{})
+	pulumi.RegisterOutputType(GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput{})
+	pulumi.RegisterOutputType(GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopsFilterOutput{})
 	pulumi.RegisterOutputType(GetDesktopsFilterArrayOutput{})
 }

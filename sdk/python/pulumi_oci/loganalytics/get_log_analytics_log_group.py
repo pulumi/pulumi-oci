@@ -171,7 +171,7 @@ def get_log_analytics_log_group(log_analytics_log_group_id: Optional[_builtins.s
 
 
     :param _builtins.str log_analytics_log_group_id: unique logAnalytics log group identifier
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['logAnalyticsLogGroupId'] = log_analytics_log_group_id
@@ -210,7 +210,7 @@ def get_log_analytics_log_group_output(log_analytics_log_group_id: Optional[pulu
 
 
     :param _builtins.str log_analytics_log_group_id: unique logAnalytics log group identifier
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['logAnalyticsLogGroupId'] = log_analytics_log_group_id

@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/desktops"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/desktops"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -67,6 +67,8 @@ type LookupDesktopPoolResult struct {
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Provides the start and stop schedule information for desktop availability of the desktop pool.
 	AvailabilityPolicies []GetDesktopPoolAvailabilityPolicy `pulumi:"availabilityPolicies"`
+	// The size in GBs of the boot volume for the desktop pool.
+	BootVolumeSizeInGbs int `pulumi:"bootVolumeSizeInGbs"`
 	// The OCID of the compartment of the desktop pool.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Contact information of the desktop pool administrator. Avoid entering confidential information.
@@ -177,6 +179,11 @@ func (o LookupDesktopPoolResultOutput) AvailabilityDomain() pulumi.StringOutput 
 // Provides the start and stop schedule information for desktop availability of the desktop pool.
 func (o LookupDesktopPoolResultOutput) AvailabilityPolicies() GetDesktopPoolAvailabilityPolicyArrayOutput {
 	return o.ApplyT(func(v LookupDesktopPoolResult) []GetDesktopPoolAvailabilityPolicy { return v.AvailabilityPolicies }).(GetDesktopPoolAvailabilityPolicyArrayOutput)
+}
+
+// The size in GBs of the boot volume for the desktop pool.
+func (o LookupDesktopPoolResultOutput) BootVolumeSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDesktopPoolResult) int { return v.BootVolumeSizeInGbs }).(pulumi.IntOutput)
 }
 
 // The OCID of the compartment of the desktop pool.

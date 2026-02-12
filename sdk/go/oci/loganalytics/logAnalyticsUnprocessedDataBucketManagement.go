@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +19,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -45,11 +45,11 @@ import (
 type LogAnalyticsUnprocessedDataBucketManagement struct {
 	pulumi.CustomResourceState
 
-	// Name of the Object Storage bucket.
+	// Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
 	Bucket pulumi.StringOutput `pulumi:"bucket"`
 	// Flag that specifies if this configuration is enabled or not.
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -96,11 +96,11 @@ func GetLogAnalyticsUnprocessedDataBucketManagement(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering LogAnalyticsUnprocessedDataBucketManagement resources.
 type logAnalyticsUnprocessedDataBucketManagementState struct {
-	// Name of the Object Storage bucket.
+	// Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
 	Bucket *string `pulumi:"bucket"`
 	// Flag that specifies if this configuration is enabled or not.
 	IsEnabled *bool `pulumi:"isEnabled"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -112,11 +112,11 @@ type logAnalyticsUnprocessedDataBucketManagementState struct {
 }
 
 type LogAnalyticsUnprocessedDataBucketManagementState struct {
-	// Name of the Object Storage bucket.
+	// Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
 	Bucket pulumi.StringPtrInput
 	// Flag that specifies if this configuration is enabled or not.
 	IsEnabled pulumi.BoolPtrInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -132,11 +132,11 @@ func (LogAnalyticsUnprocessedDataBucketManagementState) ElementType() reflect.Ty
 }
 
 type logAnalyticsUnprocessedDataBucketManagementArgs struct {
-	// Name of the Object Storage bucket.
+	// Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
 	Bucket string `pulumi:"bucket"`
 	// Flag that specifies if this configuration is enabled or not.
 	IsEnabled *bool `pulumi:"isEnabled"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -145,11 +145,11 @@ type logAnalyticsUnprocessedDataBucketManagementArgs struct {
 
 // The set of arguments for constructing a LogAnalyticsUnprocessedDataBucketManagement resource.
 type LogAnalyticsUnprocessedDataBucketManagementArgs struct {
-	// Name of the Object Storage bucket.
+	// Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
 	Bucket pulumi.StringInput
 	// Flag that specifies if this configuration is enabled or not.
 	IsEnabled pulumi.BoolPtrInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -243,7 +243,7 @@ func (o LogAnalyticsUnprocessedDataBucketManagementOutput) ToLogAnalyticsUnproce
 	return o
 }
 
-// Name of the Object Storage bucket.
+// Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
 func (o LogAnalyticsUnprocessedDataBucketManagementOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsUnprocessedDataBucketManagement) pulumi.StringOutput { return v.Bucket }).(pulumi.StringOutput)
 }
@@ -253,7 +253,7 @@ func (o LogAnalyticsUnprocessedDataBucketManagementOutput) IsEnabled() pulumi.Bo
 	return o.ApplyT(func(v *LogAnalyticsUnprocessedDataBucketManagement) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
-// The Logging Analytics namespace used for the request.
+// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

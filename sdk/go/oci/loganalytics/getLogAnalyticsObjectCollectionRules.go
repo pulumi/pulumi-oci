@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -60,7 +60,7 @@ type GetLogAnalyticsObjectCollectionRulesArgs struct {
 	Filters       []GetLogAnalyticsObjectCollectionRulesFilter `pulumi:"filters"`
 	// A filter to return rules only matching with this name.
 	Name *string `pulumi:"name"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 	// Lifecycle state filter.
 	State *string `pulumi:"state"`
@@ -98,7 +98,7 @@ type GetLogAnalyticsObjectCollectionRulesOutputArgs struct {
 	Filters       GetLogAnalyticsObjectCollectionRulesFilterArrayInput `pulumi:"filters"`
 	// A filter to return rules only matching with this name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// Lifecycle state filter.
 	State pulumi.StringPtrInput `pulumi:"state"`

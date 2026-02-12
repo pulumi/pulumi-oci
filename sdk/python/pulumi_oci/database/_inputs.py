@@ -519,6 +519,8 @@ __all__ = [
     'VmClusterRemoveVirtualMachineDbServerArgsDict',
     'VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs',
     'VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgsDict',
+    'GetAdvancedClusterFileSystemsFilterArgs',
+    'GetAdvancedClusterFileSystemsFilterArgsDict',
     'GetApplicationVipsFilterArgs',
     'GetApplicationVipsFilterArgsDict',
     'GetAutonomousCharacterSetsFilterArgs',
@@ -10735,6 +10737,7 @@ if not MYPY:
         """
         Available storage size for Exascale in GBs.
         """
+        available_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
         total_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
         """
         Storage size needed for Exascale in GBs.
@@ -10743,6 +10746,7 @@ if not MYPY:
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        total_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
 elif False:
     CloudExadataInfrastructureConfigureExascaleManagementExascaleConfigArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -10750,7 +10754,9 @@ elif False:
 class CloudExadataInfrastructureConfigureExascaleManagementExascaleConfigArgs:
     def __init__(__self__, *,
                  available_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 total_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
+                 available_vm_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
+                 total_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
+                 total_vm_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] available_storage_in_gbs: Available storage size for Exascale in GBs.
         :param pulumi.Input[_builtins.int] total_storage_in_gbs: Storage size needed for Exascale in GBs.
@@ -10761,8 +10767,12 @@ class CloudExadataInfrastructureConfigureExascaleManagementExascaleConfigArgs:
         """
         if available_storage_in_gbs is not None:
             pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        if available_vm_storage_in_gbs is not None:
+            pulumi.set(__self__, "available_vm_storage_in_gbs", available_vm_storage_in_gbs)
         if total_storage_in_gbs is not None:
             pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+        if total_vm_storage_in_gbs is not None:
+            pulumi.set(__self__, "total_vm_storage_in_gbs", total_vm_storage_in_gbs)
 
     @_builtins.property
     @pulumi.getter(name="availableStorageInGbs")
@@ -10775,6 +10785,15 @@ class CloudExadataInfrastructureConfigureExascaleManagementExascaleConfigArgs:
     @available_storage_in_gbs.setter
     def available_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "available_storage_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="availableVmStorageInGbs")
+    def available_vm_storage_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        return pulumi.get(self, "available_vm_storage_in_gbs")
+
+    @available_vm_storage_in_gbs.setter
+    def available_vm_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "available_vm_storage_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="totalStorageInGbs")
@@ -10791,6 +10810,15 @@ class CloudExadataInfrastructureConfigureExascaleManagementExascaleConfigArgs:
     @total_storage_in_gbs.setter
     def total_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "total_storage_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalVmStorageInGbs")
+    def total_vm_storage_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        return pulumi.get(self, "total_vm_storage_in_gbs")
+
+    @total_vm_storage_in_gbs.setter
+    def total_vm_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "total_vm_storage_in_gbs", value)
 
 
 if not MYPY:
@@ -11219,9 +11247,17 @@ if not MYPY:
         """
         Available storage size for Exascale in GBs.
         """
+        available_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        Available storage size for VM storage on Exascale in GBs.
+        """
         total_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
         """
         Storage size needed for Exascale in GBs.
+        """
+        total_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        Storage size needed for VM storage on Exascale in GBs.
         """
 elif False:
     CloudExadataInfrastructureExascaleConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -11230,15 +11266,23 @@ elif False:
 class CloudExadataInfrastructureExascaleConfigArgs:
     def __init__(__self__, *,
                  available_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 total_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
+                 available_vm_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
+                 total_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
+                 total_vm_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] available_storage_in_gbs: Available storage size for Exascale in GBs.
+        :param pulumi.Input[_builtins.int] available_vm_storage_in_gbs: Available storage size for VM storage on Exascale in GBs.
         :param pulumi.Input[_builtins.int] total_storage_in_gbs: Storage size needed for Exascale in GBs.
+        :param pulumi.Input[_builtins.int] total_vm_storage_in_gbs: Storage size needed for VM storage on Exascale in GBs.
         """
         if available_storage_in_gbs is not None:
             pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        if available_vm_storage_in_gbs is not None:
+            pulumi.set(__self__, "available_vm_storage_in_gbs", available_vm_storage_in_gbs)
         if total_storage_in_gbs is not None:
             pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+        if total_vm_storage_in_gbs is not None:
+            pulumi.set(__self__, "total_vm_storage_in_gbs", total_vm_storage_in_gbs)
 
     @_builtins.property
     @pulumi.getter(name="availableStorageInGbs")
@@ -11253,6 +11297,18 @@ class CloudExadataInfrastructureExascaleConfigArgs:
         pulumi.set(self, "available_storage_in_gbs", value)
 
     @_builtins.property
+    @pulumi.getter(name="availableVmStorageInGbs")
+    def available_vm_storage_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Available storage size for VM storage on Exascale in GBs.
+        """
+        return pulumi.get(self, "available_vm_storage_in_gbs")
+
+    @available_vm_storage_in_gbs.setter
+    def available_vm_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "available_vm_storage_in_gbs", value)
+
+    @_builtins.property
     @pulumi.getter(name="totalStorageInGbs")
     def total_storage_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
@@ -11263,6 +11319,18 @@ class CloudExadataInfrastructureExascaleConfigArgs:
     @total_storage_in_gbs.setter
     def total_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "total_storage_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalVmStorageInGbs")
+    def total_vm_storage_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Storage size needed for VM storage on Exascale in GBs.
+        """
+        return pulumi.get(self, "total_vm_storage_in_gbs")
+
+    @total_vm_storage_in_gbs.setter
+    def total_vm_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "total_vm_storage_in_gbs", value)
 
 
 if not MYPY:
@@ -20871,6 +20939,7 @@ if not MYPY:
         """
         Available storage size for Exascale in GBs.
         """
+        available_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
         total_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
         """
         Storage size needed for Exascale in GBs.
@@ -20879,6 +20948,7 @@ if not MYPY:
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        total_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
 elif False:
     ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -20886,7 +20956,9 @@ elif False:
 class ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgs:
     def __init__(__self__, *,
                  available_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 total_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
+                 available_vm_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
+                 total_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
+                 total_vm_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] available_storage_in_gbs: Available storage size for Exascale in GBs.
         :param pulumi.Input[_builtins.int] total_storage_in_gbs: Storage size needed for Exascale in GBs.
@@ -20897,8 +20969,12 @@ class ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgs:
         """
         if available_storage_in_gbs is not None:
             pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        if available_vm_storage_in_gbs is not None:
+            pulumi.set(__self__, "available_vm_storage_in_gbs", available_vm_storage_in_gbs)
         if total_storage_in_gbs is not None:
             pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+        if total_vm_storage_in_gbs is not None:
+            pulumi.set(__self__, "total_vm_storage_in_gbs", total_vm_storage_in_gbs)
 
     @_builtins.property
     @pulumi.getter(name="availableStorageInGbs")
@@ -20911,6 +20987,15 @@ class ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgs:
     @available_storage_in_gbs.setter
     def available_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "available_storage_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="availableVmStorageInGbs")
+    def available_vm_storage_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        return pulumi.get(self, "available_vm_storage_in_gbs")
+
+    @available_vm_storage_in_gbs.setter
+    def available_vm_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "available_vm_storage_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="totalStorageInGbs")
@@ -20927,6 +21012,15 @@ class ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgs:
     @total_storage_in_gbs.setter
     def total_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "total_storage_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalVmStorageInGbs")
+    def total_vm_storage_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        return pulumi.get(self, "total_vm_storage_in_gbs")
+
+    @total_vm_storage_in_gbs.setter
+    def total_vm_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "total_vm_storage_in_gbs", value)
 
 
 if not MYPY:
@@ -21504,9 +21598,17 @@ if not MYPY:
         """
         Available storage size for Exascale in GBs.
         """
+        available_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        Available storage size for VM storage on Exascale in GBs.
+        """
         total_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
         """
         Storage size needed for Exascale in GBs.
+        """
+        total_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        Storage size needed for VM storage on Exascale in GBs.
         """
 elif False:
     ExadataInfrastructureExascaleConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -21515,15 +21617,23 @@ elif False:
 class ExadataInfrastructureExascaleConfigArgs:
     def __init__(__self__, *,
                  available_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 total_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
+                 available_vm_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
+                 total_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
+                 total_vm_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] available_storage_in_gbs: Available storage size for Exascale in GBs.
+        :param pulumi.Input[_builtins.int] available_vm_storage_in_gbs: Available storage size for VM storage on Exascale in GBs.
         :param pulumi.Input[_builtins.int] total_storage_in_gbs: Storage size needed for Exascale in GBs.
+        :param pulumi.Input[_builtins.int] total_vm_storage_in_gbs: Storage size needed for VM storage on Exascale in GBs.
         """
         if available_storage_in_gbs is not None:
             pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        if available_vm_storage_in_gbs is not None:
+            pulumi.set(__self__, "available_vm_storage_in_gbs", available_vm_storage_in_gbs)
         if total_storage_in_gbs is not None:
             pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+        if total_vm_storage_in_gbs is not None:
+            pulumi.set(__self__, "total_vm_storage_in_gbs", total_vm_storage_in_gbs)
 
     @_builtins.property
     @pulumi.getter(name="availableStorageInGbs")
@@ -21538,6 +21648,18 @@ class ExadataInfrastructureExascaleConfigArgs:
         pulumi.set(self, "available_storage_in_gbs", value)
 
     @_builtins.property
+    @pulumi.getter(name="availableVmStorageInGbs")
+    def available_vm_storage_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Available storage size for VM storage on Exascale in GBs.
+        """
+        return pulumi.get(self, "available_vm_storage_in_gbs")
+
+    @available_vm_storage_in_gbs.setter
+    def available_vm_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "available_vm_storage_in_gbs", value)
+
+    @_builtins.property
     @pulumi.getter(name="totalStorageInGbs")
     def total_storage_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
@@ -21548,6 +21670,18 @@ class ExadataInfrastructureExascaleConfigArgs:
     @total_storage_in_gbs.setter
     def total_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "total_storage_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalVmStorageInGbs")
+    def total_vm_storage_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Storage size needed for VM storage on Exascale in GBs.
+        """
+        return pulumi.get(self, "total_vm_storage_in_gbs")
+
+    @total_vm_storage_in_gbs.setter
+    def total_vm_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "total_vm_storage_in_gbs", value)
 
 
 if not MYPY:
@@ -26613,6 +26747,62 @@ class VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs:
     @mount_point.setter
     def mount_point(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "mount_point", value)
+
+
+if not MYPY:
+    class GetAdvancedClusterFileSystemsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        """
+        A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetAdvancedClusterFileSystemsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetAdvancedClusterFileSystemsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
 
 
 if not MYPY:

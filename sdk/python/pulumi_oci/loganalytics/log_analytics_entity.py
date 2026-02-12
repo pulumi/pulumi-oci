@@ -39,8 +39,8 @@ class LogAnalyticsEntityArgs:
         The set of arguments for constructing a LogAnalyticsEntity resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] entity_type_name: Log analytics entity type name.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
-        :param pulumi.Input[_builtins.str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
+        :param pulumi.Input[_builtins.str] cloud_resource_id: (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] hostname: (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
@@ -110,7 +110,7 @@ class LogAnalyticsEntityArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -122,7 +122,7 @@ class LogAnalyticsEntityArgs:
     @pulumi.getter(name="cloudResourceId")
     def cloud_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+        (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         """
         return pulumi.get(self, "cloud_resource_id")
 
@@ -285,7 +285,7 @@ class _LogAnalyticsEntityState:
         Input properties used for looking up and filtering LogAnalyticsEntity resources.
         :param pulumi.Input[_builtins.bool] are_logs_collected: The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
         :param pulumi.Input[_builtins.int] associated_sources_count: The count of associated log sources for a given log analytics entity.
-        :param pulumi.Input[_builtins.str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+        :param pulumi.Input[_builtins.str] cloud_resource_id: (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] entity_type_internal_name: Internal name for the log analytics entity type.
@@ -298,7 +298,7 @@ class _LogAnalyticsEntityState:
         :param pulumi.Input[_builtins.str] management_agent_id: (Updatable) The OCID of the Management Agent.
         :param pulumi.Input['LogAnalyticsEntityMetadataArgs'] metadata: (Updatable) Details of Entity Metadata.
         :param pulumi.Input[_builtins.str] name: (Updatable) Log analytics entity name.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param pulumi.Input[_builtins.str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
         :param pulumi.Input[_builtins.str] state: The current state of the log analytics entity.
@@ -386,7 +386,7 @@ class _LogAnalyticsEntityState:
     @pulumi.getter(name="cloudResourceId")
     def cloud_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+        (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         """
         return pulumi.get(self, "cloud_resource_id")
 
@@ -542,7 +542,7 @@ class _LogAnalyticsEntityState:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -704,7 +704,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+        :param pulumi.Input[_builtins.str] cloud_resource_id: (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] entity_type_name: Log analytics entity type name.
@@ -713,7 +713,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] management_agent_id: (Updatable) The OCID of the Management Agent.
         :param pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']] metadata: (Updatable) Details of Entity Metadata.
         :param pulumi.Input[_builtins.str] name: (Updatable) Log analytics entity name.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param pulumi.Input[_builtins.str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
         :param pulumi.Input[_builtins.str] time_last_discovered: (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
@@ -880,7 +880,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] are_logs_collected: The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
         :param pulumi.Input[_builtins.int] associated_sources_count: The count of associated log sources for a given log analytics entity.
-        :param pulumi.Input[_builtins.str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+        :param pulumi.Input[_builtins.str] cloud_resource_id: (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] entity_type_internal_name: Internal name for the log analytics entity type.
@@ -893,7 +893,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] management_agent_id: (Updatable) The OCID of the Management Agent.
         :param pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']] metadata: (Updatable) Details of Entity Metadata.
         :param pulumi.Input[_builtins.str] name: (Updatable) Log analytics entity name.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param pulumi.Input[_builtins.str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
         :param pulumi.Input[_builtins.str] state: The current state of the log analytics entity.
@@ -955,7 +955,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
     @pulumi.getter(name="cloudResourceId")
     def cloud_resource_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+        (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         """
         return pulumi.get(self, "cloud_resource_id")
 
@@ -1059,7 +1059,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 

@@ -32,6 +32,7 @@ namespace Pulumi.Oci.NetworkFirewall
     ///                 Type = networkFirewallPolicyUrlListUrlsType,
     ///             },
     ///         },
+    ///         Description = networkFirewallPolicyUrlListDescription,
     ///     });
     /// 
     /// });
@@ -48,6 +49,12 @@ namespace Pulumi.Oci.NetworkFirewall
     [OciResourceType("oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList")]
     public partial class NetworkFirewallPolicyUrlList : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// (Updatable) The description of the Url list. This field can be used to add additional info.
+        /// </summary>
+        [Output("description")]
+        public Output<string?> Description { get; private set; } = null!;
+
         /// <summary>
         /// Unique name to identify the group of urls to be used in the policy rules.
         /// </summary>
@@ -125,6 +132,12 @@ namespace Pulumi.Oci.NetworkFirewall
     public sealed class NetworkFirewallPolicyUrlListArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) The description of the Url list. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        /// <summary>
         /// Unique name to identify the group of urls to be used in the policy rules.
         /// </summary>
         [Input("name")]
@@ -156,6 +169,12 @@ namespace Pulumi.Oci.NetworkFirewall
 
     public sealed class NetworkFirewallPolicyUrlListState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) The description of the Url list. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
         /// <summary>
         /// Unique name to identify the group of urls to be used in the policy rules.
         /// </summary>

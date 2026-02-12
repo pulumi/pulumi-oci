@@ -86,7 +86,9 @@ namespace Pulumi.Oci.Database
     ///         SubscriptionId = tenantSubscriptionId,
     ///         SystemVersion = cloudVmClusterSystemVersion,
     ///         TimeZone = cloudVmClusterTimeZone,
+    ///         VmBackupStorageType = cloudVmClusterVmBackupStorageType,
     ///         VmClusterType = cloudVmClusterVmClusterType,
+    ///         VmFileSystemStorageType = cloudVmClusterVmFileSystemStorageType,
     ///     });
     /// 
     /// });
@@ -469,14 +471,26 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<string>> Vipv6ids { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+        /// </summary>
+        [Output("vmBackupStorageType")]
+        public Output<string> VmBackupStorageType { get; private set; } = null!;
+
+        /// <summary>
         /// The vmcluster type for the VM cluster/Cloud VM cluster.
+        /// </summary>
+        [Output("vmClusterType")]
+        public Output<string> VmClusterType { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Output("vmClusterType")]
-        public Output<string> VmClusterType { get; private set; } = null!;
+        [Output("vmFileSystemStorageType")]
+        public Output<string> VmFileSystemStorageType { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the zone the cloud VM cluster is associated with.
@@ -818,14 +832,26 @@ namespace Pulumi.Oci.Database
         public Input<string>? TimeZone { get; set; }
 
         /// <summary>
+        /// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+        /// </summary>
+        [Input("vmBackupStorageType")]
+        public Input<string>? VmBackupStorageType { get; set; }
+
+        /// <summary>
         /// The vmcluster type for the VM cluster/Cloud VM cluster.
+        /// </summary>
+        [Input("vmClusterType")]
+        public Input<string>? VmClusterType { get; set; }
+
+        /// <summary>
+        /// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("vmClusterType")]
-        public Input<string>? VmClusterType { get; set; }
+        [Input("vmFileSystemStorageType")]
+        public Input<string>? VmFileSystemStorageType { get; set; }
 
         public CloudVmClusterArgs()
         {
@@ -1291,14 +1317,26 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+        /// </summary>
+        [Input("vmBackupStorageType")]
+        public Input<string>? VmBackupStorageType { get; set; }
+
+        /// <summary>
         /// The vmcluster type for the VM cluster/Cloud VM cluster.
+        /// </summary>
+        [Input("vmClusterType")]
+        public Input<string>? VmClusterType { get; set; }
+
+        /// <summary>
+        /// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("vmClusterType")]
-        public Input<string>? VmClusterType { get; set; }
+        [Input("vmFileSystemStorageType")]
+        public Input<string>? VmFileSystemStorageType { get; set; }
 
         /// <summary>
         /// The OCID of the zone the cloud VM cluster is associated with.

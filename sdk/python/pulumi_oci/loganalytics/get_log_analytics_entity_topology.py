@@ -147,9 +147,9 @@ def get_log_analytics_entity_topology(context: Optional[_builtins.str] = None,
 
 
     :param _builtins.str context: A filter to return log analytics entity toplogy whose context matches the specified string.
-    :param _builtins.str log_analytics_entity_id: The log analytics entity OCID.
+    :param _builtins.str log_analytics_entity_id: The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
     :param Sequence[_builtins.str] metadata_equals: A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()
@@ -198,9 +198,9 @@ def get_log_analytics_entity_topology_output(context: Optional[pulumi.Input[Opti
 
 
     :param _builtins.str context: A filter to return log analytics entity toplogy whose context matches the specified string.
-    :param _builtins.str log_analytics_entity_id: The log analytics entity OCID.
+    :param _builtins.str log_analytics_entity_id: The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
     :param Sequence[_builtins.str] metadata_equals: A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()

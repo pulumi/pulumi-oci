@@ -97,13 +97,13 @@ namespace Pulumi.Oci.LogAnalytics
     public sealed class GetLogAnalyticsEntityTypeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Log analytics entity type name.
+        /// Log analytics entity type name. Entity type name can be obtained by running 'oci log-analytics entity-type list --namespace-name &lt;namespacename&gt; --all'. The json output 'internal-name' parameter value contains the entity type name.
         /// </summary>
         [Input("entityTypeName", required: true)]
         public string EntityTypeName { get; set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace", required: true)]
         public string Namespace { get; set; } = null!;
@@ -117,13 +117,13 @@ namespace Pulumi.Oci.LogAnalytics
     public sealed class GetLogAnalyticsEntityTypeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Log analytics entity type name.
+        /// Log analytics entity type name. Entity type name can be obtained by running 'oci log-analytics entity-type list --namespace-name &lt;namespacename&gt; --all'. The json output 'internal-name' parameter value contains the entity type name.
         /// </summary>
         [Input("entityTypeName", required: true)]
         public Input<string> EntityTypeName { get; set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;

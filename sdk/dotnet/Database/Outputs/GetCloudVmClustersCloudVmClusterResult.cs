@@ -242,9 +242,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Vipv6ids;
         /// <summary>
+        /// Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+        /// </summary>
+        public readonly string VmBackupStorageType;
+        /// <summary>
         /// A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
         /// </summary>
         public readonly string VmClusterType;
+        /// <summary>
+        /// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+        /// </summary>
+        public readonly string VmFileSystemStorageType;
         /// <summary>
         /// The OCID of the zone the cloud VM cluster is associated with.
         /// </summary>
@@ -370,7 +378,11 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<string> vipv6ids,
 
+            string vmBackupStorageType,
+
             string vmClusterType,
+
+            string vmFileSystemStorageType,
 
             string zoneId)
         {
@@ -433,7 +445,9 @@ namespace Pulumi.Oci.Database.Outputs
             TimeZone = timeZone;
             VipIds = vipIds;
             Vipv6ids = vipv6ids;
+            VmBackupStorageType = vmBackupStorageType;
             VmClusterType = vmClusterType;
+            VmFileSystemStorageType = vmFileSystemStorageType;
             ZoneId = zoneId;
         }
     }

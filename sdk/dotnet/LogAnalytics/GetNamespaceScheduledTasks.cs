@@ -129,7 +129,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace", required: true)]
         public string Namespace { get; set; } = null!;
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
@@ -227,6 +227,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
+        /// </summary>
         public readonly string Namespace;
         /// <summary>
         /// The list of scheduled_task_collection.

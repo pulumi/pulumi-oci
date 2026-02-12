@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +19,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -30,6 +30,7 @@ import (
 //				Apps:                    pulumi.Any(networkFirewallPolicyApplicationGroupApps),
 //				Name:                    pulumi.Any(networkFirewallPolicyApplicationGroupName),
 //				NetworkFirewallPolicyId: pulumi.Any(testNetworkFirewallPolicy.Id),
+//				Description:             pulumi.Any(networkFirewallPolicyApplicationGroupDescription),
 //			})
 //			if err != nil {
 //				return err
@@ -50,8 +51,10 @@ import (
 type NetworkFirewallPolicyApplicationGroup struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+	// (Updatable) Collection of application names.
 	Apps pulumi.StringArrayOutput `pulumi:"apps"`
+	// (Updatable) The description of the application group. This field can be used to add additional info.
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// Name of the application group.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -101,8 +104,10 @@ func GetNetworkFirewallPolicyApplicationGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NetworkFirewallPolicyApplicationGroup resources.
 type networkFirewallPolicyApplicationGroupState struct {
-	// (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+	// (Updatable) Collection of application names.
 	Apps []string `pulumi:"apps"`
+	// (Updatable) The description of the application group. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Name of the application group.
 	Name *string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -117,8 +122,10 @@ type networkFirewallPolicyApplicationGroupState struct {
 }
 
 type NetworkFirewallPolicyApplicationGroupState struct {
-	// (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+	// (Updatable) Collection of application names.
 	Apps pulumi.StringArrayInput
+	// (Updatable) The description of the application group. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
 	// Name of the application group.
 	Name pulumi.StringPtrInput
 	// Unique Network Firewall Policy identifier
@@ -137,8 +144,10 @@ func (NetworkFirewallPolicyApplicationGroupState) ElementType() reflect.Type {
 }
 
 type networkFirewallPolicyApplicationGroupArgs struct {
-	// (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+	// (Updatable) Collection of application names.
 	Apps []string `pulumi:"apps"`
+	// (Updatable) The description of the application group. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Name of the application group.
 	Name *string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -150,8 +159,10 @@ type networkFirewallPolicyApplicationGroupArgs struct {
 
 // The set of arguments for constructing a NetworkFirewallPolicyApplicationGroup resource.
 type NetworkFirewallPolicyApplicationGroupArgs struct {
-	// (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+	// (Updatable) Collection of application names.
 	Apps pulumi.StringArrayInput
+	// (Updatable) The description of the application group. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
 	// Name of the application group.
 	Name pulumi.StringPtrInput
 	// Unique Network Firewall Policy identifier
@@ -248,9 +259,14 @@ func (o NetworkFirewallPolicyApplicationGroupOutput) ToNetworkFirewallPolicyAppl
 	return o
 }
 
-// (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+// (Updatable) Collection of application names.
 func (o NetworkFirewallPolicyApplicationGroupOutput) Apps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicyApplicationGroup) pulumi.StringArrayOutput { return v.Apps }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The description of the application group. This field can be used to add additional info.
+func (o NetworkFirewallPolicyApplicationGroupOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyApplicationGroup) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Name of the application group.

@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -44,6 +45,7 @@ import javax.annotation.Nullable;
  *             .apps(networkFirewallPolicyApplicationGroupApps)
  *             .name(networkFirewallPolicyApplicationGroupName)
  *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .description(networkFirewallPolicyApplicationGroupDescription)
  *             .build());
  * 
  *     }
@@ -63,18 +65,32 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup")
 public class NetworkFirewallPolicyApplicationGroup extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+     * (Updatable) Collection of application names.
      * 
      */
     @Export(name="apps", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> apps;
 
     /**
-     * @return (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+     * @return (Updatable) Collection of application names.
      * 
      */
     public Output<List<String>> apps() {
         return this.apps;
+    }
+    /**
+     * (Updatable) The description of the application group. This field can be used to add additional info.
+     * 
+     */
+    @Export(name="description", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> description;
+
+    /**
+     * @return (Updatable) The description of the application group. This field can be used to add additional info.
+     * 
+     */
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * Name of the application group.

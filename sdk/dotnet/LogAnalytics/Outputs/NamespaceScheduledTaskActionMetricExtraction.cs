@@ -18,6 +18,10 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
+        /// Details for the metrics to be collected.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.NamespaceScheduledTaskActionMetricExtractionMetricCollection> MetricCollections;
+        /// <summary>
         /// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         /// </summary>
         public readonly string? MetricName;
@@ -34,6 +38,8 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         private NamespaceScheduledTaskActionMetricExtraction(
             string? compartmentId,
 
+            ImmutableArray<Outputs.NamespaceScheduledTaskActionMetricExtractionMetricCollection> metricCollections,
+
             string? metricName,
 
             string? @namespace,
@@ -41,6 +47,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
             string? resourceGroup)
         {
             CompartmentId = compartmentId;
+            MetricCollections = metricCollections;
             MetricName = metricName;
             Namespace = @namespace;
             ResourceGroup = resourceGroup;

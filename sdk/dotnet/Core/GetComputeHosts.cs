@@ -278,6 +278,10 @@ namespace Pulumi.Oci.Core
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetComputeHostsFilterResult> Filters;
         /// <summary>
+        /// The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+        /// </summary>
+        public readonly string HostCorrelationId;
+        /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
@@ -307,6 +311,8 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetComputeHostsFilterResult> filters,
 
+            string hostCorrelationId,
+
             string id,
 
             ImmutableDictionary<string, string> lifecycleDetails,
@@ -322,6 +328,7 @@ namespace Pulumi.Oci.Core
             ComputeHostLifecycleState = computeHostLifecycleState;
             DisplayName = displayName;
             Filters = filters;
+            HostCorrelationId = hostCorrelationId;
             Id = id;
             LifecycleDetails = lifecycleDetails;
             NetworkResourceId = networkResourceId;

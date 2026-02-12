@@ -17,16 +17,28 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// The ID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// Details for the metrics to be collected.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionMetricCollectionResult> MetricCollections;
+        /// <summary>
+        /// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        /// </summary>
         public readonly string MetricName;
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         public readonly string Namespace;
+        /// <summary>
+        /// The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        /// </summary>
         public readonly string ResourceGroup;
 
         [OutputConstructor]
         private GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionResult(
             string compartmentId,
+
+            ImmutableArray<Outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionMetricCollectionResult> metricCollections,
 
             string metricName,
 
@@ -35,6 +47,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
             string resourceGroup)
         {
             CompartmentId = compartmentId;
+            MetricCollections = metricCollections;
             MetricName = metricName;
             Namespace = @namespace;
             ResourceGroup = resourceGroup;

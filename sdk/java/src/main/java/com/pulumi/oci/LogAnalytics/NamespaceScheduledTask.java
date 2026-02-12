@@ -55,6 +55,15 @@ import javax.annotation.Nullable;
  *                 .dataType(namespaceScheduledTaskActionDataType)
  *                 .metricExtraction(NamespaceScheduledTaskActionMetricExtractionArgs.builder()
  *                     .compartmentId(compartmentId)
+ *                     .metricCollections(NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs.builder()
+ *                         .dimensions(NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs.builder()
+ *                             .dimensionName(namespaceScheduledTaskActionMetricExtractionMetricCollectionsDimensionsDimensionName)
+ *                             .queryFieldName(namespaceScheduledTaskActionMetricExtractionMetricCollectionsDimensionsQueryFieldName)
+ *                             .build())
+ *                         .metricName(testMetric.name())
+ *                         .metricQueryFieldName(namespaceScheduledTaskActionMetricExtractionMetricCollectionsMetricQueryFieldName)
+ *                         .queryTableName(testTable.name())
+ *                         .build())
  *                     .metricName(testMetric.name())
  *                     .namespace(namespaceScheduledTaskActionMetricExtractionNamespace)
  *                     .resourceGroup(namespaceScheduledTaskActionMetricExtractionResourceGroup)
@@ -72,6 +81,7 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .build())
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .description(namespaceScheduledTaskDescription)
  *             .displayName(namespaceScheduledTaskDisplayName)
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .savedSearchId(testSavedSearch.id())
@@ -79,8 +89,10 @@ import javax.annotation.Nullable;
  *                 .type(namespaceScheduledTaskSchedulesType)
  *                 .expression(namespaceScheduledTaskSchedulesExpression)
  *                 .misfirePolicy(namespaceScheduledTaskSchedulesMisfirePolicy)
+ *                 .queryOffsetSecs(namespaceScheduledTaskSchedulesQueryOffsetSecs)
  *                 .recurringInterval(namespaceScheduledTaskSchedulesRecurringInterval)
  *                 .repeatCount(namespaceScheduledTaskSchedulesRepeatCount)
+ *                 .timeEnd(namespaceScheduledTaskSchedulesTimeEnd)
  *                 .timeZone(namespaceScheduledTaskSchedulesTimeZone)
  *                 .build())
  *             .taskType(namespaceScheduledTaskTaskType)
@@ -90,6 +102,32 @@ import javax.annotation.Nullable;
  * }
  * }
  * </pre>
+ * 
+ * ## Schedules
+ * 
+ * There are parameters which require a specific constant value to be supplied.
+ * 
+ * ### misfirePolicy
+ * 
+ * #### &#39;RETRY_INDEFINITELY&#39;
+ * A constant which can be used with the misfirePolicy property of a Schedule. This constant has a value of “RETRY_INDEFINITELY”
+ * 
+ * #### &#39;RETRY_ONCE&#39;
+ * A constant which can be used with the misfirePolicy property of a Schedule. This constant has a value of “RETRY_ONCE”
+ * 
+ * #### &#39;SKIP&#39;
+ * A constant which can be used with the misfirePolicy property of a Schedule. This constant has a value of “SKIP”
+ * 
+ * ### type
+ * 
+ * #### &#39;AUTO&#39;
+ * A constant which can be used with the type property of a Schedule. This constant has a value of “AUTO”
+ * 
+ * #### &#39;CRON&#39;
+ * A constant which can be used with the type property of a Schedule. This constant has a value of “CRON”
+ * 
+ * #### &#39;FIXED_FREQUENCY&#39;
+ * A constant which can be used with the type property of a Schedule. This constant has a value of “FIXED_FREQUENCY”
  * 
  * ## Import
  * 
@@ -145,6 +183,20 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
         return this.definedTags;
     }
     /**
+     * (Updatable) Description for this resource.
+     * 
+     */
+    @Export(name="description", refs={String.class}, tree="[0]")
+    private Output<String> description;
+
+    /**
+     * @return (Updatable) Description for this resource.
+     * 
+     */
+    public Output<String> description() {
+        return this.description;
+    }
+    /**
      * (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      * 
      */
@@ -187,14 +239,14 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
         return this.kind;
     }
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public Output<String> namespace() {
@@ -263,14 +315,14 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
         return this.state;
     }
     /**
-     * Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+     * Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
      * 
      */
     @Export(name="taskStatus", refs={String.class}, tree="[0]")
     private Output<String> taskStatus;
 
     /**
-     * @return Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+     * @return Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
      * 
      */
     public Output<String> taskStatus() {
@@ -325,14 +377,14 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
         return this.timeUpdated;
     }
     /**
-     * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+     * most recent Work Request Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      * 
      */
     @Export(name="workRequestId", refs={String.class}, tree="[0]")
     private Output<String> workRequestId;
 
     /**
-     * @return most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+     * @return most recent Work Request Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      * 
      */
     public Output<String> workRequestId() {

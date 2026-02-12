@@ -27,7 +27,7 @@ class GetNetworkFirewallResult:
     """
     A collection of values returned by getNetworkFirewall.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ipv4address=None, ipv6address=None, lifecycle_details=None, nat_configurations=None, network_firewall_id=None, network_firewall_policy_id=None, network_security_group_ids=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ipv4address=None, ipv6address=None, lifecycle_details=None, nat_configurations=None, network_firewall_id=None, network_firewall_policy_id=None, network_security_group_ids=None, shape=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -67,6 +67,9 @@ class GetNetworkFirewallResult:
         if network_security_group_ids and not isinstance(network_security_group_ids, list):
             raise TypeError("Expected argument 'network_security_group_ids' to be a list")
         pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        if shape and not isinstance(shape, str):
+            raise TypeError("Expected argument 'shape' to be a str")
+        pulumi.set(__self__, "shape", shape)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -159,7 +162,7 @@ class GetNetworkFirewallResult:
     @pulumi.getter(name="natConfigurations")
     def nat_configurations(self) -> Sequence['outputs.GetNetworkFirewallNatConfigurationResult']:
         """
-        Nat Configuration response.
+        Response to a request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
         """
         return pulumi.get(self, "nat_configurations")
 
@@ -183,6 +186,14 @@ class GetNetworkFirewallResult:
         An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
         """
         return pulumi.get(self, "network_security_group_ids")
+
+    @_builtins.property
+    @pulumi.getter
+    def shape(self) -> _builtins.str:
+        """
+        The shape of a firewall to determine the bandwidth that the firewall allows.
+        """
+        return pulumi.get(self, "shape")
 
     @_builtins.property
     @pulumi.getter
@@ -244,6 +255,7 @@ class AwaitableGetNetworkFirewallResult(GetNetworkFirewallResult):
             network_firewall_id=self.network_firewall_id,
             network_firewall_policy_id=self.network_firewall_policy_id,
             network_security_group_ids=self.network_security_group_ids,
+            shape=self.shape,
             state=self.state,
             subnet_id=self.subnet_id,
             system_tags=self.system_tags,
@@ -289,6 +301,7 @@ def get_network_firewall(network_firewall_id: Optional[_builtins.str] = None,
         network_firewall_id=pulumi.get(__ret__, 'network_firewall_id'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
         network_security_group_ids=pulumi.get(__ret__, 'network_security_group_ids'),
+        shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -331,6 +344,7 @@ def get_network_firewall_output(network_firewall_id: Optional[pulumi.Input[_buil
         network_firewall_id=pulumi.get(__response__, 'network_firewall_id'),
         network_firewall_policy_id=pulumi.get(__response__, 'network_firewall_policy_id'),
         network_security_group_ids=pulumi.get(__response__, 'network_security_group_ids'),
+        shape=pulumi.get(__response__, 'shape'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         system_tags=pulumi.get(__response__, 'system_tags'),

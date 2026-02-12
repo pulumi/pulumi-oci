@@ -20,6 +20,11 @@ public final class GetNamespaceStorageArchivalConfigArchivingConfiguration {
      * 
      */
     private String archivalStorageDuration;
+    /**
+     * @return end time of the oldest active CoreGroup
+     * 
+     */
+    private String timeOldestActiveBucketEnded;
 
     private GetNamespaceStorageArchivalConfigArchivingConfiguration() {}
     /**
@@ -36,6 +41,13 @@ public final class GetNamespaceStorageArchivalConfigArchivingConfiguration {
     public String archivalStorageDuration() {
         return this.archivalStorageDuration;
     }
+    /**
+     * @return end time of the oldest active CoreGroup
+     * 
+     */
+    public String timeOldestActiveBucketEnded() {
+        return this.timeOldestActiveBucketEnded;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -48,11 +60,13 @@ public final class GetNamespaceStorageArchivalConfigArchivingConfiguration {
     public static final class Builder {
         private String activeStorageDuration;
         private String archivalStorageDuration;
+        private String timeOldestActiveBucketEnded;
         public Builder() {}
         public Builder(GetNamespaceStorageArchivalConfigArchivingConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.activeStorageDuration = defaults.activeStorageDuration;
     	      this.archivalStorageDuration = defaults.archivalStorageDuration;
+    	      this.timeOldestActiveBucketEnded = defaults.timeOldestActiveBucketEnded;
         }
 
         @CustomType.Setter
@@ -71,10 +85,19 @@ public final class GetNamespaceStorageArchivalConfigArchivingConfiguration {
             this.archivalStorageDuration = archivalStorageDuration;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeOldestActiveBucketEnded(String timeOldestActiveBucketEnded) {
+            if (timeOldestActiveBucketEnded == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageArchivalConfigArchivingConfiguration", "timeOldestActiveBucketEnded");
+            }
+            this.timeOldestActiveBucketEnded = timeOldestActiveBucketEnded;
+            return this;
+        }
         public GetNamespaceStorageArchivalConfigArchivingConfiguration build() {
             final var _resultValue = new GetNamespaceStorageArchivalConfigArchivingConfiguration();
             _resultValue.activeStorageDuration = activeStorageDuration;
             _resultValue.archivalStorageDuration = archivalStorageDuration;
+            _resultValue.timeOldestActiveBucketEnded = timeOldestActiveBucketEnded;
             return _resultValue;
         }
     }

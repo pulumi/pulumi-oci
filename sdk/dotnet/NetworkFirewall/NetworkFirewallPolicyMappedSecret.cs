@@ -28,6 +28,7 @@ namespace Pulumi.Oci.NetworkFirewall
     ///         Type = networkFirewallPolicyMappedSecretType,
     ///         VaultSecretId = testSecret.Id,
     ///         VersionNumber = networkFirewallPolicyMappedSecretVersionNumber,
+    ///         Description = networkFirewallPolicyMappedSecretDescription,
     ///     });
     /// 
     /// });
@@ -44,6 +45,12 @@ namespace Pulumi.Oci.NetworkFirewall
     [OciResourceType("oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret")]
     public partial class NetworkFirewallPolicyMappedSecret : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// (Updatable) The description of the mapped secret. This field can be used to add additional info.
+        /// </summary>
+        [Output("description")]
+        public Output<string?> Description { get; private set; } = null!;
+
         /// <summary>
         /// Unique name to identify the group of urls to be used in the policy rules.
         /// </summary>
@@ -139,6 +146,12 @@ namespace Pulumi.Oci.NetworkFirewall
     public sealed class NetworkFirewallPolicyMappedSecretArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) The description of the mapped secret. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        /// <summary>
         /// Unique name to identify the group of urls to be used in the policy rules.
         /// </summary>
         [Input("name")]
@@ -188,6 +201,12 @@ namespace Pulumi.Oci.NetworkFirewall
 
     public sealed class NetworkFirewallPolicyMappedSecretState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) The description of the mapped secret. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
         /// <summary>
         /// Unique name to identify the group of urls to be used in the policy rules.
         /// </summary>

@@ -54,6 +54,10 @@ export interface GetNetworkFirewallPolicyResult {
      */
     readonly definedTags: {[key: string]: string};
     /**
+     * The description of the network firewall policy. This field can be used to add additional info.
+     */
+    readonly description: string;
+    /**
      * A user-friendly optional name for the firewall policy. Avoid entering confidential information.
      */
     readonly displayName: string;

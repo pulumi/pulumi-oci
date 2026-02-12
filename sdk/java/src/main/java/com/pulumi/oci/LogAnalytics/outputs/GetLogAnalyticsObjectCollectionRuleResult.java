@@ -40,7 +40,7 @@ public final class GetLogAnalyticsObjectCollectionRuleResult {
      */
     private String description;
     /**
-     * @return Logging Analytics entity OCID to associate the processed logs with.
+     * @return Log Analytics entity OCID to associate the processed logs with.
      * 
      */
     private String entityId;
@@ -76,7 +76,7 @@ public final class GetLogAnalyticsObjectCollectionRuleResult {
     private String lifecycleDetails;
     private String logAnalyticsObjectCollectionRuleId;
     /**
-     * @return Logging Analytics Log group OCID to associate the processed logs with.
+     * @return Log Analytics Log group OCID to associate the processed logs with.
      * 
      */
     private String logGroupId;
@@ -96,7 +96,7 @@ public final class GetLogAnalyticsObjectCollectionRuleResult {
      */
     private String logSetKey;
     /**
-     * @return Name of the Logging Analytics Source to use for the processing.
+     * @return Name of the Log Analytics Source to use for the processing.
      * 
      */
     private String logSourceName;
@@ -157,7 +157,7 @@ public final class GetLogAnalyticsObjectCollectionRuleResult {
      */
     private String streamCursorType;
     /**
-     * @return A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+     * @return A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
      * 
      */
     private String streamId;
@@ -214,7 +214,7 @@ public final class GetLogAnalyticsObjectCollectionRuleResult {
         return this.description;
     }
     /**
-     * @return Logging Analytics entity OCID to associate the processed logs with.
+     * @return Log Analytics entity OCID to associate the processed logs with.
      * 
      */
     public String entityId() {
@@ -266,7 +266,7 @@ public final class GetLogAnalyticsObjectCollectionRuleResult {
         return this.logAnalyticsObjectCollectionRuleId;
     }
     /**
-     * @return Logging Analytics Log group OCID to associate the processed logs with.
+     * @return Log Analytics Log group OCID to associate the processed logs with.
      * 
      */
     public String logGroupId() {
@@ -294,7 +294,7 @@ public final class GetLogAnalyticsObjectCollectionRuleResult {
         return this.logSetKey;
     }
     /**
-     * @return Name of the Logging Analytics Source to use for the processing.
+     * @return Name of the Log Analytics Source to use for the processing.
      * 
      */
     public String logSourceName() {
@@ -381,7 +381,7 @@ public final class GetLogAnalyticsObjectCollectionRuleResult {
         return this.streamCursorType;
     }
     /**
-     * @return A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+     * @return A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
      * 
      */
     public String streamId() {

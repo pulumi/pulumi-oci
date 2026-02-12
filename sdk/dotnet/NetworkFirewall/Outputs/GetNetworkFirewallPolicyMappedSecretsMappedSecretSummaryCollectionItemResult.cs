@@ -14,6 +14,10 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
     public sealed class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemResult
     {
         /// <summary>
+        /// The description of the mapped secret. This field can be used to add additional info.
+        /// </summary>
+        public readonly string? Description;
+        /// <summary>
         /// Name of the secret.
         /// </summary>
         public readonly string Name;
@@ -46,6 +50,8 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemResult(
+            string? description,
+
             string name,
 
             string networkFirewallPolicyId,
@@ -60,6 +66,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
             int versionNumber)
         {
+            Description = description;
             Name = name;
             NetworkFirewallPolicyId = networkFirewallPolicyId;
             ParentResourceId = parentResourceId;

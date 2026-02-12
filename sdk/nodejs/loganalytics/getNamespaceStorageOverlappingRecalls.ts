@@ -40,7 +40,7 @@ export function getNamespaceStorageOverlappingRecalls(args: GetNamespaceStorageO
 export interface GetNamespaceStorageOverlappingRecallsArgs {
     filters?: inputs.LogAnalytics.GetNamespaceStorageOverlappingRecallsFilter[];
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: string;
     /**
@@ -110,7 +110,7 @@ export function getNamespaceStorageOverlappingRecallsOutput(args: GetNamespaceSt
 export interface GetNamespaceStorageOverlappingRecallsOutputArgs {
     filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespaceStorageOverlappingRecallsFilterArgs>[]>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
     /**

@@ -12,6 +12,7 @@ import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyApplicationSta
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -44,6 +45,7 @@ import javax.annotation.Nullable;
  *             .name(networkFirewallPolicyApplicationName)
  *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
  *             .type(networkFirewallPolicyApplicationType)
+ *             .description(networkFirewallPolicyApplicationDescription)
  *             .icmpCode(networkFirewallPolicyApplicationIcmpCode)
  *             .build());
  * 
@@ -64,28 +66,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:NetworkFirewall/networkFirewallPolicyApplication:NetworkFirewallPolicyApplication")
 public class NetworkFirewallPolicyApplication extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * (Updatable) The description of the application. This field can be used to add additional info.
+     * 
+     */
+    @Export(name="description", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> description;
+
+    /**
+     * @return (Updatable) The description of the application. This field can be used to add additional info.
+     * 
+     */
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
+    }
+    /**
+     * (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      * 
      */
     @Export(name="icmpCode", refs={Integer.class}, tree="[0]")
     private Output<Integer> icmpCode;
 
     /**
-     * @return (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * @return (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      * 
      */
     public Output<Integer> icmpCode() {
         return this.icmpCode;
     }
     /**
-     * (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      * 
      */
     @Export(name="icmpType", refs={Integer.class}, tree="[0]")
     private Output<Integer> icmpType;
 
     /**
-     * @return (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * @return (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      * 
      */
     public Output<Integer> icmpType() {

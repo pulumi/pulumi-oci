@@ -24,6 +24,11 @@ public final class NamespaceScheduledTaskSchedulesSchedule {
      */
     private @Nullable String misfirePolicy;
     /**
+     * @return Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
+     * 
+     */
+    private @Nullable Integer queryOffsetSecs;
+    /**
      * @return Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
      * 
      */
@@ -33,6 +38,11 @@ public final class NamespaceScheduledTaskSchedulesSchedule {
      * 
      */
     private @Nullable Integer repeatCount;
+    /**
+     * @return End time for the schedule, even if the schedule would otherwise have remaining executions.
+     * 
+     */
+    private @Nullable String timeEnd;
     /**
      * @return Time zone, by default UTC.
      * 
@@ -60,6 +70,13 @@ public final class NamespaceScheduledTaskSchedulesSchedule {
         return Optional.ofNullable(this.misfirePolicy);
     }
     /**
+     * @return Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
+     * 
+     */
+    public Optional<Integer> queryOffsetSecs() {
+        return Optional.ofNullable(this.queryOffsetSecs);
+    }
+    /**
      * @return Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
      * 
      */
@@ -72,6 +89,13 @@ public final class NamespaceScheduledTaskSchedulesSchedule {
      */
     public Optional<Integer> repeatCount() {
         return Optional.ofNullable(this.repeatCount);
+    }
+    /**
+     * @return End time for the schedule, even if the schedule would otherwise have remaining executions.
+     * 
+     */
+    public Optional<String> timeEnd() {
+        return Optional.ofNullable(this.timeEnd);
     }
     /**
      * @return Time zone, by default UTC.
@@ -99,8 +123,10 @@ public final class NamespaceScheduledTaskSchedulesSchedule {
     public static final class Builder {
         private @Nullable String expression;
         private @Nullable String misfirePolicy;
+        private @Nullable Integer queryOffsetSecs;
         private @Nullable String recurringInterval;
         private @Nullable Integer repeatCount;
+        private @Nullable String timeEnd;
         private @Nullable String timeZone;
         private String type;
         public Builder() {}
@@ -108,8 +134,10 @@ public final class NamespaceScheduledTaskSchedulesSchedule {
     	      Objects.requireNonNull(defaults);
     	      this.expression = defaults.expression;
     	      this.misfirePolicy = defaults.misfirePolicy;
+    	      this.queryOffsetSecs = defaults.queryOffsetSecs;
     	      this.recurringInterval = defaults.recurringInterval;
     	      this.repeatCount = defaults.repeatCount;
+    	      this.timeEnd = defaults.timeEnd;
     	      this.timeZone = defaults.timeZone;
     	      this.type = defaults.type;
         }
@@ -127,6 +155,12 @@ public final class NamespaceScheduledTaskSchedulesSchedule {
             return this;
         }
         @CustomType.Setter
+        public Builder queryOffsetSecs(@Nullable Integer queryOffsetSecs) {
+
+            this.queryOffsetSecs = queryOffsetSecs;
+            return this;
+        }
+        @CustomType.Setter
         public Builder recurringInterval(@Nullable String recurringInterval) {
 
             this.recurringInterval = recurringInterval;
@@ -136,6 +170,12 @@ public final class NamespaceScheduledTaskSchedulesSchedule {
         public Builder repeatCount(@Nullable Integer repeatCount) {
 
             this.repeatCount = repeatCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeEnd(@Nullable String timeEnd) {
+
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
@@ -156,8 +196,10 @@ public final class NamespaceScheduledTaskSchedulesSchedule {
             final var _resultValue = new NamespaceScheduledTaskSchedulesSchedule();
             _resultValue.expression = expression;
             _resultValue.misfirePolicy = misfirePolicy;
+            _resultValue.queryOffsetSecs = queryOffsetSecs;
             _resultValue.recurringInterval = recurringInterval;
             _resultValue.repeatCount = repeatCount;
+            _resultValue.timeEnd = timeEnd;
             _resultValue.timeZone = timeZone;
             _resultValue.type = type;
             return _resultValue;

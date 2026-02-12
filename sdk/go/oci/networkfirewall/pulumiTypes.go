@@ -7,16 +7,16 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 var _ = internal.GetEnvOrDefault
 
 type NetworkFirewallNatConfiguration struct {
-	// (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+	// (Updatable) The value of this field must be set to true if the network firewall policy being applied contains NAT rules. The value of this field can be set to false if the network firewall policy being applied or the currently attached firewall policy doesn't contain NAT rules.
 	MustEnablePrivateNat bool `pulumi:"mustEnablePrivateNat"`
-	// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+	// An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
 	NatIpAddressLists []string `pulumi:"natIpAddressLists"`
 }
 
@@ -32,9 +32,9 @@ type NetworkFirewallNatConfigurationInput interface {
 }
 
 type NetworkFirewallNatConfigurationArgs struct {
-	// (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+	// (Updatable) The value of this field must be set to true if the network firewall policy being applied contains NAT rules. The value of this field can be set to false if the network firewall policy being applied or the currently attached firewall policy doesn't contain NAT rules.
 	MustEnablePrivateNat pulumi.BoolInput `pulumi:"mustEnablePrivateNat"`
-	// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+	// An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
 	NatIpAddressLists pulumi.StringArrayInput `pulumi:"natIpAddressLists"`
 }
 
@@ -115,12 +115,12 @@ func (o NetworkFirewallNatConfigurationOutput) ToNetworkFirewallNatConfiguration
 	}).(NetworkFirewallNatConfigurationPtrOutput)
 }
 
-// (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+// (Updatable) The value of this field must be set to true if the network firewall policy being applied contains NAT rules. The value of this field can be set to false if the network firewall policy being applied or the currently attached firewall policy doesn't contain NAT rules.
 func (o NetworkFirewallNatConfigurationOutput) MustEnablePrivateNat() pulumi.BoolOutput {
 	return o.ApplyT(func(v NetworkFirewallNatConfiguration) bool { return v.MustEnablePrivateNat }).(pulumi.BoolOutput)
 }
 
-// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+// An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
 func (o NetworkFirewallNatConfigurationOutput) NatIpAddressLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NetworkFirewallNatConfiguration) []string { return v.NatIpAddressLists }).(pulumi.StringArrayOutput)
 }
@@ -149,7 +149,7 @@ func (o NetworkFirewallNatConfigurationPtrOutput) Elem() NetworkFirewallNatConfi
 	}).(NetworkFirewallNatConfigurationOutput)
 }
 
-// (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+// (Updatable) The value of this field must be set to true if the network firewall policy being applied contains NAT rules. The value of this field can be set to false if the network firewall policy being applied or the currently attached firewall policy doesn't contain NAT rules.
 func (o NetworkFirewallNatConfigurationPtrOutput) MustEnablePrivateNat() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NetworkFirewallNatConfiguration) *bool {
 		if v == nil {
@@ -159,7 +159,7 @@ func (o NetworkFirewallNatConfigurationPtrOutput) MustEnablePrivateNat() pulumi.
 	}).(pulumi.BoolPtrOutput)
 }
 
-// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+// An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
 func (o NetworkFirewallNatConfigurationPtrOutput) NatIpAddressLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkFirewallNatConfiguration) []string {
 		if v == nil {
@@ -170,9 +170,9 @@ func (o NetworkFirewallNatConfigurationPtrOutput) NatIpAddressLists() pulumi.Str
 }
 
 type NetworkFirewallPolicyDecryptionRuleCondition struct {
-	// (Updatable) An array of address list names to be evaluated against the traffic destination address.
+	// (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
 	DestinationAddresses []string `pulumi:"destinationAddresses"`
-	// (Updatable) An array of address list names to be evaluated against the traffic source address.
+	// (Updatable) An array of IP address list names to be evaluated against the traffic source address.
 	SourceAddresses []string `pulumi:"sourceAddresses"`
 }
 
@@ -188,9 +188,9 @@ type NetworkFirewallPolicyDecryptionRuleConditionInput interface {
 }
 
 type NetworkFirewallPolicyDecryptionRuleConditionArgs struct {
-	// (Updatable) An array of address list names to be evaluated against the traffic destination address.
+	// (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
 	DestinationAddresses pulumi.StringArrayInput `pulumi:"destinationAddresses"`
-	// (Updatable) An array of address list names to be evaluated against the traffic source address.
+	// (Updatable) An array of IP address list names to be evaluated against the traffic source address.
 	SourceAddresses pulumi.StringArrayInput `pulumi:"sourceAddresses"`
 }
 
@@ -271,12 +271,12 @@ func (o NetworkFirewallPolicyDecryptionRuleConditionOutput) ToNetworkFirewallPol
 	}).(NetworkFirewallPolicyDecryptionRuleConditionPtrOutput)
 }
 
-// (Updatable) An array of address list names to be evaluated against the traffic destination address.
+// (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
 func (o NetworkFirewallPolicyDecryptionRuleConditionOutput) DestinationAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NetworkFirewallPolicyDecryptionRuleCondition) []string { return v.DestinationAddresses }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) An array of address list names to be evaluated against the traffic source address.
+// (Updatable) An array of IP address list names to be evaluated against the traffic source address.
 func (o NetworkFirewallPolicyDecryptionRuleConditionOutput) SourceAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NetworkFirewallPolicyDecryptionRuleCondition) []string { return v.SourceAddresses }).(pulumi.StringArrayOutput)
 }
@@ -305,7 +305,7 @@ func (o NetworkFirewallPolicyDecryptionRuleConditionPtrOutput) Elem() NetworkFir
 	}).(NetworkFirewallPolicyDecryptionRuleConditionOutput)
 }
 
-// (Updatable) An array of address list names to be evaluated against the traffic destination address.
+// (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
 func (o NetworkFirewallPolicyDecryptionRuleConditionPtrOutput) DestinationAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionRuleCondition) []string {
 		if v == nil {
@@ -315,7 +315,7 @@ func (o NetworkFirewallPolicyDecryptionRuleConditionPtrOutput) DestinationAddres
 	}).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) An array of address list names to be evaluated against the traffic source address.
+// (Updatable) An array of IP address list names to be evaluated against the traffic source address.
 func (o NetworkFirewallPolicyDecryptionRuleConditionPtrOutput) SourceAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionRuleCondition) []string {
 		if v == nil {
@@ -1826,9 +1826,9 @@ func (o NetworkFirewallPolicyUrlListUrlArrayOutput) Index(i pulumi.IntInput) Net
 }
 
 type GetNetworkFirewallNatConfiguration struct {
-	// To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+	// True indicates that NAT configuration is enabled. False indicates NAT configuration is disabled.
 	MustEnablePrivateNat bool `pulumi:"mustEnablePrivateNat"`
-	// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+	// An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
 	NatIpAddressLists []string `pulumi:"natIpAddressLists"`
 }
 
@@ -1844,9 +1844,9 @@ type GetNetworkFirewallNatConfigurationInput interface {
 }
 
 type GetNetworkFirewallNatConfigurationArgs struct {
-	// To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+	// True indicates that NAT configuration is enabled. False indicates NAT configuration is disabled.
 	MustEnablePrivateNat pulumi.BoolInput `pulumi:"mustEnablePrivateNat"`
-	// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+	// An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
 	NatIpAddressLists pulumi.StringArrayInput `pulumi:"natIpAddressLists"`
 }
 
@@ -1901,12 +1901,12 @@ func (o GetNetworkFirewallNatConfigurationOutput) ToGetNetworkFirewallNatConfigu
 	return o
 }
 
-// To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+// True indicates that NAT configuration is enabled. False indicates NAT configuration is disabled.
 func (o GetNetworkFirewallNatConfigurationOutput) MustEnablePrivateNat() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNetworkFirewallNatConfiguration) bool { return v.MustEnablePrivateNat }).(pulumi.BoolOutput)
 }
 
-// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+// An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
 func (o GetNetworkFirewallNatConfigurationOutput) NatIpAddressLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallNatConfiguration) []string { return v.NatIpAddressLists }).(pulumi.StringArrayOutput)
 }
@@ -2140,6 +2140,8 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem struct
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The description of the network firewall policy. This field can be used to add additional info.
+	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -2176,6 +2178,8 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArgs st
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The description of the network firewall policy. This field can be used to add additional info.
+	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -2264,6 +2268,13 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutp
 	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem) map[string]string {
 		return v.DefinedTags
 	}).(pulumi.StringMapOutput)
+}
+
+// The description of the network firewall policy. This field can be used to add additional info.
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -2437,6 +2448,8 @@ func (o GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionArrayOut
 type GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItem struct {
 	// List of addresses.
 	Addresses []string `pulumi:"addresses"`
+	// The description of the address list. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Unique name to identify the group of addresses to be used in the policy rules.
 	Name string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -2463,6 +2476,8 @@ type GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItemInput i
 type GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItemArgs struct {
 	// List of addresses.
 	Addresses pulumi.StringArrayInput `pulumi:"addresses"`
+	// The description of the address list. This field can be used to add additional info.
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Unique name to identify the group of addresses to be used in the policy rules.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -2531,6 +2546,13 @@ func (o GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItemOutp
 	return o.ApplyT(func(v GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItem) []string {
 		return v.Addresses
 	}).(pulumi.StringArrayOutput)
+}
+
+// The description of the address list. This field can be used to add additional info.
+func (o GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItem) *string {
+		return v.Description
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unique name to identify the group of addresses to be used in the policy rules.
@@ -2792,6 +2814,8 @@ func (o GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollecti
 type GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionItem struct {
 	// List of apps in the group.
 	Apps []string `pulumi:"apps"`
+	// The description of the application list. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Name of the application Group.
 	Name string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -2816,6 +2840,8 @@ type GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionI
 type GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionItemArgs struct {
 	// List of apps in the group.
 	Apps pulumi.StringArrayInput `pulumi:"apps"`
+	// The description of the application list. This field can be used to add additional info.
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Name of the application Group.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -2882,6 +2908,13 @@ func (o GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollecti
 	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionItem) []string {
 		return v.Apps
 	}).(pulumi.StringArrayOutput)
+}
+
+// The description of the application list. This field can be used to add additional info.
+func (o GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionItem) *string {
+		return v.Description
+	}).(pulumi.StringPtrOutput)
 }
 
 // Name of the application Group.
@@ -3138,9 +3171,11 @@ func (o GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionArrayOut
 }
 
 type GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem struct {
-	// The value of the ICMP6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+	// The description of the application. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
+	// The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 	IcmpCode int `pulumi:"icmpCode"`
-	// The value of the ICMP6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+	// The value of the ICMP/ICMP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 	IcmpType int `pulumi:"icmpType"`
 	// Name of the application.
 	Name string `pulumi:"name"`
@@ -3164,9 +3199,11 @@ type GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItemInput i
 }
 
 type GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItemArgs struct {
-	// The value of the ICMP6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+	// The description of the application. This field can be used to add additional info.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 	IcmpCode pulumi.IntInput `pulumi:"icmpCode"`
-	// The value of the ICMP6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+	// The value of the ICMP/ICMP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 	IcmpType pulumi.IntInput `pulumi:"icmpType"`
 	// Name of the application.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -3229,12 +3266,19 @@ func (o GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItemOutp
 	return o
 }
 
-// The value of the ICMP6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+// The description of the application. This field can be used to add additional info.
+func (o GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem) *string {
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 func (o GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItemOutput) IcmpCode() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem) int { return v.IcmpCode }).(pulumi.IntOutput)
 }
 
-// The value of the ICMP6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+// The value of the ICMP/ICMP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 func (o GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItemOutput) IcmpType() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem) int { return v.IcmpType }).(pulumi.IntOutput)
 }
@@ -3491,6 +3535,8 @@ func (o GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollec
 type GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem struct {
 	// Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
 	AreCertificateExtensionsRestricted bool `pulumi:"areCertificateExtensionsRestricted"`
+	// The description of the decryption profile. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
 	IsAutoIncludeAltName bool `pulumi:"isAutoIncludeAltName"`
 	// Whether to block sessions if server's certificate is expired.
@@ -3531,6 +3577,8 @@ type GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectio
 type GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItemArgs struct {
 	// Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
 	AreCertificateExtensionsRestricted pulumi.BoolInput `pulumi:"areCertificateExtensionsRestricted"`
+	// The description of the decryption profile. This field can be used to add additional info.
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
 	IsAutoIncludeAltName pulumi.BoolInput `pulumi:"isAutoIncludeAltName"`
 	// Whether to block sessions if server's certificate is expired.
@@ -3613,6 +3661,13 @@ func (o GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollec
 	return o.ApplyT(func(v GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem) bool {
 		return v.AreCertificateExtensionsRestricted
 	}).(pulumi.BoolOutput)
+}
+
+// The description of the decryption profile. This field can be used to add additional info.
+func (o GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionItem) *string {
+		return v.Description
+	}).(pulumi.StringPtrOutput)
 }
 
 // Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
@@ -4145,6 +4200,8 @@ type GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem 
 	Condition GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemCondition `pulumi:"condition"`
 	// The name of the decryption profile to use.
 	DecryptionProfile *string `pulumi:"decryptionProfile"`
+	// The description of the decryption rule. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Name for the decryption rule, must be unique within the policy.
 	Name string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -4178,6 +4235,8 @@ type GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemA
 	Condition GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemConditionInput `pulumi:"condition"`
 	// The name of the decryption profile to use.
 	DecryptionProfile pulumi.StringPtrInput `pulumi:"decryptionProfile"`
+	// The description of the decryption rule. This field can be used to add additional info.
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Name for the decryption rule, must be unique within the policy.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -4262,6 +4321,13 @@ func (o GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionIt
 func (o GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemOutput) DecryptionProfile() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem) *string {
 		return v.DecryptionProfile
+	}).(pulumi.StringPtrOutput)
+}
+
+// The description of the decryption rule. This field can be used to add additional info.
+func (o GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem) *string {
+		return v.Description
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -4662,6 +4728,8 @@ func (o GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionArrayO
 }
 
 type GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItem struct {
+	// The description of the mapped secret. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Name of the secret.
 	Name string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -4692,6 +4760,8 @@ type GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemInput
 }
 
 type GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemArgs struct {
+	// The description of the mapped secret. This field can be used to add additional info.
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Name of the secret.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -4759,6 +4829,13 @@ func (o GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemOu
 
 func (o GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemOutput) ToGetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemOutput {
 	return o
+}
+
+// The description of the mapped secret. This field can be used to add additional info.
+func (o GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItem) *string {
+		return v.Description
+	}).(pulumi.StringPtrOutput)
 }
 
 // Name of the secret.
@@ -5256,7 +5333,7 @@ type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem struct {
 	// action:
 	// * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
 	Action string `pulumi:"action"`
-	// Match criteria used in NAT Rule used on the firewall policy.
+	// Match criteria used in NAT rule used on the firewall policy.
 	Condition GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemCondition `pulumi:"condition"`
 	// Description of a NAT rule. This field can be used to add additional info.
 	Description *string `pulumi:"description"`
@@ -5264,7 +5341,7 @@ type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem struct {
 	Name string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
-	// OCID of the Network Firewall Policy this decryption profile belongs to.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
 	ParentResourceId string `pulumi:"parentResourceId"`
 	// An object which defines the position of the rule.
 	Position GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPosition `pulumi:"position"`
@@ -5290,7 +5367,7 @@ type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArgs struct {
 	// action:
 	// * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
 	Action pulumi.StringInput `pulumi:"action"`
-	// Match criteria used in NAT Rule used on the firewall policy.
+	// Match criteria used in NAT rule used on the firewall policy.
 	Condition GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionInput `pulumi:"condition"`
 	// Description of a NAT rule. This field can be used to add additional info.
 	Description pulumi.StringPtrInput `pulumi:"description"`
@@ -5298,7 +5375,7 @@ type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArgs struct {
 	Name pulumi.StringInput `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
 	NetworkFirewallPolicyId pulumi.StringInput `pulumi:"networkFirewallPolicyId"`
-	// OCID of the Network Firewall Policy this decryption profile belongs to.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
 	ParentResourceId pulumi.StringInput `pulumi:"parentResourceId"`
 	// An object which defines the position of the rule.
 	Position GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionInput `pulumi:"position"`
@@ -5366,7 +5443,7 @@ func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput) Action() pu
 	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem) string { return v.Action }).(pulumi.StringOutput)
 }
 
-// Match criteria used in NAT Rule used on the firewall policy.
+// Match criteria used in NAT rule used on the firewall policy.
 func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput) Condition() GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem) GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemCondition {
 		return v.Condition
@@ -5388,7 +5465,7 @@ func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput) NetworkFire
 	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem) string { return v.NetworkFirewallPolicyId }).(pulumi.StringOutput)
 }
 
-// OCID of the Network Firewall Policy this decryption profile belongs to.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
 func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput) ParentResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem) string { return v.ParentResourceId }).(pulumi.StringOutput)
 }
@@ -6019,6 +6096,8 @@ type GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem stru
 	Action string `pulumi:"action"`
 	// Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
 	Condition GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition `pulumi:"condition"`
+	// The description of the security rule. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
 	// * INTRUSION_DETECTION - Intrusion Detection.
 	// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
@@ -6054,6 +6133,8 @@ type GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemArgs 
 	Action pulumi.StringInput `pulumi:"action"`
 	// Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
 	Condition GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemConditionInput `pulumi:"condition"`
+	// The description of the security rule. This field can be used to add additional info.
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
 	// * INTRUSION_DETECTION - Intrusion Detection.
 	// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
@@ -6134,6 +6215,13 @@ func (o GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemOu
 	return o.ApplyT(func(v GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem) GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition {
 		return v.Condition
 	}).(GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemConditionOutput)
+}
+
+// The description of the security rule. This field can be used to add additional info.
+func (o GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem) *string {
+		return v.Description
+	}).(pulumi.StringPtrOutput)
 }
 
 // Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
@@ -6611,6 +6699,8 @@ func (o GetNetworkFirewallPolicyServiceListsServiceListSummaryCollectionArrayOut
 }
 
 type GetNetworkFirewallPolicyServiceListsServiceListSummaryCollectionItem struct {
+	// The description of the service list. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Name of the service Group.
 	Name string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -6635,6 +6725,8 @@ type GetNetworkFirewallPolicyServiceListsServiceListSummaryCollectionItemInput i
 }
 
 type GetNetworkFirewallPolicyServiceListsServiceListSummaryCollectionItemArgs struct {
+	// The description of the service list. This field can be used to add additional info.
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Name of the service Group.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -6696,6 +6788,13 @@ func (o GetNetworkFirewallPolicyServiceListsServiceListSummaryCollectionItemOutp
 
 func (o GetNetworkFirewallPolicyServiceListsServiceListSummaryCollectionItemOutput) ToGetNetworkFirewallPolicyServiceListsServiceListSummaryCollectionItemOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyServiceListsServiceListSummaryCollectionItemOutput {
 	return o
+}
+
+// The description of the service list. This field can be used to add additional info.
+func (o GetNetworkFirewallPolicyServiceListsServiceListSummaryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyServiceListsServiceListSummaryCollectionItem) *string {
+		return v.Description
+	}).(pulumi.StringPtrOutput)
 }
 
 // Name of the service Group.
@@ -7063,6 +7162,8 @@ func (o GetNetworkFirewallPolicyServicesServiceSummaryCollectionArrayOutput) Ind
 }
 
 type GetNetworkFirewallPolicyServicesServiceSummaryCollectionItem struct {
+	// The description of the service. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Name of the service.
 	Name string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -7087,6 +7188,8 @@ type GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemInput interface
 }
 
 type GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemArgs struct {
+	// The description of the service. This field can be used to add additional info.
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Name of the service.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -7148,6 +7251,11 @@ func (o GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemOutput) ToGe
 
 func (o GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemOutput) ToGetNetworkFirewallPolicyServicesServiceSummaryCollectionItemOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemOutput {
 	return o
+}
+
+// The description of the service. This field can be used to add additional info.
+func (o GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyServicesServiceSummaryCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Name of the service.
@@ -7830,6 +7938,8 @@ type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCol
 	Action string `pulumi:"action"`
 	// Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
 	Condition GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemCondition `pulumi:"condition"`
+	// The description of the tunnel inspect rule. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Name for the Tunnel Inspection Rule, must be unique within the policy.
 	Name string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -7865,6 +7975,8 @@ type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCol
 	Action pulumi.StringInput `pulumi:"action"`
 	// Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
 	Condition GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionInput `pulumi:"condition"`
+	// The description of the tunnel inspect rule. This field can be used to add additional info.
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Name for the Tunnel Inspection Rule, must be unique within the policy.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -7947,6 +8059,13 @@ func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummary
 	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemCondition {
 		return v.Condition
 	}).(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput)
+}
+
+// The description of the tunnel inspect rule. This field can be used to add additional info.
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem) *string {
+		return v.Description
+	}).(pulumi.StringPtrOutput)
 }
 
 // Name for the Tunnel Inspection Rule, must be unique within the policy.
@@ -8518,6 +8637,8 @@ func (o GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionArrayOutput) Ind
 }
 
 type GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem struct {
+	// The description of the Url list. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Unique name identifier for the URL list.
 	Name string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -8542,6 +8663,8 @@ type GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemInput interface
 }
 
 type GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemArgs struct {
+	// The description of the Url list. This field can be used to add additional info.
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Unique name identifier for the URL list.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -8603,6 +8726,11 @@ func (o GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemOutput) ToGe
 
 func (o GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemOutput) ToGetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemOutput {
 	return o
+}
+
+// The description of the Url list. This field can be used to add additional info.
+func (o GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Unique name identifier for the URL list.
@@ -8984,12 +9112,14 @@ type GetNetworkFirewallsNetworkFirewallCollectionItem struct {
 	Ipv6address string `pulumi:"ipv6address"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// Nat Configuration response.
+	// Response to a request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
 	NatConfigurations []GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration `pulumi:"natConfigurations"`
 	// A filter to return only resources that match the entire networkFirewallPolicyId given.
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
 	// An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	// The shape of a firewall to determine the bandwidth that the firewall allows.
+	Shape string `pulumi:"shape"`
 	// A filter to return only resources with a lifecycleState matching the given value.
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
@@ -9032,12 +9162,14 @@ type GetNetworkFirewallsNetworkFirewallCollectionItemArgs struct {
 	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// Nat Configuration response.
+	// Response to a request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
 	NatConfigurations GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayInput `pulumi:"natConfigurations"`
 	// A filter to return only resources that match the entire networkFirewallPolicyId given.
 	NetworkFirewallPolicyId pulumi.StringInput `pulumi:"networkFirewallPolicyId"`
 	// An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
+	// The shape of a firewall to determine the bandwidth that the firewall allows.
+	Shape pulumi.StringInput `pulumi:"shape"`
 	// A filter to return only resources with a lifecycleState matching the given value.
 	State pulumi.StringInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
@@ -9146,7 +9278,7 @@ func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) LifecycleDetails
 	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Nat Configuration response.
+// Response to a request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
 func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) NatConfigurations() GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItem) []GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration {
 		return v.NatConfigurations
@@ -9161,6 +9293,11 @@ func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) NetworkFirewallP
 // An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItem) []string { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// The shape of a firewall to determine the bandwidth that the firewall allows.
+func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItem) string { return v.Shape }).(pulumi.StringOutput)
 }
 
 // A filter to return only resources with a lifecycleState matching the given value.
@@ -9209,9 +9346,9 @@ func (o GetNetworkFirewallsNetworkFirewallCollectionItemArrayOutput) Index(i pul
 }
 
 type GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration struct {
-	// To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+	// True indicates that NAT configuration is enabled. False indicates NAT configuration is disabled.
 	MustEnablePrivateNat bool `pulumi:"mustEnablePrivateNat"`
-	// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+	// An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
 	NatIpAddressLists []string `pulumi:"natIpAddressLists"`
 }
 
@@ -9227,9 +9364,9 @@ type GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationInput inter
 }
 
 type GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArgs struct {
-	// To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+	// True indicates that NAT configuration is enabled. False indicates NAT configuration is disabled.
 	MustEnablePrivateNat pulumi.BoolInput `pulumi:"mustEnablePrivateNat"`
-	// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+	// An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
 	NatIpAddressLists pulumi.StringArrayInput `pulumi:"natIpAddressLists"`
 }
 
@@ -9284,14 +9421,14 @@ func (o GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput) 
 	return o
 }
 
-// To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+// True indicates that NAT configuration is enabled. False indicates NAT configuration is disabled.
 func (o GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput) MustEnablePrivateNat() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration) bool {
 		return v.MustEnablePrivateNat
 	}).(pulumi.BoolOutput)
 }
 
-// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+// An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
 func (o GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput) NatIpAddressLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration) []string {
 		return v.NatIpAddressLists

@@ -27,10 +27,13 @@ class GetDesktopResult:
     """
     A collection of values returned by getDesktop.
     """
-    def __init__(__self__, defined_tags=None, desktop_id=None, device_policies=None, display_name=None, freeform_tags=None, hosting_options=None, id=None, pool_id=None, state=None, time_created=None, user_name=None):
+    def __init__(__self__, defined_tags=None, desktop_connections=None, desktop_id=None, device_policies=None, display_name=None, freeform_tags=None, hosting_options=None, id=None, pool_id=None, state=None, time_created=None, user_name=None):
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
+        if desktop_connections and not isinstance(desktop_connections, list):
+            raise TypeError("Expected argument 'desktop_connections' to be a list")
+        pulumi.set(__self__, "desktop_connections", desktop_connections)
         if desktop_id and not isinstance(desktop_id, str):
             raise TypeError("Expected argument 'desktop_id' to be a str")
         pulumi.set(__self__, "desktop_id", desktop_id)
@@ -69,6 +72,14 @@ class GetDesktopResult:
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="desktopConnections")
+    def desktop_connections(self) -> Sequence['outputs.GetDesktopDesktopConnectionResult']:
+        """
+        Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+        """
+        return pulumi.get(self, "desktop_connections")
 
     @_builtins.property
     @pulumi.getter(name="desktopId")
@@ -155,6 +166,7 @@ class AwaitableGetDesktopResult(GetDesktopResult):
             yield self
         return GetDesktopResult(
             defined_tags=self.defined_tags,
+            desktop_connections=self.desktop_connections,
             desktop_id=self.desktop_id,
             device_policies=self.device_policies,
             display_name=self.display_name,
@@ -193,6 +205,7 @@ def get_desktop(desktop_id: Optional[_builtins.str] = None,
 
     return AwaitableGetDesktopResult(
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        desktop_connections=pulumi.get(__ret__, 'desktop_connections'),
         desktop_id=pulumi.get(__ret__, 'desktop_id'),
         device_policies=pulumi.get(__ret__, 'device_policies'),
         display_name=pulumi.get(__ret__, 'display_name'),
@@ -228,6 +241,7 @@ def get_desktop_output(desktop_id: Optional[pulumi.Input[_builtins.str]] = None,
     __ret__ = pulumi.runtime.invoke_output('oci:Desktops/getDesktop:getDesktop', __args__, opts=opts, typ=GetDesktopResult)
     return __ret__.apply(lambda __response__: GetDesktopResult(
         defined_tags=pulumi.get(__response__, 'defined_tags'),
+        desktop_connections=pulumi.get(__response__, 'desktop_connections'),
         desktop_id=pulumi.get(__response__, 'desktop_id'),
         device_policies=pulumi.get(__response__, 'device_policies'),
         display_name=pulumi.get(__response__, 'display_name'),

@@ -82,7 +82,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<int> AssociatedSourcesCount { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+        /// (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         /// </summary>
         [Output("cloudResourceId")]
         public Output<string> CloudResourceId { get; private set; } = null!;
@@ -160,7 +160,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Output("namespace")]
         public Output<string> Namespace { get; private set; } = null!;
@@ -258,7 +258,7 @@ namespace Pulumi.Oci.LogAnalytics
     public sealed class LogAnalyticsEntityArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+        /// (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         /// </summary>
         [Input("cloudResourceId")]
         public Input<string>? CloudResourceId { get; set; }
@@ -324,7 +324,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
@@ -384,7 +384,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<int>? AssociatedSourcesCount { get; set; }
 
         /// <summary>
-        /// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+        /// (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         /// </summary>
         [Input("cloudResourceId")]
         public Input<string>? CloudResourceId { get; set; }
@@ -474,7 +474,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }

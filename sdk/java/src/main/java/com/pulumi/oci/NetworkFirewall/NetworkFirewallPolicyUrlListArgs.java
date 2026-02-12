@@ -19,6 +19,21 @@ public final class NetworkFirewallPolicyUrlListArgs extends com.pulumi.resources
     public static final NetworkFirewallPolicyUrlListArgs Empty = new NetworkFirewallPolicyUrlListArgs();
 
     /**
+     * (Updatable) The description of the Url list. This field can be used to add additional info.
+     * 
+     */
+    @Import(name="description")
+    private @Nullable Output<String> description;
+
+    /**
+     * @return (Updatable) The description of the Url list. This field can be used to add additional info.
+     * 
+     */
+    public Optional<Output<String>> description() {
+        return Optional.ofNullable(this.description);
+    }
+
+    /**
      * Unique name to identify the group of urls to be used in the policy rules.
      * 
      */
@@ -66,6 +81,7 @@ public final class NetworkFirewallPolicyUrlListArgs extends com.pulumi.resources
     private NetworkFirewallPolicyUrlListArgs() {}
 
     private NetworkFirewallPolicyUrlListArgs(NetworkFirewallPolicyUrlListArgs $) {
+        this.description = $.description;
         this.name = $.name;
         this.networkFirewallPolicyId = $.networkFirewallPolicyId;
         this.urls = $.urls;
@@ -87,6 +103,27 @@ public final class NetworkFirewallPolicyUrlListArgs extends com.pulumi.resources
 
         public Builder(NetworkFirewallPolicyUrlListArgs defaults) {
             $ = new NetworkFirewallPolicyUrlListArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param description (Updatable) The description of the Url list. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(@Nullable Output<String> description) {
+            $.description = description;
+            return this;
+        }
+
+        /**
+         * @param description (Updatable) The description of the Url list. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(String description) {
+            return description(Output.of(description));
         }
 
         /**

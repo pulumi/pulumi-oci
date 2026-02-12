@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +19,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -65,7 +65,7 @@ type LogAnalyticsEntityType struct {
 	ManagementAgentEligibilityStatus pulumi.StringOutput `pulumi:"managementAgentEligibilityStatus"`
 	// Log analytics entity type name.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// Log analytics entity type property definition.
 	Properties LogAnalyticsEntityTypePropertyArrayOutput `pulumi:"properties"`
@@ -119,7 +119,7 @@ type logAnalyticsEntityTypeState struct {
 	ManagementAgentEligibilityStatus *string `pulumi:"managementAgentEligibilityStatus"`
 	// Log analytics entity type name.
 	Name *string `pulumi:"name"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace *string `pulumi:"namespace"`
 	// Log analytics entity type property definition.
 	Properties []LogAnalyticsEntityTypeProperty `pulumi:"properties"`
@@ -141,7 +141,7 @@ type LogAnalyticsEntityTypeState struct {
 	ManagementAgentEligibilityStatus pulumi.StringPtrInput
 	// Log analytics entity type name.
 	Name pulumi.StringPtrInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringPtrInput
 	// Log analytics entity type property definition.
 	Properties LogAnalyticsEntityTypePropertyArrayInput
@@ -162,7 +162,7 @@ type logAnalyticsEntityTypeArgs struct {
 	Category *string `pulumi:"category"`
 	// Log analytics entity type name.
 	Name *string `pulumi:"name"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 	// Log analytics entity type property definition.
 	Properties []LogAnalyticsEntityTypeProperty `pulumi:"properties"`
@@ -174,7 +174,7 @@ type LogAnalyticsEntityTypeArgs struct {
 	Category pulumi.StringPtrInput
 	// Log analytics entity type name.
 	Name pulumi.StringPtrInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput
 	// Log analytics entity type property definition.
 	Properties LogAnalyticsEntityTypePropertyArrayInput
@@ -291,7 +291,7 @@ func (o LogAnalyticsEntityTypeOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsEntityType) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// The Logging Analytics namespace used for the request.
+// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 func (o LogAnalyticsEntityTypeOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsEntityType) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }

@@ -138,8 +138,7 @@ def get_rrset(compartment_id: Optional[_builtins.str] = None,
 
     Gets a list of all records in the specified RRSet.
 
-    The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
-    and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
+    The results are sorted by `recordHash` by default. When accessing a private zone by name, the `view_id` parameter is required.
 
     ## Example Usage
 
@@ -150,17 +149,12 @@ def get_rrset(compartment_id: Optional[_builtins.str] = None,
     test_rrset = oci.Dns.get_rrset(domain=rrset_domain,
         rtype=rrset_rtype,
         zone_name_or_id=test_zone["id"],
-        scope=rrset_scope,
         view_id=test_view["id"])
     ```
 
 
-    :param _builtins.str compartment_id: The OCID of the compartment the zone belongs to.
-           
-           This parameter is deprecated and should be omitted.
     :param _builtins.str domain: The target fully-qualified domain name (FQDN) within the target zone.
     :param _builtins.str rtype: The type of the target RRSet within the target zone.
-    :param _builtins.str scope: Specifies to operate only on resources that have a matching DNS scope.
     :param _builtins.str view_id: The OCID of the view the zone is associated with. Required when accessing a private zone by name.
     :param _builtins.str zone_name_or_id: The name or OCID of the target zone.
     :param _builtins.str zone_version: The version of the zone for which data is requested.
@@ -199,8 +193,7 @@ def get_rrset_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.st
 
     Gets a list of all records in the specified RRSet.
 
-    The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
-    and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
+    The results are sorted by `recordHash` by default. When accessing a private zone by name, the `view_id` parameter is required.
 
     ## Example Usage
 
@@ -211,17 +204,12 @@ def get_rrset_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.st
     test_rrset = oci.Dns.get_rrset(domain=rrset_domain,
         rtype=rrset_rtype,
         zone_name_or_id=test_zone["id"],
-        scope=rrset_scope,
         view_id=test_view["id"])
     ```
 
 
-    :param _builtins.str compartment_id: The OCID of the compartment the zone belongs to.
-           
-           This parameter is deprecated and should be omitted.
     :param _builtins.str domain: The target fully-qualified domain name (FQDN) within the target zone.
     :param _builtins.str rtype: The type of the target RRSet within the target zone.
-    :param _builtins.str scope: Specifies to operate only on resources that have a matching DNS scope.
     :param _builtins.str view_id: The OCID of the view the zone is associated with. Required when accessing a private zone by name.
     :param _builtins.str zone_name_or_id: The name or OCID of the target zone.
     :param _builtins.str zone_version: The version of the zone for which data is requested.

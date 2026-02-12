@@ -26,7 +26,10 @@ class GetNetworkFirewallPolicyMappedSecretResult:
     """
     A collection of values returned by getNetworkFirewallPolicyMappedSecret.
     """
-    def __init__(__self__, id=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, source=None, type=None, vault_secret_id=None, version_number=None):
+    def __init__(__self__, description=None, id=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, source=None, type=None, vault_secret_id=None, version_number=None):
+        if description and not isinstance(description, str):
+            raise TypeError("Expected argument 'description' to be a str")
+        pulumi.set(__self__, "description", description)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -51,6 +54,14 @@ class GetNetworkFirewallPolicyMappedSecretResult:
         if version_number and not isinstance(version_number, int):
             raise TypeError("Expected argument 'version_number' to be a int")
         pulumi.set(__self__, "version_number", version_number)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the mapped secret. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter
@@ -119,6 +130,7 @@ class AwaitableGetNetworkFirewallPolicyMappedSecretResult(GetNetworkFirewallPoli
         if False:
             yield self
         return GetNetworkFirewallPolicyMappedSecretResult(
+            description=self.description,
             id=self.id,
             name=self.name,
             network_firewall_policy_id=self.network_firewall_policy_id,
@@ -150,6 +162,7 @@ def get_network_firewall_policy_mapped_secret(name: Optional[_builtins.str] = No
     __ret__ = pulumi.runtime.invoke('oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret', __args__, opts=opts, typ=GetNetworkFirewallPolicyMappedSecretResult).value
 
     return AwaitableGetNetworkFirewallPolicyMappedSecretResult(
+        description=pulumi.get(__ret__, 'description'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
@@ -178,6 +191,7 @@ def get_network_firewall_policy_mapped_secret_output(name: Optional[pulumi.Input
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret', __args__, opts=opts, typ=GetNetworkFirewallPolicyMappedSecretResult)
     return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyMappedSecretResult(
+        description=pulumi.get(__response__, 'description'),
         id=pulumi.get(__response__, 'id'),
         name=pulumi.get(__response__, 'name'),
         network_firewall_policy_id=pulumi.get(__response__, 'network_firewall_policy_id'),

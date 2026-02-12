@@ -14,14 +14,14 @@ public final class GetLogAnalyticsEntityTypePlainArgs extends com.pulumi.resourc
     public static final GetLogAnalyticsEntityTypePlainArgs Empty = new GetLogAnalyticsEntityTypePlainArgs();
 
     /**
-     * Log analytics entity type name.
+     * Log analytics entity type name. Entity type name can be obtained by running &#39;oci log-analytics entity-type list --namespace-name &lt;namespacename&gt; --all&#39;. The json output &#39;internal-name&#39; parameter value contains the entity type name.
      * 
      */
     @Import(name="entityTypeName", required=true)
     private String entityTypeName;
 
     /**
-     * @return Log analytics entity type name.
+     * @return Log analytics entity type name. Entity type name can be obtained by running &#39;oci log-analytics entity-type list --namespace-name &lt;namespacename&gt; --all&#39;. The json output &#39;internal-name&#39; parameter value contains the entity type name.
      * 
      */
     public String entityTypeName() {
@@ -29,14 +29,14 @@ public final class GetLogAnalyticsEntityTypePlainArgs extends com.pulumi.resourc
     }
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     @Import(name="namespace", required=true)
     private String namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public String namespace() {
@@ -69,7 +69,7 @@ public final class GetLogAnalyticsEntityTypePlainArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param entityTypeName Log analytics entity type name.
+         * @param entityTypeName Log analytics entity type name. Entity type name can be obtained by running &#39;oci log-analytics entity-type list --namespace-name &lt;namespacename&gt; --all&#39;. The json output &#39;internal-name&#39; parameter value contains the entity type name.
          * 
          * @return builder
          * 
@@ -80,7 +80,7 @@ public final class GetLogAnalyticsEntityTypePlainArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 

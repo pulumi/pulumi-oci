@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/core"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -97,6 +97,8 @@ type GetComputeHostsResult struct {
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetComputeHostsFilter `pulumi:"filters"`
+	// The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+	HostCorrelationId string `pulumi:"hostCorrelationId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// A free-form description detailing why the host is in its current state.
@@ -195,6 +197,11 @@ func (o GetComputeHostsResultOutput) DisplayName() pulumi.StringPtrOutput {
 
 func (o GetComputeHostsResultOutput) Filters() GetComputeHostsFilterArrayOutput {
 	return o.ApplyT(func(v GetComputeHostsResult) []GetComputeHostsFilter { return v.Filters }).(GetComputeHostsFilterArrayOutput)
+}
+
+// The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+func (o GetComputeHostsResultOutput) HostCorrelationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetComputeHostsResult) string { return v.HostCorrelationId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

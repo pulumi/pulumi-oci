@@ -84,6 +84,7 @@ import javax.annotation.Nullable;
  *                 .isKeyboardEnabled(desktopPoolDevicePolicyIsKeyboardEnabled)
  *                 .isPointerEnabled(desktopPoolDevicePolicyIsPointerEnabled)
  *                 .isPrintingEnabled(desktopPoolDevicePolicyIsPrintingEnabled)
+ *                 .isVideoInputEnabled(desktopPoolDevicePolicyIsVideoInputEnabled)
  *                 .build())
  *             .displayName(desktopPoolDisplayName)
  *             .image(DesktopPoolImageArgs.builder()
@@ -101,6 +102,7 @@ import javax.annotation.Nullable;
  *             .standbySize(desktopPoolStandbySize)
  *             .storageBackupPolicyId("ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz")
  *             .storageSizeInGbs(desktopPoolStorageSizeInGbs)
+ *             .bootVolumeSizeInGbs(desktopPoolBootVolumeSizeInGbs)
  *             .areVolumesPreserved(desktopPoolAreVolumesPreserved)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(desktopPoolDescription)
@@ -224,6 +226,20 @@ public class DesktopPool extends com.pulumi.resources.CustomResource {
         return this.availabilityPolicy;
     }
     /**
+     * (Updatable) The size in GBs of the boot volume for the desktop pool.
+     * 
+     */
+    @Export(name="bootVolumeSizeInGbs", refs={Integer.class}, tree="[0]")
+    private Output<Integer> bootVolumeSizeInGbs;
+
+    /**
+     * @return (Updatable) The size in GBs of the boot volume for the desktop pool.
+     * 
+     */
+    public Output<Integer> bootVolumeSizeInGbs() {
+        return this.bootVolumeSizeInGbs;
+    }
+    /**
      * (Updatable) The OCID of the compartment which will contain the desktop pool.
      * 
      */
@@ -322,14 +338,14 @@ public class DesktopPool extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * Provides information about the desktop image.
+     * (Updatable) Provides information about the desktop image.
      * 
      */
     @Export(name="image", refs={DesktopPoolImage.class}, tree="[0]")
     private Output<DesktopPoolImage> image;
 
     /**
-     * @return Provides information about the desktop image.
+     * @return (Updatable) Provides information about the desktop image.
      * 
      */
     public Output<DesktopPoolImage> image() {

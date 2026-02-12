@@ -26,10 +26,13 @@ class GetNetworkFirewallPolicyAddressListResult:
     """
     A collection of values returned by getNetworkFirewallPolicyAddressList.
     """
-    def __init__(__self__, addresses=None, id=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, total_addresses=None, type=None):
+    def __init__(__self__, addresses=None, description=None, id=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, total_addresses=None, type=None):
         if addresses and not isinstance(addresses, list):
             raise TypeError("Expected argument 'addresses' to be a list")
         pulumi.set(__self__, "addresses", addresses)
+        if description and not isinstance(description, str):
+            raise TypeError("Expected argument 'description' to be a str")
+        pulumi.set(__self__, "description", description)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -56,6 +59,14 @@ class GetNetworkFirewallPolicyAddressListResult:
         List of addresses.
         """
         return pulumi.get(self, "addresses")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the address list. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter
@@ -107,6 +118,7 @@ class AwaitableGetNetworkFirewallPolicyAddressListResult(GetNetworkFirewallPolic
             yield self
         return GetNetworkFirewallPolicyAddressListResult(
             addresses=self.addresses,
+            description=self.description,
             id=self.id,
             name=self.name,
             network_firewall_policy_id=self.network_firewall_policy_id,
@@ -137,6 +149,7 @@ def get_network_firewall_policy_address_list(name: Optional[_builtins.str] = Non
 
     return AwaitableGetNetworkFirewallPolicyAddressListResult(
         addresses=pulumi.get(__ret__, 'addresses'),
+        description=pulumi.get(__ret__, 'description'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
@@ -164,6 +177,7 @@ def get_network_firewall_policy_address_list_output(name: Optional[pulumi.Input[
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyAddressList:getNetworkFirewallPolicyAddressList', __args__, opts=opts, typ=GetNetworkFirewallPolicyAddressListResult)
     return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyAddressListResult(
         addresses=pulumi.get(__response__, 'addresses'),
+        description=pulumi.get(__response__, 'description'),
         id=pulumi.get(__response__, 'id'),
         name=pulumi.get(__response__, 'name'),
         network_firewall_policy_id=pulumi.get(__response__, 'network_firewall_policy_id'),

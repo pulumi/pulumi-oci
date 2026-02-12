@@ -30,6 +30,11 @@ public final class GetNamespaceScheduledTaskResult {
      */
     private Map<String,String> definedTags;
     /**
+     * @return Description for this resource.
+     * 
+     */
+    private String description;
+    /**
      * @return A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      * 
      */
@@ -76,7 +81,7 @@ public final class GetNamespaceScheduledTaskResult {
      */
     private String state;
     /**
-     * @return Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+     * @return Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
      * 
      */
     private String taskStatus;
@@ -122,6 +127,13 @@ public final class GetNamespaceScheduledTaskResult {
      */
     public Map<String,String> definedTags() {
         return this.definedTags;
+    }
+    /**
+     * @return Description for this resource.
+     * 
+     */
+    public String description() {
+        return this.description;
     }
     /**
      * @return A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
@@ -190,7 +202,7 @@ public final class GetNamespaceScheduledTaskResult {
         return this.state;
     }
     /**
-     * @return Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+     * @return Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
      * 
      */
     public String taskStatus() {
@@ -237,6 +249,7 @@ public final class GetNamespaceScheduledTaskResult {
         private List<GetNamespaceScheduledTaskAction> actions;
         private String compartmentId;
         private Map<String,String> definedTags;
+        private String description;
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
@@ -258,6 +271,7 @@ public final class GetNamespaceScheduledTaskResult {
     	      this.actions = defaults.actions;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
+    	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -300,6 +314,14 @@ public final class GetNamespaceScheduledTaskResult {
               throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "definedTags");
             }
             this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder description(String description) {
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
@@ -430,6 +452,7 @@ public final class GetNamespaceScheduledTaskResult {
             _resultValue.actions = actions;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;

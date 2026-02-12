@@ -17,6 +17,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// Available storage size for Exascale in GBs.
         /// </summary>
         public readonly int? AvailableStorageInGbs;
+        public readonly int? AvailableVmStorageInGbs;
         /// <summary>
         /// Storage size needed for Exascale in GBs.
         /// 
@@ -25,15 +26,22 @@ namespace Pulumi.Oci.Database.Outputs
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly int? TotalStorageInGbs;
+        public readonly int? TotalVmStorageInGbs;
 
         [OutputConstructor]
         private CloudExadataInfrastructureConfigureExascaleManagementExascaleConfig(
             int? availableStorageInGbs,
 
-            int? totalStorageInGbs)
+            int? availableVmStorageInGbs,
+
+            int? totalStorageInGbs,
+
+            int? totalVmStorageInGbs)
         {
             AvailableStorageInGbs = availableStorageInGbs;
+            AvailableVmStorageInGbs = availableVmStorageInGbs;
             TotalStorageInGbs = totalStorageInGbs;
+            TotalVmStorageInGbs = totalVmStorageInGbs;
         }
     }
 }

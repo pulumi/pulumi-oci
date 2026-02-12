@@ -257,6 +257,10 @@ namespace Pulumi.Oci.Database
         /// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// </summary>
         public readonly string TimeZone;
+        /// <summary>
+        /// Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
+        /// </summary>
+        public readonly string VmBackupStorageType;
         public readonly string VmClusterId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
@@ -266,6 +270,10 @@ namespace Pulumi.Oci.Database
         /// The vmcluster type for the VM cluster/Cloud VM cluster.
         /// </summary>
         public readonly string VmClusterType;
+        /// <summary>
+        /// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+        /// </summary>
+        public readonly string VmFileSystemStorageType;
 
         [OutputConstructor]
         private GetVmClusterResult(
@@ -339,11 +347,15 @@ namespace Pulumi.Oci.Database
 
             string timeZone,
 
+            string vmBackupStorageType,
+
             string vmClusterId,
 
             string vmClusterNetworkId,
 
-            string vmClusterType)
+            string vmClusterType,
+
+            string vmFileSystemStorageType)
         {
             AvailabilityDomain = availabilityDomain;
             CloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
@@ -380,9 +392,11 @@ namespace Pulumi.Oci.Database
             SystemVersion = systemVersion;
             TimeCreated = timeCreated;
             TimeZone = timeZone;
+            VmBackupStorageType = vmBackupStorageType;
             VmClusterId = vmClusterId;
             VmClusterNetworkId = vmClusterNetworkId;
             VmClusterType = vmClusterType;
+            VmFileSystemStorageType = vmFileSystemStorageType;
         }
     }
 }

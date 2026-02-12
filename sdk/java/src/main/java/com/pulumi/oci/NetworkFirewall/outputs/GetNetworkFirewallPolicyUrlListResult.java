@@ -13,6 +13,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNetworkFirewallPolicyUrlListResult {
+    /**
+     * @return The description of the Url list. This field can be used to add additional info.
+     * 
+     */
+    private String description;
     private String id;
     /**
      * @return Unique name identifier for the URL list.
@@ -37,6 +42,13 @@ public final class GetNetworkFirewallPolicyUrlListResult {
     private List<GetNetworkFirewallPolicyUrlListUrl> urls;
 
     private GetNetworkFirewallPolicyUrlListResult() {}
+    /**
+     * @return The description of the Url list. This field can be used to add additional info.
+     * 
+     */
+    public String description() {
+        return this.description;
+    }
     public String id() {
         return this.id;
     }
@@ -81,6 +93,7 @@ public final class GetNetworkFirewallPolicyUrlListResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String description;
         private String id;
         private String name;
         private String networkFirewallPolicyId;
@@ -90,6 +103,7 @@ public final class GetNetworkFirewallPolicyUrlListResult {
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyUrlListResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.description = defaults.description;
     	      this.id = defaults.id;
     	      this.name = defaults.name;
     	      this.networkFirewallPolicyId = defaults.networkFirewallPolicyId;
@@ -98,6 +112,14 @@ public final class GetNetworkFirewallPolicyUrlListResult {
     	      this.urls = defaults.urls;
         }
 
+        @CustomType.Setter
+        public Builder description(String description) {
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyUrlListResult", "description");
+            }
+            this.description = description;
+            return this;
+        }
         @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
@@ -151,6 +173,7 @@ public final class GetNetworkFirewallPolicyUrlListResult {
         }
         public GetNetworkFirewallPolicyUrlListResult build() {
             final var _resultValue = new GetNetworkFirewallPolicyUrlListResult();
+            _resultValue.description = description;
             _resultValue.id = id;
             _resultValue.name = name;
             _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;

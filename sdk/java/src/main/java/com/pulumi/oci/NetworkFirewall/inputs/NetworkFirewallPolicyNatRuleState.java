@@ -35,14 +35,14 @@ public final class NetworkFirewallPolicyNatRuleState extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+     * (Updatable) Match criteria used in NAT rule used on the firewall policy.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<NetworkFirewallPolicyNatRuleConditionArgs> condition;
 
     /**
-     * @return (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+     * @return (Updatable) Match criteria used in NAT rule used on the firewall policy.
      * 
      */
     public Optional<Output<NetworkFirewallPolicyNatRuleConditionArgs>> condition() {
@@ -95,14 +95,14 @@ public final class NetworkFirewallPolicyNatRuleState extends com.pulumi.resource
     }
 
     /**
-     * OCID of the Network Firewall Policy this decryption profile belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
      * 
      */
     @Import(name="parentResourceId")
     private @Nullable Output<String> parentResourceId;
 
     /**
-     * @return OCID of the Network Firewall Policy this decryption profile belongs to.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
      * 
      */
     public Optional<Output<String>> parentResourceId() {
@@ -218,7 +218,7 @@ public final class NetworkFirewallPolicyNatRuleState extends com.pulumi.resource
         }
 
         /**
-         * @param condition (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+         * @param condition (Updatable) Match criteria used in NAT rule used on the firewall policy.
          * 
          * @return builder
          * 
@@ -229,7 +229,7 @@ public final class NetworkFirewallPolicyNatRuleState extends com.pulumi.resource
         }
 
         /**
-         * @param condition (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+         * @param condition (Updatable) Match criteria used in NAT rule used on the firewall policy.
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class NetworkFirewallPolicyNatRuleState extends com.pulumi.resource
         }
 
         /**
-         * @param parentResourceId OCID of the Network Firewall Policy this decryption profile belongs to.
+         * @param parentResourceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
          * 
          * @return builder
          * 
@@ -313,7 +313,7 @@ public final class NetworkFirewallPolicyNatRuleState extends com.pulumi.resource
         }
 
         /**
-         * @param parentResourceId OCID of the Network Firewall Policy this decryption profile belongs to.
+         * @param parentResourceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
          * 
          * @return builder
          * 

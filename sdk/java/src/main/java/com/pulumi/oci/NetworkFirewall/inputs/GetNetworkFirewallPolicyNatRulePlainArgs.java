@@ -14,14 +14,14 @@ public final class GetNetworkFirewallPolicyNatRulePlainArgs extends com.pulumi.r
     public static final GetNetworkFirewallPolicyNatRulePlainArgs Empty = new GetNetworkFirewallPolicyNatRulePlainArgs();
 
     /**
-     * Unique identifier for NAT Rules in the network firewall policy.
+     * Unique identifier for NAT rules in the Network Firewall policy.
      * 
      */
     @Import(name="natRuleName", required=true)
     private String natRuleName;
 
     /**
-     * @return Unique identifier for NAT Rules in the network firewall policy.
+     * @return Unique identifier for NAT rules in the Network Firewall policy.
      * 
      */
     public String natRuleName() {
@@ -69,7 +69,7 @@ public final class GetNetworkFirewallPolicyNatRulePlainArgs extends com.pulumi.r
         }
 
         /**
-         * @param natRuleName Unique identifier for NAT Rules in the network firewall policy.
+         * @param natRuleName Unique identifier for NAT rules in the Network Firewall policy.
          * 
          * @return builder
          * 

@@ -37,6 +37,10 @@ export interface GetNetworkFirewallPolicyServiceListArgs {
  * A collection of values returned by getNetworkFirewallPolicyServiceList.
  */
 export interface GetNetworkFirewallPolicyServiceListResult {
+    /**
+     * The description of the service list. This field can be used to add additional info.
+     */
+    readonly description: string;
     readonly id: string;
     /**
      * Name of the service Group.

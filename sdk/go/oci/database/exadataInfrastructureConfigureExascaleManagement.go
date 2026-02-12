@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,7 +23,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/database"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -155,7 +155,8 @@ type ExadataInfrastructureConfigureExascaleManagement struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TotalStorageInGbs pulumi.IntOutput `pulumi:"totalStorageInGbs"`
+	TotalStorageInGbs   pulumi.IntOutput `pulumi:"totalStorageInGbs"`
+	TotalVmStorageInGbs pulumi.IntOutput `pulumi:"totalVmStorageInGbs"`
 }
 
 // NewExadataInfrastructureConfigureExascaleManagement registers a new resource with the given unique name, arguments, and options.
@@ -296,7 +297,8 @@ type exadataInfrastructureConfigureExascaleManagementState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TotalStorageInGbs *int `pulumi:"totalStorageInGbs"`
+	TotalStorageInGbs   *int `pulumi:"totalStorageInGbs"`
+	TotalVmStorageInGbs *int `pulumi:"totalVmStorageInGbs"`
 }
 
 type ExadataInfrastructureConfigureExascaleManagementState struct {
@@ -402,7 +404,8 @@ type ExadataInfrastructureConfigureExascaleManagementState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TotalStorageInGbs pulumi.IntPtrInput
+	TotalStorageInGbs   pulumi.IntPtrInput
+	TotalVmStorageInGbs pulumi.IntPtrInput
 }
 
 func (ExadataInfrastructureConfigureExascaleManagementState) ElementType() reflect.Type {
@@ -416,7 +419,8 @@ type exadataInfrastructureConfigureExascaleManagementArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TotalStorageInGbs int `pulumi:"totalStorageInGbs"`
+	TotalStorageInGbs   int  `pulumi:"totalStorageInGbs"`
+	TotalVmStorageInGbs *int `pulumi:"totalVmStorageInGbs"`
 }
 
 // The set of arguments for constructing a ExadataInfrastructureConfigureExascaleManagement resource.
@@ -427,7 +431,8 @@ type ExadataInfrastructureConfigureExascaleManagementArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TotalStorageInGbs pulumi.IntInput
+	TotalStorageInGbs   pulumi.IntInput
+	TotalVmStorageInGbs pulumi.IntPtrInput
 }
 
 func (ExadataInfrastructureConfigureExascaleManagementArgs) ElementType() reflect.Type {
@@ -832,6 +837,12 @@ func (o ExadataInfrastructureConfigureExascaleManagementOutput) TimeZone() pulum
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExadataInfrastructureConfigureExascaleManagementOutput) TotalStorageInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v *ExadataInfrastructureConfigureExascaleManagement) pulumi.IntOutput { return v.TotalStorageInGbs }).(pulumi.IntOutput)
+}
+
+func (o ExadataInfrastructureConfigureExascaleManagementOutput) TotalVmStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureConfigureExascaleManagement) pulumi.IntOutput {
+		return v.TotalVmStorageInGbs
+	}).(pulumi.IntOutput)
 }
 
 type ExadataInfrastructureConfigureExascaleManagementArrayOutput struct{ *pulumi.OutputState }

@@ -16,8 +16,7 @@ namespace Pulumi.Oci.Dns
         /// 
         /// Gets a list of all records in the specified RRSet.
         /// 
-        /// The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
-        /// and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
+        /// The results are sorted by `recordHash` by default. When accessing a private zone by name, the `ViewId` parameter is required.
         /// 
         /// 
         /// ## Example Usage
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.Dns
         ///         Domain = rrsetDomain,
         ///         Rtype = rrsetRtype,
         ///         ZoneNameOrId = testZone.Id,
-        ///         Scope = rrsetScope,
         ///         ViewId = testView.Id,
         ///     });
         /// 
@@ -50,8 +48,7 @@ namespace Pulumi.Oci.Dns
         /// 
         /// Gets a list of all records in the specified RRSet.
         /// 
-        /// The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
-        /// and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
+        /// The results are sorted by `recordHash` by default. When accessing a private zone by name, the `ViewId` parameter is required.
         /// 
         /// 
         /// ## Example Usage
@@ -69,7 +66,6 @@ namespace Pulumi.Oci.Dns
         ///         Domain = rrsetDomain,
         ///         Rtype = rrsetRtype,
         ///         ZoneNameOrId = testZone.Id,
-        ///         Scope = rrsetScope,
         ///         ViewId = testView.Id,
         ///     });
         /// 
@@ -84,8 +80,7 @@ namespace Pulumi.Oci.Dns
         /// 
         /// Gets a list of all records in the specified RRSet.
         /// 
-        /// The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
-        /// and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
+        /// The results are sorted by `recordHash` by default. When accessing a private zone by name, the `ViewId` parameter is required.
         /// 
         /// 
         /// ## Example Usage
@@ -103,7 +98,6 @@ namespace Pulumi.Oci.Dns
         ///         Domain = rrsetDomain,
         ///         Rtype = rrsetRtype,
         ///         ZoneNameOrId = testZone.Id,
-        ///         Scope = rrsetScope,
         ///         ViewId = testView.Id,
         ///     });
         /// 
@@ -117,11 +111,6 @@ namespace Pulumi.Oci.Dns
 
     public sealed class GetRrsetArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// The OCID of the compartment the zone belongs to.
-        /// 
-        /// This parameter is deprecated and should be omitted.
-        /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
 
@@ -137,9 +126,6 @@ namespace Pulumi.Oci.Dns
         [Input("rtype", required: true)]
         public string Rtype { get; set; } = null!;
 
-        /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope.
-        /// </summary>
         [Input("scope")]
         public string? Scope { get; set; }
 
@@ -169,11 +155,6 @@ namespace Pulumi.Oci.Dns
 
     public sealed class GetRrsetInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// The OCID of the compartment the zone belongs to.
-        /// 
-        /// This parameter is deprecated and should be omitted.
-        /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
@@ -189,9 +170,6 @@ namespace Pulumi.Oci.Dns
         [Input("rtype", required: true)]
         public Input<string> Rtype { get; set; } = null!;
 
-        /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope.
-        /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
 

@@ -23,6 +23,15 @@ import * as utilities from "../utilities";
  *         dataType: namespaceScheduledTaskActionDataType,
  *         metricExtraction: {
  *             compartmentId: compartmentId,
+ *             metricCollections: [{
+ *                 dimensions: [{
+ *                     dimensionName: namespaceScheduledTaskActionMetricExtractionMetricCollectionsDimensionsDimensionName,
+ *                     queryFieldName: namespaceScheduledTaskActionMetricExtractionMetricCollectionsDimensionsQueryFieldName,
+ *                 }],
+ *                 metricName: testMetric.name,
+ *                 metricQueryFieldName: namespaceScheduledTaskActionMetricExtractionMetricCollectionsMetricQueryFieldName,
+ *                 queryTableName: testTable.name,
+ *             }],
  *             metricName: testMetric.name,
  *             namespace: namespaceScheduledTaskActionMetricExtractionNamespace,
  *             resourceGroup: namespaceScheduledTaskActionMetricExtractionResourceGroup,
@@ -42,6 +51,7 @@ import * as utilities from "../utilities";
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
+ *     description: namespaceScheduledTaskDescription,
  *     displayName: namespaceScheduledTaskDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
@@ -51,13 +61,41 @@ import * as utilities from "../utilities";
  *         type: namespaceScheduledTaskSchedulesType,
  *         expression: namespaceScheduledTaskSchedulesExpression,
  *         misfirePolicy: namespaceScheduledTaskSchedulesMisfirePolicy,
+ *         queryOffsetSecs: namespaceScheduledTaskSchedulesQueryOffsetSecs,
  *         recurringInterval: namespaceScheduledTaskSchedulesRecurringInterval,
  *         repeatCount: namespaceScheduledTaskSchedulesRepeatCount,
+ *         timeEnd: namespaceScheduledTaskSchedulesTimeEnd,
  *         timeZone: namespaceScheduledTaskSchedulesTimeZone,
  *     },
  *     taskType: namespaceScheduledTaskTaskType,
  * });
  * ```
+ *
+ * ## Schedules
+ *
+ * There are parameters which require a specific constant value to be supplied.
+ *
+ * ### misfirePolicy
+ *
+ * #### 'RETRY_INDEFINITELY'
+ * A constant which can be used with the misfirePolicy property of a Schedule. This constant has a value of “RETRY_INDEFINITELY”
+ *
+ * #### 'RETRY_ONCE'
+ * A constant which can be used with the misfirePolicy property of a Schedule. This constant has a value of “RETRY_ONCE”
+ *
+ * #### 'SKIP'
+ * A constant which can be used with the misfirePolicy property of a Schedule. This constant has a value of “SKIP”
+ *
+ * ### type
+ *
+ * #### 'AUTO'
+ * A constant which can be used with the type property of a Schedule. This constant has a value of “AUTO”
+ *
+ * #### 'CRON'
+ * A constant which can be used with the type property of a Schedule. This constant has a value of “CRON”
+ *
+ * #### 'FIXED_FREQUENCY'
+ * A constant which can be used with the type property of a Schedule. This constant has a value of “FIXED_FREQUENCY”
  *
  * ## Import
  *
@@ -108,6 +146,10 @@ export class NamespaceScheduledTask extends pulumi.CustomResource {
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * (Updatable) Description for this resource.
+     */
+    declare public readonly description: pulumi.Output<string>;
+    /**
      * (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      */
     declare public readonly displayName: pulumi.Output<string>;
@@ -120,7 +162,7 @@ export class NamespaceScheduledTask extends pulumi.CustomResource {
      */
     declare public readonly kind: pulumi.Output<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     declare public readonly namespace: pulumi.Output<string>;
     /**
@@ -141,7 +183,7 @@ export class NamespaceScheduledTask extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
-     * Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+     * Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
      */
     declare public /*out*/ readonly taskStatus: pulumi.Output<string>;
     /**
@@ -161,7 +203,7 @@ export class NamespaceScheduledTask extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
-     * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+     * most recent Work Request Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      */
     declare public /*out*/ readonly workRequestId: pulumi.Output<string>;
 
@@ -181,6 +223,7 @@ export class NamespaceScheduledTask extends pulumi.CustomResource {
             resourceInputs["action"] = state?.action;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["kind"] = state?.kind;
@@ -218,6 +261,7 @@ export class NamespaceScheduledTask extends pulumi.CustomResource {
             resourceInputs["action"] = args?.action;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["kind"] = args?.kind;
@@ -255,6 +299,10 @@ export interface NamespaceScheduledTaskState {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * (Updatable) Description for this resource.
+     */
+    description?: pulumi.Input<string>;
+    /**
      * (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      */
     displayName?: pulumi.Input<string>;
@@ -267,7 +315,7 @@ export interface NamespaceScheduledTaskState {
      */
     kind?: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace?: pulumi.Input<string>;
     /**
@@ -288,7 +336,7 @@ export interface NamespaceScheduledTaskState {
      */
     state?: pulumi.Input<string>;
     /**
-     * Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+     * Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
      */
     taskStatus?: pulumi.Input<string>;
     /**
@@ -308,7 +356,7 @@ export interface NamespaceScheduledTaskState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+     * most recent Work Request Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      */
     workRequestId?: pulumi.Input<string>;
 }
@@ -330,6 +378,10 @@ export interface NamespaceScheduledTaskArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * (Updatable) Description for this resource.
+     */
+    description?: pulumi.Input<string>;
+    /**
      * (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      */
     displayName?: pulumi.Input<string>;
@@ -342,7 +394,7 @@ export interface NamespaceScheduledTaskArgs {
      */
     kind: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
     /**

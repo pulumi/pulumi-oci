@@ -29,7 +29,7 @@ class LogAnalyticsLogGroupArgs:
         The set of arguments for constructing a LogAnalyticsLogGroup resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request. 
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
                
                ** IMPORTANT **
@@ -76,7 +76,7 @@ class LogAnalyticsLogGroupArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request. 
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
 
 
         ** IMPORTANT **
@@ -143,7 +143,7 @@ class _LogAnalyticsLogGroupState:
         :param pulumi.Input[_builtins.str] description: (Updatable) Description for this resource.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request. 
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
                
                ** IMPORTANT **
@@ -232,7 +232,7 @@ class _LogAnalyticsLogGroupState:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Logging Analytics namespace used for the request. 
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
 
 
         ** IMPORTANT **
@@ -317,7 +317,7 @@ class LogAnalyticsLogGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) Description for this resource.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request. 
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
                
                ** IMPORTANT **
@@ -431,7 +431,7 @@ class LogAnalyticsLogGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) Description for this resource.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request. 
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
                
                ** IMPORTANT **
@@ -497,7 +497,7 @@ class LogAnalyticsLogGroup(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request. 
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
 
 
         ** IMPORTANT **

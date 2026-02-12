@@ -22,6 +22,7 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
                  network_firewall_policy_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
                  are_certificate_extensions_restricted: Optional[pulumi.Input[_builtins.bool]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  is_auto_include_alt_name: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_expired_certificate_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_out_of_capacity_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -40,6 +41,7 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] type: Describes the type of decryption profile. The accepted values are - * SSL_FORWARD_PROXY * SSL_INBOUND_INSPECTION
         :param pulumi.Input[_builtins.bool] are_certificate_extensions_restricted: (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the decryption profile. This field can be used to add additional info.
         :param pulumi.Input[_builtins.bool] is_auto_include_alt_name: (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
         :param pulumi.Input[_builtins.bool] is_expired_certificate_blocked: (Updatable) Whether to block sessions if server's certificate is expired.
         :param pulumi.Input[_builtins.bool] is_out_of_capacity_blocked: (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
@@ -54,6 +56,8 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
         pulumi.set(__self__, "type", type)
         if are_certificate_extensions_restricted is not None:
             pulumi.set(__self__, "are_certificate_extensions_restricted", are_certificate_extensions_restricted)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if is_auto_include_alt_name is not None:
             pulumi.set(__self__, "is_auto_include_alt_name", is_auto_include_alt_name)
         if is_expired_certificate_blocked is not None:
@@ -112,6 +116,18 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
     @are_certificate_extensions_restricted.setter
     def are_certificate_extensions_restricted(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "are_certificate_extensions_restricted", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The description of the decryption profile. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoIncludeAltName")
@@ -226,6 +242,7 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
 class _NetworkFirewallPolicyDecryptionProfileState:
     def __init__(__self__, *,
                  are_certificate_extensions_restricted: Optional[pulumi.Input[_builtins.bool]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  is_auto_include_alt_name: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_expired_certificate_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_out_of_capacity_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -241,6 +258,7 @@ class _NetworkFirewallPolicyDecryptionProfileState:
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyDecryptionProfile resources.
         :param pulumi.Input[_builtins.bool] are_certificate_extensions_restricted: (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the decryption profile. This field can be used to add additional info.
         :param pulumi.Input[_builtins.bool] is_auto_include_alt_name: (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
         :param pulumi.Input[_builtins.bool] is_expired_certificate_blocked: (Updatable) Whether to block sessions if server's certificate is expired.
         :param pulumi.Input[_builtins.bool] is_out_of_capacity_blocked: (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
@@ -260,6 +278,8 @@ class _NetworkFirewallPolicyDecryptionProfileState:
         """
         if are_certificate_extensions_restricted is not None:
             pulumi.set(__self__, "are_certificate_extensions_restricted", are_certificate_extensions_restricted)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if is_auto_include_alt_name is not None:
             pulumi.set(__self__, "is_auto_include_alt_name", is_auto_include_alt_name)
         if is_expired_certificate_blocked is not None:
@@ -296,6 +316,18 @@ class _NetworkFirewallPolicyDecryptionProfileState:
     @are_certificate_extensions_restricted.setter
     def are_certificate_extensions_restricted(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "are_certificate_extensions_restricted", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The description of the decryption profile. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoIncludeAltName")
@@ -453,6 +485,7 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  are_certificate_extensions_restricted: Optional[pulumi.Input[_builtins.bool]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  is_auto_include_alt_name: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_expired_certificate_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_out_of_capacity_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -476,6 +509,7 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
             name=network_firewall_policy_decryption_profile_name,
             network_firewall_policy_id=test_network_firewall_policy["id"],
             type=network_firewall_policy_decryption_profile_type,
+            description=network_firewall_policy_decryption_profile_description,
             are_certificate_extensions_restricted=network_firewall_policy_decryption_profile_are_certificate_extensions_restricted,
             is_auto_include_alt_name=network_firewall_policy_decryption_profile_is_auto_include_alt_name,
             is_expired_certificate_blocked=network_firewall_policy_decryption_profile_is_expired_certificate_blocked,
@@ -498,6 +532,7 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] are_certificate_extensions_restricted: (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the decryption profile. This field can be used to add additional info.
         :param pulumi.Input[_builtins.bool] is_auto_include_alt_name: (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
         :param pulumi.Input[_builtins.bool] is_expired_certificate_blocked: (Updatable) Whether to block sessions if server's certificate is expired.
         :param pulumi.Input[_builtins.bool] is_out_of_capacity_blocked: (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
@@ -531,6 +566,7 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
             name=network_firewall_policy_decryption_profile_name,
             network_firewall_policy_id=test_network_firewall_policy["id"],
             type=network_firewall_policy_decryption_profile_type,
+            description=network_firewall_policy_decryption_profile_description,
             are_certificate_extensions_restricted=network_firewall_policy_decryption_profile_are_certificate_extensions_restricted,
             is_auto_include_alt_name=network_firewall_policy_decryption_profile_is_auto_include_alt_name,
             is_expired_certificate_blocked=network_firewall_policy_decryption_profile_is_expired_certificate_blocked,
@@ -566,6 +602,7 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  are_certificate_extensions_restricted: Optional[pulumi.Input[_builtins.bool]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  is_auto_include_alt_name: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_expired_certificate_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_out_of_capacity_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -587,6 +624,7 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
             __props__ = NetworkFirewallPolicyDecryptionProfileArgs.__new__(NetworkFirewallPolicyDecryptionProfileArgs)
 
             __props__.__dict__["are_certificate_extensions_restricted"] = are_certificate_extensions_restricted
+            __props__.__dict__["description"] = description
             __props__.__dict__["is_auto_include_alt_name"] = is_auto_include_alt_name
             __props__.__dict__["is_expired_certificate_blocked"] = is_expired_certificate_blocked
             __props__.__dict__["is_out_of_capacity_blocked"] = is_out_of_capacity_blocked
@@ -614,6 +652,7 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             are_certificate_extensions_restricted: Optional[pulumi.Input[_builtins.bool]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
             is_auto_include_alt_name: Optional[pulumi.Input[_builtins.bool]] = None,
             is_expired_certificate_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
             is_out_of_capacity_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -634,6 +673,7 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] are_certificate_extensions_restricted: (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the decryption profile. This field can be used to add additional info.
         :param pulumi.Input[_builtins.bool] is_auto_include_alt_name: (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
         :param pulumi.Input[_builtins.bool] is_expired_certificate_blocked: (Updatable) Whether to block sessions if server's certificate is expired.
         :param pulumi.Input[_builtins.bool] is_out_of_capacity_blocked: (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
@@ -656,6 +696,7 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
         __props__ = _NetworkFirewallPolicyDecryptionProfileState.__new__(_NetworkFirewallPolicyDecryptionProfileState)
 
         __props__.__dict__["are_certificate_extensions_restricted"] = are_certificate_extensions_restricted
+        __props__.__dict__["description"] = description
         __props__.__dict__["is_auto_include_alt_name"] = is_auto_include_alt_name
         __props__.__dict__["is_expired_certificate_blocked"] = is_expired_certificate_blocked
         __props__.__dict__["is_out_of_capacity_blocked"] = is_out_of_capacity_blocked
@@ -677,6 +718,14 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
         (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
         """
         return pulumi.get(self, "are_certificate_extensions_restricted")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Updatable) The description of the decryption profile. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter(name="isAutoIncludeAltName")

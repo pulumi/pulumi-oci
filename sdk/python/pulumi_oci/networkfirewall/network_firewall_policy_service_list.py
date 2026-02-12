@@ -21,6 +21,7 @@ class NetworkFirewallPolicyServiceListArgs:
     def __init__(__self__, *,
                  network_firewall_policy_id: pulumi.Input[_builtins.str],
                  services: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyServiceList resource.
@@ -30,10 +31,13 @@ class NetworkFirewallPolicyServiceListArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the service list. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the service Group.
         """
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         pulumi.set(__self__, "services", services)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -67,6 +71,18 @@ class NetworkFirewallPolicyServiceListArgs:
 
     @_builtins.property
     @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The description of the service list. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Name of the service Group.
@@ -81,6 +97,7 @@ class NetworkFirewallPolicyServiceListArgs:
 @pulumi.input_type
 class _NetworkFirewallPolicyServiceListState:
     def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -88,6 +105,7 @@ class _NetworkFirewallPolicyServiceListState:
                  total_services: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyServiceList resources.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the service list. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the service Group.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this serviceList belongs to.
@@ -98,6 +116,8 @@ class _NetworkFirewallPolicyServiceListState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.int] total_services: Count of total services in the given service List.
         """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if network_firewall_policy_id is not None:
@@ -108,6 +128,18 @@ class _NetworkFirewallPolicyServiceListState:
             pulumi.set(__self__, "services", services)
         if total_services is not None:
             pulumi.set(__self__, "total_services", total_services)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The description of the service list. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
@@ -180,6 +212,7 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -194,7 +227,8 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
         test_network_firewall_policy_service_list = oci.networkfirewall.NetworkFirewallPolicyServiceList("test_network_firewall_policy_service_list",
             name=network_firewall_policy_service_list_name,
             network_firewall_policy_id=test_network_firewall_policy["id"],
-            services=network_firewall_policy_service_list_services)
+            services=network_firewall_policy_service_list_services,
+            description=network_firewall_policy_service_list_description)
         ```
 
         ## Import
@@ -207,6 +241,7 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the service list. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the service Group.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] services: (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list. 
@@ -231,7 +266,8 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
         test_network_firewall_policy_service_list = oci.networkfirewall.NetworkFirewallPolicyServiceList("test_network_firewall_policy_service_list",
             name=network_firewall_policy_service_list_name,
             network_firewall_policy_id=test_network_firewall_policy["id"],
-            services=network_firewall_policy_service_list_services)
+            services=network_firewall_policy_service_list_services,
+            description=network_firewall_policy_service_list_description)
         ```
 
         ## Import
@@ -257,6 +293,7 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -269,6 +306,7 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = NetworkFirewallPolicyServiceListArgs.__new__(NetworkFirewallPolicyServiceListArgs)
 
+            __props__.__dict__["description"] = description
             __props__.__dict__["name"] = name
             if network_firewall_policy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'network_firewall_policy_id'")
@@ -288,6 +326,7 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
             network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
             parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -300,6 +339,7 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the service list. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the service Group.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this serviceList belongs to.
@@ -314,12 +354,21 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
 
         __props__ = _NetworkFirewallPolicyServiceListState.__new__(_NetworkFirewallPolicyServiceListState)
 
+        __props__.__dict__["description"] = description
         __props__.__dict__["name"] = name
         __props__.__dict__["network_firewall_policy_id"] = network_firewall_policy_id
         __props__.__dict__["parent_resource_id"] = parent_resource_id
         __props__.__dict__["services"] = services
         __props__.__dict__["total_services"] = total_services
         return NetworkFirewallPolicyServiceList(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Updatable) The description of the service list. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter

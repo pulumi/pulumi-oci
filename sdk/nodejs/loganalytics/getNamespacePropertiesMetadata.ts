@@ -60,7 +60,7 @@ export interface GetNamespacePropertiesMetadataArgs {
      */
     name?: string;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: string;
 }
@@ -144,7 +144,7 @@ export interface GetNamespacePropertiesMetadataOutputArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
 }

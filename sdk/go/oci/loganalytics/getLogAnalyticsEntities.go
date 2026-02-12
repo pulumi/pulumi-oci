@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -100,7 +100,7 @@ type GetLogAnalyticsEntitiesArgs struct {
 	Name *string `pulumi:"name"`
 	// A filter to return only log analytics entities whose name contains the name given. The match is case-insensitive.
 	NameContains *string `pulumi:"nameContains"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 	// A filter to return only log analytics entities whose sourceId matches the sourceId given.
 	SourceId *string `pulumi:"sourceId"`
@@ -184,7 +184,7 @@ type GetLogAnalyticsEntitiesOutputArgs struct {
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A filter to return only log analytics entities whose name contains the name given. The match is case-insensitive.
 	NameContains pulumi.StringPtrInput `pulumi:"nameContains"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// A filter to return only log analytics entities whose sourceId matches the sourceId given.
 	SourceId pulumi.StringPtrInput `pulumi:"sourceId"`

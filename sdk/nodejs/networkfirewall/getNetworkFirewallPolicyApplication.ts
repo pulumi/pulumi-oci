@@ -38,6 +38,10 @@ export interface GetNetworkFirewallPolicyApplicationArgs {
  */
 export interface GetNetworkFirewallPolicyApplicationResult {
     /**
+     * The description of the application. This field can be used to add additional info.
+     */
+    readonly description: string;
+    /**
      * The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      */
     readonly icmpCode: number;

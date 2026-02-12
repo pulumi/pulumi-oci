@@ -27,6 +27,11 @@ public final class GetNetworkFirewallPolicySecurityRuleResult {
      * 
      */
     private List<GetNetworkFirewallPolicySecurityRuleCondition> conditions;
+    /**
+     * @return The description of the security rule. This field can be used to add additional info.
+     * 
+     */
+    private String description;
     private String id;
     /**
      * @return Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
@@ -71,6 +76,13 @@ public final class GetNetworkFirewallPolicySecurityRuleResult {
      */
     public List<GetNetworkFirewallPolicySecurityRuleCondition> conditions() {
         return this.conditions;
+    }
+    /**
+     * @return The description of the security rule. This field can be used to add additional info.
+     * 
+     */
+    public String description() {
+        return this.description;
     }
     public String id() {
         return this.id;
@@ -123,6 +135,7 @@ public final class GetNetworkFirewallPolicySecurityRuleResult {
     public static final class Builder {
         private String action;
         private List<GetNetworkFirewallPolicySecurityRuleCondition> conditions;
+        private String description;
         private String id;
         private String inspection;
         private String name;
@@ -135,6 +148,7 @@ public final class GetNetworkFirewallPolicySecurityRuleResult {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
     	      this.conditions = defaults.conditions;
+    	      this.description = defaults.description;
     	      this.id = defaults.id;
     	      this.inspection = defaults.inspection;
     	      this.name = defaults.name;
@@ -162,6 +176,14 @@ public final class GetNetworkFirewallPolicySecurityRuleResult {
         }
         public Builder conditions(GetNetworkFirewallPolicySecurityRuleCondition... conditions) {
             return conditions(List.of(conditions));
+        }
+        @CustomType.Setter
+        public Builder description(String description) {
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicySecurityRuleResult", "description");
+            }
+            this.description = description;
+            return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
@@ -226,6 +248,7 @@ public final class GetNetworkFirewallPolicySecurityRuleResult {
             final var _resultValue = new GetNetworkFirewallPolicySecurityRuleResult();
             _resultValue.action = action;
             _resultValue.conditions = conditions;
+            _resultValue.description = description;
             _resultValue.id = id;
             _resultValue.inspection = inspection;
             _resultValue.name = name;

@@ -26,7 +26,7 @@ class GetNamespaceResult:
     """
     A collection of values returned by getNamespace.
     """
-    def __init__(__self__, compartment_id=None, id=None, is_archiving_enabled=None, is_data_ever_ingested=None, is_logset_enabled=None, is_onboarded=None, namespace=None):
+    def __init__(__self__, compartment_id=None, id=None, is_archiving_enabled=None, is_data_ever_ingested=None, is_logset_enabled=None, is_onboarded=None, namespace=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -48,12 +48,15 @@ class GetNamespaceResult:
         if namespace and not isinstance(namespace, str):
             raise TypeError("Expected argument 'namespace' to be a str")
         pulumi.set(__self__, "namespace", namespace)
+        if state and not isinstance(state, str):
+            raise TypeError("Expected argument 'state' to be a str")
+        pulumi.set(__self__, "state", state)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The is the tenancy ID
+        This is the tenancy ID
         """
         return pulumi.get(self, "compartment_id")
 
@@ -90,7 +93,7 @@ class GetNamespaceResult:
     @pulumi.getter(name="isOnboarded")
     def is_onboarded(self) -> _builtins.bool:
         """
-        This indicates if the tenancy is onboarded to Logging Analytics
+        This indicates if the tenancy is onboarded to Log Analytics
         """
         return pulumi.get(self, "is_onboarded")
 
@@ -99,9 +102,17 @@ class GetNamespaceResult:
     def namespace(self) -> _builtins.str:
         """
         This is the namespace name of a tenancy
-        * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
         """
         return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the compartment.
+        * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
+        """
+        return pulumi.get(self, "state")
 
 
 class AwaitableGetNamespaceResult(GetNamespaceResult):
@@ -116,7 +127,8 @@ class AwaitableGetNamespaceResult(GetNamespaceResult):
             is_data_ever_ingested=self.is_data_ever_ingested,
             is_logset_enabled=self.is_logset_enabled,
             is_onboarded=self.is_onboarded,
-            namespace=self.namespace)
+            namespace=self.namespace,
+            state=self.state)
 
 
 def get_namespace(namespace: Optional[_builtins.str] = None,
@@ -124,7 +136,7 @@ def get_namespace(namespace: Optional[_builtins.str] = None,
     """
     This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
 
-    This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
+    This API gets the namespace details of a tenancy already onboarded in Log Analytics Application
 
     ## Example Usage
 
@@ -136,7 +148,7 @@ def get_namespace(namespace: Optional[_builtins.str] = None,
     ```
 
 
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['namespace'] = namespace
@@ -150,13 +162,14 @@ def get_namespace(namespace: Optional[_builtins.str] = None,
         is_data_ever_ingested=pulumi.get(__ret__, 'is_data_ever_ingested'),
         is_logset_enabled=pulumi.get(__ret__, 'is_logset_enabled'),
         is_onboarded=pulumi.get(__ret__, 'is_onboarded'),
-        namespace=pulumi.get(__ret__, 'namespace'))
+        namespace=pulumi.get(__ret__, 'namespace'),
+        state=pulumi.get(__ret__, 'state'))
 def get_namespace_output(namespace: Optional[pulumi.Input[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceResult]:
     """
     This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
 
-    This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
+    This API gets the namespace details of a tenancy already onboarded in Log Analytics Application
 
     ## Example Usage
 
@@ -168,7 +181,7 @@ def get_namespace_output(namespace: Optional[pulumi.Input[_builtins.str]] = None
     ```
 
 
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['namespace'] = namespace
@@ -181,4 +194,5 @@ def get_namespace_output(namespace: Optional[pulumi.Input[_builtins.str]] = None
         is_data_ever_ingested=pulumi.get(__response__, 'is_data_ever_ingested'),
         is_logset_enabled=pulumi.get(__response__, 'is_logset_enabled'),
         is_onboarded=pulumi.get(__response__, 'is_onboarded'),
-        namespace=pulumi.get(__response__, 'namespace')))
+        namespace=pulumi.get(__response__, 'namespace'),
+        state=pulumi.get(__response__, 'state')))

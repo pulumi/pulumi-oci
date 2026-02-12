@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -38024,6 +38024,8 @@ type GetVolumeAttachmentsVolumeAttachment struct {
 	InstanceId string `pulumi:"instanceId"`
 	// The volume's iSCSI IP address.  Example: `169.254.2.2`
 	Ipv4 string `pulumi:"ipv4"`
+	// The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
+	Ipv6 string `pulumi:"ipv6"`
 	// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
 	Iqn string `pulumi:"iqn"`
 	// Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
@@ -38089,6 +38091,8 @@ type GetVolumeAttachmentsVolumeAttachmentArgs struct {
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
 	// The volume's iSCSI IP address.  Example: `169.254.2.2`
 	Ipv4 pulumi.StringInput `pulumi:"ipv4"`
+	// The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
+	Ipv6 pulumi.StringInput `pulumi:"ipv6"`
 	// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
 	Iqn pulumi.StringInput `pulumi:"iqn"`
 	// Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
@@ -38224,6 +38228,11 @@ func (o GetVolumeAttachmentsVolumeAttachmentOutput) InstanceId() pulumi.StringOu
 // The volume's iSCSI IP address.  Example: `169.254.2.2`
 func (o GetVolumeAttachmentsVolumeAttachmentOutput) Ipv4() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.Ipv4 }).(pulumi.StringOutput)
+}
+
+// The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) Ipv6() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) string { return v.Ipv6 }).(pulumi.StringOutput)
 }
 
 // The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`

@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -36,6 +36,8 @@ type LookupNetworkFirewallPolicyApplicationArgs struct {
 
 // A collection of values returned by getNetworkFirewallPolicyApplication.
 type LookupNetworkFirewallPolicyApplicationResult struct {
+	// The description of the application. This field can be used to add additional info.
+	Description string `pulumi:"description"`
 	// The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 	IcmpCode int `pulumi:"icmpCode"`
 	// The value of the ICMP/ICMP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
@@ -84,6 +86,11 @@ func (o LookupNetworkFirewallPolicyApplicationResultOutput) ToLookupNetworkFirew
 
 func (o LookupNetworkFirewallPolicyApplicationResultOutput) ToLookupNetworkFirewallPolicyApplicationResultOutputWithContext(ctx context.Context) LookupNetworkFirewallPolicyApplicationResultOutput {
 	return o
+}
+
+// The description of the application. This field can be used to add additional info.
+func (o LookupNetworkFirewallPolicyApplicationResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 // The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).

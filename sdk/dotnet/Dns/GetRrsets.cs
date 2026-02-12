@@ -16,9 +16,7 @@ namespace Pulumi.Oci.Dns
         /// 
         /// Gets a list of all rrsets in the specified zone.
         /// 
-        /// You can optionally filter the results using the listed parameters. When the zone name
-        /// is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
-        /// the viewId parameter is required.
+        /// You can optionally filter the results using the listed parameters. When accessing a private zone by name, the `ViewId` parameter is required.
         /// 
         /// 
         /// ## Example Usage
@@ -37,7 +35,6 @@ namespace Pulumi.Oci.Dns
         ///         Domain = rrsetDomain,
         ///         DomainContains = rrsetDomain,
         ///         Rtype = rrsetRtype,
-        ///         Scope = rrsetScope,
         ///         ViewId = testView.Id,
         ///     });
         /// 
@@ -52,9 +49,7 @@ namespace Pulumi.Oci.Dns
         /// 
         /// Gets a list of all rrsets in the specified zone.
         /// 
-        /// You can optionally filter the results using the listed parameters. When the zone name
-        /// is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
-        /// the viewId parameter is required.
+        /// You can optionally filter the results using the listed parameters. When accessing a private zone by name, the `ViewId` parameter is required.
         /// 
         /// 
         /// ## Example Usage
@@ -73,7 +68,6 @@ namespace Pulumi.Oci.Dns
         ///         Domain = rrsetDomain,
         ///         DomainContains = rrsetDomain,
         ///         Rtype = rrsetRtype,
-        ///         Scope = rrsetScope,
         ///         ViewId = testView.Id,
         ///     });
         /// 
@@ -88,9 +82,7 @@ namespace Pulumi.Oci.Dns
         /// 
         /// Gets a list of all rrsets in the specified zone.
         /// 
-        /// You can optionally filter the results using the listed parameters. When the zone name
-        /// is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
-        /// the viewId parameter is required.
+        /// You can optionally filter the results using the listed parameters. When accessing a private zone by name, the `ViewId` parameter is required.
         /// 
         /// 
         /// ## Example Usage
@@ -109,7 +101,6 @@ namespace Pulumi.Oci.Dns
         ///         Domain = rrsetDomain,
         ///         DomainContains = rrsetDomain,
         ///         Rtype = rrsetRtype,
-        ///         Scope = rrsetScope,
         ///         ViewId = testView.Id,
         ///     });
         /// 
@@ -149,9 +140,6 @@ namespace Pulumi.Oci.Dns
         [Input("rtype")]
         public string? Rtype { get; set; }
 
-        /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope.
-        /// </summary>
         [Input("scope")]
         public string? Scope { get; set; }
 
@@ -201,9 +189,6 @@ namespace Pulumi.Oci.Dns
         [Input("rtype")]
         public Input<string>? Rtype { get; set; }
 
-        /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope.
-        /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
 

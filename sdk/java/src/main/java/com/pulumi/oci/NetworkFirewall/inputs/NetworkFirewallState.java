@@ -139,14 +139,14 @@ public final class NetworkFirewallState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) Nat Configuration request to use Nat feature on firewall.
+     * (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
      * 
      */
     @Import(name="natConfiguration")
     private @Nullable Output<NetworkFirewallNatConfigurationArgs> natConfiguration;
 
     /**
-     * @return (Updatable) Nat Configuration request to use Nat feature on firewall.
+     * @return (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
      * 
      */
     public Optional<Output<NetworkFirewallNatConfigurationArgs>> natConfiguration() {
@@ -181,6 +181,21 @@ public final class NetworkFirewallState extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<List<String>>> networkSecurityGroupIds() {
         return Optional.ofNullable(this.networkSecurityGroupIds);
+    }
+
+    /**
+     * (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
+     * 
+     */
+    @Import(name="shape")
+    private @Nullable Output<String> shape;
+
+    /**
+     * @return (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
+     * 
+     */
+    public Optional<Output<String>> shape() {
+        return Optional.ofNullable(this.shape);
     }
 
     /**
@@ -278,6 +293,7 @@ public final class NetworkFirewallState extends com.pulumi.resources.ResourceArg
         this.natConfiguration = $.natConfiguration;
         this.networkFirewallPolicyId = $.networkFirewallPolicyId;
         this.networkSecurityGroupIds = $.networkSecurityGroupIds;
+        this.shape = $.shape;
         this.state = $.state;
         this.subnetId = $.subnetId;
         this.systemTags = $.systemTags;
@@ -472,7 +488,7 @@ public final class NetworkFirewallState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param natConfiguration (Updatable) Nat Configuration request to use Nat feature on firewall.
+         * @param natConfiguration (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
          * 
          * @return builder
          * 
@@ -483,7 +499,7 @@ public final class NetworkFirewallState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param natConfiguration (Updatable) Nat Configuration request to use Nat feature on firewall.
+         * @param natConfiguration (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
          * 
          * @return builder
          * 
@@ -542,6 +558,27 @@ public final class NetworkFirewallState extends com.pulumi.resources.ResourceArg
          */
         public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
             return networkSecurityGroupIds(List.of(networkSecurityGroupIds));
+        }
+
+        /**
+         * @param shape (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shape(@Nullable Output<String> shape) {
+            $.shape = shape;
+            return this;
+        }
+
+        /**
+         * @param shape (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shape(String shape) {
+            return shape(Output.of(shape));
         }
 
         /**

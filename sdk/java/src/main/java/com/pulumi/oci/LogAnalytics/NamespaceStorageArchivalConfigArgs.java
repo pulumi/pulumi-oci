@@ -31,20 +31,14 @@ public final class NamespaceStorageArchivalConfigArgs extends com.pulumi.resourc
     }
 
     /**
-     * The Logging Analytics namespace used for the request.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public Output<String> namespace() {
@@ -98,10 +92,7 @@ public final class NamespaceStorageArchivalConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 
@@ -112,10 +103,7 @@ public final class NamespaceStorageArchivalConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 

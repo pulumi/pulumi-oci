@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Desktops.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
+        /// Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionResult> DesktopConnections;
+        /// <summary>
         /// The OCID of the desktop.
         /// </summary>
         public readonly string DesktopId;
@@ -25,6 +29,10 @@ namespace Pulumi.Oci.Desktops.Outputs
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
+        /// <summary>
+        /// Provides information about the desktop image.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageResult> Images;
         /// <summary>
         /// The OCID of the compute resource used by this desktop.
         /// </summary>
@@ -50,9 +58,13 @@ namespace Pulumi.Oci.Desktops.Outputs
         private GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemResult(
             ImmutableDictionary<string, string> definedTags,
 
+            ImmutableArray<Outputs.GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionResult> desktopConnections,
+
             string desktopId,
 
             ImmutableDictionary<string, string> freeformTags,
+
+            ImmutableArray<Outputs.GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageResult> images,
 
             string instanceId,
 
@@ -65,8 +77,10 @@ namespace Pulumi.Oci.Desktops.Outputs
             string userName)
         {
             DefinedTags = definedTags;
+            DesktopConnections = desktopConnections;
             DesktopId = desktopId;
             FreeformTags = freeformTags;
+            Images = images;
             InstanceId = instanceId;
             IsAssigned = isAssigned;
             State = state;

@@ -189,8 +189,8 @@ def get_log_analytics_entity_type(entity_type_name: Optional[_builtins.str] = No
     ```
 
 
-    :param _builtins.str entity_type_name: Log analytics entity type name.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str entity_type_name: Log analytics entity type name. Entity type name can be obtained by running 'oci log-analytics entity-type list --namespace-name <namespacename> --all'. The json output 'internal-name' parameter value contains the entity type name.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['entityTypeName'] = entity_type_name
@@ -230,8 +230,8 @@ def get_log_analytics_entity_type_output(entity_type_name: Optional[pulumi.Input
     ```
 
 
-    :param _builtins.str entity_type_name: Log analytics entity type name.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str entity_type_name: Log analytics entity type name. Entity type name can be obtained by running 'oci log-analytics entity-type list --namespace-name <namespacename> --all'. The json output 'internal-name' parameter value contains the entity type name.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['entityTypeName'] = entity_type_name

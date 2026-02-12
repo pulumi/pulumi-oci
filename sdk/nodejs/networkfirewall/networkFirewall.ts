@@ -31,6 +31,7 @@ import * as utilities from "../utilities";
  *         mustEnablePrivateNat: networkFirewallNatConfigurationMustEnablePrivateNat,
  *     },
  *     networkSecurityGroupIds: networkFirewallNetworkSecurityGroupIds,
+ *     shape: networkFirewallShape,
  * });
  * ```
  *
@@ -103,7 +104,7 @@ export class NetworkFirewall extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
-     * (Updatable) Nat Configuration request to use Nat feature on firewall.
+     * (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
      */
     declare public readonly natConfiguration: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallNatConfiguration>;
     /**
@@ -114,6 +115,10 @@ export class NetworkFirewall extends pulumi.CustomResource {
      * (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
      */
     declare public readonly networkSecurityGroupIds: pulumi.Output<string[]>;
+    /**
+     * (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
+     */
+    declare public readonly shape: pulumi.Output<string>;
     /**
      * The current state of the Network Firewall.
      */
@@ -163,6 +168,7 @@ export class NetworkFirewall extends pulumi.CustomResource {
             resourceInputs["natConfiguration"] = state?.natConfiguration;
             resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
             resourceInputs["networkSecurityGroupIds"] = state?.networkSecurityGroupIds;
+            resourceInputs["shape"] = state?.shape;
             resourceInputs["state"] = state?.state;
             resourceInputs["subnetId"] = state?.subnetId;
             resourceInputs["systemTags"] = state?.systemTags;
@@ -189,6 +195,7 @@ export class NetworkFirewall extends pulumi.CustomResource {
             resourceInputs["natConfiguration"] = args?.natConfiguration;
             resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
             resourceInputs["networkSecurityGroupIds"] = args?.networkSecurityGroupIds;
+            resourceInputs["shape"] = args?.shape;
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -238,7 +245,7 @@ export interface NetworkFirewallState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * (Updatable) Nat Configuration request to use Nat feature on firewall.
+     * (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
      */
     natConfiguration?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallNatConfiguration>;
     /**
@@ -249,6 +256,10 @@ export interface NetworkFirewallState {
      * (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
      */
     networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
+     */
+    shape?: pulumi.Input<string>;
     /**
      * The current state of the Network Firewall.
      */
@@ -308,7 +319,7 @@ export interface NetworkFirewallArgs {
      */
     ipv6address?: pulumi.Input<string>;
     /**
-     * (Updatable) Nat Configuration request to use Nat feature on firewall.
+     * (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
      */
     natConfiguration?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallNatConfiguration>;
     /**
@@ -319,6 +330,10 @@ export interface NetworkFirewallArgs {
      * (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
      */
     networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
+     */
+    shape?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
      *

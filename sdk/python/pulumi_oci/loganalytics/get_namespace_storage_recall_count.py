@@ -135,7 +135,7 @@ def get_namespace_storage_recall_count(namespace: Optional[_builtins.str] = None
     ```
 
 
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['namespace'] = namespace
@@ -167,7 +167,7 @@ def get_namespace_storage_recall_count_output(namespace: Optional[pulumi.Input[_
     ```
 
 
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['namespace'] = namespace

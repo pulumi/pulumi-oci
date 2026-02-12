@@ -73,11 +73,11 @@ if not MYPY:
     class NetworkFirewallNatConfigurationArgsDict(TypedDict):
         must_enable_private_nat: pulumi.Input[_builtins.bool]
         """
-        (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+        (Updatable) The value of this field must be set to true if the network firewall policy being applied contains NAT rules. The value of this field can be set to false if the network firewall policy being applied or the currently attached firewall policy doesn't contain NAT rules.
         """
         nat_ip_address_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
         """
-        An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
         """
 elif False:
     NetworkFirewallNatConfigurationArgsDict: TypeAlias = Mapping[str, Any]
@@ -88,8 +88,8 @@ class NetworkFirewallNatConfigurationArgs:
                  must_enable_private_nat: pulumi.Input[_builtins.bool],
                  nat_ip_address_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
-        :param pulumi.Input[_builtins.bool] must_enable_private_nat: (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nat_ip_address_lists: An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        :param pulumi.Input[_builtins.bool] must_enable_private_nat: (Updatable) The value of this field must be set to true if the network firewall policy being applied contains NAT rules. The value of this field can be set to false if the network firewall policy being applied or the currently attached firewall policy doesn't contain NAT rules.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nat_ip_address_lists: An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
         """
         pulumi.set(__self__, "must_enable_private_nat", must_enable_private_nat)
         if nat_ip_address_lists is not None:
@@ -99,7 +99,7 @@ class NetworkFirewallNatConfigurationArgs:
     @pulumi.getter(name="mustEnablePrivateNat")
     def must_enable_private_nat(self) -> pulumi.Input[_builtins.bool]:
         """
-        (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+        (Updatable) The value of this field must be set to true if the network firewall policy being applied contains NAT rules. The value of this field can be set to false if the network firewall policy being applied or the currently attached firewall policy doesn't contain NAT rules.
         """
         return pulumi.get(self, "must_enable_private_nat")
 
@@ -111,7 +111,7 @@ class NetworkFirewallNatConfigurationArgs:
     @pulumi.getter(name="natIpAddressLists")
     def nat_ip_address_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
         """
         return pulumi.get(self, "nat_ip_address_lists")
 
@@ -124,11 +124,11 @@ if not MYPY:
     class NetworkFirewallPolicyDecryptionRuleConditionArgsDict(TypedDict):
         destination_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
         """
-        (Updatable) An array of address list names to be evaluated against the traffic destination address.
+        (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
         """
         source_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
         """
-        (Updatable) An array of address list names to be evaluated against the traffic source address.
+        (Updatable) An array of IP address list names to be evaluated against the traffic source address.
         """
 elif False:
     NetworkFirewallPolicyDecryptionRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
@@ -139,8 +139,8 @@ class NetworkFirewallPolicyDecryptionRuleConditionArgs:
                  destination_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  source_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] destination_addresses: (Updatable) An array of address list names to be evaluated against the traffic destination address.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] source_addresses: (Updatable) An array of address list names to be evaluated against the traffic source address.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] destination_addresses: (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] source_addresses: (Updatable) An array of IP address list names to be evaluated against the traffic source address.
         """
         if destination_addresses is not None:
             pulumi.set(__self__, "destination_addresses", destination_addresses)
@@ -151,7 +151,7 @@ class NetworkFirewallPolicyDecryptionRuleConditionArgs:
     @pulumi.getter(name="destinationAddresses")
     def destination_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) An array of address list names to be evaluated against the traffic destination address.
+        (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
         """
         return pulumi.get(self, "destination_addresses")
 
@@ -163,7 +163,7 @@ class NetworkFirewallPolicyDecryptionRuleConditionArgs:
     @pulumi.getter(name="sourceAddresses")
     def source_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) An array of address list names to be evaluated against the traffic source address.
+        (Updatable) An array of IP address list names to be evaluated against the traffic source address.
         """
         return pulumi.get(self, "source_addresses")
 

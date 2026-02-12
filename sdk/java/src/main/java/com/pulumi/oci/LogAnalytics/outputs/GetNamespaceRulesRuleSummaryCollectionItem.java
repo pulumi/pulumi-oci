@@ -68,6 +68,11 @@ public final class GetNamespaceRulesRuleSummaryCollectionItem {
      */
     private String targetService;
     /**
+     * @return The task status of the rule.
+     * 
+     */
+    private String taskStatus;
+    /**
      * @return The date and time the resource was created, in the format defined by RFC3339.
      * 
      */
@@ -162,6 +167,13 @@ public final class GetNamespaceRulesRuleSummaryCollectionItem {
         return this.targetService;
     }
     /**
+     * @return The task status of the rule.
+     * 
+     */
+    public String taskStatus() {
+        return this.taskStatus;
+    }
+    /**
      * @return The date and time the resource was created, in the format defined by RFC3339.
      * 
      */
@@ -203,6 +215,7 @@ public final class GetNamespaceRulesRuleSummaryCollectionItem {
         private String lastExecutionStatus;
         private String state;
         private String targetService;
+        private String taskStatus;
         private String timeCreated;
         private String timeLastExecuted;
         private String timeUpdated;
@@ -220,6 +233,7 @@ public final class GetNamespaceRulesRuleSummaryCollectionItem {
     	      this.lastExecutionStatus = defaults.lastExecutionStatus;
     	      this.state = defaults.state;
     	      this.targetService = defaults.targetService;
+    	      this.taskStatus = defaults.taskStatus;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeLastExecuted = defaults.timeLastExecuted;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -314,6 +328,14 @@ public final class GetNamespaceRulesRuleSummaryCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder taskStatus(String taskStatus) {
+            if (taskStatus == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceRulesRuleSummaryCollectionItem", "taskStatus");
+            }
+            this.taskStatus = taskStatus;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetNamespaceRulesRuleSummaryCollectionItem", "timeCreated");
@@ -350,6 +372,7 @@ public final class GetNamespaceRulesRuleSummaryCollectionItem {
             _resultValue.lastExecutionStatus = lastExecutionStatus;
             _resultValue.state = state;
             _resultValue.targetService = targetService;
+            _resultValue.taskStatus = taskStatus;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeLastExecuted = timeLastExecuted;
             _resultValue.timeUpdated = timeUpdated;

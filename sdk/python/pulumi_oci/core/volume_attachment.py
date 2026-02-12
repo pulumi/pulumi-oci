@@ -240,6 +240,7 @@ class _VolumeAttachmentState:
                  encryption_in_transit_type: Optional[pulumi.Input[_builtins.str]] = None,
                  instance_id: Optional[pulumi.Input[_builtins.str]] = None,
                  ipv4: Optional[pulumi.Input[_builtins.str]] = None,
+                 ipv6: Optional[pulumi.Input[_builtins.str]] = None,
                  iqn: Optional[pulumi.Input[_builtins.str]] = None,
                  is_agent_auto_iscsi_login_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_multipath: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -266,6 +267,7 @@ class _VolumeAttachmentState:
         :param pulumi.Input[_builtins.str] encryption_in_transit_type: Refer the top-level definition of encryptionInTransitType. The default value is NONE.
         :param pulumi.Input[_builtins.str] instance_id: The OCID of the instance.
         :param pulumi.Input[_builtins.str] ipv4: The volume's iSCSI IP address.  Example: `169.254.2.2`
+        :param pulumi.Input[_builtins.str] ipv6: The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
         :param pulumi.Input[_builtins.str] iqn: The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
         :param pulumi.Input[_builtins.bool] is_agent_auto_iscsi_login_enabled: Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
         :param pulumi.Input[_builtins.bool] is_multipath: Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
@@ -308,6 +310,8 @@ class _VolumeAttachmentState:
             pulumi.set(__self__, "instance_id", instance_id)
         if ipv4 is not None:
             pulumi.set(__self__, "ipv4", ipv4)
+        if ipv6 is not None:
+            pulumi.set(__self__, "ipv6", ipv6)
         if iqn is not None:
             pulumi.set(__self__, "iqn", iqn)
         if is_agent_auto_iscsi_login_enabled is not None:
@@ -457,6 +461,18 @@ class _VolumeAttachmentState:
     @ipv4.setter
     def ipv4(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ipv4", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
+        """
+        return pulumi.get(self, "ipv6")
+
+    @ipv6.setter
+    def ipv6(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ipv6", value)
 
     @_builtins.property
     @pulumi.getter
@@ -791,6 +807,7 @@ class VolumeAttachment(pulumi.CustomResource):
             __props__.__dict__["chap_secret"] = None
             __props__.__dict__["chap_username"] = None
             __props__.__dict__["ipv4"] = None
+            __props__.__dict__["ipv6"] = None
             __props__.__dict__["iqn"] = None
             __props__.__dict__["is_multipath"] = None
             __props__.__dict__["is_volume_created_during_launch"] = None
@@ -819,6 +836,7 @@ class VolumeAttachment(pulumi.CustomResource):
             encryption_in_transit_type: Optional[pulumi.Input[_builtins.str]] = None,
             instance_id: Optional[pulumi.Input[_builtins.str]] = None,
             ipv4: Optional[pulumi.Input[_builtins.str]] = None,
+            ipv6: Optional[pulumi.Input[_builtins.str]] = None,
             iqn: Optional[pulumi.Input[_builtins.str]] = None,
             is_agent_auto_iscsi_login_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
             is_multipath: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -850,6 +868,7 @@ class VolumeAttachment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] encryption_in_transit_type: Refer the top-level definition of encryptionInTransitType. The default value is NONE.
         :param pulumi.Input[_builtins.str] instance_id: The OCID of the instance.
         :param pulumi.Input[_builtins.str] ipv4: The volume's iSCSI IP address.  Example: `169.254.2.2`
+        :param pulumi.Input[_builtins.str] ipv6: The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
         :param pulumi.Input[_builtins.str] iqn: The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
         :param pulumi.Input[_builtins.bool] is_agent_auto_iscsi_login_enabled: Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
         :param pulumi.Input[_builtins.bool] is_multipath: Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
@@ -883,6 +902,7 @@ class VolumeAttachment(pulumi.CustomResource):
         __props__.__dict__["encryption_in_transit_type"] = encryption_in_transit_type
         __props__.__dict__["instance_id"] = instance_id
         __props__.__dict__["ipv4"] = ipv4
+        __props__.__dict__["ipv6"] = ipv6
         __props__.__dict__["iqn"] = iqn
         __props__.__dict__["is_agent_auto_iscsi_login_enabled"] = is_agent_auto_iscsi_login_enabled
         __props__.__dict__["is_multipath"] = is_multipath
@@ -979,6 +999,14 @@ class VolumeAttachment(pulumi.CustomResource):
         The volume's iSCSI IP address.  Example: `169.254.2.2`
         """
         return pulumi.get(self, "ipv4")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6(self) -> pulumi.Output[_builtins.str]:
+        """
+        The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
+        """
+        return pulumi.get(self, "ipv6")
 
     @_builtins.property
     @pulumi.getter

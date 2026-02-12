@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -63,9 +63,9 @@ type GetLogAnalyticsEntityTypesArgs struct {
 	Name *string `pulumi:"name"`
 	// A filter to return only log analytics entity types whose name or internalName contains name given. The match is case-insensitive.
 	NameContains *string `pulumi:"nameContains"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
-	// A filter to return only those log analytics entity types with the specified lifecycle state. The state value is case-insensitive.
+	// A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
 	State *string `pulumi:"state"`
 }
 
@@ -104,9 +104,9 @@ type GetLogAnalyticsEntityTypesOutputArgs struct {
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A filter to return only log analytics entity types whose name or internalName contains name given. The match is case-insensitive.
 	NameContains pulumi.StringPtrInput `pulumi:"nameContains"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// A filter to return only those log analytics entity types with the specified lifecycle state. The state value is case-insensitive.
+	// A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 

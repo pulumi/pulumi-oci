@@ -69,6 +69,11 @@ public final class GetComputeHostsComputeHostCollectionItem {
      */
     private String health;
     /**
+     * @return The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+     * 
+     */
+    private String hostCorrelationId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
      * 
      */
@@ -201,6 +206,13 @@ public final class GetComputeHostsComputeHostCollectionItem {
         return this.health;
     }
     /**
+     * @return The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+     * 
+     */
+    public String hostCorrelationId() {
+        return this.hostCorrelationId;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
      * 
      */
@@ -292,6 +304,7 @@ public final class GetComputeHostsComputeHostCollectionItem {
         private String gpuMemoryFabricId;
         private Boolean hasImpactedComponents;
         private String health;
+        private String hostCorrelationId;
         private String hpcIslandId;
         private String id;
         private String instanceId;
@@ -317,6 +330,7 @@ public final class GetComputeHostsComputeHostCollectionItem {
     	      this.gpuMemoryFabricId = defaults.gpuMemoryFabricId;
     	      this.hasImpactedComponents = defaults.hasImpactedComponents;
     	      this.health = defaults.health;
+    	      this.hostCorrelationId = defaults.hostCorrelationId;
     	      this.hpcIslandId = defaults.hpcIslandId;
     	      this.id = defaults.id;
     	      this.instanceId = defaults.instanceId;
@@ -426,6 +440,14 @@ public final class GetComputeHostsComputeHostCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder hostCorrelationId(String hostCorrelationId) {
+            if (hostCorrelationId == null) {
+              throw new MissingRequiredPropertyException("GetComputeHostsComputeHostCollectionItem", "hostCorrelationId");
+            }
+            this.hostCorrelationId = hostCorrelationId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder hpcIslandId(String hpcIslandId) {
             if (hpcIslandId == null) {
               throw new MissingRequiredPropertyException("GetComputeHostsComputeHostCollectionItem", "hpcIslandId");
@@ -519,6 +541,7 @@ public final class GetComputeHostsComputeHostCollectionItem {
             _resultValue.gpuMemoryFabricId = gpuMemoryFabricId;
             _resultValue.hasImpactedComponents = hasImpactedComponents;
             _resultValue.health = health;
+            _resultValue.hostCorrelationId = hostCorrelationId;
             _resultValue.hpcIslandId = hpcIslandId;
             _resultValue.id = id;
             _resultValue.instanceId = instanceId;

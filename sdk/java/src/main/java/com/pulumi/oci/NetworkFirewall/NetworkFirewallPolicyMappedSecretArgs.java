@@ -18,6 +18,21 @@ public final class NetworkFirewallPolicyMappedSecretArgs extends com.pulumi.reso
     public static final NetworkFirewallPolicyMappedSecretArgs Empty = new NetworkFirewallPolicyMappedSecretArgs();
 
     /**
+     * (Updatable) The description of the mapped secret. This field can be used to add additional info.
+     * 
+     */
+    @Import(name="description")
+    private @Nullable Output<String> description;
+
+    /**
+     * @return (Updatable) The description of the mapped secret. This field can be used to add additional info.
+     * 
+     */
+    public Optional<Output<String>> description() {
+        return Optional.ofNullable(this.description);
+    }
+
+    /**
      * Unique name to identify the group of urls to be used in the policy rules.
      * 
      */
@@ -120,6 +135,7 @@ public final class NetworkFirewallPolicyMappedSecretArgs extends com.pulumi.reso
     private NetworkFirewallPolicyMappedSecretArgs() {}
 
     private NetworkFirewallPolicyMappedSecretArgs(NetworkFirewallPolicyMappedSecretArgs $) {
+        this.description = $.description;
         this.name = $.name;
         this.networkFirewallPolicyId = $.networkFirewallPolicyId;
         this.source = $.source;
@@ -144,6 +160,27 @@ public final class NetworkFirewallPolicyMappedSecretArgs extends com.pulumi.reso
 
         public Builder(NetworkFirewallPolicyMappedSecretArgs defaults) {
             $ = new NetworkFirewallPolicyMappedSecretArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param description (Updatable) The description of the mapped secret. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(@Nullable Output<String> description) {
+            $.description = description;
+            return this;
+        }
+
+        /**
+         * @param description (Updatable) The description of the mapped secret. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(String description) {
+            return description(Output.of(description));
         }
 
         /**

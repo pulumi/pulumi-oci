@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/desktops"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/desktops"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -60,7 +60,9 @@ type GetDesktopArgs struct {
 type GetDesktopResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	DesktopId   string            `pulumi:"desktopId"`
+	// Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+	DesktopConnections []GetDesktopDesktopConnection `pulumi:"desktopConnections"`
+	DesktopId          string                        `pulumi:"desktopId"`
 	// Provides the settings for desktop and client device options, such as audio in and out, client drive mapping, and clipboard access.
 	DevicePolicies []GetDesktopDevicePolicy `pulumi:"devicePolicies"`
 	// A user friendly display name. Avoid entering confidential information.
@@ -118,6 +120,11 @@ func (o GetDesktopResultOutput) ToGetDesktopResultOutputWithContext(ctx context.
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o GetDesktopResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetDesktopResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+func (o GetDesktopResultOutput) DesktopConnections() GetDesktopDesktopConnectionArrayOutput {
+	return o.ApplyT(func(v GetDesktopResult) []GetDesktopDesktopConnection { return v.DesktopConnections }).(GetDesktopDesktopConnectionArrayOutput)
 }
 
 func (o GetDesktopResultOutput) DesktopId() pulumi.StringOutput {

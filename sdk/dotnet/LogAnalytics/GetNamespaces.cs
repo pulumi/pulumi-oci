@@ -15,7 +15,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
-        /// result also indicates if the tenancy is onboarded with Logging Analytics.
+        /// result also indicates if the tenancy is onboarded with Log Analytics.
         /// 
         /// 
         /// ## Example Usage
@@ -31,6 +31,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///     var testNamespaces = Oci.LogAnalytics.GetNamespaces.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         IsCompartmentDelete = namespaceIsCompartmentDelete,
         ///     });
         /// 
         /// });
@@ -43,7 +44,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
-        /// result also indicates if the tenancy is onboarded with Logging Analytics.
+        /// result also indicates if the tenancy is onboarded with Log Analytics.
         /// 
         /// 
         /// ## Example Usage
@@ -59,6 +60,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///     var testNamespaces = Oci.LogAnalytics.GetNamespaces.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         IsCompartmentDelete = namespaceIsCompartmentDelete,
         ///     });
         /// 
         /// });
@@ -71,7 +73,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
-        /// result also indicates if the tenancy is onboarded with Logging Analytics.
+        /// result also indicates if the tenancy is onboarded with Log Analytics.
         /// 
         /// 
         /// ## Example Usage
@@ -87,6 +89,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///     var testNamespaces = Oci.LogAnalytics.GetNamespaces.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         IsCompartmentDelete = namespaceIsCompartmentDelete,
         ///     });
         /// 
         /// });
@@ -113,6 +116,12 @@ namespace Pulumi.Oci.LogAnalytics
             set => _filters = value;
         }
 
+        /// <summary>
+        /// if true, the request is from compartment delete service.
+        /// </summary>
+        [Input("isCompartmentDelete")]
+        public bool? IsCompartmentDelete { get; set; }
+
         public GetNamespacesArgs()
         {
         }
@@ -135,6 +144,12 @@ namespace Pulumi.Oci.LogAnalytics
             set => _filters = value;
         }
 
+        /// <summary>
+        /// if true, the request is from compartment delete service.
+        /// </summary>
+        [Input("isCompartmentDelete")]
+        public Input<bool>? IsCompartmentDelete { get; set; }
+
         public GetNamespacesInvokeArgs()
         {
         }
@@ -146,7 +161,7 @@ namespace Pulumi.Oci.LogAnalytics
     public sealed class GetNamespacesResult
     {
         /// <summary>
-        /// The is the tenancy ID
+        /// This is the tenancy ID
         /// </summary>
         public readonly string CompartmentId;
         public readonly ImmutableArray<Outputs.GetNamespacesFilterResult> Filters;
@@ -154,6 +169,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool? IsCompartmentDelete;
         /// <summary>
         /// The list of namespace_collection.
         /// </summary>
@@ -167,11 +183,14 @@ namespace Pulumi.Oci.LogAnalytics
 
             string id,
 
+            bool? isCompartmentDelete,
+
             ImmutableArray<Outputs.GetNamespacesNamespaceCollectionResult> namespaceCollections)
         {
             CompartmentId = compartmentId;
             Filters = filters;
             Id = id;
+            IsCompartmentDelete = isCompartmentDelete;
             NamespaceCollections = namespaceCollections;
         }
     }

@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -67,7 +67,9 @@ type LookupNetworkFirewallPolicyTunnelInspectionRuleResult struct {
 	Action string `pulumi:"action"`
 	// Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
 	Conditions []GetNetworkFirewallPolicyTunnelInspectionRuleCondition `pulumi:"conditions"`
-	Id         string                                                  `pulumi:"id"`
+	// The description of the tunnel inspect rule. This field can be used to add additional info.
+	Description string `pulumi:"description"`
+	Id          string `pulumi:"id"`
 	// Name for the Tunnel Inspection Rule, must be unique within the policy.
 	Name                    string `pulumi:"name"`
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
@@ -133,6 +135,11 @@ func (o LookupNetworkFirewallPolicyTunnelInspectionRuleResultOutput) Conditions(
 	return o.ApplyT(func(v LookupNetworkFirewallPolicyTunnelInspectionRuleResult) []GetNetworkFirewallPolicyTunnelInspectionRuleCondition {
 		return v.Conditions
 	}).(GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutput)
+}
+
+// The description of the tunnel inspect rule. This field can be used to add additional info.
+func (o LookupNetworkFirewallPolicyTunnelInspectionRuleResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyTunnelInspectionRuleResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 func (o LookupNetworkFirewallPolicyTunnelInspectionRuleResultOutput) Id() pulumi.StringOutput {

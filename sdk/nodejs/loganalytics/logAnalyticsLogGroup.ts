@@ -82,7 +82,7 @@ export class LogAnalyticsLogGroup extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * The Logging Analytics namespace used for the request. 
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
      *
      * ** IMPORTANT **
@@ -169,7 +169,7 @@ export interface LogAnalyticsLogGroupState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The Logging Analytics namespace used for the request. 
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
      *
      * ** IMPORTANT **
@@ -211,7 +211,7 @@ export interface LogAnalyticsLogGroupArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The Logging Analytics namespace used for the request. 
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
      *
      * ** IMPORTANT **

@@ -36,11 +36,11 @@ export function getNamespaceFieldUsage(args: GetNamespaceFieldUsageArgs, opts?: 
  */
 export interface GetNamespaceFieldUsageArgs {
     /**
-     * The field name.
+     * The field name. Field name can be obtained by running 'oci log-analytics field list-fields --namespace-name <namespace>'. The json output 'name' parameter value contains the field name.
      */
     fieldName: string;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: string;
 }
@@ -94,11 +94,11 @@ export function getNamespaceFieldUsageOutput(args: GetNamespaceFieldUsageOutputA
  */
 export interface GetNamespaceFieldUsageOutputArgs {
     /**
-     * The field name.
+     * The field name. Field name can be obtained by running 'oci log-analytics field list-fields --namespace-name <namespace>'. The json output 'name' parameter value contains the field name.
      */
     fieldName: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
 }

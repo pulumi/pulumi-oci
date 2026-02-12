@@ -48,6 +48,21 @@ public final class NetworkFirewallPolicyArgs extends com.pulumi.resources.Resour
     }
 
     /**
+     * (Updatable) The description of the network firewall policy. This field can be used to add additional info.
+     * 
+     */
+    @Import(name="description")
+    private @Nullable Output<String> description;
+
+    /**
+     * @return (Updatable) The description of the network firewall policy. This field can be used to add additional info.
+     * 
+     */
+    public Optional<Output<String>> description() {
+        return Optional.ofNullable(this.description);
+    }
+
+    /**
      * (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
      * 
      */
@@ -88,6 +103,7 @@ public final class NetworkFirewallPolicyArgs extends com.pulumi.resources.Resour
     private NetworkFirewallPolicyArgs(NetworkFirewallPolicyArgs $) {
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
+        this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
     }
@@ -150,6 +166,27 @@ public final class NetworkFirewallPolicyArgs extends com.pulumi.resources.Resour
          */
         public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
+        }
+
+        /**
+         * @param description (Updatable) The description of the network firewall policy. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(@Nullable Output<String> description) {
+            $.description = description;
+            return this;
+        }
+
+        /**
+         * @param description (Updatable) The description of the network firewall policy. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(String description) {
+            return description(Output.of(description));
         }
 
         /**

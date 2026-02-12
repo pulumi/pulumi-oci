@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +19,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/database"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -130,6 +130,7 @@ type CloudExadataInfrastructureConfigureExascaleManagement struct {
 	TotalStorageInGbs pulumi.IntOutput `pulumi:"totalStorageInGbs"`
 	// The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
 	TotalStorageSizeInGbs pulumi.IntOutput `pulumi:"totalStorageSizeInGbs"`
+	TotalVmStorageInGbs   pulumi.IntOutput `pulumi:"totalVmStorageInGbs"`
 }
 
 // NewCloudExadataInfrastructureConfigureExascaleManagement registers a new resource with the given unique name, arguments, and options.
@@ -249,6 +250,7 @@ type cloudExadataInfrastructureConfigureExascaleManagementState struct {
 	TotalStorageInGbs *int `pulumi:"totalStorageInGbs"`
 	// The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
 	TotalStorageSizeInGbs *int `pulumi:"totalStorageSizeInGbs"`
+	TotalVmStorageInGbs   *int `pulumi:"totalVmStorageInGbs"`
 }
 
 type CloudExadataInfrastructureConfigureExascaleManagementState struct {
@@ -333,6 +335,7 @@ type CloudExadataInfrastructureConfigureExascaleManagementState struct {
 	TotalStorageInGbs pulumi.IntPtrInput
 	// The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
 	TotalStorageSizeInGbs pulumi.IntPtrInput
+	TotalVmStorageInGbs   pulumi.IntPtrInput
 }
 
 func (CloudExadataInfrastructureConfigureExascaleManagementState) ElementType() reflect.Type {
@@ -346,7 +349,8 @@ type cloudExadataInfrastructureConfigureExascaleManagementArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TotalStorageInGbs int `pulumi:"totalStorageInGbs"`
+	TotalStorageInGbs   int  `pulumi:"totalStorageInGbs"`
+	TotalVmStorageInGbs *int `pulumi:"totalVmStorageInGbs"`
 }
 
 // The set of arguments for constructing a CloudExadataInfrastructureConfigureExascaleManagement resource.
@@ -357,7 +361,8 @@ type CloudExadataInfrastructureConfigureExascaleManagementArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TotalStorageInGbs pulumi.IntInput
+	TotalStorageInGbs   pulumi.IntInput
+	TotalVmStorageInGbs pulumi.IntPtrInput
 }
 
 func (CloudExadataInfrastructureConfigureExascaleManagementArgs) ElementType() reflect.Type {
@@ -708,6 +713,12 @@ func (o CloudExadataInfrastructureConfigureExascaleManagementOutput) TotalStorag
 func (o CloudExadataInfrastructureConfigureExascaleManagementOutput) TotalStorageSizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudExadataInfrastructureConfigureExascaleManagement) pulumi.IntOutput {
 		return v.TotalStorageSizeInGbs
+	}).(pulumi.IntOutput)
+}
+
+func (o CloudExadataInfrastructureConfigureExascaleManagementOutput) TotalVmStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructureConfigureExascaleManagement) pulumi.IntOutput {
+		return v.TotalVmStorageInGbs
 	}).(pulumi.IntOutput)
 }
 

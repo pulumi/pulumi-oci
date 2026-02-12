@@ -101,6 +101,10 @@ namespace Pulumi.Oci.NetworkFirewall
         /// The name of the decryption profile to use.
         /// </summary>
         public readonly string DecryptionProfile;
+        /// <summary>
+        /// The description of the decryption rule. This field can be used to add additional info.
+        /// </summary>
+        public readonly string Description;
         public readonly string Id;
         /// <summary>
         /// Name for the decryption rule, must be unique within the policy.
@@ -129,6 +133,8 @@ namespace Pulumi.Oci.NetworkFirewall
 
             string decryptionProfile,
 
+            string description,
+
             string id,
 
             string name,
@@ -146,6 +152,7 @@ namespace Pulumi.Oci.NetworkFirewall
             Action = action;
             Conditions = conditions;
             DecryptionProfile = decryptionProfile;
+            Description = description;
             Id = id;
             Name = name;
             NetworkFirewallPolicyId = networkFirewallPolicyId;

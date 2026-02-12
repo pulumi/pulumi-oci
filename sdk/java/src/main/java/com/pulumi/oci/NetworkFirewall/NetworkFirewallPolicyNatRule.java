@@ -93,14 +93,14 @@ public class NetworkFirewallPolicyNatRule extends com.pulumi.resources.CustomRes
         return this.action;
     }
     /**
-     * (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+     * (Updatable) Match criteria used in NAT rule used on the firewall policy.
      * 
      */
     @Export(name="condition", refs={NetworkFirewallPolicyNatRuleCondition.class}, tree="[0]")
     private Output<NetworkFirewallPolicyNatRuleCondition> condition;
 
     /**
-     * @return (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+     * @return (Updatable) Match criteria used in NAT rule used on the firewall policy.
      * 
      */
     public Output<NetworkFirewallPolicyNatRuleCondition> condition() {
@@ -149,14 +149,14 @@ public class NetworkFirewallPolicyNatRule extends com.pulumi.resources.CustomRes
         return this.networkFirewallPolicyId;
     }
     /**
-     * OCID of the Network Firewall Policy this decryption profile belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
      * 
      */
     @Export(name="parentResourceId", refs={String.class}, tree="[0]")
     private Output<String> parentResourceId;
 
     /**
-     * @return OCID of the Network Firewall Policy this decryption profile belongs to.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
      * 
      */
     public Output<String> parentResourceId() {

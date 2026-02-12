@@ -30,6 +30,11 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
      */
     private GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition condition;
     /**
+     * @return The description of the security rule. This field can be used to add additional info.
+     * 
+     */
+    private @Nullable String description;
+    /**
      * @return Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
      * * INTRUSION_DETECTION - Intrusion Detection.
      * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
@@ -76,6 +81,13 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
      */
     public GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition condition() {
         return this.condition;
+    }
+    /**
+     * @return The description of the security rule. This field can be used to add additional info.
+     * 
+     */
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
@@ -129,6 +141,7 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
     public static final class Builder {
         private String action;
         private GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition condition;
+        private @Nullable String description;
         private @Nullable String inspection;
         private String name;
         private String networkFirewallPolicyId;
@@ -140,6 +153,7 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
     	      this.condition = defaults.condition;
+    	      this.description = defaults.description;
     	      this.inspection = defaults.inspection;
     	      this.name = defaults.name;
     	      this.networkFirewallPolicyId = defaults.networkFirewallPolicyId;
@@ -162,6 +176,12 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
               throw new MissingRequiredPropertyException("GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem", "condition");
             }
             this.condition = condition;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder description(@Nullable String description) {
+
+            this.description = description;
             return this;
         }
         @CustomType.Setter
@@ -215,6 +235,7 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
             final var _resultValue = new GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem();
             _resultValue.action = action;
             _resultValue.condition = condition;
+            _resultValue.description = description;
             _resultValue.inspection = inspection;
             _resultValue.name = name;
             _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;

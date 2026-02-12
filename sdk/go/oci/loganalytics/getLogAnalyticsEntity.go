@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -56,9 +56,9 @@ func LookupLogAnalyticsEntity(ctx *pulumi.Context, args *LookupLogAnalyticsEntit
 type LookupLogAnalyticsEntityArgs struct {
 	// Option to return count of associated log sources for log analytics entity(s).
 	IsShowAssociatedSourcesCount *string `pulumi:"isShowAssociatedSourcesCount"`
-	// The log analytics entity OCID.
+	// The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
 	LogAnalyticsEntityId string `pulumi:"logAnalyticsEntityId"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -128,9 +128,9 @@ func LookupLogAnalyticsEntityOutput(ctx *pulumi.Context, args LookupLogAnalytics
 type LookupLogAnalyticsEntityOutputArgs struct {
 	// Option to return count of associated log sources for log analytics entity(s).
 	IsShowAssociatedSourcesCount pulumi.StringPtrInput `pulumi:"isShowAssociatedSourcesCount"`
-	// The log analytics entity OCID.
+	// The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
 	LogAnalyticsEntityId pulumi.StringInput `pulumi:"logAnalyticsEntityId"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 }
 

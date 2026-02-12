@@ -86,7 +86,7 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly associatedSourcesCount: pulumi.Output<number>;
     /**
-     * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+     * (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      */
     declare public readonly cloudResourceId: pulumi.Output<string>;
     /**
@@ -138,7 +138,7 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
      */
     declare public readonly name: pulumi.Output<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     declare public readonly namespace: pulumi.Output<string>;
     /**
@@ -263,7 +263,7 @@ export interface LogAnalyticsEntityState {
      */
     associatedSourcesCount?: pulumi.Input<number>;
     /**
-     * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+     * (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      */
     cloudResourceId?: pulumi.Input<string>;
     /**
@@ -315,7 +315,7 @@ export interface LogAnalyticsEntityState {
      */
     name?: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace?: pulumi.Input<string>;
     /**
@@ -357,7 +357,7 @@ export interface LogAnalyticsEntityState {
  */
 export interface LogAnalyticsEntityArgs {
     /**
-     * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+     * (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      */
     cloudResourceId?: pulumi.Input<string>;
     /**
@@ -393,7 +393,7 @@ export interface LogAnalyticsEntityArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
     /**

@@ -75,7 +75,7 @@ class GetNetworkFirewallPolicyNatRuleResult:
     @pulumi.getter
     def conditions(self) -> Sequence['outputs.GetNetworkFirewallPolicyNatRuleConditionResult']:
         """
-        Match criteria used in NAT Rule used on the firewall policy.
+        Match criteria used in NAT rule used on the firewall policy.
         """
         return pulumi.get(self, "conditions")
 
@@ -114,7 +114,7 @@ class GetNetworkFirewallPolicyNatRuleResult:
     @pulumi.getter(name="parentResourceId")
     def parent_resource_id(self) -> _builtins.str:
         """
-        OCID of the Network Firewall Policy this decryption profile belongs to.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
         """
         return pulumi.get(self, "parent_resource_id")
 
@@ -169,7 +169,7 @@ def get_network_firewall_policy_nat_rule(nat_rule_name: Optional[_builtins.str] 
     """
     This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
 
-    Get NAT Rule by the given name in the context of network firewall policy.
+    Get a [NAT rule](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) by the given name in the context of Network Firewall policy.
 
     ## Example Usage
 
@@ -182,7 +182,7 @@ def get_network_firewall_policy_nat_rule(nat_rule_name: Optional[_builtins.str] 
     ```
 
 
-    :param _builtins.str nat_rule_name: Unique identifier for NAT Rules in the network firewall policy.
+    :param _builtins.str nat_rule_name: Unique identifier for NAT rules in the Network Firewall policy.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
     """
     __args__ = dict()
@@ -209,7 +209,7 @@ def get_network_firewall_policy_nat_rule_output(nat_rule_name: Optional[pulumi.I
     """
     This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
 
-    Get NAT Rule by the given name in the context of network firewall policy.
+    Get a [NAT rule](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) by the given name in the context of Network Firewall policy.
 
     ## Example Usage
 
@@ -222,7 +222,7 @@ def get_network_firewall_policy_nat_rule_output(nat_rule_name: Optional[pulumi.I
     ```
 
 
-    :param _builtins.str nat_rule_name: Unique identifier for NAT Rules in the network firewall policy.
+    :param _builtins.str nat_rule_name: Unique identifier for NAT rules in the Network Firewall policy.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
     """
     __args__ = dict()

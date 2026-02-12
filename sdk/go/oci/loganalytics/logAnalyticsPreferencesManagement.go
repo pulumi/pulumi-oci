@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +19,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -52,7 +52,7 @@ type LogAnalyticsPreferencesManagement struct {
 
 	// An array of tenant preference details.
 	Items LogAnalyticsPreferencesManagementItemArrayOutput `pulumi:"items"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -94,7 +94,7 @@ func GetLogAnalyticsPreferencesManagement(ctx *pulumi.Context,
 type logAnalyticsPreferencesManagementState struct {
 	// An array of tenant preference details.
 	Items []LogAnalyticsPreferencesManagementItem `pulumi:"items"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -104,7 +104,7 @@ type logAnalyticsPreferencesManagementState struct {
 type LogAnalyticsPreferencesManagementState struct {
 	// An array of tenant preference details.
 	Items LogAnalyticsPreferencesManagementItemArrayInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -118,7 +118,7 @@ func (LogAnalyticsPreferencesManagementState) ElementType() reflect.Type {
 type logAnalyticsPreferencesManagementArgs struct {
 	// An array of tenant preference details.
 	Items []LogAnalyticsPreferencesManagementItem `pulumi:"items"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -129,7 +129,7 @@ type logAnalyticsPreferencesManagementArgs struct {
 type LogAnalyticsPreferencesManagementArgs struct {
 	// An array of tenant preference details.
 	Items LogAnalyticsPreferencesManagementItemArrayInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -230,7 +230,7 @@ func (o LogAnalyticsPreferencesManagementOutput) Items() LogAnalyticsPreferences
 	}).(LogAnalyticsPreferencesManagementItemArrayOutput)
 }
 
-// The Logging Analytics namespace used for the request.
+// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

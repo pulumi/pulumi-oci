@@ -26,7 +26,10 @@ class GetNetworkFirewallPolicyApplicationResult:
     """
     A collection of values returned by getNetworkFirewallPolicyApplication.
     """
-    def __init__(__self__, icmp_code=None, icmp_type=None, id=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, type=None):
+    def __init__(__self__, description=None, icmp_code=None, icmp_type=None, id=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, type=None):
+        if description and not isinstance(description, str):
+            raise TypeError("Expected argument 'description' to be a str")
+        pulumi.set(__self__, "description", description)
         if icmp_code and not isinstance(icmp_code, int):
             raise TypeError("Expected argument 'icmp_code' to be a int")
         pulumi.set(__self__, "icmp_code", icmp_code)
@@ -48,6 +51,14 @@ class GetNetworkFirewallPolicyApplicationResult:
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the application. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter(name="icmpCode")
@@ -106,6 +117,7 @@ class AwaitableGetNetworkFirewallPolicyApplicationResult(GetNetworkFirewallPolic
         if False:
             yield self
         return GetNetworkFirewallPolicyApplicationResult(
+            description=self.description,
             icmp_code=self.icmp_code,
             icmp_type=self.icmp_type,
             id=self.id,
@@ -136,6 +148,7 @@ def get_network_firewall_policy_application(name: Optional[_builtins.str] = None
     __ret__ = pulumi.runtime.invoke('oci:NetworkFirewall/getNetworkFirewallPolicyApplication:getNetworkFirewallPolicyApplication', __args__, opts=opts, typ=GetNetworkFirewallPolicyApplicationResult).value
 
     return AwaitableGetNetworkFirewallPolicyApplicationResult(
+        description=pulumi.get(__ret__, 'description'),
         icmp_code=pulumi.get(__ret__, 'icmp_code'),
         icmp_type=pulumi.get(__ret__, 'icmp_type'),
         id=pulumi.get(__ret__, 'id'),
@@ -163,6 +176,7 @@ def get_network_firewall_policy_application_output(name: Optional[pulumi.Input[_
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyApplication:getNetworkFirewallPolicyApplication', __args__, opts=opts, typ=GetNetworkFirewallPolicyApplicationResult)
     return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyApplicationResult(
+        description=pulumi.get(__response__, 'description'),
         icmp_code=pulumi.get(__response__, 'icmp_code'),
         icmp_type=pulumi.get(__response__, 'icmp_type'),
         id=pulumi.get(__response__, 'id'),

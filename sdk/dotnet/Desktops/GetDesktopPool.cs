@@ -141,6 +141,10 @@ namespace Pulumi.Oci.Desktops
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDesktopPoolAvailabilityPolicyResult> AvailabilityPolicies;
         /// <summary>
+        /// The size in GBs of the boot volume for the desktop pool.
+        /// </summary>
+        public readonly int BootVolumeSizeInGbs;
+        /// <summary>
         /// The OCID of the compartment of the desktop pool.
         /// </summary>
         public readonly string CompartmentId;
@@ -255,6 +259,8 @@ namespace Pulumi.Oci.Desktops
 
             ImmutableArray<Outputs.GetDesktopPoolAvailabilityPolicyResult> availabilityPolicies,
 
+            int bootVolumeSizeInGbs,
+
             string compartmentId,
 
             string contactDetails,
@@ -312,6 +318,7 @@ namespace Pulumi.Oci.Desktops
             AreVolumesPreserved = areVolumesPreserved;
             AvailabilityDomain = availabilityDomain;
             AvailabilityPolicies = availabilityPolicies;
+            BootVolumeSizeInGbs = bootVolumeSizeInGbs;
             CompartmentId = compartmentId;
             ContactDetails = contactDetails;
             DefinedTags = definedTags;

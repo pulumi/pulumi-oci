@@ -59,7 +59,7 @@ export class LogAnalyticsPreferencesManagement extends pulumi.CustomResource {
      */
     declare public readonly items: pulumi.Output<outputs.LogAnalytics.LogAnalyticsPreferencesManagementItem[] | undefined>;
     /**
-     * The Logging Analytics namespace used for the request. 
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
      *
      * ** IMPORTANT **
@@ -104,7 +104,7 @@ export interface LogAnalyticsPreferencesManagementState {
      */
     items?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsPreferencesManagementItem>[]>;
     /**
-     * The Logging Analytics namespace used for the request. 
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
      *
      * ** IMPORTANT **
@@ -122,7 +122,7 @@ export interface LogAnalyticsPreferencesManagementArgs {
      */
     items?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsPreferencesManagementItem>[]>;
     /**
-     * The Logging Analytics namespace used for the request. 
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
      *
      * ** IMPORTANT **

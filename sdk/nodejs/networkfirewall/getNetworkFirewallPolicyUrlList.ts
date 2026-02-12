@@ -39,6 +39,10 @@ export interface GetNetworkFirewallPolicyUrlListArgs {
  * A collection of values returned by getNetworkFirewallPolicyUrlList.
  */
 export interface GetNetworkFirewallPolicyUrlListResult {
+    /**
+     * The description of the Url list. This field can be used to add additional info.
+     */
+    readonly description: string;
     readonly id: string;
     /**
      * Unique name identifier for the URL list.

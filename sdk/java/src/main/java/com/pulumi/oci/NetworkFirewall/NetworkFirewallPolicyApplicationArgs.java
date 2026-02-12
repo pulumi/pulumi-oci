@@ -18,14 +18,29 @@ public final class NetworkFirewallPolicyApplicationArgs extends com.pulumi.resou
     public static final NetworkFirewallPolicyApplicationArgs Empty = new NetworkFirewallPolicyApplicationArgs();
 
     /**
-     * (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * (Updatable) The description of the application. This field can be used to add additional info.
+     * 
+     */
+    @Import(name="description")
+    private @Nullable Output<String> description;
+
+    /**
+     * @return (Updatable) The description of the application. This field can be used to add additional info.
+     * 
+     */
+    public Optional<Output<String>> description() {
+        return Optional.ofNullable(this.description);
+    }
+
+    /**
+     * (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      * 
      */
     @Import(name="icmpCode")
     private @Nullable Output<Integer> icmpCode;
 
     /**
-     * @return (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * @return (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      * 
      */
     public Optional<Output<Integer>> icmpCode() {
@@ -33,14 +48,14 @@ public final class NetworkFirewallPolicyApplicationArgs extends com.pulumi.resou
     }
 
     /**
-     * (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      * 
      */
     @Import(name="icmpType", required=true)
     private Output<Integer> icmpType;
 
     /**
-     * @return (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * @return (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      * 
      */
     public Output<Integer> icmpType() {
@@ -101,6 +116,7 @@ public final class NetworkFirewallPolicyApplicationArgs extends com.pulumi.resou
     private NetworkFirewallPolicyApplicationArgs() {}
 
     private NetworkFirewallPolicyApplicationArgs(NetworkFirewallPolicyApplicationArgs $) {
+        this.description = $.description;
         this.icmpCode = $.icmpCode;
         this.icmpType = $.icmpType;
         this.name = $.name;
@@ -127,7 +143,28 @@ public final class NetworkFirewallPolicyApplicationArgs extends com.pulumi.resou
         }
 
         /**
-         * @param icmpCode (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+         * @param description (Updatable) The description of the application. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(@Nullable Output<String> description) {
+            $.description = description;
+            return this;
+        }
+
+        /**
+         * @param description (Updatable) The description of the application. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(String description) {
+            return description(Output.of(description));
+        }
+
+        /**
+         * @param icmpCode (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
          * 
          * @return builder
          * 
@@ -138,7 +175,7 @@ public final class NetworkFirewallPolicyApplicationArgs extends com.pulumi.resou
         }
 
         /**
-         * @param icmpCode (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+         * @param icmpCode (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
          * 
          * @return builder
          * 
@@ -148,7 +185,7 @@ public final class NetworkFirewallPolicyApplicationArgs extends com.pulumi.resou
         }
 
         /**
-         * @param icmpType (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+         * @param icmpType (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
          * 
          * @return builder
          * 
@@ -159,7 +196,7 @@ public final class NetworkFirewallPolicyApplicationArgs extends com.pulumi.resou
         }
 
         /**
-         * @param icmpType (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+         * @param icmpType (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
          * 
          * @return builder
          * 

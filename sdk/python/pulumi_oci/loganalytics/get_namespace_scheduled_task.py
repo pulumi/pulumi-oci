@@ -27,7 +27,7 @@ class GetNamespaceScheduledTaskResult:
     """
     A collection of values returned by getNamespaceScheduledTask.
     """
-    def __init__(__self__, actions=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, kind=None, namespace=None, num_occurrences=None, saved_search_id=None, scheduled_task_id=None, schedules=None, state=None, task_status=None, task_type=None, time_created=None, time_updated=None, work_request_id=None):
+    def __init__(__self__, actions=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, kind=None, namespace=None, num_occurrences=None, saved_search_id=None, scheduled_task_id=None, schedules=None, state=None, task_status=None, task_type=None, time_created=None, time_updated=None, work_request_id=None):
         if actions and not isinstance(actions, list):
             raise TypeError("Expected argument 'actions' to be a list")
         pulumi.set(__self__, "actions", actions)
@@ -37,6 +37,9 @@ class GetNamespaceScheduledTaskResult:
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
+        if description and not isinstance(description, str):
+            raise TypeError("Expected argument 'description' to be a str")
+        pulumi.set(__self__, "description", description)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -106,6 +109,14 @@ class GetNamespaceScheduledTaskResult:
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description for this resource.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -188,7 +199,7 @@ class GetNamespaceScheduledTaskResult:
     @pulumi.getter(name="taskStatus")
     def task_status(self) -> _builtins.str:
         """
-        Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+        Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
         """
         return pulumi.get(self, "task_status")
 
@@ -234,6 +245,7 @@ class AwaitableGetNamespaceScheduledTaskResult(GetNamespaceScheduledTaskResult):
             actions=self.actions,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
+            description=self.description,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
@@ -270,7 +282,7 @@ def get_namespace_scheduled_task(namespace: Optional[_builtins.str] = None,
     ```
 
 
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str scheduled_task_id: Unique scheduledTask id returned from task create. If invalid will lead to a 404 not found.
     """
     __args__ = dict()
@@ -283,6 +295,7 @@ def get_namespace_scheduled_task(namespace: Optional[_builtins.str] = None,
         actions=pulumi.get(__ret__, 'actions'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
@@ -317,7 +330,7 @@ def get_namespace_scheduled_task_output(namespace: Optional[pulumi.Input[_builti
     ```
 
 
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str scheduled_task_id: Unique scheduledTask id returned from task create. If invalid will lead to a 404 not found.
     """
     __args__ = dict()
@@ -329,6 +342,7 @@ def get_namespace_scheduled_task_output(namespace: Optional[pulumi.Input[_builti
         actions=pulumi.get(__response__, 'actions'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),

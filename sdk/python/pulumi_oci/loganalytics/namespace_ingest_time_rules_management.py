@@ -29,8 +29,8 @@ class NamespaceIngestTimeRulesManagementArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] ingest_time_rule_id: Unique ocid of the ingest time rule.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] ingest_time_rule_id: Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         pulumi.set(__self__, "enable_ingest_time_rule", enable_ingest_time_rule)
         pulumi.set(__self__, "ingest_time_rule_id", ingest_time_rule_id)
@@ -56,7 +56,7 @@ class NamespaceIngestTimeRulesManagementArgs:
     @pulumi.getter(name="ingestTimeRuleId")
     def ingest_time_rule_id(self) -> pulumi.Input[_builtins.str]:
         """
-        Unique ocid of the ingest time rule.
+        Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
         """
         return pulumi.get(self, "ingest_time_rule_id")
 
@@ -68,7 +68,7 @@ class NamespaceIngestTimeRulesManagementArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -90,8 +90,8 @@ class _NamespaceIngestTimeRulesManagementState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] ingest_time_rule_id: Unique ocid of the ingest time rule.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] ingest_time_rule_id: Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         if enable_ingest_time_rule is not None:
             pulumi.set(__self__, "enable_ingest_time_rule", enable_ingest_time_rule)
@@ -120,7 +120,7 @@ class _NamespaceIngestTimeRulesManagementState:
     @pulumi.getter(name="ingestTimeRuleId")
     def ingest_time_rule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Unique ocid of the ingest time rule.
+        Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
         """
         return pulumi.get(self, "ingest_time_rule_id")
 
@@ -132,7 +132,7 @@ class _NamespaceIngestTimeRulesManagementState:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -171,8 +171,8 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] ingest_time_rule_id: Unique ocid of the ingest time rule.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] ingest_time_rule_id: Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         ...
     @overload
@@ -254,8 +254,8 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] ingest_time_rule_id: Unique ocid of the ingest time rule.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] ingest_time_rule_id: Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -282,7 +282,7 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
     @pulumi.getter(name="ingestTimeRuleId")
     def ingest_time_rule_id(self) -> pulumi.Output[_builtins.str]:
         """
-        Unique ocid of the ingest time rule.
+        Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
         """
         return pulumi.get(self, "ingest_time_rule_id")
 
@@ -290,7 +290,7 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 

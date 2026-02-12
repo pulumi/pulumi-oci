@@ -18,18 +18,33 @@ public final class NetworkFirewallPolicyApplicationGroupState extends com.pulumi
     public static final NetworkFirewallPolicyApplicationGroupState Empty = new NetworkFirewallPolicyApplicationGroupState();
 
     /**
-     * (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+     * (Updatable) Collection of application names.
      * 
      */
     @Import(name="apps")
     private @Nullable Output<List<String>> apps;
 
     /**
-     * @return (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+     * @return (Updatable) Collection of application names.
      * 
      */
     public Optional<Output<List<String>>> apps() {
         return Optional.ofNullable(this.apps);
+    }
+
+    /**
+     * (Updatable) The description of the application group. This field can be used to add additional info.
+     * 
+     */
+    @Import(name="description")
+    private @Nullable Output<String> description;
+
+    /**
+     * @return (Updatable) The description of the application group. This field can be used to add additional info.
+     * 
+     */
+    public Optional<Output<String>> description() {
+        return Optional.ofNullable(this.description);
     }
 
     /**
@@ -102,6 +117,7 @@ public final class NetworkFirewallPolicyApplicationGroupState extends com.pulumi
 
     private NetworkFirewallPolicyApplicationGroupState(NetworkFirewallPolicyApplicationGroupState $) {
         this.apps = $.apps;
+        this.description = $.description;
         this.name = $.name;
         this.networkFirewallPolicyId = $.networkFirewallPolicyId;
         this.parentResourceId = $.parentResourceId;
@@ -127,7 +143,7 @@ public final class NetworkFirewallPolicyApplicationGroupState extends com.pulumi
         }
 
         /**
-         * @param apps (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+         * @param apps (Updatable) Collection of application names.
          * 
          * @return builder
          * 
@@ -138,7 +154,7 @@ public final class NetworkFirewallPolicyApplicationGroupState extends com.pulumi
         }
 
         /**
-         * @param apps (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+         * @param apps (Updatable) Collection of application names.
          * 
          * @return builder
          * 
@@ -148,13 +164,34 @@ public final class NetworkFirewallPolicyApplicationGroupState extends com.pulumi
         }
 
         /**
-         * @param apps (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+         * @param apps (Updatable) Collection of application names.
          * 
          * @return builder
          * 
          */
         public Builder apps(String... apps) {
             return apps(List.of(apps));
+        }
+
+        /**
+         * @param description (Updatable) The description of the application group. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(@Nullable Output<String> description) {
+            $.description = description;
+            return this;
+        }
+
+        /**
+         * @param description (Updatable) The description of the application group. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(String description) {
+            return description(Output.of(description));
         }
 
         /**

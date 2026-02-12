@@ -69,17 +69,9 @@ public final class GetRrsetsPlainArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.rtype);
     }
 
-    /**
-     * Specifies to operate only on resources that have a matching DNS scope.
-     * 
-     */
     @Import(name="scope")
     private @Nullable String scope;
 
-    /**
-     * @return Specifies to operate only on resources that have a matching DNS scope.
-     * 
-     */
     public Optional<String> scope() {
         return Optional.ofNullable(this.scope);
     }
@@ -186,12 +178,6 @@ public final class GetRrsetsPlainArgs extends com.pulumi.resources.InvokeArgs {
             return this;
         }
 
-        /**
-         * @param scope Specifies to operate only on resources that have a matching DNS scope.
-         * 
-         * @return builder
-         * 
-         */
         public Builder scope(@Nullable String scope) {
             $.scope = scope;
             return this;

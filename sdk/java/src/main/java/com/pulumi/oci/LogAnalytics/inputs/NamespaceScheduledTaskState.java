@@ -64,6 +64,21 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
     }
 
     /**
+     * (Updatable) Description for this resource.
+     * 
+     */
+    @Import(name="description")
+    private @Nullable Output<String> description;
+
+    /**
+     * @return (Updatable) Description for this resource.
+     * 
+     */
+    public Optional<Output<String>> description() {
+        return Optional.ofNullable(this.description);
+    }
+
+    /**
      * (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      * 
      */
@@ -109,14 +124,14 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
     }
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -191,14 +206,14 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
     }
 
     /**
-     * Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+     * Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
      * 
      */
     @Import(name="taskStatus")
     private @Nullable Output<String> taskStatus;
 
     /**
-     * @return Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+     * @return Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
      * 
      */
     public Optional<Output<String>> taskStatus() {
@@ -257,14 +272,14 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
     }
 
     /**
-     * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+     * most recent Work Request Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      * 
      */
     @Import(name="workRequestId")
     private @Nullable Output<String> workRequestId;
 
     /**
-     * @return most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+     * @return most recent Work Request Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      * 
      */
     public Optional<Output<String>> workRequestId() {
@@ -277,6 +292,7 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
         this.action = $.action;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
+        this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.kind = $.kind;
@@ -375,6 +391,27 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
         }
 
         /**
+         * @param description (Updatable) Description for this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(@Nullable Output<String> description) {
+            $.description = description;
+            return this;
+        }
+
+        /**
+         * @param description (Updatable) Description for this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(String description) {
+            return description(Output.of(description));
+        }
+
+        /**
          * @param displayName (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
          * 
          * @return builder
@@ -438,7 +475,7 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 
@@ -449,7 +486,7 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 
@@ -552,7 +589,7 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param taskStatus Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+         * @param taskStatus Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
          * 
          * @return builder
          * 
@@ -563,7 +600,7 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param taskStatus Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+         * @param taskStatus Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
          * 
          * @return builder
          * 
@@ -642,7 +679,7 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param workRequestId most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+         * @param workRequestId most recent Work Request Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
          * 
          * @return builder
          * 
@@ -653,7 +690,7 @@ public final class NamespaceScheduledTaskState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param workRequestId most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+         * @param workRequestId most recent Work Request Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
          * 
          * @return builder
          * 

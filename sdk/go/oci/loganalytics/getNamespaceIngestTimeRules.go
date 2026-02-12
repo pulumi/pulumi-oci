@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -69,7 +69,7 @@ type GetNamespaceIngestTimeRulesArgs struct {
 	// The field value used for filtering. Only rules using the specified field value will be returned.
 	FieldValue *string                             `pulumi:"fieldValue"`
 	Filters    []GetNamespaceIngestTimeRulesFilter `pulumi:"filters"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 	// The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
 	State *string `pulumi:"state"`
@@ -119,7 +119,7 @@ type GetNamespaceIngestTimeRulesOutputArgs struct {
 	// The field value used for filtering. Only rules using the specified field value will be returned.
 	FieldValue pulumi.StringPtrInput                       `pulumi:"fieldValue"`
 	Filters    GetNamespaceIngestTimeRulesFilterArrayInput `pulumi:"filters"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
 	State pulumi.StringPtrInput `pulumi:"state"`

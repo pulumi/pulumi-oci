@@ -91,6 +91,10 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
         /// </summary>
         public readonly bool AreCertificateExtensionsRestricted;
+        /// <summary>
+        /// The description of the decryption profile. This field can be used to add additional info.
+        /// </summary>
+        public readonly string Description;
         public readonly string Id;
         /// <summary>
         /// Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
@@ -142,6 +146,8 @@ namespace Pulumi.Oci.NetworkFirewall
         private GetNetworkFirewallPolicyDecryptionProfileResult(
             bool areCertificateExtensionsRestricted,
 
+            string description,
+
             string id,
 
             bool isAutoIncludeAltName,
@@ -169,6 +175,7 @@ namespace Pulumi.Oci.NetworkFirewall
             string type)
         {
             AreCertificateExtensionsRestricted = areCertificateExtensionsRestricted;
+            Description = description;
             Id = id;
             IsAutoIncludeAltName = isAutoIncludeAltName;
             IsExpiredCertificateBlocked = isExpiredCertificateBlocked;

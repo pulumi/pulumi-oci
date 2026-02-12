@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +19,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/core"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -80,6 +80,8 @@ type VolumeAttachment struct {
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
 	// The volume's iSCSI IP address.  Example: `169.254.2.2`
 	Ipv4 pulumi.StringOutput `pulumi:"ipv4"`
+	// The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
+	Ipv6 pulumi.StringOutput `pulumi:"ipv6"`
 	// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
 	Iqn pulumi.StringOutput `pulumi:"iqn"`
 	// Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
@@ -174,6 +176,8 @@ type volumeAttachmentState struct {
 	InstanceId *string `pulumi:"instanceId"`
 	// The volume's iSCSI IP address.  Example: `169.254.2.2`
 	Ipv4 *string `pulumi:"ipv4"`
+	// The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
+	Ipv6 *string `pulumi:"ipv6"`
 	// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
 	Iqn *string `pulumi:"iqn"`
 	// Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
@@ -230,6 +234,8 @@ type VolumeAttachmentState struct {
 	InstanceId pulumi.StringPtrInput
 	// The volume's iSCSI IP address.  Example: `169.254.2.2`
 	Ipv4 pulumi.StringPtrInput
+	// The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
+	Ipv6 pulumi.StringPtrInput
 	// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
 	Iqn pulumi.StringPtrInput
 	// Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
@@ -469,6 +475,11 @@ func (o VolumeAttachmentOutput) InstanceId() pulumi.StringOutput {
 // The volume's iSCSI IP address.  Example: `169.254.2.2`
 func (o VolumeAttachmentOutput) Ipv4() pulumi.StringOutput {
 	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringOutput { return v.Ipv4 }).(pulumi.StringOutput)
+}
+
+// The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
+func (o VolumeAttachmentOutput) Ipv6() pulumi.StringOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringOutput { return v.Ipv6 }).(pulumi.StringOutput)
 }
 
 // The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`

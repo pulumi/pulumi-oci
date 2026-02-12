@@ -175,7 +175,7 @@ class GetLogAnalyticsObjectCollectionRuleResult:
     @pulumi.getter(name="entityId")
     def entity_id(self) -> _builtins.str:
         """
-        Logging Analytics entity OCID to associate the processed logs with.
+        Log Analytics entity OCID to associate the processed logs with.
         """
         return pulumi.get(self, "entity_id")
 
@@ -236,7 +236,7 @@ class GetLogAnalyticsObjectCollectionRuleResult:
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> _builtins.str:
         """
-        Logging Analytics Log group OCID to associate the processed logs with.
+        Log Analytics Log group OCID to associate the processed logs with.
         """
         return pulumi.get(self, "log_group_id")
 
@@ -268,7 +268,7 @@ class GetLogAnalyticsObjectCollectionRuleResult:
     @pulumi.getter(name="logSourceName")
     def log_source_name(self) -> _builtins.str:
         """
-        Name of the Logging Analytics Source to use for the processing.
+        Name of the Log Analytics Source to use for the processing.
         """
         return pulumi.get(self, "log_source_name")
 
@@ -369,7 +369,7 @@ class GetLogAnalyticsObjectCollectionRuleResult:
     @pulumi.getter(name="streamId")
     def stream_id(self) -> _builtins.str:
         """
-        A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         """
         return pulumi.get(self, "stream_id")
 
@@ -459,8 +459,8 @@ def get_log_analytics_object_collection_rule(log_analytics_object_collection_rul
     ```
 
 
-    :param _builtins.str log_analytics_object_collection_rule_id: The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str log_analytics_object_collection_rule_id: The Log Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['logAnalyticsObjectCollectionRuleId'] = log_analytics_object_collection_rule_id
@@ -522,8 +522,8 @@ def get_log_analytics_object_collection_rule_output(log_analytics_object_collect
     ```
 
 
-    :param _builtins.str log_analytics_object_collection_rule_id: The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str log_analytics_object_collection_rule_id: The Log Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['logAnalyticsObjectCollectionRuleId'] = log_analytics_object_collection_rule_id

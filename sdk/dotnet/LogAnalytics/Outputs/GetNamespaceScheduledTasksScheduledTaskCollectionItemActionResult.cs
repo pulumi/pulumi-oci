@@ -21,6 +21,9 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// the type of the log data to be purged
         /// </summary>
         public readonly string DataType;
+        /// <summary>
+        /// Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionResult> MetricExtractions;
         /// <summary>
         /// the compartment OCID under which the data will be purged

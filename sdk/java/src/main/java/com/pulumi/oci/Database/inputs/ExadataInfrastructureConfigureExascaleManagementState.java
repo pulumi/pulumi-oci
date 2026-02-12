@@ -781,6 +781,13 @@ public final class ExadataInfrastructureConfigureExascaleManagementState extends
         return Optional.ofNullable(this.totalStorageInGbs);
     }
 
+    @Import(name="totalVmStorageInGbs")
+    private @Nullable Output<Integer> totalVmStorageInGbs;
+
+    public Optional<Output<Integer>> totalVmStorageInGbs() {
+        return Optional.ofNullable(this.totalVmStorageInGbs);
+    }
+
     private ExadataInfrastructureConfigureExascaleManagementState() {}
 
     private ExadataInfrastructureConfigureExascaleManagementState(ExadataInfrastructureConfigureExascaleManagementState $) {
@@ -834,6 +841,7 @@ public final class ExadataInfrastructureConfigureExascaleManagementState extends
         this.timeCreated = $.timeCreated;
         this.timeZone = $.timeZone;
         this.totalStorageInGbs = $.totalStorageInGbs;
+        this.totalVmStorageInGbs = $.totalVmStorageInGbs;
     }
 
     public static Builder builder() {
@@ -1978,6 +1986,15 @@ public final class ExadataInfrastructureConfigureExascaleManagementState extends
          */
         public Builder totalStorageInGbs(Integer totalStorageInGbs) {
             return totalStorageInGbs(Output.of(totalStorageInGbs));
+        }
+
+        public Builder totalVmStorageInGbs(@Nullable Output<Integer> totalVmStorageInGbs) {
+            $.totalVmStorageInGbs = totalVmStorageInGbs;
+            return this;
+        }
+
+        public Builder totalVmStorageInGbs(Integer totalVmStorageInGbs) {
+            return totalVmStorageInGbs(Output.of(totalVmStorageInGbs));
         }
 
         public ExadataInfrastructureConfigureExascaleManagementState build() {

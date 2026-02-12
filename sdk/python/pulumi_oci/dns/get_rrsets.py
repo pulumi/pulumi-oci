@@ -145,9 +145,7 @@ def get_rrsets(domain: Optional[_builtins.str] = None,
 
     Gets a list of all rrsets in the specified zone.
 
-    You can optionally filter the results using the listed parameters. When the zone name
-    is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
-    the viewId parameter is required.
+    You can optionally filter the results using the listed parameters. When accessing a private zone by name, the `view_id` parameter is required.
 
     ## Example Usage
 
@@ -159,7 +157,6 @@ def get_rrsets(domain: Optional[_builtins.str] = None,
         domain=rrset_domain,
         domain_contains=rrset_domain,
         rtype=rrset_rtype,
-        scope=rrset_scope,
         view_id=test_view["id"])
     ```
 
@@ -167,7 +164,6 @@ def get_rrsets(domain: Optional[_builtins.str] = None,
     :param _builtins.str domain: The target fully-qualified domain name (FQDN) within the target zone.
     :param _builtins.str domain_contains: Matches any rrset whose fully-qualified domain name (FQDN) contains the provided value.
     :param _builtins.str rtype: Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
-    :param _builtins.str scope: Specifies to operate only on resources that have a matching DNS scope.
     :param _builtins.str view_id: The OCID of the view the zone is associated with. Required when accessing a private zone by name.
     :param _builtins.str zone_name_or_id: The name or OCID of the target zone.
     """
@@ -205,9 +201,7 @@ def get_rrsets_output(domain: Optional[pulumi.Input[Optional[_builtins.str]]] = 
 
     Gets a list of all rrsets in the specified zone.
 
-    You can optionally filter the results using the listed parameters. When the zone name
-    is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
-    the viewId parameter is required.
+    You can optionally filter the results using the listed parameters. When accessing a private zone by name, the `view_id` parameter is required.
 
     ## Example Usage
 
@@ -219,7 +213,6 @@ def get_rrsets_output(domain: Optional[pulumi.Input[Optional[_builtins.str]]] = 
         domain=rrset_domain,
         domain_contains=rrset_domain,
         rtype=rrset_rtype,
-        scope=rrset_scope,
         view_id=test_view["id"])
     ```
 
@@ -227,7 +220,6 @@ def get_rrsets_output(domain: Optional[pulumi.Input[Optional[_builtins.str]]] = 
     :param _builtins.str domain: The target fully-qualified domain name (FQDN) within the target zone.
     :param _builtins.str domain_contains: Matches any rrset whose fully-qualified domain name (FQDN) contains the provided value.
     :param _builtins.str rtype: Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
-    :param _builtins.str scope: Specifies to operate only on resources that have a matching DNS scope.
     :param _builtins.str view_id: The OCID of the view the zone is associated with. Required when accessing a private zone by name.
     :param _builtins.str zone_name_or_id: The name or OCID of the target zone.
     """

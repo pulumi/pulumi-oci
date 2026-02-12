@@ -71,7 +71,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> LookupName { get; private set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string> LookupName { get; set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -205,7 +205,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? LookupName { get; set; }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
         /// 
         /// 
         /// ** IMPORTANT **

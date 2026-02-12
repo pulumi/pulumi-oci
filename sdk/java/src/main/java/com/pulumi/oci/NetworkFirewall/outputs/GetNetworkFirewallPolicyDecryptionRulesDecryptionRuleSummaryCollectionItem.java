@@ -32,6 +32,11 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
      */
     private @Nullable String decryptionProfile;
     /**
+     * @return The description of the decryption rule. This field can be used to add additional info.
+     * 
+     */
+    private @Nullable String description;
+    /**
      * @return Name for the decryption rule, must be unique within the policy.
      * 
      */
@@ -81,6 +86,13 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
      */
     public Optional<String> decryptionProfile() {
         return Optional.ofNullable(this.decryptionProfile);
+    }
+    /**
+     * @return The description of the decryption rule. This field can be used to add additional info.
+     * 
+     */
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Name for the decryption rule, must be unique within the policy.
@@ -133,6 +145,7 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
         private String action;
         private GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemCondition condition;
         private @Nullable String decryptionProfile;
+        private @Nullable String description;
         private String name;
         private String networkFirewallPolicyId;
         private String parentResourceId;
@@ -145,6 +158,7 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
     	      this.action = defaults.action;
     	      this.condition = defaults.condition;
     	      this.decryptionProfile = defaults.decryptionProfile;
+    	      this.description = defaults.description;
     	      this.name = defaults.name;
     	      this.networkFirewallPolicyId = defaults.networkFirewallPolicyId;
     	      this.parentResourceId = defaults.parentResourceId;
@@ -173,6 +187,12 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
         public Builder decryptionProfile(@Nullable String decryptionProfile) {
 
             this.decryptionProfile = decryptionProfile;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder description(@Nullable String description) {
+
+            this.description = description;
             return this;
         }
         @CustomType.Setter
@@ -224,6 +244,7 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
             _resultValue.action = action;
             _resultValue.condition = condition;
             _resultValue.decryptionProfile = decryptionProfile;
+            _resultValue.description = description;
             _resultValue.name = name;
             _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
             _resultValue.parentResourceId = parentResourceId;

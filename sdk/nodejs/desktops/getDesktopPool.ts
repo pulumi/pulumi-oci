@@ -61,6 +61,10 @@ export interface GetDesktopPoolResult {
      */
     readonly availabilityPolicies: outputs.Desktops.GetDesktopPoolAvailabilityPolicy[];
     /**
+     * The size in GBs of the boot volume for the desktop pool.
+     */
+    readonly bootVolumeSizeInGbs: number;
+    /**
      * The OCID of the compartment of the desktop pool.
      */
     readonly compartmentId: string;

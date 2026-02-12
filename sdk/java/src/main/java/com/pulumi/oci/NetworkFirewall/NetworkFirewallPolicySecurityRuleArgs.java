@@ -58,18 +58,33 @@ public final class NetworkFirewallPolicySecurityRuleArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-     * * INTRUSION_DETECTION - Intrusion Detection.
-     * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+     * (Updatable) The description of the security rule. This field can be used to add additional info.
+     * 
+     */
+    @Import(name="description")
+    private @Nullable Output<String> description;
+
+    /**
+     * @return (Updatable) The description of the security rule. This field can be used to add additional info.
+     * 
+     */
+    public Optional<Output<String>> description() {
+        return Optional.ofNullable(this.description);
+    }
+
+    /**
+     * (Updatable) Type of inspection to affect the traffic flow.
+     * * INTRUSION_DETECTION - Intrusion detection.
+     * * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
      * 
      */
     @Import(name="inspection")
     private @Nullable Output<String> inspection;
 
     /**
-     * @return (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-     * * INTRUSION_DETECTION - Intrusion Detection.
-     * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+     * @return (Updatable) Type of inspection to affect the traffic flow.
+     * * INTRUSION_DETECTION - Intrusion detection.
+     * * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
      * 
      */
     public Optional<Output<String>> inspection() {
@@ -133,6 +148,7 @@ public final class NetworkFirewallPolicySecurityRuleArgs extends com.pulumi.reso
     private NetworkFirewallPolicySecurityRuleArgs(NetworkFirewallPolicySecurityRuleArgs $) {
         this.action = $.action;
         this.condition = $.condition;
+        this.description = $.description;
         this.inspection = $.inspection;
         this.name = $.name;
         this.networkFirewallPolicyId = $.networkFirewallPolicyId;
@@ -209,9 +225,30 @@ public final class NetworkFirewallPolicySecurityRuleArgs extends com.pulumi.reso
         }
 
         /**
-         * @param inspection (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-         * * INTRUSION_DETECTION - Intrusion Detection.
-         * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+         * @param description (Updatable) The description of the security rule. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(@Nullable Output<String> description) {
+            $.description = description;
+            return this;
+        }
+
+        /**
+         * @param description (Updatable) The description of the security rule. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(String description) {
+            return description(Output.of(description));
+        }
+
+        /**
+         * @param inspection (Updatable) Type of inspection to affect the traffic flow.
+         * * INTRUSION_DETECTION - Intrusion detection.
+         * * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
          * 
          * @return builder
          * 
@@ -222,9 +259,9 @@ public final class NetworkFirewallPolicySecurityRuleArgs extends com.pulumi.reso
         }
 
         /**
-         * @param inspection (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-         * * INTRUSION_DETECTION - Intrusion Detection.
-         * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+         * @param inspection (Updatable) Type of inspection to affect the traffic flow.
+         * * INTRUSION_DETECTION - Intrusion detection.
+         * * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
          * 
          * @return builder
          * 

@@ -68,7 +68,7 @@ export interface GetNamespaceIngestTimeRulesArgs {
     fieldValue?: string;
     filters?: inputs.LogAnalytics.GetNamespaceIngestTimeRulesFilter[];
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: string;
     /**
@@ -178,7 +178,7 @@ export interface GetNamespaceIngestTimeRulesOutputArgs {
     fieldValue?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespaceIngestTimeRulesFilterArgs>[]>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
     /**

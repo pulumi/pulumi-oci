@@ -15,14 +15,14 @@ public final class GetLogAnalyticsObjectCollectionRuleArgs extends com.pulumi.re
     public static final GetLogAnalyticsObjectCollectionRuleArgs Empty = new GetLogAnalyticsObjectCollectionRuleArgs();
 
     /**
-     * The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The Log Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="logAnalyticsObjectCollectionRuleId", required=true)
     private Output<String> logAnalyticsObjectCollectionRuleId;
 
     /**
-     * @return The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return The Log Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> logAnalyticsObjectCollectionRuleId() {
@@ -30,14 +30,14 @@ public final class GetLogAnalyticsObjectCollectionRuleArgs extends com.pulumi.re
     }
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public Output<String> namespace() {
@@ -70,7 +70,7 @@ public final class GetLogAnalyticsObjectCollectionRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param logAnalyticsObjectCollectionRuleId The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param logAnalyticsObjectCollectionRuleId The Log Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class GetLogAnalyticsObjectCollectionRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param logAnalyticsObjectCollectionRuleId The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param logAnalyticsObjectCollectionRuleId The Log Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class GetLogAnalyticsObjectCollectionRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class GetLogAnalyticsObjectCollectionRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 

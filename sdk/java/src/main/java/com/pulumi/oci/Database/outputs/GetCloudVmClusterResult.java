@@ -310,10 +310,20 @@ public final class GetCloudVmClusterResult {
      */
     private List<String> vipv6ids;
     /**
+     * @return Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+     * 
+     */
+    private String vmBackupStorageType;
+    /**
      * @return The vmcluster type for the VM cluster/Cloud VM cluster.
      * 
      */
     private String vmClusterType;
+    /**
+     * @return Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+     * 
+     */
+    private String vmFileSystemStorageType;
     /**
      * @return The OCID of the zone the cloud VM cluster is associated with.
      * 
@@ -731,11 +741,25 @@ public final class GetCloudVmClusterResult {
         return this.vipv6ids;
     }
     /**
+     * @return Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+     * 
+     */
+    public String vmBackupStorageType() {
+        return this.vmBackupStorageType;
+    }
+    /**
      * @return The vmcluster type for the VM cluster/Cloud VM cluster.
      * 
      */
     public String vmClusterType() {
         return this.vmClusterType;
+    }
+    /**
+     * @return Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+     * 
+     */
+    public String vmFileSystemStorageType() {
+        return this.vmFileSystemStorageType;
     }
     /**
      * @return The OCID of the zone the cloud VM cluster is associated with.
@@ -814,7 +838,9 @@ public final class GetCloudVmClusterResult {
         private String timeZone;
         private List<String> vipIds;
         private List<String> vipv6ids;
+        private String vmBackupStorageType;
         private String vmClusterType;
+        private String vmFileSystemStorageType;
         private String zoneId;
         public Builder() {}
         public Builder(GetCloudVmClusterResult defaults) {
@@ -879,7 +905,9 @@ public final class GetCloudVmClusterResult {
     	      this.timeZone = defaults.timeZone;
     	      this.vipIds = defaults.vipIds;
     	      this.vipv6ids = defaults.vipv6ids;
+    	      this.vmBackupStorageType = defaults.vmBackupStorageType;
     	      this.vmClusterType = defaults.vmClusterType;
+    	      this.vmFileSystemStorageType = defaults.vmFileSystemStorageType;
     	      this.zoneId = defaults.zoneId;
         }
 
@@ -1403,11 +1431,27 @@ public final class GetCloudVmClusterResult {
             return vipv6ids(List.of(vipv6ids));
         }
         @CustomType.Setter
+        public Builder vmBackupStorageType(String vmBackupStorageType) {
+            if (vmBackupStorageType == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClusterResult", "vmBackupStorageType");
+            }
+            this.vmBackupStorageType = vmBackupStorageType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder vmClusterType(String vmClusterType) {
             if (vmClusterType == null) {
               throw new MissingRequiredPropertyException("GetCloudVmClusterResult", "vmClusterType");
             }
             this.vmClusterType = vmClusterType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder vmFileSystemStorageType(String vmFileSystemStorageType) {
+            if (vmFileSystemStorageType == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClusterResult", "vmFileSystemStorageType");
+            }
+            this.vmFileSystemStorageType = vmFileSystemStorageType;
             return this;
         }
         @CustomType.Setter
@@ -1480,7 +1524,9 @@ public final class GetCloudVmClusterResult {
             _resultValue.timeZone = timeZone;
             _resultValue.vipIds = vipIds;
             _resultValue.vipv6ids = vipv6ids;
+            _resultValue.vmBackupStorageType = vmBackupStorageType;
             _resultValue.vmClusterType = vmClusterType;
+            _resultValue.vmFileSystemStorageType = vmFileSystemStorageType;
             _resultValue.zoneId = zoneId;
             return _resultValue;
         }

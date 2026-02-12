@@ -279,7 +279,7 @@ def get_namespace_template(namespace: Optional[_builtins.str] = None,
     ```
 
 
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str template_id: Unique ocid of the template.
     """
     __args__ = dict()
@@ -327,7 +327,7 @@ def get_namespace_template_output(namespace: Optional[pulumi.Input[_builtins.str
     ```
 
 
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str template_id: Unique ocid of the template.
     """
     __args__ = dict()

@@ -37,6 +37,10 @@ export interface GetNetworkFirewallPolicyMappedSecretArgs {
  * A collection of values returned by getNetworkFirewallPolicyMappedSecret.
  */
 export interface GetNetworkFirewallPolicyMappedSecretResult {
+    /**
+     * The description of the mapped secret. This field can be used to add additional info.
+     */
+    readonly description: string;
     readonly id: string;
     /**
      * Name of the secret.

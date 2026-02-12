@@ -30,6 +30,11 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
      * 
      */
     private String decryptionProfile;
+    /**
+     * @return The description of the decryption rule. This field can be used to add additional info.
+     * 
+     */
+    private String description;
     private String id;
     /**
      * @return Name for the decryption rule, must be unique within the policy.
@@ -77,6 +82,13 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
      */
     public String decryptionProfile() {
         return this.decryptionProfile;
+    }
+    /**
+     * @return The description of the decryption rule. This field can be used to add additional info.
+     * 
+     */
+    public String description() {
+        return this.description;
     }
     public String id() {
         return this.id;
@@ -128,6 +140,7 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
         private String action;
         private List<GetNetworkFirewallPolicyDecryptionRuleCondition> conditions;
         private String decryptionProfile;
+        private String description;
         private String id;
         private String name;
         private String networkFirewallPolicyId;
@@ -141,6 +154,7 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
     	      this.action = defaults.action;
     	      this.conditions = defaults.conditions;
     	      this.decryptionProfile = defaults.decryptionProfile;
+    	      this.description = defaults.description;
     	      this.id = defaults.id;
     	      this.name = defaults.name;
     	      this.networkFirewallPolicyId = defaults.networkFirewallPolicyId;
@@ -175,6 +189,14 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
               throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionRuleResult", "decryptionProfile");
             }
             this.decryptionProfile = decryptionProfile;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder description(String description) {
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionRuleResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
@@ -241,6 +263,7 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
             _resultValue.action = action;
             _resultValue.conditions = conditions;
             _resultValue.decryptionProfile = decryptionProfile;
+            _resultValue.description = description;
             _resultValue.id = id;
             _resultValue.name = name;
             _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;

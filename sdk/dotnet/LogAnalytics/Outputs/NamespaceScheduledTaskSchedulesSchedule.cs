@@ -22,6 +22,10 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string? MisfirePolicy;
         /// <summary>
+        /// Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
+        /// </summary>
+        public readonly int? QueryOffsetSecs;
+        /// <summary>
         /// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         /// </summary>
         public readonly string? RecurringInterval;
@@ -29,6 +33,10 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
         /// </summary>
         public readonly int? RepeatCount;
+        /// <summary>
+        /// End time for the schedule, even if the schedule would otherwise have remaining executions.
+        /// </summary>
+        public readonly string? TimeEnd;
         /// <summary>
         /// Time zone, by default UTC.
         /// </summary>
@@ -44,9 +52,13 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
 
             string? misfirePolicy,
 
+            int? queryOffsetSecs,
+
             string? recurringInterval,
 
             int? repeatCount,
+
+            string? timeEnd,
 
             string? timeZone,
 
@@ -54,8 +66,10 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         {
             Expression = expression;
             MisfirePolicy = misfirePolicy;
+            QueryOffsetSecs = queryOffsetSecs;
             RecurringInterval = recurringInterval;
             RepeatCount = repeatCount;
+            TimeEnd = timeEnd;
             TimeZone = timeZone;
             Type = type;
         }

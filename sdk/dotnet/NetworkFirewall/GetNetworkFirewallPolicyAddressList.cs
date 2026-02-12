@@ -91,6 +91,10 @@ namespace Pulumi.Oci.NetworkFirewall
         /// List of addresses.
         /// </summary>
         public readonly ImmutableArray<string> Addresses;
+        /// <summary>
+        /// The description of the address list. This field can be used to add additional info.
+        /// </summary>
+        public readonly string Description;
         public readonly string Id;
         /// <summary>
         /// Unique name to identify the group of addresses to be used in the policy rules.
@@ -114,6 +118,8 @@ namespace Pulumi.Oci.NetworkFirewall
         private GetNetworkFirewallPolicyAddressListResult(
             ImmutableArray<string> addresses,
 
+            string description,
+
             string id,
 
             string name,
@@ -127,6 +133,7 @@ namespace Pulumi.Oci.NetworkFirewall
             string type)
         {
             Addresses = addresses;
+            Description = description;
             Id = id;
             Name = name;
             NetworkFirewallPolicyId = networkFirewallPolicyId;

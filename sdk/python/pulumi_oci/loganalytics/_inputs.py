@@ -49,6 +49,10 @@ __all__ = [
     'NamespaceScheduledTaskActionArgsDict',
     'NamespaceScheduledTaskActionMetricExtractionArgs',
     'NamespaceScheduledTaskActionMetricExtractionArgsDict',
+    'NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs',
+    'NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgsDict',
+    'NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs',
+    'NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgsDict',
     'NamespaceScheduledTaskActionTemplateDetailsArgs',
     'NamespaceScheduledTaskActionTemplateDetailsArgsDict',
     'NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs',
@@ -1630,6 +1634,10 @@ if not MYPY:
         """
         (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
         """
+        metric_collections: NotRequired[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgsDict']]]]
+        """
+        Details for the metrics to be collected.
+        """
         metric_name: NotRequired[pulumi.Input[_builtins.str]]
         """
         The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
@@ -1649,17 +1657,21 @@ elif False:
 class NamespaceScheduledTaskActionMetricExtractionArgs:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 metric_collections: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs']]]] = None,
                  metric_name: Optional[pulumi.Input[_builtins.str]] = None,
                  namespace: Optional[pulumi.Input[_builtins.str]] = None,
                  resource_group: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+        :param pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs']]] metric_collections: Details for the metrics to be collected.
         :param pulumi.Input[_builtins.str] metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         :param pulumi.Input[_builtins.str] namespace: The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
         :param pulumi.Input[_builtins.str] resource_group: The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if metric_collections is not None:
+            pulumi.set(__self__, "metric_collections", metric_collections)
         if metric_name is not None:
             pulumi.set(__self__, "metric_name", metric_name)
         if namespace is not None:
@@ -1678,6 +1690,18 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="metricCollections")
+    def metric_collections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs']]]]:
+        """
+        Details for the metrics to be collected.
+        """
+        return pulumi.get(self, "metric_collections")
+
+    @metric_collections.setter
+    def metric_collections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs']]]]):
+        pulumi.set(self, "metric_collections", value)
 
     @_builtins.property
     @pulumi.getter(name="metricName")
@@ -1714,6 +1738,150 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
     @resource_group.setter
     def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
+
+
+if not MYPY:
+    class NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgsDict(TypedDict):
+        dimensions: NotRequired[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgsDict']]]]
+        """
+        Selected dimension fields for the metric collection.
+        """
+        metric_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The metric name for this metric collection. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+        metric_query_field_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Output field in the query to be used as the metric value.
+        """
+        query_table_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Output table in the query.
+        """
+elif False:
+    NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs:
+    def __init__(__self__, *,
+                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs']]]] = None,
+                 metric_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 metric_query_field_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 query_table_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs']]] dimensions: Selected dimension fields for the metric collection.
+        :param pulumi.Input[_builtins.str] metric_name: The metric name for this metric collection. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        :param pulumi.Input[_builtins.str] metric_query_field_name: Output field in the query to be used as the metric value.
+        :param pulumi.Input[_builtins.str] query_table_name: Output table in the query.
+        """
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
+        if metric_name is not None:
+            pulumi.set(__self__, "metric_name", metric_name)
+        if metric_query_field_name is not None:
+            pulumi.set(__self__, "metric_query_field_name", metric_query_field_name)
+        if query_table_name is not None:
+            pulumi.set(__self__, "query_table_name", query_table_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs']]]]:
+        """
+        Selected dimension fields for the metric collection.
+        """
+        return pulumi.get(self, "dimensions")
+
+    @dimensions.setter
+    def dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs']]]]):
+        pulumi.set(self, "dimensions", value)
+
+    @_builtins.property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The metric name for this metric collection. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+        return pulumi.get(self, "metric_name")
+
+    @metric_name.setter
+    def metric_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "metric_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="metricQueryFieldName")
+    def metric_query_field_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Output field in the query to be used as the metric value.
+        """
+        return pulumi.get(self, "metric_query_field_name")
+
+    @metric_query_field_name.setter
+    def metric_query_field_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "metric_query_field_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="queryTableName")
+    def query_table_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Output table in the query.
+        """
+        return pulumi.get(self, "query_table_name")
+
+    @query_table_name.setter
+    def query_table_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "query_table_name", value)
+
+
+if not MYPY:
+    class NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgsDict(TypedDict):
+        dimension_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Dimension name to be stored with the metric.
+        """
+        query_field_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Output field in the query to be used as the source for the metric dimension.
+        """
+elif False:
+    NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs:
+    def __init__(__self__, *,
+                 dimension_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 query_field_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] dimension_name: Dimension name to be stored with the metric.
+        :param pulumi.Input[_builtins.str] query_field_name: Output field in the query to be used as the source for the metric dimension.
+        """
+        if dimension_name is not None:
+            pulumi.set(__self__, "dimension_name", dimension_name)
+        if query_field_name is not None:
+            pulumi.set(__self__, "query_field_name", query_field_name)
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionName")
+    def dimension_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Dimension name to be stored with the metric.
+        """
+        return pulumi.get(self, "dimension_name")
+
+    @dimension_name.setter
+    def dimension_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "dimension_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="queryFieldName")
+    def query_field_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Output field in the query to be used as the source for the metric dimension.
+        """
+        return pulumi.get(self, "query_field_name")
+
+    @query_field_name.setter
+    def query_field_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "query_field_name", value)
 
 
 if not MYPY:
@@ -1856,6 +2024,10 @@ if not MYPY:
         """
         Schedule misfire retry policy.
         """
+        query_offset_secs: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
+        """
         recurring_interval: NotRequired[pulumi.Input[_builtins.str]]
         """
         Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
@@ -1863,6 +2035,10 @@ if not MYPY:
         repeat_count: NotRequired[pulumi.Input[_builtins.int]]
         """
         Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+        """
+        time_end: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        End time for the schedule, even if the schedule would otherwise have remaining executions.
         """
         time_zone: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -1877,15 +2053,19 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
                  type: pulumi.Input[_builtins.str],
                  expression: Optional[pulumi.Input[_builtins.str]] = None,
                  misfire_policy: Optional[pulumi.Input[_builtins.str]] = None,
+                 query_offset_secs: Optional[pulumi.Input[_builtins.int]] = None,
                  recurring_interval: Optional[pulumi.Input[_builtins.str]] = None,
                  repeat_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 time_end: Optional[pulumi.Input[_builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Schedule type discriminator.
         :param pulumi.Input[_builtins.str] expression: Value in cron format.
         :param pulumi.Input[_builtins.str] misfire_policy: Schedule misfire retry policy.
+        :param pulumi.Input[_builtins.int] query_offset_secs: Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
         :param pulumi.Input[_builtins.str] recurring_interval: Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         :param pulumi.Input[_builtins.int] repeat_count: Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+        :param pulumi.Input[_builtins.str] time_end: End time for the schedule, even if the schedule would otherwise have remaining executions.
         :param pulumi.Input[_builtins.str] time_zone: Time zone, by default UTC.
         """
         pulumi.set(__self__, "type", type)
@@ -1893,10 +2073,14 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
             pulumi.set(__self__, "expression", expression)
         if misfire_policy is not None:
             pulumi.set(__self__, "misfire_policy", misfire_policy)
+        if query_offset_secs is not None:
+            pulumi.set(__self__, "query_offset_secs", query_offset_secs)
         if recurring_interval is not None:
             pulumi.set(__self__, "recurring_interval", recurring_interval)
         if repeat_count is not None:
             pulumi.set(__self__, "repeat_count", repeat_count)
+        if time_end is not None:
+            pulumi.set(__self__, "time_end", time_end)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
 
@@ -1937,6 +2121,18 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
         pulumi.set(self, "misfire_policy", value)
 
     @_builtins.property
+    @pulumi.getter(name="queryOffsetSecs")
+    def query_offset_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
+        """
+        return pulumi.get(self, "query_offset_secs")
+
+    @query_offset_secs.setter
+    def query_offset_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "query_offset_secs", value)
+
+    @_builtins.property
     @pulumi.getter(name="recurringInterval")
     def recurring_interval(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1961,6 +2157,18 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
         pulumi.set(self, "repeat_count", value)
 
     @_builtins.property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        End time for the schedule, even if the schedule would otherwise have remaining executions.
+        """
+        return pulumi.get(self, "time_end")
+
+    @time_end.setter
+    def time_end(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_end", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1983,6 +2191,10 @@ if not MYPY:
         """
         (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
         """
+        time_oldest_active_bucket_ended: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) end time of the oldest active CoreGroup
+        """
 elif False:
     NamespaceStorageArchivalConfigArchivingConfigurationArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -1990,15 +2202,19 @@ elif False:
 class NamespaceStorageArchivalConfigArchivingConfigurationArgs:
     def __init__(__self__, *,
                  active_storage_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 archival_storage_duration: Optional[pulumi.Input[_builtins.str]] = None):
+                 archival_storage_duration: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_oldest_active_bucket_ended: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] active_storage_duration: (Updatable) This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
         :param pulumi.Input[_builtins.str] archival_storage_duration: (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+        :param pulumi.Input[_builtins.str] time_oldest_active_bucket_ended: (Updatable) end time of the oldest active CoreGroup
         """
         if active_storage_duration is not None:
             pulumi.set(__self__, "active_storage_duration", active_storage_duration)
         if archival_storage_duration is not None:
             pulumi.set(__self__, "archival_storage_duration", archival_storage_duration)
+        if time_oldest_active_bucket_ended is not None:
+            pulumi.set(__self__, "time_oldest_active_bucket_ended", time_oldest_active_bucket_ended)
 
     @_builtins.property
     @pulumi.getter(name="activeStorageDuration")
@@ -2023,6 +2239,18 @@ class NamespaceStorageArchivalConfigArchivingConfigurationArgs:
     @archival_storage_duration.setter
     def archival_storage_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "archival_storage_duration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeOldestActiveBucketEnded")
+    def time_oldest_active_bucket_ended(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) end time of the oldest active CoreGroup
+        """
+        return pulumi.get(self, "time_oldest_active_bucket_ended")
+
+    @time_oldest_active_bucket_ended.setter
+    def time_oldest_active_bucket_ended(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_oldest_active_bucket_ended", value)
 
 
 if not MYPY:

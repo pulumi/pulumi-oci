@@ -28,7 +28,7 @@ class GetComputeHostsResult:
     """
     A collection of values returned by getComputeHosts.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, compute_host_collections=None, compute_host_group_id=None, compute_host_health=None, compute_host_in_subtree=None, compute_host_lifecycle_state=None, display_name=None, filters=None, id=None, lifecycle_details=None, network_resource_id=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, compute_host_collections=None, compute_host_group_id=None, compute_host_health=None, compute_host_in_subtree=None, compute_host_lifecycle_state=None, display_name=None, filters=None, host_correlation_id=None, id=None, lifecycle_details=None, network_resource_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -56,6 +56,9 @@ class GetComputeHostsResult:
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
+        if host_correlation_id and not isinstance(host_correlation_id, str):
+            raise TypeError("Expected argument 'host_correlation_id' to be a str")
+        pulumi.set(__self__, "host_correlation_id", host_correlation_id)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -127,6 +130,14 @@ class GetComputeHostsResult:
         return pulumi.get(self, "filters")
 
     @_builtins.property
+    @pulumi.getter(name="hostCorrelationId")
+    def host_correlation_id(self) -> _builtins.str:
+        """
+        The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+        """
+        return pulumi.get(self, "host_correlation_id")
+
+    @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
@@ -163,6 +174,7 @@ class AwaitableGetComputeHostsResult(GetComputeHostsResult):
             compute_host_lifecycle_state=self.compute_host_lifecycle_state,
             display_name=self.display_name,
             filters=self.filters,
+            host_correlation_id=self.host_correlation_id,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
             network_resource_id=self.network_resource_id)
@@ -235,6 +247,7 @@ def get_compute_hosts(availability_domain: Optional[_builtins.str] = None,
         compute_host_lifecycle_state=pulumi.get(__ret__, 'compute_host_lifecycle_state'),
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
+        host_correlation_id=pulumi.get(__ret__, 'host_correlation_id'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         network_resource_id=pulumi.get(__ret__, 'network_resource_id'))
@@ -304,6 +317,7 @@ def get_compute_hosts_output(availability_domain: Optional[pulumi.Input[Optional
         compute_host_lifecycle_state=pulumi.get(__response__, 'compute_host_lifecycle_state'),
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
+        host_correlation_id=pulumi.get(__response__, 'host_correlation_id'),
         id=pulumi.get(__response__, 'id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         network_resource_id=pulumi.get(__response__, 'network_resource_id')))

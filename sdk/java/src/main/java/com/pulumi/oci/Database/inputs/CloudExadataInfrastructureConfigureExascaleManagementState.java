@@ -615,6 +615,13 @@ public final class CloudExadataInfrastructureConfigureExascaleManagementState ex
         return Optional.ofNullable(this.totalStorageSizeInGbs);
     }
 
+    @Import(name="totalVmStorageInGbs")
+    private @Nullable Output<Integer> totalVmStorageInGbs;
+
+    public Optional<Output<Integer>> totalVmStorageInGbs() {
+        return Optional.ofNullable(this.totalVmStorageInGbs);
+    }
+
     private CloudExadataInfrastructureConfigureExascaleManagementState() {}
 
     private CloudExadataInfrastructureConfigureExascaleManagementState(CloudExadataInfrastructureConfigureExascaleManagementState $) {
@@ -657,6 +664,7 @@ public final class CloudExadataInfrastructureConfigureExascaleManagementState ex
         this.timeCreated = $.timeCreated;
         this.totalStorageInGbs = $.totalStorageInGbs;
         this.totalStorageSizeInGbs = $.totalStorageSizeInGbs;
+        this.totalVmStorageInGbs = $.totalVmStorageInGbs;
     }
 
     public static Builder builder() {
@@ -1540,6 +1548,15 @@ public final class CloudExadataInfrastructureConfigureExascaleManagementState ex
          */
         public Builder totalStorageSizeInGbs(Integer totalStorageSizeInGbs) {
             return totalStorageSizeInGbs(Output.of(totalStorageSizeInGbs));
+        }
+
+        public Builder totalVmStorageInGbs(@Nullable Output<Integer> totalVmStorageInGbs) {
+            $.totalVmStorageInGbs = totalVmStorageInGbs;
+            return this;
+        }
+
+        public Builder totalVmStorageInGbs(Integer totalVmStorageInGbs) {
+            return totalVmStorageInGbs(Output.of(totalVmStorageInGbs));
         }
 
         public CloudExadataInfrastructureConfigureExascaleManagementState build() {

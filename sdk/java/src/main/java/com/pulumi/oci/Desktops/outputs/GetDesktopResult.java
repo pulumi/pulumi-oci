@@ -5,6 +5,7 @@ package com.pulumi.oci.Desktops.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Desktops.outputs.GetDesktopDesktopConnection;
 import com.pulumi.oci.Desktops.outputs.GetDesktopDevicePolicy;
 import com.pulumi.oci.Desktops.outputs.GetDesktopHostingOption;
 import java.lang.String;
@@ -19,6 +20,11 @@ public final class GetDesktopResult {
      * 
      */
     private Map<String,String> definedTags;
+    /**
+     * @return Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+     * 
+     */
+    private List<GetDesktopDesktopConnection> desktopConnections;
     private String desktopId;
     /**
      * @return Provides the settings for desktop and client device options, such as audio in and out, client drive mapping, and clipboard access.
@@ -73,6 +79,13 @@ public final class GetDesktopResult {
      */
     public Map<String,String> definedTags() {
         return this.definedTags;
+    }
+    /**
+     * @return Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+     * 
+     */
+    public List<GetDesktopDesktopConnection> desktopConnections() {
+        return this.desktopConnections;
     }
     public String desktopId() {
         return this.desktopId;
@@ -151,6 +164,7 @@ public final class GetDesktopResult {
     @CustomType.Builder
     public static final class Builder {
         private Map<String,String> definedTags;
+        private List<GetDesktopDesktopConnection> desktopConnections;
         private String desktopId;
         private List<GetDesktopDevicePolicy> devicePolicies;
         private String displayName;
@@ -165,6 +179,7 @@ public final class GetDesktopResult {
         public Builder(GetDesktopResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.definedTags = defaults.definedTags;
+    	      this.desktopConnections = defaults.desktopConnections;
     	      this.desktopId = defaults.desktopId;
     	      this.devicePolicies = defaults.devicePolicies;
     	      this.displayName = defaults.displayName;
@@ -184,6 +199,17 @@ public final class GetDesktopResult {
             }
             this.definedTags = definedTags;
             return this;
+        }
+        @CustomType.Setter
+        public Builder desktopConnections(List<GetDesktopDesktopConnection> desktopConnections) {
+            if (desktopConnections == null) {
+              throw new MissingRequiredPropertyException("GetDesktopResult", "desktopConnections");
+            }
+            this.desktopConnections = desktopConnections;
+            return this;
+        }
+        public Builder desktopConnections(GetDesktopDesktopConnection... desktopConnections) {
+            return desktopConnections(List.of(desktopConnections));
         }
         @CustomType.Setter
         public Builder desktopId(String desktopId) {
@@ -274,6 +300,7 @@ public final class GetDesktopResult {
         public GetDesktopResult build() {
             final var _resultValue = new GetDesktopResult();
             _resultValue.definedTags = definedTags;
+            _resultValue.desktopConnections = desktopConnections;
             _resultValue.desktopId = desktopId;
             _resultValue.devicePolicies = devicePolicies;
             _resultValue.displayName = displayName;

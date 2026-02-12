@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  *         pattern: networkFirewallPolicyUrlListUrlsPattern,
  *         type: networkFirewallPolicyUrlListUrlsType,
  *     }],
+ *     description: networkFirewallPolicyUrlListDescription,
  * });
  * ```
  *
@@ -60,6 +61,10 @@ export class NetworkFirewallPolicyUrlList extends pulumi.CustomResource {
     }
 
     /**
+     * (Updatable) The description of the Url list. This field can be used to add additional info.
+     */
+    declare public readonly description: pulumi.Output<string | undefined>;
+    /**
      * Unique name to identify the group of urls to be used in the policy rules.
      */
     declare public readonly name: pulumi.Output<string>;
@@ -93,6 +98,7 @@ export class NetworkFirewallPolicyUrlList extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyUrlListState | undefined;
+            resourceInputs["description"] = state?.description;
             resourceInputs["name"] = state?.name;
             resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
             resourceInputs["parentResourceId"] = state?.parentResourceId;
@@ -106,6 +112,7 @@ export class NetworkFirewallPolicyUrlList extends pulumi.CustomResource {
             if (args?.urls === undefined && !opts.urn) {
                 throw new Error("Missing required property 'urls'");
             }
+            resourceInputs["description"] = args?.description;
             resourceInputs["name"] = args?.name;
             resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
             resourceInputs["urls"] = args?.urls;
@@ -121,6 +128,10 @@ export class NetworkFirewallPolicyUrlList extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NetworkFirewallPolicyUrlList resources.
  */
 export interface NetworkFirewallPolicyUrlListState {
+    /**
+     * (Updatable) The description of the Url list. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * Unique name to identify the group of urls to be used in the policy rules.
      */
@@ -147,6 +158,10 @@ export interface NetworkFirewallPolicyUrlListState {
  * The set of arguments for constructing a NetworkFirewallPolicyUrlList resource.
  */
 export interface NetworkFirewallPolicyUrlListArgs {
+    /**
+     * (Updatable) The description of the Url list. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * Unique name to identify the group of urls to be used in the policy rules.
      */

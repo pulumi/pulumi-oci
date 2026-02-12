@@ -126,7 +126,7 @@ def get_log_analytics_unprocessed_data_bucket(namespace: Optional[_builtins.str]
     ```
 
 
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['namespace'] = namespace
@@ -157,7 +157,7 @@ def get_log_analytics_unprocessed_data_bucket_output(namespace: Optional[pulumi.
     ```
 
 
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['namespace'] = namespace

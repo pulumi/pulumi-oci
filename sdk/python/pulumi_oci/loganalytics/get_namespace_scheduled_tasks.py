@@ -89,6 +89,9 @@ class GetNamespaceScheduledTasksResult:
     @_builtins.property
     @pulumi.getter
     def namespace(self) -> _builtins.str:
+        """
+        The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
+        """
         return pulumi.get(self, "namespace")
 
     @_builtins.property
@@ -168,7 +171,7 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[_builtins.str] = None
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str target_service: The target service to use for filtering.
     :param _builtins.str task_type: Required parameter to specify schedule task type.
     :param _builtins.str template_id: A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
@@ -224,7 +227,7 @@ def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[_
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str target_service: The target service to use for filtering.
     :param _builtins.str task_type: Required parameter to specify schedule task type.
     :param _builtins.str template_id: A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.

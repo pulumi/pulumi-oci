@@ -126,7 +126,7 @@ def get_namespace_parser_actions(action_display_text: Optional[_builtins.str] = 
 
     :param _builtins.str action_display_text: The parser action display text used for filtering.
     :param _builtins.str name: The parser action name used for filtering.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['actionDisplayText'] = action_display_text
@@ -167,7 +167,7 @@ def get_namespace_parser_actions_output(action_display_text: Optional[pulumi.Inp
 
     :param _builtins.str action_display_text: The parser action display text used for filtering.
     :param _builtins.str name: The parser action name used for filtering.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['actionDisplayText'] = action_display_text

@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,7 +44,9 @@ type LookupNetworkFirewallPolicyDecryptionRuleResult struct {
 	Conditions []GetNetworkFirewallPolicyDecryptionRuleCondition `pulumi:"conditions"`
 	// The name of the decryption profile to use.
 	DecryptionProfile string `pulumi:"decryptionProfile"`
-	Id                string `pulumi:"id"`
+	// The description of the decryption rule. This field can be used to add additional info.
+	Description string `pulumi:"description"`
+	Id          string `pulumi:"id"`
 	// Name for the decryption rule, must be unique within the policy.
 	Name                    string `pulumi:"name"`
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
@@ -110,6 +112,11 @@ func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) Conditions() GetN
 // The name of the decryption profile to use.
 func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) DecryptionProfile() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNetworkFirewallPolicyDecryptionRuleResult) string { return v.DecryptionProfile }).(pulumi.StringOutput)
+}
+
+// The description of the decryption rule. This field can be used to add additional info.
+func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyDecryptionRuleResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) Id() pulumi.StringOutput {

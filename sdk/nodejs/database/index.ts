@@ -5,6 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AdvancedClusterFileSystemArgs, AdvancedClusterFileSystemState } from "./advancedClusterFileSystem";
+export type AdvancedClusterFileSystem = import("./advancedClusterFileSystem").AdvancedClusterFileSystem;
+export const AdvancedClusterFileSystem: typeof import("./advancedClusterFileSystem").AdvancedClusterFileSystem = null as any;
+utilities.lazyLoad(exports, ["AdvancedClusterFileSystem"], () => require("./advancedClusterFileSystem"));
+
+export { AdvancedClusterFileSystemMountArgs, AdvancedClusterFileSystemMountState } from "./advancedClusterFileSystemMount";
+export type AdvancedClusterFileSystemMount = import("./advancedClusterFileSystemMount").AdvancedClusterFileSystemMount;
+export const AdvancedClusterFileSystemMount: typeof import("./advancedClusterFileSystemMount").AdvancedClusterFileSystemMount = null as any;
+utilities.lazyLoad(exports, ["AdvancedClusterFileSystemMount"], () => require("./advancedClusterFileSystemMount"));
+
+export { AdvancedClusterFileSystemUnmountArgs, AdvancedClusterFileSystemUnmountState } from "./advancedClusterFileSystemUnmount";
+export type AdvancedClusterFileSystemUnmount = import("./advancedClusterFileSystemUnmount").AdvancedClusterFileSystemUnmount;
+export const AdvancedClusterFileSystemUnmount: typeof import("./advancedClusterFileSystemUnmount").AdvancedClusterFileSystemUnmount = null as any;
+utilities.lazyLoad(exports, ["AdvancedClusterFileSystemUnmount"], () => require("./advancedClusterFileSystemUnmount"));
+
 export { ApplicationVipArgs, ApplicationVipState } from "./applicationVip";
 export type ApplicationVip = import("./applicationVip").ApplicationVip;
 export const ApplicationVip: typeof import("./applicationVip").ApplicationVip = null as any;
@@ -314,6 +329,16 @@ export { ExternalPluggableDatabasesStackMonitoringArgs, ExternalPluggableDatabas
 export type ExternalPluggableDatabasesStackMonitoring = import("./externalPluggableDatabasesStackMonitoring").ExternalPluggableDatabasesStackMonitoring;
 export const ExternalPluggableDatabasesStackMonitoring: typeof import("./externalPluggableDatabasesStackMonitoring").ExternalPluggableDatabasesStackMonitoring = null as any;
 utilities.lazyLoad(exports, ["ExternalPluggableDatabasesStackMonitoring"], () => require("./externalPluggableDatabasesStackMonitoring"));
+
+export { GetAdvancedClusterFileSystemArgs, GetAdvancedClusterFileSystemResult, GetAdvancedClusterFileSystemOutputArgs } from "./getAdvancedClusterFileSystem";
+export const getAdvancedClusterFileSystem: typeof import("./getAdvancedClusterFileSystem").getAdvancedClusterFileSystem = null as any;
+export const getAdvancedClusterFileSystemOutput: typeof import("./getAdvancedClusterFileSystem").getAdvancedClusterFileSystemOutput = null as any;
+utilities.lazyLoad(exports, ["getAdvancedClusterFileSystem","getAdvancedClusterFileSystemOutput"], () => require("./getAdvancedClusterFileSystem"));
+
+export { GetAdvancedClusterFileSystemsArgs, GetAdvancedClusterFileSystemsResult, GetAdvancedClusterFileSystemsOutputArgs } from "./getAdvancedClusterFileSystems";
+export const getAdvancedClusterFileSystems: typeof import("./getAdvancedClusterFileSystems").getAdvancedClusterFileSystems = null as any;
+export const getAdvancedClusterFileSystemsOutput: typeof import("./getAdvancedClusterFileSystems").getAdvancedClusterFileSystemsOutput = null as any;
+utilities.lazyLoad(exports, ["getAdvancedClusterFileSystems","getAdvancedClusterFileSystemsOutput"], () => require("./getAdvancedClusterFileSystems"));
 
 export { GetApplicationVipArgs, GetApplicationVipResult, GetApplicationVipOutputArgs } from "./getApplicationVip";
 export const getApplicationVip: typeof import("./getApplicationVip").getApplicationVip = null as any;
@@ -1190,6 +1215,12 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:Database/advancedClusterFileSystem:AdvancedClusterFileSystem":
+                return new AdvancedClusterFileSystem(name, <any>undefined, { urn })
+            case "oci:Database/advancedClusterFileSystemMount:AdvancedClusterFileSystemMount":
+                return new AdvancedClusterFileSystemMount(name, <any>undefined, { urn })
+            case "oci:Database/advancedClusterFileSystemUnmount:AdvancedClusterFileSystemUnmount":
+                return new AdvancedClusterFileSystemUnmount(name, <any>undefined, { urn })
             case "oci:Database/applicationVip:ApplicationVip":
                 return new ApplicationVip(name, <any>undefined, { urn })
             case "oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase":
@@ -1351,6 +1382,9 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "Database/advancedClusterFileSystem", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/advancedClusterFileSystemMount", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/advancedClusterFileSystemUnmount", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/applicationVip", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousContainerDatabase", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousContainerDatabaseAddStandby", _module)

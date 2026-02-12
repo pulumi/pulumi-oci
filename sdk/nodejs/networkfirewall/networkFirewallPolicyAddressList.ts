@@ -16,6 +16,7 @@ import * as utilities from "../utilities";
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     type: networkFirewallPolicyAddressListType,
  *     addresses: networkFirewallPolicyAddressListAddresses,
+ *     description: networkFirewallPolicyAddressListDescription,
  * });
  * ```
  *
@@ -60,6 +61,10 @@ export class NetworkFirewallPolicyAddressList extends pulumi.CustomResource {
      */
     declare public readonly addresses: pulumi.Output<string[]>;
     /**
+     * (Updatable) The description of the address list. This field can be used to add additional info.
+     */
+    declare public readonly description: pulumi.Output<string | undefined>;
+    /**
      * Unique name to identify the group of addresses to be used in the policy rules.
      */
     declare public readonly name: pulumi.Output<string>;
@@ -98,6 +103,7 @@ export class NetworkFirewallPolicyAddressList extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyAddressListState | undefined;
             resourceInputs["addresses"] = state?.addresses;
+            resourceInputs["description"] = state?.description;
             resourceInputs["name"] = state?.name;
             resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
             resourceInputs["parentResourceId"] = state?.parentResourceId;
@@ -115,6 +121,7 @@ export class NetworkFirewallPolicyAddressList extends pulumi.CustomResource {
                 throw new Error("Missing required property 'type'");
             }
             resourceInputs["addresses"] = args?.addresses;
+            resourceInputs["description"] = args?.description;
             resourceInputs["name"] = args?.name;
             resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
             resourceInputs["type"] = args?.type;
@@ -134,6 +141,10 @@ export interface NetworkFirewallPolicyAddressListState {
      * (Updatable) List of addresses.
      */
     addresses?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) The description of the address list. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * Unique name to identify the group of addresses to be used in the policy rules.
      */
@@ -168,6 +179,10 @@ export interface NetworkFirewallPolicyAddressListArgs {
      * (Updatable) List of addresses.
      */
     addresses: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) The description of the address list. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * Unique name to identify the group of addresses to be used in the policy rules.
      */

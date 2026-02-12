@@ -6,6 +6,9 @@ import builtins as _builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .advanced_cluster_file_system import *
+from .advanced_cluster_file_system_mount import *
+from .advanced_cluster_file_system_unmount import *
 from .application_vip import *
 from .autonomous_container_database import *
 from .autonomous_container_database_add_standby import *
@@ -68,6 +71,8 @@ from .external_pluggable_database import *
 from .external_pluggable_database_management import *
 from .external_pluggable_database_operations_insights_management import *
 from .external_pluggable_databases_stack_monitoring import *
+from .get_advanced_cluster_file_system import *
+from .get_advanced_cluster_file_systems import *
 from .get_application_vip import *
 from .get_application_vips import *
 from .get_autonomous_character_sets import *

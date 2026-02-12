@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +19,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -28,8 +28,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := loganalytics.NewNamespaceStorageArchivalConfig(ctx, "test_namespace_storage_archival_config", &loganalytics.NamespaceStorageArchivalConfigArgs{
 //				ArchivingConfiguration: &loganalytics.NamespaceStorageArchivalConfigArchivingConfigurationArgs{
-//					ActiveStorageDuration:   pulumi.Any(namespaceStorageArchivalConfigArchivingConfigurationActiveStorageDuration),
-//					ArchivalStorageDuration: pulumi.Any(namespaceStorageArchivalConfigArchivingConfigurationArchivalStorageDuration),
+//					ActiveStorageDuration:       pulumi.Any(namespaceStorageArchivalConfigArchivingConfigurationActiveStorageDuration),
+//					ArchivalStorageDuration:     pulumi.Any(namespaceStorageArchivalConfigArchivingConfigurationArchivalStorageDuration),
+//					TimeOldestActiveBucketEnded: pulumi.Any(namespaceStorageArchivalConfigArchivingConfigurationTimeOldestActiveBucketEnded),
 //				},
 //				Namespace: pulumi.Any(namespaceStorageArchivalConfigNamespace),
 //			})
@@ -48,10 +49,7 @@ type NamespaceStorageArchivalConfig struct {
 	ArchivingConfiguration NamespaceStorageArchivalConfigArchivingConfigurationOutput `pulumi:"archivingConfiguration"`
 	// This indicates if old data can be archived for a tenancy
 	IsArchivingEnabled pulumi.BoolOutput `pulumi:"isArchivingEnabled"`
-	// The Logging Analytics namespace used for the request.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 }
 
@@ -95,10 +93,7 @@ type namespaceStorageArchivalConfigState struct {
 	ArchivingConfiguration *NamespaceStorageArchivalConfigArchivingConfiguration `pulumi:"archivingConfiguration"`
 	// This indicates if old data can be archived for a tenancy
 	IsArchivingEnabled *bool `pulumi:"isArchivingEnabled"`
-	// The Logging Analytics namespace used for the request.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace *string `pulumi:"namespace"`
 }
 
@@ -107,10 +102,7 @@ type NamespaceStorageArchivalConfigState struct {
 	ArchivingConfiguration NamespaceStorageArchivalConfigArchivingConfigurationPtrInput
 	// This indicates if old data can be archived for a tenancy
 	IsArchivingEnabled pulumi.BoolPtrInput
-	// The Logging Analytics namespace used for the request.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringPtrInput
 }
 
@@ -121,10 +113,7 @@ func (NamespaceStorageArchivalConfigState) ElementType() reflect.Type {
 type namespaceStorageArchivalConfigArgs struct {
 	// (Updatable) This is the configuration for data archiving in object storage
 	ArchivingConfiguration NamespaceStorageArchivalConfigArchivingConfiguration `pulumi:"archivingConfiguration"`
-	// The Logging Analytics namespace used for the request.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -132,10 +121,7 @@ type namespaceStorageArchivalConfigArgs struct {
 type NamespaceStorageArchivalConfigArgs struct {
 	// (Updatable) This is the configuration for data archiving in object storage
 	ArchivingConfiguration NamespaceStorageArchivalConfigArchivingConfigurationInput
-	// The Logging Analytics namespace used for the request.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput
 }
 
@@ -238,10 +224,7 @@ func (o NamespaceStorageArchivalConfigOutput) IsArchivingEnabled() pulumi.BoolOu
 	return o.ApplyT(func(v *NamespaceStorageArchivalConfig) pulumi.BoolOutput { return v.IsArchivingEnabled }).(pulumi.BoolOutput)
 }
 
-// The Logging Analytics namespace used for the request.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 func (o NamespaceStorageArchivalConfigOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceStorageArchivalConfig) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }

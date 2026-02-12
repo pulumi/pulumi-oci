@@ -107,7 +107,7 @@ def get_network_firewall_policy_nat_rules(display_name: Optional[_builtins.str] 
     """
     This data source provides the list of Network Firewall Policy Nat Rules in Oracle Cloud Infrastructure Network Firewall service.
 
-    Returns a list of NAT Rules for the Network Firewall Policy.
+    Returns a list of [NAT rules](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
 
     ## Example Usage
 
@@ -122,7 +122,7 @@ def get_network_firewall_policy_nat_rules(display_name: Optional[_builtins.str] 
 
 
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
-    :param _builtins.int nat_rule_priority_order: Unique priority order for NAT Rules in the network firewall policy.
+    :param _builtins.int nat_rule_priority_order: Unique priority order for NAT rules in the Network Firewall policy.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
     """
     __args__ = dict()
@@ -148,7 +148,7 @@ def get_network_firewall_policy_nat_rules_output(display_name: Optional[pulumi.I
     """
     This data source provides the list of Network Firewall Policy Nat Rules in Oracle Cloud Infrastructure Network Firewall service.
 
-    Returns a list of NAT Rules for the Network Firewall Policy.
+    Returns a list of [NAT rules](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
 
     ## Example Usage
 
@@ -163,7 +163,7 @@ def get_network_firewall_policy_nat_rules_output(display_name: Optional[pulumi.I
 
 
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
-    :param _builtins.int nat_rule_priority_order: Unique priority order for NAT Rules in the network firewall policy.
+    :param _builtins.int nat_rule_priority_order: Unique priority order for NAT rules in the Network Firewall policy.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
     """
     __args__ = dict()

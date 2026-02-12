@@ -25,6 +25,7 @@ namespace Pulumi.Oci.NetworkFirewall
     ///         Apps = networkFirewallPolicyApplicationGroupApps,
     ///         Name = networkFirewallPolicyApplicationGroupName,
     ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+    ///         Description = networkFirewallPolicyApplicationGroupDescription,
     ///     });
     /// 
     /// });
@@ -42,10 +43,16 @@ namespace Pulumi.Oci.NetworkFirewall
     public partial class NetworkFirewallPolicyApplicationGroup : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+        /// (Updatable) Collection of application names.
         /// </summary>
         [Output("apps")]
         public Output<ImmutableArray<string>> Apps { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The description of the application group. This field can be used to add additional info.
+        /// </summary>
+        [Output("description")]
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// Name of the application group.
@@ -125,13 +132,19 @@ namespace Pulumi.Oci.NetworkFirewall
         private InputList<string>? _apps;
 
         /// <summary>
-        /// (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+        /// (Updatable) Collection of application names.
         /// </summary>
         public InputList<string> Apps
         {
             get => _apps ?? (_apps = new InputList<string>());
             set => _apps = value;
         }
+
+        /// <summary>
+        /// (Updatable) The description of the application group. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
 
         /// <summary>
         /// Name of the application group.
@@ -161,13 +174,19 @@ namespace Pulumi.Oci.NetworkFirewall
         private InputList<string>? _apps;
 
         /// <summary>
-        /// (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+        /// (Updatable) Collection of application names.
         /// </summary>
         public InputList<string> Apps
         {
             get => _apps ?? (_apps = new InputList<string>());
             set => _apps = value;
         }
+
+        /// <summary>
+        /// (Updatable) The description of the application group. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
 
         /// <summary>
         /// Name of the application group.

@@ -15,14 +15,14 @@ public final class GetNamespaceIngestTimeRuleArgs extends com.pulumi.resources.I
     public static final GetNamespaceIngestTimeRuleArgs Empty = new GetNamespaceIngestTimeRuleArgs();
 
     /**
-     * Unique ocid of the ingest time rule.
+     * Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running &#39;oci log-analytics ingest-time-rule list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;id&#39; parameter value contains the rule ID.
      * 
      */
     @Import(name="ingestTimeRuleId", required=true)
     private Output<String> ingestTimeRuleId;
 
     /**
-     * @return Unique ocid of the ingest time rule.
+     * @return Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running &#39;oci log-analytics ingest-time-rule list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;id&#39; parameter value contains the rule ID.
      * 
      */
     public Output<String> ingestTimeRuleId() {
@@ -30,14 +30,14 @@ public final class GetNamespaceIngestTimeRuleArgs extends com.pulumi.resources.I
     }
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public Output<String> namespace() {
@@ -70,7 +70,7 @@ public final class GetNamespaceIngestTimeRuleArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param ingestTimeRuleId Unique ocid of the ingest time rule.
+         * @param ingestTimeRuleId Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running &#39;oci log-analytics ingest-time-rule list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;id&#39; parameter value contains the rule ID.
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class GetNamespaceIngestTimeRuleArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param ingestTimeRuleId Unique ocid of the ingest time rule.
+         * @param ingestTimeRuleId Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running &#39;oci log-analytics ingest-time-rule list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;id&#39; parameter value contains the rule ID.
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class GetNamespaceIngestTimeRuleArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class GetNamespaceIngestTimeRuleArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 

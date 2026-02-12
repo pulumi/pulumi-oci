@@ -22,6 +22,11 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule
      */
     private String misfirePolicy;
     /**
+     * @return Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
+     * 
+     */
+    private Integer queryOffsetSecs;
+    /**
      * @return Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
      * 
      */
@@ -31,6 +36,11 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule
      * 
      */
     private Integer repeatCount;
+    /**
+     * @return End time for the schedule, even if the schedule would otherwise have remaining executions.
+     * 
+     */
+    private String timeEnd;
     /**
      * @return Time zone, by default UTC.
      * 
@@ -58,6 +68,13 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule
         return this.misfirePolicy;
     }
     /**
+     * @return Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
+     * 
+     */
+    public Integer queryOffsetSecs() {
+        return this.queryOffsetSecs;
+    }
+    /**
      * @return Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
      * 
      */
@@ -70,6 +87,13 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule
      */
     public Integer repeatCount() {
         return this.repeatCount;
+    }
+    /**
+     * @return End time for the schedule, even if the schedule would otherwise have remaining executions.
+     * 
+     */
+    public String timeEnd() {
+        return this.timeEnd;
     }
     /**
      * @return Time zone, by default UTC.
@@ -97,8 +121,10 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule
     public static final class Builder {
         private String expression;
         private String misfirePolicy;
+        private Integer queryOffsetSecs;
         private String recurringInterval;
         private Integer repeatCount;
+        private String timeEnd;
         private String timeZone;
         private String type;
         public Builder() {}
@@ -106,8 +132,10 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule
     	      Objects.requireNonNull(defaults);
     	      this.expression = defaults.expression;
     	      this.misfirePolicy = defaults.misfirePolicy;
+    	      this.queryOffsetSecs = defaults.queryOffsetSecs;
     	      this.recurringInterval = defaults.recurringInterval;
     	      this.repeatCount = defaults.repeatCount;
+    	      this.timeEnd = defaults.timeEnd;
     	      this.timeZone = defaults.timeZone;
     	      this.type = defaults.type;
         }
@@ -129,6 +157,14 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule
             return this;
         }
         @CustomType.Setter
+        public Builder queryOffsetSecs(Integer queryOffsetSecs) {
+            if (queryOffsetSecs == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule", "queryOffsetSecs");
+            }
+            this.queryOffsetSecs = queryOffsetSecs;
+            return this;
+        }
+        @CustomType.Setter
         public Builder recurringInterval(String recurringInterval) {
             if (recurringInterval == null) {
               throw new MissingRequiredPropertyException("GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule", "recurringInterval");
@@ -142,6 +178,14 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule
               throw new MissingRequiredPropertyException("GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule", "repeatCount");
             }
             this.repeatCount = repeatCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeEnd(String timeEnd) {
+            if (timeEnd == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule", "timeEnd");
+            }
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
@@ -164,8 +208,10 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule
             final var _resultValue = new GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule();
             _resultValue.expression = expression;
             _resultValue.misfirePolicy = misfirePolicy;
+            _resultValue.queryOffsetSecs = queryOffsetSecs;
             _resultValue.recurringInterval = recurringInterval;
             _resultValue.repeatCount = repeatCount;
+            _resultValue.timeEnd = timeEnd;
             _resultValue.timeZone = timeZone;
             _resultValue.type = type;
             return _resultValue;

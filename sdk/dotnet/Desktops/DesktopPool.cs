@@ -48,6 +48,7 @@ namespace Pulumi.Oci.Desktops
     ///             IsKeyboardEnabled = desktopPoolDevicePolicyIsKeyboardEnabled,
     ///             IsPointerEnabled = desktopPoolDevicePolicyIsPointerEnabled,
     ///             IsPrintingEnabled = desktopPoolDevicePolicyIsPrintingEnabled,
+    ///             IsVideoInputEnabled = desktopPoolDevicePolicyIsVideoInputEnabled,
     ///         },
     ///         DisplayName = desktopPoolDisplayName,
     ///         Image = new Oci.Desktops.Inputs.DesktopPoolImageArgs
@@ -67,6 +68,7 @@ namespace Pulumi.Oci.Desktops
     ///         StandbySize = desktopPoolStandbySize,
     ///         StorageBackupPolicyId = "ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz",
     ///         StorageSizeInGbs = desktopPoolStorageSizeInGbs,
+    ///         BootVolumeSizeInGbs = desktopPoolBootVolumeSizeInGbs,
     ///         AreVolumesPreserved = desktopPoolAreVolumesPreserved,
     ///         DefinedTags = 
     ///         {
@@ -157,6 +159,12 @@ namespace Pulumi.Oci.Desktops
         public Output<Outputs.DesktopPoolAvailabilityPolicy> AvailabilityPolicy { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The size in GBs of the boot volume for the desktop pool.
+        /// </summary>
+        [Output("bootVolumeSizeInGbs")]
+        public Output<int> BootVolumeSizeInGbs { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The OCID of the compartment which will contain the desktop pool.
         /// </summary>
         [Output("compartmentId")]
@@ -199,7 +207,7 @@ namespace Pulumi.Oci.Desktops
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Provides information about the desktop image.
+        /// (Updatable) Provides information about the desktop image.
         /// </summary>
         [Output("image")]
         public Output<Outputs.DesktopPoolImage> Image { get; private set; } = null!;
@@ -375,6 +383,12 @@ namespace Pulumi.Oci.Desktops
         public Input<Inputs.DesktopPoolAvailabilityPolicyArgs> AvailabilityPolicy { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The size in GBs of the boot volume for the desktop pool.
+        /// </summary>
+        [Input("bootVolumeSizeInGbs")]
+        public Input<int>? BootVolumeSizeInGbs { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of the compartment which will contain the desktop pool.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -429,7 +443,7 @@ namespace Pulumi.Oci.Desktops
         }
 
         /// <summary>
-        /// Provides information about the desktop image.
+        /// (Updatable) Provides information about the desktop image.
         /// </summary>
         [Input("image", required: true)]
         public Input<Inputs.DesktopPoolImageArgs> Image { get; set; } = null!;
@@ -567,6 +581,12 @@ namespace Pulumi.Oci.Desktops
         public Input<Inputs.DesktopPoolAvailabilityPolicyGetArgs>? AvailabilityPolicy { get; set; }
 
         /// <summary>
+        /// (Updatable) The size in GBs of the boot volume for the desktop pool.
+        /// </summary>
+        [Input("bootVolumeSizeInGbs")]
+        public Input<int>? BootVolumeSizeInGbs { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of the compartment which will contain the desktop pool.
         /// </summary>
         [Input("compartmentId")]
@@ -621,7 +641,7 @@ namespace Pulumi.Oci.Desktops
         }
 
         /// <summary>
-        /// Provides information about the desktop image.
+        /// (Updatable) Provides information about the desktop image.
         /// </summary>
         [Input("image")]
         public Input<Inputs.DesktopPoolImageGetArgs>? Image { get; set; }

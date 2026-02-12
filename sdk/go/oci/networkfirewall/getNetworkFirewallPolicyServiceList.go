@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -36,7 +36,9 @@ type LookupNetworkFirewallPolicyServiceListArgs struct {
 
 // A collection of values returned by getNetworkFirewallPolicyServiceList.
 type LookupNetworkFirewallPolicyServiceListResult struct {
-	Id string `pulumi:"id"`
+	// The description of the service list. This field can be used to add additional info.
+	Description string `pulumi:"description"`
+	Id          string `pulumi:"id"`
 	// Name of the service Group.
 	Name                    string `pulumi:"name"`
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
@@ -82,6 +84,11 @@ func (o LookupNetworkFirewallPolicyServiceListResultOutput) ToLookupNetworkFirew
 
 func (o LookupNetworkFirewallPolicyServiceListResultOutput) ToLookupNetworkFirewallPolicyServiceListResultOutputWithContext(ctx context.Context) LookupNetworkFirewallPolicyServiceListResultOutput {
 	return o
+}
+
+// The description of the service list. This field can be used to add additional info.
+func (o LookupNetworkFirewallPolicyServiceListResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyServiceListResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 func (o LookupNetworkFirewallPolicyServiceListResultOutput) Id() pulumi.StringOutput {

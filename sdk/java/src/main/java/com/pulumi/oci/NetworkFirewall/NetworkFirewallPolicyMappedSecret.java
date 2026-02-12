@@ -12,6 +12,7 @@ import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyMappedSecretSt
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -46,6 +47,7 @@ import javax.annotation.Nullable;
  *             .type(networkFirewallPolicyMappedSecretType)
  *             .vaultSecretId(testSecret.id())
  *             .versionNumber(networkFirewallPolicyMappedSecretVersionNumber)
+ *             .description(networkFirewallPolicyMappedSecretDescription)
  *             .build());
  * 
  *     }
@@ -64,6 +66,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret")
 public class NetworkFirewallPolicyMappedSecret extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) The description of the mapped secret. This field can be used to add additional info.
+     * 
+     */
+    @Export(name="description", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> description;
+
+    /**
+     * @return (Updatable) The description of the mapped secret. This field can be used to add additional info.
+     * 
+     */
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
+    }
     /**
      * Unique name to identify the group of urls to be used in the policy rules.
      * 

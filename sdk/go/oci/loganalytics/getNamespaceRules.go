@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -64,7 +64,7 @@ type GetNamespaceRulesArgs struct {
 	Filters     []GetNamespaceRulesFilter `pulumi:"filters"`
 	// The rule kind used for filtering. Only rules of the specified kind will be returned.
 	Kind *string `pulumi:"kind"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 	// The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
 	State *string `pulumi:"state"`
@@ -86,7 +86,7 @@ type GetNamespaceRulesResult struct {
 	Namespace string  `pulumi:"namespace"`
 	// The list of rule_summary_collection.
 	RuleSummaryCollections []GetNamespaceRulesRuleSummaryCollection `pulumi:"ruleSummaryCollections"`
-	// The current state of the logging analytics rule.
+	// The current state of the Log Analytics rule.
 	State *string `pulumi:"state"`
 	// The target service.
 	TargetService *string `pulumi:"targetService"`
@@ -110,7 +110,7 @@ type GetNamespaceRulesOutputArgs struct {
 	Filters     GetNamespaceRulesFilterArrayInput `pulumi:"filters"`
 	// The rule kind used for filtering. Only rules of the specified kind will be returned.
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -172,7 +172,7 @@ func (o GetNamespaceRulesResultOutput) RuleSummaryCollections() GetNamespaceRule
 	}).(GetNamespaceRulesRuleSummaryCollectionArrayOutput)
 }
 
-// The current state of the logging analytics rule.
+// The current state of the Log Analytics rule.
 func (o GetNamespaceRulesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetNamespaceRulesResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

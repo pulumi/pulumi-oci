@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -68,7 +68,7 @@ type GetNamespaceEffectivePropertiesArgs struct {
 	IsIncludePatterns *bool `pulumi:"isIncludePatterns"`
 	// The property name used for filtering.
 	Name *string `pulumi:"name"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 	// The pattern id.
 	PatternId *int `pulumi:"patternId"`
@@ -116,7 +116,7 @@ type GetNamespaceEffectivePropertiesOutputArgs struct {
 	IsIncludePatterns pulumi.BoolPtrInput `pulumi:"isIncludePatterns"`
 	// The property name used for filtering.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The pattern id.
 	PatternId pulumi.IntPtrInput `pulumi:"patternId"`

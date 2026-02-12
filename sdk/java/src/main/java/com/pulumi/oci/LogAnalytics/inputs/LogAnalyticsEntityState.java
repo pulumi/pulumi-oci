@@ -50,14 +50,14 @@ public final class LogAnalyticsEntityState extends com.pulumi.resources.Resource
     }
 
     /**
-     * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+     * (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      * 
      */
     @Import(name="cloudResourceId")
     private @Nullable Output<String> cloudResourceId;
 
     /**
-     * @return The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+     * @return (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      * 
      */
     public Optional<Output<String>> cloudResourceId() {
@@ -245,14 +245,14 @@ public final class LogAnalyticsEntityState extends com.pulumi.resources.Resource
     }
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -459,7 +459,7 @@ public final class LogAnalyticsEntityState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param cloudResourceId The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+         * @param cloudResourceId (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
          * 
          * @return builder
          * 
@@ -470,7 +470,7 @@ public final class LogAnalyticsEntityState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param cloudResourceId The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+         * @param cloudResourceId (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
          * 
          * @return builder
          * 
@@ -732,7 +732,7 @@ public final class LogAnalyticsEntityState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 
@@ -743,7 +743,7 @@ public final class LogAnalyticsEntityState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 

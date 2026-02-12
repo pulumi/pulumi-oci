@@ -42,6 +42,7 @@ namespace Pulumi.Oci.NetworkFirewall
     ///             MustEnablePrivateNat = networkFirewallNatConfigurationMustEnablePrivateNat,
     ///         },
     ///         NetworkSecurityGroupIds = networkFirewallNetworkSecurityGroupIds,
+    ///         Shape = networkFirewallShape,
     ///     });
     /// 
     /// });
@@ -107,7 +108,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Nat Configuration request to use Nat feature on firewall.
+        /// (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
         /// </summary>
         [Output("natConfiguration")]
         public Output<Outputs.NetworkFirewallNatConfiguration> NatConfiguration { get; private set; } = null!;
@@ -123,6 +124,12 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         [Output("networkSecurityGroupIds")]
         public Output<ImmutableArray<string>> NetworkSecurityGroupIds { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
+        /// </summary>
+        [Output("shape")]
+        public Output<string> Shape { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the Network Firewall.
@@ -259,7 +266,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Input<string>? Ipv6address { get; set; }
 
         /// <summary>
-        /// (Updatable) Nat Configuration request to use Nat feature on firewall.
+        /// (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
         /// </summary>
         [Input("natConfiguration")]
         public Input<Inputs.NetworkFirewallNatConfigurationArgs>? NatConfiguration { get; set; }
@@ -281,6 +288,12 @@ namespace Pulumi.Oci.NetworkFirewall
             get => _networkSecurityGroupIds ?? (_networkSecurityGroupIds = new InputList<string>());
             set => _networkSecurityGroupIds = value;
         }
+
+        /// <summary>
+        /// (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
+        /// </summary>
+        [Input("shape")]
+        public Input<string>? Shape { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
@@ -361,7 +374,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Nat Configuration request to use Nat feature on firewall.
+        /// (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
         /// </summary>
         [Input("natConfiguration")]
         public Input<Inputs.NetworkFirewallNatConfigurationGetArgs>? NatConfiguration { get; set; }
@@ -383,6 +396,12 @@ namespace Pulumi.Oci.NetworkFirewall
             get => _networkSecurityGroupIds ?? (_networkSecurityGroupIds = new InputList<string>());
             set => _networkSecurityGroupIds = value;
         }
+
+        /// <summary>
+        /// (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
+        /// </summary>
+        [Input("shape")]
+        public Input<string>? Shape { get; set; }
 
         /// <summary>
         /// The current state of the Network Firewall.

@@ -5,7 +5,9 @@ package com.pulumi.oci.LogAnalytics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.LogAnalytics.inputs.NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -28,6 +30,21 @@ public final class NamespaceScheduledTaskActionMetricExtractionArgs extends com.
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * Details for the metrics to be collected.
+     * 
+     */
+    @Import(name="metricCollections")
+    private @Nullable Output<List<NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs>> metricCollections;
+
+    /**
+     * @return Details for the metrics to be collected.
+     * 
+     */
+    public Optional<Output<List<NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs>>> metricCollections() {
+        return Optional.ofNullable(this.metricCollections);
     }
 
     /**
@@ -79,6 +96,7 @@ public final class NamespaceScheduledTaskActionMetricExtractionArgs extends com.
 
     private NamespaceScheduledTaskActionMetricExtractionArgs(NamespaceScheduledTaskActionMetricExtractionArgs $) {
         this.compartmentId = $.compartmentId;
+        this.metricCollections = $.metricCollections;
         this.metricName = $.metricName;
         this.namespace = $.namespace;
         this.resourceGroup = $.resourceGroup;
@@ -121,6 +139,37 @@ public final class NamespaceScheduledTaskActionMetricExtractionArgs extends com.
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param metricCollections Details for the metrics to be collected.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder metricCollections(@Nullable Output<List<NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs>> metricCollections) {
+            $.metricCollections = metricCollections;
+            return this;
+        }
+
+        /**
+         * @param metricCollections Details for the metrics to be collected.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder metricCollections(List<NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs> metricCollections) {
+            return metricCollections(Output.of(metricCollections));
+        }
+
+        /**
+         * @param metricCollections Details for the metrics to be collected.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder metricCollections(NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs... metricCollections) {
+            return metricCollections(List.of(metricCollections));
         }
 
         /**

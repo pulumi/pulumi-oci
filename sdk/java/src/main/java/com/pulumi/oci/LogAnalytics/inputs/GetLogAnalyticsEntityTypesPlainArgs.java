@@ -70,14 +70,14 @@ public final class GetLogAnalyticsEntityTypesPlainArgs extends com.pulumi.resour
     }
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     @Import(name="namespace", required=true)
     private String namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public String namespace() {
@@ -85,14 +85,14 @@ public final class GetLogAnalyticsEntityTypesPlainArgs extends com.pulumi.resour
     }
 
     /**
-     * A filter to return only those log analytics entity types with the specified lifecycle state. The state value is case-insensitive.
+     * A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
      * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
-     * @return A filter to return only those log analytics entity types with the specified lifecycle state. The state value is case-insensitive.
+     * @return A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
      * 
      */
     public Optional<String> state() {
@@ -171,7 +171,7 @@ public final class GetLogAnalyticsEntityTypesPlainArgs extends com.pulumi.resour
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class GetLogAnalyticsEntityTypesPlainArgs extends com.pulumi.resour
         }
 
         /**
-         * @param state A filter to return only those log analytics entity types with the specified lifecycle state. The state value is case-insensitive.
+         * @param state A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
          * 
          * @return builder
          * 

@@ -4,7 +4,9 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.LogAnalytics.outputs.NamespaceScheduledTaskActionMetricExtractionMetricCollection;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -16,6 +18,11 @@ public final class NamespaceScheduledTaskActionMetricExtraction {
      * 
      */
     private @Nullable String compartmentId;
+    /**
+     * @return Details for the metrics to be collected.
+     * 
+     */
+    private @Nullable List<NamespaceScheduledTaskActionMetricExtractionMetricCollection> metricCollections;
     /**
      * @return The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
      * 
@@ -39,6 +46,13 @@ public final class NamespaceScheduledTaskActionMetricExtraction {
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+    /**
+     * @return Details for the metrics to be collected.
+     * 
+     */
+    public List<NamespaceScheduledTaskActionMetricExtractionMetricCollection> metricCollections() {
+        return this.metricCollections == null ? List.of() : this.metricCollections;
     }
     /**
      * @return The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
@@ -72,6 +86,7 @@ public final class NamespaceScheduledTaskActionMetricExtraction {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
+        private @Nullable List<NamespaceScheduledTaskActionMetricExtractionMetricCollection> metricCollections;
         private @Nullable String metricName;
         private @Nullable String namespace;
         private @Nullable String resourceGroup;
@@ -79,6 +94,7 @@ public final class NamespaceScheduledTaskActionMetricExtraction {
         public Builder(NamespaceScheduledTaskActionMetricExtraction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.metricCollections = defaults.metricCollections;
     	      this.metricName = defaults.metricName;
     	      this.namespace = defaults.namespace;
     	      this.resourceGroup = defaults.resourceGroup;
@@ -89,6 +105,15 @@ public final class NamespaceScheduledTaskActionMetricExtraction {
 
             this.compartmentId = compartmentId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder metricCollections(@Nullable List<NamespaceScheduledTaskActionMetricExtractionMetricCollection> metricCollections) {
+
+            this.metricCollections = metricCollections;
+            return this;
+        }
+        public Builder metricCollections(NamespaceScheduledTaskActionMetricExtractionMetricCollection... metricCollections) {
+            return metricCollections(List.of(metricCollections));
         }
         @CustomType.Setter
         public Builder metricName(@Nullable String metricName) {
@@ -111,6 +136,7 @@ public final class NamespaceScheduledTaskActionMetricExtraction {
         public NamespaceScheduledTaskActionMetricExtraction build() {
             final var _resultValue = new NamespaceScheduledTaskActionMetricExtraction();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.metricCollections = metricCollections;
             _resultValue.metricName = metricName;
             _resultValue.namespace = namespace;
             _resultValue.resourceGroup = resourceGroup;

@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -19,7 +19,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/database"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -84,7 +84,9 @@ import (
 //				SubscriptionId:           pulumi.Any(tenantSubscriptionId),
 //				SystemVersion:            pulumi.Any(cloudVmClusterSystemVersion),
 //				TimeZone:                 pulumi.Any(cloudVmClusterTimeZone),
+//				VmBackupStorageType:      pulumi.Any(cloudVmClusterVmBackupStorageType),
 //				VmClusterType:            pulumi.Any(cloudVmClusterVmClusterType),
+//				VmFileSystemStorageType:  pulumi.Any(cloudVmClusterVmFileSystemStorageType),
 //			})
 //			if err != nil {
 //				return err
@@ -240,11 +242,15 @@ type CloudVmCluster struct {
 	VipIds pulumi.StringArrayOutput `pulumi:"vipIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
 	Vipv6ids pulumi.StringArrayOutput `pulumi:"vipv6ids"`
+	// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+	VmBackupStorageType pulumi.StringOutput `pulumi:"vmBackupStorageType"`
 	// The vmcluster type for the VM cluster/Cloud VM cluster.
+	VmClusterType pulumi.StringOutput `pulumi:"vmClusterType"`
+	// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VmClusterType pulumi.StringOutput `pulumi:"vmClusterType"`
+	VmFileSystemStorageType pulumi.StringOutput `pulumi:"vmFileSystemStorageType"`
 	// The OCID of the zone the cloud VM cluster is associated with.
 	ZoneId pulumi.StringOutput `pulumi:"zoneId"`
 }
@@ -441,11 +447,15 @@ type cloudVmClusterState struct {
 	VipIds []string `pulumi:"vipIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
 	Vipv6ids []string `pulumi:"vipv6ids"`
+	// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+	VmBackupStorageType *string `pulumi:"vmBackupStorageType"`
 	// The vmcluster type for the VM cluster/Cloud VM cluster.
+	VmClusterType *string `pulumi:"vmClusterType"`
+	// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VmClusterType *string `pulumi:"vmClusterType"`
+	VmFileSystemStorageType *string `pulumi:"vmFileSystemStorageType"`
 	// The OCID of the zone the cloud VM cluster is associated with.
 	ZoneId *string `pulumi:"zoneId"`
 }
@@ -586,11 +596,15 @@ type CloudVmClusterState struct {
 	VipIds pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
 	Vipv6ids pulumi.StringArrayInput
+	// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+	VmBackupStorageType pulumi.StringPtrInput
 	// The vmcluster type for the VM cluster/Cloud VM cluster.
+	VmClusterType pulumi.StringPtrInput
+	// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VmClusterType pulumi.StringPtrInput
+	VmFileSystemStorageType pulumi.StringPtrInput
 	// The OCID of the zone the cloud VM cluster is associated with.
 	ZoneId pulumi.StringPtrInput
 }
@@ -693,11 +707,15 @@ type cloudVmClusterArgs struct {
 	TdeKeyStoreType *string `pulumi:"tdeKeyStoreType"`
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone *string `pulumi:"timeZone"`
+	// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+	VmBackupStorageType *string `pulumi:"vmBackupStorageType"`
 	// The vmcluster type for the VM cluster/Cloud VM cluster.
+	VmClusterType *string `pulumi:"vmClusterType"`
+	// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VmClusterType *string `pulumi:"vmClusterType"`
+	VmFileSystemStorageType *string `pulumi:"vmFileSystemStorageType"`
 }
 
 // The set of arguments for constructing a CloudVmCluster resource.
@@ -795,11 +813,15 @@ type CloudVmClusterArgs struct {
 	TdeKeyStoreType pulumi.StringPtrInput
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringPtrInput
+	// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+	VmBackupStorageType pulumi.StringPtrInput
 	// The vmcluster type for the VM cluster/Cloud VM cluster.
+	VmClusterType pulumi.StringPtrInput
+	// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VmClusterType pulumi.StringPtrInput
+	VmFileSystemStorageType pulumi.StringPtrInput
 }
 
 func (CloudVmClusterArgs) ElementType() reflect.Type {
@@ -1204,12 +1226,22 @@ func (o CloudVmClusterOutput) Vipv6ids() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringArrayOutput { return v.Vipv6ids }).(pulumi.StringArrayOutput)
 }
 
+// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+func (o CloudVmClusterOutput) VmBackupStorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.VmBackupStorageType }).(pulumi.StringOutput)
+}
+
 // The vmcluster type for the VM cluster/Cloud VM cluster.
+func (o CloudVmClusterOutput) VmClusterType() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.VmClusterType }).(pulumi.StringOutput)
+}
+
+// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o CloudVmClusterOutput) VmClusterType() pulumi.StringOutput {
-	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.VmClusterType }).(pulumi.StringOutput)
+func (o CloudVmClusterOutput) VmFileSystemStorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.VmFileSystemStorageType }).(pulumi.StringOutput)
 }
 
 // The OCID of the zone the cloud VM cluster is associated with.

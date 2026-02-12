@@ -13,7 +13,7 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
     public sealed class NetworkFirewallNatConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+        /// (Updatable) The value of this field must be set to true if the network firewall policy being applied contains NAT rules. The value of this field can be set to false if the network firewall policy being applied or the currently attached firewall policy doesn't contain NAT rules.
         /// </summary>
         [Input("mustEnablePrivateNat", required: true)]
         public Input<bool> MustEnablePrivateNat { get; set; } = null!;
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
         private InputList<string>? _natIpAddressLists;
 
         /// <summary>
-        /// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        /// An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
         /// </summary>
         public InputList<string> NatIpAddressLists
         {

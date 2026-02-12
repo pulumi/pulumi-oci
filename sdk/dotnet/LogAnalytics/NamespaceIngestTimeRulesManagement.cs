@@ -44,13 +44,13 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<bool> EnableIngestTimeRule { get; private set; } = null!;
 
         /// <summary>
-        /// Unique ocid of the ingest time rule.
+        /// Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;'. The json output 'id' parameter value contains the rule ID.
         /// </summary>
         [Output("ingestTimeRuleId")]
         public Output<string> IngestTimeRuleId { get; private set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Output("namespace")]
         public Output<string> Namespace { get; private set; } = null!;
@@ -112,13 +112,13 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<bool> EnableIngestTimeRule { get; set; } = null!;
 
         /// <summary>
-        /// Unique ocid of the ingest time rule.
+        /// Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;'. The json output 'id' parameter value contains the rule ID.
         /// </summary>
         [Input("ingestTimeRuleId", required: true)]
         public Input<string> IngestTimeRuleId { get; set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
@@ -142,13 +142,13 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<bool>? EnableIngestTimeRule { get; set; }
 
         /// <summary>
-        /// Unique ocid of the ingest time rule.
+        /// Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;'. The json output 'id' parameter value contains the rule ID.
         /// </summary>
         [Input("ingestTimeRuleId")]
         public Input<string>? IngestTimeRuleId { get; set; }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }

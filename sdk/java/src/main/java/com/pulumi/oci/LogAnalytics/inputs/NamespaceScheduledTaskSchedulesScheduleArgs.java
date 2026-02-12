@@ -48,6 +48,21 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
     }
 
     /**
+     * Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
+     * 
+     */
+    @Import(name="queryOffsetSecs")
+    private @Nullable Output<Integer> queryOffsetSecs;
+
+    /**
+     * @return Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
+     * 
+     */
+    public Optional<Output<Integer>> queryOffsetSecs() {
+        return Optional.ofNullable(this.queryOffsetSecs);
+    }
+
+    /**
      * Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
      * 
      */
@@ -75,6 +90,21 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
      */
     public Optional<Output<Integer>> repeatCount() {
         return Optional.ofNullable(this.repeatCount);
+    }
+
+    /**
+     * End time for the schedule, even if the schedule would otherwise have remaining executions.
+     * 
+     */
+    @Import(name="timeEnd")
+    private @Nullable Output<String> timeEnd;
+
+    /**
+     * @return End time for the schedule, even if the schedule would otherwise have remaining executions.
+     * 
+     */
+    public Optional<Output<String>> timeEnd() {
+        return Optional.ofNullable(this.timeEnd);
     }
 
     /**
@@ -112,8 +142,10 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
     private NamespaceScheduledTaskSchedulesScheduleArgs(NamespaceScheduledTaskSchedulesScheduleArgs $) {
         this.expression = $.expression;
         this.misfirePolicy = $.misfirePolicy;
+        this.queryOffsetSecs = $.queryOffsetSecs;
         this.recurringInterval = $.recurringInterval;
         this.repeatCount = $.repeatCount;
+        this.timeEnd = $.timeEnd;
         this.timeZone = $.timeZone;
         this.type = $.type;
     }
@@ -179,6 +211,27 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
         }
 
         /**
+         * @param queryOffsetSecs Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder queryOffsetSecs(@Nullable Output<Integer> queryOffsetSecs) {
+            $.queryOffsetSecs = queryOffsetSecs;
+            return this;
+        }
+
+        /**
+         * @param queryOffsetSecs Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder queryOffsetSecs(Integer queryOffsetSecs) {
+            return queryOffsetSecs(Output.of(queryOffsetSecs));
+        }
+
+        /**
          * @param recurringInterval Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
          * 
          * @return builder
@@ -218,6 +271,27 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
          */
         public Builder repeatCount(Integer repeatCount) {
             return repeatCount(Output.of(repeatCount));
+        }
+
+        /**
+         * @param timeEnd End time for the schedule, even if the schedule would otherwise have remaining executions.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeEnd(@Nullable Output<String> timeEnd) {
+            $.timeEnd = timeEnd;
+            return this;
+        }
+
+        /**
+         * @param timeEnd End time for the schedule, even if the schedule would otherwise have remaining executions.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeEnd(String timeEnd) {
+            return timeEnd(Output.of(timeEnd));
         }
 
         /**

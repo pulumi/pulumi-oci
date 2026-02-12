@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Desktops.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
+        /// Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDesktopsDesktopCollectionItemDesktopConnectionResult> DesktopConnections;
+        /// <summary>
         /// A filter to return only results with the given displayName.
         /// </summary>
         public readonly string DisplayName;
@@ -50,6 +54,8 @@ namespace Pulumi.Oci.Desktops.Outputs
         private GetDesktopsDesktopCollectionItemResult(
             ImmutableDictionary<string, string> definedTags,
 
+            ImmutableArray<Outputs.GetDesktopsDesktopCollectionItemDesktopConnectionResult> desktopConnections,
+
             string displayName,
 
             ImmutableDictionary<string, string> freeformTags,
@@ -65,6 +71,7 @@ namespace Pulumi.Oci.Desktops.Outputs
             string userName)
         {
             DefinedTags = definedTags;
+            DesktopConnections = desktopConnections;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;

@@ -21,7 +21,7 @@ public final class GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem {
      */
     private String action;
     /**
-     * @return Match criteria used in NAT Rule used on the firewall policy.
+     * @return Match criteria used in NAT rule used on the firewall policy.
      * 
      */
     private GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemCondition condition;
@@ -41,7 +41,7 @@ public final class GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem {
      */
     private String networkFirewallPolicyId;
     /**
-     * @return OCID of the Network Firewall Policy this decryption profile belongs to.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
      * 
      */
     private String parentResourceId;
@@ -72,7 +72,7 @@ public final class GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem {
         return this.action;
     }
     /**
-     * @return Match criteria used in NAT Rule used on the firewall policy.
+     * @return Match criteria used in NAT rule used on the firewall policy.
      * 
      */
     public GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemCondition condition() {
@@ -100,7 +100,7 @@ public final class GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem {
         return this.networkFirewallPolicyId;
     }
     /**
-     * @return OCID of the Network Firewall Policy this decryption profile belongs to.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
      * 
      */
     public String parentResourceId() {

@@ -43,6 +43,11 @@ public final class GetDesktopPoolResult {
      */
     private List<GetDesktopPoolAvailabilityPolicy> availabilityPolicies;
     /**
+     * @return The size in GBs of the boot volume for the desktop pool.
+     * 
+     */
+    private Integer bootVolumeSizeInGbs;
+    /**
      * @return The OCID of the compartment of the desktop pool.
      * 
      */
@@ -201,6 +206,13 @@ public final class GetDesktopPoolResult {
      */
     public List<GetDesktopPoolAvailabilityPolicy> availabilityPolicies() {
         return this.availabilityPolicies;
+    }
+    /**
+     * @return The size in GBs of the boot volume for the desktop pool.
+     * 
+     */
+    public Integer bootVolumeSizeInGbs() {
+        return this.bootVolumeSizeInGbs;
     }
     /**
      * @return The OCID of the compartment of the desktop pool.
@@ -396,6 +408,7 @@ public final class GetDesktopPoolResult {
         private Boolean areVolumesPreserved;
         private String availabilityDomain;
         private List<GetDesktopPoolAvailabilityPolicy> availabilityPolicies;
+        private Integer bootVolumeSizeInGbs;
         private String compartmentId;
         private String contactDetails;
         private Map<String,String> definedTags;
@@ -430,6 +443,7 @@ public final class GetDesktopPoolResult {
     	      this.areVolumesPreserved = defaults.areVolumesPreserved;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.availabilityPolicies = defaults.availabilityPolicies;
+    	      this.bootVolumeSizeInGbs = defaults.bootVolumeSizeInGbs;
     	      this.compartmentId = defaults.compartmentId;
     	      this.contactDetails = defaults.contactDetails;
     	      this.definedTags = defaults.definedTags;
@@ -500,6 +514,14 @@ public final class GetDesktopPoolResult {
         }
         public Builder availabilityPolicies(GetDesktopPoolAvailabilityPolicy... availabilityPolicies) {
             return availabilityPolicies(List.of(availabilityPolicies));
+        }
+        @CustomType.Setter
+        public Builder bootVolumeSizeInGbs(Integer bootVolumeSizeInGbs) {
+            if (bootVolumeSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDesktopPoolResult", "bootVolumeSizeInGbs");
+            }
+            this.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
+            return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -737,6 +759,7 @@ public final class GetDesktopPoolResult {
             _resultValue.areVolumesPreserved = areVolumesPreserved;
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.availabilityPolicies = availabilityPolicies;
+            _resultValue.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
             _resultValue.compartmentId = compartmentId;
             _resultValue.contactDetails = contactDetails;
             _resultValue.definedTags = definedTags;

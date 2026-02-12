@@ -7,15 +7,17 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespacesFilter;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespacesNamespaceCollection;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespacesResult {
     /**
-     * @return The is the tenancy ID
+     * @return This is the tenancy ID
      * 
      */
     private String compartmentId;
@@ -25,6 +27,7 @@ public final class GetNamespacesResult {
      * 
      */
     private String id;
+    private @Nullable Boolean isCompartmentDelete;
     /**
      * @return The list of namespace_collection.
      * 
@@ -33,7 +36,7 @@ public final class GetNamespacesResult {
 
     private GetNamespacesResult() {}
     /**
-     * @return The is the tenancy ID
+     * @return This is the tenancy ID
      * 
      */
     public String compartmentId() {
@@ -48,6 +51,9 @@ public final class GetNamespacesResult {
      */
     public String id() {
         return this.id;
+    }
+    public Optional<Boolean> isCompartmentDelete() {
+        return Optional.ofNullable(this.isCompartmentDelete);
     }
     /**
      * @return The list of namespace_collection.
@@ -69,6 +75,7 @@ public final class GetNamespacesResult {
         private String compartmentId;
         private @Nullable List<GetNamespacesFilter> filters;
         private String id;
+        private @Nullable Boolean isCompartmentDelete;
         private List<GetNamespacesNamespaceCollection> namespaceCollections;
         public Builder() {}
         public Builder(GetNamespacesResult defaults) {
@@ -76,6 +83,7 @@ public final class GetNamespacesResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.isCompartmentDelete = defaults.isCompartmentDelete;
     	      this.namespaceCollections = defaults.namespaceCollections;
         }
 
@@ -105,6 +113,12 @@ public final class GetNamespacesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isCompartmentDelete(@Nullable Boolean isCompartmentDelete) {
+
+            this.isCompartmentDelete = isCompartmentDelete;
+            return this;
+        }
+        @CustomType.Setter
         public Builder namespaceCollections(List<GetNamespacesNamespaceCollection> namespaceCollections) {
             if (namespaceCollections == null) {
               throw new MissingRequiredPropertyException("GetNamespacesResult", "namespaceCollections");
@@ -120,6 +134,7 @@ public final class GetNamespacesResult {
             _resultValue.compartmentId = compartmentId;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.isCompartmentDelete = isCompartmentDelete;
             _resultValue.namespaceCollections = namespaceCollections;
             return _resultValue;
         }

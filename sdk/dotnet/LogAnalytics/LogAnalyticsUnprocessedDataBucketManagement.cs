@@ -37,7 +37,7 @@ namespace Pulumi.Oci.LogAnalytics
     public partial class LogAnalyticsUnprocessedDataBucketManagement : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Name of the Object Storage bucket.
+        /// Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;'. The json output 'name' parameter value contains the bucket name.
         /// </summary>
         [Output("bucket")]
         public Output<string> Bucket { get; private set; } = null!;
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<bool> IsEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -117,7 +117,7 @@ namespace Pulumi.Oci.LogAnalytics
     public sealed class LogAnalyticsUnprocessedDataBucketManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Name of the Object Storage bucket.
+        /// Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;'. The json output 'name' parameter value contains the bucket name.
         /// </summary>
         [Input("bucket", required: true)]
         public Input<string> Bucket { get; set; } = null!;
@@ -129,7 +129,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -147,7 +147,7 @@ namespace Pulumi.Oci.LogAnalytics
     public sealed class LogAnalyticsUnprocessedDataBucketManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Name of the Object Storage bucket.
+        /// Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;'. The json output 'name' parameter value contains the bucket name.
         /// </summary>
         [Input("bucket")]
         public Input<string>? Bucket { get; set; }
@@ -159,7 +159,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
         /// 
         /// 
         /// ** IMPORTANT **

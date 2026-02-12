@@ -36,11 +36,11 @@ export function getLogAnalyticsEntityType(args: GetLogAnalyticsEntityTypeArgs, o
  */
 export interface GetLogAnalyticsEntityTypeArgs {
     /**
-     * Log analytics entity type name.
+     * Log analytics entity type name. Entity type name can be obtained by running 'oci log-analytics entity-type list --namespace-name <namespacename> --all'. The json output 'internal-name' parameter value contains the entity type name.
      */
     entityTypeName: string;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: string;
 }
@@ -116,11 +116,11 @@ export function getLogAnalyticsEntityTypeOutput(args: GetLogAnalyticsEntityTypeO
  */
 export interface GetLogAnalyticsEntityTypeOutputArgs {
     /**
-     * Log analytics entity type name.
+     * Log analytics entity type name. Entity type name can be obtained by running 'oci log-analytics entity-type list --namespace-name <namespacename> --all'. The json output 'internal-name' parameter value contains the entity type name.
      */
     entityTypeName: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
 }

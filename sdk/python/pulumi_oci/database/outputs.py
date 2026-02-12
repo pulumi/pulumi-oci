@@ -268,6 +268,9 @@ __all__ = [
     'VmClusterRemoveVirtualMachineDataCollectionOption',
     'VmClusterRemoveVirtualMachineDbServer',
     'VmClusterRemoveVirtualMachineFileSystemConfigurationDetail',
+    'GetAdvancedClusterFileSystemsAdvancedClusterFileSystemCollectionResult',
+    'GetAdvancedClusterFileSystemsAdvancedClusterFileSystemCollectionItemResult',
+    'GetAdvancedClusterFileSystemsFilterResult',
     'GetApplicationVipsApplicationVipResult',
     'GetApplicationVipsFilterResult',
     'GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetResult',
@@ -8514,8 +8517,12 @@ class CloudExadataInfrastructureConfigureExascaleManagementExascaleConfig(dict):
         suggest = None
         if key == "availableStorageInGbs":
             suggest = "available_storage_in_gbs"
+        elif key == "availableVmStorageInGbs":
+            suggest = "available_vm_storage_in_gbs"
         elif key == "totalStorageInGbs":
             suggest = "total_storage_in_gbs"
+        elif key == "totalVmStorageInGbs":
+            suggest = "total_vm_storage_in_gbs"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in CloudExadataInfrastructureConfigureExascaleManagementExascaleConfig. Access the value via the '{suggest}' property getter instead.")
@@ -8530,7 +8537,9 @@ class CloudExadataInfrastructureConfigureExascaleManagementExascaleConfig(dict):
 
     def __init__(__self__, *,
                  available_storage_in_gbs: Optional[_builtins.int] = None,
-                 total_storage_in_gbs: Optional[_builtins.int] = None):
+                 available_vm_storage_in_gbs: Optional[_builtins.int] = None,
+                 total_storage_in_gbs: Optional[_builtins.int] = None,
+                 total_vm_storage_in_gbs: Optional[_builtins.int] = None):
         """
         :param _builtins.int available_storage_in_gbs: Available storage size for Exascale in GBs.
         :param _builtins.int total_storage_in_gbs: Storage size needed for Exascale in GBs.
@@ -8541,8 +8550,12 @@ class CloudExadataInfrastructureConfigureExascaleManagementExascaleConfig(dict):
         """
         if available_storage_in_gbs is not None:
             pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        if available_vm_storage_in_gbs is not None:
+            pulumi.set(__self__, "available_vm_storage_in_gbs", available_vm_storage_in_gbs)
         if total_storage_in_gbs is not None:
             pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+        if total_vm_storage_in_gbs is not None:
+            pulumi.set(__self__, "total_vm_storage_in_gbs", total_vm_storage_in_gbs)
 
     @_builtins.property
     @pulumi.getter(name="availableStorageInGbs")
@@ -8551,6 +8564,11 @@ class CloudExadataInfrastructureConfigureExascaleManagementExascaleConfig(dict):
         Available storage size for Exascale in GBs.
         """
         return pulumi.get(self, "available_storage_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="availableVmStorageInGbs")
+    def available_vm_storage_in_gbs(self) -> Optional[_builtins.int]:
+        return pulumi.get(self, "available_vm_storage_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="totalStorageInGbs")
@@ -8563,6 +8581,11 @@ class CloudExadataInfrastructureConfigureExascaleManagementExascaleConfig(dict):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "total_storage_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="totalVmStorageInGbs")
+    def total_vm_storage_in_gbs(self) -> Optional[_builtins.int]:
+        return pulumi.get(self, "total_vm_storage_in_gbs")
 
 
 @pulumi.output_type
@@ -8879,8 +8902,12 @@ class CloudExadataInfrastructureExascaleConfig(dict):
         suggest = None
         if key == "availableStorageInGbs":
             suggest = "available_storage_in_gbs"
+        elif key == "availableVmStorageInGbs":
+            suggest = "available_vm_storage_in_gbs"
         elif key == "totalStorageInGbs":
             suggest = "total_storage_in_gbs"
+        elif key == "totalVmStorageInGbs":
+            suggest = "total_vm_storage_in_gbs"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in CloudExadataInfrastructureExascaleConfig. Access the value via the '{suggest}' property getter instead.")
@@ -8895,15 +8922,23 @@ class CloudExadataInfrastructureExascaleConfig(dict):
 
     def __init__(__self__, *,
                  available_storage_in_gbs: Optional[_builtins.int] = None,
-                 total_storage_in_gbs: Optional[_builtins.int] = None):
+                 available_vm_storage_in_gbs: Optional[_builtins.int] = None,
+                 total_storage_in_gbs: Optional[_builtins.int] = None,
+                 total_vm_storage_in_gbs: Optional[_builtins.int] = None):
         """
         :param _builtins.int available_storage_in_gbs: Available storage size for Exascale in GBs.
+        :param _builtins.int available_vm_storage_in_gbs: Available storage size for VM storage on Exascale in GBs.
         :param _builtins.int total_storage_in_gbs: Storage size needed for Exascale in GBs.
+        :param _builtins.int total_vm_storage_in_gbs: Storage size needed for VM storage on Exascale in GBs.
         """
         if available_storage_in_gbs is not None:
             pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        if available_vm_storage_in_gbs is not None:
+            pulumi.set(__self__, "available_vm_storage_in_gbs", available_vm_storage_in_gbs)
         if total_storage_in_gbs is not None:
             pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+        if total_vm_storage_in_gbs is not None:
+            pulumi.set(__self__, "total_vm_storage_in_gbs", total_vm_storage_in_gbs)
 
     @_builtins.property
     @pulumi.getter(name="availableStorageInGbs")
@@ -8914,12 +8949,28 @@ class CloudExadataInfrastructureExascaleConfig(dict):
         return pulumi.get(self, "available_storage_in_gbs")
 
     @_builtins.property
+    @pulumi.getter(name="availableVmStorageInGbs")
+    def available_vm_storage_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        Available storage size for VM storage on Exascale in GBs.
+        """
+        return pulumi.get(self, "available_vm_storage_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="totalStorageInGbs")
     def total_storage_in_gbs(self) -> Optional[_builtins.int]:
         """
         Storage size needed for Exascale in GBs.
         """
         return pulumi.get(self, "total_storage_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="totalVmStorageInGbs")
+    def total_vm_storage_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        Storage size needed for VM storage on Exascale in GBs.
+        """
+        return pulumi.get(self, "total_vm_storage_in_gbs")
 
 
 @pulumi.output_type
@@ -16397,8 +16448,12 @@ class ExadataInfrastructureConfigureExascaleManagementExascaleConfig(dict):
         suggest = None
         if key == "availableStorageInGbs":
             suggest = "available_storage_in_gbs"
+        elif key == "availableVmStorageInGbs":
+            suggest = "available_vm_storage_in_gbs"
         elif key == "totalStorageInGbs":
             suggest = "total_storage_in_gbs"
+        elif key == "totalVmStorageInGbs":
+            suggest = "total_vm_storage_in_gbs"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in ExadataInfrastructureConfigureExascaleManagementExascaleConfig. Access the value via the '{suggest}' property getter instead.")
@@ -16413,7 +16468,9 @@ class ExadataInfrastructureConfigureExascaleManagementExascaleConfig(dict):
 
     def __init__(__self__, *,
                  available_storage_in_gbs: Optional[_builtins.int] = None,
-                 total_storage_in_gbs: Optional[_builtins.int] = None):
+                 available_vm_storage_in_gbs: Optional[_builtins.int] = None,
+                 total_storage_in_gbs: Optional[_builtins.int] = None,
+                 total_vm_storage_in_gbs: Optional[_builtins.int] = None):
         """
         :param _builtins.int available_storage_in_gbs: Available storage size for Exascale in GBs.
         :param _builtins.int total_storage_in_gbs: Storage size needed for Exascale in GBs.
@@ -16424,8 +16481,12 @@ class ExadataInfrastructureConfigureExascaleManagementExascaleConfig(dict):
         """
         if available_storage_in_gbs is not None:
             pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        if available_vm_storage_in_gbs is not None:
+            pulumi.set(__self__, "available_vm_storage_in_gbs", available_vm_storage_in_gbs)
         if total_storage_in_gbs is not None:
             pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+        if total_vm_storage_in_gbs is not None:
+            pulumi.set(__self__, "total_vm_storage_in_gbs", total_vm_storage_in_gbs)
 
     @_builtins.property
     @pulumi.getter(name="availableStorageInGbs")
@@ -16434,6 +16495,11 @@ class ExadataInfrastructureConfigureExascaleManagementExascaleConfig(dict):
         Available storage size for Exascale in GBs.
         """
         return pulumi.get(self, "available_storage_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="availableVmStorageInGbs")
+    def available_vm_storage_in_gbs(self) -> Optional[_builtins.int]:
+        return pulumi.get(self, "available_vm_storage_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="totalStorageInGbs")
@@ -16446,6 +16512,11 @@ class ExadataInfrastructureConfigureExascaleManagementExascaleConfig(dict):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "total_storage_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="totalVmStorageInGbs")
+    def total_vm_storage_in_gbs(self) -> Optional[_builtins.int]:
+        return pulumi.get(self, "total_vm_storage_in_gbs")
 
 
 @pulumi.output_type
@@ -16892,8 +16963,12 @@ class ExadataInfrastructureExascaleConfig(dict):
         suggest = None
         if key == "availableStorageInGbs":
             suggest = "available_storage_in_gbs"
+        elif key == "availableVmStorageInGbs":
+            suggest = "available_vm_storage_in_gbs"
         elif key == "totalStorageInGbs":
             suggest = "total_storage_in_gbs"
+        elif key == "totalVmStorageInGbs":
+            suggest = "total_vm_storage_in_gbs"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in ExadataInfrastructureExascaleConfig. Access the value via the '{suggest}' property getter instead.")
@@ -16908,15 +16983,23 @@ class ExadataInfrastructureExascaleConfig(dict):
 
     def __init__(__self__, *,
                  available_storage_in_gbs: Optional[_builtins.int] = None,
-                 total_storage_in_gbs: Optional[_builtins.int] = None):
+                 available_vm_storage_in_gbs: Optional[_builtins.int] = None,
+                 total_storage_in_gbs: Optional[_builtins.int] = None,
+                 total_vm_storage_in_gbs: Optional[_builtins.int] = None):
         """
         :param _builtins.int available_storage_in_gbs: Available storage size for Exascale in GBs.
+        :param _builtins.int available_vm_storage_in_gbs: Available storage size for VM storage on Exascale in GBs.
         :param _builtins.int total_storage_in_gbs: Storage size needed for Exascale in GBs.
+        :param _builtins.int total_vm_storage_in_gbs: Storage size needed for VM storage on Exascale in GBs.
         """
         if available_storage_in_gbs is not None:
             pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        if available_vm_storage_in_gbs is not None:
+            pulumi.set(__self__, "available_vm_storage_in_gbs", available_vm_storage_in_gbs)
         if total_storage_in_gbs is not None:
             pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+        if total_vm_storage_in_gbs is not None:
+            pulumi.set(__self__, "total_vm_storage_in_gbs", total_vm_storage_in_gbs)
 
     @_builtins.property
     @pulumi.getter(name="availableStorageInGbs")
@@ -16927,12 +17010,28 @@ class ExadataInfrastructureExascaleConfig(dict):
         return pulumi.get(self, "available_storage_in_gbs")
 
     @_builtins.property
+    @pulumi.getter(name="availableVmStorageInGbs")
+    def available_vm_storage_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        Available storage size for VM storage on Exascale in GBs.
+        """
+        return pulumi.get(self, "available_vm_storage_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="totalStorageInGbs")
     def total_storage_in_gbs(self) -> Optional[_builtins.int]:
         """
         Storage size needed for Exascale in GBs.
         """
         return pulumi.get(self, "total_storage_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="totalVmStorageInGbs")
+    def total_vm_storage_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        Storage size needed for VM storage on Exascale in GBs.
+        """
+        return pulumi.get(self, "total_vm_storage_in_gbs")
 
 
 @pulumi.output_type
@@ -21257,6 +21356,234 @@ class VmClusterRemoveVirtualMachineFileSystemConfigurationDetail(dict):
         The mount point of file system.
         """
         return pulumi.get(self, "mount_point")
+
+
+@pulumi.output_type
+class GetAdvancedClusterFileSystemsAdvancedClusterFileSystemCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAdvancedClusterFileSystemsAdvancedClusterFileSystemCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAdvancedClusterFileSystemsAdvancedClusterFileSystemCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAdvancedClusterFileSystemsAdvancedClusterFileSystemCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 is_mounted: _builtins.bool,
+                 lifecycle_details: _builtins.str,
+                 mount_point: _builtins.str,
+                 name: _builtins.str,
+                 state: _builtins.str,
+                 storage_in_gbs: _builtins.int,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 vault_id: _builtins.str,
+                 vm_cluster_id: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param _builtins.str description: Description of the advanced cluster file system.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the advanced cluster file system.
+        :param _builtins.bool is_mounted: True if the file system is mounted on all VMs within VM Cluster.
+        :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
+        :param _builtins.str mount_point: The mount point of file system.
+        :param _builtins.str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param _builtins.int storage_in_gbs: The total storage allocated for advanced cluster file system in GBs.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param _builtins.str time_created: The date and time the advanced cluster file system was created.
+        :param _builtins.str time_updated: The last date and time that the advanced cluster file system was updated.
+        :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param _builtins.str vm_cluster_id: A filter to return only ACFS that match the given vm cluster id exactly.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_mounted", is_mounted)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "mount_point", mount_point)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "storage_in_gbs", storage_in_gbs)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "vault_id", vault_id)
+        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of the advanced cluster file system.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the advanced cluster file system.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isMounted")
+    def is_mounted(self) -> _builtins.bool:
+        """
+        True if the file system is mounted on all VMs within VM Cluster.
+        """
+        return pulumi.get(self, "is_mounted")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> _builtins.str:
+        """
+        The mount point of file system.
+        """
+        return pulumi.get(self, "mount_point")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="storageInGbs")
+    def storage_in_gbs(self) -> _builtins.int:
+        """
+        The total storage allocated for advanced cluster file system in GBs.
+        """
+        return pulumi.get(self, "storage_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the advanced cluster file system was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The last date and time that the advanced cluster file system was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        """
+        return pulumi.get(self, "vault_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> _builtins.str:
+        """
+        A filter to return only ACFS that match the given vm cluster id exactly.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+
+@pulumi.output_type
+class GetAdvancedClusterFileSystemsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type
@@ -41884,13 +42211,19 @@ class GetCloudExadataInfrastructureDefinedFileSystemConfigurationResult(dict):
 class GetCloudExadataInfrastructureExascaleConfigResult(dict):
     def __init__(__self__, *,
                  available_storage_in_gbs: _builtins.int,
-                 total_storage_in_gbs: _builtins.int):
+                 available_vm_storage_in_gbs: _builtins.int,
+                 total_storage_in_gbs: _builtins.int,
+                 total_vm_storage_in_gbs: _builtins.int):
         """
         :param _builtins.int available_storage_in_gbs: Available storage size for Exascale in GBs.
+        :param _builtins.int available_vm_storage_in_gbs: Available storage size for VM storage on Exascale in GBs.
         :param _builtins.int total_storage_in_gbs: Storage size needed for Exascale in GBs.
+        :param _builtins.int total_vm_storage_in_gbs: Storage size needed for VM storage on Exascale in GBs.
         """
         pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        pulumi.set(__self__, "available_vm_storage_in_gbs", available_vm_storage_in_gbs)
         pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+        pulumi.set(__self__, "total_vm_storage_in_gbs", total_vm_storage_in_gbs)
 
     @_builtins.property
     @pulumi.getter(name="availableStorageInGbs")
@@ -41901,12 +42234,28 @@ class GetCloudExadataInfrastructureExascaleConfigResult(dict):
         return pulumi.get(self, "available_storage_in_gbs")
 
     @_builtins.property
+    @pulumi.getter(name="availableVmStorageInGbs")
+    def available_vm_storage_in_gbs(self) -> _builtins.int:
+        """
+        Available storage size for VM storage on Exascale in GBs.
+        """
+        return pulumi.get(self, "available_vm_storage_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="totalStorageInGbs")
     def total_storage_in_gbs(self) -> _builtins.int:
         """
         Storage size needed for Exascale in GBs.
         """
         return pulumi.get(self, "total_storage_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="totalVmStorageInGbs")
+    def total_vm_storage_in_gbs(self) -> _builtins.int:
+        """
+        Storage size needed for VM storage on Exascale in GBs.
+        """
+        return pulumi.get(self, "total_vm_storage_in_gbs")
 
 
 @pulumi.output_type
@@ -42631,13 +42980,19 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemC
 class GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigResult(dict):
     def __init__(__self__, *,
                  available_storage_in_gbs: _builtins.int,
-                 total_storage_in_gbs: _builtins.int):
+                 available_vm_storage_in_gbs: _builtins.int,
+                 total_storage_in_gbs: _builtins.int,
+                 total_vm_storage_in_gbs: _builtins.int):
         """
         :param _builtins.int available_storage_in_gbs: Available storage size for Exascale in GBs.
+        :param _builtins.int available_vm_storage_in_gbs: Available storage size for VM storage on Exascale in GBs.
         :param _builtins.int total_storage_in_gbs: Storage size needed for Exascale in GBs.
+        :param _builtins.int total_vm_storage_in_gbs: Storage size needed for VM storage on Exascale in GBs.
         """
         pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        pulumi.set(__self__, "available_vm_storage_in_gbs", available_vm_storage_in_gbs)
         pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+        pulumi.set(__self__, "total_vm_storage_in_gbs", total_vm_storage_in_gbs)
 
     @_builtins.property
     @pulumi.getter(name="availableStorageInGbs")
@@ -42648,12 +43003,28 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigResu
         return pulumi.get(self, "available_storage_in_gbs")
 
     @_builtins.property
+    @pulumi.getter(name="availableVmStorageInGbs")
+    def available_vm_storage_in_gbs(self) -> _builtins.int:
+        """
+        Available storage size for VM storage on Exascale in GBs.
+        """
+        return pulumi.get(self, "available_vm_storage_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="totalStorageInGbs")
     def total_storage_in_gbs(self) -> _builtins.int:
         """
         Storage size needed for Exascale in GBs.
         """
         return pulumi.get(self, "total_storage_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="totalVmStorageInGbs")
+    def total_vm_storage_in_gbs(self) -> _builtins.int:
+        """
+        Storage size needed for VM storage on Exascale in GBs.
+        """
+        return pulumi.get(self, "total_vm_storage_in_gbs")
 
 
 @pulumi.output_type
@@ -43251,7 +43622,9 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
                  time_zone: _builtins.str,
                  vip_ids: Sequence[_builtins.str],
                  vipv6ids: Sequence[_builtins.str],
+                 vm_backup_storage_type: _builtins.str,
                  vm_cluster_type: _builtins.str,
+                 vm_file_system_storage_type: _builtins.str,
                  zone_id: _builtins.str):
         """
         :param _builtins.str availability_domain: The name of the availability domain that the cloud Exadata infrastructure resource is located in.
@@ -43311,7 +43684,9 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param _builtins.str time_zone: The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param Sequence[_builtins.str] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         :param Sequence[_builtins.str] vipv6ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        :param _builtins.str vm_backup_storage_type: Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
         :param _builtins.str vm_cluster_type: A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
+        :param _builtins.str vm_file_system_storage_type: Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
         :param _builtins.str zone_id: The OCID of the zone the cloud VM cluster is associated with.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -43373,7 +43748,9 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         pulumi.set(__self__, "time_zone", time_zone)
         pulumi.set(__self__, "vip_ids", vip_ids)
         pulumi.set(__self__, "vipv6ids", vipv6ids)
+        pulumi.set(__self__, "vm_backup_storage_type", vm_backup_storage_type)
         pulumi.set(__self__, "vm_cluster_type", vm_cluster_type)
+        pulumi.set(__self__, "vm_file_system_storage_type", vm_file_system_storage_type)
         pulumi.set(__self__, "zone_id", zone_id)
 
     @_builtins.property
@@ -43841,12 +44218,28 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         return pulumi.get(self, "vipv6ids")
 
     @_builtins.property
+    @pulumi.getter(name="vmBackupStorageType")
+    def vm_backup_storage_type(self) -> _builtins.str:
+        """
+        Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+        """
+        return pulumi.get(self, "vm_backup_storage_type")
+
+    @_builtins.property
     @pulumi.getter(name="vmClusterType")
     def vm_cluster_type(self) -> _builtins.str:
         """
         A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
         """
         return pulumi.get(self, "vm_cluster_type")
+
+    @_builtins.property
+    @pulumi.getter(name="vmFileSystemStorageType")
+    def vm_file_system_storage_type(self) -> _builtins.str:
+        """
+        Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+        """
+        return pulumi.get(self, "vm_file_system_storage_type")
 
     @_builtins.property
     @pulumi.getter(name="zoneId")
@@ -56378,13 +56771,19 @@ class GetExadataInfrastructureDefinedFileSystemConfigurationResult(dict):
 class GetExadataInfrastructureExascaleConfigResult(dict):
     def __init__(__self__, *,
                  available_storage_in_gbs: _builtins.int,
-                 total_storage_in_gbs: _builtins.int):
+                 available_vm_storage_in_gbs: _builtins.int,
+                 total_storage_in_gbs: _builtins.int,
+                 total_vm_storage_in_gbs: _builtins.int):
         """
         :param _builtins.int available_storage_in_gbs: Available storage size for Exascale in GBs.
+        :param _builtins.int available_vm_storage_in_gbs: Available storage size for VM storage on Exascale in GBs.
         :param _builtins.int total_storage_in_gbs: Storage size needed for Exascale in GBs.
+        :param _builtins.int total_vm_storage_in_gbs: Storage size needed for VM storage on Exascale in GBs.
         """
         pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        pulumi.set(__self__, "available_vm_storage_in_gbs", available_vm_storage_in_gbs)
         pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+        pulumi.set(__self__, "total_vm_storage_in_gbs", total_vm_storage_in_gbs)
 
     @_builtins.property
     @pulumi.getter(name="availableStorageInGbs")
@@ -56395,12 +56794,28 @@ class GetExadataInfrastructureExascaleConfigResult(dict):
         return pulumi.get(self, "available_storage_in_gbs")
 
     @_builtins.property
+    @pulumi.getter(name="availableVmStorageInGbs")
+    def available_vm_storage_in_gbs(self) -> _builtins.int:
+        """
+        Available storage size for VM storage on Exascale in GBs.
+        """
+        return pulumi.get(self, "available_vm_storage_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="totalStorageInGbs")
     def total_storage_in_gbs(self) -> _builtins.int:
         """
         Storage size needed for Exascale in GBs.
         """
         return pulumi.get(self, "total_storage_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="totalVmStorageInGbs")
+    def total_vm_storage_in_gbs(self) -> _builtins.int:
+        """
+        Storage size needed for VM storage on Exascale in GBs.
+        """
+        return pulumi.get(self, "total_vm_storage_in_gbs")
 
 
 @pulumi.output_type
@@ -57355,13 +57770,19 @@ class GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurati
 class GetExadataInfrastructuresExadataInfrastructureExascaleConfigResult(dict):
     def __init__(__self__, *,
                  available_storage_in_gbs: _builtins.int,
-                 total_storage_in_gbs: _builtins.int):
+                 available_vm_storage_in_gbs: _builtins.int,
+                 total_storage_in_gbs: _builtins.int,
+                 total_vm_storage_in_gbs: _builtins.int):
         """
         :param _builtins.int available_storage_in_gbs: Available storage size for Exascale in GBs.
+        :param _builtins.int available_vm_storage_in_gbs: Available storage size for VM storage on Exascale in GBs.
         :param _builtins.int total_storage_in_gbs: Storage size needed for Exascale in GBs.
+        :param _builtins.int total_vm_storage_in_gbs: Storage size needed for VM storage on Exascale in GBs.
         """
         pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        pulumi.set(__self__, "available_vm_storage_in_gbs", available_vm_storage_in_gbs)
         pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+        pulumi.set(__self__, "total_vm_storage_in_gbs", total_vm_storage_in_gbs)
 
     @_builtins.property
     @pulumi.getter(name="availableStorageInGbs")
@@ -57372,12 +57793,28 @@ class GetExadataInfrastructuresExadataInfrastructureExascaleConfigResult(dict):
         return pulumi.get(self, "available_storage_in_gbs")
 
     @_builtins.property
+    @pulumi.getter(name="availableVmStorageInGbs")
+    def available_vm_storage_in_gbs(self) -> _builtins.int:
+        """
+        Available storage size for VM storage on Exascale in GBs.
+        """
+        return pulumi.get(self, "available_vm_storage_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="totalStorageInGbs")
     def total_storage_in_gbs(self) -> _builtins.int:
         """
         Storage size needed for Exascale in GBs.
         """
         return pulumi.get(self, "total_storage_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="totalVmStorageInGbs")
+    def total_vm_storage_in_gbs(self) -> _builtins.int:
+        """
+        Storage size needed for VM storage on Exascale in GBs.
+        """
+        return pulumi.get(self, "total_vm_storage_in_gbs")
 
 
 @pulumi.output_type
@@ -67442,8 +67879,10 @@ class GetVmClustersVmClusterResult(dict):
                  system_version: _builtins.str,
                  time_created: _builtins.str,
                  time_zone: _builtins.str,
+                 vm_backup_storage_type: _builtins.str,
                  vm_cluster_network_id: _builtins.str,
-                 vm_cluster_type: _builtins.str):
+                 vm_cluster_type: _builtins.str,
+                 vm_file_system_storage_type: _builtins.str):
         """
         :param _builtins.str availability_domain: The name of the availability domain that the VM cluster is located in.
         :param Sequence['GetVmClustersVmClusterCloudAutomationUpdateDetailArgs'] cloud_automation_update_details: Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
@@ -67477,8 +67916,10 @@ class GetVmClustersVmClusterResult(dict):
         :param _builtins.str system_version: Operating system version of the image.
         :param _builtins.str time_created: The date and time that the VM cluster was created.
         :param _builtins.str time_zone: The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param _builtins.str vm_backup_storage_type: Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
         :param _builtins.str vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         :param _builtins.str vm_cluster_type: A filter to return only vmclusters that match the given vmcluster type exactly.
+        :param _builtins.str vm_file_system_storage_type: Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "cloud_automation_update_details", cloud_automation_update_details)
@@ -67515,8 +67956,10 @@ class GetVmClustersVmClusterResult(dict):
         pulumi.set(__self__, "system_version", system_version)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_zone", time_zone)
+        pulumi.set(__self__, "vm_backup_storage_type", vm_backup_storage_type)
         pulumi.set(__self__, "vm_cluster_network_id", vm_cluster_network_id)
         pulumi.set(__self__, "vm_cluster_type", vm_cluster_type)
+        pulumi.set(__self__, "vm_file_system_storage_type", vm_file_system_storage_type)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -67790,6 +68233,14 @@ class GetVmClustersVmClusterResult(dict):
         return pulumi.get(self, "time_zone")
 
     @_builtins.property
+    @pulumi.getter(name="vmBackupStorageType")
+    def vm_backup_storage_type(self) -> _builtins.str:
+        """
+        Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
+        """
+        return pulumi.get(self, "vm_backup_storage_type")
+
+    @_builtins.property
     @pulumi.getter(name="vmClusterNetworkId")
     def vm_cluster_network_id(self) -> _builtins.str:
         """
@@ -67804,6 +68255,14 @@ class GetVmClustersVmClusterResult(dict):
         A filter to return only vmclusters that match the given vmcluster type exactly.
         """
         return pulumi.get(self, "vm_cluster_type")
+
+    @_builtins.property
+    @pulumi.getter(name="vmFileSystemStorageType")
+    def vm_file_system_storage_type(self) -> _builtins.str:
+        """
+        Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+        """
+        return pulumi.get(self, "vm_file_system_storage_type")
 
 
 @pulumi.output_type

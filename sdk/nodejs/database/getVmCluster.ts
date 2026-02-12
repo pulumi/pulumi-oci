@@ -174,6 +174,10 @@ export interface GetVmClusterResult {
      * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     readonly timeZone: string;
+    /**
+     * Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
+     */
+    readonly vmBackupStorageType: string;
     readonly vmClusterId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
@@ -183,6 +187,10 @@ export interface GetVmClusterResult {
      * The vmcluster type for the VM cluster/Cloud VM cluster.
      */
     readonly vmClusterType: string;
+    /**
+     * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+     */
+    readonly vmFileSystemStorageType: string;
 }
 /**
  * This data source provides details about a specific Vm Cluster resource in Oracle Cloud Infrastructure Database service.

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Network Firewall Policy Nat Rules in Oracle Cloud Infrastructure Network Firewall service.
  *
- * Returns a list of NAT Rules for the Network Firewall Policy.
+ * Returns a list of [NAT rules](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
  *
  * ## Example Usage
  *
@@ -44,7 +44,7 @@ export interface GetNetworkFirewallPolicyNatRulesArgs {
     displayName?: string;
     filters?: inputs.NetworkFirewall.GetNetworkFirewallPolicyNatRulesFilter[];
     /**
-     * Unique priority order for NAT Rules in the network firewall policy.
+     * Unique priority order for NAT rules in the Network Firewall policy.
      */
     natRulePriorityOrder?: number;
     /**
@@ -73,7 +73,7 @@ export interface GetNetworkFirewallPolicyNatRulesResult {
 /**
  * This data source provides the list of Network Firewall Policy Nat Rules in Oracle Cloud Infrastructure Network Firewall service.
  *
- * Returns a list of NAT Rules for the Network Firewall Policy.
+ * Returns a list of [NAT rules](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
  *
  * ## Example Usage
  *
@@ -108,7 +108,7 @@ export interface GetNetworkFirewallPolicyNatRulesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.GetNetworkFirewallPolicyNatRulesFilterArgs>[]>;
     /**
-     * Unique priority order for NAT Rules in the network firewall policy.
+     * Unique priority order for NAT rules in the Network Firewall policy.
      */
     natRulePriorityOrder?: pulumi.Input<number>;
     /**

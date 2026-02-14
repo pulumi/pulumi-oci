@@ -58,13 +58,14 @@ import javax.annotation.Nullable;
  *                 .destinationAddresses(networkFirewallPolicyDecryptionRuleConditionDestinationAddress)
  *                 .sourceAddresses(networkFirewallPolicyDecryptionRuleConditionSourceAddress)
  *                 .build())
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .description(networkFirewallPolicyDecryptionRuleDescription)
+ *             .decryptionProfile(networkFirewallPolicyDecryptionRuleDecryptionProfile)
+ *             .secret(networkFirewallPolicyDecryptionRuleSecret)
  *             .position(NetworkFirewallPolicyDecryptionRulePositionArgs.builder()
  *                 .afterRule(networkFirewallPolicyDecryptionRulePositionAfterRule)
  *                 .beforeRule(networkFirewallPolicyDecryptionRulePositionBeforeRule)
  *                 .build())
- *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
- *             .decryptionProfile(networkFirewallPolicyDecryptionRuleDecryptionProfile)
- *             .secret(networkFirewallPolicyDecryptionRuleSecret)
  *             .build());
  * 
  *     }
@@ -102,14 +103,14 @@ public class NetworkFirewallPolicyDecryptionRule extends com.pulumi.resources.Cu
         return this.action;
     }
     /**
-     * (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
+     * (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
      * 
      */
     @Export(name="condition", refs={NetworkFirewallPolicyDecryptionRuleCondition.class}, tree="[0]")
     private Output<NetworkFirewallPolicyDecryptionRuleCondition> condition;
 
     /**
-     * @return (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
+     * @return (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
      * 
      */
     public Output<NetworkFirewallPolicyDecryptionRuleCondition> condition() {
@@ -128,6 +129,20 @@ public class NetworkFirewallPolicyDecryptionRule extends com.pulumi.resources.Cu
      */
     public Output<Optional<String>> decryptionProfile() {
         return Codegen.optional(this.decryptionProfile);
+    }
+    /**
+     * (Updatable) The description of the decryption rule. This field can be used to add additional info.
+     * 
+     */
+    @Export(name="description", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> description;
+
+    /**
+     * @return (Updatable) The description of the decryption rule. This field can be used to add additional info.
+     * 
+     */
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * Name for the decryption rule, must be unique within the policy.

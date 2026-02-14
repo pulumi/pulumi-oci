@@ -10,7 +10,7 @@ import * as utilities from "../utilities";
  * This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
  *
  * Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
- * result also indicates if the tenancy is onboarded with Logging Analytics.
+ * result also indicates if the tenancy is onboarded with Log Analytics.
  *
  * ## Example Usage
  *
@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testNamespaces = oci.LogAnalytics.getNamespaces({
  *     compartmentId: compartmentId,
+ *     isCompartmentDelete: namespaceIsCompartmentDelete,
  * });
  * ```
  */
@@ -28,6 +29,7 @@ export function getNamespaces(args: GetNamespacesArgs, opts?: pulumi.InvokeOptio
     return pulumi.runtime.invoke("oci:LogAnalytics/getNamespaces:getNamespaces", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "isCompartmentDelete": args.isCompartmentDelete,
     }, opts);
 }
 
@@ -40,6 +42,10 @@ export interface GetNamespacesArgs {
      */
     compartmentId: string;
     filters?: inputs.LogAnalytics.GetNamespacesFilter[];
+    /**
+     * if true, the request is from compartment delete service.
+     */
+    isCompartmentDelete?: boolean;
 }
 
 /**
@@ -47,7 +53,7 @@ export interface GetNamespacesArgs {
  */
 export interface GetNamespacesResult {
     /**
-     * The is the tenancy ID
+     * This is the tenancy ID
      */
     readonly compartmentId: string;
     readonly filters?: outputs.LogAnalytics.GetNamespacesFilter[];
@@ -55,6 +61,7 @@ export interface GetNamespacesResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly isCompartmentDelete?: boolean;
     /**
      * The list of namespace_collection.
      */
@@ -64,7 +71,7 @@ export interface GetNamespacesResult {
  * This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
  *
  * Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
- * result also indicates if the tenancy is onboarded with Logging Analytics.
+ * result also indicates if the tenancy is onboarded with Log Analytics.
  *
  * ## Example Usage
  *
@@ -74,6 +81,7 @@ export interface GetNamespacesResult {
  *
  * const testNamespaces = oci.LogAnalytics.getNamespaces({
  *     compartmentId: compartmentId,
+ *     isCompartmentDelete: namespaceIsCompartmentDelete,
  * });
  * ```
  */
@@ -82,6 +90,7 @@ export function getNamespacesOutput(args: GetNamespacesOutputArgs, opts?: pulumi
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getNamespaces:getNamespaces", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "isCompartmentDelete": args.isCompartmentDelete,
     }, opts);
 }
 
@@ -94,4 +103,8 @@ export interface GetNamespacesOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespacesFilterArgs>[]>;
+    /**
+     * if true, the request is from compartment delete service.
+     */
+    isCompartmentDelete?: pulumi.Input<boolean>;
 }

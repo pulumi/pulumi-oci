@@ -62,6 +62,7 @@ import javax.annotation.Nullable;
  *                 .urls(networkFirewallPolicySecurityRuleConditionUrl)
  *                 .build())
  *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .description(networkFirewallPolicySecurityRuleDescription)
  *             .inspection(networkFirewallPolicySecurityRuleInspection)
  *             .positions(NetworkFirewallPolicySecurityRulePositionArgs.builder()
  *                 .afterRule(networkFirewallPolicySecurityRulePositionAfterRule)
@@ -122,18 +123,32 @@ public class NetworkFirewallPolicySecurityRule extends com.pulumi.resources.Cust
         return this.condition;
     }
     /**
-     * (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-     * * INTRUSION_DETECTION - Intrusion Detection.
-     * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+     * (Updatable) The description of the security rule. This field can be used to add additional info.
+     * 
+     */
+    @Export(name="description", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> description;
+
+    /**
+     * @return (Updatable) The description of the security rule. This field can be used to add additional info.
+     * 
+     */
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
+    }
+    /**
+     * (Updatable) Type of inspection to affect the traffic flow.
+     * * INTRUSION_DETECTION - Intrusion detection.
+     * * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
      * 
      */
     @Export(name="inspection", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> inspection;
 
     /**
-     * @return (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-     * * INTRUSION_DETECTION - Intrusion Detection.
-     * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+     * @return (Updatable) Type of inspection to affect the traffic flow.
+     * * INTRUSION_DETECTION - Intrusion detection.
+     * * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
      * 
      */
     public Output<Optional<String>> inspection() {

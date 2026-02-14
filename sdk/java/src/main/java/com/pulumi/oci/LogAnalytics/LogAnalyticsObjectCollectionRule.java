@@ -167,14 +167,14 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
         return this.description;
     }
     /**
-     * (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+     * (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
      * 
      */
     @Export(name="entityId", refs={String.class}, tree="[0]")
     private Output<String> entityId;
 
     /**
-     * @return (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+     * @return (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
      * 
      */
     public Output<String> entityId() {
@@ -251,14 +251,14 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
         return this.lifecycleDetails;
     }
     /**
-     * (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+     * (Updatable) Log Analytics Log group OCID to associate the processed logs with.
      * 
      */
     @Export(name="logGroupId", refs={String.class}, tree="[0]")
     private Output<String> logGroupId;
 
     /**
-     * @return (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+     * @return (Updatable) Log Analytics Log group OCID to associate the processed logs with.
      * 
      */
     public Output<String> logGroupId() {
@@ -307,14 +307,14 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
         return this.logSetKey;
     }
     /**
-     * (Updatable) Name of the Logging Analytics Source to use for the processing.
+     * (Updatable) Name of the Log Analytics Source to use for the processing.
      * 
      */
     @Export(name="logSourceName", refs={String.class}, tree="[0]")
     private Output<String> logSourceName;
 
     /**
-     * @return (Updatable) Name of the Logging Analytics Source to use for the processing.
+     * @return (Updatable) Name of the Log Analytics Source to use for the processing.
      * 
      */
     public Output<String> logSourceName() {
@@ -349,14 +349,14 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
         return this.name;
     }
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public Output<String> namespace() {
@@ -489,14 +489,14 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
         return this.streamCursorType;
     }
     /**
-     * (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+     * (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
      * 
      */
     @Export(name="streamId", refs={String.class}, tree="[0]")
     private Output<String> streamId;
 
     /**
-     * @return (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+     * @return (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
      * 
      */
     public Output<String> streamId() {

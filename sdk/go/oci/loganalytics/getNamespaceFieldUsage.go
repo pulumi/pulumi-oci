@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -53,9 +53,9 @@ func GetNamespaceFieldUsage(ctx *pulumi.Context, args *GetNamespaceFieldUsageArg
 
 // A collection of arguments for invoking getNamespaceFieldUsage.
 type GetNamespaceFieldUsageArgs struct {
-	// The field name.
+	// The field name. Field name can be obtained by running 'oci log-analytics field list-fields --namespace-name <namespace>'. The json output 'name' parameter value contains the field name.
 	FieldName string `pulumi:"fieldName"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -82,9 +82,9 @@ func GetNamespaceFieldUsageOutput(ctx *pulumi.Context, args GetNamespaceFieldUsa
 
 // A collection of arguments for invoking getNamespaceFieldUsage.
 type GetNamespaceFieldUsageOutputArgs struct {
-	// The field name.
+	// The field name. Field name can be obtained by running 'oci log-analytics field list-fields --namespace-name <namespace>'. The json output 'name' parameter value contains the field name.
 	FieldName pulumi.StringInput `pulumi:"fieldName"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 }
 

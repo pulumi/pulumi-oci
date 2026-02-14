@@ -627,6 +627,12 @@ public class CloudExadataInfrastructureConfigureExascaleManagement extends com.p
     public Output<Integer> totalStorageSizeInGbs() {
         return this.totalStorageSizeInGbs;
     }
+    @Export(name="totalVmStorageInGbs", refs={Integer.class}, tree="[0]")
+    private Output<Integer> totalVmStorageInGbs;
+
+    public Output<Integer> totalVmStorageInGbs() {
+        return this.totalVmStorageInGbs;
+    }
 
     /**
      *

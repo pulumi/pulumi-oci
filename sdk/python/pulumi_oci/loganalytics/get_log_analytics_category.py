@@ -138,7 +138,7 @@ def get_log_analytics_category(name: Optional[_builtins.str] = None,
 
 
     :param _builtins.str name: The category name.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['name'] = name
@@ -174,7 +174,7 @@ def get_log_analytics_category_output(name: Optional[pulumi.Input[_builtins.str]
 
 
     :param _builtins.str name: The category name.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['name'] = name

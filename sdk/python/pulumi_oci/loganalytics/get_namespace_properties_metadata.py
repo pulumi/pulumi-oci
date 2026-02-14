@@ -153,7 +153,7 @@ def get_namespace_properties_metadata(constraints: Optional[_builtins.str] = Non
     :param _builtins.str display_text: The property display text used for filtering. Only properties matching the specified display name or description will be returned.
     :param _builtins.str level: The level for which applicable properties are to be listed.
     :param _builtins.str name: The property name used for filtering.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['constraints'] = constraints
@@ -204,7 +204,7 @@ def get_namespace_properties_metadata_output(constraints: Optional[pulumi.Input[
     :param _builtins.str display_text: The property display text used for filtering. Only properties matching the specified display name or description will be returned.
     :param _builtins.str level: The level for which applicable properties are to be listed.
     :param _builtins.str name: The property name used for filtering.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['constraints'] = constraints

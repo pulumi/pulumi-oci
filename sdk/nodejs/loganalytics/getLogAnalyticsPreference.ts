@@ -34,7 +34,7 @@ export function getLogAnalyticsPreference(args: GetLogAnalyticsPreferenceArgs, o
  */
 export interface GetLogAnalyticsPreferenceArgs {
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: string;
 }
@@ -81,7 +81,7 @@ export function getLogAnalyticsPreferenceOutput(args: GetLogAnalyticsPreferenceO
  */
 export interface GetLogAnalyticsPreferenceOutputArgs {
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
 }

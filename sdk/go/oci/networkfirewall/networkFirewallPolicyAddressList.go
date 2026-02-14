@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -38,6 +38,7 @@ import (
 //				NetworkFirewallPolicyId: pulumi.Any(testNetworkFirewallPolicy.Id),
 //				Type:                    pulumi.Any(networkFirewallPolicyAddressListType),
 //				Addresses:               pulumi.Any(networkFirewallPolicyAddressListAddresses),
+//				Description:             pulumi.Any(networkFirewallPolicyAddressListDescription),
 //			})
 //			if err != nil {
 //				return err
@@ -60,6 +61,8 @@ type NetworkFirewallPolicyAddressList struct {
 
 	// (Updatable) List of addresses.
 	Addresses pulumi.StringArrayOutput `pulumi:"addresses"`
+	// (Updatable) The description of the address list. This field can be used to add additional info.
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// Unique name to identify the group of addresses to be used in the policy rules.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -116,6 +119,8 @@ func GetNetworkFirewallPolicyAddressList(ctx *pulumi.Context,
 type networkFirewallPolicyAddressListState struct {
 	// (Updatable) List of addresses.
 	Addresses []string `pulumi:"addresses"`
+	// (Updatable) The description of the address list. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Unique name to identify the group of addresses to be used in the policy rules.
 	Name *string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -134,6 +139,8 @@ type networkFirewallPolicyAddressListState struct {
 type NetworkFirewallPolicyAddressListState struct {
 	// (Updatable) List of addresses.
 	Addresses pulumi.StringArrayInput
+	// (Updatable) The description of the address list. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
 	// Unique name to identify the group of addresses to be used in the policy rules.
 	Name pulumi.StringPtrInput
 	// Unique Network Firewall Policy identifier
@@ -156,6 +163,8 @@ func (NetworkFirewallPolicyAddressListState) ElementType() reflect.Type {
 type networkFirewallPolicyAddressListArgs struct {
 	// (Updatable) List of addresses.
 	Addresses []string `pulumi:"addresses"`
+	// (Updatable) The description of the address list. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Unique name to identify the group of addresses to be used in the policy rules.
 	Name *string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -171,6 +180,8 @@ type networkFirewallPolicyAddressListArgs struct {
 type NetworkFirewallPolicyAddressListArgs struct {
 	// (Updatable) List of addresses.
 	Addresses pulumi.StringArrayInput
+	// (Updatable) The description of the address list. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
 	// Unique name to identify the group of addresses to be used in the policy rules.
 	Name pulumi.StringPtrInput
 	// Unique Network Firewall Policy identifier
@@ -272,6 +283,11 @@ func (o NetworkFirewallPolicyAddressListOutput) ToNetworkFirewallPolicyAddressLi
 // (Updatable) List of addresses.
 func (o NetworkFirewallPolicyAddressListOutput) Addresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicyAddressList) pulumi.StringArrayOutput { return v.Addresses }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The description of the address list. This field can be used to add additional info.
+func (o NetworkFirewallPolicyAddressListOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyAddressList) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Unique name to identify the group of addresses to be used in the policy rules.

@@ -14,6 +14,7 @@ import com.pulumi.oci.NetworkFirewall.outputs.NetworkFirewallPolicyTunnelInspect
 import com.pulumi.oci.NetworkFirewall.outputs.NetworkFirewallPolicyTunnelInspectionRuleProfile;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -60,6 +61,7 @@ import javax.annotation.Nullable;
  *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
  *             .protocol(networkFirewallPolicyTunnelInspectionRuleProtocol)
  *             .action(networkFirewallPolicyTunnelInspectionRuleAction)
+ *             .description(networkFirewallPolicyTunnelInspectionRuleDescription)
  *             .position(NetworkFirewallPolicyTunnelInspectionRulePositionArgs.builder()
  *                 .afterRule(networkFirewallPolicyTunnelInspectionRulePositionAfterRule)
  *                 .beforeRule(networkFirewallPolicyTunnelInspectionRulePositionBeforeRule)
@@ -116,6 +118,20 @@ public class NetworkFirewallPolicyTunnelInspectionRule extends com.pulumi.resour
      */
     public Output<NetworkFirewallPolicyTunnelInspectionRuleCondition> condition() {
         return this.condition;
+    }
+    /**
+     * (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
+     * 
+     */
+    @Export(name="description", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> description;
+
+    /**
+     * @return (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
+     * 
+     */
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * Name for the Tunnel Inspection Rule, must be unique within the policy.

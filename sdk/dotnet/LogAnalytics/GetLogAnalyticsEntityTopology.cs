@@ -120,7 +120,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// The log analytics entity OCID.
+        /// The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;'. The json output 'id' parameter value contains the entity ID.
         /// </summary>
         [Input("logAnalyticsEntityId", required: true)]
         public string LogAnalyticsEntityId { get; set; } = null!;
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace", required: true)]
         public string Namespace { get; set; } = null!;
@@ -172,7 +172,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// The log analytics entity OCID.
+        /// The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;'. The json output 'id' parameter value contains the entity ID.
         /// </summary>
         [Input("logAnalyticsEntityId", required: true)]
         public Input<string> LogAnalyticsEntityId { get; set; } = null!;
@@ -190,7 +190,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;

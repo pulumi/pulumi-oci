@@ -37,6 +37,7 @@ class DesktopPoolArgs:
                  storage_backup_policy_id: pulumi.Input[_builtins.str],
                  storage_size_in_gbs: pulumi.Input[_builtins.int],
                  are_volumes_preserved: Optional[pulumi.Input[_builtins.bool]] = None,
+                 boot_volume_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -56,7 +57,7 @@ class DesktopPoolArgs:
         :param pulumi.Input[_builtins.str] contact_details: (Updatable) Contact information of the desktop pool administrator. Avoid entering confidential information.
         :param pulumi.Input['DesktopPoolDevicePolicyArgs'] device_policy: (Updatable) Provides the settings for desktop and client device options, such as audio in and out, client drive mapping, and clipboard access.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user friendly display name. Avoid entering confidential information.
-        :param pulumi.Input['DesktopPoolImageArgs'] image: Provides information about the desktop image.
+        :param pulumi.Input['DesktopPoolImageArgs'] image: (Updatable) Provides information about the desktop image.
         :param pulumi.Input[_builtins.bool] is_storage_enabled: Indicates whether storage is enabled for the desktop pool.
         :param pulumi.Input[_builtins.int] maximum_size: (Updatable) The maximum number of desktops permitted in the desktop pool.
         :param pulumi.Input['DesktopPoolNetworkConfigurationArgs'] network_configuration: Provides information about the network configuration of the desktop pool.
@@ -69,6 +70,7 @@ class DesktopPoolArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.int] boot_volume_size_in_gbs: (Updatable) The size in GBs of the boot volume for the desktop pool.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user friendly description providing additional information about the resource. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -97,6 +99,8 @@ class DesktopPoolArgs:
         pulumi.set(__self__, "storage_size_in_gbs", storage_size_in_gbs)
         if are_volumes_preserved is not None:
             pulumi.set(__self__, "are_volumes_preserved", are_volumes_preserved)
+        if boot_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -206,7 +210,7 @@ class DesktopPoolArgs:
     @pulumi.getter
     def image(self) -> pulumi.Input['DesktopPoolImageArgs']:
         """
-        Provides information about the desktop image.
+        (Updatable) Provides information about the desktop image.
         """
         return pulumi.get(self, "image")
 
@@ -313,6 +317,18 @@ class DesktopPoolArgs:
     @are_volumes_preserved.setter
     def are_volumes_preserved(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "are_volumes_preserved", value)
+
+    @_builtins.property
+    @pulumi.getter(name="bootVolumeSizeInGbs")
+    def boot_volume_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The size in GBs of the boot volume for the desktop pool.
+        """
+        return pulumi.get(self, "boot_volume_size_in_gbs")
+
+    @boot_volume_size_in_gbs.setter
+    def boot_volume_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "boot_volume_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -443,6 +459,7 @@ class _DesktopPoolState:
                  are_volumes_preserved: Optional[pulumi.Input[_builtins.bool]] = None,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  availability_policy: Optional[pulumi.Input['DesktopPoolAvailabilityPolicyArgs']] = None,
+                 boot_volume_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  contact_details: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -478,6 +495,7 @@ class _DesktopPoolState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the desktop pool.
         :param pulumi.Input['DesktopPoolAvailabilityPolicyArgs'] availability_policy: (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
+        :param pulumi.Input[_builtins.int] boot_volume_size_in_gbs: (Updatable) The size in GBs of the boot volume for the desktop pool.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment which will contain the desktop pool.
         :param pulumi.Input[_builtins.str] contact_details: (Updatable) Contact information of the desktop pool administrator. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -485,7 +503,7 @@ class _DesktopPoolState:
         :param pulumi.Input['DesktopPoolDevicePolicyArgs'] device_policy: (Updatable) Provides the settings for desktop and client device options, such as audio in and out, client drive mapping, and clipboard access.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user friendly display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input['DesktopPoolImageArgs'] image: Provides information about the desktop image.
+        :param pulumi.Input['DesktopPoolImageArgs'] image: (Updatable) Provides information about the desktop image.
         :param pulumi.Input[_builtins.bool] is_storage_enabled: Indicates whether storage is enabled for the desktop pool.
         :param pulumi.Input[_builtins.int] maximum_size: (Updatable) The maximum number of desktops permitted in the desktop pool.
         :param pulumi.Input['DesktopPoolNetworkConfigurationArgs'] network_configuration: Provides information about the network configuration of the desktop pool.
@@ -513,6 +531,8 @@ class _DesktopPoolState:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if availability_policy is not None:
             pulumi.set(__self__, "availability_policy", availability_policy)
+        if boot_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if contact_details is not None:
@@ -627,6 +647,18 @@ class _DesktopPoolState:
         pulumi.set(self, "availability_policy", value)
 
     @_builtins.property
+    @pulumi.getter(name="bootVolumeSizeInGbs")
+    def boot_volume_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The size in GBs of the boot volume for the desktop pool.
+        """
+        return pulumi.get(self, "boot_volume_size_in_gbs")
+
+    @boot_volume_size_in_gbs.setter
+    def boot_volume_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "boot_volume_size_in_gbs", value)
+
+    @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -714,7 +746,7 @@ class _DesktopPoolState:
     @pulumi.getter
     def image(self) -> Optional[pulumi.Input['DesktopPoolImageArgs']]:
         """
-        Provides information about the desktop image.
+        (Updatable) Provides information about the desktop image.
         """
         return pulumi.get(self, "image")
 
@@ -925,6 +957,7 @@ class DesktopPool(pulumi.CustomResource):
                  are_volumes_preserved: Optional[pulumi.Input[_builtins.bool]] = None,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  availability_policy: Optional[pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']]] = None,
+                 boot_volume_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  contact_details: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -985,6 +1018,7 @@ class DesktopPool(pulumi.CustomResource):
                 "is_keyboard_enabled": desktop_pool_device_policy_is_keyboard_enabled,
                 "is_pointer_enabled": desktop_pool_device_policy_is_pointer_enabled,
                 "is_printing_enabled": desktop_pool_device_policy_is_printing_enabled,
+                "is_video_input_enabled": desktop_pool_device_policy_is_video_input_enabled,
             },
             display_name=desktop_pool_display_name,
             image={
@@ -1002,6 +1036,7 @@ class DesktopPool(pulumi.CustomResource):
             standby_size=desktop_pool_standby_size,
             storage_backup_policy_id="ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz",
             storage_size_in_gbs=desktop_pool_storage_size_in_gbs,
+            boot_volume_size_in_gbs=desktop_pool_boot_volume_size_in_gbs,
             are_volumes_preserved=desktop_pool_are_volumes_preserved,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -1054,6 +1089,7 @@ class DesktopPool(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the desktop pool.
         :param pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']] availability_policy: (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
+        :param pulumi.Input[_builtins.int] boot_volume_size_in_gbs: (Updatable) The size in GBs of the boot volume for the desktop pool.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment which will contain the desktop pool.
         :param pulumi.Input[_builtins.str] contact_details: (Updatable) Contact information of the desktop pool administrator. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -1061,7 +1097,7 @@ class DesktopPool(pulumi.CustomResource):
         :param pulumi.Input[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict']] device_policy: (Updatable) Provides the settings for desktop and client device options, such as audio in and out, client drive mapping, and clipboard access.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user friendly display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict']] image: Provides information about the desktop image.
+        :param pulumi.Input[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict']] image: (Updatable) Provides information about the desktop image.
         :param pulumi.Input[_builtins.bool] is_storage_enabled: Indicates whether storage is enabled for the desktop pool.
         :param pulumi.Input[_builtins.int] maximum_size: (Updatable) The maximum number of desktops permitted in the desktop pool.
         :param pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']] network_configuration: Provides information about the network configuration of the desktop pool.
@@ -1120,6 +1156,7 @@ class DesktopPool(pulumi.CustomResource):
                 "is_keyboard_enabled": desktop_pool_device_policy_is_keyboard_enabled,
                 "is_pointer_enabled": desktop_pool_device_policy_is_pointer_enabled,
                 "is_printing_enabled": desktop_pool_device_policy_is_printing_enabled,
+                "is_video_input_enabled": desktop_pool_device_policy_is_video_input_enabled,
             },
             display_name=desktop_pool_display_name,
             image={
@@ -1137,6 +1174,7 @@ class DesktopPool(pulumi.CustomResource):
             standby_size=desktop_pool_standby_size,
             storage_backup_policy_id="ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz",
             storage_size_in_gbs=desktop_pool_storage_size_in_gbs,
+            boot_volume_size_in_gbs=desktop_pool_boot_volume_size_in_gbs,
             are_volumes_preserved=desktop_pool_are_volumes_preserved,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -1198,6 +1236,7 @@ class DesktopPool(pulumi.CustomResource):
                  are_volumes_preserved: Optional[pulumi.Input[_builtins.bool]] = None,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  availability_policy: Optional[pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']]] = None,
+                 boot_volume_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  contact_details: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1239,6 +1278,7 @@ class DesktopPool(pulumi.CustomResource):
             if availability_policy is None and not opts.urn:
                 raise TypeError("Missing required property 'availability_policy'")
             __props__.__dict__["availability_policy"] = availability_policy
+            __props__.__dict__["boot_volume_size_in_gbs"] = boot_volume_size_in_gbs
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -1303,6 +1343,7 @@ class DesktopPool(pulumi.CustomResource):
             are_volumes_preserved: Optional[pulumi.Input[_builtins.bool]] = None,
             availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
             availability_policy: Optional[pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']]] = None,
+            boot_volume_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             contact_details: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1343,6 +1384,7 @@ class DesktopPool(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the desktop pool.
         :param pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']] availability_policy: (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
+        :param pulumi.Input[_builtins.int] boot_volume_size_in_gbs: (Updatable) The size in GBs of the boot volume for the desktop pool.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment which will contain the desktop pool.
         :param pulumi.Input[_builtins.str] contact_details: (Updatable) Contact information of the desktop pool administrator. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -1350,7 +1392,7 @@ class DesktopPool(pulumi.CustomResource):
         :param pulumi.Input[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict']] device_policy: (Updatable) Provides the settings for desktop and client device options, such as audio in and out, client drive mapping, and clipboard access.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user friendly display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict']] image: Provides information about the desktop image.
+        :param pulumi.Input[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict']] image: (Updatable) Provides information about the desktop image.
         :param pulumi.Input[_builtins.bool] is_storage_enabled: Indicates whether storage is enabled for the desktop pool.
         :param pulumi.Input[_builtins.int] maximum_size: (Updatable) The maximum number of desktops permitted in the desktop pool.
         :param pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']] network_configuration: Provides information about the network configuration of the desktop pool.
@@ -1377,6 +1419,7 @@ class DesktopPool(pulumi.CustomResource):
         __props__.__dict__["are_volumes_preserved"] = are_volumes_preserved
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["availability_policy"] = availability_policy
+        __props__.__dict__["boot_volume_size_in_gbs"] = boot_volume_size_in_gbs
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["contact_details"] = contact_details
         __props__.__dict__["defined_tags"] = defined_tags
@@ -1448,6 +1491,14 @@ class DesktopPool(pulumi.CustomResource):
         return pulumi.get(self, "availability_policy")
 
     @_builtins.property
+    @pulumi.getter(name="bootVolumeSizeInGbs")
+    def boot_volume_size_in_gbs(self) -> pulumi.Output[_builtins.int]:
+        """
+        (Updatable) The size in GBs of the boot volume for the desktop pool.
+        """
+        return pulumi.get(self, "boot_volume_size_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:
         """
@@ -1507,7 +1558,7 @@ class DesktopPool(pulumi.CustomResource):
     @pulumi.getter
     def image(self) -> pulumi.Output['outputs.DesktopPoolImage']:
         """
-        Provides information about the desktop image.
+        (Updatable) Provides information about the desktop image.
         """
         return pulumi.get(self, "image")
 

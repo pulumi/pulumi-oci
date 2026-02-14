@@ -78,7 +78,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         public readonly string Namespace;
         /// <summary>

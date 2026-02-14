@@ -26,6 +26,10 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// </summary>
         public readonly Outputs.GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemConditionResult Condition;
         /// <summary>
+        /// The description of the security rule. This field can be used to add additional info.
+        /// </summary>
+        public readonly string? Description;
+        /// <summary>
         /// Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
         /// * INTRUSION_DETECTION - Intrusion Detection.
         /// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `Type`.
@@ -55,6 +59,8 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
             Outputs.GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemConditionResult condition,
 
+            string? description,
+
             string? inspection,
 
             string name,
@@ -69,6 +75,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         {
             Action = action;
             Condition = condition;
+            Description = description;
             Inspection = inspection;
             Name = name;
             NetworkFirewallPolicyId = networkFirewallPolicyId;

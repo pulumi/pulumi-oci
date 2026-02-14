@@ -120,8 +120,8 @@ class NetworkFirewallNatConfiguration(dict):
                  must_enable_private_nat: _builtins.bool,
                  nat_ip_address_lists: Optional[Sequence[_builtins.str]] = None):
         """
-        :param _builtins.bool must_enable_private_nat: (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
-        :param Sequence[_builtins.str] nat_ip_address_lists: An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        :param _builtins.bool must_enable_private_nat: (Updatable) The value of this field must be set to true if the network firewall policy being applied contains NAT rules. The value of this field can be set to false if the network firewall policy being applied or the currently attached firewall policy doesn't contain NAT rules.
+        :param Sequence[_builtins.str] nat_ip_address_lists: An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
         """
         pulumi.set(__self__, "must_enable_private_nat", must_enable_private_nat)
         if nat_ip_address_lists is not None:
@@ -131,7 +131,7 @@ class NetworkFirewallNatConfiguration(dict):
     @pulumi.getter(name="mustEnablePrivateNat")
     def must_enable_private_nat(self) -> _builtins.bool:
         """
-        (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+        (Updatable) The value of this field must be set to true if the network firewall policy being applied contains NAT rules. The value of this field can be set to false if the network firewall policy being applied or the currently attached firewall policy doesn't contain NAT rules.
         """
         return pulumi.get(self, "must_enable_private_nat")
 
@@ -139,7 +139,7 @@ class NetworkFirewallNatConfiguration(dict):
     @pulumi.getter(name="natIpAddressLists")
     def nat_ip_address_lists(self) -> Optional[Sequence[_builtins.str]]:
         """
-        An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
         """
         return pulumi.get(self, "nat_ip_address_lists")
 
@@ -169,8 +169,8 @@ class NetworkFirewallPolicyDecryptionRuleCondition(dict):
                  destination_addresses: Optional[Sequence[_builtins.str]] = None,
                  source_addresses: Optional[Sequence[_builtins.str]] = None):
         """
-        :param Sequence[_builtins.str] destination_addresses: (Updatable) An array of address list names to be evaluated against the traffic destination address.
-        :param Sequence[_builtins.str] source_addresses: (Updatable) An array of address list names to be evaluated against the traffic source address.
+        :param Sequence[_builtins.str] destination_addresses: (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+        :param Sequence[_builtins.str] source_addresses: (Updatable) An array of IP address list names to be evaluated against the traffic source address.
         """
         if destination_addresses is not None:
             pulumi.set(__self__, "destination_addresses", destination_addresses)
@@ -181,7 +181,7 @@ class NetworkFirewallPolicyDecryptionRuleCondition(dict):
     @pulumi.getter(name="destinationAddresses")
     def destination_addresses(self) -> Optional[Sequence[_builtins.str]]:
         """
-        (Updatable) An array of address list names to be evaluated against the traffic destination address.
+        (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
         """
         return pulumi.get(self, "destination_addresses")
 
@@ -189,7 +189,7 @@ class NetworkFirewallPolicyDecryptionRuleCondition(dict):
     @pulumi.getter(name="sourceAddresses")
     def source_addresses(self) -> Optional[Sequence[_builtins.str]]:
         """
-        (Updatable) An array of address list names to be evaluated against the traffic source address.
+        (Updatable) An array of IP address list names to be evaluated against the traffic source address.
         """
         return pulumi.get(self, "source_addresses")
 
@@ -738,8 +738,8 @@ class GetNetworkFirewallNatConfigurationResult(dict):
                  must_enable_private_nat: _builtins.bool,
                  nat_ip_address_lists: Sequence[_builtins.str]):
         """
-        :param _builtins.bool must_enable_private_nat: To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
-        :param Sequence[_builtins.str] nat_ip_address_lists: An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        :param _builtins.bool must_enable_private_nat: True indicates that NAT configuration is enabled. False indicates NAT configuration is disabled.
+        :param Sequence[_builtins.str] nat_ip_address_lists: An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
         """
         pulumi.set(__self__, "must_enable_private_nat", must_enable_private_nat)
         pulumi.set(__self__, "nat_ip_address_lists", nat_ip_address_lists)
@@ -748,7 +748,7 @@ class GetNetworkFirewallNatConfigurationResult(dict):
     @pulumi.getter(name="mustEnablePrivateNat")
     def must_enable_private_nat(self) -> _builtins.bool:
         """
-        To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+        True indicates that NAT configuration is enabled. False indicates NAT configuration is disabled.
         """
         return pulumi.get(self, "must_enable_private_nat")
 
@@ -756,7 +756,7 @@ class GetNetworkFirewallNatConfigurationResult(dict):
     @pulumi.getter(name="natIpAddressLists")
     def nat_ip_address_lists(self) -> Sequence[_builtins.str]:
         """
-        An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
         """
         return pulumi.get(self, "nat_ip_address_lists")
 
@@ -806,6 +806,7 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemResult
                  attached_network_firewall_count: _builtins.int,
                  compartment_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
@@ -818,6 +819,7 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemResult
         :param _builtins.int attached_network_firewall_count: Count of number of Network Firewall attached to the Policy.
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: The description of the network firewall policy. This field can be used to add additional info.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param _builtins.str id: Unique Network Firewall Policy identifier
@@ -830,6 +832,7 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemResult
         pulumi.set(__self__, "attached_network_firewall_count", attached_network_firewall_count)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
@@ -862,6 +865,14 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemResult
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the network firewall policy. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -948,7 +959,8 @@ class GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItemResult
                  network_firewall_policy_id: _builtins.str,
                  parent_resource_id: _builtins.str,
                  total_addresses: _builtins.int,
-                 type: _builtins.str):
+                 type: _builtins.str,
+                 description: Optional[_builtins.str] = None):
         """
         :param Sequence[_builtins.str] addresses: List of addresses.
         :param _builtins.str name: Unique name to identify the group of addresses to be used in the policy rules.
@@ -956,6 +968,7 @@ class GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItemResult
         :param _builtins.str parent_resource_id: OCID of the Network Firewall Policy this Address List belongs to.
         :param _builtins.int total_addresses: Count of total Addresses in the AddressList
         :param _builtins.str type: Type of address list.
+        :param _builtins.str description: The description of the address list. This field can be used to add additional info.
         """
         pulumi.set(__self__, "addresses", addresses)
         pulumi.set(__self__, "name", name)
@@ -963,6 +976,8 @@ class GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItemResult
         pulumi.set(__self__, "parent_resource_id", parent_resource_id)
         pulumi.set(__self__, "total_addresses", total_addresses)
         pulumi.set(__self__, "type", type)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
 
     @_builtins.property
     @pulumi.getter
@@ -1011,6 +1026,14 @@ class GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItemResult
         Type of address list.
         """
         return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        The description of the address list. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
 
 @pulumi.output_type
@@ -1065,19 +1088,23 @@ class GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollection
                  name: _builtins.str,
                  network_firewall_policy_id: _builtins.str,
                  parent_resource_id: _builtins.str,
-                 total_apps: _builtins.int):
+                 total_apps: _builtins.int,
+                 description: Optional[_builtins.str] = None):
         """
         :param Sequence[_builtins.str] apps: List of apps in the group.
         :param _builtins.str name: Name of the application Group.
         :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param _builtins.str parent_resource_id: OCID of the Network Firewall Policy this application group belongs to.
         :param _builtins.int total_apps: Count of total applications in the given application group.
+        :param _builtins.str description: The description of the application list. This field can be used to add additional info.
         """
         pulumi.set(__self__, "apps", apps)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         pulumi.set(__self__, "parent_resource_id", parent_resource_id)
         pulumi.set(__self__, "total_apps", total_apps)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
 
     @_builtins.property
     @pulumi.getter
@@ -1118,6 +1145,14 @@ class GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollection
         Count of total applications in the given application group.
         """
         return pulumi.get(self, "total_apps")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        The description of the application list. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
 
 @pulumi.output_type
@@ -1173,14 +1208,16 @@ class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItemResult
                  name: _builtins.str,
                  network_firewall_policy_id: _builtins.str,
                  parent_resource_id: _builtins.str,
-                 type: _builtins.str):
+                 type: _builtins.str,
+                 description: Optional[_builtins.str] = None):
         """
-        :param _builtins.int icmp_code: The value of the ICMP6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        :param _builtins.int icmp_type: The value of the ICMP6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        :param _builtins.int icmp_code: The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        :param _builtins.int icmp_type: The value of the ICMP/ICMP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         :param _builtins.str name: Name of the application.
         :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param _builtins.str parent_resource_id: OCID of the Network Firewall Policy this application belongs to.
         :param _builtins.str type: Describes the type of Application.
+        :param _builtins.str description: The description of the application. This field can be used to add additional info.
         """
         pulumi.set(__self__, "icmp_code", icmp_code)
         pulumi.set(__self__, "icmp_type", icmp_type)
@@ -1188,12 +1225,14 @@ class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItemResult
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         pulumi.set(__self__, "parent_resource_id", parent_resource_id)
         pulumi.set(__self__, "type", type)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
 
     @_builtins.property
     @pulumi.getter(name="icmpCode")
     def icmp_code(self) -> _builtins.int:
         """
-        The value of the ICMP6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         """
         return pulumi.get(self, "icmp_code")
 
@@ -1201,7 +1240,7 @@ class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItemResult
     @pulumi.getter(name="icmpType")
     def icmp_type(self) -> _builtins.int:
         """
-        The value of the ICMP6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        The value of the ICMP/ICMP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         """
         return pulumi.get(self, "icmp_type")
 
@@ -1236,6 +1275,14 @@ class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItemResult
         Describes the type of Application.
         """
         return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        The description of the application. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
 
 @pulumi.output_type
@@ -1298,7 +1345,8 @@ class GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollecti
                  name: _builtins.str,
                  network_firewall_policy_id: _builtins.str,
                  parent_resource_id: _builtins.str,
-                 type: _builtins.str):
+                 type: _builtins.str,
+                 description: Optional[_builtins.str] = None):
         """
         :param _builtins.bool are_certificate_extensions_restricted: Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
         :param _builtins.bool is_auto_include_alt_name: Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
@@ -1313,6 +1361,7 @@ class GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollecti
         :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param _builtins.str parent_resource_id: OCID of the Network Firewall Policy this decryption profile belongs to.
         :param _builtins.str type: Describes the type of Decryption Profile SslForwardProxy or SslInboundInspection.
+        :param _builtins.str description: The description of the decryption profile. This field can be used to add additional info.
         """
         pulumi.set(__self__, "are_certificate_extensions_restricted", are_certificate_extensions_restricted)
         pulumi.set(__self__, "is_auto_include_alt_name", is_auto_include_alt_name)
@@ -1327,6 +1376,8 @@ class GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollecti
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         pulumi.set(__self__, "parent_resource_id", parent_resource_id)
         pulumi.set(__self__, "type", type)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
 
     @_builtins.property
     @pulumi.getter(name="areCertificateExtensionsRestricted")
@@ -1431,6 +1482,14 @@ class GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollecti
         Describes the type of Decryption Profile SslForwardProxy or SslInboundInspection.
         """
         return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        The description of the decryption profile. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
 
 @pulumi.output_type
@@ -1546,6 +1605,7 @@ class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem
                  parent_resource_id: _builtins.str,
                  position: 'outputs.GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPositionResult',
                  decryption_profile: Optional[_builtins.str] = None,
+                 description: Optional[_builtins.str] = None,
                  priority_order: Optional[_builtins.str] = None,
                  secret: Optional[_builtins.str] = None):
         """
@@ -1558,6 +1618,7 @@ class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem
         :param _builtins.str parent_resource_id: OCID of the Network Firewall Policy this decryption rule belongs to.
         :param 'GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPositionArgs' position: An object which defines the position of the rule.
         :param _builtins.str decryption_profile: The name of the decryption profile to use.
+        :param _builtins.str description: The description of the decryption rule. This field can be used to add additional info.
         :param _builtins.str secret: The name of a mapped secret. Its `type` must match that of the specified decryption profile.
         """
         pulumi.set(__self__, "action", action)
@@ -1568,6 +1629,8 @@ class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem
         pulumi.set(__self__, "position", position)
         if decryption_profile is not None:
             pulumi.set(__self__, "decryption_profile", decryption_profile)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if priority_order is not None:
             pulumi.set(__self__, "priority_order", priority_order)
         if secret is not None:
@@ -1630,6 +1693,14 @@ class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem
         The name of the decryption profile to use.
         """
         return pulumi.get(self, "decryption_profile")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        The description of the decryption rule. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter(name="priorityOrder")
@@ -1759,7 +1830,8 @@ class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemResu
                  source: _builtins.str,
                  type: _builtins.str,
                  vault_secret_id: _builtins.str,
-                 version_number: _builtins.int):
+                 version_number: _builtins.int,
+                 description: Optional[_builtins.str] = None):
         """
         :param _builtins.str name: Name of the secret.
         :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -1770,6 +1842,7 @@ class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemResu
                * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         :param _builtins.str vault_secret_id: OCID for the Vault Secret to be used.
         :param _builtins.int version_number: Version number of the secret to be used.
+        :param _builtins.str description: The description of the mapped secret. This field can be used to add additional info.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
@@ -1778,6 +1851,8 @@ class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemResu
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vault_secret_id", vault_secret_id)
         pulumi.set(__self__, "version_number", version_number)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
 
     @_builtins.property
     @pulumi.getter
@@ -1836,6 +1911,14 @@ class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemResu
         Version number of the secret to be used.
         """
         return pulumi.get(self, "version_number")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        The description of the mapped secret. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
 
 @pulumi.output_type
@@ -1967,10 +2050,10 @@ class GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemResult(dict):
         """
         :param _builtins.str action: action:
                * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
-        :param 'GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionArgs' condition: Match criteria used in NAT Rule used on the firewall policy.
+        :param 'GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionArgs' condition: Match criteria used in NAT rule used on the firewall policy.
         :param _builtins.str name: Name for the NAT rule, must be unique within the policy.
         :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param _builtins.str parent_resource_id: OCID of the Network Firewall Policy this decryption profile belongs to.
+        :param _builtins.str parent_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
         :param 'GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionArgs' position: An object which defines the position of the rule.
         :param _builtins.str priority_order: The priority order in which this rule should be evaluated
         :param _builtins.str type: NAT type:
@@ -2001,7 +2084,7 @@ class GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemResult(dict):
     @pulumi.getter
     def condition(self) -> 'outputs.GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionResult':
         """
-        Match criteria used in NAT Rule used on the firewall policy.
+        Match criteria used in NAT rule used on the firewall policy.
         """
         return pulumi.get(self, "condition")
 
@@ -2025,7 +2108,7 @@ class GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemResult(dict):
     @pulumi.getter(name="parentResourceId")
     def parent_resource_id(self) -> _builtins.str:
         """
-        OCID of the Network Firewall Policy this decryption profile belongs to.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
         """
         return pulumi.get(self, "parent_resource_id")
 
@@ -2280,6 +2363,7 @@ class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemResu
                  network_firewall_policy_id: _builtins.str,
                  parent_resource_id: _builtins.str,
                  positions: Sequence['outputs.GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPositionResult'],
+                 description: Optional[_builtins.str] = None,
                  inspection: Optional[_builtins.str] = None,
                  priority_order: Optional[_builtins.str] = None):
         """
@@ -2293,6 +2377,7 @@ class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemResu
         :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param _builtins.str parent_resource_id: OCID of the Network Firewall Policy this security rule belongs to.
         :param Sequence['GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPositionArgs'] positions: An object which defines the position of the rule.
+        :param _builtins.str description: The description of the security rule. This field can be used to add additional info.
         :param _builtins.str inspection: Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
                * INTRUSION_DETECTION - Intrusion Detection.
                * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
@@ -2303,6 +2388,8 @@ class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemResu
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         pulumi.set(__self__, "parent_resource_id", parent_resource_id)
         pulumi.set(__self__, "positions", positions)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if inspection is not None:
             pulumi.set(__self__, "inspection", inspection)
         if priority_order is not None:
@@ -2359,6 +2446,14 @@ class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemResu
         An object which defines the position of the rule.
         """
         return pulumi.get(self, "positions")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        The description of the security rule. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter
@@ -2524,19 +2619,23 @@ class GetNetworkFirewallPolicyServiceListsServiceListSummaryCollectionItemResult
                  network_firewall_policy_id: _builtins.str,
                  parent_resource_id: _builtins.str,
                  services: Sequence[_builtins.str],
-                 total_services: _builtins.int):
+                 total_services: _builtins.int,
+                 description: Optional[_builtins.str] = None):
         """
         :param _builtins.str name: Name of the service Group.
         :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param _builtins.str parent_resource_id: OCID of the Network Firewall Policy this serviceList belongs to.
         :param Sequence[_builtins.str] services: List of services in the group.
         :param _builtins.int total_services: Count of total services in the given service List.
+        :param _builtins.str description: The description of the service list. This field can be used to add additional info.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         pulumi.set(__self__, "parent_resource_id", parent_resource_id)
         pulumi.set(__self__, "services", services)
         pulumi.set(__self__, "total_services", total_services)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
 
     @_builtins.property
     @pulumi.getter
@@ -2577,6 +2676,14 @@ class GetNetworkFirewallPolicyServiceListsServiceListSummaryCollectionItemResult
         Count of total services in the given service List.
         """
         return pulumi.get(self, "total_services")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        The description of the service list. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
 
 @pulumi.output_type
@@ -2660,19 +2767,23 @@ class GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemResult(dict):
                  network_firewall_policy_id: _builtins.str,
                  parent_resource_id: _builtins.str,
                  port_ranges: Sequence['outputs.GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRangeResult'],
-                 type: _builtins.str):
+                 type: _builtins.str,
+                 description: Optional[_builtins.str] = None):
         """
         :param _builtins.str name: Name of the service.
         :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param _builtins.str parent_resource_id: OCID of the Network Firewall Policy this service belongs to.
         :param Sequence['GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRangeArgs'] port_ranges: List of port-ranges used.
         :param _builtins.str type: Describes the type of Service.
+        :param _builtins.str description: The description of the service. This field can be used to add additional info.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         pulumi.set(__self__, "parent_resource_id", parent_resource_id)
         pulumi.set(__self__, "port_ranges", port_ranges)
         pulumi.set(__self__, "type", type)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
 
     @_builtins.property
     @pulumi.getter
@@ -2713,6 +2824,14 @@ class GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemResult(dict):
         Describes the type of Service.
         """
         return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        The description of the service. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
 
 @pulumi.output_type
@@ -2876,7 +2995,8 @@ class GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCo
                  position: 'outputs.GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionResult',
                  priority_order: _builtins.str,
                  profile: 'outputs.GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileResult',
-                 protocol: _builtins.str):
+                 protocol: _builtins.str,
+                 description: Optional[_builtins.str] = None):
         """
         :param _builtins.str action: Types of Inspect Action on the Traffic flow.
                * INSPECT - Inspect the traffic.
@@ -2890,6 +3010,7 @@ class GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCo
         :param 'GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileArgs' profile: Vxlan Inspect profile used in Vxlan Tunnel Inspection Rules.
         :param _builtins.str protocol: Types of Tunnel Inspection Protocol to be applied on the traffic.
                * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
+        :param _builtins.str description: The description of the tunnel inspect rule. This field can be used to add additional info.
         """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "condition", condition)
@@ -2900,6 +3021,8 @@ class GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCo
         pulumi.set(__self__, "priority_order", priority_order)
         pulumi.set(__self__, "profile", profile)
         pulumi.set(__self__, "protocol", protocol)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
 
     @_builtins.property
     @pulumi.getter
@@ -2975,6 +3098,14 @@ class GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCo
         * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
         """
         return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        The description of the tunnel inspect rule. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
 
 @pulumi.output_type
@@ -3136,19 +3267,23 @@ class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemResult(dict):
                  network_firewall_policy_id: _builtins.str,
                  parent_resource_id: _builtins.str,
                  total_urls: _builtins.int,
-                 urls: Sequence['outputs.GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemUrlResult']):
+                 urls: Sequence['outputs.GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemUrlResult'],
+                 description: Optional[_builtins.str] = None):
         """
         :param _builtins.str name: Unique name identifier for the URL list.
         :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param _builtins.str parent_resource_id: OCID of the Network Firewall Policy this URL List belongs to.
         :param _builtins.int total_urls: Total count of URLs in the URL List
         :param Sequence['GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemUrlArgs'] urls: List of urls.
+        :param _builtins.str description: The description of the Url list. This field can be used to add additional info.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         pulumi.set(__self__, "parent_resource_id", parent_resource_id)
         pulumi.set(__self__, "total_urls", total_urls)
         pulumi.set(__self__, "urls", urls)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
 
     @_builtins.property
     @pulumi.getter
@@ -3189,6 +3324,14 @@ class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemResult(dict):
         List of urls.
         """
         return pulumi.get(self, "urls")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        The description of the Url list. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
 
 @pulumi.output_type
@@ -3276,6 +3419,7 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemResult(dict):
                  nat_configurations: Sequence['outputs.GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationResult'],
                  network_firewall_policy_id: _builtins.str,
                  network_security_group_ids: Sequence[_builtins.str],
+                 shape: _builtins.str,
                  state: _builtins.str,
                  subnet_id: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -3291,9 +3435,10 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemResult(dict):
         :param _builtins.str ipv4address: IPv4 address for the Network Firewall.
         :param _builtins.str ipv6address: IPv6 address for the Network Firewall.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
-        :param Sequence['GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArgs'] nat_configurations: Nat Configuration response.
+        :param Sequence['GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArgs'] nat_configurations: Response to a request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
         :param _builtins.str network_firewall_policy_id: A filter to return only resources that match the entire networkFirewallPolicyId given.
         :param Sequence[_builtins.str] network_security_group_ids: An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
+        :param _builtins.str shape: The shape of a firewall to determine the bandwidth that the firewall allows.
         :param _builtins.str state: A filter to return only resources with a lifecycleState matching the given value.
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -3312,6 +3457,7 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemResult(dict):
         pulumi.set(__self__, "nat_configurations", nat_configurations)
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -3394,7 +3540,7 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemResult(dict):
     @pulumi.getter(name="natConfigurations")
     def nat_configurations(self) -> Sequence['outputs.GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationResult']:
         """
-        Nat Configuration response.
+        Response to a request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
         """
         return pulumi.get(self, "nat_configurations")
 
@@ -3413,6 +3559,14 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemResult(dict):
         An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
         """
         return pulumi.get(self, "network_security_group_ids")
+
+    @_builtins.property
+    @pulumi.getter
+    def shape(self) -> _builtins.str:
+        """
+        The shape of a firewall to determine the bandwidth that the firewall allows.
+        """
+        return pulumi.get(self, "shape")
 
     @_builtins.property
     @pulumi.getter
@@ -3461,8 +3615,8 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationResult(dic
                  must_enable_private_nat: _builtins.bool,
                  nat_ip_address_lists: Sequence[_builtins.str]):
         """
-        :param _builtins.bool must_enable_private_nat: To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
-        :param Sequence[_builtins.str] nat_ip_address_lists: An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        :param _builtins.bool must_enable_private_nat: True indicates that NAT configuration is enabled. False indicates NAT configuration is disabled.
+        :param Sequence[_builtins.str] nat_ip_address_lists: An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
         """
         pulumi.set(__self__, "must_enable_private_nat", must_enable_private_nat)
         pulumi.set(__self__, "nat_ip_address_lists", nat_ip_address_lists)
@@ -3471,7 +3625,7 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationResult(dic
     @pulumi.getter(name="mustEnablePrivateNat")
     def must_enable_private_nat(self) -> _builtins.bool:
         """
-        To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+        True indicates that NAT configuration is enabled. False indicates NAT configuration is disabled.
         """
         return pulumi.get(self, "must_enable_private_nat")
 
@@ -3479,7 +3633,7 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationResult(dic
     @pulumi.getter(name="natIpAddressLists")
     def nat_ip_address_lists(self) -> Sequence[_builtins.str]:
         """
-        An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
         """
         return pulumi.get(self, "nat_ip_address_lists")
 

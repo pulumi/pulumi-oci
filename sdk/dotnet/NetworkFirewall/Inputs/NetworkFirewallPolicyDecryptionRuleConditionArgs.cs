@@ -16,7 +16,7 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
         private InputList<string>? _destinationAddresses;
 
         /// <summary>
-        /// (Updatable) An array of address list names to be evaluated against the traffic destination address.
+        /// (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
         /// </summary>
         public InputList<string> DestinationAddresses
         {
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
         private InputList<string>? _sourceAddresses;
 
         /// <summary>
-        /// (Updatable) An array of address list names to be evaluated against the traffic source address.
+        /// (Updatable) An array of IP address list names to be evaluated against the traffic source address.
         /// </summary>
         public InputList<string> SourceAddresses
         {

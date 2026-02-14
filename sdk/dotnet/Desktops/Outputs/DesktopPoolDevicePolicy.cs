@@ -41,6 +41,10 @@ namespace Pulumi.Oci.Desktops.Outputs
         /// (Updatable) Indicates whether printing is enabled.
         /// </summary>
         public readonly bool IsPrintingEnabled;
+        /// <summary>
+        /// (Updatable) Indicates whether video input is enabled.
+        /// </summary>
+        public readonly bool? IsVideoInputEnabled;
 
         [OutputConstructor]
         private DesktopPoolDevicePolicy(
@@ -56,7 +60,9 @@ namespace Pulumi.Oci.Desktops.Outputs
 
             bool isPointerEnabled,
 
-            bool isPrintingEnabled)
+            bool isPrintingEnabled,
+
+            bool? isVideoInputEnabled)
         {
             AudioMode = audioMode;
             CdmMode = cdmMode;
@@ -65,6 +71,7 @@ namespace Pulumi.Oci.Desktops.Outputs
             IsKeyboardEnabled = isKeyboardEnabled;
             IsPointerEnabled = isPointerEnabled;
             IsPrintingEnabled = isPrintingEnabled;
+            IsVideoInputEnabled = isVideoInputEnabled;
         }
     }
 }

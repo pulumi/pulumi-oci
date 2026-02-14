@@ -224,6 +224,20 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
         return this.ipv4;
     }
     /**
+     * The volume&#39;s iSCSI IPv6 address.  Example: `2001:db8::1/64`
+     * 
+     */
+    @Export(name="ipv6", refs={String.class}, tree="[0]")
+    private Output<String> ipv6;
+
+    /**
+     * @return The volume&#39;s iSCSI IPv6 address.  Example: `2001:db8::1/64`
+     * 
+     */
+    public Output<String> ipv6() {
+        return this.ipv6;
+    }
+    /**
      * The target volume&#39;s iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
      * 
      */

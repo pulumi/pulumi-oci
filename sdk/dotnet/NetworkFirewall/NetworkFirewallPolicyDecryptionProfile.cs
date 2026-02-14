@@ -32,6 +32,7 @@ namespace Pulumi.Oci.NetworkFirewall
     ///         Name = networkFirewallPolicyDecryptionProfileName,
     ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
     ///         Type = networkFirewallPolicyDecryptionProfileType,
+    ///         Description = networkFirewallPolicyDecryptionProfileDescription,
     ///         AreCertificateExtensionsRestricted = networkFirewallPolicyDecryptionProfileAreCertificateExtensionsRestricted,
     ///         IsAutoIncludeAltName = networkFirewallPolicyDecryptionProfileIsAutoIncludeAltName,
     ///         IsExpiredCertificateBlocked = networkFirewallPolicyDecryptionProfileIsExpiredCertificateBlocked,
@@ -62,6 +63,12 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         [Output("areCertificateExtensionsRestricted")]
         public Output<bool> AreCertificateExtensionsRestricted { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The description of the decryption profile. This field can be used to add additional info.
+        /// </summary>
+        [Output("description")]
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
@@ -192,6 +199,12 @@ namespace Pulumi.Oci.NetworkFirewall
         public Input<bool>? AreCertificateExtensionsRestricted { get; set; }
 
         /// <summary>
+        /// (Updatable) The description of the decryption profile. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        /// <summary>
         /// (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
         /// </summary>
         [Input("isAutoIncludeAltName")]
@@ -274,6 +287,12 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         [Input("areCertificateExtensionsRestricted")]
         public Input<bool>? AreCertificateExtensionsRestricted { get; set; }
+
+        /// <summary>
+        /// (Updatable) The description of the decryption profile. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
 
         /// <summary>
         /// (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.

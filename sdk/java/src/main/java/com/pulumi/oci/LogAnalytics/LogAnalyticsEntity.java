@@ -118,14 +118,14 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
         return this.associatedSourcesCount;
     }
     /**
-     * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+     * (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      * 
      */
     @Export(name="cloudResourceId", refs={String.class}, tree="[0]")
     private Output<String> cloudResourceId;
 
     /**
-     * @return The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+     * @return (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      * 
      */
     public Output<String> cloudResourceId() {
@@ -300,14 +300,14 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
         return this.name;
     }
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public Output<String> namespace() {

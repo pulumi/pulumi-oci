@@ -14,14 +14,14 @@ public final class GetNamespaceFieldUsagePlainArgs extends com.pulumi.resources.
     public static final GetNamespaceFieldUsagePlainArgs Empty = new GetNamespaceFieldUsagePlainArgs();
 
     /**
-     * The field name.
+     * The field name. Field name can be obtained by running &#39;oci log-analytics field list-fields --namespace-name &lt;namespace&gt;&#39;. The json output &#39;name&#39; parameter value contains the field name.
      * 
      */
     @Import(name="fieldName", required=true)
     private String fieldName;
 
     /**
-     * @return The field name.
+     * @return The field name. Field name can be obtained by running &#39;oci log-analytics field list-fields --namespace-name &lt;namespace&gt;&#39;. The json output &#39;name&#39; parameter value contains the field name.
      * 
      */
     public String fieldName() {
@@ -29,14 +29,14 @@ public final class GetNamespaceFieldUsagePlainArgs extends com.pulumi.resources.
     }
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     @Import(name="namespace", required=true)
     private String namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public String namespace() {
@@ -69,7 +69,7 @@ public final class GetNamespaceFieldUsagePlainArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param fieldName The field name.
+         * @param fieldName The field name. Field name can be obtained by running &#39;oci log-analytics field list-fields --namespace-name &lt;namespace&gt;&#39;. The json output &#39;name&#39; parameter value contains the field name.
          * 
          * @return builder
          * 
@@ -80,7 +80,7 @@ public final class GetNamespaceFieldUsagePlainArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 

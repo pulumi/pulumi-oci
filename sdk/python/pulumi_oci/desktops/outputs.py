@@ -27,6 +27,9 @@ __all__ = [
     'DesktopPoolSessionLifecycleActionsDisconnect',
     'DesktopPoolSessionLifecycleActionsInactivity',
     'DesktopPoolShapeConfig',
+    'GetDesktopDesktopConnectionResult',
+    'GetDesktopDesktopConnectionLastActionResult',
+    'GetDesktopDesktopConnectionNextActionResult',
     'GetDesktopDevicePolicyResult',
     'GetDesktopHostingOptionResult',
     'GetDesktopHostingOptionImageResult',
@@ -35,6 +38,10 @@ __all__ = [
     'GetDesktopPoolAvailabilityPolicyStopScheduleResult',
     'GetDesktopPoolDesktopsDesktopPoolDesktopCollectionResult',
     'GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemResult',
+    'GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionResult',
+    'GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionResult',
+    'GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionResult',
+    'GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageResult',
     'GetDesktopPoolDesktopsFilterResult',
     'GetDesktopPoolDevicePolicyResult',
     'GetDesktopPoolImageResult',
@@ -63,6 +70,9 @@ __all__ = [
     'GetDesktopPoolsFilterResult',
     'GetDesktopsDesktopCollectionResult',
     'GetDesktopsDesktopCollectionItemResult',
+    'GetDesktopsDesktopCollectionItemDesktopConnectionResult',
+    'GetDesktopsDesktopCollectionItemDesktopConnectionLastActionResult',
+    'GetDesktopsDesktopCollectionItemDesktopConnectionNextActionResult',
     'GetDesktopsFilterResult',
 ]
 
@@ -227,6 +237,8 @@ class DesktopPoolDevicePolicy(dict):
             suggest = "is_pointer_enabled"
         elif key == "isPrintingEnabled":
             suggest = "is_printing_enabled"
+        elif key == "isVideoInputEnabled":
+            suggest = "is_video_input_enabled"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DesktopPoolDevicePolicy. Access the value via the '{suggest}' property getter instead.")
@@ -246,7 +258,8 @@ class DesktopPoolDevicePolicy(dict):
                  is_display_enabled: _builtins.bool,
                  is_keyboard_enabled: _builtins.bool,
                  is_pointer_enabled: _builtins.bool,
-                 is_printing_enabled: _builtins.bool):
+                 is_printing_enabled: _builtins.bool,
+                 is_video_input_enabled: Optional[_builtins.bool] = None):
         """
         :param _builtins.str audio_mode: (Updatable) The audio mode. NONE: No access to the local audio devices is permitted. TODESKTOP: The user may record audio on their desktop.  FROMDESKTOP: The user may play audio on their desktop. FULL: The user may play and record audio on their desktop.
         :param _builtins.str cdm_mode: (Updatable) The client local drive access mode. NONE: No access to local drives permitted. READONLY: The user may read from local drives on their desktop. FULL: The user may read from and write to their local drives on their desktop.
@@ -255,6 +268,7 @@ class DesktopPoolDevicePolicy(dict):
         :param _builtins.bool is_keyboard_enabled: (Updatable) Indicates whether the keyboard is enabled.
         :param _builtins.bool is_pointer_enabled: (Updatable) Indicates whether the pointer is enabled.
         :param _builtins.bool is_printing_enabled: (Updatable) Indicates whether printing is enabled.
+        :param _builtins.bool is_video_input_enabled: (Updatable) Indicates whether video input is enabled.
         """
         pulumi.set(__self__, "audio_mode", audio_mode)
         pulumi.set(__self__, "cdm_mode", cdm_mode)
@@ -263,6 +277,8 @@ class DesktopPoolDevicePolicy(dict):
         pulumi.set(__self__, "is_keyboard_enabled", is_keyboard_enabled)
         pulumi.set(__self__, "is_pointer_enabled", is_pointer_enabled)
         pulumi.set(__self__, "is_printing_enabled", is_printing_enabled)
+        if is_video_input_enabled is not None:
+            pulumi.set(__self__, "is_video_input_enabled", is_video_input_enabled)
 
     @_builtins.property
     @pulumi.getter(name="audioMode")
@@ -320,6 +336,14 @@ class DesktopPoolDevicePolicy(dict):
         """
         return pulumi.get(self, "is_printing_enabled")
 
+    @_builtins.property
+    @pulumi.getter(name="isVideoInputEnabled")
+    def is_video_input_enabled(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Indicates whether video input is enabled.
+        """
+        return pulumi.get(self, "is_video_input_enabled")
+
 
 @pulumi.output_type
 class DesktopPoolImage(dict):
@@ -349,7 +373,7 @@ class DesktopPoolImage(dict):
                  image_name: _builtins.str,
                  operating_system: Optional[_builtins.str] = None):
         """
-        :param _builtins.str image_id: The OCID of the desktop image.
+        :param _builtins.str image_id: (Updatable) The OCID of the desktop image.
         :param _builtins.str image_name: The name of the desktop image.
         :param _builtins.str operating_system: The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
         """
@@ -362,7 +386,7 @@ class DesktopPoolImage(dict):
     @pulumi.getter(name="imageId")
     def image_id(self) -> _builtins.str:
         """
-        The OCID of the desktop image.
+        (Updatable) The OCID of the desktop image.
         """
         return pulumi.get(self, "image_id")
 
@@ -716,6 +740,148 @@ class DesktopPoolShapeConfig(dict):
 
 
 @pulumi.output_type
+class GetDesktopDesktopConnectionResult(dict):
+    def __init__(__self__, *,
+                 client_platform: _builtins.str,
+                 client_type: _builtins.str,
+                 client_version: _builtins.str,
+                 last_actions: Sequence['outputs.GetDesktopDesktopConnectionLastActionResult'],
+                 next_actions: Sequence['outputs.GetDesktopDesktopConnectionNextActionResult'],
+                 time_connected: _builtins.str,
+                 time_disconnected: _builtins.str):
+        """
+        :param _builtins.str client_platform: The platform on which the Secure Desktops client runs.
+        :param _builtins.str client_type: The type of Secure Desktops client connected to a desktop.
+        :param _builtins.str client_version: The version of the Secure Desktops client connected to a desktop, applicable only to the installed client type.
+        :param Sequence['GetDesktopDesktopConnectionLastActionArgs'] last_actions: Provides information about actions performed on a desktop, including type and time.
+        :param Sequence['GetDesktopDesktopConnectionNextActionArgs'] next_actions: Provides information about actions performed on a desktop, including type and time.
+        :param _builtins.str time_connected: The time when the last connection to a desktop started.
+        :param _builtins.str time_disconnected: The time when the last connection to a desktop ended.
+        """
+        pulumi.set(__self__, "client_platform", client_platform)
+        pulumi.set(__self__, "client_type", client_type)
+        pulumi.set(__self__, "client_version", client_version)
+        pulumi.set(__self__, "last_actions", last_actions)
+        pulumi.set(__self__, "next_actions", next_actions)
+        pulumi.set(__self__, "time_connected", time_connected)
+        pulumi.set(__self__, "time_disconnected", time_disconnected)
+
+    @_builtins.property
+    @pulumi.getter(name="clientPlatform")
+    def client_platform(self) -> _builtins.str:
+        """
+        The platform on which the Secure Desktops client runs.
+        """
+        return pulumi.get(self, "client_platform")
+
+    @_builtins.property
+    @pulumi.getter(name="clientType")
+    def client_type(self) -> _builtins.str:
+        """
+        The type of Secure Desktops client connected to a desktop.
+        """
+        return pulumi.get(self, "client_type")
+
+    @_builtins.property
+    @pulumi.getter(name="clientVersion")
+    def client_version(self) -> _builtins.str:
+        """
+        The version of the Secure Desktops client connected to a desktop, applicable only to the installed client type.
+        """
+        return pulumi.get(self, "client_version")
+
+    @_builtins.property
+    @pulumi.getter(name="lastActions")
+    def last_actions(self) -> Sequence['outputs.GetDesktopDesktopConnectionLastActionResult']:
+        """
+        Provides information about actions performed on a desktop, including type and time.
+        """
+        return pulumi.get(self, "last_actions")
+
+    @_builtins.property
+    @pulumi.getter(name="nextActions")
+    def next_actions(self) -> Sequence['outputs.GetDesktopDesktopConnectionNextActionResult']:
+        """
+        Provides information about actions performed on a desktop, including type and time.
+        """
+        return pulumi.get(self, "next_actions")
+
+    @_builtins.property
+    @pulumi.getter(name="timeConnected")
+    def time_connected(self) -> _builtins.str:
+        """
+        The time when the last connection to a desktop started.
+        """
+        return pulumi.get(self, "time_connected")
+
+    @_builtins.property
+    @pulumi.getter(name="timeDisconnected")
+    def time_disconnected(self) -> _builtins.str:
+        """
+        The time when the last connection to a desktop ended.
+        """
+        return pulumi.get(self, "time_disconnected")
+
+
+@pulumi.output_type
+class GetDesktopDesktopConnectionLastActionResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 time_applied: _builtins.str):
+        """
+        :param _builtins.str action: An action performed on a desktop.
+        :param _builtins.str time_applied: The time of an action performed on a desktop.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "time_applied", time_applied)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        """
+        An action performed on a desktop.
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="timeApplied")
+    def time_applied(self) -> _builtins.str:
+        """
+        The time of an action performed on a desktop.
+        """
+        return pulumi.get(self, "time_applied")
+
+
+@pulumi.output_type
+class GetDesktopDesktopConnectionNextActionResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 time_applied: _builtins.str):
+        """
+        :param _builtins.str action: An action performed on a desktop.
+        :param _builtins.str time_applied: The time of an action performed on a desktop.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "time_applied", time_applied)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        """
+        An action performed on a desktop.
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="timeApplied")
+    def time_applied(self) -> _builtins.str:
+        """
+        The time of an action performed on a desktop.
+        """
+        return pulumi.get(self, "time_applied")
+
+
+@pulumi.output_type
 class GetDesktopDevicePolicyResult(dict):
     def __init__(__self__, *,
                  audio_mode: _builtins.str,
@@ -724,7 +890,8 @@ class GetDesktopDevicePolicyResult(dict):
                  is_display_enabled: _builtins.bool,
                  is_keyboard_enabled: _builtins.bool,
                  is_pointer_enabled: _builtins.bool,
-                 is_printing_enabled: _builtins.bool):
+                 is_printing_enabled: _builtins.bool,
+                 is_video_input_enabled: _builtins.bool):
         """
         :param _builtins.str audio_mode: The audio mode. NONE: No access to the local audio devices is permitted. TODESKTOP: The user may record audio on their desktop.  FROMDESKTOP: The user may play audio on their desktop. FULL: The user may play and record audio on their desktop.
         :param _builtins.str cdm_mode: The client local drive access mode. NONE: No access to local drives permitted. READONLY: The user may read from local drives on their desktop. FULL: The user may read from and write to their local drives on their desktop.
@@ -733,6 +900,7 @@ class GetDesktopDevicePolicyResult(dict):
         :param _builtins.bool is_keyboard_enabled: Indicates whether the keyboard is enabled.
         :param _builtins.bool is_pointer_enabled: Indicates whether the pointer is enabled.
         :param _builtins.bool is_printing_enabled: Indicates whether printing is enabled.
+        :param _builtins.bool is_video_input_enabled: Indicates whether video input is enabled.
         """
         pulumi.set(__self__, "audio_mode", audio_mode)
         pulumi.set(__self__, "cdm_mode", cdm_mode)
@@ -741,6 +909,7 @@ class GetDesktopDevicePolicyResult(dict):
         pulumi.set(__self__, "is_keyboard_enabled", is_keyboard_enabled)
         pulumi.set(__self__, "is_pointer_enabled", is_pointer_enabled)
         pulumi.set(__self__, "is_printing_enabled", is_printing_enabled)
+        pulumi.set(__self__, "is_video_input_enabled", is_video_input_enabled)
 
     @_builtins.property
     @pulumi.getter(name="audioMode")
@@ -797,6 +966,14 @@ class GetDesktopDevicePolicyResult(dict):
         Indicates whether printing is enabled.
         """
         return pulumi.get(self, "is_printing_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isVideoInputEnabled")
+    def is_video_input_enabled(self) -> _builtins.bool:
+        """
+        Indicates whether video input is enabled.
+        """
+        return pulumi.get(self, "is_video_input_enabled")
 
 
 @pulumi.output_type
@@ -977,8 +1154,10 @@ class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionResult(dict):
 class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemResult(dict):
     def __init__(__self__, *,
                  defined_tags: Mapping[str, _builtins.str],
+                 desktop_connections: Sequence['outputs.GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionResult'],
                  desktop_id: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
+                 images: Sequence['outputs.GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageResult'],
                  instance_id: _builtins.str,
                  is_assigned: _builtins.bool,
                  state: _builtins.str,
@@ -986,8 +1165,10 @@ class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemResult(dict):
                  user_name: _builtins.str):
         """
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Sequence['GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionArgs'] desktop_connections: Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
         :param _builtins.str desktop_id: The OCID of the desktop.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Sequence['GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageArgs'] images: Provides information about the desktop image.
         :param _builtins.str instance_id: The OCID of the compute resource used by this desktop.
         :param _builtins.bool is_assigned: Indicates whether the desktop is assigned to a user.
         :param _builtins.str state: A filter to return only results with the given lifecycleState.
@@ -995,8 +1176,10 @@ class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemResult(dict):
         :param _builtins.str user_name: The owner of the desktop.
         """
         pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "desktop_connections", desktop_connections)
         pulumi.set(__self__, "desktop_id", desktop_id)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "images", images)
         pulumi.set(__self__, "instance_id", instance_id)
         pulumi.set(__self__, "is_assigned", is_assigned)
         pulumi.set(__self__, "state", state)
@@ -1010,6 +1193,14 @@ class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemResult(dict):
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="desktopConnections")
+    def desktop_connections(self) -> Sequence['outputs.GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionResult']:
+        """
+        Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+        """
+        return pulumi.get(self, "desktop_connections")
 
     @_builtins.property
     @pulumi.getter(name="desktopId")
@@ -1026,6 +1217,14 @@ class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemResult(dict):
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def images(self) -> Sequence['outputs.GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageResult']:
+        """
+        Provides information about the desktop image.
+        """
+        return pulumi.get(self, "images")
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
@@ -1069,6 +1268,188 @@ class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionResult(dict):
+    def __init__(__self__, *,
+                 client_platform: _builtins.str,
+                 client_type: _builtins.str,
+                 client_version: _builtins.str,
+                 last_actions: Sequence['outputs.GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionResult'],
+                 next_actions: Sequence['outputs.GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionResult'],
+                 time_connected: _builtins.str,
+                 time_disconnected: _builtins.str):
+        """
+        :param _builtins.str client_platform: The platform on which the Secure Desktops client runs.
+        :param _builtins.str client_type: The type of Secure Desktops client connected to a desktop.
+        :param _builtins.str client_version: The version of the Secure Desktops client connected to a desktop, applicable only to the installed client type.
+        :param Sequence['GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionArgs'] last_actions: Provides information about actions performed on a desktop, including type and time.
+        :param Sequence['GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionArgs'] next_actions: Provides information about actions performed on a desktop, including type and time.
+        :param _builtins.str time_connected: The time when the last connection to a desktop started.
+        :param _builtins.str time_disconnected: The time when the last connection to a desktop ended.
+        """
+        pulumi.set(__self__, "client_platform", client_platform)
+        pulumi.set(__self__, "client_type", client_type)
+        pulumi.set(__self__, "client_version", client_version)
+        pulumi.set(__self__, "last_actions", last_actions)
+        pulumi.set(__self__, "next_actions", next_actions)
+        pulumi.set(__self__, "time_connected", time_connected)
+        pulumi.set(__self__, "time_disconnected", time_disconnected)
+
+    @_builtins.property
+    @pulumi.getter(name="clientPlatform")
+    def client_platform(self) -> _builtins.str:
+        """
+        The platform on which the Secure Desktops client runs.
+        """
+        return pulumi.get(self, "client_platform")
+
+    @_builtins.property
+    @pulumi.getter(name="clientType")
+    def client_type(self) -> _builtins.str:
+        """
+        The type of Secure Desktops client connected to a desktop.
+        """
+        return pulumi.get(self, "client_type")
+
+    @_builtins.property
+    @pulumi.getter(name="clientVersion")
+    def client_version(self) -> _builtins.str:
+        """
+        The version of the Secure Desktops client connected to a desktop, applicable only to the installed client type.
+        """
+        return pulumi.get(self, "client_version")
+
+    @_builtins.property
+    @pulumi.getter(name="lastActions")
+    def last_actions(self) -> Sequence['outputs.GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionResult']:
+        """
+        Provides information about actions performed on a desktop, including type and time.
+        """
+        return pulumi.get(self, "last_actions")
+
+    @_builtins.property
+    @pulumi.getter(name="nextActions")
+    def next_actions(self) -> Sequence['outputs.GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionResult']:
+        """
+        Provides information about actions performed on a desktop, including type and time.
+        """
+        return pulumi.get(self, "next_actions")
+
+    @_builtins.property
+    @pulumi.getter(name="timeConnected")
+    def time_connected(self) -> _builtins.str:
+        """
+        The time when the last connection to a desktop started.
+        """
+        return pulumi.get(self, "time_connected")
+
+    @_builtins.property
+    @pulumi.getter(name="timeDisconnected")
+    def time_disconnected(self) -> _builtins.str:
+        """
+        The time when the last connection to a desktop ended.
+        """
+        return pulumi.get(self, "time_disconnected")
+
+
+@pulumi.output_type
+class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionLastActionResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 time_applied: _builtins.str):
+        """
+        :param _builtins.str action: An action performed on a desktop.
+        :param _builtins.str time_applied: The time of an action performed on a desktop.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "time_applied", time_applied)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        """
+        An action performed on a desktop.
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="timeApplied")
+    def time_applied(self) -> _builtins.str:
+        """
+        The time of an action performed on a desktop.
+        """
+        return pulumi.get(self, "time_applied")
+
+
+@pulumi.output_type
+class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnectionNextActionResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 time_applied: _builtins.str):
+        """
+        :param _builtins.str action: An action performed on a desktop.
+        :param _builtins.str time_applied: The time of an action performed on a desktop.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "time_applied", time_applied)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        """
+        An action performed on a desktop.
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="timeApplied")
+    def time_applied(self) -> _builtins.str:
+        """
+        The time of an action performed on a desktop.
+        """
+        return pulumi.get(self, "time_applied")
+
+
+@pulumi.output_type
+class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImageResult(dict):
+    def __init__(__self__, *,
+                 image_id: _builtins.str,
+                 image_name: _builtins.str,
+                 operating_system: _builtins.str):
+        """
+        :param _builtins.str image_id: The OCID of the desktop image.
+        :param _builtins.str image_name: The name of the desktop image.
+        :param _builtins.str operating_system: The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+        """
+        pulumi.set(__self__, "image_id", image_id)
+        pulumi.set(__self__, "image_name", image_name)
+        pulumi.set(__self__, "operating_system", operating_system)
+
+    @_builtins.property
+    @pulumi.getter(name="imageId")
+    def image_id(self) -> _builtins.str:
+        """
+        The OCID of the desktop image.
+        """
+        return pulumi.get(self, "image_id")
+
+    @_builtins.property
+    @pulumi.getter(name="imageName")
+    def image_name(self) -> _builtins.str:
+        """
+        The name of the desktop image.
+        """
+        return pulumi.get(self, "image_name")
+
+    @_builtins.property
+    @pulumi.getter(name="operatingSystem")
+    def operating_system(self) -> _builtins.str:
+        """
+        The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+        """
+        return pulumi.get(self, "operating_system")
+
+
+@pulumi.output_type
 class GetDesktopPoolDesktopsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -1104,7 +1485,8 @@ class GetDesktopPoolDevicePolicyResult(dict):
                  is_display_enabled: _builtins.bool,
                  is_keyboard_enabled: _builtins.bool,
                  is_pointer_enabled: _builtins.bool,
-                 is_printing_enabled: _builtins.bool):
+                 is_printing_enabled: _builtins.bool,
+                 is_video_input_enabled: _builtins.bool):
         """
         :param _builtins.str audio_mode: The audio mode. NONE: No access to the local audio devices is permitted. TODESKTOP: The user may record audio on their desktop.  FROMDESKTOP: The user may play audio on their desktop. FULL: The user may play and record audio on their desktop.
         :param _builtins.str cdm_mode: The client local drive access mode. NONE: No access to local drives permitted. READONLY: The user may read from local drives on their desktop. FULL: The user may read from and write to their local drives on their desktop.
@@ -1113,6 +1495,7 @@ class GetDesktopPoolDevicePolicyResult(dict):
         :param _builtins.bool is_keyboard_enabled: Indicates whether the keyboard is enabled.
         :param _builtins.bool is_pointer_enabled: Indicates whether the pointer is enabled.
         :param _builtins.bool is_printing_enabled: Indicates whether printing is enabled.
+        :param _builtins.bool is_video_input_enabled: Indicates whether video input is enabled.
         """
         pulumi.set(__self__, "audio_mode", audio_mode)
         pulumi.set(__self__, "cdm_mode", cdm_mode)
@@ -1121,6 +1504,7 @@ class GetDesktopPoolDevicePolicyResult(dict):
         pulumi.set(__self__, "is_keyboard_enabled", is_keyboard_enabled)
         pulumi.set(__self__, "is_pointer_enabled", is_pointer_enabled)
         pulumi.set(__self__, "is_printing_enabled", is_printing_enabled)
+        pulumi.set(__self__, "is_video_input_enabled", is_video_input_enabled)
 
     @_builtins.property
     @pulumi.getter(name="audioMode")
@@ -1177,6 +1561,14 @@ class GetDesktopPoolDevicePolicyResult(dict):
         Indicates whether printing is enabled.
         """
         return pulumi.get(self, "is_printing_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isVideoInputEnabled")
+    def is_video_input_enabled(self) -> _builtins.bool:
+        """
+        Indicates whether video input is enabled.
+        """
+        return pulumi.get(self, "is_video_input_enabled")
 
 
 @pulumi.output_type
@@ -1609,6 +2001,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
                  are_volumes_preserved: _builtins.bool,
                  availability_domain: _builtins.str,
                  availability_policies: Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemAvailabilityPolicyResult'],
+                 boot_volume_size_in_gbs: _builtins.int,
                  compartment_id: _builtins.str,
                  contact_details: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
@@ -1639,6 +2032,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
         :param _builtins.bool are_privileged_users: Indicates whether desktop pool users have administrative privileges on their desktop.
         :param _builtins.str availability_domain: The name of the availability domain.
         :param Sequence['GetDesktopPoolsDesktopPoolCollectionItemAvailabilityPolicyArgs'] availability_policies: Provides the start and stop schedule information for desktop availability of the desktop pool.
+        :param _builtins.int boot_volume_size_in_gbs: The size in GBs of the boot volume for the desktop pool.
         :param _builtins.str compartment_id: The OCID of the compartment of the desktop pool.
         :param _builtins.str contact_details: Contact information of the desktop pool administrator. Avoid entering confidential information.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -1670,6 +2064,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
         pulumi.set(__self__, "are_volumes_preserved", are_volumes_preserved)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "availability_policies", availability_policies)
+        pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "contact_details", contact_details)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -1732,6 +2127,14 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
         Provides the start and stop schedule information for desktop availability of the desktop pool.
         """
         return pulumi.get(self, "availability_policies")
+
+    @_builtins.property
+    @pulumi.getter(name="bootVolumeSizeInGbs")
+    def boot_volume_size_in_gbs(self) -> _builtins.int:
+        """
+        The size in GBs of the boot volume for the desktop pool.
+        """
+        return pulumi.get(self, "boot_volume_size_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -2030,7 +2433,8 @@ class GetDesktopPoolsDesktopPoolCollectionItemDevicePolicyResult(dict):
                  is_display_enabled: _builtins.bool,
                  is_keyboard_enabled: _builtins.bool,
                  is_pointer_enabled: _builtins.bool,
-                 is_printing_enabled: _builtins.bool):
+                 is_printing_enabled: _builtins.bool,
+                 is_video_input_enabled: _builtins.bool):
         """
         :param _builtins.str audio_mode: The audio mode. NONE: No access to the local audio devices is permitted. TODESKTOP: The user may record audio on their desktop.  FROMDESKTOP: The user may play audio on their desktop. FULL: The user may play and record audio on their desktop.
         :param _builtins.str cdm_mode: The client local drive access mode. NONE: No access to local drives permitted. READONLY: The user may read from local drives on their desktop. FULL: The user may read from and write to their local drives on their desktop.
@@ -2039,6 +2443,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemDevicePolicyResult(dict):
         :param _builtins.bool is_keyboard_enabled: Indicates whether the keyboard is enabled.
         :param _builtins.bool is_pointer_enabled: Indicates whether the pointer is enabled.
         :param _builtins.bool is_printing_enabled: Indicates whether printing is enabled.
+        :param _builtins.bool is_video_input_enabled: Indicates whether video input is enabled.
         """
         pulumi.set(__self__, "audio_mode", audio_mode)
         pulumi.set(__self__, "cdm_mode", cdm_mode)
@@ -2047,6 +2452,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemDevicePolicyResult(dict):
         pulumi.set(__self__, "is_keyboard_enabled", is_keyboard_enabled)
         pulumi.set(__self__, "is_pointer_enabled", is_pointer_enabled)
         pulumi.set(__self__, "is_printing_enabled", is_printing_enabled)
+        pulumi.set(__self__, "is_video_input_enabled", is_video_input_enabled)
 
     @_builtins.property
     @pulumi.getter(name="audioMode")
@@ -2103,6 +2509,14 @@ class GetDesktopPoolsDesktopPoolCollectionItemDevicePolicyResult(dict):
         Indicates whether printing is enabled.
         """
         return pulumi.get(self, "is_printing_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isVideoInputEnabled")
+    def is_video_input_enabled(self) -> _builtins.bool:
+        """
+        Indicates whether video input is enabled.
+        """
+        return pulumi.get(self, "is_video_input_enabled")
 
 
 @pulumi.output_type
@@ -2412,6 +2826,7 @@ class GetDesktopsDesktopCollectionResult(dict):
 class GetDesktopsDesktopCollectionItemResult(dict):
     def __init__(__self__, *,
                  defined_tags: Mapping[str, _builtins.str],
+                 desktop_connections: Sequence['outputs.GetDesktopsDesktopCollectionItemDesktopConnectionResult'],
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
@@ -2421,6 +2836,7 @@ class GetDesktopsDesktopCollectionItemResult(dict):
                  user_name: _builtins.str):
         """
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Sequence['GetDesktopsDesktopCollectionItemDesktopConnectionArgs'] desktop_connections: Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
         :param _builtins.str display_name: A filter to return only results with the given displayName.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param _builtins.str id: A filter to return only results with the given OCID.
@@ -2430,6 +2846,7 @@ class GetDesktopsDesktopCollectionItemResult(dict):
         :param _builtins.str user_name: The owner of the desktop.
         """
         pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "desktop_connections", desktop_connections)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
@@ -2445,6 +2862,14 @@ class GetDesktopsDesktopCollectionItemResult(dict):
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="desktopConnections")
+    def desktop_connections(self) -> Sequence['outputs.GetDesktopsDesktopCollectionItemDesktopConnectionResult']:
+        """
+        Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+        """
+        return pulumi.get(self, "desktop_connections")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -2501,6 +2926,148 @@ class GetDesktopsDesktopCollectionItemResult(dict):
         The owner of the desktop.
         """
         return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class GetDesktopsDesktopCollectionItemDesktopConnectionResult(dict):
+    def __init__(__self__, *,
+                 client_platform: _builtins.str,
+                 client_type: _builtins.str,
+                 client_version: _builtins.str,
+                 last_actions: Sequence['outputs.GetDesktopsDesktopCollectionItemDesktopConnectionLastActionResult'],
+                 next_actions: Sequence['outputs.GetDesktopsDesktopCollectionItemDesktopConnectionNextActionResult'],
+                 time_connected: _builtins.str,
+                 time_disconnected: _builtins.str):
+        """
+        :param _builtins.str client_platform: The platform on which the Secure Desktops client runs.
+        :param _builtins.str client_type: The type of Secure Desktops client connected to a desktop.
+        :param _builtins.str client_version: The version of the Secure Desktops client connected to a desktop, applicable only to the installed client type.
+        :param Sequence['GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArgs'] last_actions: Provides information about actions performed on a desktop, including type and time.
+        :param Sequence['GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArgs'] next_actions: Provides information about actions performed on a desktop, including type and time.
+        :param _builtins.str time_connected: The time when the last connection to a desktop started.
+        :param _builtins.str time_disconnected: The time when the last connection to a desktop ended.
+        """
+        pulumi.set(__self__, "client_platform", client_platform)
+        pulumi.set(__self__, "client_type", client_type)
+        pulumi.set(__self__, "client_version", client_version)
+        pulumi.set(__self__, "last_actions", last_actions)
+        pulumi.set(__self__, "next_actions", next_actions)
+        pulumi.set(__self__, "time_connected", time_connected)
+        pulumi.set(__self__, "time_disconnected", time_disconnected)
+
+    @_builtins.property
+    @pulumi.getter(name="clientPlatform")
+    def client_platform(self) -> _builtins.str:
+        """
+        The platform on which the Secure Desktops client runs.
+        """
+        return pulumi.get(self, "client_platform")
+
+    @_builtins.property
+    @pulumi.getter(name="clientType")
+    def client_type(self) -> _builtins.str:
+        """
+        The type of Secure Desktops client connected to a desktop.
+        """
+        return pulumi.get(self, "client_type")
+
+    @_builtins.property
+    @pulumi.getter(name="clientVersion")
+    def client_version(self) -> _builtins.str:
+        """
+        The version of the Secure Desktops client connected to a desktop, applicable only to the installed client type.
+        """
+        return pulumi.get(self, "client_version")
+
+    @_builtins.property
+    @pulumi.getter(name="lastActions")
+    def last_actions(self) -> Sequence['outputs.GetDesktopsDesktopCollectionItemDesktopConnectionLastActionResult']:
+        """
+        Provides information about actions performed on a desktop, including type and time.
+        """
+        return pulumi.get(self, "last_actions")
+
+    @_builtins.property
+    @pulumi.getter(name="nextActions")
+    def next_actions(self) -> Sequence['outputs.GetDesktopsDesktopCollectionItemDesktopConnectionNextActionResult']:
+        """
+        Provides information about actions performed on a desktop, including type and time.
+        """
+        return pulumi.get(self, "next_actions")
+
+    @_builtins.property
+    @pulumi.getter(name="timeConnected")
+    def time_connected(self) -> _builtins.str:
+        """
+        The time when the last connection to a desktop started.
+        """
+        return pulumi.get(self, "time_connected")
+
+    @_builtins.property
+    @pulumi.getter(name="timeDisconnected")
+    def time_disconnected(self) -> _builtins.str:
+        """
+        The time when the last connection to a desktop ended.
+        """
+        return pulumi.get(self, "time_disconnected")
+
+
+@pulumi.output_type
+class GetDesktopsDesktopCollectionItemDesktopConnectionLastActionResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 time_applied: _builtins.str):
+        """
+        :param _builtins.str action: An action performed on a desktop.
+        :param _builtins.str time_applied: The time of an action performed on a desktop.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "time_applied", time_applied)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        """
+        An action performed on a desktop.
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="timeApplied")
+    def time_applied(self) -> _builtins.str:
+        """
+        The time of an action performed on a desktop.
+        """
+        return pulumi.get(self, "time_applied")
+
+
+@pulumi.output_type
+class GetDesktopsDesktopCollectionItemDesktopConnectionNextActionResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 time_applied: _builtins.str):
+        """
+        :param _builtins.str action: An action performed on a desktop.
+        :param _builtins.str time_applied: The time of an action performed on a desktop.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "time_applied", time_applied)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        """
+        An action performed on a desktop.
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="timeApplied")
+    def time_applied(self) -> _builtins.str:
+        """
+        The time of an action performed on a desktop.
+        """
+        return pulumi.get(self, "time_applied")
 
 
 @pulumi.output_type

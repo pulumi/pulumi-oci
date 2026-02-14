@@ -7,11 +7,372 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 var _ = internal.GetEnvOrDefault
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact struct {
+	// The email address used by Oracle to send notifications regarding databases and infrastructure.
+	Email string `pulumi:"email"`
+}
+
+// GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArgs and GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactInput` via:
+//
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArgs{...}
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutputWithContext(context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArgs struct {
+	// The email address used by Oracle to send notifications regarding databases and infrastructure.
+	Email pulumi.StringInput `pulumi:"email"`
+}
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArgs) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput {
+	return i.ToGetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArgs) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput)
+}
+
+// GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArray and GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayInput` via:
+//
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArray{ GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArgs{...} }
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutputWithContext(context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArray []GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactInput
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArray) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput {
+	return i.ToGetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArray) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput {
+	return o
+}
+
+// The email address used by Oracle to send notifications regarding databases and infrastructure.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact) string { return v.Email }).(pulumi.StringOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput) Index(i pulumi.IntInput) GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact {
+		return vs[0].([]GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact)[vs[1].(int)]
+	}).(GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration struct {
+	// If true, the file system is used to create a backup prior to Exadata VM OS update.
+	IsBackupPartition bool `pulumi:"isBackupPartition"`
+	// If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+	IsResizable bool `pulumi:"isResizable"`
+	// The minimum size of file system.
+	MinSizeGb int `pulumi:"minSizeGb"`
+	// The mount point of file system.
+	MountPoint string `pulumi:"mountPoint"`
+}
+
+// GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArgs and GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationInput` via:
+//
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArgs{...}
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutputWithContext(context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArgs struct {
+	// If true, the file system is used to create a backup prior to Exadata VM OS update.
+	IsBackupPartition pulumi.BoolInput `pulumi:"isBackupPartition"`
+	// If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+	IsResizable pulumi.BoolInput `pulumi:"isResizable"`
+	// The minimum size of file system.
+	MinSizeGb pulumi.IntInput `pulumi:"minSizeGb"`
+	// The mount point of file system.
+	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
+}
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArgs) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return i.ToGetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArgs) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput)
+}
+
+// GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArray and GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayInput` via:
+//
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArray{ GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArgs{...} }
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutputWithContext(context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArray []GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationInput
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArray) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return i.ToGetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArray) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return o
+}
+
+// If true, the file system is used to create a backup prior to Exadata VM OS update.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput) IsBackupPartition() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration) bool {
+		return v.IsBackupPartition
+	}).(pulumi.BoolOutput)
+}
+
+// If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput) IsResizable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration) bool {
+		return v.IsResizable
+	}).(pulumi.BoolOutput)
+}
+
+// The minimum size of file system.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput) MinSizeGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration) int {
+		return v.MinSizeGb
+	}).(pulumi.IntOutput)
+}
+
+// The mount point of file system.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput) MountPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration) string {
+		return v.MountPoint
+	}).(pulumi.StringOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput) Index(i pulumi.IntInput) GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration {
+		return vs[0].([]GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration)[vs[1].(int)]
+	}).(GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfig struct {
+	// Available storage size for Exascale in GBs.
+	AvailableStorageInGbs int `pulumi:"availableStorageInGbs"`
+	// Available storage size for VM storage on Exascale in GBs.
+	AvailableVmStorageInGbs int `pulumi:"availableVmStorageInGbs"`
+	// Storage size needed for Exascale in GBs.
+	TotalStorageInGbs int `pulumi:"totalStorageInGbs"`
+	// Storage size needed for VM storage on Exascale in GBs.
+	TotalVmStorageInGbs int `pulumi:"totalVmStorageInGbs"`
+}
+
+// GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArgs and GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigInput` via:
+//
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArgs{...}
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutputWithContext(context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArgs struct {
+	// Available storage size for Exascale in GBs.
+	AvailableStorageInGbs pulumi.IntInput `pulumi:"availableStorageInGbs"`
+	// Available storage size for VM storage on Exascale in GBs.
+	AvailableVmStorageInGbs pulumi.IntInput `pulumi:"availableVmStorageInGbs"`
+	// Storage size needed for Exascale in GBs.
+	TotalStorageInGbs pulumi.IntInput `pulumi:"totalStorageInGbs"`
+	// Storage size needed for VM storage on Exascale in GBs.
+	TotalVmStorageInGbs pulumi.IntInput `pulumi:"totalVmStorageInGbs"`
+}
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfig)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArgs) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput {
+	return i.ToGetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArgs) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput)
+}
+
+// GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArray and GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayInput` via:
+//
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArray{ GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArgs{...} }
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutputWithContext(context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArray []GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigInput
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfig)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArray) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput {
+	return i.ToGetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArray) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfig)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput {
+	return o
+}
+
+// Available storage size for Exascale in GBs.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput) AvailableStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfig) int {
+		return v.AvailableStorageInGbs
+	}).(pulumi.IntOutput)
+}
+
+// Available storage size for VM storage on Exascale in GBs.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput) AvailableVmStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfig) int {
+		return v.AvailableVmStorageInGbs
+	}).(pulumi.IntOutput)
+}
+
+// Storage size needed for Exascale in GBs.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput) TotalStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfig) int {
+		return v.TotalStorageInGbs
+	}).(pulumi.IntOutput)
+}
+
+// Storage size needed for VM storage on Exascale in GBs.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput) TotalVmStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfig) int {
+		return v.TotalVmStorageInGbs
+	}).(pulumi.IntOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfig)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput) Index(i pulumi.IntInput) GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfig {
+		return vs[0].([]GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfig)[vs[1].(int)]
+	}).(GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput)
+}
 
 type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow struct {
 	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -1673,8 +2034,12 @@ type GetCloudVmClustersCloudVmCluster struct {
 	VipIds []string `pulumi:"vipIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
 	Vipv6ids []string `pulumi:"vipv6ids"`
+	// Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+	VmBackupStorageType string `pulumi:"vmBackupStorageType"`
 	// A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
 	VmClusterType string `pulumi:"vmClusterType"`
+	// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+	VmFileSystemStorageType string `pulumi:"vmFileSystemStorageType"`
 	// The OCID of the zone the cloud VM cluster is associated with.
 	ZoneId string `pulumi:"zoneId"`
 }
@@ -1807,8 +2172,12 @@ type GetCloudVmClustersCloudVmClusterArgs struct {
 	VipIds pulumi.StringArrayInput `pulumi:"vipIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
 	Vipv6ids pulumi.StringArrayInput `pulumi:"vipv6ids"`
+	// Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+	VmBackupStorageType pulumi.StringInput `pulumi:"vmBackupStorageType"`
 	// A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
 	VmClusterType pulumi.StringInput `pulumi:"vmClusterType"`
+	// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+	VmFileSystemStorageType pulumi.StringInput `pulumi:"vmFileSystemStorageType"`
 	// The OCID of the zone the cloud VM cluster is associated with.
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
@@ -2167,9 +2536,19 @@ func (o GetCloudVmClustersCloudVmClusterOutput) Vipv6ids() pulumi.StringArrayOut
 	return o.ApplyT(func(v GetCloudVmClustersCloudVmCluster) []string { return v.Vipv6ids }).(pulumi.StringArrayOutput)
 }
 
+// Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+func (o GetCloudVmClustersCloudVmClusterOutput) VmBackupStorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmCluster) string { return v.VmBackupStorageType }).(pulumi.StringOutput)
+}
+
 // A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
 func (o GetCloudVmClustersCloudVmClusterOutput) VmClusterType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudVmClustersCloudVmCluster) string { return v.VmClusterType }).(pulumi.StringOutput)
+}
+
+// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+func (o GetCloudVmClustersCloudVmClusterOutput) VmFileSystemStorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmCluster) string { return v.VmFileSystemStorageType }).(pulumi.StringOutput)
 }
 
 // The OCID of the zone the cloud VM cluster is associated with.
@@ -25140,8 +25519,12 @@ func (o GetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput) Index
 type GetExadataInfrastructureExascaleConfig struct {
 	// Available storage size for Exascale in GBs.
 	AvailableStorageInGbs int `pulumi:"availableStorageInGbs"`
+	// Available storage size for VM storage on Exascale in GBs.
+	AvailableVmStorageInGbs int `pulumi:"availableVmStorageInGbs"`
 	// Storage size needed for Exascale in GBs.
 	TotalStorageInGbs int `pulumi:"totalStorageInGbs"`
+	// Storage size needed for VM storage on Exascale in GBs.
+	TotalVmStorageInGbs int `pulumi:"totalVmStorageInGbs"`
 }
 
 // GetExadataInfrastructureExascaleConfigInput is an input type that accepts GetExadataInfrastructureExascaleConfigArgs and GetExadataInfrastructureExascaleConfigOutput values.
@@ -25158,8 +25541,12 @@ type GetExadataInfrastructureExascaleConfigInput interface {
 type GetExadataInfrastructureExascaleConfigArgs struct {
 	// Available storage size for Exascale in GBs.
 	AvailableStorageInGbs pulumi.IntInput `pulumi:"availableStorageInGbs"`
+	// Available storage size for VM storage on Exascale in GBs.
+	AvailableVmStorageInGbs pulumi.IntInput `pulumi:"availableVmStorageInGbs"`
 	// Storage size needed for Exascale in GBs.
 	TotalStorageInGbs pulumi.IntInput `pulumi:"totalStorageInGbs"`
+	// Storage size needed for VM storage on Exascale in GBs.
+	TotalVmStorageInGbs pulumi.IntInput `pulumi:"totalVmStorageInGbs"`
 }
 
 func (GetExadataInfrastructureExascaleConfigArgs) ElementType() reflect.Type {
@@ -25218,9 +25605,19 @@ func (o GetExadataInfrastructureExascaleConfigOutput) AvailableStorageInGbs() pu
 	return o.ApplyT(func(v GetExadataInfrastructureExascaleConfig) int { return v.AvailableStorageInGbs }).(pulumi.IntOutput)
 }
 
+// Available storage size for VM storage on Exascale in GBs.
+func (o GetExadataInfrastructureExascaleConfigOutput) AvailableVmStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureExascaleConfig) int { return v.AvailableVmStorageInGbs }).(pulumi.IntOutput)
+}
+
 // Storage size needed for Exascale in GBs.
 func (o GetExadataInfrastructureExascaleConfigOutput) TotalStorageInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetExadataInfrastructureExascaleConfig) int { return v.TotalStorageInGbs }).(pulumi.IntOutput)
+}
+
+// Storage size needed for VM storage on Exascale in GBs.
+func (o GetExadataInfrastructureExascaleConfigOutput) TotalVmStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureExascaleConfig) int { return v.TotalVmStorageInGbs }).(pulumi.IntOutput)
 }
 
 type GetExadataInfrastructureExascaleConfigArrayOutput struct{ *pulumi.OutputState }
@@ -26706,8 +27103,12 @@ func (o GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigura
 type GetExadataInfrastructuresExadataInfrastructureExascaleConfig struct {
 	// Available storage size for Exascale in GBs.
 	AvailableStorageInGbs int `pulumi:"availableStorageInGbs"`
+	// Available storage size for VM storage on Exascale in GBs.
+	AvailableVmStorageInGbs int `pulumi:"availableVmStorageInGbs"`
 	// Storage size needed for Exascale in GBs.
 	TotalStorageInGbs int `pulumi:"totalStorageInGbs"`
+	// Storage size needed for VM storage on Exascale in GBs.
+	TotalVmStorageInGbs int `pulumi:"totalVmStorageInGbs"`
 }
 
 // GetExadataInfrastructuresExadataInfrastructureExascaleConfigInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureExascaleConfigArgs and GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput values.
@@ -26724,8 +27125,12 @@ type GetExadataInfrastructuresExadataInfrastructureExascaleConfigInput interface
 type GetExadataInfrastructuresExadataInfrastructureExascaleConfigArgs struct {
 	// Available storage size for Exascale in GBs.
 	AvailableStorageInGbs pulumi.IntInput `pulumi:"availableStorageInGbs"`
+	// Available storage size for VM storage on Exascale in GBs.
+	AvailableVmStorageInGbs pulumi.IntInput `pulumi:"availableVmStorageInGbs"`
 	// Storage size needed for Exascale in GBs.
 	TotalStorageInGbs pulumi.IntInput `pulumi:"totalStorageInGbs"`
+	// Storage size needed for VM storage on Exascale in GBs.
+	TotalVmStorageInGbs pulumi.IntInput `pulumi:"totalVmStorageInGbs"`
 }
 
 func (GetExadataInfrastructuresExadataInfrastructureExascaleConfigArgs) ElementType() reflect.Type {
@@ -26786,9 +27191,21 @@ func (o GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput) Avai
 	}).(pulumi.IntOutput)
 }
 
+// Available storage size for VM storage on Exascale in GBs.
+func (o GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput) AvailableVmStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureExascaleConfig) int {
+		return v.AvailableVmStorageInGbs
+	}).(pulumi.IntOutput)
+}
+
 // Storage size needed for Exascale in GBs.
 func (o GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput) TotalStorageInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureExascaleConfig) int { return v.TotalStorageInGbs }).(pulumi.IntOutput)
+}
+
+// Storage size needed for VM storage on Exascale in GBs.
+func (o GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput) TotalVmStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureExascaleConfig) int { return v.TotalVmStorageInGbs }).(pulumi.IntOutput)
 }
 
 type GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput struct{ *pulumi.OutputState }
@@ -48789,10 +49206,14 @@ type GetVmClustersVmCluster struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone string `pulumi:"timeZone"`
+	// Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
+	VmBackupStorageType string `pulumi:"vmBackupStorageType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	VmClusterNetworkId string `pulumi:"vmClusterNetworkId"`
 	// A filter to return only vmclusters that match the given vmcluster type exactly.
 	VmClusterType string `pulumi:"vmClusterType"`
+	// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+	VmFileSystemStorageType string `pulumi:"vmFileSystemStorageType"`
 }
 
 // GetVmClustersVmClusterInput is an input type that accepts GetVmClustersVmClusterArgs and GetVmClustersVmClusterOutput values.
@@ -48874,10 +49295,14 @@ type GetVmClustersVmClusterArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+	// Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
+	VmBackupStorageType pulumi.StringInput `pulumi:"vmBackupStorageType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	VmClusterNetworkId pulumi.StringInput `pulumi:"vmClusterNetworkId"`
 	// A filter to return only vmclusters that match the given vmcluster type exactly.
 	VmClusterType pulumi.StringInput `pulumi:"vmClusterType"`
+	// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+	VmFileSystemStorageType pulumi.StringInput `pulumi:"vmFileSystemStorageType"`
 }
 
 func (GetVmClustersVmClusterArgs) ElementType() reflect.Type {
@@ -49109,6 +49534,11 @@ func (o GetVmClustersVmClusterOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.TimeZone }).(pulumi.StringOutput)
 }
 
+// Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
+func (o GetVmClustersVmClusterOutput) VmBackupStorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.VmBackupStorageType }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 func (o GetVmClustersVmClusterOutput) VmClusterNetworkId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.VmClusterNetworkId }).(pulumi.StringOutput)
@@ -49117,6 +49547,11 @@ func (o GetVmClustersVmClusterOutput) VmClusterNetworkId() pulumi.StringOutput {
 // A filter to return only vmclusters that match the given vmcluster type exactly.
 func (o GetVmClustersVmClusterOutput) VmClusterType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.VmClusterType }).(pulumi.StringOutput)
+}
+
+// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+func (o GetVmClustersVmClusterOutput) VmFileSystemStorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.VmFileSystemStorageType }).(pulumi.StringOutput)
 }
 
 type GetVmClustersVmClusterArrayOutput struct{ *pulumi.OutputState }
@@ -49709,6 +50144,12 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{})
@@ -50385,6 +50826,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput{})

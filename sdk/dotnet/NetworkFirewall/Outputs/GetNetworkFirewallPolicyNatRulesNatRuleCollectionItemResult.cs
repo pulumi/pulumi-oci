@@ -19,7 +19,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// </summary>
         public readonly string Action;
         /// <summary>
-        /// Match criteria used in NAT Rule used on the firewall policy.
+        /// Match criteria used in NAT rule used on the firewall policy.
         /// </summary>
         public readonly Outputs.GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionResult Condition;
         /// <summary>
@@ -35,7 +35,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// </summary>
         public readonly string NetworkFirewallPolicyId;
         /// <summary>
-        /// OCID of the Network Firewall Policy this decryption profile belongs to.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
         /// </summary>
         public readonly string ParentResourceId;
         /// <summary>

@@ -115,6 +115,10 @@ export interface GetComputeHostsResult {
     readonly displayName?: string;
     readonly filters?: outputs.Core.GetComputeHostsFilter[];
     /**
+     * The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+     */
+    readonly hostCorrelationId: string;
+    /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;

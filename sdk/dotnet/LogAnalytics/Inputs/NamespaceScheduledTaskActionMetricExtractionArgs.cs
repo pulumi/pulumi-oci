@@ -18,6 +18,18 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        [Input("metricCollections")]
+        private InputList<Inputs.NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs>? _metricCollections;
+
+        /// <summary>
+        /// Details for the metrics to be collected.
+        /// </summary>
+        public InputList<Inputs.NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs> MetricCollections
+        {
+            get => _metricCollections ?? (_metricCollections = new InputList<Inputs.NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs>());
+            set => _metricCollections = value;
+        }
+
         /// <summary>
         /// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         /// </summary>

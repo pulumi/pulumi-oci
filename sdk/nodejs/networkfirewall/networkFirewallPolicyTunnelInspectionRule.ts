@@ -29,6 +29,7 @@ import * as utilities from "../utilities";
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     protocol: networkFirewallPolicyTunnelInspectionRuleProtocol,
  *     action: networkFirewallPolicyTunnelInspectionRuleAction,
+ *     description: networkFirewallPolicyTunnelInspectionRuleDescription,
  *     position: {
  *         afterRule: networkFirewallPolicyTunnelInspectionRulePositionAfterRule,
  *         beforeRule: networkFirewallPolicyTunnelInspectionRulePositionBeforeRule,
@@ -86,6 +87,10 @@ export class NetworkFirewallPolicyTunnelInspectionRule extends pulumi.CustomReso
      */
     declare public readonly condition: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRuleCondition>;
     /**
+     * (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
+     */
+    declare public readonly description: pulumi.Output<string | undefined>;
+    /**
      * Name for the Tunnel Inspection Rule, must be unique within the policy.
      */
     declare public readonly name: pulumi.Output<string>;
@@ -134,6 +139,7 @@ export class NetworkFirewallPolicyTunnelInspectionRule extends pulumi.CustomReso
             const state = argsOrState as NetworkFirewallPolicyTunnelInspectionRuleState | undefined;
             resourceInputs["action"] = state?.action;
             resourceInputs["condition"] = state?.condition;
+            resourceInputs["description"] = state?.description;
             resourceInputs["name"] = state?.name;
             resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
             resourceInputs["parentResourceId"] = state?.parentResourceId;
@@ -154,6 +160,7 @@ export class NetworkFirewallPolicyTunnelInspectionRule extends pulumi.CustomReso
             }
             resourceInputs["action"] = args?.action;
             resourceInputs["condition"] = args?.condition;
+            resourceInputs["description"] = args?.description;
             resourceInputs["name"] = args?.name;
             resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
             resourceInputs["position"] = args?.position;
@@ -181,6 +188,10 @@ export interface NetworkFirewallPolicyTunnelInspectionRuleState {
      * (Updatable) Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
      */
     condition?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRuleCondition>;
+    /**
+     * (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * Name for the Tunnel Inspection Rule, must be unique within the policy.
      */
@@ -230,6 +241,10 @@ export interface NetworkFirewallPolicyTunnelInspectionRuleArgs {
      * (Updatable) Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
      */
     condition: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRuleCondition>;
+    /**
+     * (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * Name for the Tunnel Inspection Rule, must be unique within the policy.
      */

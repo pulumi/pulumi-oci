@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -52,6 +53,7 @@ import javax.annotation.Nullable;
  *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
  *             .type(networkFirewallPolicyAddressListType)
  *             .addresses(networkFirewallPolicyAddressListAddresses)
+ *             .description(networkFirewallPolicyAddressListDescription)
  *             .build());
  * 
  *     }
@@ -83,6 +85,20 @@ public class NetworkFirewallPolicyAddressList extends com.pulumi.resources.Custo
      */
     public Output<List<String>> addresses() {
         return this.addresses;
+    }
+    /**
+     * (Updatable) The description of the address list. This field can be used to add additional info.
+     * 
+     */
+    @Export(name="description", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> description;
+
+    /**
+     * @return (Updatable) The description of the address list. This field can be used to add additional info.
+     * 
+     */
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * Unique name to identify the group of addresses to be used in the policy rules.

@@ -12,6 +12,11 @@ import java.util.Objects;
 @CustomType
 public final class GetNetworkFirewallPolicyApplicationResult {
     /**
+     * @return The description of the application. This field can be used to add additional info.
+     * 
+     */
+    private String description;
+    /**
      * @return The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      * 
      */
@@ -40,6 +45,13 @@ public final class GetNetworkFirewallPolicyApplicationResult {
     private String type;
 
     private GetNetworkFirewallPolicyApplicationResult() {}
+    /**
+     * @return The description of the application. This field can be used to add additional info.
+     * 
+     */
+    public String description() {
+        return this.description;
+    }
     /**
      * @return The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      * 
@@ -91,6 +103,7 @@ public final class GetNetworkFirewallPolicyApplicationResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String description;
         private Integer icmpCode;
         private Integer icmpType;
         private String id;
@@ -101,6 +114,7 @@ public final class GetNetworkFirewallPolicyApplicationResult {
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyApplicationResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.description = defaults.description;
     	      this.icmpCode = defaults.icmpCode;
     	      this.icmpType = defaults.icmpType;
     	      this.id = defaults.id;
@@ -110,6 +124,14 @@ public final class GetNetworkFirewallPolicyApplicationResult {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder description(String description) {
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyApplicationResult", "description");
+            }
+            this.description = description;
+            return this;
+        }
         @CustomType.Setter
         public Builder icmpCode(Integer icmpCode) {
             if (icmpCode == null) {
@@ -168,6 +190,7 @@ public final class GetNetworkFirewallPolicyApplicationResult {
         }
         public GetNetworkFirewallPolicyApplicationResult build() {
             final var _resultValue = new GetNetworkFirewallPolicyApplicationResult();
+            _resultValue.description = description;
             _resultValue.icmpCode = icmpCode;
             _resultValue.icmpType = icmpType;
             _resultValue.id = id;

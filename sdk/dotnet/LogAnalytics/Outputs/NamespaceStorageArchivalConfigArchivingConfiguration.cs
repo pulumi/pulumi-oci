@@ -21,15 +21,22 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
         /// </summary>
         public readonly string? ArchivalStorageDuration;
+        /// <summary>
+        /// (Updatable) end time of the oldest active CoreGroup
+        /// </summary>
+        public readonly string? TimeOldestActiveBucketEnded;
 
         [OutputConstructor]
         private NamespaceStorageArchivalConfigArchivingConfiguration(
             string? activeStorageDuration,
 
-            string? archivalStorageDuration)
+            string? archivalStorageDuration,
+
+            string? timeOldestActiveBucketEnded)
         {
             ActiveStorageDuration = activeStorageDuration;
             ArchivalStorageDuration = archivalStorageDuration;
+            TimeOldestActiveBucketEnded = timeOldestActiveBucketEnded;
         }
     }
 }

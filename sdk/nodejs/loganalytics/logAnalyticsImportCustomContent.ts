@@ -89,7 +89,7 @@ export class LogAnalyticsImportCustomContent extends pulumi.CustomResource {
      */
     declare public readonly isOverwrite: pulumi.Output<boolean>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     declare public readonly namespace: pulumi.Output<string>;
     /**
@@ -179,7 +179,7 @@ export interface LogAnalyticsImportCustomContentState {
      */
     isOverwrite?: pulumi.Input<boolean>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace?: pulumi.Input<string>;
     /**
@@ -213,7 +213,7 @@ export interface LogAnalyticsImportCustomContentArgs {
      */
     isOverwrite?: pulumi.Input<boolean>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
 }

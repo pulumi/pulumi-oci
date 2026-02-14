@@ -64,7 +64,7 @@ export class NamespaceStorageEnableDisableArchiving extends pulumi.CustomResourc
      */
     declare public /*out*/ readonly message: pulumi.Output<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     declare public readonly namespace: pulumi.Output<string>;
 
@@ -118,7 +118,7 @@ export interface NamespaceStorageEnableDisableArchivingState {
      */
     message?: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace?: pulumi.Input<string>;
 }
@@ -136,7 +136,7 @@ export interface NamespaceStorageEnableDisableArchivingArgs {
      */
     enableArchivingTenant: pulumi.Input<boolean>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
 }

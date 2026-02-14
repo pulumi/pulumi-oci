@@ -34,13 +34,13 @@ public final class GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionIte
      */
     private String name;
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     private String namespace;
     private List<GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionItemProperty> properties;
     /**
-     * @return A filter to return only those log analytics entity types with the specified lifecycle state. The state value is case-insensitive.
+     * @return A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
      * 
      */
     private String state;
@@ -88,7 +88,7 @@ public final class GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionIte
         return this.name;
     }
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public String namespace() {
@@ -98,7 +98,7 @@ public final class GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionIte
         return this.properties;
     }
     /**
-     * @return A filter to return only those log analytics entity types with the specified lifecycle state. The state value is case-insensitive.
+     * @return A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
      * 
      */
     public String state() {

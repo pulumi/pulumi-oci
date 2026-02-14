@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -38,7 +38,9 @@ type LookupNetworkFirewallPolicyApplicationGroupArgs struct {
 type LookupNetworkFirewallPolicyApplicationGroupResult struct {
 	// List of apps in the group.
 	Apps []string `pulumi:"apps"`
-	Id   string   `pulumi:"id"`
+	// The description of the application list. This field can be used to add additional info.
+	Description string `pulumi:"description"`
+	Id          string `pulumi:"id"`
 	// Name of the application Group.
 	Name                    string `pulumi:"name"`
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
@@ -87,6 +89,11 @@ func (o LookupNetworkFirewallPolicyApplicationGroupResultOutput) ToLookupNetwork
 // List of apps in the group.
 func (o LookupNetworkFirewallPolicyApplicationGroupResultOutput) Apps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationGroupResult) []string { return v.Apps }).(pulumi.StringArrayOutput)
+}
+
+// The description of the application list. This field can be used to add additional info.
+func (o LookupNetworkFirewallPolicyApplicationGroupResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationGroupResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 func (o LookupNetworkFirewallPolicyApplicationGroupResultOutput) Id() pulumi.StringOutput {

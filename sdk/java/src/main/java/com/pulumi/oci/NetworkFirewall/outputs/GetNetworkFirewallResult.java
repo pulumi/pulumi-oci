@@ -59,7 +59,7 @@ public final class GetNetworkFirewallResult {
      */
     private String lifecycleDetails;
     /**
-     * @return Nat Configuration response.
+     * @return Response to a request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
      * 
      */
     private List<GetNetworkFirewallNatConfiguration> natConfigurations;
@@ -74,6 +74,11 @@ public final class GetNetworkFirewallResult {
      * 
      */
     private List<String> networkSecurityGroupIds;
+    /**
+     * @return The shape of a firewall to determine the bandwidth that the firewall allows.
+     * 
+     */
+    private String shape;
     /**
      * @return The current state of the Network Firewall.
      * 
@@ -165,7 +170,7 @@ public final class GetNetworkFirewallResult {
         return this.lifecycleDetails;
     }
     /**
-     * @return Nat Configuration response.
+     * @return Response to a request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
      * 
      */
     public List<GetNetworkFirewallNatConfiguration> natConfigurations() {
@@ -187,6 +192,13 @@ public final class GetNetworkFirewallResult {
      */
     public List<String> networkSecurityGroupIds() {
         return this.networkSecurityGroupIds;
+    }
+    /**
+     * @return The shape of a firewall to determine the bandwidth that the firewall allows.
+     * 
+     */
+    public String shape() {
+        return this.shape;
     }
     /**
      * @return The current state of the Network Firewall.
@@ -246,6 +258,7 @@ public final class GetNetworkFirewallResult {
         private String networkFirewallId;
         private String networkFirewallPolicyId;
         private List<String> networkSecurityGroupIds;
+        private String shape;
         private String state;
         private String subnetId;
         private Map<String,String> systemTags;
@@ -267,6 +280,7 @@ public final class GetNetworkFirewallResult {
     	      this.networkFirewallId = defaults.networkFirewallId;
     	      this.networkFirewallPolicyId = defaults.networkFirewallPolicyId;
     	      this.networkSecurityGroupIds = defaults.networkSecurityGroupIds;
+    	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.systemTags = defaults.systemTags;
@@ -385,6 +399,14 @@ public final class GetNetworkFirewallResult {
             return networkSecurityGroupIds(List.of(networkSecurityGroupIds));
         }
         @CustomType.Setter
+        public Builder shape(String shape) {
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallResult", "shape");
+            }
+            this.shape = shape;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetNetworkFirewallResult", "state");
@@ -439,6 +461,7 @@ public final class GetNetworkFirewallResult {
             _resultValue.networkFirewallId = networkFirewallId;
             _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
             _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
+            _resultValue.shape = shape;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.systemTags = systemTags;

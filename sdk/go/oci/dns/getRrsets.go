@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -15,9 +15,7 @@ import (
 //
 // Gets a list of all rrsets in the specified zone.
 //
-// You can optionally filter the results using the listed parameters. When the zone name
-// is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
-// the viewId parameter is required.
+// You can optionally filter the results using the listed parameters. When accessing a private zone by name, the `viewId` parameter is required.
 //
 // ## Example Usage
 //
@@ -26,7 +24,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/dns"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/dns"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -38,7 +36,6 @@ import (
 //				Domain:         pulumi.StringRef(rrsetDomain),
 //				DomainContains: pulumi.StringRef(rrsetDomain),
 //				Rtype:          pulumi.StringRef(rrsetRtype),
-//				Scope:          pulumi.StringRef(rrsetScope),
 //				ViewId:         pulumi.StringRef(testView.Id),
 //			}, nil)
 //			if err != nil {
@@ -68,7 +65,6 @@ type GetRrsetsArgs struct {
 	Filters        []GetRrsetsFilter `pulumi:"filters"`
 	// Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
 	Rtype *string `pulumi:"rtype"`
-	// Specifies to operate only on resources that have a matching DNS scope.
 	Scope *string `pulumi:"scope"`
 	// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 	ViewId *string `pulumi:"viewId"`
@@ -111,7 +107,6 @@ type GetRrsetsOutputArgs struct {
 	Filters        GetRrsetsFilterArrayInput `pulumi:"filters"`
 	// Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
 	Rtype pulumi.StringPtrInput `pulumi:"rtype"`
-	// Specifies to operate only on resources that have a matching DNS scope.
 	Scope pulumi.StringPtrInput `pulumi:"scope"`
 	// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 	ViewId pulumi.StringPtrInput `pulumi:"viewId"`

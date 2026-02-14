@@ -24,8 +24,8 @@ class LogAnalyticsUnprocessedDataBucketManagementArgs:
                  is_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a LogAnalyticsUnprocessedDataBucketManagement resource.
-        :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request. 
+        :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
                
                ** IMPORTANT **
@@ -41,7 +41,7 @@ class LogAnalyticsUnprocessedDataBucketManagementArgs:
     @pulumi.getter
     def bucket(self) -> pulumi.Input[_builtins.str]:
         """
-        Name of the Object Storage bucket.
+        Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
         """
         return pulumi.get(self, "bucket")
 
@@ -53,7 +53,7 @@ class LogAnalyticsUnprocessedDataBucketManagementArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request. 
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
 
 
         ** IMPORTANT **
@@ -88,9 +88,9 @@ class _LogAnalyticsUnprocessedDataBucketManagementState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsUnprocessedDataBucketManagement resources.
-        :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket.
+        :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
         :param pulumi.Input[_builtins.bool] is_enabled: Flag that specifies if this configuration is enabled or not.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request. 
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
                
                ** IMPORTANT **
@@ -113,7 +113,7 @@ class _LogAnalyticsUnprocessedDataBucketManagementState:
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Name of the Object Storage bucket.
+        Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
         """
         return pulumi.get(self, "bucket")
 
@@ -137,7 +137,7 @@ class _LogAnalyticsUnprocessedDataBucketManagementState:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Logging Analytics namespace used for the request. 
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
 
 
         ** IMPORTANT **
@@ -211,9 +211,9 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket.
+        :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
         :param pulumi.Input[_builtins.bool] is_enabled: Flag that specifies if this configuration is enabled or not.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request. 
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
                
                ** IMPORTANT **
@@ -308,9 +308,9 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket.
+        :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
         :param pulumi.Input[_builtins.bool] is_enabled: Flag that specifies if this configuration is enabled or not.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request. 
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
                
                ** IMPORTANT **
@@ -333,7 +333,7 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
     @pulumi.getter
     def bucket(self) -> pulumi.Output[_builtins.str]:
         """
-        Name of the Object Storage bucket.
+        Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
         """
         return pulumi.get(self, "bucket")
 
@@ -349,7 +349,7 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request. 
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
 
 
         ** IMPORTANT **

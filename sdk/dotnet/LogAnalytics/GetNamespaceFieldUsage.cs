@@ -100,13 +100,13 @@ namespace Pulumi.Oci.LogAnalytics
     public sealed class GetNamespaceFieldUsageArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The field name.
+        /// The field name. Field name can be obtained by running 'oci log-analytics field list-fields --namespace-name &lt;namespace&gt;'. The json output 'name' parameter value contains the field name.
         /// </summary>
         [Input("fieldName", required: true)]
         public string FieldName { get; set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace", required: true)]
         public string Namespace { get; set; } = null!;
@@ -120,13 +120,13 @@ namespace Pulumi.Oci.LogAnalytics
     public sealed class GetNamespaceFieldUsageInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The field name.
+        /// The field name. Field name can be obtained by running 'oci log-analytics field list-fields --namespace-name &lt;namespace&gt;'. The json output 'name' parameter value contains the field name.
         /// </summary>
         [Input("fieldName", required: true)]
         public Input<string> FieldName { get; set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;

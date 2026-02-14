@@ -7,7 +7,7 @@ import (
 	"fmt"
 
 	"github.com/blang/semver"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -21,6 +21,12 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:Database/advancedClusterFileSystem:AdvancedClusterFileSystem":
+		r = &AdvancedClusterFileSystem{}
+	case "oci:Database/advancedClusterFileSystemMount:AdvancedClusterFileSystemMount":
+		r = &AdvancedClusterFileSystemMount{}
+	case "oci:Database/advancedClusterFileSystemUnmount:AdvancedClusterFileSystemUnmount":
+		r = &AdvancedClusterFileSystemUnmount{}
 	case "oci:Database/applicationVip:ApplicationVip":
 		r = &ApplicationVip{}
 	case "oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase":
@@ -190,6 +196,21 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/advancedClusterFileSystem",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/advancedClusterFileSystemMount",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/advancedClusterFileSystemUnmount",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Database/applicationVip",

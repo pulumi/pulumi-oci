@@ -94,6 +94,21 @@ public final class DesktopPoolArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The size in GBs of the boot volume for the desktop pool.
+     * 
+     */
+    @Import(name="bootVolumeSizeInGbs")
+    private @Nullable Output<Integer> bootVolumeSizeInGbs;
+
+    /**
+     * @return (Updatable) The size in GBs of the boot volume for the desktop pool.
+     * 
+     */
+    public Optional<Output<Integer>> bootVolumeSizeInGbs() {
+        return Optional.ofNullable(this.bootVolumeSizeInGbs);
+    }
+
+    /**
      * (Updatable) The OCID of the compartment which will contain the desktop pool.
      * 
      */
@@ -199,14 +214,14 @@ public final class DesktopPoolArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Provides information about the desktop image.
+     * (Updatable) Provides information about the desktop image.
      * 
      */
     @Import(name="image", required=true)
     private Output<DesktopPoolImageArgs> image;
 
     /**
-     * @return Provides information about the desktop image.
+     * @return (Updatable) Provides information about the desktop image.
      * 
      */
     public Output<DesktopPoolImageArgs> image() {
@@ -430,6 +445,7 @@ public final class DesktopPoolArgs extends com.pulumi.resources.ResourceArgs {
         this.areVolumesPreserved = $.areVolumesPreserved;
         this.availabilityDomain = $.availabilityDomain;
         this.availabilityPolicy = $.availabilityPolicy;
+        this.bootVolumeSizeInGbs = $.bootVolumeSizeInGbs;
         this.compartmentId = $.compartmentId;
         this.contactDetails = $.contactDetails;
         this.definedTags = $.definedTags;
@@ -560,6 +576,27 @@ public final class DesktopPoolArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder availabilityPolicy(DesktopPoolAvailabilityPolicyArgs availabilityPolicy) {
             return availabilityPolicy(Output.of(availabilityPolicy));
+        }
+
+        /**
+         * @param bootVolumeSizeInGbs (Updatable) The size in GBs of the boot volume for the desktop pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bootVolumeSizeInGbs(@Nullable Output<Integer> bootVolumeSizeInGbs) {
+            $.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
+            return this;
+        }
+
+        /**
+         * @param bootVolumeSizeInGbs (Updatable) The size in GBs of the boot volume for the desktop pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bootVolumeSizeInGbs(Integer bootVolumeSizeInGbs) {
+            return bootVolumeSizeInGbs(Output.of(bootVolumeSizeInGbs));
         }
 
         /**
@@ -710,7 +747,7 @@ public final class DesktopPoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param image Provides information about the desktop image.
+         * @param image (Updatable) Provides information about the desktop image.
          * 
          * @return builder
          * 
@@ -721,7 +758,7 @@ public final class DesktopPoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param image Provides information about the desktop image.
+         * @param image (Updatable) Provides information about the desktop image.
          * 
          * @return builder
          * 

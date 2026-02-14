@@ -22,12 +22,13 @@ import * as utilities from "../utilities";
  *
  * const testNetworkFirewallPolicyService = new oci.networkfirewall.NetworkFirewallPolicyService("test_network_firewall_policy_service", {
  *     name: networkFirewallPolicyServiceName,
+ *     type: networkFirewallPolicyServiceType,
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     portRanges: [{
  *         minimumPort: networkFirewallPolicyServicePortRangesMinimumPort,
  *         maximumPort: networkFirewallPolicyServicePortRangesMaximumPort,
  *     }],
- *     type: networkFirewallPolicyServiceType,
+ *     description: networkFirewallPolicyServiceDescription,
  * });
  * ```
  *
@@ -68,6 +69,10 @@ export class NetworkFirewallPolicyService extends pulumi.CustomResource {
     }
 
     /**
+     * (Updatable) The description of the service. This field can be used to add additional info.
+     */
+    declare public readonly description: pulumi.Output<string | undefined>;
+    /**
      * Name of the service
      */
     declare public readonly name: pulumi.Output<string>;
@@ -105,6 +110,7 @@ export class NetworkFirewallPolicyService extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyServiceState | undefined;
+            resourceInputs["description"] = state?.description;
             resourceInputs["name"] = state?.name;
             resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
             resourceInputs["parentResourceId"] = state?.parentResourceId;
@@ -121,6 +127,7 @@ export class NetworkFirewallPolicyService extends pulumi.CustomResource {
             if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
+            resourceInputs["description"] = args?.description;
             resourceInputs["name"] = args?.name;
             resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
             resourceInputs["portRanges"] = args?.portRanges;
@@ -136,6 +143,10 @@ export class NetworkFirewallPolicyService extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NetworkFirewallPolicyService resources.
  */
 export interface NetworkFirewallPolicyServiceState {
+    /**
+     * (Updatable) The description of the service. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * Name of the service
      */
@@ -166,6 +177,10 @@ export interface NetworkFirewallPolicyServiceState {
  * The set of arguments for constructing a NetworkFirewallPolicyService resource.
  */
 export interface NetworkFirewallPolicyServiceArgs {
+    /**
+     * (Updatable) The description of the service. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * Name of the service
      */

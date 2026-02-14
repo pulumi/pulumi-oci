@@ -32,14 +32,14 @@ public final class GetLogAnalyticsEntityArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * The log analytics entity OCID.
+     * The log analytics entity ID [OCID]. Entity ID can be obtained by running &#39;oci log-analytics entity list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;id&#39; parameter value contains the entity ID.
      * 
      */
     @Import(name="logAnalyticsEntityId", required=true)
     private Output<String> logAnalyticsEntityId;
 
     /**
-     * @return The log analytics entity OCID.
+     * @return The log analytics entity ID [OCID]. Entity ID can be obtained by running &#39;oci log-analytics entity list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;id&#39; parameter value contains the entity ID.
      * 
      */
     public Output<String> logAnalyticsEntityId() {
@@ -47,14 +47,14 @@ public final class GetLogAnalyticsEntityArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public Output<String> namespace() {
@@ -109,7 +109,7 @@ public final class GetLogAnalyticsEntityArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param logAnalyticsEntityId The log analytics entity OCID.
+         * @param logAnalyticsEntityId The log analytics entity ID [OCID]. Entity ID can be obtained by running &#39;oci log-analytics entity list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;id&#39; parameter value contains the entity ID.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class GetLogAnalyticsEntityArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param logAnalyticsEntityId The log analytics entity OCID.
+         * @param logAnalyticsEntityId The log analytics entity ID [OCID]. Entity ID can be obtained by running &#39;oci log-analytics entity list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;id&#39; parameter value contains the entity ID.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class GetLogAnalyticsEntityArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class GetLogAnalyticsEntityArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 

@@ -63,7 +63,9 @@ import * as utilities from "../utilities";
  *     memorySizeInGbs: vmClusterMemorySizeInGbs,
  *     systemVersion: vmClusterSystemVersion,
  *     timeZone: vmClusterTimeZone,
+ *     vmBackupStorageType: vmClusterVmBackupStorageType,
  *     vmClusterType: vmClusterVmClusterType,
+ *     vmFileSystemStorageType: vmClusterVmFileSystemStorageType,
  * });
  * ```
  *
@@ -234,17 +236,25 @@ export class VmCluster extends pulumi.CustomResource {
      */
     declare public readonly timeZone: pulumi.Output<string>;
     /**
+     * (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+     */
+    declare public readonly vmBackupStorageType: pulumi.Output<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      */
     declare public readonly vmClusterNetworkId: pulumi.Output<string>;
     /**
      * The vmcluster type for the VM cluster/Cloud VM cluster.
+     */
+    declare public readonly vmClusterType: pulumi.Output<string>;
+    /**
+     * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    declare public readonly vmClusterType: pulumi.Output<string>;
+    declare public readonly vmFileSystemStorageType: pulumi.Output<string>;
 
     /**
      * Create a VmCluster resource with the given unique name, arguments, and options.
@@ -293,8 +303,10 @@ export class VmCluster extends pulumi.CustomResource {
             resourceInputs["systemVersion"] = state?.systemVersion;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeZone"] = state?.timeZone;
+            resourceInputs["vmBackupStorageType"] = state?.vmBackupStorageType;
             resourceInputs["vmClusterNetworkId"] = state?.vmClusterNetworkId;
             resourceInputs["vmClusterType"] = state?.vmClusterType;
+            resourceInputs["vmFileSystemStorageType"] = state?.vmFileSystemStorageType;
         } else {
             const args = argsOrState as VmClusterArgs | undefined;
             if (args?.compartmentId === undefined && !opts.urn) {
@@ -341,8 +353,10 @@ export class VmCluster extends pulumi.CustomResource {
             resourceInputs["sshPublicKeys"] = args?.sshPublicKeys;
             resourceInputs["systemVersion"] = args?.systemVersion;
             resourceInputs["timeZone"] = args?.timeZone;
+            resourceInputs["vmBackupStorageType"] = args?.vmBackupStorageType;
             resourceInputs["vmClusterNetworkId"] = args?.vmClusterNetworkId;
             resourceInputs["vmClusterType"] = args?.vmClusterType;
+            resourceInputs["vmFileSystemStorageType"] = args?.vmFileSystemStorageType;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["computeModel"] = undefined /*out*/;
             resourceInputs["cpusEnabled"] = undefined /*out*/;
@@ -495,17 +509,25 @@ export interface VmClusterState {
      */
     timeZone?: pulumi.Input<string>;
     /**
+     * (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+     */
+    vmBackupStorageType?: pulumi.Input<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      */
     vmClusterNetworkId?: pulumi.Input<string>;
     /**
      * The vmcluster type for the VM cluster/Cloud VM cluster.
+     */
+    vmClusterType?: pulumi.Input<string>;
+    /**
+     * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vmClusterType?: pulumi.Input<string>;
+    vmFileSystemStorageType?: pulumi.Input<string>;
 }
 
 /**
@@ -602,15 +624,23 @@ export interface VmClusterArgs {
      */
     timeZone?: pulumi.Input<string>;
     /**
+     * (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+     */
+    vmBackupStorageType?: pulumi.Input<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      */
     vmClusterNetworkId: pulumi.Input<string>;
     /**
      * The vmcluster type for the VM cluster/Cloud VM cluster.
+     */
+    vmClusterType?: pulumi.Input<string>;
+    /**
+     * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vmClusterType?: pulumi.Input<string>;
+    vmFileSystemStorageType?: pulumi.Input<string>;
 }

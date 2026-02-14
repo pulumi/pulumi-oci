@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -38,6 +38,7 @@ import (
 //				Name:                    pulumi.Any(networkFirewallPolicyApplicationName),
 //				NetworkFirewallPolicyId: pulumi.Any(testNetworkFirewallPolicy.Id),
 //				Type:                    pulumi.Any(networkFirewallPolicyApplicationType),
+//				Description:             pulumi.Any(networkFirewallPolicyApplicationDescription),
 //				IcmpCode:                pulumi.Any(networkFirewallPolicyApplicationIcmpCode),
 //			})
 //			if err != nil {
@@ -59,9 +60,11 @@ import (
 type NetworkFirewallPolicyApplication struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+	// (Updatable) The description of the application. This field can be used to add additional info.
+	Description pulumi.StringPtrOutput `pulumi:"description"`
+	// (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 	IcmpCode pulumi.IntOutput `pulumi:"icmpCode"`
-	// (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+	// (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 	IcmpType pulumi.IntOutput `pulumi:"icmpType"`
 	// Name of the application
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -115,9 +118,11 @@ func GetNetworkFirewallPolicyApplication(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NetworkFirewallPolicyApplication resources.
 type networkFirewallPolicyApplicationState struct {
-	// (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+	// (Updatable) The description of the application. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
+	// (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 	IcmpCode *int `pulumi:"icmpCode"`
-	// (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+	// (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 	IcmpType *int `pulumi:"icmpType"`
 	// Name of the application
 	Name *string `pulumi:"name"`
@@ -133,9 +138,11 @@ type networkFirewallPolicyApplicationState struct {
 }
 
 type NetworkFirewallPolicyApplicationState struct {
-	// (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+	// (Updatable) The description of the application. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
+	// (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 	IcmpCode pulumi.IntPtrInput
-	// (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+	// (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 	IcmpType pulumi.IntPtrInput
 	// Name of the application
 	Name pulumi.StringPtrInput
@@ -155,9 +162,11 @@ func (NetworkFirewallPolicyApplicationState) ElementType() reflect.Type {
 }
 
 type networkFirewallPolicyApplicationArgs struct {
-	// (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+	// (Updatable) The description of the application. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
+	// (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 	IcmpCode *int `pulumi:"icmpCode"`
-	// (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+	// (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 	IcmpType int `pulumi:"icmpType"`
 	// Name of the application
 	Name *string `pulumi:"name"`
@@ -172,9 +181,11 @@ type networkFirewallPolicyApplicationArgs struct {
 
 // The set of arguments for constructing a NetworkFirewallPolicyApplication resource.
 type NetworkFirewallPolicyApplicationArgs struct {
-	// (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+	// (Updatable) The description of the application. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
+	// (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 	IcmpCode pulumi.IntPtrInput
-	// (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+	// (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 	IcmpType pulumi.IntInput
 	// Name of the application
 	Name pulumi.StringPtrInput
@@ -274,12 +285,17 @@ func (o NetworkFirewallPolicyApplicationOutput) ToNetworkFirewallPolicyApplicati
 	return o
 }
 
-// (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+// (Updatable) The description of the application. This field can be used to add additional info.
+func (o NetworkFirewallPolicyApplicationOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyApplication) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 func (o NetworkFirewallPolicyApplicationOutput) IcmpCode() pulumi.IntOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicyApplication) pulumi.IntOutput { return v.IcmpCode }).(pulumi.IntOutput)
 }
 
-// (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+// (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
 func (o NetworkFirewallPolicyApplicationOutput) IcmpType() pulumi.IntOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicyApplication) pulumi.IntOutput { return v.IcmpType }).(pulumi.IntOutput)
 }

@@ -127,6 +127,10 @@ namespace Pulumi.Oci.Desktops
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
+        /// <summary>
+        /// Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDesktopDesktopConnectionResult> DesktopConnections;
         public readonly string DesktopId;
         /// <summary>
         /// Provides the settings for desktop and client device options, such as audio in and out, client drive mapping, and clipboard access.
@@ -169,6 +173,8 @@ namespace Pulumi.Oci.Desktops
         private GetDesktopResult(
             ImmutableDictionary<string, string> definedTags,
 
+            ImmutableArray<Outputs.GetDesktopDesktopConnectionResult> desktopConnections,
+
             string desktopId,
 
             ImmutableArray<Outputs.GetDesktopDevicePolicyResult> devicePolicies,
@@ -190,6 +196,7 @@ namespace Pulumi.Oci.Desktops
             string userName)
         {
             DefinedTags = definedTags;
+            DesktopConnections = desktopConnections;
             DesktopId = desktopId;
             DevicePolicies = devicePolicies;
             DisplayName = displayName;

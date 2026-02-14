@@ -14,6 +14,10 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
     public sealed class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemResult
     {
         /// <summary>
+        /// The description of the Url list. This field can be used to add additional info.
+        /// </summary>
+        public readonly string? Description;
+        /// <summary>
         /// Unique name identifier for the URL list.
         /// </summary>
         public readonly string Name;
@@ -36,6 +40,8 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemResult(
+            string? description,
+
             string name,
 
             string networkFirewallPolicyId,
@@ -46,6 +52,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
             ImmutableArray<Outputs.GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemUrlResult> urls)
         {
+            Description = description;
             Name = name;
             NetworkFirewallPolicyId = networkFirewallPolicyId;
             ParentResourceId = parentResourceId;

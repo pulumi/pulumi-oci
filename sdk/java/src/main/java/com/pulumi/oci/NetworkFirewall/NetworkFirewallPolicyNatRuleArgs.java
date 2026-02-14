@@ -36,14 +36,14 @@ public final class NetworkFirewallPolicyNatRuleArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+     * (Updatable) Match criteria used in NAT rule used on the firewall policy.
      * 
      */
     @Import(name="condition", required=true)
     private Output<NetworkFirewallPolicyNatRuleConditionArgs> condition;
 
     /**
-     * @return (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+     * @return (Updatable) Match criteria used in NAT rule used on the firewall policy.
      * 
      */
     public Output<NetworkFirewallPolicyNatRuleConditionArgs> condition() {
@@ -187,7 +187,7 @@ public final class NetworkFirewallPolicyNatRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param condition (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+         * @param condition (Updatable) Match criteria used in NAT rule used on the firewall policy.
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class NetworkFirewallPolicyNatRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param condition (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+         * @param condition (Updatable) Match criteria used in NAT rule used on the firewall policy.
          * 
          * @return builder
          * 

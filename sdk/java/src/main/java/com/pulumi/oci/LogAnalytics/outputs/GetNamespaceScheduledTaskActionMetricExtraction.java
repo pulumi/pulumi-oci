@@ -5,7 +5,9 @@ package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceScheduledTaskActionMetricExtractionMetricCollection;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -16,12 +18,17 @@ public final class GetNamespaceScheduledTaskActionMetricExtraction {
      */
     private String compartmentId;
     /**
+     * @return Details for the metrics to be collected.
+     * 
+     */
+    private List<GetNamespaceScheduledTaskActionMetricExtractionMetricCollection> metricCollections;
+    /**
      * @return The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
      * 
      */
     private String metricName;
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     private String namespace;
@@ -40,6 +47,13 @@ public final class GetNamespaceScheduledTaskActionMetricExtraction {
         return this.compartmentId;
     }
     /**
+     * @return Details for the metrics to be collected.
+     * 
+     */
+    public List<GetNamespaceScheduledTaskActionMetricExtractionMetricCollection> metricCollections() {
+        return this.metricCollections;
+    }
+    /**
      * @return The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
      * 
      */
@@ -47,7 +61,7 @@ public final class GetNamespaceScheduledTaskActionMetricExtraction {
         return this.metricName;
     }
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public String namespace() {
@@ -71,6 +85,7 @@ public final class GetNamespaceScheduledTaskActionMetricExtraction {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private List<GetNamespaceScheduledTaskActionMetricExtractionMetricCollection> metricCollections;
         private String metricName;
         private String namespace;
         private String resourceGroup;
@@ -78,6 +93,7 @@ public final class GetNamespaceScheduledTaskActionMetricExtraction {
         public Builder(GetNamespaceScheduledTaskActionMetricExtraction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.metricCollections = defaults.metricCollections;
     	      this.metricName = defaults.metricName;
     	      this.namespace = defaults.namespace;
     	      this.resourceGroup = defaults.resourceGroup;
@@ -90,6 +106,17 @@ public final class GetNamespaceScheduledTaskActionMetricExtraction {
             }
             this.compartmentId = compartmentId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder metricCollections(List<GetNamespaceScheduledTaskActionMetricExtractionMetricCollection> metricCollections) {
+            if (metricCollections == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskActionMetricExtraction", "metricCollections");
+            }
+            this.metricCollections = metricCollections;
+            return this;
+        }
+        public Builder metricCollections(GetNamespaceScheduledTaskActionMetricExtractionMetricCollection... metricCollections) {
+            return metricCollections(List.of(metricCollections));
         }
         @CustomType.Setter
         public Builder metricName(String metricName) {
@@ -118,6 +145,7 @@ public final class GetNamespaceScheduledTaskActionMetricExtraction {
         public GetNamespaceScheduledTaskActionMetricExtraction build() {
             final var _resultValue = new GetNamespaceScheduledTaskActionMetricExtraction();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.metricCollections = metricCollections;
             _resultValue.metricName = metricName;
             _resultValue.namespace = namespace;
             _resultValue.resourceGroup = resourceGroup;

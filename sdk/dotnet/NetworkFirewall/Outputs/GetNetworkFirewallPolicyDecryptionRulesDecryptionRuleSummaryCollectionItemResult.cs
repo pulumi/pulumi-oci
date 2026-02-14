@@ -28,6 +28,10 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// </summary>
         public readonly string? DecryptionProfile;
         /// <summary>
+        /// The description of the decryption rule. This field can be used to add additional info.
+        /// </summary>
+        public readonly string? Description;
+        /// <summary>
         /// Name for the decryption rule, must be unique within the policy.
         /// </summary>
         public readonly string Name;
@@ -57,6 +61,8 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
             string? decryptionProfile,
 
+            string? description,
+
             string name,
 
             string networkFirewallPolicyId,
@@ -72,6 +78,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
             Action = action;
             Condition = condition;
             DecryptionProfile = decryptionProfile;
+            Description = description;
             Name = name;
             NetworkFirewallPolicyId = networkFirewallPolicyId;
             ParentResourceId = parentResourceId;

@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
+ *     description: networkFirewallPolicyDescription,
  *     displayName: networkFirewallPolicyDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
@@ -85,6 +86,10 @@ export class NetworkFirewallPolicy extends pulumi.CustomResource {
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * (Updatable) The description of the network firewall policy. This field can be used to add additional info.
+     */
+    declare public readonly description: pulumi.Output<string | undefined>;
+    /**
      * (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
      */
     declare public readonly displayName: pulumi.Output<string>;
@@ -132,6 +137,7 @@ export class NetworkFirewallPolicy extends pulumi.CustomResource {
             resourceInputs["attachedNetworkFirewallCount"] = state?.attachedNetworkFirewallCount;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
@@ -146,6 +152,7 @@ export class NetworkFirewallPolicy extends pulumi.CustomResource {
             }
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["attachedNetworkFirewallCount"] = undefined /*out*/;
@@ -176,6 +183,10 @@ export interface NetworkFirewallPolicyState {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) The description of the network firewall policy. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
      */
@@ -221,6 +232,10 @@ export interface NetworkFirewallPolicyArgs {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) The description of the network firewall policy. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
      */

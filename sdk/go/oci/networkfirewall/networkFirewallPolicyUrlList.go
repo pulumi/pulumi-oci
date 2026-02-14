@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -42,6 +42,7 @@ import (
 //						Type:    pulumi.Any(networkFirewallPolicyUrlListUrlsType),
 //					},
 //				},
+//				Description: pulumi.Any(networkFirewallPolicyUrlListDescription),
 //			})
 //			if err != nil {
 //				return err
@@ -62,6 +63,8 @@ import (
 type NetworkFirewallPolicyUrlList struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) The description of the Url list. This field can be used to add additional info.
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// Unique name to identify the group of urls to be used in the policy rules.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -110,6 +113,8 @@ func GetNetworkFirewallPolicyUrlList(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NetworkFirewallPolicyUrlList resources.
 type networkFirewallPolicyUrlListState struct {
+	// (Updatable) The description of the Url list. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Unique name to identify the group of urls to be used in the policy rules.
 	Name *string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -123,6 +128,8 @@ type networkFirewallPolicyUrlListState struct {
 }
 
 type NetworkFirewallPolicyUrlListState struct {
+	// (Updatable) The description of the Url list. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
 	// Unique name to identify the group of urls to be used in the policy rules.
 	Name pulumi.StringPtrInput
 	// Unique Network Firewall Policy identifier
@@ -140,6 +147,8 @@ func (NetworkFirewallPolicyUrlListState) ElementType() reflect.Type {
 }
 
 type networkFirewallPolicyUrlListArgs struct {
+	// (Updatable) The description of the Url list. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Unique name to identify the group of urls to be used in the policy rules.
 	Name *string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -150,6 +159,8 @@ type networkFirewallPolicyUrlListArgs struct {
 
 // The set of arguments for constructing a NetworkFirewallPolicyUrlList resource.
 type NetworkFirewallPolicyUrlListArgs struct {
+	// (Updatable) The description of the Url list. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
 	// Unique name to identify the group of urls to be used in the policy rules.
 	Name pulumi.StringPtrInput
 	// Unique Network Firewall Policy identifier
@@ -243,6 +254,11 @@ func (o NetworkFirewallPolicyUrlListOutput) ToNetworkFirewallPolicyUrlListOutput
 
 func (o NetworkFirewallPolicyUrlListOutput) ToNetworkFirewallPolicyUrlListOutputWithContext(ctx context.Context) NetworkFirewallPolicyUrlListOutput {
 	return o
+}
+
+// (Updatable) The description of the Url list. This field can be used to add additional info.
+func (o NetworkFirewallPolicyUrlListOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyUrlList) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Unique name to identify the group of urls to be used in the policy rules.

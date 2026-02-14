@@ -42,11 +42,11 @@ export interface GetLogAnalyticsEntityArgs {
      */
     isShowAssociatedSourcesCount?: string;
     /**
-     * The log analytics entity OCID.
+     * The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
      */
     logAnalyticsEntityId: string;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: string;
 }
@@ -187,11 +187,11 @@ export interface GetLogAnalyticsEntityOutputArgs {
      */
     isShowAssociatedSourcesCount?: pulumi.Input<string>;
     /**
-     * The log analytics entity OCID.
+     * The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
      */
     logAnalyticsEntityId: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
 }

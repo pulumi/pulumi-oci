@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionItem {
@@ -17,6 +19,11 @@ public final class GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSumm
      * 
      */
     private List<String> apps;
+    /**
+     * @return The description of the application list. This field can be used to add additional info.
+     * 
+     */
+    private @Nullable String description;
     /**
      * @return Name of the application Group.
      * 
@@ -45,6 +52,13 @@ public final class GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSumm
      */
     public List<String> apps() {
         return this.apps;
+    }
+    /**
+     * @return The description of the application list. This field can be used to add additional info.
+     * 
+     */
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Name of the application Group.
@@ -85,6 +99,7 @@ public final class GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSumm
     @CustomType.Builder
     public static final class Builder {
         private List<String> apps;
+        private @Nullable String description;
         private String name;
         private String networkFirewallPolicyId;
         private String parentResourceId;
@@ -93,6 +108,7 @@ public final class GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSumm
         public Builder(GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apps = defaults.apps;
+    	      this.description = defaults.description;
     	      this.name = defaults.name;
     	      this.networkFirewallPolicyId = defaults.networkFirewallPolicyId;
     	      this.parentResourceId = defaults.parentResourceId;
@@ -109,6 +125,12 @@ public final class GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSumm
         }
         public Builder apps(String... apps) {
             return apps(List.of(apps));
+        }
+        @CustomType.Setter
+        public Builder description(@Nullable String description) {
+
+            this.description = description;
+            return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
@@ -145,6 +167,7 @@ public final class GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSumm
         public GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionItem build() {
             final var _resultValue = new GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionItem();
             _resultValue.apps = apps;
+            _resultValue.description = description;
             _resultValue.name = name;
             _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
             _resultValue.parentResourceId = parentResourceId;

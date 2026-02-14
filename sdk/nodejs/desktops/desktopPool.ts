@@ -43,6 +43,7 @@ import * as utilities from "../utilities";
  *         isKeyboardEnabled: desktopPoolDevicePolicyIsKeyboardEnabled,
  *         isPointerEnabled: desktopPoolDevicePolicyIsPointerEnabled,
  *         isPrintingEnabled: desktopPoolDevicePolicyIsPrintingEnabled,
+ *         isVideoInputEnabled: desktopPoolDevicePolicyIsVideoInputEnabled,
  *     },
  *     displayName: desktopPoolDisplayName,
  *     image: {
@@ -60,6 +61,7 @@ import * as utilities from "../utilities";
  *     standbySize: desktopPoolStandbySize,
  *     storageBackupPolicyId: "ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz",
  *     storageSizeInGbs: desktopPoolStorageSizeInGbs,
+ *     bootVolumeSizeInGbs: desktopPoolBootVolumeSizeInGbs,
  *     areVolumesPreserved: desktopPoolAreVolumesPreserved,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -156,6 +158,10 @@ export class DesktopPool extends pulumi.CustomResource {
      */
     declare public readonly availabilityPolicy: pulumi.Output<outputs.Desktops.DesktopPoolAvailabilityPolicy>;
     /**
+     * (Updatable) The size in GBs of the boot volume for the desktop pool.
+     */
+    declare public readonly bootVolumeSizeInGbs: pulumi.Output<number>;
+    /**
      * (Updatable) The OCID of the compartment which will contain the desktop pool.
      */
     declare public readonly compartmentId: pulumi.Output<string>;
@@ -184,7 +190,7 @@ export class DesktopPool extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * Provides information about the desktop image.
+     * (Updatable) Provides information about the desktop image.
      */
     declare public readonly image: pulumi.Output<outputs.Desktops.DesktopPoolImage>;
     /**
@@ -270,6 +276,7 @@ export class DesktopPool extends pulumi.CustomResource {
             resourceInputs["areVolumesPreserved"] = state?.areVolumesPreserved;
             resourceInputs["availabilityDomain"] = state?.availabilityDomain;
             resourceInputs["availabilityPolicy"] = state?.availabilityPolicy;
+            resourceInputs["bootVolumeSizeInGbs"] = state?.bootVolumeSizeInGbs;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["contactDetails"] = state?.contactDetails;
             resourceInputs["definedTags"] = state?.definedTags;
@@ -345,6 +352,7 @@ export class DesktopPool extends pulumi.CustomResource {
             resourceInputs["areVolumesPreserved"] = args?.areVolumesPreserved;
             resourceInputs["availabilityDomain"] = args?.availabilityDomain;
             resourceInputs["availabilityPolicy"] = args?.availabilityPolicy;
+            resourceInputs["bootVolumeSizeInGbs"] = args?.bootVolumeSizeInGbs;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["contactDetails"] = args?.contactDetails;
             resourceInputs["definedTags"] = args?.definedTags;
@@ -405,6 +413,10 @@ export interface DesktopPoolState {
      */
     availabilityPolicy?: pulumi.Input<inputs.Desktops.DesktopPoolAvailabilityPolicy>;
     /**
+     * (Updatable) The size in GBs of the boot volume for the desktop pool.
+     */
+    bootVolumeSizeInGbs?: pulumi.Input<number>;
+    /**
      * (Updatable) The OCID of the compartment which will contain the desktop pool.
      */
     compartmentId?: pulumi.Input<string>;
@@ -433,7 +445,7 @@ export interface DesktopPoolState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Provides information about the desktop image.
+     * (Updatable) Provides information about the desktop image.
      */
     image?: pulumi.Input<inputs.Desktops.DesktopPoolImage>;
     /**
@@ -527,6 +539,10 @@ export interface DesktopPoolArgs {
      */
     availabilityPolicy: pulumi.Input<inputs.Desktops.DesktopPoolAvailabilityPolicy>;
     /**
+     * (Updatable) The size in GBs of the boot volume for the desktop pool.
+     */
+    bootVolumeSizeInGbs?: pulumi.Input<number>;
+    /**
      * (Updatable) The OCID of the compartment which will contain the desktop pool.
      */
     compartmentId: pulumi.Input<string>;
@@ -555,7 +571,7 @@ export interface DesktopPoolArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Provides information about the desktop image.
+     * (Updatable) Provides information about the desktop image.
      */
     image: pulumi.Input<inputs.Desktops.DesktopPoolImage>;
     /**

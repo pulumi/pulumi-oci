@@ -13,6 +13,7 @@ import com.pulumi.oci.NetworkFirewall.outputs.NetworkFirewallPolicyServicePortRa
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -50,12 +51,13 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testNetworkFirewallPolicyService = new NetworkFirewallPolicyService("testNetworkFirewallPolicyService", NetworkFirewallPolicyServiceArgs.builder()
  *             .name(networkFirewallPolicyServiceName)
+ *             .type(networkFirewallPolicyServiceType)
  *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
  *             .portRanges(NetworkFirewallPolicyServicePortRangeArgs.builder()
  *                 .minimumPort(networkFirewallPolicyServicePortRangesMinimumPort)
  *                 .maximumPort(networkFirewallPolicyServicePortRangesMaximumPort)
  *                 .build())
- *             .type(networkFirewallPolicyServiceType)
+ *             .description(networkFirewallPolicyServiceDescription)
  *             .build());
  * 
  *     }
@@ -74,6 +76,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:NetworkFirewall/networkFirewallPolicyService:NetworkFirewallPolicyService")
 public class NetworkFirewallPolicyService extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) The description of the service. This field can be used to add additional info.
+     * 
+     */
+    @Export(name="description", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> description;
+
+    /**
+     * @return (Updatable) The description of the service. This field can be used to add additional info.
+     * 
+     */
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
+    }
     /**
      * Name of the service
      * 

@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/database"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -78,7 +78,9 @@ import (
 //				MemorySizeInGbs:          pulumi.Any(vmClusterMemorySizeInGbs),
 //				SystemVersion:            pulumi.Any(vmClusterSystemVersion),
 //				TimeZone:                 pulumi.Any(vmClusterTimeZone),
+//				VmBackupStorageType:      pulumi.Any(vmClusterVmBackupStorageType),
 //				VmClusterType:            pulumi.Any(vmClusterVmClusterType),
+//				VmFileSystemStorageType:  pulumi.Any(vmClusterVmFileSystemStorageType),
 //			})
 //			if err != nil {
 //				return err
@@ -165,13 +167,17 @@ type VmCluster struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
+	// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+	VmBackupStorageType pulumi.StringOutput `pulumi:"vmBackupStorageType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	VmClusterNetworkId pulumi.StringOutput `pulumi:"vmClusterNetworkId"`
 	// The vmcluster type for the VM cluster/Cloud VM cluster.
+	VmClusterType pulumi.StringOutput `pulumi:"vmClusterType"`
+	// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VmClusterType pulumi.StringOutput `pulumi:"vmClusterType"`
+	VmFileSystemStorageType pulumi.StringOutput `pulumi:"vmFileSystemStorageType"`
 }
 
 // NewVmCluster registers a new resource with the given unique name, arguments, and options.
@@ -291,13 +297,17 @@ type vmClusterState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone *string `pulumi:"timeZone"`
+	// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+	VmBackupStorageType *string `pulumi:"vmBackupStorageType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	VmClusterNetworkId *string `pulumi:"vmClusterNetworkId"`
 	// The vmcluster type for the VM cluster/Cloud VM cluster.
+	VmClusterType *string `pulumi:"vmClusterType"`
+	// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VmClusterType *string `pulumi:"vmClusterType"`
+	VmFileSystemStorageType *string `pulumi:"vmFileSystemStorageType"`
 }
 
 type VmClusterState struct {
@@ -367,13 +377,17 @@ type VmClusterState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringPtrInput
+	// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+	VmBackupStorageType pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	VmClusterNetworkId pulumi.StringPtrInput
 	// The vmcluster type for the VM cluster/Cloud VM cluster.
+	VmClusterType pulumi.StringPtrInput
+	// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VmClusterType pulumi.StringPtrInput
+	VmFileSystemStorageType pulumi.StringPtrInput
 }
 
 func (VmClusterState) ElementType() reflect.Type {
@@ -426,13 +440,17 @@ type vmClusterArgs struct {
 	SystemVersion *string `pulumi:"systemVersion"`
 	// The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone *string `pulumi:"timeZone"`
+	// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+	VmBackupStorageType *string `pulumi:"vmBackupStorageType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	VmClusterNetworkId string `pulumi:"vmClusterNetworkId"`
 	// The vmcluster type for the VM cluster/Cloud VM cluster.
+	VmClusterType *string `pulumi:"vmClusterType"`
+	// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VmClusterType *string `pulumi:"vmClusterType"`
+	VmFileSystemStorageType *string `pulumi:"vmFileSystemStorageType"`
 }
 
 // The set of arguments for constructing a VmCluster resource.
@@ -482,13 +500,17 @@ type VmClusterArgs struct {
 	SystemVersion pulumi.StringPtrInput
 	// The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringPtrInput
+	// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+	VmBackupStorageType pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	VmClusterNetworkId pulumi.StringInput
 	// The vmcluster type for the VM cluster/Cloud VM cluster.
+	VmClusterType pulumi.StringPtrInput
+	// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VmClusterType pulumi.StringPtrInput
+	VmFileSystemStorageType pulumi.StringPtrInput
 }
 
 func (VmClusterArgs) ElementType() reflect.Type {
@@ -748,17 +770,27 @@ func (o VmClusterOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
 }
 
+// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+func (o VmClusterOutput) VmBackupStorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.VmBackupStorageType }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 func (o VmClusterOutput) VmClusterNetworkId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.VmClusterNetworkId }).(pulumi.StringOutput)
 }
 
 // The vmcluster type for the VM cluster/Cloud VM cluster.
+func (o VmClusterOutput) VmClusterType() pulumi.StringOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.VmClusterType }).(pulumi.StringOutput)
+}
+
+// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o VmClusterOutput) VmClusterType() pulumi.StringOutput {
-	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.VmClusterType }).(pulumi.StringOutput)
+func (o VmClusterOutput) VmFileSystemStorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.VmFileSystemStorageType }).(pulumi.StringOutput)
 }
 
 type VmClusterArrayOutput struct{ *pulumi.OutputState }

@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DesktopPoolImage {
     /**
-     * @return The OCID of the desktop image.
+     * @return (Updatable) The OCID of the desktop image.
      * 
      */
     private String imageId;
@@ -30,7 +30,7 @@ public final class DesktopPoolImage {
 
     private DesktopPoolImage() {}
     /**
-     * @return The OCID of the desktop image.
+     * @return (Updatable) The OCID of the desktop image.
      * 
      */
     public String imageId() {

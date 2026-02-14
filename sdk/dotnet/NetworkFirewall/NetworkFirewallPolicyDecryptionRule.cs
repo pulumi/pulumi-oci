@@ -43,14 +43,15 @@ namespace Pulumi.Oci.NetworkFirewall
     ///             DestinationAddresses = networkFirewallPolicyDecryptionRuleConditionDestinationAddress,
     ///             SourceAddresses = networkFirewallPolicyDecryptionRuleConditionSourceAddress,
     ///         },
+    ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+    ///         Description = networkFirewallPolicyDecryptionRuleDescription,
+    ///         DecryptionProfile = networkFirewallPolicyDecryptionRuleDecryptionProfile,
+    ///         Secret = networkFirewallPolicyDecryptionRuleSecret,
     ///         Position = new Oci.NetworkFirewall.Inputs.NetworkFirewallPolicyDecryptionRulePositionArgs
     ///         {
     ///             AfterRule = networkFirewallPolicyDecryptionRulePositionAfterRule,
     ///             BeforeRule = networkFirewallPolicyDecryptionRulePositionBeforeRule,
     ///         },
-    ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
-    ///         DecryptionProfile = networkFirewallPolicyDecryptionRuleDecryptionProfile,
-    ///         Secret = networkFirewallPolicyDecryptionRuleSecret,
     ///     });
     /// 
     /// });
@@ -76,7 +77,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Output<string> Action { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
+        /// (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
         /// </summary>
         [Output("condition")]
         public Output<Outputs.NetworkFirewallPolicyDecryptionRuleCondition> Condition { get; private set; } = null!;
@@ -86,6 +87,12 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         [Output("decryptionProfile")]
         public Output<string?> DecryptionProfile { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The description of the decryption rule. This field can be used to add additional info.
+        /// </summary>
+        [Output("description")]
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// Name for the decryption rule, must be unique within the policy.
@@ -175,7 +182,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Input<string> Action { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
+        /// (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
         /// </summary>
         [Input("condition", required: true)]
         public Input<Inputs.NetworkFirewallPolicyDecryptionRuleConditionArgs> Condition { get; set; } = null!;
@@ -185,6 +192,12 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         [Input("decryptionProfile")]
         public Input<string>? DecryptionProfile { get; set; }
+
+        /// <summary>
+        /// (Updatable) The description of the decryption rule. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
 
         /// <summary>
         /// Name for the decryption rule, must be unique within the policy.
@@ -230,7 +243,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Input<string>? Action { get; set; }
 
         /// <summary>
-        /// (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
+        /// (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
         /// </summary>
         [Input("condition")]
         public Input<Inputs.NetworkFirewallPolicyDecryptionRuleConditionGetArgs>? Condition { get; set; }
@@ -240,6 +253,12 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         [Input("decryptionProfile")]
         public Input<string>? DecryptionProfile { get; set; }
+
+        /// <summary>
+        /// (Updatable) The description of the decryption rule. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
 
         /// <summary>
         /// Name for the decryption rule, must be unique within the policy.

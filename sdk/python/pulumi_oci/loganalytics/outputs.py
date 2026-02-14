@@ -33,6 +33,8 @@ __all__ = [
     'NamespaceLookupStatusSummary',
     'NamespaceScheduledTaskAction',
     'NamespaceScheduledTaskActionMetricExtraction',
+    'NamespaceScheduledTaskActionMetricExtractionMetricCollection',
+    'NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimension',
     'NamespaceScheduledTaskActionTemplateDetails',
     'NamespaceScheduledTaskActionTemplateDetailsTemplateParam',
     'NamespaceScheduledTaskSchedules',
@@ -104,6 +106,8 @@ __all__ = [
     'GetNamespaceRulesRuleSummaryCollectionItemResult',
     'GetNamespaceScheduledTaskActionResult',
     'GetNamespaceScheduledTaskActionMetricExtractionResult',
+    'GetNamespaceScheduledTaskActionMetricExtractionMetricCollectionResult',
+    'GetNamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionResult',
     'GetNamespaceScheduledTaskActionTemplateDetailResult',
     'GetNamespaceScheduledTaskActionTemplateDetailTemplateParamResult',
     'GetNamespaceScheduledTaskScheduleResult',
@@ -113,6 +117,8 @@ __all__ = [
     'GetNamespaceScheduledTasksScheduledTaskCollectionItemResult',
     'GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult',
     'GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionResult',
+    'GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionMetricCollectionResult',
+    'GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionMetricCollectionDimensionResult',
     'GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailResult',
     'GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamResult',
     'GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleResult',
@@ -1302,6 +1308,8 @@ class NamespaceScheduledTaskActionMetricExtraction(dict):
         suggest = None
         if key == "compartmentId":
             suggest = "compartment_id"
+        elif key == "metricCollections":
+            suggest = "metric_collections"
         elif key == "metricName":
             suggest = "metric_name"
         elif key == "resourceGroup":
@@ -1320,17 +1328,21 @@ class NamespaceScheduledTaskActionMetricExtraction(dict):
 
     def __init__(__self__, *,
                  compartment_id: Optional[_builtins.str] = None,
+                 metric_collections: Optional[Sequence['outputs.NamespaceScheduledTaskActionMetricExtractionMetricCollection']] = None,
                  metric_name: Optional[_builtins.str] = None,
                  namespace: Optional[_builtins.str] = None,
                  resource_group: Optional[_builtins.str] = None):
         """
         :param _builtins.str compartment_id: (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+        :param Sequence['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs'] metric_collections: Details for the metrics to be collected.
         :param _builtins.str metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         :param _builtins.str namespace: The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
         :param _builtins.str resource_group: The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if metric_collections is not None:
+            pulumi.set(__self__, "metric_collections", metric_collections)
         if metric_name is not None:
             pulumi.set(__self__, "metric_name", metric_name)
         if namespace is not None:
@@ -1345,6 +1357,14 @@ class NamespaceScheduledTaskActionMetricExtraction(dict):
         (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="metricCollections")
+    def metric_collections(self) -> Optional[Sequence['outputs.NamespaceScheduledTaskActionMetricExtractionMetricCollection']]:
+        """
+        Details for the metrics to be collected.
+        """
+        return pulumi.get(self, "metric_collections")
 
     @_builtins.property
     @pulumi.getter(name="metricName")
@@ -1369,6 +1389,132 @@ class NamespaceScheduledTaskActionMetricExtraction(dict):
         The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         """
         return pulumi.get(self, "resource_group")
+
+
+@pulumi.output_type
+class NamespaceScheduledTaskActionMetricExtractionMetricCollection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "metricName":
+            suggest = "metric_name"
+        elif key == "metricQueryFieldName":
+            suggest = "metric_query_field_name"
+        elif key == "queryTableName":
+            suggest = "query_table_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NamespaceScheduledTaskActionMetricExtractionMetricCollection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NamespaceScheduledTaskActionMetricExtractionMetricCollection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NamespaceScheduledTaskActionMetricExtractionMetricCollection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dimensions: Optional[Sequence['outputs.NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimension']] = None,
+                 metric_name: Optional[_builtins.str] = None,
+                 metric_query_field_name: Optional[_builtins.str] = None,
+                 query_table_name: Optional[_builtins.str] = None):
+        """
+        :param Sequence['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs'] dimensions: Selected dimension fields for the metric collection.
+        :param _builtins.str metric_name: The metric name for this metric collection. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        :param _builtins.str metric_query_field_name: Output field in the query to be used as the metric value.
+        :param _builtins.str query_table_name: Output table in the query.
+        """
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
+        if metric_name is not None:
+            pulumi.set(__self__, "metric_name", metric_name)
+        if metric_query_field_name is not None:
+            pulumi.set(__self__, "metric_query_field_name", metric_query_field_name)
+        if query_table_name is not None:
+            pulumi.set(__self__, "query_table_name", query_table_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def dimensions(self) -> Optional[Sequence['outputs.NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimension']]:
+        """
+        Selected dimension fields for the metric collection.
+        """
+        return pulumi.get(self, "dimensions")
+
+    @_builtins.property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> Optional[_builtins.str]:
+        """
+        The metric name for this metric collection. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+        return pulumi.get(self, "metric_name")
+
+    @_builtins.property
+    @pulumi.getter(name="metricQueryFieldName")
+    def metric_query_field_name(self) -> Optional[_builtins.str]:
+        """
+        Output field in the query to be used as the metric value.
+        """
+        return pulumi.get(self, "metric_query_field_name")
+
+    @_builtins.property
+    @pulumi.getter(name="queryTableName")
+    def query_table_name(self) -> Optional[_builtins.str]:
+        """
+        Output table in the query.
+        """
+        return pulumi.get(self, "query_table_name")
+
+
+@pulumi.output_type
+class NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimension(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dimensionName":
+            suggest = "dimension_name"
+        elif key == "queryFieldName":
+            suggest = "query_field_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimension. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimension.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimension.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dimension_name: Optional[_builtins.str] = None,
+                 query_field_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str dimension_name: Dimension name to be stored with the metric.
+        :param _builtins.str query_field_name: Output field in the query to be used as the source for the metric dimension.
+        """
+        if dimension_name is not None:
+            pulumi.set(__self__, "dimension_name", dimension_name)
+        if query_field_name is not None:
+            pulumi.set(__self__, "query_field_name", query_field_name)
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionName")
+    def dimension_name(self) -> Optional[_builtins.str]:
+        """
+        Dimension name to be stored with the metric.
+        """
+        return pulumi.get(self, "dimension_name")
+
+    @_builtins.property
+    @pulumi.getter(name="queryFieldName")
+    def query_field_name(self) -> Optional[_builtins.str]:
+        """
+        Output field in the query to be used as the source for the metric dimension.
+        """
+        return pulumi.get(self, "query_field_name")
 
 
 @pulumi.output_type
@@ -1490,10 +1636,14 @@ class NamespaceScheduledTaskSchedulesSchedule(dict):
         suggest = None
         if key == "misfirePolicy":
             suggest = "misfire_policy"
+        elif key == "queryOffsetSecs":
+            suggest = "query_offset_secs"
         elif key == "recurringInterval":
             suggest = "recurring_interval"
         elif key == "repeatCount":
             suggest = "repeat_count"
+        elif key == "timeEnd":
+            suggest = "time_end"
         elif key == "timeZone":
             suggest = "time_zone"
 
@@ -1512,15 +1662,19 @@ class NamespaceScheduledTaskSchedulesSchedule(dict):
                  type: _builtins.str,
                  expression: Optional[_builtins.str] = None,
                  misfire_policy: Optional[_builtins.str] = None,
+                 query_offset_secs: Optional[_builtins.int] = None,
                  recurring_interval: Optional[_builtins.str] = None,
                  repeat_count: Optional[_builtins.int] = None,
+                 time_end: Optional[_builtins.str] = None,
                  time_zone: Optional[_builtins.str] = None):
         """
         :param _builtins.str type: Schedule type discriminator.
         :param _builtins.str expression: Value in cron format.
         :param _builtins.str misfire_policy: Schedule misfire retry policy.
+        :param _builtins.int query_offset_secs: Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
         :param _builtins.str recurring_interval: Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         :param _builtins.int repeat_count: Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+        :param _builtins.str time_end: End time for the schedule, even if the schedule would otherwise have remaining executions.
         :param _builtins.str time_zone: Time zone, by default UTC.
         """
         pulumi.set(__self__, "type", type)
@@ -1528,10 +1682,14 @@ class NamespaceScheduledTaskSchedulesSchedule(dict):
             pulumi.set(__self__, "expression", expression)
         if misfire_policy is not None:
             pulumi.set(__self__, "misfire_policy", misfire_policy)
+        if query_offset_secs is not None:
+            pulumi.set(__self__, "query_offset_secs", query_offset_secs)
         if recurring_interval is not None:
             pulumi.set(__self__, "recurring_interval", recurring_interval)
         if repeat_count is not None:
             pulumi.set(__self__, "repeat_count", repeat_count)
+        if time_end is not None:
+            pulumi.set(__self__, "time_end", time_end)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
 
@@ -1560,6 +1718,14 @@ class NamespaceScheduledTaskSchedulesSchedule(dict):
         return pulumi.get(self, "misfire_policy")
 
     @_builtins.property
+    @pulumi.getter(name="queryOffsetSecs")
+    def query_offset_secs(self) -> Optional[_builtins.int]:
+        """
+        Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
+        """
+        return pulumi.get(self, "query_offset_secs")
+
+    @_builtins.property
     @pulumi.getter(name="recurringInterval")
     def recurring_interval(self) -> Optional[_builtins.str]:
         """
@@ -1574,6 +1740,14 @@ class NamespaceScheduledTaskSchedulesSchedule(dict):
         Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
         """
         return pulumi.get(self, "repeat_count")
+
+    @_builtins.property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> Optional[_builtins.str]:
+        """
+        End time for the schedule, even if the schedule would otherwise have remaining executions.
+        """
+        return pulumi.get(self, "time_end")
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
@@ -1593,6 +1767,8 @@ class NamespaceStorageArchivalConfigArchivingConfiguration(dict):
             suggest = "active_storage_duration"
         elif key == "archivalStorageDuration":
             suggest = "archival_storage_duration"
+        elif key == "timeOldestActiveBucketEnded":
+            suggest = "time_oldest_active_bucket_ended"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in NamespaceStorageArchivalConfigArchivingConfiguration. Access the value via the '{suggest}' property getter instead.")
@@ -1607,15 +1783,19 @@ class NamespaceStorageArchivalConfigArchivingConfiguration(dict):
 
     def __init__(__self__, *,
                  active_storage_duration: Optional[_builtins.str] = None,
-                 archival_storage_duration: Optional[_builtins.str] = None):
+                 archival_storage_duration: Optional[_builtins.str] = None,
+                 time_oldest_active_bucket_ended: Optional[_builtins.str] = None):
         """
         :param _builtins.str active_storage_duration: (Updatable) This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
         :param _builtins.str archival_storage_duration: (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+        :param _builtins.str time_oldest_active_bucket_ended: (Updatable) end time of the oldest active CoreGroup
         """
         if active_storage_duration is not None:
             pulumi.set(__self__, "active_storage_duration", active_storage_duration)
         if archival_storage_duration is not None:
             pulumi.set(__self__, "archival_storage_duration", archival_storage_duration)
+        if time_oldest_active_bucket_ended is not None:
+            pulumi.set(__self__, "time_oldest_active_bucket_ended", time_oldest_active_bucket_ended)
 
     @_builtins.property
     @pulumi.getter(name="activeStorageDuration")
@@ -1632,6 +1812,14 @@ class NamespaceStorageArchivalConfigArchivingConfiguration(dict):
         (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
         """
         return pulumi.get(self, "archival_storage_duration")
+
+    @_builtins.property
+    @pulumi.getter(name="timeOldestActiveBucketEnded")
+    def time_oldest_active_bucket_ended(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) end time of the oldest active CoreGroup
+        """
+        return pulumi.get(self, "time_oldest_active_bucket_ended")
 
 
 @pulumi.output_type
@@ -1791,7 +1979,7 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
         :param _builtins.str management_agent_id: The OCID of the Management Agent.
         :param Sequence['GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataArgs'] metadatas: Details of entity metadata information.
         :param _builtins.str name: A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
-        :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+        :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param Mapping[str, _builtins.str] properties: The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param _builtins.str source_id: A filter to return only log analytics entities whose sourceId matches the sourceId given.
         :param _builtins.str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
@@ -1957,7 +2145,7 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
     @pulumi.getter
     def namespace(self) -> _builtins.str:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -2867,8 +3055,8 @@ class GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionItemResult(dict)
         :param _builtins.str cloud_type: A filter to return CLOUD or NON_CLOUD entity types.
         :param _builtins.str internal_name: Internal name for the log analytics entity type.
         :param _builtins.str name: A filter to return only log analytics entity types whose name matches the entire name given. The match is case-insensitive.
-        :param _builtins.str namespace: The Logging Analytics namespace used for the request.
-        :param _builtins.str state: A filter to return only those log analytics entity types with the specified lifecycle state. The state value is case-insensitive.
+        :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
+        :param _builtins.str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
         :param _builtins.str time_created: Time the log analytics entity type was created. An RFC3339 formatted datetime string.
         :param _builtins.str time_updated: Time the log analytics entity type was updated. An RFC3339 formatted datetime string.
         """
@@ -2924,7 +3112,7 @@ class GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionItemResult(dict)
     @pulumi.getter
     def namespace(self) -> _builtins.str:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -2937,7 +3125,7 @@ class GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionItemResult(dict)
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        A filter to return only those log analytics entity types with the specified lifecycle state. The state value is case-insensitive.
+        A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
         """
         return pulumi.get(self, "state")
 
@@ -3041,7 +3229,7 @@ class GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemResult(di
         :param _builtins.str display_name: A filter to return only log analytics log groups whose displayName matches the entire display name given. The match is case-insensitive.
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str id: The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-        :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+        :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param _builtins.str time_created: The date and time the resource was created, in the format defined by RFC3339.
         :param _builtins.str time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
         """
@@ -3107,7 +3295,7 @@ class GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemResult(di
     @pulumi.getter
     def namespace(self) -> _builtins.str:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -3248,21 +3436,21 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param _builtins.str description: A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
-        :param _builtins.str entity_id: Logging Analytics entity OCID to associate the processed logs with.
+        :param _builtins.str entity_id: Log Analytics entity OCID to associate the processed logs with.
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
         :param _builtins.bool is_enabled: Whether or not this rule is currently enabled.
         :param _builtins.bool is_force_historic_collection: Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
         :param _builtins.str last_collected_object: Last Collected Object for the rule
         :param _builtins.str lifecycle_details: A detailed status of the life cycle state.
-        :param _builtins.str log_group_id: Logging Analytics Log group OCID to associate the processed logs with.
+        :param _builtins.str log_group_id: Log Analytics Log group OCID to associate the processed logs with.
         :param _builtins.str log_set: The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
         :param _builtins.str log_set_ext_regex: The regex to be applied against given logSetKey. Regex has to be in string escaped format.
         :param _builtins.str log_set_key: An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
-        :param _builtins.str log_source_name: Name of the Logging Analytics Source to use for the processing.
+        :param _builtins.str log_source_name: Name of the Log Analytics Source to use for the processing.
         :param _builtins.str log_type: Type of files/objects in this object collection rule.
         :param _builtins.str name: A filter to return rules only matching with this name.
-        :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+        :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param Sequence[_builtins.str] object_name_filters: When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
         :param _builtins.str os_bucket_name: Name of the Object Storage bucket.
         :param _builtins.str os_namespace: Object Storage namespace.
@@ -3272,7 +3460,7 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         :param _builtins.str state: Lifecycle state filter.
         :param _builtins.str stream_cursor_time: The time from which to consume the objects, if streamCursorType is AT_TIME.
         :param _builtins.str stream_cursor_type: Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
-        :param _builtins.str stream_id: A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        :param _builtins.str stream_id: A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         :param _builtins.str time_created: The time when this rule was created. An RFC3339 formatted datetime string.
         :param _builtins.str time_updated: The time when this rule was last updated. An RFC3339 formatted datetime string.
         :param _builtins.str timezone: Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
@@ -3355,7 +3543,7 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
     @pulumi.getter(name="entityId")
     def entity_id(self) -> _builtins.str:
         """
-        Logging Analytics entity OCID to associate the processed logs with.
+        Log Analytics entity OCID to associate the processed logs with.
         """
         return pulumi.get(self, "entity_id")
 
@@ -3411,7 +3599,7 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> _builtins.str:
         """
-        Logging Analytics Log group OCID to associate the processed logs with.
+        Log Analytics Log group OCID to associate the processed logs with.
         """
         return pulumi.get(self, "log_group_id")
 
@@ -3443,7 +3631,7 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
     @pulumi.getter(name="logSourceName")
     def log_source_name(self) -> _builtins.str:
         """
-        Name of the Logging Analytics Source to use for the processing.
+        Name of the Log Analytics Source to use for the processing.
         """
         return pulumi.get(self, "log_source_name")
 
@@ -3467,7 +3655,7 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
     @pulumi.getter
     def namespace(self) -> _builtins.str:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -3547,7 +3735,7 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
     @pulumi.getter(name="streamId")
     def stream_id(self) -> _builtins.str:
         """
-        A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         """
         return pulumi.get(self, "stream_id")
 
@@ -4271,7 +4459,7 @@ class GetNamespaceIngestTimeRuleActionResult(dict):
         :param _builtins.str compartment_id: Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Sequence[_builtins.str] dimensions: Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
         :param _builtins.str metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+        :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param _builtins.str resource_group: The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         :param _builtins.str type: Discriminator.
         """
@@ -4310,7 +4498,7 @@ class GetNamespaceIngestTimeRuleActionResult(dict):
     @pulumi.getter
     def namespace(self) -> _builtins.str:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -5151,6 +5339,7 @@ class GetNamespaceRulesRuleSummaryCollectionItemResult(dict):
                  last_execution_status: _builtins.str,
                  state: _builtins.str,
                  target_service: _builtins.str,
+                 task_status: _builtins.str,
                  time_created: _builtins.str,
                  time_last_executed: _builtins.str,
                  time_updated: _builtins.str):
@@ -5166,6 +5355,7 @@ class GetNamespaceRulesRuleSummaryCollectionItemResult(dict):
         :param _builtins.str last_execution_status: The most recent task execution status.
         :param _builtins.str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
         :param _builtins.str target_service: The target service to use for filtering.
+        :param _builtins.str task_status: The task status of the rule.
         :param _builtins.str time_created: The date and time the resource was created, in the format defined by RFC3339.
         :param _builtins.str time_last_executed: The date and time the scheduled task last executed, in the format defined by RFC3339.
         :param _builtins.str time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
@@ -5181,6 +5371,7 @@ class GetNamespaceRulesRuleSummaryCollectionItemResult(dict):
         pulumi.set(__self__, "last_execution_status", last_execution_status)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "target_service", target_service)
+        pulumi.set(__self__, "task_status", task_status)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_last_executed", time_last_executed)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -5272,6 +5463,14 @@ class GetNamespaceRulesRuleSummaryCollectionItemResult(dict):
         The target service to use for filtering.
         """
         return pulumi.get(self, "target_service")
+
+    @_builtins.property
+    @pulumi.getter(name="taskStatus")
+    def task_status(self) -> _builtins.str:
+        """
+        The task status of the rule.
+        """
+        return pulumi.get(self, "task_status")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -5408,16 +5607,19 @@ class GetNamespaceScheduledTaskActionResult(dict):
 class GetNamespaceScheduledTaskActionMetricExtractionResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
+                 metric_collections: Sequence['outputs.GetNamespaceScheduledTaskActionMetricExtractionMetricCollectionResult'],
                  metric_name: _builtins.str,
                  namespace: _builtins.str,
                  resource_group: _builtins.str):
         """
         :param _builtins.str compartment_id: Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Sequence['GetNamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs'] metric_collections: Details for the metrics to be collected.
         :param _builtins.str metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+        :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param _builtins.str resource_group: The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "metric_collections", metric_collections)
         pulumi.set(__self__, "metric_name", metric_name)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "resource_group", resource_group)
@@ -5431,6 +5633,14 @@ class GetNamespaceScheduledTaskActionMetricExtractionResult(dict):
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
+    @pulumi.getter(name="metricCollections")
+    def metric_collections(self) -> Sequence['outputs.GetNamespaceScheduledTaskActionMetricExtractionMetricCollectionResult']:
+        """
+        Details for the metrics to be collected.
+        """
+        return pulumi.get(self, "metric_collections")
+
+    @_builtins.property
     @pulumi.getter(name="metricName")
     def metric_name(self) -> _builtins.str:
         """
@@ -5442,7 +5652,7 @@ class GetNamespaceScheduledTaskActionMetricExtractionResult(dict):
     @pulumi.getter
     def namespace(self) -> _builtins.str:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -5453,6 +5663,86 @@ class GetNamespaceScheduledTaskActionMetricExtractionResult(dict):
         The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         """
         return pulumi.get(self, "resource_group")
+
+
+@pulumi.output_type
+class GetNamespaceScheduledTaskActionMetricExtractionMetricCollectionResult(dict):
+    def __init__(__self__, *,
+                 dimensions: Sequence['outputs.GetNamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionResult'],
+                 metric_name: _builtins.str,
+                 metric_query_field_name: _builtins.str,
+                 query_table_name: _builtins.str):
+        """
+        :param Sequence['GetNamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs'] dimensions: Selected dimension fields for the metric collection.
+        :param _builtins.str metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        :param _builtins.str metric_query_field_name: Output field in the query to be used as the metric value.
+        :param _builtins.str query_table_name: Output table in the query.
+        """
+        pulumi.set(__self__, "dimensions", dimensions)
+        pulumi.set(__self__, "metric_name", metric_name)
+        pulumi.set(__self__, "metric_query_field_name", metric_query_field_name)
+        pulumi.set(__self__, "query_table_name", query_table_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def dimensions(self) -> Sequence['outputs.GetNamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionResult']:
+        """
+        Selected dimension fields for the metric collection.
+        """
+        return pulumi.get(self, "dimensions")
+
+    @_builtins.property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> _builtins.str:
+        """
+        The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+        return pulumi.get(self, "metric_name")
+
+    @_builtins.property
+    @pulumi.getter(name="metricQueryFieldName")
+    def metric_query_field_name(self) -> _builtins.str:
+        """
+        Output field in the query to be used as the metric value.
+        """
+        return pulumi.get(self, "metric_query_field_name")
+
+    @_builtins.property
+    @pulumi.getter(name="queryTableName")
+    def query_table_name(self) -> _builtins.str:
+        """
+        Output table in the query.
+        """
+        return pulumi.get(self, "query_table_name")
+
+
+@pulumi.output_type
+class GetNamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionResult(dict):
+    def __init__(__self__, *,
+                 dimension_name: _builtins.str,
+                 query_field_name: _builtins.str):
+        """
+        :param _builtins.str dimension_name: Dimension name to be stored with the metric.
+        :param _builtins.str query_field_name: Output field in the query to be used as the source for the metric dimension.
+        """
+        pulumi.set(__self__, "dimension_name", dimension_name)
+        pulumi.set(__self__, "query_field_name", query_field_name)
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionName")
+    def dimension_name(self) -> _builtins.str:
+        """
+        Dimension name to be stored with the metric.
+        """
+        return pulumi.get(self, "dimension_name")
+
+    @_builtins.property
+    @pulumi.getter(name="queryFieldName")
+    def query_field_name(self) -> _builtins.str:
+        """
+        Output field in the query to be used as the source for the metric dimension.
+        """
+        return pulumi.get(self, "query_field_name")
 
 
 @pulumi.output_type
@@ -5530,22 +5820,28 @@ class GetNamespaceScheduledTaskScheduleScheduleResult(dict):
     def __init__(__self__, *,
                  expression: _builtins.str,
                  misfire_policy: _builtins.str,
+                 query_offset_secs: _builtins.int,
                  recurring_interval: _builtins.str,
                  repeat_count: _builtins.int,
+                 time_end: _builtins.str,
                  time_zone: _builtins.str,
                  type: _builtins.str):
         """
         :param _builtins.str expression: Value in cron format.
         :param _builtins.str misfire_policy: Schedule misfire retry policy.
+        :param _builtins.int query_offset_secs: Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
         :param _builtins.str recurring_interval: Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         :param _builtins.int repeat_count: Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+        :param _builtins.str time_end: End time for the schedule, even if the schedule would otherwise have remaining executions.
         :param _builtins.str time_zone: Time zone, by default UTC.
         :param _builtins.str type: Schedule type discriminator.
         """
         pulumi.set(__self__, "expression", expression)
         pulumi.set(__self__, "misfire_policy", misfire_policy)
+        pulumi.set(__self__, "query_offset_secs", query_offset_secs)
         pulumi.set(__self__, "recurring_interval", recurring_interval)
         pulumi.set(__self__, "repeat_count", repeat_count)
+        pulumi.set(__self__, "time_end", time_end)
         pulumi.set(__self__, "time_zone", time_zone)
         pulumi.set(__self__, "type", type)
 
@@ -5566,6 +5862,14 @@ class GetNamespaceScheduledTaskScheduleScheduleResult(dict):
         return pulumi.get(self, "misfire_policy")
 
     @_builtins.property
+    @pulumi.getter(name="queryOffsetSecs")
+    def query_offset_secs(self) -> _builtins.int:
+        """
+        Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
+        """
+        return pulumi.get(self, "query_offset_secs")
+
+    @_builtins.property
     @pulumi.getter(name="recurringInterval")
     def recurring_interval(self) -> _builtins.str:
         """
@@ -5580,6 +5884,14 @@ class GetNamespaceScheduledTaskScheduleScheduleResult(dict):
         Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
         """
         return pulumi.get(self, "repeat_count")
+
+    @_builtins.property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> _builtins.str:
+        """
+        End time for the schedule, even if the schedule would otherwise have remaining executions.
+        """
+        return pulumi.get(self, "time_end")
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
@@ -5643,6 +5955,7 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemResult(dict):
                  actions: Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult'],
                  compartment_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
@@ -5662,15 +5975,16 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemResult(dict):
         :param Sequence['GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs'] actions: Action for scheduled task.
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param _builtins.str description: Description for this resource.
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
-        :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+        :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param _builtins.str num_occurrences: Number of execution occurrences.
         :param _builtins.str saved_search_id: The ManagementSavedSearch id [OCID] utilized in the action.
         :param Sequence['GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArgs'] schedules: Schedules.
         :param _builtins.str state: The current state of the scheduled task.
-        :param _builtins.str task_status: Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+        :param _builtins.str task_status: Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
         :param _builtins.str task_type: Required parameter to specify schedule task type.
         :param _builtins.str time_created: The date and time the scheduled task was created, in the format defined by RFC3339.
         :param _builtins.str time_updated: The date and time the scheduled task was last updated, in the format defined by RFC3339.
@@ -5679,6 +5993,7 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemResult(dict):
         pulumi.set(__self__, "actions", actions)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
@@ -5720,6 +6035,14 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemResult(dict):
         return pulumi.get(self, "defined_tags")
 
     @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description for this resource.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
@@ -5752,7 +6075,7 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemResult(dict):
     @pulumi.getter
     def namespace(self) -> _builtins.str:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -5797,7 +6120,7 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemResult(dict):
     @pulumi.getter(name="taskStatus")
     def task_status(self) -> _builtins.str:
         """
-        Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+        Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
         """
         return pulumi.get(self, "task_status")
 
@@ -5849,6 +6172,7 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult(dict):
         """
         :param _builtins.bool compartment_id_in_subtree: if true, purge child compartments data
         :param _builtins.str data_type: the type of the log data to be purged
+        :param Sequence['GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArgs'] metric_extractions: Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
         :param _builtins.str purge_compartment_id: the compartment OCID under which the data will be purged
         :param _builtins.str purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         :param _builtins.str query_string: Purge query string.
@@ -5885,6 +6209,9 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult(dict):
     @_builtins.property
     @pulumi.getter(name="metricExtractions")
     def metric_extractions(self) -> Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionResult']:
+        """
+        Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+        """
         return pulumi.get(self, "metric_extractions")
 
     @_builtins.property
@@ -5940,14 +6267,19 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult(dict):
 class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
+                 metric_collections: Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionMetricCollectionResult'],
                  metric_name: _builtins.str,
                  namespace: _builtins.str,
                  resource_group: _builtins.str):
         """
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
-        :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+        :param Sequence['GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionMetricCollectionArgs'] metric_collections: Details for the metrics to be collected.
+        :param _builtins.str metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
+        :param _builtins.str resource_group: The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "metric_collections", metric_collections)
         pulumi.set(__self__, "metric_name", metric_name)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "resource_group", resource_group)
@@ -5961,22 +6293,116 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractio
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
+    @pulumi.getter(name="metricCollections")
+    def metric_collections(self) -> Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionMetricCollectionResult']:
+        """
+        Details for the metrics to be collected.
+        """
+        return pulumi.get(self, "metric_collections")
+
+    @_builtins.property
     @pulumi.getter(name="metricName")
     def metric_name(self) -> _builtins.str:
+        """
+        The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
         return pulumi.get(self, "metric_name")
 
     @_builtins.property
     @pulumi.getter
     def namespace(self) -> _builtins.str:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
     def resource_group(self) -> _builtins.str:
+        """
+        The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
         return pulumi.get(self, "resource_group")
+
+
+@pulumi.output_type
+class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionMetricCollectionResult(dict):
+    def __init__(__self__, *,
+                 dimensions: Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionMetricCollectionDimensionResult'],
+                 metric_name: _builtins.str,
+                 metric_query_field_name: _builtins.str,
+                 query_table_name: _builtins.str):
+        """
+        :param Sequence['GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionMetricCollectionDimensionArgs'] dimensions: Selected dimension fields for the metric collection.
+        :param _builtins.str metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        :param _builtins.str metric_query_field_name: Output field in the query to be used as the metric value.
+        :param _builtins.str query_table_name: Output table in the query.
+        """
+        pulumi.set(__self__, "dimensions", dimensions)
+        pulumi.set(__self__, "metric_name", metric_name)
+        pulumi.set(__self__, "metric_query_field_name", metric_query_field_name)
+        pulumi.set(__self__, "query_table_name", query_table_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def dimensions(self) -> Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionMetricCollectionDimensionResult']:
+        """
+        Selected dimension fields for the metric collection.
+        """
+        return pulumi.get(self, "dimensions")
+
+    @_builtins.property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> _builtins.str:
+        """
+        The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+        return pulumi.get(self, "metric_name")
+
+    @_builtins.property
+    @pulumi.getter(name="metricQueryFieldName")
+    def metric_query_field_name(self) -> _builtins.str:
+        """
+        Output field in the query to be used as the metric value.
+        """
+        return pulumi.get(self, "metric_query_field_name")
+
+    @_builtins.property
+    @pulumi.getter(name="queryTableName")
+    def query_table_name(self) -> _builtins.str:
+        """
+        Output table in the query.
+        """
+        return pulumi.get(self, "query_table_name")
+
+
+@pulumi.output_type
+class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionMetricCollectionDimensionResult(dict):
+    def __init__(__self__, *,
+                 dimension_name: _builtins.str,
+                 query_field_name: _builtins.str):
+        """
+        :param _builtins.str dimension_name: Dimension name to be stored with the metric.
+        :param _builtins.str query_field_name: Output field in the query to be used as the source for the metric dimension.
+        """
+        pulumi.set(__self__, "dimension_name", dimension_name)
+        pulumi.set(__self__, "query_field_name", query_field_name)
+
+    @_builtins.property
+    @pulumi.getter(name="dimensionName")
+    def dimension_name(self) -> _builtins.str:
+        """
+        Dimension name to be stored with the metric.
+        """
+        return pulumi.get(self, "dimension_name")
+
+    @_builtins.property
+    @pulumi.getter(name="queryFieldName")
+    def query_field_name(self) -> _builtins.str:
+        """
+        Output field in the query to be used as the source for the metric dimension.
+        """
+        return pulumi.get(self, "query_field_name")
 
 
 @pulumi.output_type
@@ -6054,22 +6480,28 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResul
     def __init__(__self__, *,
                  expression: _builtins.str,
                  misfire_policy: _builtins.str,
+                 query_offset_secs: _builtins.int,
                  recurring_interval: _builtins.str,
                  repeat_count: _builtins.int,
+                 time_end: _builtins.str,
                  time_zone: _builtins.str,
                  type: _builtins.str):
         """
         :param _builtins.str expression: Value in cron format.
         :param _builtins.str misfire_policy: Schedule misfire retry policy.
+        :param _builtins.int query_offset_secs: Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
         :param _builtins.str recurring_interval: Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         :param _builtins.int repeat_count: Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+        :param _builtins.str time_end: End time for the schedule, even if the schedule would otherwise have remaining executions.
         :param _builtins.str time_zone: Time zone, by default UTC.
         :param _builtins.str type: Schedule type discriminator.
         """
         pulumi.set(__self__, "expression", expression)
         pulumi.set(__self__, "misfire_policy", misfire_policy)
+        pulumi.set(__self__, "query_offset_secs", query_offset_secs)
         pulumi.set(__self__, "recurring_interval", recurring_interval)
         pulumi.set(__self__, "repeat_count", repeat_count)
+        pulumi.set(__self__, "time_end", time_end)
         pulumi.set(__self__, "time_zone", time_zone)
         pulumi.set(__self__, "type", type)
 
@@ -6090,6 +6522,14 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResul
         return pulumi.get(self, "misfire_policy")
 
     @_builtins.property
+    @pulumi.getter(name="queryOffsetSecs")
+    def query_offset_secs(self) -> _builtins.int:
+        """
+        Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
+        """
+        return pulumi.get(self, "query_offset_secs")
+
+    @_builtins.property
     @pulumi.getter(name="recurringInterval")
     def recurring_interval(self) -> _builtins.str:
         """
@@ -6104,6 +6544,14 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResul
         Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
         """
         return pulumi.get(self, "repeat_count")
+
+    @_builtins.property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> _builtins.str:
+        """
+        End time for the schedule, even if the schedule would otherwise have remaining executions.
+        """
+        return pulumi.get(self, "time_end")
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
@@ -6126,13 +6574,16 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResul
 class GetNamespaceStorageArchivalConfigArchivingConfigurationResult(dict):
     def __init__(__self__, *,
                  active_storage_duration: _builtins.str,
-                 archival_storage_duration: _builtins.str):
+                 archival_storage_duration: _builtins.str,
+                 time_oldest_active_bucket_ended: _builtins.str):
         """
         :param _builtins.str active_storage_duration: This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
         :param _builtins.str archival_storage_duration: This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+        :param _builtins.str time_oldest_active_bucket_ended: end time of the oldest active CoreGroup
         """
         pulumi.set(__self__, "active_storage_duration", active_storage_duration)
         pulumi.set(__self__, "archival_storage_duration", archival_storage_duration)
+        pulumi.set(__self__, "time_oldest_active_bucket_ended", time_oldest_active_bucket_ended)
 
     @_builtins.property
     @pulumi.getter(name="activeStorageDuration")
@@ -6149,6 +6600,14 @@ class GetNamespaceStorageArchivalConfigArchivingConfigurationResult(dict):
         This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
         """
         return pulumi.get(self, "archival_storage_duration")
+
+    @_builtins.property
+    @pulumi.getter(name="timeOldestActiveBucketEnded")
+    def time_oldest_active_bucket_ended(self) -> _builtins.str:
+        """
+        end time of the oldest active CoreGroup
+        """
+        return pulumi.get(self, "time_oldest_active_bucket_ended")
 
 
 @pulumi.output_type
@@ -6697,13 +7156,15 @@ class GetNamespacesNamespaceCollectionItemResult(dict):
                  is_data_ever_ingested: _builtins.bool,
                  is_logset_enabled: _builtins.bool,
                  is_onboarded: _builtins.bool,
-                 namespace: _builtins.str):
+                 namespace: _builtins.str,
+                 state: _builtins.str):
         """
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
         :param _builtins.bool is_archiving_enabled: This indicates if old data can be archived for a tenancy
         :param _builtins.bool is_data_ever_ingested: This indicates if the tenancy is data ever ingested
-        :param _builtins.bool is_onboarded: This indicates if the tenancy is onboarded to Logging Analytics
+        :param _builtins.bool is_onboarded: This indicates if the tenancy is onboarded to Log Analytics
         :param _builtins.str namespace: This is the namespace name of a tenancy
+        :param _builtins.str state: The current state of the compartment.
                * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -6712,6 +7173,7 @@ class GetNamespacesNamespaceCollectionItemResult(dict):
         pulumi.set(__self__, "is_logset_enabled", is_logset_enabled)
         pulumi.set(__self__, "is_onboarded", is_onboarded)
         pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "state", state)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -6746,7 +7208,7 @@ class GetNamespacesNamespaceCollectionItemResult(dict):
     @pulumi.getter(name="isOnboarded")
     def is_onboarded(self) -> _builtins.bool:
         """
-        This indicates if the tenancy is onboarded to Logging Analytics
+        This indicates if the tenancy is onboarded to Log Analytics
         """
         return pulumi.get(self, "is_onboarded")
 
@@ -6755,8 +7217,16 @@ class GetNamespacesNamespaceCollectionItemResult(dict):
     def namespace(self) -> _builtins.str:
         """
         This is the namespace name of a tenancy
-        * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
         """
         return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the compartment.
+        * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
+        """
+        return pulumi.get(self, "state")
 
 

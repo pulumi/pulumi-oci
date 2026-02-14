@@ -40,7 +40,7 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
      */
     private String description;
     /**
-     * @return Logging Analytics entity OCID to associate the processed logs with.
+     * @return Log Analytics entity OCID to associate the processed logs with.
      * 
      */
     private String entityId;
@@ -75,7 +75,7 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
      */
     private String lifecycleDetails;
     /**
-     * @return Logging Analytics Log group OCID to associate the processed logs with.
+     * @return Log Analytics Log group OCID to associate the processed logs with.
      * 
      */
     private String logGroupId;
@@ -95,7 +95,7 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
      */
     private String logSetKey;
     /**
-     * @return Name of the Logging Analytics Source to use for the processing.
+     * @return Name of the Log Analytics Source to use for the processing.
      * 
      */
     private String logSourceName;
@@ -110,7 +110,7 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
      */
     private String name;
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     private String namespace;
@@ -160,7 +160,7 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
      */
     private String streamCursorType;
     /**
-     * @return A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+     * @return A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
      * 
      */
     private String streamId;
@@ -217,7 +217,7 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
         return this.description;
     }
     /**
-     * @return Logging Analytics entity OCID to associate the processed logs with.
+     * @return Log Analytics entity OCID to associate the processed logs with.
      * 
      */
     public String entityId() {
@@ -266,7 +266,7 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
         return this.lifecycleDetails;
     }
     /**
-     * @return Logging Analytics Log group OCID to associate the processed logs with.
+     * @return Log Analytics Log group OCID to associate the processed logs with.
      * 
      */
     public String logGroupId() {
@@ -294,7 +294,7 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
         return this.logSetKey;
     }
     /**
-     * @return Name of the Logging Analytics Source to use for the processing.
+     * @return Name of the Log Analytics Source to use for the processing.
      * 
      */
     public String logSourceName() {
@@ -315,7 +315,7 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
         return this.name;
     }
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public String namespace() {
@@ -385,7 +385,7 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
         return this.streamCursorType;
     }
     /**
-     * @return A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+     * @return A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
      * 
      */
     public String streamId() {

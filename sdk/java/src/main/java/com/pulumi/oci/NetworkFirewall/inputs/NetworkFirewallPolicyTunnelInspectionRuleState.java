@@ -53,6 +53,21 @@ public final class NetworkFirewallPolicyTunnelInspectionRuleState extends com.pu
     }
 
     /**
+     * (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
+     * 
+     */
+    @Import(name="description")
+    private @Nullable Output<String> description;
+
+    /**
+     * @return (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
+     * 
+     */
+    public Optional<Output<String>> description() {
+        return Optional.ofNullable(this.description);
+    }
+
+    /**
      * Name for the Tunnel Inspection Rule, must be unique within the policy.
      * 
      */
@@ -170,6 +185,7 @@ public final class NetworkFirewallPolicyTunnelInspectionRuleState extends com.pu
     private NetworkFirewallPolicyTunnelInspectionRuleState(NetworkFirewallPolicyTunnelInspectionRuleState $) {
         this.action = $.action;
         this.condition = $.condition;
+        this.description = $.description;
         this.name = $.name;
         this.networkFirewallPolicyId = $.networkFirewallPolicyId;
         this.parentResourceId = $.parentResourceId;
@@ -241,6 +257,27 @@ public final class NetworkFirewallPolicyTunnelInspectionRuleState extends com.pu
          */
         public Builder condition(NetworkFirewallPolicyTunnelInspectionRuleConditionArgs condition) {
             return condition(Output.of(condition));
+        }
+
+        /**
+         * @param description (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(@Nullable Output<String> description) {
+            $.description = description;
+            return this;
+        }
+
+        /**
+         * @param description (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(String description) {
+            return description(Output.of(description));
         }
 
         /**

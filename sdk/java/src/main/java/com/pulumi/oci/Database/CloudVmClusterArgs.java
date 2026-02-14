@@ -612,10 +612,22 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     * (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    @Import(name="vmBackupStorageType")
+    private @Nullable Output<String> vmBackupStorageType;
+
+    /**
+     * @return (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+     * 
+     */
+    public Optional<Output<String>> vmBackupStorageType() {
+        return Optional.ofNullable(this.vmBackupStorageType);
+    }
+
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
      * 
      */
     @Import(name="vmClusterType")
@@ -624,12 +636,30 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * @return The vmcluster type for the VM cluster/Cloud VM cluster.
      * 
+     */
+    public Optional<Output<String>> vmClusterType() {
+        return Optional.ofNullable(this.vmClusterType);
+    }
+
+    /**
+     * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<String>> vmClusterType() {
-        return Optional.ofNullable(this.vmClusterType);
+    @Import(name="vmFileSystemStorageType")
+    private @Nullable Output<String> vmFileSystemStorageType;
+
+    /**
+     * @return Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> vmFileSystemStorageType() {
+        return Optional.ofNullable(this.vmFileSystemStorageType);
     }
 
     private CloudVmClusterArgs() {}
@@ -672,7 +702,9 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         this.systemVersion = $.systemVersion;
         this.tdeKeyStoreType = $.tdeKeyStoreType;
         this.timeZone = $.timeZone;
+        this.vmBackupStorageType = $.vmBackupStorageType;
         this.vmClusterType = $.vmClusterType;
+        this.vmFileSystemStorageType = $.vmFileSystemStorageType;
     }
 
     public static Builder builder() {
@@ -1550,10 +1582,28 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param vmClusterType The vmcluster type for the VM cluster/Cloud VM cluster.
+         * @param vmBackupStorageType (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @return builder
+         * 
+         */
+        public Builder vmBackupStorageType(@Nullable Output<String> vmBackupStorageType) {
+            $.vmBackupStorageType = vmBackupStorageType;
+            return this;
+        }
+
+        /**
+         * @param vmBackupStorageType (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmBackupStorageType(String vmBackupStorageType) {
+            return vmBackupStorageType(Output.of(vmBackupStorageType));
+        }
+
+        /**
+         * @param vmClusterType The vmcluster type for the VM cluster/Cloud VM cluster.
          * 
          * @return builder
          * 
@@ -1566,14 +1616,38 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param vmClusterType The vmcluster type for the VM cluster/Cloud VM cluster.
          * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterType(String vmClusterType) {
+            return vmClusterType(Output.of(vmClusterType));
+        }
+
+        /**
+         * @param vmFileSystemStorageType Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder vmClusterType(String vmClusterType) {
-            return vmClusterType(Output.of(vmClusterType));
+        public Builder vmFileSystemStorageType(@Nullable Output<String> vmFileSystemStorageType) {
+            $.vmFileSystemStorageType = vmFileSystemStorageType;
+            return this;
+        }
+
+        /**
+         * @param vmFileSystemStorageType Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmFileSystemStorageType(String vmFileSystemStorageType) {
+            return vmFileSystemStorageType(Output.of(vmFileSystemStorageType));
         }
 
         public CloudVmClusterArgs build() {

@@ -32,7 +32,7 @@ export function getNamespaceStorageRecallCount(args: GetNamespaceStorageRecallCo
  */
 export interface GetNamespaceStorageRecallCountArgs {
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: string;
 }
@@ -95,7 +95,7 @@ export function getNamespaceStorageRecallCountOutput(args: GetNamespaceStorageRe
  */
 export interface GetNamespaceStorageRecallCountOutputArgs {
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
 }

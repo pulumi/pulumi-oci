@@ -59,7 +59,7 @@ export class LogAnalyticsResourceCategoriesManagement extends pulumi.CustomResou
     }
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     declare public readonly namespace: pulumi.Output<string>;
     /**
@@ -125,7 +125,7 @@ export class LogAnalyticsResourceCategoriesManagement extends pulumi.CustomResou
  */
 export interface LogAnalyticsResourceCategoriesManagementState {
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace?: pulumi.Input<string>;
     /**
@@ -151,7 +151,7 @@ export interface LogAnalyticsResourceCategoriesManagementState {
  */
 export interface LogAnalyticsResourceCategoriesManagementArgs {
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
     /**

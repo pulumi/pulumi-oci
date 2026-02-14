@@ -58,6 +58,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Ipv4;
         /// <summary>
+        /// The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
+        /// </summary>
+        public readonly string Ipv6;
+        /// <summary>
         /// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
         /// </summary>
         public readonly string Iqn;
@@ -135,6 +139,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string ipv4,
 
+            string ipv6,
+
             string iqn,
 
             bool isAgentAutoIscsiLoginEnabled,
@@ -174,6 +180,7 @@ namespace Pulumi.Oci.Core.Outputs
             Id = id;
             InstanceId = instanceId;
             Ipv4 = ipv4;
+            Ipv6 = ipv6;
             Iqn = iqn;
             IsAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
             IsMultipath = isMultipath;

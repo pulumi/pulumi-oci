@@ -32,6 +32,21 @@ public final class NetworkFirewallPolicyDecryptionProfileState extends com.pulum
     }
 
     /**
+     * (Updatable) The description of the decryption profile. This field can be used to add additional info.
+     * 
+     */
+    @Import(name="description")
+    private @Nullable Output<String> description;
+
+    /**
+     * @return (Updatable) The description of the decryption profile. This field can be used to add additional info.
+     * 
+     */
+    public Optional<Output<String>> description() {
+        return Optional.ofNullable(this.description);
+    }
+
+    /**
      * (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
      * 
      */
@@ -221,6 +236,7 @@ public final class NetworkFirewallPolicyDecryptionProfileState extends com.pulum
 
     private NetworkFirewallPolicyDecryptionProfileState(NetworkFirewallPolicyDecryptionProfileState $) {
         this.areCertificateExtensionsRestricted = $.areCertificateExtensionsRestricted;
+        this.description = $.description;
         this.isAutoIncludeAltName = $.isAutoIncludeAltName;
         this.isExpiredCertificateBlocked = $.isExpiredCertificateBlocked;
         this.isOutOfCapacityBlocked = $.isOutOfCapacityBlocked;
@@ -272,6 +288,27 @@ public final class NetworkFirewallPolicyDecryptionProfileState extends com.pulum
          */
         public Builder areCertificateExtensionsRestricted(Boolean areCertificateExtensionsRestricted) {
             return areCertificateExtensionsRestricted(Output.of(areCertificateExtensionsRestricted));
+        }
+
+        /**
+         * @param description (Updatable) The description of the decryption profile. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(@Nullable Output<String> description) {
+            $.description = description;
+            return this;
+        }
+
+        /**
+         * @param description (Updatable) The description of the decryption profile. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(String description) {
+            return description(Output.of(description));
         }
 
         /**

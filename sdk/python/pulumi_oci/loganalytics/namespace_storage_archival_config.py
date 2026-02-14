@@ -26,10 +26,7 @@ class NamespaceStorageArchivalConfigArgs:
         """
         The set of arguments for constructing a NamespaceStorageArchivalConfig resource.
         :param pulumi.Input['NamespaceStorageArchivalConfigArchivingConfigurationArgs'] archiving_configuration: (Updatable) This is the configuration for data archiving in object storage
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         pulumi.set(__self__, "archiving_configuration", archiving_configuration)
         pulumi.set(__self__, "namespace", namespace)
@@ -50,10 +47,7 @@ class NamespaceStorageArchivalConfigArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -72,10 +66,7 @@ class _NamespaceStorageArchivalConfigState:
         Input properties used for looking up and filtering NamespaceStorageArchivalConfig resources.
         :param pulumi.Input['NamespaceStorageArchivalConfigArchivingConfigurationArgs'] archiving_configuration: (Updatable) This is the configuration for data archiving in object storage
         :param pulumi.Input[_builtins.bool] is_archiving_enabled: This indicates if old data can be archived for a tenancy
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         if archiving_configuration is not None:
             pulumi.set(__self__, "archiving_configuration", archiving_configuration)
@@ -112,10 +103,7 @@ class _NamespaceStorageArchivalConfigState:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Logging Analytics namespace used for the request.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -151,6 +139,7 @@ class NamespaceStorageArchivalConfig(pulumi.CustomResource):
             archiving_configuration={
                 "active_storage_duration": namespace_storage_archival_config_archiving_configuration_active_storage_duration,
                 "archival_storage_duration": namespace_storage_archival_config_archiving_configuration_archival_storage_duration,
+                "time_oldest_active_bucket_ended": namespace_storage_archival_config_archiving_configuration_time_oldest_active_bucket_ended,
             },
             namespace=namespace_storage_archival_config_namespace)
         ```
@@ -158,10 +147,7 @@ class NamespaceStorageArchivalConfig(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict']] archiving_configuration: (Updatable) This is the configuration for data archiving in object storage
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         ...
     @overload
@@ -187,6 +173,7 @@ class NamespaceStorageArchivalConfig(pulumi.CustomResource):
             archiving_configuration={
                 "active_storage_duration": namespace_storage_archival_config_archiving_configuration_active_storage_duration,
                 "archival_storage_duration": namespace_storage_archival_config_archiving_configuration_archival_storage_duration,
+                "time_oldest_active_bucket_ended": namespace_storage_archival_config_archiving_configuration_time_oldest_active_bucket_ended,
             },
             namespace=namespace_storage_archival_config_namespace)
         ```
@@ -246,10 +233,7 @@ class NamespaceStorageArchivalConfig(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict']] archiving_configuration: (Updatable) This is the configuration for data archiving in object storage
         :param pulumi.Input[_builtins.bool] is_archiving_enabled: This indicates if old data can be archived for a tenancy
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -280,10 +264,7 @@ class NamespaceStorageArchivalConfig(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 

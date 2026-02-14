@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -54,7 +54,7 @@ import (
 type LogAnalyticsResourceCategoriesManagement struct {
 	pulumi.CustomResourceState
 
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// The list of categories to be assigned to the resource.
 	ResourceCategories pulumi.StringArrayOutput `pulumi:"resourceCategories"`
@@ -109,7 +109,7 @@ func GetLogAnalyticsResourceCategoriesManagement(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering LogAnalyticsResourceCategoriesManagement resources.
 type logAnalyticsResourceCategoriesManagementState struct {
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace *string `pulumi:"namespace"`
 	// The list of categories to be assigned to the resource.
 	ResourceCategories []string `pulumi:"resourceCategories"`
@@ -123,7 +123,7 @@ type logAnalyticsResourceCategoriesManagementState struct {
 }
 
 type LogAnalyticsResourceCategoriesManagementState struct {
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringPtrInput
 	// The list of categories to be assigned to the resource.
 	ResourceCategories pulumi.StringArrayInput
@@ -141,7 +141,7 @@ func (LogAnalyticsResourceCategoriesManagementState) ElementType() reflect.Type 
 }
 
 type logAnalyticsResourceCategoriesManagementArgs struct {
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 	// The list of categories to be assigned to the resource.
 	ResourceCategories []string `pulumi:"resourceCategories"`
@@ -156,7 +156,7 @@ type logAnalyticsResourceCategoriesManagementArgs struct {
 
 // The set of arguments for constructing a LogAnalyticsResourceCategoriesManagement resource.
 type LogAnalyticsResourceCategoriesManagementArgs struct {
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput
 	// The list of categories to be assigned to the resource.
 	ResourceCategories pulumi.StringArrayInput
@@ -256,7 +256,7 @@ func (o LogAnalyticsResourceCategoriesManagementOutput) ToLogAnalyticsResourceCa
 	return o
 }
 
-// The Logging Analytics namespace used for the request.
+// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 func (o LogAnalyticsResourceCategoriesManagementOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsResourceCategoriesManagement) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }

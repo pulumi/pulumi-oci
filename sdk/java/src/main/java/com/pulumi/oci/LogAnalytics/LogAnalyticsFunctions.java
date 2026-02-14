@@ -4144,7 +4144,7 @@ public final class LogAnalyticsFunctions {
     /**
      * This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
      * 
-     * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
+     * This API gets the namespace details of a tenancy already onboarded in Log Analytics Application
      * 
      * ## Example Usage
      * 
@@ -4186,7 +4186,7 @@ public final class LogAnalyticsFunctions {
     /**
      * This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
      * 
-     * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
+     * This API gets the namespace details of a tenancy already onboarded in Log Analytics Application
      * 
      * ## Example Usage
      * 
@@ -4228,7 +4228,7 @@ public final class LogAnalyticsFunctions {
     /**
      * This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
      * 
-     * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
+     * This API gets the namespace details of a tenancy already onboarded in Log Analytics Application
      * 
      * ## Example Usage
      * 
@@ -4270,7 +4270,7 @@ public final class LogAnalyticsFunctions {
     /**
      * This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
      * 
-     * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
+     * This API gets the namespace details of a tenancy already onboarded in Log Analytics Application
      * 
      * ## Example Usage
      * 
@@ -4312,7 +4312,7 @@ public final class LogAnalyticsFunctions {
     /**
      * This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
      * 
-     * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
+     * This API gets the namespace details of a tenancy already onboarded in Log Analytics Application
      * 
      * ## Example Usage
      * 
@@ -8360,7 +8360,7 @@ public final class LogAnalyticsFunctions {
      * This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
      * 
      * Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
-     * result also indicates if the tenancy is onboarded with Logging Analytics.
+     * result also indicates if the tenancy is onboarded with Log Analytics.
      * 
      * ## Example Usage
      * 
@@ -8388,6 +8388,7 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaces = LogAnalyticsFunctions.getNamespaces(GetNamespacesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .isCompartmentDelete(namespaceIsCompartmentDelete)
      *             .build());
      * 
      *     }
@@ -8403,7 +8404,7 @@ public final class LogAnalyticsFunctions {
      * This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
      * 
      * Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
-     * result also indicates if the tenancy is onboarded with Logging Analytics.
+     * result also indicates if the tenancy is onboarded with Log Analytics.
      * 
      * ## Example Usage
      * 
@@ -8431,6 +8432,7 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaces = LogAnalyticsFunctions.getNamespaces(GetNamespacesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .isCompartmentDelete(namespaceIsCompartmentDelete)
      *             .build());
      * 
      *     }
@@ -8446,7 +8448,7 @@ public final class LogAnalyticsFunctions {
      * This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
      * 
      * Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
-     * result also indicates if the tenancy is onboarded with Logging Analytics.
+     * result also indicates if the tenancy is onboarded with Log Analytics.
      * 
      * ## Example Usage
      * 
@@ -8474,6 +8476,7 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaces = LogAnalyticsFunctions.getNamespaces(GetNamespacesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .isCompartmentDelete(namespaceIsCompartmentDelete)
      *             .build());
      * 
      *     }
@@ -8489,7 +8492,7 @@ public final class LogAnalyticsFunctions {
      * This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
      * 
      * Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
-     * result also indicates if the tenancy is onboarded with Logging Analytics.
+     * result also indicates if the tenancy is onboarded with Log Analytics.
      * 
      * ## Example Usage
      * 
@@ -8517,6 +8520,7 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaces = LogAnalyticsFunctions.getNamespaces(GetNamespacesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .isCompartmentDelete(namespaceIsCompartmentDelete)
      *             .build());
      * 
      *     }
@@ -8532,7 +8536,7 @@ public final class LogAnalyticsFunctions {
      * This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
      * 
      * Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
-     * result also indicates if the tenancy is onboarded with Logging Analytics.
+     * result also indicates if the tenancy is onboarded with Log Analytics.
      * 
      * ## Example Usage
      * 
@@ -8560,6 +8564,7 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaces = LogAnalyticsFunctions.getNamespaces(GetNamespacesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .isCompartmentDelete(namespaceIsCompartmentDelete)
      *             .build());
      * 
      *     }

@@ -111,7 +111,7 @@ class GetNamespaceRulesResult:
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        The current state of the logging analytics rule.
+        The current state of the Log Analytics rule.
         """
         return pulumi.get(self, "state")
 
@@ -172,7 +172,7 @@ def get_namespace_rules(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
     :param _builtins.str kind: The rule kind used for filtering. Only rules of the specified kind will be returned.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
     :param _builtins.str target_service: The target service to use for filtering.
     """
@@ -228,7 +228,7 @@ def get_namespace_rules_output(compartment_id: Optional[pulumi.Input[_builtins.s
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
     :param _builtins.str kind: The rule kind used for filtering. Only rules of the specified kind will be returned.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
     :param _builtins.str target_service: The target service to use for filtering.
     """

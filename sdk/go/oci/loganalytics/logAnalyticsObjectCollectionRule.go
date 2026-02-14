@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -95,7 +95,7 @@ type LogAnalyticsObjectCollectionRule struct {
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+	// (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
 	EntityId pulumi.StringOutput `pulumi:"entityId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
@@ -107,7 +107,7 @@ type LogAnalyticsObjectCollectionRule struct {
 	LastCollectedObject pulumi.StringOutput `pulumi:"lastCollectedObject"`
 	// A detailed status of the life cycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+	// (Updatable) Log Analytics Log group OCID to associate the processed logs with.
 	LogGroupId pulumi.StringOutput `pulumi:"logGroupId"`
 	// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
 	LogSet pulumi.StringOutput `pulumi:"logSet"`
@@ -115,13 +115,13 @@ type LogAnalyticsObjectCollectionRule struct {
 	LogSetExtRegex pulumi.StringOutput `pulumi:"logSetExtRegex"`
 	// (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
 	LogSetKey pulumi.StringOutput `pulumi:"logSetKey"`
-	// (Updatable) Name of the Logging Analytics Source to use for the processing.
+	// (Updatable) Name of the Log Analytics Source to use for the processing.
 	LogSourceName pulumi.StringOutput `pulumi:"logSourceName"`
 	// Type of files/objects in this object collection rule.
 	LogType pulumi.StringOutput `pulumi:"logType"`
 	// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
 	ObjectNameFilters pulumi.StringArrayOutput `pulumi:"objectNameFilters"`
@@ -141,7 +141,7 @@ type LogAnalyticsObjectCollectionRule struct {
 	StreamCursorTime pulumi.StringOutput `pulumi:"streamCursorTime"`
 	// (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
 	StreamCursorType pulumi.StringOutput `pulumi:"streamCursorType"`
-	// (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+	// (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
 	StreamId pulumi.StringOutput `pulumi:"streamId"`
 	// The time when this rule was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -209,7 +209,7 @@ type logAnalyticsObjectCollectionRuleState struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+	// (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
 	EntityId *string `pulumi:"entityId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -221,7 +221,7 @@ type logAnalyticsObjectCollectionRuleState struct {
 	LastCollectedObject *string `pulumi:"lastCollectedObject"`
 	// A detailed status of the life cycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+	// (Updatable) Log Analytics Log group OCID to associate the processed logs with.
 	LogGroupId *string `pulumi:"logGroupId"`
 	// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
 	LogSet *string `pulumi:"logSet"`
@@ -229,13 +229,13 @@ type logAnalyticsObjectCollectionRuleState struct {
 	LogSetExtRegex *string `pulumi:"logSetExtRegex"`
 	// (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
 	LogSetKey *string `pulumi:"logSetKey"`
-	// (Updatable) Name of the Logging Analytics Source to use for the processing.
+	// (Updatable) Name of the Log Analytics Source to use for the processing.
 	LogSourceName *string `pulumi:"logSourceName"`
 	// Type of files/objects in this object collection rule.
 	LogType *string `pulumi:"logType"`
 	// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
 	Name *string `pulumi:"name"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace *string `pulumi:"namespace"`
 	// (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
 	ObjectNameFilters []string `pulumi:"objectNameFilters"`
@@ -255,7 +255,7 @@ type logAnalyticsObjectCollectionRuleState struct {
 	StreamCursorTime *string `pulumi:"streamCursorTime"`
 	// (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
 	StreamCursorType *string `pulumi:"streamCursorType"`
-	// (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+	// (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
 	StreamId *string `pulumi:"streamId"`
 	// The time when this rule was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -279,7 +279,7 @@ type LogAnalyticsObjectCollectionRuleState struct {
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+	// (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
 	EntityId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
@@ -291,7 +291,7 @@ type LogAnalyticsObjectCollectionRuleState struct {
 	LastCollectedObject pulumi.StringPtrInput
 	// A detailed status of the life cycle state.
 	LifecycleDetails pulumi.StringPtrInput
-	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+	// (Updatable) Log Analytics Log group OCID to associate the processed logs with.
 	LogGroupId pulumi.StringPtrInput
 	// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
 	LogSet pulumi.StringPtrInput
@@ -299,13 +299,13 @@ type LogAnalyticsObjectCollectionRuleState struct {
 	LogSetExtRegex pulumi.StringPtrInput
 	// (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
 	LogSetKey pulumi.StringPtrInput
-	// (Updatable) Name of the Logging Analytics Source to use for the processing.
+	// (Updatable) Name of the Log Analytics Source to use for the processing.
 	LogSourceName pulumi.StringPtrInput
 	// Type of files/objects in this object collection rule.
 	LogType pulumi.StringPtrInput
 	// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
 	Name pulumi.StringPtrInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringPtrInput
 	// (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
 	ObjectNameFilters pulumi.StringArrayInput
@@ -325,7 +325,7 @@ type LogAnalyticsObjectCollectionRuleState struct {
 	StreamCursorTime pulumi.StringPtrInput
 	// (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
 	StreamCursorType pulumi.StringPtrInput
-	// (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+	// (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
 	StreamId pulumi.StringPtrInput
 	// The time when this rule was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
@@ -353,7 +353,7 @@ type logAnalyticsObjectCollectionRuleArgs struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+	// (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
 	EntityId *string `pulumi:"entityId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -361,7 +361,7 @@ type logAnalyticsObjectCollectionRuleArgs struct {
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
 	IsForceHistoricCollection *bool `pulumi:"isForceHistoricCollection"`
-	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+	// (Updatable) Log Analytics Log group OCID to associate the processed logs with.
 	LogGroupId string `pulumi:"logGroupId"`
 	// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
 	LogSet *string `pulumi:"logSet"`
@@ -369,13 +369,13 @@ type logAnalyticsObjectCollectionRuleArgs struct {
 	LogSetExtRegex *string `pulumi:"logSetExtRegex"`
 	// (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
 	LogSetKey *string `pulumi:"logSetKey"`
-	// (Updatable) Name of the Logging Analytics Source to use for the processing.
+	// (Updatable) Name of the Log Analytics Source to use for the processing.
 	LogSourceName *string `pulumi:"logSourceName"`
 	// Type of files/objects in this object collection rule.
 	LogType *string `pulumi:"logType"`
 	// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
 	Name *string `pulumi:"name"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 	// (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
 	ObjectNameFilters []string `pulumi:"objectNameFilters"`
@@ -393,7 +393,7 @@ type logAnalyticsObjectCollectionRuleArgs struct {
 	StreamCursorTime *string `pulumi:"streamCursorTime"`
 	// (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
 	StreamCursorType *string `pulumi:"streamCursorType"`
-	// (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+	// (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
 	StreamId *string `pulumi:"streamId"`
 	// (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
 	//
@@ -414,7 +414,7 @@ type LogAnalyticsObjectCollectionRuleArgs struct {
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+	// (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
 	EntityId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
@@ -422,7 +422,7 @@ type LogAnalyticsObjectCollectionRuleArgs struct {
 	IsEnabled pulumi.BoolPtrInput
 	// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
 	IsForceHistoricCollection pulumi.BoolPtrInput
-	// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+	// (Updatable) Log Analytics Log group OCID to associate the processed logs with.
 	LogGroupId pulumi.StringInput
 	// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
 	LogSet pulumi.StringPtrInput
@@ -430,13 +430,13 @@ type LogAnalyticsObjectCollectionRuleArgs struct {
 	LogSetExtRegex pulumi.StringPtrInput
 	// (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
 	LogSetKey pulumi.StringPtrInput
-	// (Updatable) Name of the Logging Analytics Source to use for the processing.
+	// (Updatable) Name of the Log Analytics Source to use for the processing.
 	LogSourceName pulumi.StringPtrInput
 	// Type of files/objects in this object collection rule.
 	LogType pulumi.StringPtrInput
 	// A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
 	Name pulumi.StringPtrInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput
 	// (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
 	ObjectNameFilters pulumi.StringArrayInput
@@ -454,7 +454,7 @@ type LogAnalyticsObjectCollectionRuleArgs struct {
 	StreamCursorTime pulumi.StringPtrInput
 	// (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
 	StreamCursorType pulumi.StringPtrInput
-	// (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+	// (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
 	StreamId pulumi.StringPtrInput
 	// (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
 	//
@@ -575,7 +575,7 @@ func (o LogAnalyticsObjectCollectionRuleOutput) Description() pulumi.StringOutpu
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+// (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
 func (o LogAnalyticsObjectCollectionRuleOutput) EntityId() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.EntityId }).(pulumi.StringOutput)
 }
@@ -605,7 +605,7 @@ func (o LogAnalyticsObjectCollectionRuleOutput) LifecycleDetails() pulumi.String
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+// (Updatable) Log Analytics Log group OCID to associate the processed logs with.
 func (o LogAnalyticsObjectCollectionRuleOutput) LogGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.LogGroupId }).(pulumi.StringOutput)
 }
@@ -625,7 +625,7 @@ func (o LogAnalyticsObjectCollectionRuleOutput) LogSetKey() pulumi.StringOutput 
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.LogSetKey }).(pulumi.StringOutput)
 }
 
-// (Updatable) Name of the Logging Analytics Source to use for the processing.
+// (Updatable) Name of the Log Analytics Source to use for the processing.
 func (o LogAnalyticsObjectCollectionRuleOutput) LogSourceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.LogSourceName }).(pulumi.StringOutput)
 }
@@ -640,7 +640,7 @@ func (o LogAnalyticsObjectCollectionRuleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// The Logging Analytics namespace used for the request.
+// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 func (o LogAnalyticsObjectCollectionRuleOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -692,7 +692,7 @@ func (o LogAnalyticsObjectCollectionRuleOutput) StreamCursorType() pulumi.String
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.StreamCursorType }).(pulumi.StringOutput)
 }
 
-// (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+// (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
 func (o LogAnalyticsObjectCollectionRuleOutput) StreamId() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.StreamId }).(pulumi.StringOutput)
 }

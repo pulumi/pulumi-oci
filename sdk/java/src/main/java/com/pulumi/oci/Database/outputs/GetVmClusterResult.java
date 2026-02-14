@@ -181,6 +181,11 @@ public final class GetVmClusterResult {
      * 
      */
     private String timeZone;
+    /**
+     * @return Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
+     * 
+     */
+    private String vmBackupStorageType;
     private String vmClusterId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
@@ -192,6 +197,11 @@ public final class GetVmClusterResult {
      * 
      */
     private String vmClusterType;
+    /**
+     * @return Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+     * 
+     */
+    private String vmFileSystemStorageType;
 
     private GetVmClusterResult() {}
     /**
@@ -427,6 +437,13 @@ public final class GetVmClusterResult {
     public String timeZone() {
         return this.timeZone;
     }
+    /**
+     * @return Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
+     * 
+     */
+    public String vmBackupStorageType() {
+        return this.vmBackupStorageType;
+    }
     public String vmClusterId() {
         return this.vmClusterId;
     }
@@ -443,6 +460,13 @@ public final class GetVmClusterResult {
      */
     public String vmClusterType() {
         return this.vmClusterType;
+    }
+    /**
+     * @return Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+     * 
+     */
+    public String vmFileSystemStorageType() {
+        return this.vmFileSystemStorageType;
     }
 
     public static Builder builder() {
@@ -489,9 +513,11 @@ public final class GetVmClusterResult {
         private String systemVersion;
         private String timeCreated;
         private String timeZone;
+        private String vmBackupStorageType;
         private String vmClusterId;
         private String vmClusterNetworkId;
         private String vmClusterType;
+        private String vmFileSystemStorageType;
         public Builder() {}
         public Builder(GetVmClusterResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -530,9 +556,11 @@ public final class GetVmClusterResult {
     	      this.systemVersion = defaults.systemVersion;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
+    	      this.vmBackupStorageType = defaults.vmBackupStorageType;
     	      this.vmClusterId = defaults.vmClusterId;
     	      this.vmClusterNetworkId = defaults.vmClusterNetworkId;
     	      this.vmClusterType = defaults.vmClusterType;
+    	      this.vmFileSystemStorageType = defaults.vmFileSystemStorageType;
         }
 
         @CustomType.Setter
@@ -831,6 +859,14 @@ public final class GetVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder vmBackupStorageType(String vmBackupStorageType) {
+            if (vmBackupStorageType == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterResult", "vmBackupStorageType");
+            }
+            this.vmBackupStorageType = vmBackupStorageType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
             if (vmClusterId == null) {
               throw new MissingRequiredPropertyException("GetVmClusterResult", "vmClusterId");
@@ -852,6 +888,14 @@ public final class GetVmClusterResult {
               throw new MissingRequiredPropertyException("GetVmClusterResult", "vmClusterType");
             }
             this.vmClusterType = vmClusterType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder vmFileSystemStorageType(String vmFileSystemStorageType) {
+            if (vmFileSystemStorageType == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterResult", "vmFileSystemStorageType");
+            }
+            this.vmFileSystemStorageType = vmFileSystemStorageType;
             return this;
         }
         public GetVmClusterResult build() {
@@ -891,9 +935,11 @@ public final class GetVmClusterResult {
             _resultValue.systemVersion = systemVersion;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeZone = timeZone;
+            _resultValue.vmBackupStorageType = vmBackupStorageType;
             _resultValue.vmClusterId = vmClusterId;
             _resultValue.vmClusterNetworkId = vmClusterNetworkId;
             _resultValue.vmClusterType = vmClusterType;
+            _resultValue.vmFileSystemStorageType = vmFileSystemStorageType;
             return _resultValue;
         }
     }

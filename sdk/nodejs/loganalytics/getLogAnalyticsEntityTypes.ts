@@ -56,11 +56,11 @@ export interface GetLogAnalyticsEntityTypesArgs {
      */
     nameContains?: string;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: string;
     /**
-     * A filter to return only those log analytics entity types with the specified lifecycle state. The state value is case-insensitive.
+     * A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
      */
     state?: string;
 }
@@ -143,11 +143,11 @@ export interface GetLogAnalyticsEntityTypesOutputArgs {
      */
     nameContains?: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
     /**
-     * A filter to return only those log analytics entity types with the specified lifecycle state. The state value is case-insensitive.
+     * A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
      */
     state?: pulumi.Input<string>;
 }

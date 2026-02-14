@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -35,6 +35,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := networkfirewall.NewNetworkFirewallPolicyService(ctx, "test_network_firewall_policy_service", &networkfirewall.NetworkFirewallPolicyServiceArgs{
 //				Name:                    pulumi.Any(networkFirewallPolicyServiceName),
+//				Type:                    pulumi.Any(networkFirewallPolicyServiceType),
 //				NetworkFirewallPolicyId: pulumi.Any(testNetworkFirewallPolicy.Id),
 //				PortRanges: networkfirewall.NetworkFirewallPolicyServicePortRangeArray{
 //					&networkfirewall.NetworkFirewallPolicyServicePortRangeArgs{
@@ -42,7 +43,7 @@ import (
 //						MaximumPort: pulumi.Any(networkFirewallPolicyServicePortRangesMaximumPort),
 //					},
 //				},
-//				Type: pulumi.Any(networkFirewallPolicyServiceType),
+//				Description: pulumi.Any(networkFirewallPolicyServiceDescription),
 //			})
 //			if err != nil {
 //				return err
@@ -63,6 +64,8 @@ import (
 type NetworkFirewallPolicyService struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) The description of the service. This field can be used to add additional info.
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// Name of the service
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -117,6 +120,8 @@ func GetNetworkFirewallPolicyService(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NetworkFirewallPolicyService resources.
 type networkFirewallPolicyServiceState struct {
+	// (Updatable) The description of the service. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Name of the service
 	Name *string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -133,6 +138,8 @@ type networkFirewallPolicyServiceState struct {
 }
 
 type NetworkFirewallPolicyServiceState struct {
+	// (Updatable) The description of the service. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
 	// Name of the service
 	Name pulumi.StringPtrInput
 	// Unique Network Firewall Policy identifier
@@ -153,6 +160,8 @@ func (NetworkFirewallPolicyServiceState) ElementType() reflect.Type {
 }
 
 type networkFirewallPolicyServiceArgs struct {
+	// (Updatable) The description of the service. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Name of the service
 	Name *string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -168,6 +177,8 @@ type networkFirewallPolicyServiceArgs struct {
 
 // The set of arguments for constructing a NetworkFirewallPolicyService resource.
 type NetworkFirewallPolicyServiceArgs struct {
+	// (Updatable) The description of the service. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
 	// Name of the service
 	Name pulumi.StringPtrInput
 	// Unique Network Firewall Policy identifier
@@ -266,6 +277,11 @@ func (o NetworkFirewallPolicyServiceOutput) ToNetworkFirewallPolicyServiceOutput
 
 func (o NetworkFirewallPolicyServiceOutput) ToNetworkFirewallPolicyServiceOutputWithContext(ctx context.Context) NetworkFirewallPolicyServiceOutput {
 	return o
+}
+
+// (Updatable) The description of the service. This field can be used to add additional info.
+func (o NetworkFirewallPolicyServiceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyService) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Name of the service

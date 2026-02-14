@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -52,7 +52,7 @@ func LookupNamespaceStorageArchivalConfig(ctx *pulumi.Context, args *LookupNames
 
 // A collection of arguments for invoking getNamespaceStorageArchivalConfig.
 type LookupNamespaceStorageArchivalConfigArgs struct {
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -77,7 +77,7 @@ func LookupNamespaceStorageArchivalConfigOutput(ctx *pulumi.Context, args Lookup
 
 // A collection of arguments for invoking getNamespaceStorageArchivalConfig.
 type LookupNamespaceStorageArchivalConfigOutputArgs struct {
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 }
 

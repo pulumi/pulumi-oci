@@ -95,14 +95,14 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+     * (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
      * 
      */
     @Import(name="entityId")
     private @Nullable Output<String> entityId;
 
     /**
-     * @return (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+     * @return (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
      * 
      */
     public Optional<Output<String>> entityId() {
@@ -185,14 +185,14 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+     * (Updatable) Log Analytics Log group OCID to associate the processed logs with.
      * 
      */
     @Import(name="logGroupId")
     private @Nullable Output<String> logGroupId;
 
     /**
-     * @return (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+     * @return (Updatable) Log Analytics Log group OCID to associate the processed logs with.
      * 
      */
     public Optional<Output<String>> logGroupId() {
@@ -245,14 +245,14 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) Name of the Logging Analytics Source to use for the processing.
+     * (Updatable) Name of the Log Analytics Source to use for the processing.
      * 
      */
     @Import(name="logSourceName")
     private @Nullable Output<String> logSourceName;
 
     /**
-     * @return (Updatable) Name of the Logging Analytics Source to use for the processing.
+     * @return (Updatable) Name of the Log Analytics Source to use for the processing.
      * 
      */
     public Optional<Output<String>> logSourceName() {
@@ -290,14 +290,14 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
     }
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -440,14 +440,14 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+     * (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
      * 
      */
     @Import(name="streamId")
     private @Nullable Output<String> streamId;
 
     /**
-     * @return (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+     * @return (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
      * 
      */
     public Optional<Output<String>> streamId() {
@@ -666,7 +666,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
-         * @param entityId (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+         * @param entityId (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
          * 
          * @return builder
          * 
@@ -677,7 +677,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
-         * @param entityId (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+         * @param entityId (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
          * 
          * @return builder
          * 
@@ -792,7 +792,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
-         * @param logGroupId (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+         * @param logGroupId (Updatable) Log Analytics Log group OCID to associate the processed logs with.
          * 
          * @return builder
          * 
@@ -803,7 +803,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
-         * @param logGroupId (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+         * @param logGroupId (Updatable) Log Analytics Log group OCID to associate the processed logs with.
          * 
          * @return builder
          * 
@@ -876,7 +876,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
-         * @param logSourceName (Updatable) Name of the Logging Analytics Source to use for the processing.
+         * @param logSourceName (Updatable) Name of the Log Analytics Source to use for the processing.
          * 
          * @return builder
          * 
@@ -887,7 +887,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
-         * @param logSourceName (Updatable) Name of the Logging Analytics Source to use for the processing.
+         * @param logSourceName (Updatable) Name of the Log Analytics Source to use for the processing.
          * 
          * @return builder
          * 
@@ -939,7 +939,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 
@@ -950,7 +950,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 
@@ -1169,7 +1169,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
-         * @param streamId (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+         * @param streamId (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
          * 
          * @return builder
          * 
@@ -1180,7 +1180,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         }
 
         /**
-         * @param streamId (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+         * @param streamId (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
          * 
          * @return builder
          * 

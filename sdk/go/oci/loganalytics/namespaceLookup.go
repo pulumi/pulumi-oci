@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -128,7 +128,7 @@ type NamespaceLookup struct {
 	LookupReferenceString pulumi.StringOutput `pulumi:"lookupReferenceString"`
 	// (Updatable) The maximum number of matches.
 	MaxMatches pulumi.StringPtrOutput `pulumi:"maxMatches"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// AutoLookups
 	ReferringSources NamespaceLookupReferringSourceArrayOutput `pulumi:"referringSources"`
@@ -225,7 +225,7 @@ type namespaceLookupState struct {
 	LookupReferenceString *string `pulumi:"lookupReferenceString"`
 	// (Updatable) The maximum number of matches.
 	MaxMatches *string `pulumi:"maxMatches"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace *string `pulumi:"namespace"`
 	// AutoLookups
 	ReferringSources []NamespaceLookupReferringSource `pulumi:"referringSources"`
@@ -281,7 +281,7 @@ type NamespaceLookupState struct {
 	LookupReferenceString pulumi.StringPtrInput
 	// (Updatable) The maximum number of matches.
 	MaxMatches pulumi.StringPtrInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringPtrInput
 	// AutoLookups
 	ReferringSources NamespaceLookupReferringSourceArrayInput
@@ -325,7 +325,7 @@ type namespaceLookupArgs struct {
 	LookupName string `pulumi:"lookupName"`
 	// (Updatable) The maximum number of matches.
 	MaxMatches *string `pulumi:"maxMatches"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 	// Path to the file containing data for lookup creation.
 	RegisterLookupFile string `pulumi:"registerLookupFile"`
@@ -360,7 +360,7 @@ type NamespaceLookupArgs struct {
 	LookupName pulumi.StringInput
 	// (Updatable) The maximum number of matches.
 	MaxMatches pulumi.StringPtrInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput
 	// Path to the file containing data for lookup creation.
 	RegisterLookupFile pulumi.StringInput
@@ -553,7 +553,7 @@ func (o NamespaceLookupOutput) MaxMatches() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NamespaceLookup) pulumi.StringPtrOutput { return v.MaxMatches }).(pulumi.StringPtrOutput)
 }
 
-// The Logging Analytics namespace used for the request.
+// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 func (o NamespaceLookupOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceLookup) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }

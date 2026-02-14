@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -64,7 +64,7 @@ type NamespaceLookupsUpdateDataManagement struct {
 	IsForce pulumi.BoolOutput `pulumi:"isForce"`
 	// The name of the lookup to operate on.
 	LookupName pulumi.StringOutput `pulumi:"lookupName"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -120,7 +120,7 @@ type namespaceLookupsUpdateDataManagementState struct {
 	IsForce *bool `pulumi:"isForce"`
 	// The name of the lookup to operate on.
 	LookupName *string `pulumi:"lookupName"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -138,7 +138,7 @@ type NamespaceLookupsUpdateDataManagementState struct {
 	IsForce pulumi.BoolPtrInput
 	// The name of the lookup to operate on.
 	LookupName pulumi.StringPtrInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -160,7 +160,7 @@ type namespaceLookupsUpdateDataManagementArgs struct {
 	IsForce *bool `pulumi:"isForce"`
 	// The name of the lookup to operate on.
 	LookupName string `pulumi:"lookupName"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -179,7 +179,7 @@ type NamespaceLookupsUpdateDataManagementArgs struct {
 	IsForce pulumi.BoolPtrInput
 	// The name of the lookup to operate on.
 	LookupName pulumi.StringInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -295,7 +295,7 @@ func (o NamespaceLookupsUpdateDataManagementOutput) LookupName() pulumi.StringOu
 	return o.ApplyT(func(v *NamespaceLookupsUpdateDataManagement) pulumi.StringOutput { return v.LookupName }).(pulumi.StringOutput)
 }
 
-// The Logging Analytics namespace used for the request.
+// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

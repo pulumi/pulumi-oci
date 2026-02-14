@@ -16,21 +16,9 @@ public final class GetRrsetArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetRrsetArgs Empty = new GetRrsetArgs();
 
-    /**
-     * The OCID of the compartment the zone belongs to.
-     * 
-     * This parameter is deprecated and should be omitted.
-     * 
-     */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
-    /**
-     * @return The OCID of the compartment the zone belongs to.
-     * 
-     * This parameter is deprecated and should be omitted.
-     * 
-     */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
@@ -65,17 +53,9 @@ public final class GetRrsetArgs extends com.pulumi.resources.InvokeArgs {
         return this.rtype;
     }
 
-    /**
-     * Specifies to operate only on resources that have a matching DNS scope.
-     * 
-     */
     @Import(name="scope")
     private @Nullable Output<String> scope;
 
-    /**
-     * @return Specifies to operate only on resources that have a matching DNS scope.
-     * 
-     */
     public Optional<Output<String>> scope() {
         return Optional.ofNullable(this.scope);
     }
@@ -155,27 +135,11 @@ public final class GetRrsetArgs extends com.pulumi.resources.InvokeArgs {
             $ = new GetRrsetArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param compartmentId The OCID of the compartment the zone belongs to.
-         * 
-         * This parameter is deprecated and should be omitted.
-         * 
-         * @return builder
-         * 
-         */
         public Builder compartmentId(@Nullable Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
 
-        /**
-         * @param compartmentId The OCID of the compartment the zone belongs to.
-         * 
-         * This parameter is deprecated and should be omitted.
-         * 
-         * @return builder
-         * 
-         */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
         }
@@ -222,23 +186,11 @@ public final class GetRrsetArgs extends com.pulumi.resources.InvokeArgs {
             return rtype(Output.of(rtype));
         }
 
-        /**
-         * @param scope Specifies to operate only on resources that have a matching DNS scope.
-         * 
-         * @return builder
-         * 
-         */
         public Builder scope(@Nullable Output<String> scope) {
             $.scope = scope;
             return this;
         }
 
-        /**
-         * @param scope Specifies to operate only on resources that have a matching DNS scope.
-         * 
-         * @return builder
-         * 
-         */
         public Builder scope(String scope) {
             return scope(Output.of(scope));
         }

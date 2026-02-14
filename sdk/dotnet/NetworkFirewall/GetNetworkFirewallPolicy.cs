@@ -136,6 +136,10 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
+        /// The description of the network firewall policy. This field can be used to add additional info.
+        /// </summary>
+        public readonly string Description;
+        /// <summary>
         /// A user-friendly optional name for the firewall policy. Avoid entering confidential information.
         /// </summary>
         public readonly string DisplayName;
@@ -177,6 +181,8 @@ namespace Pulumi.Oci.NetworkFirewall
 
             ImmutableDictionary<string, string> definedTags,
 
+            string description,
+
             string displayName,
 
             ImmutableDictionary<string, string> freeformTags,
@@ -198,6 +204,7 @@ namespace Pulumi.Oci.NetworkFirewall
             AttachedNetworkFirewallCount = attachedNetworkFirewallCount;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
+            Description = description;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;

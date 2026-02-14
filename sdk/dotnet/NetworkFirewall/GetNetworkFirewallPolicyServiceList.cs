@@ -87,6 +87,10 @@ namespace Pulumi.Oci.NetworkFirewall
     [OutputType]
     public sealed class GetNetworkFirewallPolicyServiceListResult
     {
+        /// <summary>
+        /// The description of the service list. This field can be used to add additional info.
+        /// </summary>
+        public readonly string Description;
         public readonly string Id;
         /// <summary>
         /// Name of the service Group.
@@ -108,6 +112,8 @@ namespace Pulumi.Oci.NetworkFirewall
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyServiceListResult(
+            string description,
+
             string id,
 
             string name,
@@ -120,6 +126,7 @@ namespace Pulumi.Oci.NetworkFirewall
 
             int totalServices)
         {
+            Description = description;
             Id = id;
             Name = name;
             NetworkFirewallPolicyId = networkFirewallPolicyId;

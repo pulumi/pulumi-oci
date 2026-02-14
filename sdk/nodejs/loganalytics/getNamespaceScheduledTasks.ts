@@ -54,7 +54,7 @@ export interface GetNamespaceScheduledTasksArgs {
     displayName?: string;
     filters?: inputs.LogAnalytics.GetNamespaceScheduledTasksFilter[];
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: string;
     /**
@@ -88,6 +88,9 @@ export interface GetNamespaceScheduledTasksResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
+     */
     readonly namespace: string;
     /**
      * The list of scheduled_task_collection.
@@ -151,7 +154,7 @@ export interface GetNamespaceScheduledTasksOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespaceScheduledTasksFilterArgs>[]>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
     /**

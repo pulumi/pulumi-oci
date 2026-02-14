@@ -24,6 +24,7 @@ class NetworkFirewallPolicyServiceArgs:
                  network_firewall_policy_id: pulumi.Input[_builtins.str],
                  port_ranges: pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyServicePortRangeArgs']]],
                  type: pulumi.Input[_builtins.str],
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyService resource.
@@ -34,11 +35,14 @@ class NetworkFirewallPolicyServiceArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the service. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the service
         """
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         pulumi.set(__self__, "port_ranges", port_ranges)
         pulumi.set(__self__, "type", type)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -84,6 +88,18 @@ class NetworkFirewallPolicyServiceArgs:
 
     @_builtins.property
     @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The description of the service. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Name of the service
@@ -98,6 +114,7 @@ class NetworkFirewallPolicyServiceArgs:
 @pulumi.input_type
 class _NetworkFirewallPolicyServiceState:
     def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -105,6 +122,7 @@ class _NetworkFirewallPolicyServiceState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyService resources.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the service. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the service
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this service belongs to.
@@ -115,6 +133,8 @@ class _NetworkFirewallPolicyServiceState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if network_firewall_policy_id is not None:
@@ -125,6 +145,18 @@ class _NetworkFirewallPolicyServiceState:
             pulumi.set(__self__, "port_ranges", port_ranges)
         if type is not None:
             pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The description of the service. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
@@ -197,6 +229,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  port_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict']]]]] = None,
@@ -218,12 +251,13 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
 
         test_network_firewall_policy_service = oci.networkfirewall.NetworkFirewallPolicyService("test_network_firewall_policy_service",
             name=network_firewall_policy_service_name,
+            type=network_firewall_policy_service_type,
             network_firewall_policy_id=test_network_firewall_policy["id"],
             port_ranges=[{
                 "minimum_port": network_firewall_policy_service_port_ranges_minimum_port,
                 "maximum_port": network_firewall_policy_service_port_ranges_maximum_port,
             }],
-            type=network_firewall_policy_service_type)
+            description=network_firewall_policy_service_description)
         ```
 
         ## Import
@@ -236,6 +270,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the service. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the service
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict']]]] port_ranges: (Updatable) List of port-ranges to be used.
@@ -267,12 +302,13 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
 
         test_network_firewall_policy_service = oci.networkfirewall.NetworkFirewallPolicyService("test_network_firewall_policy_service",
             name=network_firewall_policy_service_name,
+            type=network_firewall_policy_service_type,
             network_firewall_policy_id=test_network_firewall_policy["id"],
             port_ranges=[{
                 "minimum_port": network_firewall_policy_service_port_ranges_minimum_port,
                 "maximum_port": network_firewall_policy_service_port_ranges_maximum_port,
             }],
-            type=network_firewall_policy_service_type)
+            description=network_firewall_policy_service_description)
         ```
 
         ## Import
@@ -298,6 +334,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  port_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict']]]]] = None,
@@ -311,6 +348,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = NetworkFirewallPolicyServiceArgs.__new__(NetworkFirewallPolicyServiceArgs)
 
+            __props__.__dict__["description"] = description
             __props__.__dict__["name"] = name
             if network_firewall_policy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'network_firewall_policy_id'")
@@ -332,6 +370,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
             network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
             parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -344,6 +383,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the service. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the service
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this service belongs to.
@@ -358,12 +398,21 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
 
         __props__ = _NetworkFirewallPolicyServiceState.__new__(_NetworkFirewallPolicyServiceState)
 
+        __props__.__dict__["description"] = description
         __props__.__dict__["name"] = name
         __props__.__dict__["network_firewall_policy_id"] = network_firewall_policy_id
         __props__.__dict__["parent_resource_id"] = parent_resource_id
         __props__.__dict__["port_ranges"] = port_ranges
         __props__.__dict__["type"] = type
         return NetworkFirewallPolicyService(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Updatable) The description of the service. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter

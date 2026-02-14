@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Desktops.Inputs
     public sealed class DesktopPoolImageGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the desktop image.
+        /// (Updatable) The OCID of the desktop image.
         /// </summary>
         [Input("imageId", required: true)]
         public Input<string> ImageId { get; set; } = null!;

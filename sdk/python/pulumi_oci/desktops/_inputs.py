@@ -219,6 +219,10 @@ class DesktopPoolDevicePolicyArgsDict(TypedDict):
     """
     (Updatable) Indicates whether printing is enabled.
     """
+    is_video_input_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether video input is enabled.
+    """
 
 @pulumi.input_type
 class DesktopPoolDevicePolicyArgs:
@@ -229,7 +233,8 @@ class DesktopPoolDevicePolicyArgs:
                  is_display_enabled: pulumi.Input[_builtins.bool],
                  is_keyboard_enabled: pulumi.Input[_builtins.bool],
                  is_pointer_enabled: pulumi.Input[_builtins.bool],
-                 is_printing_enabled: pulumi.Input[_builtins.bool]):
+                 is_printing_enabled: pulumi.Input[_builtins.bool],
+                 is_video_input_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] audio_mode: (Updatable) The audio mode. NONE: No access to the local audio devices is permitted. TODESKTOP: The user may record audio on their desktop.  FROMDESKTOP: The user may play audio on their desktop. FULL: The user may play and record audio on their desktop.
         :param pulumi.Input[_builtins.str] cdm_mode: (Updatable) The client local drive access mode. NONE: No access to local drives permitted. READONLY: The user may read from local drives on their desktop. FULL: The user may read from and write to their local drives on their desktop.
@@ -238,6 +243,7 @@ class DesktopPoolDevicePolicyArgs:
         :param pulumi.Input[_builtins.bool] is_keyboard_enabled: (Updatable) Indicates whether the keyboard is enabled.
         :param pulumi.Input[_builtins.bool] is_pointer_enabled: (Updatable) Indicates whether the pointer is enabled.
         :param pulumi.Input[_builtins.bool] is_printing_enabled: (Updatable) Indicates whether printing is enabled.
+        :param pulumi.Input[_builtins.bool] is_video_input_enabled: (Updatable) Indicates whether video input is enabled.
         """
         pulumi.set(__self__, "audio_mode", audio_mode)
         pulumi.set(__self__, "cdm_mode", cdm_mode)
@@ -246,6 +252,8 @@ class DesktopPoolDevicePolicyArgs:
         pulumi.set(__self__, "is_keyboard_enabled", is_keyboard_enabled)
         pulumi.set(__self__, "is_pointer_enabled", is_pointer_enabled)
         pulumi.set(__self__, "is_printing_enabled", is_printing_enabled)
+        if is_video_input_enabled is not None:
+            pulumi.set(__self__, "is_video_input_enabled", is_video_input_enabled)
 
     @_builtins.property
     @pulumi.getter(name="audioMode")
@@ -331,11 +339,23 @@ class DesktopPoolDevicePolicyArgs:
     def is_printing_enabled(self, value: pulumi.Input[_builtins.bool]):
         pulumi.set(self, "is_printing_enabled", value)
 
+    @_builtins.property
+    @pulumi.getter(name="isVideoInputEnabled")
+    def is_video_input_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates whether video input is enabled.
+        """
+        return pulumi.get(self, "is_video_input_enabled")
+
+    @is_video_input_enabled.setter
+    def is_video_input_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_video_input_enabled", value)
+
 
 class DesktopPoolImageArgsDict(TypedDict):
     image_id: pulumi.Input[_builtins.str]
     """
-    The OCID of the desktop image.
+    (Updatable) The OCID of the desktop image.
     """
     image_name: pulumi.Input[_builtins.str]
     """
@@ -353,7 +373,7 @@ class DesktopPoolImageArgs:
                  image_name: pulumi.Input[_builtins.str],
                  operating_system: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] image_id: The OCID of the desktop image.
+        :param pulumi.Input[_builtins.str] image_id: (Updatable) The OCID of the desktop image.
         :param pulumi.Input[_builtins.str] image_name: The name of the desktop image.
         :param pulumi.Input[_builtins.str] operating_system: The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
         """
@@ -366,7 +386,7 @@ class DesktopPoolImageArgs:
     @pulumi.getter(name="imageId")
     def image_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The OCID of the desktop image.
+        (Updatable) The OCID of the desktop image.
         """
         return pulumi.get(self, "image_id")
 

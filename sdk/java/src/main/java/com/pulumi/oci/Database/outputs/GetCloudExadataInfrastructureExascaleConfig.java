@@ -16,10 +16,20 @@ public final class GetCloudExadataInfrastructureExascaleConfig {
      */
     private Integer availableStorageInGbs;
     /**
+     * @return Available storage size for VM storage on Exascale in GBs.
+     * 
+     */
+    private Integer availableVmStorageInGbs;
+    /**
      * @return Storage size needed for Exascale in GBs.
      * 
      */
     private Integer totalStorageInGbs;
+    /**
+     * @return Storage size needed for VM storage on Exascale in GBs.
+     * 
+     */
+    private Integer totalVmStorageInGbs;
 
     private GetCloudExadataInfrastructureExascaleConfig() {}
     /**
@@ -30,11 +40,25 @@ public final class GetCloudExadataInfrastructureExascaleConfig {
         return this.availableStorageInGbs;
     }
     /**
+     * @return Available storage size for VM storage on Exascale in GBs.
+     * 
+     */
+    public Integer availableVmStorageInGbs() {
+        return this.availableVmStorageInGbs;
+    }
+    /**
      * @return Storage size needed for Exascale in GBs.
      * 
      */
     public Integer totalStorageInGbs() {
         return this.totalStorageInGbs;
+    }
+    /**
+     * @return Storage size needed for VM storage on Exascale in GBs.
+     * 
+     */
+    public Integer totalVmStorageInGbs() {
+        return this.totalVmStorageInGbs;
     }
 
     public static Builder builder() {
@@ -47,12 +71,16 @@ public final class GetCloudExadataInfrastructureExascaleConfig {
     @CustomType.Builder
     public static final class Builder {
         private Integer availableStorageInGbs;
+        private Integer availableVmStorageInGbs;
         private Integer totalStorageInGbs;
+        private Integer totalVmStorageInGbs;
         public Builder() {}
         public Builder(GetCloudExadataInfrastructureExascaleConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availableStorageInGbs = defaults.availableStorageInGbs;
+    	      this.availableVmStorageInGbs = defaults.availableVmStorageInGbs;
     	      this.totalStorageInGbs = defaults.totalStorageInGbs;
+    	      this.totalVmStorageInGbs = defaults.totalVmStorageInGbs;
         }
 
         @CustomType.Setter
@@ -64,6 +92,14 @@ public final class GetCloudExadataInfrastructureExascaleConfig {
             return this;
         }
         @CustomType.Setter
+        public Builder availableVmStorageInGbs(Integer availableVmStorageInGbs) {
+            if (availableVmStorageInGbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureExascaleConfig", "availableVmStorageInGbs");
+            }
+            this.availableVmStorageInGbs = availableVmStorageInGbs;
+            return this;
+        }
+        @CustomType.Setter
         public Builder totalStorageInGbs(Integer totalStorageInGbs) {
             if (totalStorageInGbs == null) {
               throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureExascaleConfig", "totalStorageInGbs");
@@ -71,10 +107,20 @@ public final class GetCloudExadataInfrastructureExascaleConfig {
             this.totalStorageInGbs = totalStorageInGbs;
             return this;
         }
+        @CustomType.Setter
+        public Builder totalVmStorageInGbs(Integer totalVmStorageInGbs) {
+            if (totalVmStorageInGbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureExascaleConfig", "totalVmStorageInGbs");
+            }
+            this.totalVmStorageInGbs = totalVmStorageInGbs;
+            return this;
+        }
         public GetCloudExadataInfrastructureExascaleConfig build() {
             final var _resultValue = new GetCloudExadataInfrastructureExascaleConfig();
             _resultValue.availableStorageInGbs = availableStorageInGbs;
+            _resultValue.availableVmStorageInGbs = availableVmStorageInGbs;
             _resultValue.totalStorageInGbs = totalStorageInGbs;
+            _resultValue.totalVmStorageInGbs = totalVmStorageInGbs;
             return _resultValue;
         }
     }

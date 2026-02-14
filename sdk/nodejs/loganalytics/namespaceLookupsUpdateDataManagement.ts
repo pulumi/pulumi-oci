@@ -77,7 +77,7 @@ export class NamespaceLookupsUpdateDataManagement extends pulumi.CustomResource 
      */
     declare public readonly lookupName: pulumi.Output<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
      *
      * ** IMPORTANT **
@@ -152,7 +152,7 @@ export interface NamespaceLookupsUpdateDataManagementState {
      */
     lookupName?: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
      *
      * ** IMPORTANT **
@@ -186,7 +186,7 @@ export interface NamespaceLookupsUpdateDataManagementArgs {
      */
     lookupName: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
      *
      * ** IMPORTANT **

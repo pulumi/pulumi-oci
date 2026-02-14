@@ -88,6 +88,10 @@ namespace Pulumi.Oci.NetworkFirewall
     public sealed class GetNetworkFirewallPolicyApplicationResult
     {
         /// <summary>
+        /// The description of the application. This field can be used to add additional info.
+        /// </summary>
+        public readonly string Description;
+        /// <summary>
         /// The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         /// </summary>
         public readonly int IcmpCode;
@@ -112,6 +116,8 @@ namespace Pulumi.Oci.NetworkFirewall
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyApplicationResult(
+            string description,
+
             int icmpCode,
 
             int icmpType,
@@ -126,6 +132,7 @@ namespace Pulumi.Oci.NetworkFirewall
 
             string type)
         {
+            Description = description;
             IcmpCode = icmpCode;
             IcmpType = icmpType;
             Id = id;

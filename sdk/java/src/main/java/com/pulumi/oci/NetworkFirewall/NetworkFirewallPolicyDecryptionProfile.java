@@ -12,6 +12,7 @@ import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyDecryptionProf
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -50,6 +51,7 @@ import javax.annotation.Nullable;
  *             .name(networkFirewallPolicyDecryptionProfileName)
  *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
  *             .type(networkFirewallPolicyDecryptionProfileType)
+ *             .description(networkFirewallPolicyDecryptionProfileDescription)
  *             .areCertificateExtensionsRestricted(networkFirewallPolicyDecryptionProfileAreCertificateExtensionsRestricted)
  *             .isAutoIncludeAltName(networkFirewallPolicyDecryptionProfileIsAutoIncludeAltName)
  *             .isExpiredCertificateBlocked(networkFirewallPolicyDecryptionProfileIsExpiredCertificateBlocked)
@@ -90,6 +92,20 @@ public class NetworkFirewallPolicyDecryptionProfile extends com.pulumi.resources
      */
     public Output<Boolean> areCertificateExtensionsRestricted() {
         return this.areCertificateExtensionsRestricted;
+    }
+    /**
+     * (Updatable) The description of the decryption profile. This field can be used to add additional info.
+     * 
+     */
+    @Export(name="description", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> description;
+
+    /**
+     * @return (Updatable) The description of the decryption profile. This field can be used to add additional info.
+     * 
+     */
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
-        /// Get NAT Rule by the given name in the context of network firewall policy.
+        /// Get a [NAT rule](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) by the given name in the context of Network Firewall policy.
         /// 
         /// ## Example Usage
         /// 
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
-        /// Get NAT Rule by the given name in the context of network firewall policy.
+        /// Get a [NAT rule](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) by the given name in the context of Network Firewall policy.
         /// 
         /// ## Example Usage
         /// 
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
-        /// Get NAT Rule by the given name in the context of network firewall policy.
+        /// Get a [NAT rule](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) by the given name in the context of Network Firewall policy.
         /// 
         /// ## Example Usage
         /// 
@@ -97,7 +97,7 @@ namespace Pulumi.Oci.NetworkFirewall
     public sealed class GetNetworkFirewallPolicyNatRuleArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Unique identifier for NAT Rules in the network firewall policy.
+        /// Unique identifier for NAT rules in the Network Firewall policy.
         /// </summary>
         [Input("natRuleName", required: true)]
         public string NatRuleName { get; set; } = null!;
@@ -117,7 +117,7 @@ namespace Pulumi.Oci.NetworkFirewall
     public sealed class GetNetworkFirewallPolicyNatRuleInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Unique identifier for NAT Rules in the network firewall policy.
+        /// Unique identifier for NAT rules in the Network Firewall policy.
         /// </summary>
         [Input("natRuleName", required: true)]
         public Input<string> NatRuleName { get; set; } = null!;
@@ -144,7 +144,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         public readonly string Action;
         /// <summary>
-        /// Match criteria used in NAT Rule used on the firewall policy.
+        /// Match criteria used in NAT rule used on the firewall policy.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkFirewallPolicyNatRuleConditionResult> Conditions;
         /// <summary>
@@ -159,7 +159,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public readonly string NatRuleName;
         public readonly string NetworkFirewallPolicyId;
         /// <summary>
-        /// OCID of the Network Firewall Policy this decryption profile belongs to.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
         /// </summary>
         public readonly string ParentResourceId;
         /// <summary>

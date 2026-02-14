@@ -51,6 +51,10 @@ export interface GetNetworkFirewallPolicySecurityRuleResult {
      * Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
      */
     readonly conditions: outputs.NetworkFirewall.GetNetworkFirewallPolicySecurityRuleCondition[];
+    /**
+     * The description of the security rule. This field can be used to add additional info.
+     */
+    readonly description: string;
     readonly id: string;
     /**
      * Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.

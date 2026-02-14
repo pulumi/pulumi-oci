@@ -26,10 +26,13 @@ class GetNetworkFirewallPolicyDecryptionProfileResult:
     """
     A collection of values returned by getNetworkFirewallPolicyDecryptionProfile.
     """
-    def __init__(__self__, are_certificate_extensions_restricted=None, id=None, is_auto_include_alt_name=None, is_expired_certificate_blocked=None, is_out_of_capacity_blocked=None, is_revocation_status_timeout_blocked=None, is_unknown_revocation_status_blocked=None, is_unsupported_cipher_blocked=None, is_unsupported_version_blocked=None, is_untrusted_issuer_blocked=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, type=None):
+    def __init__(__self__, are_certificate_extensions_restricted=None, description=None, id=None, is_auto_include_alt_name=None, is_expired_certificate_blocked=None, is_out_of_capacity_blocked=None, is_revocation_status_timeout_blocked=None, is_unknown_revocation_status_blocked=None, is_unsupported_cipher_blocked=None, is_unsupported_version_blocked=None, is_untrusted_issuer_blocked=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, type=None):
         if are_certificate_extensions_restricted and not isinstance(are_certificate_extensions_restricted, bool):
             raise TypeError("Expected argument 'are_certificate_extensions_restricted' to be a bool")
         pulumi.set(__self__, "are_certificate_extensions_restricted", are_certificate_extensions_restricted)
+        if description and not isinstance(description, str):
+            raise TypeError("Expected argument 'description' to be a str")
+        pulumi.set(__self__, "description", description)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -77,6 +80,14 @@ class GetNetworkFirewallPolicyDecryptionProfileResult:
         Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
         """
         return pulumi.get(self, "are_certificate_extensions_restricted")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the decryption profile. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter
@@ -184,6 +195,7 @@ class AwaitableGetNetworkFirewallPolicyDecryptionProfileResult(GetNetworkFirewal
             yield self
         return GetNetworkFirewallPolicyDecryptionProfileResult(
             are_certificate_extensions_restricted=self.are_certificate_extensions_restricted,
+            description=self.description,
             id=self.id,
             is_auto_include_alt_name=self.is_auto_include_alt_name,
             is_expired_certificate_blocked=self.is_expired_certificate_blocked,
@@ -221,6 +233,7 @@ def get_network_firewall_policy_decryption_profile(name: Optional[_builtins.str]
 
     return AwaitableGetNetworkFirewallPolicyDecryptionProfileResult(
         are_certificate_extensions_restricted=pulumi.get(__ret__, 'are_certificate_extensions_restricted'),
+        description=pulumi.get(__ret__, 'description'),
         id=pulumi.get(__ret__, 'id'),
         is_auto_include_alt_name=pulumi.get(__ret__, 'is_auto_include_alt_name'),
         is_expired_certificate_blocked=pulumi.get(__ret__, 'is_expired_certificate_blocked'),
@@ -255,6 +268,7 @@ def get_network_firewall_policy_decryption_profile_output(name: Optional[pulumi.
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfile:getNetworkFirewallPolicyDecryptionProfile', __args__, opts=opts, typ=GetNetworkFirewallPolicyDecryptionProfileResult)
     return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyDecryptionProfileResult(
         are_certificate_extensions_restricted=pulumi.get(__response__, 'are_certificate_extensions_restricted'),
+        description=pulumi.get(__response__, 'description'),
         id=pulumi.get(__response__, 'id'),
         is_auto_include_alt_name=pulumi.get(__response__, 'is_auto_include_alt_name'),
         is_expired_certificate_blocked=pulumi.get(__response__, 'is_expired_certificate_blocked'),

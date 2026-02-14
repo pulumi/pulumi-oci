@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -42,6 +42,7 @@ import (
 //				NetworkFirewallPolicyId: pulumi.Any(testNetworkFirewallPolicy.Id),
 //				Protocol:                pulumi.Any(networkFirewallPolicyTunnelInspectionRuleProtocol),
 //				Action:                  pulumi.Any(networkFirewallPolicyTunnelInspectionRuleAction),
+//				Description:             pulumi.Any(networkFirewallPolicyTunnelInspectionRuleDescription),
 //				Position: &networkfirewall.NetworkFirewallPolicyTunnelInspectionRulePositionArgs{
 //					AfterRule:  pulumi.Any(networkFirewallPolicyTunnelInspectionRulePositionAfterRule),
 //					BeforeRule: pulumi.Any(networkFirewallPolicyTunnelInspectionRulePositionBeforeRule),
@@ -75,6 +76,8 @@ type NetworkFirewallPolicyTunnelInspectionRule struct {
 	Action pulumi.StringOutput `pulumi:"action"`
 	// (Updatable) Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
 	Condition NetworkFirewallPolicyTunnelInspectionRuleConditionOutput `pulumi:"condition"`
+	// (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// Name for the Tunnel Inspection Rule, must be unique within the policy.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -140,6 +143,8 @@ type networkFirewallPolicyTunnelInspectionRuleState struct {
 	Action *string `pulumi:"action"`
 	// (Updatable) Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
 	Condition *NetworkFirewallPolicyTunnelInspectionRuleCondition `pulumi:"condition"`
+	// (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Name for the Tunnel Inspection Rule, must be unique within the policy.
 	Name *string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -167,6 +172,8 @@ type NetworkFirewallPolicyTunnelInspectionRuleState struct {
 	Action pulumi.StringPtrInput
 	// (Updatable) Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
 	Condition NetworkFirewallPolicyTunnelInspectionRuleConditionPtrInput
+	// (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
 	// Name for the Tunnel Inspection Rule, must be unique within the policy.
 	Name pulumi.StringPtrInput
 	// Unique Network Firewall Policy identifier
@@ -198,6 +205,8 @@ type networkFirewallPolicyTunnelInspectionRuleArgs struct {
 	Action *string `pulumi:"action"`
 	// (Updatable) Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
 	Condition NetworkFirewallPolicyTunnelInspectionRuleCondition `pulumi:"condition"`
+	// (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Name for the Tunnel Inspection Rule, must be unique within the policy.
 	Name *string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -222,6 +231,8 @@ type NetworkFirewallPolicyTunnelInspectionRuleArgs struct {
 	Action pulumi.StringPtrInput
 	// (Updatable) Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
 	Condition NetworkFirewallPolicyTunnelInspectionRuleConditionInput
+	// (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
 	// Name for the Tunnel Inspection Rule, must be unique within the policy.
 	Name pulumi.StringPtrInput
 	// Unique Network Firewall Policy identifier
@@ -337,6 +348,11 @@ func (o NetworkFirewallPolicyTunnelInspectionRuleOutput) Condition() NetworkFire
 	return o.ApplyT(func(v *NetworkFirewallPolicyTunnelInspectionRule) NetworkFirewallPolicyTunnelInspectionRuleConditionOutput {
 		return v.Condition
 	}).(NetworkFirewallPolicyTunnelInspectionRuleConditionOutput)
+}
+
+// (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
+func (o NetworkFirewallPolicyTunnelInspectionRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyTunnelInspectionRule) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Name for the Tunnel Inspection Rule, must be unique within the policy.

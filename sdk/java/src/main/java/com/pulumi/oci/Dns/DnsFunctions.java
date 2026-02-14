@@ -1290,8 +1290,7 @@ public final class DnsFunctions {
      * 
      * Gets a list of all records in the specified RRSet.
      * 
-     * The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
-     * and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
+     * The results are sorted by `recordHash` by default. When accessing a private zone by name, the `viewId` parameter is required.
      * 
      * ## Example Usage
      * 
@@ -1321,7 +1320,6 @@ public final class DnsFunctions {
      *             .domain(rrsetDomain)
      *             .rtype(rrsetRtype)
      *             .zoneNameOrId(testZone.id())
-     *             .scope(rrsetScope)
      *             .viewId(testView.id())
      *             .build());
      * 
@@ -1339,8 +1337,7 @@ public final class DnsFunctions {
      * 
      * Gets a list of all records in the specified RRSet.
      * 
-     * The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
-     * and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
+     * The results are sorted by `recordHash` by default. When accessing a private zone by name, the `viewId` parameter is required.
      * 
      * ## Example Usage
      * 
@@ -1370,7 +1367,6 @@ public final class DnsFunctions {
      *             .domain(rrsetDomain)
      *             .rtype(rrsetRtype)
      *             .zoneNameOrId(testZone.id())
-     *             .scope(rrsetScope)
      *             .viewId(testView.id())
      *             .build());
      * 
@@ -1388,8 +1384,7 @@ public final class DnsFunctions {
      * 
      * Gets a list of all records in the specified RRSet.
      * 
-     * The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
-     * and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
+     * The results are sorted by `recordHash` by default. When accessing a private zone by name, the `viewId` parameter is required.
      * 
      * ## Example Usage
      * 
@@ -1419,7 +1414,6 @@ public final class DnsFunctions {
      *             .domain(rrsetDomain)
      *             .rtype(rrsetRtype)
      *             .zoneNameOrId(testZone.id())
-     *             .scope(rrsetScope)
      *             .viewId(testView.id())
      *             .build());
      * 
@@ -1437,8 +1431,7 @@ public final class DnsFunctions {
      * 
      * Gets a list of all records in the specified RRSet.
      * 
-     * The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
-     * and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
+     * The results are sorted by `recordHash` by default. When accessing a private zone by name, the `viewId` parameter is required.
      * 
      * ## Example Usage
      * 
@@ -1468,7 +1461,6 @@ public final class DnsFunctions {
      *             .domain(rrsetDomain)
      *             .rtype(rrsetRtype)
      *             .zoneNameOrId(testZone.id())
-     *             .scope(rrsetScope)
      *             .viewId(testView.id())
      *             .build());
      * 
@@ -1486,8 +1478,7 @@ public final class DnsFunctions {
      * 
      * Gets a list of all records in the specified RRSet.
      * 
-     * The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
-     * and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
+     * The results are sorted by `recordHash` by default. When accessing a private zone by name, the `viewId` parameter is required.
      * 
      * ## Example Usage
      * 
@@ -1517,7 +1508,6 @@ public final class DnsFunctions {
      *             .domain(rrsetDomain)
      *             .rtype(rrsetRtype)
      *             .zoneNameOrId(testZone.id())
-     *             .scope(rrsetScope)
      *             .viewId(testView.id())
      *             .build());
      * 
@@ -1535,9 +1525,7 @@ public final class DnsFunctions {
      * 
      * Gets a list of all rrsets in the specified zone.
      * 
-     * You can optionally filter the results using the listed parameters. When the zone name
-     * is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
-     * the viewId parameter is required.
+     * You can optionally filter the results using the listed parameters. When accessing a private zone by name, the `viewId` parameter is required.
      * 
      * ## Example Usage
      * 
@@ -1568,7 +1556,6 @@ public final class DnsFunctions {
      *             .domain(rrsetDomain)
      *             .domainContains(rrsetDomain)
      *             .rtype(rrsetRtype)
-     *             .scope(rrsetScope)
      *             .viewId(testView.id())
      *             .build());
      * 
@@ -1586,9 +1573,7 @@ public final class DnsFunctions {
      * 
      * Gets a list of all rrsets in the specified zone.
      * 
-     * You can optionally filter the results using the listed parameters. When the zone name
-     * is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
-     * the viewId parameter is required.
+     * You can optionally filter the results using the listed parameters. When accessing a private zone by name, the `viewId` parameter is required.
      * 
      * ## Example Usage
      * 
@@ -1619,7 +1604,6 @@ public final class DnsFunctions {
      *             .domain(rrsetDomain)
      *             .domainContains(rrsetDomain)
      *             .rtype(rrsetRtype)
-     *             .scope(rrsetScope)
      *             .viewId(testView.id())
      *             .build());
      * 
@@ -1637,9 +1621,7 @@ public final class DnsFunctions {
      * 
      * Gets a list of all rrsets in the specified zone.
      * 
-     * You can optionally filter the results using the listed parameters. When the zone name
-     * is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
-     * the viewId parameter is required.
+     * You can optionally filter the results using the listed parameters. When accessing a private zone by name, the `viewId` parameter is required.
      * 
      * ## Example Usage
      * 
@@ -1670,7 +1652,6 @@ public final class DnsFunctions {
      *             .domain(rrsetDomain)
      *             .domainContains(rrsetDomain)
      *             .rtype(rrsetRtype)
-     *             .scope(rrsetScope)
      *             .viewId(testView.id())
      *             .build());
      * 
@@ -1688,9 +1669,7 @@ public final class DnsFunctions {
      * 
      * Gets a list of all rrsets in the specified zone.
      * 
-     * You can optionally filter the results using the listed parameters. When the zone name
-     * is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
-     * the viewId parameter is required.
+     * You can optionally filter the results using the listed parameters. When accessing a private zone by name, the `viewId` parameter is required.
      * 
      * ## Example Usage
      * 
@@ -1721,7 +1700,6 @@ public final class DnsFunctions {
      *             .domain(rrsetDomain)
      *             .domainContains(rrsetDomain)
      *             .rtype(rrsetRtype)
-     *             .scope(rrsetScope)
      *             .viewId(testView.id())
      *             .build());
      * 
@@ -1739,9 +1717,7 @@ public final class DnsFunctions {
      * 
      * Gets a list of all rrsets in the specified zone.
      * 
-     * You can optionally filter the results using the listed parameters. When the zone name
-     * is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
-     * the viewId parameter is required.
+     * You can optionally filter the results using the listed parameters. When accessing a private zone by name, the `viewId` parameter is required.
      * 
      * ## Example Usage
      * 
@@ -1772,7 +1748,6 @@ public final class DnsFunctions {
      *             .domain(rrsetDomain)
      *             .domainContains(rrsetDomain)
      *             .rtype(rrsetRtype)
-     *             .scope(rrsetScope)
      *             .viewId(testView.id())
      *             .build());
      * 

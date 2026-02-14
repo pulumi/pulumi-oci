@@ -8,9 +8,16 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItem {
+    /**
+     * @return The description of the mapped secret. This field can be used to add additional info.
+     * 
+     */
+    private @Nullable String description;
     /**
      * @return Name of the secret.
      * 
@@ -50,6 +57,13 @@ public final class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryColle
     private Integer versionNumber;
 
     private GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItem() {}
+    /**
+     * @return The description of the mapped secret. This field can be used to add additional info.
+     * 
+     */
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
+    }
     /**
      * @return Name of the secret.
      * 
@@ -111,6 +125,7 @@ public final class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryColle
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String description;
         private String name;
         private String networkFirewallPolicyId;
         private String parentResourceId;
@@ -121,6 +136,7 @@ public final class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryColle
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.description = defaults.description;
     	      this.name = defaults.name;
     	      this.networkFirewallPolicyId = defaults.networkFirewallPolicyId;
     	      this.parentResourceId = defaults.parentResourceId;
@@ -130,6 +146,12 @@ public final class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryColle
     	      this.versionNumber = defaults.versionNumber;
         }
 
+        @CustomType.Setter
+        public Builder description(@Nullable String description) {
+
+            this.description = description;
+            return this;
+        }
         @CustomType.Setter
         public Builder name(String name) {
             if (name == null) {
@@ -188,6 +210,7 @@ public final class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryColle
         }
         public GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItem build() {
             final var _resultValue = new GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItem();
+            _resultValue.description = description;
             _resultValue.name = name;
             _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
             _resultValue.parentResourceId = parentResourceId;

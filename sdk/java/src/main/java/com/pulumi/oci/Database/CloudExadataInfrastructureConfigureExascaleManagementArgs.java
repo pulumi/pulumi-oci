@@ -9,6 +9,8 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class CloudExadataInfrastructureConfigureExascaleManagementArgs extends com.pulumi.resources.ResourceArgs {
@@ -51,11 +53,19 @@ public final class CloudExadataInfrastructureConfigureExascaleManagementArgs ext
         return this.totalStorageInGbs;
     }
 
+    @Import(name="totalVmStorageInGbs")
+    private @Nullable Output<Integer> totalVmStorageInGbs;
+
+    public Optional<Output<Integer>> totalVmStorageInGbs() {
+        return Optional.ofNullable(this.totalVmStorageInGbs);
+    }
+
     private CloudExadataInfrastructureConfigureExascaleManagementArgs() {}
 
     private CloudExadataInfrastructureConfigureExascaleManagementArgs(CloudExadataInfrastructureConfigureExascaleManagementArgs $) {
         this.cloudExadataInfrastructureId = $.cloudExadataInfrastructureId;
         this.totalStorageInGbs = $.totalStorageInGbs;
+        this.totalVmStorageInGbs = $.totalVmStorageInGbs;
     }
 
     public static Builder builder() {
@@ -122,6 +132,15 @@ public final class CloudExadataInfrastructureConfigureExascaleManagementArgs ext
          */
         public Builder totalStorageInGbs(Integer totalStorageInGbs) {
             return totalStorageInGbs(Output.of(totalStorageInGbs));
+        }
+
+        public Builder totalVmStorageInGbs(@Nullable Output<Integer> totalVmStorageInGbs) {
+            $.totalVmStorageInGbs = totalVmStorageInGbs;
+            return this;
+        }
+
+        public Builder totalVmStorageInGbs(Integer totalVmStorageInGbs) {
+            return totalVmStorageInGbs(Output.of(totalVmStorageInGbs));
         }
 
         public CloudExadataInfrastructureConfigureExascaleManagementArgs build() {

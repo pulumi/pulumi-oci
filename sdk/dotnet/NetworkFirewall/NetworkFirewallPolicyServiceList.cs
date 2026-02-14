@@ -32,6 +32,7 @@ namespace Pulumi.Oci.NetworkFirewall
     ///         Name = networkFirewallPolicyServiceListName,
     ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
     ///         Services = networkFirewallPolicyServiceListServices,
+    ///         Description = networkFirewallPolicyServiceListDescription,
     ///     });
     /// 
     /// });
@@ -48,6 +49,12 @@ namespace Pulumi.Oci.NetworkFirewall
     [OciResourceType("oci:NetworkFirewall/networkFirewallPolicyServiceList:NetworkFirewallPolicyServiceList")]
     public partial class NetworkFirewallPolicyServiceList : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// (Updatable) The description of the service list. This field can be used to add additional info.
+        /// </summary>
+        [Output("description")]
+        public Output<string?> Description { get; private set; } = null!;
+
         /// <summary>
         /// Name of the service Group.
         /// </summary>
@@ -129,6 +136,12 @@ namespace Pulumi.Oci.NetworkFirewall
     public sealed class NetworkFirewallPolicyServiceListArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) The description of the service list. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        /// <summary>
         /// Name of the service Group.
         /// </summary>
         [Input("name")]
@@ -164,6 +177,12 @@ namespace Pulumi.Oci.NetworkFirewall
 
     public sealed class NetworkFirewallPolicyServiceListState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) The description of the service list. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
         /// <summary>
         /// Name of the service Group.
         /// </summary>

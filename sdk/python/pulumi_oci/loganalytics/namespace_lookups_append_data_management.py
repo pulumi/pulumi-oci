@@ -29,7 +29,7 @@ class NamespaceLookupsAppendDataManagementArgs:
         The set of arguments for constructing a NamespaceLookupsAppendDataManagement resource.
         :param pulumi.Input[_builtins.str] append_lookup_file: Path to the file containing data for the lookup append.
         :param pulumi.Input[_builtins.str] lookup_name: The name of the lookup to operate on.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
                
                ** IMPORTANT **
@@ -76,7 +76,7 @@ class NamespaceLookupsAppendDataManagementArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
 
 
         ** IMPORTANT **
@@ -141,7 +141,7 @@ class _NamespaceLookupsAppendDataManagementState:
         :param pulumi.Input[_builtins.str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
         :param pulumi.Input[_builtins.bool] is_force: is force
         :param pulumi.Input[_builtins.str] lookup_name: The name of the lookup to operate on.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
                
                ** IMPORTANT **
@@ -224,7 +224,7 @@ class _NamespaceLookupsAppendDataManagementState:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
 
 
         ** IMPORTANT **
@@ -284,7 +284,7 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
         :param pulumi.Input[_builtins.bool] is_force: is force
         :param pulumi.Input[_builtins.str] lookup_name: The name of the lookup to operate on.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
                
                ** IMPORTANT **
@@ -393,7 +393,7 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
         :param pulumi.Input[_builtins.bool] is_force: is force
         :param pulumi.Input[_builtins.str] lookup_name: The name of the lookup to operate on.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
                
                ** IMPORTANT **
@@ -455,7 +455,7 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
 
 
         ** IMPORTANT **

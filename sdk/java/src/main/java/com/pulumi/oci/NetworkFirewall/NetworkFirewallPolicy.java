@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -50,6 +51,7 @@ import javax.annotation.Nullable;
  *         var testNetworkFirewallPolicy = new NetworkFirewallPolicy("testNetworkFirewallPolicy", NetworkFirewallPolicyArgs.builder()
  *             .compartmentId(compartmentId)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .description(networkFirewallPolicyDescription)
  *             .displayName(networkFirewallPolicyDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
@@ -117,6 +119,20 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> definedTags() {
         return this.definedTags;
+    }
+    /**
+     * (Updatable) The description of the network firewall policy. This field can be used to add additional info.
+     * 
+     */
+    @Export(name="description", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> description;
+
+    /**
+     * @return (Updatable) The description of the network firewall policy. This field can be used to add additional info.
+     * 
+     */
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.

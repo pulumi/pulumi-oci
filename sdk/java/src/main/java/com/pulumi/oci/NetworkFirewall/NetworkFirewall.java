@@ -63,6 +63,7 @@ import javax.annotation.Nullable;
  *                 .mustEnablePrivateNat(networkFirewallNatConfigurationMustEnablePrivateNat)
  *                 .build())
  *             .networkSecurityGroupIds(networkFirewallNetworkSecurityGroupIds)
+ *             .shape(networkFirewallShape)
  *             .build());
  * 
  *     }
@@ -194,14 +195,14 @@ public class NetworkFirewall extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * (Updatable) Nat Configuration request to use Nat feature on firewall.
+     * (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
      * 
      */
     @Export(name="natConfiguration", refs={NetworkFirewallNatConfiguration.class}, tree="[0]")
     private Output<NetworkFirewallNatConfiguration> natConfiguration;
 
     /**
-     * @return (Updatable) Nat Configuration request to use Nat feature on firewall.
+     * @return (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
      * 
      */
     public Output<NetworkFirewallNatConfiguration> natConfiguration() {
@@ -234,6 +235,20 @@ public class NetworkFirewall extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> networkSecurityGroupIds() {
         return this.networkSecurityGroupIds;
+    }
+    /**
+     * (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
+     * 
+     */
+    @Export(name="shape", refs={String.class}, tree="[0]")
+    private Output<String> shape;
+
+    /**
+     * @return (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
+     * 
+     */
+    public Output<String> shape() {
+        return this.shape;
     }
     /**
      * The current state of the Network Firewall.

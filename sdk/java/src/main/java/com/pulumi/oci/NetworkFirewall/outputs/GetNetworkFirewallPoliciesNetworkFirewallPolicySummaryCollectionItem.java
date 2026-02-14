@@ -28,6 +28,11 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
      */
     private Map<String,String> definedTags;
     /**
+     * @return The description of the network firewall policy. This field can be used to add additional info.
+     * 
+     */
+    private String description;
+    /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
@@ -89,6 +94,13 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
      */
     public Map<String,String> definedTags() {
         return this.definedTags;
+    }
+    /**
+     * @return The description of the network firewall policy. This field can be used to add additional info.
+     * 
+     */
+    public String description() {
+        return this.description;
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
@@ -159,6 +171,7 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
         private Integer attachedNetworkFirewallCount;
         private String compartmentId;
         private Map<String,String> definedTags;
+        private String description;
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
@@ -173,6 +186,7 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
     	      this.attachedNetworkFirewallCount = defaults.attachedNetworkFirewallCount;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
+    	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -205,6 +219,14 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
               throw new MissingRequiredPropertyException("GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem", "definedTags");
             }
             this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder description(String description) {
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
@@ -276,6 +298,7 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
             _resultValue.attachedNetworkFirewallCount = attachedNetworkFirewallCount;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;

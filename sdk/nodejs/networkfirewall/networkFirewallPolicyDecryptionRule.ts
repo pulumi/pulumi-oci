@@ -30,13 +30,14 @@ import * as utilities from "../utilities";
  *         destinationAddresses: networkFirewallPolicyDecryptionRuleConditionDestinationAddress,
  *         sourceAddresses: networkFirewallPolicyDecryptionRuleConditionSourceAddress,
  *     },
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ *     description: networkFirewallPolicyDecryptionRuleDescription,
+ *     decryptionProfile: networkFirewallPolicyDecryptionRuleDecryptionProfile,
+ *     secret: networkFirewallPolicyDecryptionRuleSecret,
  *     position: {
  *         afterRule: networkFirewallPolicyDecryptionRulePositionAfterRule,
  *         beforeRule: networkFirewallPolicyDecryptionRulePositionBeforeRule,
  *     },
- *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
- *     decryptionProfile: networkFirewallPolicyDecryptionRuleDecryptionProfile,
- *     secret: networkFirewallPolicyDecryptionRuleSecret,
  * });
  * ```
  *
@@ -83,13 +84,17 @@ export class NetworkFirewallPolicyDecryptionRule extends pulumi.CustomResource {
      */
     declare public readonly action: pulumi.Output<string>;
     /**
-     * (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
+     * (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
      */
     declare public readonly condition: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyDecryptionRuleCondition>;
     /**
      * (Updatable) The name of the decryption profile to use.
      */
     declare public readonly decryptionProfile: pulumi.Output<string | undefined>;
+    /**
+     * (Updatable) The description of the decryption rule. This field can be used to add additional info.
+     */
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * Name for the decryption rule, must be unique within the policy.
      */
@@ -128,6 +133,7 @@ export class NetworkFirewallPolicyDecryptionRule extends pulumi.CustomResource {
             resourceInputs["action"] = state?.action;
             resourceInputs["condition"] = state?.condition;
             resourceInputs["decryptionProfile"] = state?.decryptionProfile;
+            resourceInputs["description"] = state?.description;
             resourceInputs["name"] = state?.name;
             resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
             resourceInputs["parentResourceId"] = state?.parentResourceId;
@@ -148,6 +154,7 @@ export class NetworkFirewallPolicyDecryptionRule extends pulumi.CustomResource {
             resourceInputs["action"] = args?.action;
             resourceInputs["condition"] = args?.condition;
             resourceInputs["decryptionProfile"] = args?.decryptionProfile;
+            resourceInputs["description"] = args?.description;
             resourceInputs["name"] = args?.name;
             resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
             resourceInputs["position"] = args?.position;
@@ -171,13 +178,17 @@ export interface NetworkFirewallPolicyDecryptionRuleState {
      */
     action?: pulumi.Input<string>;
     /**
-     * (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
+     * (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
      */
     condition?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyDecryptionRuleCondition>;
     /**
      * (Updatable) The name of the decryption profile to use.
      */
     decryptionProfile?: pulumi.Input<string>;
+    /**
+     * (Updatable) The description of the decryption rule. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * Name for the decryption rule, must be unique within the policy.
      */
@@ -212,13 +223,17 @@ export interface NetworkFirewallPolicyDecryptionRuleArgs {
      */
     action: pulumi.Input<string>;
     /**
-     * (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
+     * (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
      */
     condition: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyDecryptionRuleCondition>;
     /**
      * (Updatable) The name of the decryption profile to use.
      */
     decryptionProfile?: pulumi.Input<string>;
+    /**
+     * (Updatable) The description of the decryption rule. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * Name for the decryption rule, must be unique within the policy.
      */

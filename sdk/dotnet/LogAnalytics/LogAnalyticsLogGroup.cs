@@ -88,7 +88,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -198,7 +198,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -258,7 +258,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
         /// 
         /// 
         /// ** IMPORTANT **

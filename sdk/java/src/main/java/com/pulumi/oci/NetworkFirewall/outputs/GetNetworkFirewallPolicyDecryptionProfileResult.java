@@ -16,6 +16,11 @@ public final class GetNetworkFirewallPolicyDecryptionProfileResult {
      * 
      */
     private Boolean areCertificateExtensionsRestricted;
+    /**
+     * @return The description of the decryption profile. This field can be used to add additional info.
+     * 
+     */
+    private String description;
     private String id;
     /**
      * @return Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
@@ -81,6 +86,13 @@ public final class GetNetworkFirewallPolicyDecryptionProfileResult {
      */
     public Boolean areCertificateExtensionsRestricted() {
         return this.areCertificateExtensionsRestricted;
+    }
+    /**
+     * @return The description of the decryption profile. This field can be used to add additional info.
+     * 
+     */
+    public String description() {
+        return this.description;
     }
     public String id() {
         return this.id;
@@ -176,6 +188,7 @@ public final class GetNetworkFirewallPolicyDecryptionProfileResult {
     @CustomType.Builder
     public static final class Builder {
         private Boolean areCertificateExtensionsRestricted;
+        private String description;
         private String id;
         private Boolean isAutoIncludeAltName;
         private Boolean isExpiredCertificateBlocked;
@@ -193,6 +206,7 @@ public final class GetNetworkFirewallPolicyDecryptionProfileResult {
         public Builder(GetNetworkFirewallPolicyDecryptionProfileResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.areCertificateExtensionsRestricted = defaults.areCertificateExtensionsRestricted;
+    	      this.description = defaults.description;
     	      this.id = defaults.id;
     	      this.isAutoIncludeAltName = defaults.isAutoIncludeAltName;
     	      this.isExpiredCertificateBlocked = defaults.isExpiredCertificateBlocked;
@@ -214,6 +228,14 @@ public final class GetNetworkFirewallPolicyDecryptionProfileResult {
               throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfileResult", "areCertificateExtensionsRestricted");
             }
             this.areCertificateExtensionsRestricted = areCertificateExtensionsRestricted;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder description(String description) {
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionProfileResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
@@ -323,6 +345,7 @@ public final class GetNetworkFirewallPolicyDecryptionProfileResult {
         public GetNetworkFirewallPolicyDecryptionProfileResult build() {
             final var _resultValue = new GetNetworkFirewallPolicyDecryptionProfileResult();
             _resultValue.areCertificateExtensionsRestricted = areCertificateExtensionsRestricted;
+            _resultValue.description = description;
             _resultValue.id = id;
             _resultValue.isAutoIncludeAltName = isAutoIncludeAltName;
             _resultValue.isExpiredCertificateBlocked = isExpiredCertificateBlocked;

@@ -19,14 +19,14 @@ public final class NetworkFirewallNatConfigurationArgs extends com.pulumi.resour
     public static final NetworkFirewallNatConfigurationArgs Empty = new NetworkFirewallNatConfigurationArgs();
 
     /**
-     * (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+     * (Updatable) The value of this field must be set to true if the network firewall policy being applied contains NAT rules. The value of this field can be set to false if the network firewall policy being applied or the currently attached firewall policy doesn&#39;t contain NAT rules.
      * 
      */
     @Import(name="mustEnablePrivateNat", required=true)
     private Output<Boolean> mustEnablePrivateNat;
 
     /**
-     * @return (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+     * @return (Updatable) The value of this field must be set to true if the network firewall policy being applied contains NAT rules. The value of this field can be set to false if the network firewall policy being applied or the currently attached firewall policy doesn&#39;t contain NAT rules.
      * 
      */
     public Output<Boolean> mustEnablePrivateNat() {
@@ -34,14 +34,14 @@ public final class NetworkFirewallNatConfigurationArgs extends com.pulumi.resour
     }
 
     /**
-     * An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn&#39;t be used for any other purpose in the subnet.
+     * An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn&#39;t be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
      * 
      */
     @Import(name="natIpAddressLists")
     private @Nullable Output<List<String>> natIpAddressLists;
 
     /**
-     * @return An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn&#39;t be used for any other purpose in the subnet.
+     * @return An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn&#39;t be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
      * 
      */
     public Optional<Output<List<String>>> natIpAddressLists() {
@@ -74,7 +74,7 @@ public final class NetworkFirewallNatConfigurationArgs extends com.pulumi.resour
         }
 
         /**
-         * @param mustEnablePrivateNat (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+         * @param mustEnablePrivateNat (Updatable) The value of this field must be set to true if the network firewall policy being applied contains NAT rules. The value of this field can be set to false if the network firewall policy being applied or the currently attached firewall policy doesn&#39;t contain NAT rules.
          * 
          * @return builder
          * 
@@ -85,7 +85,7 @@ public final class NetworkFirewallNatConfigurationArgs extends com.pulumi.resour
         }
 
         /**
-         * @param mustEnablePrivateNat (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+         * @param mustEnablePrivateNat (Updatable) The value of this field must be set to true if the network firewall policy being applied contains NAT rules. The value of this field can be set to false if the network firewall policy being applied or the currently attached firewall policy doesn&#39;t contain NAT rules.
          * 
          * @return builder
          * 
@@ -95,7 +95,7 @@ public final class NetworkFirewallNatConfigurationArgs extends com.pulumi.resour
         }
 
         /**
-         * @param natIpAddressLists An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn&#39;t be used for any other purpose in the subnet.
+         * @param natIpAddressLists An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn&#39;t be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
          * 
          * @return builder
          * 
@@ -106,7 +106,7 @@ public final class NetworkFirewallNatConfigurationArgs extends com.pulumi.resour
         }
 
         /**
-         * @param natIpAddressLists An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn&#39;t be used for any other purpose in the subnet.
+         * @param natIpAddressLists An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn&#39;t be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class NetworkFirewallNatConfigurationArgs extends com.pulumi.resour
         }
 
         /**
-         * @param natIpAddressLists An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn&#39;t be used for any other purpose in the subnet.
+         * @param natIpAddressLists An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn&#39;t be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
          * 
          * @return builder
          * 

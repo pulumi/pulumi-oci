@@ -40,6 +40,7 @@ namespace Pulumi.Oci.NetworkFirewall
     ///             Urls = networkFirewallPolicySecurityRuleConditionUrl,
     ///         },
     ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+    ///         Description = networkFirewallPolicySecurityRuleDescription,
     ///         Inspection = networkFirewallPolicySecurityRuleInspection,
     ///         Positions = new[]
     ///         {
@@ -82,9 +83,15 @@ namespace Pulumi.Oci.NetworkFirewall
         public Output<Outputs.NetworkFirewallPolicySecurityRuleCondition> Condition { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-        /// * INTRUSION_DETECTION - Intrusion Detection.
-        /// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `Type`.
+        /// (Updatable) The description of the security rule. This field can be used to add additional info.
+        /// </summary>
+        [Output("description")]
+        public Output<string?> Description { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Type of inspection to affect the traffic flow.
+        /// * INTRUSION_DETECTION - Intrusion detection.
+        /// * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `Type`.
         /// </summary>
         [Output("inspection")]
         public Output<string?> Inspection { get; private set; } = null!;
@@ -179,9 +186,15 @@ namespace Pulumi.Oci.NetworkFirewall
         public Input<Inputs.NetworkFirewallPolicySecurityRuleConditionArgs> Condition { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-        /// * INTRUSION_DETECTION - Intrusion Detection.
-        /// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `Type`.
+        /// (Updatable) The description of the security rule. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// (Updatable) Type of inspection to affect the traffic flow.
+        /// * INTRUSION_DETECTION - Intrusion detection.
+        /// * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `Type`.
         /// </summary>
         [Input("inspection")]
         public Input<string>? Inspection { get; set; }
@@ -238,9 +251,15 @@ namespace Pulumi.Oci.NetworkFirewall
         public Input<Inputs.NetworkFirewallPolicySecurityRuleConditionGetArgs>? Condition { get; set; }
 
         /// <summary>
-        /// (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-        /// * INTRUSION_DETECTION - Intrusion Detection.
-        /// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `Type`.
+        /// (Updatable) The description of the security rule. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// (Updatable) Type of inspection to affect the traffic flow.
+        /// * INTRUSION_DETECTION - Intrusion detection.
+        /// * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `Type`.
         /// </summary>
         [Input("inspection")]
         public Input<string>? Inspection { get; set; }

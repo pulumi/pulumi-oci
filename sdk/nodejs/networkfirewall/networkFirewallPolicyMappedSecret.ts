@@ -25,6 +25,7 @@ import * as utilities from "../utilities";
  *     type: networkFirewallPolicyMappedSecretType,
  *     vaultSecretId: testSecret.id,
  *     versionNumber: networkFirewallPolicyMappedSecretVersionNumber,
+ *     description: networkFirewallPolicyMappedSecretDescription,
  * });
  * ```
  *
@@ -64,6 +65,10 @@ export class NetworkFirewallPolicyMappedSecret extends pulumi.CustomResource {
         return obj['__pulumiType'] === NetworkFirewallPolicyMappedSecret.__pulumiType;
     }
 
+    /**
+     * (Updatable) The description of the mapped secret. This field can be used to add additional info.
+     */
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * Unique name to identify the group of urls to be used in the policy rules.
      */
@@ -112,6 +117,7 @@ export class NetworkFirewallPolicyMappedSecret extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyMappedSecretState | undefined;
+            resourceInputs["description"] = state?.description;
             resourceInputs["name"] = state?.name;
             resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
             resourceInputs["parentResourceId"] = state?.parentResourceId;
@@ -136,6 +142,7 @@ export class NetworkFirewallPolicyMappedSecret extends pulumi.CustomResource {
             if (args?.versionNumber === undefined && !opts.urn) {
                 throw new Error("Missing required property 'versionNumber'");
             }
+            resourceInputs["description"] = args?.description;
             resourceInputs["name"] = args?.name;
             resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
             resourceInputs["source"] = args?.source;
@@ -153,6 +160,10 @@ export class NetworkFirewallPolicyMappedSecret extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NetworkFirewallPolicyMappedSecret resources.
  */
 export interface NetworkFirewallPolicyMappedSecretState {
+    /**
+     * (Updatable) The description of the mapped secret. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * Unique name to identify the group of urls to be used in the policy rules.
      */
@@ -193,6 +204,10 @@ export interface NetworkFirewallPolicyMappedSecretState {
  * The set of arguments for constructing a NetworkFirewallPolicyMappedSecret resource.
  */
 export interface NetworkFirewallPolicyMappedSecretArgs {
+    /**
+     * (Updatable) The description of the mapped secret. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * Unique name to identify the group of urls to be used in the policy rules.
      */

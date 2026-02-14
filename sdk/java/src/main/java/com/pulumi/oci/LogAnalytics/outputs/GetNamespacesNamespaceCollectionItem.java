@@ -28,16 +28,21 @@ public final class GetNamespacesNamespaceCollectionItem {
     private Boolean isDataEverIngested;
     private Boolean isLogsetEnabled;
     /**
-     * @return This indicates if the tenancy is onboarded to Logging Analytics
+     * @return This indicates if the tenancy is onboarded to Log Analytics
      * 
      */
     private Boolean isOnboarded;
     /**
      * @return This is the namespace name of a tenancy
-     * * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
      * 
      */
     private String namespace;
+    /**
+     * @return The current state of the compartment.
+     * * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
+     * 
+     */
+    private String state;
 
     private GetNamespacesNamespaceCollectionItem() {}
     /**
@@ -65,7 +70,7 @@ public final class GetNamespacesNamespaceCollectionItem {
         return this.isLogsetEnabled;
     }
     /**
-     * @return This indicates if the tenancy is onboarded to Logging Analytics
+     * @return This indicates if the tenancy is onboarded to Log Analytics
      * 
      */
     public Boolean isOnboarded() {
@@ -73,11 +78,18 @@ public final class GetNamespacesNamespaceCollectionItem {
     }
     /**
      * @return This is the namespace name of a tenancy
-     * * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
      * 
      */
     public String namespace() {
         return this.namespace;
+    }
+    /**
+     * @return The current state of the compartment.
+     * * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
+     * 
+     */
+    public String state() {
+        return this.state;
     }
 
     public static Builder builder() {
@@ -95,6 +107,7 @@ public final class GetNamespacesNamespaceCollectionItem {
         private Boolean isLogsetEnabled;
         private Boolean isOnboarded;
         private String namespace;
+        private String state;
         public Builder() {}
         public Builder(GetNamespacesNamespaceCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -104,6 +117,7 @@ public final class GetNamespacesNamespaceCollectionItem {
     	      this.isLogsetEnabled = defaults.isLogsetEnabled;
     	      this.isOnboarded = defaults.isOnboarded;
     	      this.namespace = defaults.namespace;
+    	      this.state = defaults.state;
         }
 
         @CustomType.Setter
@@ -154,6 +168,14 @@ public final class GetNamespacesNamespaceCollectionItem {
             this.namespace = namespace;
             return this;
         }
+        @CustomType.Setter
+        public Builder state(String state) {
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetNamespacesNamespaceCollectionItem", "state");
+            }
+            this.state = state;
+            return this;
+        }
         public GetNamespacesNamespaceCollectionItem build() {
             final var _resultValue = new GetNamespacesNamespaceCollectionItem();
             _resultValue.compartmentId = compartmentId;
@@ -162,6 +184,7 @@ public final class GetNamespacesNamespaceCollectionItem {
             _resultValue.isLogsetEnabled = isLogsetEnabled;
             _resultValue.isOnboarded = isOnboarded;
             _resultValue.namespace = namespace;
+            _resultValue.state = state;
             return _resultValue;
         }
     }

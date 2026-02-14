@@ -53,6 +53,10 @@ export interface GetNetworkFirewallPolicyDecryptionRuleResult {
      * The name of the decryption profile to use.
      */
     readonly decryptionProfile: string;
+    /**
+     * The description of the decryption rule. This field can be used to add additional info.
+     */
+    readonly description: string;
     readonly id: string;
     /**
      * Name for the decryption rule, must be unique within the policy.

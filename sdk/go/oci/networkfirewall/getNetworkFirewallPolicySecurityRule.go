@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,7 +44,9 @@ type LookupNetworkFirewallPolicySecurityRuleResult struct {
 	Action string `pulumi:"action"`
 	// Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
 	Conditions []GetNetworkFirewallPolicySecurityRuleCondition `pulumi:"conditions"`
-	Id         string                                          `pulumi:"id"`
+	// The description of the security rule. This field can be used to add additional info.
+	Description string `pulumi:"description"`
+	Id          string `pulumi:"id"`
 	// Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
 	// * INTRUSION_DETECTION - Intrusion Detection.
 	// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
@@ -109,6 +111,11 @@ func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) Conditions() GetNet
 	return o.ApplyT(func(v LookupNetworkFirewallPolicySecurityRuleResult) []GetNetworkFirewallPolicySecurityRuleCondition {
 		return v.Conditions
 	}).(GetNetworkFirewallPolicySecurityRuleConditionArrayOutput)
+}
+
+// The description of the security rule. This field can be used to add additional info.
+func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicySecurityRuleResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) Id() pulumi.StringOutput {

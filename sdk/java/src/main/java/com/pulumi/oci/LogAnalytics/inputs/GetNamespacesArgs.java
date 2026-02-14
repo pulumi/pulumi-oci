@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespacesFilterArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -40,11 +41,27 @@ public final class GetNamespacesArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * if true, the request is from compartment delete service.
+     * 
+     */
+    @Import(name="isCompartmentDelete")
+    private @Nullable Output<Boolean> isCompartmentDelete;
+
+    /**
+     * @return if true, the request is from compartment delete service.
+     * 
+     */
+    public Optional<Output<Boolean>> isCompartmentDelete() {
+        return Optional.ofNullable(this.isCompartmentDelete);
+    }
+
     private GetNamespacesArgs() {}
 
     private GetNamespacesArgs(GetNamespacesArgs $) {
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
+        this.isCompartmentDelete = $.isCompartmentDelete;
     }
 
     public static Builder builder() {
@@ -97,6 +114,27 @@ public final class GetNamespacesArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder filters(GetNamespacesFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isCompartmentDelete if true, the request is from compartment delete service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCompartmentDelete(@Nullable Output<Boolean> isCompartmentDelete) {
+            $.isCompartmentDelete = isCompartmentDelete;
+            return this;
+        }
+
+        /**
+         * @param isCompartmentDelete if true, the request is from compartment delete service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCompartmentDelete(Boolean isCompartmentDelete) {
+            return isCompartmentDelete(Output.of(isCompartmentDelete));
         }
 
         public GetNamespacesArgs build() {

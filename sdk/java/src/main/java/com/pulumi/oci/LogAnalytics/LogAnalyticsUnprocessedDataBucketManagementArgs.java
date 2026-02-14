@@ -18,14 +18,14 @@ public final class LogAnalyticsUnprocessedDataBucketManagementArgs extends com.p
     public static final LogAnalyticsUnprocessedDataBucketManagementArgs Empty = new LogAnalyticsUnprocessedDataBucketManagementArgs();
 
     /**
-     * Name of the Object Storage bucket.
+     * Name of the Object Storage bucket. Bucket name can be obtained by running &#39;oci os bucket list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;name&#39; parameter value contains the bucket name.
      * 
      */
     @Import(name="bucket", required=true)
     private Output<String> bucket;
 
     /**
-     * @return Name of the Object Storage bucket.
+     * @return Name of the Object Storage bucket. Bucket name can be obtained by running &#39;oci os bucket list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;name&#39; parameter value contains the bucket name.
      * 
      */
     public Output<String> bucket() {
@@ -48,7 +48,7 @@ public final class LogAnalyticsUnprocessedDataBucketManagementArgs extends com.p
     }
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -58,7 +58,7 @@ public final class LogAnalyticsUnprocessedDataBucketManagementArgs extends com.p
     private Output<String> namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -95,7 +95,7 @@ public final class LogAnalyticsUnprocessedDataBucketManagementArgs extends com.p
         }
 
         /**
-         * @param bucket Name of the Object Storage bucket.
+         * @param bucket Name of the Object Storage bucket. Bucket name can be obtained by running &#39;oci os bucket list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;name&#39; parameter value contains the bucket name.
          * 
          * @return builder
          * 
@@ -106,7 +106,7 @@ public final class LogAnalyticsUnprocessedDataBucketManagementArgs extends com.p
         }
 
         /**
-         * @param bucket Name of the Object Storage bucket.
+         * @param bucket Name of the Object Storage bucket. Bucket name can be obtained by running &#39;oci os bucket list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;name&#39; parameter value contains the bucket name.
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class LogAnalyticsUnprocessedDataBucketManagementArgs extends com.p
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -151,7 +151,7 @@ public final class LogAnalyticsUnprocessedDataBucketManagementArgs extends com.p
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

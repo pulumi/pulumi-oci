@@ -24,6 +24,10 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// </summary>
         public readonly Outputs.GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionResult Condition;
         /// <summary>
+        /// The description of the tunnel inspect rule. This field can be used to add additional info.
+        /// </summary>
+        public readonly string? Description;
+        /// <summary>
         /// Name for the Tunnel Inspection Rule, must be unique within the policy.
         /// </summary>
         public readonly string Name;
@@ -59,6 +63,8 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
             Outputs.GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionResult condition,
 
+            string? description,
+
             string name,
 
             string networkFirewallPolicyId,
@@ -75,6 +81,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         {
             Action = action;
             Condition = condition;
+            Description = description;
             Name = name;
             NetworkFirewallPolicyId = networkFirewallPolicyId;
             ParentResourceId = parentResourceId;

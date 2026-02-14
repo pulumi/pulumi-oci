@@ -143,7 +143,7 @@ def get_log_analytics_object_collection_rules(compartment_id: Optional[_builtins
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.str name: A filter to return rules only matching with this name.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str state: Lifecycle state filter.
     """
     __args__ = dict()
@@ -189,7 +189,7 @@ def get_log_analytics_object_collection_rules_output(compartment_id: Optional[pu
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.str name: A filter to return rules only matching with this name.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str state: Lifecycle state filter.
     """
     __args__ = dict()

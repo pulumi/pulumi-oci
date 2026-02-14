@@ -2369,7 +2369,7 @@ public final class NetworkFirewallFunctions {
     /**
      * This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
-     * Get NAT Rule by the given name in the context of network firewall policy.
+     * Get a [NAT rule](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) by the given name in the context of Network Firewall policy.
      * 
      * ## Example Usage
      * 
@@ -2412,7 +2412,7 @@ public final class NetworkFirewallFunctions {
     /**
      * This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
-     * Get NAT Rule by the given name in the context of network firewall policy.
+     * Get a [NAT rule](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) by the given name in the context of Network Firewall policy.
      * 
      * ## Example Usage
      * 
@@ -2455,7 +2455,7 @@ public final class NetworkFirewallFunctions {
     /**
      * This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
-     * Get NAT Rule by the given name in the context of network firewall policy.
+     * Get a [NAT rule](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) by the given name in the context of Network Firewall policy.
      * 
      * ## Example Usage
      * 
@@ -2498,7 +2498,7 @@ public final class NetworkFirewallFunctions {
     /**
      * This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
-     * Get NAT Rule by the given name in the context of network firewall policy.
+     * Get a [NAT rule](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) by the given name in the context of Network Firewall policy.
      * 
      * ## Example Usage
      * 
@@ -2541,7 +2541,7 @@ public final class NetworkFirewallFunctions {
     /**
      * This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
-     * Get NAT Rule by the given name in the context of network firewall policy.
+     * Get a [NAT rule](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) by the given name in the context of Network Firewall policy.
      * 
      * ## Example Usage
      * 
@@ -2584,7 +2584,7 @@ public final class NetworkFirewallFunctions {
     /**
      * This data source provides the list of Network Firewall Policy Nat Rules in Oracle Cloud Infrastructure Network Firewall service.
      * 
-     * Returns a list of NAT Rules for the Network Firewall Policy.
+     * Returns a list of [NAT rules](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
      * 
      * ## Example Usage
      * 
@@ -2628,7 +2628,7 @@ public final class NetworkFirewallFunctions {
     /**
      * This data source provides the list of Network Firewall Policy Nat Rules in Oracle Cloud Infrastructure Network Firewall service.
      * 
-     * Returns a list of NAT Rules for the Network Firewall Policy.
+     * Returns a list of [NAT rules](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
      * 
      * ## Example Usage
      * 
@@ -2672,7 +2672,7 @@ public final class NetworkFirewallFunctions {
     /**
      * This data source provides the list of Network Firewall Policy Nat Rules in Oracle Cloud Infrastructure Network Firewall service.
      * 
-     * Returns a list of NAT Rules for the Network Firewall Policy.
+     * Returns a list of [NAT rules](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
      * 
      * ## Example Usage
      * 
@@ -2716,7 +2716,7 @@ public final class NetworkFirewallFunctions {
     /**
      * This data source provides the list of Network Firewall Policy Nat Rules in Oracle Cloud Infrastructure Network Firewall service.
      * 
-     * Returns a list of NAT Rules for the Network Firewall Policy.
+     * Returns a list of [NAT rules](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
      * 
      * ## Example Usage
      * 
@@ -2760,7 +2760,7 @@ public final class NetworkFirewallFunctions {
     /**
      * This data source provides the list of Network Firewall Policy Nat Rules in Oracle Cloud Infrastructure Network Firewall service.
      * 
-     * Returns a list of NAT Rules for the Network Firewall Policy.
+     * Returns a list of [NAT rules](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
      * 
      * ## Example Usage
      * 

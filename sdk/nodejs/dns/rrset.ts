@@ -14,8 +14,7 @@ import * as utilities from "../utilities";
  *
  *   Updates records in the specified RRSet.
  *
- * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
- * parameter then the viewId query parameter is required.
+ * When accessing a private zone by name, the viewId query parameter is required.
  *
  * ## Example Usage
  *
@@ -33,10 +32,13 @@ import * as utilities from "../utilities";
  *         rtype: rrsetItemsRtype,
  *         ttl: rrsetItemsTtl,
  *     }],
- *     scope: rrsetScope,
  *     viewId: testView.id,
  * });
  * ```
+ *
+ * ## Behavior
+ *
+ * - Create returns HTTP 409 (Conflict) if the target RRSet already contains records. Use Update to modify an existing RRSet, or Delete to remove records.
  *
  * ## Import
  *
@@ -46,13 +48,7 @@ import * as utilities from "../utilities";
  * $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}"
  * ```
  *
- * For Rrsets created using `scope` and `viewId`, these Rrsets can be imported using the `id`, e.g.
- *
- * ```sh
- * $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}"
- * ```
- *
- * skip adding `{view_id}` at the end if Rrset was created without `viewId`.
+ * Note: Legacy RRSet IDs that include scope/viewId remain accepted for import for backward compatibility; however, scope is no longer a supported argument on this resource.
  */
 export class Rrset extends pulumi.CustomResource {
     /**
@@ -83,18 +79,15 @@ export class Rrset extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The OCID of the compartment the zone belongs to.
-     *
-     * This parameter is deprecated and should be omitted.
+     * @deprecated Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
      */
-    declare public readonly compartmentId: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string | undefined>;
     /**
      * The target fully-qualified domain name (FQDN) within the target zone.
      */
     declare public readonly domain: pulumi.Output<string>;
     /**
-     * (Updatable) 
-     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+     * (Updatable)
      */
     declare public readonly items: pulumi.Output<outputs.Dns.RrsetItem[]>;
     /**
@@ -102,7 +95,7 @@ export class Rrset extends pulumi.CustomResource {
      */
     declare public readonly rtype: pulumi.Output<string>;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope.
+     * @deprecated Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
      */
     declare public readonly scope: pulumi.Output<string | undefined>;
     /**
@@ -167,9 +160,7 @@ export class Rrset extends pulumi.CustomResource {
  */
 export interface RrsetState {
     /**
-     * (Updatable) The OCID of the compartment the zone belongs to.
-     *
-     * This parameter is deprecated and should be omitted.
+     * @deprecated Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -177,8 +168,7 @@ export interface RrsetState {
      */
     domain?: pulumi.Input<string>;
     /**
-     * (Updatable) 
-     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+     * (Updatable)
      */
     items?: pulumi.Input<pulumi.Input<inputs.Dns.RrsetItem>[]>;
     /**
@@ -186,7 +176,7 @@ export interface RrsetState {
      */
     rtype?: pulumi.Input<string>;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope.
+     * @deprecated Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
      */
     scope?: pulumi.Input<string>;
     /**
@@ -208,9 +198,7 @@ export interface RrsetState {
  */
 export interface RrsetArgs {
     /**
-     * (Updatable) The OCID of the compartment the zone belongs to.
-     *
-     * This parameter is deprecated and should be omitted.
+     * @deprecated Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -218,8 +206,7 @@ export interface RrsetArgs {
      */
     domain: pulumi.Input<string>;
     /**
-     * (Updatable) 
-     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+     * (Updatable)
      */
     items?: pulumi.Input<pulumi.Input<inputs.Dns.RrsetItem>[]>;
     /**
@@ -227,7 +214,7 @@ export interface RrsetArgs {
      */
     rtype: pulumi.Input<string>;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope.
+     * @deprecated Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
      */
     scope?: pulumi.Input<string>;
     /**

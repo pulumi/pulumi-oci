@@ -5,7 +5,9 @@ package com.pulumi.oci.Desktops.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Desktops.outputs.GetDesktopsDesktopCollectionItemDesktopConnection;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -16,6 +18,11 @@ public final class GetDesktopsDesktopCollectionItem {
      * 
      */
     private Map<String,String> definedTags;
+    /**
+     * @return Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+     * 
+     */
+    private List<GetDesktopsDesktopCollectionItemDesktopConnection> desktopConnections;
     /**
      * @return A filter to return only results with the given displayName.
      * 
@@ -59,6 +66,13 @@ public final class GetDesktopsDesktopCollectionItem {
      */
     public Map<String,String> definedTags() {
         return this.definedTags;
+    }
+    /**
+     * @return Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+     * 
+     */
+    public List<GetDesktopsDesktopCollectionItemDesktopConnection> desktopConnections() {
+        return this.desktopConnections;
     }
     /**
      * @return A filter to return only results with the given displayName.
@@ -120,6 +134,7 @@ public final class GetDesktopsDesktopCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private Map<String,String> definedTags;
+        private List<GetDesktopsDesktopCollectionItemDesktopConnection> desktopConnections;
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
@@ -131,6 +146,7 @@ public final class GetDesktopsDesktopCollectionItem {
         public Builder(GetDesktopsDesktopCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.definedTags = defaults.definedTags;
+    	      this.desktopConnections = defaults.desktopConnections;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -147,6 +163,17 @@ public final class GetDesktopsDesktopCollectionItem {
             }
             this.definedTags = definedTags;
             return this;
+        }
+        @CustomType.Setter
+        public Builder desktopConnections(List<GetDesktopsDesktopCollectionItemDesktopConnection> desktopConnections) {
+            if (desktopConnections == null) {
+              throw new MissingRequiredPropertyException("GetDesktopsDesktopCollectionItem", "desktopConnections");
+            }
+            this.desktopConnections = desktopConnections;
+            return this;
+        }
+        public Builder desktopConnections(GetDesktopsDesktopCollectionItemDesktopConnection... desktopConnections) {
+            return desktopConnections(List.of(desktopConnections));
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
@@ -207,6 +234,7 @@ public final class GetDesktopsDesktopCollectionItem {
         public GetDesktopsDesktopCollectionItem build() {
             final var _resultValue = new GetDesktopsDesktopCollectionItem();
             _resultValue.definedTags = definedTags;
+            _resultValue.desktopConnections = desktopConnections;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;

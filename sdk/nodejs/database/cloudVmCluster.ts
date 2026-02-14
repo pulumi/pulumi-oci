@@ -76,7 +76,9 @@ import * as utilities from "../utilities";
  *     subscriptionId: tenantSubscriptionId,
  *     systemVersion: cloudVmClusterSystemVersion,
  *     timeZone: cloudVmClusterTimeZone,
+ *     vmBackupStorageType: cloudVmClusterVmBackupStorageType,
  *     vmClusterType: cloudVmClusterVmClusterType,
+ *     vmFileSystemStorageType: cloudVmClusterVmFileSystemStorageType,
  * });
  * ```
  *
@@ -366,13 +368,21 @@ export class CloudVmCluster extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly vipv6ids: pulumi.Output<string[]>;
     /**
+     * (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+     */
+    declare public readonly vmBackupStorageType: pulumi.Output<string>;
+    /**
      * The vmcluster type for the VM cluster/Cloud VM cluster.
+     */
+    declare public readonly vmClusterType: pulumi.Output<string>;
+    /**
+     * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    declare public readonly vmClusterType: pulumi.Output<string>;
+    declare public readonly vmFileSystemStorageType: pulumi.Output<string>;
     /**
      * The OCID of the zone the cloud VM cluster is associated with.
      */
@@ -449,7 +459,9 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["timeZone"] = state?.timeZone;
             resourceInputs["vipIds"] = state?.vipIds;
             resourceInputs["vipv6ids"] = state?.vipv6ids;
+            resourceInputs["vmBackupStorageType"] = state?.vmBackupStorageType;
             resourceInputs["vmClusterType"] = state?.vmClusterType;
+            resourceInputs["vmFileSystemStorageType"] = state?.vmFileSystemStorageType;
             resourceInputs["zoneId"] = state?.zoneId;
         } else {
             const args = argsOrState as CloudVmClusterArgs | undefined;
@@ -517,7 +529,9 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["systemVersion"] = args?.systemVersion;
             resourceInputs["tdeKeyStoreType"] = args?.tdeKeyStoreType;
             resourceInputs["timeZone"] = args?.timeZone;
+            resourceInputs["vmBackupStorageType"] = args?.vmBackupStorageType;
             resourceInputs["vmClusterType"] = args?.vmClusterType;
+            resourceInputs["vmFileSystemStorageType"] = args?.vmFileSystemStorageType;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["computeModel"] = undefined /*out*/;
             resourceInputs["diskRedundancy"] = undefined /*out*/;
@@ -800,13 +814,21 @@ export interface CloudVmClusterState {
      */
     vipv6ids?: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+     */
+    vmBackupStorageType?: pulumi.Input<string>;
+    /**
      * The vmcluster type for the VM cluster/Cloud VM cluster.
+     */
+    vmClusterType?: pulumi.Input<string>;
+    /**
+     * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vmClusterType?: pulumi.Input<string>;
+    vmFileSystemStorageType?: pulumi.Input<string>;
     /**
      * The OCID of the zone the cloud VM cluster is associated with.
      */
@@ -983,11 +1005,19 @@ export interface CloudVmClusterArgs {
      */
     timeZone?: pulumi.Input<string>;
     /**
+     * (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+     */
+    vmBackupStorageType?: pulumi.Input<string>;
+    /**
      * The vmcluster type for the VM cluster/Cloud VM cluster.
+     */
+    vmClusterType?: pulumi.Input<string>;
+    /**
+     * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vmClusterType?: pulumi.Input<string>;
+    vmFileSystemStorageType?: pulumi.Input<string>;
 }

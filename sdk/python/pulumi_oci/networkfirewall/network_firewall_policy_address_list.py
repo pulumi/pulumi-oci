@@ -22,6 +22,7 @@ class NetworkFirewallPolicyAddressListArgs:
                  addresses: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  network_firewall_policy_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyAddressList resource.
@@ -32,11 +33,14 @@ class NetworkFirewallPolicyAddressListArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the address list. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Unique name to identify the group of addresses to be used in the policy rules.
         """
         pulumi.set(__self__, "addresses", addresses)
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         pulumi.set(__self__, "type", type)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -82,6 +86,18 @@ class NetworkFirewallPolicyAddressListArgs:
 
     @_builtins.property
     @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The description of the address list. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Unique name to identify the group of addresses to be used in the policy rules.
@@ -97,6 +113,7 @@ class NetworkFirewallPolicyAddressListArgs:
 class _NetworkFirewallPolicyAddressListState:
     def __init__(__self__, *,
                  addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -105,6 +122,7 @@ class _NetworkFirewallPolicyAddressListState:
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyAddressList resources.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] addresses: (Updatable) List of addresses.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the address list. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Unique name to identify the group of addresses to be used in the policy rules.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this Address List belongs to.
@@ -117,6 +135,8 @@ class _NetworkFirewallPolicyAddressListState:
         """
         if addresses is not None:
             pulumi.set(__self__, "addresses", addresses)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if network_firewall_policy_id is not None:
@@ -139,6 +159,18 @@ class _NetworkFirewallPolicyAddressListState:
     @addresses.setter
     def addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "addresses", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The description of the address list. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
@@ -212,6 +244,7 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -234,7 +267,8 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
             name=network_firewall_policy_address_list_name,
             network_firewall_policy_id=test_network_firewall_policy["id"],
             type=network_firewall_policy_address_list_type,
-            addresses=network_firewall_policy_address_list_addresses)
+            addresses=network_firewall_policy_address_list_addresses,
+            description=network_firewall_policy_address_list_description)
         ```
 
         ## Import
@@ -248,6 +282,7 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] addresses: (Updatable) List of addresses.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the address list. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Unique name to identify the group of addresses to be used in the policy rules.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] type: Type of address List. The accepted values are - * FQDN * IP
@@ -280,7 +315,8 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
             name=network_firewall_policy_address_list_name,
             network_firewall_policy_id=test_network_firewall_policy["id"],
             type=network_firewall_policy_address_list_type,
-            addresses=network_firewall_policy_address_list_addresses)
+            addresses=network_firewall_policy_address_list_addresses,
+            description=network_firewall_policy_address_list_description)
         ```
 
         ## Import
@@ -307,6 +343,7 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -322,6 +359,7 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
             if addresses is None and not opts.urn:
                 raise TypeError("Missing required property 'addresses'")
             __props__.__dict__["addresses"] = addresses
+            __props__.__dict__["description"] = description
             __props__.__dict__["name"] = name
             if network_firewall_policy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'network_firewall_policy_id'")
@@ -342,6 +380,7 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
             network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
             parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -355,6 +394,7 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] addresses: (Updatable) List of addresses.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the address list. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Unique name to identify the group of addresses to be used in the policy rules.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this Address List belongs to.
@@ -370,6 +410,7 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
         __props__ = _NetworkFirewallPolicyAddressListState.__new__(_NetworkFirewallPolicyAddressListState)
 
         __props__.__dict__["addresses"] = addresses
+        __props__.__dict__["description"] = description
         __props__.__dict__["name"] = name
         __props__.__dict__["network_firewall_policy_id"] = network_firewall_policy_id
         __props__.__dict__["parent_resource_id"] = parent_resource_id
@@ -384,6 +425,14 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
         (Updatable) List of addresses.
         """
         return pulumi.get(self, "addresses")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Updatable) The description of the address list. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter

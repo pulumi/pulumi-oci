@@ -24,6 +24,7 @@ class NetworkFirewallPolicySecurityRuleArgs:
                  action: pulumi.Input[_builtins.str],
                  condition: pulumi.Input['NetworkFirewallPolicySecurityRuleConditionArgs'],
                  network_firewall_policy_id: pulumi.Input[_builtins.str],
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  inspection: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  positions: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRulePositionArgs']]]] = None,
@@ -37,15 +38,18 @@ class NetworkFirewallPolicySecurityRuleArgs:
                * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
         :param pulumi.Input['NetworkFirewallPolicySecurityRuleConditionArgs'] condition: (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic. The resources mentioned must already be present in the policy before being referenced in the rule.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[_builtins.str] inspection: (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-               * INTRUSION_DETECTION - Intrusion Detection.
-               * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the security rule. This field can be used to add additional info.
+        :param pulumi.Input[_builtins.str] inspection: (Updatable) Type of inspection to affect the traffic flow.
+               * INTRUSION_DETECTION - Intrusion detection.
+               * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
         :param pulumi.Input[_builtins.str] name: Name for the Security rule, must be unique within the policy.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRulePositionArgs']]] positions: (Updatable) An object which defines the position of the rule. Only one of the following position references should be provided.
         """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "condition", condition)
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if inspection is not None:
             pulumi.set(__self__, "inspection", inspection)
         if name is not None:
@@ -97,11 +101,23 @@ class NetworkFirewallPolicySecurityRuleArgs:
 
     @_builtins.property
     @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The description of the security rule. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
     def inspection(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-        * INTRUSION_DETECTION - Intrusion Detection.
-        * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+        (Updatable) Type of inspection to affect the traffic flow.
+        * INTRUSION_DETECTION - Intrusion detection.
+        * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
         """
         return pulumi.get(self, "inspection")
 
@@ -148,6 +164,7 @@ class _NetworkFirewallPolicySecurityRuleState:
     def __init__(__self__, *,
                  action: Optional[pulumi.Input[_builtins.str]] = None,
                  condition: Optional[pulumi.Input['NetworkFirewallPolicySecurityRuleConditionArgs']] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  inspection: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -162,9 +179,10 @@ class _NetworkFirewallPolicySecurityRuleState:
                * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
                * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
         :param pulumi.Input['NetworkFirewallPolicySecurityRuleConditionArgs'] condition: (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic. The resources mentioned must already be present in the policy before being referenced in the rule.
-        :param pulumi.Input[_builtins.str] inspection: (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-               * INTRUSION_DETECTION - Intrusion Detection.
-               * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the security rule. This field can be used to add additional info.
+        :param pulumi.Input[_builtins.str] inspection: (Updatable) Type of inspection to affect the traffic flow.
+               * INTRUSION_DETECTION - Intrusion detection.
+               * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
         :param pulumi.Input[_builtins.str] name: Name for the Security rule, must be unique within the policy.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this security rule belongs to.
@@ -174,6 +192,8 @@ class _NetworkFirewallPolicySecurityRuleState:
             pulumi.set(__self__, "action", action)
         if condition is not None:
             pulumi.set(__self__, "condition", condition)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if inspection is not None:
             pulumi.set(__self__, "inspection", inspection)
         if name is not None:
@@ -217,11 +237,23 @@ class _NetworkFirewallPolicySecurityRuleState:
 
     @_builtins.property
     @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The description of the security rule. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
     def inspection(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-        * INTRUSION_DETECTION - Intrusion Detection.
-        * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+        (Updatable) Type of inspection to affect the traffic flow.
+        * INTRUSION_DETECTION - Intrusion detection.
+        * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
         """
         return pulumi.get(self, "inspection")
 
@@ -295,6 +327,7 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: Optional[pulumi.Input[_builtins.str]] = None,
                  condition: Optional[pulumi.Input[Union['NetworkFirewallPolicySecurityRuleConditionArgs', 'NetworkFirewallPolicySecurityRuleConditionArgsDict']]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  inspection: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -326,6 +359,7 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
                 "urls": network_firewall_policy_security_rule_condition_url,
             },
             network_firewall_policy_id=test_network_firewall_policy["id"],
+            description=network_firewall_policy_security_rule_description,
             inspection=network_firewall_policy_security_rule_inspection,
             positions=[{
                 "after_rule": network_firewall_policy_security_rule_position_after_rule,
@@ -349,9 +383,10 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
                * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
                * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
         :param pulumi.Input[Union['NetworkFirewallPolicySecurityRuleConditionArgs', 'NetworkFirewallPolicySecurityRuleConditionArgsDict']] condition: (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic. The resources mentioned must already be present in the policy before being referenced in the rule.
-        :param pulumi.Input[_builtins.str] inspection: (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-               * INTRUSION_DETECTION - Intrusion Detection.
-               * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the security rule. This field can be used to add additional info.
+        :param pulumi.Input[_builtins.str] inspection: (Updatable) Type of inspection to affect the traffic flow.
+               * INTRUSION_DETECTION - Intrusion detection.
+               * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
         :param pulumi.Input[_builtins.str] name: Name for the Security rule, must be unique within the policy.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicySecurityRulePositionArgs', 'NetworkFirewallPolicySecurityRulePositionArgsDict']]]] positions: (Updatable) An object which defines the position of the rule. Only one of the following position references should be provided.
@@ -387,6 +422,7 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
                 "urls": network_firewall_policy_security_rule_condition_url,
             },
             network_firewall_policy_id=test_network_firewall_policy["id"],
+            description=network_firewall_policy_security_rule_description,
             inspection=network_firewall_policy_security_rule_inspection,
             positions=[{
                 "after_rule": network_firewall_policy_security_rule_position_after_rule,
@@ -419,6 +455,7 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: Optional[pulumi.Input[_builtins.str]] = None,
                  condition: Optional[pulumi.Input[Union['NetworkFirewallPolicySecurityRuleConditionArgs', 'NetworkFirewallPolicySecurityRuleConditionArgsDict']]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
                  inspection: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -439,6 +476,7 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
             if condition is None and not opts.urn:
                 raise TypeError("Missing required property 'condition'")
             __props__.__dict__["condition"] = condition
+            __props__.__dict__["description"] = description
             __props__.__dict__["inspection"] = inspection
             __props__.__dict__["name"] = name
             if network_firewall_policy_id is None and not opts.urn:
@@ -459,6 +497,7 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             action: Optional[pulumi.Input[_builtins.str]] = None,
             condition: Optional[pulumi.Input[Union['NetworkFirewallPolicySecurityRuleConditionArgs', 'NetworkFirewallPolicySecurityRuleConditionArgsDict']]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
             inspection: Optional[pulumi.Input[_builtins.str]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
             network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -478,9 +517,10 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
                * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
                * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
         :param pulumi.Input[Union['NetworkFirewallPolicySecurityRuleConditionArgs', 'NetworkFirewallPolicySecurityRuleConditionArgsDict']] condition: (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic. The resources mentioned must already be present in the policy before being referenced in the rule.
-        :param pulumi.Input[_builtins.str] inspection: (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-               * INTRUSION_DETECTION - Intrusion Detection.
-               * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the security rule. This field can be used to add additional info.
+        :param pulumi.Input[_builtins.str] inspection: (Updatable) Type of inspection to affect the traffic flow.
+               * INTRUSION_DETECTION - Intrusion detection.
+               * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
         :param pulumi.Input[_builtins.str] name: Name for the Security rule, must be unique within the policy.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this security rule belongs to.
@@ -492,6 +532,7 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
 
         __props__.__dict__["action"] = action
         __props__.__dict__["condition"] = condition
+        __props__.__dict__["description"] = description
         __props__.__dict__["inspection"] = inspection
         __props__.__dict__["name"] = name
         __props__.__dict__["network_firewall_policy_id"] = network_firewall_policy_id
@@ -522,11 +563,19 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
+    def description(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Updatable) The description of the security rule. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
     def inspection(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-        * INTRUSION_DETECTION - Intrusion Detection.
-        * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+        (Updatable) Type of inspection to affect the traffic flow.
+        * INTRUSION_DETECTION - Intrusion detection.
+        * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
         """
         return pulumi.get(self, "inspection")
 

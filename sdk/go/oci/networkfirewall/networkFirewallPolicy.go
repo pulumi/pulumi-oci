@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -38,6 +38,7 @@ import (
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
+//				Description: pulumi.Any(networkFirewallPolicyDescription),
 //				DisplayName: pulumi.Any(networkFirewallPolicyDisplayName),
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
@@ -74,6 +75,8 @@ type NetworkFirewallPolicy struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
+	// (Updatable) The description of the network firewall policy. This field can be used to add additional info.
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -132,6 +135,8 @@ type networkFirewallPolicyState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// (Updatable) The description of the network firewall policy. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -158,6 +163,8 @@ type NetworkFirewallPolicyState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
+	// (Updatable) The description of the network firewall policy. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -186,6 +193,8 @@ type networkFirewallPolicyArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// (Updatable) The description of the network firewall policy. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -201,6 +210,8 @@ type NetworkFirewallPolicyArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
+	// (Updatable) The description of the network firewall policy. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -310,6 +321,11 @@ func (o NetworkFirewallPolicyOutput) CompartmentId() pulumi.StringOutput {
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o NetworkFirewallPolicyOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) The description of the network firewall policy. This field can be used to add additional info.
+func (o NetworkFirewallPolicyOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.

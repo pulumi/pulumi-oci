@@ -15,21 +15,9 @@ public final class GetRrsetPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetRrsetPlainArgs Empty = new GetRrsetPlainArgs();
 
-    /**
-     * The OCID of the compartment the zone belongs to.
-     * 
-     * This parameter is deprecated and should be omitted.
-     * 
-     */
     @Import(name="compartmentId")
     private @Nullable String compartmentId;
 
-    /**
-     * @return The OCID of the compartment the zone belongs to.
-     * 
-     * This parameter is deprecated and should be omitted.
-     * 
-     */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
@@ -64,17 +52,9 @@ public final class GetRrsetPlainArgs extends com.pulumi.resources.InvokeArgs {
         return this.rtype;
     }
 
-    /**
-     * Specifies to operate only on resources that have a matching DNS scope.
-     * 
-     */
     @Import(name="scope")
     private @Nullable String scope;
 
-    /**
-     * @return Specifies to operate only on resources that have a matching DNS scope.
-     * 
-     */
     public Optional<String> scope() {
         return Optional.ofNullable(this.scope);
     }
@@ -154,14 +134,6 @@ public final class GetRrsetPlainArgs extends com.pulumi.resources.InvokeArgs {
             $ = new GetRrsetPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param compartmentId The OCID of the compartment the zone belongs to.
-         * 
-         * This parameter is deprecated and should be omitted.
-         * 
-         * @return builder
-         * 
-         */
         public Builder compartmentId(@Nullable String compartmentId) {
             $.compartmentId = compartmentId;
             return this;
@@ -189,12 +161,6 @@ public final class GetRrsetPlainArgs extends com.pulumi.resources.InvokeArgs {
             return this;
         }
 
-        /**
-         * @param scope Specifies to operate only on resources that have a matching DNS scope.
-         * 
-         * @return builder
-         * 
-         */
         public Builder scope(@Nullable String scope) {
             $.scope = scope;
             return this;

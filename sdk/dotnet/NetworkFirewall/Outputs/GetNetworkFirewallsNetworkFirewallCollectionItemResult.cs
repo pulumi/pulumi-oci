@@ -50,7 +50,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Nat Configuration response.
+        /// Response to a request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationResult> NatConfigurations;
         /// <summary>
@@ -61,6 +61,10 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
         /// </summary>
         public readonly ImmutableArray<string> NetworkSecurityGroupIds;
+        /// <summary>
+        /// The shape of a firewall to determine the bandwidth that the firewall allows.
+        /// </summary>
+        public readonly string Shape;
         /// <summary>
         /// A filter to return only resources with a lifecycleState matching the given value.
         /// </summary>
@@ -108,6 +112,8 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
             ImmutableArray<string> networkSecurityGroupIds,
 
+            string shape,
+
             string state,
 
             string subnetId,
@@ -130,6 +136,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
             NatConfigurations = natConfigurations;
             NetworkFirewallPolicyId = networkFirewallPolicyId;
             NetworkSecurityGroupIds = networkSecurityGroupIds;
+            Shape = shape;
             State = state;
             SubnetId = subnetId;
             SystemTags = systemTags;

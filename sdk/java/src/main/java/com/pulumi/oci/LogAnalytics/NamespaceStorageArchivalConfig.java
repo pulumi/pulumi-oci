@@ -52,6 +52,7 @@ import javax.annotation.Nullable;
  *             .archivingConfiguration(NamespaceStorageArchivalConfigArchivingConfigurationArgs.builder()
  *                 .activeStorageDuration(namespaceStorageArchivalConfigArchivingConfigurationActiveStorageDuration)
  *                 .archivalStorageDuration(namespaceStorageArchivalConfigArchivingConfigurationArchivalStorageDuration)
+ *                 .timeOldestActiveBucketEnded(namespaceStorageArchivalConfigArchivingConfigurationTimeOldestActiveBucketEnded)
  *                 .build())
  *             .namespace(namespaceStorageArchivalConfigNamespace)
  *             .build());
@@ -93,20 +94,14 @@ public class NamespaceStorageArchivalConfig extends com.pulumi.resources.CustomR
         return this.isArchivingEnabled;
     }
     /**
-     * The Logging Analytics namespace used for the request.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public Output<String> namespace() {

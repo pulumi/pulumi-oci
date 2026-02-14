@@ -109,7 +109,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+        /// (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
         /// </summary>
         [Output("entityId")]
         public Output<string> EntityId { get; private set; } = null!;
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+        /// (Updatable) Log Analytics Log group OCID to associate the processed logs with.
         /// </summary>
         [Output("logGroupId")]
         public Output<string> LogGroupId { get; private set; } = null!;
@@ -169,7 +169,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> LogSetKey { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Name of the Logging Analytics Source to use for the processing.
+        /// (Updatable) Name of the Log Analytics Source to use for the processing.
         /// </summary>
         [Output("logSourceName")]
         public Output<string> LogSourceName { get; private set; } = null!;
@@ -187,7 +187,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Output("namespace")]
         public Output<string> Namespace { get; private set; } = null!;
@@ -247,7 +247,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> StreamCursorType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        /// (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         /// </summary>
         [Output("streamId")]
         public Output<string> StreamId { get; private set; } = null!;
@@ -357,7 +357,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+        /// (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
         /// </summary>
         [Input("entityId")]
         public Input<string>? EntityId { get; set; }
@@ -387,7 +387,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<bool>? IsForceHistoricCollection { get; set; }
 
         /// <summary>
-        /// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+        /// (Updatable) Log Analytics Log group OCID to associate the processed logs with.
         /// </summary>
         [Input("logGroupId", required: true)]
         public Input<string> LogGroupId { get; set; } = null!;
@@ -411,7 +411,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? LogSetKey { get; set; }
 
         /// <summary>
-        /// (Updatable) Name of the Logging Analytics Source to use for the processing.
+        /// (Updatable) Name of the Log Analytics Source to use for the processing.
         /// </summary>
         [Input("logSourceName")]
         public Input<string>? LogSourceName { get; set; }
@@ -429,7 +429,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
@@ -495,7 +495,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? StreamCursorType { get; set; }
 
         /// <summary>
-        /// (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        /// (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         /// </summary>
         [Input("streamId")]
         public Input<string>? StreamId { get; set; }
@@ -555,7 +555,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
+        /// (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
         /// </summary>
         [Input("entityId")]
         public Input<string>? EntityId { get; set; }
@@ -597,7 +597,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+        /// (Updatable) Log Analytics Log group OCID to associate the processed logs with.
         /// </summary>
         [Input("logGroupId")]
         public Input<string>? LogGroupId { get; set; }
@@ -621,7 +621,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? LogSetKey { get; set; }
 
         /// <summary>
-        /// (Updatable) Name of the Logging Analytics Source to use for the processing.
+        /// (Updatable) Name of the Log Analytics Source to use for the processing.
         /// </summary>
         [Input("logSourceName")]
         public Input<string>? LogSourceName { get; set; }
@@ -639,7 +639,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
@@ -711,7 +711,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? StreamCursorType { get; set; }
 
         /// <summary>
-        /// (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        /// (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         /// </summary>
         [Input("streamId")]
         public Input<string>? StreamId { get; set; }

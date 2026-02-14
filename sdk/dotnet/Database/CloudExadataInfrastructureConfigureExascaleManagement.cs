@@ -285,6 +285,9 @@ namespace Pulumi.Oci.Database
         [Output("totalStorageSizeInGbs")]
         public Output<int> TotalStorageSizeInGbs { get; private set; } = null!;
 
+        [Output("totalVmStorageInGbs")]
+        public Output<int> TotalVmStorageInGbs { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a CloudExadataInfrastructureConfigureExascaleManagement resource with the given unique name, arguments, and options.
@@ -346,6 +349,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("totalStorageInGbs", required: true)]
         public Input<int> TotalStorageInGbs { get; set; } = null!;
+
+        [Input("totalVmStorageInGbs")]
+        public Input<int>? TotalVmStorageInGbs { get; set; }
 
         public CloudExadataInfrastructureConfigureExascaleManagementArgs()
         {
@@ -634,6 +640,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("totalStorageSizeInGbs")]
         public Input<int>? TotalStorageSizeInGbs { get; set; }
+
+        [Input("totalVmStorageInGbs")]
+        public Input<int>? TotalVmStorageInGbs { get; set; }
 
         public CloudExadataInfrastructureConfigureExascaleManagementState()
         {

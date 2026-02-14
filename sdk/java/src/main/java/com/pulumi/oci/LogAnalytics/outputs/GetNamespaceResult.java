@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetNamespaceResult {
     /**
-     * @return The is the tenancy ID
+     * @return This is the tenancy ID
      * 
      */
     private String compartmentId;
@@ -33,20 +33,25 @@ public final class GetNamespaceResult {
     private Boolean isDataEverIngested;
     private Boolean isLogsetEnabled;
     /**
-     * @return This indicates if the tenancy is onboarded to Logging Analytics
+     * @return This indicates if the tenancy is onboarded to Log Analytics
      * 
      */
     private Boolean isOnboarded;
     /**
      * @return This is the namespace name of a tenancy
-     * * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
      * 
      */
     private String namespace;
+    /**
+     * @return The current state of the compartment.
+     * * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
+     * 
+     */
+    private String state;
 
     private GetNamespaceResult() {}
     /**
-     * @return The is the tenancy ID
+     * @return This is the tenancy ID
      * 
      */
     public String compartmentId() {
@@ -77,7 +82,7 @@ public final class GetNamespaceResult {
         return this.isLogsetEnabled;
     }
     /**
-     * @return This indicates if the tenancy is onboarded to Logging Analytics
+     * @return This indicates if the tenancy is onboarded to Log Analytics
      * 
      */
     public Boolean isOnboarded() {
@@ -85,11 +90,18 @@ public final class GetNamespaceResult {
     }
     /**
      * @return This is the namespace name of a tenancy
-     * * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
      * 
      */
     public String namespace() {
         return this.namespace;
+    }
+    /**
+     * @return The current state of the compartment.
+     * * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
+     * 
+     */
+    public String state() {
+        return this.state;
     }
 
     public static Builder builder() {
@@ -108,6 +120,7 @@ public final class GetNamespaceResult {
         private Boolean isLogsetEnabled;
         private Boolean isOnboarded;
         private String namespace;
+        private String state;
         public Builder() {}
         public Builder(GetNamespaceResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -118,6 +131,7 @@ public final class GetNamespaceResult {
     	      this.isLogsetEnabled = defaults.isLogsetEnabled;
     	      this.isOnboarded = defaults.isOnboarded;
     	      this.namespace = defaults.namespace;
+    	      this.state = defaults.state;
         }
 
         @CustomType.Setter
@@ -176,6 +190,14 @@ public final class GetNamespaceResult {
             this.namespace = namespace;
             return this;
         }
+        @CustomType.Setter
+        public Builder state(String state) {
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceResult", "state");
+            }
+            this.state = state;
+            return this;
+        }
         public GetNamespaceResult build() {
             final var _resultValue = new GetNamespaceResult();
             _resultValue.compartmentId = compartmentId;
@@ -185,6 +207,7 @@ public final class GetNamespaceResult {
             _resultValue.isLogsetEnabled = isLogsetEnabled;
             _resultValue.isOnboarded = isOnboarded;
             _resultValue.namespace = namespace;
+            _resultValue.state = state;
             return _resultValue;
         }
     }

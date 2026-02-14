@@ -17,14 +17,14 @@ public final class LogAnalyticsUnprocessedDataBucketManagementState extends com.
     public static final LogAnalyticsUnprocessedDataBucketManagementState Empty = new LogAnalyticsUnprocessedDataBucketManagementState();
 
     /**
-     * Name of the Object Storage bucket.
+     * Name of the Object Storage bucket. Bucket name can be obtained by running &#39;oci os bucket list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;name&#39; parameter value contains the bucket name.
      * 
      */
     @Import(name="bucket")
     private @Nullable Output<String> bucket;
 
     /**
-     * @return Name of the Object Storage bucket.
+     * @return Name of the Object Storage bucket. Bucket name can be obtained by running &#39;oci os bucket list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;name&#39; parameter value contains the bucket name.
      * 
      */
     public Optional<Output<String>> bucket() {
@@ -47,7 +47,7 @@ public final class LogAnalyticsUnprocessedDataBucketManagementState extends com.
     }
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -57,7 +57,7 @@ public final class LogAnalyticsUnprocessedDataBucketManagementState extends com.
     private @Nullable Output<String> namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -126,7 +126,7 @@ public final class LogAnalyticsUnprocessedDataBucketManagementState extends com.
         }
 
         /**
-         * @param bucket Name of the Object Storage bucket.
+         * @param bucket Name of the Object Storage bucket. Bucket name can be obtained by running &#39;oci os bucket list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;name&#39; parameter value contains the bucket name.
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class LogAnalyticsUnprocessedDataBucketManagementState extends com.
         }
 
         /**
-         * @param bucket Name of the Object Storage bucket.
+         * @param bucket Name of the Object Storage bucket. Bucket name can be obtained by running &#39;oci os bucket list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;name&#39; parameter value contains the bucket name.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class LogAnalyticsUnprocessedDataBucketManagementState extends com.
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -182,7 +182,7 @@ public final class LogAnalyticsUnprocessedDataBucketManagementState extends com.
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

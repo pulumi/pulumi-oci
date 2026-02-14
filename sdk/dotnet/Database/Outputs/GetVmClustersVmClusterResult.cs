@@ -145,6 +145,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string TimeZone;
         /// <summary>
+        /// Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
+        /// </summary>
+        public readonly string VmBackupStorageType;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         /// </summary>
         public readonly string VmClusterNetworkId;
@@ -152,6 +156,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// A filter to return only vmclusters that match the given vmcluster type exactly.
         /// </summary>
         public readonly string VmClusterType;
+        /// <summary>
+        /// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+        /// </summary>
+        public readonly string VmFileSystemStorageType;
 
         [OutputConstructor]
         private GetVmClustersVmClusterResult(
@@ -225,9 +233,13 @@ namespace Pulumi.Oci.Database.Outputs
 
             string timeZone,
 
+            string vmBackupStorageType,
+
             string vmClusterNetworkId,
 
-            string vmClusterType)
+            string vmClusterType,
+
+            string vmFileSystemStorageType)
         {
             AvailabilityDomain = availabilityDomain;
             CloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
@@ -264,8 +276,10 @@ namespace Pulumi.Oci.Database.Outputs
             SystemVersion = systemVersion;
             TimeCreated = timeCreated;
             TimeZone = timeZone;
+            VmBackupStorageType = vmBackupStorageType;
             VmClusterNetworkId = vmClusterNetworkId;
             VmClusterType = vmClusterType;
+            VmFileSystemStorageType = vmFileSystemStorageType;
         }
     }
 }

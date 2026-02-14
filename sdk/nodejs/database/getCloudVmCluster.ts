@@ -276,9 +276,17 @@ export interface GetCloudVmClusterResult {
      */
     readonly vipv6ids: string[];
     /**
+     * Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+     */
+    readonly vmBackupStorageType: string;
+    /**
      * The vmcluster type for the VM cluster/Cloud VM cluster.
      */
     readonly vmClusterType: string;
+    /**
+     * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+     */
+    readonly vmFileSystemStorageType: string;
     /**
      * The OCID of the zone the cloud VM cluster is associated with.
      */

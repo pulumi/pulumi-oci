@@ -1,5 +1,5 @@
 provider: oci
-major-version: 3
+major-version: 4
 providerDefaultBranch: main
 parallel: 1
 timeout: 90

@@ -8,6 +8,10 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
+import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemArgs;
+import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemPlainArgs;
+import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemsArgs;
+import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetApplicationVipArgs;
 import com.pulumi.oci.Database.inputs.GetApplicationVipPlainArgs;
 import com.pulumi.oci.Database.inputs.GetApplicationVipsArgs;
@@ -322,6 +326,8 @@ import com.pulumi.oci.Database.inputs.GetVmClusterUpdatesArgs;
 import com.pulumi.oci.Database.inputs.GetVmClusterUpdatesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetVmClustersArgs;
 import com.pulumi.oci.Database.inputs.GetVmClustersPlainArgs;
+import com.pulumi.oci.Database.outputs.GetAdvancedClusterFileSystemResult;
+import com.pulumi.oci.Database.outputs.GetAdvancedClusterFileSystemsResult;
 import com.pulumi.oci.Database.outputs.GetApplicationVipResult;
 import com.pulumi.oci.Database.outputs.GetApplicationVipsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousCharacterSetsResult;
@@ -485,6 +491,446 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class DatabaseFunctions {
+    /**
+     * This data source provides details about a specific Advanced Cluster File System resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified advanced cluster file systems.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAdvancedClusterFileSystem = DatabaseFunctions.getAdvancedClusterFileSystem(GetAdvancedClusterFileSystemArgs.builder()
+     *             .advancedClusterFileSystemId(testAdvancedClusterFileSystemOciDatabaseAdvancedClusterFileSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAdvancedClusterFileSystemResult> getAdvancedClusterFileSystem(GetAdvancedClusterFileSystemArgs args) {
+        return getAdvancedClusterFileSystem(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Advanced Cluster File System resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified advanced cluster file systems.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAdvancedClusterFileSystem = DatabaseFunctions.getAdvancedClusterFileSystem(GetAdvancedClusterFileSystemArgs.builder()
+     *             .advancedClusterFileSystemId(testAdvancedClusterFileSystemOciDatabaseAdvancedClusterFileSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAdvancedClusterFileSystemResult> getAdvancedClusterFileSystemPlain(GetAdvancedClusterFileSystemPlainArgs args) {
+        return getAdvancedClusterFileSystemPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Advanced Cluster File System resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified advanced cluster file systems.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAdvancedClusterFileSystem = DatabaseFunctions.getAdvancedClusterFileSystem(GetAdvancedClusterFileSystemArgs.builder()
+     *             .advancedClusterFileSystemId(testAdvancedClusterFileSystemOciDatabaseAdvancedClusterFileSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAdvancedClusterFileSystemResult> getAdvancedClusterFileSystem(GetAdvancedClusterFileSystemArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAdvancedClusterFileSystem:getAdvancedClusterFileSystem", TypeShape.of(GetAdvancedClusterFileSystemResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Advanced Cluster File System resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified advanced cluster file systems.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAdvancedClusterFileSystem = DatabaseFunctions.getAdvancedClusterFileSystem(GetAdvancedClusterFileSystemArgs.builder()
+     *             .advancedClusterFileSystemId(testAdvancedClusterFileSystemOciDatabaseAdvancedClusterFileSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAdvancedClusterFileSystemResult> getAdvancedClusterFileSystem(GetAdvancedClusterFileSystemArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAdvancedClusterFileSystem:getAdvancedClusterFileSystem", TypeShape.of(GetAdvancedClusterFileSystemResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Advanced Cluster File System resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified advanced cluster file systems.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAdvancedClusterFileSystem = DatabaseFunctions.getAdvancedClusterFileSystem(GetAdvancedClusterFileSystemArgs.builder()
+     *             .advancedClusterFileSystemId(testAdvancedClusterFileSystemOciDatabaseAdvancedClusterFileSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAdvancedClusterFileSystemResult> getAdvancedClusterFileSystemPlain(GetAdvancedClusterFileSystemPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getAdvancedClusterFileSystem:getAdvancedClusterFileSystem", TypeShape.of(GetAdvancedClusterFileSystemResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Advanced Cluster File Systems in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the advanced cluster file system resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAdvancedClusterFileSystems = DatabaseFunctions.getAdvancedClusterFileSystems(GetAdvancedClusterFileSystemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(advancedClusterFileSystemName)
+     *             .resourceId(testResource.id())
+     *             .state(advancedClusterFileSystemState)
+     *             .vmClusterId(testVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAdvancedClusterFileSystemsResult> getAdvancedClusterFileSystems(GetAdvancedClusterFileSystemsArgs args) {
+        return getAdvancedClusterFileSystems(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Advanced Cluster File Systems in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the advanced cluster file system resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAdvancedClusterFileSystems = DatabaseFunctions.getAdvancedClusterFileSystems(GetAdvancedClusterFileSystemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(advancedClusterFileSystemName)
+     *             .resourceId(testResource.id())
+     *             .state(advancedClusterFileSystemState)
+     *             .vmClusterId(testVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAdvancedClusterFileSystemsResult> getAdvancedClusterFileSystemsPlain(GetAdvancedClusterFileSystemsPlainArgs args) {
+        return getAdvancedClusterFileSystemsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Advanced Cluster File Systems in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the advanced cluster file system resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAdvancedClusterFileSystems = DatabaseFunctions.getAdvancedClusterFileSystems(GetAdvancedClusterFileSystemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(advancedClusterFileSystemName)
+     *             .resourceId(testResource.id())
+     *             .state(advancedClusterFileSystemState)
+     *             .vmClusterId(testVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAdvancedClusterFileSystemsResult> getAdvancedClusterFileSystems(GetAdvancedClusterFileSystemsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAdvancedClusterFileSystems:getAdvancedClusterFileSystems", TypeShape.of(GetAdvancedClusterFileSystemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Advanced Cluster File Systems in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the advanced cluster file system resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAdvancedClusterFileSystems = DatabaseFunctions.getAdvancedClusterFileSystems(GetAdvancedClusterFileSystemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(advancedClusterFileSystemName)
+     *             .resourceId(testResource.id())
+     *             .state(advancedClusterFileSystemState)
+     *             .vmClusterId(testVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAdvancedClusterFileSystemsResult> getAdvancedClusterFileSystems(GetAdvancedClusterFileSystemsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAdvancedClusterFileSystems:getAdvancedClusterFileSystems", TypeShape.of(GetAdvancedClusterFileSystemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Advanced Cluster File Systems in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the advanced cluster file system resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAdvancedClusterFileSystems = DatabaseFunctions.getAdvancedClusterFileSystems(GetAdvancedClusterFileSystemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(advancedClusterFileSystemName)
+     *             .resourceId(testResource.id())
+     *             .state(advancedClusterFileSystemState)
+     *             .vmClusterId(testVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAdvancedClusterFileSystemsResult> getAdvancedClusterFileSystemsPlain(GetAdvancedClusterFileSystemsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getAdvancedClusterFileSystems:getAdvancedClusterFileSystems", TypeShape.of(GetAdvancedClusterFileSystemsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Application Vip resource in Oracle Cloud Infrastructure Database service.
      * 

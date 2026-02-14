@@ -6,6 +6,7 @@ package com.pulumi.oci.LogAnalytics.inputs;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespacesFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -39,11 +40,27 @@ public final class GetNamespacesPlainArgs extends com.pulumi.resources.InvokeArg
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * if true, the request is from compartment delete service.
+     * 
+     */
+    @Import(name="isCompartmentDelete")
+    private @Nullable Boolean isCompartmentDelete;
+
+    /**
+     * @return if true, the request is from compartment delete service.
+     * 
+     */
+    public Optional<Boolean> isCompartmentDelete() {
+        return Optional.ofNullable(this.isCompartmentDelete);
+    }
+
     private GetNamespacesPlainArgs() {}
 
     private GetNamespacesPlainArgs(GetNamespacesPlainArgs $) {
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
+        this.isCompartmentDelete = $.isCompartmentDelete;
     }
 
     public static Builder builder() {
@@ -82,6 +99,17 @@ public final class GetNamespacesPlainArgs extends com.pulumi.resources.InvokeArg
 
         public Builder filters(GetNamespacesFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isCompartmentDelete if true, the request is from compartment delete service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCompartmentDelete(@Nullable Boolean isCompartmentDelete) {
+            $.isCompartmentDelete = isCompartmentDelete;
+            return this;
         }
 
         public GetNamespacesPlainArgs build() {

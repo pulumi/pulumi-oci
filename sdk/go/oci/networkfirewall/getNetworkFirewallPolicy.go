@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -64,6 +64,8 @@ type LookupNetworkFirewallPolicyResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The description of the network firewall policy. This field can be used to add additional info.
+	Description string `pulumi:"description"`
 	// A user-friendly optional name for the firewall policy. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -130,6 +132,11 @@ func (o LookupNetworkFirewallPolicyResultOutput) CompartmentId() pulumi.StringOu
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o LookupNetworkFirewallPolicyResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupNetworkFirewallPolicyResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The description of the network firewall policy. This field can be used to add additional info.
+func (o LookupNetworkFirewallPolicyResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 // A user-friendly optional name for the firewall policy. Avoid entering confidential information.

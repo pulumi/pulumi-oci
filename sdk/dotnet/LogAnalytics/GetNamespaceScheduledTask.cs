@@ -97,7 +97,7 @@ namespace Pulumi.Oci.LogAnalytics
     public sealed class GetNamespaceScheduledTaskArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace", required: true)]
         public string Namespace { get; set; } = null!;
@@ -117,7 +117,7 @@ namespace Pulumi.Oci.LogAnalytics
     public sealed class GetNamespaceScheduledTaskInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
@@ -150,6 +150,10 @@ namespace Pulumi.Oci.LogAnalytics
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
+        /// <summary>
+        /// Description for this resource.
+        /// </summary>
+        public readonly string Description;
         /// <summary>
         /// A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
         /// </summary>
@@ -188,7 +192,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+        /// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
         /// </summary>
         public readonly string TaskStatus;
         /// <summary>
@@ -215,6 +219,8 @@ namespace Pulumi.Oci.LogAnalytics
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
+
+            string description,
 
             string displayName,
 
@@ -249,6 +255,7 @@ namespace Pulumi.Oci.LogAnalytics
             Actions = actions;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
+            Description = description;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;

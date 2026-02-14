@@ -34,7 +34,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Logging Analytics entity OCID to associate the processed logs with.
+        /// Log Analytics entity OCID to associate the processed logs with.
         /// </summary>
         public readonly string EntityId;
         /// <summary>
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Logging Analytics Log group OCID to associate the processed logs with.
+        /// Log Analytics Log group OCID to associate the processed logs with.
         /// </summary>
         public readonly string LogGroupId;
         /// <summary>
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string LogSetKey;
         /// <summary>
-        /// Name of the Logging Analytics Source to use for the processing.
+        /// Name of the Log Analytics Source to use for the processing.
         /// </summary>
         public readonly string LogSourceName;
         /// <summary>
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         public readonly string Namespace;
         /// <summary>
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string StreamCursorType;
         /// <summary>
-        /// A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        /// A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         /// </summary>
         public readonly string StreamId;
         /// <summary>

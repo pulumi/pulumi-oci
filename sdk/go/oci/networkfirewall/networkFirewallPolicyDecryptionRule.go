@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -45,13 +45,14 @@ import (
 //					DestinationAddresses: pulumi.Any(networkFirewallPolicyDecryptionRuleConditionDestinationAddress),
 //					SourceAddresses:      pulumi.Any(networkFirewallPolicyDecryptionRuleConditionSourceAddress),
 //				},
+//				NetworkFirewallPolicyId: pulumi.Any(testNetworkFirewallPolicy.Id),
+//				Description:             pulumi.Any(networkFirewallPolicyDecryptionRuleDescription),
+//				DecryptionProfile:       pulumi.Any(networkFirewallPolicyDecryptionRuleDecryptionProfile),
+//				Secret:                  pulumi.Any(networkFirewallPolicyDecryptionRuleSecret),
 //				Position: &networkfirewall.NetworkFirewallPolicyDecryptionRulePositionArgs{
 //					AfterRule:  pulumi.Any(networkFirewallPolicyDecryptionRulePositionAfterRule),
 //					BeforeRule: pulumi.Any(networkFirewallPolicyDecryptionRulePositionBeforeRule),
 //				},
-//				NetworkFirewallPolicyId: pulumi.Any(testNetworkFirewallPolicy.Id),
-//				DecryptionProfile:       pulumi.Any(networkFirewallPolicyDecryptionRuleDecryptionProfile),
-//				Secret:                  pulumi.Any(networkFirewallPolicyDecryptionRuleSecret),
 //			})
 //			if err != nil {
 //				return err
@@ -76,10 +77,12 @@ type NetworkFirewallPolicyDecryptionRule struct {
 	// * NO_DECRYPT - Matching traffic is not decrypted.
 	// * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
 	Action pulumi.StringOutput `pulumi:"action"`
-	// (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
+	// (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
 	Condition NetworkFirewallPolicyDecryptionRuleConditionOutput `pulumi:"condition"`
 	// (Updatable) The name of the decryption profile to use.
 	DecryptionProfile pulumi.StringPtrOutput `pulumi:"decryptionProfile"`
+	// (Updatable) The description of the decryption rule. This field can be used to add additional info.
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// Name for the decryption rule, must be unique within the policy.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -136,10 +139,12 @@ type networkFirewallPolicyDecryptionRuleState struct {
 	// * NO_DECRYPT - Matching traffic is not decrypted.
 	// * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
 	Action *string `pulumi:"action"`
-	// (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
+	// (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
 	Condition *NetworkFirewallPolicyDecryptionRuleCondition `pulumi:"condition"`
 	// (Updatable) The name of the decryption profile to use.
 	DecryptionProfile *string `pulumi:"decryptionProfile"`
+	// (Updatable) The description of the decryption rule. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Name for the decryption rule, must be unique within the policy.
 	Name *string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -158,10 +163,12 @@ type NetworkFirewallPolicyDecryptionRuleState struct {
 	// * NO_DECRYPT - Matching traffic is not decrypted.
 	// * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
 	Action pulumi.StringPtrInput
-	// (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
+	// (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
 	Condition NetworkFirewallPolicyDecryptionRuleConditionPtrInput
 	// (Updatable) The name of the decryption profile to use.
 	DecryptionProfile pulumi.StringPtrInput
+	// (Updatable) The description of the decryption rule. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
 	// Name for the decryption rule, must be unique within the policy.
 	Name pulumi.StringPtrInput
 	// Unique Network Firewall Policy identifier
@@ -184,10 +191,12 @@ type networkFirewallPolicyDecryptionRuleArgs struct {
 	// * NO_DECRYPT - Matching traffic is not decrypted.
 	// * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
 	Action string `pulumi:"action"`
-	// (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
+	// (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
 	Condition NetworkFirewallPolicyDecryptionRuleCondition `pulumi:"condition"`
 	// (Updatable) The name of the decryption profile to use.
 	DecryptionProfile *string `pulumi:"decryptionProfile"`
+	// (Updatable) The description of the decryption rule. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
 	// Name for the decryption rule, must be unique within the policy.
 	Name *string `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -205,10 +214,12 @@ type NetworkFirewallPolicyDecryptionRuleArgs struct {
 	// * NO_DECRYPT - Matching traffic is not decrypted.
 	// * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
 	Action pulumi.StringInput
-	// (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
+	// (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
 	Condition NetworkFirewallPolicyDecryptionRuleConditionInput
 	// (Updatable) The name of the decryption profile to use.
 	DecryptionProfile pulumi.StringPtrInput
+	// (Updatable) The description of the decryption rule. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
 	// Name for the decryption rule, must be unique within the policy.
 	Name pulumi.StringPtrInput
 	// Unique Network Firewall Policy identifier
@@ -314,7 +325,7 @@ func (o NetworkFirewallPolicyDecryptionRuleOutput) Action() pulumi.StringOutput 
 	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionRule) pulumi.StringOutput { return v.Action }).(pulumi.StringOutput)
 }
 
-// (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
+// (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
 func (o NetworkFirewallPolicyDecryptionRuleOutput) Condition() NetworkFirewallPolicyDecryptionRuleConditionOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionRule) NetworkFirewallPolicyDecryptionRuleConditionOutput {
 		return v.Condition
@@ -324,6 +335,11 @@ func (o NetworkFirewallPolicyDecryptionRuleOutput) Condition() NetworkFirewallPo
 // (Updatable) The name of the decryption profile to use.
 func (o NetworkFirewallPolicyDecryptionRuleOutput) DecryptionProfile() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionRule) pulumi.StringPtrOutput { return v.DecryptionProfile }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The description of the decryption rule. This field can be used to add additional info.
+func (o NetworkFirewallPolicyDecryptionRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionRule) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Name for the decryption rule, must be unique within the policy.

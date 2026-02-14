@@ -54,6 +54,12 @@ namespace Pulumi.Oci.Desktops.Inputs
         [Input("isPrintingEnabled", required: true)]
         public Input<bool> IsPrintingEnabled { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Indicates whether video input is enabled.
+        /// </summary>
+        [Input("isVideoInputEnabled")]
+        public Input<bool>? IsVideoInputEnabled { get; set; }
+
         public DesktopPoolDevicePolicyGetArgs()
         {
         }

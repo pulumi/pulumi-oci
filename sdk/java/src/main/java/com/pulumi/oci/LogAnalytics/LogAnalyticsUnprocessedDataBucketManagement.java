@@ -66,14 +66,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:LogAnalytics/logAnalyticsUnprocessedDataBucketManagement:LogAnalyticsUnprocessedDataBucketManagement")
 public class LogAnalyticsUnprocessedDataBucketManagement extends com.pulumi.resources.CustomResource {
     /**
-     * Name of the Object Storage bucket.
+     * Name of the Object Storage bucket. Bucket name can be obtained by running &#39;oci os bucket list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;name&#39; parameter value contains the bucket name.
      * 
      */
     @Export(name="bucket", refs={String.class}, tree="[0]")
     private Output<String> bucket;
 
     /**
-     * @return Name of the Object Storage bucket.
+     * @return Name of the Object Storage bucket. Bucket name can be obtained by running &#39;oci os bucket list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;name&#39; parameter value contains the bucket name.
      * 
      */
     public Output<String> bucket() {
@@ -94,7 +94,7 @@ public class LogAnalyticsUnprocessedDataBucketManagement extends com.pulumi.reso
         return this.isEnabled;
     }
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -104,7 +104,7 @@ public class LogAnalyticsUnprocessedDataBucketManagement extends com.pulumi.reso
     private Output<String> namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

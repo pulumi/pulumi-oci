@@ -37,14 +37,14 @@ public final class NetworkFirewallPolicyDecryptionRuleState extends com.pulumi.r
     }
 
     /**
-     * (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
+     * (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<NetworkFirewallPolicyDecryptionRuleConditionArgs> condition;
 
     /**
-     * @return (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
+     * @return (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
      * 
      */
     public Optional<Output<NetworkFirewallPolicyDecryptionRuleConditionArgs>> condition() {
@@ -64,6 +64,21 @@ public final class NetworkFirewallPolicyDecryptionRuleState extends com.pulumi.r
      */
     public Optional<Output<String>> decryptionProfile() {
         return Optional.ofNullable(this.decryptionProfile);
+    }
+
+    /**
+     * (Updatable) The description of the decryption rule. This field can be used to add additional info.
+     * 
+     */
+    @Import(name="description")
+    private @Nullable Output<String> description;
+
+    /**
+     * @return (Updatable) The description of the decryption rule. This field can be used to add additional info.
+     * 
+     */
+    public Optional<Output<String>> description() {
+        return Optional.ofNullable(this.description);
     }
 
     /**
@@ -154,6 +169,7 @@ public final class NetworkFirewallPolicyDecryptionRuleState extends com.pulumi.r
         this.action = $.action;
         this.condition = $.condition;
         this.decryptionProfile = $.decryptionProfile;
+        this.description = $.description;
         this.name = $.name;
         this.networkFirewallPolicyId = $.networkFirewallPolicyId;
         this.parentResourceId = $.parentResourceId;
@@ -206,7 +222,7 @@ public final class NetworkFirewallPolicyDecryptionRuleState extends com.pulumi.r
         }
 
         /**
-         * @param condition (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
+         * @param condition (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
          * 
          * @return builder
          * 
@@ -217,7 +233,7 @@ public final class NetworkFirewallPolicyDecryptionRuleState extends com.pulumi.r
         }
 
         /**
-         * @param condition (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
+         * @param condition (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
          * 
          * @return builder
          * 
@@ -245,6 +261,27 @@ public final class NetworkFirewallPolicyDecryptionRuleState extends com.pulumi.r
          */
         public Builder decryptionProfile(String decryptionProfile) {
             return decryptionProfile(Output.of(decryptionProfile));
+        }
+
+        /**
+         * @param description (Updatable) The description of the decryption rule. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(@Nullable Output<String> description) {
+            $.description = description;
+            return this;
+        }
+
+        /**
+         * @param description (Updatable) The description of the decryption rule. This field can be used to add additional info.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(String description) {
+            return description(Output.of(description));
         }
 
         /**

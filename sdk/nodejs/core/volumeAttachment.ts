@@ -114,6 +114,10 @@ export class VolumeAttachment extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly ipv4: pulumi.Output<string>;
     /**
+     * The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
+     */
+    declare public /*out*/ readonly ipv6: pulumi.Output<string>;
+    /**
      * The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
      */
     declare public /*out*/ readonly iqn: pulumi.Output<string>;
@@ -197,6 +201,7 @@ export class VolumeAttachment extends pulumi.CustomResource {
             resourceInputs["encryptionInTransitType"] = state?.encryptionInTransitType;
             resourceInputs["instanceId"] = state?.instanceId;
             resourceInputs["ipv4"] = state?.ipv4;
+            resourceInputs["ipv6"] = state?.ipv6;
             resourceInputs["iqn"] = state?.iqn;
             resourceInputs["isAgentAutoIscsiLoginEnabled"] = state?.isAgentAutoIscsiLoginEnabled;
             resourceInputs["isMultipath"] = state?.isMultipath;
@@ -238,6 +243,7 @@ export class VolumeAttachment extends pulumi.CustomResource {
             resourceInputs["chapSecret"] = undefined /*out*/;
             resourceInputs["chapUsername"] = undefined /*out*/;
             resourceInputs["ipv4"] = undefined /*out*/;
+            resourceInputs["ipv6"] = undefined /*out*/;
             resourceInputs["iqn"] = undefined /*out*/;
             resourceInputs["isMultipath"] = undefined /*out*/;
             resourceInputs["isVolumeCreatedDuringLaunch"] = undefined /*out*/;
@@ -298,6 +304,10 @@ export interface VolumeAttachmentState {
      * The volume's iSCSI IP address.  Example: `169.254.2.2`
      */
     ipv4?: pulumi.Input<string>;
+    /**
+     * The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
+     */
+    ipv6?: pulumi.Input<string>;
     /**
      * The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
      */

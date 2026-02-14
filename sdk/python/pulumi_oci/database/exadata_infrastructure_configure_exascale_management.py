@@ -22,7 +22,8 @@ __all__ = ['ExadataInfrastructureConfigureExascaleManagementArgs', 'ExadataInfra
 class ExadataInfrastructureConfigureExascaleManagementArgs:
     def __init__(__self__, *,
                  exadata_infrastructure_id: pulumi.Input[_builtins.str],
-                 total_storage_in_gbs: pulumi.Input[_builtins.int]):
+                 total_storage_in_gbs: pulumi.Input[_builtins.int],
+                 total_vm_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a ExadataInfrastructureConfigureExascaleManagement resource.
         :param pulumi.Input[_builtins.str] exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -34,6 +35,8 @@ class ExadataInfrastructureConfigureExascaleManagementArgs:
         """
         pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
         pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+        if total_vm_storage_in_gbs is not None:
+            pulumi.set(__self__, "total_vm_storage_in_gbs", total_vm_storage_in_gbs)
 
     @_builtins.property
     @pulumi.getter(name="exadataInfrastructureId")
@@ -62,6 +65,15 @@ class ExadataInfrastructureConfigureExascaleManagementArgs:
     @total_storage_in_gbs.setter
     def total_storage_in_gbs(self, value: pulumi.Input[_builtins.int]):
         pulumi.set(self, "total_storage_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalVmStorageInGbs")
+    def total_vm_storage_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        return pulumi.get(self, "total_vm_storage_in_gbs")
+
+    @total_vm_storage_in_gbs.setter
+    def total_vm_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "total_vm_storage_in_gbs", value)
 
 
 @pulumi.input_type
@@ -116,7 +128,8 @@ class _ExadataInfrastructureConfigureExascaleManagementState:
                  storage_server_version: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
+                 total_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
+                 total_vm_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ExadataInfrastructureConfigureExascaleManagement resources.
         :param pulumi.Input[_builtins.int] activated_storage_count: The requested number of additional storage servers activated for the Exadata infrastructure.
@@ -274,6 +287,8 @@ class _ExadataInfrastructureConfigureExascaleManagementState:
             pulumi.set(__self__, "time_zone", time_zone)
         if total_storage_in_gbs is not None:
             pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+        if total_vm_storage_in_gbs is not None:
+            pulumi.set(__self__, "total_vm_storage_in_gbs", total_vm_storage_in_gbs)
 
     @_builtins.property
     @pulumi.getter(name="activatedStorageCount")
@@ -879,6 +894,15 @@ class _ExadataInfrastructureConfigureExascaleManagementState:
     def total_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "total_storage_in_gbs", value)
 
+    @_builtins.property
+    @pulumi.getter(name="totalVmStorageInGbs")
+    def total_vm_storage_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        return pulumi.get(self, "total_vm_storage_in_gbs")
+
+    @total_vm_storage_in_gbs.setter
+    def total_vm_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "total_vm_storage_in_gbs", value)
+
 
 @pulumi.type_token("oci:Database/exadataInfrastructureConfigureExascaleManagement:ExadataInfrastructureConfigureExascaleManagement")
 class ExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResource):
@@ -888,6 +912,7 @@ class ExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
                  total_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
+                 total_vm_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Exadata Infrastructure Configure Exascale Management resource in Oracle Cloud Infrastructure Database service.
@@ -969,6 +994,7 @@ class ExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
                  total_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
+                 total_vm_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -984,6 +1010,7 @@ class ExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResource):
             if total_storage_in_gbs is None and not opts.urn:
                 raise TypeError("Missing required property 'total_storage_in_gbs'")
             __props__.__dict__["total_storage_in_gbs"] = total_storage_in_gbs
+            __props__.__dict__["total_vm_storage_in_gbs"] = total_vm_storage_in_gbs
             __props__.__dict__["activated_storage_count"] = None
             __props__.__dict__["additional_compute_count"] = None
             __props__.__dict__["additional_compute_system_model"] = None
@@ -1091,7 +1118,8 @@ class ExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResource):
             storage_server_version: Optional[pulumi.Input[_builtins.str]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-            total_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None) -> 'ExadataInfrastructureConfigureExascaleManagement':
+            total_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
+            total_vm_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None) -> 'ExadataInfrastructureConfigureExascaleManagement':
         """
         Get an existing ExadataInfrastructureConfigureExascaleManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1208,6 +1236,7 @@ class ExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_zone"] = time_zone
         __props__.__dict__["total_storage_in_gbs"] = total_storage_in_gbs
+        __props__.__dict__["total_vm_storage_in_gbs"] = total_vm_storage_in_gbs
         return ExadataInfrastructureConfigureExascaleManagement(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
@@ -1613,4 +1642,9 @@ class ExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResource):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "total_storage_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="totalVmStorageInGbs")
+    def total_vm_storage_in_gbs(self) -> pulumi.Output[_builtins.int]:
+        return pulumi.get(self, "total_vm_storage_in_gbs")
 

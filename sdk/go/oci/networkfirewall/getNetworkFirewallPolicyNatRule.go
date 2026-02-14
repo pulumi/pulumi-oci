@@ -7,13 +7,13 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
 //
-// Get NAT Rule by the given name in the context of network firewall policy.
+// Get a [NAT rule](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) by the given name in the context of Network Firewall policy.
 //
 // ## Example Usage
 //
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -53,7 +53,7 @@ func LookupNetworkFirewallPolicyNatRule(ctx *pulumi.Context, args *LookupNetwork
 
 // A collection of arguments for invoking getNetworkFirewallPolicyNatRule.
 type LookupNetworkFirewallPolicyNatRuleArgs struct {
-	// Unique identifier for NAT Rules in the network firewall policy.
+	// Unique identifier for NAT rules in the Network Firewall policy.
 	NatRuleName string `pulumi:"natRuleName"`
 	// Unique Network Firewall Policy identifier
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
@@ -64,7 +64,7 @@ type LookupNetworkFirewallPolicyNatRuleResult struct {
 	// action:
 	// * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
 	Action string `pulumi:"action"`
-	// Match criteria used in NAT Rule used on the firewall policy.
+	// Match criteria used in NAT rule used on the firewall policy.
 	Conditions []GetNetworkFirewallPolicyNatRuleCondition `pulumi:"conditions"`
 	// Description of a NAT rule. This field can be used to add additional info.
 	Description string `pulumi:"description"`
@@ -73,7 +73,7 @@ type LookupNetworkFirewallPolicyNatRuleResult struct {
 	Name                    string `pulumi:"name"`
 	NatRuleName             string `pulumi:"natRuleName"`
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
-	// OCID of the Network Firewall Policy this decryption profile belongs to.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
 	ParentResourceId string `pulumi:"parentResourceId"`
 	// An object which defines the position of the rule.
 	Positions []GetNetworkFirewallPolicyNatRulePosition `pulumi:"positions"`
@@ -95,7 +95,7 @@ func LookupNetworkFirewallPolicyNatRuleOutput(ctx *pulumi.Context, args LookupNe
 
 // A collection of arguments for invoking getNetworkFirewallPolicyNatRule.
 type LookupNetworkFirewallPolicyNatRuleOutputArgs struct {
-	// Unique identifier for NAT Rules in the network firewall policy.
+	// Unique identifier for NAT rules in the Network Firewall policy.
 	NatRuleName pulumi.StringInput `pulumi:"natRuleName"`
 	// Unique Network Firewall Policy identifier
 	NetworkFirewallPolicyId pulumi.StringInput `pulumi:"networkFirewallPolicyId"`
@@ -126,7 +126,7 @@ func (o LookupNetworkFirewallPolicyNatRuleResultOutput) Action() pulumi.StringOu
 	return o.ApplyT(func(v LookupNetworkFirewallPolicyNatRuleResult) string { return v.Action }).(pulumi.StringOutput)
 }
 
-// Match criteria used in NAT Rule used on the firewall policy.
+// Match criteria used in NAT rule used on the firewall policy.
 func (o LookupNetworkFirewallPolicyNatRuleResultOutput) Conditions() GetNetworkFirewallPolicyNatRuleConditionArrayOutput {
 	return o.ApplyT(func(v LookupNetworkFirewallPolicyNatRuleResult) []GetNetworkFirewallPolicyNatRuleCondition {
 		return v.Conditions
@@ -155,7 +155,7 @@ func (o LookupNetworkFirewallPolicyNatRuleResultOutput) NetworkFirewallPolicyId(
 	return o.ApplyT(func(v LookupNetworkFirewallPolicyNatRuleResult) string { return v.NetworkFirewallPolicyId }).(pulumi.StringOutput)
 }
 
-// OCID of the Network Firewall Policy this decryption profile belongs to.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
 func (o LookupNetworkFirewallPolicyNatRuleResultOutput) ParentResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNetworkFirewallPolicyNatRuleResult) string { return v.ParentResourceId }).(pulumi.StringOutput)
 }

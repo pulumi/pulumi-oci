@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -44,6 +44,7 @@ import (
 //					Urls:                 pulumi.Any(networkFirewallPolicySecurityRuleConditionUrl),
 //				},
 //				NetworkFirewallPolicyId: pulumi.Any(testNetworkFirewallPolicy.Id),
+//				Description:             pulumi.Any(networkFirewallPolicySecurityRuleDescription),
 //				Inspection:              pulumi.Any(networkFirewallPolicySecurityRuleInspection),
 //				Positions: networkfirewall.NetworkFirewallPolicySecurityRulePositionArray{
 //					&networkfirewall.NetworkFirewallPolicySecurityRulePositionArgs{
@@ -79,9 +80,11 @@ type NetworkFirewallPolicySecurityRule struct {
 	Action pulumi.StringOutput `pulumi:"action"`
 	// (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic. The resources mentioned must already be present in the policy before being referenced in the rule.
 	Condition NetworkFirewallPolicySecurityRuleConditionOutput `pulumi:"condition"`
-	// (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-	// * INTRUSION_DETECTION - Intrusion Detection.
-	// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+	// (Updatable) The description of the security rule. This field can be used to add additional info.
+	Description pulumi.StringPtrOutput `pulumi:"description"`
+	// (Updatable) Type of inspection to affect the traffic flow.
+	// * INTRUSION_DETECTION - Intrusion detection.
+	// * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
 	Inspection pulumi.StringPtrOutput `pulumi:"inspection"`
 	// Name for the Security rule, must be unique within the policy.
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -141,9 +144,11 @@ type networkFirewallPolicySecurityRuleState struct {
 	Action *string `pulumi:"action"`
 	// (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic. The resources mentioned must already be present in the policy before being referenced in the rule.
 	Condition *NetworkFirewallPolicySecurityRuleCondition `pulumi:"condition"`
-	// (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-	// * INTRUSION_DETECTION - Intrusion Detection.
-	// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+	// (Updatable) The description of the security rule. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
+	// (Updatable) Type of inspection to affect the traffic flow.
+	// * INTRUSION_DETECTION - Intrusion detection.
+	// * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
 	Inspection *string `pulumi:"inspection"`
 	// Name for the Security rule, must be unique within the policy.
 	Name *string `pulumi:"name"`
@@ -165,9 +170,11 @@ type NetworkFirewallPolicySecurityRuleState struct {
 	Action pulumi.StringPtrInput
 	// (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic. The resources mentioned must already be present in the policy before being referenced in the rule.
 	Condition NetworkFirewallPolicySecurityRuleConditionPtrInput
-	// (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-	// * INTRUSION_DETECTION - Intrusion Detection.
-	// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+	// (Updatable) The description of the security rule. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
+	// (Updatable) Type of inspection to affect the traffic flow.
+	// * INTRUSION_DETECTION - Intrusion detection.
+	// * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
 	Inspection pulumi.StringPtrInput
 	// Name for the Security rule, must be unique within the policy.
 	Name pulumi.StringPtrInput
@@ -193,9 +200,11 @@ type networkFirewallPolicySecurityRuleArgs struct {
 	Action string `pulumi:"action"`
 	// (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic. The resources mentioned must already be present in the policy before being referenced in the rule.
 	Condition NetworkFirewallPolicySecurityRuleCondition `pulumi:"condition"`
-	// (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-	// * INTRUSION_DETECTION - Intrusion Detection.
-	// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+	// (Updatable) The description of the security rule. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
+	// (Updatable) Type of inspection to affect the traffic flow.
+	// * INTRUSION_DETECTION - Intrusion detection.
+	// * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
 	Inspection *string `pulumi:"inspection"`
 	// Name for the Security rule, must be unique within the policy.
 	Name *string `pulumi:"name"`
@@ -216,9 +225,11 @@ type NetworkFirewallPolicySecurityRuleArgs struct {
 	Action pulumi.StringInput
 	// (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic. The resources mentioned must already be present in the policy before being referenced in the rule.
 	Condition NetworkFirewallPolicySecurityRuleConditionInput
-	// (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-	// * INTRUSION_DETECTION - Intrusion Detection.
-	// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+	// (Updatable) The description of the security rule. This field can be used to add additional info.
+	Description pulumi.StringPtrInput
+	// (Updatable) Type of inspection to affect the traffic flow.
+	// * INTRUSION_DETECTION - Intrusion detection.
+	// * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
 	Inspection pulumi.StringPtrInput
 	// Name for the Security rule, must be unique within the policy.
 	Name pulumi.StringPtrInput
@@ -332,9 +343,14 @@ func (o NetworkFirewallPolicySecurityRuleOutput) Condition() NetworkFirewallPoli
 	}).(NetworkFirewallPolicySecurityRuleConditionOutput)
 }
 
-// (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-// * INTRUSION_DETECTION - Intrusion Detection.
-// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+// (Updatable) The description of the security rule. This field can be used to add additional info.
+func (o NetworkFirewallPolicySecurityRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicySecurityRule) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of inspection to affect the traffic flow.
+// * INTRUSION_DETECTION - Intrusion detection.
+// * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
 func (o NetworkFirewallPolicySecurityRuleOutput) Inspection() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicySecurityRule) pulumi.StringPtrOutput { return v.Inspection }).(pulumi.StringPtrOutput)
 }

@@ -155,8 +155,8 @@ def get_log_analytics_entity_types(cloud_type: Optional[_builtins.str] = None,
     :param _builtins.str cloud_type: A filter to return CLOUD or NON_CLOUD entity types.
     :param _builtins.str name: A filter to return only log analytics entity types whose name matches the entire name given. The match is case-insensitive.
     :param _builtins.str name_contains: A filter to return only log analytics entity types whose name or internalName contains name given. The match is case-insensitive.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
-    :param _builtins.str state: A filter to return only those log analytics entity types with the specified lifecycle state. The state value is case-insensitive.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
+    :param _builtins.str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()
     __args__['cloudType'] = cloud_type
@@ -206,8 +206,8 @@ def get_log_analytics_entity_types_output(cloud_type: Optional[pulumi.Input[Opti
     :param _builtins.str cloud_type: A filter to return CLOUD or NON_CLOUD entity types.
     :param _builtins.str name: A filter to return only log analytics entity types whose name matches the entire name given. The match is case-insensitive.
     :param _builtins.str name_contains: A filter to return only log analytics entity types whose name or internalName contains name given. The match is case-insensitive.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
-    :param _builtins.str state: A filter to return only those log analytics entity types with the specified lifecycle state. The state value is case-insensitive.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
+    :param _builtins.str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()
     __args__['cloudType'] = cloud_type

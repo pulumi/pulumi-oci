@@ -222,8 +222,8 @@ def get_namespace_ingest_time_rule(ingest_time_rule_id: Optional[_builtins.str] 
     ```
 
 
-    :param _builtins.str ingest_time_rule_id: Unique ocid of the ingest time rule.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str ingest_time_rule_id: Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['ingestTimeRuleId'] = ingest_time_rule_id
@@ -265,8 +265,8 @@ def get_namespace_ingest_time_rule_output(ingest_time_rule_id: Optional[pulumi.I
     ```
 
 
-    :param _builtins.str ingest_time_rule_id: Unique ocid of the ingest time rule.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str ingest_time_rule_id: Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['ingestTimeRuleId'] = ingest_time_rule_id

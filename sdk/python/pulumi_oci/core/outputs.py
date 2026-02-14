@@ -25358,6 +25358,7 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
                  gpu_memory_fabric_id: _builtins.str,
                  has_impacted_components: _builtins.bool,
                  health: _builtins.str,
+                 host_correlation_id: _builtins.str,
                  hpc_island_id: _builtins.str,
                  id: _builtins.str,
                  instance_id: _builtins.str,
@@ -25380,6 +25381,7 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str gpu_memory_fabric_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique GPU Memory Fabric
         :param _builtins.str health: The heathy state of the host
+        :param _builtins.str host_correlation_id: The ID that remains consistent when a host moves between capacity pools within the same tenancy.
         :param _builtins.str hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique host
         :param _builtins.str instance_id: The public [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Virtual Machine or Bare Metal instance
@@ -25403,6 +25405,7 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
         pulumi.set(__self__, "gpu_memory_fabric_id", gpu_memory_fabric_id)
         pulumi.set(__self__, "has_impacted_components", has_impacted_components)
         pulumi.set(__self__, "health", health)
+        pulumi.set(__self__, "host_correlation_id", host_correlation_id)
         pulumi.set(__self__, "hpc_island_id", hpc_island_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "instance_id", instance_id)
@@ -25506,6 +25509,14 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
         The heathy state of the host
         """
         return pulumi.get(self, "health")
+
+    @_builtins.property
+    @pulumi.getter(name="hostCorrelationId")
+    def host_correlation_id(self) -> _builtins.str:
+        """
+        The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+        """
+        return pulumi.get(self, "host_correlation_id")
 
     @_builtins.property
     @pulumi.getter(name="hpcIslandId")
@@ -51979,6 +51990,7 @@ class GetVolumeAttachmentsVolumeAttachmentResult(dict):
                  id: _builtins.str,
                  instance_id: _builtins.str,
                  ipv4: _builtins.str,
+                 ipv6: _builtins.str,
                  iqn: _builtins.str,
                  is_agent_auto_iscsi_login_enabled: _builtins.bool,
                  is_multipath: _builtins.bool,
@@ -52005,6 +52017,7 @@ class GetVolumeAttachmentsVolumeAttachmentResult(dict):
         :param _builtins.str id: The OCID of the volume attachment.
         :param _builtins.str instance_id: The OCID of the instance.
         :param _builtins.str ipv4: The volume's iSCSI IP address.  Example: `169.254.2.2`
+        :param _builtins.str ipv6: The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
         :param _builtins.str iqn: The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
         :param _builtins.bool is_agent_auto_iscsi_login_enabled: Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
         :param _builtins.bool is_multipath: Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
@@ -52030,6 +52043,7 @@ class GetVolumeAttachmentsVolumeAttachmentResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "instance_id", instance_id)
         pulumi.set(__self__, "ipv4", ipv4)
+        pulumi.set(__self__, "ipv6", ipv6)
         pulumi.set(__self__, "iqn", iqn)
         pulumi.set(__self__, "is_agent_auto_iscsi_login_enabled", is_agent_auto_iscsi_login_enabled)
         pulumi.set(__self__, "is_multipath", is_multipath)
@@ -52133,6 +52147,14 @@ class GetVolumeAttachmentsVolumeAttachmentResult(dict):
         The volume's iSCSI IP address.  Example: `169.254.2.2`
         """
         return pulumi.get(self, "ipv4")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6(self) -> _builtins.str:
+        """
+        The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
+        """
+        return pulumi.get(self, "ipv6")
 
     @_builtins.property
     @pulumi.getter

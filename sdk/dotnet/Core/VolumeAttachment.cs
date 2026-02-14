@@ -117,6 +117,12 @@ namespace Pulumi.Oci.Core
         public Output<string> Ipv4 { get; private set; } = null!;
 
         /// <summary>
+        /// The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
+        /// </summary>
+        [Output("ipv6")]
+        public Output<string> Ipv6 { get; private set; } = null!;
+
+        /// <summary>
         /// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
         /// </summary>
         [Output("iqn")]
@@ -393,6 +399,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("ipv4")]
         public Input<string>? Ipv4 { get; set; }
+
+        /// <summary>
+        /// The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
+        /// </summary>
+        [Input("ipv6")]
+        public Input<string>? Ipv6 { get; set; }
 
         /// <summary>
         /// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`

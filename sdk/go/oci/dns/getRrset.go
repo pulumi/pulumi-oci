@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -15,8 +15,7 @@ import (
 //
 // Gets a list of all records in the specified RRSet.
 //
-// The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
-// and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
+// The results are sorted by `recordHash` by default. When accessing a private zone by name, the `viewId` parameter is required.
 //
 // ## Example Usage
 //
@@ -25,7 +24,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/dns"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/dns"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -36,7 +35,6 @@ import (
 //				Domain:       rrsetDomain,
 //				Rtype:        rrsetRtype,
 //				ZoneNameOrId: testZone.Id,
-//				Scope:        pulumi.StringRef(rrsetScope),
 //				ViewId:       pulumi.StringRef(testView.Id),
 //			}, nil)
 //			if err != nil {
@@ -59,15 +57,11 @@ func LookupRrset(ctx *pulumi.Context, args *LookupRrsetArgs, opts ...pulumi.Invo
 
 // A collection of arguments for invoking getRrset.
 type LookupRrsetArgs struct {
-	// The OCID of the compartment the zone belongs to.
-	//
-	// This parameter is deprecated and should be omitted.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain string `pulumi:"domain"`
 	// The type of the target RRSet within the target zone.
-	Rtype string `pulumi:"rtype"`
-	// Specifies to operate only on resources that have a matching DNS scope.
+	Rtype string  `pulumi:"rtype"`
 	Scope *string `pulumi:"scope"`
 	// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 	ViewId *string `pulumi:"viewId"`
@@ -103,15 +97,11 @@ func LookupRrsetOutput(ctx *pulumi.Context, args LookupRrsetOutputArgs, opts ...
 
 // A collection of arguments for invoking getRrset.
 type LookupRrsetOutputArgs struct {
-	// The OCID of the compartment the zone belongs to.
-	//
-	// This parameter is deprecated and should be omitted.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain pulumi.StringInput `pulumi:"domain"`
 	// The type of the target RRSet within the target zone.
-	Rtype pulumi.StringInput `pulumi:"rtype"`
-	// Specifies to operate only on resources that have a matching DNS scope.
+	Rtype pulumi.StringInput    `pulumi:"rtype"`
 	Scope pulumi.StringPtrInput `pulumi:"scope"`
 	// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 	ViewId pulumi.StringPtrInput `pulumi:"viewId"`

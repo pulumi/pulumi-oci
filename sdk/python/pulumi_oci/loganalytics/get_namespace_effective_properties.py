@@ -183,7 +183,7 @@ def get_namespace_effective_properties(agent_id: Optional[_builtins.str] = None,
     :param _builtins.str entity_id: The entity ocid.
     :param _builtins.bool is_include_patterns: The include pattern flag.
     :param _builtins.str name: The property name used for filtering.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.int pattern_id: The pattern id.
     :param _builtins.str pattern_id_long: The pattern id (long).
     :param _builtins.str source_name: The source name.
@@ -249,7 +249,7 @@ def get_namespace_effective_properties_output(agent_id: Optional[pulumi.Input[Op
     :param _builtins.str entity_id: The entity ocid.
     :param _builtins.bool is_include_patterns: The include pattern flag.
     :param _builtins.str name: The property name used for filtering.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.int pattern_id: The pattern id.
     :param _builtins.str pattern_id_long: The pattern id (long).
     :param _builtins.str source_name: The source name.

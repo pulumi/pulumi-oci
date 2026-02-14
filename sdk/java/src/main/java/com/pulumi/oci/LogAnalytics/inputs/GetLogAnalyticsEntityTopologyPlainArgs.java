@@ -40,14 +40,14 @@ public final class GetLogAnalyticsEntityTopologyPlainArgs extends com.pulumi.res
     }
 
     /**
-     * The log analytics entity OCID.
+     * The log analytics entity ID [OCID]. Entity ID can be obtained by running &#39;oci log-analytics entity list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;id&#39; parameter value contains the entity ID.
      * 
      */
     @Import(name="logAnalyticsEntityId", required=true)
     private String logAnalyticsEntityId;
 
     /**
-     * @return The log analytics entity OCID.
+     * @return The log analytics entity ID [OCID]. Entity ID can be obtained by running &#39;oci log-analytics entity list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;id&#39; parameter value contains the entity ID.
      * 
      */
     public String logAnalyticsEntityId() {
@@ -70,14 +70,14 @@ public final class GetLogAnalyticsEntityTopologyPlainArgs extends com.pulumi.res
     }
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     @Import(name="namespace", required=true)
     private String namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public String namespace() {
@@ -149,7 +149,7 @@ public final class GetLogAnalyticsEntityTopologyPlainArgs extends com.pulumi.res
         }
 
         /**
-         * @param logAnalyticsEntityId The log analytics entity OCID.
+         * @param logAnalyticsEntityId The log analytics entity ID [OCID]. Entity ID can be obtained by running &#39;oci log-analytics entity list --namespace-name &lt;namespace&gt; --compartment-id &lt;compartment&gt;&#39;. The json output &#39;id&#39; parameter value contains the entity ID.
          * 
          * @return builder
          * 
@@ -181,7 +181,7 @@ public final class GetLogAnalyticsEntityTopologyPlainArgs extends com.pulumi.res
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 

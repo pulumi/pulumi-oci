@@ -87,6 +87,10 @@ namespace Pulumi.Oci.NetworkFirewall
     [OutputType]
     public sealed class GetNetworkFirewallPolicyMappedSecretResult
     {
+        /// <summary>
+        /// The description of the mapped secret. This field can be used to add additional info.
+        /// </summary>
+        public readonly string Description;
         public readonly string Id;
         /// <summary>
         /// Name of the secret.
@@ -118,6 +122,8 @@ namespace Pulumi.Oci.NetworkFirewall
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyMappedSecretResult(
+            string description,
+
             string id,
 
             string name,
@@ -134,6 +140,7 @@ namespace Pulumi.Oci.NetworkFirewall
 
             int versionNumber)
         {
+            Description = description;
             Id = id;
             Name = name;
             NetworkFirewallPolicyId = networkFirewallPolicyId;

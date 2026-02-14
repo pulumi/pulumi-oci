@@ -19,10 +19,22 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<int>? AvailableStorageInGbs { get; set; }
 
         /// <summary>
+        /// Available storage size for VM storage on Exascale in GBs.
+        /// </summary>
+        [Input("availableVmStorageInGbs")]
+        public Input<int>? AvailableVmStorageInGbs { get; set; }
+
+        /// <summary>
         /// Storage size needed for Exascale in GBs.
         /// </summary>
         [Input("totalStorageInGbs")]
         public Input<int>? TotalStorageInGbs { get; set; }
+
+        /// <summary>
+        /// Storage size needed for VM storage on Exascale in GBs.
+        /// </summary>
+        [Input("totalVmStorageInGbs")]
+        public Input<int>? TotalVmStorageInGbs { get; set; }
 
         public CloudExadataInfrastructureExascaleConfigArgs()
         {

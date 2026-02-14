@@ -42,7 +42,7 @@ public final class GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection
      */
     private String id;
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     private String namespace;
@@ -101,7 +101,7 @@ public final class GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection
         return this.id;
     }
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public String namespace() {

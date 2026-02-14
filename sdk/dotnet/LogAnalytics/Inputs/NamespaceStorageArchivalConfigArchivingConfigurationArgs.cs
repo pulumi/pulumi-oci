@@ -24,6 +24,12 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
         [Input("archivalStorageDuration")]
         public Input<string>? ArchivalStorageDuration { get; set; }
 
+        /// <summary>
+        /// (Updatable) end time of the oldest active CoreGroup
+        /// </summary>
+        [Input("timeOldestActiveBucketEnded")]
+        public Input<string>? TimeOldestActiveBucketEnded { get; set; }
+
         public NamespaceStorageArchivalConfigArchivingConfigurationArgs()
         {
         }

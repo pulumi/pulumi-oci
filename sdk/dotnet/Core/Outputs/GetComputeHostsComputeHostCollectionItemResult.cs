@@ -59,6 +59,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Health;
         /// <summary>
+        /// The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+        /// </summary>
+        public readonly string HostCorrelationId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
         /// </summary>
         public readonly string HpcIslandId;
@@ -125,6 +129,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string health,
 
+            string hostCorrelationId,
+
             string hpcIslandId,
 
             string id,
@@ -157,6 +163,7 @@ namespace Pulumi.Oci.Core.Outputs
             GpuMemoryFabricId = gpuMemoryFabricId;
             HasImpactedComponents = hasImpactedComponents;
             Health = health;
+            HostCorrelationId = hostCorrelationId;
             HpcIslandId = hpcIslandId;
             Id = id;
             InstanceId = instanceId;

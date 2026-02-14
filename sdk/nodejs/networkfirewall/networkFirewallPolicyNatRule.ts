@@ -12,7 +12,7 @@ import * as utilities from "../utilities";
  *
  * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_firewall
  *
- * Creates a new NAT Rule for the Network Firewall Policy.
+ * Creates a new [NAT rule](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
  *
  * ## Example Usage
  *
@@ -80,7 +80,7 @@ export class NetworkFirewallPolicyNatRule extends pulumi.CustomResource {
      */
     declare public readonly action: pulumi.Output<string>;
     /**
-     * (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+     * (Updatable) Match criteria used in NAT rule used on the firewall policy.
      */
     declare public readonly condition: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyNatRuleCondition>;
     /**
@@ -96,7 +96,7 @@ export class NetworkFirewallPolicyNatRule extends pulumi.CustomResource {
      */
     declare public readonly networkFirewallPolicyId: pulumi.Output<string>;
     /**
-     * OCID of the Network Firewall Policy this decryption profile belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
      */
     declare public /*out*/ readonly parentResourceId: pulumi.Output<string>;
     /**
@@ -178,7 +178,7 @@ export interface NetworkFirewallPolicyNatRuleState {
      */
     action?: pulumi.Input<string>;
     /**
-     * (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+     * (Updatable) Match criteria used in NAT rule used on the firewall policy.
      */
     condition?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyNatRuleCondition>;
     /**
@@ -194,7 +194,7 @@ export interface NetworkFirewallPolicyNatRuleState {
      */
     networkFirewallPolicyId?: pulumi.Input<string>;
     /**
-     * OCID of the Network Firewall Policy this decryption profile belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
      */
     parentResourceId?: pulumi.Input<string>;
     /**
@@ -226,7 +226,7 @@ export interface NetworkFirewallPolicyNatRuleArgs {
      */
     action: pulumi.Input<string>;
     /**
-     * (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+     * (Updatable) Match criteria used in NAT rule used on the firewall policy.
      */
     condition: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyNatRuleCondition>;
     /**

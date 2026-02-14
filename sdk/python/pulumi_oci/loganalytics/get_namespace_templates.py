@@ -179,7 +179,7 @@ def get_namespace_templates(compartment_id: Optional[_builtins.str] = None,
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.str name: The template name used for filtering.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str namespace_template_filter: filter
     :param _builtins.str state: The template lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
     :param _builtins.str template_display_text: The template display text used for filtering. Only templates with the specified name or description will be returned.
@@ -240,7 +240,7 @@ def get_namespace_templates_output(compartment_id: Optional[pulumi.Input[_builti
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.str name: The template name used for filtering.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str namespace_template_filter: filter
     :param _builtins.str state: The template lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
     :param _builtins.str template_display_text: The template display text used for filtering. Only templates with the specified name or description will be returned.

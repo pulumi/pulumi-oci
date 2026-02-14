@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
  *
- * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
+ * This API gets the namespace details of a tenancy already onboarded in Log Analytics Application
  *
  * ## Example Usage
  *
@@ -32,7 +32,7 @@ export function getNamespace(args: GetNamespaceArgs, opts?: pulumi.InvokeOptions
  */
 export interface GetNamespaceArgs {
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: string;
 }
@@ -42,7 +42,7 @@ export interface GetNamespaceArgs {
  */
 export interface GetNamespaceResult {
     /**
-     * The is the tenancy ID
+     * This is the tenancy ID
      */
     readonly compartmentId: string;
     /**
@@ -59,19 +59,23 @@ export interface GetNamespaceResult {
     readonly isDataEverIngested: boolean;
     readonly isLogsetEnabled: boolean;
     /**
-     * This indicates if the tenancy is onboarded to Logging Analytics
+     * This indicates if the tenancy is onboarded to Log Analytics
      */
     readonly isOnboarded: boolean;
     /**
      * This is the namespace name of a tenancy
-     * * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
      */
     readonly namespace: string;
+    /**
+     * The current state of the compartment.
+     * * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
+     */
+    readonly state: string;
 }
 /**
  * This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
  *
- * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
+ * This API gets the namespace details of a tenancy already onboarded in Log Analytics Application
  *
  * ## Example Usage
  *
@@ -96,7 +100,7 @@ export function getNamespaceOutput(args: GetNamespaceOutputArgs, opts?: pulumi.I
  */
 export interface GetNamespaceOutputArgs {
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
 }

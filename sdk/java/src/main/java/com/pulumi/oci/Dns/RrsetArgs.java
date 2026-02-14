@@ -19,20 +19,20 @@ public final class RrsetArgs extends com.pulumi.resources.ResourceArgs {
     public static final RrsetArgs Empty = new RrsetArgs();
 
     /**
-     * (Updatable) The OCID of the compartment the zone belongs to.
-     * 
-     * This parameter is deprecated and should be omitted.
+     * @deprecated
+     * Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
      * 
      */
+    @Deprecated /* Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release. */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment the zone belongs to.
-     * 
-     * This parameter is deprecated and should be omitted.
+     * @deprecated
+     * Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
      * 
      */
+    @Deprecated /* Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release. */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
@@ -54,7 +54,6 @@ public final class RrsetArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * (Updatable)
-     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      * 
      */
     @Import(name="items")
@@ -62,7 +61,6 @@ public final class RrsetArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return (Updatable)
-     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      * 
      */
     public Optional<Output<List<RrsetItemArgs>>> items() {
@@ -85,16 +83,20 @@ public final class RrsetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Specifies to operate only on resources that have a matching DNS scope.
+     * @deprecated
+     * Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
      * 
      */
+    @Deprecated /* Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release. */
     @Import(name="scope")
     private @Nullable Output<String> scope;
 
     /**
-     * @return Specifies to operate only on resources that have a matching DNS scope.
+     * @deprecated
+     * Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
      * 
      */
+    @Deprecated /* Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release. */
     public Optional<Output<String>> scope() {
         return Optional.ofNullable(this.scope);
     }
@@ -166,26 +168,26 @@ public final class RrsetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment the zone belongs to.
-         * 
-         * This parameter is deprecated and should be omitted.
-         * 
          * @return builder
          * 
+         * @deprecated
+         * Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
+         * 
          */
+        @Deprecated /* Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release. */
         public Builder compartmentId(@Nullable Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment the zone belongs to.
-         * 
-         * This parameter is deprecated and should be omitted.
-         * 
          * @return builder
          * 
+         * @deprecated
+         * Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
+         * 
          */
+        @Deprecated /* Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release. */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
         }
@@ -213,7 +215,6 @@ public final class RrsetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param items (Updatable)
-         * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
          * 
          * @return builder
          * 
@@ -225,7 +226,6 @@ public final class RrsetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param items (Updatable)
-         * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
          * 
          * @return builder
          * 
@@ -236,7 +236,6 @@ public final class RrsetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param items (Updatable)
-         * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
          * 
          * @return builder
          * 
@@ -267,22 +266,26 @@ public final class RrsetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scope Specifies to operate only on resources that have a matching DNS scope.
-         * 
          * @return builder
          * 
+         * @deprecated
+         * Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
+         * 
          */
+        @Deprecated /* Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release. */
         public Builder scope(@Nullable Output<String> scope) {
             $.scope = scope;
             return this;
         }
 
         /**
-         * @param scope Specifies to operate only on resources that have a matching DNS scope.
-         * 
          * @return builder
          * 
+         * @deprecated
+         * Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
+         * 
          */
+        @Deprecated /* Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release. */
         public Builder scope(String scope) {
             return scope(Output.of(scope));
         }

@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     name: networkFirewallPolicyDecryptionProfileName,
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     type: networkFirewallPolicyDecryptionProfileType,
+ *     description: networkFirewallPolicyDecryptionProfileDescription,
  *     areCertificateExtensionsRestricted: networkFirewallPolicyDecryptionProfileAreCertificateExtensionsRestricted,
  *     isAutoIncludeAltName: networkFirewallPolicyDecryptionProfileIsAutoIncludeAltName,
  *     isExpiredCertificateBlocked: networkFirewallPolicyDecryptionProfileIsExpiredCertificateBlocked,
@@ -74,6 +75,10 @@ export class NetworkFirewallPolicyDecryptionProfile extends pulumi.CustomResourc
      * (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
      */
     declare public readonly areCertificateExtensionsRestricted: pulumi.Output<boolean>;
+    /**
+     * (Updatable) The description of the decryption profile. This field can be used to add additional info.
+     */
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
      */
@@ -141,6 +146,7 @@ export class NetworkFirewallPolicyDecryptionProfile extends pulumi.CustomResourc
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyDecryptionProfileState | undefined;
             resourceInputs["areCertificateExtensionsRestricted"] = state?.areCertificateExtensionsRestricted;
+            resourceInputs["description"] = state?.description;
             resourceInputs["isAutoIncludeAltName"] = state?.isAutoIncludeAltName;
             resourceInputs["isExpiredCertificateBlocked"] = state?.isExpiredCertificateBlocked;
             resourceInputs["isOutOfCapacityBlocked"] = state?.isOutOfCapacityBlocked;
@@ -162,6 +168,7 @@ export class NetworkFirewallPolicyDecryptionProfile extends pulumi.CustomResourc
                 throw new Error("Missing required property 'type'");
             }
             resourceInputs["areCertificateExtensionsRestricted"] = args?.areCertificateExtensionsRestricted;
+            resourceInputs["description"] = args?.description;
             resourceInputs["isAutoIncludeAltName"] = args?.isAutoIncludeAltName;
             resourceInputs["isExpiredCertificateBlocked"] = args?.isExpiredCertificateBlocked;
             resourceInputs["isOutOfCapacityBlocked"] = args?.isOutOfCapacityBlocked;
@@ -188,6 +195,10 @@ export interface NetworkFirewallPolicyDecryptionProfileState {
      * (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
      */
     areCertificateExtensionsRestricted?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) The description of the decryption profile. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
      */
@@ -250,6 +261,10 @@ export interface NetworkFirewallPolicyDecryptionProfileArgs {
      * (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
      */
     areCertificateExtensionsRestricted?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) The description of the decryption profile. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
      */

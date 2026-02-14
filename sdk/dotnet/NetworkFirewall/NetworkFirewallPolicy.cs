@@ -34,6 +34,7 @@ namespace Pulumi.Oci.NetworkFirewall
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
+    ///         Description = networkFirewallPolicyDescription,
     ///         DisplayName = networkFirewallPolicyDisplayName,
     ///         FreeformTags = 
     ///         {
@@ -78,6 +79,12 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The description of the network firewall policy. This field can be used to add additional info.
+        /// </summary>
+        [Output("description")]
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
@@ -189,6 +196,12 @@ namespace Pulumi.Oci.NetworkFirewall
         }
 
         /// <summary>
+        /// (Updatable) The description of the network firewall policy. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        /// <summary>
         /// (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
@@ -240,6 +253,12 @@ namespace Pulumi.Oci.NetworkFirewall
             get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) The description of the network firewall policy. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
 
         /// <summary>
         /// (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.

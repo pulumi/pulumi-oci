@@ -178,6 +178,21 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * The volume&#39;s iSCSI IPv6 address.  Example: `2001:db8::1/64`
+     * 
+     */
+    @Import(name="ipv6")
+    private @Nullable Output<String> ipv6;
+
+    /**
+     * @return The volume&#39;s iSCSI IPv6 address.  Example: `2001:db8::1/64`
+     * 
+     */
+    public Optional<Output<String>> ipv6() {
+        return Optional.ofNullable(this.ipv6);
+    }
+
+    /**
      * The target volume&#39;s iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
      * 
      */
@@ -406,6 +421,7 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
         this.encryptionInTransitType = $.encryptionInTransitType;
         this.instanceId = $.instanceId;
         this.ipv4 = $.ipv4;
+        this.ipv6 = $.ipv6;
         this.iqn = $.iqn;
         this.isAgentAutoIscsiLoginEnabled = $.isAgentAutoIscsiLoginEnabled;
         this.isMultipath = $.isMultipath;
@@ -656,6 +672,27 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
          */
         public Builder ipv4(String ipv4) {
             return ipv4(Output.of(ipv4));
+        }
+
+        /**
+         * @param ipv6 The volume&#39;s iSCSI IPv6 address.  Example: `2001:db8::1/64`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6(@Nullable Output<String> ipv6) {
+            $.ipv6 = ipv6;
+            return this;
+        }
+
+        /**
+         * @param ipv6 The volume&#39;s iSCSI IPv6 address.  Example: `2001:db8::1/64`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6(String ipv6) {
+            return ipv6(Output.of(ipv6));
         }
 
         /**

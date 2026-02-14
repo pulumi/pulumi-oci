@@ -169,7 +169,7 @@ export class NamespaceLookup extends pulumi.CustomResource {
      */
     declare public readonly maxMatches: pulumi.Output<string | undefined>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     declare public readonly namespace: pulumi.Output<string>;
     /**
@@ -361,7 +361,7 @@ export interface NamespaceLookupState {
      */
     maxMatches?: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace?: pulumi.Input<string>;
     /**
@@ -439,7 +439,7 @@ export interface NamespaceLookupArgs {
      */
     maxMatches?: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
     /**

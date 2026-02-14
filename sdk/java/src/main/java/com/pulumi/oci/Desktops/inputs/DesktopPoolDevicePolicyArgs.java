@@ -9,6 +9,8 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class DesktopPoolDevicePolicyArgs extends com.pulumi.resources.ResourceArgs {
@@ -120,6 +122,21 @@ public final class DesktopPoolDevicePolicyArgs extends com.pulumi.resources.Reso
         return this.isPrintingEnabled;
     }
 
+    /**
+     * (Updatable) Indicates whether video input is enabled.
+     * 
+     */
+    @Import(name="isVideoInputEnabled")
+    private @Nullable Output<Boolean> isVideoInputEnabled;
+
+    /**
+     * @return (Updatable) Indicates whether video input is enabled.
+     * 
+     */
+    public Optional<Output<Boolean>> isVideoInputEnabled() {
+        return Optional.ofNullable(this.isVideoInputEnabled);
+    }
+
     private DesktopPoolDevicePolicyArgs() {}
 
     private DesktopPoolDevicePolicyArgs(DesktopPoolDevicePolicyArgs $) {
@@ -130,6 +147,7 @@ public final class DesktopPoolDevicePolicyArgs extends com.pulumi.resources.Reso
         this.isKeyboardEnabled = $.isKeyboardEnabled;
         this.isPointerEnabled = $.isPointerEnabled;
         this.isPrintingEnabled = $.isPrintingEnabled;
+        this.isVideoInputEnabled = $.isVideoInputEnabled;
     }
 
     public static Builder builder() {
@@ -295,6 +313,27 @@ public final class DesktopPoolDevicePolicyArgs extends com.pulumi.resources.Reso
          */
         public Builder isPrintingEnabled(Boolean isPrintingEnabled) {
             return isPrintingEnabled(Output.of(isPrintingEnabled));
+        }
+
+        /**
+         * @param isVideoInputEnabled (Updatable) Indicates whether video input is enabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isVideoInputEnabled(@Nullable Output<Boolean> isVideoInputEnabled) {
+            $.isVideoInputEnabled = isVideoInputEnabled;
+            return this;
+        }
+
+        /**
+         * @param isVideoInputEnabled (Updatable) Indicates whether video input is enabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isVideoInputEnabled(Boolean isVideoInputEnabled) {
+            return isVideoInputEnabled(Output.of(isVideoInputEnabled));
         }
 
         public DesktopPoolDevicePolicyArgs build() {

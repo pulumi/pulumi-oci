@@ -17,6 +17,11 @@ public final class GetNetworkFirewallPolicyApplicationGroupResult {
      * 
      */
     private List<String> apps;
+    /**
+     * @return The description of the application list. This field can be used to add additional info.
+     * 
+     */
+    private String description;
     private String id;
     /**
      * @return Name of the application Group.
@@ -42,6 +47,13 @@ public final class GetNetworkFirewallPolicyApplicationGroupResult {
      */
     public List<String> apps() {
         return this.apps;
+    }
+    /**
+     * @return The description of the application list. This field can be used to add additional info.
+     * 
+     */
+    public String description() {
+        return this.description;
     }
     public String id() {
         return this.id;
@@ -81,6 +93,7 @@ public final class GetNetworkFirewallPolicyApplicationGroupResult {
     @CustomType.Builder
     public static final class Builder {
         private List<String> apps;
+        private String description;
         private String id;
         private String name;
         private String networkFirewallPolicyId;
@@ -90,6 +103,7 @@ public final class GetNetworkFirewallPolicyApplicationGroupResult {
         public Builder(GetNetworkFirewallPolicyApplicationGroupResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apps = defaults.apps;
+    	      this.description = defaults.description;
     	      this.id = defaults.id;
     	      this.name = defaults.name;
     	      this.networkFirewallPolicyId = defaults.networkFirewallPolicyId;
@@ -107,6 +121,14 @@ public final class GetNetworkFirewallPolicyApplicationGroupResult {
         }
         public Builder apps(String... apps) {
             return apps(List.of(apps));
+        }
+        @CustomType.Setter
+        public Builder description(String description) {
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyApplicationGroupResult", "description");
+            }
+            this.description = description;
+            return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
@@ -151,6 +173,7 @@ public final class GetNetworkFirewallPolicyApplicationGroupResult {
         public GetNetworkFirewallPolicyApplicationGroupResult build() {
             final var _resultValue = new GetNetworkFirewallPolicyApplicationGroupResult();
             _resultValue.apps = apps;
+            _resultValue.description = description;
             _resultValue.id = id;
             _resultValue.name = name;
             _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;

@@ -31,6 +31,7 @@ import * as utilities from "../utilities";
  *         urls: networkFirewallPolicySecurityRuleConditionUrl,
  *     },
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ *     description: networkFirewallPolicySecurityRuleDescription,
  *     inspection: networkFirewallPolicySecurityRuleInspection,
  *     positions: [{
  *         afterRule: networkFirewallPolicySecurityRulePositionAfterRule,
@@ -88,9 +89,13 @@ export class NetworkFirewallPolicySecurityRule extends pulumi.CustomResource {
      */
     declare public readonly condition: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicySecurityRuleCondition>;
     /**
-     * (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-     * * INTRUSION_DETECTION - Intrusion Detection.
-     * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+     * (Updatable) The description of the security rule. This field can be used to add additional info.
+     */
+    declare public readonly description: pulumi.Output<string | undefined>;
+    /**
+     * (Updatable) Type of inspection to affect the traffic flow.
+     * * INTRUSION_DETECTION - Intrusion detection.
+     * * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
      */
     declare public readonly inspection: pulumi.Output<string | undefined>;
     /**
@@ -126,6 +131,7 @@ export class NetworkFirewallPolicySecurityRule extends pulumi.CustomResource {
             const state = argsOrState as NetworkFirewallPolicySecurityRuleState | undefined;
             resourceInputs["action"] = state?.action;
             resourceInputs["condition"] = state?.condition;
+            resourceInputs["description"] = state?.description;
             resourceInputs["inspection"] = state?.inspection;
             resourceInputs["name"] = state?.name;
             resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
@@ -145,6 +151,7 @@ export class NetworkFirewallPolicySecurityRule extends pulumi.CustomResource {
             }
             resourceInputs["action"] = args?.action;
             resourceInputs["condition"] = args?.condition;
+            resourceInputs["description"] = args?.description;
             resourceInputs["inspection"] = args?.inspection;
             resourceInputs["name"] = args?.name;
             resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
@@ -174,9 +181,13 @@ export interface NetworkFirewallPolicySecurityRuleState {
      */
     condition?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicySecurityRuleCondition>;
     /**
-     * (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-     * * INTRUSION_DETECTION - Intrusion Detection.
-     * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+     * (Updatable) The description of the security rule. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * (Updatable) Type of inspection to affect the traffic flow.
+     * * INTRUSION_DETECTION - Intrusion detection.
+     * * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
      */
     inspection?: pulumi.Input<string>;
     /**
@@ -215,9 +226,13 @@ export interface NetworkFirewallPolicySecurityRuleArgs {
      */
     condition: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicySecurityRuleCondition>;
     /**
-     * (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
-     * * INTRUSION_DETECTION - Intrusion Detection.
-     * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+     * (Updatable) The description of the security rule. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * (Updatable) Type of inspection to affect the traffic flow.
+     * * INTRUSION_DETECTION - Intrusion detection.
+     * * INTRUSION_PREVENTION - Intrusion detection and prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
      */
     inspection?: pulumi.Input<string>;
     /**

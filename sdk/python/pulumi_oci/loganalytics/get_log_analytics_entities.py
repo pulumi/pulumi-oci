@@ -322,7 +322,7 @@ def get_log_analytics_entities(cloud_resource_id: Optional[_builtins.str] = None
     :param Sequence[_builtins.str] metadata_equals: A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
     :param _builtins.str name: A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
     :param _builtins.str name_contains: A filter to return only log analytics entities whose name contains the name given. The match is case-insensitive.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str source_id: A filter to return only log analytics entities whose sourceId matches the sourceId given.
     :param _builtins.str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
     """
@@ -438,7 +438,7 @@ def get_log_analytics_entities_output(cloud_resource_id: Optional[pulumi.Input[O
     :param Sequence[_builtins.str] metadata_equals: A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
     :param _builtins.str name: A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
     :param _builtins.str name_contains: A filter to return only log analytics entities whose name contains the name given. The match is case-insensitive.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str source_id: A filter to return only log analytics entities whose sourceId matches the sourceId given.
     :param _builtins.str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
     """

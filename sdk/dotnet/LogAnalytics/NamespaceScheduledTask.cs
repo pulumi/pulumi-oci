@@ -40,6 +40,23 @@ namespace Pulumi.Oci.LogAnalytics
     ///             MetricExtraction = new Oci.LogAnalytics.Inputs.NamespaceScheduledTaskActionMetricExtractionArgs
     ///             {
     ///                 CompartmentId = compartmentId,
+    ///                 MetricCollections = new[]
+    ///                 {
+    ///                     new Oci.LogAnalytics.Inputs.NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs
+    ///                     {
+    ///                         Dimensions = new[]
+    ///                         {
+    ///                             new Oci.LogAnalytics.Inputs.NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs
+    ///                             {
+    ///                                 DimensionName = namespaceScheduledTaskActionMetricExtractionMetricCollectionsDimensionsDimensionName,
+    ///                                 QueryFieldName = namespaceScheduledTaskActionMetricExtractionMetricCollectionsDimensionsQueryFieldName,
+    ///                             },
+    ///                         },
+    ///                         MetricName = testMetric.Name,
+    ///                         MetricQueryFieldName = namespaceScheduledTaskActionMetricExtractionMetricCollectionsMetricQueryFieldName,
+    ///                         QueryTableName = testTable.Name,
+    ///                     },
+    ///                 },
     ///                 MetricName = testMetric.Name,
     ///                 Namespace = namespaceScheduledTaskActionMetricExtractionNamespace,
     ///                 ResourceGroup = namespaceScheduledTaskActionMetricExtractionResourceGroup,
@@ -65,6 +82,7 @@ namespace Pulumi.Oci.LogAnalytics
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
+    ///         Description = namespaceScheduledTaskDescription,
     ///         DisplayName = namespaceScheduledTaskDisplayName,
     ///         FreeformTags = 
     ///         {
@@ -76,8 +94,10 @@ namespace Pulumi.Oci.LogAnalytics
     ///             Type = namespaceScheduledTaskSchedulesType,
     ///             Expression = namespaceScheduledTaskSchedulesExpression,
     ///             MisfirePolicy = namespaceScheduledTaskSchedulesMisfirePolicy,
+    ///             QueryOffsetSecs = namespaceScheduledTaskSchedulesQueryOffsetSecs,
     ///             RecurringInterval = namespaceScheduledTaskSchedulesRecurringInterval,
     ///             RepeatCount = namespaceScheduledTaskSchedulesRepeatCount,
+    ///             TimeEnd = namespaceScheduledTaskSchedulesTimeEnd,
     ///             TimeZone = namespaceScheduledTaskSchedulesTimeZone,
     ///         },
     ///         TaskType = namespaceScheduledTaskTaskType,
@@ -85,6 +105,32 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// });
     /// ```
+    /// 
+    /// ## Schedules
+    /// 
+    /// There are parameters which require a specific constant value to be supplied.
+    /// 
+    /// ### MisfirePolicy
+    /// 
+    /// #### 'RETRY_INDEFINITELY'
+    /// A constant which can be used with the MisfirePolicy property of a Schedule. This constant has a value of “RETRY_INDEFINITELY”
+    /// 
+    /// #### 'RETRY_ONCE'
+    /// A constant which can be used with the MisfirePolicy property of a Schedule. This constant has a value of “RETRY_ONCE”
+    /// 
+    /// #### 'SKIP'
+    /// A constant which can be used with the MisfirePolicy property of a Schedule. This constant has a value of “SKIP”
+    /// 
+    /// ### type
+    /// 
+    /// #### 'AUTO'
+    /// A constant which can be used with the type property of a Schedule. This constant has a value of “AUTO”
+    /// 
+    /// #### 'CRON'
+    /// A constant which can be used with the type property of a Schedule. This constant has a value of “CRON”
+    /// 
+    /// #### 'FIXED_FREQUENCY'
+    /// A constant which can be used with the type property of a Schedule. This constant has a value of “FIXED_FREQUENCY”
     /// 
     /// ## Import
     /// 
@@ -116,6 +162,12 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Description for this resource.
+        /// </summary>
+        [Output("description")]
+        public Output<string> Description { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
         /// </summary>
         [Output("displayName")]
@@ -134,7 +186,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> Kind { get; private set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Output("namespace")]
         public Output<string> Namespace { get; private set; } = null!;
@@ -167,7 +219,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+        /// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
         /// </summary>
         [Output("taskStatus")]
         public Output<string> TaskStatus { get; private set; } = null!;
@@ -195,7 +247,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+        /// most recent Work Request Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
         /// </summary>
         [Output("workRequestId")]
         public Output<string> WorkRequestId { get; private set; } = null!;
@@ -271,6 +323,12 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
+        /// (Updatable) Description for this resource.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        /// <summary>
         /// (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
         /// </summary>
         [Input("displayName")]
@@ -295,7 +353,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string> Kind { get; set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
@@ -355,6 +413,12 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
+        /// (Updatable) Description for this resource.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        /// <summary>
         /// (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
         /// </summary>
         [Input("displayName")]
@@ -379,7 +443,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? Kind { get; set; }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
@@ -412,7 +476,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+        /// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
         /// </summary>
         [Input("taskStatus")]
         public Input<string>? TaskStatus { get; set; }
@@ -440,7 +504,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+        /// most recent Work Request Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
         /// </summary>
         [Input("workRequestId")]
         public Input<string>? WorkRequestId { get; set; }

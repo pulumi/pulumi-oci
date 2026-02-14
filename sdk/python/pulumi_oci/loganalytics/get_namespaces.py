@@ -28,7 +28,7 @@ class GetNamespacesResult:
     """
     A collection of values returned by getNamespaces.
     """
-    def __init__(__self__, compartment_id=None, filters=None, id=None, namespace_collections=None):
+    def __init__(__self__, compartment_id=None, filters=None, id=None, is_compartment_delete=None, namespace_collections=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -38,6 +38,9 @@ class GetNamespacesResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_compartment_delete and not isinstance(is_compartment_delete, bool):
+            raise TypeError("Expected argument 'is_compartment_delete' to be a bool")
+        pulumi.set(__self__, "is_compartment_delete", is_compartment_delete)
         if namespace_collections and not isinstance(namespace_collections, list):
             raise TypeError("Expected argument 'namespace_collections' to be a list")
         pulumi.set(__self__, "namespace_collections", namespace_collections)
@@ -46,7 +49,7 @@ class GetNamespacesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The is the tenancy ID
+        This is the tenancy ID
         """
         return pulumi.get(self, "compartment_id")
 
@@ -62,6 +65,11 @@ class GetNamespacesResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isCompartmentDelete")
+    def is_compartment_delete(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "is_compartment_delete")
 
     @_builtins.property
     @pulumi.getter(name="namespaceCollections")
@@ -81,17 +89,19 @@ class AwaitableGetNamespacesResult(GetNamespacesResult):
             compartment_id=self.compartment_id,
             filters=self.filters,
             id=self.id,
+            is_compartment_delete=self.is_compartment_delete,
             namespace_collections=self.namespace_collections)
 
 
 def get_namespaces(compartment_id: Optional[_builtins.str] = None,
                    filters: Optional[Sequence[Union['GetNamespacesFilterArgs', 'GetNamespacesFilterArgsDict']]] = None,
+                   is_compartment_delete: Optional[_builtins.bool] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespacesResult:
     """
     This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
 
     Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
-    result also indicates if the tenancy is onboarded with Logging Analytics.
+    result also indicates if the tenancy is onboarded with Log Analytics.
 
     ## Example Usage
 
@@ -99,15 +109,18 @@ def get_namespaces(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespaces = oci.LogAnalytics.get_namespaces(compartment_id=compartment_id)
+    test_namespaces = oci.LogAnalytics.get_namespaces(compartment_id=compartment_id,
+        is_compartment_delete=namespace_is_compartment_delete)
     ```
 
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+    :param _builtins.bool is_compartment_delete: if true, the request is from compartment delete service.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
+    __args__['isCompartmentDelete'] = is_compartment_delete
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getNamespaces:getNamespaces', __args__, opts=opts, typ=GetNamespacesResult).value
 
@@ -115,15 +128,17 @@ def get_namespaces(compartment_id: Optional[_builtins.str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        is_compartment_delete=pulumi.get(__ret__, 'is_compartment_delete'),
         namespace_collections=pulumi.get(__ret__, 'namespace_collections'))
 def get_namespaces_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespacesFilterArgs', 'GetNamespacesFilterArgsDict']]]]] = None,
+                          is_compartment_delete: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespacesResult]:
     """
     This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
 
     Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
-    result also indicates if the tenancy is onboarded with Logging Analytics.
+    result also indicates if the tenancy is onboarded with Log Analytics.
 
     ## Example Usage
 
@@ -131,19 +146,23 @@ def get_namespaces_output(compartment_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_namespaces = oci.LogAnalytics.get_namespaces(compartment_id=compartment_id)
+    test_namespaces = oci.LogAnalytics.get_namespaces(compartment_id=compartment_id,
+        is_compartment_delete=namespace_is_compartment_delete)
     ```
 
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+    :param _builtins.bool is_compartment_delete: if true, the request is from compartment delete service.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
+    __args__['isCompartmentDelete'] = is_compartment_delete
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaces:getNamespaces', __args__, opts=opts, typ=GetNamespacesResult)
     return __ret__.apply(lambda __response__: GetNamespacesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
+        is_compartment_delete=pulumi.get(__response__, 'is_compartment_delete'),
         namespace_collections=pulumi.get(__response__, 'namespace_collections')))

@@ -32,7 +32,7 @@ export function getLogAnalyticsUnprocessedDataBucket(args: GetLogAnalyticsUnproc
  */
 export interface GetLogAnalyticsUnprocessedDataBucketArgs {
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: string;
 }
@@ -94,7 +94,7 @@ export function getLogAnalyticsUnprocessedDataBucketOutput(args: GetLogAnalytics
  */
 export interface GetLogAnalyticsUnprocessedDataBucketOutputArgs {
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
 }

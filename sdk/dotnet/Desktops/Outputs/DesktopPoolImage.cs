@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Desktops.Outputs
     public sealed class DesktopPoolImage
     {
         /// <summary>
-        /// The OCID of the desktop image.
+        /// (Updatable) The OCID of the desktop image.
         /// </summary>
         public readonly string ImageId;
         /// <summary>

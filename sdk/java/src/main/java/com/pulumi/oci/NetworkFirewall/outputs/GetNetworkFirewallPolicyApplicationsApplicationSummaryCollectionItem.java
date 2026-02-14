@@ -8,16 +8,23 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem {
     /**
-     * @return The value of the ICMP6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * @return The description of the application. This field can be used to add additional info.
+     * 
+     */
+    private @Nullable String description;
+    /**
+     * @return The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      * 
      */
     private Integer icmpCode;
     /**
-     * @return The value of the ICMP6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * @return The value of the ICMP/ICMP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      * 
      */
     private Integer icmpType;
@@ -44,14 +51,21 @@ public final class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollect
 
     private GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem() {}
     /**
-     * @return The value of the ICMP6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * @return The description of the application. This field can be used to add additional info.
+     * 
+     */
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
+    }
+    /**
+     * @return The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      * 
      */
     public Integer icmpCode() {
         return this.icmpCode;
     }
     /**
-     * @return The value of the ICMP6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * @return The value of the ICMP/ICMP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      * 
      */
     public Integer icmpType() {
@@ -95,6 +109,7 @@ public final class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollect
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String description;
         private Integer icmpCode;
         private Integer icmpType;
         private String name;
@@ -104,6 +119,7 @@ public final class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollect
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.description = defaults.description;
     	      this.icmpCode = defaults.icmpCode;
     	      this.icmpType = defaults.icmpType;
     	      this.name = defaults.name;
@@ -112,6 +128,12 @@ public final class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollect
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder description(@Nullable String description) {
+
+            this.description = description;
+            return this;
+        }
         @CustomType.Setter
         public Builder icmpCode(Integer icmpCode) {
             if (icmpCode == null) {
@@ -162,6 +184,7 @@ public final class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollect
         }
         public GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem build() {
             final var _resultValue = new GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem();
+            _resultValue.description = description;
             _resultValue.icmpCode = icmpCode;
             _resultValue.icmpType = icmpType;
             _resultValue.name = name;

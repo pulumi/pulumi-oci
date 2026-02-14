@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -38,7 +38,9 @@ type LookupNetworkFirewallPolicyAddressListArgs struct {
 type LookupNetworkFirewallPolicyAddressListResult struct {
 	// List of addresses.
 	Addresses []string `pulumi:"addresses"`
-	Id        string   `pulumi:"id"`
+	// The description of the address list. This field can be used to add additional info.
+	Description string `pulumi:"description"`
+	Id          string `pulumi:"id"`
 	// Unique name to identify the group of addresses to be used in the policy rules.
 	Name                    string `pulumi:"name"`
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
@@ -89,6 +91,11 @@ func (o LookupNetworkFirewallPolicyAddressListResultOutput) ToLookupNetworkFirew
 // List of addresses.
 func (o LookupNetworkFirewallPolicyAddressListResultOutput) Addresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupNetworkFirewallPolicyAddressListResult) []string { return v.Addresses }).(pulumi.StringArrayOutput)
+}
+
+// The description of the address list. This field can be used to add additional info.
+func (o LookupNetworkFirewallPolicyAddressListResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyAddressListResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 func (o LookupNetworkFirewallPolicyAddressListResultOutput) Id() pulumi.StringOutput {

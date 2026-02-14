@@ -41,6 +41,10 @@ export interface GetNetworkFirewallPolicyAddressListResult {
      * List of addresses.
      */
     readonly addresses: string[];
+    /**
+     * The description of the address list. This field can be used to add additional info.
+     */
+    readonly description: string;
     readonly id: string;
     /**
      * Unique name to identify the group of addresses to be used in the policy rules.

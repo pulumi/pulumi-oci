@@ -18,6 +18,10 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Apps;
         /// <summary>
+        /// The description of the application list. This field can be used to add additional info.
+        /// </summary>
+        public readonly string? Description;
+        /// <summary>
         /// Name of the application Group.
         /// </summary>
         public readonly string Name;
@@ -38,6 +42,8 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         private GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionItemResult(
             ImmutableArray<string> apps,
 
+            string? description,
+
             string name,
 
             string networkFirewallPolicyId,
@@ -47,6 +53,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
             int totalApps)
         {
             Apps = apps;
+            Description = description;
             Name = name;
             NetworkFirewallPolicyId = networkFirewallPolicyId;
             ParentResourceId = parentResourceId;

@@ -36,11 +36,11 @@ export function getLogAnalyticsObjectCollectionRule(args: GetLogAnalyticsObjectC
  */
 export interface GetLogAnalyticsObjectCollectionRuleArgs {
     /**
-     * The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The Log Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     logAnalyticsObjectCollectionRuleId: string;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: string;
 }
@@ -70,7 +70,7 @@ export interface GetLogAnalyticsObjectCollectionRuleResult {
      */
     readonly description: string;
     /**
-     * Logging Analytics entity OCID to associate the processed logs with.
+     * Log Analytics entity OCID to associate the processed logs with.
      */
     readonly entityId: string;
     /**
@@ -99,7 +99,7 @@ export interface GetLogAnalyticsObjectCollectionRuleResult {
     readonly lifecycleDetails: string;
     readonly logAnalyticsObjectCollectionRuleId: string;
     /**
-     * Logging Analytics Log group OCID to associate the processed logs with.
+     * Log Analytics Log group OCID to associate the processed logs with.
      */
     readonly logGroupId: string;
     /**
@@ -115,7 +115,7 @@ export interface GetLogAnalyticsObjectCollectionRuleResult {
      */
     readonly logSetKey: string;
     /**
-     * Name of the Logging Analytics Source to use for the processing.
+     * Name of the Log Analytics Source to use for the processing.
      */
     readonly logSourceName: string;
     /**
@@ -164,7 +164,7 @@ export interface GetLogAnalyticsObjectCollectionRuleResult {
      */
     readonly streamCursorType: string;
     /**
-     * A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+     * A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
      */
     readonly streamId: string;
     /**
@@ -210,11 +210,11 @@ export function getLogAnalyticsObjectCollectionRuleOutput(args: GetLogAnalyticsO
  */
 export interface GetLogAnalyticsObjectCollectionRuleOutputArgs {
     /**
-     * The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The Log Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     logAnalyticsObjectCollectionRuleId: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
 }

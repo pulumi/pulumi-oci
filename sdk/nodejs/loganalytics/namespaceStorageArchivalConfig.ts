@@ -24,6 +24,7 @@ import * as utilities from "../utilities";
  *     archivingConfiguration: {
  *         activeStorageDuration: namespaceStorageArchivalConfigArchivingConfigurationActiveStorageDuration,
  *         archivalStorageDuration: namespaceStorageArchivalConfigArchivingConfigurationArchivalStorageDuration,
+ *         timeOldestActiveBucketEnded: namespaceStorageArchivalConfigArchivingConfigurationTimeOldestActiveBucketEnded,
  *     },
  *     namespace: namespaceStorageArchivalConfigNamespace,
  * });
@@ -66,10 +67,7 @@ export class NamespaceStorageArchivalConfig extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly isArchivingEnabled: pulumi.Output<boolean>;
     /**
-     * The Logging Analytics namespace used for the request.
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     declare public readonly namespace: pulumi.Output<string>;
 
@@ -119,10 +117,7 @@ export interface NamespaceStorageArchivalConfigState {
      */
     isArchivingEnabled?: pulumi.Input<boolean>;
     /**
-     * The Logging Analytics namespace used for the request.
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace?: pulumi.Input<string>;
 }
@@ -136,10 +131,7 @@ export interface NamespaceStorageArchivalConfigArgs {
      */
     archivingConfiguration: pulumi.Input<inputs.LogAnalytics.NamespaceStorageArchivalConfigArchivingConfiguration>;
     /**
-     * The Logging Analytics namespace used for the request.
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
 }

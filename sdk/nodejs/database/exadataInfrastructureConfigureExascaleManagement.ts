@@ -263,6 +263,7 @@ export class ExadataInfrastructureConfigureExascaleManagement extends pulumi.Cus
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     declare public readonly totalStorageInGbs: pulumi.Output<number>;
+    declare public readonly totalVmStorageInGbs: pulumi.Output<number>;
 
     /**
      * Create a ExadataInfrastructureConfigureExascaleManagement resource with the given unique name, arguments, and options.
@@ -327,6 +328,7 @@ export class ExadataInfrastructureConfigureExascaleManagement extends pulumi.Cus
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeZone"] = state?.timeZone;
             resourceInputs["totalStorageInGbs"] = state?.totalStorageInGbs;
+            resourceInputs["totalVmStorageInGbs"] = state?.totalVmStorageInGbs;
         } else {
             const args = argsOrState as ExadataInfrastructureConfigureExascaleManagementArgs | undefined;
             if (args?.exadataInfrastructureId === undefined && !opts.urn) {
@@ -337,6 +339,7 @@ export class ExadataInfrastructureConfigureExascaleManagement extends pulumi.Cus
             }
             resourceInputs["exadataInfrastructureId"] = args?.exadataInfrastructureId;
             resourceInputs["totalStorageInGbs"] = args?.totalStorageInGbs;
+            resourceInputs["totalVmStorageInGbs"] = args?.totalVmStorageInGbs;
             resourceInputs["activatedStorageCount"] = undefined /*out*/;
             resourceInputs["additionalComputeCount"] = undefined /*out*/;
             resourceInputs["additionalComputeSystemModel"] = undefined /*out*/;
@@ -599,6 +602,7 @@ export interface ExadataInfrastructureConfigureExascaleManagementState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     totalStorageInGbs?: pulumi.Input<number>;
+    totalVmStorageInGbs?: pulumi.Input<number>;
 }
 
 /**
@@ -617,4 +621,5 @@ export interface ExadataInfrastructureConfigureExascaleManagementArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     totalStorageInGbs: pulumi.Input<number>;
+    totalVmStorageInGbs?: pulumi.Input<number>;
 }

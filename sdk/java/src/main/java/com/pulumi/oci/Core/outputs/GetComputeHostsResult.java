@@ -47,6 +47,11 @@ public final class GetComputeHostsResult {
     private @Nullable String displayName;
     private @Nullable List<GetComputeHostsFilter> filters;
     /**
+     * @return The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+     * 
+     */
+    private String hostCorrelationId;
+    /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
@@ -107,6 +112,13 @@ public final class GetComputeHostsResult {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
+     * @return The ID that remains consistent when a host moves between capacity pools within the same tenancy.
+     * 
+     */
+    public String hostCorrelationId() {
+        return this.hostCorrelationId;
+    }
+    /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
@@ -142,6 +154,7 @@ public final class GetComputeHostsResult {
         private @Nullable String computeHostLifecycleState;
         private @Nullable String displayName;
         private @Nullable List<GetComputeHostsFilter> filters;
+        private String hostCorrelationId;
         private String id;
         private Map<String,String> lifecycleDetails;
         private @Nullable String networkResourceId;
@@ -157,6 +170,7 @@ public final class GetComputeHostsResult {
     	      this.computeHostLifecycleState = defaults.computeHostLifecycleState;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
+    	      this.hostCorrelationId = defaults.hostCorrelationId;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.networkResourceId = defaults.networkResourceId;
@@ -227,6 +241,14 @@ public final class GetComputeHostsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
+        public Builder hostCorrelationId(String hostCorrelationId) {
+            if (hostCorrelationId == null) {
+              throw new MissingRequiredPropertyException("GetComputeHostsResult", "hostCorrelationId");
+            }
+            this.hostCorrelationId = hostCorrelationId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
               throw new MissingRequiredPropertyException("GetComputeHostsResult", "id");
@@ -259,6 +281,7 @@ public final class GetComputeHostsResult {
             _resultValue.computeHostLifecycleState = computeHostLifecycleState;
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
+            _resultValue.hostCorrelationId = hostCorrelationId;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.networkResourceId = networkResourceId;

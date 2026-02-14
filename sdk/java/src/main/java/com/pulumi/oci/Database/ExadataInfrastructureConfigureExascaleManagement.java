@@ -779,6 +779,12 @@ public class ExadataInfrastructureConfigureExascaleManagement extends com.pulumi
     public Output<Integer> totalStorageInGbs() {
         return this.totalStorageInGbs;
     }
+    @Export(name="totalVmStorageInGbs", refs={Integer.class}, tree="[0]")
+    private Output<Integer> totalVmStorageInGbs;
+
+    public Output<Integer> totalVmStorageInGbs() {
+        return this.totalVmStorageInGbs;
+    }
 
     /**
      *

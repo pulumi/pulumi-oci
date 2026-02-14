@@ -27,13 +27,16 @@ class GetNetworkFirewallPolicyTunnelInspectionRuleResult:
     """
     A collection of values returned by getNetworkFirewallPolicyTunnelInspectionRule.
     """
-    def __init__(__self__, action=None, conditions=None, id=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, positions=None, priority_order=None, profiles=None, protocol=None, tunnel_inspection_rule_name=None):
+    def __init__(__self__, action=None, conditions=None, description=None, id=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, positions=None, priority_order=None, profiles=None, protocol=None, tunnel_inspection_rule_name=None):
         if action and not isinstance(action, str):
             raise TypeError("Expected argument 'action' to be a str")
         pulumi.set(__self__, "action", action)
         if conditions and not isinstance(conditions, list):
             raise TypeError("Expected argument 'conditions' to be a list")
         pulumi.set(__self__, "conditions", conditions)
+        if description and not isinstance(description, str):
+            raise TypeError("Expected argument 'description' to be a str")
+        pulumi.set(__self__, "description", description)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -79,6 +82,14 @@ class GetNetworkFirewallPolicyTunnelInspectionRuleResult:
         Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
         """
         return pulumi.get(self, "conditions")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the tunnel inspect rule. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter
@@ -153,6 +164,7 @@ class AwaitableGetNetworkFirewallPolicyTunnelInspectionRuleResult(GetNetworkFire
         return GetNetworkFirewallPolicyTunnelInspectionRuleResult(
             action=self.action,
             conditions=self.conditions,
+            description=self.description,
             id=self.id,
             name=self.name,
             network_firewall_policy_id=self.network_firewall_policy_id,
@@ -195,6 +207,7 @@ def get_network_firewall_policy_tunnel_inspection_rule(network_firewall_policy_i
     return AwaitableGetNetworkFirewallPolicyTunnelInspectionRuleResult(
         action=pulumi.get(__ret__, 'action'),
         conditions=pulumi.get(__ret__, 'conditions'),
+        description=pulumi.get(__ret__, 'description'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
@@ -234,6 +247,7 @@ def get_network_firewall_policy_tunnel_inspection_rule_output(network_firewall_p
     return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyTunnelInspectionRuleResult(
         action=pulumi.get(__response__, 'action'),
         conditions=pulumi.get(__response__, 'conditions'),
+        description=pulumi.get(__response__, 'description'),
         id=pulumi.get(__response__, 'id'),
         name=pulumi.get(__response__, 'name'),
         network_firewall_policy_id=pulumi.get(__response__, 'network_firewall_policy_id'),

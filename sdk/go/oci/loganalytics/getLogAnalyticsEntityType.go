@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -53,9 +53,9 @@ func LookupLogAnalyticsEntityType(ctx *pulumi.Context, args *LookupLogAnalyticsE
 
 // A collection of arguments for invoking getLogAnalyticsEntityType.
 type LookupLogAnalyticsEntityTypeArgs struct {
-	// Log analytics entity type name.
+	// Log analytics entity type name. Entity type name can be obtained by running 'oci log-analytics entity-type list --namespace-name <namespacename> --all'. The json output 'internal-name' parameter value contains the entity type name.
 	EntityTypeName string `pulumi:"entityTypeName"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -94,9 +94,9 @@ func LookupLogAnalyticsEntityTypeOutput(ctx *pulumi.Context, args LookupLogAnaly
 
 // A collection of arguments for invoking getLogAnalyticsEntityType.
 type LookupLogAnalyticsEntityTypeOutputArgs struct {
-	// Log analytics entity type name.
+	// Log analytics entity type name. Entity type name can be obtained by running 'oci log-analytics entity-type list --namespace-name <namespacename> --all'. The json output 'internal-name' parameter value contains the entity type name.
 	EntityTypeName pulumi.StringInput `pulumi:"entityTypeName"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 }
 

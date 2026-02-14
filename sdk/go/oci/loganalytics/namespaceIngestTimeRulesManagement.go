@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -25,7 +25,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -53,9 +53,9 @@ type NamespaceIngestTimeRulesManagement struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableIngestTimeRule pulumi.BoolOutput `pulumi:"enableIngestTimeRule"`
-	// Unique ocid of the ingest time rule.
+	// Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
 	IngestTimeRuleId pulumi.StringOutput `pulumi:"ingestTimeRuleId"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 }
 
@@ -103,9 +103,9 @@ type namespaceIngestTimeRulesManagementState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableIngestTimeRule *bool `pulumi:"enableIngestTimeRule"`
-	// Unique ocid of the ingest time rule.
+	// Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
 	IngestTimeRuleId *string `pulumi:"ingestTimeRuleId"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace *string `pulumi:"namespace"`
 }
 
@@ -115,9 +115,9 @@ type NamespaceIngestTimeRulesManagementState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableIngestTimeRule pulumi.BoolPtrInput
-	// Unique ocid of the ingest time rule.
+	// Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
 	IngestTimeRuleId pulumi.StringPtrInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringPtrInput
 }
 
@@ -131,9 +131,9 @@ type namespaceIngestTimeRulesManagementArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableIngestTimeRule bool `pulumi:"enableIngestTimeRule"`
-	// Unique ocid of the ingest time rule.
+	// Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
 	IngestTimeRuleId string `pulumi:"ingestTimeRuleId"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -144,9 +144,9 @@ type NamespaceIngestTimeRulesManagementArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableIngestTimeRule pulumi.BoolInput
-	// Unique ocid of the ingest time rule.
+	// Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
 	IngestTimeRuleId pulumi.StringInput
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput
 }
 
@@ -245,12 +245,12 @@ func (o NamespaceIngestTimeRulesManagementOutput) EnableIngestTimeRule() pulumi.
 	return o.ApplyT(func(v *NamespaceIngestTimeRulesManagement) pulumi.BoolOutput { return v.EnableIngestTimeRule }).(pulumi.BoolOutput)
 }
 
-// Unique ocid of the ingest time rule.
+// Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
 func (o NamespaceIngestTimeRulesManagementOutput) IngestTimeRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceIngestTimeRulesManagement) pulumi.StringOutput { return v.IngestTimeRuleId }).(pulumi.StringOutput)
 }
 
-// The Logging Analytics namespace used for the request.
+// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 func (o NamespaceIngestTimeRulesManagementOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceIngestTimeRulesManagement) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }

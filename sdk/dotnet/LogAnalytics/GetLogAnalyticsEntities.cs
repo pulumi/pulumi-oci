@@ -279,7 +279,7 @@ namespace Pulumi.Oci.LogAnalytics
         public string? NameContains { get; set; }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace", required: true)]
         public string Namespace { get; set; } = null!;
@@ -439,7 +439,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? NameContains { get; set; }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;

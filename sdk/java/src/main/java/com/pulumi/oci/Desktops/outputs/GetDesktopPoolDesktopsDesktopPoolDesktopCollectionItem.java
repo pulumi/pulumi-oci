@@ -5,8 +5,11 @@ package com.pulumi.oci.Desktops.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Desktops.outputs.GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection;
+import com.pulumi.oci.Desktops.outputs.GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImage;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -18,6 +21,11 @@ public final class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem {
      */
     private Map<String,String> definedTags;
     /**
+     * @return Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+     * 
+     */
+    private List<GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection> desktopConnections;
+    /**
      * @return The OCID of the desktop.
      * 
      */
@@ -27,6 +35,11 @@ public final class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem {
      * 
      */
     private Map<String,String> freeformTags;
+    /**
+     * @return Provides information about the desktop image.
+     * 
+     */
+    private List<GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImage> images;
     /**
      * @return The OCID of the compute resource used by this desktop.
      * 
@@ -62,6 +75,13 @@ public final class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem {
         return this.definedTags;
     }
     /**
+     * @return Provides information about a connection to a desktop, including connect and disconnect time, and client properties.
+     * 
+     */
+    public List<GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection> desktopConnections() {
+        return this.desktopConnections;
+    }
+    /**
      * @return The OCID of the desktop.
      * 
      */
@@ -74,6 +94,13 @@ public final class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem {
      */
     public Map<String,String> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * @return Provides information about the desktop image.
+     * 
+     */
+    public List<GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImage> images() {
+        return this.images;
     }
     /**
      * @return The OCID of the compute resource used by this desktop.
@@ -121,8 +148,10 @@ public final class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private Map<String,String> definedTags;
+        private List<GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection> desktopConnections;
         private String desktopId;
         private Map<String,String> freeformTags;
+        private List<GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImage> images;
         private String instanceId;
         private Boolean isAssigned;
         private String state;
@@ -132,8 +161,10 @@ public final class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem {
         public Builder(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.definedTags = defaults.definedTags;
+    	      this.desktopConnections = defaults.desktopConnections;
     	      this.desktopId = defaults.desktopId;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.images = defaults.images;
     	      this.instanceId = defaults.instanceId;
     	      this.isAssigned = defaults.isAssigned;
     	      this.state = defaults.state;
@@ -150,6 +181,17 @@ public final class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder desktopConnections(List<GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection> desktopConnections) {
+            if (desktopConnections == null) {
+              throw new MissingRequiredPropertyException("GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem", "desktopConnections");
+            }
+            this.desktopConnections = desktopConnections;
+            return this;
+        }
+        public Builder desktopConnections(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemDesktopConnection... desktopConnections) {
+            return desktopConnections(List.of(desktopConnections));
+        }
+        @CustomType.Setter
         public Builder desktopId(String desktopId) {
             if (desktopId == null) {
               throw new MissingRequiredPropertyException("GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem", "desktopId");
@@ -164,6 +206,17 @@ public final class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem {
             }
             this.freeformTags = freeformTags;
             return this;
+        }
+        @CustomType.Setter
+        public Builder images(List<GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImage> images) {
+            if (images == null) {
+              throw new MissingRequiredPropertyException("GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem", "images");
+            }
+            this.images = images;
+            return this;
+        }
+        public Builder images(GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItemImage... images) {
+            return images(List.of(images));
         }
         @CustomType.Setter
         public Builder instanceId(String instanceId) {
@@ -208,8 +261,10 @@ public final class GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem {
         public GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem build() {
             final var _resultValue = new GetDesktopPoolDesktopsDesktopPoolDesktopCollectionItem();
             _resultValue.definedTags = definedTags;
+            _resultValue.desktopConnections = desktopConnections;
             _resultValue.desktopId = desktopId;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.images = images;
             _resultValue.instanceId = instanceId;
             _resultValue.isAssigned = isAssigned;
             _resultValue.state = state;

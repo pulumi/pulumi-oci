@@ -10,6 +10,8 @@ import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyTunnelInsp
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfile;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem {
@@ -25,6 +27,11 @@ public final class GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspection
      * 
      */
     private GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemCondition condition;
+    /**
+     * @return The description of the tunnel inspect rule. This field can be used to add additional info.
+     * 
+     */
+    private @Nullable String description;
     /**
      * @return Name for the Tunnel Inspection Rule, must be unique within the policy.
      * 
@@ -78,6 +85,13 @@ public final class GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspection
      */
     public GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemCondition condition() {
         return this.condition;
+    }
+    /**
+     * @return The description of the tunnel inspect rule. This field can be used to add additional info.
+     * 
+     */
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Name for the Tunnel Inspection Rule, must be unique within the policy.
@@ -141,6 +155,7 @@ public final class GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspection
     public static final class Builder {
         private String action;
         private GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemCondition condition;
+        private @Nullable String description;
         private String name;
         private String networkFirewallPolicyId;
         private String parentResourceId;
@@ -153,6 +168,7 @@ public final class GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspection
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
     	      this.condition = defaults.condition;
+    	      this.description = defaults.description;
     	      this.name = defaults.name;
     	      this.networkFirewallPolicyId = defaults.networkFirewallPolicyId;
     	      this.parentResourceId = defaults.parentResourceId;
@@ -176,6 +192,12 @@ public final class GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspection
               throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem", "condition");
             }
             this.condition = condition;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder description(@Nullable String description) {
+
+            this.description = description;
             return this;
         }
         @CustomType.Setter
@@ -238,6 +260,7 @@ public final class GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspection
             final var _resultValue = new GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem();
             _resultValue.action = action;
             _resultValue.condition = condition;
+            _resultValue.description = description;
             _resultValue.name = name;
             _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
             _resultValue.parentResourceId = parentResourceId;

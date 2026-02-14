@@ -25,6 +25,12 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
         public Input<string>? MisfirePolicy { get; set; }
 
         /// <summary>
+        /// Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
+        /// </summary>
+        [Input("queryOffsetSecs")]
+        public Input<int>? QueryOffsetSecs { get; set; }
+
+        /// <summary>
         /// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         /// </summary>
         [Input("recurringInterval")]
@@ -35,6 +41,12 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
         /// </summary>
         [Input("repeatCount")]
         public Input<int>? RepeatCount { get; set; }
+
+        /// <summary>
+        /// End time for the schedule, even if the schedule would otherwise have remaining executions.
+        /// </summary>
+        [Input("timeEnd")]
+        public Input<string>? TimeEnd { get; set; }
 
         /// <summary>
         /// Time zone, by default UTC.

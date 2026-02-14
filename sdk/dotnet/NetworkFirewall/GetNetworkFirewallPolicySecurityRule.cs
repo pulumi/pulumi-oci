@@ -99,6 +99,10 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkFirewallPolicySecurityRuleConditionResult> Conditions;
+        /// <summary>
+        /// The description of the security rule. This field can be used to add additional info.
+        /// </summary>
+        public readonly string Description;
         public readonly string Id;
         /// <summary>
         /// Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
@@ -127,6 +131,8 @@ namespace Pulumi.Oci.NetworkFirewall
 
             ImmutableArray<Outputs.GetNetworkFirewallPolicySecurityRuleConditionResult> conditions,
 
+            string description,
+
             string id,
 
             string inspection,
@@ -143,6 +149,7 @@ namespace Pulumi.Oci.NetworkFirewall
         {
             Action = action;
             Conditions = conditions;
+            Description = description;
             Id = id;
             Inspection = inspection;
             Name = name;

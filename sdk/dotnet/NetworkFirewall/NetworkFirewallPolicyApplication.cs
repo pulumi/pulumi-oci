@@ -33,6 +33,7 @@ namespace Pulumi.Oci.NetworkFirewall
     ///         Name = networkFirewallPolicyApplicationName,
     ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
     ///         Type = networkFirewallPolicyApplicationType,
+    ///         Description = networkFirewallPolicyApplicationDescription,
     ///         IcmpCode = networkFirewallPolicyApplicationIcmpCode,
     ///     });
     /// 
@@ -51,13 +52,19 @@ namespace Pulumi.Oci.NetworkFirewall
     public partial class NetworkFirewallPolicyApplication : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        /// (Updatable) The description of the application. This field can be used to add additional info.
+        /// </summary>
+        [Output("description")]
+        public Output<string?> Description { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         /// </summary>
         [Output("icmpCode")]
         public Output<int> IcmpCode { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        /// (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         /// </summary>
         [Output("icmpType")]
         public Output<int> IcmpType { get; private set; } = null!;
@@ -137,13 +144,19 @@ namespace Pulumi.Oci.NetworkFirewall
     public sealed class NetworkFirewallPolicyApplicationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        /// (Updatable) The description of the application. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         /// </summary>
         [Input("icmpCode")]
         public Input<int>? IcmpCode { get; set; }
 
         /// <summary>
-        /// (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        /// (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         /// </summary>
         [Input("icmpType", required: true)]
         public Input<int> IcmpType { get; set; } = null!;
@@ -179,13 +192,19 @@ namespace Pulumi.Oci.NetworkFirewall
     public sealed class NetworkFirewallPolicyApplicationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        /// (Updatable) The description of the application. This field can be used to add additional info.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         /// </summary>
         [Input("icmpCode")]
         public Input<int>? IcmpCode { get; set; }
 
         /// <summary>
-        /// (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+        /// (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         /// </summary>
         [Input("icmpType")]
         public Input<int>? IcmpType { get; set; }

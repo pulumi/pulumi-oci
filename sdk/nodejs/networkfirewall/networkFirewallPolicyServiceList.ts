@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     name: networkFirewallPolicyServiceListName,
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     services: networkFirewallPolicyServiceListServices,
+ *     description: networkFirewallPolicyServiceListDescription,
  * });
  * ```
  *
@@ -62,6 +63,10 @@ export class NetworkFirewallPolicyServiceList extends pulumi.CustomResource {
     }
 
     /**
+     * (Updatable) The description of the service list. This field can be used to add additional info.
+     */
+    declare public readonly description: pulumi.Output<string | undefined>;
+    /**
      * Name of the service Group.
      */
     declare public readonly name: pulumi.Output<string>;
@@ -99,6 +104,7 @@ export class NetworkFirewallPolicyServiceList extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyServiceListState | undefined;
+            resourceInputs["description"] = state?.description;
             resourceInputs["name"] = state?.name;
             resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
             resourceInputs["parentResourceId"] = state?.parentResourceId;
@@ -112,6 +118,7 @@ export class NetworkFirewallPolicyServiceList extends pulumi.CustomResource {
             if (args?.services === undefined && !opts.urn) {
                 throw new Error("Missing required property 'services'");
             }
+            resourceInputs["description"] = args?.description;
             resourceInputs["name"] = args?.name;
             resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
             resourceInputs["services"] = args?.services;
@@ -127,6 +134,10 @@ export class NetworkFirewallPolicyServiceList extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NetworkFirewallPolicyServiceList resources.
  */
 export interface NetworkFirewallPolicyServiceListState {
+    /**
+     * (Updatable) The description of the service list. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * Name of the service Group.
      */
@@ -157,6 +168,10 @@ export interface NetworkFirewallPolicyServiceListState {
  * The set of arguments for constructing a NetworkFirewallPolicyServiceList resource.
  */
 export interface NetworkFirewallPolicyServiceListArgs {
+    /**
+     * (Updatable) The description of the service list. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * Name of the service Group.
      */

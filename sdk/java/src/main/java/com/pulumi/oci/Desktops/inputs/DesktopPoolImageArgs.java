@@ -17,14 +17,14 @@ public final class DesktopPoolImageArgs extends com.pulumi.resources.ResourceArg
     public static final DesktopPoolImageArgs Empty = new DesktopPoolImageArgs();
 
     /**
-     * The OCID of the desktop image.
+     * (Updatable) The OCID of the desktop image.
      * 
      */
     @Import(name="imageId", required=true)
     private Output<String> imageId;
 
     /**
-     * @return The OCID of the desktop image.
+     * @return (Updatable) The OCID of the desktop image.
      * 
      */
     public Output<String> imageId() {
@@ -88,7 +88,7 @@ public final class DesktopPoolImageArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param imageId The OCID of the desktop image.
+         * @param imageId (Updatable) The OCID of the desktop image.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class DesktopPoolImageArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param imageId The OCID of the desktop image.
+         * @param imageId (Updatable) The OCID of the desktop image.
          * 
          * @return builder
          * 

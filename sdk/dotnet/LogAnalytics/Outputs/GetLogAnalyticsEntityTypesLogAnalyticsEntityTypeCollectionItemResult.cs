@@ -31,12 +31,12 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         public readonly string Namespace;
         public readonly ImmutableArray<Outputs.GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionItemPropertyResult> Properties;
         /// <summary>
-        /// A filter to return only those log analytics entity types with the specified lifecycle state. The state value is case-insensitive.
+        /// A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
         /// </summary>
         public readonly string State;
         /// <summary>

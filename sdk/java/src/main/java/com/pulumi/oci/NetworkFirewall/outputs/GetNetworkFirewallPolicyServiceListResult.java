@@ -12,6 +12,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNetworkFirewallPolicyServiceListResult {
+    /**
+     * @return The description of the service list. This field can be used to add additional info.
+     * 
+     */
+    private String description;
     private String id;
     /**
      * @return Name of the service Group.
@@ -36,6 +41,13 @@ public final class GetNetworkFirewallPolicyServiceListResult {
     private Integer totalServices;
 
     private GetNetworkFirewallPolicyServiceListResult() {}
+    /**
+     * @return The description of the service list. This field can be used to add additional info.
+     * 
+     */
+    public String description() {
+        return this.description;
+    }
     public String id() {
         return this.id;
     }
@@ -80,6 +92,7 @@ public final class GetNetworkFirewallPolicyServiceListResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String description;
         private String id;
         private String name;
         private String networkFirewallPolicyId;
@@ -89,6 +102,7 @@ public final class GetNetworkFirewallPolicyServiceListResult {
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyServiceListResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.description = defaults.description;
     	      this.id = defaults.id;
     	      this.name = defaults.name;
     	      this.networkFirewallPolicyId = defaults.networkFirewallPolicyId;
@@ -97,6 +111,14 @@ public final class GetNetworkFirewallPolicyServiceListResult {
     	      this.totalServices = defaults.totalServices;
         }
 
+        @CustomType.Setter
+        public Builder description(String description) {
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyServiceListResult", "description");
+            }
+            this.description = description;
+            return this;
+        }
         @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
@@ -150,6 +172,7 @@ public final class GetNetworkFirewallPolicyServiceListResult {
         }
         public GetNetworkFirewallPolicyServiceListResult build() {
             final var _resultValue = new GetNetworkFirewallPolicyServiceListResult();
+            _resultValue.description = description;
             _resultValue.id = id;
             _resultValue.name = name;
             _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;

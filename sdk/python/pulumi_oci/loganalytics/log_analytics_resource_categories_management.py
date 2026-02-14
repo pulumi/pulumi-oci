@@ -25,7 +25,7 @@ class LogAnalyticsResourceCategoriesManagementArgs:
                  resource_type: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a LogAnalyticsResourceCategoriesManagement resource.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resource_categories: The list of categories to be assigned to the resource.
         :param pulumi.Input[_builtins.str] resource_id: The resource unique identifier for which catagories are managed.
         :param pulumi.Input[_builtins.str] resource_type: The resource type of the resource for which categories are managed.
@@ -43,7 +43,7 @@ class LogAnalyticsResourceCategoriesManagementArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -101,7 +101,7 @@ class _LogAnalyticsResourceCategoriesManagementState:
                  resource_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsResourceCategoriesManagement resources.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resource_categories: The list of categories to be assigned to the resource.
         :param pulumi.Input[_builtins.str] resource_id: The resource unique identifier for which catagories are managed.
         :param pulumi.Input[_builtins.str] resource_type: The resource type of the resource for which categories are managed.
@@ -123,7 +123,7 @@ class _LogAnalyticsResourceCategoriesManagementState:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
@@ -210,7 +210,7 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resource_categories: The list of categories to be assigned to the resource.
         :param pulumi.Input[_builtins.str] resource_id: The resource unique identifier for which catagories are managed.
         :param pulumi.Input[_builtins.str] resource_type: The resource type of the resource for which categories are managed.
@@ -311,7 +311,7 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resource_categories: The list of categories to be assigned to the resource.
         :param pulumi.Input[_builtins.str] resource_id: The resource unique identifier for which catagories are managed.
         :param pulumi.Input[_builtins.str] resource_type: The resource type of the resource for which categories are managed.
@@ -334,7 +334,7 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request.
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 

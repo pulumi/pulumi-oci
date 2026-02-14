@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -37,8 +37,10 @@ type LookupNetworkFirewallPolicyDecryptionProfileArgs struct {
 // A collection of values returned by getNetworkFirewallPolicyDecryptionProfile.
 type LookupNetworkFirewallPolicyDecryptionProfileResult struct {
 	// Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
-	AreCertificateExtensionsRestricted bool   `pulumi:"areCertificateExtensionsRestricted"`
-	Id                                 string `pulumi:"id"`
+	AreCertificateExtensionsRestricted bool `pulumi:"areCertificateExtensionsRestricted"`
+	// The description of the decryption profile. This field can be used to add additional info.
+	Description string `pulumi:"description"`
+	Id          string `pulumi:"id"`
 	// Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
 	IsAutoIncludeAltName bool `pulumi:"isAutoIncludeAltName"`
 	// Whether to block sessions if server's certificate is expired.
@@ -105,6 +107,11 @@ func (o LookupNetworkFirewallPolicyDecryptionProfileResultOutput) AreCertificate
 	return o.ApplyT(func(v LookupNetworkFirewallPolicyDecryptionProfileResult) bool {
 		return v.AreCertificateExtensionsRestricted
 	}).(pulumi.BoolOutput)
+}
+
+// The description of the decryption profile. This field can be used to add additional info.
+func (o LookupNetworkFirewallPolicyDecryptionProfileResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyDecryptionProfileResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 func (o LookupNetworkFirewallPolicyDecryptionProfileResultOutput) Id() pulumi.StringOutput {

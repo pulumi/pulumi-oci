@@ -58,7 +58,9 @@ class CloudVmClusterArgs:
                  system_version: Optional[pulumi.Input[_builtins.str]] = None,
                  tde_key_store_type: Optional[pulumi.Input[_builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_cluster_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 vm_backup_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_cluster_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_file_system_storage_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudVmCluster resource.
         :param pulumi.Input[_builtins.str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
@@ -117,7 +119,9 @@ class CloudVmClusterArgs:
         :param pulumi.Input[_builtins.str] system_version: Operating system version of the image.
         :param pulumi.Input[_builtins.str] tde_key_store_type: Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[_builtins.str] vm_backup_storage_type: (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
         :param pulumi.Input[_builtins.str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
+        :param pulumi.Input[_builtins.str] vm_file_system_storage_type: Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
                
                
                ** IMPORTANT **
@@ -188,8 +192,12 @@ class CloudVmClusterArgs:
             pulumi.set(__self__, "tde_key_store_type", tde_key_store_type)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
+        if vm_backup_storage_type is not None:
+            pulumi.set(__self__, "vm_backup_storage_type", vm_backup_storage_type)
         if vm_cluster_type is not None:
             pulumi.set(__self__, "vm_cluster_type", vm_cluster_type)
+        if vm_file_system_storage_type is not None:
+            pulumi.set(__self__, "vm_file_system_storage_type", vm_file_system_storage_type)
 
     @_builtins.property
     @pulumi.getter(name="backupSubnetId")
@@ -653,20 +661,44 @@ class CloudVmClusterArgs:
         pulumi.set(self, "time_zone", value)
 
     @_builtins.property
+    @pulumi.getter(name="vmBackupStorageType")
+    def vm_backup_storage_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+        """
+        return pulumi.get(self, "vm_backup_storage_type")
+
+    @vm_backup_storage_type.setter
+    def vm_backup_storage_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vm_backup_storage_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="vmClusterType")
     def vm_cluster_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The vmcluster type for the VM cluster/Cloud VM cluster.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vm_cluster_type")
 
     @vm_cluster_type.setter
     def vm_cluster_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "vm_cluster_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmFileSystemStorageType")
+    def vm_file_system_storage_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "vm_file_system_storage_type")
+
+    @vm_file_system_storage_type.setter
+    def vm_file_system_storage_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vm_file_system_storage_type", value)
 
 
 @pulumi.input_type
@@ -730,7 +762,9 @@ class _CloudVmClusterState:
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None,
                  vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  vipv6ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vm_backup_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
                  vm_cluster_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_file_system_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
                  zone_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudVmCluster resources.
@@ -811,7 +845,9 @@ class _CloudVmClusterState:
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vipv6ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        :param pulumi.Input[_builtins.str] vm_backup_storage_type: (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
         :param pulumi.Input[_builtins.str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
+        :param pulumi.Input[_builtins.str] vm_file_system_storage_type: Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
                
                
                ** IMPORTANT **
@@ -934,8 +970,12 @@ class _CloudVmClusterState:
             pulumi.set(__self__, "vip_ids", vip_ids)
         if vipv6ids is not None:
             pulumi.set(__self__, "vipv6ids", vipv6ids)
+        if vm_backup_storage_type is not None:
+            pulumi.set(__self__, "vm_backup_storage_type", vm_backup_storage_type)
         if vm_cluster_type is not None:
             pulumi.set(__self__, "vm_cluster_type", vm_cluster_type)
+        if vm_file_system_storage_type is not None:
+            pulumi.set(__self__, "vm_file_system_storage_type", vm_file_system_storage_type)
         if zone_id is not None:
             pulumi.set(__self__, "zone_id", zone_id)
 
@@ -1653,20 +1693,44 @@ class _CloudVmClusterState:
         pulumi.set(self, "vipv6ids", value)
 
     @_builtins.property
+    @pulumi.getter(name="vmBackupStorageType")
+    def vm_backup_storage_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+        """
+        return pulumi.get(self, "vm_backup_storage_type")
+
+    @vm_backup_storage_type.setter
+    def vm_backup_storage_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vm_backup_storage_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="vmClusterType")
     def vm_cluster_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The vmcluster type for the VM cluster/Cloud VM cluster.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vm_cluster_type")
 
     @vm_cluster_type.setter
     def vm_cluster_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "vm_cluster_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmFileSystemStorageType")
+    def vm_file_system_storage_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "vm_file_system_storage_type")
+
+    @vm_file_system_storage_type.setter
+    def vm_file_system_storage_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vm_file_system_storage_type", value)
 
     @_builtins.property
     @pulumi.getter(name="zoneId")
@@ -1724,7 +1788,9 @@ class CloudVmCluster(pulumi.CustomResource):
                  system_version: Optional[pulumi.Input[_builtins.str]] = None,
                  tde_key_store_type: Optional[pulumi.Input[_builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_backup_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
                  vm_cluster_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_file_system_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Cloud Vm Cluster resource in Oracle Cloud Infrastructure Database service.
@@ -1796,7 +1862,9 @@ class CloudVmCluster(pulumi.CustomResource):
             subscription_id=tenant_subscription_id,
             system_version=cloud_vm_cluster_system_version,
             time_zone=cloud_vm_cluster_time_zone,
-            vm_cluster_type=cloud_vm_cluster_vm_cluster_type)
+            vm_backup_storage_type=cloud_vm_cluster_vm_backup_storage_type,
+            vm_cluster_type=cloud_vm_cluster_vm_cluster_type,
+            vm_file_system_storage_type=cloud_vm_cluster_vm_file_system_storage_type)
         ```
 
         ## Import
@@ -1865,7 +1933,9 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] system_version: Operating system version of the image.
         :param pulumi.Input[_builtins.str] tde_key_store_type: Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[_builtins.str] vm_backup_storage_type: (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
         :param pulumi.Input[_builtins.str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
+        :param pulumi.Input[_builtins.str] vm_file_system_storage_type: Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
                
                
                ** IMPORTANT **
@@ -1947,7 +2017,9 @@ class CloudVmCluster(pulumi.CustomResource):
             subscription_id=tenant_subscription_id,
             system_version=cloud_vm_cluster_system_version,
             time_zone=cloud_vm_cluster_time_zone,
-            vm_cluster_type=cloud_vm_cluster_vm_cluster_type)
+            vm_backup_storage_type=cloud_vm_cluster_vm_backup_storage_type,
+            vm_cluster_type=cloud_vm_cluster_vm_cluster_type,
+            vm_file_system_storage_type=cloud_vm_cluster_vm_file_system_storage_type)
         ```
 
         ## Import
@@ -2010,7 +2082,9 @@ class CloudVmCluster(pulumi.CustomResource):
                  system_version: Optional[pulumi.Input[_builtins.str]] = None,
                  tde_key_store_type: Optional[pulumi.Input[_builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_backup_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
                  vm_cluster_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_file_system_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -2075,7 +2149,9 @@ class CloudVmCluster(pulumi.CustomResource):
             __props__.__dict__["system_version"] = system_version
             __props__.__dict__["tde_key_store_type"] = tde_key_store_type
             __props__.__dict__["time_zone"] = time_zone
+            __props__.__dict__["vm_backup_storage_type"] = vm_backup_storage_type
             __props__.__dict__["vm_cluster_type"] = vm_cluster_type
+            __props__.__dict__["vm_file_system_storage_type"] = vm_file_system_storage_type
             __props__.__dict__["availability_domain"] = None
             __props__.__dict__["compute_model"] = None
             __props__.__dict__["disk_redundancy"] = None
@@ -2166,7 +2242,9 @@ class CloudVmCluster(pulumi.CustomResource):
             time_zone: Optional[pulumi.Input[_builtins.str]] = None,
             vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             vipv6ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            vm_backup_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
             vm_cluster_type: Optional[pulumi.Input[_builtins.str]] = None,
+            vm_file_system_storage_type: Optional[pulumi.Input[_builtins.str]] = None,
             zone_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'CloudVmCluster':
         """
         Get an existing CloudVmCluster resource's state with the given name, id, and optional extra
@@ -2252,7 +2330,9 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vipv6ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        :param pulumi.Input[_builtins.str] vm_backup_storage_type: (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
         :param pulumi.Input[_builtins.str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
+        :param pulumi.Input[_builtins.str] vm_file_system_storage_type: Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
                
                
                ** IMPORTANT **
@@ -2321,7 +2401,9 @@ class CloudVmCluster(pulumi.CustomResource):
         __props__.__dict__["time_zone"] = time_zone
         __props__.__dict__["vip_ids"] = vip_ids
         __props__.__dict__["vipv6ids"] = vipv6ids
+        __props__.__dict__["vm_backup_storage_type"] = vm_backup_storage_type
         __props__.__dict__["vm_cluster_type"] = vm_cluster_type
+        __props__.__dict__["vm_file_system_storage_type"] = vm_file_system_storage_type
         __props__.__dict__["zone_id"] = zone_id
         return CloudVmCluster(resource_name, opts=opts, __props__=__props__)
 
@@ -2807,16 +2889,32 @@ class CloudVmCluster(pulumi.CustomResource):
         return pulumi.get(self, "vipv6ids")
 
     @_builtins.property
+    @pulumi.getter(name="vmBackupStorageType")
+    def vm_backup_storage_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+        """
+        return pulumi.get(self, "vm_backup_storage_type")
+
+    @_builtins.property
     @pulumi.getter(name="vmClusterType")
     def vm_cluster_type(self) -> pulumi.Output[_builtins.str]:
         """
         The vmcluster type for the VM cluster/Cloud VM cluster.
+        """
+        return pulumi.get(self, "vm_cluster_type")
+
+    @_builtins.property
+    @pulumi.getter(name="vmFileSystemStorageType")
+    def vm_file_system_storage_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        return pulumi.get(self, "vm_cluster_type")
+        return pulumi.get(self, "vm_file_system_storage_type")
 
     @_builtins.property
     @pulumi.getter(name="zoneId")

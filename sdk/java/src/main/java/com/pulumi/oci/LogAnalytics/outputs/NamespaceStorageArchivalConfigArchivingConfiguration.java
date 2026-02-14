@@ -21,6 +21,11 @@ public final class NamespaceStorageArchivalConfigArchivingConfiguration {
      * 
      */
     private @Nullable String archivalStorageDuration;
+    /**
+     * @return (Updatable) end time of the oldest active CoreGroup
+     * 
+     */
+    private @Nullable String timeOldestActiveBucketEnded;
 
     private NamespaceStorageArchivalConfigArchivingConfiguration() {}
     /**
@@ -37,6 +42,13 @@ public final class NamespaceStorageArchivalConfigArchivingConfiguration {
     public Optional<String> archivalStorageDuration() {
         return Optional.ofNullable(this.archivalStorageDuration);
     }
+    /**
+     * @return (Updatable) end time of the oldest active CoreGroup
+     * 
+     */
+    public Optional<String> timeOldestActiveBucketEnded() {
+        return Optional.ofNullable(this.timeOldestActiveBucketEnded);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -49,11 +61,13 @@ public final class NamespaceStorageArchivalConfigArchivingConfiguration {
     public static final class Builder {
         private @Nullable String activeStorageDuration;
         private @Nullable String archivalStorageDuration;
+        private @Nullable String timeOldestActiveBucketEnded;
         public Builder() {}
         public Builder(NamespaceStorageArchivalConfigArchivingConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.activeStorageDuration = defaults.activeStorageDuration;
     	      this.archivalStorageDuration = defaults.archivalStorageDuration;
+    	      this.timeOldestActiveBucketEnded = defaults.timeOldestActiveBucketEnded;
         }
 
         @CustomType.Setter
@@ -68,10 +82,17 @@ public final class NamespaceStorageArchivalConfigArchivingConfiguration {
             this.archivalStorageDuration = archivalStorageDuration;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeOldestActiveBucketEnded(@Nullable String timeOldestActiveBucketEnded) {
+
+            this.timeOldestActiveBucketEnded = timeOldestActiveBucketEnded;
+            return this;
+        }
         public NamespaceStorageArchivalConfigArchivingConfiguration build() {
             final var _resultValue = new NamespaceStorageArchivalConfigArchivingConfiguration();
             _resultValue.activeStorageDuration = activeStorageDuration;
             _resultValue.archivalStorageDuration = archivalStorageDuration;
+            _resultValue.timeOldestActiveBucketEnded = timeOldestActiveBucketEnded;
             return _resultValue;
         }
     }

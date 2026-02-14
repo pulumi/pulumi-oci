@@ -363,8 +363,8 @@ def get_log_analytics_entity(is_show_associated_sources_count: Optional[_builtin
 
 
     :param _builtins.str is_show_associated_sources_count: Option to return count of associated log sources for log analytics entity(s).
-    :param _builtins.str log_analytics_entity_id: The log analytics entity OCID.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str log_analytics_entity_id: The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['isShowAssociatedSourcesCount'] = is_show_associated_sources_count
@@ -422,8 +422,8 @@ def get_log_analytics_entity_output(is_show_associated_sources_count: Optional[p
 
 
     :param _builtins.str is_show_associated_sources_count: Option to return count of associated log sources for log analytics entity(s).
-    :param _builtins.str log_analytics_entity_id: The log analytics entity OCID.
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str log_analytics_entity_id: The log analytics entity ID [OCID]. Entity ID can be obtained by running 'oci log-analytics entity list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the entity ID.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     """
     __args__ = dict()
     __args__['isShowAssociatedSourcesCount'] = is_show_associated_sources_count

@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     apps: networkFirewallPolicyApplicationGroupApps,
  *     name: networkFirewallPolicyApplicationGroupName,
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ *     description: networkFirewallPolicyApplicationGroupDescription,
  * });
  * ```
  *
@@ -62,9 +63,13 @@ export class NetworkFirewallPolicyApplicationGroup extends pulumi.CustomResource
     }
 
     /**
-     * (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+     * (Updatable) Collection of application names.
      */
     declare public readonly apps: pulumi.Output<string[]>;
+    /**
+     * (Updatable) The description of the application group. This field can be used to add additional info.
+     */
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * Name of the application group.
      */
@@ -100,6 +105,7 @@ export class NetworkFirewallPolicyApplicationGroup extends pulumi.CustomResource
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyApplicationGroupState | undefined;
             resourceInputs["apps"] = state?.apps;
+            resourceInputs["description"] = state?.description;
             resourceInputs["name"] = state?.name;
             resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
             resourceInputs["parentResourceId"] = state?.parentResourceId;
@@ -113,6 +119,7 @@ export class NetworkFirewallPolicyApplicationGroup extends pulumi.CustomResource
                 throw new Error("Missing required property 'networkFirewallPolicyId'");
             }
             resourceInputs["apps"] = args?.apps;
+            resourceInputs["description"] = args?.description;
             resourceInputs["name"] = args?.name;
             resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
             resourceInputs["parentResourceId"] = undefined /*out*/;
@@ -128,9 +135,13 @@ export class NetworkFirewallPolicyApplicationGroup extends pulumi.CustomResource
  */
 export interface NetworkFirewallPolicyApplicationGroupState {
     /**
-     * (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+     * (Updatable) Collection of application names.
      */
     apps?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) The description of the application group. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * Name of the application group.
      */
@@ -158,9 +169,13 @@ export interface NetworkFirewallPolicyApplicationGroupState {
  */
 export interface NetworkFirewallPolicyApplicationGroupArgs {
     /**
-     * (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
+     * (Updatable) Collection of application names.
      */
     apps: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) The description of the application group. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
     /**
      * Name of the application group.
      */

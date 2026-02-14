@@ -27,13 +27,16 @@ class GetNetworkFirewallPolicySecurityRuleResult:
     """
     A collection of values returned by getNetworkFirewallPolicySecurityRule.
     """
-    def __init__(__self__, action=None, conditions=None, id=None, inspection=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, positions=None, priority_order=None):
+    def __init__(__self__, action=None, conditions=None, description=None, id=None, inspection=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, positions=None, priority_order=None):
         if action and not isinstance(action, str):
             raise TypeError("Expected argument 'action' to be a str")
         pulumi.set(__self__, "action", action)
         if conditions and not isinstance(conditions, list):
             raise TypeError("Expected argument 'conditions' to be a list")
         pulumi.set(__self__, "conditions", conditions)
+        if description and not isinstance(description, str):
+            raise TypeError("Expected argument 'description' to be a str")
+        pulumi.set(__self__, "description", description)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -75,6 +78,14 @@ class GetNetworkFirewallPolicySecurityRuleResult:
         Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
         """
         return pulumi.get(self, "conditions")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the security rule. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter
@@ -134,6 +145,7 @@ class AwaitableGetNetworkFirewallPolicySecurityRuleResult(GetNetworkFirewallPoli
         return GetNetworkFirewallPolicySecurityRuleResult(
             action=self.action,
             conditions=self.conditions,
+            description=self.description,
             id=self.id,
             inspection=self.inspection,
             name=self.name,
@@ -166,6 +178,7 @@ def get_network_firewall_policy_security_rule(name: Optional[_builtins.str] = No
     return AwaitableGetNetworkFirewallPolicySecurityRuleResult(
         action=pulumi.get(__ret__, 'action'),
         conditions=pulumi.get(__ret__, 'conditions'),
+        description=pulumi.get(__ret__, 'description'),
         id=pulumi.get(__ret__, 'id'),
         inspection=pulumi.get(__ret__, 'inspection'),
         name=pulumi.get(__ret__, 'name'),
@@ -195,6 +208,7 @@ def get_network_firewall_policy_security_rule_output(name: Optional[pulumi.Input
     return __ret__.apply(lambda __response__: GetNetworkFirewallPolicySecurityRuleResult(
         action=pulumi.get(__response__, 'action'),
         conditions=pulumi.get(__response__, 'conditions'),
+        description=pulumi.get(__response__, 'description'),
         id=pulumi.get(__response__, 'id'),
         inspection=pulumi.get(__response__, 'inspection'),
         name=pulumi.get(__response__, 'name'),

@@ -10,9 +10,16 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem {
+    /**
+     * @return The description of the Url list. This field can be used to add additional info.
+     * 
+     */
+    private @Nullable String description;
     /**
      * @return Unique name identifier for the URL list.
      * 
@@ -40,6 +47,13 @@ public final class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem 
     private List<GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemUrl> urls;
 
     private GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem() {}
+    /**
+     * @return The description of the Url list. This field can be used to add additional info.
+     * 
+     */
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
+    }
     /**
      * @return Unique name identifier for the URL list.
      * 
@@ -85,6 +99,7 @@ public final class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem 
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String description;
         private String name;
         private String networkFirewallPolicyId;
         private String parentResourceId;
@@ -93,6 +108,7 @@ public final class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem 
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.description = defaults.description;
     	      this.name = defaults.name;
     	      this.networkFirewallPolicyId = defaults.networkFirewallPolicyId;
     	      this.parentResourceId = defaults.parentResourceId;
@@ -100,6 +116,12 @@ public final class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem 
     	      this.urls = defaults.urls;
         }
 
+        @CustomType.Setter
+        public Builder description(@Nullable String description) {
+
+            this.description = description;
+            return this;
+        }
         @CustomType.Setter
         public Builder name(String name) {
             if (name == null) {
@@ -145,6 +167,7 @@ public final class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem 
         }
         public GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem build() {
             final var _resultValue = new GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem();
+            _resultValue.description = description;
             _resultValue.name = name;
             _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
             _resultValue.parentResourceId = parentResourceId;

@@ -222,6 +222,7 @@ export class CloudExadataInfrastructureConfigureExascaleManagement extends pulum
      * The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
      */
     declare public /*out*/ readonly totalStorageSizeInGbs: pulumi.Output<number>;
+    declare public readonly totalVmStorageInGbs: pulumi.Output<number>;
 
     /**
      * Create a CloudExadataInfrastructureConfigureExascaleManagement resource with the given unique name, arguments, and options.
@@ -275,6 +276,7 @@ export class CloudExadataInfrastructureConfigureExascaleManagement extends pulum
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["totalStorageInGbs"] = state?.totalStorageInGbs;
             resourceInputs["totalStorageSizeInGbs"] = state?.totalStorageSizeInGbs;
+            resourceInputs["totalVmStorageInGbs"] = state?.totalVmStorageInGbs;
         } else {
             const args = argsOrState as CloudExadataInfrastructureConfigureExascaleManagementArgs | undefined;
             if (args?.cloudExadataInfrastructureId === undefined && !opts.urn) {
@@ -285,6 +287,7 @@ export class CloudExadataInfrastructureConfigureExascaleManagement extends pulum
             }
             resourceInputs["cloudExadataInfrastructureId"] = args?.cloudExadataInfrastructureId;
             resourceInputs["totalStorageInGbs"] = args?.totalStorageInGbs;
+            resourceInputs["totalVmStorageInGbs"] = args?.totalVmStorageInGbs;
             resourceInputs["activatedStorageCount"] = undefined /*out*/;
             resourceInputs["additionalStorageCount"] = undefined /*out*/;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
@@ -492,6 +495,7 @@ export interface CloudExadataInfrastructureConfigureExascaleManagementState {
      * The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
      */
     totalStorageSizeInGbs?: pulumi.Input<number>;
+    totalVmStorageInGbs?: pulumi.Input<number>;
 }
 
 /**
@@ -510,4 +514,5 @@ export interface CloudExadataInfrastructureConfigureExascaleManagementArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     totalStorageInGbs: pulumi.Input<number>;
+    totalVmStorageInGbs?: pulumi.Input<number>;
 }

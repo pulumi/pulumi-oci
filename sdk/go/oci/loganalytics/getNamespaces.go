@@ -7,14 +7,14 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
 //
 // Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
-// result also indicates if the tenancy is onboarded with Logging Analytics.
+// result also indicates if the tenancy is onboarded with Log Analytics.
 //
 // ## Example Usage
 //
@@ -23,7 +23,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -31,7 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := loganalytics.GetNamespaces(ctx, &loganalytics.GetNamespacesArgs{
-//				CompartmentId: compartmentId,
+//				CompartmentId:       compartmentId,
+//				IsCompartmentDelete: pulumi.BoolRef(namespaceIsCompartmentDelete),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -56,15 +57,18 @@ type GetNamespacesArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string                `pulumi:"compartmentId"`
 	Filters       []GetNamespacesFilter `pulumi:"filters"`
+	// if true, the request is from compartment delete service.
+	IsCompartmentDelete *bool `pulumi:"isCompartmentDelete"`
 }
 
 // A collection of values returned by getNamespaces.
 type GetNamespacesResult struct {
-	// The is the tenancy ID
+	// This is the tenancy ID
 	CompartmentId string                `pulumi:"compartmentId"`
 	Filters       []GetNamespacesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id                  string `pulumi:"id"`
+	IsCompartmentDelete *bool  `pulumi:"isCompartmentDelete"`
 	// The list of namespace_collection.
 	NamespaceCollections []GetNamespacesNamespaceCollection `pulumi:"namespaceCollections"`
 }
@@ -83,6 +87,8 @@ type GetNamespacesOutputArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput            `pulumi:"compartmentId"`
 	Filters       GetNamespacesFilterArrayInput `pulumi:"filters"`
+	// if true, the request is from compartment delete service.
+	IsCompartmentDelete pulumi.BoolPtrInput `pulumi:"isCompartmentDelete"`
 }
 
 func (GetNamespacesOutputArgs) ElementType() reflect.Type {
@@ -104,7 +110,7 @@ func (o GetNamespacesResultOutput) ToGetNamespacesResultOutputWithContext(ctx co
 	return o
 }
 
-// The is the tenancy ID
+// This is the tenancy ID
 func (o GetNamespacesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespacesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -116,6 +122,10 @@ func (o GetNamespacesResultOutput) Filters() GetNamespacesFilterArrayOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o GetNamespacesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespacesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetNamespacesResultOutput) IsCompartmentDelete() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNamespacesResult) *bool { return v.IsCompartmentDelete }).(pulumi.BoolPtrOutput)
 }
 
 // The list of namespace_collection.

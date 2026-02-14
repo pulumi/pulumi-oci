@@ -58,6 +58,10 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string TargetService;
         /// <summary>
+        /// The task status of the rule.
+        /// </summary>
+        public readonly string TaskStatus;
+        /// <summary>
         /// The date and time the resource was created, in the format defined by RFC3339.
         /// </summary>
         public readonly string TimeCreated;
@@ -94,6 +98,8 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
 
             string targetService,
 
+            string taskStatus,
+
             string timeCreated,
 
             string timeLastExecuted,
@@ -111,6 +117,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
             LastExecutionStatus = lastExecutionStatus;
             State = state;
             TargetService = targetService;
+            TaskStatus = taskStatus;
             TimeCreated = timeCreated;
             TimeLastExecuted = timeLastExecuted;
             TimeUpdated = timeUpdated;

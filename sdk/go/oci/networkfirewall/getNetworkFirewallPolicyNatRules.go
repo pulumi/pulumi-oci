@@ -7,13 +7,13 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // This data source provides the list of Network Firewall Policy Nat Rules in Oracle Cloud Infrastructure Network Firewall service.
 //
-// Returns a list of NAT Rules for the Network Firewall Policy.
+// Returns a list of [NAT rules](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
 //
 // ## Example Usage
 //
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -57,7 +57,7 @@ type GetNetworkFirewallPolicyNatRulesArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                                  `pulumi:"displayName"`
 	Filters     []GetNetworkFirewallPolicyNatRulesFilter `pulumi:"filters"`
-	// Unique priority order for NAT Rules in the network firewall policy.
+	// Unique priority order for NAT rules in the Network Firewall policy.
 	NatRulePriorityOrder *int `pulumi:"natRulePriorityOrder"`
 	// Unique Network Firewall Policy identifier
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
@@ -89,7 +89,7 @@ type GetNetworkFirewallPolicyNatRulesOutputArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput                            `pulumi:"displayName"`
 	Filters     GetNetworkFirewallPolicyNatRulesFilterArrayInput `pulumi:"filters"`
-	// Unique priority order for NAT Rules in the network firewall policy.
+	// Unique priority order for NAT rules in the Network Firewall policy.
 	NatRulePriorityOrder pulumi.IntPtrInput `pulumi:"natRulePriorityOrder"`
 	// Unique Network Firewall Policy identifier
 	NetworkFirewallPolicyId pulumi.StringInput `pulumi:"networkFirewallPolicyId"`

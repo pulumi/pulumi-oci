@@ -59,7 +59,7 @@ export class LogAnalyticsUnprocessedDataBucketManagement extends pulumi.CustomRe
     }
 
     /**
-     * Name of the Object Storage bucket.
+     * Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
      */
     declare public readonly bucket: pulumi.Output<string>;
     /**
@@ -67,7 +67,7 @@ export class LogAnalyticsUnprocessedDataBucketManagement extends pulumi.CustomRe
      */
     declare public readonly isEnabled: pulumi.Output<boolean>;
     /**
-     * The Logging Analytics namespace used for the request. 
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
      *
      * ** IMPORTANT **
@@ -125,7 +125,7 @@ export class LogAnalyticsUnprocessedDataBucketManagement extends pulumi.CustomRe
  */
 export interface LogAnalyticsUnprocessedDataBucketManagementState {
     /**
-     * Name of the Object Storage bucket.
+     * Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
      */
     bucket?: pulumi.Input<string>;
     /**
@@ -133,7 +133,7 @@ export interface LogAnalyticsUnprocessedDataBucketManagementState {
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
-     * The Logging Analytics namespace used for the request. 
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
      *
      * ** IMPORTANT **
@@ -155,7 +155,7 @@ export interface LogAnalyticsUnprocessedDataBucketManagementState {
  */
 export interface LogAnalyticsUnprocessedDataBucketManagementArgs {
     /**
-     * Name of the Object Storage bucket.
+     * Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
      */
     bucket: pulumi.Input<string>;
     /**
@@ -163,7 +163,7 @@ export interface LogAnalyticsUnprocessedDataBucketManagementArgs {
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
-     * The Logging Analytics namespace used for the request. 
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
      *
      *
      * ** IMPORTANT **

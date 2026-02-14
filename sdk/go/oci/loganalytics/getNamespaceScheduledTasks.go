@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -62,7 +62,7 @@ type GetNamespaceScheduledTasksArgs struct {
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName *string                            `pulumi:"displayName"`
 	Filters     []GetNamespaceScheduledTasksFilter `pulumi:"filters"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 	// The target service to use for filtering.
 	TargetService *string `pulumi:"targetService"`
@@ -80,7 +80,8 @@ type GetNamespaceScheduledTasksResult struct {
 	DisplayName *string                            `pulumi:"displayName"`
 	Filters     []GetNamespaceScheduledTasksFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
 	Namespace string `pulumi:"namespace"`
 	// The list of scheduled_task_collection.
 	ScheduledTaskCollections []GetNamespaceScheduledTasksScheduledTaskCollection `pulumi:"scheduledTaskCollections"`
@@ -107,7 +108,7 @@ type GetNamespaceScheduledTasksOutputArgs struct {
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringPtrInput                      `pulumi:"displayName"`
 	Filters     GetNamespaceScheduledTasksFilterArrayInput `pulumi:"filters"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The target service to use for filtering.
 	TargetService pulumi.StringPtrInput `pulumi:"targetService"`
@@ -155,6 +156,7 @@ func (o GetNamespaceScheduledTasksResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceScheduledTasksResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
 func (o GetNamespaceScheduledTasksResultOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceScheduledTasksResult) string { return v.Namespace }).(pulumi.StringOutput)
 }

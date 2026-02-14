@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/database"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -124,12 +124,16 @@ type LookupVmClusterResult struct {
 	// The date and time that the VM cluster was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	TimeZone    string `pulumi:"timeZone"`
-	VmClusterId string `pulumi:"vmClusterId"`
+	TimeZone string `pulumi:"timeZone"`
+	// Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
+	VmBackupStorageType string `pulumi:"vmBackupStorageType"`
+	VmClusterId         string `pulumi:"vmClusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	VmClusterNetworkId string `pulumi:"vmClusterNetworkId"`
 	// The vmcluster type for the VM cluster/Cloud VM cluster.
 	VmClusterType string `pulumi:"vmClusterType"`
+	// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+	VmFileSystemStorageType string `pulumi:"vmFileSystemStorageType"`
 }
 
 func LookupVmClusterOutput(ctx *pulumi.Context, args LookupVmClusterOutputArgs, opts ...pulumi.InvokeOption) LookupVmClusterResultOutput {
@@ -342,6 +346,11 @@ func (o LookupVmClusterResultOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVmClusterResult) string { return v.TimeZone }).(pulumi.StringOutput)
 }
 
+// Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
+func (o LookupVmClusterResultOutput) VmBackupStorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupVmClusterResult) string { return v.VmBackupStorageType }).(pulumi.StringOutput)
+}
+
 func (o LookupVmClusterResultOutput) VmClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVmClusterResult) string { return v.VmClusterId }).(pulumi.StringOutput)
 }
@@ -354,6 +363,11 @@ func (o LookupVmClusterResultOutput) VmClusterNetworkId() pulumi.StringOutput {
 // The vmcluster type for the VM cluster/Cloud VM cluster.
 func (o LookupVmClusterResultOutput) VmClusterType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVmClusterResult) string { return v.VmClusterType }).(pulumi.StringOutput)
+}
+
+// Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+func (o LookupVmClusterResultOutput) VmFileSystemStorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupVmClusterResult) string { return v.VmFileSystemStorageType }).(pulumi.StringOutput)
 }
 
 func init() {

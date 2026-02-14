@@ -27,7 +27,10 @@ class GetNetworkFirewallPolicyServiceResult:
     """
     A collection of values returned by getNetworkFirewallPolicyService.
     """
-    def __init__(__self__, id=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, port_ranges=None, type=None):
+    def __init__(__self__, description=None, id=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, port_ranges=None, type=None):
+        if description and not isinstance(description, str):
+            raise TypeError("Expected argument 'description' to be a str")
+        pulumi.set(__self__, "description", description)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -46,6 +49,14 @@ class GetNetworkFirewallPolicyServiceResult:
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the service. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter
@@ -96,6 +107,7 @@ class AwaitableGetNetworkFirewallPolicyServiceResult(GetNetworkFirewallPolicySer
         if False:
             yield self
         return GetNetworkFirewallPolicyServiceResult(
+            description=self.description,
             id=self.id,
             name=self.name,
             network_firewall_policy_id=self.network_firewall_policy_id,
@@ -125,6 +137,7 @@ def get_network_firewall_policy_service(name: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('oci:NetworkFirewall/getNetworkFirewallPolicyService:getNetworkFirewallPolicyService', __args__, opts=opts, typ=GetNetworkFirewallPolicyServiceResult).value
 
     return AwaitableGetNetworkFirewallPolicyServiceResult(
+        description=pulumi.get(__ret__, 'description'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
@@ -151,6 +164,7 @@ def get_network_firewall_policy_service_output(name: Optional[pulumi.Input[_buil
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyService:getNetworkFirewallPolicyService', __args__, opts=opts, typ=GetNetworkFirewallPolicyServiceResult)
     return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyServiceResult(
+        description=pulumi.get(__response__, 'description'),
         id=pulumi.get(__response__, 'id'),
         name=pulumi.get(__response__, 'name'),
         network_firewall_policy_id=pulumi.get(__response__, 'network_firewall_policy_id'),

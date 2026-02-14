@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     name: networkFirewallPolicyApplicationName,
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     type: networkFirewallPolicyApplicationType,
+ *     description: networkFirewallPolicyApplicationDescription,
  *     icmpCode: networkFirewallPolicyApplicationIcmpCode,
  * });
  * ```
@@ -64,11 +65,15 @@ export class NetworkFirewallPolicyApplication extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * (Updatable) The description of the application. This field can be used to add additional info.
+     */
+    declare public readonly description: pulumi.Output<string | undefined>;
+    /**
+     * (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      */
     declare public readonly icmpCode: pulumi.Output<number>;
     /**
-     * (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      */
     declare public readonly icmpType: pulumi.Output<number>;
     /**
@@ -105,6 +110,7 @@ export class NetworkFirewallPolicyApplication extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyApplicationState | undefined;
+            resourceInputs["description"] = state?.description;
             resourceInputs["icmpCode"] = state?.icmpCode;
             resourceInputs["icmpType"] = state?.icmpType;
             resourceInputs["name"] = state?.name;
@@ -122,6 +128,7 @@ export class NetworkFirewallPolicyApplication extends pulumi.CustomResource {
             if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
+            resourceInputs["description"] = args?.description;
             resourceInputs["icmpCode"] = args?.icmpCode;
             resourceInputs["icmpType"] = args?.icmpType;
             resourceInputs["name"] = args?.name;
@@ -139,11 +146,15 @@ export class NetworkFirewallPolicyApplication extends pulumi.CustomResource {
  */
 export interface NetworkFirewallPolicyApplicationState {
     /**
-     * (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * (Updatable) The description of the application. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      */
     icmpCode?: pulumi.Input<number>;
     /**
-     * (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      */
     icmpType?: pulumi.Input<number>;
     /**
@@ -173,11 +184,15 @@ export interface NetworkFirewallPolicyApplicationState {
  */
 export interface NetworkFirewallPolicyApplicationArgs {
     /**
-     * (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * (Updatable) The description of the application. This field can be used to add additional info.
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      */
     icmpCode?: pulumi.Input<number>;
     /**
-     * (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
+     * (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      */
     icmpType: pulumi.Input<number>;
     /**

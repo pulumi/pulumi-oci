@@ -36,11 +36,11 @@ export function getNamespaceIngestTimeRule(args: GetNamespaceIngestTimeRuleArgs,
  */
 export interface GetNamespaceIngestTimeRuleArgs {
     /**
-     * Unique ocid of the ingest time rule.
+     * Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
      */
     ingestTimeRuleId: string;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: string;
 }
@@ -133,11 +133,11 @@ export function getNamespaceIngestTimeRuleOutput(args: GetNamespaceIngestTimeRul
  */
 export interface GetNamespaceIngestTimeRuleOutputArgs {
     /**
-     * Unique ocid of the ingest time rule.
+     * Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
      */
     ingestTimeRuleId: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
     namespace: pulumi.Input<string>;
 }

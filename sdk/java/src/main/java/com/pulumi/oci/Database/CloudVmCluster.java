@@ -115,7 +115,9 @@ import javax.annotation.Nullable;
  *             .subscriptionId(tenantSubscriptionId)
  *             .systemVersion(cloudVmClusterSystemVersion)
  *             .timeZone(cloudVmClusterTimeZone)
+ *             .vmBackupStorageType(cloudVmClusterVmBackupStorageType)
  *             .vmClusterType(cloudVmClusterVmClusterType)
+ *             .vmFileSystemStorageType(cloudVmClusterVmFileSystemStorageType)
  *             .build());
  * 
  *     }
@@ -979,10 +981,21 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
         return this.vipv6ids;
     }
     /**
-     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     * (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    @Export(name="vmBackupStorageType", refs={String.class}, tree="[0]")
+    private Output<String> vmBackupStorageType;
+
+    /**
+     * @return (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
+     * 
+     */
+    public Output<String> vmBackupStorageType() {
+        return this.vmBackupStorageType;
+    }
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
      * 
      */
     @Export(name="vmClusterType", refs={String.class}, tree="[0]")
@@ -991,12 +1004,29 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
     /**
      * @return The vmcluster type for the VM cluster/Cloud VM cluster.
      * 
+     */
+    public Output<String> vmClusterType() {
+        return this.vmClusterType;
+    }
+    /**
+     * Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> vmClusterType() {
-        return this.vmClusterType;
+    @Export(name="vmFileSystemStorageType", refs={String.class}, tree="[0]")
+    private Output<String> vmFileSystemStorageType;
+
+    /**
+     * @return Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> vmFileSystemStorageType() {
+        return this.vmFileSystemStorageType;
     }
     /**
      * The OCID of the zone the cloud VM cluster is associated with.

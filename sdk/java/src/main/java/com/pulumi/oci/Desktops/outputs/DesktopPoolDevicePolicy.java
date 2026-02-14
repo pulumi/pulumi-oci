@@ -8,6 +8,8 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class DesktopPoolDevicePolicy {
@@ -46,6 +48,11 @@ public final class DesktopPoolDevicePolicy {
      * 
      */
     private Boolean isPrintingEnabled;
+    /**
+     * @return (Updatable) Indicates whether video input is enabled.
+     * 
+     */
+    private @Nullable Boolean isVideoInputEnabled;
 
     private DesktopPoolDevicePolicy() {}
     /**
@@ -97,6 +104,13 @@ public final class DesktopPoolDevicePolicy {
     public Boolean isPrintingEnabled() {
         return this.isPrintingEnabled;
     }
+    /**
+     * @return (Updatable) Indicates whether video input is enabled.
+     * 
+     */
+    public Optional<Boolean> isVideoInputEnabled() {
+        return Optional.ofNullable(this.isVideoInputEnabled);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -114,6 +128,7 @@ public final class DesktopPoolDevicePolicy {
         private Boolean isKeyboardEnabled;
         private Boolean isPointerEnabled;
         private Boolean isPrintingEnabled;
+        private @Nullable Boolean isVideoInputEnabled;
         public Builder() {}
         public Builder(DesktopPoolDevicePolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -124,6 +139,7 @@ public final class DesktopPoolDevicePolicy {
     	      this.isKeyboardEnabled = defaults.isKeyboardEnabled;
     	      this.isPointerEnabled = defaults.isPointerEnabled;
     	      this.isPrintingEnabled = defaults.isPrintingEnabled;
+    	      this.isVideoInputEnabled = defaults.isVideoInputEnabled;
         }
 
         @CustomType.Setter
@@ -182,6 +198,12 @@ public final class DesktopPoolDevicePolicy {
             this.isPrintingEnabled = isPrintingEnabled;
             return this;
         }
+        @CustomType.Setter
+        public Builder isVideoInputEnabled(@Nullable Boolean isVideoInputEnabled) {
+
+            this.isVideoInputEnabled = isVideoInputEnabled;
+            return this;
+        }
         public DesktopPoolDevicePolicy build() {
             final var _resultValue = new DesktopPoolDevicePolicy();
             _resultValue.audioMode = audioMode;
@@ -191,6 +213,7 @@ public final class DesktopPoolDevicePolicy {
             _resultValue.isKeyboardEnabled = isKeyboardEnabled;
             _resultValue.isPointerEnabled = isPointerEnabled;
             _resultValue.isPrintingEnabled = isPrintingEnabled;
+            _resultValue.isVideoInputEnabled = isVideoInputEnabled;
             return _resultValue;
         }
     }

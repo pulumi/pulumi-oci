@@ -27,7 +27,7 @@ class GetNetworkFirewallPolicyDecryptionRuleResult:
     """
     A collection of values returned by getNetworkFirewallPolicyDecryptionRule.
     """
-    def __init__(__self__, action=None, conditions=None, decryption_profile=None, id=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, positions=None, priority_order=None, secret=None):
+    def __init__(__self__, action=None, conditions=None, decryption_profile=None, description=None, id=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, positions=None, priority_order=None, secret=None):
         if action and not isinstance(action, str):
             raise TypeError("Expected argument 'action' to be a str")
         pulumi.set(__self__, "action", action)
@@ -37,6 +37,9 @@ class GetNetworkFirewallPolicyDecryptionRuleResult:
         if decryption_profile and not isinstance(decryption_profile, str):
             raise TypeError("Expected argument 'decryption_profile' to be a str")
         pulumi.set(__self__, "decryption_profile", decryption_profile)
+        if description and not isinstance(description, str):
+            raise TypeError("Expected argument 'description' to be a str")
+        pulumi.set(__self__, "description", description)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -84,6 +87,14 @@ class GetNetworkFirewallPolicyDecryptionRuleResult:
         The name of the decryption profile to use.
         """
         return pulumi.get(self, "decryption_profile")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the decryption rule. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter
@@ -142,6 +153,7 @@ class AwaitableGetNetworkFirewallPolicyDecryptionRuleResult(GetNetworkFirewallPo
             action=self.action,
             conditions=self.conditions,
             decryption_profile=self.decryption_profile,
+            description=self.description,
             id=self.id,
             name=self.name,
             network_firewall_policy_id=self.network_firewall_policy_id,
@@ -175,6 +187,7 @@ def get_network_firewall_policy_decryption_rule(name: Optional[_builtins.str] = 
         action=pulumi.get(__ret__, 'action'),
         conditions=pulumi.get(__ret__, 'conditions'),
         decryption_profile=pulumi.get(__ret__, 'decryption_profile'),
+        description=pulumi.get(__ret__, 'description'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
@@ -205,6 +218,7 @@ def get_network_firewall_policy_decryption_rule_output(name: Optional[pulumi.Inp
         action=pulumi.get(__response__, 'action'),
         conditions=pulumi.get(__response__, 'conditions'),
         decryption_profile=pulumi.get(__response__, 'decryption_profile'),
+        description=pulumi.get(__response__, 'description'),
         id=pulumi.get(__response__, 'id'),
         name=pulumi.get(__response__, 'name'),
         network_firewall_policy_id=pulumi.get(__response__, 'network_firewall_policy_id'),

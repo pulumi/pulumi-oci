@@ -80,7 +80,7 @@ export interface GetNetworkFirewallResult {
      */
     readonly lifecycleDetails: string;
     /**
-     * Nat Configuration response.
+     * Response to a request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
      */
     readonly natConfigurations: outputs.NetworkFirewall.GetNetworkFirewallNatConfiguration[];
     readonly networkFirewallId: string;
@@ -92,6 +92,10 @@ export interface GetNetworkFirewallResult {
      * An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
      */
     readonly networkSecurityGroupIds: string[];
+    /**
+     * The shape of a firewall to determine the bandwidth that the firewall allows.
+     */
+    readonly shape: string;
     /**
      * The current state of the Network Firewall.
      */

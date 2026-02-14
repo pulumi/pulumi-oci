@@ -32,7 +32,7 @@ class NetworkFirewallPolicyNatRuleArgs:
         The set of arguments for constructing a NetworkFirewallPolicyNatRule resource.
         :param pulumi.Input[_builtins.str] action: (Updatable) action:
                * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
-        :param pulumi.Input['NetworkFirewallPolicyNatRuleConditionArgs'] condition: (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+        :param pulumi.Input['NetworkFirewallPolicyNatRuleConditionArgs'] condition: (Updatable) Match criteria used in NAT rule used on the firewall policy.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] type: (Updatable) NAT type:
                * NATV4 - NATV4 type NAT.
@@ -72,7 +72,7 @@ class NetworkFirewallPolicyNatRuleArgs:
     @pulumi.getter
     def condition(self) -> pulumi.Input['NetworkFirewallPolicyNatRuleConditionArgs']:
         """
-        (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+        (Updatable) Match criteria used in NAT rule used on the firewall policy.
         """
         return pulumi.get(self, "condition")
 
@@ -162,11 +162,11 @@ class _NetworkFirewallPolicyNatRuleState:
         Input properties used for looking up and filtering NetworkFirewallPolicyNatRule resources.
         :param pulumi.Input[_builtins.str] action: (Updatable) action:
                * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
-        :param pulumi.Input['NetworkFirewallPolicyNatRuleConditionArgs'] condition: (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+        :param pulumi.Input['NetworkFirewallPolicyNatRuleConditionArgs'] condition: (Updatable) Match criteria used in NAT rule used on the firewall policy.
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of a NAT rule. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name for the NAT rule, must be unique within the policy.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this decryption profile belongs to.
+        :param pulumi.Input[_builtins.str] parent_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
         :param pulumi.Input['NetworkFirewallPolicyNatRulePositionArgs'] position: (Updatable) An object which defines the position of the rule.
         :param pulumi.Input[_builtins.str] priority_order: The priority order in which this rule should be evaluated
         :param pulumi.Input[_builtins.str] type: (Updatable) NAT type:
@@ -212,7 +212,7 @@ class _NetworkFirewallPolicyNatRuleState:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['NetworkFirewallPolicyNatRuleConditionArgs']]:
         """
-        (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+        (Updatable) Match criteria used in NAT rule used on the firewall policy.
         """
         return pulumi.get(self, "condition")
 
@@ -260,7 +260,7 @@ class _NetworkFirewallPolicyNatRuleState:
     @pulumi.getter(name="parentResourceId")
     def parent_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        OCID of the Network Firewall Policy this decryption profile belongs to.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
         """
         return pulumi.get(self, "parent_resource_id")
 
@@ -330,7 +330,7 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
 
         Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_firewall
 
-        Creates a new NAT Rule for the Network Firewall Policy.
+        Creates a new [NAT rule](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
 
         ## Example Usage
 
@@ -367,7 +367,7 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: (Updatable) action:
                * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
-        :param pulumi.Input[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict']] condition: (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+        :param pulumi.Input[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict']] condition: (Updatable) Match criteria used in NAT rule used on the firewall policy.
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of a NAT rule. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name for the NAT rule, must be unique within the policy.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -391,7 +391,7 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
 
         Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_firewall
 
-        Creates a new NAT Rule for the Network Firewall Policy.
+        Creates a new [NAT rule](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
 
         ## Example Usage
 
@@ -500,11 +500,11 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: (Updatable) action:
                * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
-        :param pulumi.Input[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict']] condition: (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+        :param pulumi.Input[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict']] condition: (Updatable) Match criteria used in NAT rule used on the firewall policy.
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of a NAT rule. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name for the NAT rule, must be unique within the policy.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this decryption profile belongs to.
+        :param pulumi.Input[_builtins.str] parent_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
         :param pulumi.Input[Union['NetworkFirewallPolicyNatRulePositionArgs', 'NetworkFirewallPolicyNatRulePositionArgsDict']] position: (Updatable) An object which defines the position of the rule.
         :param pulumi.Input[_builtins.str] priority_order: The priority order in which this rule should be evaluated
         :param pulumi.Input[_builtins.str] type: (Updatable) NAT type:
@@ -542,7 +542,7 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
     @pulumi.getter
     def condition(self) -> pulumi.Output['outputs.NetworkFirewallPolicyNatRuleCondition']:
         """
-        (Updatable) Match criteria used in NAT Rule used on the firewall policy.
+        (Updatable) Match criteria used in NAT rule used on the firewall policy.
         """
         return pulumi.get(self, "condition")
 
@@ -574,7 +574,7 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
     @pulumi.getter(name="parentResourceId")
     def parent_resource_id(self) -> pulumi.Output[_builtins.str]:
         """
-        OCID of the Network Firewall Policy this decryption profile belongs to.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
         """
         return pulumi.get(self, "parent_resource_id")
 

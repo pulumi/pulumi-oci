@@ -26,7 +26,7 @@ class GetNetworkFirewallPolicyResult:
     """
     A collection of values returned by getNetworkFirewallPolicy.
     """
-    def __init__(__self__, attached_network_firewall_count=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, network_firewall_policy_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, attached_network_firewall_count=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, network_firewall_policy_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if attached_network_firewall_count and not isinstance(attached_network_firewall_count, int):
             raise TypeError("Expected argument 'attached_network_firewall_count' to be a int")
         pulumi.set(__self__, "attached_network_firewall_count", attached_network_firewall_count)
@@ -36,6 +36,9 @@ class GetNetworkFirewallPolicyResult:
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
+        if description and not isinstance(description, str):
+            raise TypeError("Expected argument 'description' to be a str")
+        pulumi.set(__self__, "description", description)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -87,6 +90,14 @@ class GetNetworkFirewallPolicyResult:
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the network firewall policy. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -167,6 +178,7 @@ class AwaitableGetNetworkFirewallPolicyResult(GetNetworkFirewallPolicyResult):
             attached_network_firewall_count=self.attached_network_firewall_count,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
+            description=self.description,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
@@ -206,6 +218,7 @@ def get_network_firewall_policy(network_firewall_policy_id: Optional[_builtins.s
         attached_network_firewall_count=pulumi.get(__ret__, 'attached_network_firewall_count'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
@@ -242,6 +255,7 @@ def get_network_firewall_policy_output(network_firewall_policy_id: Optional[pulu
         attached_network_firewall_count=pulumi.get(__response__, 'attached_network_firewall_count'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),

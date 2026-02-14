@@ -127,7 +127,7 @@ def get_namespace_storage_overlapping_recalls(filters: Optional[Sequence[Union['
     ```
 
 
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str time_data_ended: This is the end of the time range for recalled data
     :param _builtins.str time_data_started: This is the start of the time range for recalled data
     """
@@ -168,7 +168,7 @@ def get_namespace_storage_overlapping_recalls_output(filters: Optional[pulumi.In
     ```
 
 
-    :param _builtins.str namespace: The Logging Analytics namespace used for the request.
+    :param _builtins.str namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
     :param _builtins.str time_data_ended: This is the end of the time range for recalled data
     :param _builtins.str time_data_started: This is the start of the time range for recalled data
     """

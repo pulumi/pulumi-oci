@@ -35,7 +35,7 @@ class NamespaceIngestTimeRuleArgs:
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input['NamespaceIngestTimeRuleConditionsArgs'] conditions: (Updatable) The condition(s) to evaluate for an ingest time rule.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The ingest time rule display name.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request. 
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
                
                ** IMPORTANT **
@@ -108,7 +108,7 @@ class NamespaceIngestTimeRuleArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request. 
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
 
 
         ** IMPORTANT **
@@ -183,7 +183,7 @@ class _NamespaceIngestTimeRuleState:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The ingest time rule display name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_enabled: A flag indicating whether or not the ingest time rule is enabled.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request. 
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
                
                ** IMPORTANT **
@@ -328,7 +328,7 @@ class _NamespaceIngestTimeRuleState:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Logging Analytics namespace used for the request. 
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
 
 
         ** IMPORTANT **
@@ -455,7 +455,7 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) Description for this resource.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The ingest time rule display name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request. 
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
                
                ** IMPORTANT **
@@ -614,7 +614,7 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The ingest time rule display name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_enabled: A flag indicating whether or not the ingest time rule is enabled.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request. 
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
                
                ** IMPORTANT **
@@ -715,7 +715,7 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request. 
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
 
 
         ** IMPORTANT **

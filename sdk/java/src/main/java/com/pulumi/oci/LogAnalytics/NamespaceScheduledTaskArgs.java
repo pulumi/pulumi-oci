@@ -65,6 +65,21 @@ public final class NamespaceScheduledTaskArgs extends com.pulumi.resources.Resou
     }
 
     /**
+     * (Updatable) Description for this resource.
+     * 
+     */
+    @Import(name="description")
+    private @Nullable Output<String> description;
+
+    /**
+     * @return (Updatable) Description for this resource.
+     * 
+     */
+    public Optional<Output<String>> description() {
+        return Optional.ofNullable(this.description);
+    }
+
+    /**
      * (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      * 
      */
@@ -110,14 +125,14 @@ public final class NamespaceScheduledTaskArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
      * 
      */
     public Output<String> namespace() {
@@ -181,6 +196,7 @@ public final class NamespaceScheduledTaskArgs extends com.pulumi.resources.Resou
         this.action = $.action;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
+        this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.kind = $.kind;
@@ -272,6 +288,27 @@ public final class NamespaceScheduledTaskArgs extends com.pulumi.resources.Resou
         }
 
         /**
+         * @param description (Updatable) Description for this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(@Nullable Output<String> description) {
+            $.description = description;
+            return this;
+        }
+
+        /**
+         * @param description (Updatable) Description for this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(String description) {
+            return description(Output.of(description));
+        }
+
+        /**
          * @param displayName (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
          * 
          * @return builder
@@ -335,7 +372,7 @@ public final class NamespaceScheduledTaskArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 
@@ -346,7 +383,7 @@ public final class NamespaceScheduledTaskArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The Log Analytics namespace used for the request. The namespace can be obtained by running &#39;oci os ns get&#39;
          * 
          * @return builder
          * 

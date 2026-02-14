@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -53,7 +53,7 @@ func LookupNamespaceScheduledTask(ctx *pulumi.Context, args *LookupNamespaceSche
 
 // A collection of arguments for invoking getNamespaceScheduledTask.
 type LookupNamespaceScheduledTaskArgs struct {
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 	// Unique scheduledTask id returned from task create. If invalid will lead to a 404 not found.
 	ScheduledTaskId string `pulumi:"scheduledTaskId"`
@@ -67,6 +67,8 @@ type LookupNamespaceScheduledTaskResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Description for this resource.
+	Description string `pulumi:"description"`
 	// A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -86,7 +88,7 @@ type LookupNamespaceScheduledTaskResult struct {
 	Schedules []GetNamespaceScheduledTaskSchedule `pulumi:"schedules"`
 	// The current state of the scheduled task.
 	State string `pulumi:"state"`
-	// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+	// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
 	TaskStatus string `pulumi:"taskStatus"`
 	// Task type.
 	TaskType string `pulumi:"taskType"`
@@ -109,7 +111,7 @@ func LookupNamespaceScheduledTaskOutput(ctx *pulumi.Context, args LookupNamespac
 
 // A collection of arguments for invoking getNamespaceScheduledTask.
 type LookupNamespaceScheduledTaskOutputArgs struct {
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// Unique scheduledTask id returned from task create. If invalid will lead to a 404 not found.
 	ScheduledTaskId pulumi.StringInput `pulumi:"scheduledTaskId"`
@@ -147,6 +149,11 @@ func (o LookupNamespaceScheduledTaskResultOutput) CompartmentId() pulumi.StringO
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o LookupNamespaceScheduledTaskResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Description for this resource.
+func (o LookupNamespaceScheduledTaskResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 // A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
@@ -198,7 +205,7 @@ func (o LookupNamespaceScheduledTaskResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
+// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
 func (o LookupNamespaceScheduledTaskResultOutput) TaskStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.TaskStatus }).(pulumi.StringOutput)
 }

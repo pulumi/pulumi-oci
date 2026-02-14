@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -55,7 +55,7 @@ func LookupLogAnalyticsLogGroup(ctx *pulumi.Context, args *LookupLogAnalyticsLog
 type LookupLogAnalyticsLogGroupArgs struct {
 	// unique logAnalytics log group identifier
 	LogAnalyticsLogGroupId string `pulumi:"logAnalyticsLogGroupId"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -94,7 +94,7 @@ func LookupLogAnalyticsLogGroupOutput(ctx *pulumi.Context, args LookupLogAnalyti
 type LookupLogAnalyticsLogGroupOutputArgs struct {
 	// unique logAnalytics log group identifier
 	LogAnalyticsLogGroupId pulumi.StringInput `pulumi:"logAnalyticsLogGroupId"`
-	// The Logging Analytics namespace used for the request.
+	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 }
 

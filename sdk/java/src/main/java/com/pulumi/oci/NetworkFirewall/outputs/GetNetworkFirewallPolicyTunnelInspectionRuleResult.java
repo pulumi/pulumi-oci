@@ -26,6 +26,11 @@ public final class GetNetworkFirewallPolicyTunnelInspectionRuleResult {
      * 
      */
     private List<GetNetworkFirewallPolicyTunnelInspectionRuleCondition> conditions;
+    /**
+     * @return The description of the tunnel inspect rule. This field can be used to add additional info.
+     * 
+     */
+    private String description;
     private String id;
     /**
      * @return Name for the Tunnel Inspection Rule, must be unique within the policy.
@@ -77,6 +82,13 @@ public final class GetNetworkFirewallPolicyTunnelInspectionRuleResult {
      */
     public List<GetNetworkFirewallPolicyTunnelInspectionRuleCondition> conditions() {
         return this.conditions;
+    }
+    /**
+     * @return The description of the tunnel inspect rule. This field can be used to add additional info.
+     * 
+     */
+    public String description() {
+        return this.description;
     }
     public String id() {
         return this.id;
@@ -142,6 +154,7 @@ public final class GetNetworkFirewallPolicyTunnelInspectionRuleResult {
     public static final class Builder {
         private String action;
         private List<GetNetworkFirewallPolicyTunnelInspectionRuleCondition> conditions;
+        private String description;
         private String id;
         private String name;
         private String networkFirewallPolicyId;
@@ -156,6 +169,7 @@ public final class GetNetworkFirewallPolicyTunnelInspectionRuleResult {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
     	      this.conditions = defaults.conditions;
+    	      this.description = defaults.description;
     	      this.id = defaults.id;
     	      this.name = defaults.name;
     	      this.networkFirewallPolicyId = defaults.networkFirewallPolicyId;
@@ -185,6 +199,14 @@ public final class GetNetworkFirewallPolicyTunnelInspectionRuleResult {
         }
         public Builder conditions(GetNetworkFirewallPolicyTunnelInspectionRuleCondition... conditions) {
             return conditions(List.of(conditions));
+        }
+        @CustomType.Setter
+        public Builder description(String description) {
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyTunnelInspectionRuleResult", "description");
+            }
+            this.description = description;
+            return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
@@ -268,6 +290,7 @@ public final class GetNetworkFirewallPolicyTunnelInspectionRuleResult {
             final var _resultValue = new GetNetworkFirewallPolicyTunnelInspectionRuleResult();
             _resultValue.action = action;
             _resultValue.conditions = conditions;
+            _resultValue.description = description;
             _resultValue.id = id;
             _resultValue.name = name;
             _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;

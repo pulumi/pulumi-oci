@@ -14,7 +14,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
         /// 
-        /// This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
+        /// This API gets the namespace details of a tenancy already onboarded in Log Analytics Application
         /// 
         /// 
         /// ## Example Usage
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
         /// 
-        /// This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
+        /// This API gets the namespace details of a tenancy already onboarded in Log Analytics Application
         /// 
         /// 
         /// ## Example Usage
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
         /// 
-        /// This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
+        /// This API gets the namespace details of a tenancy already onboarded in Log Analytics Application
         /// 
         /// 
         /// ## Example Usage
@@ -97,7 +97,7 @@ namespace Pulumi.Oci.LogAnalytics
     public sealed class GetNamespaceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace", required: true)]
         public string Namespace { get; set; } = null!;
@@ -111,7 +111,7 @@ namespace Pulumi.Oci.LogAnalytics
     public sealed class GetNamespaceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
@@ -127,7 +127,7 @@ namespace Pulumi.Oci.LogAnalytics
     public sealed class GetNamespaceResult
     {
         /// <summary>
-        /// The is the tenancy ID
+        /// This is the tenancy ID
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -144,14 +144,18 @@ namespace Pulumi.Oci.LogAnalytics
         public readonly bool IsDataEverIngested;
         public readonly bool IsLogsetEnabled;
         /// <summary>
-        /// This indicates if the tenancy is onboarded to Logging Analytics
+        /// This indicates if the tenancy is onboarded to Log Analytics
         /// </summary>
         public readonly bool IsOnboarded;
         /// <summary>
         /// This is the namespace name of a tenancy
-        /// * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
         /// </summary>
         public readonly string Namespace;
+        /// <summary>
+        /// The current state of the compartment.
+        /// * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
+        /// </summary>
+        public readonly string State;
 
         [OutputConstructor]
         private GetNamespaceResult(
@@ -167,7 +171,9 @@ namespace Pulumi.Oci.LogAnalytics
 
             bool isOnboarded,
 
-            string @namespace)
+            string @namespace,
+
+            string state)
         {
             CompartmentId = compartmentId;
             Id = id;
@@ -176,6 +182,7 @@ namespace Pulumi.Oci.LogAnalytics
             IsLogsetEnabled = isLogsetEnabled;
             IsOnboarded = isOnboarded;
             Namespace = @namespace;
+            State = state;
         }
     }
 }

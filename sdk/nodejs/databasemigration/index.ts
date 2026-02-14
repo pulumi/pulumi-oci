@@ -5,15 +5,70 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AssessmentArgs, AssessmentState } from "./assessment";
+export type Assessment = import("./assessment").Assessment;
+export const Assessment: typeof import("./assessment").Assessment = null as any;
+utilities.lazyLoad(exports, ["Assessment"], () => require("./assessment"));
+
+export { AssessmentAssessorActionArgs, AssessmentAssessorActionState } from "./assessmentAssessorAction";
+export type AssessmentAssessorAction = import("./assessmentAssessorAction").AssessmentAssessorAction;
+export const AssessmentAssessorAction: typeof import("./assessmentAssessorAction").AssessmentAssessorAction = null as any;
+utilities.lazyLoad(exports, ["AssessmentAssessorAction"], () => require("./assessmentAssessorAction"));
+
 export { ConnectionArgs, ConnectionState } from "./connection";
 export type Connection = import("./connection").Connection;
 export const Connection: typeof import("./connection").Connection = null as any;
 utilities.lazyLoad(exports, ["Connection"], () => require("./connection"));
 
+export { GetAssessmentArgs, GetAssessmentResult, GetAssessmentOutputArgs } from "./getAssessment";
+export const getAssessment: typeof import("./getAssessment").getAssessment = null as any;
+export const getAssessmentOutput: typeof import("./getAssessment").getAssessmentOutput = null as any;
+utilities.lazyLoad(exports, ["getAssessment","getAssessmentOutput"], () => require("./getAssessment"));
+
+export { GetAssessmentAssessorArgs, GetAssessmentAssessorResult, GetAssessmentAssessorOutputArgs } from "./getAssessmentAssessor";
+export const getAssessmentAssessor: typeof import("./getAssessmentAssessor").getAssessmentAssessor = null as any;
+export const getAssessmentAssessorOutput: typeof import("./getAssessmentAssessor").getAssessmentAssessorOutput = null as any;
+utilities.lazyLoad(exports, ["getAssessmentAssessor","getAssessmentAssessorOutput"], () => require("./getAssessmentAssessor"));
+
+export { GetAssessmentAssessorCheckArgs, GetAssessmentAssessorCheckResult, GetAssessmentAssessorCheckOutputArgs } from "./getAssessmentAssessorCheck";
+export const getAssessmentAssessorCheck: typeof import("./getAssessmentAssessorCheck").getAssessmentAssessorCheck = null as any;
+export const getAssessmentAssessorCheckOutput: typeof import("./getAssessmentAssessorCheck").getAssessmentAssessorCheckOutput = null as any;
+utilities.lazyLoad(exports, ["getAssessmentAssessorCheck","getAssessmentAssessorCheckOutput"], () => require("./getAssessmentAssessorCheck"));
+
+export { GetAssessmentAssessorCheckAffectedObjectsArgs, GetAssessmentAssessorCheckAffectedObjectsResult, GetAssessmentAssessorCheckAffectedObjectsOutputArgs } from "./getAssessmentAssessorCheckAffectedObjects";
+export const getAssessmentAssessorCheckAffectedObjects: typeof import("./getAssessmentAssessorCheckAffectedObjects").getAssessmentAssessorCheckAffectedObjects = null as any;
+export const getAssessmentAssessorCheckAffectedObjectsOutput: typeof import("./getAssessmentAssessorCheckAffectedObjects").getAssessmentAssessorCheckAffectedObjectsOutput = null as any;
+utilities.lazyLoad(exports, ["getAssessmentAssessorCheckAffectedObjects","getAssessmentAssessorCheckAffectedObjectsOutput"], () => require("./getAssessmentAssessorCheckAffectedObjects"));
+
+export { GetAssessmentAssessorChecksArgs, GetAssessmentAssessorChecksResult, GetAssessmentAssessorChecksOutputArgs } from "./getAssessmentAssessorChecks";
+export const getAssessmentAssessorChecks: typeof import("./getAssessmentAssessorChecks").getAssessmentAssessorChecks = null as any;
+export const getAssessmentAssessorChecksOutput: typeof import("./getAssessmentAssessorChecks").getAssessmentAssessorChecksOutput = null as any;
+utilities.lazyLoad(exports, ["getAssessmentAssessorChecks","getAssessmentAssessorChecksOutput"], () => require("./getAssessmentAssessorChecks"));
+
+export { GetAssessmentAssessorsArgs, GetAssessmentAssessorsResult, GetAssessmentAssessorsOutputArgs } from "./getAssessmentAssessors";
+export const getAssessmentAssessors: typeof import("./getAssessmentAssessors").getAssessmentAssessors = null as any;
+export const getAssessmentAssessorsOutput: typeof import("./getAssessmentAssessors").getAssessmentAssessorsOutput = null as any;
+utilities.lazyLoad(exports, ["getAssessmentAssessors","getAssessmentAssessorsOutput"], () => require("./getAssessmentAssessors"));
+
+export { GetAssessmentObjectTypesArgs, GetAssessmentObjectTypesResult, GetAssessmentObjectTypesOutputArgs } from "./getAssessmentObjectTypes";
+export const getAssessmentObjectTypes: typeof import("./getAssessmentObjectTypes").getAssessmentObjectTypes = null as any;
+export const getAssessmentObjectTypesOutput: typeof import("./getAssessmentObjectTypes").getAssessmentObjectTypesOutput = null as any;
+utilities.lazyLoad(exports, ["getAssessmentObjectTypes","getAssessmentObjectTypesOutput"], () => require("./getAssessmentObjectTypes"));
+
+export { GetAssessmentsArgs, GetAssessmentsResult, GetAssessmentsOutputArgs } from "./getAssessments";
+export const getAssessments: typeof import("./getAssessments").getAssessments = null as any;
+export const getAssessmentsOutput: typeof import("./getAssessments").getAssessmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getAssessments","getAssessmentsOutput"], () => require("./getAssessments"));
+
 export { GetConnectionArgs, GetConnectionResult, GetConnectionOutputArgs } from "./getConnection";
 export const getConnection: typeof import("./getConnection").getConnection = null as any;
 export const getConnectionOutput: typeof import("./getConnection").getConnectionOutput = null as any;
 utilities.lazyLoad(exports, ["getConnection","getConnectionOutput"], () => require("./getConnection"));
+
+export { GetConnectionDatabaseconnectiontypesArgs, GetConnectionDatabaseconnectiontypesResult, GetConnectionDatabaseconnectiontypesOutputArgs } from "./getConnectionDatabaseconnectiontypes";
+export const getConnectionDatabaseconnectiontypes: typeof import("./getConnectionDatabaseconnectiontypes").getConnectionDatabaseconnectiontypes = null as any;
+export const getConnectionDatabaseconnectiontypesOutput: typeof import("./getConnectionDatabaseconnectiontypes").getConnectionDatabaseconnectiontypesOutput = null as any;
+utilities.lazyLoad(exports, ["getConnectionDatabaseconnectiontypes","getConnectionDatabaseconnectiontypesOutput"], () => require("./getConnectionDatabaseconnectiontypes"));
 
 export { GetConnectionsArgs, GetConnectionsResult, GetConnectionsOutputArgs } from "./getConnections";
 export const getConnections: typeof import("./getConnections").getConnections = null as any;
@@ -24,6 +79,16 @@ export { GetJobAdvisorReportArgs, GetJobAdvisorReportResult, GetJobAdvisorReport
 export const getJobAdvisorReport: typeof import("./getJobAdvisorReport").getJobAdvisorReport = null as any;
 export const getJobAdvisorReportOutput: typeof import("./getJobAdvisorReport").getJobAdvisorReportOutput = null as any;
 utilities.lazyLoad(exports, ["getJobAdvisorReport","getJobAdvisorReportOutput"], () => require("./getJobAdvisorReport"));
+
+export { GetJobAdvisorReportCheckObjectsArgs, GetJobAdvisorReportCheckObjectsResult, GetJobAdvisorReportCheckObjectsOutputArgs } from "./getJobAdvisorReportCheckObjects";
+export const getJobAdvisorReportCheckObjects: typeof import("./getJobAdvisorReportCheckObjects").getJobAdvisorReportCheckObjects = null as any;
+export const getJobAdvisorReportCheckObjectsOutput: typeof import("./getJobAdvisorReportCheckObjects").getJobAdvisorReportCheckObjectsOutput = null as any;
+utilities.lazyLoad(exports, ["getJobAdvisorReportCheckObjects","getJobAdvisorReportCheckObjectsOutput"], () => require("./getJobAdvisorReportCheckObjects"));
+
+export { GetJobAdvisorReportChecksArgs, GetJobAdvisorReportChecksResult, GetJobAdvisorReportChecksOutputArgs } from "./getJobAdvisorReportChecks";
+export const getJobAdvisorReportChecks: typeof import("./getJobAdvisorReportChecks").getJobAdvisorReportChecks = null as any;
+export const getJobAdvisorReportChecksOutput: typeof import("./getJobAdvisorReportChecks").getJobAdvisorReportChecksOutput = null as any;
+utilities.lazyLoad(exports, ["getJobAdvisorReportChecks","getJobAdvisorReportChecksOutput"], () => require("./getJobAdvisorReportChecks"));
 
 export { GetJobOutputArgs, GetJobOutputResult, GetJobOutputOutputArgs } from "./getJobOutput";
 export const getJobOutput: typeof import("./getJobOutput").getJobOutput = null as any;
@@ -45,10 +110,20 @@ export const getMigrations: typeof import("./getMigrations").getMigrations = nul
 export const getMigrationsOutput: typeof import("./getMigrations").getMigrationsOutput = null as any;
 utilities.lazyLoad(exports, ["getMigrations","getMigrationsOutput"], () => require("./getMigrations"));
 
+export { GetScriptArgs, GetScriptResult, GetScriptOutputArgs } from "./getScript";
+export const getScript: typeof import("./getScript").getScript = null as any;
+export const getScriptOutput: typeof import("./getScript").getScriptOutput = null as any;
+utilities.lazyLoad(exports, ["getScript","getScriptOutput"], () => require("./getScript"));
+
 export { JobArgs, JobState } from "./job";
 export type Job = import("./job").Job;
 export const Job: typeof import("./job").Job = null as any;
 utilities.lazyLoad(exports, ["Job"], () => require("./job"));
+
+export { JobAdvisorReportCheckArgs, JobAdvisorReportCheckState } from "./jobAdvisorReportCheck";
+export type JobAdvisorReportCheck = import("./jobAdvisorReportCheck").JobAdvisorReportCheck;
+export const JobAdvisorReportCheck: typeof import("./jobAdvisorReportCheck").JobAdvisorReportCheck = null as any;
+utilities.lazyLoad(exports, ["JobAdvisorReportCheck"], () => require("./jobAdvisorReportCheck"));
 
 export { MigrationArgs, MigrationState } from "./migration";
 export type Migration = import("./migration").Migration;
@@ -60,10 +135,16 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:DatabaseMigration/assessment:Assessment":
+                return new Assessment(name, <any>undefined, { urn })
+            case "oci:DatabaseMigration/assessmentAssessorAction:AssessmentAssessorAction":
+                return new AssessmentAssessorAction(name, <any>undefined, { urn })
             case "oci:DatabaseMigration/connection:Connection":
                 return new Connection(name, <any>undefined, { urn })
             case "oci:DatabaseMigration/job:Job":
                 return new Job(name, <any>undefined, { urn })
+            case "oci:DatabaseMigration/jobAdvisorReportCheck:JobAdvisorReportCheck":
+                return new JobAdvisorReportCheck(name, <any>undefined, { urn })
             case "oci:DatabaseMigration/migration:Migration":
                 return new Migration(name, <any>undefined, { urn })
             default:
@@ -71,6 +152,9 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "DatabaseMigration/assessment", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseMigration/assessmentAssessorAction", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseMigration/connection", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseMigration/job", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseMigration/jobAdvisorReportCheck", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseMigration/migration", _module)

@@ -32,6 +32,8 @@ import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulne
 import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityPlainArgs;
 import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditArgs;
 import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditPlainArgs;
+import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditVulnerabilityArgs;
+import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditVulnerabilityPlainArgs;
 import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditsArgs;
 import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditsPlainArgs;
 import com.pulumi.oci.Adm.outputs.GetKnowledgebaseResult;
@@ -46,6 +48,7 @@ import com.pulumi.oci.Adm.outputs.GetRemediationRunsResult;
 import com.pulumi.oci.Adm.outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesResult;
 import com.pulumi.oci.Adm.outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityResult;
 import com.pulumi.oci.Adm.outputs.GetVulnerabilityAuditResult;
+import com.pulumi.oci.Adm.outputs.GetVulnerabilityAuditVulnerabilityResult;
 import com.pulumi.oci.Adm.outputs.GetVulnerabilityAuditsResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
@@ -3008,6 +3011,21 @@ public final class AdmFunctions {
      */
     public static CompletableFuture<GetVulnerabilityAuditApplicationDependencyVulnerabilityResult> getVulnerabilityAuditApplicationDependencyVulnerabilityPlain(GetVulnerabilityAuditApplicationDependencyVulnerabilityPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Adm/getVulnerabilityAuditApplicationDependencyVulnerability:getVulnerabilityAuditApplicationDependencyVulnerability", TypeShape.of(GetVulnerabilityAuditApplicationDependencyVulnerabilityResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetVulnerabilityAuditVulnerabilityResult> getVulnerabilityAuditVulnerability(GetVulnerabilityAuditVulnerabilityArgs args) {
+        return getVulnerabilityAuditVulnerability(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetVulnerabilityAuditVulnerabilityResult> getVulnerabilityAuditVulnerabilityPlain(GetVulnerabilityAuditVulnerabilityPlainArgs args) {
+        return getVulnerabilityAuditVulnerabilityPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetVulnerabilityAuditVulnerabilityResult> getVulnerabilityAuditVulnerability(GetVulnerabilityAuditVulnerabilityArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getVulnerabilityAuditVulnerability:getVulnerabilityAuditVulnerability", TypeShape.of(GetVulnerabilityAuditVulnerabilityResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetVulnerabilityAuditVulnerabilityResult> getVulnerabilityAuditVulnerability(GetVulnerabilityAuditVulnerabilityArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getVulnerabilityAuditVulnerability:getVulnerabilityAuditVulnerability", TypeShape.of(GetVulnerabilityAuditVulnerabilityResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetVulnerabilityAuditVulnerabilityResult> getVulnerabilityAuditVulnerabilityPlain(GetVulnerabilityAuditVulnerabilityPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Adm/getVulnerabilityAuditVulnerability:getVulnerabilityAuditVulnerability", TypeShape.of(GetVulnerabilityAuditVulnerabilityResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Vulnerability Audits in Oracle Cloud Infrastructure ADM service.

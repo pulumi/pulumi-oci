@@ -68,6 +68,7 @@ type GetGenerativeAiPrivateEndpointsArgs struct {
 
 // A collection of values returned by getGenerativeAiPrivateEndpoints.
 type GetGenerativeAiPrivateEndpointsResult struct {
+	// The OCID of the compartment that contains the private endpoint.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A user friendly name. It doesn't have to be unique. Avoid entering confidential information.
 	DisplayName *string                                 `pulumi:"displayName"`
@@ -121,6 +122,7 @@ func (o GetGenerativeAiPrivateEndpointsResultOutput) ToGetGenerativeAiPrivateEnd
 	return o
 }
 
+// The OCID of the compartment that contains the private endpoint.
 func (o GetGenerativeAiPrivateEndpointsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

@@ -3973,6 +3973,112 @@ func (o MysqlConfigurationInitVariablesPtrOutput) LowerCaseTableNames() pulumi.S
 	}).(pulumi.StringPtrOutput)
 }
 
+type MysqlConfigurationOption struct {
+	// The option name.
+	Name string `pulumi:"name"`
+	// The option value.
+	Value *string `pulumi:"value"`
+}
+
+// MysqlConfigurationOptionInput is an input type that accepts MysqlConfigurationOptionArgs and MysqlConfigurationOptionOutput values.
+// You can construct a concrete instance of `MysqlConfigurationOptionInput` via:
+//
+//	MysqlConfigurationOptionArgs{...}
+type MysqlConfigurationOptionInput interface {
+	pulumi.Input
+
+	ToMysqlConfigurationOptionOutput() MysqlConfigurationOptionOutput
+	ToMysqlConfigurationOptionOutputWithContext(context.Context) MysqlConfigurationOptionOutput
+}
+
+type MysqlConfigurationOptionArgs struct {
+	// The option name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The option value.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (MysqlConfigurationOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlConfigurationOption)(nil)).Elem()
+}
+
+func (i MysqlConfigurationOptionArgs) ToMysqlConfigurationOptionOutput() MysqlConfigurationOptionOutput {
+	return i.ToMysqlConfigurationOptionOutputWithContext(context.Background())
+}
+
+func (i MysqlConfigurationOptionArgs) ToMysqlConfigurationOptionOutputWithContext(ctx context.Context) MysqlConfigurationOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationOptionOutput)
+}
+
+// MysqlConfigurationOptionArrayInput is an input type that accepts MysqlConfigurationOptionArray and MysqlConfigurationOptionArrayOutput values.
+// You can construct a concrete instance of `MysqlConfigurationOptionArrayInput` via:
+//
+//	MysqlConfigurationOptionArray{ MysqlConfigurationOptionArgs{...} }
+type MysqlConfigurationOptionArrayInput interface {
+	pulumi.Input
+
+	ToMysqlConfigurationOptionArrayOutput() MysqlConfigurationOptionArrayOutput
+	ToMysqlConfigurationOptionArrayOutputWithContext(context.Context) MysqlConfigurationOptionArrayOutput
+}
+
+type MysqlConfigurationOptionArray []MysqlConfigurationOptionInput
+
+func (MysqlConfigurationOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlConfigurationOption)(nil)).Elem()
+}
+
+func (i MysqlConfigurationOptionArray) ToMysqlConfigurationOptionArrayOutput() MysqlConfigurationOptionArrayOutput {
+	return i.ToMysqlConfigurationOptionArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlConfigurationOptionArray) ToMysqlConfigurationOptionArrayOutputWithContext(ctx context.Context) MysqlConfigurationOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationOptionArrayOutput)
+}
+
+type MysqlConfigurationOptionOutput struct{ *pulumi.OutputState }
+
+func (MysqlConfigurationOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlConfigurationOption)(nil)).Elem()
+}
+
+func (o MysqlConfigurationOptionOutput) ToMysqlConfigurationOptionOutput() MysqlConfigurationOptionOutput {
+	return o
+}
+
+func (o MysqlConfigurationOptionOutput) ToMysqlConfigurationOptionOutputWithContext(ctx context.Context) MysqlConfigurationOptionOutput {
+	return o
+}
+
+// The option name.
+func (o MysqlConfigurationOptionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v MysqlConfigurationOption) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The option value.
+func (o MysqlConfigurationOptionOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationOption) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type MysqlConfigurationOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlConfigurationOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlConfigurationOption)(nil)).Elem()
+}
+
+func (o MysqlConfigurationOptionArrayOutput) ToMysqlConfigurationOptionArrayOutput() MysqlConfigurationOptionArrayOutput {
+	return o
+}
+
+func (o MysqlConfigurationOptionArrayOutput) ToMysqlConfigurationOptionArrayOutputWithContext(ctx context.Context) MysqlConfigurationOptionArrayOutput {
+	return o
+}
+
+func (o MysqlConfigurationOptionArrayOutput) Index(i pulumi.IntInput) MysqlConfigurationOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlConfigurationOption {
+		return vs[0].([]MysqlConfigurationOption)[vs[1].(int)]
+	}).(MysqlConfigurationOptionOutput)
+}
+
 type MysqlConfigurationVariables struct {
 	// auto_increment_increment and autoIncrementOffset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
 	//
@@ -4307,12 +4413,12 @@ type MysqlConfigurationVariables struct {
 	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryAllocBlockSize *string `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryPreallocSize *string `pulumi:"queryPreallocSize"`
 	// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
 	//
 	// rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [rangeOptimizerMaxMemSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
-	//
-	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	RangeOptimizerMaxMemSize *string `pulumi:"rangeOptimizerMaxMemSize"`
 	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
 	RegexpTimeLimit *int `pulumi:"regexpTimeLimit"`
@@ -4752,12 +4858,12 @@ type MysqlConfigurationVariablesArgs struct {
 	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryAllocBlockSize pulumi.StringPtrInput `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryPreallocSize pulumi.StringPtrInput `pulumi:"queryPreallocSize"`
 	// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
 	//
 	// rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [rangeOptimizerMaxMemSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
-	//
-	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	RangeOptimizerMaxMemSize pulumi.StringPtrInput `pulumi:"rangeOptimizerMaxMemSize"`
 	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
 	RegexpTimeLimit pulumi.IntPtrInput `pulumi:"regexpTimeLimit"`
@@ -5538,6 +5644,8 @@ func (o MysqlConfigurationVariablesOutput) QueryAllocBlockSize() pulumi.StringPt
 }
 
 // ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o MysqlConfigurationVariablesOutput) QueryPreallocSize() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.QueryPreallocSize }).(pulumi.StringPtrOutput)
 }
@@ -5545,8 +5653,6 @@ func (o MysqlConfigurationVariablesOutput) QueryPreallocSize() pulumi.StringPtrO
 // The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
 //
 // rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [rangeOptimizerMaxMemSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
-//
-// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o MysqlConfigurationVariablesOutput) RangeOptimizerMaxMemSize() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.RangeOptimizerMaxMemSize }).(pulumi.StringPtrOutput)
 }
@@ -6807,6 +6913,8 @@ func (o MysqlConfigurationVariablesPtrOutput) QueryAllocBlockSize() pulumi.Strin
 }
 
 // ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o MysqlConfigurationVariablesPtrOutput) QueryPreallocSize() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
 		if v == nil {
@@ -6819,8 +6927,6 @@ func (o MysqlConfigurationVariablesPtrOutput) QueryPreallocSize() pulumi.StringP
 // The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
 //
 // rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [rangeOptimizerMaxMemSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
-//
-// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o MysqlConfigurationVariablesPtrOutput) RangeOptimizerMaxMemSize() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
 		if v == nil {
@@ -16339,6 +16445,112 @@ func (o GetMysqlConfigurationInitVariableArrayOutput) Index(i pulumi.IntInput) G
 	}).(GetMysqlConfigurationInitVariableOutput)
 }
 
+type GetMysqlConfigurationOption struct {
+	// The option name.
+	Name string `pulumi:"name"`
+	// The option value.
+	Value string `pulumi:"value"`
+}
+
+// GetMysqlConfigurationOptionInput is an input type that accepts GetMysqlConfigurationOptionArgs and GetMysqlConfigurationOptionOutput values.
+// You can construct a concrete instance of `GetMysqlConfigurationOptionInput` via:
+//
+//	GetMysqlConfigurationOptionArgs{...}
+type GetMysqlConfigurationOptionInput interface {
+	pulumi.Input
+
+	ToGetMysqlConfigurationOptionOutput() GetMysqlConfigurationOptionOutput
+	ToGetMysqlConfigurationOptionOutputWithContext(context.Context) GetMysqlConfigurationOptionOutput
+}
+
+type GetMysqlConfigurationOptionArgs struct {
+	// The option name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The option value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMysqlConfigurationOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlConfigurationOption)(nil)).Elem()
+}
+
+func (i GetMysqlConfigurationOptionArgs) ToGetMysqlConfigurationOptionOutput() GetMysqlConfigurationOptionOutput {
+	return i.ToGetMysqlConfigurationOptionOutputWithContext(context.Background())
+}
+
+func (i GetMysqlConfigurationOptionArgs) ToGetMysqlConfigurationOptionOutputWithContext(ctx context.Context) GetMysqlConfigurationOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationOptionOutput)
+}
+
+// GetMysqlConfigurationOptionArrayInput is an input type that accepts GetMysqlConfigurationOptionArray and GetMysqlConfigurationOptionArrayOutput values.
+// You can construct a concrete instance of `GetMysqlConfigurationOptionArrayInput` via:
+//
+//	GetMysqlConfigurationOptionArray{ GetMysqlConfigurationOptionArgs{...} }
+type GetMysqlConfigurationOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlConfigurationOptionArrayOutput() GetMysqlConfigurationOptionArrayOutput
+	ToGetMysqlConfigurationOptionArrayOutputWithContext(context.Context) GetMysqlConfigurationOptionArrayOutput
+}
+
+type GetMysqlConfigurationOptionArray []GetMysqlConfigurationOptionInput
+
+func (GetMysqlConfigurationOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlConfigurationOption)(nil)).Elem()
+}
+
+func (i GetMysqlConfigurationOptionArray) ToGetMysqlConfigurationOptionArrayOutput() GetMysqlConfigurationOptionArrayOutput {
+	return i.ToGetMysqlConfigurationOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlConfigurationOptionArray) ToGetMysqlConfigurationOptionArrayOutputWithContext(ctx context.Context) GetMysqlConfigurationOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationOptionArrayOutput)
+}
+
+type GetMysqlConfigurationOptionOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlConfigurationOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlConfigurationOption)(nil)).Elem()
+}
+
+func (o GetMysqlConfigurationOptionOutput) ToGetMysqlConfigurationOptionOutput() GetMysqlConfigurationOptionOutput {
+	return o
+}
+
+func (o GetMysqlConfigurationOptionOutput) ToGetMysqlConfigurationOptionOutputWithContext(ctx context.Context) GetMysqlConfigurationOptionOutput {
+	return o
+}
+
+// The option name.
+func (o GetMysqlConfigurationOptionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationOption) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The option value.
+func (o GetMysqlConfigurationOptionOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationOption) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetMysqlConfigurationOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlConfigurationOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlConfigurationOption)(nil)).Elem()
+}
+
+func (o GetMysqlConfigurationOptionArrayOutput) ToGetMysqlConfigurationOptionArrayOutput() GetMysqlConfigurationOptionArrayOutput {
+	return o
+}
+
+func (o GetMysqlConfigurationOptionArrayOutput) ToGetMysqlConfigurationOptionArrayOutputWithContext(ctx context.Context) GetMysqlConfigurationOptionArrayOutput {
+	return o
+}
+
+func (o GetMysqlConfigurationOptionArrayOutput) Index(i pulumi.IntInput) GetMysqlConfigurationOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlConfigurationOption {
+		return vs[0].([]GetMysqlConfigurationOption)[vs[1].(int)]
+	}).(GetMysqlConfigurationOptionOutput)
+}
+
 type GetMysqlConfigurationVariable struct {
 	// auto_increment_increment and autoIncrementOffset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
 	AutoIncrementIncrement int `pulumi:"autoIncrementIncrement"`
@@ -16543,10 +16755,10 @@ type GetMysqlConfigurationVariable struct {
 	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryAllocBlockSize string `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
-	QueryPreallocSize string `pulumi:"queryPreallocSize"`
-	// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+	QueryPreallocSize string `pulumi:"queryPreallocSize"`
+	// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
 	RangeOptimizerMaxMemSize string `pulumi:"rangeOptimizerMaxMemSize"`
 	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
 	RegexpTimeLimit int `pulumi:"regexpTimeLimit"`
@@ -16813,10 +17025,10 @@ type GetMysqlConfigurationVariableArgs struct {
 	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryAllocBlockSize pulumi.StringInput `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
-	QueryPreallocSize pulumi.StringInput `pulumi:"queryPreallocSize"`
-	// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+	QueryPreallocSize pulumi.StringInput `pulumi:"queryPreallocSize"`
+	// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
 	RangeOptimizerMaxMemSize pulumi.StringInput `pulumi:"rangeOptimizerMaxMemSize"`
 	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
 	RegexpTimeLimit pulumi.IntInput `pulumi:"regexpTimeLimit"`
@@ -17398,13 +17610,13 @@ func (o GetMysqlConfigurationVariableOutput) QueryAllocBlockSize() pulumi.String
 }
 
 // ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o GetMysqlConfigurationVariableOutput) QueryPreallocSize() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.QueryPreallocSize }).(pulumi.StringOutput)
 }
 
 // The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
-//
-// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o GetMysqlConfigurationVariableOutput) RangeOptimizerMaxMemSize() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.RangeOptimizerMaxMemSize }).(pulumi.StringOutput)
 }
@@ -17562,8 +17774,10 @@ type GetMysqlConfigurationsConfiguration struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Configuration.
 	Id string `pulumi:"id"`
-	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 	InitVariables []GetMysqlConfigurationsConfigurationInitVariable `pulumi:"initVariables"`
+	// The MySQL options defined in the Configuration.
+	Options []GetMysqlConfigurationsConfigurationOption `pulumi:"options"`
 	// The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
 	ParentConfigurationId string `pulumi:"parentConfigurationId"`
 	// The requested Shape name.
@@ -17578,7 +17792,7 @@ type GetMysqlConfigurationsConfiguration struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The requested Configuration types.
 	Type string `pulumi:"type"`
-	// User-defined service variables.
+	// DEPRECATED -- please use the `options` field instead. User-defined service variables.
 	Variables []GetMysqlConfigurationsConfigurationVariable `pulumi:"variables"`
 }
 
@@ -17606,8 +17820,10 @@ type GetMysqlConfigurationsConfigurationArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the Configuration.
 	Id pulumi.StringInput `pulumi:"id"`
-	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 	InitVariables GetMysqlConfigurationsConfigurationInitVariableArrayInput `pulumi:"initVariables"`
+	// The MySQL options defined in the Configuration.
+	Options GetMysqlConfigurationsConfigurationOptionArrayInput `pulumi:"options"`
 	// The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
 	ParentConfigurationId pulumi.StringInput `pulumi:"parentConfigurationId"`
 	// The requested Shape name.
@@ -17622,7 +17838,7 @@ type GetMysqlConfigurationsConfigurationArgs struct {
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// The requested Configuration types.
 	Type pulumi.StringInput `pulumi:"type"`
-	// User-defined service variables.
+	// DEPRECATED -- please use the `options` field instead. User-defined service variables.
 	Variables GetMysqlConfigurationsConfigurationVariableArrayInput `pulumi:"variables"`
 }
 
@@ -17707,11 +17923,18 @@ func (o GetMysqlConfigurationsConfigurationOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 func (o GetMysqlConfigurationsConfigurationOutput) InitVariables() GetMysqlConfigurationsConfigurationInitVariableArrayOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) []GetMysqlConfigurationsConfigurationInitVariable {
 		return v.InitVariables
 	}).(GetMysqlConfigurationsConfigurationInitVariableArrayOutput)
+}
+
+// The MySQL options defined in the Configuration.
+func (o GetMysqlConfigurationsConfigurationOutput) Options() GetMysqlConfigurationsConfigurationOptionArrayOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) []GetMysqlConfigurationsConfigurationOption {
+		return v.Options
+	}).(GetMysqlConfigurationsConfigurationOptionArrayOutput)
 }
 
 // The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
@@ -17749,7 +17972,7 @@ func (o GetMysqlConfigurationsConfigurationOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// User-defined service variables.
+// DEPRECATED -- please use the `options` field instead. User-defined service variables.
 func (o GetMysqlConfigurationsConfigurationOutput) Variables() GetMysqlConfigurationsConfigurationVariableArrayOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) []GetMysqlConfigurationsConfigurationVariable {
 		return v.Variables
@@ -17871,6 +18094,112 @@ func (o GetMysqlConfigurationsConfigurationInitVariableArrayOutput) Index(i pulu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlConfigurationsConfigurationInitVariable {
 		return vs[0].([]GetMysqlConfigurationsConfigurationInitVariable)[vs[1].(int)]
 	}).(GetMysqlConfigurationsConfigurationInitVariableOutput)
+}
+
+type GetMysqlConfigurationsConfigurationOption struct {
+	// The option name.
+	Name string `pulumi:"name"`
+	// The option value.
+	Value string `pulumi:"value"`
+}
+
+// GetMysqlConfigurationsConfigurationOptionInput is an input type that accepts GetMysqlConfigurationsConfigurationOptionArgs and GetMysqlConfigurationsConfigurationOptionOutput values.
+// You can construct a concrete instance of `GetMysqlConfigurationsConfigurationOptionInput` via:
+//
+//	GetMysqlConfigurationsConfigurationOptionArgs{...}
+type GetMysqlConfigurationsConfigurationOptionInput interface {
+	pulumi.Input
+
+	ToGetMysqlConfigurationsConfigurationOptionOutput() GetMysqlConfigurationsConfigurationOptionOutput
+	ToGetMysqlConfigurationsConfigurationOptionOutputWithContext(context.Context) GetMysqlConfigurationsConfigurationOptionOutput
+}
+
+type GetMysqlConfigurationsConfigurationOptionArgs struct {
+	// The option name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The option value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMysqlConfigurationsConfigurationOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlConfigurationsConfigurationOption)(nil)).Elem()
+}
+
+func (i GetMysqlConfigurationsConfigurationOptionArgs) ToGetMysqlConfigurationsConfigurationOptionOutput() GetMysqlConfigurationsConfigurationOptionOutput {
+	return i.ToGetMysqlConfigurationsConfigurationOptionOutputWithContext(context.Background())
+}
+
+func (i GetMysqlConfigurationsConfigurationOptionArgs) ToGetMysqlConfigurationsConfigurationOptionOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationOptionOutput)
+}
+
+// GetMysqlConfigurationsConfigurationOptionArrayInput is an input type that accepts GetMysqlConfigurationsConfigurationOptionArray and GetMysqlConfigurationsConfigurationOptionArrayOutput values.
+// You can construct a concrete instance of `GetMysqlConfigurationsConfigurationOptionArrayInput` via:
+//
+//	GetMysqlConfigurationsConfigurationOptionArray{ GetMysqlConfigurationsConfigurationOptionArgs{...} }
+type GetMysqlConfigurationsConfigurationOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlConfigurationsConfigurationOptionArrayOutput() GetMysqlConfigurationsConfigurationOptionArrayOutput
+	ToGetMysqlConfigurationsConfigurationOptionArrayOutputWithContext(context.Context) GetMysqlConfigurationsConfigurationOptionArrayOutput
+}
+
+type GetMysqlConfigurationsConfigurationOptionArray []GetMysqlConfigurationsConfigurationOptionInput
+
+func (GetMysqlConfigurationsConfigurationOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlConfigurationsConfigurationOption)(nil)).Elem()
+}
+
+func (i GetMysqlConfigurationsConfigurationOptionArray) ToGetMysqlConfigurationsConfigurationOptionArrayOutput() GetMysqlConfigurationsConfigurationOptionArrayOutput {
+	return i.ToGetMysqlConfigurationsConfigurationOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlConfigurationsConfigurationOptionArray) ToGetMysqlConfigurationsConfigurationOptionArrayOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationOptionArrayOutput)
+}
+
+type GetMysqlConfigurationsConfigurationOptionOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlConfigurationsConfigurationOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlConfigurationsConfigurationOption)(nil)).Elem()
+}
+
+func (o GetMysqlConfigurationsConfigurationOptionOutput) ToGetMysqlConfigurationsConfigurationOptionOutput() GetMysqlConfigurationsConfigurationOptionOutput {
+	return o
+}
+
+func (o GetMysqlConfigurationsConfigurationOptionOutput) ToGetMysqlConfigurationsConfigurationOptionOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationOptionOutput {
+	return o
+}
+
+// The option name.
+func (o GetMysqlConfigurationsConfigurationOptionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationOption) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The option value.
+func (o GetMysqlConfigurationsConfigurationOptionOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationOption) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetMysqlConfigurationsConfigurationOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlConfigurationsConfigurationOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlConfigurationsConfigurationOption)(nil)).Elem()
+}
+
+func (o GetMysqlConfigurationsConfigurationOptionArrayOutput) ToGetMysqlConfigurationsConfigurationOptionArrayOutput() GetMysqlConfigurationsConfigurationOptionArrayOutput {
+	return o
+}
+
+func (o GetMysqlConfigurationsConfigurationOptionArrayOutput) ToGetMysqlConfigurationsConfigurationOptionArrayOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationOptionArrayOutput {
+	return o
+}
+
+func (o GetMysqlConfigurationsConfigurationOptionArrayOutput) Index(i pulumi.IntInput) GetMysqlConfigurationsConfigurationOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlConfigurationsConfigurationOption {
+		return vs[0].([]GetMysqlConfigurationsConfigurationOption)[vs[1].(int)]
+	}).(GetMysqlConfigurationsConfigurationOptionOutput)
 }
 
 type GetMysqlConfigurationsConfigurationVariable struct {
@@ -18077,10 +18406,10 @@ type GetMysqlConfigurationsConfigurationVariable struct {
 	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryAllocBlockSize string `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
-	QueryPreallocSize string `pulumi:"queryPreallocSize"`
-	// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+	QueryPreallocSize string `pulumi:"queryPreallocSize"`
+	// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
 	RangeOptimizerMaxMemSize string `pulumi:"rangeOptimizerMaxMemSize"`
 	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
 	RegexpTimeLimit int `pulumi:"regexpTimeLimit"`
@@ -18347,10 +18676,10 @@ type GetMysqlConfigurationsConfigurationVariableArgs struct {
 	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
 	QueryAllocBlockSize pulumi.StringInput `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
-	QueryPreallocSize pulumi.StringInput `pulumi:"queryPreallocSize"`
-	// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+	QueryPreallocSize pulumi.StringInput `pulumi:"queryPreallocSize"`
+	// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
 	RangeOptimizerMaxMemSize pulumi.StringInput `pulumi:"rangeOptimizerMaxMemSize"`
 	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
 	RegexpTimeLimit pulumi.IntInput `pulumi:"regexpTimeLimit"`
@@ -18934,13 +19263,13 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) QueryAllocBlockSize()
 }
 
 // ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o GetMysqlConfigurationsConfigurationVariableOutput) QueryPreallocSize() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.QueryPreallocSize }).(pulumi.StringOutput)
 }
 
 // The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
-//
-// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o GetMysqlConfigurationsConfigurationVariableOutput) RangeOptimizerMaxMemSize() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.RangeOptimizerMaxMemSize }).(pulumi.StringOutput)
 }
@@ -19086,6 +19415,7 @@ func (o GetMysqlConfigurationsConfigurationVariableArrayOutput) Index(i pulumi.I
 }
 
 type GetMysqlConfigurationsFilter struct {
+	// The option name.
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -19103,6 +19433,7 @@ type GetMysqlConfigurationsFilterInput interface {
 }
 
 type GetMysqlConfigurationsFilterArgs struct {
+	// The option name.
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -19159,6 +19490,7 @@ func (o GetMysqlConfigurationsFilterOutput) ToGetMysqlConfigurationsFilterOutput
 	return o
 }
 
+// The option name.
 func (o GetMysqlConfigurationsFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -27364,6 +27696,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupValidateBackupDetailArrayInput)(nil)).Elem(), MysqlBackupValidateBackupDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationInitVariablesInput)(nil)).Elem(), MysqlConfigurationInitVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationInitVariablesPtrInput)(nil)).Elem(), MysqlConfigurationInitVariablesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationOptionInput)(nil)).Elem(), MysqlConfigurationOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationOptionArrayInput)(nil)).Elem(), MysqlConfigurationOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationVariablesInput)(nil)).Elem(), MysqlConfigurationVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationVariablesPtrInput)(nil)).Elem(), MysqlConfigurationVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemBackupPolicyInput)(nil)).Elem(), MysqlDbSystemBackupPolicyArgs{})
@@ -27492,12 +27826,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsFilterArrayInput)(nil)).Elem(), GetMysqlBackupsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationInitVariableInput)(nil)).Elem(), GetMysqlConfigurationInitVariableArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationInitVariableArrayInput)(nil)).Elem(), GetMysqlConfigurationInitVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationOptionInput)(nil)).Elem(), GetMysqlConfigurationOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationOptionArrayInput)(nil)).Elem(), GetMysqlConfigurationOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationVariableInput)(nil)).Elem(), GetMysqlConfigurationVariableArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationVariableArrayInput)(nil)).Elem(), GetMysqlConfigurationVariableArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsConfigurationInput)(nil)).Elem(), GetMysqlConfigurationsConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsConfigurationArrayInput)(nil)).Elem(), GetMysqlConfigurationsConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsConfigurationInitVariableInput)(nil)).Elem(), GetMysqlConfigurationsConfigurationInitVariableArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsConfigurationInitVariableArrayInput)(nil)).Elem(), GetMysqlConfigurationsConfigurationInitVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsConfigurationOptionInput)(nil)).Elem(), GetMysqlConfigurationsConfigurationOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsConfigurationOptionArrayInput)(nil)).Elem(), GetMysqlConfigurationsConfigurationOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsConfigurationVariableInput)(nil)).Elem(), GetMysqlConfigurationsConfigurationVariableArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsConfigurationVariableArrayInput)(nil)).Elem(), GetMysqlConfigurationsConfigurationVariableArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsFilterInput)(nil)).Elem(), GetMysqlConfigurationsFilterArgs{})
@@ -27676,6 +28014,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlBackupValidateBackupDetailArrayOutput{})
 	pulumi.RegisterOutputType(MysqlConfigurationInitVariablesOutput{})
 	pulumi.RegisterOutputType(MysqlConfigurationInitVariablesPtrOutput{})
+	pulumi.RegisterOutputType(MysqlConfigurationOptionOutput{})
+	pulumi.RegisterOutputType(MysqlConfigurationOptionArrayOutput{})
 	pulumi.RegisterOutputType(MysqlConfigurationVariablesOutput{})
 	pulumi.RegisterOutputType(MysqlConfigurationVariablesPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemBackupPolicyOutput{})
@@ -27804,12 +28144,16 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationInitVariableOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationInitVariableArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlConfigurationOptionOutput{})
+	pulumi.RegisterOutputType(GetMysqlConfigurationOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationVariableOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationVariableArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationsConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationsConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationsConfigurationInitVariableOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationsConfigurationInitVariableArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlConfigurationsConfigurationOptionOutput{})
+	pulumi.RegisterOutputType(GetMysqlConfigurationsConfigurationOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationsConfigurationVariableOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationsConfigurationVariableArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationsFilterOutput{})

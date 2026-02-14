@@ -14,6 +14,9 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
     public sealed class GetModelsModelCollectionItemResult
     {
         public readonly string BaseModelId;
+        /// <summary>
+        /// Describes what this model can be used for.
+        /// </summary>
         public readonly ImmutableArray<string> Capabilities;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.

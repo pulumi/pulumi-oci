@@ -100,6 +100,9 @@ class GetModelResult:
     @_builtins.property
     @pulumi.getter
     def capabilities(self) -> Sequence[_builtins.str]:
+        """
+        Describes what this model can be used for.
+        """
         return pulumi.get(self, "capabilities")
 
     @_builtins.property

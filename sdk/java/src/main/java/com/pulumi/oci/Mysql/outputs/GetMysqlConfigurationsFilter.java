@@ -14,11 +14,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMysqlConfigurationsFilter {
+    /**
+     * @return The option name.
+     * 
+     */
     private String name;
     private @Nullable Boolean regex;
     private List<String> values;
 
     private GetMysqlConfigurationsFilter() {}
+    /**
+     * @return The option name.
+     * 
+     */
     public String name() {
         return this.name;
     }

@@ -16,8 +16,17 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'AssessmentAssessorActionItem',
+    'AssessmentExcludeObject',
+    'AssessmentIncludeObject',
+    'AssessmentSourceDatabaseConnection',
+    'AssessmentTargetDatabaseConnection',
     'ConnectionAdditionalAttribute',
     'ConnectionIngressIp',
+    'JobAdvisorReportCheckItem',
+    'JobAdvisorReportCheckItemColumn',
+    'JobAdvisorReportCheckItemMetadata',
+    'JobAdvisorReportCheckSummary',
     'JobCollectTracesData',
     'JobParameterFileVersion',
     'JobProgress',
@@ -47,13 +56,86 @@ __all__ = [
     'MigrationInitialLoadSettingsImportDirectoryObject',
     'MigrationInitialLoadSettingsMetadataRemap',
     'MigrationInitialLoadSettingsTablespaceDetails',
+    'GetAssessmentAssessorActionResult',
+    'GetAssessmentAssessorActionUserDefinedPropertyResult',
+    'GetAssessmentAssessorActionUserDefinedPropertyPropertyResult',
+    'GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionResult',
+    'GetAssessmentAssessorAssessorGroupResult',
+    'GetAssessmentAssessorAssessorGroupActionResult',
+    'GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyResult',
+    'GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyResult',
+    'GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionResult',
+    'GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionResult',
+    'GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemResult',
+    'GetAssessmentAssessorCheckAffectedObjectsFilterResult',
+    'GetAssessmentAssessorCheckAssessorCheckGroupResult',
+    'GetAssessmentAssessorCheckCheckActionResult',
+    'GetAssessmentAssessorCheckCheckActionUserDefinedPropertyResult',
+    'GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyResult',
+    'GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionResult',
+    'GetAssessmentAssessorCheckColumnResult',
+    'GetAssessmentAssessorCheckLogLocationResult',
+    'GetAssessmentAssessorCheckMetadataResult',
+    'GetAssessmentAssessorChecksAssessorCheckSummaryCollectionResult',
+    'GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemResult',
+    'GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupResult',
+    'GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionResult',
+    'GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyResult',
+    'GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyResult',
+    'GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionResult',
+    'GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnResult',
+    'GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationResult',
+    'GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataResult',
+    'GetAssessmentAssessorChecksFilterResult',
+    'GetAssessmentAssessorsAssessorSummaryCollectionResult',
+    'GetAssessmentAssessorsAssessorSummaryCollectionItemResult',
+    'GetAssessmentAssessorsAssessorSummaryCollectionItemActionResult',
+    'GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyResult',
+    'GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyResult',
+    'GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionResult',
+    'GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupResult',
+    'GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionResult',
+    'GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyResult',
+    'GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyResult',
+    'GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionResult',
+    'GetAssessmentAssessorsFilterResult',
+    'GetAssessmentExcludeObjectResult',
+    'GetAssessmentIncludeObjectResult',
+    'GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionResult',
+    'GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemResult',
+    'GetAssessmentObjectTypesFilterResult',
+    'GetAssessmentSourceDatabaseConnectionResult',
+    'GetAssessmentTargetDatabaseConnectionResult',
+    'GetAssessmentsAssessmentCollectionResult',
+    'GetAssessmentsAssessmentCollectionItemResult',
+    'GetAssessmentsAssessmentCollectionItemExcludeObjectResult',
+    'GetAssessmentsAssessmentCollectionItemIncludeObjectResult',
+    'GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionResult',
+    'GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionResult',
+    'GetAssessmentsFilterResult',
     'GetConnectionAdditionalAttributeResult',
+    'GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionResult',
+    'GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemResult',
+    'GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeResult',
+    'GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeResult',
+    'GetConnectionDatabaseconnectiontypesFilterResult',
     'GetConnectionIngressIpResult',
     'GetConnectionsConnectionCollectionResult',
     'GetConnectionsConnectionCollectionItemResult',
     'GetConnectionsConnectionCollectionItemAdditionalAttributeResult',
     'GetConnectionsConnectionCollectionItemIngressIpResult',
     'GetConnectionsFilterResult',
+    'GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionResult',
+    'GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemResult',
+    'GetJobAdvisorReportCheckObjectsFilterResult',
+    'GetJobAdvisorReportChecksAdvisorReportCheckCollectionResult',
+    'GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemResult',
+    'GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemResult',
+    'GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnResult',
+    'GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataResult',
+    'GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryResult',
+    'GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryResult',
+    'GetJobAdvisorReportChecksFilterResult',
     'GetJobAdvisorReportReportLocationDetailResult',
     'GetJobAdvisorReportReportLocationDetailObjectStorageDetailResult',
     'GetJobOutputItemResult',
@@ -105,6 +187,325 @@ __all__ = [
     'GetMigrationsInitialLoadSettingMetadataRemapResult',
     'GetMigrationsInitialLoadSettingTablespaceDetailResult',
 ]
+
+@pulumi.output_type
+class AssessmentAssessorActionItem(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str name: The property name.
+        :param _builtins.str value: The property value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The property name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The property value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class AssessmentExcludeObject(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isOmitExcludedTableFromReplication":
+            suggest = "is_omit_excluded_table_from_replication"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AssessmentExcludeObject. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AssessmentExcludeObject.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AssessmentExcludeObject.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 object: _builtins.str,
+                 is_omit_excluded_table_from_replication: Optional[_builtins.bool] = None,
+                 owner: Optional[_builtins.str] = None,
+                 schema: Optional[_builtins.str] = None,
+                 type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str object: Name of the object (regular expression is allowed)
+        :param _builtins.bool is_omit_excluded_table_from_replication: Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+        :param _builtins.str owner: Owner of the object (regular expression is allowed)
+        :param _builtins.str schema: Schema of the object (regular expression is allowed)
+        :param _builtins.str type: Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+        """
+        pulumi.set(__self__, "object", object)
+        if is_omit_excluded_table_from_replication is not None:
+            pulumi.set(__self__, "is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
+        if owner is not None:
+            pulumi.set(__self__, "owner", owner)
+        if schema is not None:
+            pulumi.set(__self__, "schema", schema)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> _builtins.str:
+        """
+        Name of the object (regular expression is allowed)
+        """
+        return pulumi.get(self, "object")
+
+    @_builtins.property
+    @pulumi.getter(name="isOmitExcludedTableFromReplication")
+    def is_omit_excluded_table_from_replication(self) -> Optional[_builtins.bool]:
+        """
+        Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+        """
+        return pulumi.get(self, "is_omit_excluded_table_from_replication")
+
+    @_builtins.property
+    @pulumi.getter
+    def owner(self) -> Optional[_builtins.str]:
+        """
+        Owner of the object (regular expression is allowed)
+        """
+        return pulumi.get(self, "owner")
+
+    @_builtins.property
+    @pulumi.getter
+    def schema(self) -> Optional[_builtins.str]:
+        """
+        Schema of the object (regular expression is allowed)
+        """
+        return pulumi.get(self, "schema")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[_builtins.str]:
+        """
+        Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class AssessmentIncludeObject(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isOmitExcludedTableFromReplication":
+            suggest = "is_omit_excluded_table_from_replication"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AssessmentIncludeObject. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AssessmentIncludeObject.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AssessmentIncludeObject.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 object: _builtins.str,
+                 is_omit_excluded_table_from_replication: Optional[_builtins.bool] = None,
+                 owner: Optional[_builtins.str] = None,
+                 schema: Optional[_builtins.str] = None,
+                 type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str object: Name of the object (regular expression is allowed)
+        :param _builtins.bool is_omit_excluded_table_from_replication: Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+        :param _builtins.str owner: Owner of the object (regular expression is allowed)
+        :param _builtins.str schema: Schema of the object (regular expression is allowed)
+        :param _builtins.str type: Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+        """
+        pulumi.set(__self__, "object", object)
+        if is_omit_excluded_table_from_replication is not None:
+            pulumi.set(__self__, "is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
+        if owner is not None:
+            pulumi.set(__self__, "owner", owner)
+        if schema is not None:
+            pulumi.set(__self__, "schema", schema)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> _builtins.str:
+        """
+        Name of the object (regular expression is allowed)
+        """
+        return pulumi.get(self, "object")
+
+    @_builtins.property
+    @pulumi.getter(name="isOmitExcludedTableFromReplication")
+    def is_omit_excluded_table_from_replication(self) -> Optional[_builtins.bool]:
+        """
+        Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+        """
+        return pulumi.get(self, "is_omit_excluded_table_from_replication")
+
+    @_builtins.property
+    @pulumi.getter
+    def owner(self) -> Optional[_builtins.str]:
+        """
+        Owner of the object (regular expression is allowed)
+        """
+        return pulumi.get(self, "owner")
+
+    @_builtins.property
+    @pulumi.getter
+    def schema(self) -> Optional[_builtins.str]:
+        """
+        Schema of the object (regular expression is allowed)
+        """
+        return pulumi.get(self, "schema")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[_builtins.str]:
+        """
+        Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class AssessmentSourceDatabaseConnection(dict):
+    def __init__(__self__, *,
+                 id: _builtins.str):
+        """
+        :param _builtins.str id: (Updatable) The OCID of the resource being referenced.
+        """
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        (Updatable) The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class AssessmentTargetDatabaseConnection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectionType":
+            suggest = "connection_type"
+        elif key == "databaseVersion":
+            suggest = "database_version"
+        elif key == "technologySubType":
+            suggest = "technology_sub_type"
+        elif key == "technologyType":
+            suggest = "technology_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AssessmentTargetDatabaseConnection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AssessmentTargetDatabaseConnection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AssessmentTargetDatabaseConnection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connection_type: Optional[_builtins.str] = None,
+                 database_version: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None,
+                 technology_sub_type: Optional[_builtins.str] = None,
+                 technology_type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str connection_type: (Updatable) Defines the type of connection. For example, ORACLE.
+        :param _builtins.str database_version: (Updatable) The database version
+        :param _builtins.str id: (Updatable) The OCID of the resource being referenced.
+        :param _builtins.str technology_sub_type: (Updatable) Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
+        :param _builtins.str technology_type: (Updatable) The technology type.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if connection_type is not None:
+            pulumi.set(__self__, "connection_type", connection_type)
+        if database_version is not None:
+            pulumi.set(__self__, "database_version", database_version)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if technology_sub_type is not None:
+            pulumi.set(__self__, "technology_sub_type", technology_sub_type)
+        if technology_type is not None:
+            pulumi.set(__self__, "technology_type", technology_type)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Defines the type of connection. For example, ORACLE.
+        """
+        return pulumi.get(self, "connection_type")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseVersion")
+    def database_version(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The database version
+        """
+        return pulumi.get(self, "database_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="technologySubType")
+    def technology_sub_type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
+        """
+        return pulumi.get(self, "technology_sub_type")
+
+    @_builtins.property
+    @pulumi.getter(name="technologyType")
+    def technology_type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The technology type.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "technology_type")
+
 
 @pulumi.output_type
 class ConnectionAdditionalAttribute(dict):
@@ -171,6 +572,402 @@ class ConnectionIngressIp(dict):
         A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         """
         return pulumi.get(self, "ingress_ip")
+
+
+@pulumi.output_type
+class JobAdvisorReportCheckItem(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+        elif key == "fixupScriptLocation":
+            suggest = "fixup_script_location"
+        elif key == "isExclusionAllowed":
+            suggest = "is_exclusion_allowed"
+        elif key == "isReviewed":
+            suggest = "is_reviewed"
+        elif key == "objectCount":
+            suggest = "object_count"
+        elif key == "resultType":
+            suggest = "result_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobAdvisorReportCheckItem. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobAdvisorReportCheckItem.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobAdvisorReportCheckItem.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: Optional[_builtins.str] = None,
+                 columns: Optional[Sequence['outputs.JobAdvisorReportCheckItemColumn']] = None,
+                 display_name: Optional[_builtins.str] = None,
+                 fixup_script_location: Optional[_builtins.str] = None,
+                 impact: Optional[_builtins.str] = None,
+                 is_exclusion_allowed: Optional[_builtins.bool] = None,
+                 is_reviewed: Optional[_builtins.bool] = None,
+                 issue: Optional[_builtins.str] = None,
+                 key: Optional[_builtins.str] = None,
+                 metadatas: Optional[Sequence['outputs.JobAdvisorReportCheckItemMetadata']] = None,
+                 object_count: Optional[_builtins.int] = None,
+                 result_type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str action: Fixing the issue.
+        :param Sequence['JobAdvisorReportCheckItemColumnArgs'] columns: Array of the column of the objects table.
+        :param _builtins.str display_name: Pre-Migration сheck display name.
+        :param _builtins.str fixup_script_location: The path to the fixup script for this check.
+        :param _builtins.str impact: Impact of the issue on data migration.
+        :param _builtins.bool is_exclusion_allowed: If false, objects cannot be excluded from migration.
+        :param _builtins.bool is_reviewed: (Updatable) User flag for advisor report check.
+        :param _builtins.str issue: Description of the issue.
+        :param _builtins.str key: Pre-Migration сheck id.
+        :param Sequence['JobAdvisorReportCheckItemMetadataArgs'] metadatas: Metadata of object.
+        :param _builtins.int object_count: Number of database objects to migrate.
+        :param _builtins.str result_type: Pre-Migration advisor result.
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if columns is not None:
+            pulumi.set(__self__, "columns", columns)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if fixup_script_location is not None:
+            pulumi.set(__self__, "fixup_script_location", fixup_script_location)
+        if impact is not None:
+            pulumi.set(__self__, "impact", impact)
+        if is_exclusion_allowed is not None:
+            pulumi.set(__self__, "is_exclusion_allowed", is_exclusion_allowed)
+        if is_reviewed is not None:
+            pulumi.set(__self__, "is_reviewed", is_reviewed)
+        if issue is not None:
+            pulumi.set(__self__, "issue", issue)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if object_count is not None:
+            pulumi.set(__self__, "object_count", object_count)
+        if result_type is not None:
+            pulumi.set(__self__, "result_type", result_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> Optional[_builtins.str]:
+        """
+        Fixing the issue.
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter
+    def columns(self) -> Optional[Sequence['outputs.JobAdvisorReportCheckItemColumn']]:
+        """
+        Array of the column of the objects table.
+        """
+        return pulumi.get(self, "columns")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        Pre-Migration сheck display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="fixupScriptLocation")
+    def fixup_script_location(self) -> Optional[_builtins.str]:
+        """
+        The path to the fixup script for this check.
+        """
+        return pulumi.get(self, "fixup_script_location")
+
+    @_builtins.property
+    @pulumi.getter
+    def impact(self) -> Optional[_builtins.str]:
+        """
+        Impact of the issue on data migration.
+        """
+        return pulumi.get(self, "impact")
+
+    @_builtins.property
+    @pulumi.getter(name="isExclusionAllowed")
+    def is_exclusion_allowed(self) -> Optional[_builtins.bool]:
+        """
+        If false, objects cannot be excluded from migration.
+        """
+        return pulumi.get(self, "is_exclusion_allowed")
+
+    @_builtins.property
+    @pulumi.getter(name="isReviewed")
+    def is_reviewed(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) User flag for advisor report check.
+        """
+        return pulumi.get(self, "is_reviewed")
+
+    @_builtins.property
+    @pulumi.getter
+    def issue(self) -> Optional[_builtins.str]:
+        """
+        Description of the issue.
+        """
+        return pulumi.get(self, "issue")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Pre-Migration сheck id.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def metadatas(self) -> Optional[Sequence['outputs.JobAdvisorReportCheckItemMetadata']]:
+        """
+        Metadata of object.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @_builtins.property
+    @pulumi.getter(name="objectCount")
+    def object_count(self) -> Optional[_builtins.int]:
+        """
+        Number of database objects to migrate.
+        """
+        return pulumi.get(self, "object_count")
+
+    @_builtins.property
+    @pulumi.getter(name="resultType")
+    def result_type(self) -> Optional[_builtins.str]:
+        """
+        Pre-Migration advisor result.
+        """
+        return pulumi.get(self, "result_type")
+
+
+@pulumi.output_type
+class JobAdvisorReportCheckItemColumn(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobAdvisorReportCheckItemColumn. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobAdvisorReportCheckItemColumn.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobAdvisorReportCheckItemColumn.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[_builtins.str] = None,
+                 key: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str display_name: Pre-Migration сheck display name.
+        :param _builtins.str key: Pre-Migration сheck id.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        Pre-Migration сheck display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Pre-Migration сheck id.
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class JobAdvisorReportCheckItemMetadata(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "objectNameColumn":
+            suggest = "object_name_column"
+        elif key == "objectTypeColumn":
+            suggest = "object_type_column"
+        elif key == "objectTypeFixed":
+            suggest = "object_type_fixed"
+        elif key == "schemaOwnerColumn":
+            suggest = "schema_owner_column"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobAdvisorReportCheckItemMetadata. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobAdvisorReportCheckItemMetadata.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobAdvisorReportCheckItemMetadata.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 object_name_column: Optional[_builtins.str] = None,
+                 object_type_column: Optional[_builtins.str] = None,
+                 object_type_fixed: Optional[_builtins.str] = None,
+                 schema_owner_column: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str object_name_column: The field that stores the name of the object.
+        :param _builtins.str object_type_column: The field that stores the type of the object.
+        :param _builtins.str object_type_fixed: The field that stores the fixed type of the object.
+        :param _builtins.str schema_owner_column: The field that stores the owner of the object.
+        """
+        if object_name_column is not None:
+            pulumi.set(__self__, "object_name_column", object_name_column)
+        if object_type_column is not None:
+            pulumi.set(__self__, "object_type_column", object_type_column)
+        if object_type_fixed is not None:
+            pulumi.set(__self__, "object_type_fixed", object_type_fixed)
+        if schema_owner_column is not None:
+            pulumi.set(__self__, "schema_owner_column", schema_owner_column)
+
+    @_builtins.property
+    @pulumi.getter(name="objectNameColumn")
+    def object_name_column(self) -> Optional[_builtins.str]:
+        """
+        The field that stores the name of the object.
+        """
+        return pulumi.get(self, "object_name_column")
+
+    @_builtins.property
+    @pulumi.getter(name="objectTypeColumn")
+    def object_type_column(self) -> Optional[_builtins.str]:
+        """
+        The field that stores the type of the object.
+        """
+        return pulumi.get(self, "object_type_column")
+
+    @_builtins.property
+    @pulumi.getter(name="objectTypeFixed")
+    def object_type_fixed(self) -> Optional[_builtins.str]:
+        """
+        The field that stores the fixed type of the object.
+        """
+        return pulumi.get(self, "object_type_fixed")
+
+    @_builtins.property
+    @pulumi.getter(name="schemaOwnerColumn")
+    def schema_owner_column(self) -> Optional[_builtins.str]:
+        """
+        The field that stores the owner of the object.
+        """
+        return pulumi.get(self, "schema_owner_column")
+
+
+@pulumi.output_type
+class JobAdvisorReportCheckSummary(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "blockerResultsTotalCount":
+            suggest = "blocker_results_total_count"
+        elif key == "fatalResultsTotalCount":
+            suggest = "fatal_results_total_count"
+        elif key == "informationalResultsTotalCount":
+            suggest = "informational_results_total_count"
+        elif key == "passResultsTotalCount":
+            suggest = "pass_results_total_count"
+        elif key == "warningResultsTotalCount":
+            suggest = "warning_results_total_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobAdvisorReportCheckSummary. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobAdvisorReportCheckSummary.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobAdvisorReportCheckSummary.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 blocker_results_total_count: Optional[_builtins.int] = None,
+                 fatal_results_total_count: Optional[_builtins.int] = None,
+                 informational_results_total_count: Optional[_builtins.int] = None,
+                 pass_results_total_count: Optional[_builtins.int] = None,
+                 warning_results_total_count: Optional[_builtins.int] = None):
+        """
+        :param _builtins.int blocker_results_total_count: Number of BLOCKER results in the extended advisor report.
+        :param _builtins.int fatal_results_total_count: Number of FATAL results in the extended advisor report.
+        :param _builtins.int informational_results_total_count: Number of INFORMATIONAL results in the extended advisor report.
+        :param _builtins.int pass_results_total_count: Number of PASS results in the extended advisor report.
+        :param _builtins.int warning_results_total_count: Number of WARNING results in the extended advisor report.
+        """
+        if blocker_results_total_count is not None:
+            pulumi.set(__self__, "blocker_results_total_count", blocker_results_total_count)
+        if fatal_results_total_count is not None:
+            pulumi.set(__self__, "fatal_results_total_count", fatal_results_total_count)
+        if informational_results_total_count is not None:
+            pulumi.set(__self__, "informational_results_total_count", informational_results_total_count)
+        if pass_results_total_count is not None:
+            pulumi.set(__self__, "pass_results_total_count", pass_results_total_count)
+        if warning_results_total_count is not None:
+            pulumi.set(__self__, "warning_results_total_count", warning_results_total_count)
+
+    @_builtins.property
+    @pulumi.getter(name="blockerResultsTotalCount")
+    def blocker_results_total_count(self) -> Optional[_builtins.int]:
+        """
+        Number of BLOCKER results in the extended advisor report.
+        """
+        return pulumi.get(self, "blocker_results_total_count")
+
+    @_builtins.property
+    @pulumi.getter(name="fatalResultsTotalCount")
+    def fatal_results_total_count(self) -> Optional[_builtins.int]:
+        """
+        Number of FATAL results in the extended advisor report.
+        """
+        return pulumi.get(self, "fatal_results_total_count")
+
+    @_builtins.property
+    @pulumi.getter(name="informationalResultsTotalCount")
+    def informational_results_total_count(self) -> Optional[_builtins.int]:
+        """
+        Number of INFORMATIONAL results in the extended advisor report.
+        """
+        return pulumi.get(self, "informational_results_total_count")
+
+    @_builtins.property
+    @pulumi.getter(name="passResultsTotalCount")
+    def pass_results_total_count(self) -> Optional[_builtins.int]:
+        """
+        Number of PASS results in the extended advisor report.
+        """
+        return pulumi.get(self, "pass_results_total_count")
+
+    @_builtins.property
+    @pulumi.getter(name="warningResultsTotalCount")
+    def warning_results_total_count(self) -> Optional[_builtins.int]:
+        """
+        Number of WARNING results in the extended advisor report.
+        """
+        return pulumi.get(self, "warning_results_total_count")
 
 
 @pulumi.output_type
@@ -458,6 +1255,8 @@ class JobProgressPhase(dict):
             suggest = "duration_in_ms"
         elif key == "editableParameterFiles":
             suggest = "editable_parameter_files"
+        elif key == "groupDisplayName":
+            suggest = "group_display_name"
         elif key == "isAdvisorReportAvailable":
             suggest = "is_advisor_report_available"
         elif key == "isSuspendAvailable":
@@ -481,6 +1280,7 @@ class JobProgressPhase(dict):
                  duration_in_ms: Optional[_builtins.int] = None,
                  editable_parameter_files: Optional[Sequence[_builtins.str]] = None,
                  extracts: Optional[Sequence['outputs.JobProgressPhaseExtract']] = None,
+                 group_display_name: Optional[_builtins.str] = None,
                  is_advisor_report_available: Optional[_builtins.bool] = None,
                  is_suspend_available: Optional[_builtins.bool] = None,
                  issue: Optional[_builtins.str] = None,
@@ -493,6 +1293,7 @@ class JobProgressPhase(dict):
         :param _builtins.int duration_in_ms: Duration of the phase in milliseconds
         :param Sequence[_builtins.str] editable_parameter_files: Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
         :param Sequence['JobProgressPhaseExtractArgs'] extracts: Summary of phase status results.
+        :param _builtins.str group_display_name: Job Phase group display name e.g. 'Step 1: Migration'
         :param _builtins.bool is_advisor_report_available: True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
         :param _builtins.bool is_suspend_available: This is returned as true if the current phase can be suspended.
         :param _builtins.str issue: The text describing the root cause of the reported issue
@@ -509,6 +1310,8 @@ class JobProgressPhase(dict):
             pulumi.set(__self__, "editable_parameter_files", editable_parameter_files)
         if extracts is not None:
             pulumi.set(__self__, "extracts", extracts)
+        if group_display_name is not None:
+            pulumi.set(__self__, "group_display_name", group_display_name)
         if is_advisor_report_available is not None:
             pulumi.set(__self__, "is_advisor_report_available", is_advisor_report_available)
         if is_suspend_available is not None:
@@ -555,6 +1358,14 @@ class JobProgressPhase(dict):
         Summary of phase status results.
         """
         return pulumi.get(self, "extracts")
+
+    @_builtins.property
+    @pulumi.getter(name="groupDisplayName")
+    def group_display_name(self) -> Optional[_builtins.str]:
+        """
+        Job Phase group display name e.g. 'Step 1: Migration'
+        """
+        return pulumi.get(self, "group_display_name")
 
     @_builtins.property
     @pulumi.getter(name="isAdvisorReportAvailable")
@@ -2266,6 +3077,3459 @@ class MigrationInitialLoadSettingsTablespaceDetails(dict):
 
 
 @pulumi.output_type
+class GetAssessmentAssessorActionResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 is_disabled: _builtins.bool,
+                 name: _builtins.str,
+                 resource_id: _builtins.str,
+                 title: _builtins.str,
+                 user_defined_properties: Sequence['outputs.GetAssessmentAssessorActionUserDefinedPropertyResult']):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.bool is_disabled: Defines if the action is enabled or disabled.
+        :param _builtins.str name: The Assessor Name.
+        :param _builtins.str resource_id: The OCID of the resource being referenced.
+        :param _builtins.str title: The Assessor Action Title.
+        :param Sequence['GetAssessmentAssessorActionUserDefinedPropertyArgs'] user_defined_properties: User defined properties
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_disabled", is_disabled)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "title", title)
+        pulumi.set(__self__, "user_defined_properties", user_defined_properties)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isDisabled")
+    def is_disabled(self) -> _builtins.bool:
+        """
+        Defines if the action is enabled or disabled.
+        """
+        return pulumi.get(self, "is_disabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Assessor Name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> _builtins.str:
+        """
+        The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def title(self) -> _builtins.str:
+        """
+        The Assessor Action Title.
+        """
+        return pulumi.get(self, "title")
+
+    @_builtins.property
+    @pulumi.getter(name="userDefinedProperties")
+    def user_defined_properties(self) -> Sequence['outputs.GetAssessmentAssessorActionUserDefinedPropertyResult']:
+        """
+        User defined properties
+        """
+        return pulumi.get(self, "user_defined_properties")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorActionUserDefinedPropertyResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 help_link_text: _builtins.str,
+                 help_link_url: _builtins.str,
+                 properties: Sequence['outputs.GetAssessmentAssessorActionUserDefinedPropertyPropertyResult']):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str help_link_text: The Help link text.
+        :param _builtins.str help_link_url: The Help URL.
+        :param Sequence['GetAssessmentAssessorActionUserDefinedPropertyPropertyArgs'] properties: Array of user defined properties.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "help_link_text", help_link_text)
+        pulumi.set(__self__, "help_link_url", help_link_url)
+        pulumi.set(__self__, "properties", properties)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="helpLinkText")
+    def help_link_text(self) -> _builtins.str:
+        """
+        The Help link text.
+        """
+        return pulumi.get(self, "help_link_text")
+
+    @_builtins.property
+    @pulumi.getter(name="helpLinkUrl")
+    def help_link_url(self) -> _builtins.str:
+        """
+        The Help URL.
+        """
+        return pulumi.get(self, "help_link_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def properties(self) -> Sequence['outputs.GetAssessmentAssessorActionUserDefinedPropertyPropertyResult']:
+        """
+        Array of user defined properties.
+        """
+        return pulumi.get(self, "properties")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorActionUserDefinedPropertyPropertyResult(dict):
+    def __init__(__self__, *,
+                 default_value: _builtins.str,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 is_required: _builtins.bool,
+                 max_length: _builtins.int,
+                 min_length: _builtins.int,
+                 name: _builtins.str,
+                 options: Sequence['outputs.GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionResult'],
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str default_value: The default value of the property.
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.bool is_required: True if the property is required, false otherwise
+        :param _builtins.int max_length: Maximum length of the text
+        :param _builtins.int min_length: Minimum length of the text
+        :param _builtins.str name: The Assessor Name.
+        :param Sequence['GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArgs'] options: User defined property options.
+        :param _builtins.str type: The type of the user defined property.
+        :param _builtins.str value: The value of the property.
+        """
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_required", is_required)
+        pulumi.set(__self__, "max_length", max_length)
+        pulumi.set(__self__, "min_length", min_length)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "options", options)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> _builtins.str:
+        """
+        The default value of the property.
+        """
+        return pulumi.get(self, "default_value")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isRequired")
+    def is_required(self) -> _builtins.bool:
+        """
+        True if the property is required, false otherwise
+        """
+        return pulumi.get(self, "is_required")
+
+    @_builtins.property
+    @pulumi.getter(name="maxLength")
+    def max_length(self) -> _builtins.int:
+        """
+        Maximum length of the text
+        """
+        return pulumi.get(self, "max_length")
+
+    @_builtins.property
+    @pulumi.getter(name="minLength")
+    def min_length(self) -> _builtins.int:
+        """
+        Minimum length of the text
+        """
+        return pulumi.get(self, "min_length")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Assessor Name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def options(self) -> Sequence['outputs.GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionResult']:
+        """
+        User defined property options.
+        """
+        return pulumi.get(self, "options")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the user defined property.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The value of the property.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str value: The value of the property.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The value of the property.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorAssessorGroupResult(dict):
+    def __init__(__self__, *,
+                 actions: Sequence['outputs.GetAssessmentAssessorAssessorGroupActionResult'],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 name: _builtins.str):
+        """
+        :param Sequence['GetAssessmentAssessorAssessorGroupActionArgs'] actions: Assessor group actions.
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str name: The Assessor Name.
+        """
+        pulumi.set(__self__, "actions", actions)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def actions(self) -> Sequence['outputs.GetAssessmentAssessorAssessorGroupActionResult']:
+        """
+        Assessor group actions.
+        """
+        return pulumi.get(self, "actions")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Assessor Name.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorAssessorGroupActionResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 is_disabled: _builtins.bool,
+                 name: _builtins.str,
+                 resource_id: _builtins.str,
+                 title: _builtins.str,
+                 user_defined_properties: Sequence['outputs.GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyResult']):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.bool is_disabled: Defines if the action is enabled or disabled.
+        :param _builtins.str name: The Assessor Name.
+        :param _builtins.str resource_id: The OCID of the resource being referenced.
+        :param _builtins.str title: The Assessor Action Title.
+        :param Sequence['GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArgs'] user_defined_properties: User defined properties
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_disabled", is_disabled)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "title", title)
+        pulumi.set(__self__, "user_defined_properties", user_defined_properties)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isDisabled")
+    def is_disabled(self) -> _builtins.bool:
+        """
+        Defines if the action is enabled or disabled.
+        """
+        return pulumi.get(self, "is_disabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Assessor Name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> _builtins.str:
+        """
+        The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def title(self) -> _builtins.str:
+        """
+        The Assessor Action Title.
+        """
+        return pulumi.get(self, "title")
+
+    @_builtins.property
+    @pulumi.getter(name="userDefinedProperties")
+    def user_defined_properties(self) -> Sequence['outputs.GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyResult']:
+        """
+        User defined properties
+        """
+        return pulumi.get(self, "user_defined_properties")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 help_link_text: _builtins.str,
+                 help_link_url: _builtins.str,
+                 properties: Sequence['outputs.GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyResult']):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str help_link_text: The Help link text.
+        :param _builtins.str help_link_url: The Help URL.
+        :param Sequence['GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArgs'] properties: Array of user defined properties.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "help_link_text", help_link_text)
+        pulumi.set(__self__, "help_link_url", help_link_url)
+        pulumi.set(__self__, "properties", properties)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="helpLinkText")
+    def help_link_text(self) -> _builtins.str:
+        """
+        The Help link text.
+        """
+        return pulumi.get(self, "help_link_text")
+
+    @_builtins.property
+    @pulumi.getter(name="helpLinkUrl")
+    def help_link_url(self) -> _builtins.str:
+        """
+        The Help URL.
+        """
+        return pulumi.get(self, "help_link_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def properties(self) -> Sequence['outputs.GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyResult']:
+        """
+        Array of user defined properties.
+        """
+        return pulumi.get(self, "properties")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyResult(dict):
+    def __init__(__self__, *,
+                 default_value: _builtins.str,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 is_required: _builtins.bool,
+                 max_length: _builtins.int,
+                 min_length: _builtins.int,
+                 name: _builtins.str,
+                 options: Sequence['outputs.GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionResult'],
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str default_value: The default value of the property.
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.bool is_required: True if the property is required, false otherwise
+        :param _builtins.int max_length: Maximum length of the text
+        :param _builtins.int min_length: Minimum length of the text
+        :param _builtins.str name: The Assessor Name.
+        :param Sequence['GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArgs'] options: User defined property options.
+        :param _builtins.str type: The type of the user defined property.
+        :param _builtins.str value: The value of the property.
+        """
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_required", is_required)
+        pulumi.set(__self__, "max_length", max_length)
+        pulumi.set(__self__, "min_length", min_length)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "options", options)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> _builtins.str:
+        """
+        The default value of the property.
+        """
+        return pulumi.get(self, "default_value")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isRequired")
+    def is_required(self) -> _builtins.bool:
+        """
+        True if the property is required, false otherwise
+        """
+        return pulumi.get(self, "is_required")
+
+    @_builtins.property
+    @pulumi.getter(name="maxLength")
+    def max_length(self) -> _builtins.int:
+        """
+        Maximum length of the text
+        """
+        return pulumi.get(self, "max_length")
+
+    @_builtins.property
+    @pulumi.getter(name="minLength")
+    def min_length(self) -> _builtins.int:
+        """
+        Minimum length of the text
+        """
+        return pulumi.get(self, "min_length")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Assessor Name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def options(self) -> Sequence['outputs.GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionResult']:
+        """
+        User defined property options.
+        """
+        return pulumi.get(self, "options")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the user defined property.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The value of the property.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str value: The value of the property.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The value of the property.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemResult']):
+        """
+        :param Sequence['GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArgs'] items: Items in collection.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemResult']:
+        """
+        Items in collection.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, _builtins.str],
+                 fields: Mapping[str, _builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 is_excluded: _builtins.bool,
+                 system_tags: Mapping[str, _builtins.str]):
+        """
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        :param _builtins.bool is_excluded: If the object was excluded from migration, then it is true.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "fields", fields)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "is_excluded", is_excluded)
+        pulumi.set(__self__, "system_tags", system_tags)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def fields(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "fields")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="isExcluded")
+    def is_excluded(self) -> _builtins.bool:
+        """
+        If the object was excluded from migration, then it is true.
+        """
+        return pulumi.get(self, "is_excluded")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorCheckAffectedObjectsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorCheckAssessorCheckGroupResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 is_expanded: _builtins.bool,
+                 name: _builtins.str):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.bool is_expanded: True if the group is expanded, false otherwise.
+        :param _builtins.str name: The Name of the Check.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_expanded", is_expanded)
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isExpanded")
+    def is_expanded(self) -> _builtins.bool:
+        """
+        True if the group is expanded, false otherwise.
+        """
+        return pulumi.get(self, "is_expanded")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Name of the Check.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorCheckCheckActionResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 name: _builtins.str,
+                 user_defined_properties: Sequence['outputs.GetAssessmentAssessorCheckCheckActionUserDefinedPropertyResult']):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str name: The Name of the Check.
+        :param Sequence['GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArgs'] user_defined_properties: User defined properties
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "user_defined_properties", user_defined_properties)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Name of the Check.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="userDefinedProperties")
+    def user_defined_properties(self) -> Sequence['outputs.GetAssessmentAssessorCheckCheckActionUserDefinedPropertyResult']:
+        """
+        User defined properties
+        """
+        return pulumi.get(self, "user_defined_properties")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorCheckCheckActionUserDefinedPropertyResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 help_link_text: _builtins.str,
+                 help_link_url: _builtins.str,
+                 properties: Sequence['outputs.GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyResult']):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str help_link_text: The Help link text.
+        :param _builtins.str help_link_url: The Help URL.
+        :param Sequence['GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArgs'] properties: Array of user defined properties.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "help_link_text", help_link_text)
+        pulumi.set(__self__, "help_link_url", help_link_url)
+        pulumi.set(__self__, "properties", properties)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="helpLinkText")
+    def help_link_text(self) -> _builtins.str:
+        """
+        The Help link text.
+        """
+        return pulumi.get(self, "help_link_text")
+
+    @_builtins.property
+    @pulumi.getter(name="helpLinkUrl")
+    def help_link_url(self) -> _builtins.str:
+        """
+        The Help URL.
+        """
+        return pulumi.get(self, "help_link_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def properties(self) -> Sequence['outputs.GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyResult']:
+        """
+        Array of user defined properties.
+        """
+        return pulumi.get(self, "properties")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyResult(dict):
+    def __init__(__self__, *,
+                 default_value: _builtins.str,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 is_required: _builtins.bool,
+                 max_length: _builtins.int,
+                 min_length: _builtins.int,
+                 name: _builtins.str,
+                 options: Sequence['outputs.GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionResult'],
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str default_value: The default value of the property.
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.bool is_required: True if the property is required, false otherwise
+        :param _builtins.int max_length: Maximum length of the text
+        :param _builtins.int min_length: Minimum length of the text
+        :param _builtins.str name: The Name of the Check.
+        :param Sequence['GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArgs'] options: User defined property options.
+        :param _builtins.str type: The type of the user defined property.
+        :param _builtins.str value: The value of the property.
+        """
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_required", is_required)
+        pulumi.set(__self__, "max_length", max_length)
+        pulumi.set(__self__, "min_length", min_length)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "options", options)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> _builtins.str:
+        """
+        The default value of the property.
+        """
+        return pulumi.get(self, "default_value")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isRequired")
+    def is_required(self) -> _builtins.bool:
+        """
+        True if the property is required, false otherwise
+        """
+        return pulumi.get(self, "is_required")
+
+    @_builtins.property
+    @pulumi.getter(name="maxLength")
+    def max_length(self) -> _builtins.int:
+        """
+        Maximum length of the text
+        """
+        return pulumi.get(self, "max_length")
+
+    @_builtins.property
+    @pulumi.getter(name="minLength")
+    def min_length(self) -> _builtins.int:
+        """
+        Minimum length of the text
+        """
+        return pulumi.get(self, "min_length")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Name of the Check.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def options(self) -> Sequence['outputs.GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionResult']:
+        """
+        User defined property options.
+        """
+        return pulumi.get(self, "options")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the user defined property.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The value of the property.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str value: The value of the property.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The value of the property.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorCheckColumnResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 key: _builtins.str):
+        """
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str key: Pre-Migration сheck id.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "key", key)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Pre-Migration сheck id.
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorCheckLogLocationResult(dict):
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 namespace: _builtins.str,
+                 object: _builtins.str):
+        """
+        :param _builtins.str bucket: Name of the bucket containing the log file.
+        :param _builtins.str namespace: Object Storage namespace.
+        :param _builtins.str object: Log object name.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        Name of the bucket containing the log file.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        Object Storage namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> _builtins.str:
+        """
+        Log object name.
+        """
+        return pulumi.get(self, "object")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorCheckMetadataResult(dict):
+    def __init__(__self__, *,
+                 object_name_column: _builtins.str,
+                 object_type_column: _builtins.str,
+                 object_type_fixed: _builtins.str,
+                 schema_owner_column: _builtins.str):
+        """
+        :param _builtins.str object_name_column: The field that stores the name of the object.
+        :param _builtins.str object_type_column: The field that stores the type of the object.
+        :param _builtins.str object_type_fixed: The field that stores the fixed type of the object.
+        :param _builtins.str schema_owner_column: The field that stores the owner of the object.
+        """
+        pulumi.set(__self__, "object_name_column", object_name_column)
+        pulumi.set(__self__, "object_type_column", object_type_column)
+        pulumi.set(__self__, "object_type_fixed", object_type_fixed)
+        pulumi.set(__self__, "schema_owner_column", schema_owner_column)
+
+    @_builtins.property
+    @pulumi.getter(name="objectNameColumn")
+    def object_name_column(self) -> _builtins.str:
+        """
+        The field that stores the name of the object.
+        """
+        return pulumi.get(self, "object_name_column")
+
+    @_builtins.property
+    @pulumi.getter(name="objectTypeColumn")
+    def object_type_column(self) -> _builtins.str:
+        """
+        The field that stores the type of the object.
+        """
+        return pulumi.get(self, "object_type_column")
+
+    @_builtins.property
+    @pulumi.getter(name="objectTypeFixed")
+    def object_type_fixed(self) -> _builtins.str:
+        """
+        The field that stores the fixed type of the object.
+        """
+        return pulumi.get(self, "object_type_fixed")
+
+    @_builtins.property
+    @pulumi.getter(name="schemaOwnerColumn")
+    def schema_owner_column(self) -> _builtins.str:
+        """
+        The field that stores the owner of the object.
+        """
+        return pulumi.get(self, "schema_owner_column")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorChecksAssessorCheckSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 assessor_check_groups: Sequence['outputs.GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupResult'],
+                 assessor_check_state: _builtins.str,
+                 check_actions: Sequence['outputs.GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionResult'],
+                 columns: Sequence['outputs.GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnResult'],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 fixup_script_location: _builtins.str,
+                 help_link_text: _builtins.str,
+                 help_link_url: _builtins.str,
+                 impact: _builtins.str,
+                 is_exclusion_allowed: _builtins.bool,
+                 issue: _builtins.str,
+                 key: _builtins.str,
+                 log_locations: Sequence['outputs.GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationResult'],
+                 metadatas: Sequence['outputs.GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataResult'],
+                 name: _builtins.str,
+                 object_count: _builtins.int,
+                 objects_display_name: _builtins.str):
+        """
+        :param _builtins.str action: Fixing the issue.
+        :param Sequence['GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArgs'] assessor_check_groups: Assessor Check Group
+        :param _builtins.str assessor_check_state: The current state of the Assessor Check.
+        :param Sequence['GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArgs'] check_actions: Assessor Check Action
+        :param Sequence['GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArgs'] columns: Array of the column of the objects table.
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str fixup_script_location: The path to the fixup script for this check.
+        :param _builtins.str help_link_text: The Help link text.
+        :param _builtins.str help_link_url: The Help URL.
+        :param _builtins.str impact: Impact of the issue on data migration.
+        :param _builtins.bool is_exclusion_allowed: If false, objects cannot be excluded from migration.
+        :param _builtins.str issue: Description of the issue.
+        :param _builtins.str key: Pre-Migration сheck id.
+        :param Sequence['GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArgs'] log_locations: Details to access log file in the specified Object Storage bucket, if any.
+        :param Sequence['GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArgs'] metadatas: Metadata of object.
+        :param _builtins.str name: The Name of the Check.
+        :param _builtins.int object_count: Number of database objects to migrate.
+        :param _builtins.str objects_display_name: The objects display name.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "assessor_check_groups", assessor_check_groups)
+        pulumi.set(__self__, "assessor_check_state", assessor_check_state)
+        pulumi.set(__self__, "check_actions", check_actions)
+        pulumi.set(__self__, "columns", columns)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "fixup_script_location", fixup_script_location)
+        pulumi.set(__self__, "help_link_text", help_link_text)
+        pulumi.set(__self__, "help_link_url", help_link_url)
+        pulumi.set(__self__, "impact", impact)
+        pulumi.set(__self__, "is_exclusion_allowed", is_exclusion_allowed)
+        pulumi.set(__self__, "issue", issue)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "log_locations", log_locations)
+        pulumi.set(__self__, "metadatas", metadatas)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_count", object_count)
+        pulumi.set(__self__, "objects_display_name", objects_display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        """
+        Fixing the issue.
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="assessorCheckGroups")
+    def assessor_check_groups(self) -> Sequence['outputs.GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupResult']:
+        """
+        Assessor Check Group
+        """
+        return pulumi.get(self, "assessor_check_groups")
+
+    @_builtins.property
+    @pulumi.getter(name="assessorCheckState")
+    def assessor_check_state(self) -> _builtins.str:
+        """
+        The current state of the Assessor Check.
+        """
+        return pulumi.get(self, "assessor_check_state")
+
+    @_builtins.property
+    @pulumi.getter(name="checkActions")
+    def check_actions(self) -> Sequence['outputs.GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionResult']:
+        """
+        Assessor Check Action
+        """
+        return pulumi.get(self, "check_actions")
+
+    @_builtins.property
+    @pulumi.getter
+    def columns(self) -> Sequence['outputs.GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnResult']:
+        """
+        Array of the column of the objects table.
+        """
+        return pulumi.get(self, "columns")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="fixupScriptLocation")
+    def fixup_script_location(self) -> _builtins.str:
+        """
+        The path to the fixup script for this check.
+        """
+        return pulumi.get(self, "fixup_script_location")
+
+    @_builtins.property
+    @pulumi.getter(name="helpLinkText")
+    def help_link_text(self) -> _builtins.str:
+        """
+        The Help link text.
+        """
+        return pulumi.get(self, "help_link_text")
+
+    @_builtins.property
+    @pulumi.getter(name="helpLinkUrl")
+    def help_link_url(self) -> _builtins.str:
+        """
+        The Help URL.
+        """
+        return pulumi.get(self, "help_link_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def impact(self) -> _builtins.str:
+        """
+        Impact of the issue on data migration.
+        """
+        return pulumi.get(self, "impact")
+
+    @_builtins.property
+    @pulumi.getter(name="isExclusionAllowed")
+    def is_exclusion_allowed(self) -> _builtins.bool:
+        """
+        If false, objects cannot be excluded from migration.
+        """
+        return pulumi.get(self, "is_exclusion_allowed")
+
+    @_builtins.property
+    @pulumi.getter
+    def issue(self) -> _builtins.str:
+        """
+        Description of the issue.
+        """
+        return pulumi.get(self, "issue")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Pre-Migration сheck id.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="logLocations")
+    def log_locations(self) -> Sequence['outputs.GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationResult']:
+        """
+        Details to access log file in the specified Object Storage bucket, if any.
+        """
+        return pulumi.get(self, "log_locations")
+
+    @_builtins.property
+    @pulumi.getter
+    def metadatas(self) -> Sequence['outputs.GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataResult']:
+        """
+        Metadata of object.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Name of the Check.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="objectCount")
+    def object_count(self) -> _builtins.int:
+        """
+        Number of database objects to migrate.
+        """
+        return pulumi.get(self, "object_count")
+
+    @_builtins.property
+    @pulumi.getter(name="objectsDisplayName")
+    def objects_display_name(self) -> _builtins.str:
+        """
+        The objects display name.
+        """
+        return pulumi.get(self, "objects_display_name")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 is_expanded: _builtins.bool,
+                 name: _builtins.str):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.bool is_expanded: True if the group is expanded, false otherwise.
+        :param _builtins.str name: The Name of the Check.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_expanded", is_expanded)
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isExpanded")
+    def is_expanded(self) -> _builtins.bool:
+        """
+        True if the group is expanded, false otherwise.
+        """
+        return pulumi.get(self, "is_expanded")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Name of the Check.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 name: _builtins.str,
+                 user_defined_properties: Sequence['outputs.GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyResult']):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str name: The Name of the Check.
+        :param Sequence['GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArgs'] user_defined_properties: User defined properties
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "user_defined_properties", user_defined_properties)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Name of the Check.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="userDefinedProperties")
+    def user_defined_properties(self) -> Sequence['outputs.GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyResult']:
+        """
+        User defined properties
+        """
+        return pulumi.get(self, "user_defined_properties")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 help_link_text: _builtins.str,
+                 help_link_url: _builtins.str,
+                 properties: Sequence['outputs.GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyResult']):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str help_link_text: The Help link text.
+        :param _builtins.str help_link_url: The Help URL.
+        :param Sequence['GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArgs'] properties: Array of user defined properties.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "help_link_text", help_link_text)
+        pulumi.set(__self__, "help_link_url", help_link_url)
+        pulumi.set(__self__, "properties", properties)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="helpLinkText")
+    def help_link_text(self) -> _builtins.str:
+        """
+        The Help link text.
+        """
+        return pulumi.get(self, "help_link_text")
+
+    @_builtins.property
+    @pulumi.getter(name="helpLinkUrl")
+    def help_link_url(self) -> _builtins.str:
+        """
+        The Help URL.
+        """
+        return pulumi.get(self, "help_link_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def properties(self) -> Sequence['outputs.GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyResult']:
+        """
+        Array of user defined properties.
+        """
+        return pulumi.get(self, "properties")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyResult(dict):
+    def __init__(__self__, *,
+                 default_value: _builtins.str,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 is_required: _builtins.bool,
+                 max_length: _builtins.int,
+                 min_length: _builtins.int,
+                 name: _builtins.str,
+                 options: Sequence['outputs.GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionResult'],
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str default_value: The default value of the property.
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.bool is_required: True if the property is required, false otherwise
+        :param _builtins.int max_length: Maximum length of the text
+        :param _builtins.int min_length: Minimum length of the text
+        :param _builtins.str name: The Name of the Check.
+        :param Sequence['GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArgs'] options: User defined property options.
+        :param _builtins.str type: The type of the user defined property.
+        :param _builtins.str value: The value of the property.
+        """
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_required", is_required)
+        pulumi.set(__self__, "max_length", max_length)
+        pulumi.set(__self__, "min_length", min_length)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "options", options)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> _builtins.str:
+        """
+        The default value of the property.
+        """
+        return pulumi.get(self, "default_value")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isRequired")
+    def is_required(self) -> _builtins.bool:
+        """
+        True if the property is required, false otherwise
+        """
+        return pulumi.get(self, "is_required")
+
+    @_builtins.property
+    @pulumi.getter(name="maxLength")
+    def max_length(self) -> _builtins.int:
+        """
+        Maximum length of the text
+        """
+        return pulumi.get(self, "max_length")
+
+    @_builtins.property
+    @pulumi.getter(name="minLength")
+    def min_length(self) -> _builtins.int:
+        """
+        Minimum length of the text
+        """
+        return pulumi.get(self, "min_length")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Name of the Check.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def options(self) -> Sequence['outputs.GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionResult']:
+        """
+        User defined property options.
+        """
+        return pulumi.get(self, "options")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the user defined property.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The value of the property.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str value: The value of the property.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The value of the property.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 key: _builtins.str):
+        """
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str key: Pre-Migration сheck id.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "key", key)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Pre-Migration сheck id.
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationResult(dict):
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 namespace: _builtins.str,
+                 object: _builtins.str):
+        """
+        :param _builtins.str bucket: Name of the bucket containing the log file.
+        :param _builtins.str namespace: Object Storage namespace.
+        :param _builtins.str object: Log object name.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        Name of the bucket containing the log file.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        Object Storage namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> _builtins.str:
+        """
+        Log object name.
+        """
+        return pulumi.get(self, "object")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataResult(dict):
+    def __init__(__self__, *,
+                 object_name_column: _builtins.str,
+                 object_type_column: _builtins.str,
+                 object_type_fixed: _builtins.str,
+                 schema_owner_column: _builtins.str):
+        """
+        :param _builtins.str object_name_column: The field that stores the name of the object.
+        :param _builtins.str object_type_column: The field that stores the type of the object.
+        :param _builtins.str object_type_fixed: The field that stores the fixed type of the object.
+        :param _builtins.str schema_owner_column: The field that stores the owner of the object.
+        """
+        pulumi.set(__self__, "object_name_column", object_name_column)
+        pulumi.set(__self__, "object_type_column", object_type_column)
+        pulumi.set(__self__, "object_type_fixed", object_type_fixed)
+        pulumi.set(__self__, "schema_owner_column", schema_owner_column)
+
+    @_builtins.property
+    @pulumi.getter(name="objectNameColumn")
+    def object_name_column(self) -> _builtins.str:
+        """
+        The field that stores the name of the object.
+        """
+        return pulumi.get(self, "object_name_column")
+
+    @_builtins.property
+    @pulumi.getter(name="objectTypeColumn")
+    def object_type_column(self) -> _builtins.str:
+        """
+        The field that stores the type of the object.
+        """
+        return pulumi.get(self, "object_type_column")
+
+    @_builtins.property
+    @pulumi.getter(name="objectTypeFixed")
+    def object_type_fixed(self) -> _builtins.str:
+        """
+        The field that stores the fixed type of the object.
+        """
+        return pulumi.get(self, "object_type_fixed")
+
+    @_builtins.property
+    @pulumi.getter(name="schemaOwnerColumn")
+    def schema_owner_column(self) -> _builtins.str:
+        """
+        The field that stores the owner of the object.
+        """
+        return pulumi.get(self, "schema_owner_column")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorChecksFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The Name of the Check.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Name of the Check.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorsAssessorSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorsAssessorSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 actions: Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemActionResult'],
+                 assessment_id: _builtins.str,
+                 assessor_groups: Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupResult'],
+                 assessor_result: _builtins.str,
+                 checks_summary: _builtins.str,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 does_script_require_restart: _builtins.bool,
+                 has_script: _builtins.bool,
+                 help_link_text: _builtins.str,
+                 help_link_url: _builtins.str,
+                 name: _builtins.str,
+                 script: _builtins.str,
+                 state: _builtins.str):
+        """
+        :param Sequence['GetAssessmentAssessorsAssessorSummaryCollectionItemActionArgs'] actions: Assessor group actions.
+        :param _builtins.str assessment_id: The OCID of the Assessment
+        :param Sequence['GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArgs'] assessor_groups: Assessor Group
+        :param _builtins.str assessor_result: The Assessor Result text.
+        :param _builtins.str checks_summary: The Summary of all Checks.
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.bool does_script_require_restart: True if DB restart required after running the script, false otherwise.
+        :param _builtins.bool has_script: True if script is available either from 'script' property of through download, false otherwise.
+        :param _builtins.str help_link_text: The Help link text.
+        :param _builtins.str help_link_url: The Help URL.
+        :param _builtins.str name: The Assessor Name.
+        :param _builtins.str script: The generated SQL script. Can be empty if the script exceeds maxLength. In this case the property 'hasScript' indicates that the script is available for download.
+        :param _builtins.str state: The lifecycle state of the Assessor.
+        """
+        pulumi.set(__self__, "actions", actions)
+        pulumi.set(__self__, "assessment_id", assessment_id)
+        pulumi.set(__self__, "assessor_groups", assessor_groups)
+        pulumi.set(__self__, "assessor_result", assessor_result)
+        pulumi.set(__self__, "checks_summary", checks_summary)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "does_script_require_restart", does_script_require_restart)
+        pulumi.set(__self__, "has_script", has_script)
+        pulumi.set(__self__, "help_link_text", help_link_text)
+        pulumi.set(__self__, "help_link_url", help_link_url)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "script", script)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def actions(self) -> Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemActionResult']:
+        """
+        Assessor group actions.
+        """
+        return pulumi.get(self, "actions")
+
+    @_builtins.property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> _builtins.str:
+        """
+        The OCID of the Assessment
+        """
+        return pulumi.get(self, "assessment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="assessorGroups")
+    def assessor_groups(self) -> Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupResult']:
+        """
+        Assessor Group
+        """
+        return pulumi.get(self, "assessor_groups")
+
+    @_builtins.property
+    @pulumi.getter(name="assessorResult")
+    def assessor_result(self) -> _builtins.str:
+        """
+        The Assessor Result text.
+        """
+        return pulumi.get(self, "assessor_result")
+
+    @_builtins.property
+    @pulumi.getter(name="checksSummary")
+    def checks_summary(self) -> _builtins.str:
+        """
+        The Summary of all Checks.
+        """
+        return pulumi.get(self, "checks_summary")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="doesScriptRequireRestart")
+    def does_script_require_restart(self) -> _builtins.bool:
+        """
+        True if DB restart required after running the script, false otherwise.
+        """
+        return pulumi.get(self, "does_script_require_restart")
+
+    @_builtins.property
+    @pulumi.getter(name="hasScript")
+    def has_script(self) -> _builtins.bool:
+        """
+        True if script is available either from 'script' property of through download, false otherwise.
+        """
+        return pulumi.get(self, "has_script")
+
+    @_builtins.property
+    @pulumi.getter(name="helpLinkText")
+    def help_link_text(self) -> _builtins.str:
+        """
+        The Help link text.
+        """
+        return pulumi.get(self, "help_link_text")
+
+    @_builtins.property
+    @pulumi.getter(name="helpLinkUrl")
+    def help_link_url(self) -> _builtins.str:
+        """
+        The Help URL.
+        """
+        return pulumi.get(self, "help_link_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Assessor Name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def script(self) -> _builtins.str:
+        """
+        The generated SQL script. Can be empty if the script exceeds maxLength. In this case the property 'hasScript' indicates that the script is available for download.
+        """
+        return pulumi.get(self, "script")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The lifecycle state of the Assessor.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorsAssessorSummaryCollectionItemActionResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 is_disabled: _builtins.bool,
+                 name: _builtins.str,
+                 resource_id: _builtins.str,
+                 title: _builtins.str,
+                 user_defined_properties: Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyResult']):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.bool is_disabled: Defines if the action is enabled or disabled.
+        :param _builtins.str name: The Assessor Name.
+        :param _builtins.str resource_id: The OCID of the resource being referenced.
+        :param _builtins.str title: The Assessor Action Title.
+        :param Sequence['GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArgs'] user_defined_properties: User defined properties
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_disabled", is_disabled)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "title", title)
+        pulumi.set(__self__, "user_defined_properties", user_defined_properties)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isDisabled")
+    def is_disabled(self) -> _builtins.bool:
+        """
+        Defines if the action is enabled or disabled.
+        """
+        return pulumi.get(self, "is_disabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Assessor Name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> _builtins.str:
+        """
+        The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def title(self) -> _builtins.str:
+        """
+        The Assessor Action Title.
+        """
+        return pulumi.get(self, "title")
+
+    @_builtins.property
+    @pulumi.getter(name="userDefinedProperties")
+    def user_defined_properties(self) -> Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyResult']:
+        """
+        User defined properties
+        """
+        return pulumi.get(self, "user_defined_properties")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 help_link_text: _builtins.str,
+                 help_link_url: _builtins.str,
+                 properties: Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyResult']):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str help_link_text: The Help link text.
+        :param _builtins.str help_link_url: The Help URL.
+        :param Sequence['GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArgs'] properties: Array of user defined properties.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "help_link_text", help_link_text)
+        pulumi.set(__self__, "help_link_url", help_link_url)
+        pulumi.set(__self__, "properties", properties)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="helpLinkText")
+    def help_link_text(self) -> _builtins.str:
+        """
+        The Help link text.
+        """
+        return pulumi.get(self, "help_link_text")
+
+    @_builtins.property
+    @pulumi.getter(name="helpLinkUrl")
+    def help_link_url(self) -> _builtins.str:
+        """
+        The Help URL.
+        """
+        return pulumi.get(self, "help_link_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def properties(self) -> Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyResult']:
+        """
+        Array of user defined properties.
+        """
+        return pulumi.get(self, "properties")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyResult(dict):
+    def __init__(__self__, *,
+                 default_value: _builtins.str,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 is_required: _builtins.bool,
+                 max_length: _builtins.int,
+                 min_length: _builtins.int,
+                 name: _builtins.str,
+                 options: Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionResult'],
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str default_value: The default value of the property.
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.bool is_required: True if the property is required, false otherwise
+        :param _builtins.int max_length: Maximum length of the text
+        :param _builtins.int min_length: Minimum length of the text
+        :param _builtins.str name: The Assessor Name.
+        :param Sequence['GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArgs'] options: User defined property options.
+        :param _builtins.str type: The type of the user defined property.
+        :param _builtins.str value: The value of the property.
+        """
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_required", is_required)
+        pulumi.set(__self__, "max_length", max_length)
+        pulumi.set(__self__, "min_length", min_length)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "options", options)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> _builtins.str:
+        """
+        The default value of the property.
+        """
+        return pulumi.get(self, "default_value")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isRequired")
+    def is_required(self) -> _builtins.bool:
+        """
+        True if the property is required, false otherwise
+        """
+        return pulumi.get(self, "is_required")
+
+    @_builtins.property
+    @pulumi.getter(name="maxLength")
+    def max_length(self) -> _builtins.int:
+        """
+        Maximum length of the text
+        """
+        return pulumi.get(self, "max_length")
+
+    @_builtins.property
+    @pulumi.getter(name="minLength")
+    def min_length(self) -> _builtins.int:
+        """
+        Minimum length of the text
+        """
+        return pulumi.get(self, "min_length")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Assessor Name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def options(self) -> Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionResult']:
+        """
+        User defined property options.
+        """
+        return pulumi.get(self, "options")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the user defined property.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The value of the property.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str value: The value of the property.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The value of the property.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupResult(dict):
+    def __init__(__self__, *,
+                 actions: Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionResult'],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 name: _builtins.str):
+        """
+        :param Sequence['GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArgs'] actions: Assessor group actions.
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str name: The Assessor Name.
+        """
+        pulumi.set(__self__, "actions", actions)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def actions(self) -> Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionResult']:
+        """
+        Assessor group actions.
+        """
+        return pulumi.get(self, "actions")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Assessor Name.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 is_disabled: _builtins.bool,
+                 name: _builtins.str,
+                 resource_id: _builtins.str,
+                 title: _builtins.str,
+                 user_defined_properties: Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyResult']):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.bool is_disabled: Defines if the action is enabled or disabled.
+        :param _builtins.str name: The Assessor Name.
+        :param _builtins.str resource_id: The OCID of the resource being referenced.
+        :param _builtins.str title: The Assessor Action Title.
+        :param Sequence['GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArgs'] user_defined_properties: User defined properties
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_disabled", is_disabled)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "title", title)
+        pulumi.set(__self__, "user_defined_properties", user_defined_properties)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isDisabled")
+    def is_disabled(self) -> _builtins.bool:
+        """
+        Defines if the action is enabled or disabled.
+        """
+        return pulumi.get(self, "is_disabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Assessor Name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> _builtins.str:
+        """
+        The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def title(self) -> _builtins.str:
+        """
+        The Assessor Action Title.
+        """
+        return pulumi.get(self, "title")
+
+    @_builtins.property
+    @pulumi.getter(name="userDefinedProperties")
+    def user_defined_properties(self) -> Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyResult']:
+        """
+        User defined properties
+        """
+        return pulumi.get(self, "user_defined_properties")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 help_link_text: _builtins.str,
+                 help_link_url: _builtins.str,
+                 properties: Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyResult']):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str help_link_text: The Help link text.
+        :param _builtins.str help_link_url: The Help URL.
+        :param Sequence['GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArgs'] properties: Array of user defined properties.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "help_link_text", help_link_text)
+        pulumi.set(__self__, "help_link_url", help_link_url)
+        pulumi.set(__self__, "properties", properties)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="helpLinkText")
+    def help_link_text(self) -> _builtins.str:
+        """
+        The Help link text.
+        """
+        return pulumi.get(self, "help_link_text")
+
+    @_builtins.property
+    @pulumi.getter(name="helpLinkUrl")
+    def help_link_url(self) -> _builtins.str:
+        """
+        The Help URL.
+        """
+        return pulumi.get(self, "help_link_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def properties(self) -> Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyResult']:
+        """
+        Array of user defined properties.
+        """
+        return pulumi.get(self, "properties")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyResult(dict):
+    def __init__(__self__, *,
+                 default_value: _builtins.str,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 is_required: _builtins.bool,
+                 max_length: _builtins.int,
+                 min_length: _builtins.int,
+                 name: _builtins.str,
+                 options: Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionResult'],
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str default_value: The default value of the property.
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.bool is_required: True if the property is required, false otherwise
+        :param _builtins.int max_length: Maximum length of the text
+        :param _builtins.int min_length: Minimum length of the text
+        :param _builtins.str name: The Assessor Name.
+        :param Sequence['GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArgs'] options: User defined property options.
+        :param _builtins.str type: The type of the user defined property.
+        :param _builtins.str value: The value of the property.
+        """
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_required", is_required)
+        pulumi.set(__self__, "max_length", max_length)
+        pulumi.set(__self__, "min_length", min_length)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "options", options)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> _builtins.str:
+        """
+        The default value of the property.
+        """
+        return pulumi.get(self, "default_value")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isRequired")
+    def is_required(self) -> _builtins.bool:
+        """
+        True if the property is required, false otherwise
+        """
+        return pulumi.get(self, "is_required")
+
+    @_builtins.property
+    @pulumi.getter(name="maxLength")
+    def max_length(self) -> _builtins.int:
+        """
+        Maximum length of the text
+        """
+        return pulumi.get(self, "max_length")
+
+    @_builtins.property
+    @pulumi.getter(name="minLength")
+    def min_length(self) -> _builtins.int:
+        """
+        Minimum length of the text
+        """
+        return pulumi.get(self, "min_length")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Assessor Name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def options(self) -> Sequence['outputs.GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionResult']:
+        """
+        User defined property options.
+        """
+        return pulumi.get(self, "options")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the user defined property.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The value of the property.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str value: The value of the property.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The value of the property.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAssessmentAssessorsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The Assessor Name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The Assessor Name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetAssessmentExcludeObjectResult(dict):
+    def __init__(__self__, *,
+                 is_omit_excluded_table_from_replication: _builtins.bool,
+                 object: _builtins.str,
+                 owner: _builtins.str,
+                 schema: _builtins.str,
+                 type: _builtins.str):
+        pulumi.set(__self__, "is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "schema", schema)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="isOmitExcludedTableFromReplication")
+    def is_omit_excluded_table_from_replication(self) -> _builtins.bool:
+        return pulumi.get(self, "is_omit_excluded_table_from_replication")
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> _builtins.str:
+        return pulumi.get(self, "object")
+
+    @_builtins.property
+    @pulumi.getter
+    def owner(self) -> _builtins.str:
+        return pulumi.get(self, "owner")
+
+    @_builtins.property
+    @pulumi.getter
+    def schema(self) -> _builtins.str:
+        return pulumi.get(self, "schema")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetAssessmentIncludeObjectResult(dict):
+    def __init__(__self__, *,
+                 is_omit_excluded_table_from_replication: _builtins.bool,
+                 object: _builtins.str,
+                 owner: _builtins.str,
+                 schema: _builtins.str,
+                 type: _builtins.str):
+        pulumi.set(__self__, "is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "schema", schema)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="isOmitExcludedTableFromReplication")
+    def is_omit_excluded_table_from_replication(self) -> _builtins.bool:
+        return pulumi.get(self, "is_omit_excluded_table_from_replication")
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> _builtins.str:
+        return pulumi.get(self, "object")
+
+    @_builtins.property
+    @pulumi.getter
+    def owner(self) -> _builtins.str:
+        return pulumi.get(self, "owner")
+
+    @_builtins.property
+    @pulumi.getter
+    def schema(self) -> _builtins.str:
+        return pulumi.get(self, "schema")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemResult']):
+        """
+        :param Sequence['GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArgs'] items: Items in collection.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemResult']:
+        """
+        Items in collection.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str):
+        """
+        :param _builtins.str name: Object type name
+        """
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Object type name
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetAssessmentObjectTypesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Object type name
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Object type name
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetAssessmentSourceDatabaseConnectionResult(dict):
+    def __init__(__self__, *,
+                 id: _builtins.str):
+        """
+        :param _builtins.str id: The OCID of the resource being referenced.
+        """
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetAssessmentTargetDatabaseConnectionResult(dict):
+    def __init__(__self__, *,
+                 connection_type: _builtins.str,
+                 database_version: _builtins.str,
+                 id: _builtins.str,
+                 technology_sub_type: _builtins.str,
+                 technology_type: _builtins.str):
+        """
+        :param _builtins.str connection_type: Defines the type of connection. For example, ORACLE.
+        :param _builtins.str database_version: The database version
+        :param _builtins.str id: The OCID of the resource being referenced.
+        :param _builtins.str technology_sub_type: Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
+        :param _builtins.str technology_type: The technology type.
+        """
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "database_version", database_version)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "technology_sub_type", technology_sub_type)
+        pulumi.set(__self__, "technology_type", technology_type)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> _builtins.str:
+        """
+        Defines the type of connection. For example, ORACLE.
+        """
+        return pulumi.get(self, "connection_type")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseVersion")
+    def database_version(self) -> _builtins.str:
+        """
+        The database version
+        """
+        return pulumi.get(self, "database_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="technologySubType")
+    def technology_sub_type(self) -> _builtins.str:
+        """
+        Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
+        """
+        return pulumi.get(self, "technology_sub_type")
+
+    @_builtins.property
+    @pulumi.getter(name="technologyType")
+    def technology_type(self) -> _builtins.str:
+        """
+        The technology type.
+        """
+        return pulumi.get(self, "technology_type")
+
+
+@pulumi.output_type
+class GetAssessmentsAssessmentCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAssessmentsAssessmentCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAssessmentsAssessmentCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAssessmentsAssessmentCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 acceptable_downtime: _builtins.str,
+                 assessment_migration_type: _builtins.str,
+                 bulk_include_exclude_data: _builtins.str,
+                 compartment_id: _builtins.str,
+                 creation_type: _builtins.str,
+                 database_combination: _builtins.str,
+                 database_data_size: _builtins.str,
+                 ddl_expectation: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 exclude_objects: Sequence['outputs.GetAssessmentsAssessmentCollectionItemExcludeObjectResult'],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 include_objects: Sequence['outputs.GetAssessmentsAssessmentCollectionItemIncludeObjectResult'],
+                 is_cdb_supported: _builtins.bool,
+                 migration_id: _builtins.str,
+                 network_speed_megabit_per_second: _builtins.str,
+                 source_database_connections: Sequence['outputs.GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionResult'],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 target_database_connections: Sequence['outputs.GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionResult'],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str acceptable_downtime: Time allowed for the application downtime.
+        :param _builtins.str assessment_migration_type: The migration type of the migration to be performed.
+        :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param _builtins.str creation_type: The type of assessment creation.
+        :param _builtins.str database_combination: The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+        :param _builtins.str database_data_size: The size of a source database.
+        :param _builtins.str ddl_expectation: DDL expectation values.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param _builtins.str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        :param _builtins.str id: The OCID of the resource being referenced.
+        :param _builtins.bool is_cdb_supported: True if CDB should be defined, false otherwise.
+        :param _builtins.str migration_id: The OCID of the resource being referenced.
+        :param _builtins.str network_speed_megabit_per_second: A network speed in Megabits per second.
+        :param Sequence['GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArgs'] source_database_connections: Source Assessment Connection object
+        :param _builtins.str state: The lifecycle state of the Assessment.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Sequence['GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArgs'] target_database_connections: Target Assessment Connection object
+        :param _builtins.str time_created: An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
+        :param _builtins.str time_updated: An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "acceptable_downtime", acceptable_downtime)
+        pulumi.set(__self__, "assessment_migration_type", assessment_migration_type)
+        pulumi.set(__self__, "bulk_include_exclude_data", bulk_include_exclude_data)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "creation_type", creation_type)
+        pulumi.set(__self__, "database_combination", database_combination)
+        pulumi.set(__self__, "database_data_size", database_data_size)
+        pulumi.set(__self__, "ddl_expectation", ddl_expectation)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "exclude_objects", exclude_objects)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "include_objects", include_objects)
+        pulumi.set(__self__, "is_cdb_supported", is_cdb_supported)
+        pulumi.set(__self__, "migration_id", migration_id)
+        pulumi.set(__self__, "network_speed_megabit_per_second", network_speed_megabit_per_second)
+        pulumi.set(__self__, "source_database_connections", source_database_connections)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_database_connections", target_database_connections)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="acceptableDowntime")
+    def acceptable_downtime(self) -> _builtins.str:
+        """
+        Time allowed for the application downtime.
+        """
+        return pulumi.get(self, "acceptable_downtime")
+
+    @_builtins.property
+    @pulumi.getter(name="assessmentMigrationType")
+    def assessment_migration_type(self) -> _builtins.str:
+        """
+        The migration type of the migration to be performed.
+        """
+        return pulumi.get(self, "assessment_migration_type")
+
+    @_builtins.property
+    @pulumi.getter(name="bulkIncludeExcludeData")
+    def bulk_include_exclude_data(self) -> _builtins.str:
+        return pulumi.get(self, "bulk_include_exclude_data")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="creationType")
+    def creation_type(self) -> _builtins.str:
+        """
+        The type of assessment creation.
+        """
+        return pulumi.get(self, "creation_type")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseCombination")
+    def database_combination(self) -> _builtins.str:
+        """
+        The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+        """
+        return pulumi.get(self, "database_combination")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseDataSize")
+    def database_data_size(self) -> _builtins.str:
+        """
+        The size of a source database.
+        """
+        return pulumi.get(self, "database_data_size")
+
+    @_builtins.property
+    @pulumi.getter(name="ddlExpectation")
+    def ddl_expectation(self) -> _builtins.str:
+        """
+        DDL expectation values.
+        """
+        return pulumi.get(self, "ddl_expectation")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="excludeObjects")
+    def exclude_objects(self) -> Sequence['outputs.GetAssessmentsAssessmentCollectionItemExcludeObjectResult']:
+        return pulumi.get(self, "exclude_objects")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="includeObjects")
+    def include_objects(self) -> Sequence['outputs.GetAssessmentsAssessmentCollectionItemIncludeObjectResult']:
+        return pulumi.get(self, "include_objects")
+
+    @_builtins.property
+    @pulumi.getter(name="isCdbSupported")
+    def is_cdb_supported(self) -> _builtins.bool:
+        """
+        True if CDB should be defined, false otherwise.
+        """
+        return pulumi.get(self, "is_cdb_supported")
+
+    @_builtins.property
+    @pulumi.getter(name="migrationId")
+    def migration_id(self) -> _builtins.str:
+        """
+        The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "migration_id")
+
+    @_builtins.property
+    @pulumi.getter(name="networkSpeedMegabitPerSecond")
+    def network_speed_megabit_per_second(self) -> _builtins.str:
+        """
+        A network speed in Megabits per second.
+        """
+        return pulumi.get(self, "network_speed_megabit_per_second")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceDatabaseConnections")
+    def source_database_connections(self) -> Sequence['outputs.GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionResult']:
+        """
+        Source Assessment Connection object
+        """
+        return pulumi.get(self, "source_database_connections")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The lifecycle state of the Assessment.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="targetDatabaseConnections")
+    def target_database_connections(self) -> Sequence['outputs.GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionResult']:
+        """
+        Target Assessment Connection object
+        """
+        return pulumi.get(self, "target_database_connections")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetAssessmentsAssessmentCollectionItemExcludeObjectResult(dict):
+    def __init__(__self__, *,
+                 is_omit_excluded_table_from_replication: _builtins.bool,
+                 object: _builtins.str,
+                 owner: _builtins.str,
+                 schema: _builtins.str,
+                 type: _builtins.str):
+        pulumi.set(__self__, "is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "schema", schema)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="isOmitExcludedTableFromReplication")
+    def is_omit_excluded_table_from_replication(self) -> _builtins.bool:
+        return pulumi.get(self, "is_omit_excluded_table_from_replication")
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> _builtins.str:
+        return pulumi.get(self, "object")
+
+    @_builtins.property
+    @pulumi.getter
+    def owner(self) -> _builtins.str:
+        return pulumi.get(self, "owner")
+
+    @_builtins.property
+    @pulumi.getter
+    def schema(self) -> _builtins.str:
+        return pulumi.get(self, "schema")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetAssessmentsAssessmentCollectionItemIncludeObjectResult(dict):
+    def __init__(__self__, *,
+                 is_omit_excluded_table_from_replication: _builtins.bool,
+                 object: _builtins.str,
+                 owner: _builtins.str,
+                 schema: _builtins.str,
+                 type: _builtins.str):
+        pulumi.set(__self__, "is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "schema", schema)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="isOmitExcludedTableFromReplication")
+    def is_omit_excluded_table_from_replication(self) -> _builtins.bool:
+        return pulumi.get(self, "is_omit_excluded_table_from_replication")
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> _builtins.str:
+        return pulumi.get(self, "object")
+
+    @_builtins.property
+    @pulumi.getter
+    def owner(self) -> _builtins.str:
+        return pulumi.get(self, "owner")
+
+    @_builtins.property
+    @pulumi.getter
+    def schema(self) -> _builtins.str:
+        return pulumi.get(self, "schema")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionResult(dict):
+    def __init__(__self__, *,
+                 id: _builtins.str):
+        """
+        :param _builtins.str id: The OCID of the resource being referenced.
+        """
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionResult(dict):
+    def __init__(__self__, *,
+                 connection_type: _builtins.str,
+                 database_version: _builtins.str,
+                 id: _builtins.str,
+                 technology_sub_type: _builtins.str,
+                 technology_type: _builtins.str):
+        """
+        :param _builtins.str connection_type: Defines the type of connection. For example, ORACLE.
+        :param _builtins.str database_version: The database version
+        :param _builtins.str id: The OCID of the resource being referenced.
+        :param _builtins.str technology_sub_type: Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
+        :param _builtins.str technology_type: The technology type.
+        """
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "database_version", database_version)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "technology_sub_type", technology_sub_type)
+        pulumi.set(__self__, "technology_type", technology_type)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> _builtins.str:
+        """
+        Defines the type of connection. For example, ORACLE.
+        """
+        return pulumi.get(self, "connection_type")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseVersion")
+    def database_version(self) -> _builtins.str:
+        """
+        The database version
+        """
+        return pulumi.get(self, "database_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="technologySubType")
+    def technology_sub_type(self) -> _builtins.str:
+        """
+        Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
+        """
+        return pulumi.get(self, "technology_sub_type")
+
+    @_builtins.property
+    @pulumi.getter(name="technologyType")
+    def technology_type(self) -> _builtins.str:
+        """
+        The technology type.
+        """
+        return pulumi.get(self, "technology_type")
+
+
+@pulumi.output_type
+class GetAssessmentsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetConnectionAdditionalAttributeResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -2292,6 +6556,160 @@ class GetConnectionAdditionalAttributeResult(dict):
         The value of the property entry.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemResult']):
+        """
+        :param Sequence['GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArgs'] items: Items in collection.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemResult']:
+        """
+        Items in collection.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 connection_type: _builtins.str,
+                 technology_types: Sequence['outputs.GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeResult']):
+        """
+        :param _builtins.str connection_type: The array of connection types.
+        :param Sequence['GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArgs'] technology_types: Array of technology type objects
+        """
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "technology_types", technology_types)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> _builtins.str:
+        """
+        The array of connection types.
+        """
+        return pulumi.get(self, "connection_type")
+
+    @_builtins.property
+    @pulumi.getter(name="technologyTypes")
+    def technology_types(self) -> Sequence['outputs.GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeResult']:
+        """
+        Array of technology type objects
+        """
+        return pulumi.get(self, "technology_types")
+
+
+@pulumi.output_type
+class GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeResult(dict):
+    def __init__(__self__, *,
+                 database_versions: Sequence[_builtins.str],
+                 technology_sub_types: Sequence['outputs.GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeResult'],
+                 technology_type: _builtins.str):
+        """
+        :param Sequence[_builtins.str] database_versions: Array of database versions
+        :param Sequence['GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArgs'] technology_sub_types: Array of technology sub-types e.g. ADW_SHARED.
+        :param _builtins.str technology_type: The array of technology types.
+        """
+        pulumi.set(__self__, "database_versions", database_versions)
+        pulumi.set(__self__, "technology_sub_types", technology_sub_types)
+        pulumi.set(__self__, "technology_type", technology_type)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseVersions")
+    def database_versions(self) -> Sequence[_builtins.str]:
+        """
+        Array of database versions
+        """
+        return pulumi.get(self, "database_versions")
+
+    @_builtins.property
+    @pulumi.getter(name="technologySubTypes")
+    def technology_sub_types(self) -> Sequence['outputs.GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeResult']:
+        """
+        Array of technology sub-types e.g. ADW_SHARED.
+        """
+        return pulumi.get(self, "technology_sub_types")
+
+    @_builtins.property
+    @pulumi.getter(name="technologyType")
+    def technology_type(self) -> _builtins.str:
+        """
+        The array of technology types.
+        """
+        return pulumi.get(self, "technology_type")
+
+
+@pulumi.output_type
+class GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeResult(dict):
+    def __init__(__self__, *,
+                 database_versions: Sequence[_builtins.str],
+                 technology_sub_type: _builtins.str,
+                 technology_sub_type_display_name: _builtins.str):
+        """
+        :param Sequence[_builtins.str] database_versions: Array of database versions
+        :param _builtins.str technology_sub_type: Technology sub-type e.g. ADW_SHARED.
+        :param _builtins.str technology_sub_type_display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        pulumi.set(__self__, "database_versions", database_versions)
+        pulumi.set(__self__, "technology_sub_type", technology_sub_type)
+        pulumi.set(__self__, "technology_sub_type_display_name", technology_sub_type_display_name)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseVersions")
+    def database_versions(self) -> Sequence[_builtins.str]:
+        """
+        Array of database versions
+        """
+        return pulumi.get(self, "database_versions")
+
+    @_builtins.property
+    @pulumi.getter(name="technologySubType")
+    def technology_sub_type(self) -> _builtins.str:
+        """
+        Technology sub-type e.g. ADW_SHARED.
+        """
+        return pulumi.get(self, "technology_sub_type")
+
+    @_builtins.property
+    @pulumi.getter(name="technologySubTypeDisplayName")
+    def technology_sub_type_display_name(self) -> _builtins.str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+        """
+        return pulumi.get(self, "technology_sub_type_display_name")
+
+
+@pulumi.output_type
+class GetConnectionDatabaseconnectiontypesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type
@@ -2840,6 +7258,566 @@ class GetConnectionsFilterResult(dict):
         """
         The name of the property entry.
         """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemResult']):
+        """
+        :param Sequence['GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArgs'] items: Array of check objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemResult']:
+        """
+        Array of check objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, _builtins.str],
+                 fields: Mapping[str, _builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 is_excluded: _builtins.bool,
+                 system_tags: Mapping[str, _builtins.str]):
+        """
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        :param _builtins.bool is_excluded: If the object was excluded from migration, then it is true.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "fields", fields)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "is_excluded", is_excluded)
+        pulumi.set(__self__, "system_tags", system_tags)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def fields(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "fields")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="isExcluded")
+    def is_excluded(self) -> _builtins.bool:
+        """
+        If the object was excluded from migration, then it is true.
+        """
+        return pulumi.get(self, "is_excluded")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+
+@pulumi.output_type
+class GetJobAdvisorReportCheckObjectsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetJobAdvisorReportChecksAdvisorReportCheckCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemResult'],
+                 summaries: Sequence['outputs.GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryResult']):
+        """
+        :param Sequence['GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArgs'] items: Array of advisor check items.
+        :param Sequence['GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArgs'] summaries: Pre-Migration extended advisor report summary.
+        """
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "summaries", summaries)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemResult']:
+        """
+        Array of advisor check items.
+        """
+        return pulumi.get(self, "items")
+
+    @_builtins.property
+    @pulumi.getter
+    def summaries(self) -> Sequence['outputs.GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryResult']:
+        """
+        Pre-Migration extended advisor report summary.
+        """
+        return pulumi.get(self, "summaries")
+
+
+@pulumi.output_type
+class GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 advisor_report_check_id: _builtins.str,
+                 is_reviewed: _builtins.bool,
+                 items: Sequence['outputs.GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemResult'],
+                 job_id: _builtins.str,
+                 summaries: Sequence['outputs.GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryResult']):
+        """
+        :param _builtins.bool is_reviewed: User flag for advisor report check.
+        :param Sequence['GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArgs'] items: Array of advisor check items.
+        :param _builtins.str job_id: The OCID of the job
+        :param Sequence['GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArgs'] summaries: Pre-Migration extended advisor report summary.
+        """
+        pulumi.set(__self__, "advisor_report_check_id", advisor_report_check_id)
+        pulumi.set(__self__, "is_reviewed", is_reviewed)
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "job_id", job_id)
+        pulumi.set(__self__, "summaries", summaries)
+
+    @_builtins.property
+    @pulumi.getter(name="advisorReportCheckId")
+    def advisor_report_check_id(self) -> _builtins.str:
+        return pulumi.get(self, "advisor_report_check_id")
+
+    @_builtins.property
+    @pulumi.getter(name="isReviewed")
+    def is_reviewed(self) -> _builtins.bool:
+        """
+        User flag for advisor report check.
+        """
+        return pulumi.get(self, "is_reviewed")
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemResult']:
+        """
+        Array of advisor check items.
+        """
+        return pulumi.get(self, "items")
+
+    @_builtins.property
+    @pulumi.getter(name="jobId")
+    def job_id(self) -> _builtins.str:
+        """
+        The OCID of the job
+        """
+        return pulumi.get(self, "job_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def summaries(self) -> Sequence['outputs.GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryResult']:
+        """
+        Pre-Migration extended advisor report summary.
+        """
+        return pulumi.get(self, "summaries")
+
+
+@pulumi.output_type
+class GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 columns: Sequence['outputs.GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnResult'],
+                 display_name: _builtins.str,
+                 fixup_script_location: _builtins.str,
+                 impact: _builtins.str,
+                 is_exclusion_allowed: _builtins.bool,
+                 is_reviewed: _builtins.bool,
+                 issue: _builtins.str,
+                 key: _builtins.str,
+                 metadatas: Sequence['outputs.GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataResult'],
+                 object_count: _builtins.int,
+                 result_type: _builtins.str):
+        """
+        :param _builtins.str action: Fixing the issue.
+        :param Sequence['GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArgs'] columns: Array of the column of the objects table.
+        :param _builtins.str display_name: Pre-Migration сheck display name.
+        :param _builtins.str fixup_script_location: The path to the fixup script for this check.
+        :param _builtins.str impact: Impact of the issue on data migration.
+        :param _builtins.bool is_exclusion_allowed: If false, objects cannot be excluded from migration.
+        :param _builtins.bool is_reviewed: User flag for advisor report check.
+        :param _builtins.str issue: Description of the issue.
+        :param _builtins.str key: Pre-Migration сheck id.
+        :param Sequence['GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArgs'] metadatas: Metadata of object.
+        :param _builtins.int object_count: Number of database objects to migrate.
+        :param _builtins.str result_type: Pre-Migration advisor result.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "columns", columns)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "fixup_script_location", fixup_script_location)
+        pulumi.set(__self__, "impact", impact)
+        pulumi.set(__self__, "is_exclusion_allowed", is_exclusion_allowed)
+        pulumi.set(__self__, "is_reviewed", is_reviewed)
+        pulumi.set(__self__, "issue", issue)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "metadatas", metadatas)
+        pulumi.set(__self__, "object_count", object_count)
+        pulumi.set(__self__, "result_type", result_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        """
+        Fixing the issue.
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter
+    def columns(self) -> Sequence['outputs.GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnResult']:
+        """
+        Array of the column of the objects table.
+        """
+        return pulumi.get(self, "columns")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Pre-Migration сheck display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="fixupScriptLocation")
+    def fixup_script_location(self) -> _builtins.str:
+        """
+        The path to the fixup script for this check.
+        """
+        return pulumi.get(self, "fixup_script_location")
+
+    @_builtins.property
+    @pulumi.getter
+    def impact(self) -> _builtins.str:
+        """
+        Impact of the issue on data migration.
+        """
+        return pulumi.get(self, "impact")
+
+    @_builtins.property
+    @pulumi.getter(name="isExclusionAllowed")
+    def is_exclusion_allowed(self) -> _builtins.bool:
+        """
+        If false, objects cannot be excluded from migration.
+        """
+        return pulumi.get(self, "is_exclusion_allowed")
+
+    @_builtins.property
+    @pulumi.getter(name="isReviewed")
+    def is_reviewed(self) -> _builtins.bool:
+        """
+        User flag for advisor report check.
+        """
+        return pulumi.get(self, "is_reviewed")
+
+    @_builtins.property
+    @pulumi.getter
+    def issue(self) -> _builtins.str:
+        """
+        Description of the issue.
+        """
+        return pulumi.get(self, "issue")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Pre-Migration сheck id.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def metadatas(self) -> Sequence['outputs.GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataResult']:
+        """
+        Metadata of object.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @_builtins.property
+    @pulumi.getter(name="objectCount")
+    def object_count(self) -> _builtins.int:
+        """
+        Number of database objects to migrate.
+        """
+        return pulumi.get(self, "object_count")
+
+    @_builtins.property
+    @pulumi.getter(name="resultType")
+    def result_type(self) -> _builtins.str:
+        """
+        Pre-Migration advisor result.
+        """
+        return pulumi.get(self, "result_type")
+
+
+@pulumi.output_type
+class GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 key: _builtins.str):
+        """
+        :param _builtins.str display_name: Pre-Migration сheck display name.
+        :param _builtins.str key: Pre-Migration сheck id.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "key", key)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Pre-Migration сheck display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Pre-Migration сheck id.
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataResult(dict):
+    def __init__(__self__, *,
+                 object_name_column: _builtins.str,
+                 object_type_column: _builtins.str,
+                 object_type_fixed: _builtins.str,
+                 schema_owner_column: _builtins.str):
+        """
+        :param _builtins.str object_name_column: The field that stores the name of the object.
+        :param _builtins.str object_type_column: The field that stores the type of the object.
+        :param _builtins.str object_type_fixed: The field that stores the fixed type of the object.
+        :param _builtins.str schema_owner_column: The field that stores the owner of the object.
+        """
+        pulumi.set(__self__, "object_name_column", object_name_column)
+        pulumi.set(__self__, "object_type_column", object_type_column)
+        pulumi.set(__self__, "object_type_fixed", object_type_fixed)
+        pulumi.set(__self__, "schema_owner_column", schema_owner_column)
+
+    @_builtins.property
+    @pulumi.getter(name="objectNameColumn")
+    def object_name_column(self) -> _builtins.str:
+        """
+        The field that stores the name of the object.
+        """
+        return pulumi.get(self, "object_name_column")
+
+    @_builtins.property
+    @pulumi.getter(name="objectTypeColumn")
+    def object_type_column(self) -> _builtins.str:
+        """
+        The field that stores the type of the object.
+        """
+        return pulumi.get(self, "object_type_column")
+
+    @_builtins.property
+    @pulumi.getter(name="objectTypeFixed")
+    def object_type_fixed(self) -> _builtins.str:
+        """
+        The field that stores the fixed type of the object.
+        """
+        return pulumi.get(self, "object_type_fixed")
+
+    @_builtins.property
+    @pulumi.getter(name="schemaOwnerColumn")
+    def schema_owner_column(self) -> _builtins.str:
+        """
+        The field that stores the owner of the object.
+        """
+        return pulumi.get(self, "schema_owner_column")
+
+
+@pulumi.output_type
+class GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryResult(dict):
+    def __init__(__self__, *,
+                 blocker_results_total_count: _builtins.int,
+                 fatal_results_total_count: _builtins.int,
+                 informational_results_total_count: _builtins.int,
+                 pass_results_total_count: _builtins.int,
+                 warning_results_total_count: _builtins.int):
+        """
+        :param _builtins.int blocker_results_total_count: Number of BLOCKER results in the extended advisor report.
+        :param _builtins.int fatal_results_total_count: Number of FATAL results in the extended advisor report.
+        :param _builtins.int informational_results_total_count: Number of INFORMATIONAL results in the extended advisor report.
+        :param _builtins.int pass_results_total_count: Number of PASS results in the extended advisor report.
+        :param _builtins.int warning_results_total_count: Number of WARNING results in the extended advisor report.
+        """
+        pulumi.set(__self__, "blocker_results_total_count", blocker_results_total_count)
+        pulumi.set(__self__, "fatal_results_total_count", fatal_results_total_count)
+        pulumi.set(__self__, "informational_results_total_count", informational_results_total_count)
+        pulumi.set(__self__, "pass_results_total_count", pass_results_total_count)
+        pulumi.set(__self__, "warning_results_total_count", warning_results_total_count)
+
+    @_builtins.property
+    @pulumi.getter(name="blockerResultsTotalCount")
+    def blocker_results_total_count(self) -> _builtins.int:
+        """
+        Number of BLOCKER results in the extended advisor report.
+        """
+        return pulumi.get(self, "blocker_results_total_count")
+
+    @_builtins.property
+    @pulumi.getter(name="fatalResultsTotalCount")
+    def fatal_results_total_count(self) -> _builtins.int:
+        """
+        Number of FATAL results in the extended advisor report.
+        """
+        return pulumi.get(self, "fatal_results_total_count")
+
+    @_builtins.property
+    @pulumi.getter(name="informationalResultsTotalCount")
+    def informational_results_total_count(self) -> _builtins.int:
+        """
+        Number of INFORMATIONAL results in the extended advisor report.
+        """
+        return pulumi.get(self, "informational_results_total_count")
+
+    @_builtins.property
+    @pulumi.getter(name="passResultsTotalCount")
+    def pass_results_total_count(self) -> _builtins.int:
+        """
+        Number of PASS results in the extended advisor report.
+        """
+        return pulumi.get(self, "pass_results_total_count")
+
+    @_builtins.property
+    @pulumi.getter(name="warningResultsTotalCount")
+    def warning_results_total_count(self) -> _builtins.int:
+        """
+        Number of WARNING results in the extended advisor report.
+        """
+        return pulumi.get(self, "warning_results_total_count")
+
+
+@pulumi.output_type
+class GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryResult(dict):
+    def __init__(__self__, *,
+                 blocker_results_total_count: _builtins.int,
+                 fatal_results_total_count: _builtins.int,
+                 informational_results_total_count: _builtins.int,
+                 pass_results_total_count: _builtins.int,
+                 warning_results_total_count: _builtins.int):
+        """
+        :param _builtins.int blocker_results_total_count: Number of BLOCKER results in the extended advisor report.
+        :param _builtins.int fatal_results_total_count: Number of FATAL results in the extended advisor report.
+        :param _builtins.int informational_results_total_count: Number of INFORMATIONAL results in the extended advisor report.
+        :param _builtins.int pass_results_total_count: Number of PASS results in the extended advisor report.
+        :param _builtins.int warning_results_total_count: Number of WARNING results in the extended advisor report.
+        """
+        pulumi.set(__self__, "blocker_results_total_count", blocker_results_total_count)
+        pulumi.set(__self__, "fatal_results_total_count", fatal_results_total_count)
+        pulumi.set(__self__, "informational_results_total_count", informational_results_total_count)
+        pulumi.set(__self__, "pass_results_total_count", pass_results_total_count)
+        pulumi.set(__self__, "warning_results_total_count", warning_results_total_count)
+
+    @_builtins.property
+    @pulumi.getter(name="blockerResultsTotalCount")
+    def blocker_results_total_count(self) -> _builtins.int:
+        """
+        Number of BLOCKER results in the extended advisor report.
+        """
+        return pulumi.get(self, "blocker_results_total_count")
+
+    @_builtins.property
+    @pulumi.getter(name="fatalResultsTotalCount")
+    def fatal_results_total_count(self) -> _builtins.int:
+        """
+        Number of FATAL results in the extended advisor report.
+        """
+        return pulumi.get(self, "fatal_results_total_count")
+
+    @_builtins.property
+    @pulumi.getter(name="informationalResultsTotalCount")
+    def informational_results_total_count(self) -> _builtins.int:
+        """
+        Number of INFORMATIONAL results in the extended advisor report.
+        """
+        return pulumi.get(self, "informational_results_total_count")
+
+    @_builtins.property
+    @pulumi.getter(name="passResultsTotalCount")
+    def pass_results_total_count(self) -> _builtins.int:
+        """
+        Number of PASS results in the extended advisor report.
+        """
+        return pulumi.get(self, "pass_results_total_count")
+
+    @_builtins.property
+    @pulumi.getter(name="warningResultsTotalCount")
+    def warning_results_total_count(self) -> _builtins.int:
+        """
+        Number of WARNING results in the extended advisor report.
+        """
+        return pulumi.get(self, "warning_results_total_count")
+
+
+@pulumi.output_type
+class GetJobAdvisorReportChecksFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
         return pulumi.get(self, "name")
 
     @_builtins.property

@@ -58,23 +58,26 @@ type LookupImportedModelArgs struct {
 
 // A collection of values returned by getImportedModel.
 type LookupImportedModelResult struct {
-	Capabilities     []string                     `pulumi:"capabilities"`
-	CompartmentId    string                       `pulumi:"compartmentId"`
-	DataSources      []GetImportedModelDataSource `pulumi:"dataSources"`
-	DefinedTags      map[string]string            `pulumi:"definedTags"`
-	Description      string                       `pulumi:"description"`
-	DisplayName      string                       `pulumi:"displayName"`
-	FreeformTags     map[string]string            `pulumi:"freeformTags"`
-	Id               string                       `pulumi:"id"`
-	ImportedModelId  string                       `pulumi:"importedModelId"`
-	LifecycleDetails string                       `pulumi:"lifecycleDetails"`
-	PreviousState    string                       `pulumi:"previousState"`
-	State            string                       `pulumi:"state"`
-	SystemTags       map[string]string            `pulumi:"systemTags"`
-	TimeCreated      string                       `pulumi:"timeCreated"`
-	TimeUpdated      string                       `pulumi:"timeUpdated"`
-	Vendor           string                       `pulumi:"vendor"`
-	Version          string                       `pulumi:"version"`
+	Capabilities  []string                     `pulumi:"capabilities"`
+	CompartmentId string                       `pulumi:"compartmentId"`
+	DataSources   []GetImportedModelDataSource `pulumi:"dataSources"`
+	DefinedTags   map[string]string            `pulumi:"definedTags"`
+	Description   string                       `pulumi:"description"`
+	DisplayName   string                       `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags    map[string]string `pulumi:"freeformTags"`
+	Id              string            `pulumi:"id"`
+	ImportedModelId string            `pulumi:"importedModelId"`
+	// Additional information about the current state of the imported model, providing more detailed and actionable context.
+	LifecycleDetails string            `pulumi:"lifecycleDetails"`
+	PreviousState    string            `pulumi:"previousState"`
+	State            string            `pulumi:"state"`
+	SystemTags       map[string]string `pulumi:"systemTags"`
+	// The date and time that the imported model was created in the format of an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	TimeUpdated string `pulumi:"timeUpdated"`
+	Vendor      string `pulumi:"vendor"`
+	Version     string `pulumi:"version"`
 }
 
 func LookupImportedModelOutput(ctx *pulumi.Context, args LookupImportedModelOutputArgs, opts ...pulumi.InvokeOption) LookupImportedModelResultOutput {
@@ -135,6 +138,7 @@ func (o LookupImportedModelResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImportedModelResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o LookupImportedModelResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupImportedModelResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
@@ -147,6 +151,7 @@ func (o LookupImportedModelResultOutput) ImportedModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImportedModelResult) string { return v.ImportedModelId }).(pulumi.StringOutput)
 }
 
+// Additional information about the current state of the imported model, providing more detailed and actionable context.
 func (o LookupImportedModelResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImportedModelResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
@@ -163,6 +168,7 @@ func (o LookupImportedModelResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupImportedModelResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
+// The date and time that the imported model was created in the format of an RFC3339 datetime string.
 func (o LookupImportedModelResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImportedModelResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }

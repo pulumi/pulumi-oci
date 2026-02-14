@@ -1720,14 +1720,22 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * (&#34;queryPreallocSize&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
+     * @deprecated
+     * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * 
      */
+    @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
     @Import(name="queryPreallocSize")
     private @Nullable Output<String> queryPreallocSize;
 
     /**
      * @return (&#34;queryPreallocSize&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
+     * @deprecated
+     * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * 
      */
+    @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
     public Optional<Output<String>> queryPreallocSize() {
         return Optional.ofNullable(this.queryPreallocSize);
     }
@@ -1737,11 +1745,7 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
      * 
      * rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [rangeOptimizerMaxMemSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
      * 
-     * @deprecated
-     * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
-     * 
      */
-    @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
     @Import(name="rangeOptimizerMaxMemSize")
     private @Nullable Output<String> rangeOptimizerMaxMemSize;
 
@@ -1750,11 +1754,7 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
      * 
      * rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [rangeOptimizerMaxMemSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
      * 
-     * @deprecated
-     * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
-     * 
      */
-    @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
     public Optional<Output<String>> rangeOptimizerMaxMemSize() {
         return Optional.ofNullable(this.rangeOptimizerMaxMemSize);
     }
@@ -4603,7 +4603,11 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * 
          */
+        @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
         public Builder queryPreallocSize(@Nullable Output<String> queryPreallocSize) {
             $.queryPreallocSize = queryPreallocSize;
             return this;
@@ -4614,7 +4618,11 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * 
          */
+        @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
         public Builder queryPreallocSize(String queryPreallocSize) {
             return queryPreallocSize(Output.of(queryPreallocSize));
         }
@@ -4626,11 +4634,7 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
-         * 
          */
-        @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
         public Builder rangeOptimizerMaxMemSize(@Nullable Output<String> rangeOptimizerMaxMemSize) {
             $.rangeOptimizerMaxMemSize = rangeOptimizerMaxMemSize;
             return this;
@@ -4643,11 +4647,7 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
-         * 
          */
-        @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
         public Builder rangeOptimizerMaxMemSize(String rangeOptimizerMaxMemSize) {
             return rangeOptimizerMaxMemSize(Output.of(rangeOptimizerMaxMemSize));
         }

@@ -61,6 +61,7 @@ import javax.annotation.Nullable;
  *                 .instanceShape(computeCapacityReportShapeAvailabilitiesInstanceShape)
  *                 .faultDomain(computeCapacityReportShapeAvailabilitiesFaultDomain)
  *                 .instanceShapeConfig(ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs.builder()
+ *                     .baselineOcpuUtilization(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigBaselineOcpuUtilization)
  *                     .memoryInGbs(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigMemoryInGbs)
  *                     .nvmes(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigNvmes)
  *                     .ocpus(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigOcpus)

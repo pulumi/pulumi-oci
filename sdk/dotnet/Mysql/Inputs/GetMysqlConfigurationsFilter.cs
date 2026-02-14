@@ -12,6 +12,9 @@ namespace Pulumi.Oci.Mysql.Inputs
 
     public sealed class GetMysqlConfigurationsFilterArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The option name.
+        /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 

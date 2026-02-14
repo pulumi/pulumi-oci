@@ -6,12 +6,23 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
 public final class ComputeCapacityReportShapeAvailabilityInstanceShapeConfig {
+    /**
+     * @return The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+     * 
+     * The following values are supported:
+     * * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+     * * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+     * * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     * 
+     */
+    private @Nullable String baselineOcpuUtilization;
     /**
      * @return The total amount of memory available to the instance, in gigabytes.
      * 
@@ -32,6 +43,18 @@ public final class ComputeCapacityReportShapeAvailabilityInstanceShapeConfig {
     private @Nullable Double ocpus;
 
     private ComputeCapacityReportShapeAvailabilityInstanceShapeConfig() {}
+    /**
+     * @return The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+     * 
+     * The following values are supported:
+     * * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+     * * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+     * * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     * 
+     */
+    public Optional<String> baselineOcpuUtilization() {
+        return Optional.ofNullable(this.baselineOcpuUtilization);
+    }
     /**
      * @return The total amount of memory available to the instance, in gigabytes.
      * 
@@ -66,17 +89,25 @@ public final class ComputeCapacityReportShapeAvailabilityInstanceShapeConfig {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String baselineOcpuUtilization;
         private @Nullable Double memoryInGbs;
         private @Nullable Integer nvmes;
         private @Nullable Double ocpus;
         public Builder() {}
         public Builder(ComputeCapacityReportShapeAvailabilityInstanceShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.baselineOcpuUtilization = defaults.baselineOcpuUtilization;
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
         }
 
+        @CustomType.Setter
+        public Builder baselineOcpuUtilization(@Nullable String baselineOcpuUtilization) {
+
+            this.baselineOcpuUtilization = baselineOcpuUtilization;
+            return this;
+        }
         @CustomType.Setter
         public Builder memoryInGbs(@Nullable Double memoryInGbs) {
 
@@ -97,6 +128,7 @@ public final class ComputeCapacityReportShapeAvailabilityInstanceShapeConfig {
         }
         public ComputeCapacityReportShapeAvailabilityInstanceShapeConfig build() {
             final var _resultValue = new ComputeCapacityReportShapeAvailabilityInstanceShapeConfig();
+            _resultValue.baselineOcpuUtilization = baselineOcpuUtilization;
             _resultValue.memoryInGbs = memoryInGbs;
             _resultValue.nvmes = nvmes;
             _resultValue.ocpus = ocpus;

@@ -28,7 +28,7 @@ class GetConnectionsResult:
     """
     A collection of values returned by getConnections.
     """
-    def __init__(__self__, compartment_id=None, connection_collections=None, connection_types=None, display_name=None, filters=None, id=None, source_connection_id=None, state=None, technology_types=None):
+    def __init__(__self__, compartment_id=None, connection_collections=None, connection_types=None, display_name=None, filters=None, id=None, source_connection_id=None, state=None, technology_sub_type=None, technology_types=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -53,6 +53,9 @@ class GetConnectionsResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if technology_sub_type and not isinstance(technology_sub_type, str):
+            raise TypeError("Expected argument 'technology_sub_type' to be a str")
+        pulumi.set(__self__, "technology_sub_type", technology_sub_type)
         if technology_types and not isinstance(technology_types, list):
             raise TypeError("Expected argument 'technology_types' to be a list")
         pulumi.set(__self__, "technology_types", technology_types)
@@ -116,6 +119,11 @@ class GetConnectionsResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="technologySubType")
+    def technology_sub_type(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "technology_sub_type")
+
+    @_builtins.property
     @pulumi.getter(name="technologyTypes")
     def technology_types(self) -> Optional[Sequence[_builtins.str]]:
         """
@@ -138,6 +146,7 @@ class AwaitableGetConnectionsResult(GetConnectionsResult):
             id=self.id,
             source_connection_id=self.source_connection_id,
             state=self.state,
+            technology_sub_type=self.technology_sub_type,
             technology_types=self.technology_types)
 
 
@@ -147,6 +156,7 @@ def get_connections(compartment_id: Optional[_builtins.str] = None,
                     filters: Optional[Sequence[Union['GetConnectionsFilterArgs', 'GetConnectionsFilterArgsDict']]] = None,
                     source_connection_id: Optional[_builtins.str] = None,
                     state: Optional[_builtins.str] = None,
+                    technology_sub_type: Optional[_builtins.str] = None,
                     technology_types: Optional[Sequence[_builtins.str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectionsResult:
     """
@@ -167,6 +177,7 @@ def get_connections(compartment_id: Optional[_builtins.str] = None,
         display_name=connection_display_name,
         source_connection_id=test_connection["id"],
         state=connection_state,
+        technology_sub_type=connection_technology_sub_type,
         technology_types=connection_technology_type)
     ```
 
@@ -176,6 +187,7 @@ def get_connections(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
     :param _builtins.str source_connection_id: The OCID of the source database connection.
     :param _builtins.str state: The current state of the Database Migration Deployment.
+    :param _builtins.str technology_sub_type: The database technology sub-type.
     :param Sequence[_builtins.str] technology_types: The array of technology types.
     """
     __args__ = dict()
@@ -185,6 +197,7 @@ def get_connections(compartment_id: Optional[_builtins.str] = None,
     __args__['filters'] = filters
     __args__['sourceConnectionId'] = source_connection_id
     __args__['state'] = state
+    __args__['technologySubType'] = technology_sub_type
     __args__['technologyTypes'] = technology_types
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DatabaseMigration/getConnections:getConnections', __args__, opts=opts, typ=GetConnectionsResult).value
@@ -198,6 +211,7 @@ def get_connections(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         source_connection_id=pulumi.get(__ret__, 'source_connection_id'),
         state=pulumi.get(__ret__, 'state'),
+        technology_sub_type=pulumi.get(__ret__, 'technology_sub_type'),
         technology_types=pulumi.get(__ret__, 'technology_types'))
 def get_connections_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                            connection_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
@@ -205,6 +219,7 @@ def get_connections_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConnectionsFilterArgs', 'GetConnectionsFilterArgsDict']]]]] = None,
                            source_connection_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                           technology_sub_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                            technology_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectionsResult]:
     """
@@ -225,6 +240,7 @@ def get_connections_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
         display_name=connection_display_name,
         source_connection_id=test_connection["id"],
         state=connection_state,
+        technology_sub_type=connection_technology_sub_type,
         technology_types=connection_technology_type)
     ```
 
@@ -234,6 +250,7 @@ def get_connections_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
     :param _builtins.str source_connection_id: The OCID of the source database connection.
     :param _builtins.str state: The current state of the Database Migration Deployment.
+    :param _builtins.str technology_sub_type: The database technology sub-type.
     :param Sequence[_builtins.str] technology_types: The array of technology types.
     """
     __args__ = dict()
@@ -243,6 +260,7 @@ def get_connections_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
     __args__['filters'] = filters
     __args__['sourceConnectionId'] = source_connection_id
     __args__['state'] = state
+    __args__['technologySubType'] = technology_sub_type
     __args__['technologyTypes'] = technology_types
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseMigration/getConnections:getConnections', __args__, opts=opts, typ=GetConnectionsResult)
@@ -255,4 +273,5 @@ def get_connections_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
         id=pulumi.get(__response__, 'id'),
         source_connection_id=pulumi.get(__response__, 'source_connection_id'),
         state=pulumi.get(__response__, 'state'),
+        technology_sub_type=pulumi.get(__response__, 'technology_sub_type'),
         technology_types=pulumi.get(__response__, 'technology_types')))

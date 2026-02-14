@@ -147,6 +147,7 @@ public final class DedicatedAiClusterArgs extends com.pulumi.resources.ResourceA
      * * LARGE_GENERIC_4
      * * SMALL_GENERIC_V2
      * * LARGE_GENERIC_2
+     * * LARGE_GENERIC_V3
      * * SMALL_GENERIC_V1
      * * MEDIUM_GENERIC_V1
      * * LARGE_GENERIC_V1
@@ -208,6 +209,7 @@ public final class DedicatedAiClusterArgs extends com.pulumi.resources.ResourceA
      * * LARGE_GENERIC_4
      * * SMALL_GENERIC_V2
      * * LARGE_GENERIC_2
+     * * LARGE_GENERIC_V3
      * * SMALL_GENERIC_V1
      * * MEDIUM_GENERIC_V1
      * * LARGE_GENERIC_V1
@@ -456,6 +458,7 @@ public final class DedicatedAiClusterArgs extends com.pulumi.resources.ResourceA
          * * LARGE_GENERIC_4
          * * SMALL_GENERIC_V2
          * * LARGE_GENERIC_2
+         * * LARGE_GENERIC_V3
          * * SMALL_GENERIC_V1
          * * MEDIUM_GENERIC_V1
          * * LARGE_GENERIC_V1
@@ -521,6 +524,7 @@ public final class DedicatedAiClusterArgs extends com.pulumi.resources.ResourceA
          * * LARGE_GENERIC_4
          * * SMALL_GENERIC_V2
          * * LARGE_GENERIC_2
+         * * LARGE_GENERIC_V3
          * * SMALL_GENERIC_V1
          * * MEDIUM_GENERIC_V1
          * * LARGE_GENERIC_V1

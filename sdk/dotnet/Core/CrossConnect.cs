@@ -62,6 +62,7 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         InterfaceName = crossConnectInterfaceName,
     ///         MacsecProperties = new Oci.Core.Inputs.CrossConnectMacsecPropertiesArgs
     ///         {
     ///             State = crossConnectMacsecPropertiesState,
@@ -74,6 +75,7 @@ namespace Pulumi.Oci.Core
     ///             },
     ///         },
     ///         NearCrossConnectOrCrossConnectGroupId = testCrossConnectGroup.Id,
+    ///         OciPhysicalDeviceName = crossConnectOciPhysicalDeviceName,
     ///     });
     /// 
     /// });
@@ -133,6 +135,12 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+        /// </summary>
+        [Output("interfaceName")]
+        public Output<string> InterfaceName { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
         /// </summary>
         [Output("isActive")]
@@ -163,7 +171,7 @@ namespace Pulumi.Oci.Core
         public Output<string> OciLogicalDeviceName { get; private set; } = null!;
 
         /// <summary>
-        /// The FastConnect device that terminates the physical connection.
+        /// The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
         /// </summary>
         [Output("ociPhysicalDeviceName")]
         public Output<string> OciPhysicalDeviceName { get; private set; } = null!;
@@ -297,6 +305,12 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
+        /// The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+        /// </summary>
+        [Input("interfaceName")]
+        public Input<string>? InterfaceName { get; set; }
+
+        /// <summary>
         /// (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
         /// </summary>
         [Input("isActive")]
@@ -319,6 +333,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("nearCrossConnectOrCrossConnectGroupId")]
         public Input<string>? NearCrossConnectOrCrossConnectGroupId { get; set; }
+
+        /// <summary>
+        /// The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
+        /// </summary>
+        [Input("ociPhysicalDeviceName")]
+        public Input<string>? OciPhysicalDeviceName { get; set; }
 
         /// <summary>
         /// The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps` 
@@ -393,6 +413,12 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
+        /// The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+        /// </summary>
+        [Input("interfaceName")]
+        public Input<string>? InterfaceName { get; set; }
+
+        /// <summary>
         /// (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
         /// </summary>
         [Input("isActive")]
@@ -423,7 +449,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? OciLogicalDeviceName { get; set; }
 
         /// <summary>
-        /// The FastConnect device that terminates the physical connection.
+        /// The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
         /// </summary>
         [Input("ociPhysicalDeviceName")]
         public Input<string>? OciPhysicalDeviceName { get; set; }

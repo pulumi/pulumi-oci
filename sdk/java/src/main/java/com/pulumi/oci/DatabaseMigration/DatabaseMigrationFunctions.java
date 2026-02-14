@@ -8,11 +8,33 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
+import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckAffectedObjectsArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckAffectedObjectsPlainArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckPlainArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorChecksArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorChecksPlainArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorPlainArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorsArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorsPlainArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentObjectTypesArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentObjectTypesPlainArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentPlainArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentsArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentsPlainArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionDatabaseconnectiontypesArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionDatabaseconnectiontypesPlainArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionPlainArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionsPlainArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportCheckObjectsArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportCheckObjectsPlainArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportChecksArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportChecksPlainArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportPlainArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetJobOutputArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetJobOutputPlainArgs;
@@ -22,17 +44,1611 @@ import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationObjectTypesPlainArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationPlainArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationsPlainArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetScriptArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetScriptPlainArgs;
+import com.pulumi.oci.DatabaseMigration.outputs.GetAssessmentAssessorCheckAffectedObjectsResult;
+import com.pulumi.oci.DatabaseMigration.outputs.GetAssessmentAssessorCheckResult;
+import com.pulumi.oci.DatabaseMigration.outputs.GetAssessmentAssessorChecksResult;
+import com.pulumi.oci.DatabaseMigration.outputs.GetAssessmentAssessorResult;
+import com.pulumi.oci.DatabaseMigration.outputs.GetAssessmentAssessorsResult;
+import com.pulumi.oci.DatabaseMigration.outputs.GetAssessmentObjectTypesResult;
+import com.pulumi.oci.DatabaseMigration.outputs.GetAssessmentResult;
+import com.pulumi.oci.DatabaseMigration.outputs.GetAssessmentsResult;
+import com.pulumi.oci.DatabaseMigration.outputs.GetConnectionDatabaseconnectiontypesResult;
 import com.pulumi.oci.DatabaseMigration.outputs.GetConnectionResult;
 import com.pulumi.oci.DatabaseMigration.outputs.GetConnectionsResult;
+import com.pulumi.oci.DatabaseMigration.outputs.GetJobAdvisorReportCheckObjectsResult;
+import com.pulumi.oci.DatabaseMigration.outputs.GetJobAdvisorReportChecksResult;
 import com.pulumi.oci.DatabaseMigration.outputs.GetJobAdvisorReportResult;
 import com.pulumi.oci.DatabaseMigration.outputs.GetJobOutputResult;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationObjectTypesResult;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationResult;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsResult;
+import com.pulumi.oci.DatabaseMigration.outputs.GetScriptResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class DatabaseMigrationFunctions {
+    /**
+     * This data source provides details about a specific Assessment resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Assessment details.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessment = DatabaseMigrationFunctions.getAssessment(GetAssessmentArgs.builder()
+     *             .assessmentId(testAssessmentOciDatabaseMigrationAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentResult> getAssessment(GetAssessmentArgs args) {
+        return getAssessment(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Assessment resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Assessment details.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessment = DatabaseMigrationFunctions.getAssessment(GetAssessmentArgs.builder()
+     *             .assessmentId(testAssessmentOciDatabaseMigrationAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAssessmentResult> getAssessmentPlain(GetAssessmentPlainArgs args) {
+        return getAssessmentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Assessment resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Assessment details.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessment = DatabaseMigrationFunctions.getAssessment(GetAssessmentArgs.builder()
+     *             .assessmentId(testAssessmentOciDatabaseMigrationAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentResult> getAssessment(GetAssessmentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getAssessment:getAssessment", TypeShape.of(GetAssessmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Assessment resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Assessment details.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessment = DatabaseMigrationFunctions.getAssessment(GetAssessmentArgs.builder()
+     *             .assessmentId(testAssessmentOciDatabaseMigrationAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentResult> getAssessment(GetAssessmentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getAssessment:getAssessment", TypeShape.of(GetAssessmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Assessment resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Assessment details.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessment = DatabaseMigrationFunctions.getAssessment(GetAssessmentArgs.builder()
+     *             .assessmentId(testAssessmentOciDatabaseMigrationAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAssessmentResult> getAssessmentPlain(GetAssessmentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getAssessment:getAssessment", TypeShape.of(GetAssessmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Assessment Assessor resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Assessor details.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessor = DatabaseMigrationFunctions.getAssessmentAssessor(GetAssessmentAssessorArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .assessorName(assessmentAssessorAssessorName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentAssessorResult> getAssessmentAssessor(GetAssessmentAssessorArgs args) {
+        return getAssessmentAssessor(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Assessment Assessor resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Assessor details.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessor = DatabaseMigrationFunctions.getAssessmentAssessor(GetAssessmentAssessorArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .assessorName(assessmentAssessorAssessorName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAssessmentAssessorResult> getAssessmentAssessorPlain(GetAssessmentAssessorPlainArgs args) {
+        return getAssessmentAssessorPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Assessment Assessor resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Assessor details.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessor = DatabaseMigrationFunctions.getAssessmentAssessor(GetAssessmentAssessorArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .assessorName(assessmentAssessorAssessorName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentAssessorResult> getAssessmentAssessor(GetAssessmentAssessorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getAssessmentAssessor:getAssessmentAssessor", TypeShape.of(GetAssessmentAssessorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Assessment Assessor resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Assessor details.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessor = DatabaseMigrationFunctions.getAssessmentAssessor(GetAssessmentAssessorArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .assessorName(assessmentAssessorAssessorName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentAssessorResult> getAssessmentAssessor(GetAssessmentAssessorArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getAssessmentAssessor:getAssessmentAssessor", TypeShape.of(GetAssessmentAssessorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Assessment Assessor resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Assessor details.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessor = DatabaseMigrationFunctions.getAssessmentAssessor(GetAssessmentAssessorArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .assessorName(assessmentAssessorAssessorName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAssessmentAssessorResult> getAssessmentAssessorPlain(GetAssessmentAssessorPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getAssessmentAssessor:getAssessmentAssessor", TypeShape.of(GetAssessmentAssessorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Assessment Assessor Check resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Get Assessor Check details.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetAssessmentAssessorCheckResult> getAssessmentAssessorCheck(GetAssessmentAssessorCheckArgs args) {
+        return getAssessmentAssessorCheck(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Assessment Assessor Check resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Get Assessor Check details.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetAssessmentAssessorCheckResult> getAssessmentAssessorCheckPlain(GetAssessmentAssessorCheckPlainArgs args) {
+        return getAssessmentAssessorCheckPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Assessment Assessor Check resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Get Assessor Check details.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetAssessmentAssessorCheckResult> getAssessmentAssessorCheck(GetAssessmentAssessorCheckArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getAssessmentAssessorCheck:getAssessmentAssessorCheck", TypeShape.of(GetAssessmentAssessorCheckResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Assessment Assessor Check resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Get Assessor Check details.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetAssessmentAssessorCheckResult> getAssessmentAssessorCheck(GetAssessmentAssessorCheckArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getAssessmentAssessorCheck:getAssessmentAssessorCheck", TypeShape.of(GetAssessmentAssessorCheckResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Assessment Assessor Check resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Get Assessor Check details.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetAssessmentAssessorCheckResult> getAssessmentAssessorCheckPlain(GetAssessmentAssessorCheckPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getAssessmentAssessorCheck:getAssessmentAssessorCheck", TypeShape.of(GetAssessmentAssessorCheckResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Assessment Assessor Check Affected Objects in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Check Affected objects.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckAffectedObjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessorCheckAffectedObjects = DatabaseMigrationFunctions.getAssessmentAssessorCheckAffectedObjects(GetAssessmentAssessorCheckAffectedObjectsArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .assessorName(assessmentAssessorCheckAffectedObjectAssessorName)
+     *             .checkName(assessmentAssessorCheckAffectedObjectCheckName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentAssessorCheckAffectedObjectsResult> getAssessmentAssessorCheckAffectedObjects(GetAssessmentAssessorCheckAffectedObjectsArgs args) {
+        return getAssessmentAssessorCheckAffectedObjects(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Assessment Assessor Check Affected Objects in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Check Affected objects.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckAffectedObjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessorCheckAffectedObjects = DatabaseMigrationFunctions.getAssessmentAssessorCheckAffectedObjects(GetAssessmentAssessorCheckAffectedObjectsArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .assessorName(assessmentAssessorCheckAffectedObjectAssessorName)
+     *             .checkName(assessmentAssessorCheckAffectedObjectCheckName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAssessmentAssessorCheckAffectedObjectsResult> getAssessmentAssessorCheckAffectedObjectsPlain(GetAssessmentAssessorCheckAffectedObjectsPlainArgs args) {
+        return getAssessmentAssessorCheckAffectedObjectsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Assessment Assessor Check Affected Objects in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Check Affected objects.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckAffectedObjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessorCheckAffectedObjects = DatabaseMigrationFunctions.getAssessmentAssessorCheckAffectedObjects(GetAssessmentAssessorCheckAffectedObjectsArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .assessorName(assessmentAssessorCheckAffectedObjectAssessorName)
+     *             .checkName(assessmentAssessorCheckAffectedObjectCheckName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentAssessorCheckAffectedObjectsResult> getAssessmentAssessorCheckAffectedObjects(GetAssessmentAssessorCheckAffectedObjectsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getAssessmentAssessorCheckAffectedObjects:getAssessmentAssessorCheckAffectedObjects", TypeShape.of(GetAssessmentAssessorCheckAffectedObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Assessment Assessor Check Affected Objects in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Check Affected objects.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckAffectedObjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessorCheckAffectedObjects = DatabaseMigrationFunctions.getAssessmentAssessorCheckAffectedObjects(GetAssessmentAssessorCheckAffectedObjectsArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .assessorName(assessmentAssessorCheckAffectedObjectAssessorName)
+     *             .checkName(assessmentAssessorCheckAffectedObjectCheckName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentAssessorCheckAffectedObjectsResult> getAssessmentAssessorCheckAffectedObjects(GetAssessmentAssessorCheckAffectedObjectsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getAssessmentAssessorCheckAffectedObjects:getAssessmentAssessorCheckAffectedObjects", TypeShape.of(GetAssessmentAssessorCheckAffectedObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Assessment Assessor Check Affected Objects in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display Check Affected objects.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckAffectedObjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessorCheckAffectedObjects = DatabaseMigrationFunctions.getAssessmentAssessorCheckAffectedObjects(GetAssessmentAssessorCheckAffectedObjectsArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .assessorName(assessmentAssessorCheckAffectedObjectAssessorName)
+     *             .checkName(assessmentAssessorCheckAffectedObjectCheckName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAssessmentAssessorCheckAffectedObjectsResult> getAssessmentAssessorCheckAffectedObjectsPlain(GetAssessmentAssessorCheckAffectedObjectsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getAssessmentAssessorCheckAffectedObjects:getAssessmentAssessorCheckAffectedObjects", TypeShape.of(GetAssessmentAssessorCheckAffectedObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Assessment Assessor Checks in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List Assessor Check Summaries.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessorChecks = DatabaseMigrationFunctions.getAssessmentAssessorChecks(GetAssessmentAssessorChecksArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .assessorName(assessmentAssessorCheckAssessorName)
+     *             .compartmentId(compartmentId)
+     *             .displayName(assessmentAssessorCheckDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentAssessorChecksResult> getAssessmentAssessorChecks(GetAssessmentAssessorChecksArgs args) {
+        return getAssessmentAssessorChecks(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Assessment Assessor Checks in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List Assessor Check Summaries.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessorChecks = DatabaseMigrationFunctions.getAssessmentAssessorChecks(GetAssessmentAssessorChecksArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .assessorName(assessmentAssessorCheckAssessorName)
+     *             .compartmentId(compartmentId)
+     *             .displayName(assessmentAssessorCheckDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAssessmentAssessorChecksResult> getAssessmentAssessorChecksPlain(GetAssessmentAssessorChecksPlainArgs args) {
+        return getAssessmentAssessorChecksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Assessment Assessor Checks in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List Assessor Check Summaries.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessorChecks = DatabaseMigrationFunctions.getAssessmentAssessorChecks(GetAssessmentAssessorChecksArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .assessorName(assessmentAssessorCheckAssessorName)
+     *             .compartmentId(compartmentId)
+     *             .displayName(assessmentAssessorCheckDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentAssessorChecksResult> getAssessmentAssessorChecks(GetAssessmentAssessorChecksArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getAssessmentAssessorChecks:getAssessmentAssessorChecks", TypeShape.of(GetAssessmentAssessorChecksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Assessment Assessor Checks in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List Assessor Check Summaries.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessorChecks = DatabaseMigrationFunctions.getAssessmentAssessorChecks(GetAssessmentAssessorChecksArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .assessorName(assessmentAssessorCheckAssessorName)
+     *             .compartmentId(compartmentId)
+     *             .displayName(assessmentAssessorCheckDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentAssessorChecksResult> getAssessmentAssessorChecks(GetAssessmentAssessorChecksArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getAssessmentAssessorChecks:getAssessmentAssessorChecks", TypeShape.of(GetAssessmentAssessorChecksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Assessment Assessor Checks in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List Assessor Check Summaries.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessorChecks = DatabaseMigrationFunctions.getAssessmentAssessorChecks(GetAssessmentAssessorChecksArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .assessorName(assessmentAssessorCheckAssessorName)
+     *             .compartmentId(compartmentId)
+     *             .displayName(assessmentAssessorCheckDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAssessmentAssessorChecksResult> getAssessmentAssessorChecksPlain(GetAssessmentAssessorChecksPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getAssessmentAssessorChecks:getAssessmentAssessorChecks", TypeShape.of(GetAssessmentAssessorChecksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Assessment Assessors in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Assessors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessors = DatabaseMigrationFunctions.getAssessmentAssessors(GetAssessmentAssessorsArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .displayName(assessmentAssessorDisplayName)
+     *             .state(assessmentAssessorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentAssessorsResult> getAssessmentAssessors(GetAssessmentAssessorsArgs args) {
+        return getAssessmentAssessors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Assessment Assessors in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Assessors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessors = DatabaseMigrationFunctions.getAssessmentAssessors(GetAssessmentAssessorsArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .displayName(assessmentAssessorDisplayName)
+     *             .state(assessmentAssessorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAssessmentAssessorsResult> getAssessmentAssessorsPlain(GetAssessmentAssessorsPlainArgs args) {
+        return getAssessmentAssessorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Assessment Assessors in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Assessors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessors = DatabaseMigrationFunctions.getAssessmentAssessors(GetAssessmentAssessorsArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .displayName(assessmentAssessorDisplayName)
+     *             .state(assessmentAssessorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentAssessorsResult> getAssessmentAssessors(GetAssessmentAssessorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getAssessmentAssessors:getAssessmentAssessors", TypeShape.of(GetAssessmentAssessorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Assessment Assessors in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Assessors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessors = DatabaseMigrationFunctions.getAssessmentAssessors(GetAssessmentAssessorsArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .displayName(assessmentAssessorDisplayName)
+     *             .state(assessmentAssessorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentAssessorsResult> getAssessmentAssessors(GetAssessmentAssessorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getAssessmentAssessors:getAssessmentAssessors", TypeShape.of(GetAssessmentAssessorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Assessment Assessors in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Assessors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessors = DatabaseMigrationFunctions.getAssessmentAssessors(GetAssessmentAssessorsArgs.builder()
+     *             .assessmentId(testAssessment.id())
+     *             .displayName(assessmentAssessorDisplayName)
+     *             .state(assessmentAssessorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAssessmentAssessorsResult> getAssessmentAssessorsPlain(GetAssessmentAssessorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getAssessmentAssessors:getAssessmentAssessors", TypeShape.of(GetAssessmentAssessorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Assessment Object Types in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display sample object types to exclude or include for an Assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentObjectTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentObjectTypes = DatabaseMigrationFunctions.getAssessmentObjectTypes(GetAssessmentObjectTypesArgs.builder()
+     *             .connectionType(assessmentObjectTypeConnectionType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentObjectTypesResult> getAssessmentObjectTypes(GetAssessmentObjectTypesArgs args) {
+        return getAssessmentObjectTypes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Assessment Object Types in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display sample object types to exclude or include for an Assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentObjectTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentObjectTypes = DatabaseMigrationFunctions.getAssessmentObjectTypes(GetAssessmentObjectTypesArgs.builder()
+     *             .connectionType(assessmentObjectTypeConnectionType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAssessmentObjectTypesResult> getAssessmentObjectTypesPlain(GetAssessmentObjectTypesPlainArgs args) {
+        return getAssessmentObjectTypesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Assessment Object Types in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display sample object types to exclude or include for an Assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentObjectTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentObjectTypes = DatabaseMigrationFunctions.getAssessmentObjectTypes(GetAssessmentObjectTypesArgs.builder()
+     *             .connectionType(assessmentObjectTypeConnectionType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentObjectTypesResult> getAssessmentObjectTypes(GetAssessmentObjectTypesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getAssessmentObjectTypes:getAssessmentObjectTypes", TypeShape.of(GetAssessmentObjectTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Assessment Object Types in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display sample object types to exclude or include for an Assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentObjectTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentObjectTypes = DatabaseMigrationFunctions.getAssessmentObjectTypes(GetAssessmentObjectTypesArgs.builder()
+     *             .connectionType(assessmentObjectTypeConnectionType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentObjectTypesResult> getAssessmentObjectTypes(GetAssessmentObjectTypesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getAssessmentObjectTypes:getAssessmentObjectTypes", TypeShape.of(GetAssessmentObjectTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Assessment Object Types in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Display sample object types to exclude or include for an Assessment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentObjectTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentObjectTypes = DatabaseMigrationFunctions.getAssessmentObjectTypes(GetAssessmentObjectTypesArgs.builder()
+     *             .connectionType(assessmentObjectTypeConnectionType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAssessmentObjectTypesResult> getAssessmentObjectTypesPlain(GetAssessmentObjectTypesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getAssessmentObjectTypes:getAssessmentObjectTypes", TypeShape.of(GetAssessmentObjectTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Assessments in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Assessments.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessments = DatabaseMigrationFunctions.getAssessments(GetAssessmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(assessmentDisplayName)
+     *             .lifecycleDetails(assessmentLifecycleDetails)
+     *             .state(assessmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentsResult> getAssessments(GetAssessmentsArgs args) {
+        return getAssessments(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Assessments in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Assessments.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessments = DatabaseMigrationFunctions.getAssessments(GetAssessmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(assessmentDisplayName)
+     *             .lifecycleDetails(assessmentLifecycleDetails)
+     *             .state(assessmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAssessmentsResult> getAssessmentsPlain(GetAssessmentsPlainArgs args) {
+        return getAssessmentsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Assessments in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Assessments.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessments = DatabaseMigrationFunctions.getAssessments(GetAssessmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(assessmentDisplayName)
+     *             .lifecycleDetails(assessmentLifecycleDetails)
+     *             .state(assessmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentsResult> getAssessments(GetAssessmentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getAssessments:getAssessments", TypeShape.of(GetAssessmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Assessments in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Assessments.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessments = DatabaseMigrationFunctions.getAssessments(GetAssessmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(assessmentDisplayName)
+     *             .lifecycleDetails(assessmentLifecycleDetails)
+     *             .state(assessmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAssessmentsResult> getAssessments(GetAssessmentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getAssessments:getAssessments", TypeShape.of(GetAssessmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Assessments in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List all Assessments.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessments = DatabaseMigrationFunctions.getAssessments(GetAssessmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(assessmentDisplayName)
+     *             .lifecycleDetails(assessmentLifecycleDetails)
+     *             .state(assessmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAssessmentsResult> getAssessmentsPlain(GetAssessmentsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getAssessments:getAssessments", TypeShape.of(GetAssessmentsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Database Migration service.
      * 
@@ -254,6 +1870,231 @@ public final class DatabaseMigrationFunctions {
         return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getConnection:getConnection", TypeShape.of(GetConnectionResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Connection Databaseconnectiontypes in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List supported Database Types, Sub-types and Versions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionDatabaseconnectiontypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectionDatabaseconnectiontypes = DatabaseMigrationFunctions.getConnectionDatabaseconnectiontypes(GetConnectionDatabaseconnectiontypesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .connectionTypes(connectionDatabaseconnectiontypeConnectionType)
+     *             .sourceConnectionId(testConnection.id())
+     *             .technologyTypes(connectionDatabaseconnectiontypeTechnologyType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetConnectionDatabaseconnectiontypesResult> getConnectionDatabaseconnectiontypes(GetConnectionDatabaseconnectiontypesArgs args) {
+        return getConnectionDatabaseconnectiontypes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Connection Databaseconnectiontypes in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List supported Database Types, Sub-types and Versions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionDatabaseconnectiontypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectionDatabaseconnectiontypes = DatabaseMigrationFunctions.getConnectionDatabaseconnectiontypes(GetConnectionDatabaseconnectiontypesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .connectionTypes(connectionDatabaseconnectiontypeConnectionType)
+     *             .sourceConnectionId(testConnection.id())
+     *             .technologyTypes(connectionDatabaseconnectiontypeTechnologyType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetConnectionDatabaseconnectiontypesResult> getConnectionDatabaseconnectiontypesPlain(GetConnectionDatabaseconnectiontypesPlainArgs args) {
+        return getConnectionDatabaseconnectiontypesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Connection Databaseconnectiontypes in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List supported Database Types, Sub-types and Versions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionDatabaseconnectiontypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectionDatabaseconnectiontypes = DatabaseMigrationFunctions.getConnectionDatabaseconnectiontypes(GetConnectionDatabaseconnectiontypesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .connectionTypes(connectionDatabaseconnectiontypeConnectionType)
+     *             .sourceConnectionId(testConnection.id())
+     *             .technologyTypes(connectionDatabaseconnectiontypeTechnologyType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetConnectionDatabaseconnectiontypesResult> getConnectionDatabaseconnectiontypes(GetConnectionDatabaseconnectiontypesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getConnectionDatabaseconnectiontypes:getConnectionDatabaseconnectiontypes", TypeShape.of(GetConnectionDatabaseconnectiontypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Connection Databaseconnectiontypes in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List supported Database Types, Sub-types and Versions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionDatabaseconnectiontypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectionDatabaseconnectiontypes = DatabaseMigrationFunctions.getConnectionDatabaseconnectiontypes(GetConnectionDatabaseconnectiontypesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .connectionTypes(connectionDatabaseconnectiontypeConnectionType)
+     *             .sourceConnectionId(testConnection.id())
+     *             .technologyTypes(connectionDatabaseconnectiontypeTechnologyType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetConnectionDatabaseconnectiontypesResult> getConnectionDatabaseconnectiontypes(GetConnectionDatabaseconnectiontypesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getConnectionDatabaseconnectiontypes:getConnectionDatabaseconnectiontypes", TypeShape.of(GetConnectionDatabaseconnectiontypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Connection Databaseconnectiontypes in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List supported Database Types, Sub-types and Versions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionDatabaseconnectiontypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectionDatabaseconnectiontypes = DatabaseMigrationFunctions.getConnectionDatabaseconnectiontypes(GetConnectionDatabaseconnectiontypesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .connectionTypes(connectionDatabaseconnectiontypeConnectionType)
+     *             .sourceConnectionId(testConnection.id())
+     *             .technologyTypes(connectionDatabaseconnectiontypeTechnologyType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetConnectionDatabaseconnectiontypesResult> getConnectionDatabaseconnectiontypesPlain(GetConnectionDatabaseconnectiontypesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getConnectionDatabaseconnectiontypes:getConnectionDatabaseconnectiontypes", TypeShape.of(GetConnectionDatabaseconnectiontypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Connections in Oracle Cloud Infrastructure Database Migration service.
      * 
      * List all Database Connections.
@@ -290,6 +2131,7 @@ public final class DatabaseMigrationFunctions {
      *             .displayName(connectionDisplayName)
      *             .sourceConnectionId(testConnection.id())
      *             .state(connectionState)
+     *             .technologySubType(connectionTechnologySubType)
      *             .technologyTypes(connectionTechnologyType)
      *             .build());
      * 
@@ -339,6 +2181,7 @@ public final class DatabaseMigrationFunctions {
      *             .displayName(connectionDisplayName)
      *             .sourceConnectionId(testConnection.id())
      *             .state(connectionState)
+     *             .technologySubType(connectionTechnologySubType)
      *             .technologyTypes(connectionTechnologyType)
      *             .build());
      * 
@@ -388,6 +2231,7 @@ public final class DatabaseMigrationFunctions {
      *             .displayName(connectionDisplayName)
      *             .sourceConnectionId(testConnection.id())
      *             .state(connectionState)
+     *             .technologySubType(connectionTechnologySubType)
      *             .technologyTypes(connectionTechnologyType)
      *             .build());
      * 
@@ -437,6 +2281,7 @@ public final class DatabaseMigrationFunctions {
      *             .displayName(connectionDisplayName)
      *             .sourceConnectionId(testConnection.id())
      *             .state(connectionState)
+     *             .technologySubType(connectionTechnologySubType)
      *             .technologyTypes(connectionTechnologyType)
      *             .build());
      * 
@@ -486,6 +2331,7 @@ public final class DatabaseMigrationFunctions {
      *             .displayName(connectionDisplayName)
      *             .sourceConnectionId(testConnection.id())
      *             .state(connectionState)
+     *             .technologySubType(connectionTechnologySubType)
      *             .technologyTypes(connectionTechnologyType)
      *             .build());
      * 
@@ -717,6 +2563,431 @@ public final class DatabaseMigrationFunctions {
      */
     public static CompletableFuture<GetJobAdvisorReportResult> getJobAdvisorReportPlain(GetJobAdvisorReportPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", TypeShape.of(GetJobAdvisorReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Job Advisor Report Check Objects in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Get the Pre-Migration extended Advisor report object list.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportCheckObjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobAdvisorReportCheckObjects = DatabaseMigrationFunctions.getJobAdvisorReportCheckObjects(GetJobAdvisorReportCheckObjectsArgs.builder()
+     *             .advisorReportCheckId(testAdvisorReportCheck.id())
+     *             .jobId(testJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetJobAdvisorReportCheckObjectsResult> getJobAdvisorReportCheckObjects(GetJobAdvisorReportCheckObjectsArgs args) {
+        return getJobAdvisorReportCheckObjects(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Job Advisor Report Check Objects in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Get the Pre-Migration extended Advisor report object list.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportCheckObjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobAdvisorReportCheckObjects = DatabaseMigrationFunctions.getJobAdvisorReportCheckObjects(GetJobAdvisorReportCheckObjectsArgs.builder()
+     *             .advisorReportCheckId(testAdvisorReportCheck.id())
+     *             .jobId(testJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetJobAdvisorReportCheckObjectsResult> getJobAdvisorReportCheckObjectsPlain(GetJobAdvisorReportCheckObjectsPlainArgs args) {
+        return getJobAdvisorReportCheckObjectsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Job Advisor Report Check Objects in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Get the Pre-Migration extended Advisor report object list.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportCheckObjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobAdvisorReportCheckObjects = DatabaseMigrationFunctions.getJobAdvisorReportCheckObjects(GetJobAdvisorReportCheckObjectsArgs.builder()
+     *             .advisorReportCheckId(testAdvisorReportCheck.id())
+     *             .jobId(testJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetJobAdvisorReportCheckObjectsResult> getJobAdvisorReportCheckObjects(GetJobAdvisorReportCheckObjectsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getJobAdvisorReportCheckObjects:getJobAdvisorReportCheckObjects", TypeShape.of(GetJobAdvisorReportCheckObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Job Advisor Report Check Objects in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Get the Pre-Migration extended Advisor report object list.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportCheckObjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobAdvisorReportCheckObjects = DatabaseMigrationFunctions.getJobAdvisorReportCheckObjects(GetJobAdvisorReportCheckObjectsArgs.builder()
+     *             .advisorReportCheckId(testAdvisorReportCheck.id())
+     *             .jobId(testJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetJobAdvisorReportCheckObjectsResult> getJobAdvisorReportCheckObjects(GetJobAdvisorReportCheckObjectsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getJobAdvisorReportCheckObjects:getJobAdvisorReportCheckObjects", TypeShape.of(GetJobAdvisorReportCheckObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Job Advisor Report Check Objects in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Get the Pre-Migration extended Advisor report object list.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportCheckObjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobAdvisorReportCheckObjects = DatabaseMigrationFunctions.getJobAdvisorReportCheckObjects(GetJobAdvisorReportCheckObjectsArgs.builder()
+     *             .advisorReportCheckId(testAdvisorReportCheck.id())
+     *             .jobId(testJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetJobAdvisorReportCheckObjectsResult> getJobAdvisorReportCheckObjectsPlain(GetJobAdvisorReportCheckObjectsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getJobAdvisorReportCheckObjects:getJobAdvisorReportCheckObjects", TypeShape.of(GetJobAdvisorReportCheckObjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Job Advisor Report Checks in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List of Pre-Migration checks from the advisor.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobAdvisorReportChecks = DatabaseMigrationFunctions.getJobAdvisorReportChecks(GetJobAdvisorReportChecksArgs.builder()
+     *             .jobId(testJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetJobAdvisorReportChecksResult> getJobAdvisorReportChecks(GetJobAdvisorReportChecksArgs args) {
+        return getJobAdvisorReportChecks(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Job Advisor Report Checks in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List of Pre-Migration checks from the advisor.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobAdvisorReportChecks = DatabaseMigrationFunctions.getJobAdvisorReportChecks(GetJobAdvisorReportChecksArgs.builder()
+     *             .jobId(testJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetJobAdvisorReportChecksResult> getJobAdvisorReportChecksPlain(GetJobAdvisorReportChecksPlainArgs args) {
+        return getJobAdvisorReportChecksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Job Advisor Report Checks in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List of Pre-Migration checks from the advisor.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobAdvisorReportChecks = DatabaseMigrationFunctions.getJobAdvisorReportChecks(GetJobAdvisorReportChecksArgs.builder()
+     *             .jobId(testJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetJobAdvisorReportChecksResult> getJobAdvisorReportChecks(GetJobAdvisorReportChecksArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getJobAdvisorReportChecks:getJobAdvisorReportChecks", TypeShape.of(GetJobAdvisorReportChecksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Job Advisor Report Checks in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List of Pre-Migration checks from the advisor.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobAdvisorReportChecks = DatabaseMigrationFunctions.getJobAdvisorReportChecks(GetJobAdvisorReportChecksArgs.builder()
+     *             .jobId(testJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetJobAdvisorReportChecksResult> getJobAdvisorReportChecks(GetJobAdvisorReportChecksArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getJobAdvisorReportChecks:getJobAdvisorReportChecks", TypeShape.of(GetJobAdvisorReportChecksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Job Advisor Report Checks in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * List of Pre-Migration checks from the advisor.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobAdvisorReportChecks = DatabaseMigrationFunctions.getJobAdvisorReportChecks(GetJobAdvisorReportChecksArgs.builder()
+     *             .jobId(testJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetJobAdvisorReportChecksResult> getJobAdvisorReportChecksPlain(GetJobAdvisorReportChecksPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getJobAdvisorReportChecks:getJobAdvisorReportChecks", TypeShape.of(GetJobAdvisorReportChecksResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Job Output resource in Oracle Cloud Infrastructure Database Migration service.
@@ -1432,5 +3703,215 @@ public final class DatabaseMigrationFunctions {
      */
     public static CompletableFuture<GetMigrationsResult> getMigrationsPlain(GetMigrationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getMigrations:getMigrations", TypeShape.of(GetMigrationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Download DMS script.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScript = DatabaseMigrationFunctions.getScript(GetScriptArgs.builder()
+     *             .scriptId(testScriptOciDatabaseMigrationScript.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetScriptResult> getScript(GetScriptArgs args) {
+        return getScript(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Download DMS script.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScript = DatabaseMigrationFunctions.getScript(GetScriptArgs.builder()
+     *             .scriptId(testScriptOciDatabaseMigrationScript.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetScriptResult> getScriptPlain(GetScriptPlainArgs args) {
+        return getScriptPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Download DMS script.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScript = DatabaseMigrationFunctions.getScript(GetScriptArgs.builder()
+     *             .scriptId(testScriptOciDatabaseMigrationScript.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetScriptResult> getScript(GetScriptArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getScript:getScript", TypeShape.of(GetScriptResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Download DMS script.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScript = DatabaseMigrationFunctions.getScript(GetScriptArgs.builder()
+     *             .scriptId(testScriptOciDatabaseMigrationScript.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetScriptResult> getScript(GetScriptArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getScript:getScript", TypeShape.of(GetScriptResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Download DMS script.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScript = DatabaseMigrationFunctions.getScript(GetScriptArgs.builder()
+     *             .scriptId(testScriptOciDatabaseMigrationScript.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetScriptResult> getScriptPlain(GetScriptPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getScript:getScript", TypeShape.of(GetScriptResult.class), args, Utilities.withVersion(options));
     }
 }

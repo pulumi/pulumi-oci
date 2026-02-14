@@ -25,11 +25,17 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The ID of the importedModel.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Additional information about the current state of the imported model, providing more detailed and actionable context.
+        /// </summary>
         public readonly string LifecycleDetails;
         public readonly string PreviousState;
         /// <summary>
@@ -37,6 +43,9 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly string State;
         public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
+        /// The date and time that the imported model was created in the format of an RFC3339 datetime string.
+        /// </summary>
         public readonly string TimeCreated;
         public readonly string TimeUpdated;
         /// <summary>

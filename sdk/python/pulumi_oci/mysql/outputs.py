@@ -42,6 +42,7 @@ __all__ = [
     'MysqlBackupSourceDetails',
     'MysqlBackupValidateBackupDetail',
     'MysqlConfigurationInitVariables',
+    'MysqlConfigurationOption',
     'MysqlConfigurationVariables',
     'MysqlDbSystemBackupPolicy',
     'MysqlDbSystemBackupPolicyCopyPolicy',
@@ -106,9 +107,11 @@ __all__ = [
     'GetMysqlBackupsBackupEncryptDataResult',
     'GetMysqlBackupsFilterResult',
     'GetMysqlConfigurationInitVariableResult',
+    'GetMysqlConfigurationOptionResult',
     'GetMysqlConfigurationVariableResult',
     'GetMysqlConfigurationsConfigurationResult',
     'GetMysqlConfigurationsConfigurationInitVariableResult',
+    'GetMysqlConfigurationsConfigurationOptionResult',
     'GetMysqlConfigurationsConfigurationVariableResult',
     'GetMysqlConfigurationsFilterResult',
     'GetMysqlDbSystemBackupPolicyResult',
@@ -2407,6 +2410,36 @@ class MysqlConfigurationInitVariables(dict):
 
 
 @pulumi.output_type
+class MysqlConfigurationOption(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str name: The option name.
+        :param _builtins.str value: The option value.
+        """
+        pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The option name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        The option value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class MysqlConfigurationVariables(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -4195,6 +4228,7 @@ class MysqlConfigurationVariables(dict):
 
     @_builtins.property
     @pulumi.getter(name="queryPreallocSize")
+    @_utilities.deprecated("""The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def query_prealloc_size(self) -> Optional[_builtins.str]:
         """
         ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
@@ -4203,7 +4237,6 @@ class MysqlConfigurationVariables(dict):
 
     @_builtins.property
     @pulumi.getter(name="rangeOptimizerMaxMemSize")
-    @_utilities.deprecated("""The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def range_optimizer_max_mem_size(self) -> Optional[_builtins.str]:
         """
         The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans. 
@@ -8890,6 +8923,35 @@ class GetMysqlConfigurationInitVariableResult(dict):
 
 
 @pulumi.output_type
+class GetMysqlConfigurationOptionResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str name: The option name.
+        :param _builtins.str value: The option value.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The option name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The option value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetMysqlConfigurationVariableResult(dict):
     def __init__(__self__, *,
                  auto_increment_increment: _builtins.int,
@@ -10005,6 +10067,7 @@ class GetMysqlConfigurationVariableResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="queryPreallocSize")
+    @_utilities.deprecated("""The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def query_prealloc_size(self) -> _builtins.str:
         """
         ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
@@ -10013,7 +10076,6 @@ class GetMysqlConfigurationVariableResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="rangeOptimizerMaxMemSize")
-    @_utilities.deprecated("""The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def range_optimizer_max_mem_size(self) -> _builtins.str:
         """
         The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
@@ -10223,6 +10285,7 @@ class GetMysqlConfigurationsConfigurationResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  init_variables: Sequence['outputs.GetMysqlConfigurationsConfigurationInitVariableResult'],
+                 options: Sequence['outputs.GetMysqlConfigurationsConfigurationOptionResult'],
                  parent_configuration_id: _builtins.str,
                  shape_name: _builtins.str,
                  state: _builtins.str,
@@ -10238,7 +10301,8 @@ class GetMysqlConfigurationsConfigurationResult(dict):
         :param _builtins.str display_name: A filter to return only the resource matching the given display name exactly.
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str id: The OCID of the Configuration.
-        :param Sequence['GetMysqlConfigurationsConfigurationInitVariableArgs'] init_variables: User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        :param Sequence['GetMysqlConfigurationsConfigurationInitVariableArgs'] init_variables: DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        :param Sequence['GetMysqlConfigurationsConfigurationOptionArgs'] options: The MySQL options defined in the Configuration.
         :param _builtins.str parent_configuration_id: The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
         :param _builtins.str shape_name: The requested Shape name.
         :param _builtins.str state: Configuration Lifecycle State
@@ -10246,7 +10310,7 @@ class GetMysqlConfigurationsConfigurationResult(dict):
         :param _builtins.str time_created: The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param _builtins.str time_updated: The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param _builtins.str type: The requested Configuration types.
-        :param Sequence['GetMysqlConfigurationsConfigurationVariableArgs'] variables: User-defined service variables.
+        :param Sequence['GetMysqlConfigurationsConfigurationVariableArgs'] variables: DEPRECATED -- please use the `options` field instead. User-defined service variables.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -10255,6 +10319,7 @@ class GetMysqlConfigurationsConfigurationResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "init_variables", init_variables)
+        pulumi.set(__self__, "options", options)
         pulumi.set(__self__, "parent_configuration_id", parent_configuration_id)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "state", state)
@@ -10316,9 +10381,17 @@ class GetMysqlConfigurationsConfigurationResult(dict):
     @pulumi.getter(name="initVariables")
     def init_variables(self) -> Sequence['outputs.GetMysqlConfigurationsConfigurationInitVariableResult']:
         """
-        User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
         """
         return pulumi.get(self, "init_variables")
+
+    @_builtins.property
+    @pulumi.getter
+    def options(self) -> Sequence['outputs.GetMysqlConfigurationsConfigurationOptionResult']:
+        """
+        The MySQL options defined in the Configuration.
+        """
+        return pulumi.get(self, "options")
 
     @_builtins.property
     @pulumi.getter(name="parentConfigurationId")
@@ -10380,7 +10453,7 @@ class GetMysqlConfigurationsConfigurationResult(dict):
     @pulumi.getter
     def variables(self) -> Sequence['outputs.GetMysqlConfigurationsConfigurationVariableResult']:
         """
-        User-defined service variables.
+        DEPRECATED -- please use the `options` field instead. User-defined service variables.
         """
         return pulumi.get(self, "variables")
 
@@ -10401,6 +10474,35 @@ class GetMysqlConfigurationsConfigurationInitVariableResult(dict):
         Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
         """
         return pulumi.get(self, "lower_case_table_names")
+
+
+@pulumi.output_type
+class GetMysqlConfigurationsConfigurationOptionResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str name: The option name.
+        :param _builtins.str value: The option value.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The option name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The option value.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -11519,6 +11621,7 @@ class GetMysqlConfigurationsConfigurationVariableResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="queryPreallocSize")
+    @_utilities.deprecated("""The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def query_prealloc_size(self) -> _builtins.str:
         """
         ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
@@ -11527,7 +11630,6 @@ class GetMysqlConfigurationsConfigurationVariableResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="rangeOptimizerMaxMemSize")
-    @_utilities.deprecated("""The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def range_optimizer_max_mem_size(self) -> _builtins.str:
         """
         The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
@@ -11733,6 +11835,9 @@ class GetMysqlConfigurationsFilterResult(dict):
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The option name.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -11741,6 +11846,9 @@ class GetMysqlConfigurationsFilterResult(dict):
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        """
+        The option name.
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property

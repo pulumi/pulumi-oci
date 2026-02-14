@@ -129,13 +129,22 @@ namespace Pulumi.Oci.GenerativeAi
         public readonly ImmutableDictionary<string, string> DefinedTags;
         public readonly string Description;
         public readonly string DisplayName;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         public readonly string Id;
         public readonly string ImportedModelId;
+        /// <summary>
+        /// Additional information about the current state of the imported model, providing more detailed and actionable context.
+        /// </summary>
         public readonly string LifecycleDetails;
         public readonly string PreviousState;
         public readonly string State;
         public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
+        /// The date and time that the imported model was created in the format of an RFC3339 datetime string.
+        /// </summary>
         public readonly string TimeCreated;
         public readonly string TimeUpdated;
         public readonly string Vendor;

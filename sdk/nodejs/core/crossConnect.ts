@@ -52,6 +52,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     interfaceName: crossConnectInterfaceName,
  *     macsecProperties: {
  *         state: crossConnectMacsecPropertiesState,
  *         encryptionCipher: crossConnectMacsecPropertiesEncryptionCipher,
@@ -62,6 +63,7 @@ import * as utilities from "../utilities";
  *         },
  *     },
  *     nearCrossConnectOrCrossConnectGroupId: testCrossConnectGroup.id,
+ *     ociPhysicalDeviceName: crossConnectOciPhysicalDeviceName,
  * });
  * ```
  *
@@ -130,6 +132,10 @@ export class CrossConnect extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+     */
+    declare public readonly interfaceName: pulumi.Output<string>;
+    /**
      * (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
      */
     declare public readonly isActive: pulumi.Output<boolean | undefined>;
@@ -150,9 +156,9 @@ export class CrossConnect extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly ociLogicalDeviceName: pulumi.Output<string>;
     /**
-     * The FastConnect device that terminates the physical connection.
+     * The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
      */
-    declare public /*out*/ readonly ociPhysicalDeviceName: pulumi.Output<string>;
+    declare public readonly ociPhysicalDeviceName: pulumi.Output<string>;
     /**
      * A string identifying the meet-me room port for this cross-connect.
      */
@@ -194,6 +200,7 @@ export class CrossConnect extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["farCrossConnectOrCrossConnectGroupId"] = state?.farCrossConnectOrCrossConnectGroupId;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["interfaceName"] = state?.interfaceName;
             resourceInputs["isActive"] = state?.isActive;
             resourceInputs["locationName"] = state?.locationName;
             resourceInputs["macsecProperties"] = state?.macsecProperties;
@@ -222,13 +229,14 @@ export class CrossConnect extends pulumi.CustomResource {
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["farCrossConnectOrCrossConnectGroupId"] = args?.farCrossConnectOrCrossConnectGroupId;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["interfaceName"] = args?.interfaceName;
             resourceInputs["isActive"] = args?.isActive;
             resourceInputs["locationName"] = args?.locationName;
             resourceInputs["macsecProperties"] = args?.macsecProperties;
             resourceInputs["nearCrossConnectOrCrossConnectGroupId"] = args?.nearCrossConnectOrCrossConnectGroupId;
+            resourceInputs["ociPhysicalDeviceName"] = args?.ociPhysicalDeviceName;
             resourceInputs["portSpeedShapeName"] = args?.portSpeedShapeName;
             resourceInputs["ociLogicalDeviceName"] = undefined /*out*/;
-            resourceInputs["ociPhysicalDeviceName"] = undefined /*out*/;
             resourceInputs["portName"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -271,6 +279,10 @@ export interface CrossConnectState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+     */
+    interfaceName?: pulumi.Input<string>;
+    /**
      * (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
      */
     isActive?: pulumi.Input<boolean>;
@@ -291,7 +303,7 @@ export interface CrossConnectState {
      */
     ociLogicalDeviceName?: pulumi.Input<string>;
     /**
-     * The FastConnect device that terminates the physical connection.
+     * The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
      */
     ociPhysicalDeviceName?: pulumi.Input<string>;
     /**
@@ -349,6 +361,10 @@ export interface CrossConnectArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+     */
+    interfaceName?: pulumi.Input<string>;
+    /**
      * (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
      */
     isActive?: pulumi.Input<boolean>;
@@ -364,6 +380,10 @@ export interface CrossConnectArgs {
      * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      */
     nearCrossConnectOrCrossConnectGroupId?: pulumi.Input<string>;
+    /**
+     * The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
+     */
+    ociPhysicalDeviceName?: pulumi.Input<string>;
     /**
      * The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps` 
      *

@@ -71,8 +71,10 @@ type LookupMysqlConfigurationResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Configuration.
 	Id string `pulumi:"id"`
-	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 	InitVariables []GetMysqlConfigurationInitVariable `pulumi:"initVariables"`
+	// The MySQL options defined in the Configuration.
+	Options []GetMysqlConfigurationOption `pulumi:"options"`
 	// The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
 	ParentConfigurationId string `pulumi:"parentConfigurationId"`
 	// The name of the associated Shape.
@@ -87,7 +89,7 @@ type LookupMysqlConfigurationResult struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The Configuration type, DEFAULT or CUSTOM.
 	Type string `pulumi:"type"`
-	// User-defined service variables.
+	// DEPRECATED -- please use the `options` field instead. User-defined service variables.
 	Variables []GetMysqlConfigurationVariable `pulumi:"variables"`
 }
 
@@ -159,9 +161,14 @@ func (o LookupMysqlConfigurationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 func (o LookupMysqlConfigurationResultOutput) InitVariables() GetMysqlConfigurationInitVariableArrayOutput {
 	return o.ApplyT(func(v LookupMysqlConfigurationResult) []GetMysqlConfigurationInitVariable { return v.InitVariables }).(GetMysqlConfigurationInitVariableArrayOutput)
+}
+
+// The MySQL options defined in the Configuration.
+func (o LookupMysqlConfigurationResultOutput) Options() GetMysqlConfigurationOptionArrayOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) []GetMysqlConfigurationOption { return v.Options }).(GetMysqlConfigurationOptionArrayOutput)
 }
 
 // The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
@@ -199,7 +206,7 @@ func (o LookupMysqlConfigurationResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// User-defined service variables.
+// DEPRECATED -- please use the `options` field instead. User-defined service variables.
 func (o LookupMysqlConfigurationResultOutput) Variables() GetMysqlConfigurationVariableArrayOutput {
 	return o.ApplyT(func(v LookupMysqlConfigurationResult) []GetMysqlConfigurationVariable { return v.Variables }).(GetMysqlConfigurationVariableArrayOutput)
 }

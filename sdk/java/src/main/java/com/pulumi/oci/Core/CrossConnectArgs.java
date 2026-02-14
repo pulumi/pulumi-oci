@@ -125,6 +125,21 @@ public final class CrossConnectArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+     * 
+     */
+    @Import(name="interfaceName")
+    private @Nullable Output<String> interfaceName;
+
+    /**
+     * @return The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+     * 
+     */
+    public Optional<Output<String>> interfaceName() {
+        return Optional.ofNullable(this.interfaceName);
+    }
+
+    /**
      * (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you&#39;ve confirmed the cross-connect&#39;s light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
      * 
      */
@@ -185,6 +200,21 @@ public final class CrossConnectArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
+     * 
+     */
+    @Import(name="ociPhysicalDeviceName")
+    private @Nullable Output<String> ociPhysicalDeviceName;
+
+    /**
+     * @return The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
+     * 
+     */
+    public Optional<Output<String>> ociPhysicalDeviceName() {
+        return Optional.ofNullable(this.ociPhysicalDeviceName);
+    }
+
+    /**
      * The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps`
      * 
      * ** IMPORTANT **
@@ -215,10 +245,12 @@ public final class CrossConnectArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.farCrossConnectOrCrossConnectGroupId = $.farCrossConnectOrCrossConnectGroupId;
         this.freeformTags = $.freeformTags;
+        this.interfaceName = $.interfaceName;
         this.isActive = $.isActive;
         this.locationName = $.locationName;
         this.macsecProperties = $.macsecProperties;
         this.nearCrossConnectOrCrossConnectGroupId = $.nearCrossConnectOrCrossConnectGroupId;
+        this.ociPhysicalDeviceName = $.ociPhysicalDeviceName;
         this.portSpeedShapeName = $.portSpeedShapeName;
     }
 
@@ -388,6 +420,27 @@ public final class CrossConnectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param interfaceName The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder interfaceName(@Nullable Output<String> interfaceName) {
+            $.interfaceName = interfaceName;
+            return this;
+        }
+
+        /**
+         * @param interfaceName The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder interfaceName(String interfaceName) {
+            return interfaceName(Output.of(interfaceName));
+        }
+
+        /**
          * @param isActive (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you&#39;ve confirmed the cross-connect&#39;s light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
          * 
          * @return builder
@@ -469,6 +522,27 @@ public final class CrossConnectArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder nearCrossConnectOrCrossConnectGroupId(String nearCrossConnectOrCrossConnectGroupId) {
             return nearCrossConnectOrCrossConnectGroupId(Output.of(nearCrossConnectOrCrossConnectGroupId));
+        }
+
+        /**
+         * @param ociPhysicalDeviceName The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ociPhysicalDeviceName(@Nullable Output<String> ociPhysicalDeviceName) {
+            $.ociPhysicalDeviceName = ociPhysicalDeviceName;
+            return this;
+        }
+
+        /**
+         * @param ociPhysicalDeviceName The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ociPhysicalDeviceName(String ociPhysicalDeviceName) {
+            return ociPhysicalDeviceName(Output.of(ociPhysicalDeviceName));
         }
 
         /**

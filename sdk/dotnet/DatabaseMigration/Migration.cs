@@ -35,8 +35,6 @@ namespace Pulumi.Oci.DatabaseMigration
     ///     {
     ///         CompartmentId = compartmentId,
     ///         DatabaseCombination = migrationDatabaseCombination,
-    ///         SourceDatabaseConnectionId = testConnection.Id,
-    ///         TargetDatabaseConnectionId = testConnection.Id,
     ///         Type = migrationType,
     ///         AdvancedParameters = new[]
     ///         {
@@ -52,6 +50,7 @@ namespace Pulumi.Oci.DatabaseMigration
     ///             IsIgnoreErrors = migrationAdvisorSettingsIsIgnoreErrors,
     ///             IsSkipAdvisor = migrationAdvisorSettingsIsSkipAdvisor,
     ///         },
+    ///         AssessmentId = testAssessment.Id,
     ///         BulkIncludeExcludeData = migrationBulkIncludeExcludeData,
     ///         DataTransferMediumDetails = new Oci.DatabaseMigration.Inputs.MigrationDataTransferMediumDetailsArgs
     ///         {
@@ -191,7 +190,9 @@ namespace Pulumi.Oci.DatabaseMigration
     ///             },
     ///         },
     ///         SourceContainerDatabaseConnectionId = testConnection.Id,
+    ///         SourceDatabaseConnectionId = testConnection.Id,
     ///         SourceStandbyDatabaseConnectionId = testConnection.Id,
+    ///         TargetDatabaseConnectionId = testConnection.Id,
     ///     });
     /// 
     /// });
@@ -219,6 +220,12 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Output("advisorSettings")]
         public Output<Outputs.MigrationAdvisorSettings> AdvisorSettings { get; private set; } = null!;
+
+        /// <summary>
+        /// The OCID of the resource being referenced.
+        /// </summary>
+        [Output("assessmentId")]
+        public Output<string> AssessmentId { get; private set; } = null!;
 
         /// <summary>
         /// Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
@@ -365,7 +372,7 @@ namespace Pulumi.Oci.DatabaseMigration
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+        /// (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -443,6 +450,12 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Input("advisorSettings")]
         public Input<Inputs.MigrationAdvisorSettingsArgs>? AdvisorSettings { get; set; }
+
+        /// <summary>
+        /// The OCID of the resource being referenced.
+        /// </summary>
+        [Input("assessmentId")]
+        public Input<string>? AssessmentId { get; set; }
 
         /// <summary>
         /// Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
@@ -555,8 +568,8 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// (Updatable) The OCID of the resource being referenced.
         /// </summary>
-        [Input("sourceDatabaseConnectionId", required: true)]
-        public Input<string> SourceDatabaseConnectionId { get; set; } = null!;
+        [Input("sourceDatabaseConnectionId")]
+        public Input<string>? SourceDatabaseConnectionId { get; set; }
 
         /// <summary>
         /// (Updatable) The OCID of the resource being referenced.
@@ -567,11 +580,11 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// (Updatable) The OCID of the resource being referenced.
         /// </summary>
-        [Input("targetDatabaseConnectionId", required: true)]
-        public Input<string> TargetDatabaseConnectionId { get; set; } = null!;
+        [Input("targetDatabaseConnectionId")]
+        public Input<string>? TargetDatabaseConnectionId { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+        /// (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -605,6 +618,12 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Input("advisorSettings")]
         public Input<Inputs.MigrationAdvisorSettingsGetArgs>? AdvisorSettings { get; set; }
+
+        /// <summary>
+        /// The OCID of the resource being referenced.
+        /// </summary>
+        [Input("assessmentId")]
+        public Input<string>? AssessmentId { get; set; }
 
         /// <summary>
         /// Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
@@ -781,7 +800,7 @@ namespace Pulumi.Oci.DatabaseMigration
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+        /// (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication. 
         /// 
         /// 
         /// ** IMPORTANT **

@@ -6,6 +6,7 @@ package com.pulumi.oci.Mysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlConfigurationsConfigurationInitVariable;
+import com.pulumi.oci.Mysql.outputs.GetMysqlConfigurationsConfigurationOption;
 import com.pulumi.oci.Mysql.outputs.GetMysqlConfigurationsConfigurationVariable;
 import java.lang.String;
 import java.util.List;
@@ -45,10 +46,15 @@ public final class GetMysqlConfigurationsConfiguration {
      */
     private String id;
     /**
-     * @return User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+     * @return DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      * 
      */
     private List<GetMysqlConfigurationsConfigurationInitVariable> initVariables;
+    /**
+     * @return The MySQL options defined in the Configuration.
+     * 
+     */
+    private List<GetMysqlConfigurationsConfigurationOption> options;
     /**
      * @return The OCID of the Configuration from which this Configuration is &#34;derived&#34;. This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
      * 
@@ -85,7 +91,7 @@ public final class GetMysqlConfigurationsConfiguration {
      */
     private String type;
     /**
-     * @return User-defined service variables.
+     * @return DEPRECATED -- please use the `options` field instead. User-defined service variables.
      * 
      */
     private List<GetMysqlConfigurationsConfigurationVariable> variables;
@@ -134,11 +140,18 @@ public final class GetMysqlConfigurationsConfiguration {
         return this.id;
     }
     /**
-     * @return User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+     * @return DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      * 
      */
     public List<GetMysqlConfigurationsConfigurationInitVariable> initVariables() {
         return this.initVariables;
+    }
+    /**
+     * @return The MySQL options defined in the Configuration.
+     * 
+     */
+    public List<GetMysqlConfigurationsConfigurationOption> options() {
+        return this.options;
     }
     /**
      * @return The OCID of the Configuration from which this Configuration is &#34;derived&#34;. This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
@@ -190,7 +203,7 @@ public final class GetMysqlConfigurationsConfiguration {
         return this.type;
     }
     /**
-     * @return User-defined service variables.
+     * @return DEPRECATED -- please use the `options` field instead. User-defined service variables.
      * 
      */
     public List<GetMysqlConfigurationsConfigurationVariable> variables() {
@@ -213,6 +226,7 @@ public final class GetMysqlConfigurationsConfiguration {
         private Map<String,String> freeformTags;
         private String id;
         private List<GetMysqlConfigurationsConfigurationInitVariable> initVariables;
+        private List<GetMysqlConfigurationsConfigurationOption> options;
         private String parentConfigurationId;
         private String shapeName;
         private String state;
@@ -231,6 +245,7 @@ public final class GetMysqlConfigurationsConfiguration {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.initVariables = defaults.initVariables;
+    	      this.options = defaults.options;
     	      this.parentConfigurationId = defaults.parentConfigurationId;
     	      this.shapeName = defaults.shapeName;
     	      this.state = defaults.state;
@@ -299,6 +314,17 @@ public final class GetMysqlConfigurationsConfiguration {
         }
         public Builder initVariables(GetMysqlConfigurationsConfigurationInitVariable... initVariables) {
             return initVariables(List.of(initVariables));
+        }
+        @CustomType.Setter
+        public Builder options(List<GetMysqlConfigurationsConfigurationOption> options) {
+            if (options == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfiguration", "options");
+            }
+            this.options = options;
+            return this;
+        }
+        public Builder options(GetMysqlConfigurationsConfigurationOption... options) {
+            return options(List.of(options));
         }
         @CustomType.Setter
         public Builder parentConfigurationId(String parentConfigurationId) {
@@ -376,6 +402,7 @@ public final class GetMysqlConfigurationsConfiguration {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.initVariables = initVariables;
+            _resultValue.options = options;
             _resultValue.parentConfigurationId = parentConfigurationId;
             _resultValue.shapeName = shapeName;
             _resultValue.state = state;

@@ -18,9 +18,17 @@ public final class GetMysqlConfigurationsFilterArgs extends com.pulumi.resources
 
     public static final GetMysqlConfigurationsFilterArgs Empty = new GetMysqlConfigurationsFilterArgs();
 
+    /**
+     * The option name.
+     * 
+     */
     @Import(name="name", required=true)
     private Output<String> name;
 
+    /**
+     * @return The option name.
+     * 
+     */
     public Output<String> name() {
         return this.name;
     }
@@ -65,11 +73,23 @@ public final class GetMysqlConfigurationsFilterArgs extends com.pulumi.resources
             $ = new GetMysqlConfigurationsFilterArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name The option name.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param name The option name.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             return name(Output.of(name));
         }

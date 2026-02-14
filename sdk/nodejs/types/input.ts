@@ -78,6 +78,18 @@ export namespace Adm {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetVulnerabilityAuditVulnerabilityFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetVulnerabilityAuditVulnerabilityFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetVulnerabilityAuditsFilter {
         name: string;
         regex?: boolean;
@@ -327,6 +339,14 @@ export namespace Adm {
          */
         isIgnored?: pulumi.Input<boolean>;
         /**
+         * List of artifact version ranges affected by a particular vulnerability.
+         */
+        matchingVulnerableArtifactVersionRanges?: pulumi.Input<pulumi.Input<inputs.Adm.VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange>[]>;
+        /**
+         * List of reported metrics by the source.
+         */
+        metrics?: pulumi.Input<pulumi.Input<inputs.Adm.VulnerabilityAuditVulnerabilityMetric>[]>;
+        /**
          * ADM qualitative severity score. Can be either NONE, LOW, MEDIUM, HIGH or CRITICAL.
          */
         severity?: pulumi.Input<string>;
@@ -334,6 +354,44 @@ export namespace Adm {
          * vulnerability audit source.
          */
         source?: pulumi.Input<string>;
+    }
+
+    export interface VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange {
+        /**
+         * The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+         */
+        versionEndExcluding?: pulumi.Input<string>;
+        /**
+         * Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+         */
+        versionEndIncluding?: pulumi.Input<string>;
+        /**
+         * The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+         */
+        versionStartExcluding?: pulumi.Input<string>;
+        /**
+         * The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+         */
+        versionStartIncluding?: pulumi.Input<string>;
+    }
+
+    export interface VulnerabilityAuditVulnerabilityMetric {
+        /**
+         * Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+         */
+        score?: pulumi.Input<number>;
+        /**
+         * vulnerability audit source.
+         */
+        source?: pulumi.Input<string>;
+        /**
+         * Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+         */
+        value?: pulumi.Input<string>;
     }
 }
 
@@ -13544,6 +13602,15 @@ export namespace Core {
     }
 
     export interface ComputeCapacityReportShapeAvailabilityInstanceShapeConfig {
+        /**
+         * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         *
+         * The following values are supported:
+         * * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+         * * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+         * * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         */
+        baselineOcpuUtilization?: pulumi.Input<string>;
         /**
          * The total amount of memory available to the instance, in gigabytes.
          */
@@ -39119,6 +39186,101 @@ export namespace DatabaseManagement {
 }
 
 export namespace DatabaseMigration {
+    export interface AssessmentAssessorActionItem {
+        /**
+         * The property name.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * The property value.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface AssessmentExcludeObject {
+        /**
+         * Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+         */
+        isOmitExcludedTableFromReplication?: pulumi.Input<boolean>;
+        /**
+         * Name of the object (regular expression is allowed)
+         */
+        object: pulumi.Input<string>;
+        /**
+         * Owner of the object (regular expression is allowed)
+         */
+        owner?: pulumi.Input<string>;
+        /**
+         * Schema of the object (regular expression is allowed)
+         */
+        schema?: pulumi.Input<string>;
+        /**
+         * Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface AssessmentIncludeObject {
+        /**
+         * Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+         */
+        isOmitExcludedTableFromReplication?: pulumi.Input<boolean>;
+        /**
+         * Name of the object (regular expression is allowed)
+         */
+        object: pulumi.Input<string>;
+        /**
+         * Owner of the object (regular expression is allowed)
+         */
+        owner?: pulumi.Input<string>;
+        /**
+         * Schema of the object (regular expression is allowed)
+         */
+        schema?: pulumi.Input<string>;
+        /**
+         * Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface AssessmentSourceDatabaseConnection {
+        /**
+         * (Updatable) The OCID of the resource being referenced.
+         */
+        id: pulumi.Input<string>;
+    }
+
+    export interface AssessmentTargetDatabaseConnection {
+        /**
+         * (Updatable) Defines the type of connection. For example, ORACLE.
+         */
+        connectionType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The database version
+         */
+        databaseVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the resource being referenced.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * (Updatable) Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
+         */
+        technologySubType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The technology type.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        technologyType?: pulumi.Input<string>;
+    }
+
     export interface ConnectionAdditionalAttribute {
         /**
          * (Updatable) The name of the property entry.
@@ -39137,6 +39299,96 @@ export namespace DatabaseMigration {
         ingressIp?: pulumi.Input<string>;
     }
 
+    export interface GetAssessmentAssessorCheckAffectedObjectsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAssessmentAssessorCheckAffectedObjectsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAssessmentAssessorChecksFilter {
+        /**
+         * The Name of the Check.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAssessmentAssessorChecksFilterArgs {
+        /**
+         * The Name of the Check.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAssessmentAssessorsFilter {
+        /**
+         * The Assessor Name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAssessmentAssessorsFilterArgs {
+        /**
+         * The Assessor Name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAssessmentObjectTypesFilter {
+        /**
+         * Object type name
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAssessmentObjectTypesFilterArgs {
+        /**
+         * Object type name
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAssessmentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAssessmentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetConnectionDatabaseconnectiontypesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetConnectionDatabaseconnectiontypesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetConnectionsFilter {
         /**
          * The name of the property entry.
@@ -39150,6 +39402,30 @@ export namespace DatabaseMigration {
         /**
          * The name of the property entry.
          */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetJobAdvisorReportCheckObjectsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetJobAdvisorReportCheckObjectsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetJobAdvisorReportChecksFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetJobAdvisorReportChecksFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -39171,6 +39447,110 @@ export namespace DatabaseMigration {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface JobAdvisorReportCheckItem {
+        /**
+         * Fixing the issue.
+         */
+        action?: pulumi.Input<string>;
+        /**
+         * Array of the column of the objects table.
+         */
+        columns?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobAdvisorReportCheckItemColumn>[]>;
+        /**
+         * Pre-Migration сheck display name.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The path to the fixup script for this check.
+         */
+        fixupScriptLocation?: pulumi.Input<string>;
+        /**
+         * Impact of the issue on data migration.
+         */
+        impact?: pulumi.Input<string>;
+        /**
+         * If false, objects cannot be excluded from migration.
+         */
+        isExclusionAllowed?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) User flag for advisor report check.
+         */
+        isReviewed?: pulumi.Input<boolean>;
+        /**
+         * Description of the issue.
+         */
+        issue?: pulumi.Input<string>;
+        /**
+         * Pre-Migration сheck id.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Metadata of object.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobAdvisorReportCheckItemMetadata>[]>;
+        /**
+         * Number of database objects to migrate.
+         */
+        objectCount?: pulumi.Input<number>;
+        /**
+         * Pre-Migration advisor result.
+         */
+        resultType?: pulumi.Input<string>;
+    }
+
+    export interface JobAdvisorReportCheckItemColumn {
+        /**
+         * Pre-Migration сheck display name.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * Pre-Migration сheck id.
+         */
+        key?: pulumi.Input<string>;
+    }
+
+    export interface JobAdvisorReportCheckItemMetadata {
+        /**
+         * The field that stores the name of the object.
+         */
+        objectNameColumn?: pulumi.Input<string>;
+        /**
+         * The field that stores the type of the object.
+         */
+        objectTypeColumn?: pulumi.Input<string>;
+        /**
+         * The field that stores the fixed type of the object.
+         */
+        objectTypeFixed?: pulumi.Input<string>;
+        /**
+         * The field that stores the owner of the object.
+         */
+        schemaOwnerColumn?: pulumi.Input<string>;
+    }
+
+    export interface JobAdvisorReportCheckSummary {
+        /**
+         * Number of BLOCKER results in the extended advisor report.
+         */
+        blockerResultsTotalCount?: pulumi.Input<number>;
+        /**
+         * Number of FATAL results in the extended advisor report.
+         */
+        fatalResultsTotalCount?: pulumi.Input<number>;
+        /**
+         * Number of INFORMATIONAL results in the extended advisor report.
+         */
+        informationalResultsTotalCount?: pulumi.Input<number>;
+        /**
+         * Number of PASS results in the extended advisor report.
+         */
+        passResultsTotalCount?: pulumi.Input<number>;
+        /**
+         * Number of WARNING results in the extended advisor report.
+         */
+        warningResultsTotalCount?: pulumi.Input<number>;
     }
 
     export interface JobCollectTracesData {
@@ -39263,6 +39643,10 @@ export namespace DatabaseMigration {
          * Summary of phase status results.
          */
         extracts?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobProgressPhaseExtract>[]>;
+        /**
+         * Job Phase group display name e.g. 'Step 1: Migration'
+         */
+        groupDisplayName?: pulumi.Input<string>;
         /**
          * True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
          */
@@ -46977,7 +47361,7 @@ export namespace FleetSoftwareUpdate {
          */
         strategy: pulumi.Input<string>;
         /**
-         * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+         * OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
          */
         targets?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -47050,7 +47434,7 @@ export namespace FleetSoftwareUpdate {
          */
         strategy: pulumi.Input<string>;
         /**
-         * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+         * OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
          */
         targets?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -83940,12 +84324,18 @@ export namespace Mysql {
     }
 
     export interface GetMysqlConfigurationsFilter {
+        /**
+         * The option name.
+         */
         name: string;
         regex?: boolean;
         values: string[];
     }
 
     export interface GetMysqlConfigurationsFilterArgs {
+        /**
+         * The option name.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -84485,6 +84875,17 @@ export namespace Mysql {
         lowerCaseTableNames?: pulumi.Input<string>;
     }
 
+    export interface MysqlConfigurationOption {
+        /**
+         * The option name.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * The option value.
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface MysqlConfigurationVariables {
         /**
          * auto_increment_increment and autoIncrementOffset are intended for use with circular (source-to-source) replication, and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values, and each can assume an integer value between 1 and 65,535 inclusive.
@@ -85004,14 +85405,14 @@ export namespace Mysql {
         queryAllocBlockSize?: pulumi.Input<string>;
         /**
          * ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
          */
         queryPreallocSize?: pulumi.Input<string>;
         /**
          * The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans. 
          *
          * rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [rangeOptimizerMaxMemSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
-         *
-         * @deprecated The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
          */
         rangeOptimizerMaxMemSize?: pulumi.Input<string>;
         /**

@@ -16,6 +16,10 @@ import java.util.Objects;
 @CustomType
 public final class GetModelsModelCollectionItem {
     private String baseModelId;
+    /**
+     * @return Describes what this model can be used for.
+     * 
+     */
     private List<String> capabilities;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -72,6 +76,10 @@ public final class GetModelsModelCollectionItem {
     public String baseModelId() {
         return this.baseModelId;
     }
+    /**
+     * @return Describes what this model can be used for.
+     * 
+     */
     public List<String> capabilities() {
         return this.capabilities;
     }

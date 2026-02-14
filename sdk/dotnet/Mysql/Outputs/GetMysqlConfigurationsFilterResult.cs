@@ -13,6 +13,9 @@ namespace Pulumi.Oci.Mysql.Outputs
     [OutputType]
     public sealed class GetMysqlConfigurationsFilterResult
     {
+        /// <summary>
+        /// The option name.
+        /// </summary>
         public readonly string Name;
         public readonly bool? Regex;
         public readonly ImmutableArray<string> Values;

@@ -3807,6 +3807,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DatabaseMigration/assessment",
+  "fqn": "pulumi_oci.databasemigration",
+  "classes": {
+   "oci:DatabaseMigration/assessment:Assessment": "Assessment"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseMigration/assessmentAssessorAction",
+  "fqn": "pulumi_oci.databasemigration",
+  "classes": {
+   "oci:DatabaseMigration/assessmentAssessorAction:AssessmentAssessorAction": "AssessmentAssessorAction"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DatabaseMigration/connection",
   "fqn": "pulumi_oci.databasemigration",
   "classes": {
@@ -3819,6 +3835,14 @@ _utilities.register(
   "fqn": "pulumi_oci.databasemigration",
   "classes": {
    "oci:DatabaseMigration/job:Job": "Job"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseMigration/jobAdvisorReportCheck",
+  "fqn": "pulumi_oci.databasemigration",
+  "classes": {
+   "oci:DatabaseMigration/jobAdvisorReportCheck:JobAdvisorReportCheck": "JobAdvisorReportCheck"
   }
  },
  {

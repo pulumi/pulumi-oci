@@ -21,10 +21,16 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:DatabaseMigration/assessment:Assessment":
+		r = &Assessment{}
+	case "oci:DatabaseMigration/assessmentAssessorAction:AssessmentAssessorAction":
+		r = &AssessmentAssessorAction{}
 	case "oci:DatabaseMigration/connection:Connection":
 		r = &Connection{}
 	case "oci:DatabaseMigration/job:Job":
 		r = &Job{}
+	case "oci:DatabaseMigration/jobAdvisorReportCheck:JobAdvisorReportCheck":
+		r = &JobAdvisorReportCheck{}
 	case "oci:DatabaseMigration/migration:Migration":
 		r = &Migration{}
 	default:
@@ -42,12 +48,27 @@ func init() {
 	}
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DatabaseMigration/assessment",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseMigration/assessmentAssessorAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DatabaseMigration/connection",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DatabaseMigration/job",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseMigration/jobAdvisorReportCheck",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -51,6 +51,9 @@ class GetGenerativeAiPrivateEndpointsResult:
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
+        """
+        The OCID of the compartment that contains the private endpoint.
+        """
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property

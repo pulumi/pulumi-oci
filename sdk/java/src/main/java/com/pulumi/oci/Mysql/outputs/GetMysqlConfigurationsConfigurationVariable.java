@@ -505,16 +505,16 @@ public final class GetMysqlConfigurationsConfigurationVariable {
     /**
      * @return (&#34;queryPreallocSize&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     */
-    private String queryPreallocSize;
-    /**
-     * @return The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
-     * 
      * @deprecated
      * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
     @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
+    private String queryPreallocSize;
+    /**
+     * @return The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
+     * 
+     */
     private String rangeOptimizerMaxMemSize;
     /**
      * @return regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
@@ -1315,18 +1315,18 @@ public final class GetMysqlConfigurationsConfigurationVariable {
     /**
      * @return (&#34;queryPreallocSize&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
+     * @deprecated
+     * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * 
      */
+    @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
     public String queryPreallocSize() {
         return this.queryPreallocSize;
     }
     /**
      * @return The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
      * 
-     * @deprecated
-     * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
-     * 
      */
-    @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
     public String rangeOptimizerMaxMemSize() {
         return this.rangeOptimizerMaxMemSize;
     }

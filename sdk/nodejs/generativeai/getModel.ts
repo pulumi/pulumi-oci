@@ -44,6 +44,9 @@ export interface GetModelArgs {
  */
 export interface GetModelResult {
     readonly baseModelId: string;
+    /**
+     * Describes what this model can be used for.
+     */
     readonly capabilities: string[];
     readonly compartmentId: string;
     readonly definedTags: {[key: string]: string};

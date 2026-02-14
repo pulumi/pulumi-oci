@@ -47,6 +47,7 @@ public final class GetConnectionsResult {
      * 
      */
     private @Nullable String state;
+    private @Nullable String technologySubType;
     /**
      * @return The type of MySQL source or target connection. Example: OCI_MYSQL represents Oracle Cloud Infrastructure MySQL HeatWave Database Service
      * 
@@ -102,6 +103,9 @@ public final class GetConnectionsResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    public Optional<String> technologySubType() {
+        return Optional.ofNullable(this.technologySubType);
+    }
     /**
      * @return The type of MySQL source or target connection. Example: OCI_MYSQL represents Oracle Cloud Infrastructure MySQL HeatWave Database Service
      * 
@@ -127,6 +131,7 @@ public final class GetConnectionsResult {
         private String id;
         private @Nullable String sourceConnectionId;
         private @Nullable String state;
+        private @Nullable String technologySubType;
         private @Nullable List<String> technologyTypes;
         public Builder() {}
         public Builder(GetConnectionsResult defaults) {
@@ -139,6 +144,7 @@ public final class GetConnectionsResult {
     	      this.id = defaults.id;
     	      this.sourceConnectionId = defaults.sourceConnectionId;
     	      this.state = defaults.state;
+    	      this.technologySubType = defaults.technologySubType;
     	      this.technologyTypes = defaults.technologyTypes;
         }
 
@@ -206,6 +212,12 @@ public final class GetConnectionsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder technologySubType(@Nullable String technologySubType) {
+
+            this.technologySubType = technologySubType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder technologyTypes(@Nullable List<String> technologyTypes) {
 
             this.technologyTypes = technologyTypes;
@@ -224,6 +236,7 @@ public final class GetConnectionsResult {
             _resultValue.id = id;
             _resultValue.sourceConnectionId = sourceConnectionId;
             _resultValue.state = state;
+            _resultValue.technologySubType = technologySubType;
             _resultValue.technologyTypes = technologyTypes;
             return _resultValue;
         }

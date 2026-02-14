@@ -35,6 +35,7 @@ namespace Pulumi.Oci.DatabaseMigration
         ///         DisplayName = connectionDisplayName,
         ///         SourceConnectionId = testConnection.Id,
         ///         State = connectionState,
+        ///         TechnologySubType = connectionTechnologySubType,
         ///         TechnologyTypes = connectionTechnologyType,
         ///     });
         /// 
@@ -68,6 +69,7 @@ namespace Pulumi.Oci.DatabaseMigration
         ///         DisplayName = connectionDisplayName,
         ///         SourceConnectionId = testConnection.Id,
         ///         State = connectionState,
+        ///         TechnologySubType = connectionTechnologySubType,
         ///         TechnologyTypes = connectionTechnologyType,
         ///     });
         /// 
@@ -101,6 +103,7 @@ namespace Pulumi.Oci.DatabaseMigration
         ///         DisplayName = connectionDisplayName,
         ///         SourceConnectionId = testConnection.Id,
         ///         State = connectionState,
+        ///         TechnologySubType = connectionTechnologySubType,
         ///         TechnologyTypes = connectionTechnologyType,
         ///     });
         /// 
@@ -157,6 +160,12 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
+
+        /// <summary>
+        /// The database technology sub-type.
+        /// </summary>
+        [Input("technologySubType")]
+        public string? TechnologySubType { get; set; }
 
         [Input("technologyTypes")]
         private List<string>? _technologyTypes;
@@ -222,6 +231,12 @@ namespace Pulumi.Oci.DatabaseMigration
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// The database technology sub-type.
+        /// </summary>
+        [Input("technologySubType")]
+        public Input<string>? TechnologySubType { get; set; }
+
         [Input("technologyTypes")]
         private InputList<string>? _technologyTypes;
 
@@ -270,6 +285,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// The Connection's current lifecycle state.
         /// </summary>
         public readonly string? State;
+        public readonly string? TechnologySubType;
         /// <summary>
         /// The type of MySQL source or target connection. Example: OCI_MYSQL represents Oracle Cloud Infrastructure MySQL HeatWave Database Service
         /// </summary>
@@ -293,6 +309,8 @@ namespace Pulumi.Oci.DatabaseMigration
 
             string? state,
 
+            string? technologySubType,
+
             ImmutableArray<string> technologyTypes)
         {
             CompartmentId = compartmentId;
@@ -303,6 +321,7 @@ namespace Pulumi.Oci.DatabaseMigration
             Id = id;
             SourceConnectionId = sourceConnectionId;
             State = state;
+            TechnologySubType = technologySubType;
             TechnologyTypes = technologyTypes;
         }
     }

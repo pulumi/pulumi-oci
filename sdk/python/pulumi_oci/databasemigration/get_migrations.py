@@ -27,13 +27,16 @@ class GetMigrationsResult:
     """
     A collection of values returned by getMigrations.
     """
-    def __init__(__self__, advanced_parameters=None, advisor_settings=None, bulk_include_exclude_data=None, compartment_id=None, data_transfer_medium_details=None, database_combination=None, defined_tags=None, description=None, display_name=None, exclude_objects=None, executing_job_id=None, freeform_tags=None, ggs_details=None, hub_details=None, id=None, include_objects=None, initial_load_settings=None, lifecycle_details=None, migration_id=None, source_container_database_connection_id=None, source_database_connection_id=None, source_standby_database_connection_id=None, state=None, system_tags=None, target_database_connection_id=None, time_created=None, time_last_migration=None, time_updated=None, type=None, wait_after=None):
+    def __init__(__self__, advanced_parameters=None, advisor_settings=None, assessment_id=None, bulk_include_exclude_data=None, compartment_id=None, data_transfer_medium_details=None, database_combination=None, defined_tags=None, description=None, display_name=None, exclude_objects=None, executing_job_id=None, freeform_tags=None, ggs_details=None, hub_details=None, id=None, include_objects=None, initial_load_settings=None, lifecycle_details=None, migration_id=None, source_container_database_connection_id=None, source_database_connection_id=None, source_standby_database_connection_id=None, state=None, system_tags=None, target_database_connection_id=None, time_created=None, time_last_migration=None, time_updated=None, type=None, wait_after=None):
         if advanced_parameters and not isinstance(advanced_parameters, list):
             raise TypeError("Expected argument 'advanced_parameters' to be a list")
         pulumi.set(__self__, "advanced_parameters", advanced_parameters)
         if advisor_settings and not isinstance(advisor_settings, list):
             raise TypeError("Expected argument 'advisor_settings' to be a list")
         pulumi.set(__self__, "advisor_settings", advisor_settings)
+        if assessment_id and not isinstance(assessment_id, str):
+            raise TypeError("Expected argument 'assessment_id' to be a str")
+        pulumi.set(__self__, "assessment_id", assessment_id)
         if bulk_include_exclude_data and not isinstance(bulk_include_exclude_data, str):
             raise TypeError("Expected argument 'bulk_include_exclude_data' to be a str")
         pulumi.set(__self__, "bulk_include_exclude_data", bulk_include_exclude_data)
@@ -134,6 +137,14 @@ class GetMigrationsResult:
         Details about Oracle Advisor Settings.
         """
         return pulumi.get(self, "advisor_settings")
+
+    @_builtins.property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> _builtins.str:
+        """
+        The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "assessment_id")
 
     @_builtins.property
     @pulumi.getter(name="bulkIncludeExcludeData")
@@ -356,6 +367,7 @@ class AwaitableGetMigrationsResult(GetMigrationsResult):
         return GetMigrationsResult(
             advanced_parameters=self.advanced_parameters,
             advisor_settings=self.advisor_settings,
+            assessment_id=self.assessment_id,
             bulk_include_exclude_data=self.bulk_include_exclude_data,
             compartment_id=self.compartment_id,
             data_transfer_medium_details=self.data_transfer_medium_details,
@@ -405,6 +417,7 @@ def get_migrations(migration_id: Optional[_builtins.str] = None,
     return AwaitableGetMigrationsResult(
         advanced_parameters=pulumi.get(__ret__, 'advanced_parameters'),
         advisor_settings=pulumi.get(__ret__, 'advisor_settings'),
+        assessment_id=pulumi.get(__ret__, 'assessment_id'),
         bulk_include_exclude_data=pulumi.get(__ret__, 'bulk_include_exclude_data'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         data_transfer_medium_details=pulumi.get(__ret__, 'data_transfer_medium_details'),
@@ -451,6 +464,7 @@ def get_migrations_output(migration_id: Optional[pulumi.Input[_builtins.str]] = 
     return __ret__.apply(lambda __response__: GetMigrationsResult(
         advanced_parameters=pulumi.get(__response__, 'advanced_parameters'),
         advisor_settings=pulumi.get(__response__, 'advisor_settings'),
+        assessment_id=pulumi.get(__response__, 'assessment_id'),
         bulk_include_exclude_data=pulumi.get(__response__, 'bulk_include_exclude_data'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         data_transfer_medium_details=pulumi.get(__response__, 'data_transfer_medium_details'),

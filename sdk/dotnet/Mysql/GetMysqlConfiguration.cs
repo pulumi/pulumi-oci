@@ -152,9 +152,13 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        /// DEPRECATED -- please use the `Options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMysqlConfigurationInitVariableResult> InitVariables;
+        /// <summary>
+        /// The MySQL options defined in the Configuration.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlConfigurationOptionResult> Options;
         /// <summary>
         /// The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
         /// </summary>
@@ -184,7 +188,7 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// User-defined service variables.
+        /// DEPRECATED -- please use the `Options` field instead. User-defined service variables.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMysqlConfigurationVariableResult> Variables;
 
@@ -205,6 +209,8 @@ namespace Pulumi.Oci.Mysql
             string id,
 
             ImmutableArray<Outputs.GetMysqlConfigurationInitVariableResult> initVariables,
+
+            ImmutableArray<Outputs.GetMysqlConfigurationOptionResult> options,
 
             string parentConfigurationId,
 
@@ -230,6 +236,7 @@ namespace Pulumi.Oci.Mysql
             FreeformTags = freeformTags;
             Id = id;
             InitVariables = initVariables;
+            Options = options;
             ParentConfigurationId = parentConfigurationId;
             ShapeName = shapeName;
             State = state;

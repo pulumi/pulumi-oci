@@ -27,8 +27,6 @@ import * as utilities from "../utilities";
  * const testMigration = new oci.databasemigration.Migration("test_migration", {
  *     compartmentId: compartmentId,
  *     databaseCombination: migrationDatabaseCombination,
- *     sourceDatabaseConnectionId: testConnection.id,
- *     targetDatabaseConnectionId: testConnection.id,
  *     type: migrationType,
  *     advancedParameters: [{
  *         dataType: migrationAdvancedParametersDataType,
@@ -39,6 +37,7 @@ import * as utilities from "../utilities";
  *         isIgnoreErrors: migrationAdvisorSettingsIsIgnoreErrors,
  *         isSkipAdvisor: migrationAdvisorSettingsIsSkipAdvisor,
  *     },
+ *     assessmentId: testAssessment.id,
  *     bulkIncludeExcludeData: migrationBulkIncludeExcludeData,
  *     dataTransferMediumDetails: {
  *         type: migrationDataTransferMediumDetailsType,
@@ -149,7 +148,9 @@ import * as utilities from "../utilities";
  *         },
  *     },
  *     sourceContainerDatabaseConnectionId: testConnection.id,
+ *     sourceDatabaseConnectionId: testConnection.id,
  *     sourceStandbyDatabaseConnectionId: testConnection.id,
+ *     targetDatabaseConnectionId: testConnection.id,
  * });
  * ```
  *
@@ -197,6 +198,10 @@ export class Migration extends pulumi.CustomResource {
      * (Updatable) Optional Pre-Migration advisor settings.
      */
     declare public readonly advisorSettings: pulumi.Output<outputs.DatabaseMigration.MigrationAdvisorSettings>;
+    /**
+     * The OCID of the resource being referenced.
+     */
+    declare public readonly assessmentId: pulumi.Output<string>;
     /**
      * Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
      */
@@ -294,7 +299,7 @@ export class Migration extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
-     * (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+     * (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication. 
      *
      *
      * ** IMPORTANT **
@@ -321,6 +326,7 @@ export class Migration extends pulumi.CustomResource {
             const state = argsOrState as MigrationState | undefined;
             resourceInputs["advancedParameters"] = state?.advancedParameters;
             resourceInputs["advisorSettings"] = state?.advisorSettings;
+            resourceInputs["assessmentId"] = state?.assessmentId;
             resourceInputs["bulkIncludeExcludeData"] = state?.bulkIncludeExcludeData;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["dataTransferMediumDetails"] = state?.dataTransferMediumDetails;
@@ -355,17 +361,12 @@ export class Migration extends pulumi.CustomResource {
             if (args?.databaseCombination === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseCombination'");
             }
-            if (args?.sourceDatabaseConnectionId === undefined && !opts.urn) {
-                throw new Error("Missing required property 'sourceDatabaseConnectionId'");
-            }
-            if (args?.targetDatabaseConnectionId === undefined && !opts.urn) {
-                throw new Error("Missing required property 'targetDatabaseConnectionId'");
-            }
             if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
             resourceInputs["advancedParameters"] = args?.advancedParameters;
             resourceInputs["advisorSettings"] = args?.advisorSettings;
+            resourceInputs["assessmentId"] = args?.assessmentId;
             resourceInputs["bulkIncludeExcludeData"] = args?.bulkIncludeExcludeData;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["dataTransferMediumDetails"] = args?.dataTransferMediumDetails;
@@ -410,6 +411,10 @@ export interface MigrationState {
      * (Updatable) Optional Pre-Migration advisor settings.
      */
     advisorSettings?: pulumi.Input<inputs.DatabaseMigration.MigrationAdvisorSettings>;
+    /**
+     * The OCID of the resource being referenced.
+     */
+    assessmentId?: pulumi.Input<string>;
     /**
      * Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
      */
@@ -507,7 +512,7 @@ export interface MigrationState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+     * (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication. 
      *
      *
      * ** IMPORTANT **
@@ -532,6 +537,10 @@ export interface MigrationArgs {
      * (Updatable) Optional Pre-Migration advisor settings.
      */
     advisorSettings?: pulumi.Input<inputs.DatabaseMigration.MigrationAdvisorSettings>;
+    /**
+     * The OCID of the resource being referenced.
+     */
+    assessmentId?: pulumi.Input<string>;
     /**
      * Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
      */
@@ -591,7 +600,7 @@ export interface MigrationArgs {
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
-    sourceDatabaseConnectionId: pulumi.Input<string>;
+    sourceDatabaseConnectionId?: pulumi.Input<string>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
@@ -599,9 +608,9 @@ export interface MigrationArgs {
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
-    targetDatabaseConnectionId: pulumi.Input<string>;
+    targetDatabaseConnectionId?: pulumi.Input<string>;
     /**
-     * (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+     * (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication. 
      *
      *
      * ** IMPORTANT **

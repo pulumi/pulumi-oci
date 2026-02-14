@@ -83,6 +83,10 @@ namespace Pulumi.Oci.DatabaseMigration
         /// Details about Oracle Advisor Settings.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMigrationsAdvisorSettingResult> AdvisorSettings;
+        /// <summary>
+        /// The OCID of the resource being referenced.
+        /// </summary>
+        public readonly string AssessmentId;
         public readonly string BulkIncludeExcludeData;
         /// <summary>
         /// The OCID of the resource being referenced.
@@ -190,6 +194,8 @@ namespace Pulumi.Oci.DatabaseMigration
 
             ImmutableArray<Outputs.GetMigrationsAdvisorSettingResult> advisorSettings,
 
+            string assessmentId,
+
             string bulkIncludeExcludeData,
 
             string compartmentId,
@@ -248,6 +254,7 @@ namespace Pulumi.Oci.DatabaseMigration
         {
             AdvancedParameters = advancedParameters;
             AdvisorSettings = advisorSettings;
+            AssessmentId = assessmentId;
             BulkIncludeExcludeData = bulkIncludeExcludeData;
             CompartmentId = compartmentId;
             DataTransferMediumDetails = dataTransferMediumDetails;

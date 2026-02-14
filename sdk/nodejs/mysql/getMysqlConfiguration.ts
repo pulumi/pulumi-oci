@@ -69,9 +69,13 @@ export interface GetMysqlConfigurationResult {
      */
     readonly id: string;
     /**
-     * User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+     * DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      */
     readonly initVariables: outputs.Mysql.GetMysqlConfigurationInitVariable[];
+    /**
+     * The MySQL options defined in the Configuration.
+     */
+    readonly options: outputs.Mysql.GetMysqlConfigurationOption[];
     /**
      * The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
      */
@@ -101,7 +105,7 @@ export interface GetMysqlConfigurationResult {
      */
     readonly type: string;
     /**
-     * User-defined service variables.
+     * DEPRECATED -- please use the `options` field instead. User-defined service variables.
      */
     readonly variables: outputs.Mysql.GetMysqlConfigurationVariable[];
 }

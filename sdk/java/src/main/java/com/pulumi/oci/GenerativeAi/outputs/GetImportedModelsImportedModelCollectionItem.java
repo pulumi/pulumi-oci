@@ -27,12 +27,20 @@ public final class GetImportedModelsImportedModelCollectionItem {
      * 
      */
     private String displayName;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
     private Map<String,String> freeformTags;
     /**
      * @return The ID of the importedModel.
      * 
      */
     private String id;
+    /**
+     * @return Additional information about the current state of the imported model, providing more detailed and actionable context.
+     * 
+     */
     private String lifecycleDetails;
     private String previousState;
     /**
@@ -41,6 +49,10 @@ public final class GetImportedModelsImportedModelCollectionItem {
      */
     private String state;
     private Map<String,String> systemTags;
+    /**
+     * @return The date and time that the imported model was created in the format of an RFC3339 datetime string.
+     * 
+     */
     private String timeCreated;
     private String timeUpdated;
     /**
@@ -77,6 +89,10 @@ public final class GetImportedModelsImportedModelCollectionItem {
     public String displayName() {
         return this.displayName;
     }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
     public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
@@ -87,6 +103,10 @@ public final class GetImportedModelsImportedModelCollectionItem {
     public String id() {
         return this.id;
     }
+    /**
+     * @return Additional information about the current state of the imported model, providing more detailed and actionable context.
+     * 
+     */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
@@ -103,6 +123,10 @@ public final class GetImportedModelsImportedModelCollectionItem {
     public Map<String,String> systemTags() {
         return this.systemTags;
     }
+    /**
+     * @return The date and time that the imported model was created in the format of an RFC3339 datetime string.
+     * 
+     */
     public String timeCreated() {
         return this.timeCreated;
     }

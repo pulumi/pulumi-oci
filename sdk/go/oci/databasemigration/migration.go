@@ -38,11 +38,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := databasemigration.NewMigration(ctx, "test_migration", &databasemigration.MigrationArgs{
-//				CompartmentId:              pulumi.Any(compartmentId),
-//				DatabaseCombination:        pulumi.Any(migrationDatabaseCombination),
-//				SourceDatabaseConnectionId: pulumi.Any(testConnection.Id),
-//				TargetDatabaseConnectionId: pulumi.Any(testConnection.Id),
-//				Type:                       pulumi.Any(migrationType),
+//				CompartmentId:       pulumi.Any(compartmentId),
+//				DatabaseCombination: pulumi.Any(migrationDatabaseCombination),
+//				Type:                pulumi.Any(migrationType),
 //				AdvancedParameters: databasemigration.MigrationAdvancedParameterArray{
 //					&databasemigration.MigrationAdvancedParameterArgs{
 //						DataType: pulumi.Any(migrationAdvancedParametersDataType),
@@ -54,6 +52,7 @@ import (
 //					IsIgnoreErrors: pulumi.Any(migrationAdvisorSettingsIsIgnoreErrors),
 //					IsSkipAdvisor:  pulumi.Any(migrationAdvisorSettingsIsSkipAdvisor),
 //				},
+//				AssessmentId:           pulumi.Any(testAssessment.Id),
 //				BulkIncludeExcludeData: pulumi.Any(migrationBulkIncludeExcludeData),
 //				DataTransferMediumDetails: &databasemigration.MigrationDataTransferMediumDetailsArgs{
 //					Type:        pulumi.Any(migrationDataTransferMediumDetailsType),
@@ -170,7 +169,9 @@ import (
 //					},
 //				},
 //				SourceContainerDatabaseConnectionId: pulumi.Any(testConnection.Id),
+//				SourceDatabaseConnectionId:          pulumi.Any(testConnection.Id),
 //				SourceStandbyDatabaseConnectionId:   pulumi.Any(testConnection.Id),
+//				TargetDatabaseConnectionId:          pulumi.Any(testConnection.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -195,6 +196,8 @@ type Migration struct {
 	AdvancedParameters MigrationAdvancedParameterArrayOutput `pulumi:"advancedParameters"`
 	// (Updatable) Optional Pre-Migration advisor settings.
 	AdvisorSettings MigrationAdvisorSettingsOutput `pulumi:"advisorSettings"`
+	// The OCID of the resource being referenced.
+	AssessmentId pulumi.StringOutput `pulumi:"assessmentId"`
 	// Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
 	BulkIncludeExcludeData pulumi.StringOutput `pulumi:"bulkIncludeExcludeData"`
 	// (Updatable) The OCID of the resource being referenced.
@@ -265,12 +268,6 @@ func NewMigration(ctx *pulumi.Context,
 	if args.DatabaseCombination == nil {
 		return nil, errors.New("invalid value for required argument 'DatabaseCombination'")
 	}
-	if args.SourceDatabaseConnectionId == nil {
-		return nil, errors.New("invalid value for required argument 'SourceDatabaseConnectionId'")
-	}
-	if args.TargetDatabaseConnectionId == nil {
-		return nil, errors.New("invalid value for required argument 'TargetDatabaseConnectionId'")
-	}
 	if args.Type == nil {
 		return nil, errors.New("invalid value for required argument 'Type'")
 	}
@@ -301,6 +298,8 @@ type migrationState struct {
 	AdvancedParameters []MigrationAdvancedParameter `pulumi:"advancedParameters"`
 	// (Updatable) Optional Pre-Migration advisor settings.
 	AdvisorSettings *MigrationAdvisorSettings `pulumi:"advisorSettings"`
+	// The OCID of the resource being referenced.
+	AssessmentId *string `pulumi:"assessmentId"`
 	// Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
 	BulkIncludeExcludeData *string `pulumi:"bulkIncludeExcludeData"`
 	// (Updatable) The OCID of the resource being referenced.
@@ -363,6 +362,8 @@ type MigrationState struct {
 	AdvancedParameters MigrationAdvancedParameterArrayInput
 	// (Updatable) Optional Pre-Migration advisor settings.
 	AdvisorSettings MigrationAdvisorSettingsPtrInput
+	// The OCID of the resource being referenced.
+	AssessmentId pulumi.StringPtrInput
 	// Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
 	BulkIncludeExcludeData pulumi.StringPtrInput
 	// (Updatable) The OCID of the resource being referenced.
@@ -429,6 +430,8 @@ type migrationArgs struct {
 	AdvancedParameters []MigrationAdvancedParameter `pulumi:"advancedParameters"`
 	// (Updatable) Optional Pre-Migration advisor settings.
 	AdvisorSettings *MigrationAdvisorSettings `pulumi:"advisorSettings"`
+	// The OCID of the resource being referenced.
+	AssessmentId *string `pulumi:"assessmentId"`
 	// Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
 	BulkIncludeExcludeData *string `pulumi:"bulkIncludeExcludeData"`
 	// (Updatable) The OCID of the resource being referenced.
@@ -458,11 +461,11 @@ type migrationArgs struct {
 	// (Updatable) The OCID of the resource being referenced.
 	SourceContainerDatabaseConnectionId *string `pulumi:"sourceContainerDatabaseConnectionId"`
 	// (Updatable) The OCID of the resource being referenced.
-	SourceDatabaseConnectionId string `pulumi:"sourceDatabaseConnectionId"`
+	SourceDatabaseConnectionId *string `pulumi:"sourceDatabaseConnectionId"`
 	// (Updatable) The OCID of the resource being referenced.
 	SourceStandbyDatabaseConnectionId *string `pulumi:"sourceStandbyDatabaseConnectionId"`
 	// (Updatable) The OCID of the resource being referenced.
-	TargetDatabaseConnectionId string `pulumi:"targetDatabaseConnectionId"`
+	TargetDatabaseConnectionId *string `pulumi:"targetDatabaseConnectionId"`
 	// (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
 	//
 	// ** IMPORTANT **
@@ -476,6 +479,8 @@ type MigrationArgs struct {
 	AdvancedParameters MigrationAdvancedParameterArrayInput
 	// (Updatable) Optional Pre-Migration advisor settings.
 	AdvisorSettings MigrationAdvisorSettingsPtrInput
+	// The OCID of the resource being referenced.
+	AssessmentId pulumi.StringPtrInput
 	// Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
 	BulkIncludeExcludeData pulumi.StringPtrInput
 	// (Updatable) The OCID of the resource being referenced.
@@ -505,11 +510,11 @@ type MigrationArgs struct {
 	// (Updatable) The OCID of the resource being referenced.
 	SourceContainerDatabaseConnectionId pulumi.StringPtrInput
 	// (Updatable) The OCID of the resource being referenced.
-	SourceDatabaseConnectionId pulumi.StringInput
+	SourceDatabaseConnectionId pulumi.StringPtrInput
 	// (Updatable) The OCID of the resource being referenced.
 	SourceStandbyDatabaseConnectionId pulumi.StringPtrInput
 	// (Updatable) The OCID of the resource being referenced.
-	TargetDatabaseConnectionId pulumi.StringInput
+	TargetDatabaseConnectionId pulumi.StringPtrInput
 	// (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
 	//
 	// ** IMPORTANT **
@@ -612,6 +617,11 @@ func (o MigrationOutput) AdvancedParameters() MigrationAdvancedParameterArrayOut
 // (Updatable) Optional Pre-Migration advisor settings.
 func (o MigrationOutput) AdvisorSettings() MigrationAdvisorSettingsOutput {
 	return o.ApplyT(func(v *Migration) MigrationAdvisorSettingsOutput { return v.AdvisorSettings }).(MigrationAdvisorSettingsOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o MigrationOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.AssessmentId }).(pulumi.StringOutput)
 }
 
 // Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.

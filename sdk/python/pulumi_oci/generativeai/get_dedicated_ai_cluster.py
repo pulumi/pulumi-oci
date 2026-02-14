@@ -106,6 +106,9 @@ class GetDedicatedAiClusterResult:
     @_builtins.property
     @pulumi.getter
     def description(self) -> _builtins.str:
+        """
+        An optional description of the dedicated AI cluster.
+        """
         return pulumi.get(self, "description")
 
     @_builtins.property

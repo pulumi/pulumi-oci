@@ -124,6 +124,9 @@ namespace Pulumi.Oci.GenerativeAi
     public sealed class GetModelResult
     {
         public readonly string BaseModelId;
+        /// <summary>
+        /// Describes what this model can be used for.
+        /// </summary>
         public readonly ImmutableArray<string> Capabilities;
         public readonly string CompartmentId;
         public readonly ImmutableDictionary<string, string> DefinedTags;

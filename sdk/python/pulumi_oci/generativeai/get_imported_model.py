@@ -113,6 +113,9 @@ class GetImportedModelResult:
     @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
@@ -128,6 +131,9 @@ class GetImportedModelResult:
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional information about the current state of the imported model, providing more detailed and actionable context.
+        """
         return pulumi.get(self, "lifecycle_details")
 
     @_builtins.property
@@ -148,6 +154,9 @@ class GetImportedModelResult:
     @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
+        """
+        The date and time that the imported model was created in the format of an RFC3339 datetime string.
+        """
         return pulumi.get(self, "time_created")
 
     @_builtins.property

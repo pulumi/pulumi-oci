@@ -282,6 +282,7 @@ public class DedicatedAiCluster extends com.pulumi.resources.CustomResource {
      * * LARGE_GENERIC_4
      * * SMALL_GENERIC_V2
      * * LARGE_GENERIC_2
+     * * LARGE_GENERIC_V3
      * * SMALL_GENERIC_V1
      * * MEDIUM_GENERIC_V1
      * * LARGE_GENERIC_V1
@@ -343,6 +344,7 @@ public class DedicatedAiCluster extends com.pulumi.resources.CustomResource {
      * * LARGE_GENERIC_4
      * * SMALL_GENERIC_V2
      * * LARGE_GENERIC_2
+     * * LARGE_GENERIC_V3
      * * SMALL_GENERIC_V1
      * * MEDIUM_GENERIC_V1
      * * LARGE_GENERIC_V1

@@ -33,7 +33,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDisco
      */
     private String strategy;
     /**
-     * @return The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified &#39;serviceType&#39; are allowed.
+     * @return OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
      * 
      */
     private List<String> targets;
@@ -68,7 +68,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDisco
         return this.strategy;
     }
     /**
-     * @return The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified &#39;serviceType&#39; are allowed.
+     * @return OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
      * 
      */
     public List<String> targets() {

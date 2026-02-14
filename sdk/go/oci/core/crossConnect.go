@@ -65,6 +65,7 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				InterfaceName: pulumi.Any(crossConnectInterfaceName),
 //				MacsecProperties: &core.CrossConnectMacsecPropertiesArgs{
 //					State:                       pulumi.Any(crossConnectMacsecPropertiesState),
 //					EncryptionCipher:            pulumi.Any(crossConnectMacsecPropertiesEncryptionCipher),
@@ -75,6 +76,7 @@ import (
 //					},
 //				},
 //				NearCrossConnectOrCrossConnectGroupId: pulumi.Any(testCrossConnectGroup.Id),
+//				OciPhysicalDeviceName:                 pulumi.Any(crossConnectOciPhysicalDeviceName),
 //			})
 //			if err != nil {
 //				return err
@@ -109,6 +111,8 @@ type CrossConnect struct {
 	FarCrossConnectOrCrossConnectGroupId pulumi.StringOutput `pulumi:"farCrossConnectOrCrossConnectGroupId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+	InterfaceName pulumi.StringOutput `pulumi:"interfaceName"`
 	// (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
 	IsActive pulumi.BoolPtrOutput `pulumi:"isActive"`
 	// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
@@ -119,7 +123,7 @@ type CrossConnect struct {
 	NearCrossConnectOrCrossConnectGroupId pulumi.StringOutput `pulumi:"nearCrossConnectOrCrossConnectGroupId"`
 	// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
 	OciLogicalDeviceName pulumi.StringOutput `pulumi:"ociLogicalDeviceName"`
-	// The FastConnect device that terminates the physical connection.
+	// The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
 	OciPhysicalDeviceName pulumi.StringOutput `pulumi:"ociPhysicalDeviceName"`
 	// A string identifying the meet-me room port for this cross-connect.
 	PortName pulumi.StringOutput `pulumi:"portName"`
@@ -187,6 +191,8 @@ type crossConnectState struct {
 	FarCrossConnectOrCrossConnectGroupId *string `pulumi:"farCrossConnectOrCrossConnectGroupId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+	InterfaceName *string `pulumi:"interfaceName"`
 	// (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
 	IsActive *bool `pulumi:"isActive"`
 	// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
@@ -197,7 +203,7 @@ type crossConnectState struct {
 	NearCrossConnectOrCrossConnectGroupId *string `pulumi:"nearCrossConnectOrCrossConnectGroupId"`
 	// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
 	OciLogicalDeviceName *string `pulumi:"ociLogicalDeviceName"`
-	// The FastConnect device that terminates the physical connection.
+	// The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
 	OciPhysicalDeviceName *string `pulumi:"ociPhysicalDeviceName"`
 	// A string identifying the meet-me room port for this cross-connect.
 	PortName *string `pulumi:"portName"`
@@ -227,6 +233,8 @@ type CrossConnectState struct {
 	FarCrossConnectOrCrossConnectGroupId pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+	InterfaceName pulumi.StringPtrInput
 	// (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
 	IsActive pulumi.BoolPtrInput
 	// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
@@ -237,7 +245,7 @@ type CrossConnectState struct {
 	NearCrossConnectOrCrossConnectGroupId pulumi.StringPtrInput
 	// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
 	OciLogicalDeviceName pulumi.StringPtrInput
-	// The FastConnect device that terminates the physical connection.
+	// The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
 	OciPhysicalDeviceName pulumi.StringPtrInput
 	// A string identifying the meet-me room port for this cross-connect.
 	PortName pulumi.StringPtrInput
@@ -271,6 +279,8 @@ type crossConnectArgs struct {
 	FarCrossConnectOrCrossConnectGroupId *string `pulumi:"farCrossConnectOrCrossConnectGroupId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+	InterfaceName *string `pulumi:"interfaceName"`
 	// (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
 	IsActive *bool `pulumi:"isActive"`
 	// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
@@ -279,6 +289,8 @@ type crossConnectArgs struct {
 	MacsecProperties *CrossConnectMacsecProperties `pulumi:"macsecProperties"`
 	// If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
 	NearCrossConnectOrCrossConnectGroupId *string `pulumi:"nearCrossConnectOrCrossConnectGroupId"`
+	// The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
+	OciPhysicalDeviceName *string `pulumi:"ociPhysicalDeviceName"`
 	// The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps`
 	//
 	// ** IMPORTANT **
@@ -302,6 +314,8 @@ type CrossConnectArgs struct {
 	FarCrossConnectOrCrossConnectGroupId pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+	InterfaceName pulumi.StringPtrInput
 	// (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
 	IsActive pulumi.BoolPtrInput
 	// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
@@ -310,6 +324,8 @@ type CrossConnectArgs struct {
 	MacsecProperties CrossConnectMacsecPropertiesPtrInput
 	// If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
 	NearCrossConnectOrCrossConnectGroupId pulumi.StringPtrInput
+	// The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
+	OciPhysicalDeviceName pulumi.StringPtrInput
 	// The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps`
 	//
 	// ** IMPORTANT **
@@ -439,6 +455,11 @@ func (o CrossConnectOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *CrossConnect) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+func (o CrossConnectOutput) InterfaceName() pulumi.StringOutput {
+	return o.ApplyT(func(v *CrossConnect) pulumi.StringOutput { return v.InterfaceName }).(pulumi.StringOutput)
+}
+
 // (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
 func (o CrossConnectOutput) IsActive() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CrossConnect) pulumi.BoolPtrOutput { return v.IsActive }).(pulumi.BoolPtrOutput)
@@ -464,7 +485,7 @@ func (o CrossConnectOutput) OciLogicalDeviceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *CrossConnect) pulumi.StringOutput { return v.OciLogicalDeviceName }).(pulumi.StringOutput)
 }
 
-// The FastConnect device that terminates the physical connection.
+// The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
 func (o CrossConnectOutput) OciPhysicalDeviceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *CrossConnect) pulumi.StringOutput { return v.OciPhysicalDeviceName }).(pulumi.StringOutput)
 }

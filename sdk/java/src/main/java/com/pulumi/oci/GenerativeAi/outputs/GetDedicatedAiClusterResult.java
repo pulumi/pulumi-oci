@@ -26,6 +26,10 @@ public final class GetDedicatedAiClusterResult {
      * 
      */
     private Map<String,String> definedTags;
+    /**
+     * @return An optional description of the dedicated AI cluster.
+     * 
+     */
     private String description;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.
@@ -104,6 +108,10 @@ public final class GetDedicatedAiClusterResult {
     public Map<String,String> definedTags() {
         return this.definedTags;
     }
+    /**
+     * @return An optional description of the dedicated AI cluster.
+     * 
+     */
     public String description() {
         return this.description;
     }

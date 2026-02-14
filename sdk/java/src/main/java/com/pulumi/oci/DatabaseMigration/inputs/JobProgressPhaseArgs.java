@@ -81,6 +81,21 @@ public final class JobProgressPhaseArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * Job Phase group display name e.g. &#39;Step 1: Migration&#39;
+     * 
+     */
+    @Import(name="groupDisplayName")
+    private @Nullable Output<String> groupDisplayName;
+
+    /**
+     * @return Job Phase group display name e.g. &#39;Step 1: Migration&#39;
+     * 
+     */
+    public Optional<Output<String>> groupDisplayName() {
+        return Optional.ofNullable(this.groupDisplayName);
+    }
+
+    /**
      * True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
      * 
      */
@@ -192,6 +207,7 @@ public final class JobProgressPhaseArgs extends com.pulumi.resources.ResourceArg
         this.durationInMs = $.durationInMs;
         this.editableParameterFiles = $.editableParameterFiles;
         this.extracts = $.extracts;
+        this.groupDisplayName = $.groupDisplayName;
         this.isAdvisorReportAvailable = $.isAdvisorReportAvailable;
         this.isSuspendAvailable = $.isSuspendAvailable;
         this.issue = $.issue;
@@ -321,6 +337,27 @@ public final class JobProgressPhaseArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder extracts(JobProgressPhaseExtractArgs... extracts) {
             return extracts(List.of(extracts));
+        }
+
+        /**
+         * @param groupDisplayName Job Phase group display name e.g. &#39;Step 1: Migration&#39;
+         * 
+         * @return builder
+         * 
+         */
+        public Builder groupDisplayName(@Nullable Output<String> groupDisplayName) {
+            $.groupDisplayName = groupDisplayName;
+            return this;
+        }
+
+        /**
+         * @param groupDisplayName Job Phase group display name e.g. &#39;Step 1: Migration&#39;
+         * 
+         * @return builder
+         * 
+         */
+        public Builder groupDisplayName(String groupDisplayName) {
+            return groupDisplayName(Output.of(groupDisplayName));
         }
 
         /**

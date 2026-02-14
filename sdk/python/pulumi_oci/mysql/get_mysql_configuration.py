@@ -27,7 +27,7 @@ class GetMysqlConfigurationResult:
     """
     A collection of values returned by getMysqlConfiguration.
     """
-    def __init__(__self__, compartment_id=None, configuration_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, init_variables=None, parent_configuration_id=None, shape_name=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None, variables=None):
+    def __init__(__self__, compartment_id=None, configuration_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, init_variables=None, options=None, parent_configuration_id=None, shape_name=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None, variables=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -52,6 +52,9 @@ class GetMysqlConfigurationResult:
         if init_variables and not isinstance(init_variables, list):
             raise TypeError("Expected argument 'init_variables' to be a list")
         pulumi.set(__self__, "init_variables", init_variables)
+        if options and not isinstance(options, list):
+            raise TypeError("Expected argument 'options' to be a list")
+        pulumi.set(__self__, "options", options)
         if parent_configuration_id and not isinstance(parent_configuration_id, str):
             raise TypeError("Expected argument 'parent_configuration_id' to be a str")
         pulumi.set(__self__, "parent_configuration_id", parent_configuration_id)
@@ -134,9 +137,17 @@ class GetMysqlConfigurationResult:
     @pulumi.getter(name="initVariables")
     def init_variables(self) -> Sequence['outputs.GetMysqlConfigurationInitVariableResult']:
         """
-        User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
         """
         return pulumi.get(self, "init_variables")
+
+    @_builtins.property
+    @pulumi.getter
+    def options(self) -> Sequence['outputs.GetMysqlConfigurationOptionResult']:
+        """
+        The MySQL options defined in the Configuration.
+        """
+        return pulumi.get(self, "options")
 
     @_builtins.property
     @pulumi.getter(name="parentConfigurationId")
@@ -198,7 +209,7 @@ class GetMysqlConfigurationResult:
     @pulumi.getter
     def variables(self) -> Sequence['outputs.GetMysqlConfigurationVariableResult']:
         """
-        User-defined service variables.
+        DEPRECATED -- please use the `options` field instead. User-defined service variables.
         """
         return pulumi.get(self, "variables")
 
@@ -217,6 +228,7 @@ class AwaitableGetMysqlConfigurationResult(GetMysqlConfigurationResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             init_variables=self.init_variables,
+            options=self.options,
             parent_configuration_id=self.parent_configuration_id,
             shape_name=self.shape_name,
             state=self.state,
@@ -260,6 +272,7 @@ def get_mysql_configuration(configuration_id: Optional[_builtins.str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         init_variables=pulumi.get(__ret__, 'init_variables'),
+        options=pulumi.get(__ret__, 'options'),
         parent_configuration_id=pulumi.get(__ret__, 'parent_configuration_id'),
         shape_name=pulumi.get(__ret__, 'shape_name'),
         state=pulumi.get(__ret__, 'state'),
@@ -300,6 +313,7 @@ def get_mysql_configuration_output(configuration_id: Optional[pulumi.Input[_buil
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         init_variables=pulumi.get(__response__, 'init_variables'),
+        options=pulumi.get(__response__, 'options'),
         parent_configuration_id=pulumi.get(__response__, 'parent_configuration_id'),
         shape_name=pulumi.get(__response__, 'shape_name'),
         state=pulumi.get(__response__, 'state'),

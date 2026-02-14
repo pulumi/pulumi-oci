@@ -13,6 +13,17 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class ComputeCapacityReportShapeAvailabilityInstanceShapeConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        /// 
+        /// The following values are supported:
+        /// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        /// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        /// * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        /// </summary>
+        [Input("baselineOcpuUtilization")]
+        public Input<string>? BaselineOcpuUtilization { get; set; }
+
+        /// <summary>
         /// The total amount of memory available to the instance, in gigabytes.
         /// </summary>
         [Input("memoryInGbs")]

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ObjectStorage
 {
     /// <summary>
+    /// This resource provides the Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/ReplicationPolicy
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a replication policy for the specified bucket.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -34,7 +41,7 @@ namespace Pulumi.Oci.ObjectStorage
     /// 
     /// ## Import
     /// 
-    /// ReplicationPolicies can be imported using the `id`, e.g.
+    /// ReplicationPolicies can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:ObjectStorage/replicationPolicy:ReplicationPolicy test_replication_policy "n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"

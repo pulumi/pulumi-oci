@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
+    /// This resource provides the Api Platform Instance resource in Oracle Cloud Infrastructure Api Platform service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/api_platform
+    /// 
+    /// Creates an API Platform Instance
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -40,7 +47,7 @@ namespace Pulumi.Oci.Oci
     /// 
     /// ## Import
     /// 
-    /// ApiPlatformInstances can be imported using the `id`, e.g.
+    /// ApiPlatformInstances can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:oci/apiPlatformApiPlatformInstance:ApiPlatformApiPlatformInstance test_api_platform_instance "id"

@@ -396,6 +396,13 @@ class Profile(pulumi.CustomResource):
                  target_tags: Optional[pulumi.Input[Union['ProfileTargetTagsArgs', 'ProfileTargetTagsArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Profile resource in Oracle Cloud Infrastructure Optimizer service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/advisor/latest/Profile
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/optimizer
+
+        Creates a new profile.
+
         ## Example Usage
 
         ```python
@@ -459,6 +466,13 @@ class Profile(pulumi.CustomResource):
                  args: ProfileArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Profile resource in Oracle Cloud Infrastructure Optimizer service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/advisor/latest/Profile
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/optimizer
+
+        Creates a new profile.
+
         ## Example Usage
 
         ```python

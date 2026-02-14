@@ -200,7 +200,12 @@ class EnrollmentStatus(pulumi.CustomResource):
                  status: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/advisor/latest/EnrollmentStatus
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/optimizer
+
+        Updates the enrollment status of the tenancy.
 
         ## Import
 
@@ -226,7 +231,12 @@ class EnrollmentStatus(pulumi.CustomResource):
                  args: EnrollmentStatusArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/advisor/latest/EnrollmentStatus
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/optimizer
+
+        Updates the enrollment status of the tenancy.
 
         ## Import
 

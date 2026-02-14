@@ -316,6 +316,13 @@ class Repository(pulumi.CustomResource):
                  repository_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Repository resource in Oracle Cloud Infrastructure Artifacts service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/registry/latest/Repository
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/artifacts
+
+        Creates a new repository for storing artifacts.
+
         ## Example Usage
 
         ```python
@@ -365,6 +372,13 @@ class Repository(pulumi.CustomResource):
                  args: RepositoryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Repository resource in Oracle Cloud Infrastructure Artifacts service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/registry/latest/Repository
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/artifacts
+
+        Creates a new repository for storing artifacts.
+
         ## Example Usage
 
         ```python

@@ -17,6 +17,10 @@ public final class GetStacksStack {
      * 
      */
     private String compartmentId;
+    /**
+     * @return Location of the Terraform configuration.
+     * 
+     */
     private GetStacksStackConfigSource configSource;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -53,12 +57,20 @@ public final class GetStacksStack {
      * 
      */
     private Map<String,String> systemTags;
+    /**
+     * @return The version of Terraform specified for the stack. Example: `1.5.x`
+     * 
+     */
     private String terraformVersion;
     /**
      * @return The date and time at which the stack was created. Format is defined by RFC3339. Example: `2020-01-25T21:10:29.600Z`
      * 
      */
     private String timeCreated;
+    /**
+     * @return Terraform variables associated with this resource. Maximum number of variables supported is 250. The maximum size of each variable, including both name and value, is 8192 bytes. Example: `{&#34;CompartmentId&#34;: &#34;compartment-id-value&#34;}`
+     * 
+     */
     private Map<String,String> variables;
 
     private GetStacksStack() {}
@@ -69,6 +81,10 @@ public final class GetStacksStack {
     public String compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * @return Location of the Terraform configuration.
+     * 
+     */
     public GetStacksStackConfigSource configSource() {
         return this.configSource;
     }
@@ -121,6 +137,10 @@ public final class GetStacksStack {
     public Map<String,String> systemTags() {
         return this.systemTags;
     }
+    /**
+     * @return The version of Terraform specified for the stack. Example: `1.5.x`
+     * 
+     */
     public String terraformVersion() {
         return this.terraformVersion;
     }
@@ -131,6 +151,10 @@ public final class GetStacksStack {
     public String timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * @return Terraform variables associated with this resource. Maximum number of variables supported is 250. The maximum size of each variable, including both name and value, is 8192 bytes. Example: `{&#34;CompartmentId&#34;: &#34;compartment-id-value&#34;}`
+     * 
+     */
     public Map<String,String> variables() {
         return this.variables;
     }

@@ -13,9 +13,17 @@ public final class GetStackTfStatePlainArgs extends com.pulumi.resources.InvokeA
 
     public static final GetStackTfStatePlainArgs Empty = new GetStackTfStatePlainArgs();
 
+    /**
+     * The path and filename (relative to where Terraform is executing) to write the external statefile to.
+     * 
+     */
     @Import(name="localPath", required=true)
     private String localPath;
 
+    /**
+     * @return The path and filename (relative to where Terraform is executing) to write the external statefile to.
+     * 
+     */
     public String localPath() {
         return this.localPath;
     }
@@ -60,6 +68,12 @@ public final class GetStackTfStatePlainArgs extends com.pulumi.resources.InvokeA
             $ = new GetStackTfStatePlainArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param localPath The path and filename (relative to where Terraform is executing) to write the external statefile to.
+         * 
+         * @return builder
+         * 
+         */
         public Builder localPath(String localPath) {
             $.localPath = localPath;
             return this;

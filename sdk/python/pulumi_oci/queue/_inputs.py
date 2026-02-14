@@ -23,32 +23,27 @@ __all__ = [
     'GetQueuesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class QueueCapabilityArgsDict(TypedDict):
-        is_primary_consumer_group_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies if the primary consumer group should be automatically enabled after adding the capability.
-        """
-        primary_consumer_group_dead_letter_queue_delivery_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue.  A value of 0 indicates that the DLQ is not used. If the value isn't set, it will be using the value defined at the queue level.
-        """
-        primary_consumer_group_display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of the primary consumer group. If omitted, it will be named "Primary Consumer Group".
-        """
-        primary_consumer_group_filter: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The primary consumer group cannot have any filter hence this field will always be empty. An empty value means that all messages will be available in the primary consumer group.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the capability. Could be CONSUMER_GROUPS and/or LARGE_MESSAGES
-        """
-elif False:
-    QueueCapabilityArgsDict: TypeAlias = Mapping[str, Any]
+class QueueCapabilityArgsDict(TypedDict):
+    is_primary_consumer_group_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies if the primary consumer group should be automatically enabled after adding the capability.
+    """
+    primary_consumer_group_dead_letter_queue_delivery_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue.  A value of 0 indicates that the DLQ is not used. If the value isn't set, it will be using the value defined at the queue level.
+    """
+    primary_consumer_group_display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of the primary consumer group. If omitted, it will be named "Primary Consumer Group".
+    """
+    primary_consumer_group_filter: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The primary consumer group cannot have any filter hence this field will always be empty. An empty value means that all messages will be available in the primary consumer group.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the capability. Could be CONSUMER_GROUPS and/or LARGE_MESSAGES
+    """
 
 @pulumi.input_type
 class QueueCapabilityArgs:
@@ -137,13 +132,10 @@ class QueueCapabilityArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class GetConsumerGroupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetConsumerGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetConsumerGroupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetConsumerGroupsFilterArgs:
@@ -184,13 +176,10 @@ class GetConsumerGroupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetQueuesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetQueuesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetQueuesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetQueuesFilterArgs:

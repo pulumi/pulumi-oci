@@ -122,6 +122,13 @@ class BdsCapacityReport(pulumi.CustomResource):
                  shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsCapacityReportShapeAvailabilityArgs', 'BdsCapacityReportShapeAvailabilityArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Bds Capacity Report resource in Oracle Cloud Infrastructure Big Data Service service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/bigdata/latest/BdsCapacityReport
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/big_data_service
+
+        Create a detailed capacity report for BDS service
+
         ## Example Usage
 
         ```python
@@ -160,6 +167,13 @@ class BdsCapacityReport(pulumi.CustomResource):
                  args: BdsCapacityReportArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Bds Capacity Report resource in Oracle Cloud Infrastructure Big Data Service service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/bigdata/latest/BdsCapacityReport
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/big_data_service
+
+        Create a detailed capacity report for BDS service
+
         ## Example Usage
 
         ```python

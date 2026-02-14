@@ -120,6 +120,13 @@ class CostAnomalyMonitorCostanomalymonitorenabletogglesManagement(pulumi.CustomR
                  enable_costanomalymonitorenabletoggle: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
+        This resource provides the Cost Anomaly Monitor Costanomalymonitorenabletoggles Management resource in Oracle Cloud Infrastructure Budget service.
+
+        Enables the cost anomaly monitor. This (re)starts the cost anomaly detection for targeted resource(s).
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/budgets/latest/CostAnomalyMonitor/Enable
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/budget
+
         ## Example Usage
 
         ```python
@@ -147,6 +154,13 @@ class CostAnomalyMonitorCostanomalymonitorenabletogglesManagement(pulumi.CustomR
                  args: CostAnomalyMonitorCostanomalymonitorenabletogglesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Cost Anomaly Monitor Costanomalymonitorenabletoggles Management resource in Oracle Cloud Infrastructure Budget service.
+
+        Enables the cost anomaly monitor. This (re)starts the cost anomaly detection for targeted resource(s).
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/budgets/latest/CostAnomalyMonitor/Enable
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/budget
+
         ## Example Usage
 
         ```python

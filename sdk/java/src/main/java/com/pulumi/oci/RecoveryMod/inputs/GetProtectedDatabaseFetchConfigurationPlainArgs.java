@@ -16,9 +16,17 @@ public final class GetProtectedDatabaseFetchConfigurationPlainArgs extends com.p
 
     public static final GetProtectedDatabaseFetchConfigurationPlainArgs Empty = new GetProtectedDatabaseFetchConfigurationPlainArgs();
 
+    /**
+     * Encodes the downloaded config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `true`.
+     * 
+     */
     @Import(name="base64EncodeContent")
     private @Nullable Boolean base64EncodeContent;
 
+    /**
+     * @return Encodes the downloaded config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `true`.
+     * 
+     */
     public Optional<Boolean> base64EncodeContent() {
         return Optional.ofNullable(this.base64EncodeContent);
     }
@@ -79,6 +87,12 @@ public final class GetProtectedDatabaseFetchConfigurationPlainArgs extends com.p
             $ = new GetProtectedDatabaseFetchConfigurationPlainArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param base64EncodeContent Encodes the downloaded config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `true`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder base64EncodeContent(@Nullable Boolean base64EncodeContent) {
             $.base64EncodeContent = base64EncodeContent;
             return this;

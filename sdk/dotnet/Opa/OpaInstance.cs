@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opa
 {
     /// <summary>
+    /// This resource provides the Opa Instance resource in Oracle Cloud Infrastructure Opa service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/opa/latest/OpaInstance
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/opa
+    /// 
+    /// Creates a new OpaInstance.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -45,7 +52,7 @@ namespace Pulumi.Oci.Opa
     /// 
     /// ## Import
     /// 
-    /// OpaInstances can be imported using the `id`, e.g.
+    /// OpaInstances can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Opa/opaInstance:OpaInstance test_opa_instance "id"

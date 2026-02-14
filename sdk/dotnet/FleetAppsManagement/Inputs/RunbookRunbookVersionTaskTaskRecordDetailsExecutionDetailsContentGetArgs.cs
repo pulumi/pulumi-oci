@@ -18,6 +18,9 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         [Input("bucket")]
         public Input<string>? Bucket { get; set; }
 
+        /// <summary>
+        /// Catalog Id having terraform package.
+        /// </summary>
         [Input("catalogId")]
         public Input<string>? CatalogId { get; set; }
 

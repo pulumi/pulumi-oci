@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+ *
+ * Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -215,6 +222,9 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     declare public readonly dbSplitThreshold: pulumi.Output<number>;
+    /**
+     * **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     */
     declare public readonly dbUniqueName: pulumi.Output<string>;
     /**
      * The base version for the Autonomous Container Database.
@@ -369,6 +379,9 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      */
     declare public readonly peerCloudAutonomousVmClusterId: pulumi.Output<string>;
+    /**
+     * **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     */
     declare public readonly peerDbUniqueName: pulumi.Output<string>;
     /**
      * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
@@ -719,6 +732,9 @@ export interface AutonomousContainerDatabaseState {
      * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     dbSplitThreshold?: pulumi.Input<number>;
+    /**
+     * **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     */
     dbUniqueName?: pulumi.Input<string>;
     /**
      * The base version for the Autonomous Container Database.
@@ -873,6 +889,9 @@ export interface AutonomousContainerDatabaseState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      */
     peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
+    /**
+     * **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     */
     peerDbUniqueName?: pulumi.Input<string>;
     /**
      * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
@@ -1009,6 +1028,9 @@ export interface AutonomousContainerDatabaseArgs {
      * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     dbSplitThreshold?: pulumi.Input<number>;
+    /**
+     * **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     */
     dbUniqueName?: pulumi.Input<string>;
     /**
      * The base version for the Autonomous Container Database.
@@ -1099,6 +1121,9 @@ export interface AutonomousContainerDatabaseArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      */
     peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
+    /**
+     * **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     */
     peerDbUniqueName?: pulumi.Input<string>;
     /**
      * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.

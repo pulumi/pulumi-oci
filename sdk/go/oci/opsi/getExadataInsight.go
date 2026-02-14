@@ -94,8 +94,9 @@ type LookupExadataInsightResult struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Exadata insight identifier
-	Id                string `pulumi:"id"`
-	IsAutoSyncEnabled bool   `pulumi:"isAutoSyncEnabled"`
+	Id string `pulumi:"id"`
+	// Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight. This should be always set true when using terraform, when it is set to false member associations may be missing from the application.
+	IsAutoSyncEnabled bool `pulumi:"isAutoSyncEnabled"`
 	// true if virtualization is used in the Exadata system
 	IsVirtualizedExadata bool `pulumi:"isVirtualizedExadata"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -241,6 +242,7 @@ func (o LookupExadataInsightResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight. This should be always set true when using terraform, when it is set to false member associations may be missing from the application.
 func (o LookupExadataInsightResultOutput) IsAutoSyncEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupExadataInsightResult) bool { return v.IsAutoSyncEnabled }).(pulumi.BoolOutput)
 }

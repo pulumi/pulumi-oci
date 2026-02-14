@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
+    /// This resource provides the Kafka Cluster resource in Oracle Cloud Infrastructure Managed Kafka service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/kafka/latest/KafkaCluster
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/managed_kafka
+    /// 
+    /// Creates a KafkaCluster.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -59,7 +66,7 @@ namespace Pulumi.Oci.Oci
     /// 
     /// ## Import
     /// 
-    /// KafkaClusters can be imported using the `id`, e.g.
+    /// KafkaClusters can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster test_kafka_cluster "id"

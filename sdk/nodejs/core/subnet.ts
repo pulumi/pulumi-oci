@@ -5,6 +5,43 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Subnet resource in Oracle Cloud Infrastructure Core service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/Subnet
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ *
+ * Creates a new subnet in the specified VCN. You can't change the size of the subnet after creation,
+ * so it's important to think about the size of subnets you need before creating them.
+ * For more information, see [VCNs and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm).
+ * For information on the number of subnets you can have in a VCN, see
+ * [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
+ *
+ * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the subnet
+ * to reside. Notice that the subnet doesn't have to be in the same compartment as the VCN, route tables, or
+ * other Networking Service components. If you're not sure which compartment to use, put the subnet in
+ * the same compartment as the VCN. For more information about compartments and access control, see
+ * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs,
+ * see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+ *
+ * You may optionally associate a route table with the subnet. If you don't, the subnet will use the
+ * VCN's default route table. For more information about route tables, see
+ * [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
+ *
+ * You may optionally associate a security list with the subnet. If you don't, the subnet will use the
+ * VCN's default security list. For more information about security lists, see
+ * [Security Lists](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm).
+ *
+ * You may optionally associate a set of DHCP options with the subnet. If you don't, the subnet will use the
+ * VCN's default set. For more information about DHCP options, see
+ * [DHCP Options](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDHCP.htm).
+ *
+ * You may optionally specify a *display name* for the subnet, otherwise a default is provided.
+ * It does not have to be unique, and you can change it. Avoid entering confidential information.
+ *
+ * You can also add a DNS label for the subnet, which is required if you want the Internet and
+ * VCN Resolver to resolve hostnames for instances in the subnet. For more information, see
+ * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+ *
  * ## Example Usage
  *
  * ```typescript

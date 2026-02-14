@@ -529,6 +529,13 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
                  source_db_home_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Database Software Image resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/DatabaseSoftwareImage
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        create database software image in the specified compartment.
+
         ## Example Usage
 
         ```python
@@ -584,6 +591,13 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
                  args: DatabaseSoftwareImageArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Database Software Image resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/DatabaseSoftwareImage
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        create database software image in the specified compartment.
+
         ## Example Usage
 
         ```python

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
+    /// This resource provides the Vm Cluster Add Virtual Machine resource in Oracle Cloud Infrastructure Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/VmClusterAddVirtualMachine
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+    /// 
+    /// Add Virtual Machines to the VM cluster. Applies to Exadata Cloud@Customer instances only.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -39,7 +46,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// VmClusterAddVirtualMachine can be imported using the `id`, e.g.
+    /// VmClusterAddVirtualMachine can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork test_vm_cluster_add_virtual_machine "id"

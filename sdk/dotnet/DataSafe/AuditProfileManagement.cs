@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
+    /// This resource provides the Audit Profile Management resource in Oracle Cloud Infrastructure Data Safe service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/AuditProfileManagement
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+    /// 
+    /// Create a new audit profile resource for a target group. For a target database, it will update the auto created audit profile by fetching the Audit profile.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -48,7 +55,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Import
     /// 
-    /// AuditProfiles can be imported using the `id`, e.g.
+    /// AuditProfiles can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataSafe/auditProfileManagement:AuditProfileManagement test_audit_profile_management "id"

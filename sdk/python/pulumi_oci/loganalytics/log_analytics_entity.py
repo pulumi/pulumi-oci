@@ -661,6 +661,13 @@ class LogAnalyticsEntity(pulumi.CustomResource):
                  timezone_region: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsEntity
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+
+        Create a new log analytics entity.
+
         ## Example Usage
 
         ```python
@@ -730,6 +737,13 @@ class LogAnalyticsEntity(pulumi.CustomResource):
                  args: LogAnalyticsEntityArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsEntity
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+
+        Create a new log analytics entity.
+
         ## Example Usage
 
         ```python

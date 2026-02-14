@@ -380,6 +380,16 @@ class Datastore(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Datastore resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vmware/latest/Datastore
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/ocvp
+
+        Creates a Oracle Cloud VMware Solution Datastore.
+
+        Use the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/WorkRequest/) operations to track the
+        creation of the Datastore.
+
         ## Example Usage
 
         ```python
@@ -428,6 +438,16 @@ class Datastore(pulumi.CustomResource):
                  args: DatastoreArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Datastore resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vmware/latest/Datastore
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/ocvp
+
+        Creates a Oracle Cloud VMware Solution Datastore.
+
+        Use the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/WorkRequest/) operations to track the
+        creation of the Datastore.
+
         ## Example Usage
 
         ```python

@@ -152,6 +152,13 @@ class ExternalContainerDatabasesStackMonitoring(pulumi.CustomResource):
                  external_database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Externalcontainerdatabases Stack Monitoring resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ExternalcontainerdatabasesStackMonitoring
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Enable Stack Monitoring for the external container database.
+
         ## Example Usage
 
         ```python
@@ -185,6 +192,13 @@ class ExternalContainerDatabasesStackMonitoring(pulumi.CustomResource):
                  args: ExternalContainerDatabasesStackMonitoringArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Externalcontainerdatabases Stack Monitoring resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ExternalcontainerdatabasesStackMonitoring
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Enable Stack Monitoring for the external container database.
+
         ## Example Usage
 
         ```python

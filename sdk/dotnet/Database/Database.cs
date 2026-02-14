@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// Databases can be imported using the `id`, e.g.
+    /// Databases can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/database:Database test_database "id"

@@ -154,6 +154,13 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
                  should_rotate: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
+        This resource provides the Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousDatabaseRegionalWalletManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Updates the Autonomous AI Database regional wallet.
+
         ## Example Usage
 
         ```python
@@ -185,6 +192,13 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
                  args: Optional[AutonomousDatabaseRegionalWalletManagementArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousDatabaseRegionalWalletManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Updates the Autonomous AI Database regional wallet.
+
         ## Example Usage
 
         ```python

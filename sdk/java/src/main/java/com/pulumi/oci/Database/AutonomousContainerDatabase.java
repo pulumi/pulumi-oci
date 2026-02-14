@@ -32,6 +32,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+ * 
+ * Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
+ * 
  * ## Example Usage
  * 
  * <pre>
@@ -409,9 +416,17 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
     public Output<Integer> dbSplitThreshold() {
         return this.dbSplitThreshold;
     }
+    /**
+     * **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     * 
+     */
     @Export(name="dbUniqueName", refs={String.class}, tree="[0]")
     private Output<String> dbUniqueName;
 
+    /**
+     * @return **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     * 
+     */
     public Output<String> dbUniqueName() {
         return this.dbUniqueName;
     }
@@ -953,9 +968,17 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
     public Output<String> peerCloudAutonomousVmClusterId() {
         return this.peerCloudAutonomousVmClusterId;
     }
+    /**
+     * **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     * 
+     */
     @Export(name="peerDbUniqueName", refs={String.class}, tree="[0]")
     private Output<String> peerDbUniqueName;
 
+    /**
+     * @return **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     * 
+     */
     public Output<String> peerDbUniqueName() {
         return this.peerDbUniqueName;
     }

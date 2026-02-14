@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Jms
 {
     /// <summary>
+    /// This resource provides the Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/jms/latest/FleetAdvancedFeatureConfiguration
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/jms
+    /// 
+    /// Update advanced feature configurations for the Fleet.
+    /// Ensure that the namespace and bucket storage are created prior to turning on the JfrRecording or CryptoEventAnalysis feature.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -110,7 +118,7 @@ namespace Pulumi.Oci.Jms
     /// 
     /// ## Import
     /// 
-    /// FleetAdvancedFeatureConfigurations can be imported using the `id`, e.g.
+    /// FleetAdvancedFeatureConfigurations can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Jms/fleetAdvancedFeatureConfiguration:FleetAdvancedFeatureConfiguration test_fleet_advanced_feature_configuration "fleets/{fleetId}/advancedFeatureConfiguration"

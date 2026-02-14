@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService
 {
     /// <summary>
+    /// This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/bigdata/latest/AutoScalingConfiguration
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/big_data_service
+    /// 
+    /// Add an autoscale configuration to the cluster.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -72,7 +79,7 @@ namespace Pulumi.Oci.BigDataService
     /// 
     /// ## Import
     /// 
-    /// AutoScalingConfiguration can be imported using the `id`, e.g.
+    /// AutoScalingConfiguration can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration test_auto_scaling_configuration "bdsInstances/{bdsInstanceId}/autoScalingConfiguration/{autoScalingConfigurationId}"

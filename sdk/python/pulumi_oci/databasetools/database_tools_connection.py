@@ -694,7 +694,12 @@ class DatabaseToolsConnection(pulumi.CustomResource):
                  user_password: Optional[pulumi.Input[Union['DatabaseToolsConnectionUserPasswordArgs', 'DatabaseToolsConnectionUserPasswordArgsDict']]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-tools/latest/DatabaseToolsConnection
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databaseTools
+
+        Creates a new Database Tools connection.
 
         ## Import
 
@@ -731,7 +736,12 @@ class DatabaseToolsConnection(pulumi.CustomResource):
                  args: DatabaseToolsConnectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-tools/latest/DatabaseToolsConnection
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databaseTools
+
+        Creates a new Database Tools connection.
 
         ## Import
 

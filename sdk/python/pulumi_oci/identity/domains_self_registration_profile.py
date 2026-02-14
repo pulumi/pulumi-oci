@@ -2155,6 +2155,13 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                  user_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileUserAttributeArgs', 'DomainsSelfRegistrationProfileUserAttributeArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Self Registration Profile resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/SelfRegistrationProfile
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a self-registration profile.
+
         ## Example Usage
 
         ```python
@@ -2491,6 +2498,13 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                  args: DomainsSelfRegistrationProfileArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Self Registration Profile resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/SelfRegistrationProfile
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a self-registration profile.
+
         ## Example Usage
 
         ```python

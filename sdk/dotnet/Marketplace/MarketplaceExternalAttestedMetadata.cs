@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Marketplace
 {
     /// <summary>
+    /// This resource provides the Marketplace External Attested Metadata resource in Oracle Cloud Infrastructure Marketplace service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/marketplace/latest/MarketplaceExternalAttestedMetadatum
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/marketplace
+    /// 
+    /// Generates attested marketplace metadata
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -31,7 +38,7 @@ namespace Pulumi.Oci.Marketplace
     /// 
     /// ## Import
     /// 
-    /// MarketplaceExternalAttestedMetadata can be imported using the `id`, e.g.
+    /// MarketplaceExternalAttestedMetadata can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Marketplace/marketplaceExternalAttestedMetadata:MarketplaceExternalAttestedMetadata test_marketplace_external_attested_metadata "id"

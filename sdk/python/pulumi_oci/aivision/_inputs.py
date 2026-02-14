@@ -47,29 +47,24 @@ __all__ = [
     'GetVisionPrivateEndpointsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class ModelTestingDatasetArgsDict(TypedDict):
-        dataset_type: pulumi.Input[_builtins.str]
-        """
-        The dataset type, based on where it is stored.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the Object Storage bucket that contains the input data file.
-        """
-        dataset_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the Data Labeling dataset.
-        """
-        namespace_name: NotRequired[pulumi.Input[_builtins.str]]
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object name of the input data file.
-        """
-elif False:
-    ModelTestingDatasetArgsDict: TypeAlias = Mapping[str, Any]
+class ModelTestingDatasetArgsDict(TypedDict):
+    dataset_type: pulumi.Input[_builtins.str]
+    """
+    The dataset type, based on where it is stored.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the Object Storage bucket that contains the input data file.
+    """
+    dataset_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the Data Labeling dataset.
+    """
+    namespace_name: NotRequired[pulumi.Input[_builtins.str]]
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object name of the input data file.
+    """
 
 @pulumi.input_type
 class ModelTestingDatasetArgs:
@@ -153,27 +148,24 @@ class ModelTestingDatasetArgs:
         pulumi.set(self, "object", value)
 
 
-if not MYPY:
-    class ModelTrainingDatasetArgsDict(TypedDict):
-        dataset_type: pulumi.Input[_builtins.str]
-        """
-        The dataset type, based on where it is stored.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the Object Storage bucket that contains the input data file.
-        """
-        dataset_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the Data Labeling dataset.
-        """
-        namespace_name: NotRequired[pulumi.Input[_builtins.str]]
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object name of the input data file.
-        """
-elif False:
-    ModelTrainingDatasetArgsDict: TypeAlias = Mapping[str, Any]
+class ModelTrainingDatasetArgsDict(TypedDict):
+    dataset_type: pulumi.Input[_builtins.str]
+    """
+    The dataset type, based on where it is stored.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the Object Storage bucket that contains the input data file.
+    """
+    dataset_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the Data Labeling dataset.
+    """
+    namespace_name: NotRequired[pulumi.Input[_builtins.str]]
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object name of the input data file.
+    """
 
 @pulumi.input_type
 class ModelTrainingDatasetArgs:
@@ -257,30 +249,27 @@ class ModelTrainingDatasetArgs:
         pulumi.set(self, "object", value)
 
 
-if not MYPY:
-    class ModelValidationDatasetArgsDict(TypedDict):
-        dataset_type: pulumi.Input[_builtins.str]
-        """
-        The dataset type, based on where it is stored.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the Object Storage bucket that contains the input data file.
-        """
-        dataset_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the Data Labeling dataset.
-        """
-        namespace_name: NotRequired[pulumi.Input[_builtins.str]]
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object name of the input data file.
+class ModelValidationDatasetArgsDict(TypedDict):
+    dataset_type: pulumi.Input[_builtins.str]
+    """
+    The dataset type, based on where it is stored.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the Object Storage bucket that contains the input data file.
+    """
+    dataset_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the Data Labeling dataset.
+    """
+    namespace_name: NotRequired[pulumi.Input[_builtins.str]]
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object name of the input data file.
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ModelValidationDatasetArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ModelValidationDatasetArgs:
@@ -370,14 +359,11 @@ class ModelValidationDatasetArgs:
         pulumi.set(self, "object", value)
 
 
-if not MYPY:
-    class StreamGroupStreamOverlapArgsDict(TypedDict):
-        overlapping_streams: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) List of streamSource OCIDs.
-        """
-elif False:
-    StreamGroupStreamOverlapArgsDict: TypeAlias = Mapping[str, Any]
+class StreamGroupStreamOverlapArgsDict(TypedDict):
+    overlapping_streams: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) List of streamSource OCIDs.
+    """
 
 @pulumi.input_type
 class StreamGroupStreamOverlapArgs:
@@ -402,28 +388,25 @@ class StreamGroupStreamOverlapArgs:
         pulumi.set(self, "overlapping_streams", value)
 
 
-if not MYPY:
-    class StreamJobFeatureArgsDict(TypedDict):
-        feature_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The feature of video analysis. Allowed values are:
-        * OBJECT_TRACKING: Object tracking feature(OT).
-        * FACE_DETECTION: Face detection feature(FD).
-        """
-        max_results: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum number of results to return.
-        """
-        should_return_landmarks: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether or not return face landmarks.
-        """
-        tracking_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['StreamJobFeatureTrackingTypeArgsDict']]]]
-        """
-        (Updatable) List of details of what to track.
-        """
-elif False:
-    StreamJobFeatureArgsDict: TypeAlias = Mapping[str, Any]
+class StreamJobFeatureArgsDict(TypedDict):
+    feature_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The feature of video analysis. Allowed values are:
+    * OBJECT_TRACKING: Object tracking feature(OT).
+    * FACE_DETECTION: Face detection feature(FD).
+    """
+    max_results: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum number of results to return.
+    """
+    should_return_landmarks: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether or not return face landmarks.
+    """
+    tracking_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['StreamJobFeatureTrackingTypeArgsDict']]]]
+    """
+    (Updatable) List of details of what to track.
+    """
 
 @pulumi.input_type
 class StreamJobFeatureArgs:
@@ -499,38 +482,35 @@ class StreamJobFeatureArgs:
         pulumi.set(self, "tracking_types", value)
 
 
-if not MYPY:
-    class StreamJobFeatureTrackingTypeArgsDict(TypedDict):
-        biometric_store_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) compartment Id of biometric compartment.
-        """
-        biometric_store_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Which biometric store user wants to do face recognition
-        """
-        detection_model_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The detection model OCID.
-        """
-        max_results: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum number of results to return.
-        """
-        objects: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) List of the objects to be tracked.
-        """
-        should_return_landmarks: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether or not return face landmarks.
-        """
-        tracking_model_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The tracking model OCID.
-        """
-elif False:
-    StreamJobFeatureTrackingTypeArgsDict: TypeAlias = Mapping[str, Any]
+class StreamJobFeatureTrackingTypeArgsDict(TypedDict):
+    biometric_store_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) compartment Id of biometric compartment.
+    """
+    biometric_store_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Which biometric store user wants to do face recognition
+    """
+    detection_model_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The detection model OCID.
+    """
+    max_results: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum number of results to return.
+    """
+    objects: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) List of the objects to be tracked.
+    """
+    should_return_landmarks: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether or not return face landmarks.
+    """
+    tracking_model_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The tracking model OCID.
+    """
 
 @pulumi.input_type
 class StreamJobFeatureTrackingTypeArgs:
@@ -651,32 +631,29 @@ class StreamJobFeatureTrackingTypeArgs:
         pulumi.set(self, "tracking_model_id", value)
 
 
-if not MYPY:
-    class StreamJobStreamOutputLocationArgsDict(TypedDict):
-        bucket: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The Object Storage bucket name.
-        """
-        namespace: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The Object Storage namespace.
-        """
-        output_location_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of device Allowed values are:
-        * OBJECT_STORAGE
-        * LIVEKIT_WEBRTC_AGENT
-        """
-        prefix: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The Object Storage folder name.
-        """
-        obo_token: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Object storage output location
-        """
-elif False:
-    StreamJobStreamOutputLocationArgsDict: TypeAlias = Mapping[str, Any]
+class StreamJobStreamOutputLocationArgsDict(TypedDict):
+    bucket: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The Object Storage bucket name.
+    """
+    namespace: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The Object Storage namespace.
+    """
+    output_location_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of device Allowed values are:
+    * OBJECT_STORAGE
+    * LIVEKIT_WEBRTC_AGENT
+    """
+    prefix: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The Object Storage folder name.
+    """
+    obo_token: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Object storage output location
+    """
 
 @pulumi.input_type
 class StreamJobStreamOutputLocationArgs:
@@ -765,27 +742,24 @@ class StreamJobStreamOutputLocationArgs:
         pulumi.set(self, "obo_token", value)
 
 
-if not MYPY:
-    class StreamSourceStreamSourceDetailsArgsDict(TypedDict):
-        camera_url: pulumi.Input[_builtins.str]
-        """
-        (Updatable) url of camera
-        """
-        source_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of source Allowed values are:
-        * RTSP
-        """
-        stream_network_access_details: pulumi.Input['StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgsDict']
-        """
-        (Updatable) Details about a stream Connection type
-        """
-        secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
-        """
-elif False:
-    StreamSourceStreamSourceDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class StreamSourceStreamSourceDetailsArgsDict(TypedDict):
+    camera_url: pulumi.Input[_builtins.str]
+    """
+    (Updatable) url of camera
+    """
+    source_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of source Allowed values are:
+    * RTSP
+    """
+    stream_network_access_details: pulumi.Input['StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgsDict']
+    """
+    (Updatable) Details about a stream Connection type
+    """
+    secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
+    """
 
 @pulumi.input_type
 class StreamSourceStreamSourceDetailsArgs:
@@ -857,23 +831,20 @@ class StreamSourceStreamSourceDetailsArgs:
         pulumi.set(self, "secret_id", value)
 
 
-if not MYPY:
-    class StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgsDict(TypedDict):
-        private_endpoint_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
-        """
-        stream_access_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of access Allowed values are:
-        * PRIVATE
+class StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgsDict(TypedDict):
+    private_endpoint_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
+    """
+    stream_access_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of access Allowed values are:
+    * PRIVATE
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs:
@@ -922,13 +893,10 @@ class StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs:
         pulumi.set(self, "stream_access_type", value)
 
 
-if not MYPY:
-    class GetModelsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetModelsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetModelsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetModelsFilterArgs:
@@ -969,13 +937,10 @@ class GetModelsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetProjectsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetProjectsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetProjectsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetProjectsFilterArgs:
@@ -1016,13 +981,10 @@ class GetProjectsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetStreamGroupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetStreamGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetStreamGroupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetStreamGroupsFilterArgs:
@@ -1063,13 +1025,10 @@ class GetStreamGroupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetStreamJobsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetStreamJobsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetStreamJobsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetStreamJobsFilterArgs:
@@ -1110,13 +1069,10 @@ class GetStreamJobsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetStreamSourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetStreamSourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetStreamSourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetStreamSourcesFilterArgs:
@@ -1157,13 +1113,10 @@ class GetStreamSourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetVisionPrivateEndpointsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetVisionPrivateEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetVisionPrivateEndpointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetVisionPrivateEndpointsFilterArgs:

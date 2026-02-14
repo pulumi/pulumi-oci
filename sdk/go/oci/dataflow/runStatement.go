@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-flow/latest/RunStatement
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataflow
+//
+// Executes a statement for a Session run.
+//
 // ## Example Usage
 //
 // ```go

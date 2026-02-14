@@ -397,6 +397,13 @@ class DbmulticloudMultiCloudResourceDiscovery(pulumi.CustomResource):
                  resources_filter: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/latest/MultiCloudResourceDiscovery
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dbmulticloud
+
+        Discovers Multicloud Resource and their associated resources based on the information provided.
+
         ## Example Usage
 
         ```python
@@ -446,6 +453,13 @@ class DbmulticloudMultiCloudResourceDiscovery(pulumi.CustomResource):
                  args: DbmulticloudMultiCloudResourceDiscoveryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/latest/MultiCloudResourceDiscovery
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dbmulticloud
+
+        Discovers Multicloud Resource and their associated resources based on the information provided.
+
         ## Example Usage
 
         ```python

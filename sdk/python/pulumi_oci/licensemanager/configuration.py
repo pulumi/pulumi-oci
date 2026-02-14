@@ -152,6 +152,13 @@ class Configuration(pulumi.CustomResource):
                  email_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Configuration resource in Oracle Cloud Infrastructure License Manager service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/licensemanager/latest/Configuration
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/license_manager
+
+        Updates the configuration for the compartment.
+
         ## Example Usage
 
         ```python
@@ -187,6 +194,13 @@ class Configuration(pulumi.CustomResource):
                  args: ConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Configuration resource in Oracle Cloud Infrastructure License Manager service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/licensemanager/latest/Configuration
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/license_manager
+
+        Updates the configuration for the compartment.
+
         ## Example Usage
 
         ```python

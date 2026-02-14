@@ -434,6 +434,13 @@ class UsageCarbonEmission(pulumi.CustomResource):
                  usage_carbon_emission_filter: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Usage Carbon Emission resource in Oracle Cloud Infrastructure Metering Computation service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/usage/latest/UsageCarbonEmission
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/metering_computation
+
+        Returns carbon emission usage for the given account.
+
         ## Example Usage
 
         ```python
@@ -491,6 +498,13 @@ class UsageCarbonEmission(pulumi.CustomResource):
                  args: UsageCarbonEmissionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Usage Carbon Emission resource in Oracle Cloud Infrastructure Metering Computation service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/usage/latest/UsageCarbonEmission
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/metering_computation
+
+        Returns carbon emission usage for the given account.
+
         ## Example Usage
 
         ```python

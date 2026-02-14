@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkFirewall
 {
     /// <summary>
+    /// This resource provides the Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/network-firewall/latest/NetworkFirewallPolicyApplication
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_firewall
+    /// 
+    /// Creates a new Application inside the Network Firewall Policy.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -35,7 +42,7 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// ## Import
     /// 
-    /// NetworkFirewallPolicyApplications can be imported using the `name`, e.g.
+    /// NetworkFirewallPolicyApplications can be imported using the `Name`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplication:NetworkFirewallPolicyApplication test_network_firewall_policy_application "networkFirewallPolicies/{networkFirewallPolicyId}/applications/{applicationName}"

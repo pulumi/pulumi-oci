@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkFirewall
 {
     /// <summary>
+    /// This resource provides the Network Firewall Policy Tunnel Inspection Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/network-firewall/latest/NetworkFirewallPolicyTunnelInspectionRule
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_firewall
+    /// 
+    /// Creates a new tunnel inspection rule for the network firewall policy.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -48,7 +55,7 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// ## Import
     /// 
-    /// NetworkFirewallPolicyTunnelInspectionRules can be imported using the `id`, e.g.
+    /// NetworkFirewallPolicyTunnelInspectionRules can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:NetworkFirewall/networkFirewallPolicyTunnelInspectionRule:NetworkFirewallPolicyTunnelInspectionRule test_network_firewall_policy_tunnel_inspection_rule "networkFirewallPolicies/{networkFirewallPolicyId}/tunnelInspectionRules/{tunnelInspectionRuleName}"

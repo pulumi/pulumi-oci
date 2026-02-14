@@ -31247,7 +31247,8 @@ type GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItem struc
 	// The application key.
 	ApplicationKey string `pulumi:"applicationKey"`
 	// The authorization mode for the task.
-	AuthMode               string `pulumi:"authMode"`
+	AuthMode string `pulumi:"authMode"`
+	// The information about the configuration provider. First level keys to this delegate map should be in the order first "bindings" then "childProviders".refer terraform Example.
 	ConfigProviderDelegate string `pulumi:"configProviderDelegate"`
 	// The description of the aggregator.
 	Description string `pulumi:"description"`
@@ -31315,7 +31316,8 @@ type GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemArgs s
 	// The application key.
 	ApplicationKey pulumi.StringInput `pulumi:"applicationKey"`
 	// The authorization mode for the task.
-	AuthMode               pulumi.StringInput `pulumi:"authMode"`
+	AuthMode pulumi.StringInput `pulumi:"authMode"`
+	// The information about the configuration provider. First level keys to this delegate map should be in the order first "bindings" then "childProviders".refer terraform Example.
 	ConfigProviderDelegate pulumi.StringInput `pulumi:"configProviderDelegate"`
 	// The description of the aggregator.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -31433,6 +31435,7 @@ func (o GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemOut
 	}).(pulumi.StringOutput)
 }
 
+// The information about the configuration provider. First level keys to this delegate map should be in the order first "bindings" then "childProviders".refer terraform Example.
 func (o GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemOutput) ConfigProviderDelegate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItem) string {
 		return v.ConfigProviderDelegate

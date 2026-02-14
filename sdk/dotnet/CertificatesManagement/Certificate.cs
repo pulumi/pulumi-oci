@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CertificatesManagement
 {
     /// <summary>
+    /// This resource provides the Certificate resource in Oracle Cloud Infrastructure Certificates Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/latest/Certificate
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesManagement
+    /// 
+    /// Creates a new certificate according to the details of the request.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -96,7 +103,7 @@ namespace Pulumi.Oci.CertificatesManagement
     /// 
     /// ## Import
     /// 
-    /// Certificates can be imported using the `id`, e.g.
+    /// Certificates can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:CertificatesManagement/certificate:Certificate test_certificate "id"

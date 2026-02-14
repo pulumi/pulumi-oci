@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics
 {
     /// <summary>
+    /// This resource provides the Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsObjectCollectionRule
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+    /// 
+    /// Create a configuration to collect logs from object storage bucket.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -62,7 +69,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// ## Import
     /// 
-    /// LogAnalyticsObjectCollectionRules can be imported using the `id`, e.g.
+    /// LogAnalyticsObjectCollectionRules can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule test_log_analytics_object_collection_rule "namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}"

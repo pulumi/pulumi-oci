@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Publication resource in Oracle Cloud Infrastructure Marketplace service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/marketplace/latest/Publication
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/marketplace
+//
+// Creates a publication of the specified listing type with an optional default package.
+//
 // ## Example Usage
 //
 // ```go

@@ -18,6 +18,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Stream Job resource in Oracle Cloud Infrastructure Ai Vision service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vision/latest/StreamJob
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiVision
+ * 
+ * Create a stream analysis job with given inputs and features.
+ * 
  * ## Example Usage
  * 
  * <pre>

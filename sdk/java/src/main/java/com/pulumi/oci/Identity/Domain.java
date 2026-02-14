@@ -18,6 +18,28 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Domain resource in Oracle Cloud Infrastructure Identity service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/Domain
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+ * 
+ * Creates a new domain in the tenancy with domain home in {{@literal @}code homeRegion}. This is an asynchronous call - where, at start,
+ * {{@literal @}code lifecycleState} of this domain is set to CREATING and {{@literal @}code lifecycleDetails} to UPDATING. On domain creation completion
+ * this Domain&#39;s {{@literal @}code lifecycleState} will be set to ACTIVE and {{@literal @}code lifecycleDetails} to null.
+ * 
+ * To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
+ * the async operation&#39;s status.
+ * 
+ * After creating a `Domain`, make sure its `lifecycleState` changes from CREATING to ACTIVE
+ * before using it.
+ * If the domain&#39;s {{@literal @}code displayName} already exists, returns 400 BAD REQUEST.
+ * If any one of admin related fields are provided and one of the following 3 fields
+ * - {{@literal @}code adminEmail}, {{@literal @}code adminLastName} and {{@literal @}code adminUserName} - is not provided,
+ *   returns 400 BAD REQUEST.
+ * - If {{@literal @}code isNotificationBypassed} is NOT provided when admin information is provided,
+ *   returns 400 BAD REQUEST.
+ * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+ * 
  * ## Example Usage
  * 
  * <pre>

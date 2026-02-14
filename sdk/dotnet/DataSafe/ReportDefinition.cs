@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
+    /// This resource provides the Report Definition resource in Oracle Cloud Infrastructure Data Safe service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/ReportDefinition
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+    /// 
+    /// Creates a new report definition with parameters specified in the body. The report definition is stored in the specified compartment.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -86,7 +93,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Import
     /// 
-    /// ReportDefinitions can be imported using the `id`, e.g.
+    /// ReportDefinitions can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataSafe/reportDefinition:ReportDefinition test_report_definition "id"

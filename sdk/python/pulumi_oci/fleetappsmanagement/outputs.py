@@ -545,6 +545,7 @@ class CatalogItemCatalogResultPayload(dict):
         :param _builtins.str repository_url: repository Url
         :param _builtins.str template_id: template id
         :param _builtins.str time_expires: The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str working_directory: File path to the directory to use for running Terraform. If not specified, the root directory is used.
         """
         if branch_name is not None:
             pulumi.set(__self__, "branch_name", branch_name)
@@ -622,6 +623,9 @@ class CatalogItemCatalogResultPayload(dict):
     @_builtins.property
     @pulumi.getter(name="workingDirectory")
     def working_directory(self) -> Optional[_builtins.str]:
+        """
+        File path to the directory to use for running Terraform. If not specified, the root directory is used.
+        """
         return pulumi.get(self, "working_directory")
 
 
@@ -696,6 +700,7 @@ class CatalogItemCatalogSourcePayload(dict):
         :param _builtins.str template_display_name: Template Display Name
         :param _builtins.str time_expires: The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str version: This version parameter of Payload.
+        :param _builtins.str working_directory: File path to the directory to use for running Terraform. If not specified, the root directory is used.
         :param _builtins.str zip_file_base64encoded: The Base64 encoded template. This payload will trigger CreateTemplate API, where the parameter will be passed.
         """
         pulumi.set(__self__, "config_source_type", config_source_type)
@@ -845,6 +850,9 @@ class CatalogItemCatalogSourcePayload(dict):
     @_builtins.property
     @pulumi.getter(name="workingDirectory")
     def working_directory(self) -> Optional[_builtins.str]:
+        """
+        File path to the directory to use for running Terraform. If not specified, the root directory is used.
+        """
         return pulumi.get(self, "working_directory")
 
     @_builtins.property
@@ -4962,6 +4970,7 @@ class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetails(dict):
                  variables: Optional['outputs.RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables'] = None):
         """
         :param _builtins.str execution_type: The action type of the task
+        :param _builtins.str catalog_id: Catalog Id having terraform package.
         :param _builtins.str command: Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         :param _builtins.str config_file: Catalog Id having config file.
         :param 'RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs' content: Content Source details.
@@ -5011,6 +5020,9 @@ class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetails(dict):
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> Optional[_builtins.str]:
+        """
+        Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @_builtins.property
@@ -5133,6 +5145,7 @@ class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContent(dict):
         """
         :param _builtins.str source_type: Content Source type details.
         :param _builtins.str bucket: Bucket Name.
+        :param _builtins.str catalog_id: Catalog Id having terraform package.
         :param _builtins.str checksum: md5 checksum of the artifact.
         :param _builtins.str namespace: Namespace.
         :param _builtins.str object: Object Name.
@@ -5168,6 +5181,9 @@ class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContent(dict):
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> Optional[_builtins.str]:
+        """
+        Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @_builtins.property
@@ -6914,6 +6930,7 @@ class RunbookVersionTaskTaskRecordDetailsExecutionDetails(dict):
                  variables: Optional['outputs.RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables'] = None):
         """
         :param _builtins.str execution_type: (Updatable) The action type of the task
+        :param _builtins.str catalog_id: (Updatable) Catalog Id having terraform package.
         :param _builtins.str command: (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         :param _builtins.str config_file: (Updatable) Catalog Id having config file.
         :param 'RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs' content: (Updatable) Content Source details.
@@ -6963,6 +6980,9 @@ class RunbookVersionTaskTaskRecordDetailsExecutionDetails(dict):
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @_builtins.property
@@ -7085,6 +7105,7 @@ class RunbookVersionTaskTaskRecordDetailsExecutionDetailsContent(dict):
         """
         :param _builtins.str source_type: (Updatable) Content Source type details.
         :param _builtins.str bucket: (Updatable) Bucket Name.
+        :param _builtins.str catalog_id: (Updatable) Catalog Id having terraform package.
         :param _builtins.str checksum: (Updatable) md5 checksum of the artifact.
         :param _builtins.str namespace: (Updatable) Namespace.
         :param _builtins.str object: (Updatable) Object Name.
@@ -7120,6 +7141,9 @@ class RunbookVersionTaskTaskRecordDetailsExecutionDetailsContent(dict):
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @_builtins.property
@@ -7942,6 +7966,7 @@ class TaskRecordDetailsExecutionDetails(dict):
                  variables: Optional['outputs.TaskRecordDetailsExecutionDetailsVariables'] = None):
         """
         :param _builtins.str execution_type: (Updatable) The action type of the task
+        :param _builtins.str catalog_id: (Updatable) Catalog Id having terraform package.
         :param _builtins.str command: (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         :param _builtins.str config_file: (Updatable) Catalog Id having config file.
         :param 'TaskRecordDetailsExecutionDetailsContentArgs' content: (Updatable) Content Source details.
@@ -7991,6 +8016,9 @@ class TaskRecordDetailsExecutionDetails(dict):
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @_builtins.property
@@ -8113,6 +8141,7 @@ class TaskRecordDetailsExecutionDetailsContent(dict):
         """
         :param _builtins.str source_type: (Updatable) Content Source type details.
         :param _builtins.str bucket: (Updatable) Bucket Name.
+        :param _builtins.str catalog_id: (Updatable) Catalog Id having terraform package.
         :param _builtins.str checksum: (Updatable) md5 checksum of the artifact.
         :param _builtins.str namespace: (Updatable) Namespace.
         :param _builtins.str object: (Updatable) Object Name.
@@ -8148,6 +8177,9 @@ class TaskRecordDetailsExecutionDetailsContent(dict):
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @_builtins.property
@@ -8622,6 +8654,7 @@ class GetCatalogItemCatalogResultPayloadResult(dict):
         :param _builtins.str repository_url: repository Url
         :param _builtins.str template_id: template id
         :param _builtins.str time_expires: The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str working_directory: File path to the directory to use for running Terraform. If not specified, the root directory is used.
         """
         pulumi.set(__self__, "branch_name", branch_name)
         pulumi.set(__self__, "config_result_type", config_result_type)
@@ -8691,6 +8724,9 @@ class GetCatalogItemCatalogResultPayloadResult(dict):
     @_builtins.property
     @pulumi.getter(name="workingDirectory")
     def working_directory(self) -> _builtins.str:
+        """
+        File path to the directory to use for running Terraform. If not specified, the root directory is used.
+        """
         return pulumi.get(self, "working_directory")
 
 
@@ -8728,6 +8764,7 @@ class GetCatalogItemCatalogSourcePayloadResult(dict):
         :param _builtins.str template_display_name: Template Display Name
         :param _builtins.str time_expires: The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str version: This version parameter of Payload.
+        :param _builtins.str working_directory: File path to the directory to use for running Terraform. If not specified, the root directory is used.
         :param _builtins.str zip_file_base64encoded: The Base64 encoded template. This payload will trigger CreateTemplate API, where the parameter will be passed.
         """
         pulumi.set(__self__, "access_uri", access_uri)
@@ -8862,6 +8899,9 @@ class GetCatalogItemCatalogSourcePayloadResult(dict):
     @_builtins.property
     @pulumi.getter(name="workingDirectory")
     def working_directory(self) -> _builtins.str:
+        """
+        File path to the directory to use for running Terraform. If not specified, the root directory is used.
+        """
         return pulumi.get(self, "working_directory")
 
     @_builtins.property
@@ -9638,6 +9678,7 @@ class GetCatalogItemsCatalogItemCollectionItemCatalogResultPayloadResult(dict):
         :param _builtins.str repository_url: repository Url
         :param _builtins.str template_id: template id
         :param _builtins.str time_expires: The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str working_directory: File path to the directory to use for running Terraform. If not specified, the root directory is used.
         """
         pulumi.set(__self__, "branch_name", branch_name)
         pulumi.set(__self__, "config_result_type", config_result_type)
@@ -9707,6 +9748,9 @@ class GetCatalogItemsCatalogItemCollectionItemCatalogResultPayloadResult(dict):
     @_builtins.property
     @pulumi.getter(name="workingDirectory")
     def working_directory(self) -> _builtins.str:
+        """
+        File path to the directory to use for running Terraform. If not specified, the root directory is used.
+        """
         return pulumi.get(self, "working_directory")
 
 
@@ -9744,6 +9788,7 @@ class GetCatalogItemsCatalogItemCollectionItemCatalogSourcePayloadResult(dict):
         :param _builtins.str template_display_name: Template Display Name
         :param _builtins.str time_expires: The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str version: This version parameter of Payload.
+        :param _builtins.str working_directory: File path to the directory to use for running Terraform. If not specified, the root directory is used.
         :param _builtins.str zip_file_base64encoded: The Base64 encoded template. This payload will trigger CreateTemplate API, where the parameter will be passed.
         """
         pulumi.set(__self__, "access_uri", access_uri)
@@ -9878,6 +9923,9 @@ class GetCatalogItemsCatalogItemCollectionItemCatalogSourcePayloadResult(dict):
     @_builtins.property
     @pulumi.getter(name="workingDirectory")
     def working_directory(self) -> _builtins.str:
+        """
+        File path to the directory to use for running Terraform. If not specified, the root directory is used.
+        """
         return pulumi.get(self, "working_directory")
 
     @_builtins.property
@@ -20363,6 +20411,7 @@ class GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailResult(dict):
                  target_compartment_id: _builtins.str,
                  variables: Sequence['outputs.GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailVariableResult']):
         """
+        :param _builtins.str catalog_id: Catalog Id having terraform package.
         :param _builtins.str command: Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         :param _builtins.str config_file: Catalog Id having config file.
         :param Sequence['GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailContentArgs'] contents: Content Source details.
@@ -20393,6 +20442,9 @@ class GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailResult(dict):
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> _builtins.str:
+        """
+        Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @_builtins.property
@@ -20503,6 +20555,7 @@ class GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailContentResult(d
                  source_type: _builtins.str):
         """
         :param _builtins.str bucket: Bucket Name.
+        :param _builtins.str catalog_id: Catalog Id having terraform package.
         :param _builtins.str checksum: md5 checksum of the artifact.
         :param _builtins.str namespace: Namespace.
         :param _builtins.str object: Object Name.
@@ -20526,6 +20579,9 @@ class GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailContentResult(d
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> _builtins.str:
+        """
+        Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @_builtins.property
@@ -21713,6 +21769,7 @@ class GetRunbookVersionTaskTaskRecordDetailExecutionDetailResult(dict):
                  target_compartment_id: _builtins.str,
                  variables: Sequence['outputs.GetRunbookVersionTaskTaskRecordDetailExecutionDetailVariableResult']):
         """
+        :param _builtins.str catalog_id: Catalog Id having terraform package.
         :param _builtins.str command: Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         :param _builtins.str config_file: Catalog Id having config file.
         :param Sequence['GetRunbookVersionTaskTaskRecordDetailExecutionDetailContentArgs'] contents: Content Source details.
@@ -21743,6 +21800,9 @@ class GetRunbookVersionTaskTaskRecordDetailExecutionDetailResult(dict):
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> _builtins.str:
+        """
+        Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @_builtins.property
@@ -21853,6 +21913,7 @@ class GetRunbookVersionTaskTaskRecordDetailExecutionDetailContentResult(dict):
                  source_type: _builtins.str):
         """
         :param _builtins.str bucket: Bucket Name.
+        :param _builtins.str catalog_id: Catalog Id having terraform package.
         :param _builtins.str checksum: md5 checksum of the artifact.
         :param _builtins.str namespace: Namespace.
         :param _builtins.str object: Object Name.
@@ -21876,6 +21937,9 @@ class GetRunbookVersionTaskTaskRecordDetailExecutionDetailContentResult(dict):
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> _builtins.str:
+        """
+        Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @_builtins.property
@@ -23287,6 +23351,7 @@ class GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecutio
                  target_compartment_id: _builtins.str,
                  variables: Sequence['outputs.GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecutionDetailVariableResult']):
         """
+        :param _builtins.str catalog_id: Catalog Id having terraform package.
         :param _builtins.str command: Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         :param _builtins.str config_file: Catalog Id having config file.
         :param Sequence['GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecutionDetailContentArgs'] contents: Content Source details.
@@ -23317,6 +23382,9 @@ class GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecutio
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> _builtins.str:
+        """
+        Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @_builtins.property
@@ -23427,6 +23495,7 @@ class GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecutio
                  source_type: _builtins.str):
         """
         :param _builtins.str bucket: Bucket Name.
+        :param _builtins.str catalog_id: Catalog Id having terraform package.
         :param _builtins.str checksum: md5 checksum of the artifact.
         :param _builtins.str namespace: Namespace.
         :param _builtins.str object: Object Name.
@@ -23450,6 +23519,9 @@ class GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecutio
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> _builtins.str:
+        """
+        Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @_builtins.property
@@ -25004,6 +25076,7 @@ class GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecutio
                  target_compartment_id: _builtins.str,
                  variables: Sequence['outputs.GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecutionDetailVariableResult']):
         """
+        :param _builtins.str catalog_id: Catalog Id having terraform package.
         :param _builtins.str command: Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         :param _builtins.str config_file: Catalog Id having config file.
         :param Sequence['GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecutionDetailContentArgs'] contents: Content Source details.
@@ -25034,6 +25107,9 @@ class GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecutio
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> _builtins.str:
+        """
+        Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @_builtins.property
@@ -25144,6 +25220,7 @@ class GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecutio
                  source_type: _builtins.str):
         """
         :param _builtins.str bucket: Bucket Name.
+        :param _builtins.str catalog_id: Catalog Id having terraform package.
         :param _builtins.str checksum: md5 checksum of the artifact.
         :param _builtins.str namespace: Namespace.
         :param _builtins.str object: Object Name.
@@ -25167,6 +25244,9 @@ class GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecutio
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> _builtins.str:
+        """
+        Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @_builtins.property
@@ -27466,6 +27546,7 @@ class GetTaskRecordDetailExecutionDetailResult(dict):
                  target_compartment_id: _builtins.str,
                  variables: Sequence['outputs.GetTaskRecordDetailExecutionDetailVariableResult']):
         """
+        :param _builtins.str catalog_id: Catalog Id having terraform package.
         :param _builtins.str command: Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         :param _builtins.str config_file: Catalog Id having config file.
         :param Sequence['GetTaskRecordDetailExecutionDetailContentArgs'] contents: Content Source details.
@@ -27496,6 +27577,9 @@ class GetTaskRecordDetailExecutionDetailResult(dict):
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> _builtins.str:
+        """
+        Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @_builtins.property
@@ -27606,6 +27690,7 @@ class GetTaskRecordDetailExecutionDetailContentResult(dict):
                  source_type: _builtins.str):
         """
         :param _builtins.str bucket: Bucket Name.
+        :param _builtins.str catalog_id: Catalog Id having terraform package.
         :param _builtins.str checksum: md5 checksum of the artifact.
         :param _builtins.str namespace: Namespace.
         :param _builtins.str object: Object Name.
@@ -27629,6 +27714,9 @@ class GetTaskRecordDetailExecutionDetailContentResult(dict):
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> _builtins.str:
+        """
+        Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @_builtins.property
@@ -28120,6 +28208,7 @@ class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailResult(dict):
                  target_compartment_id: _builtins.str,
                  variables: Sequence['outputs.GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailVariableResult']):
         """
+        :param _builtins.str catalog_id: Catalog Id having terraform package.
         :param _builtins.str command: Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         :param _builtins.str config_file: Catalog Id having config file.
         :param Sequence['GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContentArgs'] contents: Content Source details.
@@ -28150,6 +28239,9 @@ class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailResult(dict):
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> _builtins.str:
+        """
+        Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @_builtins.property
@@ -28260,6 +28352,7 @@ class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContentResult(d
                  source_type: _builtins.str):
         """
         :param _builtins.str bucket: Bucket Name.
+        :param _builtins.str catalog_id: Catalog Id having terraform package.
         :param _builtins.str checksum: md5 checksum of the artifact.
         :param _builtins.str namespace: Namespace.
         :param _builtins.str object: Object Name.
@@ -28283,6 +28376,9 @@ class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContentResult(d
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> _builtins.str:
+        """
+        Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @_builtins.property

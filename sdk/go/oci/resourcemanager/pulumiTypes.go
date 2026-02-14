@@ -452,7 +452,9 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput) Index(i pul
 }
 
 type GetStackConfigSource struct {
-	ConfigSourceType     string `pulumi:"configSourceType"`
+	// Specifies the `configSourceType` for uploading the Terraform configuration. Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
+	ConfigSourceType string `pulumi:"configSourceType"`
+	// File path to the directory from which Terraform runs. If not specified, we use the root directory.
 	WorkingDirectory     string `pulumi:"workingDirectory"`
 	ZipFileBase64encoded string `pulumi:"zipFileBase64encoded"`
 }
@@ -469,7 +471,9 @@ type GetStackConfigSourceInput interface {
 }
 
 type GetStackConfigSourceArgs struct {
-	ConfigSourceType     pulumi.StringInput `pulumi:"configSourceType"`
+	// Specifies the `configSourceType` for uploading the Terraform configuration. Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
+	ConfigSourceType pulumi.StringInput `pulumi:"configSourceType"`
+	// File path to the directory from which Terraform runs. If not specified, we use the root directory.
 	WorkingDirectory     pulumi.StringInput `pulumi:"workingDirectory"`
 	ZipFileBase64encoded pulumi.StringInput `pulumi:"zipFileBase64encoded"`
 }
@@ -525,10 +529,12 @@ func (o GetStackConfigSourceOutput) ToGetStackConfigSourceOutputWithContext(ctx 
 	return o
 }
 
+// Specifies the `configSourceType` for uploading the Terraform configuration. Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
 func (o GetStackConfigSourceOutput) ConfigSourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStackConfigSource) string { return v.ConfigSourceType }).(pulumi.StringOutput)
 }
 
+// File path to the directory from which Terraform runs. If not specified, we use the root directory.
 func (o GetStackConfigSourceOutput) WorkingDirectory() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStackConfigSource) string { return v.WorkingDirectory }).(pulumi.StringOutput)
 }
@@ -665,8 +671,9 @@ func (o GetStacksFilterArrayOutput) Index(i pulumi.IntInput) GetStacksFilterOutp
 
 type GetStacksStack struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
-	CompartmentId string                     `pulumi:"compartmentId"`
-	ConfigSource  GetStacksStackConfigSource `pulumi:"configSource"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// Location of the Terraform configuration.
+	ConfigSource GetStacksStackConfigSource `pulumi:"configSource"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// General description of the stack.
@@ -680,11 +687,13 @@ type GetStacksStack struct {
 	// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
 	State string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags       map[string]string `pulumi:"systemTags"`
-	TerraformVersion string            `pulumi:"terraformVersion"`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The version of Terraform specified for the stack. Example: `1.5.x`
+	TerraformVersion string `pulumi:"terraformVersion"`
 	// The date and time at which the stack was created. Format is defined by RFC3339. Example: `2020-01-25T21:10:29.600Z`
-	TimeCreated string            `pulumi:"timeCreated"`
-	Variables   map[string]string `pulumi:"variables"`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Terraform variables associated with this resource. Maximum number of variables supported is 250. The maximum size of each variable, including both name and value, is 8192 bytes. Example: `{"CompartmentId": "compartment-id-value"}`
+	Variables map[string]string `pulumi:"variables"`
 }
 
 // GetStacksStackInput is an input type that accepts GetStacksStackArgs and GetStacksStackOutput values.
@@ -700,8 +709,9 @@ type GetStacksStackInput interface {
 
 type GetStacksStackArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
-	CompartmentId pulumi.StringInput              `pulumi:"compartmentId"`
-	ConfigSource  GetStacksStackConfigSourceInput `pulumi:"configSource"`
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Location of the Terraform configuration.
+	ConfigSource GetStacksStackConfigSourceInput `pulumi:"configSource"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// General description of the stack.
@@ -715,11 +725,13 @@ type GetStacksStackArgs struct {
 	// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
 	State pulumi.StringInput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags       pulumi.StringMapInput `pulumi:"systemTags"`
-	TerraformVersion pulumi.StringInput    `pulumi:"terraformVersion"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The version of Terraform specified for the stack. Example: `1.5.x`
+	TerraformVersion pulumi.StringInput `pulumi:"terraformVersion"`
 	// The date and time at which the stack was created. Format is defined by RFC3339. Example: `2020-01-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput    `pulumi:"timeCreated"`
-	Variables   pulumi.StringMapInput `pulumi:"variables"`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Terraform variables associated with this resource. Maximum number of variables supported is 250. The maximum size of each variable, including both name and value, is 8192 bytes. Example: `{"CompartmentId": "compartment-id-value"}`
+	Variables pulumi.StringMapInput `pulumi:"variables"`
 }
 
 func (GetStacksStackArgs) ElementType() reflect.Type {
@@ -778,6 +790,7 @@ func (o GetStacksStackOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStacksStack) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Location of the Terraform configuration.
 func (o GetStacksStackOutput) ConfigSource() GetStacksStackConfigSourceOutput {
 	return o.ApplyT(func(v GetStacksStack) GetStacksStackConfigSource { return v.ConfigSource }).(GetStacksStackConfigSourceOutput)
 }
@@ -817,6 +830,7 @@ func (o GetStacksStackOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetStacksStack) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
+// The version of Terraform specified for the stack. Example: `1.5.x`
 func (o GetStacksStackOutput) TerraformVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStacksStack) string { return v.TerraformVersion }).(pulumi.StringOutput)
 }
@@ -826,6 +840,7 @@ func (o GetStacksStackOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStacksStack) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// Terraform variables associated with this resource. Maximum number of variables supported is 250. The maximum size of each variable, including both name and value, is 8192 bytes. Example: `{"CompartmentId": "compartment-id-value"}`
 func (o GetStacksStackOutput) Variables() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetStacksStack) map[string]string { return v.Variables }).(pulumi.StringMapOutput)
 }
@@ -851,7 +866,9 @@ func (o GetStacksStackArrayOutput) Index(i pulumi.IntInput) GetStacksStackOutput
 }
 
 type GetStacksStackConfigSource struct {
-	ConfigSourceType     string `pulumi:"configSourceType"`
+	// Specifies the `configSourceType` for uploading the Terraform configuration. Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
+	ConfigSourceType string `pulumi:"configSourceType"`
+	// File path to the directory from which Terraform runs. If not specified, we use the root directory.
 	WorkingDirectory     string `pulumi:"workingDirectory"`
 	ZipFileBase64encoded string `pulumi:"zipFileBase64encoded"`
 }
@@ -868,7 +885,9 @@ type GetStacksStackConfigSourceInput interface {
 }
 
 type GetStacksStackConfigSourceArgs struct {
-	ConfigSourceType     pulumi.StringInput `pulumi:"configSourceType"`
+	// Specifies the `configSourceType` for uploading the Terraform configuration. Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
+	ConfigSourceType pulumi.StringInput `pulumi:"configSourceType"`
+	// File path to the directory from which Terraform runs. If not specified, we use the root directory.
 	WorkingDirectory     pulumi.StringInput `pulumi:"workingDirectory"`
 	ZipFileBase64encoded pulumi.StringInput `pulumi:"zipFileBase64encoded"`
 }
@@ -899,10 +918,12 @@ func (o GetStacksStackConfigSourceOutput) ToGetStacksStackConfigSourceOutputWith
 	return o
 }
 
+// Specifies the `configSourceType` for uploading the Terraform configuration. Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
 func (o GetStacksStackConfigSourceOutput) ConfigSourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStacksStackConfigSource) string { return v.ConfigSourceType }).(pulumi.StringOutput)
 }
 
+// File path to the directory from which Terraform runs. If not specified, we use the root directory.
 func (o GetStacksStackConfigSourceOutput) WorkingDirectory() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStacksStackConfigSource) string { return v.WorkingDirectory }).(pulumi.StringOutput)
 }

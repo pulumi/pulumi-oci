@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/containerengine/latest/ClusterWorkloadMapping
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/container_engine
+ *
+ * Create the specified workloadMapping for a cluster.
+ *
  * ## Example Usage
  *
  * ```typescript

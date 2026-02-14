@@ -15,6 +15,13 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Externalcontainerdatabases Stack Monitoring resource in Oracle Cloud Infrastructure Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ExternalcontainerdatabasesStackMonitoring
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+ * 
+ * Enable Stack Monitoring for the external container database.
+ * 
  * ## Example Usage
  * 
  * <pre>

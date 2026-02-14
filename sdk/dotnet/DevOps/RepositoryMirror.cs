@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps
 {
     /// <summary>
+    /// This resource provides the Repository Mirror resource in Oracle Cloud Infrastructure Devops service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/RepositoryMirror
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+    /// 
+    /// Synchronize a mirrored repository to the latest version from external providers.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -30,7 +37,7 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// ## Import
     /// 
-    /// RepositoryMirror can be imported using the `id`, e.g.
+    /// RepositoryMirror can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DevOps/repositoryMirror:RepositoryMirror test_repository_mirror "id"

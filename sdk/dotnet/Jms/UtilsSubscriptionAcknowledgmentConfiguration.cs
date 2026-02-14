@@ -35,7 +35,7 @@ namespace Pulumi.Oci.Jms
     /// 
     /// ## Import
     /// 
-    /// SubscriptionAcknowledgmentConfigurations can be imported using the `id`, e.g.
+    /// SubscriptionAcknowledgmentConfigurations can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Jms/utilsSubscriptionAcknowledgmentConfiguration:UtilsSubscriptionAcknowledgmentConfiguration test_subscription_acknowledgment_configuration "id"

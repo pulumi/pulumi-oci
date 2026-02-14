@@ -12,7 +12,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## Example Usage
+// This resource provides the Channel resource in Oracle Cloud Infrastructure MySQL Database service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/mysql/latest/Channel
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/mysql
+//
+// Creates a Channel to establish replication from a source to a target.
 //
 // ## Import
 //

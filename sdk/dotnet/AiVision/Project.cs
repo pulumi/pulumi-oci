@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiVision
 {
     /// <summary>
+    /// This resource provides the Project resource in Oracle Cloud Infrastructure Ai Vision service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vision/latest/Project
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiVision
+    /// 
+    /// Create a new project.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -34,7 +41,7 @@ namespace Pulumi.Oci.AiVision
     /// 
     /// ## Import
     /// 
-    /// Projects can be imported using the `id`, e.g.
+    /// Projects can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:AiVision/project:Project test_project "id"

@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Repository Mirror resource in Oracle Cloud Infrastructure Devops service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/RepositoryMirror
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+//
+// Synchronize a mirrored repository to the latest version from external providers.
+//
 // ## Example Usage
 //
 // ```go

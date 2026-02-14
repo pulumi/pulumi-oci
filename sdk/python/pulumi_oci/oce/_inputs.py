@@ -19,18 +19,13 @@ __all__ = [
     'GetOceInstancesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetOceInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        OceInstance Name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOceInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOceInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    OceInstance Name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOceInstancesFilterArgs:

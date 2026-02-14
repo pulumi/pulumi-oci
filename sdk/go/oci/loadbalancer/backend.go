@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Backend resource in Oracle Cloud Infrastructure Load Balancer service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/loadbalancer/latest/Backend
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/load_balancer
+//
+// Adds a backend server to a backend set.
+//
 // ## Example Usage
 //
 // ```go

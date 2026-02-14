@@ -102,6 +102,9 @@ namespace Pulumi.Oci.Database
 
     public sealed class GetVmClusterNetworkDownloadConfigFileArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Encodes the downloaded txt config in base64. It is recommended to set this to `True` to avoid corrupting the file in Terraform state. The default value is `False`.
+        /// </summary>
         [Input("base64EncodeContent")]
         public bool? Base64EncodeContent { get; set; }
 
@@ -125,6 +128,9 @@ namespace Pulumi.Oci.Database
 
     public sealed class GetVmClusterNetworkDownloadConfigFileInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Encodes the downloaded txt config in base64. It is recommended to set this to `True` to avoid corrupting the file in Terraform state. The default value is `False`.
+        /// </summary>
         [Input("base64EncodeContent")]
         public Input<bool>? Base64EncodeContent { get; set; }
 

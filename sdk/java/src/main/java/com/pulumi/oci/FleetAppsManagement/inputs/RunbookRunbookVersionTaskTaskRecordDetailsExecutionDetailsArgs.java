@@ -21,9 +21,17 @@ public final class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArg
 
     public static final RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs Empty = new RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs();
 
+    /**
+     * Catalog Id having terraform package.
+     * 
+     */
     @Import(name="catalogId")
     private @Nullable Output<String> catalogId;
 
+    /**
+     * @return Catalog Id having terraform package.
+     * 
+     */
     public Optional<Output<String>> catalogId() {
         return Optional.ofNullable(this.catalogId);
     }
@@ -244,11 +252,23 @@ public final class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArg
             $ = new RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param catalogId Catalog Id having terraform package.
+         * 
+         * @return builder
+         * 
+         */
         public Builder catalogId(@Nullable Output<String> catalogId) {
             $.catalogId = catalogId;
             return this;
         }
 
+        /**
+         * @param catalogId Catalog Id having terraform package.
+         * 
+         * @return builder
+         * 
+         */
         public Builder catalogId(String catalogId) {
             return catalogId(Output.of(catalogId));
         }

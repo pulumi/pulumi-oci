@@ -11,6 +11,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
+//
+// # Get the Pre-Migration Advisor report details
+//
+// Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+//
 // ## Example Usage
 //
 // ```go

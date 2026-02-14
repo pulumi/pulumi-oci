@@ -120,6 +120,12 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
                  enable_awrhubsource: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
+        This resource provides the Awr Hub Source Awrhubsources Management resource in Oracle Cloud Infrastructure Opsi service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/operations-insights/latest/AwrHubSourceAwrhubsourcesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/osi
+        Enables a Awr Hub source database in Operations Insights. This will resume the Awr data flow for the given Awr Hub source if it was stopped earlier.
+
         ## Example Usage
 
         ```python
@@ -147,6 +153,12 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
                  args: AwrHubSourceAwrhubsourcesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Awr Hub Source Awrhubsources Management resource in Oracle Cloud Infrastructure Opsi service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/operations-insights/latest/AwrHubSourceAwrhubsourcesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/osi
+        Enables a Awr Hub source database in Operations Insights. This will resume the Awr data flow for the given Awr Hub source if it was stopped earlier.
+
         ## Example Usage
 
         ```python

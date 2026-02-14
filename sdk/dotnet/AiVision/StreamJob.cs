@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiVision
 {
     /// <summary>
+    /// This resource provides the Stream Job resource in Oracle Cloud Infrastructure Ai Vision service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vision/latest/StreamJob
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiVision
+    /// 
+    /// Create a stream analysis job with given inputs and features.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -64,7 +71,7 @@ namespace Pulumi.Oci.AiVision
     /// 
     /// ## Import
     /// 
-    /// StreamJobs can be imported using the `id`, e.g.
+    /// StreamJobs can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:AiVision/streamJob:StreamJob test_stream_job "id"

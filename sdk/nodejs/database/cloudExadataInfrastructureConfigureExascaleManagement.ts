@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Cloud Exadata Infrastructure Configure Exascale Management resource in Oracle Cloud Infrastructure Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructureConfigureExascaleManagement
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+ *
+ * Configures Exascale on Cloud exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
+ *
  * ## Example Usage
  *
  * ```typescript

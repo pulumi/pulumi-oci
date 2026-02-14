@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataFlow
 {
     /// <summary>
+    /// This resource provides the Invoke Run resource in Oracle Cloud Infrastructure Data Flow service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-flow/latest/InvokeRun
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataflow
+    /// 
+    /// Creates a run for an application.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -83,7 +90,7 @@ namespace Pulumi.Oci.DataFlow
     /// 
     /// ## Import
     /// 
-    /// InvokeRuns can be imported using the `id`, e.g.
+    /// InvokeRuns can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataFlow/invokeRun:InvokeRun test_invoke_run "id"
@@ -116,6 +123,9 @@ namespace Pulumi.Oci.DataFlow
         [Output("arguments")]
         public Output<ImmutableArray<string>> Arguments { get; private set; } = null!;
 
+        /// <summary>
+        /// Flag to invoke run asynchronously. The default is true and Terraform provider will not wait for run resource to reach target state of `SUCCEEDED`, `FAILED` or `CANCELLED` before exiting. User must wait to perform operations that need resource to be in target states. Set this to false to override this behavior.
+        /// </summary>
         [Output("asynchronous")]
         public Output<bool?> Asynchronous { get; private set; } = null!;
 
@@ -439,6 +449,9 @@ namespace Pulumi.Oci.DataFlow
             set => _arguments = value;
         }
 
+        /// <summary>
+        /// Flag to invoke run asynchronously. The default is true and Terraform provider will not wait for run resource to reach target state of `SUCCEEDED`, `FAILED` or `CANCELLED` before exiting. User must wait to perform operations that need resource to be in target states. Set this to false to override this behavior.
+        /// </summary>
         [Input("asynchronous")]
         public Input<bool>? Asynchronous { get; set; }
 
@@ -634,6 +647,9 @@ namespace Pulumi.Oci.DataFlow
             set => _arguments = value;
         }
 
+        /// <summary>
+        /// Flag to invoke run asynchronously. The default is true and Terraform provider will not wait for run resource to reach target state of `SUCCEEDED`, `FAILED` or `CANCELLED` before exiting. User must wait to perform operations that need resource to be in target states. Set this to false to override this behavior.
+        /// </summary>
         [Input("asynchronous")]
         public Input<bool>? Asynchronous { get; set; }
 

@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Jms
     /// 
     /// ## Import
     /// 
-    /// FleetAgentConfigurations can be imported using the `id`, e.g.
+    /// FleetAgentConfigurations can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Jms/fleetAgentConfiguration:FleetAgentConfiguration test_fleet_agent_configuration "fleets/{fleetId}/agentConfiguration"

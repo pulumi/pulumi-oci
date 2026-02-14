@@ -18,7 +18,12 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * ## Example Usage
+ * This resource provides the Schedule resource in Oracle Cloud Infrastructure Resource Scheduler service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/resource-scheduler/latest/Schedule
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/resourcescheduler
+ * 
+ * This API creates a schedule. You must provide either resources or resourceFilters.
  * 
  * ## Import
  * 

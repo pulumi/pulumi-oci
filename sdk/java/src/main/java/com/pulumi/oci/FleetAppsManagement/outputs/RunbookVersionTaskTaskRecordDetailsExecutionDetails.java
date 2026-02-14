@@ -17,6 +17,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class RunbookVersionTaskTaskRecordDetailsExecutionDetails {
+    /**
+     * @return (Updatable) Catalog Id having terraform package.
+     * 
+     */
     private @Nullable String catalogId;
     /**
      * @return (Updatable) Optional command to execute the content. You can provide any commands/arguments that can&#39;t be part of the script.
@@ -80,6 +84,10 @@ public final class RunbookVersionTaskTaskRecordDetailsExecutionDetails {
     private @Nullable RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariables variables;
 
     private RunbookVersionTaskTaskRecordDetailsExecutionDetails() {}
+    /**
+     * @return (Updatable) Catalog Id having terraform package.
+     * 
+     */
     public Optional<String> catalogId() {
         return Optional.ofNullable(this.catalogId);
     }

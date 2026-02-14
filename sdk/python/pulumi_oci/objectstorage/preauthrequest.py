@@ -388,6 +388,13 @@ class Preauthrequest(pulumi.CustomResource):
                  time_expires: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/PreauthenticatedRequest
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a pre-authenticated request specific to the bucket.
+
         ## Example Usage
 
         ```python
@@ -434,6 +441,13 @@ class Preauthrequest(pulumi.CustomResource):
                  args: PreauthrequestArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/PreauthenticatedRequest
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a pre-authenticated request specific to the bucket.
+
         ## Example Usage
 
         ```python

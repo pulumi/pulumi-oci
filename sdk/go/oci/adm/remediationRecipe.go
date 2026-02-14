@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/adm/latest/RemediationRecipe
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/adm
+//
+// Creates a new Remediation Recipe.
+//
 // ## Example Usage
 //
 // ```go

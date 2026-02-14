@@ -12,7 +12,15 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## Example Usage
+// This resource provides the Resolver resource in Oracle Cloud Infrastructure DNS service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dns/latest/Resolver
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dns
+//
+// Updates the specified resolver with your new information.
+//
+// Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until created VCN's state shows as Available in OCI console before updating DNS resolver properties.
+// Also a VCN cannot be deleted while its resolver has resolver endpoints. Additionally a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove the rules from a resolver user needs to update the resolver resource. Since DNS Resolver gets deleted when VCN is deleted there is no support for Delete for DNS Resolver.
 //
 // ## Import
 //

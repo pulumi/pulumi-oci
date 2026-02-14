@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LicenseManager
 {
     /// <summary>
+    /// This resource provides the Product License resource in Oracle Cloud Infrastructure License Manager service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/licensemanager/latest/ProductLicense
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/license_manager
+    /// 
+    /// Creates a new product license.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -50,7 +57,7 @@ namespace Pulumi.Oci.LicenseManager
     /// 
     /// ## Import
     /// 
-    /// ProductLicenses can be imported using the `id`, e.g.
+    /// ProductLicenses can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:LicenseManager/productLicense:ProductLicense test_product_license "id"

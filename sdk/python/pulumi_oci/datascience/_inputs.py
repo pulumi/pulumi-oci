@@ -353,32 +353,27 @@ __all__ = [
     'GetSchedulesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class JobJobConfigurationDetailsArgsDict(TypedDict):
-        job_type: pulumi.Input[_builtins.str]
-        """
-        The type of job.
-        """
-        command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The arguments to pass to the job.
-        """
-        environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Environment variables to set for the job.
-        """
-        maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
-        startup_probe_details: NotRequired[pulumi.Input['JobJobConfigurationDetailsStartupProbeDetailsArgsDict']]
-        """
-        The probe indicates whether the application within the job run has started.
-        """
-elif False:
-    JobJobConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobJobConfigurationDetailsArgsDict(TypedDict):
+    job_type: pulumi.Input[_builtins.str]
+    """
+    The type of job.
+    """
+    command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The arguments to pass to the job.
+    """
+    environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Environment variables to set for the job.
+    """
+    maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A time bound for the execution of the job. Timer starts when the job becomes active.
+    """
+    startup_probe_details: NotRequired[pulumi.Input['JobJobConfigurationDetailsStartupProbeDetailsArgsDict']]
+    """
+    The probe indicates whether the application within the job run has started.
+    """
 
 @pulumi.input_type
 class JobJobConfigurationDetailsArgs:
@@ -466,30 +461,27 @@ class JobJobConfigurationDetailsArgs:
         pulumi.set(self, "startup_probe_details", value)
 
 
-if not MYPY:
-    class JobJobConfigurationDetailsStartupProbeDetailsArgsDict(TypedDict):
-        commands: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        The commands to run in the target job run to perform the startup probe
-        """
-        job_probe_check_type: pulumi.Input[_builtins.str]
-        """
-        The probe check type to perform the startup probe and specifies the type of health check for a job.
-        """
-        failure_threshold: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        How many times the job will try before giving up when a probe fails.
-        """
-        initial_delay_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of seconds after the job run has started before a startup probe is initiated.
-        """
-        period_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of seconds how often the job run should perform a startup probe
-        """
-elif False:
-    JobJobConfigurationDetailsStartupProbeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobJobConfigurationDetailsStartupProbeDetailsArgsDict(TypedDict):
+    commands: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    The commands to run in the target job run to perform the startup probe
+    """
+    job_probe_check_type: pulumi.Input[_builtins.str]
+    """
+    The probe check type to perform the startup probe and specifies the type of health check for a job.
+    """
+    failure_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    How many times the job will try before giving up when a probe fails.
+    """
+    initial_delay_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of seconds after the job run has started before a startup probe is initiated.
+    """
+    period_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of seconds how often the job run should perform a startup probe
+    """
 
 @pulumi.input_type
 class JobJobConfigurationDetailsStartupProbeDetailsArgs:
@@ -576,34 +568,31 @@ class JobJobConfigurationDetailsStartupProbeDetailsArgs:
         pulumi.set(self, "period_in_seconds", value)
 
 
-if not MYPY:
-    class JobJobEnvironmentConfigurationDetailsArgsDict(TypedDict):
-        image: pulumi.Input[_builtins.str]
-        """
-        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
-        """
-        job_environment_type: pulumi.Input[_builtins.str]
-        """
-        The environment configuration type used for job runtime.
-        """
-        cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-        """
-        entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        """
-        image_digest: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-        """
-        image_signature_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the container image signature
-        """
-elif False:
-    JobJobEnvironmentConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobJobEnvironmentConfigurationDetailsArgsDict(TypedDict):
+    image: pulumi.Input[_builtins.str]
+    """
+    The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+    """
+    job_environment_type: pulumi.Input[_builtins.str]
+    """
+    The environment configuration type used for job runtime.
+    """
+    cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+    """
+    entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+    """
+    image_digest: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+    """
+    image_signature_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the container image signature
+    """
 
 @pulumi.input_type
 class JobJobEnvironmentConfigurationDetailsArgs:
@@ -706,30 +695,27 @@ class JobJobEnvironmentConfigurationDetailsArgs:
         pulumi.set(self, "image_signature_id", value)
 
 
-if not MYPY:
-    class JobJobInfrastructureConfigurationDetailsArgsDict(TypedDict):
-        job_infrastructure_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The infrastructure type used for job run.
-        """
-        block_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The size of the block storage volume to attach to the instance running the job
-        """
-        job_shape_config_details: NotRequired[pulumi.Input['JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict']]
-        """
-        (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
-        """
-        shape_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name that corresponds to the JobShapeSummary to use for the job node
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The subnet to create a secondary vnic in to attach to the instance running the job
-        """
-elif False:
-    JobJobInfrastructureConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobJobInfrastructureConfigurationDetailsArgsDict(TypedDict):
+    job_infrastructure_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The infrastructure type used for job run.
+    """
+    block_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The size of the block storage volume to attach to the instance running the job
+    """
+    job_shape_config_details: NotRequired[pulumi.Input['JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict']]
+    """
+    (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
+    """
+    shape_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name that corresponds to the JobShapeSummary to use for the job node
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The subnet to create a secondary vnic in to attach to the instance running the job
+    """
 
 @pulumi.input_type
 class JobJobInfrastructureConfigurationDetailsArgs:
@@ -817,22 +803,19 @@ class JobJobInfrastructureConfigurationDetailsArgs:
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict(TypedDict):
-        cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-        """
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The total amount of memory available to the job run instance, in gigabytes.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The total number of OCPUs available to the job run instance.
-        """
-elif False:
-    JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict(TypedDict):
+    cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The total amount of memory available to the job run instance, in gigabytes.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The total number of OCPUs available to the job run instance.
+    """
 
 @pulumi.input_type
 class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs:
@@ -889,26 +872,23 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class JobJobLogConfigurationDetailsArgsDict(TypedDict):
-        enable_auto_log_creation: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If automatic on-behalf-of log object creation is enabled for job runs.
-        """
-        enable_logging: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If customer logging is enabled for job runs.
-        """
-        log_group_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The log group id for where log objects are for job runs.
-        """
-        log_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The log id the job run will push logs too.
-        """
-elif False:
-    JobJobLogConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobJobLogConfigurationDetailsArgsDict(TypedDict):
+    enable_auto_log_creation: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If automatic on-behalf-of log object creation is enabled for job runs.
+    """
+    enable_logging: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If customer logging is enabled for job runs.
+    """
+    log_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The log group id for where log objects are for job runs.
+    """
+    log_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The log id the job run will push logs too.
+    """
 
 @pulumi.input_type
 class JobJobLogConfigurationDetailsArgs:
@@ -981,30 +961,27 @@ class JobJobLogConfigurationDetailsArgs:
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class JobJobNodeConfigurationDetailsArgsDict(TypedDict):
-        job_node_type: pulumi.Input[_builtins.str]
-        """
-        The node type used for job run.
-        """
-        job_network_configuration: NotRequired[pulumi.Input['JobJobNodeConfigurationDetailsJobNetworkConfigurationArgsDict']]
-        """
-        The job network configuration details
-        """
-        job_node_group_configuration_details_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListArgsDict']]]]
-        """
-        List of JobNodeGroupConfigurationDetails
-        """
-        maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A time bound for the execution of the job run. Timer starts when the job run is in progress.
-        """
-        startup_order: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The execution order of node groups
-        """
-elif False:
-    JobJobNodeConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobJobNodeConfigurationDetailsArgsDict(TypedDict):
+    job_node_type: pulumi.Input[_builtins.str]
+    """
+    The node type used for job run.
+    """
+    job_network_configuration: NotRequired[pulumi.Input['JobJobNodeConfigurationDetailsJobNetworkConfigurationArgsDict']]
+    """
+    The job network configuration details
+    """
+    job_node_group_configuration_details_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListArgsDict']]]]
+    """
+    List of JobNodeGroupConfigurationDetails
+    """
+    maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A time bound for the execution of the job run. Timer starts when the job run is in progress.
+    """
+    startup_order: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The execution order of node groups
+    """
 
 @pulumi.input_type
 class JobJobNodeConfigurationDetailsArgs:
@@ -1092,18 +1069,15 @@ class JobJobNodeConfigurationDetailsArgs:
         pulumi.set(self, "startup_order", value)
 
 
-if not MYPY:
-    class JobJobNodeConfigurationDetailsJobNetworkConfigurationArgsDict(TypedDict):
-        job_network_type: pulumi.Input[_builtins.str]
-        """
-        job network type
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The custom subnet id
-        """
-elif False:
-    JobJobNodeConfigurationDetailsJobNetworkConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class JobJobNodeConfigurationDetailsJobNetworkConfigurationArgsDict(TypedDict):
+    job_network_type: pulumi.Input[_builtins.str]
+    """
+    job network type
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The custom subnet id
+    """
 
 @pulumi.input_type
 class JobJobNodeConfigurationDetailsJobNetworkConfigurationArgs:
@@ -1143,34 +1117,31 @@ class JobJobNodeConfigurationDetailsJobNetworkConfigurationArgs:
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        node group name.
-        """
-        job_configuration_details: NotRequired[pulumi.Input['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgsDict']]
-        """
-        The job configuration details
-        """
-        job_environment_configuration_details: NotRequired[pulumi.Input['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgsDict']]
-        """
-        Environment configuration to capture job runtime dependencies.
-        """
-        job_infrastructure_configuration_details: NotRequired[pulumi.Input['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgsDict']]
-        """
-        The job infrastructure configuration details (shape, block storage, etc.)
-        """
-        minimum_success_replicas: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The minimum threshold of successful replicas for node group to be successful. All replicas need to succeed if this is not specified.
-        """
-        replicas: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of nodes.
-        """
-elif False:
-    JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListArgsDict: TypeAlias = Mapping[str, Any]
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    node group name.
+    """
+    job_configuration_details: NotRequired[pulumi.Input['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgsDict']]
+    """
+    The job configuration details
+    """
+    job_environment_configuration_details: NotRequired[pulumi.Input['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgsDict']]
+    """
+    Environment configuration to capture job runtime dependencies.
+    """
+    job_infrastructure_configuration_details: NotRequired[pulumi.Input['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgsDict']]
+    """
+    The job infrastructure configuration details (shape, block storage, etc.)
+    """
+    minimum_success_replicas: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The minimum threshold of successful replicas for node group to be successful. All replicas need to succeed if this is not specified.
+    """
+    replicas: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of nodes.
+    """
 
 @pulumi.input_type
 class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListArgs:
@@ -1274,30 +1245,27 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListArgs:
         pulumi.set(self, "replicas", value)
 
 
-if not MYPY:
-    class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgsDict(TypedDict):
-        job_type: pulumi.Input[_builtins.str]
-        """
-        The type of job.
-        """
-        command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The arguments to pass to the job.
-        """
-        environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Environment variables to set for the job.
-        """
-        maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
-        startup_probe_details: NotRequired[pulumi.Input['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgsDict']]
-        """
-        The probe indicates whether the application within the job run has started.
-        """
-elif False:
-    JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgsDict(TypedDict):
+    job_type: pulumi.Input[_builtins.str]
+    """
+    The type of job.
+    """
+    command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The arguments to pass to the job.
+    """
+    environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Environment variables to set for the job.
+    """
+    maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A time bound for the execution of the job. Timer starts when the job becomes active.
+    """
+    startup_probe_details: NotRequired[pulumi.Input['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgsDict']]
+    """
+    The probe indicates whether the application within the job run has started.
+    """
 
 @pulumi.input_type
 class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgs:
@@ -1385,30 +1353,27 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfi
         pulumi.set(self, "startup_probe_details", value)
 
 
-if not MYPY:
-    class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgsDict(TypedDict):
-        commands: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        The commands to run in the target job run to perform the startup probe
-        """
-        job_probe_check_type: pulumi.Input[_builtins.str]
-        """
-        The probe check type to perform the startup probe and specifies the type of health check for a job.
-        """
-        failure_threshold: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        How many times the job will try before giving up when a probe fails.
-        """
-        initial_delay_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of seconds after the job run has started before a startup probe is initiated.
-        """
-        period_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of seconds how often the job run should perform a startup probe
-        """
-elif False:
-    JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgsDict(TypedDict):
+    commands: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    The commands to run in the target job run to perform the startup probe
+    """
+    job_probe_check_type: pulumi.Input[_builtins.str]
+    """
+    The probe check type to perform the startup probe and specifies the type of health check for a job.
+    """
+    failure_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    How many times the job will try before giving up when a probe fails.
+    """
+    initial_delay_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of seconds after the job run has started before a startup probe is initiated.
+    """
+    period_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of seconds how often the job run should perform a startup probe
+    """
 
 @pulumi.input_type
 class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgs:
@@ -1495,34 +1460,31 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfi
         pulumi.set(self, "period_in_seconds", value)
 
 
-if not MYPY:
-    class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgsDict(TypedDict):
-        image: pulumi.Input[_builtins.str]
-        """
-        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
-        """
-        job_environment_type: pulumi.Input[_builtins.str]
-        """
-        The environment configuration type used for job runtime.
-        """
-        cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-        """
-        entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        """
-        image_digest: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-        """
-        image_signature_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the container image signature
-        """
-elif False:
-    JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgsDict(TypedDict):
+    image: pulumi.Input[_builtins.str]
+    """
+    The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+    """
+    job_environment_type: pulumi.Input[_builtins.str]
+    """
+    The environment configuration type used for job runtime.
+    """
+    cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+    """
+    entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+    """
+    image_digest: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+    """
+    image_signature_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the container image signature
+    """
 
 @pulumi.input_type
 class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgs:
@@ -1625,30 +1587,27 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvir
         pulumi.set(self, "image_signature_id", value)
 
 
-if not MYPY:
-    class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgsDict(TypedDict):
-        job_infrastructure_type: pulumi.Input[_builtins.str]
-        """
-        The infrastructure type used for job run.
-        """
-        block_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The size of the block storage volume to attach to the instance running the job
-        """
-        job_shape_config_details: NotRequired[pulumi.Input['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict']]
-        """
-        Details for the job run shape configuration. Specify only when a flex shape is selected.
-        """
-        shape_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name that corresponds to the JobShapeSummary to use for the job node
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The subnet to create a secondary vnic in to attach to the instance running the job
-        """
-elif False:
-    JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgsDict(TypedDict):
+    job_infrastructure_type: pulumi.Input[_builtins.str]
+    """
+    The infrastructure type used for job run.
+    """
+    block_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The size of the block storage volume to attach to the instance running the job
+    """
+    job_shape_config_details: NotRequired[pulumi.Input['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict']]
+    """
+    Details for the job run shape configuration. Specify only when a flex shape is selected.
+    """
+    shape_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name that corresponds to the JobShapeSummary to use for the job node
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The subnet to create a secondary vnic in to attach to the instance running the job
+    """
 
 @pulumi.input_type
 class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs:
@@ -1736,22 +1695,19 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfra
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict(TypedDict):
-        cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-        """
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total amount of memory available to the job run instance, in gigabytes.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total number of OCPUs available to the job run instance.
-        """
-elif False:
-    JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict(TypedDict):
+    cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total amount of memory available to the job run instance, in gigabytes.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total number of OCPUs available to the job run instance.
+    """
 
 @pulumi.input_type
 class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs:
@@ -1808,42 +1764,39 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfra
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class JobJobStorageMountConfigurationDetailsListArgsDict(TypedDict):
-        destination_directory_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The local directory name to be mounted
-        """
-        storage_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of storage.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The object storage bucket
-        """
-        destination_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The local path of the mounted directory, excluding directory name.
-        """
-        export_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the export
-        """
-        mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the mount target
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The object storage namespace
-        """
-        prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Prefix in the bucket to mount
-        """
-elif False:
-    JobJobStorageMountConfigurationDetailsListArgsDict: TypeAlias = Mapping[str, Any]
+class JobJobStorageMountConfigurationDetailsListArgsDict(TypedDict):
+    destination_directory_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The local directory name to be mounted
+    """
+    storage_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of storage.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The object storage bucket
+    """
+    destination_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The local path of the mounted directory, excluding directory name.
+    """
+    export_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the export
+    """
+    mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the mount target
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The object storage namespace
+    """
+    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Prefix in the bucket to mount
+    """
 
 @pulumi.input_type
 class JobJobStorageMountConfigurationDetailsListArgs:
@@ -1978,30 +1931,27 @@ class JobJobStorageMountConfigurationDetailsListArgs:
         pulumi.set(self, "prefix", value)
 
 
-if not MYPY:
-    class JobRunJobConfigurationOverrideDetailsArgsDict(TypedDict):
-        job_type: pulumi.Input[_builtins.str]
-        """
-        The type of job.
-        """
-        command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The arguments to pass to the job.
-        """
-        environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Environment variables to set for the job.
-        """
-        maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
-        startup_probe_details: NotRequired[pulumi.Input['JobRunJobConfigurationOverrideDetailsStartupProbeDetailsArgsDict']]
-        """
-        The probe indicates whether the application within the job run has started.
-        """
-elif False:
-    JobRunJobConfigurationOverrideDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunJobConfigurationOverrideDetailsArgsDict(TypedDict):
+    job_type: pulumi.Input[_builtins.str]
+    """
+    The type of job.
+    """
+    command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The arguments to pass to the job.
+    """
+    environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Environment variables to set for the job.
+    """
+    maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A time bound for the execution of the job. Timer starts when the job becomes active.
+    """
+    startup_probe_details: NotRequired[pulumi.Input['JobRunJobConfigurationOverrideDetailsStartupProbeDetailsArgsDict']]
+    """
+    The probe indicates whether the application within the job run has started.
+    """
 
 @pulumi.input_type
 class JobRunJobConfigurationOverrideDetailsArgs:
@@ -2089,30 +2039,27 @@ class JobRunJobConfigurationOverrideDetailsArgs:
         pulumi.set(self, "startup_probe_details", value)
 
 
-if not MYPY:
-    class JobRunJobConfigurationOverrideDetailsStartupProbeDetailsArgsDict(TypedDict):
-        commands: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        The commands to run in the target job run to perform the startup probe
-        """
-        job_probe_check_type: pulumi.Input[_builtins.str]
-        """
-        The probe check type to perform the startup probe and specifies the type of health check for a job.
-        """
-        failure_threshold: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        How many times the job will try before giving up when a probe fails.
-        """
-        initial_delay_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of seconds after the job run has started before a startup probe is initiated.
-        """
-        period_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of seconds how often the job run should perform a startup probe
-        """
-elif False:
-    JobRunJobConfigurationOverrideDetailsStartupProbeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunJobConfigurationOverrideDetailsStartupProbeDetailsArgsDict(TypedDict):
+    commands: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    The commands to run in the target job run to perform the startup probe
+    """
+    job_probe_check_type: pulumi.Input[_builtins.str]
+    """
+    The probe check type to perform the startup probe and specifies the type of health check for a job.
+    """
+    failure_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    How many times the job will try before giving up when a probe fails.
+    """
+    initial_delay_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of seconds after the job run has started before a startup probe is initiated.
+    """
+    period_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of seconds how often the job run should perform a startup probe
+    """
 
 @pulumi.input_type
 class JobRunJobConfigurationOverrideDetailsStartupProbeDetailsArgs:
@@ -2199,34 +2146,31 @@ class JobRunJobConfigurationOverrideDetailsStartupProbeDetailsArgs:
         pulumi.set(self, "period_in_seconds", value)
 
 
-if not MYPY:
-    class JobRunJobEnvironmentConfigurationOverrideDetailsArgsDict(TypedDict):
-        image: pulumi.Input[_builtins.str]
-        """
-        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
-        """
-        job_environment_type: pulumi.Input[_builtins.str]
-        """
-        The environment configuration type used for job runtime.
-        """
-        cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-        """
-        entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        """
-        image_digest: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-        """
-        image_signature_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the container image signature
-        """
-elif False:
-    JobRunJobEnvironmentConfigurationOverrideDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunJobEnvironmentConfigurationOverrideDetailsArgsDict(TypedDict):
+    image: pulumi.Input[_builtins.str]
+    """
+    The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+    """
+    job_environment_type: pulumi.Input[_builtins.str]
+    """
+    The environment configuration type used for job runtime.
+    """
+    cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+    """
+    entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+    """
+    image_digest: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+    """
+    image_signature_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the container image signature
+    """
 
 @pulumi.input_type
 class JobRunJobEnvironmentConfigurationOverrideDetailsArgs:
@@ -2329,30 +2273,27 @@ class JobRunJobEnvironmentConfigurationOverrideDetailsArgs:
         pulumi.set(self, "image_signature_id", value)
 
 
-if not MYPY:
-    class JobRunJobInfrastructureConfigurationDetailArgsDict(TypedDict):
-        block_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The size of the block storage volume to attach to the instance running the job
-        """
-        job_infrastructure_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The infrastructure type used for job run.
-        """
-        job_shape_config_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgsDict']]]]
-        """
-        Details for the job run shape configuration. Specify only when a flex shape is selected.
-        """
-        shape_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name that corresponds to the JobShapeSummary to use for the job node
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The subnet to create a secondary vnic in to attach to the instance running the job
-        """
-elif False:
-    JobRunJobInfrastructureConfigurationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunJobInfrastructureConfigurationDetailArgsDict(TypedDict):
+    block_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The size of the block storage volume to attach to the instance running the job
+    """
+    job_infrastructure_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The infrastructure type used for job run.
+    """
+    job_shape_config_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgsDict']]]]
+    """
+    Details for the job run shape configuration. Specify only when a flex shape is selected.
+    """
+    shape_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name that corresponds to the JobShapeSummary to use for the job node
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The subnet to create a secondary vnic in to attach to the instance running the job
+    """
 
 @pulumi.input_type
 class JobRunJobInfrastructureConfigurationDetailArgs:
@@ -2441,22 +2382,19 @@ class JobRunJobInfrastructureConfigurationDetailArgs:
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgsDict(TypedDict):
-        cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-        """
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total amount of memory available to the job run instance, in gigabytes.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total number of OCPUs available to the job run instance.
-        """
-elif False:
-    JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgsDict(TypedDict):
+    cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total amount of memory available to the job run instance, in gigabytes.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total number of OCPUs available to the job run instance.
+    """
 
 @pulumi.input_type
 class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs:
@@ -2513,30 +2451,27 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class JobRunJobInfrastructureConfigurationOverrideDetailsArgsDict(TypedDict):
-        job_infrastructure_type: pulumi.Input[_builtins.str]
-        """
-        The infrastructure type used for job run.
-        """
-        block_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The size of the block storage volume to attach to the instance running the job
-        """
-        job_shape_config_details: NotRequired[pulumi.Input['JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgsDict']]
-        """
-        Details for the job run shape configuration. Specify only when a flex shape is selected.
-        """
-        shape_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name that corresponds to the JobShapeSummary to use for the job node
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The subnet to create a secondary vnic in to attach to the instance running the job
-        """
-elif False:
-    JobRunJobInfrastructureConfigurationOverrideDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunJobInfrastructureConfigurationOverrideDetailsArgsDict(TypedDict):
+    job_infrastructure_type: pulumi.Input[_builtins.str]
+    """
+    The infrastructure type used for job run.
+    """
+    block_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The size of the block storage volume to attach to the instance running the job
+    """
+    job_shape_config_details: NotRequired[pulumi.Input['JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgsDict']]
+    """
+    Details for the job run shape configuration. Specify only when a flex shape is selected.
+    """
+    shape_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name that corresponds to the JobShapeSummary to use for the job node
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The subnet to create a secondary vnic in to attach to the instance running the job
+    """
 
 @pulumi.input_type
 class JobRunJobInfrastructureConfigurationOverrideDetailsArgs:
@@ -2624,18 +2559,15 @@ class JobRunJobInfrastructureConfigurationOverrideDetailsArgs:
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total amount of memory available to the job run instance, in gigabytes.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total number of OCPUs available to the job run instance.
-        """
-elif False:
-    JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total amount of memory available to the job run instance, in gigabytes.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total number of OCPUs available to the job run instance.
+    """
 
 @pulumi.input_type
 class JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs:
@@ -2676,26 +2608,23 @@ class JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsAr
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class JobRunJobLogConfigurationOverrideDetailsArgsDict(TypedDict):
-        enable_auto_log_creation: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If automatic on-behalf-of log object creation is enabled for job runs.
-        """
-        enable_logging: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If customer logging is enabled for job runs.
-        """
-        log_group_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The log group id for where log objects are for job runs.
-        """
-        log_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The log id the job run will push logs too.
-        """
-elif False:
-    JobRunJobLogConfigurationOverrideDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunJobLogConfigurationOverrideDetailsArgsDict(TypedDict):
+    enable_auto_log_creation: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If automatic on-behalf-of log object creation is enabled for job runs.
+    """
+    enable_logging: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If customer logging is enabled for job runs.
+    """
+    log_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The log group id for where log objects are for job runs.
+    """
+    log_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The log id the job run will push logs too.
+    """
 
 @pulumi.input_type
 class JobRunJobLogConfigurationOverrideDetailsArgs:
@@ -2768,30 +2697,27 @@ class JobRunJobLogConfigurationOverrideDetailsArgs:
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class JobRunJobNodeConfigurationOverrideDetailsArgsDict(TypedDict):
-        job_node_type: pulumi.Input[_builtins.str]
-        """
-        The node type used for job run.
-        """
-        job_network_configuration: NotRequired[pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationArgsDict']]
-        """
-        The job network configuration details
-        """
-        job_node_group_configuration_details_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListArgsDict']]]]
-        """
-        List of JobNodeGroupConfigurationDetails
-        """
-        maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A time bound for the execution of the job run. Timer starts when the job run is in progress.
-        """
-        startup_order: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The execution order of node groups
-        """
-elif False:
-    JobRunJobNodeConfigurationOverrideDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunJobNodeConfigurationOverrideDetailsArgsDict(TypedDict):
+    job_node_type: pulumi.Input[_builtins.str]
+    """
+    The node type used for job run.
+    """
+    job_network_configuration: NotRequired[pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationArgsDict']]
+    """
+    The job network configuration details
+    """
+    job_node_group_configuration_details_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListArgsDict']]]]
+    """
+    List of JobNodeGroupConfigurationDetails
+    """
+    maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A time bound for the execution of the job run. Timer starts when the job run is in progress.
+    """
+    startup_order: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The execution order of node groups
+    """
 
 @pulumi.input_type
 class JobRunJobNodeConfigurationOverrideDetailsArgs:
@@ -2879,18 +2805,15 @@ class JobRunJobNodeConfigurationOverrideDetailsArgs:
         pulumi.set(self, "startup_order", value)
 
 
-if not MYPY:
-    class JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationArgsDict(TypedDict):
-        job_network_type: pulumi.Input[_builtins.str]
-        """
-        job network type
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The custom subnet id
-        """
-elif False:
-    JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationArgsDict(TypedDict):
+    job_network_type: pulumi.Input[_builtins.str]
+    """
+    job network type
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The custom subnet id
+    """
 
 @pulumi.input_type
 class JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationArgs:
@@ -2930,34 +2853,31 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationArgs:
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        node group name.
-        """
-        job_configuration_details: NotRequired[pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgsDict']]
-        """
-        The job configuration details
-        """
-        job_environment_configuration_details: NotRequired[pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgsDict']]
-        """
-        Environment configuration to capture job runtime dependencies.
-        """
-        job_infrastructure_configuration_details: NotRequired[pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgsDict']]
-        """
-        The job infrastructure configuration details (shape, block storage, etc.)
-        """
-        minimum_success_replicas: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The minimum threshold of successful replicas for node group to be successful. All replicas need to succeed if this is not specified.
-        """
-        replicas: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of nodes.
-        """
-elif False:
-    JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    node group name.
+    """
+    job_configuration_details: NotRequired[pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgsDict']]
+    """
+    The job configuration details
+    """
+    job_environment_configuration_details: NotRequired[pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgsDict']]
+    """
+    Environment configuration to capture job runtime dependencies.
+    """
+    job_infrastructure_configuration_details: NotRequired[pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgsDict']]
+    """
+    The job infrastructure configuration details (shape, block storage, etc.)
+    """
+    minimum_success_replicas: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The minimum threshold of successful replicas for node group to be successful. All replicas need to succeed if this is not specified.
+    """
+    replicas: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of nodes.
+    """
 
 @pulumi.input_type
 class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListArgs:
@@ -3061,30 +2981,27 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
         pulumi.set(self, "replicas", value)
 
 
-if not MYPY:
-    class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgsDict(TypedDict):
-        job_type: pulumi.Input[_builtins.str]
-        """
-        The type of job.
-        """
-        command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The arguments to pass to the job.
-        """
-        environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Environment variables to set for the job.
-        """
-        maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
-        startup_probe_details: NotRequired[pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgsDict']]
-        """
-        The probe indicates whether the application within the job run has started.
-        """
-elif False:
-    JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgsDict(TypedDict):
+    job_type: pulumi.Input[_builtins.str]
+    """
+    The type of job.
+    """
+    command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The arguments to pass to the job.
+    """
+    environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Environment variables to set for the job.
+    """
+    maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A time bound for the execution of the job. Timer starts when the job becomes active.
+    """
+    startup_probe_details: NotRequired[pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgsDict']]
+    """
+    The probe indicates whether the application within the job run has started.
+    """
 
 @pulumi.input_type
 class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgs:
@@ -3172,30 +3089,27 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
         pulumi.set(self, "startup_probe_details", value)
 
 
-if not MYPY:
-    class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgsDict(TypedDict):
-        commands: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        The commands to run in the target job run to perform the startup probe
-        """
-        job_probe_check_type: pulumi.Input[_builtins.str]
-        """
-        The probe check type to perform the startup probe and specifies the type of health check for a job.
-        """
-        failure_threshold: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        How many times the job will try before giving up when a probe fails.
-        """
-        initial_delay_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of seconds after the job run has started before a startup probe is initiated.
-        """
-        period_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of seconds how often the job run should perform a startup probe
-        """
-elif False:
-    JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgsDict(TypedDict):
+    commands: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    The commands to run in the target job run to perform the startup probe
+    """
+    job_probe_check_type: pulumi.Input[_builtins.str]
+    """
+    The probe check type to perform the startup probe and specifies the type of health check for a job.
+    """
+    failure_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    How many times the job will try before giving up when a probe fails.
+    """
+    initial_delay_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of seconds after the job run has started before a startup probe is initiated.
+    """
+    period_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of seconds how often the job run should perform a startup probe
+    """
 
 @pulumi.input_type
 class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgs:
@@ -3282,34 +3196,31 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
         pulumi.set(self, "period_in_seconds", value)
 
 
-if not MYPY:
-    class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgsDict(TypedDict):
-        image: pulumi.Input[_builtins.str]
-        """
-        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
-        """
-        job_environment_type: pulumi.Input[_builtins.str]
-        """
-        The environment configuration type used for job runtime.
-        """
-        cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-        """
-        entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        """
-        image_digest: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-        """
-        image_signature_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the container image signature
-        """
-elif False:
-    JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgsDict(TypedDict):
+    image: pulumi.Input[_builtins.str]
+    """
+    The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+    """
+    job_environment_type: pulumi.Input[_builtins.str]
+    """
+    The environment configuration type used for job runtime.
+    """
+    cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+    """
+    entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+    """
+    image_digest: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+    """
+    image_signature_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the container image signature
+    """
 
 @pulumi.input_type
 class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgs:
@@ -3412,30 +3323,27 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
         pulumi.set(self, "image_signature_id", value)
 
 
-if not MYPY:
-    class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgsDict(TypedDict):
-        job_infrastructure_type: pulumi.Input[_builtins.str]
-        """
-        The infrastructure type used for job run.
-        """
-        block_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The size of the block storage volume to attach to the instance running the job
-        """
-        job_shape_config_details: NotRequired[pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict']]
-        """
-        Details for the job run shape configuration. Specify only when a flex shape is selected.
-        """
-        shape_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name that corresponds to the JobShapeSummary to use for the job node
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The subnet to create a secondary vnic in to attach to the instance running the job
-        """
-elif False:
-    JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgsDict(TypedDict):
+    job_infrastructure_type: pulumi.Input[_builtins.str]
+    """
+    The infrastructure type used for job run.
+    """
+    block_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The size of the block storage volume to attach to the instance running the job
+    """
+    job_shape_config_details: NotRequired[pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict']]
+    """
+    Details for the job run shape configuration. Specify only when a flex shape is selected.
+    """
+    shape_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name that corresponds to the JobShapeSummary to use for the job node
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The subnet to create a secondary vnic in to attach to the instance running the job
+    """
 
 @pulumi.input_type
 class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs:
@@ -3523,18 +3431,15 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total amount of memory available to the job run instance, in gigabytes.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total number of OCPUs available to the job run instance.
-        """
-elif False:
-    JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total amount of memory available to the job run instance, in gigabytes.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total number of OCPUs available to the job run instance.
+    """
 
 @pulumi.input_type
 class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs:
@@ -3575,42 +3480,39 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class JobRunJobStorageMountConfigurationDetailsListArgsDict(TypedDict):
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object storage bucket
-        """
-        destination_directory_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The local directory name to be mounted
-        """
-        destination_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The local path of the mounted directory, excluding directory name.
-        """
-        export_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the export
-        """
-        mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the mount target
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object storage namespace
-        """
-        prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Prefix in the bucket to mount
-        """
-        storage_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of storage.
-        """
-elif False:
-    JobRunJobStorageMountConfigurationDetailsListArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunJobStorageMountConfigurationDetailsListArgsDict(TypedDict):
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object storage bucket
+    """
+    destination_directory_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The local directory name to be mounted
+    """
+    destination_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The local path of the mounted directory, excluding directory name.
+    """
+    export_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the export
+    """
+    mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the mount target
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object storage namespace
+    """
+    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Prefix in the bucket to mount
+    """
+    storage_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of storage.
+    """
 
 @pulumi.input_type
 class JobRunJobStorageMountConfigurationDetailsListArgs:
@@ -3747,18 +3649,15 @@ class JobRunJobStorageMountConfigurationDetailsListArgs:
         pulumi.set(self, "storage_type", value)
 
 
-if not MYPY:
-    class JobRunLogDetailArgsDict(TypedDict):
-        log_group_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The log group id for where log objects will be for job runs.
-        """
-        log_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The log id of the log object the job run logs will be shipped to.
-        """
-elif False:
-    JobRunLogDetailArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunLogDetailArgsDict(TypedDict):
+    log_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The log group id for where log objects will be for job runs.
+    """
+    log_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The log id of the log object the job run logs will be shipped to.
+    """
 
 @pulumi.input_type
 class JobRunLogDetailArgs:
@@ -3799,22 +3698,19 @@ class JobRunLogDetailArgs:
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class JobRunNodeGroupDetailsListArgsDict(TypedDict):
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The state details of the node group.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        node group name.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The state of the job run.
-        """
-elif False:
-    JobRunNodeGroupDetailsListArgsDict: TypeAlias = Mapping[str, Any]
+class JobRunNodeGroupDetailsListArgsDict(TypedDict):
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The state details of the node group.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    node group name.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The state of the job run.
+    """
 
 @pulumi.input_type
 class JobRunNodeGroupDetailsListArgs:
@@ -3871,50 +3767,47 @@ class JobRunNodeGroupDetailsListArgs:
         pulumi.set(self, "state", value)
 
 
-if not MYPY:
-    class MlApplicationImplementationApplicationComponentArgsDict(TypedDict):
-        application_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of Data Flow Application
-        """
-        component_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of application component
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
-        """
-        job_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of Data Science Job
-        """
-        model_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of Data Science Model
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        ML Application Implementation name which is unique for given ML Application.
+class MlApplicationImplementationApplicationComponentArgsDict(TypedDict):
+    application_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of Data Flow Application
+    """
+    component_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of application component
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+    """
+    job_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of Data Science Job
+    """
+    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of Data Science Model
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    ML Application Implementation name which is unique for given ML Application.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        pipeline_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of Data Science Pipeline
-        """
-        resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the resource
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        type of the argument
-        """
-elif False:
-    MlApplicationImplementationApplicationComponentArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    pipeline_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of Data Science Pipeline
+    """
+    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the resource
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    type of the argument
+    """
 
 @pulumi.input_type
 class MlApplicationImplementationApplicationComponentArgs:
@@ -4075,38 +3968,35 @@ class MlApplicationImplementationApplicationComponentArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class MlApplicationImplementationConfigurationSchemaArgsDict(TypedDict):
-        default_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        short description of the argument
-        """
-        is_mandatory: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        argument is mandatory or not
-        """
-        key_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of key (parameter name)
-        """
-        sample_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Sample property value (it must match validationRegexp if it is specified)
-        """
-        validation_regexp: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A regular expression will be used for the validation of property value.
-        """
-        value_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of value
-        """
-elif False:
-    MlApplicationImplementationConfigurationSchemaArgsDict: TypeAlias = Mapping[str, Any]
+class MlApplicationImplementationConfigurationSchemaArgsDict(TypedDict):
+    default_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    short description of the argument
+    """
+    is_mandatory: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    argument is mandatory or not
+    """
+    key_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of key (parameter name)
+    """
+    sample_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Sample property value (it must match validationRegexp if it is specified)
+    """
+    validation_regexp: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A regular expression will be used for the validation of property value.
+    """
+    value_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of value
+    """
 
 @pulumi.input_type
 class MlApplicationImplementationConfigurationSchemaArgs:
@@ -4227,22 +4117,19 @@ class MlApplicationImplementationConfigurationSchemaArgs:
         pulumi.set(self, "value_type", value)
 
 
-if not MYPY:
-    class MlApplicationImplementationLoggingArgsDict(TypedDict):
-        aggregated_instance_view_log: NotRequired[pulumi.Input['MlApplicationImplementationLoggingAggregatedInstanceViewLogArgsDict']]
-        """
-        (Updatable) Log configuration details for particular areas of ML Application Implementation.
-        """
-        implementation_log: NotRequired[pulumi.Input['MlApplicationImplementationLoggingImplementationLogArgsDict']]
-        """
-        (Updatable) Log configuration details for particular areas of ML Application Implementation.
-        """
-        trigger_log: NotRequired[pulumi.Input['MlApplicationImplementationLoggingTriggerLogArgsDict']]
-        """
-        (Updatable) Log configuration details for particular areas of ML Application Implementation.
-        """
-elif False:
-    MlApplicationImplementationLoggingArgsDict: TypeAlias = Mapping[str, Any]
+class MlApplicationImplementationLoggingArgsDict(TypedDict):
+    aggregated_instance_view_log: NotRequired[pulumi.Input['MlApplicationImplementationLoggingAggregatedInstanceViewLogArgsDict']]
+    """
+    (Updatable) Log configuration details for particular areas of ML Application Implementation.
+    """
+    implementation_log: NotRequired[pulumi.Input['MlApplicationImplementationLoggingImplementationLogArgsDict']]
+    """
+    (Updatable) Log configuration details for particular areas of ML Application Implementation.
+    """
+    trigger_log: NotRequired[pulumi.Input['MlApplicationImplementationLoggingTriggerLogArgsDict']]
+    """
+    (Updatable) Log configuration details for particular areas of ML Application Implementation.
+    """
 
 @pulumi.input_type
 class MlApplicationImplementationLoggingArgs:
@@ -4299,22 +4186,19 @@ class MlApplicationImplementationLoggingArgs:
         pulumi.set(self, "trigger_log", value)
 
 
-if not MYPY:
-    class MlApplicationImplementationLoggingAggregatedInstanceViewLogArgsDict(TypedDict):
-        enable_logging: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If logging is enabled.
-        """
-        log_group_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
-        log_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
-elif False:
-    MlApplicationImplementationLoggingAggregatedInstanceViewLogArgsDict: TypeAlias = Mapping[str, Any]
+class MlApplicationImplementationLoggingAggregatedInstanceViewLogArgsDict(TypedDict):
+    enable_logging: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If logging is enabled.
+    """
+    log_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+    """
+    log_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+    """
 
 @pulumi.input_type
 class MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs:
@@ -4371,22 +4255,19 @@ class MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs:
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class MlApplicationImplementationLoggingImplementationLogArgsDict(TypedDict):
-        enable_logging: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If logging is enabled.
-        """
-        log_group_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
-        log_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
-elif False:
-    MlApplicationImplementationLoggingImplementationLogArgsDict: TypeAlias = Mapping[str, Any]
+class MlApplicationImplementationLoggingImplementationLogArgsDict(TypedDict):
+    enable_logging: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If logging is enabled.
+    """
+    log_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+    """
+    log_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+    """
 
 @pulumi.input_type
 class MlApplicationImplementationLoggingImplementationLogArgs:
@@ -4443,22 +4324,19 @@ class MlApplicationImplementationLoggingImplementationLogArgs:
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class MlApplicationImplementationLoggingTriggerLogArgsDict(TypedDict):
-        enable_logging: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If logging is enabled.
-        """
-        log_group_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
-        log_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
-elif False:
-    MlApplicationImplementationLoggingTriggerLogArgsDict: TypeAlias = Mapping[str, Any]
+class MlApplicationImplementationLoggingTriggerLogArgsDict(TypedDict):
+    enable_logging: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If logging is enabled.
+    """
+    log_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+    """
+    log_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+    """
 
 @pulumi.input_type
 class MlApplicationImplementationLoggingTriggerLogArgs:
@@ -4515,14 +4393,11 @@ class MlApplicationImplementationLoggingTriggerLogArgs:
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class MlApplicationImplementationMlApplicationPackageArgumentArgsDict(TypedDict):
-        arguments: NotRequired[pulumi.Input[Sequence[pulumi.Input['MlApplicationImplementationMlApplicationPackageArgumentArgumentArgsDict']]]]
-        """
-        Array of the ML Application package arguments
-        """
-elif False:
-    MlApplicationImplementationMlApplicationPackageArgumentArgsDict: TypeAlias = Mapping[str, Any]
+class MlApplicationImplementationMlApplicationPackageArgumentArgsDict(TypedDict):
+    arguments: NotRequired[pulumi.Input[Sequence[pulumi.Input['MlApplicationImplementationMlApplicationPackageArgumentArgumentArgsDict']]]]
+    """
+    Array of the ML Application package arguments
+    """
 
 @pulumi.input_type
 class MlApplicationImplementationMlApplicationPackageArgumentArgs:
@@ -4547,34 +4422,31 @@ class MlApplicationImplementationMlApplicationPackageArgumentArgs:
         pulumi.set(self, "arguments", value)
 
 
-if not MYPY:
-    class MlApplicationImplementationMlApplicationPackageArgumentArgumentArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        short description of the argument
-        """
-        is_mandatory: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        argument is mandatory or not
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        ML Application Implementation name which is unique for given ML Application.
+class MlApplicationImplementationMlApplicationPackageArgumentArgumentArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    short description of the argument
+    """
+    is_mandatory: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    argument is mandatory or not
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    ML Application Implementation name which is unique for given ML Application.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        type of the argument
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Argument value
-        """
-elif False:
-    MlApplicationImplementationMlApplicationPackageArgumentArgumentArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    type of the argument
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Argument value
+    """
 
 @pulumi.input_type
 class MlApplicationImplementationMlApplicationPackageArgumentArgumentArgs:
@@ -4671,22 +4543,19 @@ class MlApplicationImplementationMlApplicationPackageArgumentArgumentArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class MlApplicationInstanceAuthConfigurationArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of AuthN/Z
-        """
-        application_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the IDCS application
-        """
-        domain_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Identity Domain OCID
-        """
-elif False:
-    MlApplicationInstanceAuthConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class MlApplicationInstanceAuthConfigurationArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of AuthN/Z
+    """
+    application_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the IDCS application
+    """
+    domain_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Identity Domain OCID
+    """
 
 @pulumi.input_type
 class MlApplicationInstanceAuthConfigurationArgs:
@@ -4742,18 +4611,15 @@ class MlApplicationInstanceAuthConfigurationArgs:
         pulumi.set(self, "domain_id", value)
 
 
-if not MYPY:
-    class MlApplicationInstanceConfigurationArgsDict(TypedDict):
-        key: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Key of configuration property
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value of configuration property
-        """
-elif False:
-    MlApplicationInstanceConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class MlApplicationInstanceConfigurationArgsDict(TypedDict):
+    key: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Key of configuration property
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value of configuration property
+    """
 
 @pulumi.input_type
 class MlApplicationInstanceConfigurationArgs:
@@ -4793,18 +4659,15 @@ class MlApplicationInstanceConfigurationArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class MlApplicationInstancePredictionEndpointDetailArgsDict(TypedDict):
-        base_prediction_uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Base URI of prediction router.
-        """
-        prediction_uris: NotRequired[pulumi.Input[Sequence[pulumi.Input['MlApplicationInstancePredictionEndpointDetailPredictionUriArgsDict']]]]
-        """
-        Array of all prediction URIs per use-case.
-        """
-elif False:
-    MlApplicationInstancePredictionEndpointDetailArgsDict: TypeAlias = Mapping[str, Any]
+class MlApplicationInstancePredictionEndpointDetailArgsDict(TypedDict):
+    base_prediction_uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Base URI of prediction router.
+    """
+    prediction_uris: NotRequired[pulumi.Input[Sequence[pulumi.Input['MlApplicationInstancePredictionEndpointDetailPredictionUriArgsDict']]]]
+    """
+    Array of all prediction URIs per use-case.
+    """
 
 @pulumi.input_type
 class MlApplicationInstancePredictionEndpointDetailArgs:
@@ -4845,18 +4708,15 @@ class MlApplicationInstancePredictionEndpointDetailArgs:
         pulumi.set(self, "prediction_uris", value)
 
 
-if not MYPY:
-    class MlApplicationInstancePredictionEndpointDetailPredictionUriArgsDict(TypedDict):
-        uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Prediction URI.
-        """
-        use_case: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Prediction use-case.
-        """
-elif False:
-    MlApplicationInstancePredictionEndpointDetailPredictionUriArgsDict: TypeAlias = Mapping[str, Any]
+class MlApplicationInstancePredictionEndpointDetailPredictionUriArgsDict(TypedDict):
+    uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Prediction URI.
+    """
+    use_case: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Prediction use-case.
+    """
 
 @pulumi.input_type
 class MlApplicationInstancePredictionEndpointDetailPredictionUriArgs:
@@ -4897,22 +4757,19 @@ class MlApplicationInstancePredictionEndpointDetailPredictionUriArgs:
         pulumi.set(self, "use_case", value)
 
 
-if not MYPY:
-    class ModelBackupOperationDetailArgsDict(TypedDict):
-        backup_state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The backup status of the model.
-        """
-        backup_state_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The backup execution status details of the model.
-        """
-        time_last_backup: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The last backup execution time of the model.
-        """
-elif False:
-    ModelBackupOperationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class ModelBackupOperationDetailArgsDict(TypedDict):
+    backup_state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The backup status of the model.
+    """
+    backup_state_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The backup execution status details of the model.
+    """
+    time_last_backup: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The last backup execution time of the model.
+    """
 
 @pulumi.input_type
 class ModelBackupOperationDetailArgs:
@@ -4969,22 +4826,19 @@ class ModelBackupOperationDetailArgs:
         pulumi.set(self, "time_last_backup", value)
 
 
-if not MYPY:
-    class ModelBackupSettingArgsDict(TypedDict):
-        backup_region: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Oracle Cloud Infrastructure backup region for the model.
-        """
-        is_backup_enabled: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Boolean flag representing whether backup needs to be enabled/disabled for the model.
-        """
-        customer_notification_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Customer notification on backup success/failure events.
-        """
-elif False:
-    ModelBackupSettingArgsDict: TypeAlias = Mapping[str, Any]
+class ModelBackupSettingArgsDict(TypedDict):
+    backup_region: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Oracle Cloud Infrastructure backup region for the model.
+    """
+    is_backup_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Boolean flag representing whether backup needs to be enabled/disabled for the model.
+    """
+    customer_notification_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Customer notification on backup success/failure events.
+    """
 
 @pulumi.input_type
 class ModelBackupSettingArgs:
@@ -5039,47 +4893,44 @@ class ModelBackupSettingArgs:
         pulumi.set(self, "customer_notification_type", value)
 
 
-if not MYPY:
-    class ModelCustomMetadataListArgsDict(TypedDict):
-        category: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Description of model metadata
-        """
-        has_artifact: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Is there any artifact present for the metadata.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
-        * useCaseType
-        * libraryName
-        * libraryVersion
-        * estimatorClass
-        * hyperParameters
-        * testArtifactresults
-        * fineTuningConfiguration
-        * deploymentConfiguration
-        * readme
-        * license
-        * evaluationConfiguration
-        """
-        keywords: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) list of keywords for searching
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+class ModelCustomMetadataListArgsDict(TypedDict):
+    category: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Description of model metadata
+    """
+    has_artifact: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Is there any artifact present for the metadata.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
+    * useCaseType
+    * libraryName
+    * libraryVersion
+    * estimatorClass
+    * hyperParameters
+    * testArtifactresults
+    * fineTuningConfiguration
+    * deploymentConfiguration
+    * readme
+    * license
+    * evaluationConfiguration
+    """
+    keywords: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) list of keywords for searching
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 
-        Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
-        """
-elif False:
-    ModelCustomMetadataListArgsDict: TypeAlias = Mapping[str, Any]
+    Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
+    """
 
 @pulumi.input_type
 class ModelCustomMetadataListArgs:
@@ -5210,47 +5061,44 @@ class ModelCustomMetadataListArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class ModelDefinedMetadataListArgsDict(TypedDict):
-        category: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Description of model metadata
-        """
-        has_artifact: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Is there any artifact present for the metadata.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
-        * useCaseType
-        * libraryName
-        * libraryVersion
-        * estimatorClass
-        * hyperParameters
-        * testArtifactresults
-        * fineTuningConfiguration
-        * deploymentConfiguration
-        * readme
-        * license
-        * evaluationConfiguration
-        """
-        keywords: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) list of keywords for searching
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+class ModelDefinedMetadataListArgsDict(TypedDict):
+    category: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Description of model metadata
+    """
+    has_artifact: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Is there any artifact present for the metadata.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
+    * useCaseType
+    * libraryName
+    * libraryVersion
+    * estimatorClass
+    * hyperParameters
+    * testArtifactresults
+    * fineTuningConfiguration
+    * deploymentConfiguration
+    * readme
+    * license
+    * evaluationConfiguration
+    """
+    keywords: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) list of keywords for searching
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
 
-        Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
-        """
-elif False:
-    ModelDefinedMetadataListArgsDict: TypeAlias = Mapping[str, Any]
+    Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
+    """
 
 @pulumi.input_type
 class ModelDefinedMetadataListArgs:
@@ -5381,18 +5229,15 @@ class ModelDefinedMetadataListArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class ModelDeploymentCategoryLogDetailsArgsDict(TypedDict):
-        access: NotRequired[pulumi.Input['ModelDeploymentCategoryLogDetailsAccessArgsDict']]
-        """
-        (Updatable) The log details.
-        """
-        predict: NotRequired[pulumi.Input['ModelDeploymentCategoryLogDetailsPredictArgsDict']]
-        """
-        (Updatable) The log details.
-        """
-elif False:
-    ModelDeploymentCategoryLogDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentCategoryLogDetailsArgsDict(TypedDict):
+    access: NotRequired[pulumi.Input['ModelDeploymentCategoryLogDetailsAccessArgsDict']]
+    """
+    (Updatable) The log details.
+    """
+    predict: NotRequired[pulumi.Input['ModelDeploymentCategoryLogDetailsPredictArgsDict']]
+    """
+    (Updatable) The log details.
+    """
 
 @pulumi.input_type
 class ModelDeploymentCategoryLogDetailsArgs:
@@ -5433,18 +5278,15 @@ class ModelDeploymentCategoryLogDetailsArgs:
         pulumi.set(self, "predict", value)
 
 
-if not MYPY:
-    class ModelDeploymentCategoryLogDetailsAccessArgsDict(TypedDict):
-        log_group_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
-        """
-        log_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
-        """
-elif False:
-    ModelDeploymentCategoryLogDetailsAccessArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentCategoryLogDetailsAccessArgsDict(TypedDict):
+    log_group_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
+    """
+    log_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
+    """
 
 @pulumi.input_type
 class ModelDeploymentCategoryLogDetailsAccessArgs:
@@ -5483,18 +5325,15 @@ class ModelDeploymentCategoryLogDetailsAccessArgs:
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class ModelDeploymentCategoryLogDetailsPredictArgsDict(TypedDict):
-        log_group_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
-        """
-        log_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
-        """
-elif False:
-    ModelDeploymentCategoryLogDetailsPredictArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentCategoryLogDetailsPredictArgsDict(TypedDict):
+    log_group_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
+    """
+    log_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
+    """
 
 @pulumi.input_type
 class ModelDeploymentCategoryLogDetailsPredictArgs:
@@ -5533,24 +5372,21 @@ class ModelDeploymentCategoryLogDetailsPredictArgs:
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsArgsDict(TypedDict):
-        deployment_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of the model deployment.
-        """
-        environment_configuration_details: NotRequired[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgsDict']]
-        """
-        (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
-        """
-        infrastructure_configuration_details: NotRequired[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgsDict']]
-        model_configuration_details: NotRequired[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgsDict']]
-        """
-        (Updatable) The model configuration details.
-        """
-        model_group_configuration_details: NotRequired[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgsDict']]
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentModelDeploymentConfigurationDetailsArgsDict(TypedDict):
+    deployment_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of the model deployment.
+    """
+    environment_configuration_details: NotRequired[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgsDict']]
+    """
+    (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
+    """
+    infrastructure_configuration_details: NotRequired[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgsDict']]
+    model_configuration_details: NotRequired[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgsDict']]
+    """
+    (Updatable) The model configuration details.
+    """
+    model_group_configuration_details: NotRequired[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgsDict']]
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsArgs:
@@ -5630,46 +5466,43 @@ class ModelDeploymentModelDeploymentConfigurationDetailsArgs:
         pulumi.set(self, "model_group_configuration_details", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgsDict(TypedDict):
-        environment_configuration_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The environment configuration type
-        """
-        cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-        """
-        default_environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Service injected Environment variables set for the web server container and can not be set or modified by user.
-        """
-        entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        """
-        environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-        """
-        health_check_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        """
-        image: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
-        """
-        image_digest: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-        """
-        server_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        """
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgsDict(TypedDict):
+    environment_configuration_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The environment configuration type
+    """
+    cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+    """
+    default_environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Service injected Environment variables set for the web server container and can not be set or modified by user.
+    """
+    entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+    """
+    environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
+    """
+    health_check_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+    """
+    image: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+    """
+    image_digest: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+    """
+    server_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
+    """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs:
@@ -5821,27 +5654,24 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
         pulumi.set(self, "server_port", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgsDict(TypedDict):
-        infrastructure_type: pulumi.Input[_builtins.str]
-        instance_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgsDict']
-        """
-        The model deployment instance configuration.
-        """
-        bandwidth_mbps: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The minimum network bandwidth for the model deployment.
-        """
-        maximum_bandwidth_mbps: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The maximum network bandwidth for the model deployment.
-        """
-        scaling_policy: NotRequired[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgsDict']]
-        """
-        The scaling policy to apply to each model of the deployment.
-        """
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgsDict(TypedDict):
+    infrastructure_type: pulumi.Input[_builtins.str]
+    instance_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgsDict']
+    """
+    The model deployment instance configuration.
+    """
+    bandwidth_mbps: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The minimum network bandwidth for the model deployment.
+    """
+    maximum_bandwidth_mbps: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The maximum network bandwidth for the model deployment.
+    """
+    scaling_policy: NotRequired[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgsDict']]
+    """
+    The scaling policy to apply to each model of the deployment.
+    """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs:
@@ -5924,26 +5754,23 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         pulumi.set(self, "scaling_policy", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgsDict(TypedDict):
-        instance_shape_name: pulumi.Input[_builtins.str]
-        """
-        The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
-        """
-        model_deployment_instance_shape_config_details: NotRequired[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgsDict']]
-        """
-        Details for the model-deployment instance shape configuration.
-        """
-        private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of a Data Science private endpoint.
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
-        """
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgsDict(TypedDict):
+    instance_shape_name: pulumi.Input[_builtins.str]
+    """
+    The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
+    """
+    model_deployment_instance_shape_config_details: NotRequired[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgsDict']]
+    """
+    Details for the model-deployment instance shape configuration.
+    """
+    private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of a Data Science private endpoint.
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+    """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs:
@@ -6015,22 +5842,19 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgsDict(TypedDict):
-        cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-        """
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
-        """
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgsDict(TypedDict):
+    cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+    """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs:
@@ -6087,30 +5911,27 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgsDict(TypedDict):
-        policy_type: pulumi.Input[_builtins.str]
-        """
-        The type of scaling policy.
-        """
-        auto_scaling_policies: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyArgsDict']]]]
-        """
-        The list of autoscaling policy details.
-        """
-        cool_down_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
-        """
-        instance_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of instances for the model deployment.
-        """
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether the autoscaling policy is enabled.
-        """
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgsDict(TypedDict):
+    policy_type: pulumi.Input[_builtins.str]
+    """
+    The type of scaling policy.
+    """
+    auto_scaling_policies: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyArgsDict']]]]
+    """
+    The list of autoscaling policy details.
+    """
+    cool_down_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+    """
+    instance_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of instances for the model deployment.
+    """
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether the autoscaling policy is enabled.
+    """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgs:
@@ -6198,30 +6019,27 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         pulumi.set(self, "is_enabled", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyArgsDict(TypedDict):
-        auto_scaling_policy_type: pulumi.Input[_builtins.str]
-        """
-        The type of autoscaling policy.
-        """
-        initial_instance_count: pulumi.Input[_builtins.int]
-        """
-        For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
-        """
-        maximum_instance_count: pulumi.Input[_builtins.int]
-        """
-        For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
-        """
-        minimum_instance_count: pulumi.Input[_builtins.int]
-        """
-        For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
-        """
-        rules: pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgsDict']]]
-        """
-        The list of autoscaling policy rules.
-        """
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyArgsDict(TypedDict):
+    auto_scaling_policy_type: pulumi.Input[_builtins.str]
+    """
+    The type of autoscaling policy.
+    """
+    initial_instance_count: pulumi.Input[_builtins.int]
+    """
+    For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+    """
+    maximum_instance_count: pulumi.Input[_builtins.int]
+    """
+    For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+    """
+    minimum_instance_count: pulumi.Input[_builtins.int]
+    """
+    For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+    """
+    rules: pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgsDict']]]
+    """
+    The list of autoscaling policy rules.
+    """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyArgs:
@@ -6305,26 +6123,23 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         pulumi.set(self, "rules", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgsDict(TypedDict):
-        metric_expression_rule_type: pulumi.Input[_builtins.str]
-        """
-        The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
-        """
-        scale_in_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgsDict']
-        """
-        The scaling configuration for the predefined metric expression rule.
-        """
-        scale_out_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgsDict']
-        """
-        The scaling configuration for the predefined metric expression rule.
-        """
-        metric_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Metric type
-        """
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgsDict(TypedDict):
+    metric_expression_rule_type: pulumi.Input[_builtins.str]
+    """
+    The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+    """
+    scale_in_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgsDict']
+    """
+    The scaling configuration for the predefined metric expression rule.
+    """
+    scale_out_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgsDict']
+    """
+    The scaling configuration for the predefined metric expression rule.
+    """
+    metric_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Metric type
+    """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs:
@@ -6394,30 +6209,27 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         pulumi.set(self, "metric_type", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgsDict(TypedDict):
-        instance_count_adjustment: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The value is used for adjusting the count of instances by.
-        """
-        pending_duration: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
-        """
-        query: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
-        """
-        scaling_configuration_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of scaling configuration.
-        """
-        threshold: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        A metric value at which the scaling operation will be triggered.
-        """
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgsDict(TypedDict):
+    instance_count_adjustment: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The value is used for adjusting the count of instances by.
+    """
+    pending_duration: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+    """
+    query: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+    """
+    scaling_configuration_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of scaling configuration.
+    """
+    threshold: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    A metric value at which the scaling operation will be triggered.
+    """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs:
@@ -6506,30 +6318,27 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         pulumi.set(self, "threshold", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgsDict(TypedDict):
-        instance_count_adjustment: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The value is used for adjusting the count of instances by.
-        """
-        pending_duration: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
-        """
-        query: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
-        """
-        scaling_configuration_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of scaling configuration.
-        """
-        threshold: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        A metric value at which the scaling operation will be triggered.
-        """
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgsDict(TypedDict):
+    instance_count_adjustment: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The value is used for adjusting the count of instances by.
+    """
+    pending_duration: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+    """
+    query: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+    """
+    scaling_configuration_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of scaling configuration.
+    """
+    threshold: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    A metric value at which the scaling operation will be triggered.
+    """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs:
@@ -6618,30 +6427,27 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         pulumi.set(self, "threshold", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgsDict(TypedDict):
-        bandwidth_mbps: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The minimum network bandwidth for the model deployment.
-        """
-        instance_configuration: NotRequired[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgsDict']]
-        """
-        (Updatable) The model deployment instance configuration.
-        """
-        maximum_bandwidth_mbps: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum network bandwidth for the model deployment.
-        """
-        model_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the model you want to deploy.
-        """
-        scaling_policy: NotRequired[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgsDict']]
-        """
-        (Updatable) The scaling policy to apply to each model of the deployment.
-        """
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgsDict(TypedDict):
+    bandwidth_mbps: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The minimum network bandwidth for the model deployment.
+    """
+    instance_configuration: NotRequired[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgsDict']]
+    """
+    (Updatable) The model deployment instance configuration.
+    """
+    maximum_bandwidth_mbps: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum network bandwidth for the model deployment.
+    """
+    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the model you want to deploy.
+    """
+    scaling_policy: NotRequired[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgsDict']]
+    """
+    (Updatable) The scaling policy to apply to each model of the deployment.
+    """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs:
@@ -6730,26 +6536,23 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         pulumi.set(self, "scaling_policy", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgsDict(TypedDict):
-        instance_shape_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
-        """
-        model_deployment_instance_shape_config_details: NotRequired[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgsDict']]
-        """
-        (Updatable) Details for the model-deployment instance shape configuration.
-        """
-        private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of a Data Science private endpoint.
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
-        """
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgsDict(TypedDict):
+    instance_shape_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
+    """
+    model_deployment_instance_shape_config_details: NotRequired[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgsDict']]
+    """
+    (Updatable) Details for the model-deployment instance shape configuration.
+    """
+    private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of a Data Science private endpoint.
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+    """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs:
@@ -6822,22 +6625,19 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgsDict(TypedDict):
-        cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-        """
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
-        """
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgsDict(TypedDict):
+    cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+    """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs:
@@ -6894,30 +6694,27 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgsDict(TypedDict):
-        policy_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of scaling policy.
-        """
-        auto_scaling_policies: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgsDict']]]]
-        """
-        (Updatable) The list of autoscaling policy details.
-        """
-        cool_down_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
-        """
-        instance_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of instances for the model deployment.
-        """
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the autoscaling policy is enabled.
-        """
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgsDict(TypedDict):
+    policy_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of scaling policy.
+    """
+    auto_scaling_policies: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgsDict']]]]
+    """
+    (Updatable) The list of autoscaling policy details.
+    """
+    cool_down_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+    """
+    instance_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of instances for the model deployment.
+    """
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the autoscaling policy is enabled.
+    """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs:
@@ -7005,30 +6802,27 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         pulumi.set(self, "is_enabled", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgsDict(TypedDict):
-        auto_scaling_policy_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of autoscaling policy.
-        """
-        initial_instance_count: pulumi.Input[_builtins.int]
-        """
-        (Updatable) For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
-        """
-        maximum_instance_count: pulumi.Input[_builtins.int]
-        """
-        (Updatable) For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
-        """
-        minimum_instance_count: pulumi.Input[_builtins.int]
-        """
-        (Updatable) For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
-        """
-        rules: pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgsDict']]]
-        """
-        (Updatable) The list of autoscaling policy rules.
-        """
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgsDict(TypedDict):
+    auto_scaling_policy_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of autoscaling policy.
+    """
+    initial_instance_count: pulumi.Input[_builtins.int]
+    """
+    (Updatable) For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+    """
+    maximum_instance_count: pulumi.Input[_builtins.int]
+    """
+    (Updatable) For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+    """
+    minimum_instance_count: pulumi.Input[_builtins.int]
+    """
+    (Updatable) For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+    """
+    rules: pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgsDict']]]
+    """
+    (Updatable) The list of autoscaling policy rules.
+    """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgs:
@@ -7112,30 +6906,27 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         pulumi.set(self, "rules", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgsDict(TypedDict):
-        metric_expression_rule_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgsDict(TypedDict):
+    metric_expression_rule_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
 
-        The following values are supported:
-        * `PREDEFINED_EXPRESSION`: An expression built using CPU or Memory metrics emitted by the Model Deployment Monitoring.
-        * `CUSTOM_EXPRESSION`: A custom Monitoring Query Language (MQL) expression.
-        """
-        scale_in_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgsDict']
-        """
-        (Updatable) The scaling configuration for the predefined metric expression rule.
-        """
-        scale_out_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgsDict']
-        """
-        (Updatable) The scaling configuration for the predefined metric expression rule.
-        """
-        metric_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Metric type
-        """
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgsDict: TypeAlias = Mapping[str, Any]
+    The following values are supported:
+    * `PREDEFINED_EXPRESSION`: An expression built using CPU or Memory metrics emitted by the Model Deployment Monitoring.
+    * `CUSTOM_EXPRESSION`: A custom Monitoring Query Language (MQL) expression.
+    """
+    scale_in_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgsDict']
+    """
+    (Updatable) The scaling configuration for the predefined metric expression rule.
+    """
+    scale_out_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgsDict']
+    """
+    (Updatable) The scaling configuration for the predefined metric expression rule.
+    """
+    metric_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Metric type
+    """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs:
@@ -7213,40 +7004,37 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         pulumi.set(self, "metric_type", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgsDict(TypedDict):
-        instance_count_adjustment: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The value is used for adjusting the count of instances by.
-        """
-        pending_duration: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgsDict(TypedDict):
+    instance_count_adjustment: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The value is used for adjusting the count of instances by.
+    """
+    pending_duration: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
 
-        The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
-        """
-        query: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+    The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+    """
+    query: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
 
-        Example of threshold alarm:
+    Example of threshold alarm:
 
-        -----
+    -----
 
-        CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
+    CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
 
-        -----
-        """
-        scaling_configuration_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of scaling configuration.
-        """
-        threshold: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) A metric value at which the scaling operation will be triggered.
-        """
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+    -----
+    """
+    scaling_configuration_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of scaling configuration.
+    """
+    threshold: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) A metric value at which the scaling operation will be triggered.
+    """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs:
@@ -7355,40 +7143,37 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         pulumi.set(self, "threshold", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgsDict(TypedDict):
-        instance_count_adjustment: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The value is used for adjusting the count of instances by.
-        """
-        pending_duration: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgsDict(TypedDict):
+    instance_count_adjustment: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The value is used for adjusting the count of instances by.
+    """
+    pending_duration: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
 
-        The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
-        """
-        query: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+    The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+    """
+    query: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
 
-        Example of threshold alarm:
+    Example of threshold alarm:
 
-        -----
+    -----
 
-        CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
+    CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
 
-        -----
-        """
-        scaling_configuration_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of scaling configuration.
-        """
-        threshold: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) A metric value at which the scaling operation will be triggered.
-        """
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+    -----
+    """
+    scaling_configuration_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of scaling configuration.
+    """
+    threshold: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) A metric value at which the scaling operation will be triggered.
+    """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs:
@@ -7497,11 +7282,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         pulumi.set(self, "threshold", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgsDict(TypedDict):
-        model_group_id: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgsDict(TypedDict):
+    model_group_id: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgs:
@@ -7520,22 +7302,19 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationD
         pulumi.set(self, "model_group_id", value)
 
 
-if not MYPY:
-    class ModelDeploymentModelDeploymentSystemDataArgsDict(TypedDict):
-        current_instance_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        This value is the current count of the model deployment instances.
-        """
-        model_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the deployed model.
-        """
-        system_infra_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The infrastructure type of the model deployment.
-        """
-elif False:
-    ModelDeploymentModelDeploymentSystemDataArgsDict: TypeAlias = Mapping[str, Any]
+class ModelDeploymentModelDeploymentSystemDataArgsDict(TypedDict):
+    current_instance_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    This value is the current count of the model deployment instances.
+    """
+    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the deployed model.
+    """
+    system_infra_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The infrastructure type of the model deployment.
+    """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentSystemDataArgs:
@@ -7592,14 +7371,11 @@ class ModelDeploymentModelDeploymentSystemDataArgs:
         pulumi.set(self, "system_infra_type", value)
 
 
-if not MYPY:
-    class ModelGroupMemberModelEntriesArgsDict(TypedDict):
-        member_model_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelGroupMemberModelEntriesMemberModelDetailArgsDict']]]]
-        """
-        Each List item contains inference key and model ocid.
-        """
-elif False:
-    ModelGroupMemberModelEntriesArgsDict: TypeAlias = Mapping[str, Any]
+class ModelGroupMemberModelEntriesArgsDict(TypedDict):
+    member_model_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelGroupMemberModelEntriesMemberModelDetailArgsDict']]]]
+    """
+    Each List item contains inference key and model ocid.
+    """
 
 @pulumi.input_type
 class ModelGroupMemberModelEntriesArgs:
@@ -7624,18 +7400,15 @@ class ModelGroupMemberModelEntriesArgs:
         pulumi.set(self, "member_model_details", value)
 
 
-if not MYPY:
-    class ModelGroupMemberModelEntriesMemberModelDetailArgsDict(TypedDict):
-        inference_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        SaaS friendly name of the model.
-        """
-        model_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
-        """
-elif False:
-    ModelGroupMemberModelEntriesMemberModelDetailArgsDict: TypeAlias = Mapping[str, Any]
+class ModelGroupMemberModelEntriesMemberModelDetailArgsDict(TypedDict):
+    inference_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    SaaS friendly name of the model.
+    """
+    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+    """
 
 @pulumi.input_type
 class ModelGroupMemberModelEntriesMemberModelDetailArgs:
@@ -7676,26 +7449,23 @@ class ModelGroupMemberModelEntriesMemberModelDetailArgs:
         pulumi.set(self, "model_id", value)
 
 
-if not MYPY:
-    class ModelGroupModelGroupCloneSourceDetailsArgsDict(TypedDict):
-        model_group_clone_source_type: pulumi.Input[_builtins.str]
-        """
-        Source resource for model group clone operation.
-        """
-        source_id: pulumi.Input[_builtins.str]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group version history.
-        """
-        modify_model_group_details: NotRequired[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsArgsDict']]
-        """
-        Overwrites the properties of the source modelGroup.
-        """
-        patch_model_group_member_model_details: NotRequired[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsArgsDict']]
-        """
-        Specifies the list of new models to be added and list of models from source model group to be removed for cloning.
-        """
-elif False:
-    ModelGroupModelGroupCloneSourceDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ModelGroupModelGroupCloneSourceDetailsArgsDict(TypedDict):
+    model_group_clone_source_type: pulumi.Input[_builtins.str]
+    """
+    Source resource for model group clone operation.
+    """
+    source_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group version history.
+    """
+    modify_model_group_details: NotRequired[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsArgsDict']]
+    """
+    Overwrites the properties of the source modelGroup.
+    """
+    patch_model_group_member_model_details: NotRequired[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsArgsDict']]
+    """
+    Specifies the list of new models to be added and list of models from source model group to be removed for cloning.
+    """
 
 @pulumi.input_type
 class ModelGroupModelGroupCloneSourceDetailsArgs:
@@ -7766,38 +7536,35 @@ class ModelGroupModelGroupCloneSourceDetailsArgs:
         pulumi.set(self, "patch_model_group_member_model_details", value)
 
 
-if not MYPY:
-    class ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsArgsDict(TypedDict):
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A short description of the modelGroup.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My ModelGroup`
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
-        model_group_details: NotRequired[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsArgsDict']]
-        """
-        The model group details.
-        """
-        model_group_version_history_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group version history to which the modelGroup is associated.
-        """
-        version_label: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An additional description of the lifecycle state of the model group.
-        """
-elif False:
-    ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsArgsDict(TypedDict):
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A short description of the modelGroup.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My ModelGroup`
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+    """
+    model_group_details: NotRequired[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsArgsDict']]
+    """
+    The model group details.
+    """
+    model_group_version_history_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group version history to which the modelGroup is associated.
+    """
+    version_label: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An additional description of the lifecycle state of the model group.
+    """
 
 @pulumi.input_type
 class ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsArgs:
@@ -7918,22 +7685,19 @@ class ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsArgs:
         pulumi.set(self, "version_label", value)
 
 
-if not MYPY:
-    class ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        The type of the model group.
-        """
-        base_model_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model in the group that represents the base model for stacked deployment.
-        """
-        custom_metadata_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsCustomMetadataListArgsDict']]]]
-        """
-        An array of custom metadata details for the model group.
-        """
-elif False:
-    ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    The type of the model group.
+    """
+    base_model_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model in the group that represents the base model for stacked deployment.
+    """
+    custom_metadata_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsCustomMetadataListArgsDict']]]]
+    """
+    An array of custom metadata details for the model group.
+    """
 
 @pulumi.input_type
 class ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsArgs:
@@ -7989,26 +7753,23 @@ class ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDet
         pulumi.set(self, "custom_metadata_lists", value)
 
 
-if not MYPY:
-    class ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsCustomMetadataListArgsDict(TypedDict):
-        category: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Category of the metadata.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Description of model metadata.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Key of the metadata.
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Value of the metadata.
-        """
-elif False:
-    ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsCustomMetadataListArgsDict: TypeAlias = Mapping[str, Any]
+class ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsCustomMetadataListArgsDict(TypedDict):
+    category: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Category of the metadata.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Description of model metadata.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Key of the metadata.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Value of the metadata.
+    """
 
 @pulumi.input_type
 class ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsCustomMetadataListArgs:
@@ -8081,14 +7842,11 @@ class ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDet
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsArgsDict(TypedDict):
-        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemArgsDict']]]]
-        """
-        Array of patch instructions.
-        """
-elif False:
-    ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsArgsDict(TypedDict):
+    items: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemArgsDict']]]]
+    """
+    Array of patch instructions.
+    """
 
 @pulumi.input_type
 class ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsArgs:
@@ -8113,18 +7871,15 @@ class ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsArg
         pulumi.set(self, "items", value)
 
 
-if not MYPY:
-    class ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemArgsDict(TypedDict):
-        operation: pulumi.Input[_builtins.str]
-        """
-        A single instruction to be included as part of Patch request content. Enum type (INSERT and REMOVE).
-        """
-        values: pulumi.Input[Sequence[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemValueArgsDict']]]
-        """
-        Array of inference key and model OCID.
-        """
-elif False:
-    ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemArgsDict: TypeAlias = Mapping[str, Any]
+class ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemArgsDict(TypedDict):
+    operation: pulumi.Input[_builtins.str]
+    """
+    A single instruction to be included as part of Patch request content. Enum type (INSERT and REMOVE).
+    """
+    values: pulumi.Input[Sequence[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemValueArgsDict']]]
+    """
+    Array of inference key and model OCID.
+    """
 
 @pulumi.input_type
 class ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemArgs:
@@ -8163,18 +7918,15 @@ class ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsIte
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemValueArgsDict(TypedDict):
-        model_id: pulumi.Input[_builtins.str]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
-        """
-        inference_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        SaaS friendly name of the model.
-        """
-elif False:
-    ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemValueArgsDict: TypeAlias = Mapping[str, Any]
+class ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemValueArgsDict(TypedDict):
+    model_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+    """
+    inference_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    SaaS friendly name of the model.
+    """
 
 @pulumi.input_type
 class ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemValueArgs:
@@ -8214,22 +7966,19 @@ class ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsIte
         pulumi.set(self, "inference_key", value)
 
 
-if not MYPY:
-    class ModelGroupModelGroupDetailsArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        The type of the model group.
-        """
-        base_model_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model in the group that represents the base model for stacked deployment.
-        """
-        custom_metadata_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelGroupModelGroupDetailsCustomMetadataListArgsDict']]]]
-        """
-        An array of custom metadata details for the model group.
-        """
-elif False:
-    ModelGroupModelGroupDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ModelGroupModelGroupDetailsArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    The type of the model group.
+    """
+    base_model_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model in the group that represents the base model for stacked deployment.
+    """
+    custom_metadata_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelGroupModelGroupDetailsCustomMetadataListArgsDict']]]]
+    """
+    An array of custom metadata details for the model group.
+    """
 
 @pulumi.input_type
 class ModelGroupModelGroupDetailsArgs:
@@ -8285,26 +8034,23 @@ class ModelGroupModelGroupDetailsArgs:
         pulumi.set(self, "custom_metadata_lists", value)
 
 
-if not MYPY:
-    class ModelGroupModelGroupDetailsCustomMetadataListArgsDict(TypedDict):
-        category: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Category of the metadata.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Description of model metadata.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Key of the metadata.
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Value of the metadata.
-        """
-elif False:
-    ModelGroupModelGroupDetailsCustomMetadataListArgsDict: TypeAlias = Mapping[str, Any]
+class ModelGroupModelGroupDetailsCustomMetadataListArgsDict(TypedDict):
+    category: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Category of the metadata.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Description of model metadata.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Key of the metadata.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Value of the metadata.
+    """
 
 @pulumi.input_type
 class ModelGroupModelGroupDetailsCustomMetadataListArgs:
@@ -8377,34 +8123,31 @@ class ModelGroupModelGroupDetailsCustomMetadataListArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class ModelRetentionOperationDetailArgsDict(TypedDict):
-        archive_state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The archival status of model.
-        """
-        archive_state_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The archival state details of the model.
-        """
-        delete_state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The deletion status of the archived model.
-        """
-        delete_state_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The deletion status details of the archived model.
-        """
-        time_archival_scheduled: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The estimated archival time of the model based on the provided retention setting.
-        """
-        time_deletion_scheduled: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The estimated deletion time of the model based on the provided retention setting.
-        """
-elif False:
-    ModelRetentionOperationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class ModelRetentionOperationDetailArgsDict(TypedDict):
+    archive_state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The archival status of model.
+    """
+    archive_state_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The archival state details of the model.
+    """
+    delete_state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The deletion status of the archived model.
+    """
+    delete_state_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The deletion status details of the archived model.
+    """
+    time_archival_scheduled: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The estimated archival time of the model based on the provided retention setting.
+    """
+    time_deletion_scheduled: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The estimated deletion time of the model based on the provided retention setting.
+    """
 
 @pulumi.input_type
 class ModelRetentionOperationDetailArgs:
@@ -8509,22 +8252,19 @@ class ModelRetentionOperationDetailArgs:
         pulumi.set(self, "time_deletion_scheduled", value)
 
 
-if not MYPY:
-    class ModelRetentionSettingArgsDict(TypedDict):
-        archive_after_days: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Number of days after which the model will be archived.
-        """
-        customer_notification_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Customer notification options on success/failure of archival, deletion events.
-        """
-        delete_after_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Number of days after which the archived model will be deleted.
-        """
-elif False:
-    ModelRetentionSettingArgsDict: TypeAlias = Mapping[str, Any]
+class ModelRetentionSettingArgsDict(TypedDict):
+    archive_after_days: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Number of days after which the model will be archived.
+    """
+    customer_notification_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Customer notification options on success/failure of archival, deletion events.
+    """
+    delete_after_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Number of days after which the archived model will be deleted.
+    """
 
 @pulumi.input_type
 class ModelRetentionSettingArgs:
@@ -8580,30 +8320,27 @@ class ModelRetentionSettingArgs:
         pulumi.set(self, "delete_after_days", value)
 
 
-if not MYPY:
-    class NotebookSessionNotebookSessionConfigDetailsArgsDict(TypedDict):
-        shape: pulumi.Input[_builtins.str]
-        """
-        The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        """
-        block_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        """
-        notebook_session_shape_config_details: NotRequired[pulumi.Input['NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgsDict']]
-        """
-        Details for the notebook session shape configuration.
-        """
-        private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of a Data Science private endpoint.
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-        """
-elif False:
-    NotebookSessionNotebookSessionConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class NotebookSessionNotebookSessionConfigDetailsArgsDict(TypedDict):
+    shape: pulumi.Input[_builtins.str]
+    """
+    The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+    """
+    block_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+    """
+    notebook_session_shape_config_details: NotRequired[pulumi.Input['NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgsDict']]
+    """
+    Details for the notebook session shape configuration.
+    """
+    private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of a Data Science private endpoint.
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+    """
 
 @pulumi.input_type
 class NotebookSessionNotebookSessionConfigDetailsArgs:
@@ -8691,22 +8428,19 @@ class NotebookSessionNotebookSessionConfigDetailsArgs:
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgsDict(TypedDict):
-        cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-        """
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total amount of memory available to the notebook session instance, in gigabytes.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total number of OCPUs available to the notebook session instance.
-        """
-elif False:
-    NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgsDict(TypedDict):
+    cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total amount of memory available to the notebook session instance, in gigabytes.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total number of OCPUs available to the notebook session instance.
+    """
 
 @pulumi.input_type
 class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs:
@@ -8763,30 +8497,27 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class NotebookSessionNotebookSessionConfigurationDetailsArgsDict(TypedDict):
-        shape: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        """
-        subnet_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-        """
-        block_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        """
-        notebook_session_shape_config_details: NotRequired[pulumi.Input['NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgsDict']]
-        """
-        (Updatable) Details for the notebook session shape configuration.
-        """
-        private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of a Data Science private endpoint.
-        """
-elif False:
-    NotebookSessionNotebookSessionConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class NotebookSessionNotebookSessionConfigurationDetailsArgsDict(TypedDict):
+    shape: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+    """
+    subnet_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+    """
+    block_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+    """
+    notebook_session_shape_config_details: NotRequired[pulumi.Input['NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgsDict']]
+    """
+    (Updatable) Details for the notebook session shape configuration.
+    """
+    private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of a Data Science private endpoint.
+    """
 
 @pulumi.input_type
 class NotebookSessionNotebookSessionConfigurationDetailsArgs:
@@ -8873,22 +8604,19 @@ class NotebookSessionNotebookSessionConfigurationDetailsArgs:
         pulumi.set(self, "private_endpoint_id", value)
 
 
-if not MYPY:
-    class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgsDict(TypedDict):
-        cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-        """
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The total number of OCPUs available to the notebook session instance.
-        """
-elif False:
-    NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgsDict(TypedDict):
+    cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The total number of OCPUs available to the notebook session instance.
+    """
 
 @pulumi.input_type
 class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs:
@@ -8945,18 +8673,15 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class NotebookSessionNotebookSessionRuntimeConfigDetailsArgsDict(TypedDict):
-        custom_environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-        """
-        notebook_session_git_config_details: NotRequired[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgsDict']]
-        """
-        (Updatable) Git configuration Details.
-        """
-elif False:
-    NotebookSessionNotebookSessionRuntimeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class NotebookSessionNotebookSessionRuntimeConfigDetailsArgsDict(TypedDict):
+    custom_environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+    """
+    notebook_session_git_config_details: NotRequired[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgsDict']]
+    """
+    (Updatable) Git configuration Details.
+    """
 
 @pulumi.input_type
 class NotebookSessionNotebookSessionRuntimeConfigDetailsArgs:
@@ -8997,14 +8722,11 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsArgs:
         pulumi.set(self, "notebook_session_git_config_details", value)
 
 
-if not MYPY:
-    class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgsDict(TypedDict):
-        notebook_session_git_repo_config_collections: NotRequired[pulumi.Input[Sequence[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgsDict']]]]
-        """
-        (Updatable) A collection of Git repository configurations.
-        """
-elif False:
-    NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgsDict(TypedDict):
+    notebook_session_git_repo_config_collections: NotRequired[pulumi.Input[Sequence[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgsDict']]]]
+    """
+    (Updatable) A collection of Git repository configurations.
+    """
 
 @pulumi.input_type
 class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs:
@@ -9029,14 +8751,11 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfig
         pulumi.set(self, "notebook_session_git_repo_config_collections", value)
 
 
-if not MYPY:
-    class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgsDict(TypedDict):
-        url: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The repository URL
-        """
-elif False:
-    NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgsDict: TypeAlias = Mapping[str, Any]
+class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgsDict(TypedDict):
+    url: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The repository URL
+    """
 
 @pulumi.input_type
 class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs:
@@ -9060,42 +8779,39 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfig
         pulumi.set(self, "url", value)
 
 
-if not MYPY:
-    class NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgsDict(TypedDict):
-        destination_directory_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The local directory name to be mounted
-        """
-        storage_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of storage.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The object storage bucket
-        """
-        destination_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The local path of the mounted directory, excluding directory name.
-        """
-        export_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the export
-        """
-        mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the mount target
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The object storage namespace
-        """
-        prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Prefix in the bucket to mount
-        """
-elif False:
-    NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgsDict: TypeAlias = Mapping[str, Any]
+class NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgsDict(TypedDict):
+    destination_directory_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The local directory name to be mounted
+    """
+    storage_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of storage.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The object storage bucket
+    """
+    destination_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The local path of the mounted directory, excluding directory name.
+    """
+    export_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the export
+    """
+    mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the mount target
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The object storage namespace
+    """
+    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Prefix in the bucket to mount
+    """
 
 @pulumi.input_type
 class NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs:
@@ -9230,26 +8946,23 @@ class NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs:
         pulumi.set(self, "prefix", value)
 
 
-if not MYPY:
-    class PipelineConfigurationDetailsArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of pipeline.
-        """
-        command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The command line arguments to set for steps in the pipeline.
-        """
-        environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Environment variables to set for steps in the pipeline.
-        """
-        maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
-        """
-elif False:
-    PipelineConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineConfigurationDetailsArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of pipeline.
+    """
+    command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The command line arguments to set for steps in the pipeline.
+    """
+    environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Environment variables to set for steps in the pipeline.
+    """
+    maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
+    """
 
 @pulumi.input_type
 class PipelineConfigurationDetailsArgs:
@@ -9321,30 +9034,27 @@ class PipelineConfigurationDetailsArgs:
         pulumi.set(self, "maximum_runtime_in_minutes", value)
 
 
-if not MYPY:
-    class PipelineInfrastructureConfigurationDetailsArgsDict(TypedDict):
-        block_storage_size_in_gbs: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The size of the block storage volume to attach to the instance.
-        """
-        shape_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The shape used to launch the instance for all step runs in the pipeline.
-        """
-        block_storage_size_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
-        """
-        shape_config_details: NotRequired[pulumi.Input['PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict']]
-        """
-        (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
-        """
-elif False:
-    PipelineInfrastructureConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineInfrastructureConfigurationDetailsArgsDict(TypedDict):
+    block_storage_size_in_gbs: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The size of the block storage volume to attach to the instance.
+    """
+    shape_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The shape used to launch the instance for all step runs in the pipeline.
+    """
+    block_storage_size_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+    """
+    shape_config_details: NotRequired[pulumi.Input['PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict']]
+    """
+    (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+    """
 
 @pulumi.input_type
 class PipelineInfrastructureConfigurationDetailsArgs:
@@ -9431,30 +9141,27 @@ class PipelineInfrastructureConfigurationDetailsArgs:
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict(TypedDict):
-        cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-        """
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The total amount of memory available to the pipeline step run instance GBs.
-        """
-        memory_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The total number of OCPUs available to the pipeline step run instance.
-        """
-        ocpus_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-        """
-elif False:
-    PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict(TypedDict):
+    cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The total amount of memory available to the pipeline step run instance GBs.
+    """
+    memory_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The total number of OCPUs available to the pipeline step run instance.
+    """
+    ocpus_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+    """
 
 @pulumi.input_type
 class PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs:
@@ -9543,26 +9250,23 @@ class PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs:
         pulumi.set(self, "ocpus_parameterized", value)
 
 
-if not MYPY:
-    class PipelineLogConfigurationDetailsArgsDict(TypedDict):
-        enable_auto_log_creation: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        """
-        enable_logging: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If customer logging is enabled for pipeline.
-        """
-        log_group_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
-        log_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
-elif False:
-    PipelineLogConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineLogConfigurationDetailsArgsDict(TypedDict):
+    enable_auto_log_creation: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
+    """
+    enable_logging: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If customer logging is enabled for pipeline.
+    """
+    log_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+    """
+    log_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+    """
 
 @pulumi.input_type
 class PipelineLogConfigurationDetailsArgs:
@@ -9635,26 +9339,23 @@ class PipelineLogConfigurationDetailsArgs:
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class PipelineRunConfigurationDetailArgsDict(TypedDict):
-        command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The command line arguments to set for step.
-        """
-        environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Environment variables to set for step.
-        """
-        maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A time bound for the execution of the step.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of pipeline.
-        """
-elif False:
-    PipelineRunConfigurationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineRunConfigurationDetailArgsDict(TypedDict):
+    command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The command line arguments to set for step.
+    """
+    environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Environment variables to set for step.
+    """
+    maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A time bound for the execution of the step.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of pipeline.
+    """
 
 @pulumi.input_type
 class PipelineRunConfigurationDetailArgs:
@@ -9727,26 +9428,23 @@ class PipelineRunConfigurationDetailArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class PipelineRunConfigurationOverrideDetailsArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        The type of pipeline.
-        """
-        command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The command line arguments to set for steps in the pipeline.
-        """
-        environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Environment variables to set for steps in the pipeline.
-        """
-        maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
-        """
-elif False:
-    PipelineRunConfigurationOverrideDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineRunConfigurationOverrideDetailsArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    The type of pipeline.
+    """
+    command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The command line arguments to set for steps in the pipeline.
+    """
+    environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Environment variables to set for steps in the pipeline.
+    """
+    maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
+    """
 
 @pulumi.input_type
 class PipelineRunConfigurationOverrideDetailsArgs:
@@ -9818,30 +9516,27 @@ class PipelineRunConfigurationOverrideDetailsArgs:
         pulumi.set(self, "maximum_runtime_in_minutes", value)
 
 
-if not MYPY:
-    class PipelineRunInfrastructureConfigurationOverrideDetailsArgsDict(TypedDict):
-        block_storage_size_in_gbs: pulumi.Input[_builtins.int]
-        """
-        The size of the block storage volume to attach to the instance.
-        """
-        shape_name: pulumi.Input[_builtins.str]
-        """
-        The shape used to launch the instance for all step runs in the pipeline.
-        """
-        block_storage_size_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
-        """
-        shape_config_details: NotRequired[pulumi.Input['PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgsDict']]
-        """
-        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
-        """
-elif False:
-    PipelineRunInfrastructureConfigurationOverrideDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineRunInfrastructureConfigurationOverrideDetailsArgsDict(TypedDict):
+    block_storage_size_in_gbs: pulumi.Input[_builtins.int]
+    """
+    The size of the block storage volume to attach to the instance.
+    """
+    shape_name: pulumi.Input[_builtins.str]
+    """
+    The shape used to launch the instance for all step runs in the pipeline.
+    """
+    block_storage_size_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+    """
+    shape_config_details: NotRequired[pulumi.Input['PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgsDict']]
+    """
+    Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+    """
 
 @pulumi.input_type
 class PipelineRunInfrastructureConfigurationOverrideDetailsArgs:
@@ -9928,30 +9623,27 @@ class PipelineRunInfrastructureConfigurationOverrideDetailsArgs:
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgsDict(TypedDict):
-        cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-        """
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total amount of memory available to the pipeline step run instance GBs.
-        """
-        memory_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total number of OCPUs available to the pipeline step run instance.
-        """
-        ocpus_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-        """
-elif False:
-    PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgsDict(TypedDict):
+    cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total amount of memory available to the pipeline step run instance GBs.
+    """
+    memory_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total number of OCPUs available to the pipeline step run instance.
+    """
+    ocpus_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+    """
 
 @pulumi.input_type
 class PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgs:
@@ -10040,26 +9732,23 @@ class PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArg
         pulumi.set(self, "ocpus_parameterized", value)
 
 
-if not MYPY:
-    class PipelineRunLogConfigurationOverrideDetailsArgsDict(TypedDict):
-        enable_auto_log_creation: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        """
-        enable_logging: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If customer logging is enabled for pipeline.
-        """
-        log_group_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
-        log_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
-elif False:
-    PipelineRunLogConfigurationOverrideDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineRunLogConfigurationOverrideDetailsArgsDict(TypedDict):
+    enable_auto_log_creation: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If automatic on-behalf-of log object creation is enabled for pipeline runs.
+    """
+    enable_logging: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If customer logging is enabled for pipeline.
+    """
+    log_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+    """
+    log_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+    """
 
 @pulumi.input_type
 class PipelineRunLogConfigurationOverrideDetailsArgs:
@@ -10132,18 +9821,15 @@ class PipelineRunLogConfigurationOverrideDetailsArgs:
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class PipelineRunLogDetailArgsDict(TypedDict):
-        log_group_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The log group id for where log objects will be for pipeline runs.
-        """
-        log_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The log id of the log object the pipeline run logs will be shipped to.
-        """
-elif False:
-    PipelineRunLogDetailArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineRunLogDetailArgsDict(TypedDict):
+    log_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The log group id for where log objects will be for pipeline runs.
+    """
+    log_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The log id of the log object the pipeline run logs will be shipped to.
+    """
 
 @pulumi.input_type
 class PipelineRunLogDetailArgs:
@@ -10184,34 +9870,31 @@ class PipelineRunLogDetailArgs:
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class PipelineRunStepOverrideDetailArgsDict(TypedDict):
-        step_configuration_details: pulumi.Input['PipelineRunStepOverrideDetailStepConfigurationDetailsArgsDict']
-        """
-        The configuration details of a step.
-        """
-        step_name: pulumi.Input[_builtins.str]
-        """
-        The name of the step.
-        """
-        step_container_configuration_details: NotRequired[pulumi.Input['PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgsDict']]
-        """
-        Container Details for a step in pipeline.
-        """
-        step_dataflow_configuration_details: NotRequired[pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgsDict']]
-        """
-        The configuration details of a Dataflow step.
-        """
-        step_infrastructure_configuration_details: NotRequired[pulumi.Input['PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgsDict']]
-        """
-        The infrastructure configuration details of a pipeline or a step.
-        """
-        step_storage_mount_configuration_details_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgsDict']]]]
-        """
-        The storage mount details to mount to the instance running the pipeline step.
-        """
-elif False:
-    PipelineRunStepOverrideDetailArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineRunStepOverrideDetailArgsDict(TypedDict):
+    step_configuration_details: pulumi.Input['PipelineRunStepOverrideDetailStepConfigurationDetailsArgsDict']
+    """
+    The configuration details of a step.
+    """
+    step_name: pulumi.Input[_builtins.str]
+    """
+    The name of the step.
+    """
+    step_container_configuration_details: NotRequired[pulumi.Input['PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgsDict']]
+    """
+    Container Details for a step in pipeline.
+    """
+    step_dataflow_configuration_details: NotRequired[pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgsDict']]
+    """
+    The configuration details of a Dataflow step.
+    """
+    step_infrastructure_configuration_details: NotRequired[pulumi.Input['PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgsDict']]
+    """
+    The infrastructure configuration details of a pipeline or a step.
+    """
+    step_storage_mount_configuration_details_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgsDict']]]]
+    """
+    The storage mount details to mount to the instance running the pipeline step.
+    """
 
 @pulumi.input_type
 class PipelineRunStepOverrideDetailArgs:
@@ -10314,22 +9997,19 @@ class PipelineRunStepOverrideDetailArgs:
         pulumi.set(self, "step_storage_mount_configuration_details_lists", value)
 
 
-if not MYPY:
-    class PipelineRunStepOverrideDetailStepConfigurationDetailsArgsDict(TypedDict):
-        command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The command line arguments to set for step.
-        """
-        environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Environment variables to set for step.
-        """
-        maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A time bound for the execution of the step.
-        """
-elif False:
-    PipelineRunStepOverrideDetailStepConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineRunStepOverrideDetailStepConfigurationDetailsArgsDict(TypedDict):
+    command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The command line arguments to set for step.
+    """
+    environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Environment variables to set for step.
+    """
+    maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A time bound for the execution of the step.
+    """
 
 @pulumi.input_type
 class PipelineRunStepOverrideDetailStepConfigurationDetailsArgs:
@@ -10386,34 +10066,31 @@ class PipelineRunStepOverrideDetailStepConfigurationDetailsArgs:
         pulumi.set(self, "maximum_runtime_in_minutes", value)
 
 
-if not MYPY:
-    class PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgsDict(TypedDict):
-        container_type: pulumi.Input[_builtins.str]
-        """
-        The type of container.
-        """
-        image: pulumi.Input[_builtins.str]
-        """
-        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
-        """
-        cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-        """
-        entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        """
-        image_digest: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-        """
-        image_signature_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the container image signature
-        """
-elif False:
-    PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgsDict(TypedDict):
+    container_type: pulumi.Input[_builtins.str]
+    """
+    The type of container.
+    """
+    image: pulumi.Input[_builtins.str]
+    """
+    The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+    """
+    cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+    """
+    entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+    """
+    image_digest: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+    """
+    image_signature_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the container image signature
+    """
 
 @pulumi.input_type
 class PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs:
@@ -10516,42 +10193,39 @@ class PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs:
         pulumi.set(self, "image_signature_id", value)
 
 
-if not MYPY:
-    class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgsDict(TypedDict):
-        configuration: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        The Spark configuration passed to the running process.
-        """
-        driver_shape: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The VM shape for the driver.
-        """
-        driver_shape_config_details: NotRequired[pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict']]
-        """
-        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
-        executor_shape: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The VM shape for the executors.
-        """
-        executor_shape_config_details: NotRequired[pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict']]
-        """
-        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
-        logs_bucket_uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-        """
-        num_executors: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of executor VMs requested.
-        """
-        warehouse_bucket_uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
-        """
-elif False:
-    PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgsDict(TypedDict):
+    configuration: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    The Spark configuration passed to the running process.
+    """
+    driver_shape: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The VM shape for the driver.
+    """
+    driver_shape_config_details: NotRequired[pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict']]
+    """
+    Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+    """
+    executor_shape: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The VM shape for the executors.
+    """
+    executor_shape_config_details: NotRequired[pulumi.Input['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict']]
+    """
+    Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+    """
+    logs_bucket_uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+    """
+    num_executors: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of executor VMs requested.
+    """
+    warehouse_bucket_uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+    """
 
 @pulumi.input_type
 class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs:
@@ -10688,26 +10362,23 @@ class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs:
         pulumi.set(self, "warehouse_bucket_uri", value)
 
 
-if not MYPY:
-    class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total amount of memory available to the pipeline step run instance GBs.
-        """
-        memory_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total number of OCPUs available to the pipeline step run instance.
-        """
-        ocpus_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-        """
-elif False:
-    PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total amount of memory available to the pipeline step run instance GBs.
+    """
+    memory_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total number of OCPUs available to the pipeline step run instance.
+    """
+    ocpus_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+    """
 
 @pulumi.input_type
 class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs:
@@ -10780,26 +10451,23 @@ class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeCo
         pulumi.set(self, "ocpus_parameterized", value)
 
 
-if not MYPY:
-    class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total amount of memory available to the pipeline step run instance GBs.
-        """
-        memory_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total number of OCPUs available to the pipeline step run instance.
-        """
-        ocpus_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-        """
-elif False:
-    PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total amount of memory available to the pipeline step run instance GBs.
+    """
+    memory_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total number of OCPUs available to the pipeline step run instance.
+    """
+    ocpus_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+    """
 
 @pulumi.input_type
 class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs:
@@ -10872,30 +10540,27 @@ class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShape
         pulumi.set(self, "ocpus_parameterized", value)
 
 
-if not MYPY:
-    class PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgsDict(TypedDict):
-        block_storage_size_in_gbs: pulumi.Input[_builtins.int]
-        """
-        The size of the block storage volume to attach to the instance.
-        """
-        shape_name: pulumi.Input[_builtins.str]
-        """
-        The shape used to launch the instance for all step runs in the pipeline.
-        """
-        block_storage_size_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
-        """
-        shape_config_details: NotRequired[pulumi.Input['PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict']]
-        """
-        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
-        """
-elif False:
-    PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgsDict(TypedDict):
+    block_storage_size_in_gbs: pulumi.Input[_builtins.int]
+    """
+    The size of the block storage volume to attach to the instance.
+    """
+    shape_name: pulumi.Input[_builtins.str]
+    """
+    The shape used to launch the instance for all step runs in the pipeline.
+    """
+    block_storage_size_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+    """
+    shape_config_details: NotRequired[pulumi.Input['PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict']]
+    """
+    Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+    """
 
 @pulumi.input_type
 class PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs:
@@ -10982,30 +10647,27 @@ class PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs:
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict(TypedDict):
-        cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-        """
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total amount of memory available to the pipeline step run instance GBs.
-        """
-        memory_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total number of OCPUs available to the pipeline step run instance.
-        """
-        ocpus_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-        """
-elif False:
-    PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict(TypedDict):
+    cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total amount of memory available to the pipeline step run instance GBs.
+    """
+    memory_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total number of OCPUs available to the pipeline step run instance.
+    """
+    ocpus_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+    """
 
 @pulumi.input_type
 class PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs:
@@ -11094,42 +10756,39 @@ class PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeCo
         pulumi.set(self, "ocpus_parameterized", value)
 
 
-if not MYPY:
-    class PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgsDict(TypedDict):
-        destination_directory_name: pulumi.Input[_builtins.str]
-        """
-        The local directory name to be mounted
-        """
-        storage_type: pulumi.Input[_builtins.str]
-        """
-        The type of storage.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object storage bucket
-        """
-        destination_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The local path of the mounted directory, excluding directory name.
-        """
-        export_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the export
-        """
-        mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the mount target
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object storage namespace
-        """
-        prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Prefix in the bucket to mount
-        """
-elif False:
-    PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgsDict(TypedDict):
+    destination_directory_name: pulumi.Input[_builtins.str]
+    """
+    The local directory name to be mounted
+    """
+    storage_type: pulumi.Input[_builtins.str]
+    """
+    The type of storage.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object storage bucket
+    """
+    destination_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The local path of the mounted directory, excluding directory name.
+    """
+    export_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the export
+    """
+    mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the mount target
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object storage namespace
+    """
+    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Prefix in the bucket to mount
+    """
 
 @pulumi.input_type
 class PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgs:
@@ -11264,46 +10923,43 @@ class PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgs:
         pulumi.set(self, "prefix", value)
 
 
-if not MYPY:
-    class PipelineRunStepRunArgsDict(TypedDict):
-        dataflow_run_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
-        """
-        job_run_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Details of the state of the step run.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The state of the step run.
-        """
-        step_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the step.
-        """
-        step_run_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name used when creating the steprun.
-        """
-        step_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of step.
-        """
-        time_finished: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
-        time_started: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
-elif False:
-    PipelineRunStepRunArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineRunStepRunArgsDict(TypedDict):
+    dataflow_run_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow run triggered for this step run.
+    """
+    job_run_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Details of the state of the step run.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The state of the step run.
+    """
+    step_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the step.
+    """
+    step_run_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name used when creating the steprun.
+    """
+    step_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of step.
+    """
+    time_finished: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+    """
+    time_started: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+    """
 
 @pulumi.input_type
 class PipelineRunStepRunArgs:
@@ -11456,42 +11112,39 @@ class PipelineRunStepRunArgs:
         pulumi.set(self, "time_started", value)
 
 
-if not MYPY:
-    class PipelineRunStorageMountConfigurationOverrideDetailsListArgsDict(TypedDict):
-        destination_directory_name: pulumi.Input[_builtins.str]
-        """
-        The local directory name to be mounted
-        """
-        storage_type: pulumi.Input[_builtins.str]
-        """
-        The type of storage.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object storage bucket
-        """
-        destination_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The local path of the mounted directory, excluding directory name.
-        """
-        export_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the export
-        """
-        mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the mount target
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object storage namespace
-        """
-        prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Prefix in the bucket to mount
-        """
-elif False:
-    PipelineRunStorageMountConfigurationOverrideDetailsListArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineRunStorageMountConfigurationOverrideDetailsListArgsDict(TypedDict):
+    destination_directory_name: pulumi.Input[_builtins.str]
+    """
+    The local directory name to be mounted
+    """
+    storage_type: pulumi.Input[_builtins.str]
+    """
+    The type of storage.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object storage bucket
+    """
+    destination_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The local path of the mounted directory, excluding directory name.
+    """
+    export_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the export
+    """
+    mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the mount target
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object storage namespace
+    """
+    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Prefix in the bucket to mount
+    """
 
 @pulumi.input_type
 class PipelineRunStorageMountConfigurationOverrideDetailsListArgs:
@@ -11626,19 +11279,16 @@ class PipelineRunStorageMountConfigurationOverrideDetailsListArgs:
         pulumi.set(self, "prefix", value)
 
 
-if not MYPY:
-    class PipelineStepArtifactArgsDict(TypedDict):
-        pipeline_step_artifact: pulumi.Input[_builtins.str]
-        step_name: pulumi.Input[_builtins.str]
-        """
-        The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-        """
-        artifact_content_disposition: NotRequired[pulumi.Input[_builtins.str]]
-        artifact_content_length: NotRequired[pulumi.Input[_builtins.str]]
-        artifact_content_md5: NotRequired[pulumi.Input[_builtins.str]]
-        artifact_last_modified: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    PipelineStepArtifactArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineStepArtifactArgsDict(TypedDict):
+    pipeline_step_artifact: pulumi.Input[_builtins.str]
+    step_name: pulumi.Input[_builtins.str]
+    """
+    The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+    """
+    artifact_content_disposition: NotRequired[pulumi.Input[_builtins.str]]
+    artifact_content_length: NotRequired[pulumi.Input[_builtins.str]]
+    artifact_content_md5: NotRequired[pulumi.Input[_builtins.str]]
+    artifact_last_modified: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class PipelineStepArtifactArgs:
@@ -11721,66 +11371,63 @@ class PipelineStepArtifactArgs:
         pulumi.set(self, "artifact_last_modified", value)
 
 
-if not MYPY:
-    class PipelineStepDetailArgsDict(TypedDict):
-        step_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-        """
-        step_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of step.
-        """
-        application_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
-        """
-        depends_ons: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of step names this current step depends on for execution.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A short description of the step.
-        """
-        is_artifact_uploaded: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        A flag to indicate whether the artifact has been uploaded for this step or not.
-        """
-        job_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
-        """
-        step_configuration_details: NotRequired[pulumi.Input['PipelineStepDetailStepConfigurationDetailsArgsDict']]
-        """
-        (Updatable) The configuration details of a step.
-        """
-        step_container_configuration_details: NotRequired[pulumi.Input['PipelineStepDetailStepContainerConfigurationDetailsArgsDict']]
-        """
-        Container Details for a step in pipeline.
-        """
-        step_dataflow_configuration_details: NotRequired[pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsArgsDict']]
-        """
-        (Updatable) The configuration details of a Dataflow step.
-        """
-        step_infrastructure_configuration_details: NotRequired[pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsArgsDict']]
-        """
-        (Updatable) The infrastructure configuration details of a pipeline or a step.
-        """
-        step_parameters: NotRequired[pulumi.Input['PipelineStepDetailStepParametersArgsDict']]
-        """
-        (Updatable) Pipeline step parameter details
-        """
-        step_run_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name used when creating the steprun.
-        """
-        step_storage_mount_configuration_details_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailStepStorageMountConfigurationDetailsListArgsDict']]]]
-        """
-        (Updatable) The storage mount details to mount to the instance running the pipeline step.
-        """
-elif False:
-    PipelineStepDetailArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineStepDetailArgsDict(TypedDict):
+    step_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+    """
+    step_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of step.
+    """
+    application_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dataflow application to be used as a step.
+    """
+    depends_ons: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of step names this current step depends on for execution.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A short description of the step.
+    """
+    is_artifact_uploaded: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    A flag to indicate whether the artifact has been uploaded for this step or not.
+    """
+    job_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
+    """
+    step_configuration_details: NotRequired[pulumi.Input['PipelineStepDetailStepConfigurationDetailsArgsDict']]
+    """
+    (Updatable) The configuration details of a step.
+    """
+    step_container_configuration_details: NotRequired[pulumi.Input['PipelineStepDetailStepContainerConfigurationDetailsArgsDict']]
+    """
+    Container Details for a step in pipeline.
+    """
+    step_dataflow_configuration_details: NotRequired[pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsArgsDict']]
+    """
+    (Updatable) The configuration details of a Dataflow step.
+    """
+    step_infrastructure_configuration_details: NotRequired[pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsArgsDict']]
+    """
+    (Updatable) The infrastructure configuration details of a pipeline or a step.
+    """
+    step_parameters: NotRequired[pulumi.Input['PipelineStepDetailStepParametersArgsDict']]
+    """
+    (Updatable) Pipeline step parameter details
+    """
+    step_run_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name used when creating the steprun.
+    """
+    step_storage_mount_configuration_details_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailStepStorageMountConfigurationDetailsListArgsDict']]]]
+    """
+    (Updatable) The storage mount details to mount to the instance running the pipeline step.
+    """
 
 @pulumi.input_type
 class PipelineStepDetailArgs:
@@ -12011,22 +11658,19 @@ class PipelineStepDetailArgs:
         pulumi.set(self, "step_storage_mount_configuration_details_lists", value)
 
 
-if not MYPY:
-    class PipelineStepDetailStepConfigurationDetailsArgsDict(TypedDict):
-        command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The command line arguments to set for step.
-        """
-        environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Environment variables to set for step.
-        """
-        maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A time bound for the execution of the step.
-        """
-elif False:
-    PipelineStepDetailStepConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineStepDetailStepConfigurationDetailsArgsDict(TypedDict):
+    command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The command line arguments to set for step.
+    """
+    environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Environment variables to set for step.
+    """
+    maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A time bound for the execution of the step.
+    """
 
 @pulumi.input_type
 class PipelineStepDetailStepConfigurationDetailsArgs:
@@ -12083,34 +11727,31 @@ class PipelineStepDetailStepConfigurationDetailsArgs:
         pulumi.set(self, "maximum_runtime_in_minutes", value)
 
 
-if not MYPY:
-    class PipelineStepDetailStepContainerConfigurationDetailsArgsDict(TypedDict):
-        container_type: pulumi.Input[_builtins.str]
-        """
-        The type of container.
-        """
-        image: pulumi.Input[_builtins.str]
-        """
-        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
-        """
-        cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-        """
-        entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        """
-        image_digest: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-        """
-        image_signature_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the container image signature
-        """
-elif False:
-    PipelineStepDetailStepContainerConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineStepDetailStepContainerConfigurationDetailsArgsDict(TypedDict):
+    container_type: pulumi.Input[_builtins.str]
+    """
+    The type of container.
+    """
+    image: pulumi.Input[_builtins.str]
+    """
+    The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+    """
+    cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+    """
+    entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+    """
+    image_digest: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+    """
+    image_signature_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the container image signature
+    """
 
 @pulumi.input_type
 class PipelineStepDetailStepContainerConfigurationDetailsArgs:
@@ -12213,42 +11854,39 @@ class PipelineStepDetailStepContainerConfigurationDetailsArgs:
         pulumi.set(self, "image_signature_id", value)
 
 
-if not MYPY:
-    class PipelineStepDetailStepDataflowConfigurationDetailsArgsDict(TypedDict):
-        configuration: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The Spark configuration passed to the running process.
-        """
-        driver_shape: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The VM shape for the driver.
-        """
-        driver_shape_config_details: NotRequired[pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict']]
-        """
-        (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
-        executor_shape: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The VM shape for the executors.
-        """
-        executor_shape_config_details: NotRequired[pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict']]
-        """
-        (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
-        logs_bucket_uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-        """
-        num_executors: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of executor VMs requested.
-        """
-        warehouse_bucket_uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
-        """
-elif False:
-    PipelineStepDetailStepDataflowConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineStepDetailStepDataflowConfigurationDetailsArgsDict(TypedDict):
+    configuration: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The Spark configuration passed to the running process.
+    """
+    driver_shape: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The VM shape for the driver.
+    """
+    driver_shape_config_details: NotRequired[pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict']]
+    """
+    (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+    """
+    executor_shape: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The VM shape for the executors.
+    """
+    executor_shape_config_details: NotRequired[pulumi.Input['PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict']]
+    """
+    (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+    """
+    logs_bucket_uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+    """
+    num_executors: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of executor VMs requested.
+    """
+    warehouse_bucket_uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+    """
 
 @pulumi.input_type
 class PipelineStepDetailStepDataflowConfigurationDetailsArgs:
@@ -12385,26 +12023,23 @@ class PipelineStepDetailStepDataflowConfigurationDetailsArgs:
         pulumi.set(self, "warehouse_bucket_uri", value)
 
 
-if not MYPY:
-    class PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The total amount of memory available to the pipeline step run instance GBs.
-        """
-        memory_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The total number of OCPUs available to the pipeline step run instance.
-        """
-        ocpus_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-        """
-elif False:
-    PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The total amount of memory available to the pipeline step run instance GBs.
+    """
+    memory_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The total number of OCPUs available to the pipeline step run instance.
+    """
+    ocpus_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+    """
 
 @pulumi.input_type
 class PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs:
@@ -12477,26 +12112,23 @@ class PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails
         pulumi.set(self, "ocpus_parameterized", value)
 
 
-if not MYPY:
-    class PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The total amount of memory available to the pipeline step run instance GBs.
-        """
-        memory_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The total number of OCPUs available to the pipeline step run instance.
-        """
-        ocpus_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-        """
-elif False:
-    PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The total amount of memory available to the pipeline step run instance GBs.
+    """
+    memory_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The total number of OCPUs available to the pipeline step run instance.
+    """
+    ocpus_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+    """
 
 @pulumi.input_type
 class PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs:
@@ -12569,30 +12201,27 @@ class PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetai
         pulumi.set(self, "ocpus_parameterized", value)
 
 
-if not MYPY:
-    class PipelineStepDetailStepInfrastructureConfigurationDetailsArgsDict(TypedDict):
-        block_storage_size_in_gbs: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The size of the block storage volume to attach to the instance.
-        """
-        shape_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The shape used to launch the instance for all step runs in the pipeline.
-        """
-        block_storage_size_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
-        """
-        shape_config_details: NotRequired[pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict']]
-        """
-        (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
-        """
-elif False:
-    PipelineStepDetailStepInfrastructureConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineStepDetailStepInfrastructureConfigurationDetailsArgsDict(TypedDict):
+    block_storage_size_in_gbs: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The size of the block storage volume to attach to the instance.
+    """
+    shape_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The shape used to launch the instance for all step runs in the pipeline.
+    """
+    block_storage_size_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+    """
+    shape_config_details: NotRequired[pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict']]
+    """
+    (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+    """
 
 @pulumi.input_type
 class PipelineStepDetailStepInfrastructureConfigurationDetailsArgs:
@@ -12679,30 +12308,27 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsArgs:
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict(TypedDict):
-        cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-        """
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The total amount of memory available to the pipeline step run instance GBs.
-        """
-        memory_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The total number of OCPUs available to the pipeline step run instance.
-        """
-        ocpus_parameterized: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-        """
-elif False:
-    PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict(TypedDict):
+    cpu_baseline: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The total amount of memory available to the pipeline step run instance GBs.
+    """
+    memory_in_gbs_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The total number of OCPUs available to the pipeline step run instance.
+    """
+    ocpus_parameterized: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+    """
 
 @pulumi.input_type
 class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs:
@@ -12791,18 +12417,15 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails
         pulumi.set(self, "ocpus_parameterized", value)
 
 
-if not MYPY:
-    class PipelineStepDetailStepParametersArgsDict(TypedDict):
-        output: pulumi.Input['PipelineStepDetailStepParametersOutputArgsDict']
-        """
-        (Updatable) Pipeline output parameter details
-        """
-        parameter_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of step parameter
-        """
-elif False:
-    PipelineStepDetailStepParametersArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineStepDetailStepParametersArgsDict(TypedDict):
+    output: pulumi.Input['PipelineStepDetailStepParametersOutputArgsDict']
+    """
+    (Updatable) Pipeline output parameter details
+    """
+    parameter_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of step parameter
+    """
 
 @pulumi.input_type
 class PipelineStepDetailStepParametersArgs:
@@ -12841,22 +12464,19 @@ class PipelineStepDetailStepParametersArgs:
         pulumi.set(self, "parameter_type", value)
 
 
-if not MYPY:
-    class PipelineStepDetailStepParametersOutputArgsDict(TypedDict):
-        output_file: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Output file name
-        """
-        output_parameter_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of output parameters
-        """
-        parameter_names: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) The list of parameter names that will be output by this step
-        """
-elif False:
-    PipelineStepDetailStepParametersOutputArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineStepDetailStepParametersOutputArgsDict(TypedDict):
+    output_file: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Output file name
+    """
+    output_parameter_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of output parameters
+    """
+    parameter_names: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) The list of parameter names that will be output by this step
+    """
 
 @pulumi.input_type
 class PipelineStepDetailStepParametersOutputArgs:
@@ -12910,42 +12530,39 @@ class PipelineStepDetailStepParametersOutputArgs:
         pulumi.set(self, "parameter_names", value)
 
 
-if not MYPY:
-    class PipelineStepDetailStepStorageMountConfigurationDetailsListArgsDict(TypedDict):
-        destination_directory_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The local directory name to be mounted
-        """
-        storage_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of storage.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The object storage bucket
-        """
-        destination_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The local path of the mounted directory, excluding directory name.
-        """
-        export_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the export
-        """
-        mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the mount target
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The object storage namespace
-        """
-        prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Prefix in the bucket to mount
-        """
-elif False:
-    PipelineStepDetailStepStorageMountConfigurationDetailsListArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineStepDetailStepStorageMountConfigurationDetailsListArgsDict(TypedDict):
+    destination_directory_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The local directory name to be mounted
+    """
+    storage_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of storage.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The object storage bucket
+    """
+    destination_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The local path of the mounted directory, excluding directory name.
+    """
+    export_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the export
+    """
+    mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the mount target
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The object storage namespace
+    """
+    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Prefix in the bucket to mount
+    """
 
 @pulumi.input_type
 class PipelineStepDetailStepStorageMountConfigurationDetailsListArgs:
@@ -13080,46 +12697,43 @@ class PipelineStepDetailStepStorageMountConfigurationDetailsListArgs:
         pulumi.set(self, "prefix", value)
 
 
-if not MYPY:
-    class PipelineStorageMountConfigurationDetailsListArgsDict(TypedDict):
-        destination_directory_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The local directory name to be mounted
-        """
-        storage_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of storage.
+class PipelineStorageMountConfigurationDetailsListArgsDict(TypedDict):
+    destination_directory_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The local directory name to be mounted
+    """
+    storage_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of storage.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The object storage bucket
-        """
-        destination_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The local path of the mounted directory, excluding directory name.
-        """
-        export_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the export
-        """
-        mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the mount target
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The object storage namespace
-        """
-        prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Prefix in the bucket to mount
-        """
-elif False:
-    PipelineStorageMountConfigurationDetailsListArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The object storage bucket
+    """
+    destination_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The local path of the mounted directory, excluding directory name.
+    """
+    export_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the export
+    """
+    mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the mount target
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The object storage namespace
+    """
+    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Prefix in the bucket to mount
+    """
 
 @pulumi.input_type
 class PipelineStorageMountConfigurationDetailsListArgs:
@@ -13262,18 +12876,15 @@ class PipelineStorageMountConfigurationDetailsListArgs:
         pulumi.set(self, "prefix", value)
 
 
-if not MYPY:
-    class ScheduleActionArgsDict(TypedDict):
-        action_details: pulumi.Input['ScheduleActionActionDetailsArgsDict']
-        """
-        (Updatable) Schedule Http action details
-        """
-        action_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The Schedule Action type
-        """
-elif False:
-    ScheduleActionArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduleActionArgsDict(TypedDict):
+    action_details: pulumi.Input['ScheduleActionActionDetailsArgsDict']
+    """
+    (Updatable) Schedule Http action details
+    """
+    action_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The Schedule Action type
+    """
 
 @pulumi.input_type
 class ScheduleActionArgs:
@@ -13312,30 +12923,27 @@ class ScheduleActionArgs:
         pulumi.set(self, "action_type", value)
 
 
-if not MYPY:
-    class ScheduleActionActionDetailsArgsDict(TypedDict):
-        http_action_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of http action to trigger.
-        """
-        create_job_run_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsArgsDict']]
-        """
-        (Updatable) Parameters needed to create a new job run.
-        """
-        create_pipeline_run_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsArgsDict']]
-        """
-        (Updatable) The information about new PipelineRun.
-        """
-        ml_application_instance_view_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
-        """
-        trigger_ml_application_instance_view_flow_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgsDict']]
-        """
-        (Updatable) Payload for trigger request endpoint
-        """
-elif False:
-    ScheduleActionActionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduleActionActionDetailsArgsDict(TypedDict):
+    http_action_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of http action to trigger.
+    """
+    create_job_run_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsArgsDict']]
+    """
+    (Updatable) Parameters needed to create a new job run.
+    """
+    create_pipeline_run_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsArgsDict']]
+    """
+    (Updatable) The information about new PipelineRun.
+    """
+    ml_application_instance_view_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+    """
+    trigger_ml_application_instance_view_flow_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgsDict']]
+    """
+    (Updatable) Payload for trigger request endpoint
+    """
 
 @pulumi.input_type
 class ScheduleActionActionDetailsArgs:
@@ -13423,46 +13031,43 @@ class ScheduleActionActionDetailsArgs:
         pulumi.set(self, "trigger_ml_application_instance_view_flow_details", value)
 
 
-if not MYPY:
-    class ScheduleActionActionDetailsCreateJobRunDetailsArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
-        """
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly display name for the resource.
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
-        job_configuration_override_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgsDict']]
-        """
-        (Updatable) The job configuration details
-        """
-        job_environment_configuration_override_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgsDict']]
-        """
-        (Updatable) Environment configuration to capture job runtime dependencies.
-        """
-        job_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
-        """
-        job_log_configuration_override_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgsDict']]
-        """
-        (Updatable) Logging configuration for resource.
-        """
-        project_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
-        """
-elif False:
-    ScheduleActionActionDetailsCreateJobRunDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduleActionActionDetailsCreateJobRunDetailsArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job run.
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly display name for the resource.
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+    """
+    job_configuration_override_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgsDict']]
+    """
+    (Updatable) The job configuration details
+    """
+    job_environment_configuration_override_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgsDict']]
+    """
+    (Updatable) Environment configuration to capture job runtime dependencies.
+    """
+    job_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
+    """
+    job_log_configuration_override_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgsDict']]
+    """
+    (Updatable) Logging configuration for resource.
+    """
+    project_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
+    """
 
 @pulumi.input_type
 class ScheduleActionActionDetailsCreateJobRunDetailsArgs:
@@ -13615,26 +13220,23 @@ class ScheduleActionActionDetailsCreateJobRunDetailsArgs:
         pulumi.set(self, "project_id", value)
 
 
-if not MYPY:
-    class ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgsDict(TypedDict):
-        job_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of job.
-        """
-        command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The arguments to pass to the job.
-        """
-        environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Environment variables to set for the job.
-        """
-        maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
-elif False:
-    ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgsDict(TypedDict):
+    job_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of job.
+    """
+    command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The arguments to pass to the job.
+    """
+    environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Environment variables to set for the job.
+    """
+    maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A time bound for the execution of the job. Timer starts when the job becomes active.
+    """
 
 @pulumi.input_type
 class ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs:
@@ -13706,34 +13308,31 @@ class ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDeta
         pulumi.set(self, "maximum_runtime_in_minutes", value)
 
 
-if not MYPY:
-    class ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgsDict(TypedDict):
-        image: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
-        """
-        job_environment_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The environment configuration type used for job runtime.
-        """
-        cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-        """
-        entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        """
-        image_digest: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-        """
-        image_signature_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the container image signature
-        """
-elif False:
-    ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgsDict(TypedDict):
+    image: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+    """
+    job_environment_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The environment configuration type used for job runtime.
+    """
+    cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+    """
+    entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+    """
+    image_digest: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+    """
+    image_signature_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the container image signature
+    """
 
 @pulumi.input_type
 class ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs:
@@ -13836,26 +13435,23 @@ class ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationO
         pulumi.set(self, "image_signature_id", value)
 
 
-if not MYPY:
-    class ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgsDict(TypedDict):
-        enable_auto_log_creation: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If automatic on-behalf-of log object creation is enabled for job runs.
-        """
-        enable_logging: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If customer logging is enabled for job runs.
-        """
-        log_group_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The log group id for where log objects are for job runs.
-        """
-        log_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The log id the job run will push logs too.
-        """
-elif False:
-    ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgsDict(TypedDict):
+    enable_auto_log_creation: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If automatic on-behalf-of log object creation is enabled for job runs.
+    """
+    enable_logging: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If customer logging is enabled for job runs.
+    """
+    log_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The log group id for where log objects are for job runs.
+    """
+    log_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The log id the job run will push logs too.
+    """
 
 @pulumi.input_type
 class ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs:
@@ -13928,50 +13524,47 @@ class ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideD
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class ScheduleActionActionDetailsCreatePipelineRunDetailsArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
-        """
-        configuration_override_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgsDict']]
-        """
-        (Updatable) The configuration details of a pipeline.
-        """
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly display name for the resource.
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
-        log_configuration_override_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgsDict']]
-        """
-        (Updatable) The pipeline log configuration details.
-        """
-        pipeline_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
-        """
-        project_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
-        """
-        step_override_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgsDict']]]]
-        """
-        (Updatable) Array of step override details. Only Step Configuration is allowed to be overridden.
-        """
-        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-elif False:
-    ScheduleActionActionDetailsCreatePipelineRunDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduleActionActionDetailsCreatePipelineRunDetailsArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
+    """
+    configuration_override_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgsDict']]
+    """
+    (Updatable) The configuration details of a pipeline.
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly display name for the resource.
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+    """
+    log_configuration_override_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgsDict']]
+    """
+    (Updatable) The pipeline log configuration details.
+    """
+    pipeline_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
+    """
+    project_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
+    """
+    step_override_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgsDict']]]]
+    """
+    (Updatable) Array of step override details. Only Step Configuration is allowed to be overridden.
+    """
+    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+    """
 
 @pulumi.input_type
 class ScheduleActionActionDetailsCreatePipelineRunDetailsArgs:
@@ -14140,26 +13733,23 @@ class ScheduleActionActionDetailsCreatePipelineRunDetailsArgs:
         pulumi.set(self, "system_tags", value)
 
 
-if not MYPY:
-    class ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of pipeline.
-        """
-        command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The command line arguments to set for steps in the pipeline.
-        """
-        environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Environment variables to set for steps in the pipeline.
-        """
-        maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
-        """
-elif False:
-    ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of pipeline.
+    """
+    command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The command line arguments to set for steps in the pipeline.
+    """
+    environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Environment variables to set for steps in the pipeline.
+    """
+    maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
+    """
 
 @pulumi.input_type
 class ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs:
@@ -14231,26 +13821,23 @@ class ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDe
         pulumi.set(self, "maximum_runtime_in_minutes", value)
 
 
-if not MYPY:
-    class ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgsDict(TypedDict):
-        enable_auto_log_creation: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        """
-        enable_logging: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If customer logging is enabled for pipeline.
-        """
-        log_group_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
-        log_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
-elif False:
-    ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgsDict(TypedDict):
+    enable_auto_log_creation: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
+    """
+    enable_logging: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If customer logging is enabled for pipeline.
+    """
+    log_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+    """
+    log_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+    """
 
 @pulumi.input_type
 class ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs:
@@ -14323,22 +13910,19 @@ class ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrid
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgsDict(TypedDict):
-        step_configuration_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgsDict']]
-        """
-        (Updatable) The configuration details of a step.
-        """
-        step_container_configuration_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgsDict']]
-        """
-        (Updatable) Container Details for a step in pipeline.
-        """
-        step_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the step.
-        """
-elif False:
-    ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgsDict(TypedDict):
+    step_configuration_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgsDict']]
+    """
+    (Updatable) The configuration details of a step.
+    """
+    step_container_configuration_details: NotRequired[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgsDict']]
+    """
+    (Updatable) Container Details for a step in pipeline.
+    """
+    step_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the step.
+    """
 
 @pulumi.input_type
 class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgs:
@@ -14395,22 +13979,19 @@ class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgs:
         pulumi.set(self, "step_name", value)
 
 
-if not MYPY:
-    class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgsDict(TypedDict):
-        command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The command line arguments to set for step.
-        """
-        environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Environment variables to set for step.
-        """
-        maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A time bound for the execution of the step.
-        """
-elif False:
-    ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgsDict(TypedDict):
+    command_line_arguments: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The command line arguments to set for step.
+    """
+    environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Environment variables to set for step.
+    """
+    maximum_runtime_in_minutes: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A time bound for the execution of the step.
+    """
 
 @pulumi.input_type
 class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs:
@@ -14467,34 +14048,31 @@ class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepC
         pulumi.set(self, "maximum_runtime_in_minutes", value)
 
 
-if not MYPY:
-    class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgsDict(TypedDict):
-        container_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of container.
-        """
-        image: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
-        """
-        cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-        """
-        entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        """
-        image_digest: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-        """
-        image_signature_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the container image signature
-        """
-elif False:
-    ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgsDict(TypedDict):
+    container_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of container.
+    """
+    image: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+    """
+    cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+    """
+    entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+    """
+    image_digest: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+    """
+    image_signature_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the container image signature
+    """
 
 @pulumi.input_type
 class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs:
@@ -14597,18 +14175,15 @@ class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepC
         pulumi.set(self, "image_signature_id", value)
 
 
-if not MYPY:
-    class ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgsDict(TypedDict):
-        parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgsDict']]]]
-        """
-        (Updatable) Parameters provided for given trigger invocation (they must match predefined schema)
-        """
-        trigger_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of trigger
-        """
-elif False:
-    ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgsDict(TypedDict):
+    parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgsDict']]]]
+    """
+    (Updatable) Parameters provided for given trigger invocation (they must match predefined schema)
+    """
+    trigger_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of trigger
+    """
 
 @pulumi.input_type
 class ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs:
@@ -14649,18 +14224,15 @@ class ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs
         pulumi.set(self, "trigger_name", value)
 
 
-if not MYPY:
-    class ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of trigger parameter
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value of trigger parameter
-        """
-elif False:
-    ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of trigger parameter
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value of trigger parameter
+    """
 
 @pulumi.input_type
 class ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgs:
@@ -14701,18 +14273,15 @@ class ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsPara
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class ScheduleLogDetailsArgsDict(TypedDict):
-        log_group_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
-        log_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
-        """
-elif False:
-    ScheduleLogDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduleLogDetailsArgsDict(TypedDict):
+    log_group_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+    """
+    log_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom log to be used for Schedule logging.
+    """
 
 @pulumi.input_type
 class ScheduleLogDetailsArgs:
@@ -14751,46 +14320,43 @@ class ScheduleLogDetailsArgs:
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class ScheduleTriggerArgsDict(TypedDict):
-        trigger_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The schedule trigger type
+class ScheduleTriggerArgsDict(TypedDict):
+    trigger_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The schedule trigger type
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        cron_expression: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Schedule cron expression
-        """
-        frequency: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of frequency
-        """
-        interval: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The interval of frequency.
-        """
-        is_random_start_time: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
-        """
-        recurrence: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) This recurrence field conforms to RFC-5545 formatting
-        """
-        time_end: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
-        time_start: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
-elif False:
-    ScheduleTriggerArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    cron_expression: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Schedule cron expression
+    """
+    frequency: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of frequency
+    """
+    interval: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The interval of frequency.
+    """
+    is_random_start_time: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
+    """
+    recurrence: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) This recurrence field conforms to RFC-5545 formatting
+    """
+    time_end: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The schedule end date time, if null, the schedule will never expire. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+    """
+    time_start: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The schedule starting date time, if null, System set the time when schedule is created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+    """
 
 @pulumi.input_type
 class ScheduleTriggerArgs:
@@ -14934,13 +14500,10 @@ class ScheduleTriggerArgs:
         pulumi.set(self, "time_start", value)
 
 
-if not MYPY:
-    class GetContainersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetContainersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetContainersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetContainersFilterArgs:
@@ -14981,16 +14544,13 @@ class GetContainersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFastLaunchJobConfigsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the fast launch job config
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFastLaunchJobConfigsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFastLaunchJobConfigsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the fast launch job config
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFastLaunchJobConfigsFilterArgs:
@@ -15037,16 +14597,13 @@ class GetFastLaunchJobConfigsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetJobRunsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        node group name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetJobRunsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetJobRunsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    node group name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetJobRunsFilterArgs:
@@ -15093,16 +14650,13 @@ class GetJobRunsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetJobShapesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the job shape.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetJobShapesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetJobShapesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the job shape.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetJobShapesFilterArgs:
@@ -15149,16 +14703,13 @@ class GetJobShapesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetJobsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        node group name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetJobsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetJobsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    node group name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetJobsFilterArgs:
@@ -15205,16 +14756,13 @@ class GetJobsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMlApplicationImplementationVersionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        ML Application Implementation name which is unique for given ML Application.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMlApplicationImplementationVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMlApplicationImplementationVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    ML Application Implementation name which is unique for given ML Application.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMlApplicationImplementationVersionsFilterArgs:
@@ -15261,16 +14809,13 @@ class GetMlApplicationImplementationVersionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMlApplicationImplementationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name given.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMlApplicationImplementationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMlApplicationImplementationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name given.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMlApplicationImplementationsFilterArgs:
@@ -15317,13 +14862,10 @@ class GetMlApplicationImplementationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMlApplicationInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMlApplicationInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMlApplicationInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMlApplicationInstancesFilterArgs:
@@ -15364,16 +14906,13 @@ class GetMlApplicationInstancesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMlApplicationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name given.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMlApplicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMlApplicationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name given.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMlApplicationsFilterArgs:
@@ -15420,13 +14959,10 @@ class GetMlApplicationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetModelDeploymentModelStatesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetModelDeploymentModelStatesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetModelDeploymentModelStatesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetModelDeploymentModelStatesFilterArgs:
@@ -15467,16 +15003,13 @@ class GetModelDeploymentModelStatesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetModelDeploymentShapesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the model deployment shape.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetModelDeploymentShapesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetModelDeploymentShapesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the model deployment shape.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetModelDeploymentShapesFilterArgs:
@@ -15523,13 +15056,10 @@ class GetModelDeploymentShapesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetModelDeploymentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetModelDeploymentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetModelDeploymentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetModelDeploymentsFilterArgs:
@@ -15570,13 +15100,10 @@ class GetModelDeploymentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetModelGroupModelsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetModelGroupModelsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetModelGroupModelsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetModelGroupModelsFilterArgs:
@@ -15617,13 +15144,10 @@ class GetModelGroupModelsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetModelGroupVersionHistoriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetModelGroupVersionHistoriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetModelGroupVersionHistoriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetModelGroupVersionHistoriesFilterArgs:
@@ -15664,13 +15188,10 @@ class GetModelGroupVersionHistoriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetModelGroupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetModelGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetModelGroupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetModelGroupsFilterArgs:
@@ -15711,16 +15232,13 @@ class GetModelGroupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetModelVersionSetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name given.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetModelVersionSetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetModelVersionSetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name given.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetModelVersionSetsFilterArgs:
@@ -15767,13 +15285,10 @@ class GetModelVersionSetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetModelsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetModelsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetModelsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetModelsFilterArgs:
@@ -15814,16 +15329,13 @@ class GetModelsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNotebookSessionShapesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the notebook session shape.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNotebookSessionShapesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNotebookSessionShapesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the notebook session shape.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNotebookSessionShapesFilterArgs:
@@ -15870,13 +15382,10 @@ class GetNotebookSessionShapesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNotebookSessionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNotebookSessionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNotebookSessionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNotebookSessionsFilterArgs:
@@ -15917,13 +15426,10 @@ class GetNotebookSessionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPipelineRunsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPipelineRunsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPipelineRunsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPipelineRunsFilterArgs:
@@ -15964,13 +15470,10 @@ class GetPipelineRunsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPipelinesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPipelinesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPipelinesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPipelinesFilterArgs:
@@ -16011,13 +15514,10 @@ class GetPipelinesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPrivateEndpointsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPrivateEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPrivateEndpointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPrivateEndpointsFilterArgs:
@@ -16058,13 +15558,10 @@ class GetPrivateEndpointsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetProjectsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetProjectsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetProjectsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetProjectsFilterArgs:
@@ -16105,16 +15602,13 @@ class GetProjectsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSchedulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of trigger parameter
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSchedulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSchedulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of trigger parameter
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSchedulesFilterArgs:

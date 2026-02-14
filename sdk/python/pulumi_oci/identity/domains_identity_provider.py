@@ -4144,6 +4144,13 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                  user_mapping_store_attribute: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/IdentityProvider
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create an Identity Provider
+
         ## Example Usage
 
         ```python
@@ -4833,6 +4840,13 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                  args: DomainsIdentityProviderArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/IdentityProvider
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create an Identity Provider
+
         ## Example Usage
 
         ```python

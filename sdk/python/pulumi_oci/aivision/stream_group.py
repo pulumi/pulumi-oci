@@ -352,6 +352,13 @@ class StreamGroup(pulumi.CustomResource):
                  stream_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Stream Group resource in Oracle Cloud Infrastructure Ai Vision service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vision/latest/StreamGroup
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiVision
+
+        Registration of new streamGroup
+
         ## Example Usage
 
         ```python
@@ -399,6 +406,13 @@ class StreamGroup(pulumi.CustomResource):
                  args: StreamGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Stream Group resource in Oracle Cloud Infrastructure Ai Vision service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vision/latest/StreamGroup
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiVision
+
+        Registration of new streamGroup
+
         ## Example Usage
 
         ```python

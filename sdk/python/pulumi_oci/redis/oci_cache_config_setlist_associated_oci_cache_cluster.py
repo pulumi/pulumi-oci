@@ -106,6 +106,13 @@ class OciCacheConfigSetlistAssociatedOciCacheCluster(pulumi.CustomResource):
                  oci_cache_config_set_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Oci Cache Config Setlist Associated Oci Cache Cluster resource in Oracle Cloud Infrastructure Redis service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/redis/latest/OciCacheConfigSetlistAssociatedOciCacheCluster
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
+
+        Gets a list of associated Oracle Cloud Infrastructure Cache clusters for an Oracle Cloud Infrastructure Cache Config Set.
+
         ## Example Usage
 
         ```python
@@ -134,6 +141,13 @@ class OciCacheConfigSetlistAssociatedOciCacheCluster(pulumi.CustomResource):
                  args: OciCacheConfigSetlistAssociatedOciCacheClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Oci Cache Config Setlist Associated Oci Cache Cluster resource in Oracle Cloud Infrastructure Redis service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/redis/latest/OciCacheConfigSetlistAssociatedOciCacheCluster
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
+
+        Gets a list of associated Oracle Cloud Infrastructure Cache clusters for an Oracle Cloud Infrastructure Cache Config Set.
+
         ## Example Usage
 
         ```python

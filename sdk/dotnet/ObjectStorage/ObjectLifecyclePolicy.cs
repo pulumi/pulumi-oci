@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ObjectStorage
 {
     /// <summary>
+    /// This resource provides the Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/ObjectLifecyclePolicy
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates or replaces the object lifecycle policy for the bucket.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -49,7 +56,7 @@ namespace Pulumi.Oci.ObjectStorage
     /// 
     /// ## Import
     /// 
-    /// ObjectLifecyclePolicies can be imported using the `id`, e.g.
+    /// ObjectLifecyclePolicies can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy test_object_lifecycle_policy "n/{namespaceName}/b/{bucketName}/l"

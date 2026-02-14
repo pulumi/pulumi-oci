@@ -116,6 +116,9 @@ export interface GetExadataInsightResult {
      * Exadata insight identifier
      */
     readonly id: string;
+    /**
+     * Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight. This should be always set true when using terraform, when it is set to false member associations may be missing from the application.
+     */
     readonly isAutoSyncEnabled: boolean;
     /**
      * true if virtualization is used in the Exadata system

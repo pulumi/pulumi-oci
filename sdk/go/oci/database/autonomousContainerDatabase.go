@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+//
+// Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
+//
 // ## Example Usage
 //
 // ```go
@@ -182,8 +189,9 @@ type AutonomousContainerDatabase struct {
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
 	DbName pulumi.StringOutput `pulumi:"dbName"`
 	// The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
-	DbSplitThreshold pulumi.IntOutput    `pulumi:"dbSplitThreshold"`
-	DbUniqueName     pulumi.StringOutput `pulumi:"dbUniqueName"`
+	DbSplitThreshold pulumi.IntOutput `pulumi:"dbSplitThreshold"`
+	// **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+	DbUniqueName pulumi.StringOutput `pulumi:"dbUniqueName"`
 	// The base version for the Autonomous Container Database.
 	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -261,7 +269,8 @@ type AutonomousContainerDatabase struct {
 	PeerAutonomousVmClusterId pulumi.StringOutput `pulumi:"peerAutonomousVmClusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
 	PeerCloudAutonomousVmClusterId pulumi.StringOutput `pulumi:"peerCloudAutonomousVmClusterId"`
-	PeerDbUniqueName               pulumi.StringOutput `pulumi:"peerDbUniqueName"`
+	// **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+	PeerDbUniqueName pulumi.StringOutput `pulumi:"peerDbUniqueName"`
 	// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode pulumi.StringOutput `pulumi:"protectionMode"`
 	// An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
@@ -379,8 +388,9 @@ type autonomousContainerDatabaseState struct {
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
 	DbName *string `pulumi:"dbName"`
 	// The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
-	DbSplitThreshold *int    `pulumi:"dbSplitThreshold"`
-	DbUniqueName     *string `pulumi:"dbUniqueName"`
+	DbSplitThreshold *int `pulumi:"dbSplitThreshold"`
+	// **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+	DbUniqueName *string `pulumi:"dbUniqueName"`
 	// The base version for the Autonomous Container Database.
 	DbVersion *string `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -458,7 +468,8 @@ type autonomousContainerDatabaseState struct {
 	PeerAutonomousVmClusterId *string `pulumi:"peerAutonomousVmClusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
 	PeerCloudAutonomousVmClusterId *string `pulumi:"peerCloudAutonomousVmClusterId"`
-	PeerDbUniqueName               *string `pulumi:"peerDbUniqueName"`
+	// **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+	PeerDbUniqueName *string `pulumi:"peerDbUniqueName"`
 	// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode *string `pulumi:"protectionMode"`
 	// An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
@@ -542,7 +553,8 @@ type AutonomousContainerDatabaseState struct {
 	DbName pulumi.StringPtrInput
 	// The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
 	DbSplitThreshold pulumi.IntPtrInput
-	DbUniqueName     pulumi.StringPtrInput
+	// **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+	DbUniqueName pulumi.StringPtrInput
 	// The base version for the Autonomous Container Database.
 	DbVersion pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -620,7 +632,8 @@ type AutonomousContainerDatabaseState struct {
 	PeerAutonomousVmClusterId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
 	PeerCloudAutonomousVmClusterId pulumi.StringPtrInput
-	PeerDbUniqueName               pulumi.StringPtrInput
+	// **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+	PeerDbUniqueName pulumi.StringPtrInput
 	// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode pulumi.StringPtrInput
 	// An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
@@ -693,8 +706,9 @@ type autonomousContainerDatabaseArgs struct {
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
 	DbName *string `pulumi:"dbName"`
 	// The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
-	DbSplitThreshold *int    `pulumi:"dbSplitThreshold"`
-	DbUniqueName     *string `pulumi:"dbUniqueName"`
+	DbSplitThreshold *int `pulumi:"dbSplitThreshold"`
+	// **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+	DbUniqueName *string `pulumi:"dbUniqueName"`
 	// The base version for the Autonomous Container Database.
 	DbVersion *string `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -740,7 +754,8 @@ type autonomousContainerDatabaseArgs struct {
 	PeerAutonomousVmClusterId *string `pulumi:"peerAutonomousVmClusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
 	PeerCloudAutonomousVmClusterId *string `pulumi:"peerCloudAutonomousVmClusterId"`
-	PeerDbUniqueName               *string `pulumi:"peerDbUniqueName"`
+	// **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+	PeerDbUniqueName *string `pulumi:"peerDbUniqueName"`
 	// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode *string `pulumi:"protectionMode"`
 	// (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
@@ -787,7 +802,8 @@ type AutonomousContainerDatabaseArgs struct {
 	DbName pulumi.StringPtrInput
 	// The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
 	DbSplitThreshold pulumi.IntPtrInput
-	DbUniqueName     pulumi.StringPtrInput
+	// **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+	DbUniqueName pulumi.StringPtrInput
 	// The base version for the Autonomous Container Database.
 	DbVersion pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -833,7 +849,8 @@ type AutonomousContainerDatabaseArgs struct {
 	PeerAutonomousVmClusterId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
 	PeerCloudAutonomousVmClusterId pulumi.StringPtrInput
-	PeerDbUniqueName               pulumi.StringPtrInput
+	// **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+	PeerDbUniqueName pulumi.StringPtrInput
 	// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
@@ -1042,6 +1059,7 @@ func (o AutonomousContainerDatabaseOutput) DbSplitThreshold() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.IntOutput { return v.DbSplitThreshold }).(pulumi.IntOutput)
 }
 
+// **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
 func (o AutonomousContainerDatabaseOutput) DbUniqueName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.DbUniqueName }).(pulumi.StringOutput)
 }
@@ -1258,6 +1276,7 @@ func (o AutonomousContainerDatabaseOutput) PeerCloudAutonomousVmClusterId() pulu
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.PeerCloudAutonomousVmClusterId }).(pulumi.StringOutput)
 }
 
+// **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
 func (o AutonomousContainerDatabaseOutput) PeerDbUniqueName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.PeerDbUniqueName }).(pulumi.StringOutput)
 }

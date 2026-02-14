@@ -1302,6 +1302,13 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
                  x509base64certificate: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the O Auth Partner Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/OAuthPartnerCertificate
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create an OAuth Partner Certificate
+
         ## Example Usage
 
         ```python
@@ -1454,6 +1461,13 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
                  args: DomainsOauthPartnerCertificateArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the O Auth Partner Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/OAuthPartnerCertificate
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create an OAuth Partner Certificate
+
         ## Example Usage
 
         ```python

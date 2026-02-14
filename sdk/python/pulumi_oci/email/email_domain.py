@@ -363,6 +363,13 @@ class EmailDomain(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Email Domain resource in Oracle Cloud Infrastructure Email service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/email/latest/EmailDomain
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/email
+
+        Creates a new email domain. Avoid entering confidential information.
+
         ## Example Usage
 
         ```python
@@ -410,6 +417,13 @@ class EmailDomain(pulumi.CustomResource):
                  args: EmailDomainArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Email Domain resource in Oracle Cloud Infrastructure Email service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/email/latest/EmailDomain
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/email
+
+        Creates a new email domain. Avoid entering confidential information.
+
         ## Example Usage
 
         ```python

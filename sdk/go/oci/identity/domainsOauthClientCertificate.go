@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the O Auth Client Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/OAuthClientCertificate
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+//
+// # Create an OAuth Client Certificate
+//
 // ## Example Usage
 //
 // ```go

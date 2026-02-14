@@ -381,6 +381,13 @@ class ModelGroupVersionHistory(pulumi.CustomResource):
                  project_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Model Group Version History resource in Oracle Cloud Infrastructure Data Science service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/ModelGroupVersionHistory
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+
+        Creates a new modelGroupVersionHistory.
+
         ## Example Usage
 
         ```python
@@ -430,6 +437,13 @@ class ModelGroupVersionHistory(pulumi.CustomResource):
                  args: ModelGroupVersionHistoryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Model Group Version History resource in Oracle Cloud Infrastructure Data Science service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/ModelGroupVersionHistory
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+
+        Creates a new modelGroupVersionHistory.
+
         ## Example Usage
 
         ```python

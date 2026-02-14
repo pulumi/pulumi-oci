@@ -21,15 +21,10 @@ __all__ = [
     'GetDataKeysFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetApmDomainsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetApmDomainsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetApmDomainsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetApmDomainsFilterArgs:
@@ -70,16 +65,13 @@ class GetApmDomainsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDataKeysFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDataKeysFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDataKeysFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDataKeysFilterArgs:

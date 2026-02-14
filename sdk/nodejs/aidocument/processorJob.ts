@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/document-understanding/latest/ProcessorJob
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiDocument
+ *
+ * Create a processor job for document analysis.
+ *
  * ## Example Usage
  *
  * ```typescript

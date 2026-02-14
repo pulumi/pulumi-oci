@@ -106,6 +106,13 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
                  query_definition: Optional[pulumi.Input[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/usage/latest/UsageCarbonEmissionsQuery
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/metering_computation
+
+        Returns the created carbon emissions usage query.
+
         ## Example Usage
 
         ```python
@@ -162,6 +169,13 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
                  args: UsageCarbonEmissionsQueryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/usage/latest/UsageCarbonEmissionsQuery
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/metering_computation
+
+        Returns the created carbon emissions usage query.
+
         ## Example Usage
 
         ```python

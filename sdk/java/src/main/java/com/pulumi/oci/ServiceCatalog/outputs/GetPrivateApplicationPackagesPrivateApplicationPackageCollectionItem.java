@@ -10,6 +10,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem {
+    /**
+     * @return The content URL of the terraform configuration.
+     * 
+     */
     private String contentUrl;
     /**
      * @return Exact match name filter.
@@ -21,6 +25,10 @@ public final class GetPrivateApplicationPackagesPrivateApplicationPackageCollect
      * 
      */
     private String id;
+    /**
+     * @return The MIME type of the terraform configuration.
+     * 
+     */
     private String mimeType;
     /**
      * @return Name of the package type. If multiple package types are provided, then any resource with one or more matching package types will be returned.
@@ -44,6 +52,10 @@ public final class GetPrivateApplicationPackagesPrivateApplicationPackageCollect
     private String version;
 
     private GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem() {}
+    /**
+     * @return The content URL of the terraform configuration.
+     * 
+     */
     public String contentUrl() {
         return this.contentUrl;
     }
@@ -61,6 +73,10 @@ public final class GetPrivateApplicationPackagesPrivateApplicationPackageCollect
     public String id() {
         return this.id;
     }
+    /**
+     * @return The MIME type of the terraform configuration.
+     * 
+     */
     public String mimeType() {
         return this.mimeType;
     }

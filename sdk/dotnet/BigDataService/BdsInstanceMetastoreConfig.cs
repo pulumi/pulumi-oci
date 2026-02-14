@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService
 {
     /// <summary>
+    /// This resource provides the Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/bigdata/latest/BdsInstanceMetastoreConfig
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/big_data_service
+    /// 
+    /// Create and activate external metastore configuration.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -35,7 +42,7 @@ namespace Pulumi.Oci.BigDataService
     /// 
     /// ## Import
     /// 
-    /// BdsInstanceMetastoreConfigs can be imported using the `id`, e.g.
+    /// BdsInstanceMetastoreConfigs can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig test_bds_instance_metastore_config "bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}"

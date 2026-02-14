@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Autoscaling
 {
     /// <summary>
+    /// This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/autoscaling/latest/AutoScalingConfiguration
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/autoscaling
+    /// 
+    /// Creates an autoscaling configuration.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -99,7 +106,7 @@ namespace Pulumi.Oci.Autoscaling
     /// 
     /// ## Import
     /// 
-    /// AutoScalingConfigurations can be imported using the `id`, e.g.
+    /// AutoScalingConfigurations can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Autoscaling/autoScalingConfiguration:AutoScalingConfiguration test_auto_scaling_configuration "id"

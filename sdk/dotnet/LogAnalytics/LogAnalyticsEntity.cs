@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics
 {
     /// <summary>
+    /// This resource provides the Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsEntity
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+    /// 
+    /// Create a new log analytics entity.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -60,7 +67,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// ## Import
     /// 
-    /// LogAnalyticsEntities can be imported using the `id`, e.g.
+    /// LogAnalyticsEntities can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity test_log_analytics_entity "namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"

@@ -413,6 +413,13 @@ class IotDigitalTwinRelationship(pulumi.CustomResource):
                  target_digital_twin_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Digital Twin Relationship resource in Oracle Cloud Infrastructure Iot service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a new digital twin relationship.
+
         ## Example Usage
 
         ```python
@@ -466,6 +473,13 @@ class IotDigitalTwinRelationship(pulumi.CustomResource):
                  args: IotDigitalTwinRelationshipArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Digital Twin Relationship resource in Oracle Cloud Infrastructure Iot service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a new digital twin relationship.
+
         ## Example Usage
 
         ```python

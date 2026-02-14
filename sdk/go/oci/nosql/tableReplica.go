@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Table Replica resource in Oracle Cloud Infrastructure NoSQL Database service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/nosql-database/latest/TableReplica
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/object_storage
+//
+// Add a replica for this table. The table's schema must be frozen prior to this operation.
+//
 // ## Example Usage
 //
 // ```go

@@ -14,6 +14,13 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Software Source Generate Metadata Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/SoftwareSourceGenerateMetadataManagement
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+ * 
+ * Regenerates metadata for the specified custom software source.
+ * 
  * ## Example Usage
  * 
  * <pre>

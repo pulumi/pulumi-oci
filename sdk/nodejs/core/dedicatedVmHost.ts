@@ -7,6 +7,16 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Dedicated Vm Host resource in Oracle Cloud Infrastructure Core service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHost
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ *
+ * Creates a new dedicated virtual machine host in the specified compartment and the specified availability domain.
+ * Dedicated virtual machine hosts enable you to run your Compute virtual machine (VM) instances on dedicated servers
+ * that are a single tenant and not shared with other customers.
+ * For more information, see [Dedicated Virtual Machine Hosts](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm).
+ *
  * ## Example Usage
  *
  * ```typescript

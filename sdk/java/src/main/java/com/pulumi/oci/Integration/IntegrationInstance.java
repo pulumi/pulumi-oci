@@ -26,6 +26,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Integration Instance resource in Oracle Cloud Infrastructure Integration service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/integration/latest/IntegrationInstance
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/integration
+ * 
+ * Creates a new Integration Instance.
+ * 
  * ## Example Usage
  * 
  * <pre>

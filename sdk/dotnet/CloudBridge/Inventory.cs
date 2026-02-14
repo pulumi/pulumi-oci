@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudBridge
 {
     /// <summary>
+    /// This resource provides the Inventory resource in Oracle Cloud Infrastructure Cloud Bridge service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/OCB/latest/Inventory
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudBridge
+    /// 
+    /// Creates an inventory.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -39,7 +46,7 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// ## Import
     /// 
-    /// Inventories can be imported using the `id`, e.g.
+    /// Inventories can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:CloudBridge/inventory:Inventory test_inventory "id"

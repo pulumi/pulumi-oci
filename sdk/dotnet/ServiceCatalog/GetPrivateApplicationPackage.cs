@@ -123,6 +123,9 @@ namespace Pulumi.Oci.ServiceCatalog
     [OutputType]
     public sealed class GetPrivateApplicationPackageResult
     {
+        /// <summary>
+        /// The content URL of the terraform configuration.
+        /// </summary>
         public readonly string ContentUrl;
         /// <summary>
         /// The display name of the package.
@@ -132,6 +135,9 @@ namespace Pulumi.Oci.ServiceCatalog
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The MIME type of the terraform configuration.
+        /// </summary>
         public readonly string MimeType;
         /// <summary>
         /// The specified package's type.

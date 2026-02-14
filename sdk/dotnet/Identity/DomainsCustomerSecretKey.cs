@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
+    /// This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/CustomerSecretKey
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+    /// 
+    /// Create a user's customer secret key.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -61,7 +68,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Import
     /// 
-    /// CustomerSecretKeys can be imported using the `id`, e.g.
+    /// CustomerSecretKeys can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Identity/domainsCustomerSecretKey:DomainsCustomerSecretKey test_customer_secret_key "idcsEndpoint/{idcsEndpoint}/customerSecretKeys/{customerSecretKeyId}"

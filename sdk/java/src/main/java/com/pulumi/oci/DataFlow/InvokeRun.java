@@ -23,6 +23,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Invoke Run resource in Oracle Cloud Infrastructure Data Flow service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-flow/latest/InvokeRun
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataflow
+ * 
+ * Creates a run for an application.
+ * 
  * ## Example Usage
  * 
  * <pre>
@@ -167,9 +174,17 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
     public Output<List<String>> arguments() {
         return this.arguments;
     }
+    /**
+     * Flag to invoke run asynchronously. The default is true and Terraform provider will not wait for run resource to reach target state of `SUCCEEDED`, `FAILED` or `CANCELLED` before exiting. User must wait to perform operations that need resource to be in target states. Set this to false to override this behavior.
+     * 
+     */
     @Export(name="asynchronous", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> asynchronous;
 
+    /**
+     * @return Flag to invoke run asynchronously. The default is true and Terraform provider will not wait for run resource to reach target state of `SUCCEEDED`, `FAILED` or `CANCELLED` before exiting. User must wait to perform operations that need resource to be in target states. Set this to false to override this behavior.
+     * 
+     */
     public Output<Optional<Boolean>> asynchronous() {
         return Codegen.optional(this.asynchronous);
     }

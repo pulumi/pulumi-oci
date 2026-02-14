@@ -398,7 +398,14 @@ class Job(pulumi.CustomResource):
                  suspend_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Job resource in Oracle Cloud Infrastructure Database Migration service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-migration/latest/Job
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemigration
+
+        Update Migration Job resource details.
+
+        Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
 
         ## Import
 
@@ -427,7 +434,14 @@ class Job(pulumi.CustomResource):
                  args: JobArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Job resource in Oracle Cloud Infrastructure Database Migration service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-migration/latest/Job
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemigration
+
+        Update Migration Job resource details.
+
+        Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
 
         ## Import
 

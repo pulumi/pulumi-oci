@@ -35,58 +35,53 @@ __all__ = [
     'GetMetricsFilterArgsDict',
 ]
 
-MYPY = False
+class AlarmOverrideArgsDict(TypedDict):
+    body: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The human-readable content of the delivered alarm notification. Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+    """
+    pending_duration: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
 
-if not MYPY:
-    class AlarmOverrideArgsDict(TypedDict):
-        body: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The human-readable content of the delivered alarm notification. Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
-        """
-        pending_duration: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+    The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
 
-        The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+    Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to "FIRING".
 
-        Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to "FIRING".
+    The alarm updates its status to "OK" when the breaching condition has been clear for the most recent minute.
 
-        The alarm updates its status to "OK" when the breaching condition has been clear for the most recent minute.
+    Example: `PT5M`
+    """
+    query: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
 
-        Example: `PT5M`
-        """
-        query: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+    Example of threshold alarm:
 
-        Example of threshold alarm:
+    -----
 
-        -----
+    CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
 
-        CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+    -----
 
-        -----
+    Example of absence alarm:
 
-        Example of absence alarm:
+    -----
 
-        -----
+    CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
 
-        CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+    ----- Example of absence alarm with custom absence detection period of 20 hours:
 
-        ----- Example of absence alarm with custom absence detection period of 20 hours:
-
-        ----- CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h) -----
-        """
-        rule_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
-        """
-        severity: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
-        """
-elif False:
-    AlarmOverrideArgsDict: TypeAlias = Mapping[str, Any]
+    ----- CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h) -----
+    """
+    rule_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
+    """
+    severity: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
+    """
 
 @pulumi.input_type
 class AlarmOverrideArgs:
@@ -227,30 +222,27 @@ class AlarmOverrideArgs:
         pulumi.set(self, "severity", value)
 
 
-if not MYPY:
-    class AlarmSuppressionArgsDict(TypedDict):
-        time_suppress_from: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
-        """
-        time_suppress_until: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
+class AlarmSuppressionArgsDict(TypedDict):
+    time_suppress_from: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
+    """
+    time_suppress_until: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 
-        Oracle recommends including tracking information for the event or associated work, such as a ticket number.
+    Oracle recommends including tracking information for the event or associated work, such as a ticket number.
 
-        Example: `Planned outage due to change IT-1234.`
-        """
-elif False:
-    AlarmSuppressionArgsDict: TypeAlias = Mapping[str, Any]
+    Example: `Planned outage due to change IT-1234.`
+    """
 
 @pulumi.input_type
 class AlarmSuppressionArgs:
@@ -321,26 +313,23 @@ class AlarmSuppressionArgs:
         pulumi.set(self, "description", value)
 
 
-if not MYPY:
-    class AlarmSuppressionAlarmSuppressionTargetArgsDict(TypedDict):
-        target_type: pulumi.Input[_builtins.str]
-        """
-        The type of the alarm suppression target.
-        """
-        alarm_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
-        """
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment or tenancy that is the  target of the alarm suppression. Example: `ocid1.compartment.oc1..exampleuniqueID`
-        """
-        compartment_id_in_subtree: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
-        """
-elif False:
-    AlarmSuppressionAlarmSuppressionTargetArgsDict: TypeAlias = Mapping[str, Any]
+class AlarmSuppressionAlarmSuppressionTargetArgsDict(TypedDict):
+    target_type: pulumi.Input[_builtins.str]
+    """
+    The type of the alarm suppression target.
+    """
+    alarm_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
+    """
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment or tenancy that is the  target of the alarm suppression. Example: `ocid1.compartment.oc1..exampleuniqueID`
+    """
+    compartment_id_in_subtree: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+    """
 
 @pulumi.input_type
 class AlarmSuppressionAlarmSuppressionTargetArgs:
@@ -412,25 +401,22 @@ class AlarmSuppressionAlarmSuppressionTargetArgs:
         pulumi.set(self, "compartment_id_in_subtree", value)
 
 
-if not MYPY:
-    class AlarmSuppressionSuppressionConditionArgsDict(TypedDict):
-        condition_type: pulumi.Input[_builtins.str]
-        """
-        Type of suppression condition.
-        """
-        suppression_duration: pulumi.Input[_builtins.str]
-        """
-        Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: `PT1M` (1 minute). Maximum: `PT24H` (24 hours).
-        """
-        suppression_recurrence: pulumi.Input[_builtins.str]
-        """
-        Frequency and start time of the recurring suppression. The format follows [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule parts:
-        * `FREQ`: Frequency of the recurring suppression: `WEEKLY` or `DAILY` only.
-        * `BYDAY`: Comma separated days. Use with weekly suppressions only. Supported values: `MO`, `TU`, `WE`, `TH`, `FR`, `SA` ,`SU`.
-        * `BYHOUR`, `BYMINUTE`, `BYSECOND`: Start time in UTC, after `timeSuppressFrom` value. Default is 00:00:00 UTC after `timeSuppressFrom`.
-        """
-elif False:
-    AlarmSuppressionSuppressionConditionArgsDict: TypeAlias = Mapping[str, Any]
+class AlarmSuppressionSuppressionConditionArgsDict(TypedDict):
+    condition_type: pulumi.Input[_builtins.str]
+    """
+    Type of suppression condition.
+    """
+    suppression_duration: pulumi.Input[_builtins.str]
+    """
+    Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: `PT1M` (1 minute). Maximum: `PT24H` (24 hours).
+    """
+    suppression_recurrence: pulumi.Input[_builtins.str]
+    """
+    Frequency and start time of the recurring suppression. The format follows [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule parts:
+    * `FREQ`: Frequency of the recurring suppression: `WEEKLY` or `DAILY` only.
+    * `BYDAY`: Comma separated days. Use with weekly suppressions only. Supported values: `MO`, `TU`, `WE`, `TH`, `FR`, `SA` ,`SU`.
+    * `BYHOUR`, `BYMINUTE`, `BYSECOND`: Start time in UTC, after `timeSuppressFrom` value. Default is 00:00:00 UTC after `timeSuppressFrom`.
+    """
 
 @pulumi.input_type
 class AlarmSuppressionSuppressionConditionArgs:
@@ -490,13 +476,10 @@ class AlarmSuppressionSuppressionConditionArgs:
         pulumi.set(self, "suppression_recurrence", value)
 
 
-if not MYPY:
-    class GetAlarmStatusesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAlarmStatusesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAlarmStatusesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAlarmStatusesFilterArgs:
@@ -537,13 +520,10 @@ class GetAlarmStatusesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAlarmSuppressionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAlarmSuppressionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAlarmSuppressionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAlarmSuppressionsFilterArgs:
@@ -584,13 +564,10 @@ class GetAlarmSuppressionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAlarmsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAlarmsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAlarmsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAlarmsFilterArgs:
@@ -631,16 +608,13 @@ class GetAlarmsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMetricDataFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the metric.  Example: `CpuUtilization`
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMetricDataFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMetricDataFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the metric.  Example: `CpuUtilization`
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMetricDataFilterArgs:
@@ -687,16 +661,13 @@ class GetMetricDataFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMetricsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMetricsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMetricsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMetricsFilterArgs:

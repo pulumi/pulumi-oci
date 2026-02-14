@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Opensearch Cluster Pipeline resource in Oracle Cloud Infrastructure Opensearch service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/opensearch/latest/OpensearchClusterPipeline
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/opensearch
+ *
+ * Creates a new OpensearchCluster Pipeline.
+ *
  * ## Example Usage
  *
  * ```typescript

@@ -14,6 +14,13 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Occ Customer Group Occ Customer resource in Oracle Cloud Infrastructure Capacity Management service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/occcm/latest/OccCustomerGroupOccCustomer
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/capacity_management
+ * 
+ * Create customer.
+ * 
  * ## Example Usage
  * 
  * <pre>

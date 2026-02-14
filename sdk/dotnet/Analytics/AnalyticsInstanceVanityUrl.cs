@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Analytics
 {
     /// <summary>
+    /// This resource provides the Analytics Instance Vanity Url resource in Oracle Cloud Infrastructure Analytics service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/analytics/latest/AnalyticsInstanceVanityUrl
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/analytics
+    /// 
+    /// Allows specifying a custom host name to be used to access the analytics instance.  This requires prior setup of DNS entry and certificate
+    /// for this host.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -36,7 +44,7 @@ namespace Pulumi.Oci.Analytics
     /// 
     /// ## Import
     /// 
-    /// AnalyticsInstanceVanityUrls can be imported using the `id`, e.g.
+    /// AnalyticsInstanceVanityUrls can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl test_analytics_instance_vanity_url "analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}"

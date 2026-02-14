@@ -624,6 +624,13 @@ class Pipeline(pulumi.CustomResource):
                  target_connection_details: Optional[pulumi.Input[Union['PipelineTargetConnectionDetailsArgs', 'PipelineTargetConnectionDetailsArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/goldengate/latest/Pipeline
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/goldengate
+
+        Creates a new Pipeline.
+
         ## Example Usage
 
         ```python
@@ -700,6 +707,13 @@ class Pipeline(pulumi.CustomResource):
                  args: PipelineArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/goldengate/latest/Pipeline
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/goldengate
+
+        Creates a new Pipeline.
+
         ## Example Usage
 
         ```python

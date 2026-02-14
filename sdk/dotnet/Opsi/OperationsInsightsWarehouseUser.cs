@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opsi
 {
     /// <summary>
+    /// This resource provides the Operations Insights Warehouse User resource in Oracle Cloud Infrastructure Opsi service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/operations-insights/latest/OperationsInsightsWarehouseUser
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/osi
+    /// 
+    /// Create a Operations Insights Warehouse user resource for the tenant in Operations Insights.
+    /// This resource will be created in root compartment.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -44,7 +52,7 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// ## Import
     /// 
-    /// OperationsInsightsWarehouseUsers can be imported using the `id`, e.g.
+    /// OperationsInsightsWarehouseUsers can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser test_operations_insights_warehouse_user "id"

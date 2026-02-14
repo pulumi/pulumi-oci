@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Build Run resource in Oracle Cloud Infrastructure Devops service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/BuildRun
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+//
+// Starts a build pipeline run for a predefined build pipeline. Please ensure the completion of any work request for creation/updation of Build Pipeline before starting a Build Run.
+//
 // ## Example Usage
 //
 // ```go

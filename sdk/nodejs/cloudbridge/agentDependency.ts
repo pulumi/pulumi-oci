@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Agent Dependency resource in Oracle Cloud Infrastructure Cloud Bridge service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/OCB/latest/AgentDependency
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudBridge
+ *
+ * Creates an AgentDependency.
+ *
  * ## Example Usage
  *
  * ```typescript

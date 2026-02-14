@@ -46,6 +46,10 @@ public final class CatalogItemCatalogResultPayload {
      * 
      */
     private @Nullable String timeExpires;
+    /**
+     * @return File path to the directory to use for running Terraform. If not specified, the root directory is used.
+     * 
+     */
     private @Nullable String workingDirectory;
 
     private CatalogItemCatalogResultPayload() {}
@@ -98,6 +102,10 @@ public final class CatalogItemCatalogResultPayload {
     public Optional<String> timeExpires() {
         return Optional.ofNullable(this.timeExpires);
     }
+    /**
+     * @return File path to the directory to use for running Terraform. If not specified, the root directory is used.
+     * 
+     */
     public Optional<String> workingDirectory() {
         return Optional.ofNullable(this.workingDirectory);
     }

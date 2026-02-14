@@ -10,6 +10,18 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ManagementDashboard
 {
     /// <summary>
+    /// This resource provides the Management Dashboards Import resource in Oracle Cloud Infrastructure Management Dashboard service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/managementdashboard/latest/ManagementDashboardsImport
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/management_dashboard
+    /// 
+    /// Imports an array of dashboards and their saved searches.
+    /// Here's an example of how you can use CLI to import a dashboard. For information on the details that must be passed to IMPORT, you can use the EXPORT API to obtain the Import.json file:
+    /// `oci management-dashboard dashboard export --query data --export-dashboard-id "{\"dashboardIds\":[\"ocid1.managementdashboard.oc1..dashboardId1\"]}"  &gt; Import.json`.
+    /// Note that import API updates the resource if it already exists, and creates a new resource if it does not exist. To import to a different compartment, edit and change the compartmentId to the desired compartment OCID.
+    /// Here's an example of how you can use CLI to import:
+    /// `oci management-dashboard dashboard import --from-json file://Import.json`
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -32,7 +44,7 @@ namespace Pulumi.Oci.ManagementDashboard
     /// 
     /// ## Import
     /// 
-    /// ManagementDashboardsImport can be imported using the `id`, e.g.
+    /// ManagementDashboardsImport can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport test_management_dashboards_import "id"

@@ -34,6 +34,7 @@ class DataAssetArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] description: (Updatable) Detailed description of the data asset.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. To determine the set of optional and required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
         """
         pulumi.set(__self__, "catalog_id", catalog_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -98,6 +99,9 @@ class DataAssetArgs:
     @_builtins.property
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. To determine the set of optional and required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+        """
         return pulumi.get(self, "properties")
 
     @properties.setter
@@ -132,6 +136,7 @@ class _DataAssetState:
         :param pulumi.Input[_builtins.str] external_key: External URI that can be used to reference the object. Format will differ based on the type of object.
         :param pulumi.Input[_builtins.str] key: Unique data asset key that is immutable.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. To determine the set of optional and required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
         :param pulumi.Input[_builtins.str] state: The current state of the data asset.
         :param pulumi.Input[_builtins.str] time_created: The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_harvested: The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -262,6 +267,9 @@ class _DataAssetState:
     @_builtins.property
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. To determine the set of optional and required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+        """
         return pulumi.get(self, "properties")
 
     @properties.setter
@@ -370,6 +378,13 @@ class DataAsset(pulumi.CustomResource):
                  type_key: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-catalog/latest/DataAsset
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datacatalog
+
+        Create a new data asset.
+
         ## Example Usage
 
         ```python
@@ -397,6 +412,7 @@ class DataAsset(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] catalog_id: Unique catalog identifier.
         :param pulumi.Input[_builtins.str] description: (Updatable) Detailed description of the data asset.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. To determine the set of optional and required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
         :param pulumi.Input[_builtins.str] type_key: The key of the data asset type. This can be obtained via the '/types' endpoint.
                
                
@@ -410,6 +426,13 @@ class DataAsset(pulumi.CustomResource):
                  args: DataAssetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-catalog/latest/DataAsset
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datacatalog
+
+        Create a new data asset.
+
         ## Example Usage
 
         ```python
@@ -521,6 +544,7 @@ class DataAsset(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] external_key: External URI that can be used to reference the object. Format will differ based on the type of object.
         :param pulumi.Input[_builtins.str] key: Unique data asset key that is immutable.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. To determine the set of optional and required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
         :param pulumi.Input[_builtins.str] state: The current state of the data asset.
         :param pulumi.Input[_builtins.str] time_created: The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_harvested: The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -613,6 +637,9 @@ class DataAsset(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter
     def properties(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. To determine the set of optional and required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+        """
         return pulumi.get(self, "properties")
 
     @_builtins.property

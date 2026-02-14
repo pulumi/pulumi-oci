@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataCatalog
 {
     /// <summary>
+    /// This resource provides the Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-catalog/latest/CatalogPrivateEndpoint
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datacatalog
+    /// 
+    /// Create a new private reverse connection endpoint.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -42,7 +49,7 @@ namespace Pulumi.Oci.DataCatalog
     /// 
     /// ## Import
     /// 
-    /// CatalogPrivateEndpoints can be imported using the `id`, e.g.
+    /// CatalogPrivateEndpoints can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataCatalog/catalogPrivateEndpoint:CatalogPrivateEndpoint test_catalog_private_endpoint "id"

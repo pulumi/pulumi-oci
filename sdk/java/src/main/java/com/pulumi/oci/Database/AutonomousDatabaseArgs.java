@@ -750,9 +750,31 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         return Optional.ofNullable(this.isLocalDataGuardEnabled);
     }
 
+    /**
+     * (Updatable) Specifies if the Autonomous AI Database requires mTLS connections.
+     * 
+     * This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+     * 
+     * Service Change: The default value of the isMTLSConnectionRequired attribute will change from true to false on July 1, 2023 in the following APIs:
+     * * CreateAutonomousDatabase
+     * * GetAutonomousDatabase
+     * * UpdateAutonomousDatabase Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous AI Database Serverless. Does this impact me? If you use or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the changed default value of the attribute. Should you choose not to leave your scripts unchanged, the API calls containing this attribute will continue to work, but the default value will switch from true to false. How do I make this change? Using either Oracle Cloud Infrastructure SDKs or command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to true.
+     * 
+     */
     @Import(name="isMtlsConnectionRequired")
     private @Nullable Output<Boolean> isMtlsConnectionRequired;
 
+    /**
+     * @return (Updatable) Specifies if the Autonomous AI Database requires mTLS connections.
+     * 
+     * This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+     * 
+     * Service Change: The default value of the isMTLSConnectionRequired attribute will change from true to false on July 1, 2023 in the following APIs:
+     * * CreateAutonomousDatabase
+     * * GetAutonomousDatabase
+     * * UpdateAutonomousDatabase Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous AI Database Serverless. Does this impact me? If you use or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the changed default value of the attribute. Should you choose not to leave your scripts unchanged, the API calls containing this attribute will continue to work, but the default value will switch from true to false. How do I make this change? Using either Oracle Cloud Infrastructure SDKs or command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to true.
+     * 
+     */
     public Optional<Output<Boolean>> isMtlsConnectionRequired() {
         return Optional.ofNullable(this.isMtlsConnectionRequired);
     }
@@ -2663,11 +2685,37 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
             return isLocalDataGuardEnabled(Output.of(isLocalDataGuardEnabled));
         }
 
+        /**
+         * @param isMtlsConnectionRequired (Updatable) Specifies if the Autonomous AI Database requires mTLS connections.
+         * 
+         * This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+         * 
+         * Service Change: The default value of the isMTLSConnectionRequired attribute will change from true to false on July 1, 2023 in the following APIs:
+         * * CreateAutonomousDatabase
+         * * GetAutonomousDatabase
+         * * UpdateAutonomousDatabase Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous AI Database Serverless. Does this impact me? If you use or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the changed default value of the attribute. Should you choose not to leave your scripts unchanged, the API calls containing this attribute will continue to work, but the default value will switch from true to false. How do I make this change? Using either Oracle Cloud Infrastructure SDKs or command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to true.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isMtlsConnectionRequired(@Nullable Output<Boolean> isMtlsConnectionRequired) {
             $.isMtlsConnectionRequired = isMtlsConnectionRequired;
             return this;
         }
 
+        /**
+         * @param isMtlsConnectionRequired (Updatable) Specifies if the Autonomous AI Database requires mTLS connections.
+         * 
+         * This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+         * 
+         * Service Change: The default value of the isMTLSConnectionRequired attribute will change from true to false on July 1, 2023 in the following APIs:
+         * * CreateAutonomousDatabase
+         * * GetAutonomousDatabase
+         * * UpdateAutonomousDatabase Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous AI Database Serverless. Does this impact me? If you use or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the changed default value of the attribute. Should you choose not to leave your scripts unchanged, the API calls containing this attribute will continue to work, but the default value will switch from true to false. How do I make this change? Using either Oracle Cloud Infrastructure SDKs or command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to true.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isMtlsConnectionRequired(Boolean isMtlsConnectionRequired) {
             return isMtlsConnectionRequired(Output.of(isMtlsConnectionRequired));
         }

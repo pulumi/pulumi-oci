@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
+    /// This resource provides the Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/VmCluster
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+    /// 
+    /// Creates an Exadata Cloud@Customer VM cluster.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -83,7 +90,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// VmClusters can be imported using the `id`, e.g.
+    /// VmClusters can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/vmCluster:VmCluster test_vm_cluster "id"
@@ -116,6 +123,9 @@ namespace Pulumi.Oci.Database
         [Output("computeModel")]
         public Output<string> ComputeModel { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `CpuCoreCount` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
+        /// </summary>
         [Output("cpuCoreCount")]
         public Output<int> CpuCoreCount { get; private set; } = null!;
 
@@ -373,6 +383,9 @@ namespace Pulumi.Oci.Database
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `CpuCoreCount` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
+        /// </summary>
         [Input("cpuCoreCount", required: true)]
         public Input<int> CpuCoreCount { get; set; } = null!;
 
@@ -583,6 +596,9 @@ namespace Pulumi.Oci.Database
         [Input("computeModel")]
         public Input<string>? ComputeModel { get; set; }
 
+        /// <summary>
+        /// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `CpuCoreCount` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
+        /// </summary>
         [Input("cpuCoreCount")]
         public Input<int>? CpuCoreCount { get; set; }
 

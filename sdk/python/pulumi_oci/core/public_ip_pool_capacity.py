@@ -148,6 +148,11 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
                  public_ip_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource is used to manage the `cidr_blocks` of Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
+        Adds a Cidr from the named Byoip Range prefix to the referenced Public IP Pool. The cidr must be a subset of the Byoip Range in question. The cidr must not overlap with any other cidr already added to this or any other Public Ip Pool.
+
+        **Note:** When a new `Core.PublicIpPoolCapacity` resource is created or removed, terraform needs to be refreshed to update the `cidr_blocks` of `Core.PublicIpPool` resource in state file.
+
         ## Example Usage
 
         ```python
@@ -184,6 +189,11 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
                  args: PublicIpPoolCapacityArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource is used to manage the `cidr_blocks` of Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
+        Adds a Cidr from the named Byoip Range prefix to the referenced Public IP Pool. The cidr must be a subset of the Byoip Range in question. The cidr must not overlap with any other cidr already added to this or any other Public Ip Pool.
+
+        **Note:** When a new `Core.PublicIpPoolCapacity` resource is created or removed, terraform needs to be refreshed to update the `cidr_blocks` of `Core.PublicIpPool` resource in state file.
+
         ## Example Usage
 
         ```python

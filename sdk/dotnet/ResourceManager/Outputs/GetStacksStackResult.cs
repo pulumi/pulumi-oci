@@ -17,6 +17,9 @@ namespace Pulumi.Oci.ResourceManager.Outputs
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// Location of the Terraform configuration.
+        /// </summary>
         public readonly Outputs.GetStacksStackConfigSourceResult ConfigSource;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -46,11 +49,17 @@ namespace Pulumi.Oci.ResourceManager.Outputs
         /// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
+        /// The version of Terraform specified for the stack. Example: `1.5.x`
+        /// </summary>
         public readonly string TerraformVersion;
         /// <summary>
         /// The date and time at which the stack was created. Format is defined by RFC3339. Example: `2020-01-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// Terraform variables associated with this resource. Maximum number of variables supported is 250. The maximum size of each variable, including both name and value, is 8192 bytes. Example: `{"CompartmentId": "compartment-id-value"}`
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Variables;
 
         [OutputConstructor]

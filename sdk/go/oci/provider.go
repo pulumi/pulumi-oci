@@ -81,7 +81,8 @@ type providerArgs struct {
 	// (Optional) flags to enable Dual Stack endpoint.
 	DualStackEndpointEnabled *bool `pulumi:"dualStackEndpointEnabled"`
 	// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
-	Fingerprint       *string  `pulumi:"fingerprint"`
+	Fingerprint *string `pulumi:"fingerprint"`
+	// (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
 	IgnoreDefinedTags []string `pulumi:"ignoreDefinedTags"`
 	// (Optional) A PEM formatted RSA private key for the user.
 	// A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
@@ -119,7 +120,8 @@ type ProviderArgs struct {
 	// (Optional) flags to enable Dual Stack endpoint.
 	DualStackEndpointEnabled pulumi.BoolPtrInput
 	// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
-	Fingerprint       pulumi.StringPtrInput
+	Fingerprint pulumi.StringPtrInput
+	// (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
 	IgnoreDefinedTags pulumi.StringArrayInput
 	// (Optional) A PEM formatted RSA private key for the user.
 	// A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.

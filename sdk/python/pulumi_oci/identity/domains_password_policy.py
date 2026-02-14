@@ -3395,6 +3395,13 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                  user_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
+        This resource provides the Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/PasswordPolicy
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a password policy.
+
         ## Example Usage
 
         ```python
@@ -3898,6 +3905,13 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                  args: DomainsPasswordPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/PasswordPolicy
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a password policy.
+
         ## Example Usage
 
         ```python

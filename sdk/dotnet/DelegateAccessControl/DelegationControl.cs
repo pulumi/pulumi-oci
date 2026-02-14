@@ -54,7 +54,7 @@ namespace Pulumi.Oci.DelegateAccessControl
     /// 
     /// ## Import
     /// 
-    /// DelegationControls can be imported using the `id`, e.g.
+    /// DelegationControls can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DelegateAccessControl/delegationControl:DelegationControl test_delegation_control "id"

@@ -48,7 +48,7 @@ namespace Pulumi.Oci.Lustre
     /// 
     /// ## Import
     /// 
-    /// ObjectStorageLinks can be imported using the `id`, e.g.
+    /// ObjectStorageLinks can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Lustre/fileStorageObjectStorageLink:FileStorageObjectStorageLink test_object_storage_link "id"

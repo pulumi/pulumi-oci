@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring
 {
     /// <summary>
+    /// This resource provides the Maintenance Windows Stop resource in Oracle Cloud Infrastructure Stack Monitoring service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MaintenanceWindowsStop
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+    /// 
+    /// Stop a maintenance window before the end time is reached.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -30,7 +37,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// ## Import
     /// 
-    /// MaintenanceWindowsStop can be imported using the `id`, e.g.
+    /// MaintenanceWindowsStop can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:StackMonitoring/maintenanceWindowsStop:MaintenanceWindowsStop test_maintenance_windows_stop "id"

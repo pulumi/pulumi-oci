@@ -10,6 +10,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPrivateApplicationPackageResult {
+    /**
+     * @return The content URL of the terraform configuration.
+     * 
+     */
     private String contentUrl;
     /**
      * @return The display name of the package.
@@ -21,6 +25,10 @@ public final class GetPrivateApplicationPackageResult {
      * 
      */
     private String id;
+    /**
+     * @return The MIME type of the terraform configuration.
+     * 
+     */
     private String mimeType;
     /**
      * @return The specified package&#39;s type.
@@ -45,6 +53,10 @@ public final class GetPrivateApplicationPackageResult {
     private String version;
 
     private GetPrivateApplicationPackageResult() {}
+    /**
+     * @return The content URL of the terraform configuration.
+     * 
+     */
     public String contentUrl() {
         return this.contentUrl;
     }
@@ -62,6 +74,10 @@ public final class GetPrivateApplicationPackageResult {
     public String id() {
         return this.id;
     }
+    /**
+     * @return The MIME type of the terraform configuration.
+     * 
+     */
     public String mimeType() {
         return this.mimeType;
     }

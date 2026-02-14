@@ -12,6 +12,17 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-flow/latest/SqlEndpoint
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataflow
+//
+// ## Note
+//
+// Resource Discovery is not supported for this resource.
+//
+// Create a new Sql Endpoint.
+//
 // ## Example Usage
 //
 // ```go

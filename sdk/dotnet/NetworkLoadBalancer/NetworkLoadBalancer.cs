@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkLoadBalancer
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/latest/NetworkLoadBalancer
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_load_balancer
+    /// 
+    /// Creates a network load balancer.
     /// 
     /// ## Import
     /// 
-    /// NetworkLoadBalancers can be imported using the `id`, e.g.
+    /// NetworkLoadBalancers can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer test_network_load_balancer "id"

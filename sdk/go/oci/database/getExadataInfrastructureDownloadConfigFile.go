@@ -53,6 +53,7 @@ func GetExadataInfrastructureDownloadConfigFile(ctx *pulumi.Context, args *GetEx
 
 // A collection of arguments for invoking getExadataInfrastructureDownloadConfigFile.
 type GetExadataInfrastructureDownloadConfigFileArgs struct {
+	// Encodes the downloaded zipped config in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false`.
 	Base64EncodeContent *bool `pulumi:"base64EncodeContent"`
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
@@ -79,6 +80,7 @@ func GetExadataInfrastructureDownloadConfigFileOutput(ctx *pulumi.Context, args 
 
 // A collection of arguments for invoking getExadataInfrastructureDownloadConfigFile.
 type GetExadataInfrastructureDownloadConfigFileOutputArgs struct {
+	// Encodes the downloaded zipped config in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false`.
 	Base64EncodeContent pulumi.BoolPtrInput `pulumi:"base64EncodeContent"`
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId pulumi.StringInput `pulumi:"exadataInfrastructureId"`

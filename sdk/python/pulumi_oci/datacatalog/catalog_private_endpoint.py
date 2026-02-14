@@ -398,6 +398,13 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-catalog/latest/CatalogPrivateEndpoint
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datacatalog
+
+        Create a new private reverse connection endpoint.
+
         ## Example Usage
 
         ```python
@@ -447,6 +454,13 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
                  args: CatalogPrivateEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-catalog/latest/CatalogPrivateEndpoint
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datacatalog
+
+        Create a new private reverse connection endpoint.
+
         ## Example Usage
 
         ```python

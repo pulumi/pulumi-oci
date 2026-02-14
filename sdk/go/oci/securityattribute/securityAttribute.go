@@ -12,6 +12,26 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Security Attribute resource in Oracle Cloud Infrastructure Security Attribute service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/security-attribute/latest/SecurityAttribute
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/security_attribute
+//
+// Creates a new security attribute in the specified security attribute namespace.
+//
+// The security attribute requires either the OCID or the name of the security attribute namespace that will contain this
+// security attribute.
+//
+// You must specify a *name* for the attribute, which must be unique across all attributes in the security attribute namespace
+// and cannot be changed. The only valid characters for security attribute names are: 0-9, A-Z, a-z, -, _ characters.
+// Names are case insensitive. That means, for example, "mySecurityAttribute" and "mysecurityattribute" are not allowed in the same namespace.
+// If you specify a name that's already in use in the security attribute namespace, a 409 error is returned.
+//
+// The security attribute must have a *description*. It does not have to be unique, and you can change it with
+// [UpdateSecurityAttribute](https://docs.cloud.oracle.com/iaas/api/#/en/securityattribute/latest/Tag/UpdateSecurityAttribute).
+//
+// When a validator is specified, The security attribute must have a value type. Security attribute can use either a static value or a list of possible values. Static values are entered by a user when applying the security attribute to a resource. Lists are created by the user and the user must apply a value from the list. Lists are validated.
+//
 // ## Example Usage
 //
 // ```go

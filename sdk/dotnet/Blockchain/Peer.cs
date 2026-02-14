@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Blockchain
 {
     /// <summary>
+    /// This resource provides the Peer resource in Oracle Cloud Infrastructure Blockchain service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/blockchain/latest/Peer
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/blockchain
+    /// 
+    /// Create Blockchain Platform Peer
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -37,7 +44,7 @@ namespace Pulumi.Oci.Blockchain
     /// 
     /// ## Import
     /// 
-    /// Peers can be imported using the `id`, e.g.
+    /// Peers can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Blockchain/peer:Peer test_peer "blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}"

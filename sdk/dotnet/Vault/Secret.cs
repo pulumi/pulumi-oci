@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Vault
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Secret resource in Oracle Cloud Infrastructure Vault service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/secretmgmt/latest/Secret
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a new secret according to the details of the request.
     /// 
     /// ## Import
     /// 
-    /// Secrets can be imported using the `id`, e.g.
+    /// Secrets can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Vault/secret:Secret test_secret "id"

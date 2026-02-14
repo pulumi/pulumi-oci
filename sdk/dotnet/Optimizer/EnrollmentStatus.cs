@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Optimizer
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/advisor/latest/EnrollmentStatus
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/optimizer
+    /// 
+    /// Updates the enrollment status of the tenancy.
     /// 
     /// ## Import
     /// 
-    /// EnrollmentStatus can be imported using the `id`, e.g.
+    /// EnrollmentStatus can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Optimizer/enrollmentStatus:EnrollmentStatus test_enrollment_status "id"

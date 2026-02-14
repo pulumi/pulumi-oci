@@ -664,6 +664,13 @@ class AgentAgentEndpoint(pulumi.CustomResource):
                  should_enable_trace: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
+        This resource provides the Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/latest/AgentEndpoint
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai_agent
+
+        Creates an endpoint.
+
         ## Example Usage
 
         ```python
@@ -758,6 +765,13 @@ class AgentAgentEndpoint(pulumi.CustomResource):
                  args: AgentAgentEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/latest/AgentEndpoint
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai_agent
+
+        Creates an endpoint.
+
         ## Example Usage
 
         ```python

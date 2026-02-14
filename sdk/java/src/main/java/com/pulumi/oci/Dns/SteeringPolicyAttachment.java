@@ -15,6 +15,18 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Steering Policy Attachment resource in Oracle Cloud Infrastructure DNS service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dns/latest/SteeringPolicyAttachment
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dns
+ * 
+ * Creates a new attachment between a steering policy and a domain, giving the
+ * policy permission to answer queries for the specified domain. A steering policy must
+ * be attached to a domain for the policy to answer DNS queries for that domain.
+ * 
+ * For the purposes of access control, the attachment is automatically placed
+ * into the same compartment as the domain&#39;s zone.
+ * 
  * ## Example Usage
  * 
  * <pre>

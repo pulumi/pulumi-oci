@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring
 {
     /// <summary>
+    /// This resource provides the Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MetricExtension
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+    /// 
+    /// Creates a new metric extension resource for a given compartment
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -90,7 +97,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// ## Import
     /// 
-    /// MetricExtensions can be imported using the `id`, e.g.
+    /// MetricExtensions can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:StackMonitoring/metricExtension:MetricExtension test_metric_extension "id"

@@ -36,6 +36,8 @@ func GetDualStackEndpointEnabled(ctx *pulumi.Context) bool {
 func GetFingerprint(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:fingerprint")
 }
+
+// (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
 func GetIgnoreDefinedTags(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:ignoreDefinedTags")
 }

@@ -905,6 +905,13 @@ class DomainsMySupportAccount(pulumi.CustomResource):
                  user: Optional[pulumi.Input[Union['DomainsMySupportAccountUserArgs', 'DomainsMySupportAccountUserArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the My Support Account resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/MySupportAccount
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a user's own support account.
+
         ## Example Usage
 
         ```python
@@ -1005,6 +1012,13 @@ class DomainsMySupportAccount(pulumi.CustomResource):
                  args: DomainsMySupportAccountArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the My Support Account resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/MySupportAccount
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a user's own support account.
+
         ## Example Usage
 
         ```python

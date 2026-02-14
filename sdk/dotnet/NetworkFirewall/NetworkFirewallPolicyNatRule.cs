@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkFirewall
 {
     /// <summary>
+    /// This resource provides the Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/network-firewall/latest/NetworkFirewallPolicyNatRule
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_firewall
+    /// 
+    /// Creates a new NAT Rule for the Network Firewall Policy.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -45,7 +52,7 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// ## Import
     /// 
-    /// NetworkFirewallPolicyNatRules can be imported using the `id`, e.g.
+    /// NetworkFirewallPolicyNatRules can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:NetworkFirewall/networkFirewallPolicyNatRule:NetworkFirewallPolicyNatRule test_network_firewall_policy_nat_rule "networkFirewallPolicies/{networkFirewallPolicyId}/natRules/{natRuleName}"

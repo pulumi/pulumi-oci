@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FleetAppsManagement
 {
     /// <summary>
+    /// This resource provides the Patch resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/Patch
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+    /// 
+    /// Creates a new Patch.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -89,7 +96,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     /// 
     /// ## Import
     /// 
-    /// Patches can be imported using the `id`, e.g.
+    /// Patches can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:FleetAppsManagement/patch:Patch test_patch "id"

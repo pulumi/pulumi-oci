@@ -325,24 +325,19 @@ __all__ = [
     'GetUserAssessmentsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class AlertPolicyAlertPolicyRuleDetailArgsDict(TypedDict):
-        expression: pulumi.Input[_builtins.str]
-        """
-        The conditional expression of the alert policy rule which evaluates to boolean value.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Describes the alert policy rule.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The display name of the alert policy rule.
-        """
-elif False:
-    AlertPolicyAlertPolicyRuleDetailArgsDict: TypeAlias = Mapping[str, Any]
+class AlertPolicyAlertPolicyRuleDetailArgsDict(TypedDict):
+    expression: pulumi.Input[_builtins.str]
+    """
+    The conditional expression of the alert policy rule which evaluates to boolean value.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Describes the alert policy rule.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The display name of the alert policy rule.
+    """
 
 @pulumi.input_type
 class AlertPolicyAlertPolicyRuleDetailArgs:
@@ -398,26 +393,23 @@ class AlertPolicyAlertPolicyRuleDetailArgs:
         pulumi.set(self, "display_name", value)
 
 
-if not MYPY:
-    class AuditPolicyAuditConditionArgsDict(TypedDict):
-        audit_policy_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
-        """
-        enable_conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input['AuditPolicyAuditConditionEnableConditionArgsDict']]]]
-        """
-        Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
-        """
-        is_data_safe_service_account_audited: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the Data Safe user activity on the target database will be audited by the policy.
-        """
-        is_priv_users_managed_by_data_safe: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the privileged user list is managed by Data Safe.
-        """
-elif False:
-    AuditPolicyAuditConditionArgsDict: TypeAlias = Mapping[str, Any]
+class AuditPolicyAuditConditionArgsDict(TypedDict):
+    audit_policy_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+    """
+    enable_conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input['AuditPolicyAuditConditionEnableConditionArgsDict']]]]
+    """
+    Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
+    """
+    is_data_safe_service_account_audited: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the Data Safe user activity on the target database will be audited by the policy.
+    """
+    is_priv_users_managed_by_data_safe: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the privileged user list is managed by Data Safe.
+    """
 
 @pulumi.input_type
 class AuditPolicyAuditConditionArgs:
@@ -490,26 +482,23 @@ class AuditPolicyAuditConditionArgs:
         pulumi.set(self, "is_priv_users_managed_by_data_safe", value)
 
 
-if not MYPY:
-    class AuditPolicyAuditConditionEnableConditionArgsDict(TypedDict):
-        entity_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of users or roles that the policy must be enabled for.
-        """
-        entity_selection: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The entity include or exclude selection.
-        """
-        entity_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The entity type that the policy must be enabled for.
-        """
-        operation_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The operation status that the policy must be enabled for.
-        """
-elif False:
-    AuditPolicyAuditConditionEnableConditionArgsDict: TypeAlias = Mapping[str, Any]
+class AuditPolicyAuditConditionEnableConditionArgsDict(TypedDict):
+    entity_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of users or roles that the policy must be enabled for.
+    """
+    entity_selection: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The entity include or exclude selection.
+    """
+    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The entity type that the policy must be enabled for.
+    """
+    operation_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The operation status that the policy must be enabled for.
+    """
 
 @pulumi.input_type
 class AuditPolicyAuditConditionEnableConditionArgs:
@@ -582,54 +571,51 @@ class AuditPolicyAuditConditionEnableConditionArgs:
         pulumi.set(self, "operation_status", value)
 
 
-if not MYPY:
-    class AuditPolicyAuditSpecificationArgsDict(TypedDict):
-        audit_policy_category: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The category to which the audit policy belongs.
-        """
-        audit_policy_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
-        """
-        database_policy_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Indicates the names of corresponding database policy ( or policies) in the target database.
-        """
-        enable_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates whether the policy has been enabled, disabled or partially enabled in the target database. The status is PARTIALLY_ENABLED if any of the constituent database audit policies is not enabled.
-        """
-        enabled_entities: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates on whom the audit policy is enabled.
-        """
-        is_created: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the policy is already created on the target database.
-        """
-        is_enabled_for_all_users: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the policy by default is enabled for all users with no flexibility to alter the enablement conditions.
-        """
-        is_seeded_in_data_safe: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the audit policy is one of the seeded policies provided by Oracle Data Safe.
-        """
-        is_seeded_in_target: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the audit policy is one of the predefined policies provided by Oracle Database.
-        """
-        is_view_only: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
-        """
-        partially_enabled_msg: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provides information about the policy that has been only partially enabled.
-        """
-elif False:
-    AuditPolicyAuditSpecificationArgsDict: TypeAlias = Mapping[str, Any]
+class AuditPolicyAuditSpecificationArgsDict(TypedDict):
+    audit_policy_category: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The category to which the audit policy belongs.
+    """
+    audit_policy_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+    """
+    database_policy_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Indicates the names of corresponding database policy ( or policies) in the target database.
+    """
+    enable_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates whether the policy has been enabled, disabled or partially enabled in the target database. The status is PARTIALLY_ENABLED if any of the constituent database audit policies is not enabled.
+    """
+    enabled_entities: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates on whom the audit policy is enabled.
+    """
+    is_created: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the policy is already created on the target database.
+    """
+    is_enabled_for_all_users: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the policy by default is enabled for all users with no flexibility to alter the enablement conditions.
+    """
+    is_seeded_in_data_safe: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the audit policy is one of the seeded policies provided by Oracle Data Safe.
+    """
+    is_seeded_in_target: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the audit policy is one of the predefined policies provided by Oracle Database.
+    """
+    is_view_only: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
+    """
+    partially_enabled_msg: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provides information about the policy that has been only partially enabled.
+    """
 
 @pulumi.input_type
 class AuditPolicyAuditSpecificationArgs:
@@ -814,34 +800,31 @@ class AuditPolicyAuditSpecificationArgs:
         pulumi.set(self, "partially_enabled_msg", value)
 
 
-if not MYPY:
-    class AuditPolicyManagementAuditConditionArgsDict(TypedDict):
-        audit_policy_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
-        """
-        enable_conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionEnableConditionArgsDict']]]]
-        """
-        Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
-        """
-        is_data_safe_service_account_audited: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the Data Safe user activity on the target database will be audited by the policy.
-        """
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
-        """
-        is_priv_users_managed_by_data_safe: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the privileged user list is managed by Data Safe.
+class AuditPolicyManagementAuditConditionArgsDict(TypedDict):
+    audit_policy_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+    """
+    enable_conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionEnableConditionArgsDict']]]]
+    """
+    Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
+    """
+    is_data_safe_service_account_audited: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the Data Safe user activity on the target database will be audited by the policy.
+    """
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
+    """
+    is_priv_users_managed_by_data_safe: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the privileged user list is managed by Data Safe.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    AuditPolicyManagementAuditConditionArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class AuditPolicyManagementAuditConditionArgs:
@@ -938,26 +921,23 @@ class AuditPolicyManagementAuditConditionArgs:
         pulumi.set(self, "is_priv_users_managed_by_data_safe", value)
 
 
-if not MYPY:
-    class AuditPolicyManagementAuditConditionEnableConditionArgsDict(TypedDict):
-        entity_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of users or roles that the policy must be enabled for.
-        """
-        entity_selection: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The entity include or exclude selection.
-        """
-        entity_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The entity type that the policy must be enabled for.
-        """
-        operation_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The operation status that the policy must be enabled for.
-        """
-elif False:
-    AuditPolicyManagementAuditConditionEnableConditionArgsDict: TypeAlias = Mapping[str, Any]
+class AuditPolicyManagementAuditConditionEnableConditionArgsDict(TypedDict):
+    entity_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of users or roles that the policy must be enabled for.
+    """
+    entity_selection: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The entity include or exclude selection.
+    """
+    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The entity type that the policy must be enabled for.
+    """
+    operation_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The operation status that the policy must be enabled for.
+    """
 
 @pulumi.input_type
 class AuditPolicyManagementAuditConditionEnableConditionArgs:
@@ -1030,54 +1010,51 @@ class AuditPolicyManagementAuditConditionEnableConditionArgs:
         pulumi.set(self, "operation_status", value)
 
 
-if not MYPY:
-    class AuditPolicyManagementAuditSpecificationArgsDict(TypedDict):
-        audit_policy_category: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The category to which the audit policy belongs.
-        """
-        audit_policy_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
-        """
-        database_policy_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Indicates the names of corresponding database policy ( or policies) in the target database.
-        """
-        enable_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates whether the policy has been enabled, disabled or partially enabled in the target database. The status is PARTIALLY_ENABLED if any of the constituent database audit policies is not enabled.
-        """
-        enabled_entities: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates on whom the audit policy is enabled.
-        """
-        is_created: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the policy is already created on the target database.
-        """
-        is_enabled_for_all_users: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the policy by default is enabled for all users with no flexibility to alter the enablement conditions.
-        """
-        is_seeded_in_data_safe: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the audit policy is one of the seeded policies provided by Oracle Data Safe.
-        """
-        is_seeded_in_target: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the audit policy is one of the predefined policies provided by Oracle Database.
-        """
-        is_view_only: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
-        """
-        partially_enabled_msg: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provides information about the policy that has been only partially enabled.
-        """
-elif False:
-    AuditPolicyManagementAuditSpecificationArgsDict: TypeAlias = Mapping[str, Any]
+class AuditPolicyManagementAuditSpecificationArgsDict(TypedDict):
+    audit_policy_category: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The category to which the audit policy belongs.
+    """
+    audit_policy_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+    """
+    database_policy_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Indicates the names of corresponding database policy ( or policies) in the target database.
+    """
+    enable_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates whether the policy has been enabled, disabled or partially enabled in the target database. The status is PARTIALLY_ENABLED if any of the constituent database audit policies is not enabled.
+    """
+    enabled_entities: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates on whom the audit policy is enabled.
+    """
+    is_created: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the policy is already created on the target database.
+    """
+    is_enabled_for_all_users: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the policy by default is enabled for all users with no flexibility to alter the enablement conditions.
+    """
+    is_seeded_in_data_safe: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the audit policy is one of the seeded policies provided by Oracle Data Safe.
+    """
+    is_seeded_in_target: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the audit policy is one of the predefined policies provided by Oracle Database.
+    """
+    is_view_only: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
+    """
+    partially_enabled_msg: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provides information about the policy that has been only partially enabled.
+    """
 
 @pulumi.input_type
 class AuditPolicyManagementAuditSpecificationArgs:
@@ -1262,110 +1239,107 @@ class AuditPolicyManagementAuditSpecificationArgs:
         pulumi.set(self, "partially_enabled_msg", value)
 
 
-if not MYPY:
-    class AuditProfileAuditTrailArgsDict(TypedDict):
-        audit_collection_start_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date from which the audit trail must start collecting data, in the format defined by RFC3339.
-        """
-        audit_profile_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the  parent audit.
-        """
-        can_update_last_archive_time_on_target: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
-        """
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the compartment where you want to create the audit profile.
-        """
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The description of the audit profile.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the audit profile.
-        """
-        is_auto_purge_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Details about the current state of the audit profile in Data Safe.
-        """
-        peer_target_database_key: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The secondary id assigned for the peer database registered with Data Safe.
-        """
-        purge_job_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The details of the audit trail purge job that ran on the "purgeJobTime".
-        """
-        purge_job_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current status of the audit trail purge job.
-        """
-        purge_job_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the audit profile.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current sub-state of the audit trail.
-        """
-        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        target_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the target database or target database group for which the audit profile is created.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the audit profile was created, in the format defined by RFC3339.
-        """
-        time_last_collected: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the audit profile was updated, in the format defined by RFC3339.
-        """
-        trail_location: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
-        """
-        trail_source: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The underlying source of unified audit trail.
-        """
-        work_request_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the workrequest for audit trail which collects audit records.
-        """
-elif False:
-    AuditProfileAuditTrailArgsDict: TypeAlias = Mapping[str, Any]
+class AuditProfileAuditTrailArgsDict(TypedDict):
+    audit_collection_start_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date from which the audit trail must start collecting data, in the format defined by RFC3339.
+    """
+    audit_profile_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the  parent audit.
+    """
+    can_update_last_archive_time_on_target: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+    """
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the compartment where you want to create the audit profile.
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The description of the audit profile.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the audit profile.
+    """
+    is_auto_purge_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Details about the current state of the audit profile in Data Safe.
+    """
+    peer_target_database_key: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The secondary id assigned for the peer database registered with Data Safe.
+    """
+    purge_job_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The details of the audit trail purge job that ran on the "purgeJobTime".
+    """
+    purge_job_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current status of the audit trail purge job.
+    """
+    purge_job_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the audit profile.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current sub-state of the audit trail.
+    """
+    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+    """
+    target_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the target database or target database group for which the audit profile is created.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the audit profile was created, in the format defined by RFC3339.
+    """
+    time_last_collected: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the audit profile was updated, in the format defined by RFC3339.
+    """
+    trail_location: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
+    """
+    trail_source: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The underlying source of unified audit trail.
+    """
+    work_request_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the workrequest for audit trail which collects audit records.
+    """
 
 @pulumi.input_type
 class AuditProfileAuditTrailArgs:
@@ -1774,110 +1748,107 @@ class AuditProfileAuditTrailArgs:
         pulumi.set(self, "work_request_id", value)
 
 
-if not MYPY:
-    class AuditProfileManagementAuditTrailArgsDict(TypedDict):
-        audit_collection_start_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date from which the audit trail must start collecting data, in the format defined by RFC3339.
-        """
-        audit_profile_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the  parent audit.
-        """
-        can_update_last_archive_time_on_target: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
-        """
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the compartment where you want to create the audit profile.
-        """
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The description of the audit profile.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the audit profile.
-        """
-        is_auto_purge_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Details about the current state of the audit profile in Data Safe.
-        """
-        peer_target_database_key: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The secondary id assigned for the peer database registered with Data Safe.
-        """
-        purge_job_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The details of the audit trail purge job that ran on the "purgeJobTime".
-        """
-        purge_job_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current status of the audit trail purge job.
-        """
-        purge_job_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the audit profile.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current sub-state of the audit trail.
-        """
-        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        target_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the target database or target database group for which the audit profile is created.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the audit profile was created, in the format defined by RFC3339.
-        """
-        time_last_collected: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the audit profile was updated, in the format defined by RFC3339.
-        """
-        trail_location: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
-        """
-        trail_source: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The underlying source of unified audit trail.
-        """
-        work_request_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the workrequest for audit trail which collects audit records.
-        """
-elif False:
-    AuditProfileManagementAuditTrailArgsDict: TypeAlias = Mapping[str, Any]
+class AuditProfileManagementAuditTrailArgsDict(TypedDict):
+    audit_collection_start_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date from which the audit trail must start collecting data, in the format defined by RFC3339.
+    """
+    audit_profile_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the  parent audit.
+    """
+    can_update_last_archive_time_on_target: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+    """
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the compartment where you want to create the audit profile.
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The description of the audit profile.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the audit profile.
+    """
+    is_auto_purge_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Details about the current state of the audit profile in Data Safe.
+    """
+    peer_target_database_key: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The secondary id assigned for the peer database registered with Data Safe.
+    """
+    purge_job_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The details of the audit trail purge job that ran on the "purgeJobTime".
+    """
+    purge_job_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current status of the audit trail purge job.
+    """
+    purge_job_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the audit profile.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current sub-state of the audit trail.
+    """
+    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+    """
+    target_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the target database or target database group for which the audit profile is created.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the audit profile was created, in the format defined by RFC3339.
+    """
+    time_last_collected: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the audit profile was updated, in the format defined by RFC3339.
+    """
+    trail_location: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
+    """
+    trail_source: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The underlying source of unified audit trail.
+    """
+    work_request_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the workrequest for audit trail which collects audit records.
+    """
 
 @pulumi.input_type
 class AuditProfileManagementAuditTrailArgs:
@@ -2286,17 +2257,14 @@ class AuditProfileManagementAuditTrailArgs:
         pulumi.set(self, "work_request_id", value)
 
 
-if not MYPY:
-    class CalculateAuditVolumeAvailableAvailableAuditVolumeArgsDict(TypedDict):
-        audit_profile_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the audit.
-        """
-        month_in_consideration: NotRequired[pulumi.Input[_builtins.str]]
-        trail_location: NotRequired[pulumi.Input[_builtins.str]]
-        volume: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    CalculateAuditVolumeAvailableAvailableAuditVolumeArgsDict: TypeAlias = Mapping[str, Any]
+class CalculateAuditVolumeAvailableAvailableAuditVolumeArgsDict(TypedDict):
+    audit_profile_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the audit.
+    """
+    month_in_consideration: NotRequired[pulumi.Input[_builtins.str]]
+    trail_location: NotRequired[pulumi.Input[_builtins.str]]
+    volume: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class CalculateAuditVolumeAvailableAvailableAuditVolumeArgs:
@@ -2357,17 +2325,14 @@ class CalculateAuditVolumeAvailableAvailableAuditVolumeArgs:
         pulumi.set(self, "volume", value)
 
 
-if not MYPY:
-    class CalculateAuditVolumeCollectedCollectedAuditVolumeArgsDict(TypedDict):
-        archived_volume: NotRequired[pulumi.Input[_builtins.str]]
-        audit_profile_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the audit.
-        """
-        month_in_consideration: NotRequired[pulumi.Input[_builtins.str]]
-        online_volume: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    CalculateAuditVolumeCollectedCollectedAuditVolumeArgsDict: TypeAlias = Mapping[str, Any]
+class CalculateAuditVolumeCollectedCollectedAuditVolumeArgsDict(TypedDict):
+    archived_volume: NotRequired[pulumi.Input[_builtins.str]]
+    audit_profile_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the audit.
+    """
+    month_in_consideration: NotRequired[pulumi.Input[_builtins.str]]
+    online_volume: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class CalculateAuditVolumeCollectedCollectedAuditVolumeArgs:
@@ -2428,22 +2393,19 @@ class CalculateAuditVolumeCollectedCollectedAuditVolumeArgs:
         pulumi.set(self, "online_volume", value)
 
 
-if not MYPY:
-    class DataSafeConfigurationGlobalSettingArgsDict(TypedDict):
-        is_paid_usage: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        The paid usage option chosen by the customer admin.
-        """
-        offline_retention_period: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The offline retention period in months.
-        """
-        online_retention_period: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The online retention period in months.
-        """
-elif False:
-    DataSafeConfigurationGlobalSettingArgsDict: TypeAlias = Mapping[str, Any]
+class DataSafeConfigurationGlobalSettingArgsDict(TypedDict):
+    is_paid_usage: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    The paid usage option chosen by the customer admin.
+    """
+    offline_retention_period: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The offline retention period in months.
+    """
+    online_retention_period: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The online retention period in months.
+    """
 
 @pulumi.input_type
 class DataSafeConfigurationGlobalSettingArgs:
@@ -2500,26 +2462,23 @@ class DataSafeConfigurationGlobalSettingArgs:
         pulumi.set(self, "online_retention_period", value)
 
 
-if not MYPY:
-    class DatabaseSecurityConfigManagementSqlFirewallConfigArgsDict(TypedDict):
-        exclude_job: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
-        """
-        time_status_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The most recent time when the firewall status is updated, in the format defined by RFC3339.
-        """
-        violation_log_auto_purge: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
-        """
-elif False:
-    DatabaseSecurityConfigManagementSqlFirewallConfigArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseSecurityConfigManagementSqlFirewallConfigArgsDict(TypedDict):
+    exclude_job: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+    """
+    time_status_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The most recent time when the firewall status is updated, in the format defined by RFC3339.
+    """
+    violation_log_auto_purge: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+    """
 
 @pulumi.input_type
 class DatabaseSecurityConfigManagementSqlFirewallConfigArgs:
@@ -2592,26 +2551,23 @@ class DatabaseSecurityConfigManagementSqlFirewallConfigArgs:
         pulumi.set(self, "violation_log_auto_purge", value)
 
 
-if not MYPY:
-    class DatabaseSecurityConfigSqlFirewallConfigArgsDict(TypedDict):
-        exclude_job: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
-        """
-        time_status_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The most recent time when the firewall status is updated, in the format defined by RFC3339.
-        """
-        violation_log_auto_purge: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
-        """
-elif False:
-    DatabaseSecurityConfigSqlFirewallConfigArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseSecurityConfigSqlFirewallConfigArgsDict(TypedDict):
+    exclude_job: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+    """
+    time_status_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The most recent time when the firewall status is updated, in the format defined by RFC3339.
+    """
+    violation_log_auto_purge: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+    """
 
 @pulumi.input_type
 class DatabaseSecurityConfigSqlFirewallConfigArgs:
@@ -2684,16 +2640,13 @@ class DatabaseSecurityConfigSqlFirewallConfigArgs:
         pulumi.set(self, "violation_log_auto_purge", value)
 
 
-if not MYPY:
-    class DiscoveryJobsResultConfidenceLevelDetailArgsDict(TypedDict):
-        does_column_lead_to_pii_in_non_tables: NotRequired[pulumi.Input[_builtins.bool]]
-        does_column_lead_to_pii_in_same_related_tables: NotRequired[pulumi.Input[_builtins.bool]]
-        has_comment_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
-        has_data_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
-        has_name_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
-        is_sensitive_type_from_same_context_found_in_same_or_related_tables: NotRequired[pulumi.Input[_builtins.bool]]
-elif False:
-    DiscoveryJobsResultConfidenceLevelDetailArgsDict: TypeAlias = Mapping[str, Any]
+class DiscoveryJobsResultConfidenceLevelDetailArgsDict(TypedDict):
+    does_column_lead_to_pii_in_non_tables: NotRequired[pulumi.Input[_builtins.bool]]
+    does_column_lead_to_pii_in_same_related_tables: NotRequired[pulumi.Input[_builtins.bool]]
+    has_comment_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
+    has_data_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
+    has_name_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
+    is_sensitive_type_from_same_context_found_in_same_or_related_tables: NotRequired[pulumi.Input[_builtins.bool]]
 
 @pulumi.input_type
 class DiscoveryJobsResultConfidenceLevelDetailArgs:
@@ -2772,18 +2725,15 @@ class DiscoveryJobsResultConfidenceLevelDetailArgs:
         pulumi.set(self, "is_sensitive_type_from_same_context_found_in_same_or_related_tables", value)
 
 
-if not MYPY:
-    class DiscoveryJobsResultModifiedAttributeArgsDict(TypedDict):
-        app_defined_child_column_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
-        """
-        db_defined_child_column_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
-        """
-elif False:
-    DiscoveryJobsResultModifiedAttributeArgsDict: TypeAlias = Mapping[str, Any]
+class DiscoveryJobsResultModifiedAttributeArgsDict(TypedDict):
+    app_defined_child_column_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
+    """
+    db_defined_child_column_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
+    """
 
 @pulumi.input_type
 class DiscoveryJobsResultModifiedAttributeArgs:
@@ -2824,22 +2774,19 @@ class DiscoveryJobsResultModifiedAttributeArgs:
         pulumi.set(self, "db_defined_child_column_keys", value)
 
 
-if not MYPY:
-    class DiscoveryModTablesForDiscoveryArgsDict(TypedDict):
-        schema_name: pulumi.Input[_builtins.str]
-        """
-        This contains the name of the schema.
-        """
-        table_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        This contains an optional list of the table names.
+class DiscoveryModTablesForDiscoveryArgsDict(TypedDict):
+    schema_name: pulumi.Input[_builtins.str]
+    """
+    This contains the name of the schema.
+    """
+    table_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    This contains an optional list of the table names.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    DiscoveryModTablesForDiscoveryArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class DiscoveryModTablesForDiscoveryArgs:
@@ -2887,110 +2834,107 @@ class DiscoveryModTablesForDiscoveryArgs:
         pulumi.set(self, "table_names", value)
 
 
-if not MYPY:
-    class LibraryMasingFormatFormatEntryArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of the format entry.
-        """
-        column_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the substitution column.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The description of the format entry.
-        """
-        end_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The upper bound of the range within which all the original column values fall. The end date must be greater than or equal to the start date.
-        """
-        end_length: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be greater than or equal to  the start length.
-        """
-        end_value: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The upper bound of the range within which random decimal numbers should be generated. It must be greater than or equal to the start value. It supports  input of double type.
-        """
-        fixed_number: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The constant number to be used for masking.
-        """
-        fixed_string: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The constant string to be used for masking.
-        """
-        grouping_columns: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
-        """
-        length: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of characters that should be there in the substring. It should be an integer and greater than zero.
-        """
-        library_masking_format_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the library masking format.
-        """
-        pattern: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The pattern that should be used to mask data.
-        """
-        post_processing_function: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
-        """
-        random_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
-        """
-        regular_expression: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
+class LibraryMasingFormatFormatEntryArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of the format entry.
+    """
+    column_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the substitution column.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The description of the format entry.
+    """
+    end_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The upper bound of the range within which all the original column values fall. The end date must be greater than or equal to the start date.
+    """
+    end_length: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be greater than or equal to  the start length.
+    """
+    end_value: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The upper bound of the range within which random decimal numbers should be generated. It must be greater than or equal to the start value. It supports  input of double type.
+    """
+    fixed_number: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The constant number to be used for masking.
+    """
+    fixed_string: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The constant string to be used for masking.
+    """
+    grouping_columns: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
+    """
+    length: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of characters that should be there in the substring. It should be an integer and greater than zero.
+    """
+    library_masking_format_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the library masking format.
+    """
+    pattern: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The pattern that should be used to mask data.
+    """
+    post_processing_function: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
+    """
+    random_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
+    """
+    regular_expression: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
 
-        In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
+    In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
 
-        If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
-        """
-        replace_with: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
-        """
-        schema_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the schema that contains the substitution column.
-        """
-        sql_expression: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
-        """
-        start_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
-        """
-        start_length: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
-        """
-        start_position: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
-        """
-        start_value: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The lower bound of the range within which random decimal numbers should  be generated. It must be less than or equal to the end value. It supports  input of double type.
-        """
-        table_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the table that contains the substitution column.
-        """
-        user_defined_function: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
-        """
-elif False:
-    LibraryMasingFormatFormatEntryArgsDict: TypeAlias = Mapping[str, Any]
+    If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
+    """
+    replace_with: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
+    """
+    schema_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the schema that contains the substitution column.
+    """
+    sql_expression: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+    """
+    start_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
+    """
+    start_length: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
+    """
+    start_position: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
+    """
+    start_value: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The lower bound of the range within which random decimal numbers should  be generated. It must be less than or equal to the end value. It supports  input of double type.
+    """
+    table_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the table that contains the substitution column.
+    """
+    user_defined_function: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
+    """
 
 @pulumi.input_type
 class LibraryMasingFormatFormatEntryArgs:
@@ -3390,22 +3334,19 @@ class LibraryMasingFormatFormatEntryArgs:
         pulumi.set(self, "user_defined_function", value)
 
 
-if not MYPY:
-    class MaskingPoliciesMaskingColumnMaskingFormatArgsDict(TypedDict):
-        format_entries: pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgsDict']]]
-        """
-        (Updatable) An array of format entries. The combined output of all the format entries is  used for masking the column data values.
-        """
-        condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The description of the masking format.
-        """
-elif False:
-    MaskingPoliciesMaskingColumnMaskingFormatArgsDict: TypeAlias = Mapping[str, Any]
+class MaskingPoliciesMaskingColumnMaskingFormatArgsDict(TypedDict):
+    format_entries: pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgsDict']]]
+    """
+    (Updatable) An array of format entries. The combined output of all the format entries is  used for masking the column data values.
+    """
+    condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The description of the masking format.
+    """
 
 @pulumi.input_type
 class MaskingPoliciesMaskingColumnMaskingFormatArgs:
@@ -3461,110 +3402,107 @@ class MaskingPoliciesMaskingColumnMaskingFormatArgs:
         pulumi.set(self, "description", value)
 
 
-if not MYPY:
-    class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of the format entry.
-        """
-        column_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the substitution column.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The description of the format entry.
-        """
-        end_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The upper bound of the range within which all the original column values fall. The end date must be greater than or equal to the start date.
-        """
-        end_length: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be greater than or equal to  the start length.
-        """
-        end_value: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The upper bound of the range within which random decimal numbers should be generated. It must be greater than or equal to the start value. It supports  input of double type.
-        """
-        fixed_number: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The constant number to be used for masking.
-        """
-        fixed_string: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The constant string to be used for masking.
-        """
-        grouping_columns: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
-        """
-        length: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of characters that should be there in the substring. It should be an integer and greater than zero.
-        """
-        library_masking_format_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the library masking format.
-        """
-        pattern: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The pattern that should be used to mask data.
-        """
-        post_processing_function: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
-        """
-        random_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
-        """
-        regular_expression: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
+class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of the format entry.
+    """
+    column_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the substitution column.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The description of the format entry.
+    """
+    end_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The upper bound of the range within which all the original column values fall. The end date must be greater than or equal to the start date.
+    """
+    end_length: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be greater than or equal to  the start length.
+    """
+    end_value: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The upper bound of the range within which random decimal numbers should be generated. It must be greater than or equal to the start value. It supports  input of double type.
+    """
+    fixed_number: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The constant number to be used for masking.
+    """
+    fixed_string: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The constant string to be used for masking.
+    """
+    grouping_columns: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
+    """
+    length: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of characters that should be there in the substring. It should be an integer and greater than zero.
+    """
+    library_masking_format_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the library masking format.
+    """
+    pattern: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The pattern that should be used to mask data.
+    """
+    post_processing_function: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
+    """
+    random_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
+    """
+    regular_expression: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
 
-        In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
+    In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
 
-        If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
-        """
-        replace_with: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
-        """
-        schema_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the schema that contains the substitution column.
-        """
-        sql_expression: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
-        """
-        start_date: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
-        """
-        start_length: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
-        """
-        start_position: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
-        """
-        start_value: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The lower bound of the range within which random decimal numbers should  be generated. It must be less than or equal to the end value. It supports  input of double type.
-        """
-        table_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the table that contains the substitution column.
-        """
-        user_defined_function: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
-        """
-elif False:
-    MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgsDict: TypeAlias = Mapping[str, Any]
+    If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
+    """
+    replace_with: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number or null value.
+    """
+    schema_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the schema that contains the substitution column.
+    """
+    sql_expression: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
+    """
+    start_date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
+    """
+    start_length: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
+    """
+    start_position: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
+    """
+    start_value: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The lower bound of the range within which random decimal numbers should  be generated. It must be less than or equal to the end value. It supports  input of double type.
+    """
+    table_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the table that contains the substitution column.
+    """
+    user_defined_function: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
+    """
 
 @pulumi.input_type
 class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
@@ -3964,22 +3902,19 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
         pulumi.set(self, "user_defined_function", value)
 
 
-if not MYPY:
-    class MaskingPolicyColumnSourceArgsDict(TypedDict):
-        column_source: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The source of masking columns.
-        """
-        sensitive_data_model_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the sensitive data model to be associated as the column source with the masking policy.
-        """
-        target_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the target database to be associated as the column source with the masking policy.
-        """
-elif False:
-    MaskingPolicyColumnSourceArgsDict: TypeAlias = Mapping[str, Any]
+class MaskingPolicyColumnSourceArgsDict(TypedDict):
+    column_source: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The source of masking columns.
+    """
+    sensitive_data_model_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the sensitive data model to be associated as the column source with the masking policy.
+    """
+    target_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the target database to be associated as the column source with the masking policy.
+    """
 
 @pulumi.input_type
 class MaskingPolicyColumnSourceArgs:
@@ -4035,30 +3970,27 @@ class MaskingPolicyColumnSourceArgs:
         pulumi.set(self, "target_id", value)
 
 
-if not MYPY:
-    class ReportDefinitionColumnFilterArgsDict(TypedDict):
-        expressions: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) An array of expressions based on the operator type. A filter may have one or more expressions.
-        """
-        field_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the column on which the filter must be applied.
-        """
-        is_enabled: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
-        """
-        is_hidden: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Indicates whether the filter is hidden. Values can either be 'true' or 'false'.
-        """
-        operator: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Specifies the type of operator that must be applied for example in, eq etc.
-        """
-elif False:
-    ReportDefinitionColumnFilterArgsDict: TypeAlias = Mapping[str, Any]
+class ReportDefinitionColumnFilterArgsDict(TypedDict):
+    expressions: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) An array of expressions based on the operator type. A filter may have one or more expressions.
+    """
+    field_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the column on which the filter must be applied.
+    """
+    is_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
+    """
+    is_hidden: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Indicates whether the filter is hidden. Values can either be 'true' or 'false'.
+    """
+    operator: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Specifies the type of operator that must be applied for example in, eq etc.
+    """
 
 @pulumi.input_type
 class ReportDefinitionColumnFilterArgs:
@@ -4142,38 +4074,35 @@ class ReportDefinitionColumnFilterArgs:
         pulumi.set(self, "operator", value)
 
 
-if not MYPY:
-    class ReportDefinitionColumnInfoArgsDict(TypedDict):
-        display_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the column displayed on UI.
-        """
-        display_order: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Specifies the display order of the column.
-        """
-        field_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Specifies the corresponding field name in the data source.
-        """
-        is_hidden: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Indicates if the column is hidden. Values can either be 'true' or 'false'.
-        """
-        applicable_operators: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of operators that can be supported by column fieldName.
-        """
-        data_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies the data type of the column.
-        """
-        is_virtual: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies if column is virtual and can only be used as column filter.
-        """
-elif False:
-    ReportDefinitionColumnInfoArgsDict: TypeAlias = Mapping[str, Any]
+class ReportDefinitionColumnInfoArgsDict(TypedDict):
+    display_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the column displayed on UI.
+    """
+    display_order: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Specifies the display order of the column.
+    """
+    field_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Specifies the corresponding field name in the data source.
+    """
+    is_hidden: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Indicates if the column is hidden. Values can either be 'true' or 'false'.
+    """
+    applicable_operators: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of operators that can be supported by column fieldName.
+    """
+    data_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies the data type of the column.
+    """
+    is_virtual: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies if column is virtual and can only be used as column filter.
+    """
 
 @pulumi.input_type
 class ReportDefinitionColumnInfoArgs:
@@ -4290,22 +4219,19 @@ class ReportDefinitionColumnInfoArgs:
         pulumi.set(self, "is_virtual", value)
 
 
-if not MYPY:
-    class ReportDefinitionColumnSortingArgsDict(TypedDict):
-        field_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the column that must be sorted.
-        """
-        is_ascending: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Indicates if the column must be sorted in ascending order. Values can either be 'true' or 'false'.
-        """
-        sorting_order: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Indicates the order at which column must be sorted.
-        """
-elif False:
-    ReportDefinitionColumnSortingArgsDict: TypeAlias = Mapping[str, Any]
+class ReportDefinitionColumnSortingArgsDict(TypedDict):
+    field_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the column that must be sorted.
+    """
+    is_ascending: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Indicates if the column must be sorted in ascending order. Values can either be 'true' or 'false'.
+    """
+    sorting_order: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Indicates the order at which column must be sorted.
+    """
 
 @pulumi.input_type
 class ReportDefinitionColumnSortingArgs:
@@ -4359,38 +4285,35 @@ class ReportDefinitionColumnSortingArgs:
         pulumi.set(self, "sorting_order", value)
 
 
-if not MYPY:
-    class ReportDefinitionSummaryArgsDict(TypedDict):
-        display_order: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Specifies the order in which the summary must be displayed.
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the report summary.
-        """
-        count_of: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of the key or count of object.
-        """
-        group_by_field_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
-        """
-        is_hidden: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
-        """
-        scim_filter: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Additional scim filters used to get the specific summary.
+class ReportDefinitionSummaryArgsDict(TypedDict):
+    display_order: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Specifies the order in which the summary must be displayed.
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the report summary.
+    """
+    count_of: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of the key or count of object.
+    """
+    group_by_field_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
+    """
+    is_hidden: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
+    """
+    scim_filter: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Additional scim filters used to get the specific summary.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ReportDefinitionSummaryArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ReportDefinitionSummaryArgs:
@@ -4501,38 +4424,35 @@ class ReportDefinitionSummaryArgs:
         pulumi.set(self, "scim_filter", value)
 
 
-if not MYPY:
-    class SecurityAssessmentCheckArgsDict(TypedDict):
-        category: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The category to which the check belongs to.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A unique identifier for the check.
-        """
-        oneline: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provides a recommended approach to take to remediate the check reported.
-        """
-        references: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgsDict']]]]
-        """
-        Provides information on whether the check is related to a CIS Oracle Database Benchmark recommendation, STIG rule, GDPR Article/Recital or related to the Oracle Best Practice.
-        """
-        remarks: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The explanation of the issue in this check. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
-        """
-        suggested_severity: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The severity of the check as suggested by Data Safe security assessment. This will be the default severity in the template baseline security assessment.
-        """
-        title: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The short title for the check.
-        """
-elif False:
-    SecurityAssessmentCheckArgsDict: TypeAlias = Mapping[str, Any]
+class SecurityAssessmentCheckArgsDict(TypedDict):
+    category: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The category to which the check belongs to.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A unique identifier for the check.
+    """
+    oneline: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provides a recommended approach to take to remediate the check reported.
+    """
+    references: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgsDict']]]]
+    """
+    Provides information on whether the check is related to a CIS Oracle Database Benchmark recommendation, STIG rule, GDPR Article/Recital or related to the Oracle Best Practice.
+    """
+    remarks: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The explanation of the issue in this check. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
+    """
+    suggested_severity: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The severity of the check as suggested by Data Safe security assessment. This will be the default severity in the template baseline security assessment.
+    """
+    title: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The short title for the check.
+    """
 
 @pulumi.input_type
 class SecurityAssessmentCheckArgs:
@@ -4653,22 +4573,19 @@ class SecurityAssessmentCheckArgs:
         pulumi.set(self, "title", value)
 
 
-if not MYPY:
-    class SecurityAssessmentCheckPatchOperationArgsDict(TypedDict):
-        operation: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
-        """
-        selection: pulumi.Input[_builtins.str]
-        """
-        (Updatable)
-        """
-        value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
-        """
-        (Updatable)
-        """
-elif False:
-    SecurityAssessmentCheckPatchOperationArgsDict: TypeAlias = Mapping[str, Any]
+class SecurityAssessmentCheckPatchOperationArgsDict(TypedDict):
+    operation: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+    """
+    selection: pulumi.Input[_builtins.str]
+    """
+    (Updatable)
+    """
+    value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+    """
+    (Updatable)
+    """
 
 @pulumi.input_type
 class SecurityAssessmentCheckPatchOperationArgs:
@@ -4722,26 +4639,23 @@ class SecurityAssessmentCheckPatchOperationArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class SecurityAssessmentCheckReferenceArgsDict(TypedDict):
-        cis: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Relevant section from CIS.
-        """
-        gdpr: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Relevant section from GDPR.
-        """
-        obp: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Relevant section from OBP.
-        """
-        stig: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Relevant section from STIG.
-        """
-elif False:
-    SecurityAssessmentCheckReferenceArgsDict: TypeAlias = Mapping[str, Any]
+class SecurityAssessmentCheckReferenceArgsDict(TypedDict):
+    cis: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Relevant section from CIS.
+    """
+    gdpr: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Relevant section from GDPR.
+    """
+    obp: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Relevant section from OBP.
+    """
+    stig: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Relevant section from STIG.
+    """
 
 @pulumi.input_type
 class SecurityAssessmentCheckReferenceArgs:
@@ -4814,22 +4728,19 @@ class SecurityAssessmentCheckReferenceArgs:
         pulumi.set(self, "stig", value)
 
 
-if not MYPY:
-    class SecurityAssessmentFindingPatchOperationArgsDict(TypedDict):
-        operation: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
-        """
-        selection: pulumi.Input[_builtins.str]
-        """
-        (Updatable)
-        """
-        value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
-        """
-        (Updatable)
-        """
-elif False:
-    SecurityAssessmentFindingPatchOperationArgsDict: TypeAlias = Mapping[str, Any]
+class SecurityAssessmentFindingPatchOperationArgsDict(TypedDict):
+    operation: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+    """
+    selection: pulumi.Input[_builtins.str]
+    """
+    (Updatable)
+    """
+    value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+    """
+    (Updatable)
+    """
 
 @pulumi.input_type
 class SecurityAssessmentFindingPatchOperationArgs:
@@ -4883,26 +4794,23 @@ class SecurityAssessmentFindingPatchOperationArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class SecurityAssessmentFindingReferenceArgsDict(TypedDict):
-        cis: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Relevant section from CIS.
-        """
-        gdpr: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Relevant section from GDPR.
-        """
-        obp: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Relevant section from OBP.
-        """
-        stig: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Relevant section from STIG.
-        """
-elif False:
-    SecurityAssessmentFindingReferenceArgsDict: TypeAlias = Mapping[str, Any]
+class SecurityAssessmentFindingReferenceArgsDict(TypedDict):
+    cis: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Relevant section from CIS.
+    """
+    gdpr: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Relevant section from GDPR.
+    """
+    obp: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Relevant section from OBP.
+    """
+    stig: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Relevant section from STIG.
+    """
 
 @pulumi.input_type
 class SecurityAssessmentFindingReferenceArgs:
@@ -4975,42 +4883,39 @@ class SecurityAssessmentFindingReferenceArgs:
         pulumi.set(self, "stig", value)
 
 
-if not MYPY:
-    class SecurityAssessmentStatisticArgsDict(TypedDict):
-        advisories: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticAdvisoryArgsDict']]]]
-        """
-        Statistics showing the number of findings with a particular risk level for each category.
-        """
-        deferreds: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticDeferredArgsDict']]]]
-        """
-        Statistics showing the number of findings with a particular risk level for each category.
-        """
-        evaluates: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticEvaluateArgsDict']]]]
-        """
-        Statistics showing the number of findings with a particular risk level for each category.
-        """
-        high_risks: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticHighRiskArgsDict']]]]
-        """
-        Statistics showing the number of findings with a particular risk level for each category.
-        """
-        low_risks: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticLowRiskArgsDict']]]]
-        """
-        Statistics showing the number of findings with a particular risk level for each category.
-        """
-        medium_risks: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticMediumRiskArgsDict']]]]
-        """
-        Statistics showing the number of findings with a particular risk level for each category.
-        """
-        passes: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticPassArgsDict']]]]
-        """
-        Statistics showing the number of findings with a particular risk level for each category.
-        """
-        targets_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of targets in this security assessment.
-        """
-elif False:
-    SecurityAssessmentStatisticArgsDict: TypeAlias = Mapping[str, Any]
+class SecurityAssessmentStatisticArgsDict(TypedDict):
+    advisories: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticAdvisoryArgsDict']]]]
+    """
+    Statistics showing the number of findings with a particular risk level for each category.
+    """
+    deferreds: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticDeferredArgsDict']]]]
+    """
+    Statistics showing the number of findings with a particular risk level for each category.
+    """
+    evaluates: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticEvaluateArgsDict']]]]
+    """
+    Statistics showing the number of findings with a particular risk level for each category.
+    """
+    high_risks: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticHighRiskArgsDict']]]]
+    """
+    Statistics showing the number of findings with a particular risk level for each category.
+    """
+    low_risks: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticLowRiskArgsDict']]]]
+    """
+    Statistics showing the number of findings with a particular risk level for each category.
+    """
+    medium_risks: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticMediumRiskArgsDict']]]]
+    """
+    Statistics showing the number of findings with a particular risk level for each category.
+    """
+    passes: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticPassArgsDict']]]]
+    """
+    Statistics showing the number of findings with a particular risk level for each category.
+    """
+    targets_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of targets in this security assessment.
+    """
 
 @pulumi.input_type
 class SecurityAssessmentStatisticArgs:
@@ -5147,42 +5052,39 @@ class SecurityAssessmentStatisticArgs:
         pulumi.set(self, "targets_count", value)
 
 
-if not MYPY:
-    class SecurityAssessmentStatisticAdvisoryArgsDict(TypedDict):
-        auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Auditing category.
-        """
-        authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Authorization Control category.
-        """
-        data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Data Encryption category.
-        """
-        db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Database Configuration category.
-        """
-        fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Fine-Grained Access Control category.
-        """
-        privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Privileges and Roles category.
-        """
-        targets_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of targets in this security assessment.
-        """
-        user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the User Accounts category.
-        """
-elif False:
-    SecurityAssessmentStatisticAdvisoryArgsDict: TypeAlias = Mapping[str, Any]
+class SecurityAssessmentStatisticAdvisoryArgsDict(TypedDict):
+    auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Auditing category.
+    """
+    authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Authorization Control category.
+    """
+    data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Data Encryption category.
+    """
+    db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Database Configuration category.
+    """
+    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Fine-Grained Access Control category.
+    """
+    privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Privileges and Roles category.
+    """
+    targets_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of targets in this security assessment.
+    """
+    user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the User Accounts category.
+    """
 
 @pulumi.input_type
 class SecurityAssessmentStatisticAdvisoryArgs:
@@ -5319,42 +5221,39 @@ class SecurityAssessmentStatisticAdvisoryArgs:
         pulumi.set(self, "user_accounts_findings_count", value)
 
 
-if not MYPY:
-    class SecurityAssessmentStatisticDeferredArgsDict(TypedDict):
-        auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Auditing category.
-        """
-        authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Authorization Control category.
-        """
-        data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Data Encryption category.
-        """
-        db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Database Configuration category.
-        """
-        fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Fine-Grained Access Control category.
-        """
-        privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Privileges and Roles category.
-        """
-        targets_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of targets in this security assessment.
-        """
-        user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the User Accounts category.
-        """
-elif False:
-    SecurityAssessmentStatisticDeferredArgsDict: TypeAlias = Mapping[str, Any]
+class SecurityAssessmentStatisticDeferredArgsDict(TypedDict):
+    auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Auditing category.
+    """
+    authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Authorization Control category.
+    """
+    data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Data Encryption category.
+    """
+    db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Database Configuration category.
+    """
+    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Fine-Grained Access Control category.
+    """
+    privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Privileges and Roles category.
+    """
+    targets_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of targets in this security assessment.
+    """
+    user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the User Accounts category.
+    """
 
 @pulumi.input_type
 class SecurityAssessmentStatisticDeferredArgs:
@@ -5491,42 +5390,39 @@ class SecurityAssessmentStatisticDeferredArgs:
         pulumi.set(self, "user_accounts_findings_count", value)
 
 
-if not MYPY:
-    class SecurityAssessmentStatisticEvaluateArgsDict(TypedDict):
-        auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Auditing category.
-        """
-        authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Authorization Control category.
-        """
-        data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Data Encryption category.
-        """
-        db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Database Configuration category.
-        """
-        fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Fine-Grained Access Control category.
-        """
-        privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Privileges and Roles category.
-        """
-        targets_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of targets in this security assessment.
-        """
-        user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the User Accounts category.
-        """
-elif False:
-    SecurityAssessmentStatisticEvaluateArgsDict: TypeAlias = Mapping[str, Any]
+class SecurityAssessmentStatisticEvaluateArgsDict(TypedDict):
+    auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Auditing category.
+    """
+    authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Authorization Control category.
+    """
+    data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Data Encryption category.
+    """
+    db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Database Configuration category.
+    """
+    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Fine-Grained Access Control category.
+    """
+    privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Privileges and Roles category.
+    """
+    targets_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of targets in this security assessment.
+    """
+    user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the User Accounts category.
+    """
 
 @pulumi.input_type
 class SecurityAssessmentStatisticEvaluateArgs:
@@ -5663,42 +5559,39 @@ class SecurityAssessmentStatisticEvaluateArgs:
         pulumi.set(self, "user_accounts_findings_count", value)
 
 
-if not MYPY:
-    class SecurityAssessmentStatisticHighRiskArgsDict(TypedDict):
-        auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Auditing category.
-        """
-        authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Authorization Control category.
-        """
-        data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Data Encryption category.
-        """
-        db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Database Configuration category.
-        """
-        fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Fine-Grained Access Control category.
-        """
-        privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Privileges and Roles category.
-        """
-        targets_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of targets in this security assessment.
-        """
-        user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the User Accounts category.
-        """
-elif False:
-    SecurityAssessmentStatisticHighRiskArgsDict: TypeAlias = Mapping[str, Any]
+class SecurityAssessmentStatisticHighRiskArgsDict(TypedDict):
+    auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Auditing category.
+    """
+    authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Authorization Control category.
+    """
+    data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Data Encryption category.
+    """
+    db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Database Configuration category.
+    """
+    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Fine-Grained Access Control category.
+    """
+    privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Privileges and Roles category.
+    """
+    targets_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of targets in this security assessment.
+    """
+    user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the User Accounts category.
+    """
 
 @pulumi.input_type
 class SecurityAssessmentStatisticHighRiskArgs:
@@ -5835,42 +5728,39 @@ class SecurityAssessmentStatisticHighRiskArgs:
         pulumi.set(self, "user_accounts_findings_count", value)
 
 
-if not MYPY:
-    class SecurityAssessmentStatisticLowRiskArgsDict(TypedDict):
-        auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Auditing category.
-        """
-        authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Authorization Control category.
-        """
-        data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Data Encryption category.
-        """
-        db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Database Configuration category.
-        """
-        fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Fine-Grained Access Control category.
-        """
-        privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Privileges and Roles category.
-        """
-        targets_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of targets in this security assessment.
-        """
-        user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the User Accounts category.
-        """
-elif False:
-    SecurityAssessmentStatisticLowRiskArgsDict: TypeAlias = Mapping[str, Any]
+class SecurityAssessmentStatisticLowRiskArgsDict(TypedDict):
+    auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Auditing category.
+    """
+    authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Authorization Control category.
+    """
+    data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Data Encryption category.
+    """
+    db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Database Configuration category.
+    """
+    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Fine-Grained Access Control category.
+    """
+    privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Privileges and Roles category.
+    """
+    targets_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of targets in this security assessment.
+    """
+    user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the User Accounts category.
+    """
 
 @pulumi.input_type
 class SecurityAssessmentStatisticLowRiskArgs:
@@ -6007,42 +5897,39 @@ class SecurityAssessmentStatisticLowRiskArgs:
         pulumi.set(self, "user_accounts_findings_count", value)
 
 
-if not MYPY:
-    class SecurityAssessmentStatisticMediumRiskArgsDict(TypedDict):
-        auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Auditing category.
-        """
-        authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Authorization Control category.
-        """
-        data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Data Encryption category.
-        """
-        db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Database Configuration category.
-        """
-        fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Fine-Grained Access Control category.
-        """
-        privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Privileges and Roles category.
-        """
-        targets_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of targets in this security assessment.
-        """
-        user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the User Accounts category.
-        """
-elif False:
-    SecurityAssessmentStatisticMediumRiskArgsDict: TypeAlias = Mapping[str, Any]
+class SecurityAssessmentStatisticMediumRiskArgsDict(TypedDict):
+    auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Auditing category.
+    """
+    authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Authorization Control category.
+    """
+    data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Data Encryption category.
+    """
+    db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Database Configuration category.
+    """
+    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Fine-Grained Access Control category.
+    """
+    privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Privileges and Roles category.
+    """
+    targets_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of targets in this security assessment.
+    """
+    user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the User Accounts category.
+    """
 
 @pulumi.input_type
 class SecurityAssessmentStatisticMediumRiskArgs:
@@ -6179,42 +6066,39 @@ class SecurityAssessmentStatisticMediumRiskArgs:
         pulumi.set(self, "user_accounts_findings_count", value)
 
 
-if not MYPY:
-    class SecurityAssessmentStatisticPassArgsDict(TypedDict):
-        auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Auditing category.
-        """
-        authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Authorization Control category.
-        """
-        data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Data Encryption category.
-        """
-        db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Database Configuration category.
-        """
-        fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Fine-Grained Access Control category.
-        """
-        privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the Privileges and Roles category.
-        """
-        targets_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of targets in this security assessment.
-        """
-        user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of findings in the User Accounts category.
-        """
-elif False:
-    SecurityAssessmentStatisticPassArgsDict: TypeAlias = Mapping[str, Any]
+class SecurityAssessmentStatisticPassArgsDict(TypedDict):
+    auditing_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Auditing category.
+    """
+    authorization_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Authorization Control category.
+    """
+    data_encryption_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Data Encryption category.
+    """
+    db_configuration_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Database Configuration category.
+    """
+    fine_grained_access_control_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Fine-Grained Access Control category.
+    """
+    privileges_and_roles_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the Privileges and Roles category.
+    """
+    targets_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of targets in this security assessment.
+    """
+    user_accounts_findings_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of findings in the User Accounts category.
+    """
 
 @pulumi.input_type
 class SecurityAssessmentStatisticPassArgs:
@@ -6351,26 +6235,23 @@ class SecurityAssessmentStatisticPassArgs:
         pulumi.set(self, "user_accounts_findings_count", value)
 
 
-if not MYPY:
-    class SecurityPolicyConfigFirewallConfigArgsDict(TypedDict):
-        exclude_job: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies whether the firewall is enabled or disabled.
-        """
-        time_status_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the firewall configuration was last updated, in the format defined by RFC3339.
-        """
-        violation_log_auto_purge: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting them in Data Safe.
-        """
-elif False:
-    SecurityPolicyConfigFirewallConfigArgsDict: TypeAlias = Mapping[str, Any]
+class SecurityPolicyConfigFirewallConfigArgsDict(TypedDict):
+    exclude_job: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies whether the firewall is enabled or disabled.
+    """
+    time_status_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the firewall configuration was last updated, in the format defined by RFC3339.
+    """
+    violation_log_auto_purge: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting them in Data Safe.
+    """
 
 @pulumi.input_type
 class SecurityPolicyConfigFirewallConfigArgs:
@@ -6443,18 +6324,15 @@ class SecurityPolicyConfigFirewallConfigArgs:
         pulumi.set(self, "violation_log_auto_purge", value)
 
 
-if not MYPY:
-    class SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict(TypedDict):
-        exclude_datasafe_user: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies whether the Data Safe service account on the target database should be excluded in the unified audit policy.
+class SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict(TypedDict):
+    exclude_datasafe_user: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies whether the Data Safe service account on the target database should be excluded in the unified audit policy.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class SecurityPolicyConfigUnifiedAuditPolicyConfigArgs:
@@ -6487,34 +6365,31 @@ class SecurityPolicyConfigUnifiedAuditPolicyConfigArgs:
         pulumi.set(self, "exclude_datasafe_user", value)
 
 
-if not MYPY:
-    class SensitiveDataModelReferentialRelationChildArgsDict(TypedDict):
-        app_name: pulumi.Input[_builtins.str]
-        """
-        The application name.
-        """
-        column_groups: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
-        """
-        object: pulumi.Input[_builtins.str]
-        """
-        The database object that contains the columns.
-        """
-        object_type: pulumi.Input[_builtins.str]
-        """
-        The type of the database object that contains the sensitive column.
-        """
-        schema_name: pulumi.Input[_builtins.str]
-        """
-        The schema name.
-        """
-        sensitive_type_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
-        """
-elif False:
-    SensitiveDataModelReferentialRelationChildArgsDict: TypeAlias = Mapping[str, Any]
+class SensitiveDataModelReferentialRelationChildArgsDict(TypedDict):
+    app_name: pulumi.Input[_builtins.str]
+    """
+    The application name.
+    """
+    column_groups: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+    """
+    object: pulumi.Input[_builtins.str]
+    """
+    The database object that contains the columns.
+    """
+    object_type: pulumi.Input[_builtins.str]
+    """
+    The type of the database object that contains the sensitive column.
+    """
+    schema_name: pulumi.Input[_builtins.str]
+    """
+    The schema name.
+    """
+    sensitive_type_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+    """
 
 @pulumi.input_type
 class SensitiveDataModelReferentialRelationChildArgs:
@@ -6614,34 +6489,31 @@ class SensitiveDataModelReferentialRelationChildArgs:
         pulumi.set(self, "sensitive_type_ids", value)
 
 
-if not MYPY:
-    class SensitiveDataModelReferentialRelationParentArgsDict(TypedDict):
-        app_name: pulumi.Input[_builtins.str]
-        """
-        The application name.
-        """
-        column_groups: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
-        """
-        object: pulumi.Input[_builtins.str]
-        """
-        The database object that contains the columns.
-        """
-        object_type: pulumi.Input[_builtins.str]
-        """
-        The type of the database object that contains the sensitive column.
-        """
-        schema_name: pulumi.Input[_builtins.str]
-        """
-        The schema name.
-        """
-        sensitive_type_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
-        """
-elif False:
-    SensitiveDataModelReferentialRelationParentArgsDict: TypeAlias = Mapping[str, Any]
+class SensitiveDataModelReferentialRelationParentArgsDict(TypedDict):
+    app_name: pulumi.Input[_builtins.str]
+    """
+    The application name.
+    """
+    column_groups: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    Group of columns in referential relation. Order needs to be maintained in the elements of the parent/child array listing.
+    """
+    object: pulumi.Input[_builtins.str]
+    """
+    The database object that contains the columns.
+    """
+    object_type: pulumi.Input[_builtins.str]
+    """
+    The type of the database object that contains the sensitive column.
+    """
+    schema_name: pulumi.Input[_builtins.str]
+    """
+    The schema name.
+    """
+    sensitive_type_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Sensitive type ocids of each column groups. Order needs to be maintained with the parent column group. For the DB defined referential relations identified during SDM creation, we cannot add sensitive types.  Instead use the sensitiveColumn POST API to mark the columns sensitive.
+    """
 
 @pulumi.input_type
 class SensitiveDataModelReferentialRelationParentArgs:
@@ -6741,18 +6613,15 @@ class SensitiveDataModelReferentialRelationParentArgs:
         pulumi.set(self, "sensitive_type_ids", value)
 
 
-if not MYPY:
-    class SensitiveDataModelTablesForDiscoveryArgsDict(TypedDict):
-        schema_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) This contains the name of the schema.
-        """
-        table_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) This contains an optional list of the table names.
-        """
-elif False:
-    SensitiveDataModelTablesForDiscoveryArgsDict: TypeAlias = Mapping[str, Any]
+class SensitiveDataModelTablesForDiscoveryArgsDict(TypedDict):
+    schema_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) This contains the name of the schema.
+    """
+    table_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) This contains an optional list of the table names.
+    """
 
 @pulumi.input_type
 class SensitiveDataModelTablesForDiscoveryArgs:
@@ -6792,16 +6661,13 @@ class SensitiveDataModelTablesForDiscoveryArgs:
         pulumi.set(self, "table_names", value)
 
 
-if not MYPY:
-    class SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgsDict(TypedDict):
-        does_column_lead_to_pii_in_non_tables: NotRequired[pulumi.Input[_builtins.bool]]
-        does_column_lead_to_pii_in_same_related_tables: NotRequired[pulumi.Input[_builtins.bool]]
-        has_comment_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
-        has_data_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
-        has_name_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
-        is_sensitive_type_from_same_context_found_in_same_or_related_tables: NotRequired[pulumi.Input[_builtins.bool]]
-elif False:
-    SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgsDict: TypeAlias = Mapping[str, Any]
+class SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgsDict(TypedDict):
+    does_column_lead_to_pii_in_non_tables: NotRequired[pulumi.Input[_builtins.bool]]
+    does_column_lead_to_pii_in_same_related_tables: NotRequired[pulumi.Input[_builtins.bool]]
+    has_comment_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
+    has_data_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
+    has_name_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
+    is_sensitive_type_from_same_context_found_in_same_or_related_tables: NotRequired[pulumi.Input[_builtins.bool]]
 
 @pulumi.input_type
 class SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs:
@@ -6880,14 +6746,11 @@ class SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs:
         pulumi.set(self, "is_sensitive_type_from_same_context_found_in_same_or_related_tables", value)
 
 
-if not MYPY:
-    class SensitiveTypeGroupGroupedSensitiveTypeItemArgsDict(TypedDict):
-        sensitive_type_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the sensitive type.
-        """
-elif False:
-    SensitiveTypeGroupGroupedSensitiveTypeItemArgsDict: TypeAlias = Mapping[str, Any]
+class SensitiveTypeGroupGroupedSensitiveTypeItemArgsDict(TypedDict):
+    sensitive_type_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the sensitive type.
+    """
 
 @pulumi.input_type
 class SensitiveTypeGroupGroupedSensitiveTypeItemArgs:
@@ -6912,22 +6775,19 @@ class SensitiveTypeGroupGroupedSensitiveTypeItemArgs:
         pulumi.set(self, "sensitive_type_id", value)
 
 
-if not MYPY:
-    class SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict(TypedDict):
-        operation: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
-        """
-        selection: pulumi.Input[_builtins.str]
-        """
-        (Updatable)
-        """
-        value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
-        """
-        (Updatable)
-        """
-elif False:
-    SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict: TypeAlias = Mapping[str, Any]
+class SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict(TypedDict):
+    operation: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+    """
+    selection: pulumi.Input[_builtins.str]
+    """
+    (Updatable)
+    """
+    value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+    """
+    (Updatable)
+    """
 
 @pulumi.input_type
 class SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs:
@@ -6981,24 +6841,21 @@ class SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class TargetDatabaseConnectionOptionArgsDict(TypedDict):
-        connection_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The connection type used to connect to the database. Allowed values:
-        * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
-        * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
-        """
-        datasafe_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the Data Safe private endpoint.
-        """
-        on_prem_connector_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the on-premises connector.
-        """
-elif False:
-    TargetDatabaseConnectionOptionArgsDict: TypeAlias = Mapping[str, Any]
+class TargetDatabaseConnectionOptionArgsDict(TypedDict):
+    connection_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The connection type used to connect to the database. Allowed values:
+    * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
+    * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
+    """
+    datasafe_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the Data Safe private endpoint.
+    """
+    on_prem_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the on-premises connector.
+    """
 
 @pulumi.input_type
 class TargetDatabaseConnectionOptionArgs:
@@ -7058,18 +6915,15 @@ class TargetDatabaseConnectionOptionArgs:
         pulumi.set(self, "on_prem_connector_id", value)
 
 
-if not MYPY:
-    class TargetDatabaseCredentialsArgsDict(TypedDict):
-        password: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The password of the database user.
-        """
-        user_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The database user name.
-        """
-elif False:
-    TargetDatabaseCredentialsArgsDict: TypeAlias = Mapping[str, Any]
+class TargetDatabaseCredentialsArgsDict(TypedDict):
+    password: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The password of the database user.
+    """
+    user_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The database user name.
+    """
 
 @pulumi.input_type
 class TargetDatabaseCredentialsArgs:
@@ -7108,50 +6962,47 @@ class TargetDatabaseCredentialsArgs:
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class TargetDatabaseDatabaseDetailsArgsDict(TypedDict):
-        database_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The database type.
-        """
-        infrastructure_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The infrastructure type the database is running on.
-        """
-        autonomous_database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
-        """
-        db_system_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
-        """
-        instance_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the compute instance on which the database is running.
-        """
-        ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
-        """
-        listener_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The port number of the database listener.
-        """
-        pluggable_database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
-        """
-        service_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The service name of the database registered as target database.
-        """
-        vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the VM cluster in which the database is running.
-        """
-elif False:
-    TargetDatabaseDatabaseDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class TargetDatabaseDatabaseDetailsArgsDict(TypedDict):
+    database_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The database type.
+    """
+    infrastructure_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The infrastructure type the database is running on.
+    """
+    autonomous_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+    """
+    db_system_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
+    """
+    instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the compute instance on which the database is running.
+    """
+    ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+    """
+    listener_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The port number of the database listener.
+    """
+    pluggable_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+    """
+    service_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The service name of the database registered as target database.
+    """
+    vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the VM cluster in which the database is running.
+    """
 
 @pulumi.input_type
 class TargetDatabaseDatabaseDetailsArgs:
@@ -7318,18 +7169,15 @@ class TargetDatabaseDatabaseDetailsArgs:
         pulumi.set(self, "vm_cluster_id", value)
 
 
-if not MYPY:
-    class TargetDatabaseGroupMatchingCriteriaArgsDict(TypedDict):
-        include: pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeArgsDict']
-        """
-        (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
-        """
-        exclude: NotRequired[pulumi.Input['TargetDatabaseGroupMatchingCriteriaExcludeArgsDict']]
-        """
-        (Updatable) Criteria to exclude certain target databases from the target database group.
-        """
-elif False:
-    TargetDatabaseGroupMatchingCriteriaArgsDict: TypeAlias = Mapping[str, Any]
+class TargetDatabaseGroupMatchingCriteriaArgsDict(TypedDict):
+    include: pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeArgsDict']
+    """
+    (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+    """
+    exclude: NotRequired[pulumi.Input['TargetDatabaseGroupMatchingCriteriaExcludeArgsDict']]
+    """
+    (Updatable) Criteria to exclude certain target databases from the target database group.
+    """
 
 @pulumi.input_type
 class TargetDatabaseGroupMatchingCriteriaArgs:
@@ -7369,14 +7217,11 @@ class TargetDatabaseGroupMatchingCriteriaArgs:
         pulumi.set(self, "exclude", value)
 
 
-if not MYPY:
-    class TargetDatabaseGroupMatchingCriteriaExcludeArgsDict(TypedDict):
-        target_database_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) The list of target database OCIDS, that should be excluded from the target database group (even if they match some of the other criteria).
-        """
-elif False:
-    TargetDatabaseGroupMatchingCriteriaExcludeArgsDict: TypeAlias = Mapping[str, Any]
+class TargetDatabaseGroupMatchingCriteriaExcludeArgsDict(TypedDict):
+    target_database_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) The list of target database OCIDS, that should be excluded from the target database group (even if they match some of the other criteria).
+    """
 
 @pulumi.input_type
 class TargetDatabaseGroupMatchingCriteriaExcludeArgs:
@@ -7400,30 +7245,27 @@ class TargetDatabaseGroupMatchingCriteriaExcludeArgs:
         pulumi.set(self, "target_database_ids", value)
 
 
-if not MYPY:
-    class TargetDatabaseGroupMatchingCriteriaIncludeArgsDict(TypedDict):
-        compartments: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgsDict']]]]
-        """
-        (Updatable) List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
-        """
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
-        target_database_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of target database OCIDs to be included in the target database group.
+class TargetDatabaseGroupMatchingCriteriaIncludeArgsDict(TypedDict):
+    compartments: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgsDict']]]]
+    """
+    (Updatable) List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+    """
+    target_database_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of target database OCIDs to be included in the target database group.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    TargetDatabaseGroupMatchingCriteriaIncludeArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class TargetDatabaseGroupMatchingCriteriaIncludeArgs:
@@ -7504,18 +7346,15 @@ class TargetDatabaseGroupMatchingCriteriaIncludeArgs:
         pulumi.set(self, "target_database_ids", value)
 
 
-if not MYPY:
-    class TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgsDict(TypedDict):
-        id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The OCID of the compartment for including target databases to the target database group. All target databases in the compartment will be members of the target database group.
-        """
-        is_include_subtree: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) This indicates whether the target databases of sub-compartments should also be included in the target database group. By default, this parameter is set to false.
-        """
-elif False:
-    TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgsDict: TypeAlias = Mapping[str, Any]
+class TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgsDict(TypedDict):
+    id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The OCID of the compartment for including target databases to the target database group. All target databases in the compartment will be members of the target database group.
+    """
+    is_include_subtree: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) This indicates whether the target databases of sub-compartments should also be included in the target database group. By default, this parameter is set to false.
+    """
 
 @pulumi.input_type
 class TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs:
@@ -7555,54 +7394,51 @@ class TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs:
         pulumi.set(self, "is_include_subtree", value)
 
 
-if not MYPY:
-    class TargetDatabasePeerTargetDatabaseArgsDict(TypedDict):
-        database_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailArgsDict']]]]
-        """
-        (Updatable) Details of the database for the registration in Data Safe.
-        """
-        database_unique_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique name of the database associated to the peer target database.
-        """
-        dataguard_association_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The description of the target database in Data Safe.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
-        """
-        key: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The secondary key assigned for the peer target database in Data Safe.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Details about the current state of the peer target database in Data Safe.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Role of the database associated to the peer target database.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the target database in Data Safe.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the database was registered in Data Safe and created as a target database in Data Safe.
-        """
-        tls_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseTlsConfigArgsDict']]]]
-        """
-        (Updatable) The details required to establish a TLS enabled connection.
-        """
-elif False:
-    TargetDatabasePeerTargetDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+class TargetDatabasePeerTargetDatabaseArgsDict(TypedDict):
+    database_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailArgsDict']]]]
+    """
+    (Updatable) Details of the database for the registration in Data Safe.
+    """
+    database_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique name of the database associated to the peer target database.
+    """
+    dataguard_association_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The description of the target database in Data Safe.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
+    """
+    key: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The secondary key assigned for the peer target database in Data Safe.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Details about the current state of the peer target database in Data Safe.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Role of the database associated to the peer target database.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the target database in Data Safe.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the database was registered in Data Safe and created as a target database in Data Safe.
+    """
+    tls_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseTlsConfigArgsDict']]]]
+    """
+    (Updatable) The details required to establish a TLS enabled connection.
+    """
 
 @pulumi.input_type
 class TargetDatabasePeerTargetDatabaseArgs:
@@ -7787,50 +7623,47 @@ class TargetDatabasePeerTargetDatabaseArgs:
         pulumi.set(self, "tls_configs", value)
 
 
-if not MYPY:
-    class TargetDatabasePeerTargetDatabaseDatabaseDetailArgsDict(TypedDict):
-        autonomous_database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
-        """
-        database_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The database type.
-        """
-        db_system_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
-        """
-        infrastructure_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The infrastructure type the database is running on.
-        """
-        instance_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the compute instance on which the database is running.
-        """
-        ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
-        """
-        listener_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The port number of the database listener.
-        """
-        pluggable_database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
-        """
-        service_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The service name of the database registered as target database.
-        """
-        vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the VM cluster in which the database is running.
-        """
-elif False:
-    TargetDatabasePeerTargetDatabaseDatabaseDetailArgsDict: TypeAlias = Mapping[str, Any]
+class TargetDatabasePeerTargetDatabaseDatabaseDetailArgsDict(TypedDict):
+    autonomous_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+    """
+    database_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The database type.
+    """
+    db_system_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
+    """
+    infrastructure_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The infrastructure type the database is running on.
+    """
+    instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the compute instance on which the database is running.
+    """
+    ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+    """
+    listener_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The port number of the database listener.
+    """
+    pluggable_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+    """
+    service_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The service name of the database registered as target database.
+    """
+    vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the VM cluster in which the database is running.
+    """
 
 @pulumi.input_type
 class TargetDatabasePeerTargetDatabaseDatabaseDetailArgs:
@@ -7999,50 +7832,47 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetailArgs:
         pulumi.set(self, "vm_cluster_id", value)
 
 
-if not MYPY:
-    class TargetDatabasePeerTargetDatabaseDatabaseDetailsArgsDict(TypedDict):
-        database_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The database type.
-        """
-        infrastructure_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The infrastructure type the database is running on.
-        """
-        autonomous_database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
-        """
-        db_system_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
-        """
-        instance_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the compute instance on which the database is running.
-        """
-        ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
-        """
-        listener_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The port number of the database listener.
-        """
-        pluggable_database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
-        """
-        service_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The service name of the database registered as target database.
-        """
-        vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the VM cluster in which the database is running.
-        """
-elif False:
-    TargetDatabasePeerTargetDatabaseDatabaseDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class TargetDatabasePeerTargetDatabaseDatabaseDetailsArgsDict(TypedDict):
+    database_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The database type.
+    """
+    infrastructure_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The infrastructure type the database is running on.
+    """
+    autonomous_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+    """
+    db_system_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
+    """
+    instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the compute instance on which the database is running.
+    """
+    ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+    """
+    listener_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The port number of the database listener.
+    """
+    pluggable_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+    """
+    service_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The service name of the database registered as target database.
+    """
+    vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the VM cluster in which the database is running.
+    """
 
 @pulumi.input_type
 class TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs:
@@ -8209,30 +8039,27 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs:
         pulumi.set(self, "vm_cluster_id", value)
 
 
-if not MYPY:
-    class TargetDatabasePeerTargetDatabaseDetailArgsDict(TypedDict):
-        database_details: pulumi.Input['TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgsDict']
-        """
-        Details of the database for the registration in Data Safe.
-        """
-        dataguard_association_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The description of the peer target database in Data Safe.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
-        """
-        tls_config: NotRequired[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailTlsConfigArgsDict']]
-        """
-        The details required to establish a TLS enabled connection.
-        """
-elif False:
-    TargetDatabasePeerTargetDatabaseDetailArgsDict: TypeAlias = Mapping[str, Any]
+class TargetDatabasePeerTargetDatabaseDetailArgsDict(TypedDict):
+    database_details: pulumi.Input['TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgsDict']
+    """
+    Details of the database for the registration in Data Safe.
+    """
+    dataguard_association_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The description of the peer target database in Data Safe.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+    """
+    tls_config: NotRequired[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailTlsConfigArgsDict']]
+    """
+    The details required to establish a TLS enabled connection.
+    """
 
 @pulumi.input_type
 class TargetDatabasePeerTargetDatabaseDetailArgs:
@@ -8320,50 +8147,47 @@ class TargetDatabasePeerTargetDatabaseDetailArgs:
         pulumi.set(self, "tls_config", value)
 
 
-if not MYPY:
-    class TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgsDict(TypedDict):
-        database_type: pulumi.Input[_builtins.str]
-        """
-        The database type.
-        """
-        infrastructure_type: pulumi.Input[_builtins.str]
-        """
-        The infrastructure type the database is running on.
-        """
-        autonomous_database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the Autonomous Database registered as a target database in Data Safe.
-        """
-        db_system_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the cloud database registered as a target database in Data Safe.
-        """
-        instance_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the compute instance on which the database is running.
-        """
-        ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
-        """
-        listener_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port number of the database listener.
-        """
-        pluggable_database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the pluggable database registered as a target database in Data Safe.
-        """
-        service_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The service name of the database registered as target database.
-        """
-        vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the VM cluster in which the database is running.
-        """
-elif False:
-    TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgsDict(TypedDict):
+    database_type: pulumi.Input[_builtins.str]
+    """
+    The database type.
+    """
+    infrastructure_type: pulumi.Input[_builtins.str]
+    """
+    The infrastructure type the database is running on.
+    """
+    autonomous_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the Autonomous Database registered as a target database in Data Safe.
+    """
+    db_system_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the cloud database registered as a target database in Data Safe.
+    """
+    instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the compute instance on which the database is running.
+    """
+    ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+    """
+    listener_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port number of the database listener.
+    """
+    pluggable_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the pluggable database registered as a target database in Data Safe.
+    """
+    service_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The service name of the database registered as target database.
+    """
+    vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the VM cluster in which the database is running.
+    """
 
 @pulumi.input_type
 class TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs:
@@ -8530,30 +8354,27 @@ class TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs:
         pulumi.set(self, "vm_cluster_id", value)
 
 
-if not MYPY:
-    class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgsDict(TypedDict):
-        status: pulumi.Input[_builtins.str]
-        """
-        Status to represent whether the database connection is TLS enabled or not.
-        """
-        certificate_store_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The format of the certificate store.
-        """
-        key_store_content: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Base64 encoded string of key store file content.
-        """
-        store_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The password to read the trust store and key store files, if they are password protected.
-        """
-        trust_store_content: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Base64 encoded string of trust store file content.
-        """
-elif False:
-    TargetDatabasePeerTargetDatabaseDetailTlsConfigArgsDict: TypeAlias = Mapping[str, Any]
+class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgsDict(TypedDict):
+    status: pulumi.Input[_builtins.str]
+    """
+    Status to represent whether the database connection is TLS enabled or not.
+    """
+    certificate_store_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The format of the certificate store.
+    """
+    key_store_content: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Base64 encoded string of key store file content.
+    """
+    store_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The password to read the trust store and key store files, if they are password protected.
+    """
+    trust_store_content: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Base64 encoded string of trust store file content.
+    """
 
 @pulumi.input_type
 class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs:
@@ -8641,34 +8462,31 @@ class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs:
         pulumi.set(self, "trust_store_content", value)
 
 
-if not MYPY:
-    class TargetDatabasePeerTargetDatabaseTlsConfigArgsDict(TypedDict):
-        status: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Status to represent whether the database connection is TLS enabled or not.
-        """
-        certificate_store_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The format of the certificate store.
-        """
-        key_store_content: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Base64 encoded string of key store file content.
-        """
-        store_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The password to read the trust store and key store files, if they are password protected.
-        """
-        trust_store_content: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Base64 encoded string of trust store file content.
+class TargetDatabasePeerTargetDatabaseTlsConfigArgsDict(TypedDict):
+    status: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Status to represent whether the database connection is TLS enabled or not.
+    """
+    certificate_store_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The format of the certificate store.
+    """
+    key_store_content: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Base64 encoded string of key store file content.
+    """
+    store_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The password to read the trust store and key store files, if they are password protected.
+    """
+    trust_store_content: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Base64 encoded string of trust store file content.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    TargetDatabasePeerTargetDatabaseTlsConfigArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class TargetDatabasePeerTargetDatabaseTlsConfigArgs:
@@ -8764,34 +8582,31 @@ class TargetDatabasePeerTargetDatabaseTlsConfigArgs:
         pulumi.set(self, "trust_store_content", value)
 
 
-if not MYPY:
-    class TargetDatabaseTlsConfigArgsDict(TypedDict):
-        status: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Status to represent whether the database connection is TLS enabled or not.
-        """
-        certificate_store_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The format of the certificate store.
-        """
-        key_store_content: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Base64 encoded string of key store file content.
-        """
-        store_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The password to read the trust store and key store files, if they are password protected.
-        """
-        trust_store_content: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Base64 encoded string of trust store file content.
+class TargetDatabaseTlsConfigArgsDict(TypedDict):
+    status: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Status to represent whether the database connection is TLS enabled or not.
+    """
+    certificate_store_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The format of the certificate store.
+    """
+    key_store_content: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Base64 encoded string of key store file content.
+    """
+    store_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The password to read the trust store and key store files, if they are password protected.
+    """
+    trust_store_content: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Base64 encoded string of trust store file content.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    TargetDatabaseTlsConfigArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class TargetDatabaseTlsConfigArgs:
@@ -8887,34 +8702,31 @@ class TargetDatabaseTlsConfigArgs:
         pulumi.set(self, "trust_store_content", value)
 
 
-if not MYPY:
-    class UnifiedAuditPolicyConditionArgsDict(TypedDict):
-        entity_selection: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Specifies whether to include or exclude the specified users or roles.
-        """
-        entity_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of users or roles that the unified audit policy is applied to.
-        """
-        operation_status: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The operation status that the policy must be enabled for.
-        """
-        attribute_set_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the attribute set.
-        """
-        role_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) List of roles that the policy must be enabled for.
-        """
-        user_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of users that the unified audit policy is enabled for.
-        """
-elif False:
-    UnifiedAuditPolicyConditionArgsDict: TypeAlias = Mapping[str, Any]
+class UnifiedAuditPolicyConditionArgsDict(TypedDict):
+    entity_selection: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Specifies whether to include or exclude the specified users or roles.
+    """
+    entity_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of users or roles that the unified audit policy is applied to.
+    """
+    operation_status: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The operation status that the policy must be enabled for.
+    """
+    attribute_set_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the attribute set.
+    """
+    role_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) List of roles that the policy must be enabled for.
+    """
+    user_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of users that the unified audit policy is enabled for.
+    """
 
 @pulumi.input_type
 class UnifiedAuditPolicyConditionArgs:
@@ -9016,16 +8828,13 @@ class UnifiedAuditPolicyConditionArgs:
         pulumi.set(self, "user_names", value)
 
 
-if not MYPY:
-    class UserAssessmentIgnoredTargetArgsDict(TypedDict):
-        lifecycle_state: NotRequired[pulumi.Input[_builtins.str]]
-        target_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the target database or target database group on which user assessment is to be run.
-        """
-        user_assessment_id: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    UserAssessmentIgnoredTargetArgsDict: TypeAlias = Mapping[str, Any]
+class UserAssessmentIgnoredTargetArgsDict(TypedDict):
+    lifecycle_state: NotRequired[pulumi.Input[_builtins.str]]
+    target_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the target database or target database group on which user assessment is to be run.
+    """
+    user_assessment_id: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class UserAssessmentIgnoredTargetArgs:
@@ -9074,13 +8883,10 @@ class UserAssessmentIgnoredTargetArgs:
         pulumi.set(self, "user_assessment_id", value)
 
 
-if not MYPY:
-    class GetAlertPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAlertPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAlertPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAlertPoliciesFilterArgs:
@@ -9121,13 +8927,10 @@ class GetAlertPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAlertPolicyRulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAlertPolicyRulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAlertPolicyRulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAlertPolicyRulesFilterArgs:
@@ -9168,13 +8971,10 @@ class GetAlertPolicyRulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAlertsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAlertsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAlertsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAlertsFilterArgs:
@@ -9215,13 +9015,10 @@ class GetAlertsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAttributeSetAssociatedResourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAttributeSetAssociatedResourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAttributeSetAssociatedResourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAttributeSetAssociatedResourcesFilterArgs:
@@ -9262,13 +9059,10 @@ class GetAttributeSetAssociatedResourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAttributeSetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAttributeSetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAttributeSetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAttributeSetsFilterArgs:
@@ -9309,13 +9103,10 @@ class GetAttributeSetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAuditArchiveRetrievalsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAuditArchiveRetrievalsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAuditArchiveRetrievalsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAuditArchiveRetrievalsFilterArgs:
@@ -9356,13 +9147,10 @@ class GetAuditArchiveRetrievalsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAuditEventsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAuditEventsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAuditEventsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAuditEventsFilterArgs:
@@ -9403,13 +9191,10 @@ class GetAuditEventsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAuditPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAuditPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAuditPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAuditPoliciesFilterArgs:
@@ -9450,13 +9235,10 @@ class GetAuditPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAuditProfileAvailableAuditVolumesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAuditProfileAvailableAuditVolumesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAuditProfileAvailableAuditVolumesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAuditProfileAvailableAuditVolumesFilterArgs:
@@ -9497,13 +9279,10 @@ class GetAuditProfileAvailableAuditVolumesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAuditProfileCollectedAuditVolumesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAuditProfileCollectedAuditVolumesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAuditProfileCollectedAuditVolumesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAuditProfileCollectedAuditVolumesFilterArgs:
@@ -9544,13 +9323,10 @@ class GetAuditProfileCollectedAuditVolumesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAuditProfileTargetOverridesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAuditProfileTargetOverridesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAuditProfileTargetOverridesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAuditProfileTargetOverridesFilterArgs:
@@ -9591,13 +9367,10 @@ class GetAuditProfileTargetOverridesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAuditProfilesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAuditProfilesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAuditProfilesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAuditProfilesFilterArgs:
@@ -9638,13 +9411,10 @@ class GetAuditProfilesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAuditTrailsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAuditTrailsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAuditTrailsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAuditTrailsFilterArgs:
@@ -9685,13 +9455,10 @@ class GetAuditTrailsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDataSafePrivateEndpointsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDataSafePrivateEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDataSafePrivateEndpointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDataSafePrivateEndpointsFilterArgs:
@@ -9732,13 +9499,10 @@ class GetDataSafePrivateEndpointsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDatabaseSecurityConfigsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDatabaseSecurityConfigsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDatabaseSecurityConfigsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDatabaseSecurityConfigsFilterArgs:
@@ -9779,13 +9543,10 @@ class GetDatabaseSecurityConfigsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDiscoveryAnalyticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDiscoveryAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDiscoveryAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDiscoveryAnalyticsFilterArgs:
@@ -9826,13 +9587,10 @@ class GetDiscoveryAnalyticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDiscoveryJobsResultsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDiscoveryJobsResultsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDiscoveryJobsResultsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDiscoveryJobsResultsFilterArgs:
@@ -9873,13 +9631,10 @@ class GetDiscoveryJobsResultsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetLibraryMaskingFormatsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetLibraryMaskingFormatsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetLibraryMaskingFormatsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetLibraryMaskingFormatsFilterArgs:
@@ -9920,13 +9675,10 @@ class GetLibraryMaskingFormatsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetListUserGrantsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetListUserGrantsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetListUserGrantsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetListUserGrantsFilterArgs:
@@ -9967,13 +9719,10 @@ class GetListUserGrantsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMaskingAnalyticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMaskingAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMaskingAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMaskingAnalyticsFilterArgs:
@@ -10014,13 +9763,10 @@ class GetMaskingAnalyticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMaskingPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMaskingPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMaskingPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMaskingPoliciesFilterArgs:
@@ -10061,13 +9807,10 @@ class GetMaskingPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMaskingPoliciesMaskingColumnsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMaskingPoliciesMaskingColumnsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMaskingPoliciesMaskingColumnsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMaskingPoliciesMaskingColumnsFilterArgs:
@@ -10108,13 +9851,10 @@ class GetMaskingPoliciesMaskingColumnsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMaskingPolicyHealthReportLogsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMaskingPolicyHealthReportLogsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMaskingPolicyHealthReportLogsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMaskingPolicyHealthReportLogsFilterArgs:
@@ -10155,13 +9895,10 @@ class GetMaskingPolicyHealthReportLogsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMaskingPolicyHealthReportsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMaskingPolicyHealthReportsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMaskingPolicyHealthReportsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMaskingPolicyHealthReportsFilterArgs:
@@ -10202,13 +9939,10 @@ class GetMaskingPolicyHealthReportsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMaskingPolicyMaskingObjectsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMaskingPolicyMaskingObjectsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMaskingPolicyMaskingObjectsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMaskingPolicyMaskingObjectsFilterArgs:
@@ -10249,13 +9983,10 @@ class GetMaskingPolicyMaskingObjectsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMaskingPolicyMaskingSchemasFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMaskingPolicyMaskingSchemasFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMaskingPolicyMaskingSchemasFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMaskingPolicyMaskingSchemasFilterArgs:
@@ -10296,13 +10027,10 @@ class GetMaskingPolicyMaskingSchemasFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMaskingPolicyReferentialRelationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMaskingPolicyReferentialRelationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMaskingPolicyReferentialRelationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMaskingPolicyReferentialRelationsFilterArgs:
@@ -10343,13 +10071,10 @@ class GetMaskingPolicyReferentialRelationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMaskingReportMaskedColumnsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMaskingReportMaskedColumnsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMaskingReportMaskedColumnsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMaskingReportMaskedColumnsFilterArgs:
@@ -10390,13 +10115,10 @@ class GetMaskingReportMaskedColumnsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMaskingReportMaskingErrorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMaskingReportMaskingErrorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMaskingReportMaskingErrorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMaskingReportMaskingErrorsFilterArgs:
@@ -10437,13 +10159,10 @@ class GetMaskingReportMaskingErrorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMaskingReportsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMaskingReportsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMaskingReportsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMaskingReportsFilterArgs:
@@ -10484,13 +10203,10 @@ class GetMaskingReportsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOnpremConnectorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOnpremConnectorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOnpremConnectorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOnpremConnectorsFilterArgs:
@@ -10531,16 +10247,13 @@ class GetOnpremConnectorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetReportDefinitionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the report summary.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetReportDefinitionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetReportDefinitionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the report summary.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetReportDefinitionsFilterArgs:
@@ -10587,13 +10300,10 @@ class GetReportDefinitionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetReportsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetReportsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetReportsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetReportsFilterArgs:
@@ -10634,13 +10344,10 @@ class GetReportsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs:
@@ -10681,13 +10388,10 @@ class GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSdmMaskingPolicyDifferencesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSdmMaskingPolicyDifferencesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSdmMaskingPolicyDifferencesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSdmMaskingPolicyDifferencesFilterArgs:
@@ -10728,13 +10432,10 @@ class GetSdmMaskingPolicyDifferencesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityAssessmentChecksFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityAssessmentChecksFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityAssessmentChecksFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityAssessmentChecksFilterArgs:
@@ -10775,13 +10476,10 @@ class GetSecurityAssessmentChecksFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityAssessmentFindingAnalyticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityAssessmentFindingAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityAssessmentFindingAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityAssessmentFindingAnalyticsFilterArgs:
@@ -10822,13 +10520,10 @@ class GetSecurityAssessmentFindingAnalyticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityAssessmentFindingFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityAssessmentFindingFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityAssessmentFindingFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityAssessmentFindingFilterArgs:
@@ -10869,13 +10564,10 @@ class GetSecurityAssessmentFindingFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityAssessmentFindingsChangeAuditLogsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityAssessmentFindingsChangeAuditLogsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityAssessmentFindingsChangeAuditLogsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs:
@@ -10916,13 +10608,10 @@ class GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityAssessmentFindingsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityAssessmentFindingsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityAssessmentFindingsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityAssessmentFindingsFilterArgs:
@@ -10963,13 +10652,10 @@ class GetSecurityAssessmentFindingsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs:
@@ -11010,13 +10696,10 @@ class GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityAssessmentSecurityFeaturesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityAssessmentSecurityFeaturesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityAssessmentSecurityFeaturesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityAssessmentSecurityFeaturesFilterArgs:
@@ -11057,13 +10740,10 @@ class GetSecurityAssessmentSecurityFeaturesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityAssessmentTemplateAnalyticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityAssessmentTemplateAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityAssessmentTemplateAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityAssessmentTemplateAnalyticsFilterArgs:
@@ -11104,13 +10784,10 @@ class GetSecurityAssessmentTemplateAnalyticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityAssessmentTemplateAssociationAnalyticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityAssessmentTemplateAssociationAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityAssessmentTemplateAssociationAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityAssessmentTemplateAssociationAnalyticsFilterArgs:
@@ -11151,13 +10828,10 @@ class GetSecurityAssessmentTemplateAssociationAnalyticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityAssessmentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityAssessmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityAssessmentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityAssessmentsFilterArgs:
@@ -11198,13 +10872,10 @@ class GetSecurityAssessmentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityPoliciesFilterArgs:
@@ -11245,13 +10916,10 @@ class GetSecurityPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityPolicyConfigsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityPolicyConfigsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityPolicyConfigsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityPolicyConfigsFilterArgs:
@@ -11292,13 +10960,10 @@ class GetSecurityPolicyConfigsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs:
@@ -11339,13 +11004,10 @@ class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityPolicyDeploymentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityPolicyDeploymentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityPolicyDeploymentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityPolicyDeploymentsFilterArgs:
@@ -11386,13 +11048,10 @@ class GetSecurityPolicyDeploymentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs:
@@ -11433,13 +11092,10 @@ class GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs:
@@ -11480,13 +11136,10 @@ class GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityPolicyReportRoleGrantPathsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityPolicyReportRoleGrantPathsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityPolicyReportRoleGrantPathsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityPolicyReportRoleGrantPathsFilterArgs:
@@ -11527,13 +11180,10 @@ class GetSecurityPolicyReportRoleGrantPathsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityPolicyReportsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityPolicyReportsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityPolicyReportsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityPolicyReportsFilterArgs:
@@ -11574,13 +11224,10 @@ class GetSecurityPolicyReportsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSensitiveColumnAnalyticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSensitiveColumnAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSensitiveColumnAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSensitiveColumnAnalyticsFilterArgs:
@@ -11621,13 +11268,10 @@ class GetSensitiveColumnAnalyticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSensitiveDataModelReferentialRelationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSensitiveDataModelReferentialRelationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSensitiveDataModelReferentialRelationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSensitiveDataModelReferentialRelationsFilterArgs:
@@ -11668,13 +11312,10 @@ class GetSensitiveDataModelReferentialRelationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSensitiveDataModelSensitiveObjectsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSensitiveDataModelSensitiveObjectsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSensitiveDataModelSensitiveObjectsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSensitiveDataModelSensitiveObjectsFilterArgs:
@@ -11715,13 +11356,10 @@ class GetSensitiveDataModelSensitiveObjectsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSensitiveDataModelSensitiveSchemasFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSensitiveDataModelSensitiveSchemasFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSensitiveDataModelSensitiveSchemasFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSensitiveDataModelSensitiveSchemasFilterArgs:
@@ -11762,13 +11400,10 @@ class GetSensitiveDataModelSensitiveSchemasFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSensitiveDataModelSensitiveTypesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSensitiveDataModelSensitiveTypesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSensitiveDataModelSensitiveTypesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSensitiveDataModelSensitiveTypesFilterArgs:
@@ -11809,13 +11444,10 @@ class GetSensitiveDataModelSensitiveTypesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSensitiveDataModelsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSensitiveDataModelsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSensitiveDataModelsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSensitiveDataModelsFilterArgs:
@@ -11856,13 +11488,10 @@ class GetSensitiveDataModelsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSensitiveDataModelsSensitiveColumnsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSensitiveDataModelsSensitiveColumnsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSensitiveDataModelsSensitiveColumnsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSensitiveDataModelsSensitiveColumnsFilterArgs:
@@ -11903,13 +11532,10 @@ class GetSensitiveDataModelsSensitiveColumnsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs:
@@ -11950,13 +11576,10 @@ class GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSensitiveTypeGroupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSensitiveTypeGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSensitiveTypeGroupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSensitiveTypeGroupsFilterArgs:
@@ -11997,13 +11620,10 @@ class GetSensitiveTypeGroupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSensitiveTypesExportsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSensitiveTypesExportsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSensitiveTypesExportsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSensitiveTypesExportsFilterArgs:
@@ -12044,13 +11664,10 @@ class GetSensitiveTypesExportsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSensitiveTypesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSensitiveTypesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSensitiveTypesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSensitiveTypesFilterArgs:
@@ -12091,13 +11708,10 @@ class GetSensitiveTypesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSqlCollectionAnalyticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSqlCollectionAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSqlCollectionAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSqlCollectionAnalyticsFilterArgs:
@@ -12138,13 +11752,10 @@ class GetSqlCollectionAnalyticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSqlCollectionLogInsightsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSqlCollectionLogInsightsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSqlCollectionLogInsightsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSqlCollectionLogInsightsFilterArgs:
@@ -12185,13 +11796,10 @@ class GetSqlCollectionLogInsightsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSqlCollectionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSqlCollectionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSqlCollectionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSqlCollectionsFilterArgs:
@@ -12232,13 +11840,10 @@ class GetSqlCollectionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSqlFirewallAllowedSqlAnalyticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSqlFirewallAllowedSqlAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSqlFirewallAllowedSqlAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSqlFirewallAllowedSqlAnalyticsFilterArgs:
@@ -12279,13 +11884,10 @@ class GetSqlFirewallAllowedSqlAnalyticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSqlFirewallAllowedSqlsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSqlFirewallAllowedSqlsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSqlFirewallAllowedSqlsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSqlFirewallAllowedSqlsFilterArgs:
@@ -12326,13 +11928,10 @@ class GetSqlFirewallAllowedSqlsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSqlFirewallPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSqlFirewallPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSqlFirewallPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSqlFirewallPoliciesFilterArgs:
@@ -12373,13 +11972,10 @@ class GetSqlFirewallPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSqlFirewallPolicyAnalyticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSqlFirewallPolicyAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSqlFirewallPolicyAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSqlFirewallPolicyAnalyticsFilterArgs:
@@ -12420,13 +12016,10 @@ class GetSqlFirewallPolicyAnalyticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSqlFirewallViolationAnalyticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSqlFirewallViolationAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSqlFirewallViolationAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSqlFirewallViolationAnalyticsFilterArgs:
@@ -12467,13 +12060,10 @@ class GetSqlFirewallViolationAnalyticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSqlFirewallViolationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSqlFirewallViolationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSqlFirewallViolationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSqlFirewallViolationsFilterArgs:
@@ -12514,13 +12104,10 @@ class GetSqlFirewallViolationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetTargetAlertPolicyAssociationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetTargetAlertPolicyAssociationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetTargetAlertPolicyAssociationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetTargetAlertPolicyAssociationsFilterArgs:
@@ -12561,13 +12148,10 @@ class GetTargetAlertPolicyAssociationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetTargetDatabaseGroupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetTargetDatabaseGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetTargetDatabaseGroupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetTargetDatabaseGroupsFilterArgs:
@@ -12608,13 +12192,10 @@ class GetTargetDatabaseGroupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetTargetDatabasePeerTargetDatabasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetTargetDatabasePeerTargetDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetTargetDatabasePeerTargetDatabasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetTargetDatabasePeerTargetDatabasesFilterArgs:
@@ -12655,13 +12236,10 @@ class GetTargetDatabasePeerTargetDatabasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetTargetDatabaseRoleFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetTargetDatabaseRoleFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetTargetDatabaseRoleFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetTargetDatabaseRoleFilterArgs:
@@ -12702,13 +12280,10 @@ class GetTargetDatabaseRoleFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetTargetDatabaseRolesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetTargetDatabaseRolesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetTargetDatabaseRolesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetTargetDatabaseRolesFilterArgs:
@@ -12749,13 +12324,10 @@ class GetTargetDatabaseRolesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetTargetDatabasesColumnsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetTargetDatabasesColumnsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetTargetDatabasesColumnsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetTargetDatabasesColumnsFilterArgs:
@@ -12796,13 +12368,10 @@ class GetTargetDatabasesColumnsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetTargetDatabasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetTargetDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetTargetDatabasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetTargetDatabasesFilterArgs:
@@ -12843,13 +12412,10 @@ class GetTargetDatabasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetTargetDatabasesSchemasFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetTargetDatabasesSchemasFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetTargetDatabasesSchemasFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetTargetDatabasesSchemasFilterArgs:
@@ -12890,13 +12456,10 @@ class GetTargetDatabasesSchemasFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetTargetDatabasesTablesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetTargetDatabasesTablesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetTargetDatabasesTablesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetTargetDatabasesTablesFilterArgs:
@@ -12937,13 +12500,10 @@ class GetTargetDatabasesTablesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetUnifiedAuditPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetUnifiedAuditPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetUnifiedAuditPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetUnifiedAuditPoliciesFilterArgs:
@@ -12984,13 +12544,10 @@ class GetUnifiedAuditPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetUnifiedAuditPolicyDefinitionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetUnifiedAuditPolicyDefinitionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetUnifiedAuditPolicyDefinitionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetUnifiedAuditPolicyDefinitionsFilterArgs:
@@ -13031,13 +12588,10 @@ class GetUnifiedAuditPolicyDefinitionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs:
@@ -13078,13 +12632,10 @@ class GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetUserAssessmentProfileAnalyticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetUserAssessmentProfileAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetUserAssessmentProfileAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetUserAssessmentProfileAnalyticsFilterArgs:
@@ -13125,13 +12676,10 @@ class GetUserAssessmentProfileAnalyticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetUserAssessmentProfilesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetUserAssessmentProfilesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetUserAssessmentProfilesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetUserAssessmentProfilesFilterArgs:
@@ -13172,13 +12720,10 @@ class GetUserAssessmentProfilesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetUserAssessmentUserAccessAnalyticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetUserAssessmentUserAccessAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetUserAssessmentUserAccessAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetUserAssessmentUserAccessAnalyticsFilterArgs:
@@ -13219,13 +12764,10 @@ class GetUserAssessmentUserAccessAnalyticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetUserAssessmentUserAnalyticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetUserAssessmentUserAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetUserAssessmentUserAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetUserAssessmentUserAnalyticsFilterArgs:
@@ -13266,13 +12808,10 @@ class GetUserAssessmentUserAnalyticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetUserAssessmentUsersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetUserAssessmentUsersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetUserAssessmentUsersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetUserAssessmentUsersFilterArgs:
@@ -13313,13 +12852,10 @@ class GetUserAssessmentUsersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetUserAssessmentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetUserAssessmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetUserAssessmentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetUserAssessmentsFilterArgs:

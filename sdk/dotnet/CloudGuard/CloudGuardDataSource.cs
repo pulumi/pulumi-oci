@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard
 {
     /// <summary>
+    /// This resource provides the Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/DataSource
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+    /// 
+    /// Creates a data source (DataSource resource), using parameters passed
+    /// through a CreateDataSourceDetails resource.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -73,7 +81,7 @@ namespace Pulumi.Oci.CloudGuard
     /// 
     /// ## Import
     /// 
-    /// DataSources can be imported using the `id`, e.g.
+    /// DataSources can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:CloudGuard/cloudGuardDataSource:CloudGuardDataSource test_data_source "id"

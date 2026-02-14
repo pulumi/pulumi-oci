@@ -5,6 +5,20 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Tag Default resource in Oracle Cloud Infrastructure Identity service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/TagDefault
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+ *
+ * Creates a new tag default in the specified compartment for the specified tag definition.
+ *
+ * If you specify that a value is required, a value is set during resource creation (either by
+ * the user creating the resource or another tag defualt). If no value is set, resource creation
+ * is blocked.
+ *
+ * * If the `isRequired` flag is set to "true", the value is set during resource creation.
+ * * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+ *
  * ## Example Usage
  *
  * ```typescript

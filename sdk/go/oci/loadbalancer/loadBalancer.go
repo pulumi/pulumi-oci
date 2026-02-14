@@ -12,6 +12,40 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Load Balancer resource in Oracle Cloud Infrastructure Load Balancer service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/loadbalancer/latest/LoadBalancer
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/load_balancer
+//
+// Creates a new load balancer in the specified compartment. For general information about load balancers,
+// see [Overview of the Load Balancing Service](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm).
+//
+// For the purposes of access control, you must provide the OCID of the compartment where you want
+// the load balancer to reside. Notice that the load balancer doesn't have to be in the same compartment as the VCN
+// or backend set. If you're not sure which compartment to use, put the load balancer in the same compartment as the VCN.
+// For information about access control and compartments, see
+// [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+//
+// You must specify a display name for the load balancer. It does not have to be unique, and you can change it.
+//
+// For information about Availability Domains, see
+// [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+// To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
+// in the Identity and Access Management Service API.
+//
+// All Oracle Cloud Infrastructure resources, including load balancers, get an Oracle-assigned,
+// unique ID called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID
+// in the response. You can also retrieve a resource's OCID by using a List API operation on that resource type,
+// or by viewing the resource in the Console. Fore more information, see
+// [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+//
+// When you create a load balancer, the system assigns an IP address.
+// To get the IP address, use the [GetLoadBalancer](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/GetLoadBalancer) operation.
+//
+// ## Supported Aliases
+//
+// * `ociLoadBalancer`
+//
 // ## Example Usage
 //
 // ```go

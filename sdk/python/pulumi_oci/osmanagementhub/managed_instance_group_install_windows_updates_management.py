@@ -139,6 +139,13 @@ class ManagedInstanceGroupInstallWindowsUpdatesManagement(pulumi.CustomResource)
                  work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Managed Instance Group Install Windows Updates Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ManagedInstanceGroupInstallWindowsUpdatesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+
+        Installs Windows updates on each managed instance in the managed instance group.
+
         ## Example Usage
 
         ```python
@@ -175,6 +182,13 @@ class ManagedInstanceGroupInstallWindowsUpdatesManagement(pulumi.CustomResource)
                  args: ManagedInstanceGroupInstallWindowsUpdatesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Managed Instance Group Install Windows Updates Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ManagedInstanceGroupInstallWindowsUpdatesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+
+        Installs Windows updates on each managed instance in the managed instance group.
+
         ## Example Usage
 
         ```python

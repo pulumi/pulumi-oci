@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.IdentityDataPlane
 {
     /// <summary>
+    /// This resource provides the Generate Scoped Access Token resource in Oracle Cloud Infrastructure Identity Data Plane service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_data_plane
+    /// 
+    /// Based on the calling principal and the input payload, derive the claims and create a security token.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -31,7 +38,7 @@ namespace Pulumi.Oci.IdentityDataPlane
     /// 
     /// ## Import
     /// 
-    /// GenerateScopedAccessToken can be imported using the `id`, e.g.
+    /// GenerateScopedAccessToken can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken test_generate_scoped_access_token "id"

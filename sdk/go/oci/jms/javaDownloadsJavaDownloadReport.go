@@ -12,6 +12,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Java Download Report resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/jms-java-download/latest/JavaDownloadReport
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/jms_java_downloads
+//
+// Create a new report in the specified format containing the download details
+// for the tenancy.
+//
 // ## Example Usage
 //
 // ```go

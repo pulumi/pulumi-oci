@@ -219,6 +219,13 @@ class TableReplica(pulumi.CustomResource):
                  table_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Table Replica resource in Oracle Cloud Infrastructure NoSQL Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/nosql-database/latest/TableReplica
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/object_storage
+
+        Add a replica for this table. The table's schema must be frozen prior to this operation.
+
         ## Example Usage
 
         ```python
@@ -260,6 +267,13 @@ class TableReplica(pulumi.CustomResource):
                  args: TableReplicaInitArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Table Replica resource in Oracle Cloud Infrastructure NoSQL Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/nosql-database/latest/TableReplica
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/object_storage
+
+        Add a replica for this table. The table's schema must be frozen prior to this operation.
+
         ## Example Usage
 
         ```python

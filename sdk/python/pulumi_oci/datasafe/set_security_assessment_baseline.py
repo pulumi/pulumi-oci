@@ -121,6 +121,13 @@ class SetSecurityAssessmentBaseline(pulumi.CustomResource):
                  security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Set Security Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/SetSecurityAssessmentBaseline
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Sets the saved security assessment as the baseline in the compartment where the the specified assessment resides. The security assessment needs to be of type 'SAVED'.
+
         ## Example Usage
 
         ```python
@@ -156,6 +163,13 @@ class SetSecurityAssessmentBaseline(pulumi.CustomResource):
                  args: SetSecurityAssessmentBaselineArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Set Security Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/SetSecurityAssessmentBaseline
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Sets the saved security assessment as the baseline in the compartment where the the specified assessment resides. The security assessment needs to be of type 'SAVED'.
+
         ## Example Usage
 
         ```python

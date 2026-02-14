@@ -7,6 +7,15 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Application resource in Oracle Cloud Infrastructure Functions service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/functions/latest/Application
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/functions
+ *
+ * Creates a new application.
+ *
+ * **NOTE:** Terraform will take 5 minutes after destroying an application due to a known service issue. Refer [here](https://docs.cloud.oracle.com/iaas/Content/Functions/Tasks/functionsdeleting.htm)
+ *
  * ## Example Usage
  *
  * ```typescript

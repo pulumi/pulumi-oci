@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Logging
 {
     /// <summary>
+    /// This resource provides the Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logging-management/latest/LogSavedSearch
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/logging
+    /// 
+    /// Creates a new LogSavedSearch.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,7 +48,7 @@ namespace Pulumi.Oci.Logging
     /// 
     /// ## Import
     /// 
-    /// LogSavedSearches can be imported using the `id`, e.g.
+    /// LogSavedSearches can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Logging/logSavedSearch:LogSavedSearch test_log_saved_search "id"

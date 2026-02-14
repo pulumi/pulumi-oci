@@ -10,6 +10,11 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Artifacts
 {
     /// <summary>
+    /// This resource provides the Generic Artifact resource in Oracle Cloud Infrastructure Artifacts service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/registry/latest/GenericArtifact
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/artifacts
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -38,7 +43,7 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// ## Import
     /// 
-    /// GenericArtifacts can be imported using the `id`, e.g.
+    /// GenericArtifacts can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Artifacts/genericArtifact:GenericArtifact test_generic_artifact "generic/artifacts/{artifactId}"

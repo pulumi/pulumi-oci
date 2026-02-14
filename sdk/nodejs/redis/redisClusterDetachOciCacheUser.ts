@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Redis Cluster Detach Oci Cache User resource in Oracle Cloud Infrastructure Redis service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/redis/latest/RedisClusterDetachOciCacheUser
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
+ *
+ * Detach existing Oracle Cloud Infrastructure cache users to a redis cluster.
+ *
  * ## Example Usage
  *
  * ```typescript

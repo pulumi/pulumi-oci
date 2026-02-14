@@ -15,6 +15,28 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Identity Provider resource in Oracle Cloud Infrastructure Identity service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/IdentityProvider
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+ * 
+ * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
+ * 
+ * Creates a new identity provider in your tenancy. For more information, see
+ * [Identity Providers and Federation](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/federation.htm).
+ * 
+ * You must specify your tenancy&#39;s OCID as the compartment ID in the request object.
+ * Remember that the tenancy is simply the root compartment. For information about
+ * OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+ * 
+ * You must also specify a *name* for the `IdentityProvider`, which must be unique
+ * across all `IdentityProvider` objects in your tenancy and cannot be changed.
+ * 
+ * You must also specify a *description* for the `IdentityProvider` (although
+ * it can be an empty string). It does not have to be unique, and you can change
+ * it anytime with
+ * [UpdateIdentityProvider](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/UpdateIdentityProvider).
+ * 
  * ## Example Usage
  * 
  * <pre>

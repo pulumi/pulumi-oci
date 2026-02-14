@@ -23,15 +23,10 @@ __all__ = [
     'GetSubscriptionsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetCommitmentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCommitmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCommitmentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCommitmentsFilterArgs:
@@ -72,16 +67,13 @@ class GetCommitmentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRatecardsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Product name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRatecardsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRatecardsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Product name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRatecardsFilterArgs:
@@ -128,16 +120,13 @@ class GetRatecardsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSubscriptionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Product name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSubscriptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSubscriptionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Product name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSubscriptionsFilterArgs:

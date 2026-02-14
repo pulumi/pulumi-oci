@@ -272,6 +272,15 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
                  source_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Monitored Resources Associate Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoredResourcesAssociateMonitoredResource
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+
+        Create an association between two monitored resources. Associations can be created
+        between resources from different compartments as long they are in same tenancy.
+        User should have required access in both the compartments.
+
         ## Example Usage
 
         ```python
@@ -311,6 +320,15 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
                  args: MonitoredResourcesAssociateMonitoredResourceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Monitored Resources Associate Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoredResourcesAssociateMonitoredResource
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+
+        Create an association between two monitored resources. Associations can be created
+        between resources from different compartments as long they are in same tenancy.
+        User should have required access in both the compartments.
+
         ## Example Usage
 
         ```python

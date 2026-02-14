@@ -99,24 +99,19 @@ __all__ = [
     'GetWaasPoliciesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class CertificateExtensionArgsDict(TypedDict):
-        is_critical: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The certificate extension name.
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The certificate extension value.
-        """
-elif False:
-    CertificateExtensionArgsDict: TypeAlias = Mapping[str, Any]
+class CertificateExtensionArgsDict(TypedDict):
+    is_critical: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The certificate extension name.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The certificate extension value.
+    """
 
 @pulumi.input_type
 class CertificateExtensionArgs:
@@ -173,38 +168,35 @@ class CertificateExtensionArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class CertificateIssuerNameArgsDict(TypedDict):
-        common_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The fully qualified domain name used for DNS lookups of the server.
-        """
-        country: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-        """
-        email_address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The email address of the server's administrator.
-        """
-        locality: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The city in which the organization is located.
-        """
-        organization: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The organization name.
-        """
-        organizational_unit: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The field to differentiate between divisions within an organization.
-        """
-        state_province: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The province where the organization is located.
-        """
-elif False:
-    CertificateIssuerNameArgsDict: TypeAlias = Mapping[str, Any]
+class CertificateIssuerNameArgsDict(TypedDict):
+    common_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The fully qualified domain name used for DNS lookups of the server.
+    """
+    country: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+    """
+    email_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The email address of the server's administrator.
+    """
+    locality: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The city in which the organization is located.
+    """
+    organization: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The organization name.
+    """
+    organizational_unit: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The field to differentiate between divisions within an organization.
+    """
+    state_province: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The province where the organization is located.
+    """
 
 @pulumi.input_type
 class CertificateIssuerNameArgs:
@@ -325,22 +317,19 @@ class CertificateIssuerNameArgs:
         pulumi.set(self, "state_province", value)
 
 
-if not MYPY:
-    class CertificatePublicKeyInfoArgsDict(TypedDict):
-        algorithm: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The algorithm identifier and parameters for the public key.
-        """
-        exponent: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The private key exponent.
-        """
-        key_size: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of bits in a key used by a cryptographic algorithm.
-        """
-elif False:
-    CertificatePublicKeyInfoArgsDict: TypeAlias = Mapping[str, Any]
+class CertificatePublicKeyInfoArgsDict(TypedDict):
+    algorithm: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The algorithm identifier and parameters for the public key.
+    """
+    exponent: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The private key exponent.
+    """
+    key_size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of bits in a key used by a cryptographic algorithm.
+    """
 
 @pulumi.input_type
 class CertificatePublicKeyInfoArgs:
@@ -397,38 +386,35 @@ class CertificatePublicKeyInfoArgs:
         pulumi.set(self, "key_size", value)
 
 
-if not MYPY:
-    class CertificateSubjectNameArgsDict(TypedDict):
-        common_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The fully qualified domain name used for DNS lookups of the server.
-        """
-        country: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-        """
-        email_address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The email address of the server's administrator.
-        """
-        locality: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The city in which the organization is located.
-        """
-        organization: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The organization name.
-        """
-        organizational_unit: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The field to differentiate between divisions within an organization.
-        """
-        state_province: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The province where the organization is located.
-        """
-elif False:
-    CertificateSubjectNameArgsDict: TypeAlias = Mapping[str, Any]
+class CertificateSubjectNameArgsDict(TypedDict):
+    common_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The fully qualified domain name used for DNS lookups of the server.
+    """
+    country: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+    """
+    email_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The email address of the server's administrator.
+    """
+    locality: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The city in which the organization is located.
+    """
+    organization: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The organization name.
+    """
+    organizational_unit: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The field to differentiate between divisions within an organization.
+    """
+    state_province: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The province where the organization is located.
+    """
 
 @pulumi.input_type
 class CertificateSubjectNameArgs:
@@ -549,34 +535,31 @@ class CertificateSubjectNameArgs:
         pulumi.set(self, "state_province", value)
 
 
-if not MYPY:
-    class HttpRedirectTargetArgsDict(TypedDict):
-        host: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The host portion of the redirect.
-        """
-        path: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The path component of the target URL (e.g., "/path/to/resource" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying, or request-prefixing. Use of \\ is not permitted except to escape a following \\, {, or }. An empty value is treated the same as static "/". A static value must begin with a leading "/", optionally followed by other path characters. A request-copying value must exactly match "{path}", and will be replaced with the path component of the request URL (including its initial "/"). A request-prefixing value must start with "/" and end with a non-escaped "{path}", which will be replaced with the path component of the request URL (including its initial "/"). Only one such replacement token is allowed.
-        """
-        protocol: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The protocol used for the target, http or https.
-        """
-        query: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The query component of the target URL (e.g., "?redirected" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying. Use of \\ is not permitted except to escape a following \\, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading "?", optionally followed by other query characters. A request-copying value must exactly match "{query}", and will be replaced with the query component of the request URL (including a leading "?" if and only if the request URL includes a query component).
+class HttpRedirectTargetArgsDict(TypedDict):
+    host: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The host portion of the redirect.
+    """
+    path: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The path component of the target URL (e.g., "/path/to/resource" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying, or request-prefixing. Use of \\ is not permitted except to escape a following \\, {, or }. An empty value is treated the same as static "/". A static value must begin with a leading "/", optionally followed by other path characters. A request-copying value must exactly match "{path}", and will be replaced with the path component of the request URL (including its initial "/"). A request-prefixing value must start with "/" and end with a non-escaped "{path}", which will be replaced with the path component of the request URL (including its initial "/"). Only one such replacement token is allowed.
+    """
+    protocol: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The protocol used for the target, http or https.
+    """
+    query: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The query component of the target URL (e.g., "?redirected" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying. Use of \\ is not permitted except to escape a following \\, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading "?", optionally followed by other query characters. A request-copying value must exactly match "{query}", and will be replaced with the query component of the request URL (including a leading "?" if and only if the request URL includes a query component).
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Port number of the target destination of the redirect, default to match protocol
-        """
-elif False:
-    HttpRedirectTargetArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Port number of the target destination of the redirect, default to match protocol
+    """
 
 @pulumi.input_type
 class HttpRedirectTargetArgs:
@@ -669,27 +652,24 @@ class HttpRedirectTargetArgs:
         pulumi.set(self, "port", value)
 
 
-if not MYPY:
-    class PolicyOriginArgsDict(TypedDict):
-        label: pulumi.Input[_builtins.str]
-        uri: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The URI of the origin. Does not support paths. Port numbers should be specified in the `httpPort` and `httpsPort` fields.
-        """
-        custom_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyOriginCustomHeaderArgsDict']]]]
-        """
-        (Updatable) A list of HTTP headers to forward to your origin.
-        """
-        http_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
-        """
-        https_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`. If `0` is specified - the origin is not used for HTTPS traffic.
-        """
-elif False:
-    PolicyOriginArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyOriginArgsDict(TypedDict):
+    label: pulumi.Input[_builtins.str]
+    uri: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The URI of the origin. Does not support paths. Port numbers should be specified in the `httpPort` and `httpsPort` fields.
+    """
+    custom_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyOriginCustomHeaderArgsDict']]]]
+    """
+    (Updatable) A list of HTTP headers to forward to your origin.
+    """
+    http_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
+    """
+    https_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`. If `0` is specified - the origin is not used for HTTPS traffic.
+    """
 
 @pulumi.input_type
 class PolicyOriginArgs:
@@ -772,18 +752,15 @@ class PolicyOriginArgs:
         pulumi.set(self, "https_port", value)
 
 
-if not MYPY:
-    class PolicyOriginCustomHeaderArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the header.
-        """
-        value: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The value of the header.
-        """
-elif False:
-    PolicyOriginCustomHeaderArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyOriginCustomHeaderArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the header.
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The value of the header.
+    """
 
 @pulumi.input_type
 class PolicyOriginCustomHeaderArgs:
@@ -822,12 +799,9 @@ class PolicyOriginCustomHeaderArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class PolicyOriginGroupArgsDict(TypedDict):
-        label: pulumi.Input[_builtins.str]
-        origin_groups: pulumi.Input[Sequence[pulumi.Input['PolicyOriginGroupOriginGroupArgsDict']]]
-elif False:
-    PolicyOriginGroupArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyOriginGroupArgsDict(TypedDict):
+    label: pulumi.Input[_builtins.str]
+    origin_groups: pulumi.Input[Sequence[pulumi.Input['PolicyOriginGroupOriginGroupArgsDict']]]
 
 @pulumi.input_type
 class PolicyOriginGroupArgs:
@@ -856,15 +830,12 @@ class PolicyOriginGroupArgs:
         pulumi.set(self, "origin_groups", value)
 
 
-if not MYPY:
-    class PolicyOriginGroupOriginGroupArgsDict(TypedDict):
-        origin: pulumi.Input[_builtins.str]
-        """
-        The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
-        """
-        weight: NotRequired[pulumi.Input[_builtins.int]]
-elif False:
-    PolicyOriginGroupOriginGroupArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyOriginGroupOriginGroupArgsDict(TypedDict):
+    origin: pulumi.Input[_builtins.str]
+    """
+    The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
+    """
+    weight: NotRequired[pulumi.Input[_builtins.int]]
 
 @pulumi.input_type
 class PolicyOriginGroupOriginGroupArgs:
@@ -900,84 +871,81 @@ class PolicyOriginGroupOriginGroupArgs:
         pulumi.set(self, "weight", value)
 
 
-if not MYPY:
-    class PolicyPolicyConfigArgsDict(TypedDict):
-        certificate_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the SSL certificate to use if HTTPS is supported.
-        """
-        cipher_group: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
-        * **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
-        """
-        client_address_header: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if `isBehindCdn` is enabled.
+class PolicyPolicyConfigArgsDict(TypedDict):
+    certificate_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the SSL certificate to use if HTTPS is supported.
+    """
+    cipher_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
+    * **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
+    """
+    client_address_header: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if `isBehindCdn` is enabled.
 
-        The edge node reads this header and its value and sets the client IP address as specified. It does not create the header if the header is not present in the request. If the header is not present, the connecting IP address will be used as the client's true IP address. It uses the last IP address in the header's value as the true IP address.
+    The edge node reads this header and its value and sets the client IP address as specified. It does not create the header if the header is not present in the request. If the header is not present, the connecting IP address will be used as the client's true IP address. It uses the last IP address in the header's value as the true IP address.
 
-        Example: `X-Client-Ip: 11.1.1.1, 13.3.3.3`
+    Example: `X-Client-Ip: 11.1.1.1, 13.3.3.3`
 
-        In the case of multiple headers with the same name, only the first header will be used. It is assumed that CDN sets the correct client IP address to prevent spoofing.
-        * **X_FORWARDED_FOR:** Corresponds to `X-Forwarded-For` header name.
-        * **X_CLIENT_IP:** Corresponds to `X-Client-Ip` header name.
-        * **X_REAL_IP:** Corresponds to `X-Real-Ip` header name.
-        * **CLIENT_IP:** Corresponds to `Client-Ip` header name.
-        * **TRUE_CLIENT_IP:** Corresponds to `True-Client-Ip` header name.
-        """
-        health_checks: NotRequired[pulumi.Input['PolicyPolicyConfigHealthChecksArgsDict']]
-        """
-        (Updatable) Health checks monitor the status of your origin servers and only route traffic to the origins that pass the health check. If the health check fails, origin is automatically removed from the load balancing. There is roughly one health check per EDGE POP per period. Any checks that pass will be reported as "healthy".
-        """
-        is_behind_cdn: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enabling `isBehindCdn` allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
-        """
-        is_cache_control_respected: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching is usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
-        """
-        is_https_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enable or disable HTTPS support. If true, a `certificateId` is required. If unspecified, defaults to `false`.
-        """
-        is_https_forced: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Force HTTP to HTTPS redirection. If unspecified, defaults to `false`.
-        """
-        is_origin_compression_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise, the empty `Accept-Encoding:` header is used.
-        """
-        is_response_buffering_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
-        """
-        is_sni_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
-        """
-        load_balancing_method: NotRequired[pulumi.Input['PolicyPolicyConfigLoadBalancingMethodArgsDict']]
-        """
-        (Updatable) An object that represents a load balancing method and its properties.
-        """
-        tls_protocols: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
-        * **TLS_V1:** corresponds to TLS 1.0 specification.
-        * **TLS_V1_1:** corresponds to TLS 1.1 specification.
-        * **TLS_V1_2:** corresponds to TLS 1.2 specification.
-        * **TLS_V1_3:** corresponds to TLS 1.3 specification.
+    In the case of multiple headers with the same name, only the first header will be used. It is assumed that CDN sets the correct client IP address to prevent spoofing.
+    * **X_FORWARDED_FOR:** Corresponds to `X-Forwarded-For` header name.
+    * **X_CLIENT_IP:** Corresponds to `X-Client-Ip` header name.
+    * **X_REAL_IP:** Corresponds to `X-Real-Ip` header name.
+    * **CLIENT_IP:** Corresponds to `Client-Ip` header name.
+    * **TRUE_CLIENT_IP:** Corresponds to `True-Client-Ip` header name.
+    """
+    health_checks: NotRequired[pulumi.Input['PolicyPolicyConfigHealthChecksArgsDict']]
+    """
+    (Updatable) Health checks monitor the status of your origin servers and only route traffic to the origins that pass the health check. If the health check fails, origin is automatically removed from the load balancing. There is roughly one health check per EDGE POP per period. Any checks that pass will be reported as "healthy".
+    """
+    is_behind_cdn: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enabling `isBehindCdn` allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
+    """
+    is_cache_control_respected: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching is usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
+    """
+    is_https_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enable or disable HTTPS support. If true, a `certificateId` is required. If unspecified, defaults to `false`.
+    """
+    is_https_forced: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Force HTTP to HTTPS redirection. If unspecified, defaults to `false`.
+    """
+    is_origin_compression_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise, the empty `Accept-Encoding:` header is used.
+    """
+    is_response_buffering_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
+    """
+    is_sni_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
+    """
+    load_balancing_method: NotRequired[pulumi.Input['PolicyPolicyConfigLoadBalancingMethodArgsDict']]
+    """
+    (Updatable) An object that represents a load balancing method and its properties.
+    """
+    tls_protocols: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
+    * **TLS_V1:** corresponds to TLS 1.0 specification.
+    * **TLS_V1_1:** corresponds to TLS 1.1 specification.
+    * **TLS_V1_2:** corresponds to TLS 1.2 specification.
+    * **TLS_V1_3:** corresponds to TLS 1.3 specification.
 
-        Enabled TLS protocols must go in a row. For example if `TLS_v1_1` and `TLS_V1_3` are enabled, `TLS_V1_2` must be enabled too.
-        """
-        websocket_path_prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF disabled if Connection request header from the client has the value Upgrade (case insensitive matching) and Upgrade request header has the value websocket (case insensitive matching). Paths matches if the concatenation of request URL path and query starts with the contents of the one of `websocketPathPrefixes` array value. In All other cases challenges, like JSC, HIC and etc., remain active.
-        """
-elif False:
-    PolicyPolicyConfigArgsDict: TypeAlias = Mapping[str, Any]
+    Enabled TLS protocols must go in a row. For example if `TLS_v1_1` and `TLS_V1_3` are enabled, `TLS_V1_2` must be enabled too.
+    """
+    websocket_path_prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF disabled if Connection request header from the client has the value Upgrade (case insensitive matching) and Upgrade request header has the value websocket (case insensitive matching). Paths matches if the concatenation of request URL path and query starts with the contents of the one of `websocketPathPrefixes` array value. In All other cases challenges, like JSC, HIC and etc., remain active.
+    """
 
 @pulumi.input_type
 class PolicyPolicyConfigArgs:
@@ -1246,60 +1214,57 @@ class PolicyPolicyConfigArgs:
         pulumi.set(self, "websocket_path_prefixes", value)
 
 
-if not MYPY:
-    class PolicyPolicyConfigHealthChecksArgsDict(TypedDict):
-        expected_response_code_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The HTTP response codes that signify a healthy state.
-        * **2XX:** Success response code group.
-        * **3XX:** Redirection response code group.
-        * **4XX:** Client errors response code group.
-        * **5XX:** Server errors response code group.
-        """
-        expected_response_text: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
-        """
-        headers: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
+class PolicyPolicyConfigHealthChecksArgsDict(TypedDict):
+    expected_response_code_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The HTTP response codes that signify a healthy state.
+    * **2XX:** Success response code group.
+    * **3XX:** Redirection response code group.
+    * **4XX:** Client errors response code group.
+    * **5XX:** Server errors response code group.
+    """
+    expected_response_text: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
+    """
+    headers: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
 
-        **Note:** The only currently-supported header fields are Host and User-Agent.
-        """
-        healthy_threshold: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Number of successful health checks after which the server is marked up.
-        """
-        interval_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Time between health checks of an individual origin server, in seconds.
-        """
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables or disables the health checks.
-        """
-        is_response_text_check_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables or disables additional check for predefined text in addition to response code.
-        """
-        method: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) An HTTP verb (i.e. HEAD, GET, or POST) to use when performing the health check.
-        """
-        path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Path to visit on your origins when performing the health check.
-        """
-        timeout_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Response timeout represents wait time until request is considered failed, in seconds.
-        """
-        unhealthy_threshold: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Number of failed health checks after which the server is marked down.
-        """
-elif False:
-    PolicyPolicyConfigHealthChecksArgsDict: TypeAlias = Mapping[str, Any]
+    **Note:** The only currently-supported header fields are Host and User-Agent.
+    """
+    healthy_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Number of successful health checks after which the server is marked up.
+    """
+    interval_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Time between health checks of an individual origin server, in seconds.
+    """
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables or disables the health checks.
+    """
+    is_response_text_check_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables or disables additional check for predefined text in addition to response code.
+    """
+    method: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) An HTTP verb (i.e. HEAD, GET, or POST) to use when performing the health check.
+    """
+    path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Path to visit on your origins when performing the health check.
+    """
+    timeout_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Response timeout represents wait time until request is considered failed, in seconds.
+    """
+    unhealthy_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Number of failed health checks after which the server is marked down.
+    """
 
 @pulumi.input_type
 class PolicyPolicyConfigHealthChecksArgs:
@@ -1496,29 +1461,26 @@ class PolicyPolicyConfigHealthChecksArgs:
         pulumi.set(self, "unhealthy_threshold", value)
 
 
-if not MYPY:
-    class PolicyPolicyConfigLoadBalancingMethodArgsDict(TypedDict):
-        method: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
-        * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
-        * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
-        * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
-        """
-        domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
-        """
-        expiration_time_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the cookie used to track the persistence. Can contain any US-ASCII character except separator or control character.
-        """
-elif False:
-    PolicyPolicyConfigLoadBalancingMethodArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyPolicyConfigLoadBalancingMethodArgsDict(TypedDict):
+    method: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
+    * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
+    * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
+    * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
+    """
+    domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+    """
+    expiration_time_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the cookie used to track the persistence. Can contain any US-ASCII character except separator or control character.
+    """
 
 @pulumi.input_type
 class PolicyPolicyConfigLoadBalancingMethodArgs:
@@ -1596,58 +1558,55 @@ class PolicyPolicyConfigLoadBalancingMethodArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class PolicyWafConfigArgsDict(TypedDict):
-        access_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleArgsDict']]]]
-        """
-        (Updatable) The access rules applied to the Web Application Firewall. Access rules allow custom content access policies to be defined and `ALLOW`, `DETECT`, or `BLOCK` actions to be taken on a request when specified criteria are met.
-        """
-        address_rate_limiting: NotRequired[pulumi.Input['PolicyWafConfigAddressRateLimitingArgsDict']]
-        """
-        (Updatable) The settings used to limit the number of requests from an IP address.
-        """
-        caching_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCachingRuleArgsDict']]]]
-        """
-        (Updatable) A list of caching rules applied to the web application.
-        """
-        captchas: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCaptchaArgsDict']]]]
-        """
-        (Updatable) A list of CAPTCHA challenge settings. CAPTCHAs challenge requests to ensure a human is attempting to reach the specified URL and not a bot.
-        """
-        custom_protection_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleArgsDict']]]]
-        """
-        (Updatable) A list of the custom protection rule OCIDs and their actions.
-        """
-        device_fingerprint_challenge: NotRequired[pulumi.Input['PolicyWafConfigDeviceFingerprintChallengeArgsDict']]
-        """
-        (Updatable) The device fingerprint challenge settings. Blocks bots based on unique device fingerprint information.
-        """
-        human_interaction_challenge: NotRequired[pulumi.Input['PolicyWafConfigHumanInteractionChallengeArgsDict']]
-        """
-        (Updatable) The human interaction challenge settings. Detects natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.
-        """
-        js_challenge: NotRequired[pulumi.Input['PolicyWafConfigJsChallengeArgsDict']]
-        """
-        (Updatable) The JavaScript challenge settings. Blocks bots by challenging requests from browsers that have no JavaScript support.
-        """
-        origin: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
-        """
-        origin_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
-        """
-        protection_settings: NotRequired[pulumi.Input['PolicyWafConfigProtectionSettingsArgsDict']]
-        """
-        (Updatable) The settings applied to protection rules.
-        """
-        whitelists: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigWhitelistArgsDict']]]]
-        """
-        (Updatable) A list of IP addresses that bypass the Web Application Firewall.
-        """
-elif False:
-    PolicyWafConfigArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyWafConfigArgsDict(TypedDict):
+    access_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleArgsDict']]]]
+    """
+    (Updatable) The access rules applied to the Web Application Firewall. Access rules allow custom content access policies to be defined and `ALLOW`, `DETECT`, or `BLOCK` actions to be taken on a request when specified criteria are met.
+    """
+    address_rate_limiting: NotRequired[pulumi.Input['PolicyWafConfigAddressRateLimitingArgsDict']]
+    """
+    (Updatable) The settings used to limit the number of requests from an IP address.
+    """
+    caching_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCachingRuleArgsDict']]]]
+    """
+    (Updatable) A list of caching rules applied to the web application.
+    """
+    captchas: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCaptchaArgsDict']]]]
+    """
+    (Updatable) A list of CAPTCHA challenge settings. CAPTCHAs challenge requests to ensure a human is attempting to reach the specified URL and not a bot.
+    """
+    custom_protection_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleArgsDict']]]]
+    """
+    (Updatable) A list of the custom protection rule OCIDs and their actions.
+    """
+    device_fingerprint_challenge: NotRequired[pulumi.Input['PolicyWafConfigDeviceFingerprintChallengeArgsDict']]
+    """
+    (Updatable) The device fingerprint challenge settings. Blocks bots based on unique device fingerprint information.
+    """
+    human_interaction_challenge: NotRequired[pulumi.Input['PolicyWafConfigHumanInteractionChallengeArgsDict']]
+    """
+    (Updatable) The human interaction challenge settings. Detects natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.
+    """
+    js_challenge: NotRequired[pulumi.Input['PolicyWafConfigJsChallengeArgsDict']]
+    """
+    (Updatable) The JavaScript challenge settings. Blocks bots by challenging requests from browsers that have no JavaScript support.
+    """
+    origin: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
+    """
+    origin_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
+    """
+    protection_settings: NotRequired[pulumi.Input['PolicyWafConfigProtectionSettingsArgsDict']]
+    """
+    (Updatable) The settings applied to protection rules.
+    """
+    whitelists: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigWhitelistArgsDict']]]]
+    """
+    (Updatable) A list of IP addresses that bypass the Web Application Firewall.
+    """
 
 @pulumi.input_type
 class PolicyWafConfigArgs:
@@ -1848,88 +1807,85 @@ class PolicyWafConfigArgs:
         pulumi.set(self, "whitelists", value)
 
 
-if not MYPY:
-    class PolicyWafConfigAccessRuleArgsDict(TypedDict):
-        action: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The action to take when the access criteria are met for a rule. If unspecified, defaults to `ALLOW`.
-        * **ALLOW:** Takes no action, just logs the request.
-        * **DETECT:** Takes no action, but creates an alert for the request.
-        * **BLOCK:** Blocks the request by returning specified response code or showing error page.
-        * **BYPASS:** Bypasses some or all challenges.
-        * **REDIRECT:** Redirects the request to the specified URL. These fields are required when `REDIRECT` is selected: `redirectUrl`, `redirectResponseCode`.
-        * **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
+class PolicyWafConfigAccessRuleArgsDict(TypedDict):
+    action: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The action to take when the access criteria are met for a rule. If unspecified, defaults to `ALLOW`.
+    * **ALLOW:** Takes no action, just logs the request.
+    * **DETECT:** Takes no action, but creates an alert for the request.
+    * **BLOCK:** Blocks the request by returning specified response code or showing error page.
+    * **BYPASS:** Bypasses some or all challenges.
+    * **REDIRECT:** Redirects the request to the specified URL. These fields are required when `REDIRECT` is selected: `redirectUrl`, `redirectResponseCode`.
+    * **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
 
-        Regardless of action, no further rules are processed once a rule is matched.
-        """
-        criterias: pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleCriteriaArgsDict']]]
-        """
-        (Updatable) The list of access rule criteria. The rule would be applied only for the requests that matched all the listed conditions.
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The unique name of the access rule.
-        """
-        block_action: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The method used to block requests if `action` is set to `BLOCK` and the access criteria are met. If unspecified, defaults to `SET_RESPONSE_CODE`.
-        """
-        block_error_page_code: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access rules'.
-        """
-        block_error_page_description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access blocked by website owner. Please contact support.'
-        """
-        block_error_page_message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access to the website is blocked.'
-        """
-        block_response_code: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
-        """
-        bypass_challenges: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
-        * **JS_CHALLENGE:** Bypasses JavaScript Challenge.
-        * **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
-        * **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
-        * **CAPTCHA:** Bypasses CAPTCHA Challenge.
-        """
-        captcha_footer: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
-        """
-        captcha_header: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
-        """
-        captcha_submit_label: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
-        """
-        captcha_title: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
-        """
-        redirect_response_code: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The response status code to return when `action` is set to `REDIRECT`.
-        * **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
-        * **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
-        """
-        redirect_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
-        """
-        response_header_manipulations: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleResponseHeaderManipulationArgsDict']]]]
-        """
-        (Updatable) An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
-        """
-elif False:
-    PolicyWafConfigAccessRuleArgsDict: TypeAlias = Mapping[str, Any]
+    Regardless of action, no further rules are processed once a rule is matched.
+    """
+    criterias: pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleCriteriaArgsDict']]]
+    """
+    (Updatable) The list of access rule criteria. The rule would be applied only for the requests that matched all the listed conditions.
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The unique name of the access rule.
+    """
+    block_action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The method used to block requests if `action` is set to `BLOCK` and the access criteria are met. If unspecified, defaults to `SET_RESPONSE_CODE`.
+    """
+    block_error_page_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access rules'.
+    """
+    block_error_page_description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access blocked by website owner. Please contact support.'
+    """
+    block_error_page_message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access to the website is blocked.'
+    """
+    block_response_code: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
+    """
+    bypass_challenges: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
+    * **JS_CHALLENGE:** Bypasses JavaScript Challenge.
+    * **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
+    * **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
+    * **CAPTCHA:** Bypasses CAPTCHA Challenge.
+    """
+    captcha_footer: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+    """
+    captcha_header: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+    """
+    captcha_submit_label: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+    """
+    captcha_title: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+    """
+    redirect_response_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The response status code to return when `action` is set to `REDIRECT`.
+    * **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
+    * **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
+    """
+    redirect_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
+    """
+    response_header_manipulations: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleResponseHeaderManipulationArgsDict']]]]
+    """
+    (Updatable) An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
+    """
 
 @pulumi.input_type
 class PolicyWafConfigAccessRuleArgs:
@@ -2219,47 +2175,44 @@ class PolicyWafConfigAccessRuleArgs:
         pulumi.set(self, "response_header_manipulations", value)
 
 
-if not MYPY:
-    class PolicyWafConfigAccessRuleCriteriaArgsDict(TypedDict):
-        condition: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
-        * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.
-        * **URL_IS_NOT:** Matches if the concatenation of request URL path and query is not identical to the contents of the `value` field. URL must start with a `/`.
-        * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field. URL must start with a `/`.
-        * **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
-        * **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
-        * **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-        * **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-        * **URL_DOES_NOT_START_WITH:** Matches if the concatenation of request URL path and query does not start with the contents of the `value` field.
-        * **URL_PART_DOES_NOT_CONTAIN:** Matches if the concatenation of request URL path and query does not contain the contents of the `value` field.
-        * **URL_PART_DOES_NOT_END_WITH:** Matches if the concatenation of request URL path and query does not end with the contents of the `value` field.
-        * **IP_IS:** Matches if the request originates from one of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
-        * **IP_IS_NOT:** Matches if the request does not originate from any of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
-        * **IP_IN_LIST:** Matches if the request originates from one of the IP addresses contained in the referenced address list. The `value` in this case is OCID of the address list.
-        * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
-        * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
-        * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+class PolicyWafConfigAccessRuleCriteriaArgsDict(TypedDict):
+    condition: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
+    * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.
+    * **URL_IS_NOT:** Matches if the concatenation of request URL path and query is not identical to the contents of the `value` field. URL must start with a `/`.
+    * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field. URL must start with a `/`.
+    * **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
+    * **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
+    * **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
+    * **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
+    * **URL_DOES_NOT_START_WITH:** Matches if the concatenation of request URL path and query does not start with the contents of the `value` field.
+    * **URL_PART_DOES_NOT_CONTAIN:** Matches if the concatenation of request URL path and query does not contain the contents of the `value` field.
+    * **URL_PART_DOES_NOT_END_WITH:** Matches if the concatenation of request URL path and query does not end with the contents of the `value` field.
+    * **IP_IS:** Matches if the request originates from one of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
+    * **IP_IS_NOT:** Matches if the request does not originate from any of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
+    * **IP_IN_LIST:** Matches if the request originates from one of the IP addresses contained in the referenced address list. The `value` in this case is OCID of the address list.
+    * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
+    * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
+    * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
 
-        *Example:* "GET\\nPOST"
-        * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+    *Example:* "GET\\nPOST"
+    * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
 
-        *Example:* "GET\\nPOST"
-        * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
-        * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
-        * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-        * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-        """
-        value: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The criteria value.
-        """
-        is_case_sensitive: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) When enabled, the condition will be matched with case-sensitive rules.
-        """
-elif False:
-    PolicyWafConfigAccessRuleCriteriaArgsDict: TypeAlias = Mapping[str, Any]
+    *Example:* "GET\\nPOST"
+    * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
+    * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
+    * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+    * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The criteria value.
+    """
+    is_case_sensitive: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) When enabled, the condition will be matched with case-sensitive rules.
+    """
 
 @pulumi.input_type
 class PolicyWafConfigAccessRuleCriteriaArgs:
@@ -2364,22 +2317,19 @@ class PolicyWafConfigAccessRuleCriteriaArgs:
         pulumi.set(self, "is_case_sensitive", value)
 
 
-if not MYPY:
-    class PolicyWafConfigAccessRuleResponseHeaderManipulationArgsDict(TypedDict):
-        action: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The action can be one of these values: `ADD_HTTP_RESPONSE_HEADER`, `EXTEND_HTTP_RESPONSE_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
-        """
-        header: pulumi.Input[_builtins.str]
-        """
-        (Updatable) A header field name that conforms to RFC 7230.  Example: `example_header_name`
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
-        """
-elif False:
-    PolicyWafConfigAccessRuleResponseHeaderManipulationArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyWafConfigAccessRuleResponseHeaderManipulationArgsDict(TypedDict):
+    action: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The action can be one of these values: `ADD_HTTP_RESPONSE_HEADER`, `EXTEND_HTTP_RESPONSE_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+    """
+    header: pulumi.Input[_builtins.str]
+    """
+    (Updatable) A header field name that conforms to RFC 7230.  Example: `example_header_name`
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
+    """
 
 @pulumi.input_type
 class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs:
@@ -2434,26 +2384,23 @@ class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class PolicyWafConfigAddressRateLimitingArgsDict(TypedDict):
-        is_enabled: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Enables or disables the address rate limiting Web Application Firewall feature.
-        """
-        allowed_rate_per_address: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
-        """
-        block_response_code: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The response status code returned when a request is blocked. If unspecified, defaults to `503`. The list of available response codes: `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
-        """
-        max_delayed_count_per_address: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
-        """
-elif False:
-    PolicyWafConfigAddressRateLimitingArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyWafConfigAddressRateLimitingArgsDict(TypedDict):
+    is_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Enables or disables the address rate limiting Web Application Firewall feature.
+    """
+    allowed_rate_per_address: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
+    """
+    block_response_code: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The response status code returned when a request is blocked. If unspecified, defaults to `503`. The list of available response codes: `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
+    """
+    max_delayed_count_per_address: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
+    """
 
 @pulumi.input_type
 class PolicyWafConfigAddressRateLimitingArgs:
@@ -2525,40 +2472,37 @@ class PolicyWafConfigAddressRateLimitingArgs:
         pulumi.set(self, "max_delayed_count_per_address", value)
 
 
-if not MYPY:
-    class PolicyWafConfigCachingRuleArgsDict(TypedDict):
-        action: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The action to take when the criteria of a caching rule are met.
-        * **CACHE:** Caches requested content when the criteria of the rule are met.
-        * **BYPASS_CACHE:** Allows requests to bypass the cache and be directed to the origin when the criteria of the rule is met.
-        """
-        criterias: pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCachingRuleCriteriaArgsDict']]]
-        """
-        (Updatable) The array of the rule criteria with condition and value. The caching rule would be applied for the requests that matched any of the listed conditions.
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the caching rule.
-        """
-        caching_duration: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
-        """
-        client_caching_duration: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
-        """
-        is_client_caching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The unique key for the caching rule.
-        """
-elif False:
-    PolicyWafConfigCachingRuleArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyWafConfigCachingRuleArgsDict(TypedDict):
+    action: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The action to take when the criteria of a caching rule are met.
+    * **CACHE:** Caches requested content when the criteria of the rule are met.
+    * **BYPASS_CACHE:** Allows requests to bypass the cache and be directed to the origin when the criteria of the rule is met.
+    """
+    criterias: pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCachingRuleCriteriaArgsDict']]]
+    """
+    (Updatable) The array of the rule criteria with condition and value. The caching rule would be applied for the requests that matched any of the listed conditions.
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the caching rule.
+    """
+    caching_duration: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
+    """
+    client_caching_duration: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
+    """
+    is_client_caching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The unique key for the caching rule.
+    """
 
 @pulumi.input_type
 class PolicyWafConfigCachingRuleArgs:
@@ -2680,24 +2624,21 @@ class PolicyWafConfigCachingRuleArgs:
         pulumi.set(self, "key", value)
 
 
-if not MYPY:
-    class PolicyWafConfigCachingRuleCriteriaArgsDict(TypedDict):
-        condition: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The condition of the caching rule criteria.
-        * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field.
-        * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field.
-        * **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
-        * **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
+class PolicyWafConfigCachingRuleCriteriaArgsDict(TypedDict):
+    condition: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The condition of the caching rule criteria.
+    * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field.
+    * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field.
+    * **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
+    * **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
 
-        URLs must start with a `/`. URLs can't contain restricted double slashes `//`. URLs can't contain the restricted `'` `&` `?` symbols. Resources to cache can only be specified by a URL, any query parameters are ignored.
-        """
-        value: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The value of the caching rule criteria.
-        """
-elif False:
-    PolicyWafConfigCachingRuleCriteriaArgsDict: TypeAlias = Mapping[str, Any]
+    URLs must start with a `/`. URLs can't contain restricted double slashes `//`. URLs can't contain the restricted `'` `&` `?` symbols. Resources to cache can only be specified by a URL, any query parameters are ignored.
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The value of the caching rule criteria.
+    """
 
 @pulumi.input_type
 class PolicyWafConfigCachingRuleCriteriaArgs:
@@ -2748,38 +2689,35 @@ class PolicyWafConfigCachingRuleCriteriaArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class PolicyWafConfigCaptchaArgsDict(TypedDict):
-        failure_message: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
-        """
-        session_expiration_in_seconds: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to `300`.
-        """
-        submit_label: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The text to show on the label of the CAPTCHA challenge submit button. If unspecified, defaults to `Yes, I am human`.
-        """
-        title: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The title used when displaying a CAPTCHA challenge. If unspecified, defaults to `Are you human?`
-        """
-        url: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The unique URL path at which to show the CAPTCHA challenge.
-        """
-        footer_text: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to 'Enter the letters and numbers as they are shown in the image above.'
-        """
-        header_text: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to 'We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.'
-        """
-elif False:
-    PolicyWafConfigCaptchaArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyWafConfigCaptchaArgsDict(TypedDict):
+    failure_message: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
+    """
+    session_expiration_in_seconds: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to `300`.
+    """
+    submit_label: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The text to show on the label of the CAPTCHA challenge submit button. If unspecified, defaults to `Yes, I am human`.
+    """
+    title: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The title used when displaying a CAPTCHA challenge. If unspecified, defaults to `Are you human?`
+    """
+    url: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The unique URL path at which to show the CAPTCHA challenge.
+    """
+    footer_text: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to 'Enter the letters and numbers as they are shown in the image above.'
+    """
+    header_text: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to 'We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.'
+    """
 
 @pulumi.input_type
 class PolicyWafConfigCaptchaArgs:
@@ -2895,22 +2833,19 @@ class PolicyWafConfigCaptchaArgs:
         pulumi.set(self, "header_text", value)
 
 
-if not MYPY:
-    class PolicyWafConfigCustomProtectionRuleArgsDict(TypedDict):
-        action: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The action to take when the custom protection rule is triggered. `DETECT` - Logs the request when the criteria of the custom protection rule are met. `BLOCK` - Blocks the request when the criteria of the custom protection rule are met.
-        """
-        exclusions: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgsDict']]]]
-        """
-        (Updatable)
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
-        """
-elif False:
-    PolicyWafConfigCustomProtectionRuleArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyWafConfigCustomProtectionRuleArgsDict(TypedDict):
+    action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The action to take when the custom protection rule is triggered. `DETECT` - Logs the request when the criteria of the custom protection rule are met. `BLOCK` - Blocks the request when the criteria of the custom protection rule are met.
+    """
+    exclusions: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgsDict']]]]
+    """
+    (Updatable)
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
+    """
 
 @pulumi.input_type
 class PolicyWafConfigCustomProtectionRuleArgs:
@@ -2967,18 +2902,15 @@ class PolicyWafConfigCustomProtectionRuleArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class PolicyWafConfigCustomProtectionRuleExclusionArgsDict(TypedDict):
-        exclusions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
-        """
-        target: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The target of the exclusion.
-        """
-elif False:
-    PolicyWafConfigCustomProtectionRuleExclusionArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyWafConfigCustomProtectionRuleExclusionArgsDict(TypedDict):
+    exclusions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+    """
+    target: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The target of the exclusion.
+    """
 
 @pulumi.input_type
 class PolicyWafConfigCustomProtectionRuleExclusionArgs:
@@ -3019,42 +2951,39 @@ class PolicyWafConfigCustomProtectionRuleExclusionArgs:
         pulumi.set(self, "target", value)
 
 
-if not MYPY:
-    class PolicyWafConfigDeviceFingerprintChallengeArgsDict(TypedDict):
-        is_enabled: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Enables or disables the device fingerprint challenge Web Application Firewall feature.
-        """
-        action: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
-        """
-        action_expiration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
-        """
-        challenge_settings: NotRequired[pulumi.Input['PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgsDict']]
-        """
-        (Updatable) The challenge settings if `action` is set to `BLOCK`.
-        """
-        failure_threshold: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of failed requests allowed before taking action. If unspecified, defaults to `10`.
-        """
-        failure_threshold_expiration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to `60`.
-        """
-        max_address_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
-        """
-        max_address_count_expiration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.
-        """
-elif False:
-    PolicyWafConfigDeviceFingerprintChallengeArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyWafConfigDeviceFingerprintChallengeArgsDict(TypedDict):
+    is_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Enables or disables the device fingerprint challenge Web Application Firewall feature.
+    """
+    action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
+    """
+    action_expiration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
+    """
+    challenge_settings: NotRequired[pulumi.Input['PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgsDict']]
+    """
+    (Updatable) The challenge settings if `action` is set to `BLOCK`.
+    """
+    failure_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of failed requests allowed before taking action. If unspecified, defaults to `10`.
+    """
+    failure_threshold_expiration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to `60`.
+    """
+    max_address_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
+    """
+    max_address_count_expiration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.
+    """
 
 @pulumi.input_type
 class PolicyWafConfigDeviceFingerprintChallengeArgs:
@@ -3190,46 +3119,43 @@ class PolicyWafConfigDeviceFingerprintChallengeArgs:
         pulumi.set(self, "max_address_count_expiration_in_seconds", value)
 
 
-if not MYPY:
-    class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgsDict(TypedDict):
-        block_action: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
-        """
-        block_error_page_code: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
-        """
-        block_error_page_description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-        """
-        block_error_page_message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
-        """
-        block_response_code: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
-        """
-        captcha_footer: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-        """
-        captcha_header: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-        """
-        captcha_submit_label: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-        """
-        captcha_title: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-        """
-elif False:
-    PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgsDict(TypedDict):
+    block_action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
+    """
+    block_error_page_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
+    """
+    block_error_page_description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+    """
+    block_error_page_message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
+    """
+    block_response_code: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
+    """
+    captcha_footer: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
+    """
+    captcha_header: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
+    """
+    captcha_submit_label: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
+    """
+    captcha_title: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
+    """
 
 @pulumi.input_type
 class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs:
@@ -3382,50 +3308,47 @@ class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs:
         pulumi.set(self, "captcha_title", value)
 
 
-if not MYPY:
-    class PolicyWafConfigHumanInteractionChallengeArgsDict(TypedDict):
-        is_enabled: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Enables or disables the human interaction challenge Web Application Firewall feature.
-        """
-        action: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-        """
-        action_expiration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
-        """
-        challenge_settings: NotRequired[pulumi.Input['PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgsDict']]
-        """
-        (Updatable) The challenge settings if `action` is set to `BLOCK`.
-        """
-        failure_threshold: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
-        """
-        failure_threshold_expiration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
-        """
-        interaction_threshold: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
-        """
-        is_nat_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
-        """
-        recording_period_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
-        """
-        set_http_header: NotRequired[pulumi.Input['PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgsDict']]
-        """
-        (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
-        """
-elif False:
-    PolicyWafConfigHumanInteractionChallengeArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyWafConfigHumanInteractionChallengeArgsDict(TypedDict):
+    is_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Enables or disables the human interaction challenge Web Application Firewall feature.
+    """
+    action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+    """
+    action_expiration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
+    """
+    challenge_settings: NotRequired[pulumi.Input['PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgsDict']]
+    """
+    (Updatable) The challenge settings if `action` is set to `BLOCK`.
+    """
+    failure_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
+    """
+    failure_threshold_expiration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
+    """
+    interaction_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
+    """
+    is_nat_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
+    """
+    recording_period_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
+    """
+    set_http_header: NotRequired[pulumi.Input['PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgsDict']]
+    """
+    (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
+    """
 
 @pulumi.input_type
 class PolicyWafConfigHumanInteractionChallengeArgs:
@@ -3593,46 +3516,43 @@ class PolicyWafConfigHumanInteractionChallengeArgs:
         pulumi.set(self, "set_http_header", value)
 
 
-if not MYPY:
-    class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgsDict(TypedDict):
-        block_action: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
-        """
-        block_error_page_code: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
-        """
-        block_error_page_description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-        """
-        block_error_page_message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
-        """
-        block_response_code: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
-        """
-        captcha_footer: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-        """
-        captcha_header: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-        """
-        captcha_submit_label: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-        """
-        captcha_title: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-        """
-elif False:
-    PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgsDict(TypedDict):
+    block_action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
+    """
+    block_error_page_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
+    """
+    block_error_page_description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+    """
+    block_error_page_message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
+    """
+    block_response_code: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
+    """
+    captcha_footer: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
+    """
+    captcha_header: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
+    """
+    captcha_submit_label: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
+    """
+    captcha_title: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
+    """
 
 @pulumi.input_type
 class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs:
@@ -3785,18 +3705,15 @@ class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs:
         pulumi.set(self, "captcha_title", value)
 
 
-if not MYPY:
-    class PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the header.
-        """
-        value: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The value of the header.
-        """
-elif False:
-    PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the header.
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The value of the header.
+    """
 
 @pulumi.input_type
 class PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs:
@@ -3835,46 +3752,43 @@ class PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class PolicyWafConfigJsChallengeArgsDict(TypedDict):
-        is_enabled: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
-        """
-        action: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-        """
-        action_expiration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-        """
-        are_redirects_challenged: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
-        """
-        challenge_settings: NotRequired[pulumi.Input['PolicyWafConfigJsChallengeChallengeSettingsArgsDict']]
-        """
-        (Updatable) The challenge settings if `action` is set to `BLOCK`.
-        """
-        criterias: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigJsChallengeCriteriaArgsDict']]]]
-        """
-        (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
-        """
-        failure_threshold: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
-        """
-        is_nat_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
-        """
-        set_http_header: NotRequired[pulumi.Input['PolicyWafConfigJsChallengeSetHttpHeaderArgsDict']]
-        """
-        (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
-        """
-elif False:
-    PolicyWafConfigJsChallengeArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyWafConfigJsChallengeArgsDict(TypedDict):
+    is_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+    """
+    action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+    """
+    action_expiration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+    """
+    are_redirects_challenged: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
+    """
+    challenge_settings: NotRequired[pulumi.Input['PolicyWafConfigJsChallengeChallengeSettingsArgsDict']]
+    """
+    (Updatable) The challenge settings if `action` is set to `BLOCK`.
+    """
+    criterias: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigJsChallengeCriteriaArgsDict']]]]
+    """
+    (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+    """
+    failure_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
+    """
+    is_nat_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
+    """
+    set_http_header: NotRequired[pulumi.Input['PolicyWafConfigJsChallengeSetHttpHeaderArgsDict']]
+    """
+    (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
+    """
 
 @pulumi.input_type
 class PolicyWafConfigJsChallengeArgs:
@@ -4026,46 +3940,43 @@ class PolicyWafConfigJsChallengeArgs:
         pulumi.set(self, "set_http_header", value)
 
 
-if not MYPY:
-    class PolicyWafConfigJsChallengeChallengeSettingsArgsDict(TypedDict):
-        block_action: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
-        """
-        block_error_page_code: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
-        """
-        block_error_page_description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-        """
-        block_error_page_message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
-        """
-        block_response_code: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
-        """
-        captcha_footer: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-        """
-        captcha_header: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-        """
-        captcha_submit_label: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-        """
-        captcha_title: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-        """
-elif False:
-    PolicyWafConfigJsChallengeChallengeSettingsArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyWafConfigJsChallengeChallengeSettingsArgsDict(TypedDict):
+    block_action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
+    """
+    block_error_page_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
+    """
+    block_error_page_description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+    """
+    block_error_page_message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
+    """
+    block_response_code: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
+    """
+    captcha_footer: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
+    """
+    captcha_header: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
+    """
+    captcha_submit_label: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
+    """
+    captcha_title: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
+    """
 
 @pulumi.input_type
 class PolicyWafConfigJsChallengeChallengeSettingsArgs:
@@ -4218,47 +4129,44 @@ class PolicyWafConfigJsChallengeChallengeSettingsArgs:
         pulumi.set(self, "captcha_title", value)
 
 
-if not MYPY:
-    class PolicyWafConfigJsChallengeCriteriaArgsDict(TypedDict):
-        condition: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
-        * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.
-        * **URL_IS_NOT:** Matches if the concatenation of request URL path and query is not identical to the contents of the `value` field. URL must start with a `/`.
-        * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field. URL must start with a `/`.
-        * **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
-        * **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
-        * **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-        * **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-        * **URL_DOES_NOT_START_WITH:** Matches if the concatenation of request URL path and query does not start with the contents of the `value` field.
-        * **URL_PART_DOES_NOT_CONTAIN:** Matches if the concatenation of request URL path and query does not contain the contents of the `value` field.
-        * **URL_PART_DOES_NOT_END_WITH:** Matches if the concatenation of request URL path and query does not end with the contents of the `value` field.
-        * **IP_IS:** Matches if the request originates from one of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
-        * **IP_IS_NOT:** Matches if the request does not originate from any of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
-        * **IP_IN_LIST:** Matches if the request originates from one of the IP addresses contained in the referenced address list. The `value` in this case is OCID of the address list.
-        * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
-        * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
-        * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+class PolicyWafConfigJsChallengeCriteriaArgsDict(TypedDict):
+    condition: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
+    * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.
+    * **URL_IS_NOT:** Matches if the concatenation of request URL path and query is not identical to the contents of the `value` field. URL must start with a `/`.
+    * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field. URL must start with a `/`.
+    * **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
+    * **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
+    * **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
+    * **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
+    * **URL_DOES_NOT_START_WITH:** Matches if the concatenation of request URL path and query does not start with the contents of the `value` field.
+    * **URL_PART_DOES_NOT_CONTAIN:** Matches if the concatenation of request URL path and query does not contain the contents of the `value` field.
+    * **URL_PART_DOES_NOT_END_WITH:** Matches if the concatenation of request URL path and query does not end with the contents of the `value` field.
+    * **IP_IS:** Matches if the request originates from one of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
+    * **IP_IS_NOT:** Matches if the request does not originate from any of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
+    * **IP_IN_LIST:** Matches if the request originates from one of the IP addresses contained in the referenced address list. The `value` in this case is OCID of the address list.
+    * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
+    * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
+    * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
 
-        *Example:* "GET\\nPOST"
-        * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+    *Example:* "GET\\nPOST"
+    * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
 
-        *Example:* "GET\\nPOST"
-        * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
-        * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
-        * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-        * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-        """
-        value: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The criteria value.
-        """
-        is_case_sensitive: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) When enabled, the condition will be matched with case-sensitive rules.
-        """
-elif False:
-    PolicyWafConfigJsChallengeCriteriaArgsDict: TypeAlias = Mapping[str, Any]
+    *Example:* "GET\\nPOST"
+    * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
+    * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
+    * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+    * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The criteria value.
+    """
+    is_case_sensitive: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) When enabled, the condition will be matched with case-sensitive rules.
+    """
 
 @pulumi.input_type
 class PolicyWafConfigJsChallengeCriteriaArgs:
@@ -4363,18 +4271,15 @@ class PolicyWafConfigJsChallengeCriteriaArgs:
         pulumi.set(self, "is_case_sensitive", value)
 
 
-if not MYPY:
-    class PolicyWafConfigJsChallengeSetHttpHeaderArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the header.
-        """
-        value: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The value of the header.
-        """
-elif False:
-    PolicyWafConfigJsChallengeSetHttpHeaderArgsDict: TypeAlias = Mapping[str, Any]
+class PolicyWafConfigJsChallengeSetHttpHeaderArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the header.
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The value of the header.
+    """
 
 @pulumi.input_type
 class PolicyWafConfigJsChallengeSetHttpHeaderArgs:
@@ -4413,86 +4318,83 @@ class PolicyWafConfigJsChallengeSetHttpHeaderArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class PolicyWafConfigProtectionSettingsArgsDict(TypedDict):
-        allowed_http_methods: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the "Restrict HTTP Request Methods" rule (key: 911100).
-        """
-        block_action: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-        """
-        block_error_page_code: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-        """
-        block_error_page_description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-        """
-        block_error_page_message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-        """
-        block_response_code: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-        """
-        is_response_inspected: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
+class PolicyWafConfigProtectionSettingsArgsDict(TypedDict):
+    allowed_http_methods: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the "Restrict HTTP Request Methods" rule (key: 911100).
+    """
+    block_action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+    """
+    block_error_page_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+    """
+    block_error_page_description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+    """
+    block_error_page_message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+    """
+    block_response_code: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+    """
+    is_response_inspected: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
 
-        **Note:** Only origin responses with a Content-Type matching a value in `mediaTypes` will be inspected.
-        """
-        max_argument_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum number of arguments allowed to be passed to your application before an action is taken. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `255`. This setting only applies if a corresponding protection rule is enabled, such as the "Number of Arguments Limits" rule (key: 960335).  Example: If `maxArgumentCount` to `2` for the Max Number of Arguments protection rule (key: 960335), the following requests would be blocked: `GET /myapp/path?query=one&query=two&query=three` `POST /myapp/path` with Body `{"argument1":"one","argument2":"two","argument3":"three"}`
-        """
-        max_name_length_per_argument: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum length allowed for each argument name, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `400`. This setting only applies if a corresponding protection rule is enabled, such as the "Values Limits" rule (key: 960208).
-        """
-        max_response_size_in_ki_b: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum response size to be fully inspected, in binary kilobytes (KiB). Anything over this limit will be partially inspected. If unspecified, defaults to `1024`.
-        """
-        max_total_name_length_of_arguments: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum length allowed for the sum of the argument name and value, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `64000`. This setting only applies if a corresponding protection rule is enabled, such as the "Total Arguments Limits" rule (key: 960341).
-        """
-        media_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `["text/html", "text/plain", "text/xml"]`.
+    **Note:** Only origin responses with a Content-Type matching a value in `mediaTypes` will be inspected.
+    """
+    max_argument_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum number of arguments allowed to be passed to your application before an action is taken. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `255`. This setting only applies if a corresponding protection rule is enabled, such as the "Number of Arguments Limits" rule (key: 960335).  Example: If `maxArgumentCount` to `2` for the Max Number of Arguments protection rule (key: 960335), the following requests would be blocked: `GET /myapp/path?query=one&query=two&query=three` `POST /myapp/path` with Body `{"argument1":"one","argument2":"two","argument3":"three"}`
+    """
+    max_name_length_per_argument: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum length allowed for each argument name, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `400`. This setting only applies if a corresponding protection rule is enabled, such as the "Values Limits" rule (key: 960208).
+    """
+    max_response_size_in_ki_b: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum response size to be fully inspected, in binary kilobytes (KiB). Anything over this limit will be partially inspected. If unspecified, defaults to `1024`.
+    """
+    max_total_name_length_of_arguments: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum length allowed for the sum of the argument name and value, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `64000`. This setting only applies if a corresponding protection rule is enabled, such as the "Total Arguments Limits" rule (key: 960341).
+    """
+    media_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `["text/html", "text/plain", "text/xml"]`.
 
-        Supported MIME types include:
-        * text/html
-        * text/plain
-        * text/asp
-        * text/css
-        * text/x-script
-        * application/json
-        * text/webviewhtml
-        * text/x-java-source
-        * application/x-javascript
-        * application/javascript
-        * application/ecmascript
-        * text/javascript
-        * text/ecmascript
-        * text/x-script.perl
-        * text/x-script.phyton
-        * application/plain
-        * application/xml
-        * text/xml
-        """
-        recommendations_period_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
+    Supported MIME types include:
+    * text/html
+    * text/plain
+    * text/asp
+    * text/css
+    * text/x-script
+    * application/json
+    * text/webviewhtml
+    * text/x-java-source
+    * application/x-javascript
+    * application/javascript
+    * application/ecmascript
+    * text/javascript
+    * text/ecmascript
+    * text/x-script.perl
+    * text/x-script.phyton
+    * application/plain
+    * application/xml
+    * text/xml
+    """
+    recommendations_period_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
 
-        Use `GET /waasPolicies/{waasPolicyId}/wafRecommendations` to view WAF recommendations.
-        """
-elif False:
-    PolicyWafConfigProtectionSettingsArgsDict: TypeAlias = Mapping[str, Any]
+    Use `GET /waasPolicies/{waasPolicyId}/wafRecommendations` to view WAF recommendations.
+    """
 
 @pulumi.input_type
 class PolicyWafConfigProtectionSettingsArgs:
@@ -4757,26 +4659,23 @@ class PolicyWafConfigProtectionSettingsArgs:
         pulumi.set(self, "recommendations_period_in_days", value)
 
 
-if not MYPY:
-    class PolicyWafConfigWhitelistArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The unique name of the whitelist.
+class PolicyWafConfigWhitelistArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The unique name of the whitelist.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        address_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
-        """
-        addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A set of IP addresses or CIDR notations to include in the whitelist.
-        """
-elif False:
-    PolicyWafConfigWhitelistArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    address_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
+    """
+    addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A set of IP addresses or CIDR notations to include in the whitelist.
+    """
 
 @pulumi.input_type
 class PolicyWafConfigWhitelistArgs:
@@ -4840,21 +4739,18 @@ class PolicyWafConfigWhitelistArgs:
         pulumi.set(self, "addresses", value)
 
 
-if not MYPY:
-    class ProtectionRuleExclusionArgsDict(TypedDict):
-        exclusions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
-        """
-        target: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The target of the exclusion.
+class ProtectionRuleExclusionArgsDict(TypedDict):
+    exclusions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+    """
+    target: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The target of the exclusion.
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ProtectionRuleExclusionArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ProtectionRuleExclusionArgs:
@@ -4901,13 +4797,10 @@ class ProtectionRuleExclusionArgs:
         pulumi.set(self, "target", value)
 
 
-if not MYPY:
-    class GetAddressListsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAddressListsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAddressListsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAddressListsFilterArgs:
@@ -4948,16 +4841,13 @@ class GetAddressListsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCertificatesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The certificate extension name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCertificatesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCertificatesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The certificate extension name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCertificatesFilterArgs:
@@ -5004,13 +4894,10 @@ class GetCertificatesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCustomProtectionRulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCustomProtectionRulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCustomProtectionRulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCustomProtectionRulesFilterArgs:
@@ -5051,13 +4938,10 @@ class GetCustomProtectionRulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetEdgeSubnetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetEdgeSubnetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetEdgeSubnetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetEdgeSubnetsFilterArgs:
@@ -5098,13 +4982,10 @@ class GetEdgeSubnetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetHttpRedirectsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetHttpRedirectsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetHttpRedirectsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetHttpRedirectsFilterArgs:
@@ -5145,16 +5026,13 @@ class GetHttpRedirectsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetProtectionRulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the protection rule.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetProtectionRulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetProtectionRulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the protection rule.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetProtectionRulesFilterArgs:
@@ -5201,16 +5079,13 @@ class GetProtectionRulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWaasPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The unique name of the whitelist.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWaasPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWaasPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The unique name of the whitelist.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWaasPoliciesFilterArgs:

@@ -58,11 +58,13 @@ type GetPrivateApplicationPackageArgs struct {
 
 // A collection of values returned by getPrivateApplicationPackage.
 type GetPrivateApplicationPackageResult struct {
+	// The content URL of the terraform configuration.
 	ContentUrl string `pulumi:"contentUrl"`
 	// The display name of the package.
 	DisplayName string `pulumi:"displayName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id       string `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// The MIME type of the terraform configuration.
 	MimeType string `pulumi:"mimeType"`
 	// The specified package's type.
 	PackageType string `pulumi:"packageType"`
@@ -109,6 +111,7 @@ func (o GetPrivateApplicationPackageResultOutput) ToGetPrivateApplicationPackage
 	return o
 }
 
+// The content URL of the terraform configuration.
 func (o GetPrivateApplicationPackageResultOutput) ContentUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateApplicationPackageResult) string { return v.ContentUrl }).(pulumi.StringOutput)
 }
@@ -123,6 +126,7 @@ func (o GetPrivateApplicationPackageResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateApplicationPackageResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The MIME type of the terraform configuration.
 func (o GetPrivateApplicationPackageResultOutput) MimeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateApplicationPackageResult) string { return v.MimeType }).(pulumi.StringOutput)
 }

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
+    /// This resource provides the Managed Instance Group Detach Software Sources Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ManagedInstanceGroupDetachSoftwareSourcesManagement
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+    /// 
+    /// Detaches the specified software sources from a managed instance group.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -36,7 +43,7 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// ## Import
     /// 
-    /// ManagedInstanceGroupDetachSoftwareSourcesManagement can be imported using the `id`, e.g.
+    /// ManagedInstanceGroupDetachSoftwareSourcesManagement can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:OsManagementHub/managedInstanceGroupDetachSoftwareSourcesManagement:ManagedInstanceGroupDetachSoftwareSourcesManagement test_managed_instance_group_detach_software_sources_management "id"

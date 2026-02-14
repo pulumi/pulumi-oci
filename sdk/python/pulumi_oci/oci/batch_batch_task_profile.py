@@ -348,6 +348,13 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
                  min_ocpus: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
+        This resource provides the Batch Task Profile resource in Oracle Cloud Infrastructure Batch service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/batch
+
+        Creates a batch task profile.
+
         ## Example Usage
 
         ```python
@@ -397,6 +404,13 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
                  args: BatchBatchTaskProfileArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Batch Task Profile resource in Oracle Cloud Infrastructure Batch service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/batch
+
+        Creates a batch task profile.
+
         ## Example Usage
 
         ```python

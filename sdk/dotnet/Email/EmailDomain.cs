@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Email
 {
     /// <summary>
+    /// This resource provides the Email Domain resource in Oracle Cloud Infrastructure Email service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/email/latest/EmailDomain
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/email
+    /// 
+    /// Creates a new email domain. Avoid entering confidential information.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,7 +48,7 @@ namespace Pulumi.Oci.Email
     /// 
     /// ## Import
     /// 
-    /// EmailDomains can be imported using the `id`, e.g.
+    /// EmailDomains can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Email/emailDomain:EmailDomain test_email_domain "id"

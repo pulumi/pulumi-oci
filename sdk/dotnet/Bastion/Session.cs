@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Bastion
 {
     /// <summary>
+    /// This resource provides the Session resource in Oracle Cloud Infrastructure Bastion service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/bastion/latest/Session
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/bastion
+    /// 
+    /// Creates a new session in a bastion. A bastion session lets authorized users connect to a target resource for a predetermined amount of time. The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -46,7 +53,7 @@ namespace Pulumi.Oci.Bastion
     /// 
     /// ## Import
     /// 
-    /// Sessions can be imported using the `id`, e.g.
+    /// Sessions can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Bastion/session:Session test_session "id"

@@ -10,6 +10,15 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
+    /// This resource provides the Db Node Console Connection resource in Oracle Cloud Infrastructure Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/DbNodeConsoleConnection
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+    /// 
+    /// Creates a new console connection to the specified database node.
+    /// After the console connection has been created and is available,
+    /// you connect to the console using SSH.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -36,7 +45,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// DbNodeConsoleConnections can be imported using the `id`, e.g.
+    /// DbNodeConsoleConnections can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection test_db_node_console_connection "dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"

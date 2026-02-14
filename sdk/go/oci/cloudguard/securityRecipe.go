@@ -12,6 +12,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/SecurityRecipe
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+//
+// Creates a security zone recipe (SecurityRecipe resource), using parameters
+// passed in a CreateSecurityRecipeDetails resource.
+//
 // ## Example Usage
 //
 // ```go

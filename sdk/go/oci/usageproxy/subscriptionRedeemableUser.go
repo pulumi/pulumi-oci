@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/usage-proxy/latest/SubscriptionRedeemableUser
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/usage_proxy
+//
+// Adds the list of redeemable user summary for a subscription ID.
+//
 // ## Example Usage
 //
 // ```go

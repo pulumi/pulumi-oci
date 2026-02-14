@@ -114,6 +114,7 @@ def get_autonomous_database_wallet(autonomous_database_id: Optional[_builtins.st
 
 
     :param _builtins.str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param _builtins.bool base64_encode_content: Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
     :param _builtins.str generate_type: The type of wallet to generate.
            
            **Serverless instance usage:**
@@ -154,6 +155,7 @@ def get_autonomous_database_wallet_output(autonomous_database_id: Optional[pulum
 
 
     :param _builtins.str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param _builtins.bool base64_encode_content: Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
     :param _builtins.str generate_type: The type of wallet to generate.
            
            **Serverless instance usage:**

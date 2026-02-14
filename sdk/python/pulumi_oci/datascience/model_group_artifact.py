@@ -185,6 +185,13 @@ class ModelGroupArtifact(pulumi.CustomResource):
                  model_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Model Group Artifact resource in Oracle Cloud Infrastructure Data Science service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/ModelGroupArtifact
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+
+        Creates artifact for the Model Group.
+
         ## Example Usage
 
         ```python
@@ -224,6 +231,13 @@ class ModelGroupArtifact(pulumi.CustomResource):
                  args: ModelGroupArtifactArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Model Group Artifact resource in Oracle Cloud Infrastructure Data Science service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/ModelGroupArtifact
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+
+        Creates artifact for the Model Group.
+
         ## Example Usage
 
         ```python

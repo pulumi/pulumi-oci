@@ -10,6 +10,24 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
+    /// This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/ApiKey
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+    /// 
+    /// Uploads an API signing key for the specified user.
+    /// 
+    /// Every user has permission to use this operation to upload a key for *their own user ID*. An
+    /// administrator in your organization does not need to write a policy to give users this ability.
+    /// To compare, administrators who have permission to the tenancy can use this operation to upload a
+    /// key for any user, including themselves.
+    /// 
+    /// **Important:** Even though you have permission to upload an API key, you might not yet
+    /// have permission to do much else. If you try calling an operation unrelated to your own credential
+    /// management (e.g., `ListUsers`, `LaunchInstance`) and receive an "unauthorized" error,
+    /// check with an administrator to confirm which IAM Service group(s) you're in and what access
+    /// you have. Also confirm you're working in the correct compartment.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -31,7 +49,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Import
     /// 
-    /// ApiKeys can be imported using the `id`, e.g.
+    /// ApiKeys can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Identity/apiKey:ApiKey test_api_key "users/{userId}/apiKeys/{fingerprint}"

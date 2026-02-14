@@ -10,6 +10,17 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
+    /// This resource provides the Software Source Replace Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/SoftwareSourceReplacePackagesManagement
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+    /// 
+    /// Replaces packages in a software source with the provided list of packages. This operation can only be done for custom software sources that are not created using filters.
+    /// Packages can be of the format:
+    ///  * name (for example: git). If isLatestContentOnly is true, only the latest version of the package will be added, otherwise all versions of the package will be added.
+    ///  * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
+    ///  * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -31,7 +42,7 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// ## Import
     /// 
-    /// SoftwareSourceReplacePackagesManagement can be imported using the `id`, e.g.
+    /// SoftwareSourceReplacePackagesManagement can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:OsManagementHub/softwareSourceReplacePackagesManagement:SoftwareSourceReplacePackagesManagement test_software_source_replace_packages_management "id"

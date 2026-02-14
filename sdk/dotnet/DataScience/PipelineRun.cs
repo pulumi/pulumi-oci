@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience
 {
     /// <summary>
+    /// This resource provides the Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/PipelineRun
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+    /// 
+    /// Creates a new PipelineRun.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -161,7 +168,7 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// ## Import
     /// 
-    /// PipelineRuns can be imported using the `id`, e.g.
+    /// PipelineRuns can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataScience/pipelineRun:PipelineRun test_pipeline_run "id"

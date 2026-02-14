@@ -10,6 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Ocvp
 {
     /// <summary>
+    /// This resource provides the Datastore resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vmware/latest/Datastore
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/ocvp
+    /// 
+    /// Creates a Oracle Cloud VMware Solution Datastore.
+    /// 
+    /// Use the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/WorkRequest/) operations to track the
+    /// creation of the Datastore.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -42,7 +52,7 @@ namespace Pulumi.Oci.Ocvp
     /// 
     /// ## Import
     /// 
-    /// Datastores can be imported using the `id`, e.g.
+    /// Datastores can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Ocvp/datastore:Datastore test_datastore "id"

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Artifacts
 {
     /// <summary>
+    /// This resource provides the Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/registry/latest/ContainerRepository
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/artifacts
+    /// 
+    /// Create a new empty container repository. Avoid entering confidential information.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -46,7 +53,7 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// ## Import
     /// 
-    /// ContainerRepositories can be imported using the `id`, e.g.
+    /// ContainerRepositories can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "container/repositories/{repositoryId}"

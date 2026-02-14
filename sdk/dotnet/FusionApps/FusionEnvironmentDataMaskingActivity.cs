@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FusionApps
 {
     /// <summary>
+    /// This resource provides the Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fusion-applications/latest/FusionEnvironmentDataMaskingActivity
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fusionapps
+    /// 
+    /// Creates a new DataMaskingActivity.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -31,7 +38,7 @@ namespace Pulumi.Oci.FusionApps
     /// 
     /// ## Import
     /// 
-    /// FusionEnvironmentDataMaskingActivities can be imported using the `id`, e.g.
+    /// FusionEnvironmentDataMaskingActivities can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity test_fusion_environment_data_masking_activity "fusionEnvironments/{fusionEnvironmentId}/dataMaskingActivities/{dataMaskingActivityId}"

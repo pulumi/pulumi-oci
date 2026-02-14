@@ -257,16 +257,11 @@ __all__ = [
     'GetWlmsWlsDomainsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class ApiPlatformApiPlatformInstanceIdcsAppArgsDict(TypedDict):
-        url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        IDCS URL of the app
-        """
-elif False:
-    ApiPlatformApiPlatformInstanceIdcsAppArgsDict: TypeAlias = Mapping[str, Any]
+class ApiPlatformApiPlatformInstanceIdcsAppArgsDict(TypedDict):
+    url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    IDCS URL of the app
+    """
 
 @pulumi.input_type
 class ApiPlatformApiPlatformInstanceIdcsAppArgs:
@@ -291,18 +286,15 @@ class ApiPlatformApiPlatformInstanceIdcsAppArgs:
         pulumi.set(self, "url", value)
 
 
-if not MYPY:
-    class ApiPlatformApiPlatformInstanceUriArgsDict(TypedDict):
-        developers_portal_uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Developer's Portal URI of the instance (/developers)
-        """
-        management_portal_uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Management Portal URI of the instance (/apiplatform)
-        """
-elif False:
-    ApiPlatformApiPlatformInstanceUriArgsDict: TypeAlias = Mapping[str, Any]
+class ApiPlatformApiPlatformInstanceUriArgsDict(TypedDict):
+    developers_portal_uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Developer's Portal URI of the instance (/developers)
+    """
+    management_portal_uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Management Portal URI of the instance (/apiplatform)
+    """
 
 @pulumi.input_type
 class ApiPlatformApiPlatformInstanceUriArgs:
@@ -343,22 +335,19 @@ class ApiPlatformApiPlatformInstanceUriArgs:
         pulumi.set(self, "management_portal_uri", value)
 
 
-if not MYPY:
-    class ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict(TypedDict):
-        api_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) name of the api which needs to be protected.
-        """
-        attribute_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) list of attributes belonging to the above api which needs to be protected.
-        """
-        entity_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) type of the entity which needs to be protected.
-        """
-elif False:
-    ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict: TypeAlias = Mapping[str, Any]
+class ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict(TypedDict):
+    api_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) name of the api which needs to be protected.
+    """
+    attribute_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) list of attributes belonging to the above api which needs to be protected.
+    """
+    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) type of the entity which needs to be protected.
+    """
 
 @pulumi.input_type
 class ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs:
@@ -414,30 +403,27 @@ class ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs:
         pulumi.set(self, "entity_type", value)
 
 
-if not MYPY:
-    class ApiaccesscontrolPrivilegedApiRequestApproverDetailArgsDict(TypedDict):
-        approval_action: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The action done by the approver.
-        """
-        approval_comment: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Comment specified by the approver of the request.
-        """
-        approver_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The userId of the approver.
-        """
-        time_approved_for_access: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time for when the privilegedApi request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
-        """
-        time_of_authorization: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time when the privilegedApi request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
-        """
-elif False:
-    ApiaccesscontrolPrivilegedApiRequestApproverDetailArgsDict: TypeAlias = Mapping[str, Any]
+class ApiaccesscontrolPrivilegedApiRequestApproverDetailArgsDict(TypedDict):
+    approval_action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The action done by the approver.
+    """
+    approval_comment: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Comment specified by the approver of the request.
+    """
+    approver_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The userId of the approver.
+    """
+    time_approved_for_access: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time for when the privilegedApi request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+    """
+    time_of_authorization: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time when the privilegedApi request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+    """
 
 @pulumi.input_type
 class ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs:
@@ -526,18 +512,15 @@ class ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs:
         pulumi.set(self, "time_of_authorization", value)
 
 
-if not MYPY:
-    class ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict(TypedDict):
-        api_name: pulumi.Input[_builtins.str]
-        """
-        name of the api which needs to be protected.
-        """
-        attribute_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        list of attributes belonging to the above api which needs to be protected.
-        """
-elif False:
-    ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict: TypeAlias = Mapping[str, Any]
+class ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict(TypedDict):
+    api_name: pulumi.Input[_builtins.str]
+    """
+    name of the api which needs to be protected.
+    """
+    attribute_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    list of attributes belonging to the above api which needs to be protected.
+    """
 
 @pulumi.input_type
 class ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs:
@@ -577,38 +560,35 @@ class ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs:
         pulumi.set(self, "attribute_names", value)
 
 
-if not MYPY:
-    class BatchBatchContextFleetArgsDict(TypedDict):
-        max_concurrent_tasks: pulumi.Input[_builtins.int]
-        """
-        Maximum number of concurrent tasks for the service managed fleet.
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        Name of the service managed fleet.
-        """
-        shape: pulumi.Input['BatchBatchContextFleetShapeArgsDict']
-        """
-        Shape of the fleet. Describes hardware resources of each node in the fleet.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the fleet. Also serves as a discriminator for sub-entities.
-        """
-        details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message that describes the current state of the service manage fleet configuration in more detail.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
+class BatchBatchContextFleetArgsDict(TypedDict):
+    max_concurrent_tasks: pulumi.Input[_builtins.int]
+    """
+    Maximum number of concurrent tasks for the service managed fleet.
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    Name of the service managed fleet.
+    """
+    shape: pulumi.Input['BatchBatchContextFleetShapeArgsDict']
+    """
+    Shape of the fleet. Describes hardware resources of each node in the fleet.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the fleet. Also serves as a discriminator for sub-entities.
+    """
+    details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message that describes the current state of the service manage fleet configuration in more detail.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    BatchBatchContextFleetArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class BatchBatchContextFleetArgs:
@@ -717,22 +697,19 @@ class BatchBatchContextFleetArgs:
         pulumi.set(self, "state", value)
 
 
-if not MYPY:
-    class BatchBatchContextFleetShapeArgsDict(TypedDict):
-        memory_in_gbs: pulumi.Input[_builtins.int]
-        """
-        Amount of memory in GBs required by the shape.
-        """
-        ocpus: pulumi.Input[_builtins.int]
-        """
-        Number of OCPUs required by the shape.
-        """
-        shape_name: pulumi.Input[_builtins.str]
-        """
-        The name of the shape.
-        """
-elif False:
-    BatchBatchContextFleetShapeArgsDict: TypeAlias = Mapping[str, Any]
+class BatchBatchContextFleetShapeArgsDict(TypedDict):
+    memory_in_gbs: pulumi.Input[_builtins.int]
+    """
+    Amount of memory in GBs required by the shape.
+    """
+    ocpus: pulumi.Input[_builtins.int]
+    """
+    Number of OCPUs required by the shape.
+    """
+    shape_name: pulumi.Input[_builtins.str]
+    """
+    The name of the shape.
+    """
 
 @pulumi.input_type
 class BatchBatchContextFleetShapeArgs:
@@ -786,26 +763,23 @@ class BatchBatchContextFleetShapeArgs:
         pulumi.set(self, "shape_name", value)
 
 
-if not MYPY:
-    class BatchBatchContextJobPriorityConfigurationArgsDict(TypedDict):
-        tag_key: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the tag key.
-        """
-        tag_namespace: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the corresponding tag namespace.
-        """
-        values: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) Mapping of tag value to its priority.
-        """
-        weight: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Weight associated with the tag key. Percentage point is the unit of measurement.
-        """
-elif False:
-    BatchBatchContextJobPriorityConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class BatchBatchContextJobPriorityConfigurationArgsDict(TypedDict):
+    tag_key: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the tag key.
+    """
+    tag_namespace: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the corresponding tag namespace.
+    """
+    values: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) Mapping of tag value to its priority.
+    """
+    weight: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Weight associated with the tag key. Percentage point is the unit of measurement.
+    """
 
 @pulumi.input_type
 class BatchBatchContextJobPriorityConfigurationArgs:
@@ -874,22 +848,19 @@ class BatchBatchContextJobPriorityConfigurationArgs:
         pulumi.set(self, "weight", value)
 
 
-if not MYPY:
-    class BatchBatchContextLoggingConfigurationArgsDict(TypedDict):
-        log_group_id: pulumi.Input[_builtins.str]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
-        log_id: pulumi.Input[_builtins.str]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        Discriminator for sub-entities.
-        """
-elif False:
-    BatchBatchContextLoggingConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class BatchBatchContextLoggingConfigurationArgsDict(TypedDict):
+    log_group_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+    """
+    log_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    Discriminator for sub-entities.
+    """
 
 @pulumi.input_type
 class BatchBatchContextLoggingConfigurationArgs:
@@ -943,22 +914,19 @@ class BatchBatchContextLoggingConfigurationArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class BatchBatchContextNetworkArgsDict(TypedDict):
-        subnet_id: pulumi.Input[_builtins.str]
-        """
-        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
-        """
-        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
-        """
-        vnics: NotRequired[pulumi.Input[Sequence[pulumi.Input['BatchBatchContextNetworkVnicArgsDict']]]]
-        """
-        A list of private endpoint's VNICs.
-        """
-elif False:
-    BatchBatchContextNetworkArgsDict: TypeAlias = Mapping[str, Any]
+class BatchBatchContextNetworkArgsDict(TypedDict):
+    subnet_id: pulumi.Input[_builtins.str]
+    """
+    [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+    """
+    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+    """
+    vnics: NotRequired[pulumi.Input[Sequence[pulumi.Input['BatchBatchContextNetworkVnicArgsDict']]]]
+    """
+    A list of private endpoint's VNICs.
+    """
 
 @pulumi.input_type
 class BatchBatchContextNetworkArgs:
@@ -1014,18 +982,15 @@ class BatchBatchContextNetworkArgs:
         pulumi.set(self, "vnics", value)
 
 
-if not MYPY:
-    class BatchBatchContextNetworkVnicArgsDict(TypedDict):
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC, which resides in the customer's VCN.
-        """
-        source_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        A list of private IP addresses (in the customer's VCN) that represent access points for the service.
-        """
-elif False:
-    BatchBatchContextNetworkVnicArgsDict: TypeAlias = Mapping[str, Any]
+class BatchBatchContextNetworkVnicArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC, which resides in the customer's VCN.
+    """
+    source_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+    """
 
 @pulumi.input_type
 class BatchBatchContextNetworkVnicArgs:
@@ -1066,22 +1031,19 @@ class BatchBatchContextNetworkVnicArgs:
         pulumi.set(self, "source_ips", value)
 
 
-if not MYPY:
-    class BatchBatchTaskEnvironmentSecurityContextArgsDict(TypedDict):
-        fs_group: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        A special supplemental group ID that applies to all containers in a pod.
-        """
-        run_as_group: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Group ID for running processes inside the container.
-        """
-        run_as_user: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        User ID for running processes inside the container.
-        """
-elif False:
-    BatchBatchTaskEnvironmentSecurityContextArgsDict: TypeAlias = Mapping[str, Any]
+class BatchBatchTaskEnvironmentSecurityContextArgsDict(TypedDict):
+    fs_group: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    A special supplemental group ID that applies to all containers in a pod.
+    """
+    run_as_group: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Group ID for running processes inside the container.
+    """
+    run_as_user: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    User ID for running processes inside the container.
+    """
 
 @pulumi.input_type
 class BatchBatchTaskEnvironmentSecurityContextArgs:
@@ -1138,30 +1100,27 @@ class BatchBatchTaskEnvironmentSecurityContextArgs:
         pulumi.set(self, "run_as_user", value)
 
 
-if not MYPY:
-    class BatchBatchTaskEnvironmentVolumeArgsDict(TypedDict):
-        local_mount_directory_path: pulumi.Input[_builtins.str]
-        """
-        The local path to mount the NFS share to.
-        """
-        mount_target_export_path: pulumi.Input[_builtins.str]
-        """
-        The path to the directory on the NFS server to be mounted.
-        """
-        mount_target_fqdn: pulumi.Input[_builtins.str]
-        """
-        The FQDN of the NFS server to connect to.
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        The name of the NfsVolume.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        Discriminator for sub-entities.
-        """
-elif False:
-    BatchBatchTaskEnvironmentVolumeArgsDict: TypeAlias = Mapping[str, Any]
+class BatchBatchTaskEnvironmentVolumeArgsDict(TypedDict):
+    local_mount_directory_path: pulumi.Input[_builtins.str]
+    """
+    The local path to mount the NFS share to.
+    """
+    mount_target_export_path: pulumi.Input[_builtins.str]
+    """
+    The path to the directory on the NFS server to be mounted.
+    """
+    mount_target_fqdn: pulumi.Input[_builtins.str]
+    """
+    The FQDN of the NFS server to connect to.
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    The name of the NfsVolume.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    Discriminator for sub-entities.
+    """
 
 @pulumi.input_type
 class BatchBatchTaskEnvironmentVolumeArgs:
@@ -1245,34 +1204,31 @@ class BatchBatchTaskEnvironmentVolumeArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict(TypedDict):
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The ID of the Discovered Resource.
-        """
-        location: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Discovered Resource Location.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Discovered Resource Name.
-        """
-        properties: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Discovered Resource's properties.
-        """
-        resource_group: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Discovered Resource Group Name.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Discovered Resource Type.
-        """
-elif False:
-    DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict: TypeAlias = Mapping[str, Any]
+class DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The ID of the Discovered Resource.
+    """
+    location: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Discovered Resource Location.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Discovered Resource Name.
+    """
+    properties: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Discovered Resource's properties.
+    """
+    resource_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Discovered Resource Group Name.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Discovered Resource Type.
+    """
 
 @pulumi.input_type
 class DbmulticloudMultiCloudResourceDiscoveryResourceArgs:
@@ -1377,34 +1333,31 @@ class DbmulticloudMultiCloudResourceDiscoveryResourceArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict(TypedDict):
-        role_arn: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Amazon resource name AWSof the IAM role.
-        """
-        service_private_endpoint: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Private endpoint of the AWS service.
-        """
-        service_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of service.
+class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict(TypedDict):
+    role_arn: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Amazon resource name AWSof the IAM role.
+    """
+    service_private_endpoint: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Private endpoint of the AWS service.
+    """
+    service_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of service.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        assume_role_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Assume role  status.
-        """
-        aws_nodes: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgsDict']]]]
-        """
-        List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
-        """
-elif False:
-    DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    assume_role_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Assume role  status.
+    """
+    aws_nodes: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgsDict']]]]
+    """
+    List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+    """
 
 @pulumi.input_type
 class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs:
@@ -1498,26 +1451,23 @@ class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs:
         pulumi.set(self, "aws_nodes", value)
 
 
-if not MYPY:
-    class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgsDict(TypedDict):
-        host_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        AWS host ID.
-        """
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        AWS Host name or Identity Connector name.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current status of the AWS Identity Connector resource.
-        """
-        time_last_checked: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
-        """
-elif False:
-    DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgsDict: TypeAlias = Mapping[str, Any]
+class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgsDict(TypedDict):
+    host_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    AWS host ID.
+    """
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    AWS Host name or Identity Connector name.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current status of the AWS Identity Connector resource.
+    """
+    time_last_checked: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+    """
 
 @pulumi.input_type
 class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs:
@@ -1590,30 +1540,27 @@ class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs:
         pulumi.set(self, "time_last_checked", value)
 
 
-if not MYPY:
-    class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict(TypedDict):
-        current_arc_agent_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
-        """
-        host_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Host ID.
-        """
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Host name or Azure Arc Agent name.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current status of the Azure Arc Agent resource.
-        """
-        time_last_checked: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
-        """
-elif False:
-    DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict: TypeAlias = Mapping[str, Any]
+class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict(TypedDict):
+    current_arc_agent_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
+    """
+    host_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Host ID.
+    """
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Host name or Azure Arc Agent name.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current status of the Azure Arc Agent resource.
+    """
+    time_last_checked: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+    """
 
 @pulumi.input_type
 class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs:
@@ -1702,26 +1649,23 @@ class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs:
         pulumi.set(self, "time_last_checked", value)
 
 
-if not MYPY:
-    class DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgsDict(TypedDict):
-        host_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Host ID.
-        """
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Host Name or Identity Connector name.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current status of the GCP Identity Connector resource.
-        """
-        time_last_checked: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        time when the GCP Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
-        """
-elif False:
-    DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgsDict: TypeAlias = Mapping[str, Any]
+class DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgsDict(TypedDict):
+    host_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Host ID.
+    """
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Host Name or Identity Connector name.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current status of the GCP Identity Connector resource.
+    """
+    time_last_checked: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    time when the GCP Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+    """
 
 @pulumi.input_type
 class DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs:
@@ -1794,55 +1738,52 @@ class DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs:
         pulumi.set(self, "time_last_checked", value)
 
 
-if not MYPY:
-    class DifStackAdbArgsDict(TypedDict):
-        admin_password_id: pulumi.Input[_builtins.str]
-        """
-        The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID for admin password.
-        """
-        data_storage_size_in_tbs: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database.
-        """
-        db_version: pulumi.Input[_builtins.str]
-        """
-        (Updatable) A valid Oracle Database version for Autonomous Database.
-        """
-        db_workload: pulumi.Input[_builtins.str]
-        """
-        DB Workload to be used with ADB. Accepted values are OLTP, DW.
-        """
-        ecpu: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The compute amount (ECPUs) available to the database.
-        """
-        instance_id: pulumi.Input[_builtins.str]
-        """
-        Id for the adw instance.
-        """
-        artifact_object_storage_path: NotRequired[pulumi.Input[_builtins.str]]
-        db_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackAdbDbCredentialArgsDict']]]]
-        """
-        DB credential details.
-        """
-        is_mtls_connection_required: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies if the Autonomous Database requires mTLS connections.
-        """
-        is_public: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true then subnetId should not be provided.
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the subnet the Autonomous Database is associated with.
-        """
-        tools_public_access: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        This is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Allowed only when subnetId is provided (private ADB).
-        """
-elif False:
-    DifStackAdbArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackAdbArgsDict(TypedDict):
+    admin_password_id: pulumi.Input[_builtins.str]
+    """
+    The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID for admin password.
+    """
+    data_storage_size_in_tbs: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database.
+    """
+    db_version: pulumi.Input[_builtins.str]
+    """
+    (Updatable) A valid Oracle Database version for Autonomous Database.
+    """
+    db_workload: pulumi.Input[_builtins.str]
+    """
+    DB Workload to be used with ADB. Accepted values are OLTP, DW.
+    """
+    ecpu: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The compute amount (ECPUs) available to the database.
+    """
+    instance_id: pulumi.Input[_builtins.str]
+    """
+    Id for the adw instance.
+    """
+    artifact_object_storage_path: NotRequired[pulumi.Input[_builtins.str]]
+    db_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackAdbDbCredentialArgsDict']]]]
+    """
+    DB credential details.
+    """
+    is_mtls_connection_required: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies if the Autonomous Database requires mTLS connections.
+    """
+    is_public: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true then subnetId should not be provided.
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the subnet the Autonomous Database is associated with.
+    """
+    tools_public_access: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    This is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Allowed only when subnetId is provided (private ADB).
+    """
 
 @pulumi.input_type
 class DifStackAdbArgs:
@@ -2033,22 +1974,19 @@ class DifStackAdbArgs:
         pulumi.set(self, "tools_public_access", value)
 
 
-if not MYPY:
-    class DifStackAdbDbCredentialArgsDict(TypedDict):
-        secret_id: pulumi.Input[_builtins.str]
-        """
-        Vault secret OCID containing the corresponding user password.
-        """
-        user_name: pulumi.Input[_builtins.str]
-        """
-        Username for ADB to be created or updated.
-        """
-        user_type: pulumi.Input[_builtins.str]
-        """
-        Type of the user. Allowed values are "ADMIN" or "CUSTOM" or "GGCS".
-        """
-elif False:
-    DifStackAdbDbCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackAdbDbCredentialArgsDict(TypedDict):
+    secret_id: pulumi.Input[_builtins.str]
+    """
+    Vault secret OCID containing the corresponding user password.
+    """
+    user_name: pulumi.Input[_builtins.str]
+    """
+    Username for ADB to be created or updated.
+    """
+    user_type: pulumi.Input[_builtins.str]
+    """
+    Type of the user. Allowed values are "ADMIN" or "CUSTOM" or "GGCS".
+    """
 
 @pulumi.input_type
 class DifStackAdbDbCredentialArgs:
@@ -2102,18 +2040,15 @@ class DifStackAdbDbCredentialArgs:
         pulumi.set(self, "user_type", value)
 
 
-if not MYPY:
-    class DifStackAidataplatformArgsDict(TypedDict):
-        default_workspace_name: pulumi.Input[_builtins.str]
-        """
-        A default workspace will be created with this name.
-        """
-        instance_id: pulumi.Input[_builtins.str]
-        """
-        Identifier for AIDP instance to be provisioned.
-        """
-elif False:
-    DifStackAidataplatformArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackAidataplatformArgsDict(TypedDict):
+    default_workspace_name: pulumi.Input[_builtins.str]
+    """
+    A default workspace will be created with this name.
+    """
+    instance_id: pulumi.Input[_builtins.str]
+    """
+    Identifier for AIDP instance to be provisioned.
+    """
 
 @pulumi.input_type
 class DifStackAidataplatformArgs:
@@ -2152,62 +2087,59 @@ class DifStackAidataplatformArgs:
         pulumi.set(self, "instance_id", value)
 
 
-if not MYPY:
-    class DifStackDataflowArgsDict(TypedDict):
-        driver_shape: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The VM shape for the driver. Sets the driver cores and memory.
-        """
-        executor_shape: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The VM shape for the executors. Sets the executor cores and memory.
-        """
-        instance_id: pulumi.Input[_builtins.str]
-        """
-        Id for dataflow instance
-        """
-        log_bucket_instance_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) InstanceId of log bucket created as part of objectstorage service in stack. Used for storing application run logs.
-        """
-        num_executors: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The number of executor VMs requested.
-        """
-        spark_version: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The Spark version utilized to run the application.
-        """
-        archive_uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Contains the archive from object storage bucket which can be added as dependency to data flow application.
-        """
-        connections: NotRequired[pulumi.Input['DifStackDataflowConnectionsArgsDict']]
-        """
-        (Updatable) Details for connections to other services from Dataflow.
-        """
-        driver_shape_config: NotRequired[pulumi.Input['DifStackDataflowDriverShapeConfigArgsDict']]
-        """
-        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
-        execute: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Contains the main file (py/jar) along with parameters & configuration to be passed to the DataFlow run.
-        """
-        executor_shape_config: NotRequired[pulumi.Input['DifStackDataflowExecutorShapeConfigArgsDict']]
-        """
-        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
-        private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the already provisioned dataflow private endpoint.
-        """
-        warehouse_bucket_instance_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) InstanceId of warehouse bucket created as part of objectstorage service in stack. Mandatory for SQL applications.
-        """
-elif False:
-    DifStackDataflowArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackDataflowArgsDict(TypedDict):
+    driver_shape: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The VM shape for the driver. Sets the driver cores and memory.
+    """
+    executor_shape: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The VM shape for the executors. Sets the executor cores and memory.
+    """
+    instance_id: pulumi.Input[_builtins.str]
+    """
+    Id for dataflow instance
+    """
+    log_bucket_instance_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) InstanceId of log bucket created as part of objectstorage service in stack. Used for storing application run logs.
+    """
+    num_executors: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The number of executor VMs requested.
+    """
+    spark_version: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The Spark version utilized to run the application.
+    """
+    archive_uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Contains the archive from object storage bucket which can be added as dependency to data flow application.
+    """
+    connections: NotRequired[pulumi.Input['DifStackDataflowConnectionsArgsDict']]
+    """
+    (Updatable) Details for connections to other services from Dataflow.
+    """
+    driver_shape_config: NotRequired[pulumi.Input['DifStackDataflowDriverShapeConfigArgsDict']]
+    """
+    (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+    """
+    execute: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Contains the main file (py/jar) along with parameters & configuration to be passed to the DataFlow run.
+    """
+    executor_shape_config: NotRequired[pulumi.Input['DifStackDataflowExecutorShapeConfigArgsDict']]
+    """
+    (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+    """
+    private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the already provisioned dataflow private endpoint.
+    """
+    warehouse_bucket_instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) InstanceId of warehouse bucket created as part of objectstorage service in stack. Mandatory for SQL applications.
+    """
 
 @pulumi.input_type
 class DifStackDataflowArgs:
@@ -2418,18 +2350,15 @@ class DifStackDataflowArgs:
         pulumi.set(self, "warehouse_bucket_instance_id", value)
 
 
-if not MYPY:
-    class DifStackDataflowConnectionsArgsDict(TypedDict):
-        connection_details: pulumi.Input['DifStackDataflowConnectionsConnectionDetailsArgsDict']
-        """
-        (Updatable) Details of services to create private endpoint.
-        """
-        subnet_id: pulumi.Input[_builtins.str]
-        """
-        OCID of the private subnet
-        """
-elif False:
-    DifStackDataflowConnectionsArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackDataflowConnectionsArgsDict(TypedDict):
+    connection_details: pulumi.Input['DifStackDataflowConnectionsConnectionDetailsArgsDict']
+    """
+    (Updatable) Details of services to create private endpoint.
+    """
+    subnet_id: pulumi.Input[_builtins.str]
+    """
+    OCID of the private subnet
+    """
 
 @pulumi.input_type
 class DifStackDataflowConnectionsArgs:
@@ -2468,18 +2397,15 @@ class DifStackDataflowConnectionsArgs:
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class DifStackDataflowConnectionsConnectionDetailsArgsDict(TypedDict):
-        dif_dependencies: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackDataflowConnectionsConnectionDetailsDifDependencyArgsDict']]]]
-        """
-        (Updatable) List of DIF Service Dependency Details to create private endpoint.
-        """
-        domain_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of DNS zone names.
-        """
-elif False:
-    DifStackDataflowConnectionsConnectionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackDataflowConnectionsConnectionDetailsArgsDict(TypedDict):
+    dif_dependencies: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackDataflowConnectionsConnectionDetailsDifDependencyArgsDict']]]]
+    """
+    (Updatable) List of DIF Service Dependency Details to create private endpoint.
+    """
+    domain_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of DNS zone names.
+    """
 
 @pulumi.input_type
 class DifStackDataflowConnectionsConnectionDetailsArgs:
@@ -2520,18 +2446,15 @@ class DifStackDataflowConnectionsConnectionDetailsArgs:
         pulumi.set(self, "domain_names", value)
 
 
-if not MYPY:
-    class DifStackDataflowConnectionsConnectionDetailsDifDependencyArgsDict(TypedDict):
-        service_instance_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) InstanceId of service which is part of the Stack.
-        """
-        service_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Supported service name.
-        """
-elif False:
-    DifStackDataflowConnectionsConnectionDetailsDifDependencyArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackDataflowConnectionsConnectionDetailsDifDependencyArgsDict(TypedDict):
+    service_instance_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) InstanceId of service which is part of the Stack.
+    """
+    service_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Supported service name.
+    """
 
 @pulumi.input_type
 class DifStackDataflowConnectionsConnectionDetailsDifDependencyArgs:
@@ -2570,18 +2493,15 @@ class DifStackDataflowConnectionsConnectionDetailsDifDependencyArgs:
         pulumi.set(self, "service_type", value)
 
 
-if not MYPY:
-    class DifStackDataflowDriverShapeConfigArgsDict(TypedDict):
-        memory_in_gbs: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The amount of memory used for the driver or executors.
-        """
-        ocpus: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The total number of OCPUs used for the driver or executors. See here for details.
-        """
-elif False:
-    DifStackDataflowDriverShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackDataflowDriverShapeConfigArgsDict(TypedDict):
+    memory_in_gbs: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The amount of memory used for the driver or executors.
+    """
+    ocpus: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The total number of OCPUs used for the driver or executors. See here for details.
+    """
 
 @pulumi.input_type
 class DifStackDataflowDriverShapeConfigArgs:
@@ -2620,18 +2540,15 @@ class DifStackDataflowDriverShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class DifStackDataflowExecutorShapeConfigArgsDict(TypedDict):
-        memory_in_gbs: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The amount of memory used for the driver or executors.
-        """
-        ocpus: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The total number of OCPUs used for the driver or executors. See here for details.
-        """
-elif False:
-    DifStackDataflowExecutorShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackDataflowExecutorShapeConfigArgsDict(TypedDict):
+    memory_in_gbs: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The amount of memory used for the driver or executors.
+    """
+    ocpus: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The total number of OCPUs used for the driver or executors. See here for details.
+    """
 
 @pulumi.input_type
 class DifStackDataflowExecutorShapeConfigArgs:
@@ -2670,34 +2587,31 @@ class DifStackDataflowExecutorShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class DifStackGenaiArgsDict(TypedDict):
-        base_model: pulumi.Input[_builtins.str]
-        """
-        Name of the base model.
-        """
-        cluster_type: pulumi.Input[_builtins.str]
-        """
-        The dedicated AI cluster type.
-        """
-        instance_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Id for the GenAi instance to be provisioned.
-        """
-        oci_region: pulumi.Input[_builtins.str]
-        """
-        Region on which the cluster end endpoint will be provisioned.
-        """
-        unit_count: pulumi.Input[_builtins.int]
-        """
-        (Updatable) No of replicas of base model to be used for hosting.
-        """
-        endpoints: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackGenaiEndpointArgsDict']]]]
-        """
-        (Updatable) List of endpoints to provision for the GENAI cluster.
-        """
-elif False:
-    DifStackGenaiArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackGenaiArgsDict(TypedDict):
+    base_model: pulumi.Input[_builtins.str]
+    """
+    Name of the base model.
+    """
+    cluster_type: pulumi.Input[_builtins.str]
+    """
+    The dedicated AI cluster type.
+    """
+    instance_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Id for the GenAi instance to be provisioned.
+    """
+    oci_region: pulumi.Input[_builtins.str]
+    """
+    Region on which the cluster end endpoint will be provisioned.
+    """
+    unit_count: pulumi.Input[_builtins.int]
+    """
+    (Updatable) No of replicas of base model to be used for hosting.
+    """
+    endpoints: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackGenaiEndpointArgsDict']]]]
+    """
+    (Updatable) List of endpoints to provision for the GENAI cluster.
+    """
 
 @pulumi.input_type
 class DifStackGenaiArgs:
@@ -2797,18 +2711,15 @@ class DifStackGenaiArgs:
         pulumi.set(self, "endpoints", value)
 
 
-if not MYPY:
-    class DifStackGenaiEndpointArgsDict(TypedDict):
-        endpoint_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Identifier for each endpoint.
-        """
-        is_content_moderation_enabled: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Helps remove toxic and biased content from responses.
-        """
-elif False:
-    DifStackGenaiEndpointArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackGenaiEndpointArgsDict(TypedDict):
+    endpoint_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Identifier for each endpoint.
+    """
+    is_content_moderation_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Helps remove toxic and biased content from responses.
+    """
 
 @pulumi.input_type
 class DifStackGenaiEndpointArgs:
@@ -2847,51 +2758,48 @@ class DifStackGenaiEndpointArgs:
         pulumi.set(self, "is_content_moderation_enabled", value)
 
 
-if not MYPY:
-    class DifStackGgcArgsDict(TypedDict):
-        instance_id: pulumi.Input[_builtins.str]
-        """
-        Id for the GGCS instance to provision.
-        """
-        ocpu: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
-        """
-        password_secret_id: pulumi.Input[_builtins.str]
-        """
-        The OCID of the Secret where the deployment password is stored.
-        """
-        subnet_id: pulumi.Input[_builtins.str]
-        """
-        The OCID of the subnet of the GGCS deployment's private endpoint.
-        """
-        artifact_object_storage_path: NotRequired[pulumi.Input[_builtins.str]]
-        connections: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackGgcConnectionArgsDict']]]]
-        """
-        (Updatable) Connection details to be associated with the Goldengate deployment.
-        """
-        ogg_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Version of OGG.
-        """
-        public_subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of a public subnet in the customer tenancy. Can be provided only for public GGCS deployments.
-        """
-        sources: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackGgcSourceArgsDict']]]]
-        """
-        Source Detail to configure existing or new datasource.
-        """
-        targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackGgcTargetArgsDict']]]]
-        """
-        Target Detail to configure existing or new datasource.
-        """
-        users: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackGgcUserArgsDict']]]]
-        """
-        Ggcs user details to be created or updated.
-        """
-elif False:
-    DifStackGgcArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackGgcArgsDict(TypedDict):
+    instance_id: pulumi.Input[_builtins.str]
+    """
+    Id for the GGCS instance to provision.
+    """
+    ocpu: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
+    """
+    password_secret_id: pulumi.Input[_builtins.str]
+    """
+    The OCID of the Secret where the deployment password is stored.
+    """
+    subnet_id: pulumi.Input[_builtins.str]
+    """
+    The OCID of the subnet of the GGCS deployment's private endpoint.
+    """
+    artifact_object_storage_path: NotRequired[pulumi.Input[_builtins.str]]
+    connections: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackGgcConnectionArgsDict']]]]
+    """
+    (Updatable) Connection details to be associated with the Goldengate deployment.
+    """
+    ogg_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Version of OGG.
+    """
+    public_subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of a public subnet in the customer tenancy. Can be provided only for public GGCS deployments.
+    """
+    sources: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackGgcSourceArgsDict']]]]
+    """
+    Source Detail to configure existing or new datasource.
+    """
+    targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackGgcTargetArgsDict']]]]
+    """
+    Target Detail to configure existing or new datasource.
+    """
+    users: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackGgcUserArgsDict']]]]
+    """
+    Ggcs user details to be created or updated.
+    """
 
 @pulumi.input_type
 class DifStackGgcArgs:
@@ -3068,26 +2976,23 @@ class DifStackGgcArgs:
         pulumi.set(self, "users", value)
 
 
-if not MYPY:
-    class DifStackGgcConnectionArgsDict(TypedDict):
-        connection_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the connection to be created.
-        """
-        connection_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of pre-created Oracle GoldenGate connection.
-        """
-        dif_dependencies: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackGgcConnectionDifDependencyArgsDict']]]]
-        """
-        (Updatable) List of Service Dependency Details for connection creation.
-        """
-        gg_admin_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Vault secret OCID containing password that Oracle GoldenGate uses to connect the associated system of the given technology.
-        """
-elif False:
-    DifStackGgcConnectionArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackGgcConnectionArgsDict(TypedDict):
+    connection_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the connection to be created.
+    """
+    connection_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of pre-created Oracle GoldenGate connection.
+    """
+    dif_dependencies: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackGgcConnectionDifDependencyArgsDict']]]]
+    """
+    (Updatable) List of Service Dependency Details for connection creation.
+    """
+    gg_admin_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Vault secret OCID containing password that Oracle GoldenGate uses to connect the associated system of the given technology.
+    """
 
 @pulumi.input_type
 class DifStackGgcConnectionArgs:
@@ -3159,18 +3064,15 @@ class DifStackGgcConnectionArgs:
         pulumi.set(self, "gg_admin_secret_id", value)
 
 
-if not MYPY:
-    class DifStackGgcConnectionDifDependencyArgsDict(TypedDict):
-        service_instance_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) InstanceId of service which is part of the Stack.
-        """
-        service_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Supported service name.
-        """
-elif False:
-    DifStackGgcConnectionDifDependencyArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackGgcConnectionDifDependencyArgsDict(TypedDict):
+    service_instance_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) InstanceId of service which is part of the Stack.
+    """
+    service_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Supported service name.
+    """
 
 @pulumi.input_type
 class DifStackGgcConnectionDifDependencyArgs:
@@ -3209,30 +3111,27 @@ class DifStackGgcConnectionDifDependencyArgs:
         pulumi.set(self, "service_type", value)
 
 
-if not MYPY:
-    class DifStackGgcSourceArgsDict(TypedDict):
-        action: pulumi.Input[_builtins.str]
-        """
-        Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
-        """
-        should_start_source_operations: pulumi.Input[_builtins.bool]
-        """
-        Boolean value that determines source operations should start or not.
-        """
-        source_id: pulumi.Input[_builtins.str]
-        """
-        Ggcs source artifact id.
-        """
-        target_connection_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of assigned connection for the source.
-        """
-        target_uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Target uri for the GoldenGate deployment where distribution path needs to be configured.
-        """
-elif False:
-    DifStackGgcSourceArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackGgcSourceArgsDict(TypedDict):
+    action: pulumi.Input[_builtins.str]
+    """
+    Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+    """
+    should_start_source_operations: pulumi.Input[_builtins.bool]
+    """
+    Boolean value that determines source operations should start or not.
+    """
+    source_id: pulumi.Input[_builtins.str]
+    """
+    Ggcs source artifact id.
+    """
+    target_connection_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of assigned connection for the source.
+    """
+    target_uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Target uri for the GoldenGate deployment where distribution path needs to be configured.
+    """
 
 @pulumi.input_type
 class DifStackGgcSourceArgs:
@@ -3318,30 +3217,27 @@ class DifStackGgcSourceArgs:
         pulumi.set(self, "target_uri", value)
 
 
-if not MYPY:
-    class DifStackGgcTargetArgsDict(TypedDict):
-        action: pulumi.Input[_builtins.str]
-        """
-        Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
-        """
-        should_start_target_operations: pulumi.Input[_builtins.bool]
-        """
-        Boolean value that determines target operations should start or not.
-        """
-        target_id: pulumi.Input[_builtins.str]
-        """
-        GGCS target artifact id.
-        """
-        source_connection_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of assigned connection for the target.
-        """
-        source_uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Source uri for the GoldenGate deployment from where the collector path needs to be configured.
-        """
-elif False:
-    DifStackGgcTargetArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackGgcTargetArgsDict(TypedDict):
+    action: pulumi.Input[_builtins.str]
+    """
+    Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+    """
+    should_start_target_operations: pulumi.Input[_builtins.bool]
+    """
+    Boolean value that determines target operations should start or not.
+    """
+    target_id: pulumi.Input[_builtins.str]
+    """
+    GGCS target artifact id.
+    """
+    source_connection_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of assigned connection for the target.
+    """
+    source_uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Source uri for the GoldenGate deployment from where the collector path needs to be configured.
+    """
 
 @pulumi.input_type
 class DifStackGgcTargetArgs:
@@ -3427,17 +3323,14 @@ class DifStackGgcTargetArgs:
         pulumi.set(self, "source_uri", value)
 
 
-if not MYPY:
-    class DifStackGgcUserArgsDict(TypedDict):
-        action: pulumi.Input[_builtins.str]
-        """
-        Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
-        """
-        secret_id: pulumi.Input[_builtins.str]
-        user_name: pulumi.Input[_builtins.str]
-        user_type: pulumi.Input[_builtins.str]
-elif False:
-    DifStackGgcUserArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackGgcUserArgsDict(TypedDict):
+    action: pulumi.Input[_builtins.str]
+    """
+    Action to be done over the user. Allowed values are "CREATE" or "UPDATE".
+    """
+    secret_id: pulumi.Input[_builtins.str]
+    user_name: pulumi.Input[_builtins.str]
+    user_type: pulumi.Input[_builtins.str]
 
 @pulumi.input_type
 class DifStackGgcUserArgs:
@@ -3494,26 +3387,23 @@ class DifStackGgcUserArgs:
         pulumi.set(self, "user_type", value)
 
 
-if not MYPY:
-    class DifStackObjectstorageArgsDict(TypedDict):
-        instance_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Id for Object Storage instance to be provisioned.
-        """
-        object_versioning: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Mentions whether the object versioning to be enabled or not,Allowed values are "ENABLED" / "DISABLED"/"SUSPENDED"
-        """
-        storage_tier: pulumi.Input[_builtins.str]
-        """
-        Mentions which storage tier to use for the bucket,Allowed values are "STANDARD" / "ARCHIVE"
-        """
-        auto_tiering: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) It sets the auto-tiering status on the bucket.Allowed values are "DISABLED" / "INFREQUENTACCESS"
-        """
-elif False:
-    DifStackObjectstorageArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackObjectstorageArgsDict(TypedDict):
+    instance_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Id for Object Storage instance to be provisioned.
+    """
+    object_versioning: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Mentions whether the object versioning to be enabled or not,Allowed values are "ENABLED" / "DISABLED"/"SUSPENDED"
+    """
+    storage_tier: pulumi.Input[_builtins.str]
+    """
+    Mentions which storage tier to use for the bucket,Allowed values are "STANDARD" / "ARCHIVE"
+    """
+    auto_tiering: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) It sets the auto-tiering status on the bucket.Allowed values are "DISABLED" / "INFREQUENTACCESS"
+    """
 
 @pulumi.input_type
 class DifStackObjectstorageArgs:
@@ -3583,34 +3473,31 @@ class DifStackObjectstorageArgs:
         pulumi.set(self, "auto_tiering", value)
 
 
-if not MYPY:
-    class DifStackOkeArgsDict(TypedDict):
-        cluster_id: pulumi.Input[_builtins.str]
-        """
-        OCID of existing OKE cluster.
-        """
-        instance_id: pulumi.Input[_builtins.str]
-        """
-        Unique identifier for an oke instance.
-        """
-        namespace_name: pulumi.Input[_builtins.str]
-        """
-        Kubernetes namespace-name of OKE cluster.
-        """
-        component_value_overrides: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackOkeComponentValueOverrideArgsDict']]]]
-        """
-        Component overrides for stack specific parameters applied during artifact template rendering.
-        """
-        manifest_object_storage_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Object storage path for the deployment manifest.
-        """
-        secrets: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackOkeSecretArgsDict']]]]
-        """
-        List of kubernetes secrets to create or update in the namespace-name of the target cluster. Each entry source secret values from OCI vault.
-        """
-elif False:
-    DifStackOkeArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackOkeArgsDict(TypedDict):
+    cluster_id: pulumi.Input[_builtins.str]
+    """
+    OCID of existing OKE cluster.
+    """
+    instance_id: pulumi.Input[_builtins.str]
+    """
+    Unique identifier for an oke instance.
+    """
+    namespace_name: pulumi.Input[_builtins.str]
+    """
+    Kubernetes namespace-name of OKE cluster.
+    """
+    component_value_overrides: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackOkeComponentValueOverrideArgsDict']]]]
+    """
+    Component overrides for stack specific parameters applied during artifact template rendering.
+    """
+    manifest_object_storage_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Object storage path for the deployment manifest.
+    """
+    secrets: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackOkeSecretArgsDict']]]]
+    """
+    List of kubernetes secrets to create or update in the namespace-name of the target cluster. Each entry source secret values from OCI vault.
+    """
 
 @pulumi.input_type
 class DifStackOkeArgs:
@@ -3712,20 +3599,17 @@ class DifStackOkeArgs:
         pulumi.set(self, "secrets", value)
 
 
-if not MYPY:
-    class DifStackOkeComponentValueOverrideArgsDict(TypedDict):
-        component_name: pulumi.Input[_builtins.str]
-        """
-        Logical name of the grouping independently deployable kubernetes resource artifacts for the current deployment.
-        """
-        value_overrides: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
-        """
-        Free-form value overrides for the component. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-        Used for overriding the values in value.yaml artifact of the component.
-        Example: `{"WORKER_THREADS": "8"}`
-        """
-elif False:
-    DifStackOkeComponentValueOverrideArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackOkeComponentValueOverrideArgsDict(TypedDict):
+    component_name: pulumi.Input[_builtins.str]
+    """
+    Logical name of the grouping independently deployable kubernetes resource artifacts for the current deployment.
+    """
+    value_overrides: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+    """
+    Free-form value overrides for the component. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+    Used for overriding the values in value.yaml artifact of the component.
+    Example: `{"WORKER_THREADS": "8"}`
+    """
 
 @pulumi.input_type
 class DifStackOkeComponentValueOverrideArgs:
@@ -3768,22 +3652,19 @@ class DifStackOkeComponentValueOverrideArgs:
         pulumi.set(self, "value_overrides", value)
 
 
-if not MYPY:
-    class DifStackOkeSecretArgsDict(TypedDict):
-        secret_datas: pulumi.Input[Sequence[pulumi.Input['DifStackOkeSecretSecretDataArgsDict']]]
-        """
-        List of kubernetes secret data.
-        """
-        secret_name: pulumi.Input[_builtins.str]
-        """
-        Name of the kubernetes secret of max length 63 and contain only lowercase alphanumeric characters or '-' and start and end with an alphabetic character.
-        """
-        template_object_storage_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Object storage path for the secret template to be used for creating secret otherwise it will be created with default template.
-        """
-elif False:
-    DifStackOkeSecretArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackOkeSecretArgsDict(TypedDict):
+    secret_datas: pulumi.Input[Sequence[pulumi.Input['DifStackOkeSecretSecretDataArgsDict']]]
+    """
+    List of kubernetes secret data.
+    """
+    secret_name: pulumi.Input[_builtins.str]
+    """
+    Name of the kubernetes secret of max length 63 and contain only lowercase alphanumeric characters or '-' and start and end with an alphabetic character.
+    """
+    template_object_storage_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Object storage path for the secret template to be used for creating secret otherwise it will be created with default template.
+    """
 
 @pulumi.input_type
 class DifStackOkeSecretArgs:
@@ -3838,18 +3719,15 @@ class DifStackOkeSecretArgs:
         pulumi.set(self, "template_object_storage_path", value)
 
 
-if not MYPY:
-    class DifStackOkeSecretSecretDataArgsDict(TypedDict):
-        key: pulumi.Input[_builtins.str]
-        """
-        Data key in the kubernetes secret.
-        """
-        secret_id: pulumi.Input[_builtins.str]
-        """
-        OCID of the Oci vault secret that provides the value for this key. The latest active secret version is used at deploy time unless otherwise configured.
-        """
-elif False:
-    DifStackOkeSecretSecretDataArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackOkeSecretSecretDataArgsDict(TypedDict):
+    key: pulumi.Input[_builtins.str]
+    """
+    Data key in the kubernetes secret.
+    """
+    secret_id: pulumi.Input[_builtins.str]
+    """
+    OCID of the Oci vault secret that provides the value for this key. The latest active secret version is used at deploy time unless otherwise configured.
+    """
 
 @pulumi.input_type
 class DifStackOkeSecretSecretDataArgs:
@@ -3888,38 +3766,35 @@ class DifStackOkeSecretSecretDataArgs:
         pulumi.set(self, "secret_id", value)
 
 
-if not MYPY:
-    class DifStackOmkArgsDict(TypedDict):
-        cluster_id: pulumi.Input[_builtins.str]
-        """
-        OCID of cluster assigned to OMK cluster-namespace.
-        """
-        cluster_namespace_id: pulumi.Input[_builtins.str]
-        """
-        OCID of existing OMK cluster-namespace.
-        """
-        instance_id: pulumi.Input[_builtins.str]
-        """
-        Unique identifier for an omk instance.
-        """
-        namespace_name: pulumi.Input[_builtins.str]
-        """
-        Kubernetes namespace-name of OMK cluster-namespace.
-        """
-        component_value_overrides: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackOmkComponentValueOverrideArgsDict']]]]
-        """
-        Component overrides for stack specific parameters applied during artifact template rendering.
-        """
-        manifest_object_storage_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Object storage path for the deployment manifest.
-        """
-        secrets: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackOmkSecretArgsDict']]]]
-        """
-        List of kubernetes secrets to create or update in the namespace-name of target cluster-namespace. Each entry source secret values from OCI vault.
-        """
-elif False:
-    DifStackOmkArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackOmkArgsDict(TypedDict):
+    cluster_id: pulumi.Input[_builtins.str]
+    """
+    OCID of cluster assigned to OMK cluster-namespace.
+    """
+    cluster_namespace_id: pulumi.Input[_builtins.str]
+    """
+    OCID of existing OMK cluster-namespace.
+    """
+    instance_id: pulumi.Input[_builtins.str]
+    """
+    Unique identifier for an omk instance.
+    """
+    namespace_name: pulumi.Input[_builtins.str]
+    """
+    Kubernetes namespace-name of OMK cluster-namespace.
+    """
+    component_value_overrides: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackOmkComponentValueOverrideArgsDict']]]]
+    """
+    Component overrides for stack specific parameters applied during artifact template rendering.
+    """
+    manifest_object_storage_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Object storage path for the deployment manifest.
+    """
+    secrets: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackOmkSecretArgsDict']]]]
+    """
+    List of kubernetes secrets to create or update in the namespace-name of target cluster-namespace. Each entry source secret values from OCI vault.
+    """
 
 @pulumi.input_type
 class DifStackOmkArgs:
@@ -4036,20 +3911,17 @@ class DifStackOmkArgs:
         pulumi.set(self, "secrets", value)
 
 
-if not MYPY:
-    class DifStackOmkComponentValueOverrideArgsDict(TypedDict):
-        component_name: pulumi.Input[_builtins.str]
-        """
-        Logical name of the grouping independently deployable kubernetes resource artifacts for the current deployment.
-        """
-        value_overrides: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
-        """
-        Free-form value overrides for the component. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-        Used for overriding the values in value.yaml artifact of the component.
-        Example: `{"WORKER_THREADS": "8"}`
-        """
-elif False:
-    DifStackOmkComponentValueOverrideArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackOmkComponentValueOverrideArgsDict(TypedDict):
+    component_name: pulumi.Input[_builtins.str]
+    """
+    Logical name of the grouping independently deployable kubernetes resource artifacts for the current deployment.
+    """
+    value_overrides: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+    """
+    Free-form value overrides for the component. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+    Used for overriding the values in value.yaml artifact of the component.
+    Example: `{"WORKER_THREADS": "8"}`
+    """
 
 @pulumi.input_type
 class DifStackOmkComponentValueOverrideArgs:
@@ -4092,22 +3964,19 @@ class DifStackOmkComponentValueOverrideArgs:
         pulumi.set(self, "value_overrides", value)
 
 
-if not MYPY:
-    class DifStackOmkSecretArgsDict(TypedDict):
-        secret_datas: pulumi.Input[Sequence[pulumi.Input['DifStackOmkSecretSecretDataArgsDict']]]
-        """
-        List of kubernetes secret data.
-        """
-        secret_name: pulumi.Input[_builtins.str]
-        """
-        Name of the kubernetes secret of max length 63 and contain only lowercase alphanumeric characters or '-' and start and end with an alphabetic character.
-        """
-        template_object_storage_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Object storage path for the secret template to be used for creating secret otherwise it will be created with default template.
-        """
-elif False:
-    DifStackOmkSecretArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackOmkSecretArgsDict(TypedDict):
+    secret_datas: pulumi.Input[Sequence[pulumi.Input['DifStackOmkSecretSecretDataArgsDict']]]
+    """
+    List of kubernetes secret data.
+    """
+    secret_name: pulumi.Input[_builtins.str]
+    """
+    Name of the kubernetes secret of max length 63 and contain only lowercase alphanumeric characters or '-' and start and end with an alphabetic character.
+    """
+    template_object_storage_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Object storage path for the secret template to be used for creating secret otherwise it will be created with default template.
+    """
 
 @pulumi.input_type
 class DifStackOmkSecretArgs:
@@ -4162,18 +4031,15 @@ class DifStackOmkSecretArgs:
         pulumi.set(self, "template_object_storage_path", value)
 
 
-if not MYPY:
-    class DifStackOmkSecretSecretDataArgsDict(TypedDict):
-        key: pulumi.Input[_builtins.str]
-        """
-        Data key in the kubernetes secret.
-        """
-        secret_id: pulumi.Input[_builtins.str]
-        """
-        OCID of the Oci vault secret that provides the value for this key. The latest active secret version is used at deploy time unless otherwise configured.
-        """
-elif False:
-    DifStackOmkSecretSecretDataArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackOmkSecretSecretDataArgsDict(TypedDict):
+    key: pulumi.Input[_builtins.str]
+    """
+    Data key in the kubernetes secret.
+    """
+    secret_id: pulumi.Input[_builtins.str]
+    """
+    OCID of the Oci vault secret that provides the value for this key. The latest active secret version is used at deploy time unless otherwise configured.
+    """
 
 @pulumi.input_type
 class DifStackOmkSecretSecretDataArgs:
@@ -4212,42 +4078,39 @@ class DifStackOmkSecretSecretDataArgs:
         pulumi.set(self, "secret_id", value)
 
 
-if not MYPY:
-    class DifStackServiceDetailArgsDict(TypedDict):
-        additional_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackServiceDetailAdditionalDetailArgsDict']]]]
-        """
-        Additional details about the provisioned services
-        """
-        current_artifact_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        name of the service
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name. Should be unique per compartment. Avoid entering confidential information.
-        """
-        instance_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        ID for the service instance.
-        """
-        service_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        ID for the service
-        """
-        service_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        name of the cloud service
-        """
-        service_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        url for the service
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        state of the service
-        """
-elif False:
-    DifStackServiceDetailArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackServiceDetailArgsDict(TypedDict):
+    additional_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackServiceDetailAdditionalDetailArgsDict']]]]
+    """
+    Additional details about the provisioned services
+    """
+    current_artifact_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    name of the service
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name. Should be unique per compartment. Avoid entering confidential information.
+    """
+    instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    ID for the service instance.
+    """
+    service_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    ID for the service
+    """
+    service_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    name of the cloud service
+    """
+    service_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    url for the service
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    state of the service
+    """
 
 @pulumi.input_type
 class DifStackServiceDetailArgs:
@@ -4384,42 +4247,39 @@ class DifStackServiceDetailArgs:
         pulumi.set(self, "status", value)
 
 
-if not MYPY:
-    class DifStackServiceDetailAdditionalDetailArgsDict(TypedDict):
-        assigned_connections: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackServiceDetailAdditionalDetailAssignedConnectionArgsDict']]]]
-        """
-        connections assigned to Golden Gate deployment
-        """
-        cluster_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of cluster assigned to OMK cluster-namespace.
-        """
-        endpoint_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackServiceDetailAdditionalDetailEndpointDetailArgsDict']]]]
-        """
-        details of all endpoints assigned to cluster
-        """
-        model_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of model
-        """
-        model_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        version of model
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Kubernetes namespace-name of omk cluster-namespace.
-        """
-        oci_region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        region of cluster
-        """
-        private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of model
-        """
-elif False:
-    DifStackServiceDetailAdditionalDetailArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackServiceDetailAdditionalDetailArgsDict(TypedDict):
+    assigned_connections: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackServiceDetailAdditionalDetailAssignedConnectionArgsDict']]]]
+    """
+    connections assigned to Golden Gate deployment
+    """
+    cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of cluster assigned to OMK cluster-namespace.
+    """
+    endpoint_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackServiceDetailAdditionalDetailEndpointDetailArgsDict']]]]
+    """
+    details of all endpoints assigned to cluster
+    """
+    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of model
+    """
+    model_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    version of model
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Kubernetes namespace-name of omk cluster-namespace.
+    """
+    oci_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    region of cluster
+    """
+    private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of model
+    """
 
 @pulumi.input_type
 class DifStackServiceDetailAdditionalDetailArgs:
@@ -4556,22 +4416,19 @@ class DifStackServiceDetailAdditionalDetailArgs:
         pulumi.set(self, "private_endpoint_id", value)
 
 
-if not MYPY:
-    class DifStackServiceDetailAdditionalDetailAssignedConnectionArgsDict(TypedDict):
-        connection_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the connection.
-        """
-        connection_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the connection.
-        """
-        requested_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Specifies who has made this connection.
-        """
-elif False:
-    DifStackServiceDetailAdditionalDetailAssignedConnectionArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackServiceDetailAdditionalDetailAssignedConnectionArgsDict(TypedDict):
+    connection_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the connection.
+    """
+    connection_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the connection.
+    """
+    requested_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specifies who has made this connection.
+    """
 
 @pulumi.input_type
 class DifStackServiceDetailAdditionalDetailAssignedConnectionArgs:
@@ -4628,18 +4485,15 @@ class DifStackServiceDetailAdditionalDetailAssignedConnectionArgs:
         pulumi.set(self, "requested_by", value)
 
 
-if not MYPY:
-    class DifStackServiceDetailAdditionalDetailEndpointDetailArgsDict(TypedDict):
-        endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the endpoint.
-        """
-        endpoint_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Identifier for each endpoint.
-        """
-elif False:
-    DifStackServiceDetailAdditionalDetailEndpointDetailArgsDict: TypeAlias = Mapping[str, Any]
+class DifStackServiceDetailAdditionalDetailEndpointDetailArgsDict(TypedDict):
+    endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the endpoint.
+    """
+    endpoint_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Identifier for each endpoint.
+    """
 
 @pulumi.input_type
 class DifStackServiceDetailAdditionalDetailEndpointDetailArgs:
@@ -4680,22 +4534,19 @@ class DifStackServiceDetailAdditionalDetailEndpointDetailArgs:
         pulumi.set(self, "endpoint_name", value)
 
 
-if not MYPY:
-    class IotDigitalTwinAdapterInboundEnvelopeArgsDict(TypedDict):
-        reference_endpoint: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The device endpoint.
-        """
-        envelope_mapping: NotRequired[pulumi.Input['IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgsDict']]
-        """
-        (Updatable) Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
-        """
-        reference_payload: NotRequired[pulumi.Input['IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgsDict']]
-        """
-        (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
-        """
-elif False:
-    IotDigitalTwinAdapterInboundEnvelopeArgsDict: TypeAlias = Mapping[str, Any]
+class IotDigitalTwinAdapterInboundEnvelopeArgsDict(TypedDict):
+    reference_endpoint: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The device endpoint.
+    """
+    envelope_mapping: NotRequired[pulumi.Input['IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgsDict']]
+    """
+    (Updatable) Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+    """
+    reference_payload: NotRequired[pulumi.Input['IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgsDict']]
+    """
+    (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+    """
 
 @pulumi.input_type
 class IotDigitalTwinAdapterInboundEnvelopeArgs:
@@ -4751,14 +4602,11 @@ class IotDigitalTwinAdapterInboundEnvelopeArgs:
         pulumi.set(self, "reference_payload", value)
 
 
-if not MYPY:
-    class IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgsDict(TypedDict):
-        time_observed: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
-        """
-elif False:
-    IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgsDict: TypeAlias = Mapping[str, Any]
+class IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgsDict(TypedDict):
+    time_observed: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+    """
 
 @pulumi.input_type
 class IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs:
@@ -4783,18 +4631,15 @@ class IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs:
         pulumi.set(self, "time_observed", value)
 
 
-if not MYPY:
-    class IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgsDict(TypedDict):
-        data: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) JSON raw data.
-        """
-        data_format: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Data format of the payload.
-        """
-elif False:
-    IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgsDict: TypeAlias = Mapping[str, Any]
+class IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgsDict(TypedDict):
+    data: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) JSON raw data.
+    """
+    data_format: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Data format of the payload.
+    """
 
 @pulumi.input_type
 class IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs:
@@ -4833,30 +4678,27 @@ class IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs:
         pulumi.set(self, "data_format", value)
 
 
-if not MYPY:
-    class IotDigitalTwinAdapterInboundRouteArgsDict(TypedDict):
-        condition: pulumi.Input[_builtins.str]
-        """
-        (Updatable) A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Meaningful write up about the inbound route.
-        """
-        payload_mapping: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+class IotDigitalTwinAdapterInboundRouteArgsDict(TypedDict):
+    condition: pulumi.Input[_builtins.str]
+    """
+    (Updatable) A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Meaningful write up about the inbound route.
+    """
+    payload_mapping: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
 
-        The keys are target fields (in the digital twin model), and values are JQ expressions pointing to data in the reference payload.
+    The keys are target fields (in the digital twin model), and values are JQ expressions pointing to data in the reference payload.
 
-        Example: Given payload: { "time": "<timestamp>", "temp": 65, "hum": 55 } And mapping: { "temperature": "$.temp", "humidity": "$.hum", "timeObserved": "$.time" } The output will be: { "temperature": 65, "humidity": 55, "timeObserved": "<timestamp>" }
-        """
-        reference_payload: NotRequired[pulumi.Input['IotDigitalTwinAdapterInboundRouteReferencePayloadArgsDict']]
-        """
-        (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
-        """
-elif False:
-    IotDigitalTwinAdapterInboundRouteArgsDict: TypeAlias = Mapping[str, Any]
+    Example: Given payload: { "time": "<timestamp>", "temp": 65, "hum": 55 } And mapping: { "temperature": "$.temp", "humidity": "$.hum", "timeObserved": "$.time" } The output will be: { "temperature": 65, "humidity": 55, "timeObserved": "<timestamp>" }
+    """
+    reference_payload: NotRequired[pulumi.Input['IotDigitalTwinAdapterInboundRouteReferencePayloadArgsDict']]
+    """
+    (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+    """
 
 @pulumi.input_type
 class IotDigitalTwinAdapterInboundRouteArgs:
@@ -4936,18 +4778,15 @@ class IotDigitalTwinAdapterInboundRouteArgs:
         pulumi.set(self, "reference_payload", value)
 
 
-if not MYPY:
-    class IotDigitalTwinAdapterInboundRouteReferencePayloadArgsDict(TypedDict):
-        data: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) JSON raw data.
-        """
-        data_format: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Data format of the payload.
-        """
-elif False:
-    IotDigitalTwinAdapterInboundRouteReferencePayloadArgsDict: TypeAlias = Mapping[str, Any]
+class IotDigitalTwinAdapterInboundRouteReferencePayloadArgsDict(TypedDict):
+    data: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) JSON raw data.
+    """
+    data_format: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Data format of the payload.
+    """
 
 @pulumi.input_type
 class IotDigitalTwinAdapterInboundRouteReferencePayloadArgs:
@@ -4986,26 +4825,23 @@ class IotDigitalTwinAdapterInboundRouteReferencePayloadArgs:
         pulumi.set(self, "data_format", value)
 
 
-if not MYPY:
-    class IotIotDomainDataRetentionPeriodsInDayArgsDict(TypedDict):
-        historized_data: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of days for which any normalized data sent to IoT devices would be retained for.
-        """
-        raw_command_data: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of days for which any raw command data sent to IoT devices would be retained for.
-        """
-        raw_data: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of days for which any raw data sent to IoT devices would be retained for.
-        """
-        rejected_data: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of days for which any data sent to IoT devices would be retained for.
-        """
-elif False:
-    IotIotDomainDataRetentionPeriodsInDayArgsDict: TypeAlias = Mapping[str, Any]
+class IotIotDomainDataRetentionPeriodsInDayArgsDict(TypedDict):
+    historized_data: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of days for which any normalized data sent to IoT devices would be retained for.
+    """
+    raw_command_data: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of days for which any raw command data sent to IoT devices would be retained for.
+    """
+    raw_data: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of days for which any raw data sent to IoT devices would be retained for.
+    """
+    rejected_data: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of days for which any data sent to IoT devices would be retained for.
+    """
 
 @pulumi.input_type
 class IotIotDomainDataRetentionPeriodsInDayArgs:
@@ -5078,14 +4914,11 @@ class IotIotDomainDataRetentionPeriodsInDayArgs:
         pulumi.set(self, "rejected_data", value)
 
 
-if not MYPY:
-    class ManagedKafkaKafkaClusterAccessSubnetArgsDict(TypedDict):
-        subnets: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) Subnets OCIDs
-        """
-elif False:
-    ManagedKafkaKafkaClusterAccessSubnetArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedKafkaKafkaClusterAccessSubnetArgsDict(TypedDict):
+    subnets: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) Subnets OCIDs
+    """
 
 @pulumi.input_type
 class ManagedKafkaKafkaClusterAccessSubnetArgs:
@@ -5109,26 +4942,23 @@ class ManagedKafkaKafkaClusterAccessSubnetArgs:
         pulumi.set(self, "subnets", value)
 
 
-if not MYPY:
-    class ManagedKafkaKafkaClusterBrokerShapeArgsDict(TypedDict):
-        node_count: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Number of Kafka broker nodes
-        """
-        ocpu_count: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Number of OCPUs per nodes
-        """
-        node_shape: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
-        """
-        storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Size of the storage per nodes.
-        """
-elif False:
-    ManagedKafkaKafkaClusterBrokerShapeArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedKafkaKafkaClusterBrokerShapeArgsDict(TypedDict):
+    node_count: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Number of Kafka broker nodes
+    """
+    ocpu_count: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Number of OCPUs per nodes
+    """
+    node_shape: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+    """
+    storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Size of the storage per nodes.
+    """
 
 @pulumi.input_type
 class ManagedKafkaKafkaClusterBrokerShapeArgs:
@@ -5199,30 +5029,27 @@ class ManagedKafkaKafkaClusterBrokerShapeArgs:
         pulumi.set(self, "storage_size_in_gbs", value)
 
 
-if not MYPY:
-    class ManagedKafkaKafkaClusterConfigLatestConfigArgsDict(TypedDict):
-        properties: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) Cluster configuration key-value pairs
-        """
-        config_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) ID cluster configuration
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-        """
-        version_number: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Version of the cluster configuration
+class ManagedKafkaKafkaClusterConfigLatestConfigArgsDict(TypedDict):
+    properties: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) Cluster configuration key-value pairs
+    """
+    config_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) ID cluster configuration
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+    """
+    version_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Version of the cluster configuration
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ManagedKafkaKafkaClusterConfigLatestConfigArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ManagedKafkaKafkaClusterConfigLatestConfigArgs:
@@ -5302,18 +5129,15 @@ class ManagedKafkaKafkaClusterConfigLatestConfigArgs:
         pulumi.set(self, "version_number", value)
 
 
-if not MYPY:
-    class ManagedKafkaKafkaClusterKafkaBootstrapUrlArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the Kafka listener providing this bootstrap URL
-        """
-        url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Bootstrap URL
-        """
-elif False:
-    ManagedKafkaKafkaClusterKafkaBootstrapUrlArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedKafkaKafkaClusterKafkaBootstrapUrlArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the Kafka listener providing this bootstrap URL
+    """
+    url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Bootstrap URL
+    """
 
 @pulumi.input_type
 class ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs:
@@ -5354,22 +5178,19 @@ class ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs:
         pulumi.set(self, "url", value)
 
 
-if not MYPY:
-    class ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict(TypedDict):
-        password_type: pulumi.Input[_builtins.str]
-        """
-        Password type
-        """
-        password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Password for the ADW to be created in User Tenancy. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
-        """
-        secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault secret to use as the ADW admin password.
-        """
-elif False:
-    ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict: TypeAlias = Mapping[str, Any]
+class ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict(TypedDict):
+    password_type: pulumi.Input[_builtins.str]
+    """
+    Password type
+    """
+    password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Password for the ADW to be created in User Tenancy. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+    """
+    secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault secret to use as the ADW admin password.
+    """
 
 @pulumi.input_type
 class ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs:
@@ -5425,15 +5246,12 @@ class ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs:
         pulumi.set(self, "secret_id", value)
 
 
-if not MYPY:
-    class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgsDict(TypedDict):
-        idcs_domain_id: NotRequired[pulumi.Input[_builtins.str]]
-        license_model: NotRequired[pulumi.Input[_builtins.str]]
-        network_details: NotRequired[pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgsDict']]
-        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgsDict(TypedDict):
+    idcs_domain_id: NotRequired[pulumi.Input[_builtins.str]]
+    license_model: NotRequired[pulumi.Input[_builtins.str]]
+    network_details: NotRequired[pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgsDict']]
+    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs:
@@ -5500,12 +5318,9 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsAr
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgsDict(TypedDict):
-        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgsDict(TypedDict):
+    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs:
@@ -5536,13 +5351,10 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNe
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class GetAiDataPlatformAiDataPlatformsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAiDataPlatformAiDataPlatformsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAiDataPlatformAiDataPlatformsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAiDataPlatformAiDataPlatformsFilterArgs:
@@ -5583,16 +5395,13 @@ class GetAiDataPlatformAiDataPlatformsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetApiPlatformApiPlatformInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the given name exactly
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetApiPlatformApiPlatformInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetApiPlatformApiPlatformInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the given name exactly
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetApiPlatformApiPlatformInstancesFilterArgs:
@@ -5639,13 +5448,10 @@ class GetApiPlatformApiPlatformInstancesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetApiaccesscontrolApiMetadataByEntityTypesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetApiaccesscontrolApiMetadataByEntityTypesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetApiaccesscontrolApiMetadataByEntityTypesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetApiaccesscontrolApiMetadataByEntityTypesFilterArgs:
@@ -5686,13 +5492,10 @@ class GetApiaccesscontrolApiMetadataByEntityTypesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetApiaccesscontrolApiMetadatasFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetApiaccesscontrolApiMetadatasFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetApiaccesscontrolApiMetadatasFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetApiaccesscontrolApiMetadatasFilterArgs:
@@ -5733,13 +5536,10 @@ class GetApiaccesscontrolApiMetadatasFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetApiaccesscontrolPrivilegedApiControlsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetApiaccesscontrolPrivilegedApiControlsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetApiaccesscontrolPrivilegedApiControlsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetApiaccesscontrolPrivilegedApiControlsFilterArgs:
@@ -5780,13 +5580,10 @@ class GetApiaccesscontrolPrivilegedApiControlsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetApiaccesscontrolPrivilegedApiRequestsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetApiaccesscontrolPrivilegedApiRequestsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetApiaccesscontrolPrivilegedApiRequestsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetApiaccesscontrolPrivilegedApiRequestsFilterArgs:
@@ -5827,16 +5624,13 @@ class GetApiaccesscontrolPrivilegedApiRequestsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBatchBatchContextShapesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name identifying the shape.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBatchBatchContextShapesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBatchBatchContextShapesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name identifying the shape.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBatchBatchContextShapesFilterArgs:
@@ -5883,19 +5677,16 @@ class GetBatchBatchContextShapesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBatchBatchContextsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the service managed fleet.
-        """
-        values: Sequence[_builtins.str]
-        """
-        Mapping of tag value to its priority.
-        """
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBatchBatchContextsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBatchBatchContextsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the service managed fleet.
+    """
+    values: Sequence[_builtins.str]
+    """
+    Mapping of tag value to its priority.
+    """
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBatchBatchContextsFilterArgs:
@@ -5946,13 +5737,10 @@ class GetBatchBatchContextsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBatchBatchJobPoolsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBatchBatchJobPoolsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBatchBatchJobPoolsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBatchBatchJobPoolsFilterArgs:
@@ -5993,16 +5781,13 @@ class GetBatchBatchJobPoolsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBatchBatchTaskEnvironmentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the NfsVolume.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBatchBatchTaskEnvironmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBatchBatchTaskEnvironmentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the NfsVolume.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBatchBatchTaskEnvironmentsFilterArgs:
@@ -6049,13 +5834,10 @@ class GetBatchBatchTaskEnvironmentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBatchBatchTaskProfilesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBatchBatchTaskProfilesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBatchBatchTaskProfilesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBatchBatchTaskProfilesFilterArgs:
@@ -6096,16 +5878,13 @@ class GetBatchBatchTaskProfilesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Discovered Resource Name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Discovered Resource Name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs:
@@ -6152,13 +5931,10 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs:
@@ -6199,13 +5975,10 @@ class GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbmulticloudOracleDbAwsKeysFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbmulticloudOracleDbAwsKeysFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbmulticloudOracleDbAwsKeysFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbmulticloudOracleDbAwsKeysFilterArgs:
@@ -6246,13 +6019,10 @@ class GetDbmulticloudOracleDbAwsKeysFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbmulticloudOracleDbAzureBlobContainersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbmulticloudOracleDbAzureBlobContainersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbmulticloudOracleDbAzureBlobContainersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbmulticloudOracleDbAzureBlobContainersFilterArgs:
@@ -6293,13 +6063,10 @@ class GetDbmulticloudOracleDbAzureBlobContainersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbmulticloudOracleDbAzureBlobMountsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbmulticloudOracleDbAzureBlobMountsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbmulticloudOracleDbAzureBlobMountsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbmulticloudOracleDbAzureBlobMountsFilterArgs:
@@ -6340,13 +6107,10 @@ class GetDbmulticloudOracleDbAzureBlobMountsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbmulticloudOracleDbAzureConnectorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbmulticloudOracleDbAzureConnectorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbmulticloudOracleDbAzureConnectorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbmulticloudOracleDbAzureConnectorsFilterArgs:
@@ -6387,13 +6151,10 @@ class GetDbmulticloudOracleDbAzureConnectorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbmulticloudOracleDbAzureKeysFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbmulticloudOracleDbAzureKeysFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbmulticloudOracleDbAzureKeysFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbmulticloudOracleDbAzureKeysFilterArgs:
@@ -6434,13 +6195,10 @@ class GetDbmulticloudOracleDbAzureKeysFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgs:
@@ -6481,13 +6239,10 @@ class GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbmulticloudOracleDbAzureVaultsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbmulticloudOracleDbAzureVaultsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbmulticloudOracleDbAzureVaultsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbmulticloudOracleDbAzureVaultsFilterArgs:
@@ -6528,13 +6283,10 @@ class GetDbmulticloudOracleDbAzureVaultsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgs:
@@ -6575,13 +6327,10 @@ class GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbmulticloudOracleDbGcpKeyRingsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbmulticloudOracleDbGcpKeyRingsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbmulticloudOracleDbGcpKeyRingsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbmulticloudOracleDbGcpKeyRingsFilterArgs:
@@ -6622,13 +6371,10 @@ class GetDbmulticloudOracleDbGcpKeyRingsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbmulticloudOracleDbGcpKeysFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbmulticloudOracleDbGcpKeysFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbmulticloudOracleDbGcpKeysFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbmulticloudOracleDbGcpKeysFilterArgs:
@@ -6669,13 +6415,10 @@ class GetDbmulticloudOracleDbGcpKeysFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDifStacksFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDifStacksFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDifStacksFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDifStacksFilterArgs:
@@ -6716,13 +6459,10 @@ class GetDifStacksFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetIotDigitalTwinAdaptersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetIotDigitalTwinAdaptersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetIotDigitalTwinAdaptersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetIotDigitalTwinAdaptersFilterArgs:
@@ -6763,13 +6503,10 @@ class GetIotDigitalTwinAdaptersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetIotDigitalTwinInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetIotDigitalTwinInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetIotDigitalTwinInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetIotDigitalTwinInstancesFilterArgs:
@@ -6810,13 +6547,10 @@ class GetIotDigitalTwinInstancesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetIotDigitalTwinModelsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetIotDigitalTwinModelsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetIotDigitalTwinModelsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetIotDigitalTwinModelsFilterArgs:
@@ -6857,13 +6591,10 @@ class GetIotDigitalTwinModelsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetIotDigitalTwinRelationshipsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetIotDigitalTwinRelationshipsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetIotDigitalTwinRelationshipsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetIotDigitalTwinRelationshipsFilterArgs:
@@ -6904,13 +6635,10 @@ class GetIotDigitalTwinRelationshipsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetIotIotDomainGroupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetIotIotDomainGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetIotIotDomainGroupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetIotIotDomainGroupsFilterArgs:
@@ -6951,13 +6679,10 @@ class GetIotIotDomainGroupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetIotIotDomainsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetIotIotDomainsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetIotIotDomainsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetIotIotDomainsFilterArgs:
@@ -6998,13 +6723,10 @@ class GetIotIotDomainsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedKafkaKafkaClusterConfigVersionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedKafkaKafkaClusterConfigVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedKafkaKafkaClusterConfigVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedKafkaKafkaClusterConfigVersionsFilterArgs:
@@ -7045,13 +6767,10 @@ class GetManagedKafkaKafkaClusterConfigVersionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedKafkaKafkaClusterConfigsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedKafkaKafkaClusterConfigsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedKafkaKafkaClusterConfigsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedKafkaKafkaClusterConfigsFilterArgs:
@@ -7092,16 +6811,13 @@ class GetManagedKafkaKafkaClusterConfigsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedKafkaKafkaClustersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the Kafka listener providing this bootstrap URL
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedKafkaKafkaClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedKafkaKafkaClustersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the Kafka listener providing this bootstrap URL
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedKafkaKafkaClustersFilterArgs:
@@ -7148,16 +6864,13 @@ class GetManagedKafkaKafkaClustersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedKafkaNodeShapesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name to filter on.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedKafkaNodeShapesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedKafkaNodeShapesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name to filter on.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedKafkaNodeShapesFilterArgs:
@@ -7204,13 +6917,10 @@ class GetManagedKafkaNodeShapesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMulticloudExternalLocationMappingMetadataFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMulticloudExternalLocationMappingMetadataFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMulticloudExternalLocationMappingMetadataFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMulticloudExternalLocationMappingMetadataFilterArgs:
@@ -7251,13 +6961,10 @@ class GetMulticloudExternalLocationMappingMetadataFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMulticloudExternalLocationSummariesMetadataFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMulticloudExternalLocationSummariesMetadataFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMulticloudExternalLocationSummariesMetadataFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMulticloudExternalLocationSummariesMetadataFilterArgs:
@@ -7298,13 +7005,10 @@ class GetMulticloudExternalLocationSummariesMetadataFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMulticloudExternalLocationsMetadataFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMulticloudExternalLocationsMetadataFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMulticloudExternalLocationsMetadataFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMulticloudExternalLocationsMetadataFilterArgs:
@@ -7345,13 +7049,10 @@ class GetMulticloudExternalLocationsMetadataFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMulticloudMulticloudsubscriptionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMulticloudMulticloudsubscriptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMulticloudMulticloudsubscriptionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMulticloudMulticloudsubscriptionsFilterArgs:
@@ -7392,13 +7093,10 @@ class GetMulticloudMulticloudsubscriptionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMulticloudOmHubMulticloudResourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMulticloudOmHubMulticloudResourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMulticloudOmHubMulticloudResourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMulticloudOmHubMulticloudResourcesFilterArgs:
@@ -7439,13 +7137,10 @@ class GetMulticloudOmHubMulticloudResourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMulticloudResourceAnchorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMulticloudResourceAnchorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMulticloudResourceAnchorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMulticloudResourceAnchorsFilterArgs:
@@ -7486,13 +7181,10 @@ class GetMulticloudResourceAnchorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPsaPrivateServiceAccessesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPsaPrivateServiceAccessesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPsaPrivateServiceAccessesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPsaPrivateServiceAccessesFilterArgs:
@@ -7533,13 +7225,10 @@ class GetPsaPrivateServiceAccessesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPsaPsaServicesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPsaPsaServicesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPsaPsaServicesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPsaPsaServicesFilterArgs:
@@ -7580,13 +7269,10 @@ class GetPsaPsaServicesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPsaPsaWorkRequestErrorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPsaPsaWorkRequestErrorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPsaPsaWorkRequestErrorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPsaPsaWorkRequestErrorsFilterArgs:
@@ -7627,13 +7313,10 @@ class GetPsaPsaWorkRequestErrorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPsaPsaWorkRequestLogsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPsaPsaWorkRequestLogsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPsaPsaWorkRequestLogsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPsaPsaWorkRequestLogsFilterArgs:
@@ -7674,13 +7357,10 @@ class GetPsaPsaWorkRequestLogsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPsaPsaWorkRequestsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPsaPsaWorkRequestsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPsaPsaWorkRequestsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPsaPsaWorkRequestsFilterArgs:
@@ -7721,13 +7401,10 @@ class GetPsaPsaWorkRequestsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetResourceAnalyticsMonitoredRegionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetResourceAnalyticsMonitoredRegionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetResourceAnalyticsMonitoredRegionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetResourceAnalyticsMonitoredRegionsFilterArgs:
@@ -7768,13 +7445,10 @@ class GetResourceAnalyticsMonitoredRegionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetResourceAnalyticsResourceAnalyticsInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetResourceAnalyticsResourceAnalyticsInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetResourceAnalyticsResourceAnalyticsInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs:
@@ -7815,13 +7489,10 @@ class GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetResourceAnalyticsTenancyAttachmentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetResourceAnalyticsTenancyAttachmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetResourceAnalyticsTenancyAttachmentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetResourceAnalyticsTenancyAttachmentsFilterArgs:
@@ -7862,13 +7533,10 @@ class GetResourceAnalyticsTenancyAttachmentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWlmsManagedInstanceScanResultsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWlmsManagedInstanceScanResultsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWlmsManagedInstanceScanResultsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWlmsManagedInstanceScanResultsFilterArgs:
@@ -7909,13 +7577,10 @@ class GetWlmsManagedInstanceScanResultsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWlmsManagedInstanceServerInstalledPatchesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWlmsManagedInstanceServerInstalledPatchesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWlmsManagedInstanceServerInstalledPatchesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWlmsManagedInstanceServerInstalledPatchesFilterArgs:
@@ -7956,16 +7621,13 @@ class GetWlmsManagedInstanceServerInstalledPatchesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWlmsManagedInstanceServersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the resource.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWlmsManagedInstanceServersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWlmsManagedInstanceServersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the resource.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWlmsManagedInstanceServersFilterArgs:
@@ -8012,13 +7674,10 @@ class GetWlmsManagedInstanceServersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWlmsManagedInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWlmsManagedInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWlmsManagedInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWlmsManagedInstancesFilterArgs:
@@ -8059,13 +7718,10 @@ class GetWlmsManagedInstancesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWlmsWlsDomainAgreementRecordsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWlmsWlsDomainAgreementRecordsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWlmsWlsDomainAgreementRecordsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWlmsWlsDomainAgreementRecordsFilterArgs:
@@ -8106,13 +7762,10 @@ class GetWlmsWlsDomainAgreementRecordsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWlmsWlsDomainApplicablePatchesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWlmsWlsDomainApplicablePatchesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWlmsWlsDomainApplicablePatchesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWlmsWlsDomainApplicablePatchesFilterArgs:
@@ -8153,13 +7806,10 @@ class GetWlmsWlsDomainApplicablePatchesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWlmsWlsDomainScanResultsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWlmsWlsDomainScanResultsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWlmsWlsDomainScanResultsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWlmsWlsDomainScanResultsFilterArgs:
@@ -8200,13 +7850,10 @@ class GetWlmsWlsDomainScanResultsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWlmsWlsDomainServerBackupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWlmsWlsDomainServerBackupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWlmsWlsDomainServerBackupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWlmsWlsDomainServerBackupsFilterArgs:
@@ -8247,13 +7894,10 @@ class GetWlmsWlsDomainServerBackupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWlmsWlsDomainServerInstalledPatchesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWlmsWlsDomainServerInstalledPatchesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWlmsWlsDomainServerInstalledPatchesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWlmsWlsDomainServerInstalledPatchesFilterArgs:
@@ -8294,16 +7938,13 @@ class GetWlmsWlsDomainServerInstalledPatchesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWlmsWlsDomainServersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the resource.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWlmsWlsDomainServersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWlmsWlsDomainServersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the resource.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWlmsWlsDomainServersFilterArgs:
@@ -8350,13 +7991,10 @@ class GetWlmsWlsDomainServersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWlmsWlsDomainsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWlmsWlsDomainsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWlmsWlsDomainsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWlmsWlsDomainsFilterArgs:

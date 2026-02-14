@@ -18,6 +18,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Connection resource in Oracle Cloud Infrastructure Data Catalog service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-catalog/latest/Connection
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datacatalog
+ * 
+ * Creates a new connection.
+ * 
  * ## Example Usage
  * 
  * <pre>
@@ -195,9 +202,17 @@ public class Connection extends com.pulumi.resources.CustomResource {
     public Output<String> key() {
         return this.key;
     }
+    /**
+     * (Updatable) A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the &#34;default&#34; category. To determine the set of optional and required properties for a connection type, a query can be done on &#39;/types?type=connection&#39; that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it&#39;s properties, can be identified from this collection. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;username&#34;: &#34;user1&#34;}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+     * 
+     */
     @Export(name="properties", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> properties;
 
+    /**
+     * @return (Updatable) A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the &#34;default&#34; category. To determine the set of optional and required properties for a connection type, a query can be done on &#39;/types?type=connection&#39; that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it&#39;s properties, can be identified from this collection. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;username&#34;: &#34;user1&#34;}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+     * 
+     */
     public Output<Map<String,String>> properties() {
         return this.properties;
     }

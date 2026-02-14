@@ -12,6 +12,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the File System Quota Rule resource in Oracle Cloud Infrastructure File Storage service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/filestorage/latest/FileSystemQuotaRule
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+//
+// Create an FS level, user or group quota rule given the `fileSystemId`, `principalId`, `principalType` and
+// `isHardQuota` parameters.
+//
 // ## Example Usage
 //
 // ```go

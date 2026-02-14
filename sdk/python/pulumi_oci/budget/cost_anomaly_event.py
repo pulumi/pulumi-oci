@@ -411,7 +411,12 @@ class CostAnomalyEvent(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Cost Anomaly Event resource in Oracle Cloud Infrastructure Budget service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/budgets/latest/CostAnomalyEvent
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/budget
+
+        Update a CostAnomalyEvent identified by the OCID.
 
         ## Import
 
@@ -439,7 +444,12 @@ class CostAnomalyEvent(pulumi.CustomResource):
                  args: CostAnomalyEventArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Cost Anomaly Event resource in Oracle Cloud Infrastructure Budget service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/budgets/latest/CostAnomalyEvent
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/budget
+
+        Update a CostAnomalyEvent identified by the OCID.
 
         ## Import
 

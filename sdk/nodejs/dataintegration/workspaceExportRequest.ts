@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Workspace Export Request resource in Oracle Cloud Infrastructure Data Integration service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-integration/latest/WorkspaceExportRequest
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataintegration
+ *
+ * Export Metadata Object
+ *
  * ## Example Usage
  *
  * ```typescript

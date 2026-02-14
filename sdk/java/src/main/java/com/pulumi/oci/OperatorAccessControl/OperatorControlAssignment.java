@@ -18,6 +18,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Operator Control Assignment resource in Oracle Cloud Infrastructure Operator Access Control service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/latest/OperatorControlAssignment
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/operator_access_control
+ * 
+ * Creates an Operator Control Assignment resource. In effect, this brings the target resource under the governance of the Operator Control for specified time duration.
+ * 
  * ## Example Usage
  * 
  * <pre>

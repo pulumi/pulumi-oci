@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/ModelProvenance
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+//
+// Creates provenance information for the specified model.
+//
 // ## Example Usage
 //
 // ```go

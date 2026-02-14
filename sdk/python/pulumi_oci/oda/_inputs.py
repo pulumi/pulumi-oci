@@ -29,20 +29,15 @@ __all__ = [
     'GetOdaPrivateEndpointsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class OdaInstanceRestrictedOperationArgsDict(TypedDict):
-        operation_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the restricted operation.
-        """
-        restricting_service: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the service restricting the operation.
-        """
-elif False:
-    OdaInstanceRestrictedOperationArgsDict: TypeAlias = Mapping[str, Any]
+class OdaInstanceRestrictedOperationArgsDict(TypedDict):
+    operation_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the restricted operation.
+    """
+    restricting_service: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the service restricting the operation.
+    """
 
 @pulumi.input_type
 class OdaInstanceRestrictedOperationArgs:
@@ -83,22 +78,19 @@ class OdaInstanceRestrictedOperationArgs:
         pulumi.set(self, "restricting_service", value)
 
 
-if not MYPY:
-    class OdaPrivateEndpointScanProxyScanListenerInfoArgsDict(TypedDict):
-        scan_listener_fqdn: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
-        """
-        scan_listener_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A SCAN listener's IP of the customer's Real Application Cluster (RAC).
-        """
-        scan_listener_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
-        """
-elif False:
-    OdaPrivateEndpointScanProxyScanListenerInfoArgsDict: TypeAlias = Mapping[str, Any]
+class OdaPrivateEndpointScanProxyScanListenerInfoArgsDict(TypedDict):
+    scan_listener_fqdn: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
+    """
+    scan_listener_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A SCAN listener's IP of the customer's Real Application Cluster (RAC).
+    """
+    scan_listener_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
+    """
 
 @pulumi.input_type
 class OdaPrivateEndpointScanProxyScanListenerInfoArgs:
@@ -155,13 +147,10 @@ class OdaPrivateEndpointScanProxyScanListenerInfoArgs:
         pulumi.set(self, "scan_listener_port", value)
 
 
-if not MYPY:
-    class GetOdaInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOdaInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOdaInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOdaInstancesFilterArgs:
@@ -202,13 +191,10 @@ class GetOdaInstancesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOdaPrivateEndpointAttachmentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOdaPrivateEndpointAttachmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOdaPrivateEndpointAttachmentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOdaPrivateEndpointAttachmentsFilterArgs:
@@ -249,13 +235,10 @@ class GetOdaPrivateEndpointAttachmentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOdaPrivateEndpointScanProxiesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOdaPrivateEndpointScanProxiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOdaPrivateEndpointScanProxiesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOdaPrivateEndpointScanProxiesFilterArgs:
@@ -296,13 +279,10 @@ class GetOdaPrivateEndpointScanProxiesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOdaPrivateEndpointsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOdaPrivateEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOdaPrivateEndpointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOdaPrivateEndpointsFilterArgs:

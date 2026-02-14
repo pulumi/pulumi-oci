@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/NamespaceIngestTimeRule
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+ *
+ * Creates a new ingest time rule in the specified compartment. You may also specify optional information such as description, defined tags, and free-form tags.
+ *
  * ## Example Usage
  *
  * ```typescript

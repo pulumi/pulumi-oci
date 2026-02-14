@@ -335,6 +335,13 @@ class Project(pulumi.CustomResource):
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectLockArgs', 'ProjectLockArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Project resource in Oracle Cloud Infrastructure Ai Document service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/document-understanding/latest/Project
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiDocument
+
+        Create a new project.
+
         ## Example Usage
 
         ```python
@@ -377,6 +384,13 @@ class Project(pulumi.CustomResource):
                  args: ProjectArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Project resource in Oracle Cloud Infrastructure Ai Document service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/document-understanding/latest/Project
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiDocument
+
+        Create a new project.
+
         ## Example Usage
 
         ```python

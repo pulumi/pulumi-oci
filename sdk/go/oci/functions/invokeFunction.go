@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/functions/latest/InvokeFunction
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/functions
+//
+// # Invokes a function
+//
 // ## Example Usage
 //
 // ```go
@@ -49,6 +56,7 @@ import (
 type InvokeFunction struct {
 	pulumi.CustomResourceState
 
+	// Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
 	Base64EncodeContent pulumi.BoolPtrOutput `pulumi:"base64EncodeContent"`
 	// Content of the response string, if any. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
 	Content pulumi.StringOutput `pulumi:"content"`
@@ -65,7 +73,8 @@ type InvokeFunction struct {
 	InputBodySourcePath pulumi.StringPtrOutput `pulumi:"inputBodySourcePath"`
 	InvokeEndpoint      pulumi.StringOutput    `pulumi:"invokeEndpoint"`
 	// The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `inputBodySourcePath` or `invokeFunctionBodyBase64Encoded` is defined.
-	InvokeFunctionBody              pulumi.StringOutput `pulumi:"invokeFunctionBody"`
+	InvokeFunctionBody pulumi.StringOutput `pulumi:"invokeFunctionBody"`
+	// The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invokeFunctionBody` or `inputBodySourcePath` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
 	InvokeFunctionBodyBase64Encoded pulumi.StringOutput `pulumi:"invokeFunctionBodyBase64Encoded"`
 	// Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
 	IsDryRun pulumi.BoolOutput `pulumi:"isDryRun"`
@@ -104,6 +113,7 @@ func GetInvokeFunction(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering InvokeFunction resources.
 type invokeFunctionState struct {
+	// Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
 	Base64EncodeContent *bool `pulumi:"base64EncodeContent"`
 	// Content of the response string, if any. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
 	Content *string `pulumi:"content"`
@@ -120,13 +130,15 @@ type invokeFunctionState struct {
 	InputBodySourcePath *string `pulumi:"inputBodySourcePath"`
 	InvokeEndpoint      *string `pulumi:"invokeEndpoint"`
 	// The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `inputBodySourcePath` or `invokeFunctionBodyBase64Encoded` is defined.
-	InvokeFunctionBody              *string `pulumi:"invokeFunctionBody"`
+	InvokeFunctionBody *string `pulumi:"invokeFunctionBody"`
+	// The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invokeFunctionBody` or `inputBodySourcePath` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
 	InvokeFunctionBodyBase64Encoded *string `pulumi:"invokeFunctionBodyBase64Encoded"`
 	// Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
 	IsDryRun *bool `pulumi:"isDryRun"`
 }
 
 type InvokeFunctionState struct {
+	// Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
 	Base64EncodeContent pulumi.BoolPtrInput
 	// Content of the response string, if any. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
 	Content pulumi.StringPtrInput
@@ -143,7 +155,8 @@ type InvokeFunctionState struct {
 	InputBodySourcePath pulumi.StringPtrInput
 	InvokeEndpoint      pulumi.StringPtrInput
 	// The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `inputBodySourcePath` or `invokeFunctionBodyBase64Encoded` is defined.
-	InvokeFunctionBody              pulumi.StringPtrInput
+	InvokeFunctionBody pulumi.StringPtrInput
+	// The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invokeFunctionBody` or `inputBodySourcePath` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
 	InvokeFunctionBodyBase64Encoded pulumi.StringPtrInput
 	// Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
 	IsDryRun pulumi.BoolPtrInput
@@ -154,6 +167,7 @@ func (InvokeFunctionState) ElementType() reflect.Type {
 }
 
 type invokeFunctionArgs struct {
+	// Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
 	Base64EncodeContent *bool `pulumi:"base64EncodeContent"`
 	// An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
 	FnIntent *string `pulumi:"fnIntent"`
@@ -167,7 +181,8 @@ type invokeFunctionArgs struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	InputBodySourcePath *string `pulumi:"inputBodySourcePath"`
 	// The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `inputBodySourcePath` or `invokeFunctionBodyBase64Encoded` is defined.
-	InvokeFunctionBody              *string `pulumi:"invokeFunctionBody"`
+	InvokeFunctionBody *string `pulumi:"invokeFunctionBody"`
+	// The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invokeFunctionBody` or `inputBodySourcePath` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
 	InvokeFunctionBodyBase64Encoded *string `pulumi:"invokeFunctionBodyBase64Encoded"`
 	// Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
 	IsDryRun *bool `pulumi:"isDryRun"`
@@ -175,6 +190,7 @@ type invokeFunctionArgs struct {
 
 // The set of arguments for constructing a InvokeFunction resource.
 type InvokeFunctionArgs struct {
+	// Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
 	Base64EncodeContent pulumi.BoolPtrInput
 	// An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
 	FnIntent pulumi.StringPtrInput
@@ -188,7 +204,8 @@ type InvokeFunctionArgs struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	InputBodySourcePath pulumi.StringPtrInput
 	// The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `inputBodySourcePath` or `invokeFunctionBodyBase64Encoded` is defined.
-	InvokeFunctionBody              pulumi.StringPtrInput
+	InvokeFunctionBody pulumi.StringPtrInput
+	// The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invokeFunctionBody` or `inputBodySourcePath` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
 	InvokeFunctionBodyBase64Encoded pulumi.StringPtrInput
 	// Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
 	IsDryRun pulumi.BoolPtrInput
@@ -281,6 +298,7 @@ func (o InvokeFunctionOutput) ToInvokeFunctionOutputWithContext(ctx context.Cont
 	return o
 }
 
+// Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
 func (o InvokeFunctionOutput) Base64EncodeContent() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InvokeFunction) pulumi.BoolPtrOutput { return v.Base64EncodeContent }).(pulumi.BoolPtrOutput)
 }
@@ -322,6 +340,7 @@ func (o InvokeFunctionOutput) InvokeFunctionBody() pulumi.StringOutput {
 	return o.ApplyT(func(v *InvokeFunction) pulumi.StringOutput { return v.InvokeFunctionBody }).(pulumi.StringOutput)
 }
 
+// The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invokeFunctionBody` or `inputBodySourcePath` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
 func (o InvokeFunctionOutput) InvokeFunctionBodyBase64Encoded() pulumi.StringOutput {
 	return o.ApplyT(func(v *InvokeFunction) pulumi.StringOutput { return v.InvokeFunctionBodyBase64Encoded }).(pulumi.StringOutput)
 }

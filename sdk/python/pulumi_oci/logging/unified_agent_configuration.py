@@ -365,7 +365,12 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
                  service_configuration: Optional[pulumi.Input[Union['UnifiedAgentConfigurationServiceConfigurationArgs', 'UnifiedAgentConfigurationServiceConfigurationArgsDict']]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logging-management/latest/UnifiedAgentConfiguration
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/logging
+
+        Create unified agent configuration registration.
 
         ## Import
 
@@ -393,7 +398,12 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
                  args: UnifiedAgentConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logging-management/latest/UnifiedAgentConfiguration
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/logging
+
+        Create unified agent configuration registration.
 
         ## Import
 

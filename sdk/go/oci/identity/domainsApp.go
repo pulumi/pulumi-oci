@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the App resource in Oracle Cloud Infrastructure Identity Domains service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/App
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+//
+// # Create an App
+//
 // ## Example Usage
 //
 // ```go
@@ -878,8 +885,9 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ErrorPageUrl pulumi.StringOutput  `pulumi:"errorPageUrl"`
-	ForceDelete  pulumi.BoolPtrOutput `pulumi:"forceDelete"`
+	ErrorPageUrl pulumi.StringOutput `pulumi:"errorPageUrl"`
+	// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+	ForceDelete pulumi.BoolPtrOutput `pulumi:"forceDelete"`
 	// (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
 	//
 	// **SCIM++ Properties:**
@@ -2202,7 +2210,8 @@ type domainsAppState struct {
 	// * type: string
 	// * uniqueness: none
 	ErrorPageUrl *string `pulumi:"errorPageUrl"`
-	ForceDelete  *bool   `pulumi:"forceDelete"`
+	// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+	ForceDelete *bool `pulumi:"forceDelete"`
 	// (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
 	//
 	// **SCIM++ Properties:**
@@ -3484,7 +3493,8 @@ type DomainsAppState struct {
 	// * type: string
 	// * uniqueness: none
 	ErrorPageUrl pulumi.StringPtrInput
-	ForceDelete  pulumi.BoolPtrInput
+	// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+	ForceDelete pulumi.BoolPtrInput
 	// (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
 	//
 	// **SCIM++ Properties:**
@@ -4657,7 +4667,8 @@ type domainsAppArgs struct {
 	// * type: string
 	// * uniqueness: none
 	ErrorPageUrl *string `pulumi:"errorPageUrl"`
-	ForceDelete  *bool   `pulumi:"forceDelete"`
+	// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+	ForceDelete *bool `pulumi:"forceDelete"`
 	// (Updatable) Home Page URL
 	//
 	// **Added In:** 19.2.1
@@ -5631,7 +5642,8 @@ type DomainsAppArgs struct {
 	// * type: string
 	// * uniqueness: none
 	ErrorPageUrl pulumi.StringPtrInput
-	ForceDelete  pulumi.BoolPtrInput
+	// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+	ForceDelete pulumi.BoolPtrInput
 	// (Updatable) Home Page URL
 	//
 	// **Added In:** 19.2.1
@@ -6923,6 +6935,7 @@ func (o DomainsAppOutput) ErrorPageUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.ErrorPageUrl }).(pulumi.StringOutput)
 }
 
+// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
 func (o DomainsAppOutput) ForceDelete() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.ForceDelete }).(pulumi.BoolPtrOutput)
 }

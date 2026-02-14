@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Budget
 {
     /// <summary>
+    /// This resource provides the Alert Rule resource in Oracle Cloud Infrastructure Budget service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/budgets/latest/AlertRule
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/budget
+    /// 
+    /// Creates a new Alert Rule.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -45,7 +52,7 @@ namespace Pulumi.Oci.Budget
     /// 
     /// ## Import
     /// 
-    /// AlertRules can be imported using the `id`, e.g.
+    /// AlertRules can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Budget/rule:Rule test_alert_rule "budgets/{budgetId}/alertRules/{alertRuleId}"

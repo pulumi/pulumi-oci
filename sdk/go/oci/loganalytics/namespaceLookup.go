@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Namespace Lookup resource in Oracle Cloud Infrastructure Log Analytics service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/NamespaceLookup
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+//
+// Creates a lookup with the specified name, type and description. The csv file containing the lookup content is passed in as binary data in the request.
+//
 // ## Example Usage
 //
 // ```go

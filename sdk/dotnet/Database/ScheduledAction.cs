@@ -52,7 +52,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// ScheduledActions can be imported using the `id`, e.g.
+    /// ScheduledActions can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/scheduledAction:ScheduledAction test_scheduled_action "id"

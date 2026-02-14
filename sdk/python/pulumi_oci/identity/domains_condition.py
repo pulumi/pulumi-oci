@@ -1254,6 +1254,13 @@ class DomainsCondition(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsConditionTagArgs', 'DomainsConditionTagArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Condition resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/Condition
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a condition
+
         ## Example Usage
 
         ```python
@@ -1414,6 +1421,13 @@ class DomainsCondition(pulumi.CustomResource):
                  args: DomainsConditionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Condition resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/Condition
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a condition
+
         ## Example Usage
 
         ```python

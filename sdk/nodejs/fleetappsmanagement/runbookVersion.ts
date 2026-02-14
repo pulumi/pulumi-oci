@@ -7,7 +7,18 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * ## Example Usage
+ * This resource provides the Runbook Version resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/RunbookVersion
+ *
+ * <<<<<<< ours
+ * Add RunbookVersion in Fleet Application Management.
+ * ===
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+ * > > > > > > > theirs
+ *
+ * This resource provides the Runbook Version resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+ *
+ * Add RunbookVersion in Fleet Application Management.
  *
  * ## Import
  *

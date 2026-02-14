@@ -33,24 +33,19 @@ __all__ = [
     'GetUsagelimitsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class SubscriptionRedeemableUserItemArgsDict(TypedDict):
-        email_id: pulumi.Input[_builtins.str]
-        """
-        The email ID for a user that can redeem rewards.
-        """
-        first_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The first name of the user that can redeem rewards.
-        """
-        last_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The last name of the user that can redeem rewards.
-        """
-elif False:
-    SubscriptionRedeemableUserItemArgsDict: TypeAlias = Mapping[str, Any]
+class SubscriptionRedeemableUserItemArgsDict(TypedDict):
+    email_id: pulumi.Input[_builtins.str]
+    """
+    The email ID for a user that can redeem rewards.
+    """
+    first_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The first name of the user that can redeem rewards.
+    """
+    last_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The last name of the user that can redeem rewards.
+    """
 
 @pulumi.input_type
 class SubscriptionRedeemableUserItemArgs:
@@ -106,16 +101,13 @@ class SubscriptionRedeemableUserItemArgs:
         pulumi.set(self, "last_name", value)
 
 
-if not MYPY:
-    class GetResourceQuotasFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The resource name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetResourceQuotasFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetResourceQuotasFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The resource name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetResourceQuotasFilterArgs:
@@ -162,16 +154,13 @@ class GetResourceQuotasFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetResourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the resource.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetResourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetResourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the resource.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetResourcesFilterArgs:
@@ -218,13 +207,10 @@ class GetResourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSubscriptionProductsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSubscriptionProductsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSubscriptionProductsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSubscriptionProductsFilterArgs:
@@ -265,13 +251,10 @@ class GetSubscriptionProductsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSubscriptionRedeemableUsersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSubscriptionRedeemableUsersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSubscriptionRedeemableUsersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSubscriptionRedeemableUsersFilterArgs:
@@ -312,13 +295,10 @@ class GetSubscriptionRedeemableUsersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSubscriptionRedemptionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSubscriptionRedemptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSubscriptionRedemptionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSubscriptionRedemptionsFilterArgs:
@@ -359,13 +339,10 @@ class GetSubscriptionRedemptionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSubscriptionRewardsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSubscriptionRewardsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSubscriptionRewardsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSubscriptionRewardsFilterArgs:
@@ -406,13 +383,10 @@ class GetSubscriptionRewardsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetUsagelimitsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetUsagelimitsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetUsagelimitsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetUsagelimitsFilterArgs:

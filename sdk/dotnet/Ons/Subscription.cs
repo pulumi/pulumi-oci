@@ -10,6 +10,17 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Ons
 {
     /// <summary>
+    /// This resource provides the Subscription resource in Oracle Cloud Infrastructure Notifications service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/notification/latest/Subscription
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a subscription for the specified topic and sends a subscription confirmation URL to the endpoint. The subscription remains in "Pending" status until it has been confirmed.
+    /// For information about confirming subscriptions, see
+    /// [To confirm a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#confirmSub).
+    /// 
+    /// Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,7 +52,7 @@ namespace Pulumi.Oci.Ons
     /// 
     /// ## Import
     /// 
-    /// Subscriptions can be imported using the `id`, e.g.
+    /// Subscriptions can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Ons/subscription:Subscription test_subscription "id"

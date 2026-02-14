@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
+    /// This resource provides the Security Assessment Finding resource in Oracle Cloud Infrastructure Data Safe service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/SecurityAssessmentFinding
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+    /// 
+    ///   Patches one or more findings in the specified template baseline type security assessment. Use it to modify max allowed risk level in template baseline.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -39,7 +46,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Import
     /// 
-    /// SecurityAssessmentFindings can be imported using the `id`, e.g.
+    /// SecurityAssessmentFindings can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataSafe/securityAssessmentFinding:SecurityAssessmentFinding test_security_assessment_finding "securityAssessments/{securityAssessmentId}/findings"

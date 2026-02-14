@@ -5,7 +5,12 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * ## Example Usage
+ * This resource provides the Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/ManagedList
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+ *
+ * Creates a new ManagedList resource.
  *
  * ## Import
  *

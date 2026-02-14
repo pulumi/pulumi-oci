@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
+    /// This resource provides the Drg Route Table Route Rule resource in Oracle Cloud Infrastructure Core service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/DrgRouteTableRouteRule
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Adds one static route rule to the specified DRG route table.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -33,7 +40,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Import
     /// 
-    /// DrgRouteTableRouteRule can be imported using the `id`, e.g.
+    /// DrgRouteTableRouteRule can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Core/drgRouteTableRouteRule:DrgRouteTableRouteRule test_drg_route_table_route_rule "drgRouteTables/{drgRouteTableId}/routeRules/{id}"

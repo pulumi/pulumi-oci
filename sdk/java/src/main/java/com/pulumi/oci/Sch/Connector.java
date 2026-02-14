@@ -19,6 +19,32 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/serviceconnectors/latest/ServiceConnector
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/service_connector_hub
+ * 
+ * Creates a new connector in the specified compartment.
+ * A connector is a logically defined flow for moving data from
+ * a source service to a destination service in Oracle Cloud Infrastructure.
+ * For more information, see
+ * [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+ * For general information about connectors, see
+ * [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm).
+ * 
+ * For purposes of access control, you must provide the
+ * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where
+ * you want the connector to reside. Notice that the connector
+ * doesn&#39;t have to be in the same compartment as the source or target services.
+ * For information about access control and compartments, see
+ * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+ * 
+ * After you send your request, the new connector&#39;s state is temporarily
+ * CREATING. When the state changes to ACTIVE, data begins transferring from the
+ * source service to the target service. For instructions on deactivating and
+ * activating connectors, see
+ * [Activating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/activate-service-connector.htm).
+ * 
  * ## Example Usage
  * 
  * <pre>

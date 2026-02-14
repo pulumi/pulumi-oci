@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MediaServices
 {
     /// <summary>
+    /// This resource provides the Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dms/latest/StreamPackagingConfig
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/media_services
+    /// 
+    /// Creates a new Packaging Configuration.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -57,7 +64,7 @@ namespace Pulumi.Oci.MediaServices
     /// 
     /// ## Import
     /// 
-    /// StreamPackagingConfigs can be imported using the `id`, e.g.
+    /// StreamPackagingConfigs can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:MediaServices/streamPackagingConfig:StreamPackagingConfig test_stream_packaging_config "id"

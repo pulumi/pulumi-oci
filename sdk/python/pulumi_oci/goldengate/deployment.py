@@ -1503,7 +1503,12 @@ class Deployment(pulumi.CustomResource):
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Deployment resource in Oracle Cloud Infrastructure Golden Gate service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/goldengate/latest/Deployment
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/goldengate
+
+        Creates a new Deployment.
 
         ## Import
 
@@ -1558,7 +1563,12 @@ class Deployment(pulumi.CustomResource):
                  args: DeploymentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Deployment resource in Oracle Cloud Infrastructure Golden Gate service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/goldengate/latest/Deployment
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/goldengate
+
+        Creates a new Deployment.
 
         ## Import
 

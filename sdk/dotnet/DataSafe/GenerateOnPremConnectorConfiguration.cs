@@ -35,7 +35,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Import
     /// 
-    /// GenerateOnPremConnectorConfiguration can be imported using the `id`, e.g.
+    /// GenerateOnPremConnectorConfiguration can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataSafe/generateOnPremConnectorConfiguration:GenerateOnPremConnectorConfiguration test_generate_on_prem_connector_configuration "id"

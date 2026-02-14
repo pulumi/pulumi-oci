@@ -462,6 +462,13 @@ class RemediationRecipe(pulumi.CustomResource):
                  verify_configuration: Optional[pulumi.Input[Union['RemediationRecipeVerifyConfigurationArgs', 'RemediationRecipeVerifyConfigurationArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/adm/latest/RemediationRecipe
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/adm
+
+        Creates a new Remediation Recipe.
+
         ## Example Usage
 
         ```python
@@ -548,6 +555,13 @@ class RemediationRecipe(pulumi.CustomResource):
                  args: RemediationRecipeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/adm/latest/RemediationRecipe
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/adm
+
+        Creates a new Remediation Recipe.
+
         ## Example Usage
 
         ```python

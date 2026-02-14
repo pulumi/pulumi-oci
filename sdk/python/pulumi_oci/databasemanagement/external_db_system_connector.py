@@ -431,6 +431,13 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalDbSystemConnector
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+
+        Creates a new external connector.
+
         ## Example Usage
 
         ```python
@@ -472,6 +479,13 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
                  args: ExternalDbSystemConnectorArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalDbSystemConnector
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+
+        Creates a new external connector.
+
         ## Example Usage
 
         ```python

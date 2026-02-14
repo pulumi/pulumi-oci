@@ -27,24 +27,19 @@ __all__ = [
     'GetVbInstancesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class VbInstanceAlternateCustomEndpointArgsDict(TypedDict):
-        hostname: pulumi.Input[_builtins.str]
-        """
-        (Updatable) A custom hostname to be used for the vb instance URL, in FQDN format.
-        """
-        certificate_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
-        """
-        certificate_secret_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-        """
-elif False:
-    VbInstanceAlternateCustomEndpointArgsDict: TypeAlias = Mapping[str, Any]
+class VbInstanceAlternateCustomEndpointArgsDict(TypedDict):
+    hostname: pulumi.Input[_builtins.str]
+    """
+    (Updatable) A custom hostname to be used for the vb instance URL, in FQDN format.
+    """
+    certificate_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
+    """
+    certificate_secret_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+    """
 
 @pulumi.input_type
 class VbInstanceAlternateCustomEndpointArgs:
@@ -100,22 +95,19 @@ class VbInstanceAlternateCustomEndpointArgs:
         pulumi.set(self, "certificate_secret_version", value)
 
 
-if not MYPY:
-    class VbInstanceCustomEndpointArgsDict(TypedDict):
-        hostname: pulumi.Input[_builtins.str]
-        """
-        (Updatable) A custom hostname to be used for the vb instance URL, in FQDN format.
-        """
-        certificate_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
-        """
-        certificate_secret_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-        """
-elif False:
-    VbInstanceCustomEndpointArgsDict: TypeAlias = Mapping[str, Any]
+class VbInstanceCustomEndpointArgsDict(TypedDict):
+    hostname: pulumi.Input[_builtins.str]
+    """
+    (Updatable) A custom hostname to be used for the vb instance URL, in FQDN format.
+    """
+    certificate_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
+    """
+    certificate_secret_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+    """
 
 @pulumi.input_type
 class VbInstanceCustomEndpointArgs:
@@ -171,38 +163,35 @@ class VbInstanceCustomEndpointArgs:
         pulumi.set(self, "certificate_secret_version", value)
 
 
-if not MYPY:
-    class VbInstanceNetworkEndpointDetailsArgsDict(TypedDict):
-        network_endpoint_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of network endpoint.
+class VbInstanceNetworkEndpointDetailsArgsDict(TypedDict):
+    network_endpoint_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of network endpoint.
 
-        For private endpoint access
-        """
-        allowlisted_http_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
-        """
-        allowlisted_http_vcns: NotRequired[pulumi.Input[Sequence[pulumi.Input['VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgsDict']]]]
-        """
-        (Updatable) Virtual Cloud Networks allowed to access this network endpoint.
-        """
-        network_security_group_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Network Security Group OCIDs for the Private Endpoint.
-        """
-        private_endpoint_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The IP address to be assigned to Private Endpoint
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The subnet OCID for the private endpoint.
+    For private endpoint access
+    """
+    allowlisted_http_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+    """
+    allowlisted_http_vcns: NotRequired[pulumi.Input[Sequence[pulumi.Input['VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgsDict']]]]
+    """
+    (Updatable) Virtual Cloud Networks allowed to access this network endpoint.
+    """
+    network_security_group_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Network Security Group OCIDs for the Private Endpoint.
+    """
+    private_endpoint_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The IP address to be assigned to Private Endpoint
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The subnet OCID for the private endpoint.
 
-        For public network access control
-        """
-elif False:
-    VbInstanceNetworkEndpointDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    For public network access control
+    """
 
 @pulumi.input_type
 class VbInstanceNetworkEndpointDetailsArgs:
@@ -314,18 +303,15 @@ class VbInstanceNetworkEndpointDetailsArgs:
         pulumi.set(self, "subnet_id", value)
 
 
-if not MYPY:
-    class VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgsDict(TypedDict):
-        id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The Virtual Cloud Network OCID.
-        """
-        allowlisted_ip_cidrs: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
-        """
-elif False:
-    VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgsDict: TypeAlias = Mapping[str, Any]
+class VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgsDict(TypedDict):
+    id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The Virtual Cloud Network OCID.
+    """
+    allowlisted_ip_cidrs: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+    """
 
 @pulumi.input_type
 class VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs:
@@ -365,13 +351,10 @@ class VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs:
         pulumi.set(self, "allowlisted_ip_cidrs", value)
 
 
-if not MYPY:
-    class GetVbInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetVbInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetVbInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetVbInstancesFilterArgs:

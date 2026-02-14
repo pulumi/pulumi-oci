@@ -140,6 +140,13 @@ class AuthenticationPolicy(pulumi.CustomResource):
                  password_policy: Optional[pulumi.Input[Union['AuthenticationPolicyPasswordPolicyArgs', 'AuthenticationPolicyPasswordPolicyArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/AuthenticationPolicy
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+
+        Updates authentication policy for the specified tenancy
+
         ## Example Usage
 
         ```python
@@ -182,6 +189,13 @@ class AuthenticationPolicy(pulumi.CustomResource):
                  args: AuthenticationPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/AuthenticationPolicy
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+
+        Updates authentication policy for the specified tenancy
+
         ## Example Usage
 
         ```python

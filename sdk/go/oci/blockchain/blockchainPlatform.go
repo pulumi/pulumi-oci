@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/blockchain/latest/BlockchainPlatform
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/blockchain
+//
+// Creates a new Blockchain Platform.
+//
 // ## Example Usage
 //
 // ```go

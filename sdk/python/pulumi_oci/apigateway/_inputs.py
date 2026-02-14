@@ -259,32 +259,27 @@ __all__ = [
     'GetUsagePlansFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class ApiLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the lock.
+class ApiLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time this resource was created. An RFC3339 formatted datetime string.
-        """
-elif False:
-    ApiLockArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time this resource was created. An RFC3339 formatted datetime string.
+    """
 
 @pulumi.input_type
 class ApiLockArgs:
@@ -364,18 +359,15 @@ class ApiLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class ApiValidationResultArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the validation.
-        """
-        result: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Result of the validation.
-        """
-elif False:
-    ApiValidationResultArgsDict: TypeAlias = Mapping[str, Any]
+class ApiValidationResultArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the validation.
+    """
+    result: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Result of the validation.
+    """
 
 @pulumi.input_type
 class ApiValidationResultArgs:
@@ -416,26 +408,23 @@ class ApiValidationResultArgs:
         pulumi.set(self, "result", value)
 
 
-if not MYPY:
-    class CertificateLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the lock.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time this resource was created. An RFC3339 formatted datetime string.
-        """
-elif False:
-    CertificateLockArgsDict: TypeAlias = Mapping[str, Any]
+class CertificateLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time this resource was created. An RFC3339 formatted datetime string.
+    """
 
 @pulumi.input_type
 class CertificateLockArgs:
@@ -507,26 +496,23 @@ class CertificateLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class DeploymentLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the lock.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time this resource was created. An RFC3339 formatted datetime string.
-        """
-elif False:
-    DeploymentLockArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time this resource was created. An RFC3339 formatted datetime string.
+    """
 
 @pulumi.input_type
 class DeploymentLockArgs:
@@ -598,22 +584,19 @@ class DeploymentLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationArgsDict(TypedDict):
-        routes: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteArgsDict']]]
-        """
-        (Updatable) A list of routes that this API exposes.
-        """
-        logging_policies: NotRequired[pulumi.Input['DeploymentSpecificationLoggingPoliciesArgsDict']]
-        """
-        (Updatable) Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
-        """
-        request_policies: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesArgsDict']]
-        """
-        (Updatable) Global behavior applied to all requests received by the API.
-        """
-elif False:
-    DeploymentSpecificationArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationArgsDict(TypedDict):
+    routes: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteArgsDict']]]
+    """
+    (Updatable) A list of routes that this API exposes.
+    """
+    logging_policies: NotRequired[pulumi.Input['DeploymentSpecificationLoggingPoliciesArgsDict']]
+    """
+    (Updatable) Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
+    """
+    request_policies: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesArgsDict']]
+    """
+    (Updatable) Global behavior applied to all requests received by the API.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationArgs:
@@ -669,18 +652,15 @@ class DeploymentSpecificationArgs:
         pulumi.set(self, "request_policies", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationLoggingPoliciesArgsDict(TypedDict):
-        access_log: NotRequired[pulumi.Input['DeploymentSpecificationLoggingPoliciesAccessLogArgsDict']]
-        """
-        (Updatable) Configures the logging policies for the access logs of an API Deployment.
-        """
-        execution_log: NotRequired[pulumi.Input['DeploymentSpecificationLoggingPoliciesExecutionLogArgsDict']]
-        """
-        (Updatable) Configures the logging policies for the execution logs of an API Deployment.
-        """
-elif False:
-    DeploymentSpecificationLoggingPoliciesArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationLoggingPoliciesArgsDict(TypedDict):
+    access_log: NotRequired[pulumi.Input['DeploymentSpecificationLoggingPoliciesAccessLogArgsDict']]
+    """
+    (Updatable) Configures the logging policies for the access logs of an API Deployment.
+    """
+    execution_log: NotRequired[pulumi.Input['DeploymentSpecificationLoggingPoliciesExecutionLogArgsDict']]
+    """
+    (Updatable) Configures the logging policies for the execution logs of an API Deployment.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationLoggingPoliciesArgs:
@@ -721,18 +701,15 @@ class DeploymentSpecificationLoggingPoliciesArgs:
         pulumi.set(self, "execution_log", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationLoggingPoliciesAccessLogArgsDict(TypedDict):
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables pushing of access logs to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+class DeploymentSpecificationLoggingPoliciesAccessLogArgsDict(TypedDict):
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables pushing of access logs to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
 
-        Oracle recommends using the Oracle Cloud Infrastructure Logging service to enable, retrieve, and query access logs for an API Deployment. If there is an active log object for the API Deployment and its category is set to 'access' in Oracle Cloud Infrastructure Logging service, the logs will not be uploaded to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+    Oracle recommends using the Oracle Cloud Infrastructure Logging service to enable, retrieve, and query access logs for an API Deployment. If there is an active log object for the API Deployment and its category is set to 'access' in Oracle Cloud Infrastructure Logging service, the logs will not be uploaded to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
 
-        Please note that the functionality to push to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket has been deprecated and will be removed in the future.
-        """
-elif False:
-    DeploymentSpecificationLoggingPoliciesAccessLogArgsDict: TypeAlias = Mapping[str, Any]
+    Please note that the functionality to push to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket has been deprecated and will be removed in the future.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationLoggingPoliciesAccessLogArgs:
@@ -765,22 +742,19 @@ class DeploymentSpecificationLoggingPoliciesAccessLogArgs:
         pulumi.set(self, "is_enabled", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationLoggingPoliciesExecutionLogArgsDict(TypedDict):
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables pushing of execution logs to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+class DeploymentSpecificationLoggingPoliciesExecutionLogArgsDict(TypedDict):
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables pushing of execution logs to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
 
-        Oracle recommends using the Oracle Cloud Infrastructure Logging service to enable, retrieve, and query execution logs for an API Deployment. If there is an active log object for the API Deployment and its category is set to 'execution' in Oracle Cloud Infrastructure Logging service, the logs will not be uploaded to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+    Oracle recommends using the Oracle Cloud Infrastructure Logging service to enable, retrieve, and query execution logs for an API Deployment. If there is an active log object for the API Deployment and its category is set to 'execution' in Oracle Cloud Infrastructure Logging service, the logs will not be uploaded to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
 
-        Please note that the functionality to push to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket has been deprecated and will be removed in the future.
-        """
-        log_level: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies the log level used to control logging output of execution logs. Enabling logging at a given level also enables logging at all higher levels.
-        """
-elif False:
-    DeploymentSpecificationLoggingPoliciesExecutionLogArgsDict: TypeAlias = Mapping[str, Any]
+    Please note that the functionality to push to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket has been deprecated and will be removed in the future.
+    """
+    log_level: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies the log level used to control logging output of execution logs. Enabling logging at a given level also enables logging at all higher levels.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationLoggingPoliciesExecutionLogArgs:
@@ -829,34 +803,31 @@ class DeploymentSpecificationLoggingPoliciesExecutionLogArgs:
         pulumi.set(self, "log_level", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesArgsDict(TypedDict):
-        authentication: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationArgsDict']]
-        """
-        (Updatable) Information on how to authenticate incoming requests.
-        """
-        cors: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesCorsArgsDict']]
-        """
-        (Updatable) Enable CORS (Cross-Origin-Resource-Sharing) request handling.
-        """
-        dynamic_authentication: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgsDict']]
-        """
-        (Updatable) Policy on how to authenticate requests when multiple authentication options are configured for a deployment. For an incoming request, the value of selector specified under selectionSource will be matched against the keys specified for each authentication server. The authentication server whose key matches the value of selector will be used for authentication.
-        """
-        mutual_tls: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesMutualTlsArgsDict']]
-        """
-        (Updatable) Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
-        """
-        rate_limiting: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesRateLimitingArgsDict']]
-        """
-        (Updatable) Limit the number of requests that should be handled for the specified window using a specfic key.
-        """
-        usage_plans: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesUsagePlansArgsDict']]
-        """
-        (Updatable) Usage plan policies for this deployment
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesArgsDict(TypedDict):
+    authentication: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationArgsDict']]
+    """
+    (Updatable) Information on how to authenticate incoming requests.
+    """
+    cors: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesCorsArgsDict']]
+    """
+    (Updatable) Enable CORS (Cross-Origin-Resource-Sharing) request handling.
+    """
+    dynamic_authentication: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgsDict']]
+    """
+    (Updatable) Policy on how to authenticate requests when multiple authentication options are configured for a deployment. For an incoming request, the value of selector specified under selectionSource will be matched against the keys specified for each authentication server. The authentication server whose key matches the value of selector will be used for authentication.
+    """
+    mutual_tls: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesMutualTlsArgsDict']]
+    """
+    (Updatable) Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
+    """
+    rate_limiting: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesRateLimitingArgsDict']]
+    """
+    (Updatable) Limit the number of requests that should be handled for the specified window using a specfic key.
+    """
+    usage_plans: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesUsagePlansArgsDict']]
+    """
+    (Updatable) Usage plan policies for this deployment
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesArgs:
@@ -961,70 +932,67 @@ class DeploymentSpecificationRequestPoliciesArgs:
         pulumi.set(self, "usage_plans", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the authentication policy to use.
-        """
-        audiences: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of intended recipients for the token.
-        """
-        cache_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of keys from "parameters" attribute value whose values will be added to the cache key.
-        """
-        function_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
-        """
-        is_anonymous_access_allowed: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
-        """
-        issuers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of parties that could have issued the token.
-        """
-        max_clock_skew_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
-        """
-        parameters: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
-        """
-        public_keys: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgsDict']]
-        """
-        (Updatable) A set of Public Keys that will be used to verify the JWT signature.
-        """
-        token_auth_scheme: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
-        """
-        token_header: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the header containing the authentication token.
-        """
-        token_query_param: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the query parameter containing the authentication token.
-        """
-        validation_failure_policy: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgsDict']]
-        """
-        (Updatable) Policy for defining behaviour on validation failure.
-        """
-        validation_policy: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgsDict']]
-        """
-        (Updatable) Authentication Policies for the Token Authentication types.
-        """
-        verify_claims: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgsDict']]]]
-        """
-        (Updatable) A list of claims which should be validated to consider the token valid.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the authentication policy to use.
+    """
+    audiences: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of intended recipients for the token.
+    """
+    cache_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of keys from "parameters" attribute value whose values will be added to the cache key.
+    """
+    function_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+    """
+    is_anonymous_access_allowed: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
+    """
+    issuers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of parties that could have issued the token.
+    """
+    max_clock_skew_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
+    """
+    parameters: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
+    """
+    public_keys: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgsDict']]
+    """
+    (Updatable) A set of Public Keys that will be used to verify the JWT signature.
+    """
+    token_auth_scheme: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
+    """
+    token_header: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the header containing the authentication token.
+    """
+    token_query_param: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the query parameter containing the authentication token.
+    """
+    validation_failure_policy: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgsDict']]
+    """
+    (Updatable) Policy for defining behaviour on validation failure.
+    """
+    validation_policy: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgsDict']]
+    """
+    (Updatable) Authentication Policies for the Token Authentication types.
+    """
+    verify_claims: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgsDict']]]]
+    """
+    (Updatable) A list of claims which should be validated to consider the token valid.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
@@ -1272,30 +1240,27 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
         pulumi.set(self, "verify_claims", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the public key set.
-        """
-        is_ssl_verify_disabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Defines whether or not to uphold SSL verification.
-        """
-        keys: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgsDict']]]]
-        """
-        (Updatable) The set of static public keys.
-        """
-        max_cache_duration_in_hours: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The duration for which the JWKS should be cached before it is fetched again.
-        """
-        uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the public key set.
+    """
+    is_ssl_verify_disabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Defines whether or not to uphold SSL verification.
+    """
+    keys: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgsDict']]]]
+    """
+    (Updatable) The set of static public keys.
+    """
+    max_cache_duration_in_hours: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The duration for which the JWKS should be cached before it is fetched again.
+    """
+    uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs:
@@ -1383,46 +1348,43 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs:
         pulumi.set(self, "uri", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgsDict(TypedDict):
-        format: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The format of the public key.
-        """
-        alg: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The algorithm intended for use with this key.
-        """
-        e: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The base64 url encoded exponent of the RSA public key represented by this key.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The content of the PEM-encoded public key.
-        """
-        key_ops: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The operations for which this key is to be used.
-        """
-        kid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A unique key ID. This key will be used to verify the signature of a JWT with matching "kid".
-        """
-        kty: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The key type.
-        """
-        n: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
-        """
-        use: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The intended use of the public key.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgsDict(TypedDict):
+    format: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The format of the public key.
+    """
+    alg: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The algorithm intended for use with this key.
+    """
+    e: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The base64 url encoded exponent of the RSA public key represented by this key.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The content of the PEM-encoded public key.
+    """
+    key_ops: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The operations for which this key is to be used.
+    """
+    kid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A unique key ID. This key will be used to verify the signature of a JWT with matching "kid".
+    """
+    kty: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The key type.
+    """
+    n: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
+    """
+    use: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The intended use of the public key.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs:
@@ -1574,66 +1536,63 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs:
         pulumi.set(self, "use", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the Validation failure Policy.
-        """
-        client_details: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsArgsDict']]
-        """
-        (Updatable) Client App Credential details.
-        """
-        fallback_redirect_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The path to be used as fallback after OAuth2.
-        """
-        logout_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The path to be used as logout.
-        """
-        max_expiry_duration_in_hours: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The duration for which the OAuth2 success token should be cached before it is fetched again.
-        """
-        response_code: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) HTTP response code, can include context variables.
-        """
-        response_header_transformations: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsArgsDict']]
-        """
-        (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
-        """
-        response_message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) HTTP response message.
-        """
-        response_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Response Type.
-        """
-        scopes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) List of scopes.
-        """
-        source_uri_details: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsArgsDict']]
-        """
-        (Updatable) Auth endpoint details.
-        """
-        use_cookies_for_intermediate_steps: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Defines whether or not to use cookies for OAuth2 intermediate steps.
-        """
-        use_cookies_for_session: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Defines whether or not to use cookies for session maintenance.
-        """
-        use_pkce: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Defines whether or not to support PKCE.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the Validation failure Policy.
+    """
+    client_details: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsArgsDict']]
+    """
+    (Updatable) Client App Credential details.
+    """
+    fallback_redirect_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The path to be used as fallback after OAuth2.
+    """
+    logout_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The path to be used as logout.
+    """
+    max_expiry_duration_in_hours: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The duration for which the OAuth2 success token should be cached before it is fetched again.
+    """
+    response_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) HTTP response code, can include context variables.
+    """
+    response_header_transformations: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsArgsDict']]
+    """
+    (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
+    """
+    response_message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) HTTP response message.
+    """
+    response_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Response Type.
+    """
+    scopes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) List of scopes.
+    """
+    source_uri_details: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsArgsDict']]
+    """
+    (Updatable) Auth endpoint details.
+    """
+    use_cookies_for_intermediate_steps: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Defines whether or not to use cookies for OAuth2 intermediate steps.
+    """
+    use_cookies_for_session: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Defines whether or not to use cookies for session maintenance.
+    """
+    use_pkce: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Defines whether or not to support PKCE.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgs:
@@ -1865,26 +1824,23 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         pulumi.set(self, "use_pkce", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) To specify where the Client App details should be taken from.
-        """
-        client_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Client ID for the OAuth2/OIDC app.
-        """
-        client_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
-        """
-        client_secret_version_number: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The version number of the client secret to use.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) To specify where the Client App details should be taken from.
+    """
+    client_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Client ID for the OAuth2/OIDC app.
+    """
+    client_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
+    """
+    client_secret_version_number: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The version number of the client secret to use.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsArgs:
@@ -1956,22 +1912,19 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         pulumi.set(self, "client_secret_version_number", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsArgsDict(TypedDict):
-        filter_headers: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgsDict']]
-        """
-        (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
-        """
-        rename_headers: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgsDict']]
-        """
-        (Updatable) Rename HTTP headers as they pass through the gateway.
-        """
-        set_headers: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgsDict']]
-        """
-        (Updatable) Set HTTP headers as they pass through the gateway.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsArgsDict(TypedDict):
+    filter_headers: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgsDict']]
+    """
+    (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
+    """
+    rename_headers: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgsDict']]
+    """
+    (Updatable) Rename HTTP headers as they pass through the gateway.
+    """
+    set_headers: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgsDict']]
+    """
+    (Updatable) Set HTTP headers as they pass through the gateway.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsArgs:
@@ -2028,18 +1981,15 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         pulumi.set(self, "set_headers", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgsDict(TypedDict):
-        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgsDict']]]]
-        """
-        (Updatable) The list of headers.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the headers in the list and removes all others, so it acts as an inclusion list.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgsDict(TypedDict):
+    items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgsDict']]]]
+    """
+    (Updatable) The list of headers.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the headers in the list and removes all others, so it acts as an inclusion list.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs:
@@ -2080,14 +2030,11 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs:
@@ -2112,14 +2059,11 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgsDict(TypedDict):
-        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgsDict']]]]
-        """
-        (Updatable) The list of headers.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgsDict(TypedDict):
+    items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgsDict']]]]
+    """
+    (Updatable) The list of headers.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs:
@@ -2144,18 +2088,15 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         pulumi.set(self, "items", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgsDict(TypedDict):
-        from_: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
-        to: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The new name of the header.  This name must be unique across transformation policies.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgsDict(TypedDict):
+    from_: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
+    """
+    to: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The new name of the header.  This name must be unique across transformation policies.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs:
@@ -2196,14 +2137,11 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         pulumi.set(self, "to", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgsDict(TypedDict):
-        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgsDict']]]]
-        """
-        (Updatable) The list of headers.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgsDict(TypedDict):
+    items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgsDict']]]]
+    """
+    (Updatable) The list of headers.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs:
@@ -2228,22 +2166,19 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         pulumi.set(self, "items", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgsDict(TypedDict):
-        if_exists: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgsDict(TypedDict):
+    if_exists: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs:
@@ -2300,18 +2235,15 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the Uri detail.
-        """
-        uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The discovery URI for the auth server.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the Uri detail.
+    """
+    uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The discovery URI for the auth server.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsArgs:
@@ -2351,42 +2283,39 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         pulumi.set(self, "uri", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the token validation policy.
-        """
-        additional_validation_policy: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyArgsDict']]
-        """
-        (Updatable) Additional JWT validation checks.
-        """
-        client_details: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsArgsDict']]
-        """
-        (Updatable) Client App Credential details.
-        """
-        is_ssl_verify_disabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Defines whether or not to uphold SSL verification.
-        """
-        keys: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArgsDict']]]]
-        """
-        (Updatable) The set of static public keys.
-        """
-        max_cache_duration_in_hours: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
-        """
-        source_uri_details: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsArgsDict']]
-        """
-        (Updatable) Auth endpoint details.
-        """
-        uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the token validation policy.
+    """
+    additional_validation_policy: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyArgsDict']]
+    """
+    (Updatable) Additional JWT validation checks.
+    """
+    client_details: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsArgsDict']]
+    """
+    (Updatable) Client App Credential details.
+    """
+    is_ssl_verify_disabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Defines whether or not to uphold SSL verification.
+    """
+    keys: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArgsDict']]]]
+    """
+    (Updatable) The set of static public keys.
+    """
+    max_cache_duration_in_hours: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
+    """
+    source_uri_details: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsArgsDict']]
+    """
+    (Updatable) Auth endpoint details.
+    """
+    uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs:
@@ -2522,22 +2451,19 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs:
         pulumi.set(self, "uri", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyArgsDict(TypedDict):
-        audiences: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of intended recipients for the token.
-        """
-        issuers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of parties that could have issued the token.
-        """
-        verify_claims: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgsDict']]]]
-        """
-        (Updatable) A list of claims which should be validated to consider the token valid.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyArgsDict(TypedDict):
+    audiences: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of intended recipients for the token.
+    """
+    issuers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of parties that could have issued the token.
+    """
+    verify_claims: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgsDict']]]]
+    """
+    (Updatable) A list of claims which should be validated to consider the token valid.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyArgs:
@@ -2594,22 +2520,19 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditi
         pulumi.set(self, "verify_claims", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgsDict(TypedDict):
-        is_required: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the claim is required to be present in the JWT or not. If set to "false", the claim values will be matched only if the claim is present in the JWT.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of the claim.
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of acceptable values for a given claim. If this value is "null" or empty and "isRequired" set to "true", then the presence of this claim in the JWT is validated.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgsDict(TypedDict):
+    is_required: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the claim is required to be present in the JWT or not. If set to "false", the claim values will be matched only if the claim is present in the JWT.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of the claim.
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of acceptable values for a given claim. If this value is "null" or empty and "isRequired" set to "true", then the presence of this claim in the JWT is validated.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgs:
@@ -2666,26 +2589,23 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditi
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) To specify where the Client App details should be taken from.
-        """
-        client_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Client ID for the OAuth2/OIDC app.
-        """
-        client_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
-        """
-        client_secret_version_number: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The version number of the client secret to use.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) To specify where the Client App details should be taken from.
+    """
+    client_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Client ID for the OAuth2/OIDC app.
+    """
+    client_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
+    """
+    client_secret_version_number: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The version number of the client secret to use.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsArgs:
@@ -2757,46 +2677,43 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClient
         pulumi.set(self, "client_secret_version_number", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArgsDict(TypedDict):
-        format: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The format of the public key.
-        """
-        alg: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The algorithm intended for use with this key.
-        """
-        e: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The base64 url encoded exponent of the RSA public key represented by this key.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The content of the PEM-encoded public key.
-        """
-        key_ops: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The operations for which this key is to be used.
-        """
-        kid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A unique key ID. This key will be used to verify the signature of a JWT with matching "kid".
-        """
-        kty: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The key type.
-        """
-        n: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
-        """
-        use: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The intended use of the public key.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArgsDict(TypedDict):
+    format: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The format of the public key.
+    """
+    alg: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The algorithm intended for use with this key.
+    """
+    e: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The base64 url encoded exponent of the RSA public key represented by this key.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The content of the PEM-encoded public key.
+    """
+    key_ops: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The operations for which this key is to be used.
+    """
+    kid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A unique key ID. This key will be used to verify the signature of a JWT with matching "kid".
+    """
+    kty: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The key type.
+    """
+    n: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
+    """
+    use: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The intended use of the public key.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArgs:
@@ -2948,18 +2865,15 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArg
         pulumi.set(self, "use", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the Uri detail.
-        """
-        uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The discovery URI for the auth server.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the Uri detail.
+    """
+    uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The discovery URI for the auth server.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsArgs:
@@ -2999,22 +2913,19 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySource
         pulumi.set(self, "uri", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgsDict(TypedDict):
-        is_required: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the claim is required to be present in the JWT or not. If set to "false", the claim values will be matched only if the claim is present in the JWT.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of the claim.
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of acceptable values for a given claim. If this value is "null" or empty and "isRequired" set to "true", then the presence of this claim in the JWT is validated.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgsDict(TypedDict):
+    is_required: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the claim is required to be present in the JWT or not. If set to "false", the claim values will be matched only if the claim is present in the JWT.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of the claim.
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of acceptable values for a given claim. If this value is "null" or empty and "isRequired" set to "true", then the presence of this claim in the JWT is validated.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs:
@@ -3071,34 +2982,31 @@ class DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesCorsArgsDict(TypedDict):
-        allowed_origins: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) The list of allowed origins that the CORS handler will use to respond to CORS requests. The gateway will send the Access-Control-Allow-Origin header with the best origin match for the circumstances. '*' will match any origins, and 'null' will match queries from 'file:' origins. All other origins must be qualified with the scheme, full hostname, and port if necessary.
-        """
-        allowed_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of headers that will be allowed from the client via the Access-Control-Allow-Headers header. '*' will allow all headers.
-        """
-        allowed_methods: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of allowed HTTP methods that will be returned for the preflight OPTIONS request in the Access-Control-Allow-Methods header. '*' will allow all methods.
-        """
-        exposed_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of headers that the client will be allowed to see from the response as indicated by the Access-Control-Expose-Headers header. '*' will expose all headers.
-        """
-        is_allow_credentials_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
-        """
-        max_age_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesCorsArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesCorsArgsDict(TypedDict):
+    allowed_origins: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) The list of allowed origins that the CORS handler will use to respond to CORS requests. The gateway will send the Access-Control-Allow-Origin header with the best origin match for the circumstances. '*' will match any origins, and 'null' will match queries from 'file:' origins. All other origins must be qualified with the scheme, full hostname, and port if necessary.
+    """
+    allowed_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of headers that will be allowed from the client via the Access-Control-Allow-Headers header. '*' will allow all headers.
+    """
+    allowed_methods: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of allowed HTTP methods that will be returned for the preflight OPTIONS request in the Access-Control-Allow-Methods header. '*' will allow all methods.
+    """
+    exposed_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of headers that the client will be allowed to see from the response as indicated by the Access-Control-Expose-Headers header. '*' will expose all headers.
+    """
+    is_allow_credentials_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
+    """
+    max_age_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesCorsArgs:
@@ -3202,18 +3110,15 @@ class DeploymentSpecificationRequestPoliciesCorsArgs:
         pulumi.set(self, "max_age_in_seconds", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgsDict(TypedDict):
-        authentication_servers: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerArgsDict']]]
-        """
-        (Updatable) List of authentication servers to choose from during dynamic authentication.
-        """
-        selection_source: pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgsDict']
-        """
-        (Updatable) The type of selector to use when dynamically routing and dynamically authenticating requests.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgsDict(TypedDict):
+    authentication_servers: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerArgsDict']]]
+    """
+    (Updatable) List of authentication servers to choose from during dynamic authentication.
+    """
+    selection_source: pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgsDict']
+    """
+    (Updatable) The type of selector to use when dynamically routing and dynamically authenticating requests.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs:
@@ -3252,18 +3157,15 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs:
         pulumi.set(self, "selection_source", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerArgsDict(TypedDict):
-        authentication_server_detail: pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgsDict']
-        """
-        (Updatable) Information on how to authenticate incoming requests.
-        """
-        key: pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgsDict']
-        """
-        (Updatable) Base policy for defining how to match the context variable in an incoming request with selection keys when dynamically routing and dynamically authenticating requests.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerArgsDict(TypedDict):
+    authentication_server_detail: pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgsDict']
+    """
+    (Updatable) Information on how to authenticate incoming requests.
+    """
+    key: pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgsDict']
+    """
+    (Updatable) Base policy for defining how to match the context variable in an incoming request with selection keys when dynamically routing and dynamically authenticating requests.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerArgs:
@@ -3302,70 +3204,67 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "key", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the authentication policy to use.
-        """
-        audiences: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of intended recipients for the token.
-        """
-        cache_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        A list of keys from "parameters" attribute value whose values will be added to the cache key.
-        """
-        function_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
-        """
-        is_anonymous_access_allowed: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
-        """
-        issuers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of parties that could have issued the token.
-        """
-        max_clock_skew_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
-        """
-        parameters: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
-        """
-        public_keys: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysArgsDict']]
-        """
-        (Updatable) A set of Public Keys that will be used to verify the JWT signature.
-        """
-        token_auth_scheme: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
-        """
-        token_header: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the header containing the authentication token.
-        """
-        token_query_param: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the query parameter containing the authentication token.
-        """
-        validation_failure_policy: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyArgsDict']]
-        """
-        (Updatable) Policy for defining behaviour on validation failure.
-        """
-        validation_policy: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgsDict']]
-        """
-        (Updatable) Authentication Policies for the Token Authentication types.
-        """
-        verify_claims: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgsDict']]]]
-        """
-        (Updatable) A list of claims which should be validated to consider the token valid.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the authentication policy to use.
+    """
+    audiences: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of intended recipients for the token.
+    """
+    cache_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    A list of keys from "parameters" attribute value whose values will be added to the cache key.
+    """
+    function_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+    """
+    is_anonymous_access_allowed: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
+    """
+    issuers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of parties that could have issued the token.
+    """
+    max_clock_skew_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
+    """
+    parameters: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
+    """
+    public_keys: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysArgsDict']]
+    """
+    (Updatable) A set of Public Keys that will be used to verify the JWT signature.
+    """
+    token_auth_scheme: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
+    """
+    token_header: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the header containing the authentication token.
+    """
+    token_query_param: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the query parameter containing the authentication token.
+    """
+    validation_failure_policy: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyArgsDict']]
+    """
+    (Updatable) Policy for defining behaviour on validation failure.
+    """
+    validation_policy: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgsDict']]
+    """
+    (Updatable) Authentication Policies for the Token Authentication types.
+    """
+    verify_claims: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgsDict']]]]
+    """
+    (Updatable) A list of claims which should be validated to consider the token valid.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgs:
@@ -3613,30 +3512,27 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "verify_claims", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the public key set.
-        """
-        is_ssl_verify_disabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Defines whether or not to uphold SSL verification.
-        """
-        keys: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKeyArgsDict']]]]
-        """
-        (Updatable) The set of static public keys.
-        """
-        max_cache_duration_in_hours: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The duration for which the JWKS should be cached before it is fetched again.
-        """
-        uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the public key set.
+    """
+    is_ssl_verify_disabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Defines whether or not to uphold SSL verification.
+    """
+    keys: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKeyArgsDict']]]]
+    """
+    (Updatable) The set of static public keys.
+    """
+    max_cache_duration_in_hours: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The duration for which the JWKS should be cached before it is fetched again.
+    """
+    uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysArgs:
@@ -3724,46 +3620,43 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "uri", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKeyArgsDict(TypedDict):
-        format: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The format of the public key.
-        """
-        alg: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The algorithm intended for use with this key.
-        """
-        e: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The base64 url encoded exponent of the RSA public key represented by this key.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The content of the PEM-encoded public key.
-        """
-        key_ops: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The operations for which this key is to be used.
-        """
-        kid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A unique key ID. This key will be used to verify the signature of a JWT with matching "kid".
-        """
-        kty: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The key type.
-        """
-        n: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
-        """
-        use: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The intended use of the public key.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKeyArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKeyArgsDict(TypedDict):
+    format: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The format of the public key.
+    """
+    alg: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The algorithm intended for use with this key.
+    """
+    e: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The base64 url encoded exponent of the RSA public key represented by this key.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The content of the PEM-encoded public key.
+    """
+    key_ops: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The operations for which this key is to be used.
+    """
+    kid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A unique key ID. This key will be used to verify the signature of a JWT with matching "kid".
+    """
+    kty: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The key type.
+    """
+    n: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
+    """
+    use: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The intended use of the public key.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKeyArgs:
@@ -3915,66 +3808,63 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "use", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the Validation failure Policy.
-        """
-        client_details: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailsArgsDict']]
-        """
-        (Updatable) Client App Credential details.
-        """
-        fallback_redirect_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The path to be used as fallback after OAuth2.
-        """
-        logout_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The path to be used as logout.
-        """
-        max_expiry_duration_in_hours: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The duration for which the OAuth2 success token should be cached before it is fetched again.
-        """
-        response_code: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) HTTP response code, can include context variables.
-        """
-        response_header_transformations: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsArgsDict']]
-        """
-        (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
-        """
-        response_message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) HTTP response message.
-        """
-        response_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Response Type.
-        """
-        scopes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) List of scopes.
-        """
-        source_uri_details: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailsArgsDict']]
-        """
-        (Updatable) Auth endpoint details.
-        """
-        use_cookies_for_intermediate_steps: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Defines whether or not to use cookies for OAuth2 intermediate steps.
-        """
-        use_cookies_for_session: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Defines whether or not to use cookies for session maintenance.
-        """
-        use_pkce: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Defines whether or not to support PKCE.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the Validation failure Policy.
+    """
+    client_details: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailsArgsDict']]
+    """
+    (Updatable) Client App Credential details.
+    """
+    fallback_redirect_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The path to be used as fallback after OAuth2.
+    """
+    logout_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The path to be used as logout.
+    """
+    max_expiry_duration_in_hours: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The duration for which the OAuth2 success token should be cached before it is fetched again.
+    """
+    response_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) HTTP response code, can include context variables.
+    """
+    response_header_transformations: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsArgsDict']]
+    """
+    (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
+    """
+    response_message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) HTTP response message.
+    """
+    response_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Response Type.
+    """
+    scopes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) List of scopes.
+    """
+    source_uri_details: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailsArgsDict']]
+    """
+    (Updatable) Auth endpoint details.
+    """
+    use_cookies_for_intermediate_steps: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Defines whether or not to use cookies for OAuth2 intermediate steps.
+    """
+    use_cookies_for_session: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Defines whether or not to use cookies for session maintenance.
+    """
+    use_pkce: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Defines whether or not to support PKCE.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyArgs:
@@ -4206,26 +4096,23 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "use_pkce", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailsArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) To specify where the Client App details should be taken from.
-        """
-        client_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Client ID for the OAuth2/OIDC app.
-        """
-        client_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
-        """
-        client_secret_version_number: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The version number of the client secret to use.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailsArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) To specify where the Client App details should be taken from.
+    """
+    client_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Client ID for the OAuth2/OIDC app.
+    """
+    client_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
+    """
+    client_secret_version_number: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The version number of the client secret to use.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailsArgs:
@@ -4297,22 +4184,19 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "client_secret_version_number", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsArgsDict(TypedDict):
-        filter_headers: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgsDict']]
-        """
-        (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
-        """
-        rename_headers: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgsDict']]
-        """
-        (Updatable) Rename HTTP headers as they pass through the gateway.
-        """
-        set_headers: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgsDict']]
-        """
-        (Updatable) Set HTTP headers as they pass through the gateway.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsArgsDict(TypedDict):
+    filter_headers: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgsDict']]
+    """
+    (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
+    """
+    rename_headers: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgsDict']]
+    """
+    (Updatable) Rename HTTP headers as they pass through the gateway.
+    """
+    set_headers: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgsDict']]
+    """
+    (Updatable) Set HTTP headers as they pass through the gateway.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsArgs:
@@ -4369,18 +4253,15 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "set_headers", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgsDict(TypedDict):
-        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgsDict']]]]
-        """
-        (Updatable) The list of headers.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the headers in the list and removes all others, so it acts as an inclusion list.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgsDict(TypedDict):
+    items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgsDict']]]]
+    """
+    (Updatable) The list of headers.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the headers in the list and removes all others, so it acts as an inclusion list.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs:
@@ -4421,14 +4302,11 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs:
@@ -4453,14 +4331,11 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgsDict(TypedDict):
-        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgsDict']]]]
-        """
-        (Updatable) The list of headers.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgsDict(TypedDict):
+    items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgsDict']]]]
+    """
+    (Updatable) The list of headers.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs:
@@ -4485,18 +4360,15 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "items", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgsDict(TypedDict):
-        from_: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
-        to: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The new name of the header.  This name must be unique across transformation policies.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgsDict(TypedDict):
+    from_: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
+    """
+    to: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The new name of the header.  This name must be unique across transformation policies.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs:
@@ -4537,14 +4409,11 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "to", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgsDict(TypedDict):
-        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgsDict']]]]
-        """
-        (Updatable) The list of headers.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgsDict(TypedDict):
+    items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgsDict']]]]
+    """
+    (Updatable) The list of headers.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs:
@@ -4569,22 +4438,19 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "items", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgsDict(TypedDict):
-        if_exists: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgsDict(TypedDict):
+    if_exists: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs:
@@ -4641,18 +4507,15 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailsArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the Uri detail.
-        """
-        uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The discovery URI for the auth server.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailsArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the Uri detail.
+    """
+    uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The discovery URI for the auth server.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailsArgs:
@@ -4692,42 +4555,39 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "uri", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the token validation policy.
-        """
-        additional_validation_policy: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyArgsDict']]
-        """
-        (Updatable) Additional JWT validation checks.
-        """
-        client_details: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailsArgsDict']]
-        """
-        (Updatable) Client App Credential details.
-        """
-        is_ssl_verify_disabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Defines whether or not to uphold SSL verification.
-        """
-        keys: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyArgsDict']]]]
-        """
-        (Updatable) The set of static public keys.
-        """
-        max_cache_duration_in_hours: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
-        """
-        source_uri_details: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailsArgsDict']]
-        """
-        (Updatable) Auth endpoint details.
-        """
-        uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the token validation policy.
+    """
+    additional_validation_policy: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyArgsDict']]
+    """
+    (Updatable) Additional JWT validation checks.
+    """
+    client_details: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailsArgsDict']]
+    """
+    (Updatable) Client App Credential details.
+    """
+    is_ssl_verify_disabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Defines whether or not to uphold SSL verification.
+    """
+    keys: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyArgsDict']]]]
+    """
+    (Updatable) The set of static public keys.
+    """
+    max_cache_duration_in_hours: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
+    """
+    source_uri_details: NotRequired[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailsArgsDict']]
+    """
+    (Updatable) Auth endpoint details.
+    """
+    uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgs:
@@ -4863,22 +4723,19 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "uri", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyArgsDict(TypedDict):
-        audiences: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of intended recipients for the token.
-        """
-        issuers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of parties that could have issued the token.
-        """
-        verify_claims: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgsDict']]]]
-        """
-        (Updatable) A list of claims which should be validated to consider the token valid.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyArgsDict(TypedDict):
+    audiences: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of intended recipients for the token.
+    """
+    issuers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of parties that could have issued the token.
+    """
+    verify_claims: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgsDict']]]]
+    """
+    (Updatable) A list of claims which should be validated to consider the token valid.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyArgs:
@@ -4935,22 +4792,19 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "verify_claims", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgsDict(TypedDict):
-        is_required: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the claim is required to be present in the JWT or not. If set to "false", the claim values will be matched only if the claim is present in the JWT.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of the claim.
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of acceptable values for a given claim. If this value is "null" or empty and "isRequired" set to "true", then the presence of this claim in the JWT is validated.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgsDict(TypedDict):
+    is_required: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the claim is required to be present in the JWT or not. If set to "false", the claim values will be matched only if the claim is present in the JWT.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of the claim.
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of acceptable values for a given claim. If this value is "null" or empty and "isRequired" set to "true", then the presence of this claim in the JWT is validated.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgs:
@@ -5007,26 +4861,23 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailsArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) To specify where the Client App details should be taken from.
-        """
-        client_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Client ID for the OAuth2/OIDC app.
-        """
-        client_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
-        """
-        client_secret_version_number: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The version number of the client secret to use.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailsArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) To specify where the Client App details should be taken from.
+    """
+    client_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Client ID for the OAuth2/OIDC app.
+    """
+    client_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
+    """
+    client_secret_version_number: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The version number of the client secret to use.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailsArgs:
@@ -5098,46 +4949,43 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "client_secret_version_number", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyArgsDict(TypedDict):
-        format: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The format of the public key.
-        """
-        alg: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The algorithm intended for use with this key.
-        """
-        e: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The base64 url encoded exponent of the RSA public key represented by this key.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The content of the PEM-encoded public key.
-        """
-        key_ops: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The operations for which this key is to be used.
-        """
-        kid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A unique key ID. This key will be used to verify the signature of a JWT with matching "kid".
-        """
-        kty: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The key type.
-        """
-        n: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
-        """
-        use: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The intended use of the public key.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyArgsDict(TypedDict):
+    format: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The format of the public key.
+    """
+    alg: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The algorithm intended for use with this key.
+    """
+    e: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The base64 url encoded exponent of the RSA public key represented by this key.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The content of the PEM-encoded public key.
+    """
+    key_ops: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The operations for which this key is to be used.
+    """
+    kid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A unique key ID. This key will be used to verify the signature of a JWT with matching "kid".
+    """
+    kty: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The key type.
+    """
+    n: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
+    """
+    use: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The intended use of the public key.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyArgs:
@@ -5289,18 +5137,15 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "use", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailsArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the Uri detail.
-        """
-        uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The discovery URI for the auth server.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailsArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the Uri detail.
+    """
+    uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The discovery URI for the auth server.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailsArgs:
@@ -5340,22 +5185,19 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "uri", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgsDict(TypedDict):
-        is_required: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the claim is required to be present in the JWT or not. If set to "false", the claim values will be matched only if the claim is present in the JWT.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of the claim.
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of acceptable values for a given claim. If this value is "null" or empty and "isRequired" set to "true", then the presence of this claim in the JWT is validated.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgsDict(TypedDict):
+    is_required: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the claim is required to be present in the JWT or not. If set to "false", the claim values will be matched only if the claim is present in the JWT.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of the claim.
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of acceptable values for a given claim. If this value is "null" or empty and "isRequired" set to "true", then the presence of this claim in the JWT is validated.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgs:
@@ -5412,30 +5254,27 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name assigned to the branch.
-        """
-        expression: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A selection key string containing a wildcard to match with the context variable in an incoming request. If the context variable matches the string, the request is sent to the route or authentication server associated with the selection key. Valid wildcards are '*' (zero or more characters) and '+' (one or more characters). The string can only contain one wildcard, and the wildcard must be at the start or the end of the string.
-        """
-        is_default: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies whether to use the route or authentication server associated with this selection key as the default. The default is used if the value of a context variable in an incoming request does not match any of the other selection key values when dynamically routing and dynamically authenticating requests.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Type of the selection key.
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The set of selection keys to match with the context variable in an incoming request. If the context variable exactly matches one of the keys in the set, the request is sent to the route or authentication server associated with the set.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name assigned to the branch.
+    """
+    expression: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A selection key string containing a wildcard to match with the context variable in an incoming request. If the context variable matches the string, the request is sent to the route or authentication server associated with the selection key. Valid wildcards are '*' (zero or more characters) and '+' (one or more characters). The string can only contain one wildcard, and the wildcard must be at the start or the end of the string.
+    """
+    is_default: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies whether to use the route or authentication server associated with this selection key as the default. The default is used if the value of a context variable in an incoming request does not match any of the other selection key values when dynamically routing and dynamically authenticating requests.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Type of the selection key.
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The set of selection keys to match with the context variable in an incoming request. If the context variable exactly matches one of the keys in the set, the request is sent to the route or authentication server associated with the set.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgs:
@@ -5523,18 +5362,15 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgsDict(TypedDict):
-        selector: pulumi.Input[_builtins.str]
-        """
-        (Updatable) String describing the context variable used as selector.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the Selection source to use.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgsDict(TypedDict):
+    selector: pulumi.Input[_builtins.str]
+    """
+    (Updatable) String describing the context variable used as selector.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the Selection source to use.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgs:
@@ -5573,18 +5409,15 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSource
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesMutualTlsArgsDict(TypedDict):
-        allowed_sans: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Allowed list of CN or SAN which will be used for verification of certificate.
-        """
-        is_verified_certificate_required: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Determines whether to enable client verification when API Consumer makes connection to the gateway.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesMutualTlsArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesMutualTlsArgsDict(TypedDict):
+    allowed_sans: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Allowed list of CN or SAN which will be used for verification of certificate.
+    """
+    is_verified_certificate_required: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Determines whether to enable client verification when API Consumer makes connection to the gateway.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesMutualTlsArgs:
@@ -5625,18 +5458,15 @@ class DeploymentSpecificationRequestPoliciesMutualTlsArgs:
         pulumi.set(self, "is_verified_certificate_required", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesRateLimitingArgsDict(TypedDict):
-        rate_in_requests_per_second: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The maximum number of requests per second to allow.
-        """
-        rate_key: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The key used to group requests together.
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesRateLimitingArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesRateLimitingArgsDict(TypedDict):
+    rate_in_requests_per_second: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The maximum number of requests per second to allow.
+    """
+    rate_key: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The key used to group requests together.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesRateLimitingArgs:
@@ -5675,18 +5505,15 @@ class DeploymentSpecificationRequestPoliciesRateLimitingArgs:
         pulumi.set(self, "rate_key", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRequestPoliciesUsagePlansArgsDict(TypedDict):
-        token_locations: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) A list of context variables specifying where API tokens may be located in a request. Example locations:
-        * "request.headers[token]"
-        * "request.query[token]"
-        * "request.auth[Token]"
-        * "request.path[TOKEN]"
-        """
-elif False:
-    DeploymentSpecificationRequestPoliciesUsagePlansArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRequestPoliciesUsagePlansArgsDict(TypedDict):
+    token_locations: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) A list of context variables specifying where API tokens may be located in a request. Example locations:
+    * "request.headers[token]"
+    * "request.query[token]"
+    * "request.auth[Token]"
+    * "request.path[TOKEN]"
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRequestPoliciesUsagePlansArgs:
@@ -5718,34 +5545,31 @@ class DeploymentSpecificationRequestPoliciesUsagePlansArgs:
         pulumi.set(self, "token_locations", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteArgsDict(TypedDict):
-        backend: pulumi.Input['DeploymentSpecificationRouteBackendArgsDict']
-        """
-        (Updatable) The backend to forward requests to.
-        """
-        path: pulumi.Input[_builtins.str]
-        """
-        (Updatable) A URL path pattern that must be matched on this route. The path pattern may contain a subset of RFC 6570 identifiers to allow wildcard and parameterized matching.
-        """
-        logging_policies: NotRequired[pulumi.Input['DeploymentSpecificationRouteLoggingPoliciesArgsDict']]
-        """
-        (Updatable) Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
-        """
-        methods: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of allowed methods on this route.
-        """
-        request_policies: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesArgsDict']]
-        """
-        (Updatable) Behavior applied to any requests received by the API on this route.
-        """
-        response_policies: NotRequired[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesArgsDict']]
-        """
-        (Updatable) Behavior applied to any responses sent by the API for requests on this route.
-        """
-elif False:
-    DeploymentSpecificationRouteArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteArgsDict(TypedDict):
+    backend: pulumi.Input['DeploymentSpecificationRouteBackendArgsDict']
+    """
+    (Updatable) The backend to forward requests to.
+    """
+    path: pulumi.Input[_builtins.str]
+    """
+    (Updatable) A URL path pattern that must be matched on this route. The path pattern may contain a subset of RFC 6570 identifiers to allow wildcard and parameterized matching.
+    """
+    logging_policies: NotRequired[pulumi.Input['DeploymentSpecificationRouteLoggingPoliciesArgsDict']]
+    """
+    (Updatable) Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
+    """
+    methods: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of allowed methods on this route.
+    """
+    request_policies: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesArgsDict']]
+    """
+    (Updatable) Behavior applied to any requests received by the API on this route.
+    """
+    response_policies: NotRequired[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesArgsDict']]
+    """
+    (Updatable) Behavior applied to any responses sent by the API for requests on this route.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteArgs:
@@ -5848,66 +5672,63 @@ class DeploymentSpecificationRouteArgs:
         pulumi.set(self, "response_policies", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteBackendArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the API backend.
-        """
-        allowed_post_logout_uris: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of allowed post-logout URLs to which a request can be redirected after revoke access
-        """
-        body: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The body of the stock response from the mock backend.
-        """
-        connect_timeout_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) Defines a timeout for establishing a connection with a proxied server.
-        """
-        function_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
-        """
-        headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendHeaderArgsDict']]]]
-        """
-        (Updatable) The headers of the stock response from the mock backend.
-        """
-        is_ssl_verify_disabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Defines whether or not to uphold SSL verification.
-        """
-        post_logout_state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Defines a state that should be shared on redirecting to postLogout URL.
-        """
-        read_timeout_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) Defines a timeout for reading a response from the proxied server.
-        """
-        routing_backends: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendArgsDict']]]]
-        """
-        (Updatable) List of backends to chose from for Dynamic Routing.
-        """
-        selection_source: NotRequired[pulumi.Input['DeploymentSpecificationRouteBackendSelectionSourceArgsDict']]
-        """
-        (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
-        """
-        send_timeout_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) Defines a timeout for transmitting a request to the proxied server.
-        """
-        status: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The status code of the stock response from the mock backend.
-        """
-        url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The url of the HTTP Backend
-        """
-elif False:
-    DeploymentSpecificationRouteBackendArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteBackendArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the API backend.
+    """
+    allowed_post_logout_uris: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of allowed post-logout URLs to which a request can be redirected after revoke access
+    """
+    body: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The body of the stock response from the mock backend.
+    """
+    connect_timeout_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) Defines a timeout for establishing a connection with a proxied server.
+    """
+    function_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+    """
+    headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendHeaderArgsDict']]]]
+    """
+    (Updatable) The headers of the stock response from the mock backend.
+    """
+    is_ssl_verify_disabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Defines whether or not to uphold SSL verification.
+    """
+    post_logout_state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Defines a state that should be shared on redirecting to postLogout URL.
+    """
+    read_timeout_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) Defines a timeout for reading a response from the proxied server.
+    """
+    routing_backends: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendArgsDict']]]]
+    """
+    (Updatable) List of backends to chose from for Dynamic Routing.
+    """
+    selection_source: NotRequired[pulumi.Input['DeploymentSpecificationRouteBackendSelectionSourceArgsDict']]
+    """
+    (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+    """
+    send_timeout_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) Defines a timeout for transmitting a request to the proxied server.
+    """
+    status: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The status code of the stock response from the mock backend.
+    """
+    url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The url of the HTTP Backend
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteBackendArgs:
@@ -6139,18 +5960,15 @@ class DeploymentSpecificationRouteBackendArgs:
         pulumi.set(self, "url", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteBackendHeaderArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of the header.
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value of the header.
-        """
-elif False:
-    DeploymentSpecificationRouteBackendHeaderArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteBackendHeaderArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of the header.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value of the header.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteBackendHeaderArgs:
@@ -6191,18 +6009,15 @@ class DeploymentSpecificationRouteBackendHeaderArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteBackendRoutingBackendArgsDict(TypedDict):
-        backend: NotRequired[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendBackendArgsDict']]
-        """
-        (Updatable) The backend to forward requests to.
-        """
-        key: NotRequired[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendKeyArgsDict']]
-        """
-        (Updatable) Information around the values for selector of an authentication/ routing branch.
-        """
-elif False:
-    DeploymentSpecificationRouteBackendRoutingBackendArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteBackendRoutingBackendArgsDict(TypedDict):
+    backend: NotRequired[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendBackendArgsDict']]
+    """
+    (Updatable) The backend to forward requests to.
+    """
+    key: NotRequired[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendKeyArgsDict']]
+    """
+    (Updatable) Information around the values for selector of an authentication/ routing branch.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteBackendRoutingBackendArgs:
@@ -6243,50 +6058,47 @@ class DeploymentSpecificationRouteBackendRoutingBackendArgs:
         pulumi.set(self, "key", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteBackendRoutingBackendBackendArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the Response Cache Store Policy.
-        """
-        body: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The body of the stock response from the mock backend.
-        """
-        connect_timeout_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Defines a timeout for establishing a connection with a proxied server.
-        """
-        function_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
-        """
-        headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgsDict']]]]
-        """
-        The List of Headers
-        """
-        is_ssl_verify_disabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Defines whether or not to uphold SSL verification.
-        """
-        read_timeout_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Defines a timeout for reading a response from the proxied server.
-        """
-        send_timeout_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Defines a timeout for transmitting a request to the proxied server.
-        """
-        status: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The status code of the stock response from the mock backend.
-        """
-        url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The url of the HTTP Backend
-        """
-elif False:
-    DeploymentSpecificationRouteBackendRoutingBackendBackendArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteBackendRoutingBackendBackendArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the Response Cache Store Policy.
+    """
+    body: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The body of the stock response from the mock backend.
+    """
+    connect_timeout_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Defines a timeout for establishing a connection with a proxied server.
+    """
+    function_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+    """
+    headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgsDict']]]]
+    """
+    The List of Headers
+    """
+    is_ssl_verify_disabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Defines whether or not to uphold SSL verification.
+    """
+    read_timeout_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Defines a timeout for reading a response from the proxied server.
+    """
+    send_timeout_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Defines a timeout for transmitting a request to the proxied server.
+    """
+    status: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The status code of the stock response from the mock backend.
+    """
+    url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The url of the HTTP Backend
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
@@ -6454,18 +6266,15 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
         pulumi.set(self, "url", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Value of the header.
-        """
-elif False:
-    DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The case-insensitive name of the header.  This name must be unique across transformation policies.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Value of the header.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs:
@@ -6506,30 +6315,27 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteBackendRoutingBackendKeyArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name assigned to the branch.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Information regarding type of the selection key.
-        """
-        expression: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) String describing the expression with wildcards.
-        """
-        is_default: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Information regarding whether this is the default branch.
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Information regarding the set of values of selector for which this branch should be selected.
-        """
-elif False:
-    DeploymentSpecificationRouteBackendRoutingBackendKeyArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteBackendRoutingBackendKeyArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name assigned to the branch.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Information regarding type of the selection key.
+    """
+    expression: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) String describing the expression with wildcards.
+    """
+    is_default: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Information regarding whether this is the default branch.
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Information regarding the set of values of selector for which this branch should be selected.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs:
@@ -6616,18 +6422,15 @@ class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteBackendSelectionSourceArgsDict(TypedDict):
-        selector: pulumi.Input[_builtins.str]
-        """
-        (Updatable) String describing the context variable used as selector.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the Selection source to use.
-        """
-elif False:
-    DeploymentSpecificationRouteBackendSelectionSourceArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteBackendSelectionSourceArgsDict(TypedDict):
+    selector: pulumi.Input[_builtins.str]
+    """
+    (Updatable) String describing the context variable used as selector.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the Selection source to use.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteBackendSelectionSourceArgs:
@@ -6666,18 +6469,15 @@ class DeploymentSpecificationRouteBackendSelectionSourceArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteLoggingPoliciesArgsDict(TypedDict):
-        access_log: NotRequired[pulumi.Input['DeploymentSpecificationRouteLoggingPoliciesAccessLogArgsDict']]
-        """
-        (Updatable) Configures the logging policies for the access logs of an API Deployment.
-        """
-        execution_log: NotRequired[pulumi.Input['DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgsDict']]
-        """
-        (Updatable) Configures the logging policies for the execution logs of an API Deployment.
-        """
-elif False:
-    DeploymentSpecificationRouteLoggingPoliciesArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteLoggingPoliciesArgsDict(TypedDict):
+    access_log: NotRequired[pulumi.Input['DeploymentSpecificationRouteLoggingPoliciesAccessLogArgsDict']]
+    """
+    (Updatable) Configures the logging policies for the access logs of an API Deployment.
+    """
+    execution_log: NotRequired[pulumi.Input['DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgsDict']]
+    """
+    (Updatable) Configures the logging policies for the execution logs of an API Deployment.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteLoggingPoliciesArgs:
@@ -6718,18 +6518,15 @@ class DeploymentSpecificationRouteLoggingPoliciesArgs:
         pulumi.set(self, "execution_log", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteLoggingPoliciesAccessLogArgsDict(TypedDict):
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables pushing of access logs to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+class DeploymentSpecificationRouteLoggingPoliciesAccessLogArgsDict(TypedDict):
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables pushing of access logs to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
 
-        Oracle recommends using the Oracle Cloud Infrastructure Logging service to enable, retrieve, and query access logs for an API Deployment. If there is an active log object for the API Deployment and its category is set to 'access' in Oracle Cloud Infrastructure Logging service, the logs will not be uploaded to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+    Oracle recommends using the Oracle Cloud Infrastructure Logging service to enable, retrieve, and query access logs for an API Deployment. If there is an active log object for the API Deployment and its category is set to 'access' in Oracle Cloud Infrastructure Logging service, the logs will not be uploaded to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
 
-        Please note that the functionality to push to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket has been deprecated and will be removed in the future.
-        """
-elif False:
-    DeploymentSpecificationRouteLoggingPoliciesAccessLogArgsDict: TypeAlias = Mapping[str, Any]
+    Please note that the functionality to push to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket has been deprecated and will be removed in the future.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs:
@@ -6762,22 +6559,19 @@ class DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs:
         pulumi.set(self, "is_enabled", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgsDict(TypedDict):
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables pushing of execution logs to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+class DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgsDict(TypedDict):
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables pushing of execution logs to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
 
-        Oracle recommends using the Oracle Cloud Infrastructure Logging service to enable, retrieve, and query execution logs for an API Deployment. If there is an active log object for the API Deployment and its category is set to 'execution' in Oracle Cloud Infrastructure Logging service, the logs will not be uploaded to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+    Oracle recommends using the Oracle Cloud Infrastructure Logging service to enable, retrieve, and query execution logs for an API Deployment. If there is an active log object for the API Deployment and its category is set to 'execution' in Oracle Cloud Infrastructure Logging service, the logs will not be uploaded to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
 
-        Please note that the functionality to push to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket has been deprecated and will be removed in the future.
-        """
-        log_level: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies the log level used to control logging output of execution logs. Enabling logging at a given level also enables logging at all higher levels.
-        """
-elif False:
-    DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgsDict: TypeAlias = Mapping[str, Any]
+    Please note that the functionality to push to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket has been deprecated and will be removed in the future.
+    """
+    log_level: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies the log level used to control logging output of execution logs. Enabling logging at a given level also enables logging at all higher levels.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs:
@@ -6826,42 +6620,39 @@ class DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs:
         pulumi.set(self, "log_level", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesArgsDict(TypedDict):
-        authorization: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesAuthorizationArgsDict']]
-        """
-        (Updatable) If authentication has been performed, validate whether the request scope (if any) applies to this route. If no RouteAuthorizationPolicy is defined for a route, a policy with a type of AUTHENTICATION_ONLY is applied.
-        """
-        body_validation: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesBodyValidationArgsDict']]
-        """
-        (Updatable) Validate the payload body of the incoming API requests on a specific route.
-        """
-        cors: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesCorsArgsDict']]
-        """
-        (Updatable) Enable CORS (Cross-Origin-Resource-Sharing) request handling.
-        """
-        header_transformations: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgsDict']]
-        """
-        (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
-        """
-        header_validations: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgsDict']]
-        """
-        (Updatable) Validate the HTTP headers on the incoming API requests on a specific route.
-        """
-        query_parameter_transformations: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsArgsDict']]
-        """
-        (Updatable) A set of transformations to apply to query parameters that pass through the gateway.
-        """
-        query_parameter_validations: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgsDict']]
-        """
-        (Updatable) Validate the URL query parameters on the incoming API requests on a specific route.
-        """
-        response_cache_lookup: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgsDict']]
-        """
-        (Updatable) Base policy for Response Cache lookup.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesArgsDict(TypedDict):
+    authorization: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesAuthorizationArgsDict']]
+    """
+    (Updatable) If authentication has been performed, validate whether the request scope (if any) applies to this route. If no RouteAuthorizationPolicy is defined for a route, a policy with a type of AUTHENTICATION_ONLY is applied.
+    """
+    body_validation: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesBodyValidationArgsDict']]
+    """
+    (Updatable) Validate the payload body of the incoming API requests on a specific route.
+    """
+    cors: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesCorsArgsDict']]
+    """
+    (Updatable) Enable CORS (Cross-Origin-Resource-Sharing) request handling.
+    """
+    header_transformations: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgsDict']]
+    """
+    (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
+    """
+    header_validations: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgsDict']]
+    """
+    (Updatable) Validate the HTTP headers on the incoming API requests on a specific route.
+    """
+    query_parameter_transformations: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsArgsDict']]
+    """
+    (Updatable) A set of transformations to apply to query parameters that pass through the gateway.
+    """
+    query_parameter_validations: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgsDict']]
+    """
+    (Updatable) Validate the URL query parameters on the incoming API requests on a specific route.
+    """
+    response_cache_lookup: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgsDict']]
+    """
+    (Updatable) Base policy for Response Cache lookup.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesArgs:
@@ -6998,18 +6789,15 @@ class DeploymentSpecificationRouteRequestPoliciesArgs:
         pulumi.set(self, "response_cache_lookup", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesAuthorizationArgsDict(TypedDict):
-        allowed_scopes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A user whose scope includes any of these access ranges is allowed on this route. Access ranges are case-sensitive.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Indicates how authorization should be applied. For a type of ANY_OF, an "allowedScope" property must also be specified. Otherwise, only a type is required. For a type of ANONYMOUS, an authenticated API must have the "isAnonymousAccessAllowed" property set to "true" in the authentication policy.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesAuthorizationArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesAuthorizationArgsDict(TypedDict):
+    allowed_scopes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A user whose scope includes any of these access ranges is allowed on this route. Access ranges are case-sensitive.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Indicates how authorization should be applied. For a type of ANY_OF, an "allowedScope" property must also be specified. Otherwise, only a type is required. For a type of ANONYMOUS, an authenticated API must have the "isAnonymousAccessAllowed" property set to "true" in the authentication policy.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs:
@@ -7050,28 +6838,25 @@ class DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesBodyValidationArgsDict(TypedDict):
-        contents: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgsDict']]]]
-        """
-        (Updatable) The content of the request body.
-        """
-        required: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Determines if the request body is required in the request.
-        """
-        validation_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Validation behavior mode.
+class DeploymentSpecificationRouteRequestPoliciesBodyValidationArgsDict(TypedDict):
+    contents: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgsDict']]]]
+    """
+    (Updatable) The content of the request body.
+    """
+    required: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Determines if the request body is required in the request.
+    """
+    validation_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Validation behavior mode.
 
-        In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
+    In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
 
-        In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
+    In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
 
-        `DISABLED` type turns the validation off.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesBodyValidationArgsDict: TypeAlias = Mapping[str, Any]
+    `DISABLED` type turns the validation off.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs:
@@ -7140,24 +6925,21 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs:
         pulumi.set(self, "validation_mode", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgsDict(TypedDict):
-        media_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The media_type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
+class DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgsDict(TypedDict):
+    media_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The media_type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
 
-        media_type ::= ( / (  "*" "/" "*" ) / ( type "/" "*" ) / ( type "/" subtype ) )
+    media_type ::= ( / (  "*" "/" "*" ) / ( type "/" "*" ) / ( type "/" subtype ) )
 
-        For requests that match multiple media types, only the most specific media type is applicable. e.g. `text/plain` overrides `text/*`
-        """
-        validation_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Validation type defines the content validation method.
+    For requests that match multiple media types, only the most specific media type is applicable. e.g. `text/plain` overrides `text/*`
+    """
+    validation_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Validation type defines the content validation method.
 
-        Make the validation to first parse the body as the respective format.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgsDict: TypeAlias = Mapping[str, Any]
+    Make the validation to first parse the body as the respective format.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs:
@@ -7208,34 +6990,31 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs:
         pulumi.set(self, "validation_type", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesCorsArgsDict(TypedDict):
-        allowed_origins: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) The list of allowed origins that the CORS handler will use to respond to CORS requests. The gateway will send the Access-Control-Allow-Origin header with the best origin match for the circumstances. '*' will match any origins, and 'null' will match queries from 'file:' origins. All other origins must be qualified with the scheme, full hostname, and port if necessary.
-        """
-        allowed_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of headers that will be allowed from the client via the Access-Control-Allow-Headers header. '*' will allow all headers.
-        """
-        allowed_methods: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of allowed HTTP methods that will be returned for the preflight OPTIONS request in the Access-Control-Allow-Methods header. '*' will allow all methods.
-        """
-        exposed_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of headers that the client will be allowed to see from the response as indicated by the Access-Control-Expose-Headers header. '*' will expose all headers.
-        """
-        is_allow_credentials_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
-        """
-        max_age_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesCorsArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesCorsArgsDict(TypedDict):
+    allowed_origins: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) The list of allowed origins that the CORS handler will use to respond to CORS requests. The gateway will send the Access-Control-Allow-Origin header with the best origin match for the circumstances. '*' will match any origins, and 'null' will match queries from 'file:' origins. All other origins must be qualified with the scheme, full hostname, and port if necessary.
+    """
+    allowed_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of headers that will be allowed from the client via the Access-Control-Allow-Headers header. '*' will allow all headers.
+    """
+    allowed_methods: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of allowed HTTP methods that will be returned for the preflight OPTIONS request in the Access-Control-Allow-Methods header. '*' will allow all methods.
+    """
+    exposed_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of headers that the client will be allowed to see from the response as indicated by the Access-Control-Expose-Headers header. '*' will expose all headers.
+    """
+    is_allow_credentials_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
+    """
+    max_age_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesCorsArgs:
@@ -7339,22 +7118,19 @@ class DeploymentSpecificationRouteRequestPoliciesCorsArgs:
         pulumi.set(self, "max_age_in_seconds", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgsDict(TypedDict):
-        filter_headers: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgsDict']]
-        """
-        (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
-        """
-        rename_headers: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgsDict']]
-        """
-        (Updatable) Rename HTTP headers as they pass through the gateway.
-        """
-        set_headers: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersArgsDict']]
-        """
-        (Updatable) Set HTTP headers as they pass through the gateway.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgsDict(TypedDict):
+    filter_headers: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgsDict']]
+    """
+    (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
+    """
+    rename_headers: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgsDict']]
+    """
+    (Updatable) Rename HTTP headers as they pass through the gateway.
+    """
+    set_headers: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersArgsDict']]
+    """
+    (Updatable) Set HTTP headers as they pass through the gateway.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs:
@@ -7411,18 +7187,15 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs:
         pulumi.set(self, "set_headers", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgsDict(TypedDict):
-        items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgsDict']]]
-        """
-        (Updatable) The list of headers.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the headers in the list and removes all others, so it acts as an inclusion list.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgsDict(TypedDict):
+    items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgsDict']]]
+    """
+    (Updatable) The list of headers.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the headers in the list and removes all others, so it acts as an inclusion list.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgs:
@@ -7461,14 +7234,11 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHead
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgs:
@@ -7492,14 +7262,11 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHead
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgsDict(TypedDict):
-        items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArgsDict']]]
-        """
-        (Updatable) The list of headers.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgsDict(TypedDict):
+    items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArgsDict']]]
+    """
+    (Updatable) The list of headers.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgs:
@@ -7523,18 +7290,15 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHead
         pulumi.set(self, "items", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArgsDict(TypedDict):
-        from_: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
-        to: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The new name of the header.  This name must be unique across transformation policies.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArgsDict(TypedDict):
+    from_: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
+    """
+    to: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The new name of the header.  This name must be unique across transformation policies.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArgs:
@@ -7573,14 +7337,11 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHead
         pulumi.set(self, "to", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersArgsDict(TypedDict):
-        items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArgsDict']]]
-        """
-        (Updatable) The list of headers.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersArgsDict(TypedDict):
+    items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArgsDict']]]
+    """
+    (Updatable) The list of headers.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersArgs:
@@ -7604,22 +7365,19 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeaders
         pulumi.set(self, "items", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
-        values: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
-        if_exists: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+    """
+    values: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+    """
+    if_exists: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArgs:
@@ -7674,24 +7432,21 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeaders
         pulumi.set(self, "if_exists", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgsDict(TypedDict):
-        headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgsDict']]]]
-        """
-        (Updatable) The List of Headers
-        """
-        validation_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Validation behavior mode.
+class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgsDict(TypedDict):
+    headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgsDict']]]]
+    """
+    (Updatable) The List of Headers
+    """
+    validation_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Validation behavior mode.
 
-        In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
+    In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
 
-        In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
+    In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
 
-        `DISABLED` type turns the validation off.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgsDict: TypeAlias = Mapping[str, Any]
+    `DISABLED` type turns the validation off.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs:
@@ -7744,18 +7499,15 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs:
         pulumi.set(self, "validation_mode", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Parameter name.
-        """
-        required: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Determines if the header is required in the request.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Parameter name.
+    """
+    required: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Determines if the header is required in the request.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs:
@@ -7795,22 +7547,19 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs:
         pulumi.set(self, "required", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsArgsDict(TypedDict):
-        filter_query_parameters: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersArgsDict']]
-        """
-        (Updatable) Filter parameters from the query string as they pass through the gateway.  The gateway applies filters after other transformations, so any parameters set or renamed must also be listed here when using an ALLOW type policy.
-        """
-        rename_query_parameters: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgsDict']]
-        """
-        (Updatable) Rename parameters on the query string as they pass through the gateway.
-        """
-        set_query_parameters: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersArgsDict']]
-        """
-        (Updatable) Set parameters on the query string as they pass through the gateway.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsArgsDict(TypedDict):
+    filter_query_parameters: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersArgsDict']]
+    """
+    (Updatable) Filter parameters from the query string as they pass through the gateway.  The gateway applies filters after other transformations, so any parameters set or renamed must also be listed here when using an ALLOW type policy.
+    """
+    rename_query_parameters: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgsDict']]
+    """
+    (Updatable) Rename parameters on the query string as they pass through the gateway.
+    """
+    set_query_parameters: NotRequired[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersArgsDict']]
+    """
+    (Updatable) Set parameters on the query string as they pass through the gateway.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsArgs:
@@ -7867,18 +7616,15 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsAr
         pulumi.set(self, "set_query_parameters", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersArgsDict(TypedDict):
-        items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgsDict']]]
-        """
-        (Updatable) The list of query parameters.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) BLOCK drops any query parameters that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the parameters in the list and removes all others, so it acts as an inclusion list.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersArgsDict(TypedDict):
+    items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgsDict']]]
+    """
+    (Updatable) The list of query parameters.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) BLOCK drops any query parameters that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the parameters in the list and removes all others, so it acts as an inclusion list.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersArgs:
@@ -7917,14 +7663,11 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFi
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The case-sensitive name of the query parameter.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The case-sensitive name of the query parameter.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgs:
@@ -7948,14 +7691,11 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFi
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgsDict(TypedDict):
-        items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgsDict']]]
-        """
-        (Updatable) The list of query parameters.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgsDict(TypedDict):
+    items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgsDict']]]
+    """
+    (Updatable) The list of query parameters.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgs:
@@ -7979,18 +7719,15 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRe
         pulumi.set(self, "items", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgsDict(TypedDict):
-        from_: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The original case-sensitive name of the query parameter.  This name must be unique across transformation policies.
-        """
-        to: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The new name of the query parameter.  This name must be unique across transformation policies.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgsDict(TypedDict):
+    from_: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The original case-sensitive name of the query parameter.  This name must be unique across transformation policies.
+    """
+    to: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The new name of the query parameter.  This name must be unique across transformation policies.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs:
@@ -8029,14 +7766,11 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRe
         pulumi.set(self, "to", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersArgsDict(TypedDict):
-        items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArgsDict']]]
-        """
-        (Updatable) The list of query parameters.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersArgsDict(TypedDict):
+    items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArgsDict']]]
+    """
+    (Updatable) The list of query parameters.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersArgs:
@@ -8060,22 +7794,19 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSe
         pulumi.set(self, "items", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The case-sensitive name of the query parameter.  This name must be unique across transformation policies.
-        """
-        values: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
-        if_exists: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) If a query parameter with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The case-sensitive name of the query parameter.  This name must be unique across transformation policies.
+    """
+    values: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+    """
+    if_exists: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) If a query parameter with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArgs:
@@ -8130,24 +7861,21 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSe
         pulumi.set(self, "if_exists", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgsDict(TypedDict):
-        parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgsDict']]]]
-        """
-        (Updatable) The List of Query Parameters
-        """
-        validation_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Validation behavior mode.
+class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgsDict(TypedDict):
+    parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgsDict']]]]
+    """
+    (Updatable) The List of Query Parameters
+    """
+    validation_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Validation behavior mode.
 
-        In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
+    In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
 
-        In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
+    In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
 
-        `DISABLED` type turns the validation off.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgsDict: TypeAlias = Mapping[str, Any]
+    `DISABLED` type turns the validation off.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs:
@@ -8200,18 +7928,15 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs:
         pulumi.set(self, "validation_mode", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Parameter name.
-        """
-        required: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Determines if the parameter is required in the request.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Parameter name.
+    """
+    required: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Determines if the parameter is required in the request.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs:
@@ -8251,30 +7976,27 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParame
         pulumi.set(self, "required", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-        """
-        cache_key_additions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of context expressions whose values will be added to the base cache key. Values should contain an expression enclosed within ${} delimiters. Only the request context is available.
-        """
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether this policy is currently enabled.
-        """
-        is_private_caching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
+class DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the Response Cache Store Policy.
+    """
+    cache_key_additions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of context expressions whose values will be added to the base cache key. Values should contain an expression enclosed within ${} delimiters. Only the request context is available.
+    """
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether this policy is currently enabled.
+    """
+    is_private_caching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
 
-        When false, any request with an Authorization header will not be stored in the Response Cache.
+    When false, any request with an Authorization header will not be stored in the Response Cache.
 
-        If using the CustomAuthenticationPolicy then the tokenHeader/tokenQueryParam are also subject to this check.
-        """
-elif False:
-    DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgsDict: TypeAlias = Mapping[str, Any]
+    If using the CustomAuthenticationPolicy then the tokenHeader/tokenQueryParam are also subject to this check.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs:
@@ -8354,18 +8076,15 @@ class DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs:
         pulumi.set(self, "is_private_caching_enabled", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteResponsePoliciesArgsDict(TypedDict):
-        header_transformations: NotRequired[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgsDict']]
-        """
-        (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
-        """
-        response_cache_store: NotRequired[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgsDict']]
-        """
-        (Updatable) Base policy for how a response from a backend is cached in the Response Cache.
-        """
-elif False:
-    DeploymentSpecificationRouteResponsePoliciesArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteResponsePoliciesArgsDict(TypedDict):
+    header_transformations: NotRequired[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgsDict']]
+    """
+    (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
+    """
+    response_cache_store: NotRequired[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgsDict']]
+    """
+    (Updatable) Base policy for how a response from a backend is cached in the Response Cache.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteResponsePoliciesArgs:
@@ -8406,22 +8125,19 @@ class DeploymentSpecificationRouteResponsePoliciesArgs:
         pulumi.set(self, "response_cache_store", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgsDict(TypedDict):
-        filter_headers: NotRequired[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersArgsDict']]
-        """
-        (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
-        """
-        rename_headers: NotRequired[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgsDict']]
-        """
-        (Updatable) Rename HTTP headers as they pass through the gateway.
-        """
-        set_headers: NotRequired[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersArgsDict']]
-        """
-        (Updatable) Set HTTP headers as they pass through the gateway.
-        """
-elif False:
-    DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgsDict(TypedDict):
+    filter_headers: NotRequired[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersArgsDict']]
+    """
+    (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
+    """
+    rename_headers: NotRequired[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgsDict']]
+    """
+    (Updatable) Rename HTTP headers as they pass through the gateway.
+    """
+    set_headers: NotRequired[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersArgsDict']]
+    """
+    (Updatable) Set HTTP headers as they pass through the gateway.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgs:
@@ -8478,18 +8194,15 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgs:
         pulumi.set(self, "set_headers", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersArgsDict(TypedDict):
-        items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArgsDict']]]
-        """
-        (Updatable) The list of headers.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the headers in the list and removes all others, so it acts as an inclusion list.
-        """
-elif False:
-    DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersArgsDict(TypedDict):
+    items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArgsDict']]]
+    """
+    (Updatable) The list of headers.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the headers in the list and removes all others, so it acts as an inclusion list.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersArgs:
@@ -8528,14 +8241,11 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHea
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
-elif False:
-    DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArgs:
@@ -8559,14 +8269,11 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHea
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgsDict(TypedDict):
-        items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgsDict']]]
-        """
-        (Updatable) The list of headers.
-        """
-elif False:
-    DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgsDict(TypedDict):
+    items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgsDict']]]
+    """
+    (Updatable) The list of headers.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgs:
@@ -8590,18 +8297,15 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHea
         pulumi.set(self, "items", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgsDict(TypedDict):
-        from_: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
-        to: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The new name of the header.  This name must be unique across transformation policies.
-        """
-elif False:
-    DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgsDict(TypedDict):
+    from_: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
+    """
+    to: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The new name of the header.  This name must be unique across transformation policies.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgs:
@@ -8640,14 +8344,11 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHea
         pulumi.set(self, "to", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersArgsDict(TypedDict):
-        items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArgsDict']]]
-        """
-        (Updatable) The list of headers.
-        """
-elif False:
-    DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersArgsDict(TypedDict):
+    items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArgsDict']]]
+    """
+    (Updatable) The list of headers.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersArgs:
@@ -8671,22 +8372,19 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeader
         pulumi.set(self, "items", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
-        values: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
-        if_exists: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
-        """
-elif False:
-    DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+    """
+    values: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+    """
+    if_exists: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArgs:
@@ -8741,22 +8439,19 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeader
         pulumi.set(self, "if_exists", value)
 
 
-if not MYPY:
-    class DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgsDict(TypedDict):
-        time_to_live_in_seconds: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the Response Cache Store Policy.
+class DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgsDict(TypedDict):
+    time_to_live_in_seconds: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the Response Cache Store Policy.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs:
@@ -8803,22 +8498,19 @@ class DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class GatewayCaBundleArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the CA bundle
-        """
-        ca_bundle_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        """
-        certificate_authority_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        """
-elif False:
-    GatewayCaBundleArgsDict: TypeAlias = Mapping[str, Any]
+class GatewayCaBundleArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the CA bundle
+    """
+    ca_bundle_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+    """
+    certificate_authority_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+    """
 
 @pulumi.input_type
 class GatewayCaBundleArgs:
@@ -8874,14 +8566,11 @@ class GatewayCaBundleArgs:
         pulumi.set(self, "certificate_authority_id", value)
 
 
-if not MYPY:
-    class GatewayIpAddressArgsDict(TypedDict):
-        ip_address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An IP address.
-        """
-elif False:
-    GatewayIpAddressArgsDict: TypeAlias = Mapping[str, Any]
+class GatewayIpAddressArgsDict(TypedDict):
+    ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An IP address.
+    """
 
 @pulumi.input_type
 class GatewayIpAddressArgs:
@@ -8906,14 +8595,11 @@ class GatewayIpAddressArgs:
         pulumi.set(self, "ip_address", value)
 
 
-if not MYPY:
-    class GatewayIpv4addressConfigurationArgsDict(TypedDict):
-        reserved_ip_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of Reserved IP OCIDs created in VCN service.
-        """
-elif False:
-    GatewayIpv4addressConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class GatewayIpv4addressConfigurationArgsDict(TypedDict):
+    reserved_ip_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of Reserved IP OCIDs created in VCN service.
+    """
 
 @pulumi.input_type
 class GatewayIpv4addressConfigurationArgs:
@@ -8938,18 +8624,15 @@ class GatewayIpv4addressConfigurationArgs:
         pulumi.set(self, "reserved_ip_ids", value)
 
 
-if not MYPY:
-    class GatewayIpv6addressConfigurationArgsDict(TypedDict):
-        addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of IPv6 addresses that will be assigned to the gateway during creation.
-        """
-        subnet_cidrs: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of IPv6 prefixes from which to provision IPv6 addresses from. This is required if more than one prefix exists on the subnet.
-        """
-elif False:
-    GatewayIpv6addressConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class GatewayIpv6addressConfigurationArgsDict(TypedDict):
+    addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of IPv6 addresses that will be assigned to the gateway during creation.
+    """
+    subnet_cidrs: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of IPv6 prefixes from which to provision IPv6 addresses from. This is required if more than one prefix exists on the subnet.
+    """
 
 @pulumi.input_type
 class GatewayIpv6addressConfigurationArgs:
@@ -8990,26 +8673,23 @@ class GatewayIpv6addressConfigurationArgs:
         pulumi.set(self, "subnet_cidrs", value)
 
 
-if not MYPY:
-    class GatewayLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the lock.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time this resource was created. An RFC3339 formatted datetime string.
-        """
-elif False:
-    GatewayLockArgsDict: TypeAlias = Mapping[str, Any]
+class GatewayLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time this resource was created. An RFC3339 formatted datetime string.
+    """
 
 @pulumi.input_type
 class GatewayLockArgs:
@@ -9081,46 +8761,43 @@ class GatewayLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class GatewayResponseCacheDetailsArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the Response Cache.
-        """
-        authentication_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
-        """
-        authentication_secret_version_number: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The version number of the authentication secret to use.
-        """
-        connect_timeout_in_ms: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Defines the timeout for establishing a connection with the Response Cache.
-        """
-        is_ssl_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Defines if the connection should be over SSL.
-        """
-        is_ssl_verify_disabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Defines whether or not to uphold SSL verification.
-        """
-        read_timeout_in_ms: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Defines the timeout for reading data from the Response Cache.
-        """
-        send_timeout_in_ms: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Defines the timeout for transmitting data to the Response Cache.
-        """
-        servers: NotRequired[pulumi.Input[Sequence[pulumi.Input['GatewayResponseCacheDetailsServerArgsDict']]]]
-        """
-        (Updatable) The set of cache store members to connect to. At present only a single server is supported.
-        """
-elif False:
-    GatewayResponseCacheDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class GatewayResponseCacheDetailsArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the Response Cache.
+    """
+    authentication_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
+    """
+    authentication_secret_version_number: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The version number of the authentication secret to use.
+    """
+    connect_timeout_in_ms: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Defines the timeout for establishing a connection with the Response Cache.
+    """
+    is_ssl_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Defines if the connection should be over SSL.
+    """
+    is_ssl_verify_disabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Defines whether or not to uphold SSL verification.
+    """
+    read_timeout_in_ms: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Defines the timeout for reading data from the Response Cache.
+    """
+    send_timeout_in_ms: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Defines the timeout for transmitting data to the Response Cache.
+    """
+    servers: NotRequired[pulumi.Input[Sequence[pulumi.Input['GatewayResponseCacheDetailsServerArgsDict']]]]
+    """
+    (Updatable) The set of cache store members to connect to. At present only a single server is supported.
+    """
 
 @pulumi.input_type
 class GatewayResponseCacheDetailsArgs:
@@ -9272,18 +8949,15 @@ class GatewayResponseCacheDetailsArgs:
         pulumi.set(self, "servers", value)
 
 
-if not MYPY:
-    class GatewayResponseCacheDetailsServerArgsDict(TypedDict):
-        host: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Hostname or IP address (IPv4 only) where the cache store is running.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The port the cache store is exposed on.
-        """
-elif False:
-    GatewayResponseCacheDetailsServerArgsDict: TypeAlias = Mapping[str, Any]
+class GatewayResponseCacheDetailsServerArgsDict(TypedDict):
+    host: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Hostname or IP address (IPv4 only) where the cache store is running.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The port the cache store is exposed on.
+    """
 
 @pulumi.input_type
 class GatewayResponseCacheDetailsServerArgs:
@@ -9324,18 +8998,15 @@ class GatewayResponseCacheDetailsServerArgs:
         pulumi.set(self, "port", value)
 
 
-if not MYPY:
-    class SubscriberClientArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the client. Must be unique within a subscriber.
-        """
-        token: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The token for the client. Must be unique within a tenancy.
-        """
-elif False:
-    SubscriberClientArgsDict: TypeAlias = Mapping[str, Any]
+class SubscriberClientArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the client. Must be unique within a subscriber.
+    """
+    token: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The token for the client. Must be unique within a tenancy.
+    """
 
 @pulumi.input_type
 class SubscriberClientArgs:
@@ -9374,26 +9045,23 @@ class SubscriberClientArgs:
         pulumi.set(self, "token", value)
 
 
-if not MYPY:
-    class SubscriberLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the lock.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time this resource was created. An RFC3339 formatted datetime string.
-        """
-elif False:
-    SubscriberLockArgsDict: TypeAlias = Mapping[str, Any]
+class SubscriberLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time this resource was created. An RFC3339 formatted datetime string.
+    """
 
 @pulumi.input_type
 class SubscriberLockArgs:
@@ -9465,30 +9133,27 @@ class SubscriberLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class UsagePlanEntitlementArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) An entitlement name, unique within a usage plan.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
-        """
-        quota: NotRequired[pulumi.Input['UsagePlanEntitlementQuotaArgsDict']]
-        """
-        (Updatable) Quota policy for a usage plan.
-        """
-        rate_limit: NotRequired[pulumi.Input['UsagePlanEntitlementRateLimitArgsDict']]
-        """
-        (Updatable) Rate-limiting policy for a usage plan.
-        """
-        targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['UsagePlanEntitlementTargetArgsDict']]]]
-        """
-        (Updatable) A collection of targeted deployments that the entitlement will be applied to.
-        """
-elif False:
-    UsagePlanEntitlementArgsDict: TypeAlias = Mapping[str, Any]
+class UsagePlanEntitlementArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) An entitlement name, unique within a usage plan.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+    """
+    quota: NotRequired[pulumi.Input['UsagePlanEntitlementQuotaArgsDict']]
+    """
+    (Updatable) Quota policy for a usage plan.
+    """
+    rate_limit: NotRequired[pulumi.Input['UsagePlanEntitlementRateLimitArgsDict']]
+    """
+    (Updatable) Rate-limiting policy for a usage plan.
+    """
+    targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['UsagePlanEntitlementTargetArgsDict']]]]
+    """
+    (Updatable) A collection of targeted deployments that the entitlement will be applied to.
+    """
 
 @pulumi.input_type
 class UsagePlanEntitlementArgs:
@@ -9576,26 +9241,23 @@ class UsagePlanEntitlementArgs:
         pulumi.set(self, "targets", value)
 
 
-if not MYPY:
-    class UsagePlanEntitlementQuotaArgsDict(TypedDict):
-        operation_on_breach: pulumi.Input[_builtins.str]
-        """
-        (Updatable) What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
-        """
-        reset_policy: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The policy that controls when quotas will reset. Example: `CALENDAR`
-        """
-        unit: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The unit of time over which quotas are calculated. Example: `MINUTE` or `MONTH`
-        """
-        value: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The number of requests that can be made per time period.
-        """
-elif False:
-    UsagePlanEntitlementQuotaArgsDict: TypeAlias = Mapping[str, Any]
+class UsagePlanEntitlementQuotaArgsDict(TypedDict):
+    operation_on_breach: pulumi.Input[_builtins.str]
+    """
+    (Updatable) What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+    """
+    reset_policy: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The policy that controls when quotas will reset. Example: `CALENDAR`
+    """
+    unit: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The unit of time over which quotas are calculated. Example: `MINUTE` or `MONTH`
+    """
+    value: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The number of requests that can be made per time period.
+    """
 
 @pulumi.input_type
 class UsagePlanEntitlementQuotaArgs:
@@ -9664,18 +9326,15 @@ class UsagePlanEntitlementQuotaArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class UsagePlanEntitlementRateLimitArgsDict(TypedDict):
-        unit: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
-        """
-        value: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The number of requests that can be made per time period.
-        """
-elif False:
-    UsagePlanEntitlementRateLimitArgsDict: TypeAlias = Mapping[str, Any]
+class UsagePlanEntitlementRateLimitArgsDict(TypedDict):
+    unit: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+    """
+    value: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The number of requests that can be made per time period.
+    """
 
 @pulumi.input_type
 class UsagePlanEntitlementRateLimitArgs:
@@ -9714,14 +9373,11 @@ class UsagePlanEntitlementRateLimitArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class UsagePlanEntitlementTargetArgsDict(TypedDict):
-        deployment_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
-        """
-elif False:
-    UsagePlanEntitlementTargetArgsDict: TypeAlias = Mapping[str, Any]
+class UsagePlanEntitlementTargetArgsDict(TypedDict):
+    deployment_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+    """
 
 @pulumi.input_type
 class UsagePlanEntitlementTargetArgs:
@@ -9745,30 +9401,27 @@ class UsagePlanEntitlementTargetArgs:
         pulumi.set(self, "deployment_id", value)
 
 
-if not MYPY:
-    class UsagePlanLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the lock.
+class UsagePlanLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time this resource was created. An RFC3339 formatted datetime string.
-        """
-elif False:
-    UsagePlanLockArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time this resource was created. An RFC3339 formatted datetime string.
+    """
 
 @pulumi.input_type
 class UsagePlanLockArgs:
@@ -9848,16 +9501,13 @@ class UsagePlanLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class GetApisFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the validation.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetApisFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetApisFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the validation.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetApisFilterArgs:
@@ -9904,13 +9554,10 @@ class GetApisFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCertificatesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCertificatesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCertificatesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCertificatesFilterArgs:
@@ -9951,19 +9598,16 @@ class GetCertificatesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDeploymentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
-        values: Sequence[_builtins.str]
-        """
-        A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDeploymentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDeploymentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The case-insensitive name of the header.  This name must be unique across transformation policies.
+    """
+    values: Sequence[_builtins.str]
+    """
+    A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+    """
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDeploymentsFilterArgs:
@@ -10014,13 +9658,10 @@ class GetDeploymentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetGatewaysFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetGatewaysFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetGatewaysFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetGatewaysFilterArgs:
@@ -10061,16 +9702,13 @@ class GetGatewaysFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSubscribersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the client. Must be unique within a subscriber.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSubscribersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSubscribersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the client. Must be unique within a subscriber.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSubscribersFilterArgs:
@@ -10117,16 +9755,13 @@ class GetSubscribersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetUsagePlansFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        An entitlement name, unique within a usage plan.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetUsagePlansFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetUsagePlansFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    An entitlement name, unique within a usage plan.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetUsagePlansFilterArgs:

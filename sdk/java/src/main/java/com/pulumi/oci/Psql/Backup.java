@@ -21,6 +21,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Backup resource in Oracle Cloud Infrastructure Psql service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/postgresql/latest/Backup
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/psql
+ * 
+ * Creates a new backup.
+ * 
  * ## Example Usage
  * 
  * <pre>

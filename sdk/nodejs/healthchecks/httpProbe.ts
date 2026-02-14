@@ -5,6 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Http Probe resource in Oracle Cloud Infrastructure Health Checks service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/healthchecks/latest/HttpProbe
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/health_checks
+ *
+ * Creates an on-demand HTTP probe. The location response header contains the URL for
+ * fetching the probe results.
+ *
+ * *Note:* On-demand probe configurations are not saved.
+ *
  * ## Example Usage
  *
  * ```typescript

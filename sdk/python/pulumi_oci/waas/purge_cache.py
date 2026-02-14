@@ -121,6 +121,14 @@ class PurgeCache(pulumi.CustomResource):
                  waas_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Purge Cache resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/waas/latest/PurgeCache
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/web_application_acceleration_and_security
+
+        Performs a purge of the cache for each specified resource. If no resources are passed, the cache for the entire Web Application Firewall will be purged.
+        For more information, see [Caching Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/cachingrules.htm#purge).
+
         ## Example Usage
 
         ```python
@@ -152,6 +160,14 @@ class PurgeCache(pulumi.CustomResource):
                  args: PurgeCacheArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Purge Cache resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/waas/latest/PurgeCache
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/web_application_acceleration_and_security
+
+        Performs a purge of the cache for each specified resource. If no resources are passed, the cache for the entire Web Application Firewall will be purged.
+        For more information, see [Caching Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/cachingrules.htm#purge).
+
         ## Example Usage
 
         ```python

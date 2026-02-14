@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/SoftwareSource
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+    /// 
+    /// Creates a new software source.
     /// 
     /// ## Import
     /// 
-    /// SoftwareSources can be imported using the `id`, e.g.
+    /// SoftwareSources can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:OsManagementHub/softwareSource:SoftwareSource test_software_source "id"

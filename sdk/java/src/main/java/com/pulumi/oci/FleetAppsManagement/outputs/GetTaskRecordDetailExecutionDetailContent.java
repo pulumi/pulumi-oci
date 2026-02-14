@@ -15,6 +15,10 @@ public final class GetTaskRecordDetailExecutionDetailContent {
      * 
      */
     private String bucket;
+    /**
+     * @return Catalog Id having terraform package.
+     * 
+     */
     private String catalogId;
     /**
      * @return md5 checksum of the artifact.
@@ -45,6 +49,10 @@ public final class GetTaskRecordDetailExecutionDetailContent {
     public String bucket() {
         return this.bucket;
     }
+    /**
+     * @return Catalog Id having terraform package.
+     * 
+     */
     public String catalogId() {
         return this.catalogId;
     }

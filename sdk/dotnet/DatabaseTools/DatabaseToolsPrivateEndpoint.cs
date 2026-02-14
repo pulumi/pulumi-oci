@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseTools
 {
     /// <summary>
+    /// This resource provides the Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-tools/latest/DatabaseToolsPrivateEndpoint
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databaseTools
+    /// 
+    /// Creates a new Database Tools private endpoint.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -55,7 +62,7 @@ namespace Pulumi.Oci.DatabaseTools
     /// 
     /// ## Import
     /// 
-    /// DatabaseToolsPrivateEndpoints can be imported using the `id`, e.g.
+    /// DatabaseToolsPrivateEndpoints can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint test_database_tools_private_endpoint "id"

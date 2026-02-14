@@ -81,56 +81,51 @@ __all__ = [
     'GetSslCipherSuitesFilterArgsDict',
 ]
 
-MYPY = False
+class BackendSetBackendArgsDict(TypedDict):
+    ip_address: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
+    """
+    port: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The communication port for the backend server.  Example: `8080`
+    """
+    backup: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
 
-if not MYPY:
-    class BackendSetBackendArgsDict(TypedDict):
-        ip_address: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
-        """
-        port: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The communication port for the backend server.  Example: `8080`
-        """
-        backup: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+    **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
 
-        **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+    Example: `false`
+    """
+    drain: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
+    """
+    max_connections: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
 
-        Example: `false`
-        """
-        drain: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
-        """
-        max_connections: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+    If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
 
-        If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+    Example: `300`
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A friendly name for the backend set. It must be unique and it cannot be changed.
 
-        Example: `300`
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A friendly name for the backend set. It must be unique and it cannot be changed.
+    Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
 
-        Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-
-        Example: `example_backend_set`
-        """
-        offline: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-        """
-        weight: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
-        """
-elif False:
-    BackendSetBackendArgsDict: TypeAlias = Mapping[str, Any]
+    Example: `example_backend_set`
+    """
+    offline: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+    """
+    weight: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+    """
 
 @pulumi.input_type
 class BackendSetBackendArgs:
@@ -289,52 +284,49 @@ class BackendSetBackendArgs:
         pulumi.set(self, "weight", value)
 
 
-if not MYPY:
-    class BackendSetHealthCheckerArgsDict(TypedDict):
-        protocol: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
-        """
-        interval_ms: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
-        """
-        is_force_plain_text: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+class BackendSetHealthCheckerArgsDict(TypedDict):
+    protocol: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
+    """
+    interval_ms: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
+    """
+    is_force_plain_text: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
 
-        If "true", health checks will be done using plain text even if the associated backend set is configured to use SSL.
+    If "true", health checks will be done using plain text even if the associated backend set is configured to use SSL.
 
-        If "false", health checks will be done using SSL encryption if the associated backend set is configured to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+    If "false", health checks will be done using SSL encryption if the associated backend set is configured to use SSL. If the backend set is not so configured the health checks will be done using plain text.
 
-        Example: `false`
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
-        """
-        response_body_regex: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\\s)*$`
-        """
-        retries: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state.  Example: `3`
-        """
-        return_code: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The status code a healthy backend server should return.  Example: `200`
-        """
-        timeout_in_millis: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period.  Example: `3000`
-        """
-        url_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The path against which to run the health check.  Example: `/healthcheck`
-        """
-elif False:
-    BackendSetHealthCheckerArgsDict: TypeAlias = Mapping[str, Any]
+    Example: `false`
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
+    """
+    response_body_regex: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\\s)*$`
+    """
+    retries: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state.  Example: `3`
+    """
+    return_code: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The status code a healthy backend server should return.  Example: `200`
+    """
+    timeout_in_millis: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period.  Example: `3000`
+    """
+    url_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The path against which to run the health check.  Example: `/healthcheck`
+    """
 
 @pulumi.input_type
 class BackendSetHealthCheckerArgs:
@@ -498,66 +490,63 @@ class BackendSetHealthCheckerArgs:
         pulumi.set(self, "url_path", value)
 
 
-if not MYPY:
-    class BackendSetLbCookieSessionPersistenceConfigurationArgsDict(TypedDict):
-        cookie_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to "X-Oracle-BMC-LBS-Route".  Example: `example_cookie`
+class BackendSetLbCookieSessionPersistenceConfigurationArgsDict(TypedDict):
+    cookie_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to "X-Oracle-BMC-LBS-Route".  Example: `example_cookie`
 
-        **Notes:**
-        *  Ensure that the cookie name used at the backend application servers is different from the cookie name used at the load balancer. To minimize the chance of name collision, Oracle recommends that you use a prefix such as "X-Oracle-OCI-" for this field.
-        *  If a backend server and the load balancer both insert cookies with the same name, the client or browser behavior can vary depending on the domain and path values associated with the cookie. If the name, domain, and path values of the `Set-cookie` generated by a backend server and the `Set-cookie` generated by the load balancer are all the same, the client or browser treats them as one cookie and returns only one of the cookie values in subsequent requests. If both `Set-cookie` names are the same, but the domain and path names are different, the client or browser treats them as two different cookies.
-        """
-        disable_fallback: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
-        """
-        domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The domain in which the cookie is valid. The `Set-cookie` header inserted by the load balancer contains a domain attribute with the specified value.
+    **Notes:**
+    *  Ensure that the cookie name used at the backend application servers is different from the cookie name used at the load balancer. To minimize the chance of name collision, Oracle recommends that you use a prefix such as "X-Oracle-OCI-" for this field.
+    *  If a backend server and the load balancer both insert cookies with the same name, the client or browser behavior can vary depending on the domain and path values associated with the cookie. If the name, domain, and path values of the `Set-cookie` generated by a backend server and the `Set-cookie` generated by the load balancer are all the same, the client or browser treats them as one cookie and returns only one of the cookie values in subsequent requests. If both `Set-cookie` names are the same, but the domain and path names are different, the client or browser treats them as two different cookies.
+    """
+    disable_fallback: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
+    """
+    domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The domain in which the cookie is valid. The `Set-cookie` header inserted by the load balancer contains a domain attribute with the specified value.
 
-        This attribute has no default value. If you do not specify a value, the load balancer does not insert the domain attribute into the `Set-cookie` header.
+    This attribute has no default value. If you do not specify a value, the load balancer does not insert the domain attribute into the `Set-cookie` header.
 
-        **Notes:**
-        *  [RFC 6265 - HTTP State Management Mechanism](https://www.ietf.org/rfc/rfc6265.txt) describes client and browser behavior when the domain attribute is present or not present in the `Set-cookie` header.
+    **Notes:**
+    *  [RFC 6265 - HTTP State Management Mechanism](https://www.ietf.org/rfc/rfc6265.txt) describes client and browser behavior when the domain attribute is present or not present in the `Set-cookie` header.
 
-        If the value of the `Domain` attribute is `example.com` in the `Set-cookie` header, the client includes the same cookie in the `Cookie` header when making HTTP requests to `example.com`, `www.example.com`, and `www.abc.example.com`. If the `Domain` attribute is not present, the client returns the cookie only for the domain to which the original request was made.
-        *  Ensure that this attribute specifies the correct domain value. If the `Domain` attribute in the `Set-cookie` header does not include the domain to which the original request was made, the client or browser might reject the cookie. As specified in RFC 6265, the client accepts a cookie with the `Domain` attribute value `example.com` or `www.example.com` sent from `www.example.com`. It does not accept a cookie with the `Domain` attribute `abc.example.com` or `www.abc.example.com` sent from `www.example.com`.
+    If the value of the `Domain` attribute is `example.com` in the `Set-cookie` header, the client includes the same cookie in the `Cookie` header when making HTTP requests to `example.com`, `www.example.com`, and `www.abc.example.com`. If the `Domain` attribute is not present, the client returns the cookie only for the domain to which the original request was made.
+    *  Ensure that this attribute specifies the correct domain value. If the `Domain` attribute in the `Set-cookie` header does not include the domain to which the original request was made, the client or browser might reject the cookie. As specified in RFC 6265, the client accepts a cookie with the `Domain` attribute value `example.com` or `www.example.com` sent from `www.example.com`. It does not accept a cookie with the `Domain` attribute `abc.example.com` or `www.abc.example.com` sent from `www.example.com`.
 
-        Example: `example.com`
-        """
-        is_http_only: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the `Set-cookie` header should contain the `HttpOnly` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `HttpOnly` attribute, which limits the scope of the cookie to HTTP requests. This attribute directs the client or browser to omit the cookie when providing access to cookies through non-HTTP APIs. For example, it restricts the cookie from JavaScript channels.  Example: `true`
-        """
-        is_secure: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
+    Example: `example.com`
+    """
+    is_http_only: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the `Set-cookie` header should contain the `HttpOnly` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `HttpOnly` attribute, which limits the scope of the cookie to HTTP requests. This attribute directs the client or browser to omit the cookie when providing access to cookies through non-HTTP APIs. For example, it restricts the cookie from JavaScript channels.  Example: `true`
+    """
+    is_secure: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
 
-        **Note:** If you set this field to `true`, you cannot associate the corresponding backend set with an HTTP listener.
+    **Note:** If you set this field to `true`, you cannot associate the corresponding backend set with an HTTP listener.
 
-        Example: `true`
-        """
-        max_age_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
+    Example: `true`
+    """
+    max_age_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
 
-        The specified value must be at least one second. There is no default value for this attribute. If you do not specify a value, the load balancer does not include the `Max-Age` attribute in the `Set-cookie` header. In most cases, the client or browser retains the cookie until the current session ends, as defined by the client.
+    The specified value must be at least one second. There is no default value for this attribute. If you do not specify a value, the load balancer does not include the `Max-Age` attribute in the `Set-cookie` header. In most cases, the client or browser retains the cookie until the current session ends, as defined by the client.
 
-        Example: `3600`
-        """
-        path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
+    Example: `3600`
+    """
+    path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
 
-        Clients include the cookie in an HTTP request only if the path portion of the request-uri matches, or is a subdirectory of, the cookie's `Path` attribute.
+    Clients include the cookie in an HTTP request only if the path portion of the request-uri matches, or is a subdirectory of, the cookie's `Path` attribute.
 
-        The default value is `/`.
+    The default value is `/`.
 
-        Example: `/example`
-        """
-elif False:
-    BackendSetLbCookieSessionPersistenceConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+    Example: `/example`
+    """
 
 @pulumi.input_type
 class BackendSetLbCookieSessionPersistenceConfigurationArgs:
@@ -734,18 +723,15 @@ class BackendSetLbCookieSessionPersistenceConfigurationArgs:
         pulumi.set(self, "path", value)
 
 
-if not MYPY:
-    class BackendSetSessionPersistenceConfigurationArgsDict(TypedDict):
-        cookie_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
-        """
-        disable_fallback: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
-        """
-elif False:
-    BackendSetSessionPersistenceConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class BackendSetSessionPersistenceConfigurationArgsDict(TypedDict):
+    cookie_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
+    """
+    disable_fallback: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
+    """
 
 @pulumi.input_type
 class BackendSetSessionPersistenceConfigurationArgs:
@@ -785,79 +771,76 @@ class BackendSetSessionPersistenceConfigurationArgs:
         pulumi.set(self, "disable_fallback", value)
 
 
-if not MYPY:
-    class BackendSetSslConfigurationArgsDict(TypedDict):
-        certificate_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Ids for Oracle Cloud Infrastructure certificates service certificates. Currently only a single Id may be passed.  Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
-        """
-        certificate_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
-        """
-        cipher_suite_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
+class BackendSetSslConfigurationArgsDict(TypedDict):
+    certificate_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Ids for Oracle Cloud Infrastructure certificates service certificates. Currently only a single Id may be passed.  Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
+    """
+    certificate_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
+    """
+    cipher_suite_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
 
-        If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
+    If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
 
-        **Notes:**
-        *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
-        *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
-        *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
-        *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
-        *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
-        *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
-        *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
+    **Notes:**
+    *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+    *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
+    *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+    *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+    *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
+    *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+    *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
 
-        example: `example_cipher_suite`
-        """
-        protocols: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
+    example: `example_cipher_suite`
+    """
+    protocols: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
 
-        The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
+    The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
 
-        The Load Balancing service supports the following protocols:
-        *  TLSv1
-        *  TLSv1.1
-        *  TLSv1.2
-        *  TLSv1.3
+    The Load Balancing service supports the following protocols:
+    *  TLSv1
+    *  TLSv1.1
+    *  TLSv1.2
+    *  TLSv1.3
 
-        If this field is not specified, TLSv1.2 is the default.
+    If this field is not specified, TLSv1.2 is the default.
 
-        **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
+    **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
 
-        **Notes:**
-        *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
-        *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
-        *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+    **Notes:**
+    *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+    *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+    *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
 
-        example: `["TLSv1.1", "TLSv1.2"]`
-        """
-        server_order_preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
+    example: `["TLSv1.1", "TLSv1.2"]`
+    """
+    server_order_preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
 
-        **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
-        """
-        trusted_certificate_authority_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
-        """
-        verify_depth: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum depth for peer certificate chain verification.  Example: `3`
-        """
-        verify_peer_certificate: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
+    **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
+    """
+    trusted_certificate_authority_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
+    """
+    verify_depth: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum depth for peer certificate chain verification.  Example: `3`
+    """
+    verify_peer_certificate: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    BackendSetSslConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class BackendSetSslConfigurationArgs:
@@ -1068,26 +1051,23 @@ class BackendSetSslConfigurationArgs:
         pulumi.set(self, "verify_peer_certificate", value)
 
 
-if not MYPY:
-    class ListenerConnectionConfigurationArgsDict(TypedDict):
-        idle_timeout_in_seconds: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The maximum idle time, in seconds, allowed between two successive receive or two successive send operations between the client and backend servers. A send operation does not reset the timer for receive operations. A receive operation does not reset the timer for send operations.
+class ListenerConnectionConfigurationArgsDict(TypedDict):
+    idle_timeout_in_seconds: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The maximum idle time, in seconds, allowed between two successive receive or two successive send operations between the client and backend servers. A send operation does not reset the timer for receive operations. A receive operation does not reset the timer for send operations.
 
-        For more information, see [Connection Configuration](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+    For more information, see [Connection Configuration](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
 
-        Example: `1200`
-        """
-        backend_tcp_proxy_protocol_options: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: ["PP2_TYPE_AUTHORITY"]
-        """
-        backend_tcp_proxy_protocol_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
-        """
-elif False:
-    ListenerConnectionConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+    Example: `1200`
+    """
+    backend_tcp_proxy_protocol_options: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: ["PP2_TYPE_AUTHORITY"]
+    """
+    backend_tcp_proxy_protocol_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
+    """
 
 @pulumi.input_type
 class ListenerConnectionConfigurationArgs:
@@ -1151,84 +1131,81 @@ class ListenerConnectionConfigurationArgs:
         pulumi.set(self, "backend_tcp_proxy_protocol_version", value)
 
 
-if not MYPY:
-    class ListenerSslConfigurationArgsDict(TypedDict):
-        certificate_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Ids for Oracle Cloud Infrastructure certificates service certificates. Currently only a single Id may be passed.  Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
-        """
-        certificate_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
-        """
-        cipher_suite_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
+class ListenerSslConfigurationArgsDict(TypedDict):
+    certificate_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Ids for Oracle Cloud Infrastructure certificates service certificates. Currently only a single Id may be passed.  Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
+    """
+    certificate_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
+    """
+    cipher_suite_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
 
-        If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
+    If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
 
-        **Notes:**
-        *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
-        *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
-        *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
-        *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
-        *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
-        *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
-        *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
+    **Notes:**
+    *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+    *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
+    *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+    *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+    *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
+    *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+    *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
 
-        example: `example_cipher_suite`
-        """
-        has_session_resumption: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If "true", the service resumes the previous TLS encrypted session. If "false", the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
-        """
-        protocols: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
+    example: `example_cipher_suite`
+    """
+    has_session_resumption: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If "true", the service resumes the previous TLS encrypted session. If "false", the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
+    """
+    protocols: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
 
-        The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
+    The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
 
-        The Load Balancing service supports the following protocols:
-        *  TLSv1
-        *  TLSv1.1
-        *  TLSv1.2
-        *  TLSv1.3
+    The Load Balancing service supports the following protocols:
+    *  TLSv1
+    *  TLSv1.1
+    *  TLSv1.2
+    *  TLSv1.3
 
-        If this field is not specified, TLSv1.2 is the default.
+    If this field is not specified, TLSv1.2 is the default.
 
-        **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
+    **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
 
-        **Notes:**
-        *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
-        *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
-        *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+    **Notes:**
+    *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+    *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+    *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
 
-        example: `["TLSv1.1", "TLSv1.2"]`
-        """
-        server_order_preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
+    example: `["TLSv1.1", "TLSv1.2"]`
+    """
+    server_order_preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
 
-        **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
-        """
-        trusted_certificate_authority_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
-        """
-        verify_depth: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum depth for peer certificate chain verification.  Example: `3`
-        """
-        verify_peer_certificate: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
+    **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
+    """
+    trusted_certificate_authority_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
+    """
+    verify_depth: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum depth for peer certificate chain verification.  Example: `3`
+    """
+    verify_peer_certificate: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ListenerSslConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ListenerSslConfigurationArgs:
@@ -1457,19 +1434,16 @@ class ListenerSslConfigurationArgs:
         pulumi.set(self, "verify_peer_certificate", value)
 
 
-if not MYPY:
-    class LoadBalancerIpAddressDetailArgsDict(TypedDict):
-        ip_address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An IP address.  Example: `192.168.0.3`
-        """
-        is_public: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether the IP address is public or private.
-        """
-        reserved_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input['LoadBalancerIpAddressDetailReservedIpArgsDict']]]]
-elif False:
-    LoadBalancerIpAddressDetailArgsDict: TypeAlias = Mapping[str, Any]
+class LoadBalancerIpAddressDetailArgsDict(TypedDict):
+    ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An IP address.  Example: `192.168.0.3`
+    """
+    is_public: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether the IP address is public or private.
+    """
+    reserved_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input['LoadBalancerIpAddressDetailReservedIpArgsDict']]]]
 
 @pulumi.input_type
 class LoadBalancerIpAddressDetailArgs:
@@ -1522,14 +1496,11 @@ class LoadBalancerIpAddressDetailArgs:
         pulumi.set(self, "reserved_ips", value)
 
 
-if not MYPY:
-    class LoadBalancerIpAddressDetailReservedIpArgsDict(TypedDict):
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Ocid of the Reserved IP/Public Ip created with VCN.
-        """
-elif False:
-    LoadBalancerIpAddressDetailReservedIpArgsDict: TypeAlias = Mapping[str, Any]
+class LoadBalancerIpAddressDetailReservedIpArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Ocid of the Reserved IP/Public Ip created with VCN.
+    """
 
 @pulumi.input_type
 class LoadBalancerIpAddressDetailReservedIpArgs:
@@ -1554,24 +1525,21 @@ class LoadBalancerIpAddressDetailReservedIpArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class LoadBalancerReservedIpArgsDict(TypedDict):
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
+class LoadBalancerReservedIpArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
 
-        Reserved IPs are IPs which already registered using VCN API.
+    Reserved IPs are IPs which already registered using VCN API.
 
-        Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+    Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
 
-        Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
+    Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
 
-        Example: "ocid1.publicip.oc1.phx.unique_ID"
+    Example: "ocid1.publicip.oc1.phx.unique_ID"
 
-        IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
-        """
-elif False:
-    LoadBalancerReservedIpArgsDict: TypeAlias = Mapping[str, Any]
+    IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+    """
 
 @pulumi.input_type
 class LoadBalancerReservedIpArgs:
@@ -1616,26 +1584,23 @@ class LoadBalancerReservedIpArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class LoadBalancerRoutingPolicyRuleArgsDict(TypedDict):
-        actions: pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleActionArgsDict']]]
-        """
-        (Updatable) A list of actions to be applied when conditions of the routing rule are met.
-        """
-        condition: pulumi.Input[_builtins.str]
-        """
-        (Updatable) A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
+class LoadBalancerRoutingPolicyRuleArgsDict(TypedDict):
+    actions: pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleActionArgsDict']]]
+    """
+    (Updatable) A list of actions to be applied when conditions of the routing rule are met.
+    """
+    condition: pulumi.Input[_builtins.str]
+    """
+    (Updatable) A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    LoadBalancerRoutingPolicyRuleArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class LoadBalancerRoutingPolicyRuleArgs:
@@ -1697,18 +1662,15 @@ class LoadBalancerRoutingPolicyRuleArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class LoadBalancerRoutingPolicyRuleActionArgsDict(TypedDict):
-        backend_set_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name can be one of these values: `FORWARD_TO_BACKENDSET`
-        """
-elif False:
-    LoadBalancerRoutingPolicyRuleActionArgsDict: TypeAlias = Mapping[str, Any]
+class LoadBalancerRoutingPolicyRuleActionArgsDict(TypedDict):
+    backend_set_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name can be one of these values: `FORWARD_TO_BACKENDSET`
+    """
 
 @pulumi.input_type
 class LoadBalancerRoutingPolicyRuleActionArgs:
@@ -1747,22 +1709,19 @@ class LoadBalancerRoutingPolicyRuleActionArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class LoadBalancerShapeDetailsArgsDict(TypedDict):
-        maximum_bandwidth_in_mbps: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
+class LoadBalancerShapeDetailsArgsDict(TypedDict):
+    maximum_bandwidth_in_mbps: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
 
-        The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
+    The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
 
-        Example: `1500`
-        """
-        minimum_bandwidth_in_mbps: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 10 and the maximumBandwidthInMbps.  Example: `150`
-        """
-elif False:
-    LoadBalancerShapeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    Example: `1500`
+    """
+    minimum_bandwidth_in_mbps: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 10 and the maximumBandwidthInMbps.  Example: `150`
+    """
 
 @pulumi.input_type
 class LoadBalancerShapeDetailsArgs:
@@ -1809,27 +1768,24 @@ class LoadBalancerShapeDetailsArgs:
         pulumi.set(self, "minimum_bandwidth_in_mbps", value)
 
 
-if not MYPY:
-    class PathRouteSetPathRouteArgsDict(TypedDict):
-        backend_set_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `example_backend_set`
-        """
-        path: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The path string to match against the incoming URI path.
-        *  Path strings are case-insensitive.
-        *  Asterisk (*) wildcards are not supported.
-        *  Regular expressions are not supported.
+class PathRouteSetPathRouteArgsDict(TypedDict):
+    backend_set_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `example_backend_set`
+    """
+    path: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The path string to match against the incoming URI path.
+    *  Path strings are case-insensitive.
+    *  Asterisk (*) wildcards are not supported.
+    *  Regular expressions are not supported.
 
-        Example: `/example/video/123`
-        """
-        path_match_type: pulumi.Input['PathRouteSetPathRoutePathMatchTypeArgsDict']
-        """
-        (Updatable) The type of matching to apply to incoming URIs.
-        """
-elif False:
-    PathRouteSetPathRouteArgsDict: TypeAlias = Mapping[str, Any]
+    Example: `/example/video/123`
+    """
+    path_match_type: pulumi.Input['PathRouteSetPathRoutePathMatchTypeArgsDict']
+    """
+    (Updatable) The type of matching to apply to incoming URIs.
+    """
 
 @pulumi.input_type
 class PathRouteSetPathRouteArgs:
@@ -1893,24 +1849,21 @@ class PathRouteSetPathRouteArgs:
         pulumi.set(self, "path_match_type", value)
 
 
-if not MYPY:
-    class PathRouteSetPathRoutePathMatchTypeArgsDict(TypedDict):
-        match_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Specifies how the load balancing service compares a [PathRoute](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/requests/PathRoute) object's `path` string against the incoming URI.
-        *  **EXACT_MATCH** - Looks for a `path` string that exactly matches the incoming URI path.
-        *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the `path` string with the best, longest match of the beginning portion of the incoming URI path.
-        *  **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
-        *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
+class PathRouteSetPathRoutePathMatchTypeArgsDict(TypedDict):
+    match_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Specifies how the load balancing service compares a [PathRoute](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/requests/PathRoute) object's `path` string against the incoming URI.
+    *  **EXACT_MATCH** - Looks for a `path` string that exactly matches the incoming URI path.
+    *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the `path` string with the best, longest match of the beginning portion of the incoming URI path.
+    *  **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
+    *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
 
-        For a full description of how the system handles `matchType` in a path route set containing multiple rules, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
+    For a full description of how the system handles `matchType` in a path route set containing multiple rules, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    PathRouteSetPathRoutePathMatchTypeArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class PathRouteSetPathRoutePathMatchTypeArgs:
@@ -1954,126 +1907,123 @@ class PathRouteSetPathRoutePathMatchTypeArgs:
         pulumi.set(self, "match_type", value)
 
 
-if not MYPY:
-    class RuleSetItemArgsDict(TypedDict):
-        action: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
-        """
-        allowed_methods: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of HTTP methods allowed for this listener.
+class RuleSetItemArgsDict(TypedDict):
+    action: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+    """
+    allowed_methods: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of HTTP methods allowed for this listener.
 
-        By default, you can specify only the standard HTTP methods defined in the [HTTP Method Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also see a list of supported standard HTTP methods in the Load Balancing service documentation at [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
+    By default, you can specify only the standard HTTP methods defined in the [HTTP Method Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also see a list of supported standard HTTP methods in the Load Balancing service documentation at [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
 
-        Your backend application must be able to handle the methods specified in this list.
+    Your backend application must be able to handle the methods specified in this list.
 
-        The list of HTTP methods is extensible. If you need to configure custom HTTP methods, contact [My Oracle Support](http://support.oracle.com/) to remove the restriction for your tenancy.
+    The list of HTTP methods is extensible. If you need to configure custom HTTP methods, contact [My Oracle Support](http://support.oracle.com/) to remove the restriction for your tenancy.
 
-        Example: ["GET", "PUT", "POST", "PROPFIND"]
-        """
-        are_invalid_characters_allowed: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
-        """
-        conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input['RuleSetItemConditionArgsDict']]]]
-        """
-        (Updatable)
-        """
-        default_max_connections: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A brief description of the access control rule. Avoid entering confidential information.
+    Example: ["GET", "PUT", "POST", "PROPFIND"]
+    """
+    are_invalid_characters_allowed: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
+    """
+    conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input['RuleSetItemConditionArgsDict']]]]
+    """
+    (Updatable)
+    """
+    default_max_connections: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A brief description of the access control rule. Avoid entering confidential information.
 
-        example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
-        """
-        header: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A header name that conforms to RFC 7230.  Example: `example_header_name`
-        """
-        http_large_header_size_in_kb: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
-        """
-        ip_max_connections: NotRequired[pulumi.Input[Sequence[pulumi.Input['RuleSetItemIpMaxConnectionArgsDict']]]]
-        """
-        (Updatable) An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
-        """
-        prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
-        *  value cannot contain `$`
-        *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+    example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+    """
+    header: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A header name that conforms to RFC 7230.  Example: `example_header_name`
+    """
+    http_large_header_size_in_kb: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
+    """
+    ip_max_connections: NotRequired[pulumi.Input[Sequence[pulumi.Input['RuleSetItemIpMaxConnectionArgsDict']]]]
+    """
+    (Updatable) An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+    """
+    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
+    *  value cannot contain `$`
+    *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
 
-        Example: `example_prefix_value`
-        """
-        redirect_uri: NotRequired[pulumi.Input['RuleSetItemRedirectUriArgsDict']]
-        """
-        (Updatable) An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
+    Example: `example_prefix_value`
+    """
+    redirect_uri: NotRequired[pulumi.Input['RuleSetItemRedirectUriArgsDict']]
+    """
+    (Updatable) An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
 
-        **NOTE:** The Load Balancing service cannot automatically detect or avoid infinite redirects. Be sure to provide meaningful, complete, and correct field values. If any component field of this object has no value, the system retains the value from the incoming HTTP request URI.
+    **NOTE:** The Load Balancing service cannot automatically detect or avoid infinite redirects. Be sure to provide meaningful, complete, and correct field values. If any component field of this object has no value, the system retains the value from the incoming HTTP request URI.
 
-        For example, if you specify only the protocol field `https`, and the incoming request URI is `http://example.com:8080`, the resulting runtime redirect URI is `https://example.com:8080`. The system retains the host and port from the incoming URI and does not automatically change the port setting from `8080` to `443`.
+    For example, if you specify only the protocol field `https`, and the incoming request URI is `http://example.com:8080`, the resulting runtime redirect URI is `https://example.com:8080`. The system retains the host and port from the incoming URI and does not automatically change the port setting from `8080` to `443`.
 
-        Be sure to configure valid percent-encoding (URL encoding) when needed.
+    Be sure to configure valid percent-encoding (URL encoding) when needed.
 
-        In addition to static string values, you can use the following tokens to construct the redirect URI. These tokens extract values from the incoming HTTP request URI.
-        *  {protocol} : The protocol from the incoming HTTP request URI.
-        *  {host}     : The domain name from the incoming HTTP request URI.
-        *  {port}     : The port from the incoming HTTP request URI.
-        *  {path}     : The path from the incoming HTTP request URI.
-        *  {query}    : The query string from the incoming HTTP request URI.
+    In addition to static string values, you can use the following tokens to construct the redirect URI. These tokens extract values from the incoming HTTP request URI.
+    *  {protocol} : The protocol from the incoming HTTP request URI.
+    *  {host}     : The domain name from the incoming HTTP request URI.
+    *  {port}     : The port from the incoming HTTP request URI.
+    *  {path}     : The path from the incoming HTTP request URI.
+    *  {query}    : The query string from the incoming HTTP request URI.
 
-        The tokens are case sensitive. For example, `{host}` is a valid token, but `{HOST}` is not.
+    The tokens are case sensitive. For example, `{host}` is a valid token, but `{HOST}` is not.
 
-        You can retain the literal characters of a token when you specify values for the path and query properties of the redirect URI. Use a backslash (\\\\) as the escape character for the \\\\, {, and } characters. For example, if the incoming HTTP request URI is `/video`, the path property value:
+    You can retain the literal characters of a token when you specify values for the path and query properties of the redirect URI. Use a backslash (\\\\) as the escape character for the \\\\, {, and } characters. For example, if the incoming HTTP request URI is `/video`, the path property value:
 
-        `/example{path}123\\{path\\}`
+    `/example{path}123\\{path\\}`
 
-        appears in the constructed redirect URI as:
+    appears in the constructed redirect URI as:
 
-        `/example/video123{path}`
-        """
-        response_code: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The HTTP status code to return when the incoming request is redirected.
+    `/example/video123{path}`
+    """
+    response_code: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The HTTP status code to return when the incoming request is redirected.
 
-        The status line returned with the code is mapped from the standard HTTP specification. Valid response codes for redirection are:
-        *  301
-        *  302
-        *  303
-        *  307
-        *  308
+    The status line returned with the code is mapped from the standard HTTP specification. Valid response codes for redirection are:
+    *  301
+    *  302
+    *  303
+    *  307
+    *  308
 
-        The default value is `302` (Found).
+    The default value is `302` (Found).
 
-        Example: `301`
-        """
-        status_code: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
-        """
-        suffix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
-        *  value cannot contain `$`
-        *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+    Example: `301`
+    """
+    status_code: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
+    """
+    suffix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
+    *  value cannot contain `$`
+    *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
 
-        Example: `example_suffix_value`
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A header value that conforms to RFC 7230. With the following exceptions:
-        *  value cannot contain `$`
-        *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+    Example: `example_suffix_value`
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A header value that conforms to RFC 7230. With the following exceptions:
+    *  value cannot contain `$`
+    *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
 
-        Example: `example_value`
-        """
-elif False:
-    RuleSetItemArgsDict: TypeAlias = Mapping[str, Any]
+    Example: `example_value`
+    """
 
 @pulumi.input_type
 class RuleSetItemArgs:
@@ -2433,29 +2383,26 @@ class RuleSetItemArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class RuleSetItemConditionArgsDict(TypedDict):
-        attribute_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The attribute_name can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
-        """
-        attribute_value: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Depends on `attribute_name`:
-        - when `attribute_name` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
-        - when `attribute_name` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
-        - when `attribute_name` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
-        """
-        operator: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A string that specifies how to compare the PathMatchCondition object's `attributeValue` string to the incoming URI.
-        *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
-        *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the `attributeValue` string with the best, longest match of the beginning portion of the incoming URI path.
-        *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
-        *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
-        """
-elif False:
-    RuleSetItemConditionArgsDict: TypeAlias = Mapping[str, Any]
+class RuleSetItemConditionArgsDict(TypedDict):
+    attribute_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The attribute_name can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
+    """
+    attribute_value: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Depends on `attribute_name`:
+    - when `attribute_name` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
+    - when `attribute_name` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
+    - when `attribute_name` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
+    """
+    operator: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A string that specifies how to compare the PathMatchCondition object's `attributeValue` string to the incoming URI.
+    *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
+    *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the `attributeValue` string with the best, longest match of the beginning portion of the incoming URI path.
+    *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
+    *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
+    """
 
 @pulumi.input_type
 class RuleSetItemConditionArgs:
@@ -2524,18 +2471,15 @@ class RuleSetItemConditionArgs:
         pulumi.set(self, "operator", value)
 
 
-if not MYPY:
-    class RuleSetItemIpMaxConnectionArgsDict(TypedDict):
-        ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
-        """
-        max_connections: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
-        """
-elif False:
-    RuleSetItemIpMaxConnectionArgsDict: TypeAlias = Mapping[str, Any]
+class RuleSetItemIpMaxConnectionArgsDict(TypedDict):
+    ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+    """
+    max_connections: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+    """
 
 @pulumi.input_type
 class RuleSetItemIpMaxConnectionArgs:
@@ -2576,88 +2520,85 @@ class RuleSetItemIpMaxConnectionArgs:
         pulumi.set(self, "max_connections", value)
 
 
-if not MYPY:
-    class RuleSetItemRedirectUriArgsDict(TypedDict):
-        host: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The valid domain name (hostname) or IP address to use in the redirect URI.
+class RuleSetItemRedirectUriArgsDict(TypedDict):
+    host: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The valid domain name (hostname) or IP address to use in the redirect URI.
 
-        When this value is null, not set, or set to `{host}`, the service preserves the original domain name from the incoming HTTP request URI.
+    When this value is null, not set, or set to `{host}`, the service preserves the original domain name from the incoming HTTP request URI.
 
-        All RedirectUri tokens are valid for this property. You can use any token more than once.
+    All RedirectUri tokens are valid for this property. You can use any token more than once.
 
-        Curly braces are valid in this property only to surround tokens, such as `{host}`
+    Curly braces are valid in this property only to surround tokens, such as `{host}`
 
-        Examples:
-        *  **example.com** appears as `example.com` in the redirect URI.
-        *  **in{host}** appears as `inexample.com` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
-        *  **{port}{host}** appears as `8081example.com` in the redirect URI if `example.com` is the hostname and the port is `8081` in the incoming HTTP request URI.
-        """
-        path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The HTTP URI path to use in the redirect URI.
+    Examples:
+    *  **example.com** appears as `example.com` in the redirect URI.
+    *  **in{host}** appears as `inexample.com` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
+    *  **{port}{host}** appears as `8081example.com` in the redirect URI if `example.com` is the hostname and the port is `8081` in the incoming HTTP request URI.
+    """
+    path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The HTTP URI path to use in the redirect URI.
 
-        When this value is null, not set, or set to `{path}`, the service preserves the original path from the incoming HTTP request URI. To omit the path from the redirect URI, set this value to an empty string, "".
+    When this value is null, not set, or set to `{path}`, the service preserves the original path from the incoming HTTP request URI. To omit the path from the redirect URI, set this value to an empty string, "".
 
-        All RedirectUri tokens are valid for this property. You can use any token more than once.
+    All RedirectUri tokens are valid for this property. You can use any token more than once.
 
-        The path string must begin with `/` if it does not begin with the `{path}` token.
+    The path string must begin with `/` if it does not begin with the `{path}` token.
 
-        Examples:
-        *  __/example/video/123__ appears as `/example/video/123` in the redirect URI.
-        *  __/example{path}__ appears as `/example/video/123` in the redirect URI if `/video/123` is the path in the incoming HTTP request URI.
-        *  __{path}/123__ appears as `/example/video/123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
-        *  __{path}123__ appears as `/example/video123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
-        *  __/{host}/123__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
-        *  __/{host}/{port}__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname and `123` is the port in the incoming HTTP request URI.
-        *  __/{query}__ appears as `/lang=en` in the redirect URI if the query is `lang=en` in the incoming HTTP request URI.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The communication port to use in the redirect URI.
+    Examples:
+    *  __/example/video/123__ appears as `/example/video/123` in the redirect URI.
+    *  __/example{path}__ appears as `/example/video/123` in the redirect URI if `/video/123` is the path in the incoming HTTP request URI.
+    *  __{path}/123__ appears as `/example/video/123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
+    *  __{path}123__ appears as `/example/video123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
+    *  __/{host}/123__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
+    *  __/{host}/{port}__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname and `123` is the port in the incoming HTTP request URI.
+    *  __/{query}__ appears as `/lang=en` in the redirect URI if the query is `lang=en` in the incoming HTTP request URI.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The communication port to use in the redirect URI.
 
-        Valid values include integers from 1 to 65535.
+    Valid values include integers from 1 to 65535.
 
-        When this value is null, the service preserves the original port from the incoming HTTP request URI.
+    When this value is null, the service preserves the original port from the incoming HTTP request URI.
 
-        Example: `8081`
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The HTTP protocol to use in the redirect URI.
+    Example: `8081`
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The HTTP protocol to use in the redirect URI.
 
-        When this value is null, not set, or set to `{protocol}`, the service preserves the original protocol from the incoming HTTP request URI. Allowed values are:
-        *  HTTP
-        *  HTTPS
-        *  {protocol}
+    When this value is null, not set, or set to `{protocol}`, the service preserves the original protocol from the incoming HTTP request URI. Allowed values are:
+    *  HTTP
+    *  HTTPS
+    *  {protocol}
 
-        `{protocol}` is the only valid token for this property. It can appear only once in the value string.
+    `{protocol}` is the only valid token for this property. It can appear only once in the value string.
 
-        Example: `HTTPS`
-        """
-        query: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The query string to use in the redirect URI.
+    Example: `HTTPS`
+    """
+    query: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The query string to use in the redirect URI.
 
-        When this value is null, not set, or set to `{query}`, the service preserves the original query parameters from the incoming HTTP request URI.
+    When this value is null, not set, or set to `{query}`, the service preserves the original query parameters from the incoming HTTP request URI.
 
-        All `RedirectUri` tokens are valid for this property. You can use any token more than once.
+    All `RedirectUri` tokens are valid for this property. You can use any token more than once.
 
-        If the query string does not begin with the `{query}` token, it must begin with the question mark (?) character.
+    If the query string does not begin with the `{query}` token, it must begin with the question mark (?) character.
 
-        You can specify multiple query parameters as a single string. Separate each query parameter with an ampersand (&) character. To omit all incoming query parameters from the redirect URI, set this value to an empty string, "".
+    You can specify multiple query parameters as a single string. Separate each query parameter with an ampersand (&) character. To omit all incoming query parameters from the redirect URI, set this value to an empty string, "".
 
-        If the specified query string results in a redirect URI ending with `?` or `&`, the last character is truncated. For example, if the incoming URI is `http://host.com:8080/documents` and the query property value is `?lang=en&{query}`, the redirect URI is `http://host.com:8080/documents?lang=en`. The system truncates the final ampersand (&) because the incoming URI included no value to replace the {query} token.
+    If the specified query string results in a redirect URI ending with `?` or `&`, the last character is truncated. For example, if the incoming URI is `http://host.com:8080/documents` and the query property value is `?lang=en&{query}`, the redirect URI is `http://host.com:8080/documents?lang=en`. The system truncates the final ampersand (&) because the incoming URI included no value to replace the {query} token.
 
-        Examples:
-        * **lang=en&time_zone=PST** appears as `lang=en&time_zone=PST` in the redirect URI.
-        * **{query}** appears as `lang=en&time_zone=PST` in the redirect URI if `lang=en&time_zone=PST` is the query string in the incoming HTTP request. If the incoming HTTP request has no query parameters, the `{query}` token renders as an empty string.
-        * **lang=en&{query}&time_zone=PST** appears as `lang=en&country=us&time_zone=PST` in the redirect URI if `country=us` is the query string in the incoming HTTP request. If the incoming HTTP request has no query parameters, this value renders as `lang=en&time_zone=PST`.
-        *  **protocol={protocol}&hostname={host}** appears as `protocol=http&hostname=example.com` in the redirect URI if the protocol is `HTTP` and the hostname is `example.com` in the incoming HTTP request.
-        *  **port={port}&hostname={host}** appears as `port=8080&hostname=example.com` in the redirect URI if the port is `8080` and the hostname is `example.com` in the incoming HTTP request URI.
-        """
-elif False:
-    RuleSetItemRedirectUriArgsDict: TypeAlias = Mapping[str, Any]
+    Examples:
+    * **lang=en&time_zone=PST** appears as `lang=en&time_zone=PST` in the redirect URI.
+    * **{query}** appears as `lang=en&time_zone=PST` in the redirect URI if `lang=en&time_zone=PST` is the query string in the incoming HTTP request. If the incoming HTTP request has no query parameters, the `{query}` token renders as an empty string.
+    * **lang=en&{query}&time_zone=PST** appears as `lang=en&country=us&time_zone=PST` in the redirect URI if `country=us` is the query string in the incoming HTTP request. If the incoming HTTP request has no query parameters, this value renders as `lang=en&time_zone=PST`.
+    *  **protocol={protocol}&hostname={host}** appears as `protocol=http&hostname=example.com` in the redirect URI if the protocol is `HTTP` and the hostname is `example.com` in the incoming HTTP request.
+    *  **port={port}&hostname={host}** appears as `port=8080&hostname=example.com` in the redirect URI if the port is `8080` and the hostname is `example.com` in the incoming HTTP request URI.
+    """
 
 @pulumi.input_type
 class RuleSetItemRedirectUriArgs:
@@ -2862,16 +2803,13 @@ class RuleSetItemRedirectUriArgs:
         pulumi.set(self, "query", value)
 
 
-if not MYPY:
-    class GetBackendSetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A friendly name for the backend set. It must be unique and it cannot be changed.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBackendSetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBackendSetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A friendly name for the backend set. It must be unique and it cannot be changed.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBackendSetsFilterArgs:
@@ -2918,16 +2856,13 @@ class GetBackendSetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBackendsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBackendsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBackendsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBackendsFilterArgs:
@@ -2974,13 +2909,10 @@ class GetBackendsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCertificatesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCertificatesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCertificatesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCertificatesFilterArgs:
@@ -3021,16 +2953,13 @@ class GetCertificatesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetHostnamesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetHostnamesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetHostnamesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetHostnamesFilterArgs:
@@ -3077,16 +3006,13 @@ class GetHostnamesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetListenerRulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the rule set that the rule belongs to.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetListenerRulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetListenerRulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the rule set that the rule belongs to.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetListenerRulesFilterArgs:
@@ -3133,16 +3059,13 @@ class GetListenerRulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetLoadBalancerRoutingPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A unique name for the routing policy rule. Avoid entering confidential information.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetLoadBalancerRoutingPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetLoadBalancerRoutingPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A unique name for the routing policy rule. Avoid entering confidential information.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetLoadBalancerRoutingPoliciesFilterArgs:
@@ -3189,16 +3112,13 @@ class GetLoadBalancerRoutingPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetLoadBalancersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetLoadBalancersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetLoadBalancersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetLoadBalancersFilterArgs:
@@ -3245,16 +3165,13 @@ class GetLoadBalancersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPathRouteSetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The unique name for this set of path route rules. Avoid entering confidential information.  Example: `example_path_route_set`
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPathRouteSetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPathRouteSetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The unique name for this set of path route rules. Avoid entering confidential information.  Example: `example_path_route_set`
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPathRouteSetsFilterArgs:
@@ -3301,16 +3218,13 @@ class GetPathRouteSetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of a load balancing policy.  Example: 'LEAST_CONNECTIONS'
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of a load balancing policy.  Example: 'LEAST_CONNECTIONS'
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPoliciesFilterArgs:
@@ -3357,16 +3271,13 @@ class GetPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetProtocolsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of a protocol.  Example: 'HTTP'
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetProtocolsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetProtocolsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of a protocol.  Example: 'HTTP'
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetProtocolsFilterArgs:
@@ -3413,16 +3324,13 @@ class GetProtocolsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRuleSetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRuleSetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRuleSetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRuleSetsFilterArgs:
@@ -3469,16 +3377,13 @@ class GetRuleSetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetShapesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the shape.  Example: `100Mbps`
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetShapesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetShapesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the shape.  Example: `100Mbps`
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetShapesFilterArgs:
@@ -3525,16 +3430,13 @@ class GetShapesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSslCipherSuitesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSslCipherSuitesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSslCipherSuitesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSslCipherSuitesFilterArgs:

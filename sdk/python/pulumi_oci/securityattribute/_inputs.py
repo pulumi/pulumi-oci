@@ -23,24 +23,19 @@ __all__ = [
     'GetSecurityAttributesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class SecurityAttributeValidatorArgsDict(TypedDict):
-        validator_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Specifies the type of validation: a static value (no validation) or a list.
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of allowed values for a security attribute value. 
+class SecurityAttributeValidatorArgsDict(TypedDict):
+    validator_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Specifies the type of validation: a static value (no validation) or a list.
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of allowed values for a security attribute value. 
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    SecurityAttributeValidatorArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class SecurityAttributeValidatorArgs:
@@ -88,16 +83,13 @@ class SecurityAttributeValidatorArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class GetSecurityAttributeNamespacesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire display name given.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityAttributeNamespacesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityAttributeNamespacesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire display name given.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityAttributeNamespacesFilterArgs:
@@ -144,19 +136,16 @@ class GetSecurityAttributeNamespacesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityAttributesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name assigned to the security attribute during creation. This is the security attribute key. The name must be unique within the security attribute namespace and cannot be changed.
-        """
-        values: Sequence[_builtins.str]
-        """
-        The list of allowed values for a security attribute value.
-        """
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityAttributesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityAttributesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name assigned to the security attribute during creation. This is the security attribute key. The name must be unique within the security attribute namespace and cannot be changed.
+    """
+    values: Sequence[_builtins.str]
+    """
+    The list of allowed values for a security attribute value.
+    """
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityAttributesFilterArgs:

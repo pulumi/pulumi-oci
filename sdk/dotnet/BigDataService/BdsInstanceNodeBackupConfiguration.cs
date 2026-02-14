@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService
 {
     /// <summary>
+    /// This resource provides the Bds Instance Node Backup Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/bigdata/latest/BdsInstanceNodeBackupConfiguration
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/big_data_service
+    /// 
+    /// Add a node volume backup configuration to the cluster for an indicated node type or node.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,7 +48,7 @@ namespace Pulumi.Oci.BigDataService
     /// 
     /// ## Import
     /// 
-    /// BdsInstanceNodeBackupConfigurations can be imported using the `id`, e.g.
+    /// BdsInstanceNodeBackupConfigurations can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:BigDataService/bdsInstanceNodeBackupConfiguration:BdsInstanceNodeBackupConfiguration test_bds_instance_node_backup_configuration "bdsInstances/{bdsInstanceId}/nodeBackupConfigurations/{nodeBackupConfigurationId}"

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
+    /// This resource provides the Approval Workflow Assignment resource in Oracle Cloud Infrastructure Identity Domains service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/ApprovalWorkflowAssignment
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+    /// 
+    /// Create Approval Workflow Assignment
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -64,7 +71,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Import
     /// 
-    /// ApprovalWorkflowAssignments can be imported using the `id`, e.g.
+    /// ApprovalWorkflowAssignments can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Identity/domainsApprovalWorkflowAssignment:DomainsApprovalWorkflowAssignment test_approval_workflow_assignment "idcsEndpoint/{idcsEndpoint}/approvalWorkflowAssignments/{approvalWorkflowAssignmentId}"

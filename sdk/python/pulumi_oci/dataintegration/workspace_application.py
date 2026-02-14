@@ -693,6 +693,13 @@ class WorkspaceApplication(pulumi.CustomResource):
                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-integration/latest/WorkspaceApplication
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataintegration
+
+        Creates an application.
+
         ## Example Usage
 
         ```python
@@ -766,6 +773,13 @@ class WorkspaceApplication(pulumi.CustomResource):
                  args: WorkspaceApplicationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-integration/latest/WorkspaceApplication
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataintegration
+
+        Creates an application.
+
         ## Example Usage
 
         ```python

@@ -40,9 +40,17 @@ public final class GetAutonomousDatabaseWalletArgs extends com.pulumi.resources.
         return this.autonomousDatabaseId;
     }
 
+    /**
+     * Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+     * 
+     */
     @Import(name="base64EncodeContent")
     private @Nullable Output<Boolean> base64EncodeContent;
 
+    /**
+     * @return Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+     * 
+     */
     public Optional<Output<Boolean>> base64EncodeContent() {
         return Optional.ofNullable(this.base64EncodeContent);
     }
@@ -145,11 +153,23 @@ public final class GetAutonomousDatabaseWalletArgs extends com.pulumi.resources.
             return autonomousDatabaseId(Output.of(autonomousDatabaseId));
         }
 
+        /**
+         * @param base64EncodeContent Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+         * 
+         * @return builder
+         * 
+         */
         public Builder base64EncodeContent(@Nullable Output<Boolean> base64EncodeContent) {
             $.base64EncodeContent = base64EncodeContent;
             return this;
         }
 
+        /**
+         * @param base64EncodeContent Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+         * 
+         * @return builder
+         * 
+         */
         public Builder base64EncodeContent(Boolean base64EncodeContent) {
             return base64EncodeContent(Output.of(base64EncodeContent));
         }

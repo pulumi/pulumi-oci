@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/Property
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+ *
+ * Create a business-specific metadata property in Fleet Application Management.
+ *
  * ## Example Usage
  *
  * ```typescript

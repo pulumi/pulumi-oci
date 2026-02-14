@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataCatalog
 {
     /// <summary>
+    /// This resource provides the Connection resource in Oracle Cloud Infrastructure Data Catalog service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-catalog/latest/Connection
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datacatalog
+    /// 
+    /// Creates a new connection.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -37,7 +44,7 @@ namespace Pulumi.Oci.DataCatalog
     /// 
     /// ## Import
     /// 
-    /// Connections can be imported using the `id`, e.g.
+    /// Connections can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataCatalog/connection:Connection test_connection "catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}"
@@ -100,6 +107,9 @@ namespace Pulumi.Oci.DataCatalog
         [Output("key")]
         public Output<string> Key { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "username": "user1"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+        /// </summary>
         [Output("properties")]
         public Output<ImmutableDictionary<string, string>> Properties { get; private set; } = null!;
 
@@ -247,6 +257,10 @@ namespace Pulumi.Oci.DataCatalog
 
         [Input("properties", required: true)]
         private InputMap<string>? _properties;
+
+        /// <summary>
+        /// (Updatable) A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "username": "user1"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+        /// </summary>
         public InputMap<string> Properties
         {
             get => _properties ?? (_properties = new InputMap<string>());
@@ -337,6 +351,10 @@ namespace Pulumi.Oci.DataCatalog
 
         [Input("properties")]
         private InputMap<string>? _properties;
+
+        /// <summary>
+        /// (Updatable) A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "username": "user1"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+        /// </summary>
         public InputMap<string> Properties
         {
             get => _properties ?? (_properties = new InputMap<string>());

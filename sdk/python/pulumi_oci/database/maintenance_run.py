@@ -726,6 +726,16 @@ class MaintenanceRun(pulumi.CustomResource):
                  time_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Maintenance Run resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/MaintenanceRun
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a maintenance run with one of the following:
+        The latest available release update patch (RUP) for the Autonomous Container Database.
+        The latest available RUP and DST time zone (TZ) file updates for the Autonomous Container Database.
+        Creates a maintenance run to update the DST TZ file for the Autonomous Container Database.
+
         ## Example Usage
 
         ```python
@@ -773,6 +783,16 @@ class MaintenanceRun(pulumi.CustomResource):
                  args: MaintenanceRunArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Maintenance Run resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/MaintenanceRun
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a maintenance run with one of the following:
+        The latest available release update patch (RUP) for the Autonomous Container Database.
+        The latest available RUP and DST time zone (TZ) file updates for the Autonomous Container Database.
+        Creates a maintenance run to update the DST TZ file for the Autonomous Container Database.
+
         ## Example Usage
 
         ```python

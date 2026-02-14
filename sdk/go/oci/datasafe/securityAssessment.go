@@ -12,7 +12,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## Example Usage
+// This resource provides the Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/SecurityAssessment
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+//
+// Creates a new saved security assessment for one or multiple targets in a compartment. When this operation is performed,
+// it will save the latest assessments in the specified compartment. If a schedule is passed, it will persist the latest assessments,
+// at the defined date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 //
 // ## Import
 //

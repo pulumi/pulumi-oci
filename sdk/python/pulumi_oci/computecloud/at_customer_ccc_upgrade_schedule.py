@@ -349,6 +349,13 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/compute-cloud-at-customer/latest/CccUpgradeSchedule
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/computecloudatcustomer
+
+        Creates a new Compute Cloud@Customer upgrade schedule.
+
         ## Example Usage
 
         ```python
@@ -401,6 +408,13 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
                  args: AtCustomerCccUpgradeScheduleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/compute-cloud-at-customer/latest/CccUpgradeSchedule
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/computecloudatcustomer
+
+        Creates a new Compute Cloud@Customer upgrade schedule.
+
         ## Example Usage
 
         ```python

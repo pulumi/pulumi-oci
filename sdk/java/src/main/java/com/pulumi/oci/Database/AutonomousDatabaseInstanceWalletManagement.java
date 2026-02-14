@@ -17,6 +17,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousDatabaseInstanceWalletManagement
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+ * 
+ * Updates the wallet for the specified Autonomous AI Database.
+ * 
  * ## Example Usage
  * 
  * <pre>

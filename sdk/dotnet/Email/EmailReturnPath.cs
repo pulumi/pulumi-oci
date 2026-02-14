@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Email
 {
     /// <summary>
+    /// This resource provides the Email Return Path resource in Oracle Cloud Infrastructure Email service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/email/latest/EmailReturnPath
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/email
+    /// 
+    /// Creates a new email return path. Avoid entering confidential information.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -40,7 +47,7 @@ namespace Pulumi.Oci.Email
     /// 
     /// ## Import
     /// 
-    /// EmailReturnPaths can be imported using the `id`, e.g.
+    /// EmailReturnPaths can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Email/emailReturnPath:EmailReturnPath test_email_return_path "id"

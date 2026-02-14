@@ -355,6 +355,14 @@ class SecurityZone(pulumi.CustomResource):
                  security_zone_recipe_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/SecurityZone
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+
+        Creates a security zone (SecurityZone resource) for a compartment. Pass parameters
+        through a CreateSecurityZoneDetails resource.
+
         ## Example Usage
 
         ```python
@@ -404,6 +412,14 @@ class SecurityZone(pulumi.CustomResource):
                  args: SecurityZoneArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/SecurityZone
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+
+        Creates a security zone (SecurityZone resource) for a compartment. Pass parameters
+        through a CreateSecurityZoneDetails resource.
+
         ## Example Usage
 
         ```python

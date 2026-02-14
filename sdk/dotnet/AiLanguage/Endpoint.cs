@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiLanguage
 {
     /// <summary>
+    /// This resource provides the Endpoint resource in Oracle Cloud Infrastructure Ai Language service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/language/latest/Endpoint
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiLanguage
+    /// 
+    /// Creates a new endpoint and deploy the trained model
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -43,7 +50,7 @@ namespace Pulumi.Oci.AiLanguage
     /// 
     /// ## Import
     /// 
-    /// Endpoints can be imported using the `id`, e.g.
+    /// Endpoints can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:AiLanguage/endpoint:Endpoint test_endpoint "id"

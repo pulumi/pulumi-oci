@@ -16,6 +16,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Repository resource in Oracle Cloud Infrastructure Artifacts service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/registry/latest/Repository
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/artifacts
+ * 
+ * Creates a new repository for storing artifacts.
+ * 
  * ## Example Usage
  * 
  * <pre>

@@ -1087,6 +1087,13 @@ class IntegrationInstance(pulumi.CustomResource):
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Integration Instance resource in Oracle Cloud Infrastructure Integration service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/integration/latest/IntegrationInstance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/integration
+
+        Creates a new Integration Instance.
+
         ## Example Usage
 
         ```python
@@ -1200,6 +1207,13 @@ class IntegrationInstance(pulumi.CustomResource):
                  args: IntegrationInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Integration Instance resource in Oracle Cloud Infrastructure Integration service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/integration/latest/IntegrationInstance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/integration
+
+        Creates a new Integration Instance.
+
         ## Example Usage
 
         ```python

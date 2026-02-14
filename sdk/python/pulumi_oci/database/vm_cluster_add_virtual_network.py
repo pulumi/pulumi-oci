@@ -630,6 +630,13 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
                  vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Vm Cluster Add Virtual Machine resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/VmClusterAddVirtualMachine
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Add Virtual Machines to the VM cluster. Applies to Exadata Cloud@Customer instances only.
+
         ## Example Usage
 
         ```python
@@ -669,6 +676,13 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
                  args: VmClusterAddVirtualNetworkArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Vm Cluster Add Virtual Machine resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/VmClusterAddVirtualMachine
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Add Virtual Machines to the VM cluster. Applies to Exadata Cloud@Customer instances only.
+
         ## Example Usage
 
         ```python

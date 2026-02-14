@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Quota resource in Oracle Cloud Infrastructure Limits service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/limits/latest/Quota
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/limits
+//
+// Creates a new quota with the details supplied.
+//
 // ## Example Usage
 //
 // ```go

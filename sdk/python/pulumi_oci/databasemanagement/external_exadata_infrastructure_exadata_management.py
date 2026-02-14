@@ -153,6 +153,17 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
                  license_model: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the External Exadata Infrastructure Exadata Management resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalExadataInfrastructureExadataManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+        Enables Database Management for the Exadata infrastructure specified by externalExadataInfrastructureId. It covers the following
+        components:
+
+        - Exadata infrastructure
+        - Exadata storage grid
+        - Exadata storage server
+
         ## Example Usage
 
         ```python
@@ -182,6 +193,17 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
                  args: ExternalExadataInfrastructureExadataManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the External Exadata Infrastructure Exadata Management resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalExadataInfrastructureExadataManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+        Enables Database Management for the Exadata infrastructure specified by externalExadataInfrastructureId. It covers the following
+        components:
+
+        - Exadata infrastructure
+        - Exadata storage grid
+        - Exadata storage server
+
         ## Example Usage
 
         ```python

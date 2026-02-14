@@ -462,6 +462,15 @@ class PingMonitor(pulumi.CustomResource):
                  vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Ping Monitor resource in Oracle Cloud Infrastructure Health Checks service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/healthchecks/latest/PingMonitor
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/health_checks
+
+        Creates a ping monitor. Vantage points will be automatically selected if not specified,
+        and probes will be initiated from each vantage point to each of the targets at the frequency
+        specified by `intervalInSeconds`.
+
         ## Example Usage
 
         ```python
@@ -519,6 +528,15 @@ class PingMonitor(pulumi.CustomResource):
                  args: PingMonitorArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Ping Monitor resource in Oracle Cloud Infrastructure Health Checks service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/healthchecks/latest/PingMonitor
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/health_checks
+
+        Creates a ping monitor. Vantage points will be automatically selected if not specified,
+        and probes will be initiated from each vantage point to each of the targets at the frequency
+        specified by `intervalInSeconds`.
+
         ## Example Usage
 
         ```python

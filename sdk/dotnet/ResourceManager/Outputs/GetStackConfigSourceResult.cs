@@ -13,7 +13,13 @@ namespace Pulumi.Oci.ResourceManager.Outputs
     [OutputType]
     public sealed class GetStackConfigSourceResult
     {
+        /// <summary>
+        /// Specifies the `configSourceType` for uploading the Terraform configuration. Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
+        /// </summary>
         public readonly string ConfigSourceType;
+        /// <summary>
+        /// File path to the directory from which Terraform runs. If not specified, we use the root directory.
+        /// </summary>
         public readonly string WorkingDirectory;
         public readonly string ZipFileBase64encoded;
 

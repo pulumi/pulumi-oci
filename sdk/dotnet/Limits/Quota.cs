@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Limits
 {
     /// <summary>
+    /// This resource provides the Quota resource in Oracle Cloud Infrastructure Limits service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/limits/latest/Quota
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/limits
+    /// 
+    /// Creates a new quota with the details supplied.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -50,7 +57,7 @@ namespace Pulumi.Oci.Limits
     /// 
     /// ## Import
     /// 
-    /// Quotas can be imported using the `id`, e.g.
+    /// Quotas can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Limits/quota:Quota test_quota "id"

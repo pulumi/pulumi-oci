@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Inventory resource in Oracle Cloud Infrastructure Cloud Bridge service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/OCB/latest/Inventory
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudBridge
+//
+// Creates an inventory.
+//
 // ## Example Usage
 //
 // ```go

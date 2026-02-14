@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
+    /// This resource provides the Batch Task Environment resource in Oracle Cloud Infrastructure Batch service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/batch
+    /// 
+    /// Creates a batch task environment.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -59,7 +66,7 @@ namespace Pulumi.Oci.Oci
     /// 
     /// ## Import
     /// 
-    /// BatchTaskEnvironments can be imported using the `id`, e.g.
+    /// BatchTaskEnvironments can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:oci/batchBatchTaskEnvironment:BatchBatchTaskEnvironment test_batch_task_environment "id"

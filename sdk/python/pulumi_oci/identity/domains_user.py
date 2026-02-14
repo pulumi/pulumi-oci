@@ -188,6 +188,7 @@ class DomainsUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
+        :param pulumi.Input[_builtins.bool] force_delete: (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
         :param pulumi.Input[Sequence[pulumi.Input['DomainsUserImArgs']]] ims: (Updatable) User's instant messaging addresses
                
                **SCIM++ Properties:**
@@ -762,6 +763,9 @@ class DomainsUserArgs:
     @_builtins.property
     @pulumi.getter(name="forceDelete")
     def force_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+        """
         return pulumi.get(self, "force_delete")
 
     @force_delete.setter
@@ -1549,6 +1553,7 @@ class _DomainsUserState:
                * returned: default
                * type: string
                * uniqueness: none
+        :param pulumi.Input[_builtins.bool] force_delete: (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
         :param pulumi.Input[Sequence[pulumi.Input['DomainsUserGroupArgs']]] groups: (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
                
                **SCIM++ Properties:**
@@ -2260,6 +2265,9 @@ class _DomainsUserState:
     @_builtins.property
     @pulumi.getter(name="forceDelete")
     def force_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+        """
         return pulumi.get(self, "force_delete")
 
     @force_delete.setter
@@ -3157,6 +3165,13 @@ class DomainsUser(pulumi.CustomResource):
                  x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserX509certificateArgs', 'DomainsUserX509certificateArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/User
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a user.
+
         ## Example Usage
 
         ```python
@@ -3525,6 +3540,7 @@ class DomainsUser(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
+        :param pulumi.Input[_builtins.bool] force_delete: (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserImArgs', 'DomainsUserImArgsDict']]]] ims: (Updatable) User's instant messaging addresses
                
@@ -3775,6 +3791,13 @@ class DomainsUser(pulumi.CustomResource):
                  args: DomainsUserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/User
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a user.
+
         ## Example Usage
 
         ```python
@@ -4393,6 +4416,7 @@ class DomainsUser(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
+        :param pulumi.Input[_builtins.bool] force_delete: (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserGroupArgs', 'DomainsUserGroupArgsDict']]]] groups: (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
                
                **SCIM++ Properties:**
@@ -4996,6 +5020,9 @@ class DomainsUser(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="forceDelete")
     def force_delete(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+        """
         return pulumi.get(self, "force_delete")
 
     @_builtins.property

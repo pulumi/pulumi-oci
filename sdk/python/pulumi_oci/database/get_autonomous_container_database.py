@@ -416,6 +416,9 @@ class GetAutonomousContainerDatabaseResult:
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> _builtins.str:
+        """
+        **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+        """
         return pulumi.get(self, "db_unique_name")
 
     @_builtins.property

@@ -282,6 +282,13 @@ class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
                  session_token_life_span_duration_in_hours: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
+        This resource provides the Bds Instance Resource Principal Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/bigdata/latest/BdsInstanceResourcePrincipalConfiguration
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/big_data_service
+
+        Create a resource principal session token configuration.
+
         ## Example Usage
 
         ```python
@@ -318,6 +325,13 @@ class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
                  args: BdsInstanceResourcePrincipalConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Bds Instance Resource Principal Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/bigdata/latest/BdsInstanceResourcePrincipalConfiguration
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/big_data_service
+
+        Create a resource principal session token configuration.
+
         ## Example Usage
 
         ```python

@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Environment resource in Oracle Cloud Infrastructure Cloud Bridge service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/OCB/latest/Environment
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudBridge
+//
+// Creates a source environment.
+//
 // ## Example Usage
 //
 // ```go

@@ -7,7 +7,17 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * ## Example Usage
+ * This resource provides the Recommendation resource in Oracle Cloud Infrastructure Optimizer service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/advisor/latest/Recommendation
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/optimizer
+ *
+ * Updates the recommendation that corresponds to the specified OCID.
+ * Use this operation to implement the following actions:
+ *
+ *   * Postpone recommendation
+ *   * Dismiss recommendation
+ *   * Reactivate recommendation
  *
  * ## Import
  *

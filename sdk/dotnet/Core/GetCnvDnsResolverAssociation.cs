@@ -132,6 +132,12 @@ namespace Pulumi.Oci.Core
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The current state of the association. Resolver will be created when vcn is created. But the creation happens 
+        /// asynchronously and may take longer because it is a background event that needs to run. The state will be PROVISIONING
+        /// until the resolver is actually created. After the resolver is actually created, the state will be set to AVAILABLE. Users
+        /// need to do a terraform refresh to poll and update the state file after sometime to get the DnsResolverId and state AVAILABLE.
+        /// </summary>
         public readonly string State;
         /// <summary>
         /// The OCID of the VCN in the association.

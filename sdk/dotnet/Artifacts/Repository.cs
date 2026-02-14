@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Artifacts
 {
     /// <summary>
+    /// This resource provides the Repository resource in Oracle Cloud Infrastructure Artifacts service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/registry/latest/Repository
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/artifacts
+    /// 
+    /// Creates a new repository for storing artifacts.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -42,7 +49,7 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// ## Import
     /// 
-    /// Repositories can be imported using the `id`, e.g.
+    /// Repositories can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Artifacts/repository:Repository test_repository "id"

@@ -16,6 +16,18 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Compute Capacity Topology resource in Oracle Cloud Infrastructure Core service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityTopology
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ * 
+ * Creates a new compute capacity topology in the specified compartment and availability domain.
+ * 
+ * Compute capacity topologies provide the RDMA network topology of your bare metal hosts so that you can launch
+ * instances on your bare metal hosts with targeted network locations.
+ * 
+ * Compute capacity topologies report the health status of your bare metal hosts.
+ * 
  * ## Example Usage
  * 
  * <pre>

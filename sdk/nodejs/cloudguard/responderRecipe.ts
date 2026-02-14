@@ -7,7 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * ## Example Usage
+ * This resource provides the Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/ResponderRecipe
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+ *
+ * Creates a responder recipe (ResponderRecipe resource), from values passed in a
+ * CreateResponderRecipeDetails resource.
  *
  * ## Import
  *

@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Redis Cluster Attach Oci Cache User resource in Oracle Cloud Infrastructure Redis service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/redis/latest/RedisClusterAttachOciCacheUser
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
+//
+// Attach existing Oracle Cloud Infrastructure cache users to a redis cluster.
+//
 // ## Example Usage
 //
 // ```go

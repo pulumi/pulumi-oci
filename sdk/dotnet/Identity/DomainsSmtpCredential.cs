@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
+    /// This resource provides the Smtp Credential resource in Oracle Cloud Infrastructure Identity Domains service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/SmtpCredential
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+    /// 
+    /// Create a user's SMTP credentials.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -60,7 +67,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Import
     /// 
-    /// SmtpCredentials can be imported using the `id`, e.g.
+    /// SmtpCredentials can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Identity/domainsSmtpCredential:DomainsSmtpCredential test_smtp_credential "idcsEndpoint/{idcsEndpoint}/smtpCredentials/{smtpCredentialId}"

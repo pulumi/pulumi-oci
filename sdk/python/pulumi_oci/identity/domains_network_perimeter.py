@@ -1033,6 +1033,13 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsNetworkPerimeterTagArgs', 'DomainsNetworkPerimeterTagArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Network Perimeter resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/NetworkPerimeter
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a NetworkPerimeter
+
         ## Example Usage
 
         ```python
@@ -1161,6 +1168,13 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
                  args: DomainsNetworkPerimeterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Network Perimeter resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/NetworkPerimeter
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a NetworkPerimeter
+
         ## Example Usage
 
         ```python

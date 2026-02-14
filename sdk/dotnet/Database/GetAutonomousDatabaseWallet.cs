@@ -60,6 +60,9 @@ namespace Pulumi.Oci.Database
         [Input("autonomousDatabaseId", required: true)]
         public string AutonomousDatabaseId { get; set; } = null!;
 
+        /// <summary>
+        /// Encodes the downloaded zipped wallet in base64. It is recommended to set this to `True` to avoid corrupting the zip file in Terraform state. The default value is `False` to preserve backwards compatibility with Terraform v0.11 configurations.
+        /// </summary>
         [Input("base64EncodeContent")]
         public bool? Base64EncodeContent { get; set; }
 
@@ -101,6 +104,9 @@ namespace Pulumi.Oci.Database
         [Input("autonomousDatabaseId", required: true)]
         public Input<string> AutonomousDatabaseId { get; set; } = null!;
 
+        /// <summary>
+        /// Encodes the downloaded zipped wallet in base64. It is recommended to set this to `True` to avoid corrupting the zip file in Terraform state. The default value is `False` to preserve backwards compatibility with Terraform v0.11 configurations.
+        /// </summary>
         [Input("base64EncodeContent")]
         public Input<bool>? Base64EncodeContent { get; set; }
 

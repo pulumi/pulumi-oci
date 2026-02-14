@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Batch Job Pool resource in Oracle Cloud Infrastructure Batch service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/batch
+ *
+ * Creates a batch job pool.
+ *
  * ## Example Usage
  *
  * ```typescript

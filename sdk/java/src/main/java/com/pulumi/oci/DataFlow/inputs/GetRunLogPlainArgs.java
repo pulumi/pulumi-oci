@@ -16,9 +16,19 @@ public final class GetRunLogPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetRunLogPlainArgs Empty = new GetRunLogPlainArgs();
 
+    /**
+     * Encodes the downloaded content in base64. It is recommended to set this to `true` for binary content to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+     * If passing the base64 encoded content to a `localFile` resource, please use the `contentBase64` attribute of the `localFile` resource.
+     * 
+     */
     @Import(name="base64EncodeContent")
     private @Nullable Boolean base64EncodeContent;
 
+    /**
+     * @return Encodes the downloaded content in base64. It is recommended to set this to `true` for binary content to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+     * If passing the base64 encoded content to a `localFile` resource, please use the `contentBase64` attribute of the `localFile` resource.
+     * 
+     */
     public Optional<Boolean> base64EncodeContent() {
         return Optional.ofNullable(this.base64EncodeContent);
     }
@@ -79,6 +89,13 @@ public final class GetRunLogPlainArgs extends com.pulumi.resources.InvokeArgs {
             $ = new GetRunLogPlainArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param base64EncodeContent Encodes the downloaded content in base64. It is recommended to set this to `true` for binary content to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+         * If passing the base64 encoded content to a `localFile` resource, please use the `contentBase64` attribute of the `localFile` resource.
+         * 
+         * @return builder
+         * 
+         */
         public Builder base64EncodeContent(@Nullable Boolean base64EncodeContent) {
             $.base64EncodeContent = base64EncodeContent;
             return this;

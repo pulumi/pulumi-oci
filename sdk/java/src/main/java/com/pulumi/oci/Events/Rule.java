@@ -17,6 +17,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Rule resource in Oracle Cloud Infrastructure Events service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/events/latest/Rule
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/events
+ * 
+ * Creates a new rule.
+ * 
  * ## Example Usage
  * 
  * <pre>

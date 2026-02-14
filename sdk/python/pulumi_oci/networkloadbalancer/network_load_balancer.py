@@ -722,7 +722,12 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                  subnet_ipv6cidr: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/latest/NetworkLoadBalancer
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_load_balancer
+
+        Creates a network load balancer.
 
         ## Import
 
@@ -780,7 +785,12 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                  args: NetworkLoadBalancerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/latest/NetworkLoadBalancer
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_load_balancer
+
+        Creates a network load balancer.
 
         ## Import
 

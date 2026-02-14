@@ -51,16 +51,11 @@ __all__ = [
     'GetResourceActionsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class ProfileLevelsConfigurationArgsDict(TypedDict):
-        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgsDict']]]]
-        """
-        (Updatable) The array of configuration levels.
-        """
-elif False:
-    ProfileLevelsConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ProfileLevelsConfigurationArgsDict(TypedDict):
+    items: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgsDict']]]]
+    """
+    (Updatable) The array of configuration levels.
+    """
 
 @pulumi.input_type
 class ProfileLevelsConfigurationArgs:
@@ -85,18 +80,15 @@ class ProfileLevelsConfigurationArgs:
         pulumi.set(self, "items", value)
 
 
-if not MYPY:
-    class ProfileLevelsConfigurationItemArgsDict(TypedDict):
-        level: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The pre-defined profile level.
-        """
-        recommendation_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The unique OCID of the recommendation.
-        """
-elif False:
-    ProfileLevelsConfigurationItemArgsDict: TypeAlias = Mapping[str, Any]
+class ProfileLevelsConfigurationItemArgsDict(TypedDict):
+    level: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The pre-defined profile level.
+    """
+    recommendation_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The unique OCID of the recommendation.
+    """
 
 @pulumi.input_type
 class ProfileLevelsConfigurationItemArgs:
@@ -137,14 +129,11 @@ class ProfileLevelsConfigurationItemArgs:
         pulumi.set(self, "recommendation_id", value)
 
 
-if not MYPY:
-    class ProfileTargetCompartmentsArgsDict(TypedDict):
-        items: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) The list of OCIDs attached to the compartments specified in the current profile override.
-        """
-elif False:
-    ProfileTargetCompartmentsArgsDict: TypeAlias = Mapping[str, Any]
+class ProfileTargetCompartmentsArgsDict(TypedDict):
+    items: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) The list of OCIDs attached to the compartments specified in the current profile override.
+    """
 
 @pulumi.input_type
 class ProfileTargetCompartmentsArgs:
@@ -168,14 +157,11 @@ class ProfileTargetCompartmentsArgs:
         pulumi.set(self, "items", value)
 
 
-if not MYPY:
-    class ProfileTargetTagsArgsDict(TypedDict):
-        items: pulumi.Input[Sequence[pulumi.Input['ProfileTargetTagsItemArgsDict']]]
-        """
-        (Updatable) The list of tags specified in the current profile override.
-        """
-elif False:
-    ProfileTargetTagsArgsDict: TypeAlias = Mapping[str, Any]
+class ProfileTargetTagsArgsDict(TypedDict):
+    items: pulumi.Input[Sequence[pulumi.Input['ProfileTargetTagsItemArgsDict']]]
+    """
+    (Updatable) The list of tags specified in the current profile override.
+    """
 
 @pulumi.input_type
 class ProfileTargetTagsArgs:
@@ -199,34 +185,31 @@ class ProfileTargetTagsArgs:
         pulumi.set(self, "items", value)
 
 
-if not MYPY:
-    class ProfileTargetTagsItemArgsDict(TypedDict):
-        tag_definition_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name you use to refer to the tag, also known as the tag key.
-        """
-        tag_namespace_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the tag namespace.
-        """
-        tag_value_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
+class ProfileTargetTagsItemArgsDict(TypedDict):
+    tag_definition_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name you use to refer to the tag, also known as the tag key.
+    """
+    tag_namespace_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the tag namespace.
+    """
+    tag_value_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
 
-        When the value for this field is `ANY`, the `tagValues` field should be empty, which enforces overrides to the recommendation for resources with any tag values attached to them.
+    When the value for this field is `ANY`, the `tagValues` field should be empty, which enforces overrides to the recommendation for resources with any tag values attached to them.
 
-        When the value for this field value is `VALUE`, the `tagValues` field must include a specific value or list of values. Overrides to the recommendation criteria only occur for resources that match the values in the `tagValues` fields.
-        """
-        tag_values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
+    When the value for this field value is `VALUE`, the `tagValues` field must include a specific value or list of values. Overrides to the recommendation criteria only occur for resources that match the values in the `tagValues` fields.
+    """
+    tag_values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ProfileTargetTagsItemArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ProfileTargetTagsItemArgs:
@@ -312,18 +295,15 @@ class ProfileTargetTagsItemArgs:
         pulumi.set(self, "tag_values", value)
 
 
-if not MYPY:
-    class RecommendationResourceCountArgsDict(TypedDict):
-        count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The count of resources.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The status of the recommendation.
-        """
-elif False:
-    RecommendationResourceCountArgsDict: TypeAlias = Mapping[str, Any]
+class RecommendationResourceCountArgsDict(TypedDict):
+    count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The count of resources.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The status of the recommendation.
+    """
 
 @pulumi.input_type
 class RecommendationResourceCountArgs:
@@ -364,14 +344,11 @@ class RecommendationResourceCountArgs:
         pulumi.set(self, "status", value)
 
 
-if not MYPY:
-    class RecommendationSupportedLevelArgsDict(TypedDict):
-        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['RecommendationSupportedLevelItemArgsDict']]]]
-        """
-        The list of supported levels.
-        """
-elif False:
-    RecommendationSupportedLevelArgsDict: TypeAlias = Mapping[str, Any]
+class RecommendationSupportedLevelArgsDict(TypedDict):
+    items: NotRequired[pulumi.Input[Sequence[pulumi.Input['RecommendationSupportedLevelItemArgsDict']]]]
+    """
+    The list of supported levels.
+    """
 
 @pulumi.input_type
 class RecommendationSupportedLevelArgs:
@@ -396,14 +373,11 @@ class RecommendationSupportedLevelArgs:
         pulumi.set(self, "items", value)
 
 
-if not MYPY:
-    class RecommendationSupportedLevelItemArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the profile level.
-        """
-elif False:
-    RecommendationSupportedLevelItemArgsDict: TypeAlias = Mapping[str, Any]
+class RecommendationSupportedLevelItemArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the profile level.
+    """
 
 @pulumi.input_type
 class RecommendationSupportedLevelItemArgs:
@@ -428,22 +402,19 @@ class RecommendationSupportedLevelItemArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class ResourceActionActionArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Text describing the recommended action.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of the resource action.
-        """
-        url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL path to documentation that explains how to perform the action.
-        """
-elif False:
-    ResourceActionActionArgsDict: TypeAlias = Mapping[str, Any]
+class ResourceActionActionArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Text describing the recommended action.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of the resource action.
+    """
+    url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL path to documentation that explains how to perform the action.
+    """
 
 @pulumi.input_type
 class ResourceActionActionArgs:
@@ -500,16 +471,13 @@ class ResourceActionActionArgs:
         pulumi.set(self, "url", value)
 
 
-if not MYPY:
-    class GetCategoriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCategoriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCategoriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Optional. A filter that returns results that match the name specified.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCategoriesFilterArgs:
@@ -556,13 +524,10 @@ class GetCategoriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetEnrollmentStatusesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetEnrollmentStatusesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetEnrollmentStatusesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetEnrollmentStatusesFilterArgs:
@@ -603,16 +568,13 @@ class GetEnrollmentStatusesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetHistoriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetHistoriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetHistoriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Optional. A filter that returns results that match the name specified.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetHistoriesFilterArgs:
@@ -659,16 +621,13 @@ class GetHistoriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetProfileLevelsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetProfileLevelsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetProfileLevelsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Optional. A filter that returns results that match the name specified.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetProfileLevelsFilterArgs:
@@ -715,16 +674,13 @@ class GetProfileLevelsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetProfilesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetProfilesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetProfilesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Optional. A filter that returns results that match the name specified.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetProfilesFilterArgs:
@@ -771,16 +727,13 @@ class GetProfilesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRecommendationStrategiesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRecommendationStrategiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRecommendationStrategiesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Optional. A filter that returns results that match the name specified.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRecommendationStrategiesFilterArgs:
@@ -827,16 +780,13 @@ class GetRecommendationStrategiesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRecommendationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRecommendationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRecommendationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Optional. A filter that returns results that match the name specified.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRecommendationsFilterArgs:
@@ -883,16 +833,13 @@ class GetRecommendationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetResourceActionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetResourceActionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetResourceActionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Optional. A filter that returns results that match the name specified.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetResourceActionsFilterArgs:

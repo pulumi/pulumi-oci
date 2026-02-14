@@ -739,6 +739,13 @@ class CloudExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResourc
                  total_vm_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
+        This resource provides the Cloud Exadata Infrastructure Configure Exascale Management resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructureConfigureExascaleManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Configures Exascale on Cloud exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
+
         ## Example Usage
 
         ```python
@@ -774,6 +781,13 @@ class CloudExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResourc
                  args: CloudExadataInfrastructureConfigureExascaleManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Cloud Exadata Infrastructure Configure Exascale Management resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructureConfigureExascaleManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Configures Exascale on Cloud exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
+
         ## Example Usage
 
         ```python

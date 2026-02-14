@@ -375,6 +375,15 @@ class OccDemandSignal(pulumi.CustomResource):
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OccDemandSignalPatchOperationArgs', 'OccDemandSignalPatchOperationArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Occ Demand Signal resource in Oracle Cloud Infrastructure Demand Signal service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/occds/latest/OccDemandSignal
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/demand_signal
+
+        Creates a OccDemandSignal.
+
+          Updates the data of an OccDemandSignal.
+
         ## Example Usage
 
         ```python
@@ -437,6 +446,15 @@ class OccDemandSignal(pulumi.CustomResource):
                  args: OccDemandSignalArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Occ Demand Signal resource in Oracle Cloud Infrastructure Demand Signal service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/occds/latest/OccDemandSignal
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/demand_signal
+
+        Creates a OccDemandSignal.
+
+          Updates the data of an OccDemandSignal.
+
         ## Example Usage
 
         ```python

@@ -346,7 +346,12 @@ class CloudDbHome(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Cloud Db Home resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/CloudDbHome
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+
+        Updates the cloud DB home specified by `cloudDbHomeId`.
 
         ## Import
 
@@ -373,7 +378,12 @@ class CloudDbHome(pulumi.CustomResource):
                  args: CloudDbHomeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Cloud Db Home resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/CloudDbHome
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+
+        Updates the cloud DB home specified by `cloudDbHomeId`.
 
         ## Import
 

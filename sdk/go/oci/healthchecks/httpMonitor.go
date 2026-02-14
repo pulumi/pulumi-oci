@@ -12,6 +12,15 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Http Monitor resource in Oracle Cloud Infrastructure Health Checks service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/healthchecks/latest/HttpMonitor
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/health_checks
+//
+// Creates an HTTP monitor. Vantage points will be automatically selected if not specified,
+// and probes will be initiated from each vantage point to each of the targets at the frequency
+// specified by `intervalInSeconds`.
+//
 // ## Example Usage
 //
 // ```go

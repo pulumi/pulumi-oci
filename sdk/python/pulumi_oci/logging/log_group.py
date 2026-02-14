@@ -267,6 +267,14 @@ class LogGroup(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Log Group resource in Oracle Cloud Infrastructure Logging service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logging-management/latest/LogGroup
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/logging
+
+        Create a new log group with a unique display name. This call fails
+        if the log group is already created with the same displayName in the compartment.
+
         ## Example Usage
 
         ```python
@@ -312,6 +320,14 @@ class LogGroup(pulumi.CustomResource):
                  args: LogGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Log Group resource in Oracle Cloud Infrastructure Logging service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logging-management/latest/LogGroup
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/logging
+
+        Create a new log group with a unique display name. This call fails
+        if the log group is already created with the same displayName in the compartment.
+
         ## Example Usage
 
         ```python

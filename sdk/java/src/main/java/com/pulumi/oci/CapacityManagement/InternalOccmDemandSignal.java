@@ -15,6 +15,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Internal Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/occcm/latest/InternalOccmDemandSignal
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/capacity_management
+ * 
+ * This is a internal PUT API which shall be used to update the metadata of the demand signal.
+ * 
  * ## Example Usage
  * 
  * <pre>

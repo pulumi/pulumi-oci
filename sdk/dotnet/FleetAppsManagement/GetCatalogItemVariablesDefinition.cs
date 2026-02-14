@@ -136,6 +136,9 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Schema Document representing Schema.yaml (https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager_topic-schema.htm)
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetCatalogItemVariablesDefinitionSchemaDocumentResult> SchemaDocuments;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`

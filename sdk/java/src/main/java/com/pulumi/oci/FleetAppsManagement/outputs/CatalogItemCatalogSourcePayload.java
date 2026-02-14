@@ -82,6 +82,10 @@ public final class CatalogItemCatalogSourcePayload {
      * 
      */
     private @Nullable String version;
+    /**
+     * @return File path to the directory to use for running Terraform. If not specified, the root directory is used.
+     * 
+     */
     private @Nullable String workingDirectory;
     /**
      * @return The Base64 encoded template. This payload will trigger CreateTemplate API, where the parameter will be passed.
@@ -188,6 +192,10 @@ public final class CatalogItemCatalogSourcePayload {
     public Optional<String> version() {
         return Optional.ofNullable(this.version);
     }
+    /**
+     * @return File path to the directory to use for running Terraform. If not specified, the root directory is used.
+     * 
+     */
     public Optional<String> workingDirectory() {
         return Optional.ofNullable(this.workingDirectory);
     }

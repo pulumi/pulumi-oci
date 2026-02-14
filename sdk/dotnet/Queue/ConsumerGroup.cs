@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Queue
     /// 
     /// ## Import
     /// 
-    /// ConsumerGroups can be imported using the `id`, e.g.
+    /// ConsumerGroups can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Queue/consumerGroup:ConsumerGroup test_consumer_group "id"

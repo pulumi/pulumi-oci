@@ -152,6 +152,13 @@ class LogAnalyticsEntityAssociationsAdd(pulumi.CustomResource):
                  namespace: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Log Analytics Entity Associations Add resource in Oracle Cloud Infrastructure Log Analytics service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsEntity/AddEntityAssociations
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+
+        Adds association between input source log analytics entity and one or more existing destination entities.
+
         ## Example Usage
 
         ```python
@@ -189,6 +196,13 @@ class LogAnalyticsEntityAssociationsAdd(pulumi.CustomResource):
                  args: LogAnalyticsEntityAssociationsAddArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Log Analytics Entity Associations Add resource in Oracle Cloud Infrastructure Log Analytics service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsEntity/AddEntityAssociations
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+
+        Adds association between input source log analytics entity and one or more existing destination entities.
+
         ## Example Usage
 
         ```python

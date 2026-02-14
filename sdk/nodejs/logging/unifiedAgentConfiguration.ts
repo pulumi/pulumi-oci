@@ -7,7 +7,12 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * ## Example Usage
+ * This resource provides the Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logging-management/latest/UnifiedAgentConfiguration
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/logging
+ *
+ * Create unified agent configuration registration.
  *
  * ## Import
  *

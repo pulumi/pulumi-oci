@@ -204,6 +204,13 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
                  urls: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/network-firewall/latest/NetworkFirewallPolicyUrlList
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_firewall
+
+        Creates a new Url List for the Network Firewall Policy.
+
         ## Example Usage
 
         ```python
@@ -242,6 +249,13 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
                  args: NetworkFirewallPolicyUrlListArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/network-firewall/latest/NetworkFirewallPolicyUrlList
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_firewall
+
+        Creates a new Url List for the Network Firewall Policy.
+
         ## Example Usage
 
         ```python

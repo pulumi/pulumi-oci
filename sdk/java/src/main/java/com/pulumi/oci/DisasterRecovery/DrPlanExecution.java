@@ -23,6 +23,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/disaster-recovery/latest/DrPlanExecution
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/disaster_recovery
+ * 
+ * Execute a DR plan for a DR protection group.
+ * 
  * ## Example Usage
  * 
  * <pre>

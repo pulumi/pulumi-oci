@@ -117,32 +117,27 @@ __all__ = [
     'GetDrProtectionGroupsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class AutomaticDrConfigurationMemberArgsDict(TypedDict):
-        member_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The OCID of the member.  Example: `ocid1.database.oc1..uniqueID`
-        """
-        member_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of the member. 
+class AutomaticDrConfigurationMemberArgsDict(TypedDict):
+    member_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The OCID of the member.  Example: `ocid1.database.oc1..uniqueID`
+    """
+    member_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of the member. 
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        is_auto_failover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
-        """
-        is_auto_switchover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
-        """
-elif False:
-    AutomaticDrConfigurationMemberArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    is_auto_failover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+    """
+    is_auto_switchover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+    """
 
 @pulumi.input_type
 class AutomaticDrConfigurationMemberArgs:
@@ -221,18 +216,15 @@ class AutomaticDrConfigurationMemberArgs:
         pulumi.set(self, "is_auto_switchover_enabled", value)
 
 
-if not MYPY:
-    class DrPlanExecutionAutomaticExecutionDetailArgsDict(TypedDict):
-        event_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
-        """
-        member_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
-        """
-elif False:
-    DrPlanExecutionAutomaticExecutionDetailArgsDict: TypeAlias = Mapping[str, Any]
+class DrPlanExecutionAutomaticExecutionDetailArgsDict(TypedDict):
+    event_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+    """
+    member_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+    """
 
 @pulumi.input_type
 class DrPlanExecutionAutomaticExecutionDetailArgs:
@@ -273,22 +265,19 @@ class DrPlanExecutionAutomaticExecutionDetailArgs:
         pulumi.set(self, "member_id", value)
 
 
-if not MYPY:
-    class DrPlanExecutionExecutionOptionsArgsDict(TypedDict):
-        plan_execution_type: pulumi.Input[_builtins.str]
-        """
-        The type of the plan execution.
-        """
-        are_prechecks_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
-        """
-        are_warnings_ignored: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
-        """
-elif False:
-    DrPlanExecutionExecutionOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class DrPlanExecutionExecutionOptionsArgsDict(TypedDict):
+    plan_execution_type: pulumi.Input[_builtins.str]
+    """
+    The type of the plan execution.
+    """
+    are_prechecks_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
+    """
+    are_warnings_ignored: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
+    """
 
 @pulumi.input_type
 class DrPlanExecutionExecutionOptionsArgs:
@@ -344,46 +333,43 @@ class DrPlanExecutionExecutionOptionsArgs:
         pulumi.set(self, "are_warnings_ignored", value)
 
 
-if not MYPY:
-    class DrPlanExecutionGroupExecutionArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
-        """
-        execution_duration_in_sec: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total duration in seconds taken to complete the step execution.  Example: `35`
-        """
-        group_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of the step execution.
-        """
-        status_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
-        """
-        step_executions: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionStepExecutionArgsDict']]]]
-        """
-        A list of step executions in the group.
-        """
-        time_ended: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        """
-        time_started: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The group type.  Example: `BUILT_IN`
-        """
-elif False:
-    DrPlanExecutionGroupExecutionArgsDict: TypeAlias = Mapping[str, Any]
+class DrPlanExecutionGroupExecutionArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
+    """
+    execution_duration_in_sec: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total duration in seconds taken to complete the step execution.  Example: `35`
+    """
+    group_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of the step execution.
+    """
+    status_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
+    """
+    step_executions: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionStepExecutionArgsDict']]]]
+    """
+    A list of step executions in the group.
+    """
+    time_ended: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+    """
+    time_started: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The group type.  Example: `BUILT_IN`
+    """
 
 @pulumi.input_type
 class DrPlanExecutionGroupExecutionArgs:
@@ -536,54 +522,51 @@ class DrPlanExecutionGroupExecutionArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class DrPlanExecutionGroupExecutionStepExecutionArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
-        """
-        execution_duration_in_sec: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total duration in seconds taken to complete the step execution.  Example: `35`
-        """
-        group_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-        """
-        log_locations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionStepExecutionLogLocationArgsDict']]]]
-        """
-        The details of an object storage log location for a DR protection group.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of the step execution.
-        """
-        status_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
-        """
-        step_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
-        """
-        time_ended: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        """
-        time_started: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The group type.  Example: `BUILT_IN`
-        """
-        type_display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The display name of the DR Plan step type.  Example: `Database Switchover`
-        """
-elif False:
-    DrPlanExecutionGroupExecutionStepExecutionArgsDict: TypeAlias = Mapping[str, Any]
+class DrPlanExecutionGroupExecutionStepExecutionArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
+    """
+    execution_duration_in_sec: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total duration in seconds taken to complete the step execution.  Example: `35`
+    """
+    group_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
+    """
+    log_locations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionStepExecutionLogLocationArgsDict']]]]
+    """
+    The details of an object storage log location for a DR protection group.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of the step execution.
+    """
+    status_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
+    """
+    step_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
+    """
+    time_ended: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+    """
+    time_started: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The group type.  Example: `BUILT_IN`
+    """
+    type_display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The display name of the DR Plan step type.  Example: `Database Switchover`
+    """
 
 @pulumi.input_type
 class DrPlanExecutionGroupExecutionStepExecutionArgs:
@@ -768,22 +751,19 @@ class DrPlanExecutionGroupExecutionStepExecutionArgs:
         pulumi.set(self, "type_display_name", value)
 
 
-if not MYPY:
-    class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgsDict(TypedDict):
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The bucket name inside the object storage namespace.  Example: `operation_logs`
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-        """
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object name inside the object storage bucket.  Example: `switchover_plan_executions`
-        """
-elif False:
-    DrPlanExecutionGroupExecutionStepExecutionLogLocationArgsDict: TypeAlias = Mapping[str, Any]
+class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgsDict(TypedDict):
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The bucket name inside the object storage namespace.  Example: `operation_logs`
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+    """
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+    """
 
 @pulumi.input_type
 class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs:
@@ -840,22 +820,19 @@ class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs:
         pulumi.set(self, "object", value)
 
 
-if not MYPY:
-    class DrPlanExecutionLogLocationArgsDict(TypedDict):
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The bucket name inside the object storage namespace.  Example: `operation_logs`
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-        """
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object name inside the object storage bucket.  Example: `switchover_plan_executions`
-        """
-elif False:
-    DrPlanExecutionLogLocationArgsDict: TypeAlias = Mapping[str, Any]
+class DrPlanExecutionLogLocationArgsDict(TypedDict):
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The bucket name inside the object storage namespace.  Example: `operation_logs`
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+    """
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+    """
 
 @pulumi.input_type
 class DrPlanExecutionLogLocationArgs:
@@ -912,34 +889,31 @@ class DrPlanExecutionLogLocationArgs:
         pulumi.set(self, "object", value)
 
 
-if not MYPY:
-    class DrPlanExecutionStepStatusCountArgsDict(TypedDict):
-        failed_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountFailedStepArgsDict']]]]
-        """
-        A summary of steps that failed during a DR plan execution, including failed and timed out steps.
-        """
-        remaining_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountRemainingStepArgsDict']]]]
-        """
-        A summary of remaining steps in a DR plan execution, including queued, paused, and in-progress steps.
-        """
-        skipped_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountSkippedStepArgsDict']]]]
-        """
-        A summary of steps that were skipped during a DR plan execution, including disabled, failed but ignored, timed out but ignored, and canceled steps.
-        """
-        successful_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountSuccessfulStepArgsDict']]]]
-        """
-        A summary of steps that completed successfully during a DR plan execution.
-        """
-        total_steps: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of steps in a DR plan execution.
-        """
-        warning_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountWarningStepArgsDict']]]]
-        """
-        A summary of steps that encountered warnings during a DR plan execution.
-        """
-elif False:
-    DrPlanExecutionStepStatusCountArgsDict: TypeAlias = Mapping[str, Any]
+class DrPlanExecutionStepStatusCountArgsDict(TypedDict):
+    failed_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountFailedStepArgsDict']]]]
+    """
+    A summary of steps that failed during a DR plan execution, including failed and timed out steps.
+    """
+    remaining_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountRemainingStepArgsDict']]]]
+    """
+    A summary of remaining steps in a DR plan execution, including queued, paused, and in-progress steps.
+    """
+    skipped_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountSkippedStepArgsDict']]]]
+    """
+    A summary of steps that were skipped during a DR plan execution, including disabled, failed but ignored, timed out but ignored, and canceled steps.
+    """
+    successful_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountSuccessfulStepArgsDict']]]]
+    """
+    A summary of steps that completed successfully during a DR plan execution.
+    """
+    total_steps: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of steps in a DR plan execution.
+    """
+    warning_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountWarningStepArgsDict']]]]
+    """
+    A summary of steps that encountered warnings during a DR plan execution.
+    """
 
 @pulumi.input_type
 class DrPlanExecutionStepStatusCountArgs:
@@ -1044,22 +1018,19 @@ class DrPlanExecutionStepStatusCountArgs:
         pulumi.set(self, "warning_steps", value)
 
 
-if not MYPY:
-    class DrPlanExecutionStepStatusCountFailedStepArgsDict(TypedDict):
-        failed: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of failed steps in a DR plan execution.
-        """
-        timed_out: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of steps that timed out during a DR plan execution.
-        """
-        total_failed: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of steps that failed during a DR plan execution.
-        """
-elif False:
-    DrPlanExecutionStepStatusCountFailedStepArgsDict: TypeAlias = Mapping[str, Any]
+class DrPlanExecutionStepStatusCountFailedStepArgsDict(TypedDict):
+    failed: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of failed steps in a DR plan execution.
+    """
+    timed_out: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of steps that timed out during a DR plan execution.
+    """
+    total_failed: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of steps that failed during a DR plan execution.
+    """
 
 @pulumi.input_type
 class DrPlanExecutionStepStatusCountFailedStepArgs:
@@ -1116,26 +1087,23 @@ class DrPlanExecutionStepStatusCountFailedStepArgs:
         pulumi.set(self, "total_failed", value)
 
 
-if not MYPY:
-    class DrPlanExecutionStepStatusCountRemainingStepArgsDict(TypedDict):
-        in_progress: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of steps in progress during a DR plan execution.
-        """
-        paused: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of paused steps in a DR plan execution.
-        """
-        queued: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of queued steps in a DR plan execution.
-        """
-        total_remaining: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of remaining steps in a DR plan execution.
-        """
-elif False:
-    DrPlanExecutionStepStatusCountRemainingStepArgsDict: TypeAlias = Mapping[str, Any]
+class DrPlanExecutionStepStatusCountRemainingStepArgsDict(TypedDict):
+    in_progress: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of steps in progress during a DR plan execution.
+    """
+    paused: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of paused steps in a DR plan execution.
+    """
+    queued: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of queued steps in a DR plan execution.
+    """
+    total_remaining: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of remaining steps in a DR plan execution.
+    """
 
 @pulumi.input_type
 class DrPlanExecutionStepStatusCountRemainingStepArgs:
@@ -1208,30 +1176,27 @@ class DrPlanExecutionStepStatusCountRemainingStepArgs:
         pulumi.set(self, "total_remaining", value)
 
 
-if not MYPY:
-    class DrPlanExecutionStepStatusCountSkippedStepArgsDict(TypedDict):
-        canceled: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of canceled steps in a DR plan execution.
-        """
-        disabled: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of disabled steps in a DR plan execution.
-        """
-        failed_ignored: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of steps that failed but were ignored during a DR plan execution.
-        """
-        timed_out_ignored: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of steps that timed out but were ignored during a DR plan execution.
-        """
-        total_skipped: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of steps that were skipped during a DR plan execution.
-        """
-elif False:
-    DrPlanExecutionStepStatusCountSkippedStepArgsDict: TypeAlias = Mapping[str, Any]
+class DrPlanExecutionStepStatusCountSkippedStepArgsDict(TypedDict):
+    canceled: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of canceled steps in a DR plan execution.
+    """
+    disabled: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of disabled steps in a DR plan execution.
+    """
+    failed_ignored: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of steps that failed but were ignored during a DR plan execution.
+    """
+    timed_out_ignored: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of steps that timed out but were ignored during a DR plan execution.
+    """
+    total_skipped: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of steps that were skipped during a DR plan execution.
+    """
 
 @pulumi.input_type
 class DrPlanExecutionStepStatusCountSkippedStepArgs:
@@ -1320,18 +1285,15 @@ class DrPlanExecutionStepStatusCountSkippedStepArgs:
         pulumi.set(self, "total_skipped", value)
 
 
-if not MYPY:
-    class DrPlanExecutionStepStatusCountSuccessfulStepArgsDict(TypedDict):
-        succeeded: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of steps that succeeded during a DR plan execution.
-        """
-        total_successful: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of successful steps in a DR plan execution.
-        """
-elif False:
-    DrPlanExecutionStepStatusCountSuccessfulStepArgsDict: TypeAlias = Mapping[str, Any]
+class DrPlanExecutionStepStatusCountSuccessfulStepArgsDict(TypedDict):
+    succeeded: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of steps that succeeded during a DR plan execution.
+    """
+    total_successful: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of successful steps in a DR plan execution.
+    """
 
 @pulumi.input_type
 class DrPlanExecutionStepStatusCountSuccessfulStepArgs:
@@ -1372,18 +1334,15 @@ class DrPlanExecutionStepStatusCountSuccessfulStepArgs:
         pulumi.set(self, "total_successful", value)
 
 
-if not MYPY:
-    class DrPlanExecutionStepStatusCountWarningStepArgsDict(TypedDict):
-        total_warnings: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of steps that encountered warnings in a DR plan execution.
-        """
-        warnings_ignored: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of steps with warnings that were ignored during a DR plan execution.
-        """
-elif False:
-    DrPlanExecutionStepStatusCountWarningStepArgsDict: TypeAlias = Mapping[str, Any]
+class DrPlanExecutionStepStatusCountWarningStepArgsDict(TypedDict):
+    total_warnings: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of steps that encountered warnings in a DR plan execution.
+    """
+    warnings_ignored: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of steps with warnings that were ignored during a DR plan execution.
+    """
 
 @pulumi.input_type
 class DrPlanExecutionStepStatusCountWarningStepArgs:
@@ -1424,34 +1383,31 @@ class DrPlanExecutionStepStatusCountWarningStepArgs:
         pulumi.set(self, "warnings_ignored", value)
 
 
-if not MYPY:
-    class DrPlanPlanGroupArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-        """
-        is_pause_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
-        """
-        refresh_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The DR plan step refresh status.  Example: `STEP_ADDED`
-        """
-        steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepArgsDict']]]]
-        """
-        The list of steps in the group.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of DR plan to be created.
-        """
-elif False:
-    DrPlanPlanGroupArgsDict: TypeAlias = Mapping[str, Any]
+class DrPlanPlanGroupArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
+    """
+    is_pause_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+    """
+    refresh_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The DR plan step refresh status.  Example: `STEP_ADDED`
+    """
+    steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepArgsDict']]]]
+    """
+    The list of steps in the group.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of DR plan to be created.
+    """
 
 @pulumi.input_type
 class DrPlanPlanGroupArgs:
@@ -1556,54 +1512,51 @@ class DrPlanPlanGroupArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class DrPlanPlanGroupStepArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
-        """
-        error_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The error mode for this step.
-        """
-        group_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-        """
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        A flag indicating whether this step should be enabled for execution.  Example: `true`
-        """
-        member_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
-        """
-        refresh_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The DR plan step refresh status.  Example: `STEP_ADDED`
-        """
-        timeout: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The timeout in seconds for executing this step.  Example: `600`
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of DR plan to be created.
-        """
-        type_display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The display name of the DR Plan step type.  Example: `Database Switchover`
-        """
-        user_defined_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepArgsDict']]]]
-        """
-        The details for a user-defined step in a DR plan.
-        """
-elif False:
-    DrPlanPlanGroupStepArgsDict: TypeAlias = Mapping[str, Any]
+class DrPlanPlanGroupStepArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
+    """
+    error_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The error mode for this step.
+    """
+    group_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
+    """
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    A flag indicating whether this step should be enabled for execution.  Example: `true`
+    """
+    member_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
+    """
+    refresh_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The DR plan step refresh status.  Example: `STEP_ADDED`
+    """
+    timeout: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The timeout in seconds for executing this step.  Example: `600`
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of DR plan to be created.
+    """
+    type_display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The display name of the DR Plan step type.  Example: `Database Switchover`
+    """
+    user_defined_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepArgsDict']]]]
+    """
+    The details for a user-defined step in a DR plan.
+    """
 
 @pulumi.input_type
 class DrPlanPlanGroupStepArgs:
@@ -1788,46 +1741,43 @@ class DrPlanPlanGroupStepArgs:
         pulumi.set(self, "user_defined_steps", value)
 
 
-if not MYPY:
-    class DrPlanPlanGroupStepUserDefinedStepArgsDict(TypedDict):
-        function_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
-        """
-        function_region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The region in which the function is deployed.  Example: `us-ashburn-1`
-        """
-        object_storage_script_locations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgsDict']]]]
-        """
-        The details of an object storage script location for a user-defined step in a DR plan.
-        """
-        request_body: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
-        """
-        run_as_user: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
-        """
-        run_on_instance_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the instance on which this script or command should be executed.
-        """
-        run_on_instance_region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
-        """
-        script_command: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
-        """
-        step_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the user-defined step.
-        """
-elif False:
-    DrPlanPlanGroupStepUserDefinedStepArgsDict: TypeAlias = Mapping[str, Any]
+class DrPlanPlanGroupStepUserDefinedStepArgsDict(TypedDict):
+    function_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
+    """
+    function_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The region in which the function is deployed.  Example: `us-ashburn-1`
+    """
+    object_storage_script_locations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgsDict']]]]
+    """
+    The details of an object storage script location for a user-defined step in a DR plan.
+    """
+    request_body: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
+    """
+    run_as_user: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
+    """
+    run_on_instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the instance on which this script or command should be executed.
+    """
+    run_on_instance_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
+    """
+    script_command: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
+    """
+    step_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the user-defined step.
+    """
 
 @pulumi.input_type
 class DrPlanPlanGroupStepUserDefinedStepArgs:
@@ -1980,22 +1930,19 @@ class DrPlanPlanGroupStepUserDefinedStepArgs:
         pulumi.set(self, "step_type", value)
 
 
-if not MYPY:
-    class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgsDict(TypedDict):
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-        """
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object name inside the object storage bucket.  Example: `validate_app_start.sh`
-        """
-elif False:
-    DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgsDict: TypeAlias = Mapping[str, Any]
+class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgsDict(TypedDict):
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+    """
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object name inside the object storage bucket.  Example: `validate_app_start.sh`
+    """
 
 @pulumi.input_type
 class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs:
@@ -2052,22 +1999,19 @@ class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs:
         pulumi.set(self, "object", value)
 
 
-if not MYPY:
-    class DrProtectionGroupAssociationArgsDict(TypedDict):
-        role: pulumi.Input[_builtins.str]
-        """
-        The role of the DR protection group.  Example: `STANDBY`
-        """
-        peer_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        """
-        peer_region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The region of the peer DR protection group.  Example: `us-ashburn-1`
-        """
-elif False:
-    DrProtectionGroupAssociationArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupAssociationArgsDict(TypedDict):
+    role: pulumi.Input[_builtins.str]
+    """
+    The role of the DR protection group.  Example: `STANDBY`
+    """
+    peer_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+    """
+    peer_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The region of the peer DR protection group.  Example: `us-ashburn-1`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupAssociationArgs:
@@ -2123,22 +2067,19 @@ class DrProtectionGroupAssociationArgs:
         pulumi.set(self, "peer_region", value)
 
 
-if not MYPY:
-    class DrProtectionGroupLogLocationArgsDict(TypedDict):
-        bucket: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The bucket name inside the object storage namespace.  Example: `operation_logs`
-        """
-        namespace: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-        """
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object name inside the object storage bucket.  Example: `switchover_plan_executions`
-        """
-elif False:
-    DrProtectionGroupLogLocationArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupLogLocationArgsDict(TypedDict):
+    bucket: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The bucket name inside the object storage namespace.  Example: `operation_logs`
+    """
+    namespace: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+    """
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupLogLocationArgs:
@@ -2193,186 +2134,183 @@ class DrProtectionGroupLogLocationArgs:
         pulumi.set(self, "object", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberArgsDict(TypedDict):
-        member_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
-        """
-        member_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of the member.
-        """
-        autonomous_database_standby_type_for_dr_drills: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
-        """
-        backend_set_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBackendSetMappingArgsDict']]]]
-        """
-        (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
-        """
-        backup_config: NotRequired[pulumi.Input['DrProtectionGroupMemberBackupConfigArgsDict']]
-        """
-        (Updatable) Create backup configuration properties for an OKE member.
-        """
-        backup_location: NotRequired[pulumi.Input['DrProtectionGroupMemberBackupLocationArgsDict']]
-        """
-        (Updatable) The details for creating the backup location of an OKE Cluster.
-        """
-        block_volume_attach_and_mount_operations: NotRequired[pulumi.Input['DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgsDict']]
-        """
-        (Updatable) The details for creating the operations performed on a block volume.
-        """
-        block_volume_operations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationArgsDict']]]]
-        """
-        (Updatable) Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. A list of operations performed on block volumes used by the compute instance.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
-        """
-        common_destination_key: NotRequired[pulumi.Input['DrProtectionGroupMemberCommonDestinationKeyArgsDict']]
-        """
-        (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
-        """
-        connection_string_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
-        """
-        db_system_admin_user_details: NotRequired[pulumi.Input['DrProtectionGroupMemberDbSystemAdminUserDetailsArgsDict']]
-        """
-        (Updatable) The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the Vault secret that stores the password.
-        """
-        db_system_replication_user_details: NotRequired[pulumi.Input['DrProtectionGroupMemberDbSystemReplicationUserDetailsArgsDict']]
-        """
-        (Updatable) The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the Vault secret that stores the password.
-        """
-        destination_availability_domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
-        """
-        destination_backup_policy_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
-        """
-        destination_capacity_reservation_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
-        """
-        destination_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
-        """
-        destination_dedicated_vm_host_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
-        """
-        destination_encryption_key: NotRequired[pulumi.Input['DrProtectionGroupMemberDestinationEncryptionKeyArgsDict']]
-        """
-        (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
-        """
-        destination_load_balancer_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
-        """
-        destination_network_load_balancer_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
-        """
-        destination_snapshot_policy_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
-        """
-        export_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberExportMappingArgsDict']]]]
-        """
-        (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
-        """
-        file_system_operations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberFileSystemOperationArgsDict']]]]
-        """
-        (Updatable) A list of operations performed on file systems used by the compute instance.
-        """
-        gtid_reconciliation_timeout: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
-        """
-        is_continue_on_gtid_reconciliation_timeout: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
-        """
-        is_movable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
-        """
-        is_retain_fault_domain: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
-        """
-        is_start_stop_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
-        """
-        jump_host_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
-        """
-        load_balancer_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberLoadBalancerMappingArgsDict']]]]
-        """
-        (Updatable) The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
-        """
-        managed_node_pool_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberManagedNodePoolConfigArgsDict']]]]
-        """
-        (Updatable) The list of managed node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-        """
-        network_load_balancer_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberNetworkLoadBalancerMappingArgsDict']]]]
-        """
-        (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
-        """
-        password_vault_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
-        """
-        peer_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
-        """
-        peer_db_system_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
-        """
-        resource_modifier_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberResourceModifierMappingArgsDict']]]]
-        """
-        (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
-        """
-        source_volume_to_destination_encryption_key_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgsDict']]]]
-        """
-        (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+class DrProtectionGroupMemberArgsDict(TypedDict):
+    member_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
+    """
+    member_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of the member.
+    """
+    autonomous_database_standby_type_for_dr_drills: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+    """
+    backend_set_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBackendSetMappingArgsDict']]]]
+    """
+    (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
+    """
+    backup_config: NotRequired[pulumi.Input['DrProtectionGroupMemberBackupConfigArgsDict']]
+    """
+    (Updatable) Create backup configuration properties for an OKE member.
+    """
+    backup_location: NotRequired[pulumi.Input['DrProtectionGroupMemberBackupLocationArgsDict']]
+    """
+    (Updatable) The details for creating the backup location of an OKE Cluster.
+    """
+    block_volume_attach_and_mount_operations: NotRequired[pulumi.Input['DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgsDict']]
+    """
+    (Updatable) The details for creating the operations performed on a block volume.
+    """
+    block_volume_operations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationArgsDict']]]]
+    """
+    (Updatable) Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. A list of operations performed on block volumes used by the compute instance.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+    """
+    common_destination_key: NotRequired[pulumi.Input['DrProtectionGroupMemberCommonDestinationKeyArgsDict']]
+    """
+    (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+    """
+    connection_string_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+    """
+    db_system_admin_user_details: NotRequired[pulumi.Input['DrProtectionGroupMemberDbSystemAdminUserDetailsArgsDict']]
+    """
+    (Updatable) The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the Vault secret that stores the password.
+    """
+    db_system_replication_user_details: NotRequired[pulumi.Input['DrProtectionGroupMemberDbSystemReplicationUserDetailsArgsDict']]
+    """
+    (Updatable) The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the Vault secret that stores the password.
+    """
+    destination_availability_domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
+    """
+    destination_backup_policy_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+    """
+    destination_capacity_reservation_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
+    """
+    destination_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
+    """
+    destination_dedicated_vm_host_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
+    """
+    destination_encryption_key: NotRequired[pulumi.Input['DrProtectionGroupMemberDestinationEncryptionKeyArgsDict']]
+    """
+    (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+    """
+    destination_load_balancer_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+    """
+    destination_network_load_balancer_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+    """
+    destination_snapshot_policy_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+    """
+    export_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberExportMappingArgsDict']]]]
+    """
+    (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
+    """
+    file_system_operations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberFileSystemOperationArgsDict']]]]
+    """
+    (Updatable) A list of operations performed on file systems used by the compute instance.
+    """
+    gtid_reconciliation_timeout: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+    """
+    is_continue_on_gtid_reconciliation_timeout: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+    """
+    is_movable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
+    """
+    is_retain_fault_domain: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
+    """
+    is_start_stop_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
+    """
+    jump_host_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
+    """
+    load_balancer_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberLoadBalancerMappingArgsDict']]]]
+    """
+    (Updatable) The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+    """
+    managed_node_pool_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberManagedNodePoolConfigArgsDict']]]]
+    """
+    (Updatable) The list of managed node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+    """
+    network_load_balancer_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberNetworkLoadBalancerMappingArgsDict']]]]
+    """
+    (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+    """
+    password_vault_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+    """
+    peer_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
+    """
+    peer_db_system_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+    """
+    resource_modifier_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberResourceModifierMappingArgsDict']]]]
+    """
+    (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+    """
+    source_volume_to_destination_encryption_key_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgsDict']]]]
+    """
+    (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
 
-        If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually  for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
+    If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually  for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
 
-        An entry for each volume in volume group should be added in this list. The encryption key will not be updated  for the volumes that are part of volume group but missing in this list.
-        """
-        vault_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVaultMappingArgsDict']]]]
-        """
-        (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
-        """
-        virtual_node_pool_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVirtualNodePoolConfigArgsDict']]]]
-        """
-        (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
-        """
-        vnic_mapping: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgsDict']]]]
-        """
-        (Updatable) A list of compute instance VNIC mappings.
-        """
-        vnic_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgsDict']]]]
-        """
-        (Updatable) A list of compute instance VNIC mappings.
-        """
-elif False:
-    DrProtectionGroupMemberArgsDict: TypeAlias = Mapping[str, Any]
+    An entry for each volume in volume group should be added in this list. The encryption key will not be updated  for the volumes that are part of volume group but missing in this list.
+    """
+    vault_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVaultMappingArgsDict']]]]
+    """
+    (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
+    """
+    virtual_node_pool_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVirtualNodePoolConfigArgsDict']]]]
+    """
+    (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
+    """
+    vnic_mapping: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgsDict']]]]
+    """
+    (Updatable) A list of compute instance VNIC mappings.
+    """
+    vnic_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgsDict']]]]
+    """
+    (Updatable) A list of compute instance VNIC mappings.
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberArgs:
@@ -3075,22 +3013,19 @@ class DrProtectionGroupMemberArgs:
         pulumi.set(self, "vnic_mappings", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberBackendSetMappingArgsDict(TypedDict):
-        destination_backend_set_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the destination backend set.  Example: `Destination-BackendSet-1`
-        """
-        is_backend_set_for_non_movable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR, their contents are not altered. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the  destination region load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
-        """
-        source_backend_set_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the source backend set.  Example: `Source-BackendSet-1`
-        """
-elif False:
-    DrProtectionGroupMemberBackendSetMappingArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberBackendSetMappingArgsDict(TypedDict):
+    destination_backend_set_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the destination backend set.  Example: `Destination-BackendSet-1`
+    """
+    is_backend_set_for_non_movable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR, their contents are not altered. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the  destination region load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
+    """
+    source_backend_set_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the source backend set.  Example: `Source-BackendSet-1`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberBackendSetMappingArgs:
@@ -3147,48 +3082,45 @@ class DrProtectionGroupMemberBackendSetMappingArgs:
         pulumi.set(self, "source_backend_set_name", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberBackupConfigArgsDict(TypedDict):
-        backup_schedule: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created.  This format of the string specifying the backup schedule must conform with RFC-5545 (see examples below). This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.
+class DrProtectionGroupMemberBackupConfigArgsDict(TypedDict):
+    backup_schedule: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created.  This format of the string specifying the backup schedule must conform with RFC-5545 (see examples below). This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.
 
-        The backup frequency can be HOURLY, DAILY, WEEKLY or MONTHLY, and the upper and lower interval bounds are as follows HOURLY
-        * Minimum = 1
-        * Maximum = 24 DAILY
-        * Minimum = 1
-        * Maximum = 30 WEEKLY
-        * Minimum = 1
-        * Maximum = 1 MONTHLY
-        * Minimum = 1
-        * Maximum = 12
+    The backup frequency can be HOURLY, DAILY, WEEKLY or MONTHLY, and the upper and lower interval bounds are as follows HOURLY
+    * Minimum = 1
+    * Maximum = 24 DAILY
+    * Minimum = 1
+    * Maximum = 30 WEEKLY
+    * Minimum = 1
+    * Maximum = 1 MONTHLY
+    * Minimum = 1
+    * Maximum = 12
 
-        Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every Monday and Wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (Cannot specify an interval of 2).
+    Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every Monday and Wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (Cannot specify an interval of 2).
 
-        FREQ=HOURLY;INTERVAL=25 > Invalid configuration (Cannot specify an interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (Cannot specify an interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup daily at 05:10 PM.
-        """
-        exclude_namespaces: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespace_string_3", "namespace_string_4"]
-        """
-        image_replication_vault_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
-        """
-        max_number_of_backups_retained: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
-        """
-        namespaces: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
-        """
-        replicate_images: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
-        """
-elif False:
-    DrProtectionGroupMemberBackupConfigArgsDict: TypeAlias = Mapping[str, Any]
+    FREQ=HOURLY;INTERVAL=25 > Invalid configuration (Cannot specify an interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (Cannot specify an interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup daily at 05:10 PM.
+    """
+    exclude_namespaces: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespace_string_3", "namespace_string_4"]
+    """
+    image_replication_vault_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
+    """
+    max_number_of_backups_retained: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
+    """
+    namespaces: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+    """
+    replicate_images: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberBackupConfigArgs:
@@ -3321,22 +3253,19 @@ class DrProtectionGroupMemberBackupConfigArgs:
         pulumi.set(self, "replicate_images", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberBackupLocationArgsDict(TypedDict):
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The bucket name inside the object storage namespace.  Example: `operation_logs`
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The namespace in the object storage bucket location (Note - this is usually the tenancy name).  Example: `myocitenancy`
-        """
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object name inside the object storage bucket.  Example: `switchover_plan_executions`
-        """
-elif False:
-    DrProtectionGroupMemberBackupLocationArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberBackupLocationArgsDict(TypedDict):
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The bucket name inside the object storage namespace.  Example: `operation_logs`
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The namespace in the object storage bucket location (Note - this is usually the tenancy name).  Example: `myocitenancy`
+    """
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberBackupLocationArgs:
@@ -3393,18 +3322,15 @@ class DrProtectionGroupMemberBackupLocationArgs:
         pulumi.set(self, "object", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgsDict(TypedDict):
-        attachments: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgsDict']]]]
-        """
-        (Updatable) A list of details of attach or detach operations performed on block volumes.
-        """
-        mounts: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgsDict']]]]
-        """
-        (Updatable) A list of details of mount operations performed on block volumes.
-        """
-elif False:
-    DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgsDict(TypedDict):
+    attachments: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgsDict']]]]
+    """
+    (Updatable) A list of details of attach or detach operations performed on block volumes.
+    """
+    mounts: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgsDict']]]]
+    """
+    (Updatable) A list of details of mount operations performed on block volumes.
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs:
@@ -3445,18 +3371,15 @@ class DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs:
         pulumi.set(self, "mounts", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgsDict(TypedDict):
-        block_volume_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
-        """
-        volume_attachment_reference_instance_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
-        """
-elif False:
-    DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgsDict(TypedDict):
+    block_volume_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+    """
+    volume_attachment_reference_instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgs:
@@ -3497,14 +3420,11 @@ class DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgs:
         pulumi.set(self, "volume_attachment_reference_instance_id", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgsDict(TypedDict):
-        mount_point: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The physical mount point where the file system is mounted on the block volume.  Example: `/mnt/yourmountpoint`
-        """
-elif False:
-    DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgsDict(TypedDict):
+    mount_point: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The physical mount point where the file system is mounted on the block volume.  Example: `/mnt/yourmountpoint`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgs:
@@ -3529,22 +3449,19 @@ class DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgs:
         pulumi.set(self, "mount_point", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberBlockVolumeOperationArgsDict(TypedDict):
-        attachment_details: NotRequired[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgsDict']]
-        """
-        (Updatable) Deprecated. Use the 'CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for creating a block volume attachment.
-        """
-        block_volume_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
-        """
-        mount_details: NotRequired[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgsDict']]
-        """
-        (Updatable) The details for creating a mount for a file system on a block volume.
-        """
-elif False:
-    DrProtectionGroupMemberBlockVolumeOperationArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberBlockVolumeOperationArgsDict(TypedDict):
+    attachment_details: NotRequired[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgsDict']]
+    """
+    (Updatable) Deprecated. Use the 'CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for creating a block volume attachment.
+    """
+    block_volume_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+    """
+    mount_details: NotRequired[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgsDict']]
+    """
+    (Updatable) The details for creating a mount for a file system on a block volume.
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberBlockVolumeOperationArgs:
@@ -3601,14 +3518,11 @@ class DrProtectionGroupMemberBlockVolumeOperationArgs:
         pulumi.set(self, "mount_details", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgsDict(TypedDict):
-        volume_attachment_reference_instance_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
-        """
-elif False:
-    DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgsDict(TypedDict):
+    volume_attachment_reference_instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs:
@@ -3633,14 +3547,11 @@ class DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs:
         pulumi.set(self, "volume_attachment_reference_instance_id", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgsDict(TypedDict):
-        mount_point: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The physical mount point used for mounting the file system on the block volume.  Example: `/mnt/yourmountpoint`
-        """
-elif False:
-    DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgsDict(TypedDict):
+    mount_point: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The physical mount point used for mounting the file system on the block volume.  Example: `/mnt/yourmountpoint`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs:
@@ -3665,18 +3576,15 @@ class DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs:
         pulumi.set(self, "mount_point", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberCommonDestinationKeyArgsDict(TypedDict):
-        encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
-        """
-        vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
-        """
-elif False:
-    DrProtectionGroupMemberCommonDestinationKeyArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberCommonDestinationKeyArgsDict(TypedDict):
+    encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberCommonDestinationKeyArgs:
@@ -3717,18 +3625,15 @@ class DrProtectionGroupMemberCommonDestinationKeyArgs:
         pulumi.set(self, "vault_id", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberDbSystemAdminUserDetailsArgsDict(TypedDict):
-        password_vault_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the vault secret where the HeatWave MySQL DB System password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
-        """
-        username: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
-        """
-elif False:
-    DrProtectionGroupMemberDbSystemAdminUserDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberDbSystemAdminUserDetailsArgsDict(TypedDict):
+    password_vault_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the vault secret where the HeatWave MySQL DB System password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+    """
+    username: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberDbSystemAdminUserDetailsArgs:
@@ -3769,18 +3674,15 @@ class DrProtectionGroupMemberDbSystemAdminUserDetailsArgs:
         pulumi.set(self, "username", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberDbSystemReplicationUserDetailsArgsDict(TypedDict):
-        password_vault_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the vault secret where the HeatWave MySQL DB System password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
-        """
-        username: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
-        """
-elif False:
-    DrProtectionGroupMemberDbSystemReplicationUserDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberDbSystemReplicationUserDetailsArgsDict(TypedDict):
+    password_vault_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the vault secret where the HeatWave MySQL DB System password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+    """
+    username: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs:
@@ -3821,18 +3723,15 @@ class DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs:
         pulumi.set(self, "username", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberDestinationEncryptionKeyArgsDict(TypedDict):
-        encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
-        """
-        vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
-        """
-elif False:
-    DrProtectionGroupMemberDestinationEncryptionKeyArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberDestinationEncryptionKeyArgsDict(TypedDict):
+    encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberDestinationEncryptionKeyArgs:
@@ -3873,18 +3772,15 @@ class DrProtectionGroupMemberDestinationEncryptionKeyArgs:
         pulumi.set(self, "vault_id", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberExportMappingArgsDict(TypedDict):
-        destination_mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the destination mount target in the destination region which is used to export the file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-        """
-        export_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the export path in the primary region used to mount or unmount the file system.  Example: `ocid1.export.oc1..uniqueID`
-        """
-elif False:
-    DrProtectionGroupMemberExportMappingArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberExportMappingArgsDict(TypedDict):
+    destination_mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the destination mount target in the destination region which is used to export the file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+    """
+    export_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the export path in the primary region used to mount or unmount the file system.  Example: `ocid1.export.oc1..uniqueID`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberExportMappingArgs:
@@ -3925,30 +3821,27 @@ class DrProtectionGroupMemberExportMappingArgs:
         pulumi.set(self, "export_id", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberFileSystemOperationArgsDict(TypedDict):
-        export_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The export path of the file system.  Example: `/fs-export-path`
-        """
-        mount_details: NotRequired[pulumi.Input['DrProtectionGroupMemberFileSystemOperationMountDetailsArgsDict']]
-        """
-        (Updatable) The details for creating a file system mount.
-        """
-        mount_point: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
-        """
-        mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
-        """
-        unmount_details: NotRequired[pulumi.Input['DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgsDict']]
-        """
-        (Updatable) The details for creating a file system unmount.
-        """
-elif False:
-    DrProtectionGroupMemberFileSystemOperationArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberFileSystemOperationArgsDict(TypedDict):
+    export_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The export path of the file system.  Example: `/fs-export-path`
+    """
+    mount_details: NotRequired[pulumi.Input['DrProtectionGroupMemberFileSystemOperationMountDetailsArgsDict']]
+    """
+    (Updatable) The details for creating a file system mount.
+    """
+    mount_point: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+    """
+    mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+    """
+    unmount_details: NotRequired[pulumi.Input['DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgsDict']]
+    """
+    (Updatable) The details for creating a file system unmount.
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberFileSystemOperationArgs:
@@ -4037,14 +3930,11 @@ class DrProtectionGroupMemberFileSystemOperationArgs:
         pulumi.set(self, "unmount_details", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberFileSystemOperationMountDetailsArgsDict(TypedDict):
-        mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
-        """
-elif False:
-    DrProtectionGroupMemberFileSystemOperationMountDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberFileSystemOperationMountDetailsArgsDict(TypedDict):
+    mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberFileSystemOperationMountDetailsArgs:
@@ -4069,14 +3959,11 @@ class DrProtectionGroupMemberFileSystemOperationMountDetailsArgs:
         pulumi.set(self, "mount_target_id", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgsDict(TypedDict):
-        mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
-        """
-elif False:
-    DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgsDict(TypedDict):
+    mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs:
@@ -4101,18 +3988,15 @@ class DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs:
         pulumi.set(self, "mount_target_id", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberLoadBalancerMappingArgsDict(TypedDict):
-        destination_load_balancer_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
-        """
-        source_load_balancer_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the source Load Balancer. Example: `ocid1.loadbalancer.oc1..uniqueID`
-        """
-elif False:
-    DrProtectionGroupMemberLoadBalancerMappingArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberLoadBalancerMappingArgsDict(TypedDict):
+    destination_load_balancer_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+    """
+    source_load_balancer_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the source Load Balancer. Example: `ocid1.loadbalancer.oc1..uniqueID`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberLoadBalancerMappingArgs:
@@ -4153,22 +4037,19 @@ class DrProtectionGroupMemberLoadBalancerMappingArgs:
         pulumi.set(self, "source_load_balancer_id", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberManagedNodePoolConfigArgsDict(TypedDict):
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the managed node pool in OKE cluster.
-        """
-        maximum: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum number to which nodes in the managed node pool could be scaled up.
-        """
-        minimum: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The minimum number to which nodes in the managed node pool could be scaled down.
-        """
-elif False:
-    DrProtectionGroupMemberManagedNodePoolConfigArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberManagedNodePoolConfigArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the managed node pool in OKE cluster.
+    """
+    maximum: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum number to which nodes in the managed node pool could be scaled up.
+    """
+    minimum: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The minimum number to which nodes in the managed node pool could be scaled down.
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberManagedNodePoolConfigArgs:
@@ -4225,18 +4106,15 @@ class DrProtectionGroupMemberManagedNodePoolConfigArgs:
         pulumi.set(self, "minimum", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberNetworkLoadBalancerMappingArgsDict(TypedDict):
-        destination_network_load_balancer_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
-        """
-        source_network_load_balancer_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the source Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
-        """
-elif False:
-    DrProtectionGroupMemberNetworkLoadBalancerMappingArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberNetworkLoadBalancerMappingArgsDict(TypedDict):
+    destination_network_load_balancer_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+    """
+    source_network_load_balancer_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the source Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberNetworkLoadBalancerMappingArgs:
@@ -4277,18 +4155,15 @@ class DrProtectionGroupMemberNetworkLoadBalancerMappingArgs:
         pulumi.set(self, "source_network_load_balancer_id", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberResourceModifierMappingArgsDict(TypedDict):
-        config_map: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OKE namespace where the config map resides. Example: `namespace_string_5`
-        """
-elif False:
-    DrProtectionGroupMemberResourceModifierMappingArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberResourceModifierMappingArgsDict(TypedDict):
+    config_map: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OKE namespace where the config map resides. Example: `namespace_string_5`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberResourceModifierMappingArgs:
@@ -4329,18 +4204,15 @@ class DrProtectionGroupMemberResourceModifierMappingArgs:
         pulumi.set(self, "namespace", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgsDict(TypedDict):
-        destination_encryption_key: NotRequired[pulumi.Input['DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgsDict']]
-        """
-        (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
-        """
-        source_volume_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the source boot volume or block volume.  Example: `ocid1.volume.oc1..uniqueID`
-        """
-elif False:
-    DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgsDict(TypedDict):
+    destination_encryption_key: NotRequired[pulumi.Input['DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgsDict']]
+    """
+    (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+    """
+    source_volume_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the source boot volume or block volume.  Example: `ocid1.volume.oc1..uniqueID`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs:
@@ -4381,18 +4253,15 @@ class DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs:
         pulumi.set(self, "source_volume_id", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgsDict(TypedDict):
-        encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
-        """
-        vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
-        """
-elif False:
-    DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgsDict(TypedDict):
+    encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs:
@@ -4433,18 +4302,15 @@ class DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestin
         pulumi.set(self, "vault_id", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberVaultMappingArgsDict(TypedDict):
-        destination_vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
-        """
-        source_vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the source Vault.  Example: `ocid1.vault.oc1..uniqueID`
-        """
-elif False:
-    DrProtectionGroupMemberVaultMappingArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberVaultMappingArgsDict(TypedDict):
+    destination_vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
+    """
+    source_vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the source Vault.  Example: `ocid1.vault.oc1..uniqueID`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberVaultMappingArgs:
@@ -4485,22 +4351,19 @@ class DrProtectionGroupMemberVaultMappingArgs:
         pulumi.set(self, "source_vault_id", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberVirtualNodePoolConfigArgsDict(TypedDict):
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the virtual node pool in OKE cluster.
-        """
-        maximum: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum number to which nodes in the virtual node pool could be scaled up.
-        """
-        minimum: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The minimum number to which nodes in the virtual node pool could be scaled down.
-        """
-elif False:
-    DrProtectionGroupMemberVirtualNodePoolConfigArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberVirtualNodePoolConfigArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the virtual node pool in OKE cluster.
+    """
+    maximum: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum number to which nodes in the virtual node pool could be scaled up.
+    """
+    minimum: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The minimum number to which nodes in the virtual node pool could be scaled down.
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberVirtualNodePoolConfigArgs:
@@ -4557,34 +4420,31 @@ class DrProtectionGroupMemberVirtualNodePoolConfigArgs:
         pulumi.set(self, "minimum", value)
 
 
-if not MYPY:
-    class DrProtectionGroupMemberVnicMappingArgsDict(TypedDict):
-        destination_nsg_id_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
-        """
-        destination_primary_private_ip_address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
-        """
-        destination_primary_private_ip_hostname_label: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
-        """
-        destination_reserved_public_ip_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
-        """
-        destination_subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
-        """
-        source_vnic_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
-        """
-elif False:
-    DrProtectionGroupMemberVnicMappingArgsDict: TypeAlias = Mapping[str, Any]
+class DrProtectionGroupMemberVnicMappingArgsDict(TypedDict):
+    destination_nsg_id_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+    """
+    destination_primary_private_ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
+    """
+    destination_primary_private_ip_hostname_label: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+    """
+    destination_reserved_public_ip_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+    """
+    destination_subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
+    """
+    source_vnic_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
+    """
 
 @pulumi.input_type
 class DrProtectionGroupMemberVnicMappingArgs:
@@ -4689,13 +4549,10 @@ class DrProtectionGroupMemberVnicMappingArgs:
         pulumi.set(self, "source_vnic_id", value)
 
 
-if not MYPY:
-    class GetAutomaticDrConfigurationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutomaticDrConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutomaticDrConfigurationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutomaticDrConfigurationsFilterArgs:
@@ -4736,13 +4593,10 @@ class GetAutomaticDrConfigurationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDrPlanExecutionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDrPlanExecutionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDrPlanExecutionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDrPlanExecutionsFilterArgs:
@@ -4783,13 +4637,10 @@ class GetDrPlanExecutionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDrPlansFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDrPlansFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDrPlansFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDrPlansFilterArgs:
@@ -4830,13 +4681,10 @@ class GetDrPlansFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDrProtectionGroupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDrProtectionGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDrProtectionGroupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDrProtectionGroupsFilterArgs:

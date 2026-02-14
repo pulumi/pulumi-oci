@@ -17,6 +17,46 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Ip Sec Connection resource in Oracle Cloud Infrastructure Core service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/IpSecConnection
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ * 
+ * Creates a new IPSec connection between the specified DRG and CPE with two default static tunnels. For more information, see
+ * [Site-to-Site VPN Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
+ * 
+ * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the
+ * IPSec connection to reside. Notice that the IPSec connection doesn&#39;t have to be in the same compartment
+ * as the DRG, CPE, or other Networking Service components. If you&#39;re not sure which compartment to
+ * use, put the IPSec connection in the same compartment as the DRG. For more information about
+ * compartments and access control, see
+ * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+ * 
+ * You may optionally specify a *display name* for the IPSec connection, otherwise a default is provided.
+ * It does not have to be unique, and you can change it. Avoid entering confidential information.
+ * 
+ * After creating the IPSec connection, you need to configure your on-premises router
+ * with tunnel-specific information. For tunnel status and the required configuration information, see:
+ * 
+ *   * [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)
+ *   * [IPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/)
+ * 
+ * To configure tunnel-specific information, use `oci.Core.IpsecConnectionTunnelManagement` to update the tunnels. If
+ * you configure at least one tunnel to use static routing, then in the oci.Core.Ipsec request you must provide
+ * at least one valid static route (you&#39;re allowed a maximum of 10). For example: 10.0.0.0/16.
+ * If you configure both tunnels to use BGP dynamic routing, the static routes will be ignored. However, you must provide a
+ * static route in `oci.Core.Ipsec` even if you plan to use BGP routing because it defaults to two static tunnels.  For more
+ * information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
+ * 
+ * For each tunnel, you need the IP address of Oracle&#39;s VPN headend and the shared secret
+ * (that is, the pre-shared key). For more information, see
+ * [CPE Configuration](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm).
+ * 
+ * To configure tunnel-specific information for private ipsec connection over fastconnect, use attribute `tunnelConfiguration`.
+ * You can provide configuration for maximum of 2 tunnels. You can configure each tunnel with `oracleTunnelIp`,
+ * `associatedVirtualCircuits` and `drgRouteTableId` at time of creation. These attributes cannot be updated using IPSec
+ * connection APIs. To update drg route table id, use `oci.Core.DrgAttachmentManagement` resource to update.
+ * 
  * ## Example Usage
  * 
  * <pre>

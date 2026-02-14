@@ -10,11 +10,22 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Certificate resource in Oracle Cloud Infrastructure Load Balancer service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/loadbalancer/latest/Certificate
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/load_balancer
+    /// 
+    /// Creates an asynchronous request to add an SSL certificate bundle.
+    /// 
+    /// Set the terraform flag `lifecycle { CreateBeforeDestroy = true }` in your certificate to facilitate rotating certificates.
+    /// A certificate cannot be deleted if it is attached to another resource (a listener or a backend set for example).
+    /// Because CertificateName in the listener is an updatable parameter, terraform will attempt to recreate the certificate first and then update the listener but the certificate cannot be deleted while it is attached to a listener so it will fail.
+    /// Setting the flag makes it so that when a certificate is recreated, the new certificate will be created first before the old one gets deleted.
+    /// Whenever you change any values on a certificate that causes it to be recreated the CertificateName MUST also change. Otherwise you will get an error saying that a certificate with that name already exists.
     /// 
     /// ## Import
     /// 
-    /// Certificates can be imported using the `id`, e.g.
+    /// Certificates can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:LoadBalancer/certificate:Certificate test_certificate "loadBalancers/{loadBalancerId}/certificates/{certificateName}"

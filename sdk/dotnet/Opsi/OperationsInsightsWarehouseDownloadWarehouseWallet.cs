@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opsi
 {
     /// <summary>
+    /// This resource provides the Operations Insights Warehouse Download Warehouse Wallet resource in Oracle Cloud Infrastructure Opsi service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/operations-insights/latest/OperationsInsightsWarehouseDownloadWarehouseWallet
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/osi
+    /// 
+    /// Download the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -31,7 +38,7 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// ## Import
     /// 
-    /// OperationsInsightsWarehouseDownloadWarehouseWallet can be imported using the `id`, e.g.
+    /// OperationsInsightsWarehouseDownloadWarehouseWallet can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet test_operations_insights_warehouse_download_warehouse_wallet "id"

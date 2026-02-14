@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Usage Plan resource in Oracle Cloud Infrastructure API Gateway service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/api-gateway/latest/UsagePlan
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/api_gateway
+ *
+ * Creates a new usage plan.
+ *
  * ## Example Usage
  *
  * ```typescript

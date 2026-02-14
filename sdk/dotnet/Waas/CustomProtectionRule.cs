@@ -10,6 +10,15 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas
 {
     /// <summary>
+    /// This resource provides the Custom Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/waas/latest/CustomProtectionRule
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/web_application_acceleration_and_security
+    /// 
+    /// Creates a new custom protection rule in the specified compartment.
+    /// 
+    /// Custom protection rules allow you to create rules in addition to the rulesets provided by the Web Application Firewall service, including rules from [ModSecurity](https://modsecurity.org/). The syntax for custom rules is based on the ModSecurity syntax. For more information about custom protection rules, see [Custom Protection Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/customprotectionrules.htm).
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,7 +50,7 @@ namespace Pulumi.Oci.Waas
     /// 
     /// ## Import
     /// 
-    /// CustomProtectionRules can be imported using the `id`, e.g.
+    /// CustomProtectionRules can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Waas/customProtectionRule:CustomProtectionRule test_custom_protection_rule "id"

@@ -48,6 +48,9 @@ class GetStackTfStateResult:
     @_builtins.property
     @pulumi.getter(name="localPath")
     def local_path(self) -> _builtins.str:
+        """
+        The path and filename (relative to where Terraform is executing) to write the external statefile to.
+        """
         return pulumi.get(self, "local_path")
 
     @_builtins.property
@@ -71,6 +74,12 @@ def get_stack_tf_state(local_path: Optional[_builtins.str] = None,
                        stack_id: Optional[_builtins.str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStackTfStateResult:
     """
+    This data source provides details about a specific Stack Tf State resource in Oracle Cloud Infrastructure Resource Manager service.
+
+    Returns the Terraform state for the specified stack.
+    For more information, see
+    [Getting a Stack State File](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-state.htm).
+
     ## Example Usage
 
     ```python
@@ -81,6 +90,7 @@ def get_stack_tf_state(local_path: Optional[_builtins.str] = None,
     ```
 
 
+    :param _builtins.str local_path: The path and filename (relative to where Terraform is executing) to write the external statefile to.
     :param _builtins.str stack_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
     """
     __args__ = dict()
@@ -97,6 +107,12 @@ def get_stack_tf_state_output(local_path: Optional[pulumi.Input[_builtins.str]] 
                               stack_id: Optional[pulumi.Input[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStackTfStateResult]:
     """
+    This data source provides details about a specific Stack Tf State resource in Oracle Cloud Infrastructure Resource Manager service.
+
+    Returns the Terraform state for the specified stack.
+    For more information, see
+    [Getting a Stack State File](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-state.htm).
+
     ## Example Usage
 
     ```python
@@ -107,6 +123,7 @@ def get_stack_tf_state_output(local_path: Optional[pulumi.Input[_builtins.str]] 
     ```
 
 
+    :param _builtins.str local_path: The path and filename (relative to where Terraform is executing) to write the external statefile to.
     :param _builtins.str stack_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
     """
     __args__ = dict()

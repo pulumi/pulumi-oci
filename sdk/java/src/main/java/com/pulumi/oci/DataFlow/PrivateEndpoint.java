@@ -18,6 +18,63 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-flow/latest/PrivateEndpoint
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataflow
+ * 
+ * Creates a private endpoint to be used by applications.
+ * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataFlow.PrivateEndpoint;
+ * import com.pulumi.oci.DataFlow.PrivateEndpointArgs;
+ * import com.pulumi.oci.DataFlow.inputs.PrivateEndpointScanDetailArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testPrivateEndpoint = new PrivateEndpoint("testPrivateEndpoint", PrivateEndpointArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .dnsZones(privateEndpointDnsZones)
+ *             .subnetId(testSubnet.id())
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .description(privateEndpointDescription)
+ *             .displayName(privateEndpointDisplayName)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .maxHostCount(privateEndpointMaxHostCount)
+ *             .nsgIds(privateEndpointNsgIds)
+ *             .scanDetails(PrivateEndpointScanDetailArgs.builder()
+ *                 .fqdn(privateEndpointScanDetailsFqdn)
+ *                 .port(privateEndpointScanDetailsPort)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
+ * ## Note
+ * 
+ * When a Private Endpoint resource is created it will be in `INACTIVE` state. When user runs an application using a Private Endpoint resource only then it moves to `ACTIVE` state. Also if there is already a Private Endpoint resource that is in `ACTIVE` state then on running the new application, the new Private Endpoint will be moved to `ACTIVE` state while the old one will be moved to `INACTIVE` state by the service. To update these states in your terraform state file user needs to do a `terraform refresh`.
+ * 
  * ## Import
  * 
  * PrivateEndpoints can be imported using the `id`, e.g.

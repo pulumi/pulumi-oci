@@ -397,6 +397,8 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `nextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
+     * 
      * @deprecated
      * The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
      * 
@@ -406,6 +408,8 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> nextSku;
 
     /**
+     * @return (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `nextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
+     * 
      * @deprecated
      * The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
      * 
@@ -1186,6 +1190,8 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param nextSku (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `nextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
+         * 
          * @return builder
          * 
          * @deprecated
@@ -1199,6 +1205,8 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param nextSku (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `nextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
+         * 
          * @return builder
          * 
          * @deprecated

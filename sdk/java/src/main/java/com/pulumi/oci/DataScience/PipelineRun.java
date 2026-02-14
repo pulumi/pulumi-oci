@@ -26,6 +26,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/PipelineRun
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+ * 
+ * Creates a new PipelineRun.
+ * 
  * ## Example Usage
  * 
  * <pre>

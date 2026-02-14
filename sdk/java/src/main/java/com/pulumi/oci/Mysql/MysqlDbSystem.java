@@ -35,6 +35,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/mysql/latest/MysqlDbSystem
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/mysql
+ * 
+ * Creates and launches a DB System.
+ * 
  * ## Example Usage
  * 
  * <pre>

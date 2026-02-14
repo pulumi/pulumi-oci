@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Oracle Db Aws Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/latest/OracleDbAwsKey
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dbmulticloud
+//
+// Create DB AWS Key resource.
+//
 // ## Example Usage
 //
 // ```go

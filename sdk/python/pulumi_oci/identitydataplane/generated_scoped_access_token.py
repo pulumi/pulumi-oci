@@ -136,6 +136,13 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Generate Scoped Access Token resource in Oracle Cloud Infrastructure Identity Data Plane service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_data_plane
+
+        Based on the calling principal and the input payload, derive the claims and create a security token.
+
         ## Example Usage
 
         ```python
@@ -171,6 +178,13 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
                  args: GeneratedScopedAccessTokenArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Generate Scoped Access Token resource in Oracle Cloud Infrastructure Identity Data Plane service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_data_plane
+
+        Based on the calling principal and the input payload, derive the claims and create a security token.
+
         ## Example Usage
 
         ```python

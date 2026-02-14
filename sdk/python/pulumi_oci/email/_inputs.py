@@ -33,32 +33,27 @@ __all__ = [
     'GetSuppressionsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class EmailDomainLockArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Lock type.
-        """
-elif False:
-    EmailDomainLockArgsDict: TypeAlias = Mapping[str, Any]
+class EmailDomainLockArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Lock type.
+    """
 
 @pulumi.input_type
 class EmailDomainLockArgs:
@@ -147,30 +142,27 @@ class EmailDomainLockArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class EmailReturnPathLockArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The lock compartment ID.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Lock type.
-        """
-elif False:
-    EmailReturnPathLockArgsDict: TypeAlias = Mapping[str, Any]
+class EmailReturnPathLockArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The lock compartment ID.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Lock type.
+    """
 
 @pulumi.input_type
 class EmailReturnPathLockArgs:
@@ -259,30 +251,27 @@ class EmailReturnPathLockArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class SenderLockArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the compartment that contains the sender.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Lock type.
-        """
-elif False:
-    SenderLockArgsDict: TypeAlias = Mapping[str, Any]
+class SenderLockArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the compartment that contains the sender.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Lock type.
+    """
 
 @pulumi.input_type
 class SenderLockArgs:
@@ -371,16 +360,13 @@ class SenderLockArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class GetDkimsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to only return resources that match the given name exactly.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDkimsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDkimsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to only return resources that match the given name exactly.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDkimsFilterArgs:
@@ -427,16 +413,13 @@ class GetDkimsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetEmailDomainsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to only return resources that match the given name exactly.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetEmailDomainsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetEmailDomainsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to only return resources that match the given name exactly.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetEmailDomainsFilterArgs:
@@ -483,16 +466,13 @@ class GetEmailDomainsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetEmailReturnPathsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to only return resources that match the given name exactly.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetEmailReturnPathsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetEmailReturnPathsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to only return resources that match the given name exactly.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetEmailReturnPathsFilterArgs:
@@ -539,13 +519,10 @@ class GetEmailReturnPathsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSendersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSendersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSendersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSendersFilterArgs:
@@ -586,13 +563,10 @@ class GetSendersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSuppressionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSuppressionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSuppressionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSuppressionsFilterArgs:

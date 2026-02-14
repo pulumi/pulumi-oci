@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Api Platform Instance resource in Oracle Cloud Infrastructure Api Platform service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/api_platform
+ *
+ * Creates an API Platform Instance
+ *
  * ## Example Usage
  *
  * ```typescript

@@ -366,6 +366,13 @@ class RemediationRun(pulumi.CustomResource):
                  remediation_recipe_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Remediation Run resource in Oracle Cloud Infrastructure Adm service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/adm/latest/RemediationRun
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/adm
+
+        Creates a new remediation run.
+
         ## Example Usage
 
         ```python
@@ -410,6 +417,13 @@ class RemediationRun(pulumi.CustomResource):
                  args: RemediationRunArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Remediation Run resource in Oracle Cloud Infrastructure Adm service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/adm/latest/RemediationRun
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/adm
+
+        Creates a new remediation run.
+
         ## Example Usage
 
         ```python

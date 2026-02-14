@@ -542,6 +542,13 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
                  retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
+        This resource provides the Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousDatabaseBackup
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a new Autonomous AI Database backup for the specified database based on the provided request parameters.
+
         ## Example Usage
 
         ```python
@@ -594,6 +601,13 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
                  args: AutonomousDatabaseBackupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousDatabaseBackup
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a new Autonomous AI Database backup for the specified database based on the provided request parameters.
+
         ## Example Usage
 
         ```python

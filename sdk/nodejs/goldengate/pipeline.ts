@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/goldengate/latest/Pipeline
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/goldengate
+ *
+ * Creates a new Pipeline.
+ *
  * ## Example Usage
  *
  * ```typescript

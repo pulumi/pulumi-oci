@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/DeployStage
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+    /// 
+    /// Creates a new deployment stage.
     /// 
     /// ## Import
     /// 
-    /// DeployStages can be imported using the `id`, e.g.
+    /// DeployStages can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DevOps/deployStage:DeployStage test_deploy_stage "id"

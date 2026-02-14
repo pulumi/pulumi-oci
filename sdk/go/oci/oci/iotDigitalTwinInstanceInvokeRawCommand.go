@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Digital Twin Instance Invoke Raw Command resource in Oracle Cloud Infrastructure Iot service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iot/latest/DigitalTwinInstance/InvokeRawCommand
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/iot
+//
+// Invokes the raw command on the specified digital twin instance.
+//
 // ## Example Usage
 //
 // ```go

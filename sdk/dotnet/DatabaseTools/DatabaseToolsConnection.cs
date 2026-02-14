@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseTools
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-tools/latest/DatabaseToolsConnection
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databaseTools
+    /// 
+    /// Creates a new Database Tools connection.
     /// 
     /// ## Import
     /// 
-    /// DatabaseToolsConnections can be imported using the `id`, e.g.
+    /// DatabaseToolsConnections can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection test_database_tools_connection "id"

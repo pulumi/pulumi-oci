@@ -12,6 +12,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Log resource in Oracle Cloud Infrastructure Logging service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logging-management/latest/Log
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/logging
+//
+// Creates a log within the specified log group. This call fails if a log group has already been created
+// with the same displayName or (service, resource, category) triplet.
+//
 // ## Example Usage
 //
 // ```go

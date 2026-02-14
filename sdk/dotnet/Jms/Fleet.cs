@@ -10,6 +10,19 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Jms
 {
     /// <summary>
+    /// This resource provides the Fleet resource in Oracle Cloud Infrastructure Jms service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/jms/latest/Fleet
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/jms
+    /// 
+    /// Create a new Fleet using the information provided.
+    /// 
+    /// `inventoryLog` is now a required parameter for CreateFleet API.
+    /// Update existing applications using this API
+    /// before July 15, 2022 to ensure the applications continue to work.
+    /// See the [Service Change Notice](https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#JMS) for more details.
+    /// Migrate existing fleets using the `UpdateFleet` API to set the `inventoryLog` parameter.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -51,7 +64,7 @@ namespace Pulumi.Oci.Jms
     /// 
     /// ## Import
     /// 
-    /// Fleets can be imported using the `id`, e.g.
+    /// Fleets can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Jms/fleet:Fleet test_fleet "id"

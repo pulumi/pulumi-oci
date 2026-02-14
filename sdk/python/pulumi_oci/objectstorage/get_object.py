@@ -317,6 +317,8 @@ def get_object(base64_encode_content: Optional[_builtins.bool] = None,
     ```
 
 
+    :param _builtins.bool base64_encode_content: Encodes the downloaded content in base64. It is recommended to set this to `true` for binary content to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+           If passing the base64 encoded content to a `local_file` resource, please use the `content_base64` attribute of the `local_file` resource.
     :param _builtins.str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
     :param _builtins.int content_length_limit: The limit of the content length of the object body to download from the object store. The default is 1Mb.
     :param _builtins.str http_response_cache_control: Specify this query parameter to override the Cache-Control response header in the GetObject response.
@@ -406,6 +408,8 @@ def get_object_output(base64_encode_content: Optional[pulumi.Input[Optional[_bui
     ```
 
 
+    :param _builtins.bool base64_encode_content: Encodes the downloaded content in base64. It is recommended to set this to `true` for binary content to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+           If passing the base64 encoded content to a `local_file` resource, please use the `content_base64` attribute of the `local_file` resource.
     :param _builtins.str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
     :param _builtins.int content_length_limit: The limit of the content length of the object body to download from the object store. The default is 1Mb.
     :param _builtins.str http_response_cache_control: Specify this query parameter to override the Cache-Control response header in the GetObject response.

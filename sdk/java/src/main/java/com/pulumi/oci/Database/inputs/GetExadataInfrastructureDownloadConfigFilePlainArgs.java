@@ -16,9 +16,17 @@ public final class GetExadataInfrastructureDownloadConfigFilePlainArgs extends c
 
     public static final GetExadataInfrastructureDownloadConfigFilePlainArgs Empty = new GetExadataInfrastructureDownloadConfigFilePlainArgs();
 
+    /**
+     * Encodes the downloaded zipped config in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false`.
+     * 
+     */
     @Import(name="base64EncodeContent")
     private @Nullable Boolean base64EncodeContent;
 
+    /**
+     * @return Encodes the downloaded zipped config in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false`.
+     * 
+     */
     public Optional<Boolean> base64EncodeContent() {
         return Optional.ofNullable(this.base64EncodeContent);
     }
@@ -63,6 +71,12 @@ public final class GetExadataInfrastructureDownloadConfigFilePlainArgs extends c
             $ = new GetExadataInfrastructureDownloadConfigFilePlainArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param base64EncodeContent Encodes the downloaded zipped config in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder base64EncodeContent(@Nullable Boolean base64EncodeContent) {
             $.base64EncodeContent = base64EncodeContent;
             return this;

@@ -5,6 +5,14 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/SecurityRecipe
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+ *
+ * Creates a security zone recipe (SecurityRecipe resource), using parameters
+ * passed in a CreateSecurityRecipeDetails resource.
+ *
  * ## Example Usage
  *
  * ```typescript

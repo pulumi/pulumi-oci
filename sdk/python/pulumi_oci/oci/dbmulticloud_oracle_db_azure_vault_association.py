@@ -362,6 +362,13 @@ class DbmulticloudOracleDbAzureVaultAssociation(pulumi.CustomResource):
                  oracle_db_azure_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/latest/OracleDbAzureVaultAssociation
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dbmulticloud
+
+        Creates Oracle DB Azure Vault Association resource.
+
         ## Example Usage
 
         ```python
@@ -409,6 +416,13 @@ class DbmulticloudOracleDbAzureVaultAssociation(pulumi.CustomResource):
                  args: DbmulticloudOracleDbAzureVaultAssociationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/latest/OracleDbAzureVaultAssociation
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dbmulticloud
+
+        Creates Oracle DB Azure Vault Association resource.
+
         ## Example Usage
 
         ```python

@@ -458,6 +458,13 @@ class Ipv6(pulumi.CustomResource):
                  vnic_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Ipv6 resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/Ipv6
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates an IPv6 for the specified VNIC.
+
         ## Example Usage
 
         ```python
@@ -515,6 +522,13 @@ class Ipv6(pulumi.CustomResource):
                  args: Optional[Ipv6Args] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Ipv6 resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/Ipv6
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates an IPv6 for the specified VNIC.
+
         ## Example Usage
 
         ```python

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceCatalog
 {
     /// <summary>
+    /// This resource provides the Private Application resource in Oracle Cloud Infrastructure Service Catalog service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/service-catalog/latest/PrivateApplication
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/service_catalog
+    /// 
+    /// Creates a private application along with a single package to be hosted.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -48,7 +55,7 @@ namespace Pulumi.Oci.ServiceCatalog
     /// 
     /// ## Import
     /// 
-    /// PrivateApplications can be imported using the `id`, e.g.
+    /// PrivateApplications can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:ServiceCatalog/privateApplication:PrivateApplication test_private_application "id"

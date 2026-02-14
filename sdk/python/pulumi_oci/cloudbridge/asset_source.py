@@ -610,6 +610,13 @@ class AssetSource(pulumi.CustomResource):
                  vcenter_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Asset Source resource in Oracle Cloud Infrastructure Cloud Bridge service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/OCB/latest/AssetSource
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudBridge
+
+        Creates an asset source.
+
         ## Example Usage
 
         ```python
@@ -681,6 +688,13 @@ class AssetSource(pulumi.CustomResource):
                  args: AssetSourceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Asset Source resource in Oracle Cloud Infrastructure Cloud Bridge service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/OCB/latest/AssetSource
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudBridge
+
+        Creates an asset source.
+
         ## Example Usage
 
         ```python

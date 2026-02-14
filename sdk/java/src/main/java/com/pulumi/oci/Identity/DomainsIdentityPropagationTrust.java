@@ -24,6 +24,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Identity Propagation Trust resource in Oracle Cloud Infrastructure Identity Domains service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/IdentityPropagationTrust
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+ * 
+ * Register a new Identity Propagation Trust configuration.
+ * 
  * ## Example Usage
  * 
  * <pre>

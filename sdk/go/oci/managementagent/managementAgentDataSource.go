@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Management Agent Data Source resource in Oracle Cloud Infrastructure Management Agent service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/management-agent/latest/ManagementAgentDataSource
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/management_agent
+//
+// Datasource creation request to given Management Agent.
+//
 // ## Example Usage
 //
 // ```go

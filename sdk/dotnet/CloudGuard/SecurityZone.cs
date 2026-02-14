@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard
 {
     /// <summary>
+    /// This resource provides the Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/SecurityZone
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+    /// 
+    /// Creates a security zone (SecurityZone resource) for a compartment. Pass parameters
+    /// through a CreateSecurityZoneDetails resource.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,7 +49,7 @@ namespace Pulumi.Oci.CloudGuard
     /// 
     /// ## Import
     /// 
-    /// SecurityZones can be imported using the `id`, e.g.
+    /// SecurityZones can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:CloudGuard/securityZone:SecurityZone test_security_zone "id"

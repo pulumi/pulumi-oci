@@ -16,7 +16,12 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * ## Example Usage
+ * This resource provides the Host Insight resource in Oracle Cloud Infrastructure Opsi service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/operations-insights/latest/HostInsight
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/osi
+ * 
+ * Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops Insights. Host metric collection and analysis will be started.
  * 
  * ## Import
  * 

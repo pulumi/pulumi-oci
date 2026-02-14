@@ -2046,6 +2046,13 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Identity Propagation Trust resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/IdentityPropagationTrust
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Register a new Identity Propagation Trust configuration.
+
         ## Example Usage
 
         ```python
@@ -2344,6 +2351,13 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                  args: DomainsIdentityPropagationTrustArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Identity Propagation Trust resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/IdentityPropagationTrust
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Register a new Identity Propagation Trust configuration.
+
         ## Example Usage
 
         ```python

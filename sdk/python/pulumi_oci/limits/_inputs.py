@@ -27,28 +27,23 @@ __all__ = [
     'GetServicesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class QuotaLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Lock type.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-        """
-elif False:
-    QuotaLockArgsDict: TypeAlias = Mapping[str, Any]
+class QuotaLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Lock type.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+    """
 
 @pulumi.input_type
 class QuotaLockArgs:
@@ -120,16 +115,13 @@ class QuotaLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class GetLimitDefinitionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Optional field, filter for a specific resource limit.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetLimitDefinitionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetLimitDefinitionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Optional field, filter for a specific resource limit.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetLimitDefinitionsFilterArgs:
@@ -176,16 +168,13 @@ class GetLimitDefinitionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetLimitValuesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Optional field, can be used to see a specific resource limit value.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetLimitValuesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetLimitValuesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Optional field, can be used to see a specific resource limit value.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetLimitValuesFilterArgs:
@@ -232,16 +221,13 @@ class GetLimitValuesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetQuotasFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetQuotasFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetQuotasFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetQuotasFilterArgs:
@@ -288,16 +274,13 @@ class GetQuotasFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetServicesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The service name. Use this when calling other APIs.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetServicesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetServicesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The service name. Use this when calling other APIs.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetServicesFilterArgs:

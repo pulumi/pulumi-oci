@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Redis
 {
     /// <summary>
+    /// This resource provides the Oci Cache User resource in Oracle Cloud Infrastructure Redis service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/redis/latest/OciCacheUser
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
+    /// 
+    /// Creates a new Oracle Cloud Infrastructure Cache user. Oracle Cloud Infrastructure Cache user is required to authenticate to Oracle Cloud Infrastructure Cache cluster.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -47,7 +54,7 @@ namespace Pulumi.Oci.Redis
     /// 
     /// ## Import
     /// 
-    /// OciCacheUsers can be imported using the `id`, e.g.
+    /// OciCacheUsers can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Redis/ociCacheUser:OciCacheUser test_oci_cache_user "id"

@@ -12,6 +12,13 @@ namespace Pulumi.Oci.ResourceManager
     public static class GetStackTfState
     {
         /// <summary>
+        /// This data source provides details about a specific Stack Tf State resource in Oracle Cloud Infrastructure Resource Manager service.
+        /// 
+        /// Returns the Terraform state for the specified stack.
+        /// For more information, see
+        /// [Getting a Stack State File](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-state.htm).
+        /// 
+        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -34,6 +41,13 @@ namespace Pulumi.Oci.ResourceManager
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetStackTfStateResult>("oci:ResourceManager/getStackTfState:getStackTfState", args ?? new GetStackTfStateArgs(), options.WithDefaults());
 
         /// <summary>
+        /// This data source provides details about a specific Stack Tf State resource in Oracle Cloud Infrastructure Resource Manager service.
+        /// 
+        /// Returns the Terraform state for the specified stack.
+        /// For more information, see
+        /// [Getting a Stack State File](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-state.htm).
+        /// 
+        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -56,6 +70,13 @@ namespace Pulumi.Oci.ResourceManager
             => global::Pulumi.Deployment.Instance.Invoke<GetStackTfStateResult>("oci:ResourceManager/getStackTfState:getStackTfState", args ?? new GetStackTfStateInvokeArgs(), options.WithDefaults());
 
         /// <summary>
+        /// This data source provides details about a specific Stack Tf State resource in Oracle Cloud Infrastructure Resource Manager service.
+        /// 
+        /// Returns the Terraform state for the specified stack.
+        /// For more information, see
+        /// [Getting a Stack State File](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-state.htm).
+        /// 
+        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -81,6 +102,9 @@ namespace Pulumi.Oci.ResourceManager
 
     public sealed class GetStackTfStateArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The path and filename (relative to where Terraform is executing) to write the external statefile to.
+        /// </summary>
         [Input("localPath", required: true)]
         public string LocalPath { get; set; } = null!;
 
@@ -98,6 +122,9 @@ namespace Pulumi.Oci.ResourceManager
 
     public sealed class GetStackTfStateInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The path and filename (relative to where Terraform is executing) to write the external statefile to.
+        /// </summary>
         [Input("localPath", required: true)]
         public Input<string> LocalPath { get; set; } = null!;
 
@@ -121,6 +148,9 @@ namespace Pulumi.Oci.ResourceManager
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The path and filename (relative to where Terraform is executing) to write the external statefile to.
+        /// </summary>
         public readonly string LocalPath;
         public readonly string StackId;
 

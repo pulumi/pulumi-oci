@@ -20,6 +20,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Batch Context resource in Oracle Cloud Infrastructure Batch service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/batch
+ * 
+ * Creates a batch context.
+ * 
  * ## Example Usage
  * 
  * <pre>

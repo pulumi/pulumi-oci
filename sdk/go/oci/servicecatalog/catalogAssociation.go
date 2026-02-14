@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Service Catalog Association resource in Oracle Cloud Infrastructure Service Catalog service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/service-catalog/latest/ServiceCatalogAssociation
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/service_catalog
+//
+// Creates an association between service catalog and a resource.
+//
 // ## Example Usage
 //
 // ```go

@@ -323,6 +323,22 @@ class Record(pulumi.CustomResource):
                  zone_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Record resource in Oracle Cloud Infrastructure DNS service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dns/latest/Record
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dns
+
+        **Deprecated. Use Dns.Rrset instead.**
+
+        This resource provides the Record resource in Oracle Cloud Infrastructure DNS service.
+
+          Updates a collection of records in the specified zone.
+
+        You can update one record or all records for the specified zone depending on the changes provided in the
+        request body. You can also add or remove records using this function. When the zone name is provided as
+        a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query parameter is
+        required.
+
         ## Example Usage
 
         ```python
@@ -361,6 +377,22 @@ class Record(pulumi.CustomResource):
                  args: RecordArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Record resource in Oracle Cloud Infrastructure DNS service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dns/latest/Record
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dns
+
+        **Deprecated. Use Dns.Rrset instead.**
+
+        This resource provides the Record resource in Oracle Cloud Infrastructure DNS service.
+
+          Updates a collection of records in the specified zone.
+
+        You can update one record or all records for the specified zone depending on the changes provided in the
+        request body. You can also add or remove records using this function. When the zone name is provided as
+        a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query parameter is
+        required.
+
         ## Example Usage
 
         ```python

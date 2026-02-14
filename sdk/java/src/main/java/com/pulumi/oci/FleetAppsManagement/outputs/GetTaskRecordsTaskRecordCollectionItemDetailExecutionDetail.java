@@ -15,6 +15,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetail {
+    /**
+     * @return Catalog Id having terraform package.
+     * 
+     */
     private String catalogId;
     /**
      * @return Optional command to execute the content. You can provide any commands/arguments that can&#39;t be part of the script.
@@ -78,6 +82,10 @@ public final class GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetail {
     private List<GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailVariable> variables;
 
     private GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetail() {}
+    /**
+     * @return Catalog Id having terraform package.
+     * 
+     */
     public String catalogId() {
         return this.catalogId;
     }

@@ -16,6 +16,15 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Announcement Subscriptions Filter Group resource in Oracle Cloud Infrastructure Announcements Service service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/announcements/latest/AnnouncementSubscriptionsFilterGroup
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/announcements_service
+ * 
+ * Creates a new filter group in the specified announcement subscription.
+ * 
+ * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
+ * 
  * ## Example Usage
  * 
  * <pre>

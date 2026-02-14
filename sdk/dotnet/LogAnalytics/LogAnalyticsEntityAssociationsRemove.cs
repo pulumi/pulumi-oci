@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics
 {
     /// <summary>
+    /// This resource provides the Log Analytics Entity Associations Remove resource in Oracle Cloud Infrastructure Log Analytics service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsEntity/RemoveEntityAssociations
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+    /// 
+    /// Delete association between input source log analytics entity and destination entities.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -32,7 +39,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// ## Import
     /// 
-    /// LogAnalyticsEntityAssociationsRemove can be imported using the `id`, e.g.
+    /// LogAnalyticsEntityAssociationsRemove can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:LogAnalytics/logAnalyticsEntityAssociationsRemove:LogAnalyticsEntityAssociationsRemove test_log_analytics_entity_associations_remove "id"

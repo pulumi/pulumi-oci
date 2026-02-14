@@ -109,6 +109,7 @@ def get_vm_cluster_network_download_config_file(base64_encode_content: Optional[
     ```
 
 
+    :param _builtins.bool base64_encode_content: Encodes the downloaded txt config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `false`.
     :param _builtins.str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.str vm_cluster_network_id: The VM cluster network [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
@@ -146,6 +147,7 @@ def get_vm_cluster_network_download_config_file_output(base64_encode_content: Op
     ```
 
 
+    :param _builtins.bool base64_encode_content: Encodes the downloaded txt config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `false`.
     :param _builtins.str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.str vm_cluster_network_id: The VM cluster network [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """

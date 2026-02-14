@@ -123,6 +123,13 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
                  namespace: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Log Analytics Preferences Management resource in Oracle Cloud Infrastructure Log Analytics service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsPreferencesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+
+        Updates the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
+
         ## Example Usage
 
         ```python
@@ -157,6 +164,13 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
                  args: LogAnalyticsPreferencesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Log Analytics Preferences Management resource in Oracle Cloud Infrastructure Log Analytics service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsPreferencesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+
+        Updates the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
+
         ## Example Usage
 
         ```python

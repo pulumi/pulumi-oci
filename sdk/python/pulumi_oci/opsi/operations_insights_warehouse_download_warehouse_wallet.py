@@ -120,6 +120,13 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
                  operations_insights_warehouse_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Operations Insights Warehouse Download Warehouse Wallet resource in Oracle Cloud Infrastructure Opsi service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/operations-insights/latest/OperationsInsightsWarehouseDownloadWarehouseWallet
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/osi
+
+        Download the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
+
         ## Example Usage
 
         ```python
@@ -155,6 +162,13 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
                  args: OperationsInsightsWarehouseDownloadWarehouseWalletArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Operations Insights Warehouse Download Warehouse Wallet resource in Oracle Cloud Infrastructure Opsi service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/operations-insights/latest/OperationsInsightsWarehouseDownloadWarehouseWallet
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/osi
+
+        Download the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
+
         ## Example Usage
 
         ```python

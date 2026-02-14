@@ -462,6 +462,13 @@ class UnifiedAuditPolicy(pulumi.CustomResource):
                  unified_audit_policy_definition_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Unified Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/UnifiedAuditPolicy
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Creates the specified unified audit policy.
+
         ## Example Usage
 
         ```python
@@ -522,6 +529,13 @@ class UnifiedAuditPolicy(pulumi.CustomResource):
                  args: UnifiedAuditPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Unified Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/UnifiedAuditPolicy
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Creates the specified unified audit policy.
+
         ## Example Usage
 
         ```python

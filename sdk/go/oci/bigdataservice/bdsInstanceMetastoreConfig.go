@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/bigdata/latest/BdsInstanceMetastoreConfig
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/big_data_service
+//
+// Create and activate external metastore configuration.
+//
 // ## Example Usage
 //
 // ```go

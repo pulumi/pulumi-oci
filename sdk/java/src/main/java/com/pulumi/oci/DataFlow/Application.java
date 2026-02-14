@@ -23,6 +23,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Application resource in Oracle Cloud Infrastructure Data Flow service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-flow/latest/Application
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataflow
+ * 
+ * Creates an application.
+ * 
  * ## Example Usage
  * 
  * <pre>

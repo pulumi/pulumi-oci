@@ -12,6 +12,12 @@ namespace Pulumi.Oci.DatabaseMigration
     public static class GetConnection
     {
         /// <summary>
+        /// This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Database Migration service.
+        /// 
+        /// Display Database Connection details.
+        /// 
+        /// Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -34,6 +40,12 @@ namespace Pulumi.Oci.DatabaseMigration
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetConnectionResult>("oci:DatabaseMigration/getConnection:getConnection", args ?? new GetConnectionArgs(), options.WithDefaults());
 
         /// <summary>
+        /// This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Database Migration service.
+        /// 
+        /// Display Database Connection details.
+        /// 
+        /// Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -56,6 +68,12 @@ namespace Pulumi.Oci.DatabaseMigration
             => global::Pulumi.Deployment.Instance.Invoke<GetConnectionResult>("oci:DatabaseMigration/getConnection:getConnection", args ?? new GetConnectionInvokeArgs(), options.WithDefaults());
 
         /// <summary>
+        /// This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Database Migration service.
+        /// 
+        /// Display Database Connection details.
+        /// 
+        /// Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+        /// 
         /// ## Example Usage
         /// 
         /// ```csharp

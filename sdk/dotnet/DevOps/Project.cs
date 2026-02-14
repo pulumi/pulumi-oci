@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps
 {
     /// <summary>
+    /// This resource provides the Project resource in Oracle Cloud Infrastructure Devops service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/Project
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+    /// 
+    /// Creates a new project.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -44,7 +51,7 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// ## Import
     /// 
-    /// Projects can be imported using the `id`, e.g.
+    /// Projects can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DevOps/project:Project test_project "id"

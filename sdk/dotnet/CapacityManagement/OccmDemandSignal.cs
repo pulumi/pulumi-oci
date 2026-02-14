@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CapacityManagement
 {
     /// <summary>
+    /// This resource provides the Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/occcm/latest/OccmDemandSignal
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/capacity_management
+    /// 
+    /// This is a post API to create occm demand signal.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -40,7 +47,7 @@ namespace Pulumi.Oci.CapacityManagement
     /// 
     /// ## Import
     /// 
-    /// OccmDemandSignals can be imported using the `id`, e.g.
+    /// OccmDemandSignals can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:CapacityManagement/occmDemandSignal:OccmDemandSignal test_occm_demand_signal "id"

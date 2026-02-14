@@ -286,6 +286,16 @@ class Rrset(pulumi.CustomResource):
                  zone_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Rrset resource in Oracle Cloud Infrastructure DNS service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dns/latest/Rrset
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dns
+
+          Updates records in the specified RRSet.
+
+        When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
+        parameter then the viewId query parameter is required.
+
         ## Example Usage
 
         ```python
@@ -316,7 +326,14 @@ class Rrset(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}"
         ```
-        Note: Legacy RRSet IDs that include scope/viewId remain accepted for import for backward compatibility; however, scope is no longer a supported argument on this resource.
+
+        For Rrsets created using `scope` and `view_id`, these Rrsets can be imported using the `id`, e.g.
+
+        ```sh
+        $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}"
+        ```
+
+        skip adding `{view_id}` at the end if Rrset was created without `view_id`.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -337,6 +354,16 @@ class Rrset(pulumi.CustomResource):
                  args: RrsetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Rrset resource in Oracle Cloud Infrastructure DNS service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dns/latest/Rrset
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dns
+
+          Updates records in the specified RRSet.
+
+        When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
+        parameter then the viewId query parameter is required.
+
         ## Example Usage
 
         ```python
@@ -367,7 +394,14 @@ class Rrset(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}"
         ```
-        Note: Legacy RRSet IDs that include scope/viewId remain accepted for import for backward compatibility; however, scope is no longer a supported argument on this resource.
+
+        For Rrsets created using `scope` and `view_id`, these Rrsets can be imported using the `id`, e.g.
+
+        ```sh
+        $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}"
+        ```
+
+        skip adding `{view_id}` at the end if Rrset was created without `view_id`.
 
         :param str resource_name: The name of the resource.
         :param RrsetArgs args: The arguments to use to populate this resource's properties.

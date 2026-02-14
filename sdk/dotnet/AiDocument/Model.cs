@@ -10,11 +10,18 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiDocument
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Model resource in Oracle Cloud Infrastructure Ai Document service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/document-understanding/latest/Model
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiDocument
+    /// 
+    /// Create a new model.
+    /// 
+    ///   Updates the model metadata only selected path parameter.
     /// 
     /// ## Import
     /// 
-    /// Models can be imported using the `id`, e.g.
+    /// Models can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:AiDocument/model:Model test_model "id"

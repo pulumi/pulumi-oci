@@ -15,6 +15,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/occcm/latest/OccmDemandSignal
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/capacity_management
+ * 
+ * This is a post API to create occm demand signal.
+ * 
  * ## Example Usage
  * 
  * <pre>

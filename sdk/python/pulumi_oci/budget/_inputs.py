@@ -31,28 +31,23 @@ __all__ = [
     'GetCostAnomalyMonitorsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class CostAnomalyMonitorCostAlertSubscriptionMapArgsDict(TypedDict):
-        cost_alert_subscription_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The costAlertSubscription ocid which the cost monitor alert maps to.
-        """
-        operator: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The filter operator. Example: 'AND', 'OR'.
-        """
-        threshold_absolute_value: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The absolute threshold value.
-        """
-        threshold_relative_percent: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The relative percentage threshold value.
-        """
-elif False:
-    CostAnomalyMonitorCostAlertSubscriptionMapArgsDict: TypeAlias = Mapping[str, Any]
+class CostAnomalyMonitorCostAlertSubscriptionMapArgsDict(TypedDict):
+    cost_alert_subscription_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The costAlertSubscription ocid which the cost monitor alert maps to.
+    """
+    operator: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The filter operator. Example: 'AND', 'OR'.
+    """
+    threshold_absolute_value: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The absolute threshold value.
+    """
+    threshold_relative_percent: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The relative percentage threshold value.
+    """
 
 @pulumi.input_type
 class CostAnomalyMonitorCostAlertSubscriptionMapArgs:
@@ -125,13 +120,10 @@ class CostAnomalyMonitorCostAlertSubscriptionMapArgs:
         pulumi.set(self, "threshold_relative_percent", value)
 
 
-if not MYPY:
-    class GetAlertRulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAlertRulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAlertRulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAlertRulesFilterArgs:
@@ -172,13 +164,10 @@ class GetAlertRulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBudgetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBudgetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBudgetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBudgetsFilterArgs:
@@ -219,16 +208,13 @@ class GetBudgetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCostAlertSubscriptionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Unique, non-changeable resource name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCostAlertSubscriptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCostAlertSubscriptionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique, non-changeable resource name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCostAlertSubscriptionsFilterArgs:
@@ -275,16 +261,13 @@ class GetCostAlertSubscriptionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCostAnomalyEventAnalyticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Unique, non-changeable resource name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCostAnomalyEventAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCostAnomalyEventAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique, non-changeable resource name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCostAnomalyEventAnalyticsFilterArgs:
@@ -331,16 +314,13 @@ class GetCostAnomalyEventAnalyticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCostAnomalyEventsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Unique, non-changeable resource name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCostAnomalyEventsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCostAnomalyEventsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique, non-changeable resource name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCostAnomalyEventsFilterArgs:
@@ -387,16 +367,13 @@ class GetCostAnomalyEventsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCostAnomalyMonitorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Unique, non-changeable resource name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCostAnomalyMonitorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCostAnomalyMonitorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique, non-changeable resource name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCostAnomalyMonitorsFilterArgs:

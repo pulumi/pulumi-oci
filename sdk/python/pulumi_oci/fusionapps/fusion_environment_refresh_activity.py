@@ -311,6 +311,13 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
                  source_fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fusion-applications/latest/FusionEnvironmentRefreshActivity
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fusionapps
+
+        Creates a new RefreshActivity.
+
         ## Example Usage
 
         ```python
@@ -345,6 +352,13 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
                  args: FusionEnvironmentRefreshActivityArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fusion-applications/latest/FusionEnvironmentRefreshActivity
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fusionapps
+
+        Creates a new RefreshActivity.
+
         ## Example Usage
 
         ```python

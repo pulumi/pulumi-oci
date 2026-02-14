@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiLanguage
 {
     /// <summary>
+    /// This resource provides the Model resource in Oracle Cloud Infrastructure Ai Language service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/language/latest/Model
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiLanguage
+    /// 
+    /// Creates a new model for training and train the model with date provided.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -92,7 +99,7 @@ namespace Pulumi.Oci.AiLanguage
     /// 
     /// ## Import
     /// 
-    /// Models can be imported using the `id`, e.g.
+    /// Models can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:AiLanguage/model:Model test_model "id"

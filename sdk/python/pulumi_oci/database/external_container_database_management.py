@@ -173,6 +173,15 @@ class ExternalContainerDatabaseManagement(pulumi.CustomResource):
                  license_model: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the External Container Database Management resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ExternalContainerDatabaseManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Enables Database Management Service for the external container database.
+        For more information about the Database Management Service, see
+        [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+
         ## Example Usage
 
         ```python
@@ -205,6 +214,15 @@ class ExternalContainerDatabaseManagement(pulumi.CustomResource):
                  args: ExternalContainerDatabaseManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the External Container Database Management resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ExternalContainerDatabaseManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Enables Database Management Service for the external container database.
+        For more information about the Database Management Service, see
+        [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+
         ## Example Usage
 
         ```python

@@ -12,7 +12,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## Example Usage
+// This resource provides the Model resource in Oracle Cloud Infrastructure Generative AI service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai/latest/Model
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai
+//
+// Creates a custom model by fine-tuning a base model with your own dataset. You can create a new custom models or create a new version of existing custom model..
+//
+// The header contains an opc-work-request-id, which is the id for the WorkRequest that tracks the model creation progress.
 //
 // ## Import
 //

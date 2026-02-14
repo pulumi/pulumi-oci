@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fusion-applications/latest/FusionEnvironmentServiceAttachment
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fusionapps
+ *
+ * Attaches a service instance to the fusion pod.
+ *
  * ## Example Usage
  *
  * ```typescript

@@ -334,6 +334,13 @@ class ApiPlatformApiPlatformInstance(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Api Platform Instance resource in Oracle Cloud Infrastructure Api Platform service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/api_platform
+
+        Creates an API Platform Instance
+
         ## Example Usage
 
         ```python
@@ -379,6 +386,13 @@ class ApiPlatformApiPlatformInstance(pulumi.CustomResource):
                  args: ApiPlatformApiPlatformInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Api Platform Instance resource in Oracle Cloud Infrastructure Api Platform service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/api_platform
+
+        Creates an API Platform Instance
+
         ## Example Usage
 
         ```python

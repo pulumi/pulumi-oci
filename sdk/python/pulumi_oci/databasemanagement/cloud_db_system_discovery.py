@@ -442,6 +442,15 @@ class CloudDbSystemDiscovery(pulumi.CustomResource):
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudDbSystemDiscoveryPatchOperationArgs', 'CloudDbSystemDiscoveryPatchOperationArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Cloud Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/CloudDbSystemDiscovery
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+
+        Creates a cloud DB system discovery resource and initiates the discovery process.
+
+          Patches the cloud DB system discovery specified by `cloudDbSystemDiscoveryId`.
+
         ## Example Usage
 
         ```python
@@ -494,6 +503,15 @@ class CloudDbSystemDiscovery(pulumi.CustomResource):
                  args: CloudDbSystemDiscoveryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Cloud Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/CloudDbSystemDiscovery
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+
+        Creates a cloud DB system discovery resource and initiates the discovery process.
+
+          Patches the cloud DB system discovery specified by `cloudDbSystemDiscoveryId`.
+
         ## Example Usage
 
         ```python

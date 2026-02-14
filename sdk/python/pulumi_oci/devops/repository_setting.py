@@ -189,6 +189,13 @@ class RepositorySetting(pulumi.CustomResource):
                  repository_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Repository Setting resource in Oracle Cloud Infrastructure Devops service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/RepositorySetting
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+
+        Updates the settings for a repository.
+
         ## Example Usage
 
         ```python
@@ -242,6 +249,13 @@ class RepositorySetting(pulumi.CustomResource):
                  args: RepositorySettingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Repository Setting resource in Oracle Cloud Infrastructure Devops service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/RepositorySetting
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+
+        Updates the settings for a repository.
+
         ## Example Usage
 
         ```python

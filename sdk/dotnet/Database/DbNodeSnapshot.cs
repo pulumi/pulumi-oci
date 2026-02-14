@@ -54,7 +54,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// DbNodeSnapshots can be imported using the `id`, e.g.
+    /// DbNodeSnapshots can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/dbNodeSnapshot:DbNodeSnapshot test_db_node_snapshot "id"

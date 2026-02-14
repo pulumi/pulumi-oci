@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Cloud Db System Cloud Stack Monitorings Management resource in Oracle Cloud Infrastructure Database Management service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/CloudDbSystemCloudStackMonitoringsManagement
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+ * Enables Stack Monitoring for all the components of the specified
+ * cloud DB system (except databases).
+ *
  * ## Example Usage
  *
  * ```typescript

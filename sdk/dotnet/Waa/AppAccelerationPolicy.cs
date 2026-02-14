@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waa
 {
     /// <summary>
+    /// This resource provides the Web App Acceleration Policy resource in Oracle Cloud Infrastructure Waa service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/waa/latest/WebAppAccelerationPolicy
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/web_app_acceleration
+    /// 
+    /// Creates a new WebAppAccelerationPolicy.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -51,7 +58,7 @@ namespace Pulumi.Oci.Waa
     /// 
     /// ## Import
     /// 
-    /// WebAppAccelerationPolicies can be imported using the `id`, e.g.
+    /// WebAppAccelerationPolicies can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Waa/appAccelerationPolicy:AppAccelerationPolicy test_web_app_acceleration_policy "id"

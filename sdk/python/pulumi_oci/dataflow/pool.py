@@ -448,6 +448,13 @@ class Pool(pulumi.CustomResource):
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Pool resource in Oracle Cloud Infrastructure Data Flow service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-flow/latest/Pool
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataflow
+
+        Create a pool to be used by dataflow runs or applications.
+
         ## Example Usage
 
         ```python
@@ -512,6 +519,13 @@ class Pool(pulumi.CustomResource):
                  args: PoolArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Pool resource in Oracle Cloud Infrastructure Data Flow service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-flow/latest/Pool
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataflow
+
+        Create a pool to be used by dataflow runs or applications.
+
         ## Example Usage
 
         ```python

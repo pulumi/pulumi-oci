@@ -132,7 +132,8 @@ type PrivateApplicationPackageDetails struct {
 	// The package's type.
 	PackageType string `pulumi:"packageType"`
 	// The package version.
-	Version              string `pulumi:"version"`
+	Version string `pulumi:"version"`
+	// Base-64 payload of the Terraform zip package.
 	ZipFileBase64encoded string `pulumi:"zipFileBase64encoded"`
 }
 
@@ -151,7 +152,8 @@ type PrivateApplicationPackageDetailsArgs struct {
 	// The package's type.
 	PackageType pulumi.StringInput `pulumi:"packageType"`
 	// The package version.
-	Version              pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringInput `pulumi:"version"`
+	// Base-64 payload of the Terraform zip package.
 	ZipFileBase64encoded pulumi.StringInput `pulumi:"zipFileBase64encoded"`
 }
 
@@ -242,6 +244,7 @@ func (o PrivateApplicationPackageDetailsOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v PrivateApplicationPackageDetails) string { return v.Version }).(pulumi.StringOutput)
 }
 
+// Base-64 payload of the Terraform zip package.
 func (o PrivateApplicationPackageDetailsOutput) ZipFileBase64encoded() pulumi.StringOutput {
 	return o.ApplyT(func(v PrivateApplicationPackageDetails) string { return v.ZipFileBase64encoded }).(pulumi.StringOutput)
 }
@@ -290,6 +293,7 @@ func (o PrivateApplicationPackageDetailsPtrOutput) Version() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
+// Base-64 payload of the Terraform zip package.
 func (o PrivateApplicationPackageDetailsPtrOutput) ZipFileBase64encoded() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PrivateApplicationPackageDetails) *string {
 		if v == nil {
@@ -1343,11 +1347,13 @@ func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArrayOut
 }
 
 type GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem struct {
+	// The content URL of the terraform configuration.
 	ContentUrl string `pulumi:"contentUrl"`
 	// Exact match name filter.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application package.
-	Id       string `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// The MIME type of the terraform configuration.
 	MimeType string `pulumi:"mimeType"`
 	// Name of the package type. If multiple package types are provided, then any resource with one or more matching package types will be returned.
 	PackageType string `pulumi:"packageType"`
@@ -1371,11 +1377,13 @@ type GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemInput i
 }
 
 type GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArgs struct {
+	// The content URL of the terraform configuration.
 	ContentUrl pulumi.StringInput `pulumi:"contentUrl"`
 	// Exact match name filter.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application package.
-	Id       pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringInput `pulumi:"id"`
+	// The MIME type of the terraform configuration.
 	MimeType pulumi.StringInput `pulumi:"mimeType"`
 	// Name of the package type. If multiple package types are provided, then any resource with one or more matching package types will be returned.
 	PackageType pulumi.StringInput `pulumi:"packageType"`
@@ -1438,6 +1446,7 @@ func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemOutp
 	return o
 }
 
+// The content URL of the terraform configuration.
 func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemOutput) ContentUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem) string {
 		return v.ContentUrl
@@ -1456,6 +1465,7 @@ func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemOutp
 	return o.ApplyT(func(v GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The MIME type of the terraform configuration.
 func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemOutput) MimeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem) string { return v.MimeType }).(pulumi.StringOutput)
 }

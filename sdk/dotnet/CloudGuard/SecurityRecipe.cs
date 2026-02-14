@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard
 {
     /// <summary>
+    /// This resource provides the Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/SecurityRecipe
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+    /// 
+    /// Creates a security zone recipe (SecurityRecipe resource), using parameters
+    /// passed in a CreateSecurityRecipeDetails resource.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,7 +49,7 @@ namespace Pulumi.Oci.CloudGuard
     /// 
     /// ## Import
     /// 
-    /// SecurityRecipes can be imported using the `id`, e.g.
+    /// SecurityRecipes can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:CloudGuard/securityRecipe:SecurityRecipe test_security_recipe "id"

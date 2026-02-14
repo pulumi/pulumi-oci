@@ -64,7 +64,8 @@ type GetCatalogItemVariablesDefinitionResult struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
-	Id              string                                            `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// Schema Document representing Schema.yaml (https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager_topic-schema.htm)
 	SchemaDocuments []GetCatalogItemVariablesDefinitionSchemaDocument `pulumi:"schemaDocuments"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
@@ -123,6 +124,7 @@ func (o GetCatalogItemVariablesDefinitionResultOutput) Id() pulumi.StringOutput 
 	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Schema Document representing Schema.yaml (https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager_topic-schema.htm)
 func (o GetCatalogItemVariablesDefinitionResultOutput) SchemaDocuments() GetCatalogItemVariablesDefinitionSchemaDocumentArrayOutput {
 	return o.ApplyT(func(v GetCatalogItemVariablesDefinitionResult) []GetCatalogItemVariablesDefinitionSchemaDocument {
 		return v.SchemaDocuments

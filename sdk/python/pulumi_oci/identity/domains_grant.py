@@ -1310,6 +1310,13 @@ class DomainsGrant(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantTagArgs', 'DomainsGrantTagArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Grant resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/Grant
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Add a Grantee to an AppRole
+
         ## Example Usage
 
         ```python
@@ -1474,6 +1481,13 @@ class DomainsGrant(pulumi.CustomResource):
                  args: DomainsGrantArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Grant resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/Grant
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Add a Grantee to an AppRole
+
         ## Example Usage
 
         ```python

@@ -39,9 +39,17 @@ public final class GetAutonomousDatabaseWalletPlainArgs extends com.pulumi.resou
         return this.autonomousDatabaseId;
     }
 
+    /**
+     * Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+     * 
+     */
     @Import(name="base64EncodeContent")
     private @Nullable Boolean base64EncodeContent;
 
+    /**
+     * @return Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+     * 
+     */
     public Optional<Boolean> base64EncodeContent() {
         return Optional.ofNullable(this.base64EncodeContent);
     }
@@ -130,6 +138,12 @@ public final class GetAutonomousDatabaseWalletPlainArgs extends com.pulumi.resou
             return this;
         }
 
+        /**
+         * @param base64EncodeContent Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+         * 
+         * @return builder
+         * 
+         */
         public Builder base64EncodeContent(@Nullable Boolean base64EncodeContent) {
             $.base64EncodeContent = base64EncodeContent;
             return this;

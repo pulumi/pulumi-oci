@@ -24,6 +24,9 @@ namespace Pulumi.Oci.ServiceCatalog.Inputs
         [Input("version", required: true)]
         public Input<string> Version { get; set; } = null!;
 
+        /// <summary>
+        /// Base-64 payload of the Terraform zip package.
+        /// </summary>
         [Input("zipFileBase64encoded", required: true)]
         public Input<string> ZipFileBase64encoded { get; set; } = null!;
 

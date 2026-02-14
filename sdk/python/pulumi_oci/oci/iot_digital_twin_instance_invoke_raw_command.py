@@ -317,6 +317,13 @@ class IotDigitalTwinInstanceInvokeRawCommand(pulumi.CustomResource):
                  response_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Digital Twin Instance Invoke Raw Command resource in Oracle Cloud Infrastructure Iot service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iot/latest/DigitalTwinInstance/InvokeRawCommand
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/iot
+
+        Invokes the raw command on the specified digital twin instance.
+
         ## Example Usage
 
         ```python
@@ -360,6 +367,13 @@ class IotDigitalTwinInstanceInvokeRawCommand(pulumi.CustomResource):
                  args: IotDigitalTwinInstanceInvokeRawCommandArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Digital Twin Instance Invoke Raw Command resource in Oracle Cloud Infrastructure Iot service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iot/latest/DigitalTwinInstance/InvokeRawCommand
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/iot
+
+        Invokes the raw command on the specified digital twin instance.
+
         ## Example Usage
 
         ```python

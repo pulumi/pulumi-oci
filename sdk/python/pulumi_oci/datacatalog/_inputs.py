@@ -35,28 +35,23 @@ __all__ = [
     'GetMetastoresFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class CatalogLockArgsDict(TypedDict):
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the lock.
-        """
-elif False:
-    CatalogLockArgsDict: TypeAlias = Mapping[str, Any]
+class CatalogLockArgsDict(TypedDict):
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the lock.
+    """
 
 @pulumi.input_type
 class CatalogLockArgs:
@@ -129,26 +124,23 @@ class CatalogLockArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class CatalogPrivateEndpointLockArgsDict(TypedDict):
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the lock.
-        """
-elif False:
-    CatalogPrivateEndpointLockArgsDict: TypeAlias = Mapping[str, Any]
+class CatalogPrivateEndpointLockArgsDict(TypedDict):
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the lock.
+    """
 
 @pulumi.input_type
 class CatalogPrivateEndpointLockArgs:
@@ -221,26 +213,23 @@ class CatalogPrivateEndpointLockArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class MetastoreLockArgsDict(TypedDict):
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the lock.
-        """
-elif False:
-    MetastoreLockArgsDict: TypeAlias = Mapping[str, Any]
+class MetastoreLockArgsDict(TypedDict):
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the lock.
+    """
 
 @pulumi.input_type
 class MetastoreLockArgs:
@@ -313,13 +302,10 @@ class MetastoreLockArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class GetCatalogPrivateEndpointsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCatalogPrivateEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCatalogPrivateEndpointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCatalogPrivateEndpointsFilterArgs:
@@ -360,16 +346,13 @@ class GetCatalogPrivateEndpointsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCatalogTypesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Immutable resource name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCatalogTypesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCatalogTypesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Immutable resource name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCatalogTypesFilterArgs:
@@ -416,13 +399,10 @@ class GetCatalogTypesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCatalogsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCatalogsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCatalogsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCatalogsFilterArgs:
@@ -463,13 +443,10 @@ class GetCatalogsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetConnectionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetConnectionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetConnectionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetConnectionsFilterArgs:
@@ -510,13 +487,10 @@ class GetConnectionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDataAssetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDataAssetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDataAssetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDataAssetsFilterArgs:
@@ -557,13 +531,10 @@ class GetDataAssetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMetastoresFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMetastoresFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMetastoresFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMetastoresFilterArgs:

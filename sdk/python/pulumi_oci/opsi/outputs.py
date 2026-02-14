@@ -4894,6 +4894,7 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
         :param _builtins.str exadata_type: Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str id: Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param _builtins.bool is_auto_sync_enabled: Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight. This should be always set true when using terraform, when it is set to false member associations may be missing from the application.
         :param _builtins.bool is_virtualized_exadata: true if virtualization is used in the Exadata system
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param _builtins.str state: Lifecycle states
@@ -5077,6 +5078,9 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="isAutoSyncEnabled")
     def is_auto_sync_enabled(self) -> _builtins.bool:
+        """
+        Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight. This should be always set true when using terraform, when it is set to false member associations may be missing from the application.
+        """
         return pulumi.get(self, "is_auto_sync_enabled")
 
     @_builtins.property

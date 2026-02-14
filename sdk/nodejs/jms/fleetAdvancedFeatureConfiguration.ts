@@ -7,6 +7,14 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/jms/latest/FleetAdvancedFeatureConfiguration
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/jms
+ *
+ * Update advanced feature configurations for the Fleet.
+ * Ensure that the namespace and bucket storage are created prior to turning on the JfrRecording or CryptoEventAnalysis feature.
+ *
  * ## Example Usage
  *
  * ```typescript

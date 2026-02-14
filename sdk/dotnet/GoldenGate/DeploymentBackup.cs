@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GoldenGate
 {
     /// <summary>
+    /// This resource provides the Deployment Backup resource in Oracle Cloud Infrastructure Golden Gate service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/goldengate/latest/DeploymentBackup
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/goldengate
+    /// 
+    /// Creates a new DeploymentBackup.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -52,7 +59,7 @@ namespace Pulumi.Oci.GoldenGate
     /// 
     /// ## Import
     /// 
-    /// DeploymentBackups can be imported using the `id`, e.g.
+    /// DeploymentBackups can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:GoldenGate/deploymentBackup:DeploymentBackup test_deployment_backup "id"

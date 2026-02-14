@@ -152,6 +152,13 @@ class IotIotDomainChangeDataRetentionPeriod(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Iot Domain Change Data Retention Period resource in Oracle Cloud Infrastructure Iot service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iot/latest/IotDomain/ChangeDataRetentionPeriod
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/iot
+
+        Updates Data Retention Period of the IoT Domain.
+
         ## Example Usage
 
         ```python
@@ -185,6 +192,13 @@ class IotIotDomainChangeDataRetentionPeriod(pulumi.CustomResource):
                  args: IotIotDomainChangeDataRetentionPeriodArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Iot Domain Change Data Retention Period resource in Oracle Cloud Infrastructure Iot service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iot/latest/IotDomain/ChangeDataRetentionPeriod
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/iot
+
+        Updates Data Retention Period of the IoT Domain.
+
         ## Example Usage
 
         ```python

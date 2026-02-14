@@ -12,6 +12,15 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Sensitive Type Group Grouped Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/SensitiveTypeGroupGroupedSensitiveType
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+//
+//	Patches one or more sensitive types in a sensitive type group. You can use this operation to add or remove
+//
+// sensitive type ids in a sensitive type group.
+//
 // ## Example Usage
 //
 // ```go

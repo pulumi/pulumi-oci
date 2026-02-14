@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Dns
     /// 
     /// ## Import
     /// 
-    /// ActionCreateZoneFromZoneFile can be imported using the `id`, e.g.
+    /// ActionCreateZoneFromZoneFile can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile test_action_create_zone_from_zone_file "id"

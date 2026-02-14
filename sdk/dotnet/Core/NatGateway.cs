@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
+    /// This resource provides the Nat Gateway resource in Oracle Cloud Infrastructure Core service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/NatGateway
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a new NAT gateway for the specified VCN. You must also set up a route rule with the
+    /// NAT gateway as the rule's target. See [Route Table](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/RouteTable/).
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -43,7 +51,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Import
     /// 
-    /// NatGateways can be imported using the `id`, e.g.
+    /// NatGateways can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Core/natGateway:NatGateway test_nat_gateway "id"

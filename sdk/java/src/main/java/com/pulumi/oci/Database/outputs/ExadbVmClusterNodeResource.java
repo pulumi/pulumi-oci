@@ -22,6 +22,10 @@ public final class ExadbVmClusterNodeResource {
      * 
      */
     private @Nullable String nodeId;
+    /**
+     * @return User provided identifier for each node. `nodeName` only exists in Terraform config and state and does not exist in server side. It serves as a placeholder for a node before the node is provisioned. `nodeName` 1) must be unique among all nodes 2) must not be an empty string 3) must not contain any space. 4) `nodeResource` block can be removed to trigger a remove-node operation but `nodeName` can not be changed.
+     * 
+     */
     private String nodeName;
     /**
      * @return The current state of the Exadata VM cluster on Exascale Infrastructure.
@@ -44,6 +48,10 @@ public final class ExadbVmClusterNodeResource {
     public Optional<String> nodeId() {
         return Optional.ofNullable(this.nodeId);
     }
+    /**
+     * @return User provided identifier for each node. `nodeName` only exists in Terraform config and state and does not exist in server side. It serves as a placeholder for a node before the node is provisioned. `nodeName` 1) must be unique among all nodes 2) must not be an empty string 3) must not contain any space. 4) `nodeResource` block can be removed to trigger a remove-node operation but `nodeName` can not be changed.
+     * 
+     */
     public String nodeName() {
         return this.nodeName;
     }

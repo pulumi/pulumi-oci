@@ -173,20 +173,15 @@ __all__ = [
     'GetWlpAgentsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class AdhocQueryAdhocQueryDetailsArgsDict(TypedDict):
-        adhoc_query_resources: pulumi.Input[Sequence[pulumi.Input['AdhocQueryAdhocQueryDetailsAdhocQueryResourceArgsDict']]]
-        """
-        Target information in which adhoc query will be run
-        """
-        query: pulumi.Input[_builtins.str]
-        """
-        The adhoc query expression that is run
-        """
-elif False:
-    AdhocQueryAdhocQueryDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class AdhocQueryAdhocQueryDetailsArgsDict(TypedDict):
+    adhoc_query_resources: pulumi.Input[Sequence[pulumi.Input['AdhocQueryAdhocQueryDetailsAdhocQueryResourceArgsDict']]]
+    """
+    Target information in which adhoc query will be run
+    """
+    query: pulumi.Input[_builtins.str]
+    """
+    The adhoc query expression that is run
+    """
 
 @pulumi.input_type
 class AdhocQueryAdhocQueryDetailsArgs:
@@ -225,22 +220,19 @@ class AdhocQueryAdhocQueryDetailsArgs:
         pulumi.set(self, "query", value)
 
 
-if not MYPY:
-    class AdhocQueryAdhocQueryDetailsAdhocQueryResourceArgsDict(TypedDict):
-        region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Region in which adhoc query needs to be run
-        """
-        resource_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of OCIDs on which query needs to be run
-        """
-        resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of resource
-        """
-elif False:
-    AdhocQueryAdhocQueryDetailsAdhocQueryResourceArgsDict: TypeAlias = Mapping[str, Any]
+class AdhocQueryAdhocQueryDetailsAdhocQueryResourceArgsDict(TypedDict):
+    region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Region in which adhoc query needs to be run
+    """
+    resource_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of OCIDs on which query needs to be run
+    """
+    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of resource
+    """
 
 @pulumi.input_type
 class AdhocQueryAdhocQueryDetailsAdhocQueryResourceArgs:
@@ -297,38 +289,35 @@ class AdhocQueryAdhocQueryDetailsAdhocQueryResourceArgs:
         pulumi.set(self, "resource_type", value)
 
 
-if not MYPY:
-    class AdhocQueryAdhocQueryRegionalDetailArgsDict(TypedDict):
-        expected_count: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Expected number of instances on which query should run
-        """
-        expired_count: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Number of instances on which query expired
-        """
-        failed_count: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Number of instances on which query failed
-        """
-        region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Region name
-        """
-        regional_error: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        error message to show if adhoc query fails in a region
-        """
-        regional_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        adhoc query status of the region
-        """
-        succeeded_count: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Number of instances on which query succeeded
-        """
-elif False:
-    AdhocQueryAdhocQueryRegionalDetailArgsDict: TypeAlias = Mapping[str, Any]
+class AdhocQueryAdhocQueryRegionalDetailArgsDict(TypedDict):
+    expected_count: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Expected number of instances on which query should run
+    """
+    expired_count: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Number of instances on which query expired
+    """
+    failed_count: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Number of instances on which query failed
+    """
+    region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Region name
+    """
+    regional_error: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    error message to show if adhoc query fails in a region
+    """
+    regional_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    adhoc query status of the region
+    """
+    succeeded_count: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Number of instances on which query succeeded
+    """
 
 @pulumi.input_type
 class AdhocQueryAdhocQueryRegionalDetailArgs:
@@ -449,62 +438,59 @@ class AdhocQueryAdhocQueryRegionalDetailArgs:
         pulumi.set(self, "succeeded_count", value)
 
 
-if not MYPY:
-    class CloudGuardDataSourceDataSourceDetailsArgsDict(TypedDict):
-        data_source_feed_provider: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of data source feed provider (LoggingQuery)
-        """
-        additional_entities_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The additional entities count used for data source query
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Description text for the query
-        """
-        interval_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Interval in minutes that query is run periodically.
-        """
-        interval_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Interval in minutes which query is run periodically.
-        """
-        logging_query_details: NotRequired[pulumi.Input['CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgsDict']]
-        """
-        (Updatable) Details for a logging query for a data source.
-        """
-        logging_query_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Type of logging query for data source (Sighting/Insight)
-        """
-        operator: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Operator used in data source
-        """
-        query: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The continuous query expression that is run periodically.
-        """
-        query_start_time: NotRequired[pulumi.Input['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgsDict']]
-        """
-        (Updatable) Start policy for continuous query
-        """
-        regions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) List of logging query regions
-        """
-        scheduled_query_scope_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgsDict']]]]
-        """
-        (Updatable) Target information in which scheduled query will be run
-        """
-        threshold: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
-        """
-elif False:
-    CloudGuardDataSourceDataSourceDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class CloudGuardDataSourceDataSourceDetailsArgsDict(TypedDict):
+    data_source_feed_provider: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of data source feed provider (LoggingQuery)
+    """
+    additional_entities_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The additional entities count used for data source query
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Description text for the query
+    """
+    interval_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Interval in minutes that query is run periodically.
+    """
+    interval_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Interval in minutes which query is run periodically.
+    """
+    logging_query_details: NotRequired[pulumi.Input['CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgsDict']]
+    """
+    (Updatable) Details for a logging query for a data source.
+    """
+    logging_query_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Type of logging query for data source (Sighting/Insight)
+    """
+    operator: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Operator used in data source
+    """
+    query: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The continuous query expression that is run periodically.
+    """
+    query_start_time: NotRequired[pulumi.Input['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgsDict']]
+    """
+    (Updatable) Start policy for continuous query
+    """
+    regions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) List of logging query regions
+    """
+    scheduled_query_scope_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgsDict']]]]
+    """
+    (Updatable) Target information in which scheduled query will be run
+    """
+    threshold: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+    """
 
 @pulumi.input_type
 class CloudGuardDataSourceDataSourceDetailsArgs:
@@ -720,18 +706,15 @@ class CloudGuardDataSourceDataSourceDetailsArgs:
         pulumi.set(self, "threshold", value)
 
 
-if not MYPY:
-    class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgsDict(TypedDict):
-        logging_query_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Logging query type for data source
-        """
-        key_entities_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The key entities count used for data source query
-        """
-elif False:
-    CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgsDict(TypedDict):
+    logging_query_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Logging query type for data source
+    """
+    key_entities_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The key entities count used for data source query
+    """
 
 @pulumi.input_type
 class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs:
@@ -771,18 +754,15 @@ class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs:
         pulumi.set(self, "key_entities_count", value)
 
 
-if not MYPY:
-    class CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgsDict(TypedDict):
-        start_policy_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Start policy delay timing
-        """
-        query_start_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Time when the query can start. If not specified it can start immediately
-        """
-elif False:
-    CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgsDict: TypeAlias = Mapping[str, Any]
+class CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgsDict(TypedDict):
+    start_policy_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Start policy delay timing
+    """
+    query_start_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Time when the query can start. If not specified it can start immediately
+    """
 
 @pulumi.input_type
 class CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs:
@@ -822,22 +802,19 @@ class CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs:
         pulumi.set(self, "query_start_time", value)
 
 
-if not MYPY:
-    class CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgsDict(TypedDict):
-        region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) region on which scheduled query needs to be run
-        """
-        resource_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) List of OCIDs on scheduled query needs to run
-        """
-        resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Type of resource
-        """
-elif False:
-    CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgsDict: TypeAlias = Mapping[str, Any]
+class CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgsDict(TypedDict):
+    region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) region on which scheduled query needs to be run
+    """
+    resource_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) List of OCIDs on scheduled query needs to run
+    """
+    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Type of resource
+    """
 
 @pulumi.input_type
 class CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs:
@@ -894,18 +871,15 @@ class CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs:
         pulumi.set(self, "resource_type", value)
 
 
-if not MYPY:
-    class CloudGuardDataSourceDataSourceDetectorMappingInfoArgsDict(TypedDict):
-        detector_recipe_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        ID of the detector recipe attached to the data source
-        """
-        detector_rule_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        ID of the detector rule attached to the data source
-        """
-elif False:
-    CloudGuardDataSourceDataSourceDetectorMappingInfoArgsDict: TypeAlias = Mapping[str, Any]
+class CloudGuardDataSourceDataSourceDetectorMappingInfoArgsDict(TypedDict):
+    detector_recipe_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    ID of the detector recipe attached to the data source
+    """
+    detector_rule_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    ID of the detector rule attached to the data source
+    """
 
 @pulumi.input_type
 class CloudGuardDataSourceDataSourceDetectorMappingInfoArgs:
@@ -946,22 +920,19 @@ class CloudGuardDataSourceDataSourceDetectorMappingInfoArgs:
         pulumi.set(self, "detector_rule_id", value)
 
 
-if not MYPY:
-    class CloudGuardDataSourceRegionStatusDetailArgsDict(TypedDict):
-        region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Data source replication region
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Enablement status of data source.
+class CloudGuardDataSourceRegionStatusDetailArgsDict(TypedDict):
+    region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Data source replication region
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Enablement status of data source.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    CloudGuardDataSourceRegionStatusDetailArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class CloudGuardDataSourceRegionStatusDetailArgs:
@@ -1010,22 +981,19 @@ class CloudGuardDataSourceRegionStatusDetailArgs:
         pulumi.set(self, "status", value)
 
 
-if not MYPY:
-    class DataMaskRuleTargetSelectedArgsDict(TypedDict):
-        kind: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Kind of target selection to be used
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Types of targets
+class DataMaskRuleTargetSelectedArgsDict(TypedDict):
+    kind: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Kind of target selection to be used
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Types of targets
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    DataMaskRuleTargetSelectedArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class DataMaskRuleTargetSelectedArgs:
@@ -1073,86 +1041,83 @@ class DataMaskRuleTargetSelectedArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class DetectorRecipeDetectorRuleArgsDict(TypedDict):
-        details: pulumi.Input['DetectorRecipeDetectorRuleDetailsArgsDict']
-        """
-        (Updatable) Parameters to be updated for a detector rule within a detector recipe.
-        """
-        detector_rule_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Detector recipe rule ID
-        """
-        candidate_responder_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleCandidateResponderRuleArgsDict']]]]
-        """
-        List of responder rules that can be used to remediate this detector rule
-        """
-        data_source_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The ID of the attached data source
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detector recipe description.
+class DetectorRecipeDetectorRuleArgsDict(TypedDict):
+    details: pulumi.Input['DetectorRecipeDetectorRuleDetailsArgsDict']
+    """
+    (Updatable) Parameters to be updated for a detector rule within a detector recipe.
+    """
+    detector_rule_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Detector recipe rule ID
+    """
+    candidate_responder_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleCandidateResponderRuleArgsDict']]]]
+    """
+    List of responder rules that can be used to remediate this detector rule
+    """
+    data_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The ID of the attached data source
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detector recipe description.
 
-        Avoid entering confidential information.
-        """
-        detector: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Detector for the rule
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detector recipe display name.
+    Avoid entering confidential information.
+    """
+    detector: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Detector for the rule
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detector recipe display name.
 
-        Avoid entering confidential information.
-        """
-        entities_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleEntitiesMappingArgsDict']]]]
-        """
-        Data source entities mapping for the detector rule
-        """
-        is_cloneable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Is the rule cloneable?
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
-        managed_list_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of managed list types related to this rule
-        """
-        recommendation: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Recommendation for DetectorRecipeDetectorRule resource
-        """
-        resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Resource type of the configuration to which the rule is applied
-        """
-        rule_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleRuleTypeArgsDict']]]]
-        """
-        Detector rule type
-        """
-        service_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Service type of the configuration to which the rule is applied
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current lifecycle state of the resource
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the detector recipe was created Format defined by RFC3339.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the detector recipe was last updated Format defined by RFC3339.
-        """
-elif False:
-    DetectorRecipeDetectorRuleArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    entities_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleEntitiesMappingArgsDict']]]]
+    """
+    Data source entities mapping for the detector rule
+    """
+    is_cloneable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Is the rule cloneable?
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+    """
+    managed_list_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of managed list types related to this rule
+    """
+    recommendation: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Recommendation for DetectorRecipeDetectorRule resource
+    """
+    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Resource type of the configuration to which the rule is applied
+    """
+    rule_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleRuleTypeArgsDict']]]]
+    """
+    Detector rule type
+    """
+    service_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Service type of the configuration to which the rule is applied
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current lifecycle state of the resource
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the detector recipe was created Format defined by RFC3339.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the detector recipe was last updated Format defined by RFC3339.
+    """
 
 @pulumi.input_type
 class DetectorRecipeDetectorRuleArgs:
@@ -1455,24 +1420,21 @@ class DetectorRecipeDetectorRuleArgs:
         pulumi.set(self, "time_updated", value)
 
 
-if not MYPY:
-    class DetectorRecipeDetectorRuleCandidateResponderRuleArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detector recipe display name.
+class DetectorRecipeDetectorRuleCandidateResponderRuleArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detector recipe display name.
 
-        Avoid entering confidential information.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID for detector recipe
-        """
-        is_preferred: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Is this the preferred state?
-        """
-elif False:
-    DetectorRecipeDetectorRuleCandidateResponderRuleArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID for detector recipe
+    """
+    is_preferred: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Is this the preferred state?
+    """
 
 @pulumi.input_type
 class DetectorRecipeDetectorRuleCandidateResponderRuleArgs:
@@ -1533,50 +1495,47 @@ class DetectorRecipeDetectorRuleCandidateResponderRuleArgs:
         pulumi.set(self, "is_preferred", value)
 
 
-if not MYPY:
-    class DetectorRecipeDetectorRuleDetailsArgsDict(TypedDict):
-        is_enabled: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Enablement status of the detector rule
-        """
-        risk_level: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The risk level of the detector rule
-        """
-        condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The base condition resource.
-        """
-        configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationArgsDict']]]]
-        """
-        (Updatable) List of detector rule configurations
-        """
-        data_source_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The unique identifier of the attached data source
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Description for the detector rule
-        """
-        entities_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsEntitiesMappingArgsDict']]]]
-        """
-        (Updatable) Data source entities mapping for a detector rule
-        """
-        is_configuration_allowed: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Can the rule be configured?
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) User-defined labels for a detector rule
-        """
-        recommendation: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Recommendation for the detector rule
-        """
-elif False:
-    DetectorRecipeDetectorRuleDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DetectorRecipeDetectorRuleDetailsArgsDict(TypedDict):
+    is_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Enablement status of the detector rule
+    """
+    risk_level: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The risk level of the detector rule
+    """
+    condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The base condition resource.
+    """
+    configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationArgsDict']]]]
+    """
+    (Updatable) List of detector rule configurations
+    """
+    data_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The unique identifier of the attached data source
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Description for the detector rule
+    """
+    entities_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsEntitiesMappingArgsDict']]]]
+    """
+    (Updatable) Data source entities mapping for a detector rule
+    """
+    is_configuration_allowed: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Can the rule be configured?
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) User-defined labels for a detector rule
+    """
+    recommendation: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Recommendation for the detector rule
+    """
 
 @pulumi.input_type
 class DetectorRecipeDetectorRuleDetailsArgs:
@@ -1743,42 +1702,39 @@ class DetectorRecipeDetectorRuleDetailsArgs:
         pulumi.set(self, "recommendation", value)
 
 
-if not MYPY:
-    class DetectorRecipeDetectorRuleDetailsConfigurationArgsDict(TypedDict):
-        config_key: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Unique identifier of the configuration
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Configuration name
-        """
-        additional_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict']]]]
-        """
-        (Updatable) Map of additional property values for configuration
-        """
-        allowed_values: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict']]]]
-        """
-        (Updatable) Map of possible values for configuration
-        """
-        allowed_values_data_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Map property Value data type
-        """
-        data_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Configuration data type
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Configuration value
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationValueArgsDict']]]]
-        """
-        (Updatable) List of configuration values
-        """
-elif False:
-    DetectorRecipeDetectorRuleDetailsConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class DetectorRecipeDetectorRuleDetailsConfigurationArgsDict(TypedDict):
+    config_key: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Unique identifier of the configuration
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Configuration name
+    """
+    additional_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict']]]]
+    """
+    (Updatable) Map of additional property values for configuration
+    """
+    allowed_values: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict']]]]
+    """
+    (Updatable) Map of possible values for configuration
+    """
+    allowed_values_data_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Map property Value data type
+    """
+    data_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Configuration data type
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Configuration value
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationValueArgsDict']]]]
+    """
+    (Updatable) List of configuration values
+    """
 
 @pulumi.input_type
 class DetectorRecipeDetectorRuleDetailsConfigurationArgs:
@@ -1913,22 +1869,19 @@ class DetectorRecipeDetectorRuleDetailsConfigurationArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name for Additional Property, for example, "interpreter", "router"
-        """
-        property_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Property Type
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value for Property Name, for example, "generic", "cloudguard"
-        """
-elif False:
-    DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict: TypeAlias = Mapping[str, Any]
+class DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name for Additional Property, for example, "interpreter", "router"
+    """
+    property_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Property Type
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value for Property Name, for example, "generic", "cloudguard"
+    """
 
 @pulumi.input_type
 class DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs:
@@ -1985,18 +1938,15 @@ class DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict(TypedDict):
-        key: pulumi.Input[_builtins.str]
-        """
-        (Updatable) key
-        """
-        value: pulumi.Input[_builtins.str]
-        """
-        (Updatable) value
-        """
-elif False:
-    DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict: TypeAlias = Mapping[str, Any]
+class DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict(TypedDict):
+    key: pulumi.Input[_builtins.str]
+    """
+    (Updatable) key
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    (Updatable) value
+    """
 
 @pulumi.input_type
 class DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs:
@@ -2035,22 +1985,19 @@ class DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class DetectorRecipeDetectorRuleDetailsConfigurationValueArgsDict(TypedDict):
-        list_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Configuration list item type (CUSTOM or MANAGED)
-        """
-        managed_list_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of content in the managed list
-        """
-        value: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Configuration value
-        """
-elif False:
-    DetectorRecipeDetectorRuleDetailsConfigurationValueArgsDict: TypeAlias = Mapping[str, Any]
+class DetectorRecipeDetectorRuleDetailsConfigurationValueArgsDict(TypedDict):
+    list_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Configuration list item type (CUSTOM or MANAGED)
+    """
+    managed_list_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of content in the managed list
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Configuration value
+    """
 
 @pulumi.input_type
 class DetectorRecipeDetectorRuleDetailsConfigurationValueArgs:
@@ -2104,22 +2051,19 @@ class DetectorRecipeDetectorRuleDetailsConfigurationValueArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgsDict(TypedDict):
-        query_field: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The entity value mapped to a data source query
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Display name of the entity
-        """
-        entity_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Type of entity
-        """
-elif False:
-    DetectorRecipeDetectorRuleDetailsEntitiesMappingArgsDict: TypeAlias = Mapping[str, Any]
+class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgsDict(TypedDict):
+    query_field: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The entity value mapped to a data source query
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Display name of the entity
+    """
+    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Type of entity
+    """
 
 @pulumi.input_type
 class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs:
@@ -2175,24 +2119,21 @@ class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs:
         pulumi.set(self, "entity_type", value)
 
 
-if not MYPY:
-    class DetectorRecipeDetectorRuleEntitiesMappingArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detector recipe display name.
+class DetectorRecipeDetectorRuleEntitiesMappingArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detector recipe display name.
 
-        Avoid entering confidential information.
-        """
-        entity_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of entity
-        """
-        query_field: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The entity value mapped to a data source query
-        """
-elif False:
-    DetectorRecipeDetectorRuleEntitiesMappingArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of entity
+    """
+    query_field: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The entity value mapped to a data source query
+    """
 
 @pulumi.input_type
 class DetectorRecipeDetectorRuleEntitiesMappingArgs:
@@ -2253,18 +2194,15 @@ class DetectorRecipeDetectorRuleEntitiesMappingArgs:
         pulumi.set(self, "query_field", value)
 
 
-if not MYPY:
-    class DetectorRecipeDetectorRuleRuleTypeArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the detector rule type
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Detector rule type value
-        """
-elif False:
-    DetectorRecipeDetectorRuleRuleTypeArgsDict: TypeAlias = Mapping[str, Any]
+class DetectorRecipeDetectorRuleRuleTypeArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the detector rule type
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Detector rule type value
+    """
 
 @pulumi.input_type
 class DetectorRecipeDetectorRuleRuleTypeArgs:
@@ -2305,86 +2243,83 @@ class DetectorRecipeDetectorRuleRuleTypeArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class DetectorRecipeEffectiveDetectorRuleArgsDict(TypedDict):
-        candidate_responder_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgsDict']]]]
-        """
-        List of responder rules that can be used to remediate this detector rule
-        """
-        data_source_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The ID of the attached data source
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detector recipe description.
+class DetectorRecipeEffectiveDetectorRuleArgsDict(TypedDict):
+    candidate_responder_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgsDict']]]]
+    """
+    List of responder rules that can be used to remediate this detector rule
+    """
+    data_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The ID of the attached data source
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detector recipe description.
 
-        Avoid entering confidential information.
-        """
-        details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailArgsDict']]]]
-        """
-        Detailed information for a detector.
-        """
-        detector: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Detector for the rule
-        """
-        detector_rule_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the detector rule.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detector recipe display name.
+    Avoid entering confidential information.
+    """
+    details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailArgsDict']]]]
+    """
+    Detailed information for a detector.
+    """
+    detector: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Detector for the rule
+    """
+    detector_rule_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the detector rule.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detector recipe display name.
 
-        Avoid entering confidential information.
-        """
-        entities_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict']]]]
-        """
-        Data source entities mapping for the detector rule
-        """
-        is_cloneable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Is the rule cloneable?
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
-        managed_list_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of managed list types related to this rule
-        """
-        recommendation: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Recommendation for DetectorRecipeDetectorRule resource
-        """
-        resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Resource type of the configuration to which the rule is applied
-        """
-        rule_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict']]]]
-        """
-        Detector rule type
-        """
-        service_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Service type of the configuration to which the rule is applied
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current lifecycle state of the resource
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the detector recipe was created Format defined by RFC3339.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the detector recipe was last updated Format defined by RFC3339.
-        """
-elif False:
-    DetectorRecipeEffectiveDetectorRuleArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    entities_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict']]]]
+    """
+    Data source entities mapping for the detector rule
+    """
+    is_cloneable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Is the rule cloneable?
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+    """
+    managed_list_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of managed list types related to this rule
+    """
+    recommendation: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Recommendation for DetectorRecipeDetectorRule resource
+    """
+    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Resource type of the configuration to which the rule is applied
+    """
+    rule_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict']]]]
+    """
+    Detector rule type
+    """
+    service_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Service type of the configuration to which the rule is applied
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current lifecycle state of the resource
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the detector recipe was created Format defined by RFC3339.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the detector recipe was last updated Format defined by RFC3339.
+    """
 
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleArgs:
@@ -2689,24 +2624,21 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
         pulumi.set(self, "time_updated", value)
 
 
-if not MYPY:
-    class DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detector recipe display name.
+class DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detector recipe display name.
 
-        Avoid entering confidential information.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID for detector recipe
-        """
-        is_preferred: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Is this the preferred state?
-        """
-elif False:
-    DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID for detector recipe
+    """
+    is_preferred: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Is this the preferred state?
+    """
 
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs:
@@ -2767,52 +2699,49 @@ class DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs:
         pulumi.set(self, "is_preferred", value)
 
 
-if not MYPY:
-    class DetectorRecipeEffectiveDetectorRuleDetailArgsDict(TypedDict):
-        condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The base condition resource.
-        """
-        configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict']]]]
-        """
-        List of detector rule configurations
-        """
-        data_source_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The ID of the attached data source
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detector recipe description.
+class DetectorRecipeEffectiveDetectorRuleDetailArgsDict(TypedDict):
+    condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The base condition resource.
+    """
+    configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict']]]]
+    """
+    List of detector rule configurations
+    """
+    data_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The ID of the attached data source
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detector recipe description.
 
-        Avoid entering confidential information.
-        """
-        entities_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgsDict']]]]
-        """
-        Data source entities mapping for the detector rule
-        """
-        is_configuration_allowed: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Can the rule be configured?
-        """
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enablement status for the rule
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        User-defined labels for a detector rule
-        """
-        recommendation: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Recommendation for DetectorRecipeDetectorRule resource
-        """
-        risk_level: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The risk level for the rule
-        """
-elif False:
-    DetectorRecipeEffectiveDetectorRuleDetailArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    entities_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgsDict']]]]
+    """
+    Data source entities mapping for the detector rule
+    """
+    is_configuration_allowed: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Can the rule be configured?
+    """
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enablement status for the rule
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    User-defined labels for a detector rule
+    """
+    recommendation: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Recommendation for DetectorRecipeDetectorRule resource
+    """
+    risk_level: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The risk level for the rule
+    """
 
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleDetailArgs:
@@ -2985,42 +2914,39 @@ class DetectorRecipeEffectiveDetectorRuleDetailArgs:
         pulumi.set(self, "risk_level", value)
 
 
-if not MYPY:
-    class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict(TypedDict):
-        additional_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict']]]]
-        """
-        Map of additional property values for configuration
-        """
-        allowed_values: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict']]]]
-        """
-        Map of possible values for configuration
-        """
-        allowed_values_data_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Map property Value data type
-        """
-        config_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique identifier of the configuration
-        """
-        data_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration data type
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration name
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Detector rule type value
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict']]]]
-        """
-        List of configuration values
-        """
-elif False:
-    DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict(TypedDict):
+    additional_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict']]]]
+    """
+    Map of additional property values for configuration
+    """
+    allowed_values: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict']]]]
+    """
+    Map of possible values for configuration
+    """
+    allowed_values_data_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Map property Value data type
+    """
+    config_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique identifier of the configuration
+    """
+    data_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration data type
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration name
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Detector rule type value
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict']]]]
+    """
+    List of configuration values
+    """
 
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs:
@@ -3157,22 +3083,19 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the detector rule type
-        """
-        property_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Property Type
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Detector rule type value
-        """
-elif False:
-    DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict: TypeAlias = Mapping[str, Any]
+class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the detector rule type
+    """
+    property_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Property Type
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Detector rule type value
+    """
 
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs:
@@ -3229,18 +3152,15 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyAr
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the detector rule type
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Detector rule type value
-        """
-elif False:
-    DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict: TypeAlias = Mapping[str, Any]
+class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the detector rule type
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Detector rule type value
+    """
 
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs:
@@ -3281,22 +3201,19 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict(TypedDict):
-        list_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration list item type (CUSTOM or MANAGED)
-        """
-        managed_list_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of content in the managed list
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Detector rule type value
-        """
-elif False:
-    DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict: TypeAlias = Mapping[str, Any]
+class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict(TypedDict):
+    list_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration list item type (CUSTOM or MANAGED)
+    """
+    managed_list_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of content in the managed list
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Detector rule type value
+    """
 
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs:
@@ -3353,24 +3270,21 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detector recipe display name.
+class DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detector recipe display name.
 
-        Avoid entering confidential information.
-        """
-        entity_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of entity
-        """
-        query_field: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The entity value mapped to a data source query
-        """
-elif False:
-    DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of entity
+    """
+    query_field: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The entity value mapped to a data source query
+    """
 
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs:
@@ -3431,24 +3345,21 @@ class DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs:
         pulumi.set(self, "query_field", value)
 
 
-if not MYPY:
-    class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detector recipe display name.
+class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detector recipe display name.
 
-        Avoid entering confidential information.
-        """
-        entity_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of entity
-        """
-        query_field: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The entity value mapped to a data source query
-        """
-elif False:
-    DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of entity
+    """
+    query_field: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The entity value mapped to a data source query
+    """
 
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs:
@@ -3509,18 +3420,15 @@ class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs:
         pulumi.set(self, "query_field", value)
 
 
-if not MYPY:
-    class DetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the detector rule type
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Detector rule type value
-        """
-elif False:
-    DetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict: TypeAlias = Mapping[str, Any]
+class DetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the detector rule type
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Detector rule type value
+    """
 
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleRuleTypeArgs:
@@ -3561,62 +3469,59 @@ class DetectorRecipeEffectiveDetectorRuleRuleTypeArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class ResponderRecipeEffectiveResponderRuleArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Compartment OCID
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Responder recipe description.
+class ResponderRecipeEffectiveResponderRuleArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Compartment OCID
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Responder recipe description.
 
-        Avoid entering confidential information.
-        """
-        details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailArgsDict']]]]
-        """
-        Detailed information for a responder rule
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Responder recipe display name.
+    Avoid entering confidential information.
+    """
+    details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailArgsDict']]]]
+    """
+    Detailed information for a responder rule
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Responder recipe display name.
 
-        Avoid entering confidential information.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
-        policies: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of policies
-        """
-        responder_rule_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique identifier for the responder rule
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current lifecycle state of the example
-        """
-        supported_modes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Supported execution modes for the responder rule
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the responder recipe was created. Format defined by RFC3339.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the responder recipe was last updated. Format defined by RFC3339.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of responder
-        """
-elif False:
-    ResponderRecipeEffectiveResponderRuleArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+    """
+    policies: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of policies
+    """
+    responder_rule_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique identifier for the responder rule
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current lifecycle state of the example
+    """
+    supported_modes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Supported execution modes for the responder rule
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the responder recipe was created. Format defined by RFC3339.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the responder recipe was last updated. Format defined by RFC3339.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of responder
+    """
 
 @pulumi.input_type
 class ResponderRecipeEffectiveResponderRuleArgs:
@@ -3825,26 +3730,23 @@ class ResponderRecipeEffectiveResponderRuleArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class ResponderRecipeEffectiveResponderRuleDetailArgsDict(TypedDict):
-        condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The base condition resource.
-        """
-        configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailConfigurationArgsDict']]]]
-        """
-        List of responder rule configurations
-        """
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enabled state for the responder rule
-        """
-        mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Execution mode for the responder rule
-        """
-elif False:
-    ResponderRecipeEffectiveResponderRuleDetailArgsDict: TypeAlias = Mapping[str, Any]
+class ResponderRecipeEffectiveResponderRuleDetailArgsDict(TypedDict):
+    condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The base condition resource.
+    """
+    configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailConfigurationArgsDict']]]]
+    """
+    List of responder rule configurations
+    """
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enabled state for the responder rule
+    """
+    mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Execution mode for the responder rule
+    """
 
 @pulumi.input_type
 class ResponderRecipeEffectiveResponderRuleDetailArgs:
@@ -3917,22 +3819,19 @@ class ResponderRecipeEffectiveResponderRuleDetailArgs:
         pulumi.set(self, "mode", value)
 
 
-if not MYPY:
-    class ResponderRecipeEffectiveResponderRuleDetailConfigurationArgsDict(TypedDict):
-        config_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique identifier of the configuration
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration name
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration value
-        """
-elif False:
-    ResponderRecipeEffectiveResponderRuleDetailConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ResponderRecipeEffectiveResponderRuleDetailConfigurationArgsDict(TypedDict):
+    config_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique identifier of the configuration
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration name
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration value
+    """
 
 @pulumi.input_type
 class ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs:
@@ -3989,62 +3888,59 @@ class ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class ResponderRecipeResponderRuleArgsDict(TypedDict):
-        details: pulumi.Input['ResponderRecipeResponderRuleDetailsArgsDict']
-        """
-        (Updatable) Parameters to be updated for a responder rule within a responder recipe.
-        """
-        responder_rule_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Unique identifier for the responder rule
-        """
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Compartment OCID
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Responder recipe description.
+class ResponderRecipeResponderRuleArgsDict(TypedDict):
+    details: pulumi.Input['ResponderRecipeResponderRuleDetailsArgsDict']
+    """
+    (Updatable) Parameters to be updated for a responder rule within a responder recipe.
+    """
+    responder_rule_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Unique identifier for the responder rule
+    """
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Compartment OCID
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Responder recipe description.
 
-        Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Responder recipe display name.
+    Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Responder recipe display name.
 
-        Avoid entering confidential information.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
-        policies: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of policies
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current lifecycle state of the example
-        """
-        supported_modes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Supported execution modes for the responder rule
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the responder recipe was created. Format defined by RFC3339.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the responder recipe was last updated. Format defined by RFC3339.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of responder
-        """
-elif False:
-    ResponderRecipeResponderRuleArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+    """
+    policies: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of policies
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current lifecycle state of the example
+    """
+    supported_modes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Supported execution modes for the responder rule
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the responder recipe was created. Format defined by RFC3339.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the responder recipe was last updated. Format defined by RFC3339.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of responder
+    """
 
 @pulumi.input_type
 class ResponderRecipeResponderRuleArgs:
@@ -4251,26 +4147,23 @@ class ResponderRecipeResponderRuleArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class ResponderRecipeResponderRuleDetailsArgsDict(TypedDict):
-        is_enabled: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Enablement state for the responder rule
-        """
-        condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The base condition resource.
-        """
-        configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeResponderRuleDetailsConfigurationArgsDict']]]]
-        """
-        List of responder rule configurations
-        """
-        mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Execution mode for the responder rule
-        """
-elif False:
-    ResponderRecipeResponderRuleDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ResponderRecipeResponderRuleDetailsArgsDict(TypedDict):
+    is_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Enablement state for the responder rule
+    """
+    condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The base condition resource.
+    """
+    configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeResponderRuleDetailsConfigurationArgsDict']]]]
+    """
+    List of responder rule configurations
+    """
+    mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Execution mode for the responder rule
+    """
 
 @pulumi.input_type
 class ResponderRecipeResponderRuleDetailsArgs:
@@ -4342,22 +4235,19 @@ class ResponderRecipeResponderRuleDetailsArgs:
         pulumi.set(self, "mode", value)
 
 
-if not MYPY:
-    class ResponderRecipeResponderRuleDetailsConfigurationArgsDict(TypedDict):
-        config_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique identifier of the configuration
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration name
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration value
-        """
-elif False:
-    ResponderRecipeResponderRuleDetailsConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ResponderRecipeResponderRuleDetailsConfigurationArgsDict(TypedDict):
+    config_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique identifier of the configuration
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration name
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration value
+    """
 
 @pulumi.input_type
 class ResponderRecipeResponderRuleDetailsConfigurationArgs:
@@ -4414,26 +4304,23 @@ class ResponderRecipeResponderRuleDetailsConfigurationArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class TargetTargetDetailArgsDict(TypedDict):
-        security_zone_display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the security zone to associate with this compartment.
-        """
-        security_zone_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the security zone to associate with this compartment
-        """
-        target_resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of resource that target support (COMPARTMENT/FACLOUD)
-        """
-        target_security_zone_recipes: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailTargetSecurityZoneRecipeArgsDict']]]]
-        """
-        The list of security zone recipes to associate with this compartment
-        """
-elif False:
-    TargetTargetDetailArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetDetailArgsDict(TypedDict):
+    security_zone_display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the security zone to associate with this compartment.
+    """
+    security_zone_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the security zone to associate with this compartment
+    """
+    target_resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of resource that target support (COMPARTMENT/FACLOUD)
+    """
+    target_security_zone_recipes: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailTargetSecurityZoneRecipeArgsDict']]]]
+    """
+    The list of security zone recipes to associate with this compartment
+    """
 
 @pulumi.input_type
 class TargetTargetDetailArgs:
@@ -4506,68 +4393,65 @@ class TargetTargetDetailArgs:
         pulumi.set(self, "target_security_zone_recipes", value)
 
 
-if not MYPY:
-    class TargetTargetDetailTargetSecurityZoneRecipeArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Compartment OCID where the resource is created
-        """
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The target description.
+class TargetTargetDetailTargetSecurityZoneRecipeArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Compartment OCID where the resource is created
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The target description.
 
-        Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Display name for the target.
+    Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Display name for the target.
 
-        Avoid entering confidential information.
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+    Avoid entering confidential information.
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 
-        Avoid entering confidential information.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique identifier of target responder recipe that can't be changed after creation
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Owner of target responder recipe
-        """
-        security_policies: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of security policy IDs that are included in the recipe
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The enablement state of the detector rule
-        """
-        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the target was created. Format defined by RFC3339.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the target was last updated. Format defined by RFC3339.
-        """
-elif False:
-    TargetTargetDetailTargetSecurityZoneRecipeArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique identifier of target responder recipe that can't be changed after creation
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Owner of target responder recipe
+    """
+    security_policies: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of security policy IDs that are included in the recipe
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The enablement state of the detector rule
+    """
+    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the target was created. Format defined by RFC3339.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the target was last updated. Format defined by RFC3339.
+    """
 
 @pulumi.input_type
 class TargetTargetDetailTargetSecurityZoneRecipeArgs:
@@ -4796,66 +4680,63 @@ class TargetTargetDetailTargetSecurityZoneRecipeArgs:
         pulumi.set(self, "time_updated", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeArgsDict(TypedDict):
-        detector_recipe_id: pulumi.Input[_builtins.str]
-        """
-        Unique identifier for the target detector recipe
-        """
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Compartment OCID where the resource is created
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The target description.
+class TargetTargetDetectorRecipeArgsDict(TypedDict):
+    detector_recipe_id: pulumi.Input[_builtins.str]
+    """
+    Unique identifier for the target detector recipe
+    """
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Compartment OCID where the resource is created
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The target description.
 
-        Avoid entering confidential information.
-        """
-        detector: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Detector type for the rule
-        """
-        detector_recipe_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Recipe type ( STANDARD, ENTERPRISE )
-        """
-        detector_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleArgsDict']]]]
-        """
-        (Updatable) List of overrides to be applied to detector rules associated with the target
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Display name for the target.
+    Avoid entering confidential information.
+    """
+    detector: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Detector type for the rule
+    """
+    detector_recipe_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Recipe type ( STANDARD, ENTERPRISE )
+    """
+    detector_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleArgsDict']]]]
+    """
+    (Updatable) List of overrides to be applied to detector rules associated with the target
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Display name for the target.
 
-        Avoid entering confidential information.
-        """
-        effective_detector_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleArgsDict']]]]
-        """
-        List of currently enabled detector rules for the detector type for recipe after applying defaults
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique identifier of target responder recipe that can't be changed after creation
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Owner of target responder recipe
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The enablement state of the detector rule
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the target was created. Format defined by RFC3339.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the target was last updated. Format defined by RFC3339.
-        """
-elif False:
-    TargetTargetDetectorRecipeArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    effective_detector_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleArgsDict']]]]
+    """
+    List of currently enabled detector rules for the detector type for recipe after applying defaults
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique identifier of target responder recipe that can't be changed after creation
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Owner of target responder recipe
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The enablement state of the detector rule
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the target was created. Format defined by RFC3339.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the target was last updated. Format defined by RFC3339.
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeArgs:
@@ -5079,82 +4960,79 @@ class TargetTargetDetectorRecipeArgs:
         pulumi.set(self, "time_updated", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeDetectorRuleArgsDict(TypedDict):
-        details: pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsArgsDict']
-        """
-        (Updatable) Parameters to update detector rule configuration details in a detector recipe attached to a target.
-        """
-        detector_rule_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Unique identifier for the detector rule
-        """
-        data_source_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The ID of the attached data source
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The target description.
+class TargetTargetDetectorRecipeDetectorRuleArgsDict(TypedDict):
+    details: pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsArgsDict']
+    """
+    (Updatable) Parameters to update detector rule configuration details in a detector recipe attached to a target.
+    """
+    detector_rule_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Unique identifier for the detector rule
+    """
+    data_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The ID of the attached data source
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The target description.
 
-        Avoid entering confidential information.
-        """
-        detector: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Detector type for the rule
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Display name for the target.
+    Avoid entering confidential information.
+    """
+    detector: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Detector type for the rule
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Display name for the target.
 
-        Avoid entering confidential information.
-        """
-        entities_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgsDict']]]]
-        """
-        Data source entities mapping for a detector rule
-        """
-        is_cloneable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Is the rule cloneable?
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
-        managed_list_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of managed list types related to this rule
-        """
-        recommendation: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Recommendation for TargetDetectorRecipeDetectorRule resource
-        """
-        resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
-        """
-        rule_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleRuleTypeArgsDict']]]]
-        """
-        Rule category type
-        """
-        service_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Service type of the configuration to which the rule is applied
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The enablement state of the detector rule
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the target was created. Format defined by RFC3339.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the target was last updated. Format defined by RFC3339.
-        """
-elif False:
-    TargetTargetDetectorRecipeDetectorRuleArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    entities_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgsDict']]]]
+    """
+    Data source entities mapping for a detector rule
+    """
+    is_cloneable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Is the rule cloneable?
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+    """
+    managed_list_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of managed list types related to this rule
+    """
+    recommendation: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Recommendation for TargetDetectorRecipeDetectorRule resource
+    """
+    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
+    """
+    rule_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleRuleTypeArgsDict']]]]
+    """
+    Rule category type
+    """
+    service_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Service type of the configuration to which the rule is applied
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The enablement state of the detector rule
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the target was created. Format defined by RFC3339.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the target was last updated. Format defined by RFC3339.
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeDetectorRuleArgs:
@@ -5441,34 +5319,31 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
         pulumi.set(self, "time_updated", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeDetectorRuleDetailsArgsDict(TypedDict):
-        condition_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgsDict']]]]
-        """
-        (Updatable) Condition group corresponding to each compartment
-        """
-        configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgsDict']]]]
-        """
-        List of responder rule configurations
-        """
-        is_configuration_allowed: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Configuration allowed or not
-        """
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enabled state for the responder rule
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        User-defined labels for a detector rule
-        """
-        risk_level: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The risk level of the detector rule
-        """
-elif False:
-    TargetTargetDetectorRecipeDetectorRuleDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetDetectorRecipeDetectorRuleDetailsArgsDict(TypedDict):
+    condition_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgsDict']]]]
+    """
+    (Updatable) Condition group corresponding to each compartment
+    """
+    configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgsDict']]]]
+    """
+    List of responder rule configurations
+    """
+    is_configuration_allowed: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Configuration allowed or not
+    """
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enabled state for the responder rule
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    User-defined labels for a detector rule
+    """
+    risk_level: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The risk level of the detector rule
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeDetectorRuleDetailsArgs:
@@ -5573,18 +5448,15 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsArgs:
         pulumi.set(self, "risk_level", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgsDict(TypedDict):
-        compartment_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Compartment OCID associated with condition
-        """
-        condition: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The base condition resource.
-        """
-elif False:
-    TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgsDict(TypedDict):
+    compartment_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Compartment OCID associated with condition
+    """
+    condition: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The base condition resource.
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs:
@@ -5623,42 +5495,39 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs:
         pulumi.set(self, "condition", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgsDict(TypedDict):
-        additional_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict']]]]
-        """
-        Map of additional property values for configuration
-        """
-        allowed_values: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict']]]]
-        """
-        Map of possible values for configuration
-        """
-        allowed_values_data_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Map property Value data type
-        """
-        config_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique identifier of the configuration
-        """
-        data_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration data type
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration name
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration value
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgsDict']]]]
-        """
-        List of configuration values
-        """
-elif False:
-    TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgsDict(TypedDict):
+    additional_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict']]]]
+    """
+    Map of additional property values for configuration
+    """
+    allowed_values: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict']]]]
+    """
+    Map of possible values for configuration
+    """
+    allowed_values_data_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Map property Value data type
+    """
+    config_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique identifier of the configuration
+    """
+    data_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration data type
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration name
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration value
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgsDict']]]]
+    """
+    List of configuration values
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs:
@@ -5795,22 +5664,19 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the detector rule type
-        """
-        property_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Property Type
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration value
-        """
-elif False:
-    TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the detector rule type
+    """
+    property_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Property Type
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration value
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs:
@@ -5867,18 +5733,15 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProper
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the detector rule type
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration value
-        """
-elif False:
-    TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the detector rule type
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration value
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs:
@@ -5919,22 +5782,19 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgsDict(TypedDict):
-        list_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration list item type (CUSTOM or MANAGED)
-        """
-        managed_list_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of content in the managed list
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration value
-        """
-elif False:
-    TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgsDict(TypedDict):
+    list_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration list item type (CUSTOM or MANAGED)
+    """
+    managed_list_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of content in the managed list
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration value
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs:
@@ -5991,24 +5851,21 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Display name for the target.
+class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Display name for the target.
 
-        Avoid entering confidential information.
-        """
-        entity_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of entity
-        """
-        query_field: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The entity value mapped to a data source query
-        """
-elif False:
-    TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of entity
+    """
+    query_field: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The entity value mapped to a data source query
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs:
@@ -6069,18 +5926,15 @@ class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs:
         pulumi.set(self, "query_field", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeDetectorRuleRuleTypeArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the detector rule type
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Configuration value
-        """
-elif False:
-    TargetTargetDetectorRecipeDetectorRuleRuleTypeArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetDetectorRecipeDetectorRuleRuleTypeArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the detector rule type
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Configuration value
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs:
@@ -6121,82 +5975,79 @@ class TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeEffectiveDetectorRuleArgsDict(TypedDict):
-        data_source_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The ID of the attached data source
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The target description.
+class TargetTargetDetectorRecipeEffectiveDetectorRuleArgsDict(TypedDict):
+    data_source_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The ID of the attached data source
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The target description.
 
-        Avoid entering confidential information.
-        """
-        details: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgsDict']]]]
-        """
-        Detailed information for a responder rule
-        """
-        detector: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Detector type for the rule
-        """
-        detector_rule_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the detector rule
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Display name for the target.
+    Avoid entering confidential information.
+    """
+    details: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgsDict']]]]
+    """
+    Detailed information for a responder rule
+    """
+    detector: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Detector type for the rule
+    """
+    detector_rule_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the detector rule
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Display name for the target.
 
-        Avoid entering confidential information.
-        """
-        entities_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict']]]]
-        """
-        Data source entities mapping for a detector rule
-        """
-        is_cloneable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Is the rule cloneable?
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
-        managed_list_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of managed list types related to this rule
-        """
-        recommendation: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Recommendation for TargetDetectorRecipeDetectorRule resource
-        """
-        resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
-        """
-        rule_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict']]]]
-        """
-        Rule category type
-        """
-        service_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Service type of the configuration to which the rule is applied
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The enablement state of the detector rule
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the target was created. Format defined by RFC3339.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the target was last updated. Format defined by RFC3339.
-        """
-elif False:
-    TargetTargetDetectorRecipeEffectiveDetectorRuleArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    entities_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict']]]]
+    """
+    Data source entities mapping for a detector rule
+    """
+    is_cloneable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Is the rule cloneable?
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+    """
+    managed_list_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of managed list types related to this rule
+    """
+    recommendation: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Recommendation for TargetDetectorRecipeDetectorRule resource
+    """
+    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
+    """
+    rule_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict']]]]
+    """
+    Rule category type
+    """
+    service_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Service type of the configuration to which the rule is applied
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The enablement state of the detector rule
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the target was created. Format defined by RFC3339.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the target was last updated. Format defined by RFC3339.
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
@@ -6485,34 +6336,31 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
         pulumi.set(self, "time_updated", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgsDict(TypedDict):
-        condition_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgsDict']]]]
-        """
-        Condition group corresponding to each compartment
-        """
-        configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict']]]]
-        """
-        List of responder rule configurations
-        """
-        is_configuration_allowed: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Configuration allowed or not
-        """
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enabled state for the responder rule
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        User-defined labels for a detector rule
-        """
-        risk_level: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The risk level of the detector rule
-        """
-elif False:
-    TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgsDict(TypedDict):
+    condition_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgsDict']]]]
+    """
+    Condition group corresponding to each compartment
+    """
+    configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict']]]]
+    """
+    List of responder rule configurations
+    """
+    is_configuration_allowed: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Configuration allowed or not
+    """
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enabled state for the responder rule
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    User-defined labels for a detector rule
+    """
+    risk_level: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The risk level of the detector rule
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs:
@@ -6617,18 +6465,15 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs:
         pulumi.set(self, "risk_level", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Compartment OCID where the resource is created
-        """
-        condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The base condition resource.
-        """
-elif False:
-    TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Compartment OCID where the resource is created
+    """
+    condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The base condition resource.
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs:
@@ -6669,42 +6514,39 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs:
         pulumi.set(self, "condition", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict(TypedDict):
-        additional_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict']]]]
-        """
-        Map of additional property values for configuration
-        """
-        allowed_values: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict']]]]
-        """
-        Map of possible values for configuration
-        """
-        allowed_values_data_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Map property Value data type
-        """
-        config_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique identifier of the configuration
-        """
-        data_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration data type
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration name
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration value
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict']]]]
-        """
-        List of configuration values
-        """
-elif False:
-    TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict(TypedDict):
+    additional_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict']]]]
+    """
+    Map of additional property values for configuration
+    """
+    allowed_values: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict']]]]
+    """
+    Map of possible values for configuration
+    """
+    allowed_values_data_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Map property Value data type
+    """
+    config_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique identifier of the configuration
+    """
+    data_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration data type
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration name
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration value
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict']]]]
+    """
+    List of configuration values
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs:
@@ -6841,22 +6683,19 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the detector rule type
-        """
-        property_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Property Type
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration value
-        """
-elif False:
-    TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the detector rule type
+    """
+    property_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Property Type
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration value
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs:
@@ -6913,18 +6752,15 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAddition
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the detector rule type
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration value
-        """
-elif False:
-    TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the detector rule type
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration value
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs:
@@ -6965,22 +6801,19 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedV
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict(TypedDict):
-        list_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration list item type (CUSTOM or MANAGED)
-        """
-        managed_list_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of content in the managed list
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration value
-        """
-elif False:
-    TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict(TypedDict):
+    list_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration list item type (CUSTOM or MANAGED)
+    """
+    managed_list_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of content in the managed list
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration value
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs:
@@ -7037,24 +6870,21 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArg
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Display name for the target.
+class TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Display name for the target.
 
-        Avoid entering confidential information.
-        """
-        entity_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of entity
-        """
-        query_field: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The entity value mapped to a data source query
-        """
-elif False:
-    TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of entity
+    """
+    query_field: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The entity value mapped to a data source query
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs:
@@ -7115,18 +6945,15 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs:
         pulumi.set(self, "query_field", value)
 
 
-if not MYPY:
-    class TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the detector rule type
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Configuration value
-        """
-elif False:
-    TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the detector rule type
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Configuration value
+    """
 
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs:
@@ -7167,54 +6994,51 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class TargetTargetResponderRecipeArgsDict(TypedDict):
-        responder_recipe_id: pulumi.Input[_builtins.str]
-        """
-        Unique identifier for responder recipe
-        """
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Compartment OCID where the resource is created
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The target description.
+class TargetTargetResponderRecipeArgsDict(TypedDict):
+    responder_recipe_id: pulumi.Input[_builtins.str]
+    """
+    Unique identifier for responder recipe
+    """
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Compartment OCID where the resource is created
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The target description.
 
-        Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Display name for the target.
+    Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Display name for the target.
 
-        Avoid entering confidential information.
-        """
-        effective_responder_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleArgsDict']]]]
-        """
-        List of currently enabled responder rules for the responder type for recipe after applying defaults
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique identifier of target responder recipe that can't be changed after creation
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Owner of target responder recipe
-        """
-        responder_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleArgsDict']]]]
-        """
-        (Updatable) List of overrides to be applied to responder rules associated with the target
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the target was created. Format defined by RFC3339.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the target was last updated. Format defined by RFC3339.
-        """
-elif False:
-    TargetTargetResponderRecipeArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    effective_responder_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleArgsDict']]]]
+    """
+    List of currently enabled responder rules for the responder type for recipe after applying defaults
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique identifier of target responder recipe that can't be changed after creation
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Owner of target responder recipe
+    """
+    responder_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleArgsDict']]]]
+    """
+    (Updatable) List of overrides to be applied to responder rules associated with the target
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the target was created. Format defined by RFC3339.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the target was last updated. Format defined by RFC3339.
+    """
 
 @pulumi.input_type
 class TargetTargetResponderRecipeArgs:
@@ -7390,62 +7214,59 @@ class TargetTargetResponderRecipeArgs:
         pulumi.set(self, "time_updated", value)
 
 
-if not MYPY:
-    class TargetTargetResponderRecipeEffectiveResponderRuleArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Compartment OCID where the resource is created
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The target description.
+class TargetTargetResponderRecipeEffectiveResponderRuleArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Compartment OCID where the resource is created
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The target description.
 
-        Avoid entering confidential information.
-        """
-        details: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailArgsDict']]]]
-        """
-        Detailed information for a responder rule
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Display name for the target.
+    Avoid entering confidential information.
+    """
+    details: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailArgsDict']]]]
+    """
+    Detailed information for a responder rule
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Display name for the target.
 
-        Avoid entering confidential information.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
-        policies: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of policies
-        """
-        responder_rule_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique identifier for the responder rule
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The enablement state of the detector rule
-        """
-        supported_modes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Supported execution modes for the responder rule
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the target was created. Format defined by RFC3339.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the target was last updated. Format defined by RFC3339.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of responder
-        """
-elif False:
-    TargetTargetResponderRecipeEffectiveResponderRuleArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+    """
+    policies: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of policies
+    """
+    responder_rule_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique identifier for the responder rule
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The enablement state of the detector rule
+    """
+    supported_modes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Supported execution modes for the responder rule
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the target was created. Format defined by RFC3339.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the target was last updated. Format defined by RFC3339.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of responder
+    """
 
 @pulumi.input_type
 class TargetTargetResponderRecipeEffectiveResponderRuleArgs:
@@ -7654,26 +7475,23 @@ class TargetTargetResponderRecipeEffectiveResponderRuleArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgsDict(TypedDict):
-        condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The base condition resource.
-        """
-        configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgsDict']]]]
-        """
-        List of responder rule configurations
-        """
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enabled state for the responder rule
-        """
-        mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Execution mode for the responder rule
-        """
-elif False:
-    TargetTargetResponderRecipeEffectiveResponderRuleDetailArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgsDict(TypedDict):
+    condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The base condition resource.
+    """
+    configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgsDict']]]]
+    """
+    List of responder rule configurations
+    """
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enabled state for the responder rule
+    """
+    mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Execution mode for the responder rule
+    """
 
 @pulumi.input_type
 class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs:
@@ -7746,22 +7564,19 @@ class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs:
         pulumi.set(self, "mode", value)
 
 
-if not MYPY:
-    class TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgsDict(TypedDict):
-        config_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique identifier of the configuration
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration name
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Configuration value
-        """
-elif False:
-    TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgsDict(TypedDict):
+    config_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique identifier of the configuration
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration name
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Configuration value
+    """
 
 @pulumi.input_type
 class TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs:
@@ -7818,66 +7633,63 @@ class TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class TargetTargetResponderRecipeResponderRuleArgsDict(TypedDict):
-        details: pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsArgsDict']
-        """
-        (Updatable) Parameters to update details for a responder rule for a target responder recipe. TargetResponderRuleDetails contains all configurations associated with the ResponderRule, whereas UpdateTargetResponderRecipeResponderRuleDetails refers to the details that are to be updated for ResponderRule.
-        """
-        responder_rule_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Unique identifier for target detector recipe
+class TargetTargetResponderRecipeResponderRuleArgsDict(TypedDict):
+    details: pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsArgsDict']
+    """
+    (Updatable) Parameters to update details for a responder rule for a target responder recipe. TargetResponderRuleDetails contains all configurations associated with the ResponderRule, whereas UpdateTargetResponderRecipeResponderRuleDetails refers to the details that are to be updated for ResponderRule.
+    """
+    responder_rule_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Unique identifier for target detector recipe
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Compartment OCID where the resource is created
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The target description.
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Compartment OCID where the resource is created
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The target description.
 
-        Avoid entering confidential information.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Display name for the target.
+    Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Display name for the target.
 
-        Avoid entering confidential information.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
-        policies: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of policies
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The enablement state of the detector rule
-        """
-        supported_modes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Supported execution modes for the responder rule
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the target was created. Format defined by RFC3339.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the target was last updated. Format defined by RFC3339.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of responder
-        """
-elif False:
-    TargetTargetResponderRecipeResponderRuleArgsDict: TypeAlias = Mapping[str, Any]
+    Avoid entering confidential information.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+    """
+    policies: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of policies
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The enablement state of the detector rule
+    """
+    supported_modes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Supported execution modes for the responder rule
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the target was created. Format defined by RFC3339.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the target was last updated. Format defined by RFC3339.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of responder
+    """
 
 @pulumi.input_type
 class TargetTargetResponderRecipeResponderRuleArgs:
@@ -8092,26 +7904,23 @@ class TargetTargetResponderRecipeResponderRuleArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class TargetTargetResponderRecipeResponderRuleDetailsArgsDict(TypedDict):
-        condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The base condition resource.
-        """
-        configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgsDict']]]]
-        """
-        (Updatable) List of responder rule configurations
-        """
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enabled state for the responder rule
-        """
-        mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Execution mode for the responder rule
-        """
-elif False:
-    TargetTargetResponderRecipeResponderRuleDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetResponderRecipeResponderRuleDetailsArgsDict(TypedDict):
+    condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The base condition resource.
+    """
+    configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgsDict']]]]
+    """
+    (Updatable) List of responder rule configurations
+    """
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enabled state for the responder rule
+    """
+    mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Execution mode for the responder rule
+    """
 
 @pulumi.input_type
 class TargetTargetResponderRecipeResponderRuleDetailsArgs:
@@ -8184,22 +7993,19 @@ class TargetTargetResponderRecipeResponderRuleDetailsArgs:
         pulumi.set(self, "mode", value)
 
 
-if not MYPY:
-    class TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgsDict(TypedDict):
-        config_key: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Unique identifier of the configuration
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Configuration name
-        """
-        value: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Configuration value
-        """
-elif False:
-    TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgsDict(TypedDict):
+    config_key: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Unique identifier of the configuration
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Configuration name
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Configuration value
+    """
 
 @pulumi.input_type
 class TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs:
@@ -8253,13 +8059,10 @@ class TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class GetAdhocQueriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAdhocQueriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAdhocQueriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAdhocQueriesFilterArgs:
@@ -8300,16 +8103,13 @@ class GetAdhocQueriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDataMaskRulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        """
-        Types of targets
-        """
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDataMaskRulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDataMaskRulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    """
+    Types of targets
+    """
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDataMaskRulesFilterArgs:
@@ -8356,13 +8156,10 @@ class GetDataMaskRulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDataSourceEventsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDataSourceEventsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDataSourceEventsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDataSourceEventsFilterArgs:
@@ -8403,13 +8200,10 @@ class GetDataSourceEventsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDataSourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDataSourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDataSourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDataSourcesFilterArgs:
@@ -8450,19 +8244,16 @@ class GetDataSourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDetectorRecipesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Configuration name
-        """
-        values: Sequence[_builtins.str]
-        """
-        List of configuration values
-        """
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDetectorRecipesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDetectorRecipesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Configuration name
+    """
+    values: Sequence[_builtins.str]
+    """
+    List of configuration values
+    """
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDetectorRecipesFilterArgs:
@@ -8513,19 +8304,16 @@ class GetDetectorRecipesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetGuardTargetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Configuration name
-        """
-        values: Sequence[_builtins.str]
-        """
-        List of configuration values
-        """
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetGuardTargetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetGuardTargetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Configuration name
+    """
+    values: Sequence[_builtins.str]
+    """
+    List of configuration values
+    """
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetGuardTargetsFilterArgs:
@@ -8576,13 +8364,10 @@ class GetGuardTargetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedListsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedListsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedListsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedListsFilterArgs:
@@ -8623,13 +8408,10 @@ class GetManagedListsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetProblemEntitiesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetProblemEntitiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetProblemEntitiesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetProblemEntitiesFilterArgs:
@@ -8670,16 +8452,13 @@ class GetProblemEntitiesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetResponderRecipesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Configuration name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetResponderRecipesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetResponderRecipesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Configuration name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetResponderRecipesFilterArgs:
@@ -8726,13 +8505,10 @@ class GetResponderRecipesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSavedQueriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSavedQueriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSavedQueriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSavedQueriesFilterArgs:
@@ -8773,13 +8549,10 @@ class GetSavedQueriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityPoliciesFilterArgs:
@@ -8820,13 +8593,10 @@ class GetSecurityPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityRecipesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityRecipesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityRecipesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityRecipesFilterArgs:
@@ -8867,13 +8637,10 @@ class GetSecurityRecipesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSecurityZonesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecurityZonesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecurityZonesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecurityZonesFilterArgs:
@@ -8914,13 +8681,10 @@ class GetSecurityZonesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWlpAgentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWlpAgentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWlpAgentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWlpAgentsFilterArgs:

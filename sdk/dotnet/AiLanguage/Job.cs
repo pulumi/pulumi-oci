@@ -78,7 +78,7 @@ namespace Pulumi.Oci.AiLanguage
     /// 
     /// ## Import
     /// 
-    /// Jobs can be imported using the `id`, e.g.
+    /// Jobs can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:AiLanguage/job:Job test_job "id"

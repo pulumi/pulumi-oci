@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Volume Attachment resource in Oracle Cloud Infrastructure Core service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/VolumeAttachment
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+//
+// Attaches the specified storage volume to the specified instance.
+//
 // ## Example Usage
 //
 // ```go

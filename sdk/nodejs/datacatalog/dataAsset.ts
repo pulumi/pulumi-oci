@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-catalog/latest/DataAsset
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datacatalog
+ *
+ * Create a new data asset.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -84,6 +91,9 @@ export class DataAsset extends pulumi.CustomResource {
      * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
+    /**
+     * (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. To determine the set of optional and required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+     */
     declare public readonly properties: pulumi.Output<{[key: string]: string}>;
     /**
      * The current state of the data asset.
@@ -210,6 +220,9 @@ export interface DataAssetState {
      * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. To determine the set of optional and required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+     */
     properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The current state of the data asset.
@@ -261,6 +274,9 @@ export interface DataAssetArgs {
      * (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName: pulumi.Input<string>;
+    /**
+     * (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. To determine the set of optional and required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+     */
     properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The key of the data asset type. This can be obtained via the '/types' endpoint.

@@ -542,6 +542,12 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
                  ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Pluggable Database Pluggabledatabasemanagements Management resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/PluggableDatabasePluggabledatabasemanagementsManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+        Enables the Database Management service for an Oracle Pluggable Database located in Oracle Cloud Infrastructure. This service allows the pluggable database to access tools including Metrics and Performance hub. Database Management is enabled at the pluggable database (PDB) level.
+
         ## Example Usage
 
         ```python
@@ -586,6 +592,12 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
                  args: PluggableDatabaseManagementsManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Pluggable Database Pluggabledatabasemanagements Management resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/PluggableDatabasePluggabledatabasemanagementsManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+        Enables the Database Management service for an Oracle Pluggable Database located in Oracle Cloud Infrastructure. This service allows the pluggable database to access tools including Metrics and Performance hub. Database Management is enabled at the pluggable database (PDB) level.
+
         ## Example Usage
 
         ```python

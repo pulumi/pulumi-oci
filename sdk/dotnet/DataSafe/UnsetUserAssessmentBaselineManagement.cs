@@ -35,7 +35,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Import
     /// 
-    /// UnsetUserAssessmentBaselineManagement can be imported using the `id`, e.g.
+    /// UnsetUserAssessmentBaselineManagement can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataSafe/unsetUserAssessmentBaselineManagement:UnsetUserAssessmentBaselineManagement test_unset_user_assessment_baseline_management "id"

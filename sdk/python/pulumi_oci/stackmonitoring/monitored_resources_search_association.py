@@ -337,6 +337,13 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
                  source_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Monitored Resources Search Association resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoredResourcesSearchAssociation
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+
+        Search associations in the given compartment based on the search criteria.
+
         ## Example Usage
 
         ```python
@@ -384,6 +391,13 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
                  args: MonitoredResourcesSearchAssociationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Monitored Resources Search Association resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoredResourcesSearchAssociation
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+
+        Search associations in the given compartment based on the search criteria.
+
         ## Example Usage
 
         ```python

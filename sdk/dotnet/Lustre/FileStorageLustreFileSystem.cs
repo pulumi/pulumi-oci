@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Lustre
 {
     /// <summary>
+    /// This resource provides the Lustre File System resource in Oracle Cloud Infrastructure Lustre File Storage service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/lustre/latest/LustreFileSystem
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/lustre_file_storage
+    /// 
+    /// Creates a Lustre file system.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -55,7 +62,7 @@ namespace Pulumi.Oci.Lustre
     /// 
     /// ## Import
     /// 
-    /// LustreFileSystems can be imported using the `id`, e.g.
+    /// LustreFileSystems can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Lustre/fileStorageLustreFileSystem:FileStorageLustreFileSystem test_lustre_file_system "id"

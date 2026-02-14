@@ -10,6 +10,15 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring
 {
     /// <summary>
+    /// This resource provides the Monitored Resources Associate Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoredResourcesAssociateMonitoredResource
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+    /// 
+    /// Create an association between two monitored resources. Associations can be created
+    /// between resources from different compartments as long they are in same tenancy.
+    /// User should have required access in both the compartments.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -33,7 +42,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// ## Import
     /// 
-    /// MonitoredResourcesAssociateMonitoredResources can be imported using the `id`, e.g.
+    /// MonitoredResourcesAssociateMonitoredResources can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource test_monitored_resources_associate_monitored_resource "id"

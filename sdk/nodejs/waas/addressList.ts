@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Address List resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/waas/latest/AddressList
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/web_application_acceleration_and_security
+ *
+ * Creates an address list in a set compartment and allows it to be used in a WAAS policy and referenced by access rules. Addresses can be IP addresses and CIDR notations.
+ *
  * ## Example Usage
  *
  * ```typescript

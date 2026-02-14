@@ -251,6 +251,13 @@ class NetworkSecurityGroup(pulumi.CustomResource):
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Network Security Group resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a new network security group for the specified VCN.
+
         ## Example Usage
 
         ```python
@@ -296,6 +303,13 @@ class NetworkSecurityGroup(pulumi.CustomResource):
                  args: NetworkSecurityGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Network Security Group resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a new network security group for the specified VCN.
+
         ## Example Usage
 
         ```python

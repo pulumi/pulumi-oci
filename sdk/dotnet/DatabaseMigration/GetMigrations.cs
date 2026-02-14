@@ -12,18 +12,36 @@ namespace Pulumi.Oci.DatabaseMigration
     public static class GetMigrations
     {
         /// <summary>
+        /// This data source provides the list of Migrations in Oracle Cloud Infrastructure Database Migration service.
+        /// 
+        /// List all Migrations.
+        /// 
+        /// Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+        /// 
         /// ## Example Usage
         /// </summary>
         public static Task<GetMigrationsResult> InvokeAsync(GetMigrationsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMigrationsResult>("oci:DatabaseMigration/getMigrations:getMigrations", args ?? new GetMigrationsArgs(), options.WithDefaults());
 
         /// <summary>
+        /// This data source provides the list of Migrations in Oracle Cloud Infrastructure Database Migration service.
+        /// 
+        /// List all Migrations.
+        /// 
+        /// Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+        /// 
         /// ## Example Usage
         /// </summary>
         public static Output<GetMigrationsResult> Invoke(GetMigrationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMigrationsResult>("oci:DatabaseMigration/getMigrations:getMigrations", args ?? new GetMigrationsInvokeArgs(), options.WithDefaults());
 
         /// <summary>
+        /// This data source provides the list of Migrations in Oracle Cloud Infrastructure Database Migration service.
+        /// 
+        /// List all Migrations.
+        /// 
+        /// Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+        /// 
         /// ## Example Usage
         /// </summary>
         public static Output<GetMigrationsResult> Invoke(GetMigrationsInvokeArgs args, InvokeOutputOptions options)

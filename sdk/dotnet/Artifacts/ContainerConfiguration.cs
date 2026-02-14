@@ -10,6 +10,11 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Artifacts
 {
     /// <summary>
+    /// This resource provides the Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/registry/latest/ContainerConfiguration
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/artifacts
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -27,7 +32,7 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// ## Import
     /// 
-    /// ContainerConfiguration can be imported using the `id`, e.g.
+    /// ContainerConfiguration can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Artifacts/containerConfiguration:ContainerConfiguration test_container_configuration "container/configuration/compartmentId/{compartmentId}"

@@ -368,6 +368,13 @@ class NetworkAddressList(pulumi.CustomResource):
                  vcn_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkAddressListVcnAddressArgs', 'NetworkAddressListVcnAddressArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Network Address List resource in Oracle Cloud Infrastructure Waf service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/waf/latest/NetworkAddressList
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/web_app_firewall
+
+        Creates a new NetworkAddressList.
+
         ## Example Usage
 
         ```python
@@ -418,6 +425,13 @@ class NetworkAddressList(pulumi.CustomResource):
                  args: NetworkAddressListArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Network Address List resource in Oracle Cloud Infrastructure Waf service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/waf/latest/NetworkAddressList
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/web_app_firewall
+
+        Creates a new NetworkAddressList.
+
         ## Example Usage
 
         ```python

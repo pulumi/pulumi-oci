@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Redis Cluster Create Identity Token resource in Oracle Cloud Infrastructure Redis service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/redis/latest/RedisClusterCreateIdentityToken
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
+ *
+ * Generates an identity token to sign in with the specified redis user for the redis cluster
+ *
  * ## Example Usage
  *
  * ```typescript

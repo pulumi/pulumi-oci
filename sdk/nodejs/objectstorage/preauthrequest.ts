@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/PreauthenticatedRequest
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ *
+ * Creates a pre-authenticated request specific to the bucket.
+ *
  * ## Example Usage
  *
  * ```typescript

@@ -32708,6 +32708,9 @@ export namespace Database {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the node.
          */
         nodeId?: pulumi.Input<string>;
+        /**
+         * User provided identifier for each node. `nodeName` only exists in Terraform config and state and does not exist in server side. It serves as a placeholder for a node before the node is provisioned. `nodeName` 1) must be unique among all nodes 2) must not be an empty string 3) must not contain any space. 4) `nodeResource` block can be removed to trigger a remove-node operation but `nodeName` can not be changed.
+         */
         nodeName: pulumi.Input<string>;
         /**
          * The current state of the Exadata VM cluster on Exascale Infrastructure.
@@ -44338,6 +44341,9 @@ export namespace FleetAppsManagement {
          * The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
          */
         timeExpires?: pulumi.Input<string>;
+        /**
+         * File path to the directory to use for running Terraform. If not specified, the root directory is used.
+         */
         workingDirectory?: pulumi.Input<string>;
     }
 
@@ -44398,6 +44404,9 @@ export namespace FleetAppsManagement {
          * This version parameter of Payload.
          */
         version?: pulumi.Input<string>;
+        /**
+         * File path to the directory to use for running Terraform. If not specified, the root directory is used.
+         */
         workingDirectory?: pulumi.Input<string>;
         /**
          * The Base64 encoded template. This payload will trigger CreateTemplate API, where the parameter will be passed.
@@ -45988,6 +45997,9 @@ export namespace FleetAppsManagement {
     }
 
     export interface RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetails {
+        /**
+         * Catalog Id having terraform package.
+         */
         catalogId?: pulumi.Input<string>;
         /**
          * Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
@@ -46044,6 +46056,9 @@ export namespace FleetAppsManagement {
          * Bucket Name.
          */
         bucket?: pulumi.Input<string>;
+        /**
+         * Catalog Id having terraform package.
+         */
         catalogId?: pulumi.Input<string>;
         /**
          * md5 checksum of the artifact.
@@ -46500,6 +46515,9 @@ export namespace FleetAppsManagement {
     }
 
     export interface RunbookVersionTaskTaskRecordDetailsExecutionDetails {
+        /**
+         * (Updatable) Catalog Id having terraform package.
+         */
         catalogId?: pulumi.Input<string>;
         /**
          * (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
@@ -46556,6 +46574,9 @@ export namespace FleetAppsManagement {
          * (Updatable) Bucket Name.
          */
         bucket?: pulumi.Input<string>;
+        /**
+         * (Updatable) Catalog Id having terraform package.
+         */
         catalogId?: pulumi.Input<string>;
         /**
          * (Updatable) md5 checksum of the artifact.
@@ -46781,6 +46802,9 @@ export namespace FleetAppsManagement {
     }
 
     export interface TaskRecordDetailsExecutionDetails {
+        /**
+         * (Updatable) Catalog Id having terraform package.
+         */
         catalogId?: pulumi.Input<string>;
         /**
          * (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
@@ -46837,6 +46861,9 @@ export namespace FleetAppsManagement {
          * (Updatable) Bucket Name.
          */
         bucket?: pulumi.Input<string>;
+        /**
+         * (Updatable) Catalog Id having terraform package.
+         */
         catalogId?: pulumi.Input<string>;
         /**
          * (Updatable) md5 checksum of the artifact.
@@ -92617,6 +92644,9 @@ export namespace ServiceCatalog {
          * The package version.
          */
         version: pulumi.Input<string>;
+        /**
+         * Base-64 payload of the Terraform zip package.
+         */
         zipFileBase64encoded: pulumi.Input<string>;
     }
 }

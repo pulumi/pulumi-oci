@@ -51,6 +51,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/User
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+ * 
+ * Create a user.
+ * 
  * ## Example Usage
  * 
  * <pre>
@@ -790,9 +797,17 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     public Output<String> externalId() {
         return this.externalId;
     }
+    /**
+     * (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+     * 
+     */
     @Export(name="forceDelete", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> forceDelete;
 
+    /**
+     * @return (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+     * 
+     */
     public Output<Optional<Boolean>> forceDelete() {
         return Codegen.optional(this.forceDelete);
     }

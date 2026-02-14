@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas
 {
     /// <summary>
+    /// This resource provides the Address List resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/waas/latest/AddressList
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/web_application_acceleration_and_security
+    /// 
+    /// Creates an address list in a set compartment and allows it to be used in a WAAS policy and referenced by access rules. Addresses can be IP addresses and CIDR notations.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -40,7 +47,7 @@ namespace Pulumi.Oci.Waas
     /// 
     /// ## Import
     /// 
-    /// AddressLists can be imported using the `id`, e.g.
+    /// AddressLists can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Waas/addressList:AddressList test_address_list "id"

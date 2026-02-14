@@ -47,20 +47,15 @@ __all__ = [
     'GetDesktopsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class DesktopPoolAvailabilityPolicyArgsDict(TypedDict):
-        start_schedule: NotRequired[pulumi.Input['DesktopPoolAvailabilityPolicyStartScheduleArgsDict']]
-        """
-        (Updatable) Provides the schedule information for a desktop.
-        """
-        stop_schedule: NotRequired[pulumi.Input['DesktopPoolAvailabilityPolicyStopScheduleArgsDict']]
-        """
-        (Updatable) Provides the schedule information for a desktop.
-        """
-elif False:
-    DesktopPoolAvailabilityPolicyArgsDict: TypeAlias = Mapping[str, Any]
+class DesktopPoolAvailabilityPolicyArgsDict(TypedDict):
+    start_schedule: NotRequired[pulumi.Input['DesktopPoolAvailabilityPolicyStartScheduleArgsDict']]
+    """
+    (Updatable) Provides the schedule information for a desktop.
+    """
+    stop_schedule: NotRequired[pulumi.Input['DesktopPoolAvailabilityPolicyStopScheduleArgsDict']]
+    """
+    (Updatable) Provides the schedule information for a desktop.
+    """
 
 @pulumi.input_type
 class DesktopPoolAvailabilityPolicyArgs:
@@ -101,18 +96,15 @@ class DesktopPoolAvailabilityPolicyArgs:
         pulumi.set(self, "stop_schedule", value)
 
 
-if not MYPY:
-    class DesktopPoolAvailabilityPolicyStartScheduleArgsDict(TypedDict):
-        cron_expression: pulumi.Input[_builtins.str]
-        """
-        (Updatable) A cron expression describing the desktop's schedule.
-        """
-        timezone: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The timezone of the desktop's schedule.
-        """
-elif False:
-    DesktopPoolAvailabilityPolicyStartScheduleArgsDict: TypeAlias = Mapping[str, Any]
+class DesktopPoolAvailabilityPolicyStartScheduleArgsDict(TypedDict):
+    cron_expression: pulumi.Input[_builtins.str]
+    """
+    (Updatable) A cron expression describing the desktop's schedule.
+    """
+    timezone: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The timezone of the desktop's schedule.
+    """
 
 @pulumi.input_type
 class DesktopPoolAvailabilityPolicyStartScheduleArgs:
@@ -151,18 +143,15 @@ class DesktopPoolAvailabilityPolicyStartScheduleArgs:
         pulumi.set(self, "timezone", value)
 
 
-if not MYPY:
-    class DesktopPoolAvailabilityPolicyStopScheduleArgsDict(TypedDict):
-        cron_expression: pulumi.Input[_builtins.str]
-        """
-        (Updatable) A cron expression describing the desktop's schedule.
-        """
-        timezone: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The timezone of the desktop's schedule.
-        """
-elif False:
-    DesktopPoolAvailabilityPolicyStopScheduleArgsDict: TypeAlias = Mapping[str, Any]
+class DesktopPoolAvailabilityPolicyStopScheduleArgsDict(TypedDict):
+    cron_expression: pulumi.Input[_builtins.str]
+    """
+    (Updatable) A cron expression describing the desktop's schedule.
+    """
+    timezone: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The timezone of the desktop's schedule.
+    """
 
 @pulumi.input_type
 class DesktopPoolAvailabilityPolicyStopScheduleArgs:
@@ -436,18 +425,15 @@ class DesktopPoolImageArgs:
         pulumi.set(self, "operating_system", value)
 
 
-if not MYPY:
-    class DesktopPoolNetworkConfigurationArgsDict(TypedDict):
-        subnet_id: pulumi.Input[_builtins.str]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
-        """
-        vcn_id: pulumi.Input[_builtins.str]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
-        """
-elif False:
-    DesktopPoolNetworkConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class DesktopPoolNetworkConfigurationArgsDict(TypedDict):
+    subnet_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+    """
+    vcn_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+    """
 
 @pulumi.input_type
 class DesktopPoolNetworkConfigurationArgs:
@@ -486,30 +472,27 @@ class DesktopPoolNetworkConfigurationArgs:
         pulumi.set(self, "vcn_id", value)
 
 
-if not MYPY:
-    class DesktopPoolPrivateAccessDetailsArgsDict(TypedDict):
-        subnet_id: pulumi.Input[_builtins.str]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
-        """
-        endpoint_fqdn: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
-        """
-        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        A list of network security groups for the private access.
-        """
-        private_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
-        """
-        vcn_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
-        """
-elif False:
-    DesktopPoolPrivateAccessDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DesktopPoolPrivateAccessDetailsArgsDict(TypedDict):
+    subnet_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+    """
+    endpoint_fqdn: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+    """
+    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    A list of network security groups for the private access.
+    """
+    private_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+    """
+    vcn_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+    """
 
 @pulumi.input_type
 class DesktopPoolPrivateAccessDetailsArgs:
@@ -597,18 +580,15 @@ class DesktopPoolPrivateAccessDetailsArgs:
         pulumi.set(self, "vcn_id", value)
 
 
-if not MYPY:
-    class DesktopPoolSessionLifecycleActionsArgsDict(TypedDict):
-        disconnect: NotRequired[pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgsDict']]
-        """
-        (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
-        """
-        inactivity: NotRequired[pulumi.Input['DesktopPoolSessionLifecycleActionsInactivityArgsDict']]
-        """
-        (Updatable) Action and grace period for inactivity
-        """
-elif False:
-    DesktopPoolSessionLifecycleActionsArgsDict: TypeAlias = Mapping[str, Any]
+class DesktopPoolSessionLifecycleActionsArgsDict(TypedDict):
+    disconnect: NotRequired[pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgsDict']]
+    """
+    (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
+    """
+    inactivity: NotRequired[pulumi.Input['DesktopPoolSessionLifecycleActionsInactivityArgsDict']]
+    """
+    (Updatable) Action and grace period for inactivity
+    """
 
 @pulumi.input_type
 class DesktopPoolSessionLifecycleActionsArgs:
@@ -649,18 +629,15 @@ class DesktopPoolSessionLifecycleActionsArgs:
         pulumi.set(self, "inactivity", value)
 
 
-if not MYPY:
-    class DesktopPoolSessionLifecycleActionsDisconnectArgsDict(TypedDict):
-        action: pulumi.Input[_builtins.str]
-        """
-        (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
-        """
-        grace_period_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
-        """
-elif False:
-    DesktopPoolSessionLifecycleActionsDisconnectArgsDict: TypeAlias = Mapping[str, Any]
+class DesktopPoolSessionLifecycleActionsDisconnectArgsDict(TypedDict):
+    action: pulumi.Input[_builtins.str]
+    """
+    (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
+    """
+    grace_period_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
+    """
 
 @pulumi.input_type
 class DesktopPoolSessionLifecycleActionsDisconnectArgs:
@@ -700,18 +677,15 @@ class DesktopPoolSessionLifecycleActionsDisconnectArgs:
         pulumi.set(self, "grace_period_in_minutes", value)
 
 
-if not MYPY:
-    class DesktopPoolSessionLifecycleActionsInactivityArgsDict(TypedDict):
-        action: pulumi.Input[_builtins.str]
-        """
-        (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
-        """
-        grace_period_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
-        """
-elif False:
-    DesktopPoolSessionLifecycleActionsInactivityArgsDict: TypeAlias = Mapping[str, Any]
+class DesktopPoolSessionLifecycleActionsInactivityArgsDict(TypedDict):
+    action: pulumi.Input[_builtins.str]
+    """
+    (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
+    """
+    grace_period_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+    """
 
 @pulumi.input_type
 class DesktopPoolSessionLifecycleActionsInactivityArgs:
@@ -751,25 +725,22 @@ class DesktopPoolSessionLifecycleActionsInactivityArgs:
         pulumi.set(self, "grace_period_in_minutes", value)
 
 
-if not MYPY:
-    class DesktopPoolShapeConfigArgsDict(TypedDict):
-        baseline_ocpu_utilization: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
-        * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
-        * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
-        * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
-        """
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The total number of OCPUs available for each desktop compute instance in the desktop pool.
-        """
-elif False:
-    DesktopPoolShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class DesktopPoolShapeConfigArgsDict(TypedDict):
+    baseline_ocpu_utilization: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
+    * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+    * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+    * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The total number of OCPUs available for each desktop compute instance in the desktop pool.
+    """
 
 @pulumi.input_type
 class DesktopPoolShapeConfigArgs:
@@ -832,13 +803,10 @@ class DesktopPoolShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class GetDesktopPoolDesktopsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDesktopPoolDesktopsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDesktopPoolDesktopsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDesktopPoolDesktopsFilterArgs:
@@ -879,16 +847,13 @@ class GetDesktopPoolDesktopsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDesktopPoolVolumesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the desktop pool volume.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDesktopPoolVolumesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDesktopPoolVolumesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the desktop pool volume.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDesktopPoolVolumesFilterArgs:
@@ -935,13 +900,10 @@ class GetDesktopPoolVolumesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDesktopPoolsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDesktopPoolsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDesktopPoolsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDesktopPoolsFilterArgs:
@@ -982,13 +944,10 @@ class GetDesktopPoolsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDesktopsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDesktopsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDesktopsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDesktopsFilterArgs:

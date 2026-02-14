@@ -475,6 +475,13 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
                  is_test_connection_param: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
+        This resource provides the External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalMySqlDatabaseConnector
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+
+        Creates an external MySQL connector resource.
+
         ## Example Usage
 
         ```python
@@ -522,6 +529,13 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
                  args: ExternalMySqlDatabaseConnectorArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalMySqlDatabaseConnector
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+
+        Creates an external MySQL connector resource.
+
         ## Example Usage
 
         ```python

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataFlow
 {
     /// <summary>
+    /// This resource provides the Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-flow/latest/RunStatement
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataflow
+    /// 
+    /// Executes a statement for a Session run.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -31,7 +38,7 @@ namespace Pulumi.Oci.DataFlow
     /// 
     /// ## Import
     /// 
-    /// RunStatements can be imported using the `id`, e.g.
+    /// RunStatements can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataFlow/runStatement:RunStatement test_run_statement "runs/{runId}/statements/{statementId}"

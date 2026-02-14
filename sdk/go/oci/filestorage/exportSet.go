@@ -12,6 +12,25 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Export Set resource in Oracle Cloud Infrastructure File Storage service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/filestorage/latest/ExportSet
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+//
+// The exportSet resource cannot be directly created or destroyed. An export set is created by the service automatically when a mount target is created.
+// When a mount target is deleted, the export set associated with it is also deleted automatically.
+//
+// You can use this resource for managing existing export sets from within Terraform. The resource exposes the following updatable attributes:
+//
+//	displayName
+//	maxFsStatBytes
+//	maxFsStatFiles
+//
+// Any other updates to the behavior of exportSet require updating the parent mount target. If you intend to manage exportSet with Terraform, you should import the mountTarget resource as well.
+// The mountTarget resource includes the mountTargetId attribute, which is required for updates to export_set.
+//
+// Only one export set resource should be created per mount target.
+//
 // ## Example Usage
 //
 // ```go

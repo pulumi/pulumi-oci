@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Psql
 {
     /// <summary>
+    /// This resource provides the Db System resource in Oracle Cloud Infrastructure Psql service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/postgresql/latest/DbSystem
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/psql
+    /// 
+    /// Creates a new database system.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -114,7 +121,7 @@ namespace Pulumi.Oci.Psql
     /// 
     /// ## Import
     /// 
-    /// DbSystems can be imported using the `id`, e.g.
+    /// DbSystems can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Psql/dbSystem:DbSystem test_db_system "id"

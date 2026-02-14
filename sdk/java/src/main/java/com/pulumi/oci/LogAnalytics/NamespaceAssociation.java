@@ -19,6 +19,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Namespace Association resource in Oracle Cloud Infrastructure Log Analytics service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/Association/Upsert
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+ * 
+ * Creates or updates associations between sources and entities. The entity should belong to the specified input compartment.
+ * 
  * ## Example Usage
  * 
  * <pre>

@@ -15,6 +15,13 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Cloud Db System Cloud Database Managements Management resource in Oracle Cloud Infrastructure Database Management service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/CloudDbSystemCloudDatabaseManagementsManagement
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+ * Enables Database Management service for all the components of the specified
+ * cloud DB system (except databases).
+ * 
  * ## Example Usage
  * 
  * <pre>

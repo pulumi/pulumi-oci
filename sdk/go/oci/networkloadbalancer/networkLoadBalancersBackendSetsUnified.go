@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Network Load Balancers Backend Sets Unified resource in Oracle Cloud Infrastructure Network Load Balancer service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/latest/NetworkLoadBalancersBackendSetsUnified
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_load_balancer
+//
+// Adds a backend set to a network load balancer.
+//
 // ## Example Usage
 //
 // ```go

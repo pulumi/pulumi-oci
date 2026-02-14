@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataCatalog
 {
     /// <summary>
+    /// This resource provides the Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-catalog/latest/DataAsset
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datacatalog
+    /// 
+    /// Create a new data asset.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -34,7 +41,7 @@ namespace Pulumi.Oci.DataCatalog
     /// 
     /// ## Import
     /// 
-    /// DataAssets can be imported using the `id`, e.g.
+    /// DataAssets can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataCatalog/dataAsset:DataAsset test_data_asset "catalogs/{catalogId}/dataAssets/{dataAssetKey}"
@@ -85,6 +92,9 @@ namespace Pulumi.Oci.DataCatalog
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. To determine the set of optional and required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+        /// </summary>
         [Output("properties")]
         public Output<ImmutableDictionary<string, string>> Properties { get; private set; } = null!;
 
@@ -200,6 +210,10 @@ namespace Pulumi.Oci.DataCatalog
 
         [Input("properties")]
         private InputMap<string>? _properties;
+
+        /// <summary>
+        /// (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. To determine the set of optional and required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+        /// </summary>
         public InputMap<string> Properties
         {
             get => _properties ?? (_properties = new InputMap<string>());
@@ -268,6 +282,10 @@ namespace Pulumi.Oci.DataCatalog
 
         [Input("properties")]
         private InputMap<string>? _properties;
+
+        /// <summary>
+        /// (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. To determine the set of optional and required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+        /// </summary>
         public InputMap<string> Properties
         {
             get => _properties ?? (_properties = new InputMap<string>());

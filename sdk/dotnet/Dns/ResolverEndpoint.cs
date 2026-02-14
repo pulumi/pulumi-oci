@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns
 {
     /// <summary>
+    /// This resource provides the Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dns/latest/ResolverEndpoint
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dns
+    /// 
+    /// Creates a new resolver endpoint in the same compartment as the resolver.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -39,12 +46,13 @@ namespace Pulumi.Oci.Dns
     /// 
     /// ## Import
     /// 
-    /// For legacy ResolverEndpoints created without `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
+    /// For legacy ResolverEndpoints created without `Scope`, these ResolverEndpoints can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{resolverEndpointName}"
     /// ```
-    /// For ResolverEndpoints created using `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
+    /// 
+    /// For ResolverEndpoints created using `Scope`, these ResolverEndpoints can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{name}/scope/{scope}"

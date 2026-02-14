@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DisasterRecovery
 {
     /// <summary>
+    /// This resource provides the Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/disaster-recovery/latest/DrProtectionGroup
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/disaster_recovery
+    /// 
+    /// Create a DR protection group.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -273,7 +280,7 @@ namespace Pulumi.Oci.DisasterRecovery
     /// 
     /// ## Import
     /// 
-    /// DrProtectionGroups can be imported using the `id`, e.g.
+    /// DrProtectionGroups can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DisasterRecovery/drProtectionGroup:DrProtectionGroup test_dr_protection_group "id"

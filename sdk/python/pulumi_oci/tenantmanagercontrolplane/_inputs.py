@@ -43,15 +43,10 @@ __all__ = [
     'GetSubscriptionsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetAssignedSubscriptionLineItemsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAssignedSubscriptionLineItemsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAssignedSubscriptionLineItemsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAssignedSubscriptionLineItemsFilterArgs:
@@ -92,13 +87,10 @@ class GetAssignedSubscriptionLineItemsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAssignedSubscriptionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAssignedSubscriptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAssignedSubscriptionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAssignedSubscriptionsFilterArgs:
@@ -139,16 +131,13 @@ class GetAssignedSubscriptionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDomainGovernancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that exactly match the name given.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDomainGovernancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDomainGovernancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that exactly match the name given.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDomainGovernancesFilterArgs:
@@ -195,16 +184,13 @@ class GetDomainGovernancesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDomainsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that exactly match the name given.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDomainsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDomainsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that exactly match the name given.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDomainsFilterArgs:
@@ -251,13 +237,10 @@ class GetDomainsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetLinksFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetLinksFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetLinksFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetLinksFilterArgs:
@@ -298,16 +281,13 @@ class GetLinksFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOrganizationTenanciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the tenancy.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOrganizationTenanciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOrganizationTenanciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the tenancy.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOrganizationTenanciesFilterArgs:
@@ -354,13 +334,10 @@ class GetOrganizationTenanciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOrganizationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOrganizationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOrganizationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOrganizationsFilterArgs:
@@ -401,13 +378,10 @@ class GetOrganizationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRecipientInvitationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRecipientInvitationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRecipientInvitationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRecipientInvitationsFilterArgs:
@@ -448,13 +422,10 @@ class GetRecipientInvitationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSenderInvitationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSenderInvitationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSenderInvitationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSenderInvitationsFilterArgs:
@@ -495,13 +466,10 @@ class GetSenderInvitationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSubscriptionAvailableRegionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSubscriptionAvailableRegionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSubscriptionAvailableRegionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSubscriptionAvailableRegionsFilterArgs:
@@ -542,13 +510,10 @@ class GetSubscriptionAvailableRegionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSubscriptionLineItemsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSubscriptionLineItemsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSubscriptionLineItemsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSubscriptionLineItemsFilterArgs:
@@ -589,13 +554,10 @@ class GetSubscriptionLineItemsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSubscriptionMappingsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSubscriptionMappingsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSubscriptionMappingsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSubscriptionMappingsFilterArgs:
@@ -636,13 +598,10 @@ class GetSubscriptionMappingsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSubscriptionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSubscriptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSubscriptionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSubscriptionsFilterArgs:

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.VnMonitoring
 {
     /// <summary>
+    /// This resource provides the Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/NetMonitor/latest/PathAnalyzerTest
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/vn_monitoring
+    /// 
+    /// Creates a new `PathAnalyzerTest` resource.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -78,7 +85,7 @@ namespace Pulumi.Oci.VnMonitoring
     /// 
     /// ## Import
     /// 
-    /// PathAnalyzerTests can be imported using the `id`, e.g.
+    /// PathAnalyzerTests can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest test_path_analyzer_test "id"

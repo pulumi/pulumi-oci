@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Connection resource in Oracle Cloud Infrastructure Data Catalog service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-catalog/latest/Connection
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datacatalog
+ *
+ * Creates a new connection.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -95,6 +102,9 @@ export class Connection extends pulumi.CustomResource {
      * Unique connection key that is immutable.
      */
     declare public /*out*/ readonly key: pulumi.Output<string>;
+    /**
+     * (Updatable) A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "username": "user1"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+     */
     declare public readonly properties: pulumi.Output<{[key: string]: string}>;
     /**
      * The current state of the connection.
@@ -241,6 +251,9 @@ export interface ConnectionState {
      * Unique connection key that is immutable.
      */
     key?: pulumi.Input<string>;
+    /**
+     * (Updatable) A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "username": "user1"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+     */
     properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The current state of the connection.
@@ -304,6 +317,9 @@ export interface ConnectionArgs {
      * (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
      */
     isDefault?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "username": "user1"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+     */
     properties: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The key of the object type. Type key's can be found via the '/types' endpoint.

@@ -497,6 +497,13 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Resource Analytics Instance resource in Oracle Cloud Infrastructure Resource Analytics service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/resource-analytics/latest/ResourceAnalyticsInstance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a ResourceAnalyticsInstance.
+
         ## Example Usage
 
         ```python
@@ -556,6 +563,13 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
                  args: ResourceAnalyticsResourceAnalyticsInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Resource Analytics Instance resource in Oracle Cloud Infrastructure Resource Analytics service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/resource-analytics/latest/ResourceAnalyticsInstance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a ResourceAnalyticsInstance.
+
         ## Example Usage
 
         ```python

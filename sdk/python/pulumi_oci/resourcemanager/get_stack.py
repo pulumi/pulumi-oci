@@ -79,6 +79,9 @@ class GetStackResult:
     @_builtins.property
     @pulumi.getter(name="configSources")
     def config_sources(self) -> Sequence['outputs.GetStackConfigSourceResult']:
+        """
+        Location of the Terraform configuration.
+        """
         return pulumi.get(self, "config_sources")
 
     @_builtins.property
@@ -145,6 +148,9 @@ class GetStackResult:
     @_builtins.property
     @pulumi.getter(name="terraformVersion")
     def terraform_version(self) -> _builtins.str:
+        """
+        The version of Terraform specified for the stack. Example: `1.5.x`
+        """
         return pulumi.get(self, "terraform_version")
 
     @_builtins.property
@@ -158,6 +164,9 @@ class GetStackResult:
     @_builtins.property
     @pulumi.getter
     def variables(self) -> Mapping[str, _builtins.str]:
+        """
+        Terraform variables associated with this resource. Maximum number of variables supported is 250. The maximum size of each variable, including both name and value, is 8192 bytes. Example: `{"CompartmentId": "compartment-id-value"}`
+        """
         return pulumi.get(self, "variables")
 
 

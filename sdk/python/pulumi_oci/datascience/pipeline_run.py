@@ -702,6 +702,13 @@ class PipelineRun(pulumi.CustomResource):
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/PipelineRun
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+
+        Creates a new PipelineRun.
+
         ## Example Usage
 
         ```python
@@ -854,6 +861,13 @@ class PipelineRun(pulumi.CustomResource):
                  args: PipelineRunArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/PipelineRun
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+
+        Creates a new PipelineRun.
+
         ## Example Usage
 
         ```python

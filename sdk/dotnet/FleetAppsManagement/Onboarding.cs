@@ -10,11 +10,18 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FleetAppsManagement
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Onboarding resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/Onboarding
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+    /// 
+    /// Onboard a tenant to Fleet Application Management.
+    /// The onboarding process lets Fleet Application Management create a few required policies that you need to start using it
+    /// and its features.
     /// 
     /// ## Import
     /// 
-    /// Onboardings can be imported using the `id`, e.g.
+    /// Onboardings can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:FleetAppsManagement/onboarding:Onboarding test_onboarding "id"

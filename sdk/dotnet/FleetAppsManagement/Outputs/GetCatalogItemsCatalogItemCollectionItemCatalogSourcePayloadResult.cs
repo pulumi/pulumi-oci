@@ -69,6 +69,9 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// This version parameter of Payload.
         /// </summary>
         public readonly string Version;
+        /// <summary>
+        /// File path to the directory to use for running Terraform. If not specified, the root directory is used.
+        /// </summary>
         public readonly string WorkingDirectory;
         /// <summary>
         /// The Base64 encoded template. This payload will trigger CreateTemplate API, where the parameter will be passed.

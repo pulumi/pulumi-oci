@@ -697,20 +697,15 @@ __all__ = [
     'GetVmClustersFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class AutonomousContainerDatabaseAddStandbyBackupConfigArgsDict(TypedDict):
-        backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgsDict']]]]
-        """
-        Backup destination details.
-        """
-        recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of days between the current and earliest point of recoverability covered by automatic backups.
-        """
-elif False:
-    AutonomousContainerDatabaseAddStandbyBackupConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseAddStandbyBackupConfigArgsDict(TypedDict):
+    backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgsDict']]]]
+    """
+    Backup destination details.
+    """
+    recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of days between the current and earliest point of recoverability covered by automatic backups.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseAddStandbyBackupConfigArgs:
@@ -751,42 +746,39 @@ class AutonomousContainerDatabaseAddStandbyBackupConfigArgs:
         pulumi.set(self, "recovery_window_in_days", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgsDict(TypedDict):
-        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
-        """
-        dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        """
-        internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Proxy URL to connect to object store.
-        """
-        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the database backup destination.
-        """
-        vpc_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        """
-        vpc_user: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
-elif False:
-    AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+    backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+    """
+    dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+    """
+    internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Proxy URL to connect to object store.
+    """
+    is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the database backup destination.
+    """
+    vpc_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+    """
+    vpc_user: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgs:
@@ -923,78 +915,75 @@ class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailAr
         pulumi.set(self, "vpc_user", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseAddStandbyDataguardArgsDict(TypedDict):
-        apply_lag: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
-        """
-        apply_rate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
-        """
-        automatic_failover_target: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Automatically selected by backend when observer is enabled.
-        """
-        autonomous_container_database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
-        availability_domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The domain of the Autonomous Container Database
-        """
-        fast_start_fail_over_lag_limit_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The lag time for my preference based on data loss tolerance in seconds.
-        """
-        is_automatic_failover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Additional information about the current lifecycle state.
-        """
-        protection_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        """
-        redo_transport_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Automatically selected by backend based on the protection mode.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the Autonomous Container Database.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the Autonomous Container Database was created.
-        """
-        time_lag_refreshed_on: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Timestamp when the lags were last calculated for a standby.
-        """
-        time_last_role_changed: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time when the last role change action happened.
-        """
-        time_last_synced: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time of the last update to the apply lag, apply rate, and transport lag values.
-        """
-        transport_lag: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
-        """
-elif False:
-    AutonomousContainerDatabaseAddStandbyDataguardArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseAddStandbyDataguardArgsDict(TypedDict):
+    apply_lag: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+    """
+    apply_rate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+    """
+    automatic_failover_target: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Automatically selected by backend when observer is enabled.
+    """
+    autonomous_container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    """
+    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The domain of the Autonomous Container Database
+    """
+    fast_start_fail_over_lag_limit_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The lag time for my preference based on data loss tolerance in seconds.
+    """
+    is_automatic_failover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Additional information about the current lifecycle state.
+    """
+    protection_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+    """
+    redo_transport_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Automatically selected by backend based on the protection mode.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the Autonomous Container Database.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the Autonomous Container Database was created.
+    """
+    time_lag_refreshed_on: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Timestamp when the lags were last calculated for a standby.
+    """
+    time_last_role_changed: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time when the last role change action happened.
+    """
+    time_last_synced: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time of the last update to the apply lag, apply rate, and transport lag values.
+    """
+    transport_lag: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseAddStandbyDataguardArgs:
@@ -1275,78 +1264,75 @@ class AutonomousContainerDatabaseAddStandbyDataguardArgs:
         pulumi.set(self, "transport_lag", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgsDict(TypedDict):
-        apply_lag: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
-        """
-        apply_rate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
-        """
-        automatic_failover_target: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Automatically selected by backend when observer is enabled.
-        """
-        autonomous_container_database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
-        availability_domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The domain of the Autonomous Container Database
-        """
-        fast_start_fail_over_lag_limit_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The lag time for my preference based on data loss tolerance in seconds.
-        """
-        is_automatic_failover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Additional information about the current lifecycle state.
-        """
-        protection_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        """
-        redo_transport_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Automatically selected by backend based on the protection mode.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the Autonomous Container Database.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the Autonomous Container Database was created.
-        """
-        time_lag_refreshed_on: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Timestamp when the lags were last calculated for a standby.
-        """
-        time_last_role_changed: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time when the last role change action happened.
-        """
-        time_last_synced: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time of the last update to the apply lag, apply rate, and transport lag values.
-        """
-        transport_lag: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
-        """
-elif False:
-    AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgsDict(TypedDict):
+    apply_lag: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+    """
+    apply_rate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+    """
+    automatic_failover_target: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Automatically selected by backend when observer is enabled.
+    """
+    autonomous_container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    """
+    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The domain of the Autonomous Container Database
+    """
+    fast_start_fail_over_lag_limit_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The lag time for my preference based on data loss tolerance in seconds.
+    """
+    is_automatic_failover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Additional information about the current lifecycle state.
+    """
+    protection_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+    """
+    redo_transport_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Automatically selected by backend based on the protection mode.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the Autonomous Container Database.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the Autonomous Container Database was created.
+    """
+    time_lag_refreshed_on: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Timestamp when the lags were last calculated for a standby.
+    """
+    time_last_role_changed: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time when the last role change action happened.
+    """
+    time_last_synced: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time of the last update to the apply lag, apply rate, and transport lag values.
+    """
+    transport_lag: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgs:
@@ -1627,20 +1613,17 @@ class AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgs:
         pulumi.set(self, "transport_lag", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgsDict(TypedDict):
-        aws_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provide the key OCID of a registered AWS key.
-        """
-        azure_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        hsm_password: NotRequired[pulumi.Input[_builtins.str]]
-        provider_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Use 'AWS' for creating a new database.
-        """
-elif False:
-    AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgsDict(TypedDict):
+    aws_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provide the key OCID of a registered AWS key.
+    """
+    azure_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    hsm_password: NotRequired[pulumi.Input[_builtins.str]]
+    provider_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Use 'AWS' for creating a new database.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgs:
@@ -1705,26 +1688,23 @@ class AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgs:
         pulumi.set(self, "provider_type", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgsDict(TypedDict):
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        """
-        kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
-        """
-        time_activated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the kms key activated.
-        """
-        vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
-        """
-elif False:
-    AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+    """
+    kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+    """
+    time_activated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the kms key activated.
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgs:
@@ -1797,54 +1777,51 @@ class AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgs:
         pulumi.set(self, "vault_id", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgsDict(TypedDict):
-        custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
-        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyMaintenanceWindowDaysOfWeekArgsDict']]]]
-        """
-        Days during the week when maintenance should be performed.
-        """
-        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
-        is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
-        is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, enables the monthly patching option.
-        """
-        lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
-        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyMaintenanceWindowMonthArgsDict']]]]
-        """
-        Months during the year when maintenance should be performed.
-        """
-        patching_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-        """
-        preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The maintenance window scheduling preference.
-        """
-        skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
-        """
-        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
-        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
-elif False:
-    AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgsDict(TypedDict):
+    custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+    """
+    days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyMaintenanceWindowDaysOfWeekArgsDict']]]]
+    """
+    Days during the week when maintenance should be performed.
+    """
+    hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+    """
+    is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+    """
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, enables the monthly patching option.
+    """
+    lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+    """
+    months: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyMaintenanceWindowMonthArgsDict']]]]
+    """
+    Months during the year when maintenance should be performed.
+    """
+    patching_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+    """
+    preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The maintenance window scheduling preference.
+    """
+    skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
+    """
+    If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+    """
+    weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgs:
@@ -2029,14 +2006,11 @@ class AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgs:
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseAddStandbyMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    AutonomousContainerDatabaseAddStandbyMaintenanceWindowDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseAddStandbyMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseAddStandbyMaintenanceWindowDaysOfWeekArgs:
@@ -2061,14 +2035,11 @@ class AutonomousContainerDatabaseAddStandbyMaintenanceWindowDaysOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseAddStandbyMaintenanceWindowMonthArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    AutonomousContainerDatabaseAddStandbyMaintenanceWindowMonthArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseAddStandbyMaintenanceWindowMonthArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseAddStandbyMaintenanceWindowMonthArgs:
@@ -2093,18 +2064,15 @@ class AutonomousContainerDatabaseAddStandbyMaintenanceWindowMonthArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgsDict(TypedDict):
-        backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict']]]]
-        """
-        Backup destination details.
-        """
-        recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
-        """
-elif False:
-    AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgsDict(TypedDict):
+    backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict']]]]
+    """
+    Backup destination details.
+    """
+    recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs:
@@ -2145,42 +2113,39 @@ class AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackup
         pulumi.set(self, "recovery_window_in_days", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the database backup destination.
-        """
-        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
-        """
-        dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
-        internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Proxy URL to connect to object store.
-        """
-        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
-        """
-        vpc_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        """
-        vpc_user: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
-elif False:
-    AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the database backup destination.
+    """
+    backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+    """
+    dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+    """
+    internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Proxy URL to connect to object store.
+    """
+    is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+    """
+    vpc_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+    """
+    vpc_user: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs:
@@ -2316,58 +2281,55 @@ class AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackup
         pulumi.set(self, "vpc_user", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgsDict(TypedDict):
-        backup_destination_attach_histories: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
-        """
-        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
-        """
-        dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        """
-        internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Proxy URL to connect to object store.
-        """
-        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
-        """
-        recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of days between the current and earliest point of recoverability covered by automatic backups.
-        """
-        space_utilized_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
-        """
-        time_at_which_storage_details_are_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the database backup destination.
-        """
-        vpc_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        """
-        vpc_user: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
-elif False:
-    AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgsDict(TypedDict):
+    backup_destination_attach_histories: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
+    """
+    backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+    """
+    dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+    """
+    internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Proxy URL to connect to object store.
+    """
+    is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+    """
+    recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of days between the current and earliest point of recoverability covered by automatic backups.
+    """
+    space_utilized_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
+    """
+    time_at_which_storage_details_are_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the database backup destination.
+    """
+    vpc_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+    """
+    vpc_user: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs:
@@ -2568,18 +2530,15 @@ class AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs:
         pulumi.set(self, "vpc_user", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseBackupConfigArgsDict(TypedDict):
-        backup_destination_details: NotRequired[pulumi.Input['AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgsDict']]
-        """
-        (Updatable) Backup destination details.
-        """
-        recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
-        """
-elif False:
-    AutonomousContainerDatabaseBackupConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseBackupConfigArgsDict(TypedDict):
+    backup_destination_details: NotRequired[pulumi.Input['AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgsDict']]
+    """
+    (Updatable) Backup destination details.
+    """
+    recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseBackupConfigArgs:
@@ -2620,46 +2579,43 @@ class AutonomousContainerDatabaseBackupConfigArgs:
         pulumi.set(self, "recovery_window_in_days", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the database backup destination.
-        """
-        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
-        internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Proxy URL to connect to object store.
-        """
-        is_remote: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether the backup destination is cross-region or local.
-        """
-        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
-        """
-        remote_region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        """
-        vpc_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        """
-        vpc_user: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
-elif False:
-    AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the database backup destination.
+    """
+    backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+    """
+    internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Proxy URL to connect to object store.
+    """
+    is_remote: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether the backup destination is cross-region or local.
+    """
+    is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+    """
+    remote_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+    """
+    vpc_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+    """
+    vpc_user: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs:
@@ -2811,22 +2767,19 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs:
         pulumi.set(self, "vpc_user", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseBackupDestinationPropertiesListArgsDict(TypedDict):
-        backup_destination_attach_histories: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
-        """
-        space_utilized_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
-        """
-        time_at_which_storage_details_are_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
-        """
-elif False:
-    AutonomousContainerDatabaseBackupDestinationPropertiesListArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseBackupDestinationPropertiesListArgsDict(TypedDict):
+    backup_destination_attach_histories: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
+    """
+    space_utilized_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
+    """
+    time_at_which_storage_details_are_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseBackupDestinationPropertiesListArgs:
@@ -2883,14 +2836,11 @@ class AutonomousContainerDatabaseBackupDestinationPropertiesListArgs:
         pulumi.set(self, "time_at_which_storage_details_are_updated", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseCustomerContactArgsDict(TypedDict):
-        email: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
-        """
-elif False:
-    AutonomousContainerDatabaseCustomerContactArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseCustomerContactArgsDict(TypedDict):
+    email: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseCustomerContactArgs:
@@ -2915,78 +2865,75 @@ class AutonomousContainerDatabaseCustomerContactArgs:
         pulumi.set(self, "email", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseDataguardArgsDict(TypedDict):
-        apply_lag: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
-        """
-        apply_rate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
-        """
-        automatic_failover_target: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Automatically selected by backend when observer is enabled.
-        """
-        autonomous_container_database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
-        """
-        availability_domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The domain of the Autonomous Container Database
-        """
-        fast_start_fail_over_lag_limit_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The lag time for my preference based on data loss tolerance in seconds.
-        """
-        is_automatic_failover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Additional information about the current lifecycle state.
-        """
-        protection_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        """
-        redo_transport_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Automatically selected by backend based on the protection mode.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the Autonomous Container Database.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the Autonomous Container Database was created.
-        """
-        time_lag_refreshed_on: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Timestamp when the lags were last calculated for a standby.
-        """
-        time_last_role_changed: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time when the last role change action happened.
-        """
-        time_last_synced: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time of the last update to the apply lag, apply rate, and transport lag values.
-        """
-        transport_lag: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
-        """
-elif False:
-    AutonomousContainerDatabaseDataguardArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseDataguardArgsDict(TypedDict):
+    apply_lag: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+    """
+    apply_rate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+    """
+    automatic_failover_target: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Automatically selected by backend when observer is enabled.
+    """
+    autonomous_container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
+    """
+    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The domain of the Autonomous Container Database
+    """
+    fast_start_fail_over_lag_limit_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+    """
+    is_automatic_failover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Additional information about the current lifecycle state.
+    """
+    protection_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+    """
+    redo_transport_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Automatically selected by backend based on the protection mode.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the Autonomous Container Database.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the Autonomous Container Database was created.
+    """
+    time_lag_refreshed_on: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Timestamp when the lags were last calculated for a standby.
+    """
+    time_last_role_changed: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time when the last role change action happened.
+    """
+    time_last_synced: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time of the last update to the apply lag, apply rate, and transport lag values.
+    """
+    transport_lag: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseDataguardArgs:
@@ -3267,18 +3214,15 @@ class AutonomousContainerDatabaseDataguardArgs:
         pulumi.set(self, "transport_lag", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict(TypedDict):
-        backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict']]]]
-        """
-        Backup destination details.
-        """
-        recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        """
-elif False:
-    AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict(TypedDict):
+    backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict']]]]
+    """
+    Backup destination details.
+    """
+    recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs:
@@ -3319,50 +3263,47 @@ class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerData
         pulumi.set(self, "recovery_window_in_days", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the database backup destination.
-        """
-        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
-        """
-        dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
-        internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Proxy URL to connect to object store.
-        """
-        is_remote: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the backup destination is cross-region or local.
-        """
-        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
-        """
-        remote_region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        """
-        vpc_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        """
-        vpc_user: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
-elif False:
-    AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the database backup destination.
+    """
+    backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+    """
+    dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+    """
+    internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Proxy URL to connect to object store.
+    """
+    is_remote: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the backup destination is cross-region or local.
+    """
+    is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+    """
+    remote_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+    """
+    vpc_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+    """
+    vpc_user: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs:
@@ -3530,78 +3471,75 @@ class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerData
         pulumi.set(self, "vpc_user", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseDataguardGroupMemberArgsDict(TypedDict):
-        apply_lag: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
-        """
-        apply_rate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
-        """
-        automatic_failover_target: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Automatically selected by backend when observer is enabled.
-        """
-        autonomous_container_database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
-        """
-        availability_domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The domain of the Autonomous Container Database
-        """
-        fast_start_fail_over_lag_limit_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The lag time for my preference based on data loss tolerance in seconds.
-        """
-        is_automatic_failover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Additional information about the current lifecycle state.
-        """
-        protection_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        """
-        redo_transport_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Automatically selected by backend based on the protection mode.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the Autonomous Container Database.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the Autonomous Container Database was created.
-        """
-        time_lag_refreshed_on: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Timestamp when the lags were last calculated for a standby.
-        """
-        time_last_role_changed: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time when the last role change action happened.
-        """
-        time_last_synced: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time of the last update to the apply lag, apply rate, and transport lag values.
-        """
-        transport_lag: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
-        """
-elif False:
-    AutonomousContainerDatabaseDataguardGroupMemberArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseDataguardGroupMemberArgsDict(TypedDict):
+    apply_lag: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
+    """
+    apply_rate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
+    """
+    automatic_failover_target: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Automatically selected by backend when observer is enabled.
+    """
+    autonomous_container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
+    """
+    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The domain of the Autonomous Container Database
+    """
+    fast_start_fail_over_lag_limit_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The lag time for my preference based on data loss tolerance in seconds.
+    """
+    is_automatic_failover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Additional information about the current lifecycle state.
+    """
+    protection_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+    """
+    redo_transport_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Automatically selected by backend based on the protection mode.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the Autonomous Container Database.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the Autonomous Container Database was created.
+    """
+    time_lag_refreshed_on: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Timestamp when the lags were last calculated for a standby.
+    """
+    time_last_role_changed: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time when the last role change action happened.
+    """
+    time_last_synced: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time of the last update to the apply lag, apply rate, and transport lag values.
+    """
+    transport_lag: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseDataguardGroupMemberArgs:
@@ -3882,26 +3820,23 @@ class AutonomousContainerDatabaseDataguardGroupMemberArgs:
         pulumi.set(self, "transport_lag", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgsDict(TypedDict):
-        provider_type: pulumi.Input[_builtins.str]
-        """
-        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws.
-        """
-        aws_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provide the key OCID of a registered AWS key.
-        """
-        azure_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provide the key OCID of a registered Azure key.
-        """
-        hsm_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provide the HSM password as you would in RDBMS for External HSM.
-        """
-elif False:
-    AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgsDict(TypedDict):
+    provider_type: pulumi.Input[_builtins.str]
+    """
+    Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws.
+    """
+    aws_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provide the key OCID of a registered AWS key.
+    """
+    azure_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provide the key OCID of a registered Azure key.
+    """
+    hsm_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provide the HSM password as you would in RDBMS for External HSM.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs:
@@ -3973,26 +3908,23 @@ class AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs:
         pulumi.set(self, "hsm_password", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseKeyHistoryEntryArgsDict(TypedDict):
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        """
-        kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
-        """
-        time_activated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the kms key activated.
-        """
-        vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
-        """
-elif False:
-    AutonomousContainerDatabaseKeyHistoryEntryArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseKeyHistoryEntryArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+    """
+    kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+    """
+    time_activated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the kms key activated.
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseKeyHistoryEntryArgs:
@@ -4065,54 +3997,51 @@ class AutonomousContainerDatabaseKeyHistoryEntryArgs:
         pulumi.set(self, "vault_id", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseMaintenanceWindowArgsDict(TypedDict):
-        custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
-        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgsDict']]]]
-        """
-        Days during the week when maintenance should be performed.
-        """
-        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
-        is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
-        is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, enables the monthly patching option.
-        """
-        lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
-        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowMonthArgsDict']]]]
-        """
-        Months during the year when maintenance should be performed.
-        """
-        patching_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-        """
-        preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The maintenance window scheduling preference.
-        """
-        skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
-        """
-        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
-        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
-elif False:
-    AutonomousContainerDatabaseMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseMaintenanceWindowArgsDict(TypedDict):
+    custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+    """
+    days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgsDict']]]]
+    """
+    Days during the week when maintenance should be performed.
+    """
+    hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+    """
+    is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+    """
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, enables the monthly patching option.
+    """
+    lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+    """
+    months: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowMonthArgsDict']]]]
+    """
+    Months during the year when maintenance should be performed.
+    """
+    patching_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+    """
+    preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The maintenance window scheduling preference.
+    """
+    skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
+    """
+    If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+    """
+    weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseMaintenanceWindowArgs:
@@ -4297,14 +4226,11 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs:
@@ -4329,56 +4255,53 @@ class AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict(TypedDict):
-        custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
-        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgsDict']]]]
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
-        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
-        is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
-        is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, enables the monthly patching option.
-        """
-        lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
-        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgsDict']]]]
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
-        patching_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+class AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict(TypedDict):
+    custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+    """
+    days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgsDict']]]]
+    """
+    (Updatable) Days during the week when maintenance should be performed.
+    """
+    hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+    """
+    is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+    """
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, enables the monthly patching option.
+    """
+    lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+    """
+    months: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgsDict']]]]
+    """
+    (Updatable) Months during the year when maintenance should be performed.
+    """
+    patching_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
-        preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
-        skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
-        """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
-        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
-elif False:
-    AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+    """
+    preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The maintenance window scheduling preference.
+    """
+    skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
+    """
+    (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+    """
+    weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
@@ -4567,14 +4490,11 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the day of the week.
-        """
-elif False:
-    AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the day of the week.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs:
@@ -4598,14 +4518,11 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the month of the year.
-        """
-elif False:
-    AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the month of the year.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs:
@@ -4629,14 +4546,11 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseMaintenanceWindowMonthArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    AutonomousContainerDatabaseMaintenanceWindowMonthArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseMaintenanceWindowMonthArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseMaintenanceWindowMonthArgs:
@@ -4661,18 +4575,15 @@ class AutonomousContainerDatabaseMaintenanceWindowMonthArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgsDict(TypedDict):
-        backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict']]]]
-        """
-        Backup destination details.
-        """
-        recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
-        """
-elif False:
-    AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgsDict(TypedDict):
+    backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict']]]]
+    """
+    Backup destination details.
+    """
+    recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs:
@@ -4713,46 +4624,43 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs
         pulumi.set(self, "recovery_window_in_days", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the database backup destination.
-        """
-        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
-        internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Proxy URL to connect to object store.
-        """
-        is_remote: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the backup destination is cross-region or local.
-        """
-        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
-        """
-        remote_region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        """
-        vpc_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        """
-        vpc_user: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
-elif False:
-    AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the database backup destination.
+    """
+    backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+    """
+    internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Proxy URL to connect to object store.
+    """
+    is_remote: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the backup destination is cross-region or local.
+    """
+    is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+    """
+    remote_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+    """
+    vpc_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+    """
+    vpc_user: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs:
@@ -4904,22 +4812,19 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
         pulumi.set(self, "vpc_user", value)
 
 
-if not MYPY:
-    class AutonomousContainerDatabaseRecoveryApplianceDetailArgsDict(TypedDict):
-        allocated_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The storage size of the backup destination allocated for an Autonomous Container Database to store backups on the recovery appliance, in GBs, rounded to the nearest integer.
-        """
-        recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of days between the current and earliest point of recoverability covered by automatic backups.
-        """
-        time_recovery_appliance_details_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time when the recovery appliance details are updated.
-        """
-elif False:
-    AutonomousContainerDatabaseRecoveryApplianceDetailArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousContainerDatabaseRecoveryApplianceDetailArgsDict(TypedDict):
+    allocated_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The storage size of the backup destination allocated for an Autonomous Container Database to store backups on the recovery appliance, in GBs, rounded to the nearest integer.
+    """
+    recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of days between the current and earliest point of recoverability covered by automatic backups.
+    """
+    time_recovery_appliance_details_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time when the recovery appliance details are updated.
+    """
 
 @pulumi.input_type
 class AutonomousContainerDatabaseRecoveryApplianceDetailArgs:
@@ -4976,18 +4881,15 @@ class AutonomousContainerDatabaseRecoveryApplianceDetailArgs:
         pulumi.set(self, "time_recovery_appliance_details_updated", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseApexDetailArgsDict(TypedDict):
-        apex_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle APEX AI Application Development version.
-        """
-        ords_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle REST Data Services (ORDS) version.
-        """
-elif False:
-    AutonomousDatabaseApexDetailArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseApexDetailArgsDict(TypedDict):
+    apex_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle APEX AI Application Development version.
+    """
+    ords_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle REST Data Services (ORDS) version.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseApexDetailArgs:
@@ -5028,22 +4930,19 @@ class AutonomousDatabaseApexDetailArgs:
         pulumi.set(self, "ords_version", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict(TypedDict):
-        day_of_week: pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgsDict']
-        """
-        (Updatable) Day of the week.
-        """
-        maintenance_end_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The maintenance end time. The value must use the ISO-8601 format "hh:mm".
-        """
-        maintenance_start_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The maintenance start time. The value must use the ISO-8601 format "hh:mm".
-        """
-elif False:
-    AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict(TypedDict):
+    day_of_week: pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgsDict']
+    """
+    (Updatable) Day of the week.
+    """
+    maintenance_end_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+    """
+    maintenance_start_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs:
@@ -5099,14 +4998,11 @@ class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs:
         pulumi.set(self, "maintenance_start_time", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the day of the week.
-        """
-elif False:
-    AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the day of the week.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs:
@@ -5130,46 +5026,43 @@ class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseBackupBackupDestinationDetailsArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the database backup destination.
-        """
-        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
-        internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Proxy URL to connect to object store.
-        """
-        is_remote: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the backup destination is cross-region or local.
-        """
-        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
-        """
-        remote_region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        """
-        vpc_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        """
-        vpc_user: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
-elif False:
-    AutonomousDatabaseBackupBackupDestinationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseBackupBackupDestinationDetailsArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the database backup destination.
+    """
+    backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+    """
+    internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Proxy URL to connect to object store.
+    """
+    is_remote: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the backup destination is cross-region or local.
+    """
+    is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+    """
+    remote_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+    """
+    vpc_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+    """
+    vpc_user: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseBackupBackupDestinationDetailsArgs:
@@ -5321,18 +5214,15 @@ class AutonomousDatabaseBackupBackupDestinationDetailsArgs:
         pulumi.set(self, "vpc_user", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseBackupConfigArgsDict(TypedDict):
-        manual_backup_bucket_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-        """
-        manual_backup_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The manual backup destination type.
-        """
-elif False:
-    AutonomousDatabaseBackupConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseBackupConfigArgsDict(TypedDict):
+    manual_backup_bucket_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
+    """
+    manual_backup_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The manual backup destination type.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseBackupConfigArgs:
@@ -5373,46 +5263,43 @@ class AutonomousDatabaseBackupConfigArgs:
         pulumi.set(self, "manual_backup_type", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseBackupSourceDatabaseDetailArgsDict(TypedDict):
-        autonomous_container_database_customer_contacts: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgsDict']]]]
-        """
-        Customer Contacts for the Autonomous Container Database. Setting this to an empty list removes all customer contacts.
-        """
-        autonomous_container_database_display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user-provided name for the Autonomous Container Database.
-        """
-        autonomous_container_database_dst_file_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        DST Time-Zone File version of the Autonomous Container Database.
-        """
-        autonomous_container_database_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Autonomous Container Database name.
-        """
-        autonomous_database_customer_contacts: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgsDict']]]]
-        """
-        Customer Contacts for the Autonomous Database.
-        """
-        autonomous_database_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Autonomous Database's name.
-        """
-        autonomous_vm_cluster_display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Autonomous VM cluster's user-friendly name.
-        """
-        db_workload: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Autonomous Database workload type. The following values are valid:
-        * OLTP - indicates an Autonomous Transaction Processing database
-        * DW - indicates an Autonomous Data Warehouse database
-        * AJD - indicates an Autonomous JSON Database
-        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
-        """
-elif False:
-    AutonomousDatabaseBackupSourceDatabaseDetailArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseBackupSourceDatabaseDetailArgsDict(TypedDict):
+    autonomous_container_database_customer_contacts: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgsDict']]]]
+    """
+    Customer Contacts for the Autonomous Container Database. Setting this to an empty list removes all customer contacts.
+    """
+    autonomous_container_database_display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user-provided name for the Autonomous Container Database.
+    """
+    autonomous_container_database_dst_file_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    DST Time-Zone File version of the Autonomous Container Database.
+    """
+    autonomous_container_database_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Autonomous Container Database name.
+    """
+    autonomous_database_customer_contacts: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgsDict']]]]
+    """
+    Customer Contacts for the Autonomous Database.
+    """
+    autonomous_database_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Autonomous Database's name.
+    """
+    autonomous_vm_cluster_display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Autonomous VM cluster's user-friendly name.
+    """
+    db_workload: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Autonomous Database workload type. The following values are valid:
+    * OLTP - indicates an Autonomous Transaction Processing database
+    * DW - indicates an Autonomous Data Warehouse database
+    * AJD - indicates an Autonomous JSON Database
+    * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseBackupSourceDatabaseDetailArgs:
@@ -5557,14 +5444,11 @@ class AutonomousDatabaseBackupSourceDatabaseDetailArgs:
         pulumi.set(self, "db_workload", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgsDict(TypedDict):
-        email: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The email address used by Oracle to send notifications regarding databases and infrastructure.
-        """
-elif False:
-    AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgsDict(TypedDict):
+    email: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The email address used by Oracle to send notifications regarding databases and infrastructure.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgs:
@@ -5589,14 +5473,11 @@ class AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCus
         pulumi.set(self, "email", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgsDict(TypedDict):
-        email: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The email address used by Oracle to send notifications regarding databases and infrastructure.
-        """
-elif False:
-    AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgsDict(TypedDict):
+    email: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The email address used by Oracle to send notifications regarding databases and infrastructure.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs:
@@ -5621,34 +5502,31 @@ class AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerCont
         pulumi.set(self, "email", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseConnectionStringArgsDict(TypedDict):
-        all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Returns all connection strings that can be used to connect to the Autonomous AI Database. For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
-        """
-        dedicated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
-        """
-        high: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
-        """
-        low: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
-        """
-        medium: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
-        """
-        profiles: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringProfileArgsDict']]]]
-        """
-        A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
-        """
-elif False:
-    AutonomousDatabaseConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseConnectionStringArgsDict(TypedDict):
+    all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Returns all connection strings that can be used to connect to the Autonomous AI Database. For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+    """
+    dedicated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
+    """
+    high: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
+    """
+    low: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
+    """
+    medium: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
+    """
+    profiles: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringProfileArgsDict']]]]
+    """
+    A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseConnectionStringArgs:
@@ -5753,46 +5631,43 @@ class AutonomousDatabaseConnectionStringArgs:
         pulumi.set(self, "profiles", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseConnectionStringProfileArgsDict(TypedDict):
-        consumer_group: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Consumer group used by the connection.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
-        """
-        host_format: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Host format used in connection string.
-        """
-        is_regional: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        True for a regional connection string, applicable to cross-region DG only.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Protocol used by the connection.
-        """
-        session_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use `DIRECT` for direct hand-offs. Use `REDIRECT` to redirect the session.
-        """
-        syntax_format: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
-        """
-        tls_authentication: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Specifies whether the TLS handshake is using one-way (`SERVER`) or mutual (`MUTUAL`) authentication.
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Connection string value.
-        """
-elif False:
-    AutonomousDatabaseConnectionStringProfileArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseConnectionStringProfileArgsDict(TypedDict):
+    consumer_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Consumer group used by the connection.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
+    """
+    host_format: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Host format used in connection string.
+    """
+    is_regional: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    True for a regional connection string, applicable to cross-region DG only.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Protocol used by the connection.
+    """
+    session_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use `DIRECT` for direct hand-offs. Use `REDIRECT` to redirect the session.
+    """
+    syntax_format: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
+    """
+    tls_authentication: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specifies whether the TLS handshake is using one-way (`SERVER`) or mutual (`MUTUAL`) authentication.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Connection string value.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseConnectionStringProfileArgs:
@@ -5945,42 +5820,39 @@ class AutonomousDatabaseConnectionStringProfileArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseConnectionUrlArgsDict(TypedDict):
-        apex_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Oracle Application Express (APEX) URL.
-        """
-        database_transforms_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL of the Database Transforms for the Autonomous Database.
-        """
-        graph_studio_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL of the Graph Studio for the Autonomous Database.
-        """
-        machine_learning_notebook_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
-        """
-        machine_learning_user_management_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Oracle Machine Learning user management URL.
-        """
-        mongo_db_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL of the MongoDB API for the Autonomous Database.
-        """
-        ords_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
-        """
-        sql_dev_web_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Oracle SQL Developer Web URL.
-        """
-elif False:
-    AutonomousDatabaseConnectionUrlArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseConnectionUrlArgsDict(TypedDict):
+    apex_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Oracle Application Express (APEX) URL.
+    """
+    database_transforms_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL of the Database Transforms for the Autonomous Database.
+    """
+    graph_studio_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL of the Graph Studio for the Autonomous Database.
+    """
+    machine_learning_notebook_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+    """
+    machine_learning_user_management_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Oracle Machine Learning user management URL.
+    """
+    mongo_db_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL of the MongoDB API for the Autonomous Database.
+    """
+    ords_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+    """
+    sql_dev_web_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Oracle SQL Developer Web URL.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseConnectionUrlArgs:
@@ -6117,14 +5989,11 @@ class AutonomousDatabaseConnectionUrlArgs:
         pulumi.set(self, "sql_dev_web_url", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseCustomerContactArgsDict(TypedDict):
-        email: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
-        """
-elif False:
-    AutonomousDatabaseCustomerContactArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseCustomerContactArgsDict(TypedDict):
+    email: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseCustomerContactArgs:
@@ -6149,26 +6018,23 @@ class AutonomousDatabaseCustomerContactArgs:
         pulumi.set(self, "email", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseDbToolsDetailArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of database tool.
-        """
-        compute_count: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) Compute used by database tools.
-        """
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether tool is enabled.
-        """
-        max_idle_time_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The max idle time, in minutes, after which the VM used by database tools will be terminated.
-        """
-elif False:
-    AutonomousDatabaseDbToolsDetailArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseDbToolsDetailArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of database tool.
+    """
+    compute_count: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) Compute used by database tools.
+    """
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether tool is enabled.
+    """
+    max_idle_time_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The max idle time, in minutes, after which the VM used by database tools will be terminated.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseDbToolsDetailArgs:
@@ -6240,82 +6106,79 @@ class AutonomousDatabaseDbToolsDetailArgs:
         pulumi.set(self, "max_idle_time_in_minutes", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseEncryptionKeyArgsDict(TypedDict):
-        arn_role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) AWS ARN role
-        """
-        autonomous_database_provider: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The provider for the Autonomous AI Database encryption key.
-        """
-        certificate_directory_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OKV certificate directory name
-        """
-        certificate_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OKV certificate id
-        """
-        directory_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OKV wallet directory name
-        """
-        external_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) AWS external ID
-        """
-        key_arn: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) AWS key ARN
-        """
-        key_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Azure key name
-        """
-        key_ring: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) GCP key ring
-        """
-        kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
-        kms_rest_endpoint: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) GCP kms REST API endpoint
-        """
-        location: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) GCP key ring location
-        """
-        okv_kms_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) UUID of OKV KMS Key
-        """
-        okv_uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) URI of OKV server
-        """
-        project: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) GCP project name
-        """
-        service_endpoint_uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) AWS key service endpoint URI
-        """
-        vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
-        """
-        vault_uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Azure vault URI
-        """
-elif False:
-    AutonomousDatabaseEncryptionKeyArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseEncryptionKeyArgsDict(TypedDict):
+    arn_role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) AWS ARN role
+    """
+    autonomous_database_provider: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The provider for the Autonomous AI Database encryption key.
+    """
+    certificate_directory_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OKV certificate directory name
+    """
+    certificate_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OKV certificate id
+    """
+    directory_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OKV wallet directory name
+    """
+    external_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) AWS external ID
+    """
+    key_arn: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) AWS key ARN
+    """
+    key_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Azure key name
+    """
+    key_ring: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) GCP key ring
+    """
+    kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+    """
+    kms_rest_endpoint: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) GCP kms REST API endpoint
+    """
+    location: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) GCP key ring location
+    """
+    okv_kms_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) UUID of OKV KMS Key
+    """
+    okv_uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) URI of OKV server
+    """
+    project: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) GCP project name
+    """
+    service_endpoint_uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) AWS key service endpoint URI
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+    """
+    vault_uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Azure vault URI
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseEncryptionKeyArgs:
@@ -6612,18 +6475,15 @@ class AutonomousDatabaseEncryptionKeyArgs:
         pulumi.set(self, "vault_uri", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict(TypedDict):
-        encryption_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgsDict']]]]
-        """
-        (Updatable) Details of the Autonomous AI Database encryption key.
-        """
-        time_activated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the kms key activated.
-        """
-elif False:
-    AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict(TypedDict):
+    encryption_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgsDict']]]]
+    """
+    (Updatable) Details of the Autonomous AI Database encryption key.
+    """
+    time_activated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the kms key activated.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseEncryptionKeyHistoryEntryArgs:
@@ -6664,82 +6524,79 @@ class AutonomousDatabaseEncryptionKeyHistoryEntryArgs:
         pulumi.set(self, "time_activated", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgsDict(TypedDict):
-        arn_role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) AWS ARN role
-        """
-        autonomous_database_provider: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The provider for the Autonomous AI Database encryption key.
-        """
-        certificate_directory_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OKV certificate directory name
-        """
-        certificate_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OKV certificate id
-        """
-        directory_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OKV wallet directory name
-        """
-        external_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) AWS external ID
-        """
-        key_arn: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) AWS key ARN
-        """
-        key_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Azure key name
-        """
-        key_ring: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) GCP key ring
-        """
-        kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
-        kms_rest_endpoint: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) GCP kms REST API endpoint
-        """
-        location: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) GCP key ring location
-        """
-        okv_kms_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) UUID of OKV KMS Key
-        """
-        okv_uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) URI of OKV server
-        """
-        project: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) GCP project name
-        """
-        service_endpoint_uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) AWS key service endpoint URI
-        """
-        vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
-        """
-        vault_uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Azure vault URI
-        """
-elif False:
-    AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgsDict(TypedDict):
+    arn_role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) AWS ARN role
+    """
+    autonomous_database_provider: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The provider for the Autonomous AI Database encryption key.
+    """
+    certificate_directory_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OKV certificate directory name
+    """
+    certificate_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OKV certificate id
+    """
+    directory_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OKV wallet directory name
+    """
+    external_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) AWS external ID
+    """
+    key_arn: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) AWS key ARN
+    """
+    key_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Azure key name
+    """
+    key_ring: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) GCP key ring
+    """
+    kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+    """
+    kms_rest_endpoint: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) GCP kms REST API endpoint
+    """
+    location: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) GCP key ring location
+    """
+    okv_kms_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) UUID of OKV KMS Key
+    """
+    okv_uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) URI of OKV server
+    """
+    project: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) GCP project name
+    """
+    service_endpoint_uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) AWS key service endpoint URI
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+    """
+    vault_uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Azure vault URI
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs:
@@ -7036,20 +6893,17 @@ class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs:
         pulumi.set(self, "vault_uri", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseEncryptionKeyLocationDetailArgsDict(TypedDict):
-        aws_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provide the key OCID of a registered AWS key.
-        """
-        azure_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        hsm_password: NotRequired[pulumi.Input[_builtins.str]]
-        provider_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Use 'AWS' for creating a new database.
-        """
-elif False:
-    AutonomousDatabaseEncryptionKeyLocationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseEncryptionKeyLocationDetailArgsDict(TypedDict):
+    aws_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provide the key OCID of a registered AWS key.
+    """
+    azure_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    hsm_password: NotRequired[pulumi.Input[_builtins.str]]
+    provider_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Use 'AWS' for creating a new database.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseEncryptionKeyLocationDetailArgs:
@@ -7114,26 +6968,23 @@ class AutonomousDatabaseEncryptionKeyLocationDetailArgs:
         pulumi.set(self, "provider_type", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseKeyHistoryEntryArgsDict(TypedDict):
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        """
-        kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
-        """
-        time_activated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the kms key activated.
-        """
-        vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
-        """
-elif False:
-    AutonomousDatabaseKeyHistoryEntryArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseKeyHistoryEntryArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+    """
+    kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+    """
+    time_activated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the kms key activated.
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseKeyHistoryEntryArgs:
@@ -7206,46 +7057,43 @@ class AutonomousDatabaseKeyHistoryEntryArgs:
         pulumi.set(self, "vault_id", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseLocalStandbyDbArgsDict(TypedDict):
-        availability_domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
-        """
-        lag_time_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Additional information about the current lifecycle state.
-        """
-        maintenance_target_component: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The component chosen for maintenance.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the Autonomous AI Database.
-        """
-        time_data_guard_role_changed: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-        """
-        time_disaster_recovery_role_changed: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
-        """
-        time_maintenance_begin: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time when maintenance will begin.
-        """
-        time_maintenance_end: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time when maintenance will end.
-        """
-elif False:
-    AutonomousDatabaseLocalStandbyDbArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseLocalStandbyDbArgsDict(TypedDict):
+    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+    """
+    lag_time_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Additional information about the current lifecycle state.
+    """
+    maintenance_target_component: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The component chosen for maintenance.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the Autonomous AI Database.
+    """
+    time_data_guard_role_changed: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+    """
+    time_disaster_recovery_role_changed: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
+    """
+    time_maintenance_begin: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time when maintenance will begin.
+    """
+    time_maintenance_end: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time when maintenance will end.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseLocalStandbyDbArgs:
@@ -7398,26 +7246,23 @@ class AutonomousDatabaseLocalStandbyDbArgs:
         pulumi.set(self, "time_maintenance_end", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseLongTermBackupScheduleArgsDict(TypedDict):
-        is_disabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the vanity url details should be deleted for the Autonomous Database.
-        """
-        repeat_cadence: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The frequency of the long-term backup schedule
-        """
-        retention_period_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Retention period, in days, for long-term backups
-        """
-        time_of_backup: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
-        """
-elif False:
-    AutonomousDatabaseLongTermBackupScheduleArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseLongTermBackupScheduleArgsDict(TypedDict):
+    is_disabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the vanity url details should be deleted for the Autonomous Database.
+    """
+    repeat_cadence: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The frequency of the long-term backup schedule
+    """
+    retention_period_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Retention period, in days, for long-term backups
+    """
+    time_of_backup: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseLongTermBackupScheduleArgs:
@@ -7490,42 +7335,39 @@ class AutonomousDatabaseLongTermBackupScheduleArgs:
         pulumi.set(self, "time_of_backup", value)
 
 
-if not MYPY:
-    class AutonomousDatabasePublicConnectionUrlArgsDict(TypedDict):
-        apex_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Oracle Application Express (APEX) URL.
-        """
-        database_transforms_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL of the Database Transforms for the Autonomous Database.
-        """
-        graph_studio_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL of the Graph Studio for the Autonomous Database.
-        """
-        machine_learning_notebook_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
-        """
-        machine_learning_user_management_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Oracle Machine Learning user management URL.
-        """
-        mongo_db_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL of the MongoDB API for the Autonomous Database.
-        """
-        ords_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
-        """
-        sql_dev_web_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Oracle SQL Developer Web URL.
-        """
-elif False:
-    AutonomousDatabasePublicConnectionUrlArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabasePublicConnectionUrlArgsDict(TypedDict):
+    apex_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Oracle Application Express (APEX) URL.
+    """
+    database_transforms_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL of the Database Transforms for the Autonomous Database.
+    """
+    graph_studio_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL of the Graph Studio for the Autonomous Database.
+    """
+    machine_learning_notebook_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+    """
+    machine_learning_user_management_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Oracle Machine Learning user management URL.
+    """
+    mongo_db_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL of the MongoDB API for the Autonomous Database.
+    """
+    ords_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+    """
+    sql_dev_web_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Oracle SQL Developer Web URL.
+    """
 
 @pulumi.input_type
 class AutonomousDatabasePublicConnectionUrlArgs:
@@ -7662,26 +7504,23 @@ class AutonomousDatabasePublicConnectionUrlArgs:
         pulumi.set(self, "sql_dev_web_url", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgsDict(TypedDict):
-        disaster_recovery_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates the disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
-        """
-        is_replicate_automatic_backups: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
-        """
-        is_snapshot_standby: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
-        """
-        time_snapshot_standby_enabled_till: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
-        """
-elif False:
-    AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgsDict(TypedDict):
+    disaster_recovery_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates the disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+    """
+    is_replicate_automatic_backups: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+    """
+    is_snapshot_standby: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+    """
+    time_snapshot_standby_enabled_till: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs:
@@ -7754,34 +7593,31 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs:
         pulumi.set(self, "time_snapshot_standby_enabled_till", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseResourcePoolSummaryArgsDict(TypedDict):
-        available_compute_capacity: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Available capacity left for new elastic pool members provision
-        """
-        available_storage_capacity_in_tbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
-        """
-        is_disabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
-        """
-        pool_size: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Resource pool size.
-        """
-        pool_storage_size_in_tbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Resource pool storage size in TBs.
-        """
-        total_compute_capacity: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Resource Pool total capacity, it's currently 4x of pool size
-        """
-elif False:
-    AutonomousDatabaseResourcePoolSummaryArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseResourcePoolSummaryArgsDict(TypedDict):
+    available_compute_capacity: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Available capacity left for new elastic pool members provision
+    """
+    available_storage_capacity_in_tbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
+    """
+    is_disabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
+    """
+    pool_size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Resource pool size.
+    """
+    pool_storage_size_in_tbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Resource pool storage size in TBs.
+    """
+    total_compute_capacity: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Resource Pool total capacity, it's currently 4x of pool size
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseResourcePoolSummaryArgs:
@@ -7886,22 +7722,19 @@ class AutonomousDatabaseResourcePoolSummaryArgs:
         pulumi.set(self, "total_compute_capacity", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseScheduledOperationArgsDict(TypedDict):
-        day_of_week: NotRequired[pulumi.Input['AutonomousDatabaseScheduledOperationDayOfWeekArgsDict']]
-        """
-        (Updatable) Day of the week.
-        """
-        scheduled_start_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) auto start time. value must be of ISO-8601 format "HH:mm"
-        """
-        scheduled_stop_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) auto stop time. value must be of ISO-8601 format "HH:mm"
-        """
-elif False:
-    AutonomousDatabaseScheduledOperationArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseScheduledOperationArgsDict(TypedDict):
+    day_of_week: NotRequired[pulumi.Input['AutonomousDatabaseScheduledOperationDayOfWeekArgsDict']]
+    """
+    (Updatable) Day of the week.
+    """
+    scheduled_start_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) auto start time. value must be of ISO-8601 format "HH:mm"
+    """
+    scheduled_stop_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) auto stop time. value must be of ISO-8601 format "HH:mm"
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseScheduledOperationArgs:
@@ -7958,14 +7791,11 @@ class AutonomousDatabaseScheduledOperationArgs:
         pulumi.set(self, "scheduled_stop_time", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseScheduledOperationDayOfWeekArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the day of the week.
-        """
-elif False:
-    AutonomousDatabaseScheduledOperationDayOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseScheduledOperationDayOfWeekArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the day of the week.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseScheduledOperationDayOfWeekArgs:
@@ -7989,46 +7819,43 @@ class AutonomousDatabaseScheduledOperationDayOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseStandbyDbArgsDict(TypedDict):
-        availability_domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
-        """
-        lag_time_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Additional information about the current lifecycle state.
-        """
-        maintenance_target_component: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The component chosen for maintenance.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the Autonomous AI Database.
-        """
-        time_data_guard_role_changed: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-        """
-        time_disaster_recovery_role_changed: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
-        """
-        time_maintenance_begin: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time when maintenance will begin.
-        """
-        time_maintenance_end: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time when maintenance will end.
-        """
-elif False:
-    AutonomousDatabaseStandbyDbArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseStandbyDbArgsDict(TypedDict):
+    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+    """
+    lag_time_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Additional information about the current lifecycle state.
+    """
+    maintenance_target_component: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The component chosen for maintenance.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the Autonomous AI Database.
+    """
+    time_data_guard_role_changed: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+    """
+    time_disaster_recovery_role_changed: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
+    """
+    time_maintenance_begin: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time when maintenance will begin.
+    """
+    time_maintenance_end: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time when maintenance will end.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseStandbyDbArgs:
@@ -8181,14 +8008,11 @@ class AutonomousDatabaseStandbyDbArgs:
         pulumi.set(self, "time_maintenance_end", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseTransportableTablespaceArgsDict(TypedDict):
-        tts_bundle_url: pulumi.Input[_builtins.str]
-        """
-        URL for Oracle Cloud Infrastructure Storage location for a Transportable Tablespace (TTS) bundle.
-        """
-elif False:
-    AutonomousDatabaseTransportableTablespaceArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseTransportableTablespaceArgsDict(TypedDict):
+    tts_bundle_url: pulumi.Input[_builtins.str]
+    """
+    URL for Oracle Cloud Infrastructure Storage location for a Transportable Tablespace (TTS) bundle.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseTransportableTablespaceArgs:
@@ -8212,42 +8036,39 @@ class AutonomousDatabaseTransportableTablespaceArgs:
         pulumi.set(self, "tts_bundle_url", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseVanityConnectionUrlArgsDict(TypedDict):
-        apex_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Oracle Application Express (APEX) URL.
-        """
-        database_transforms_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL of the Database Transforms for the Autonomous Database.
-        """
-        graph_studio_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL of the Graph Studio for the Autonomous Database.
-        """
-        machine_learning_notebook_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
-        """
-        machine_learning_user_management_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Oracle Machine Learning user management URL.
-        """
-        mongo_db_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The URL of the MongoDB API for the Autonomous Database.
-        """
-        ords_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
-        """
-        sql_dev_web_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Oracle SQL Developer Web URL.
-        """
-elif False:
-    AutonomousDatabaseVanityConnectionUrlArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseVanityConnectionUrlArgsDict(TypedDict):
+    apex_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Oracle Application Express (APEX) URL.
+    """
+    database_transforms_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL of the Database Transforms for the Autonomous Database.
+    """
+    graph_studio_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL of the Graph Studio for the Autonomous Database.
+    """
+    machine_learning_notebook_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+    """
+    machine_learning_user_management_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Oracle Machine Learning user management URL.
+    """
+    mongo_db_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The URL of the MongoDB API for the Autonomous Database.
+    """
+    ords_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+    """
+    sql_dev_web_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Oracle SQL Developer Web URL.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseVanityConnectionUrlArgs:
@@ -8384,22 +8205,19 @@ class AutonomousDatabaseVanityConnectionUrlArgs:
         pulumi.set(self, "sql_dev_web_url", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseVanityUrlDetailArgsDict(TypedDict):
-        api_gateway_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        API Gateway ID.
-        """
-        is_disabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the vanity url details should be deleted for the Autonomous Database.
-        """
-        vanity_url_host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Custom URL prefix provided by the customer to access dbTools.
-        """
-elif False:
-    AutonomousDatabaseVanityUrlDetailArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseVanityUrlDetailArgsDict(TypedDict):
+    api_gateway_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    API Gateway ID.
+    """
+    is_disabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the vanity url details should be deleted for the Autonomous Database.
+    """
+    vanity_url_host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Custom URL prefix provided by the customer to access dbTools.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseVanityUrlDetailArgs:
@@ -8456,52 +8274,49 @@ class AutonomousDatabaseVanityUrlDetailArgs:
         pulumi.set(self, "vanity_url_host_name", value)
 
 
-if not MYPY:
-    class AutonomousExadataInfrastructureMaintenanceWindowArgsDict(TypedDict):
-        custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
-        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict']]]]
-        """
-        Days during the week when maintenance should be performed.
-        """
-        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
-        is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
-        is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, enables the monthly patching option.
-        """
-        lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
-        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowMonthArgsDict']]]]
-        """
-        Months during the year when maintenance should be performed.
-        """
-        patching_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-        """
-        preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The maintenance window scheduling preference.
-        """
-        skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
-        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
-elif False:
-    AutonomousExadataInfrastructureMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousExadataInfrastructureMaintenanceWindowArgsDict(TypedDict):
+    custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+    """
+    days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict']]]]
+    """
+    Days during the week when maintenance should be performed.
+    """
+    hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+    * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+    """
+    is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+    """
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, enables the monthly patching option.
+    """
+    lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+    """
+    months: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowMonthArgsDict']]]]
+    """
+    Months during the year when maintenance should be performed.
+    """
+    patching_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+    """
+    preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The maintenance window scheduling preference.
+    """
+    skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
+    weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+    """
 
 @pulumi.input_type
 class AutonomousExadataInfrastructureMaintenanceWindowArgs:
@@ -8684,14 +8499,11 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs:
@@ -8716,54 +8528,51 @@ class AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict(TypedDict):
-        custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
-        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgsDict']]]]
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
-        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
-        is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
-        is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, enables the monthly patching option.
-        """
-        lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
-        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgsDict']]]]
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
-        patching_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict(TypedDict):
+    custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+    """
+    days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgsDict']]]]
+    """
+    (Updatable) Days during the week when maintenance should be performed.
+    """
+    hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+    * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+    """
+    is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+    """
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, enables the monthly patching option.
+    """
+    lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+    """
+    months: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgsDict']]]]
+    """
+    (Updatable) Months during the year when maintenance should be performed.
+    """
+    patching_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
-        preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
-        skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
-        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
-elif False:
-    AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+    """
+    preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The maintenance window scheduling preference.
+    """
+    skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
+    weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+    """
 
 @pulumi.input_type
 class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
@@ -8950,14 +8759,11 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the day of the week.
-        """
-elif False:
-    AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the day of the week.
+    """
 
 @pulumi.input_type
 class AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs:
@@ -8981,14 +8787,11 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the month of the year.
-        """
-elif False:
-    AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the month of the year.
+    """
 
 @pulumi.input_type
 class AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs:
@@ -9012,14 +8815,11 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class AutonomousExadataInfrastructureMaintenanceWindowMonthArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    AutonomousExadataInfrastructureMaintenanceWindowMonthArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousExadataInfrastructureMaintenanceWindowMonthArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class AutonomousExadataInfrastructureMaintenanceWindowMonthArgs:
@@ -9044,45 +8844,42 @@ class AutonomousExadataInfrastructureMaintenanceWindowMonthArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class AutonomousVmClusterMaintenanceWindowArgsDict(TypedDict):
-        custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDaysOfWeekArgsDict']]]]
-        """
-        Days during the week when maintenance should be performed.
-        """
-        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
-        is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
-        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowMonthArgsDict']]]]
-        """
-        Months during the year when maintenance should be performed.
-        """
-        patching_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+class AutonomousVmClusterMaintenanceWindowArgsDict(TypedDict):
+    custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDaysOfWeekArgsDict']]]]
+    """
+    Days during the week when maintenance should be performed.
+    """
+    hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+    * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+    """
+    is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+    """
+    months: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowMonthArgsDict']]]]
+    """
+    Months during the year when maintenance should be performed.
+    """
+    patching_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
-        preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The maintenance window scheduling preference.
-        """
-        skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
-        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
-elif False:
-    AutonomousVmClusterMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
+    *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+    """
+    preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The maintenance window scheduling preference.
+    """
+    skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
+    weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+    """
 
 @pulumi.input_type
 class AutonomousVmClusterMaintenanceWindowArgs:
@@ -9257,14 +9054,11 @@ class AutonomousVmClusterMaintenanceWindowArgs:
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class AutonomousVmClusterMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    AutonomousVmClusterMaintenanceWindowDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousVmClusterMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs:
@@ -9289,45 +9083,42 @@ class AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class AutonomousVmClusterMaintenanceWindowDetailArgsDict(TypedDict):
-        custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgsDict']]]]
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
-        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
-        is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
-        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailMonthArgsDict']]]]
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
-        patching_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+class AutonomousVmClusterMaintenanceWindowDetailArgsDict(TypedDict):
+    custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgsDict']]]]
+    """
+    (Updatable) Days during the week when maintenance should be performed.
+    """
+    hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+    * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+    """
+    is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+    """
+    months: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailMonthArgsDict']]]]
+    """
+    (Updatable) Months during the year when maintenance should be performed.
+    """
+    patching_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
-        preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
-        skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
-        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
-elif False:
-    AutonomousVmClusterMaintenanceWindowDetailArgsDict: TypeAlias = Mapping[str, Any]
+    *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+    """
+    preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The maintenance window scheduling preference.
+    """
+    skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
+    weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+    """
 
 @pulumi.input_type
 class AutonomousVmClusterMaintenanceWindowDetailArgs:
@@ -9502,14 +9293,11 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the day of the week.
-        """
-elif False:
-    AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the day of the week.
+    """
 
 @pulumi.input_type
 class AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs:
@@ -9533,14 +9321,11 @@ class AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class AutonomousVmClusterMaintenanceWindowDetailMonthArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the month of the year.
-        """
-elif False:
-    AutonomousVmClusterMaintenanceWindowDetailMonthArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousVmClusterMaintenanceWindowDetailMonthArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the month of the year.
+    """
 
 @pulumi.input_type
 class AutonomousVmClusterMaintenanceWindowDetailMonthArgs:
@@ -9564,14 +9349,11 @@ class AutonomousVmClusterMaintenanceWindowDetailMonthArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class AutonomousVmClusterMaintenanceWindowMonthArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    AutonomousVmClusterMaintenanceWindowMonthArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousVmClusterMaintenanceWindowMonthArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class AutonomousVmClusterMaintenanceWindowMonthArgs:
@@ -9596,18 +9378,15 @@ class AutonomousVmClusterMaintenanceWindowMonthArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class BackupDestinationAssociatedDatabaseArgsDict(TypedDict):
-        db_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The display name of the database that is associated with the backup destination.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
-elif False:
-    BackupDestinationAssociatedDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+class BackupDestinationAssociatedDatabaseArgsDict(TypedDict):
+    db_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The display name of the database that is associated with the backup destination.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+    """
 
 @pulumi.input_type
 class BackupDestinationAssociatedDatabaseArgs:
@@ -9648,18 +9427,15 @@ class BackupDestinationAssociatedDatabaseArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class BackupDestinationAssociatedLongTermBackupArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user-provided name of the backup destination.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
-elif False:
-    BackupDestinationAssociatedLongTermBackupArgsDict: TypeAlias = Mapping[str, Any]
+class BackupDestinationAssociatedLongTermBackupArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user-provided name of the backup destination.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+    """
 
 @pulumi.input_type
 class BackupDestinationAssociatedLongTermBackupArgs:
@@ -9700,26 +9476,23 @@ class BackupDestinationAssociatedLongTermBackupArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class BackupDestinationMountTypeDetailsArgsDict(TypedDict):
-        mount_type: pulumi.Input[_builtins.str]
-        """
-        Mount type for backup destination.
-        """
-        local_mount_point_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-        """
-        nfs_server_export: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Specifies the directory on which to mount the file system
-        """
-        nfs_servers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        IP addresses for NFS Auto mount.
-        """
-elif False:
-    BackupDestinationMountTypeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class BackupDestinationMountTypeDetailsArgsDict(TypedDict):
+    mount_type: pulumi.Input[_builtins.str]
+    """
+    Mount type for backup destination.
+    """
+    local_mount_point_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+    """
+    nfs_server_export: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specifies the directory on which to mount the file system
+    """
+    nfs_servers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    IP addresses for NFS Auto mount.
+    """
 
 @pulumi.input_type
 class BackupDestinationMountTypeDetailsArgs:
@@ -9791,30 +9564,27 @@ class BackupDestinationMountTypeDetailsArgs:
         pulumi.set(self, "nfs_servers", value)
 
 
-if not MYPY:
-    class BackupEncryptionKeyLocationDetailArgsDict(TypedDict):
-        aws_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provide the key OCID of a registered AWS key.
-        """
-        azure_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provide the key OCID of a registered Azure key.
-        """
-        google_cloud_provider_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provide the key OCID of a registered GCP key.
-        """
-        hsm_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provide the HSM password as you would in RDBMS for External HSM.
-        """
-        provider_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
-        """
-elif False:
-    BackupEncryptionKeyLocationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class BackupEncryptionKeyLocationDetailArgsDict(TypedDict):
+    aws_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provide the key OCID of a registered AWS key.
+    """
+    azure_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provide the key OCID of a registered Azure key.
+    """
+    google_cloud_provider_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provide the key OCID of a registered GCP key.
+    """
+    hsm_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provide the HSM password as you would in RDBMS for External HSM.
+    """
+    provider_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
+    """
 
 @pulumi.input_type
 class BackupEncryptionKeyLocationDetailArgs:
@@ -9903,55 +9673,52 @@ class BackupEncryptionKeyLocationDetailArgs:
         pulumi.set(self, "provider_type", value)
 
 
-if not MYPY:
-    class CloudAutonomousVmClusterMaintenanceWindowArgsDict(TypedDict):
-        custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
-        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgsDict']]]]
-        """
-        Days during the week when maintenance should be performed.
-        """
-        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
-        is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
-        is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, enables the monthly patching option.
-        """
-        lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
-        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowMonthArgsDict']]]]
-        """
-        Months during the year when maintenance should be performed.
-        """
-        patching_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-        """
-        preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The maintenance window scheduling preference.
-        """
-        skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
-        """
-        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
-        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
-elif False:
-    CloudAutonomousVmClusterMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
+class CloudAutonomousVmClusterMaintenanceWindowArgsDict(TypedDict):
+    custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+    """
+    days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgsDict']]]]
+    """
+    Days during the week when maintenance should be performed.
+    """
+    hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+    * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+    """
+    is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+    """
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, enables the monthly patching option.
+    """
+    lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+    """
+    months: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowMonthArgsDict']]]]
+    """
+    Months during the year when maintenance should be performed.
+    """
+    patching_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+    """
+    preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The maintenance window scheduling preference.
+    """
+    skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
+    """
+    If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+    """
+    weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+    """
 
 @pulumi.input_type
 class CloudAutonomousVmClusterMaintenanceWindowArgs:
@@ -10138,14 +9905,11 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs:
@@ -10170,57 +9934,54 @@ class CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict(TypedDict):
-        custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
-        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgsDict']]]]
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
-        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
-        is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
-        is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, enables the monthly patching option.
-        """
-        lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
-        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgsDict']]]]
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
-        patching_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+class CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict(TypedDict):
+    custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+    """
+    days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgsDict']]]]
+    """
+    (Updatable) Days during the week when maintenance should be performed.
+    """
+    hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+    * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+    """
+    is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+    """
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, enables the monthly patching option.
+    """
+    lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+    """
+    months: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgsDict']]]]
+    """
+    (Updatable) Months during the year when maintenance should be performed.
+    """
+    patching_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
-        preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
-        skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
-        """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
-        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
-elif False:
-    CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+    """
+    preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The maintenance window scheduling preference.
+    """
+    skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
+    """
+    (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+    """
+    weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+    """
 
 @pulumi.input_type
 class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
@@ -10411,14 +10172,11 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the day of the week.
-        """
-elif False:
-    CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the day of the week.
+    """
 
 @pulumi.input_type
 class CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs:
@@ -10442,14 +10200,11 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the month of the year.
-        """
-elif False:
-    CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgsDict: TypeAlias = Mapping[str, Any]
+class CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the month of the year.
+    """
 
 @pulumi.input_type
 class CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs:
@@ -10473,14 +10228,11 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class CloudAutonomousVmClusterMaintenanceWindowMonthArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    CloudAutonomousVmClusterMaintenanceWindowMonthArgsDict: TypeAlias = Mapping[str, Any]
+class CloudAutonomousVmClusterMaintenanceWindowMonthArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class CloudAutonomousVmClusterMaintenanceWindowMonthArgs:
@@ -10505,18 +10257,15 @@ class CloudAutonomousVmClusterMaintenanceWindowMonthArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgsDict(TypedDict):
-        cloud_provider: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Cloud provider
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the identity connector
-        """
-elif False:
-    CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgsDict: TypeAlias = Mapping[str, Any]
+class CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgsDict(TypedDict):
+    cloud_provider: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Cloud provider
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the identity connector
+    """
 
 @pulumi.input_type
 class CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs:
@@ -10557,18 +10306,15 @@ class CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class CloudDatabaseManagementCredentialdetailsArgsDict(TypedDict):
-        password_secret_id: pulumi.Input[_builtins.str]
-        """
-        Specific database username's password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
-        user_name: pulumi.Input[_builtins.str]
-        """
-        Database username
-        """
-elif False:
-    CloudDatabaseManagementCredentialdetailsArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDatabaseManagementCredentialdetailsArgsDict(TypedDict):
+    password_secret_id: pulumi.Input[_builtins.str]
+    """
+    Specific database username's password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    """
+    user_name: pulumi.Input[_builtins.str]
+    """
+    Database username
+    """
 
 @pulumi.input_type
 class CloudDatabaseManagementCredentialdetailsArgs:
@@ -10607,14 +10353,11 @@ class CloudDatabaseManagementCredentialdetailsArgs:
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class CloudExadataInfrastructureConfigureExascaleManagementCustomerContactArgsDict(TypedDict):
-        email: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The email address used by Oracle to send notifications regarding databases and infrastructure.
-        """
-elif False:
-    CloudExadataInfrastructureConfigureExascaleManagementCustomerContactArgsDict: TypeAlias = Mapping[str, Any]
+class CloudExadataInfrastructureConfigureExascaleManagementCustomerContactArgsDict(TypedDict):
+    email: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The email address used by Oracle to send notifications regarding databases and infrastructure.
+    """
 
 @pulumi.input_type
 class CloudExadataInfrastructureConfigureExascaleManagementCustomerContactArgs:
@@ -10639,26 +10382,23 @@ class CloudExadataInfrastructureConfigureExascaleManagementCustomerContactArgs:
         pulumi.set(self, "email", value)
 
 
-if not MYPY:
-    class CloudExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfigurationArgsDict(TypedDict):
-        is_backup_partition: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, the file system is used to create a backup prior to Exadata VM OS update.
-        """
-        is_resizable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
-        """
-        min_size_gb: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The minimum size of file system.
-        """
-        mount_point: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The mount point of file system.
-        """
-elif False:
-    CloudExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class CloudExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfigurationArgsDict(TypedDict):
+    is_backup_partition: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, the file system is used to create a backup prior to Exadata VM OS update.
+    """
+    is_resizable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+    """
+    min_size_gb: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The minimum size of file system.
+    """
+    mount_point: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The mount point of file system.
+    """
 
 @pulumi.input_type
 class CloudExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfigurationArgs:
@@ -10731,22 +10471,19 @@ class CloudExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConf
         pulumi.set(self, "mount_point", value)
 
 
-if not MYPY:
-    class CloudExadataInfrastructureConfigureExascaleManagementExascaleConfigArgsDict(TypedDict):
-        available_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Available storage size for Exascale in GBs.
-        """
-        available_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        total_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Storage size needed for Exascale in GBs.
+class CloudExadataInfrastructureConfigureExascaleManagementExascaleConfigArgsDict(TypedDict):
+    available_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Available storage size for Exascale in GBs.
+    """
+    total_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Storage size needed for Exascale in GBs.
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        total_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
 elif False:
     CloudExadataInfrastructureConfigureExascaleManagementExascaleConfigArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -10821,54 +10558,51 @@ class CloudExadataInfrastructureConfigureExascaleManagementExascaleConfigArgs:
         pulumi.set(self, "total_vm_storage_in_gbs", value)
 
 
-if not MYPY:
-    class CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgsDict(TypedDict):
-        custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
-        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgsDict']]]]
-        """
-        Days during the week when maintenance should be performed.
-        """
-        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
-        is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
-        is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, enables the monthly patching option.
-        """
-        lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
-        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgsDict']]]]
-        """
-        Months during the year when maintenance should be performed.
-        """
-        patching_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-        """
-        preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The maintenance window scheduling preference.
-        """
-        skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
-        """
-        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
-        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
-elif False:
-    CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
+class CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgsDict(TypedDict):
+    custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+    """
+    days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgsDict']]]]
+    """
+    Days during the week when maintenance should be performed.
+    """
+    hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+    """
+    is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+    """
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, enables the monthly patching option.
+    """
+    lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+    """
+    months: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgsDict']]]]
+    """
+    Months during the year when maintenance should be performed.
+    """
+    patching_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+    """
+    preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The maintenance window scheduling preference.
+    """
+    skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
+    """
+    If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+    """
+    weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+    """
 
 @pulumi.input_type
 class CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgs:
@@ -11053,14 +10787,11 @@ class CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgs
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgs:
@@ -11085,14 +10816,11 @@ class CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDays
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgsDict: TypeAlias = Mapping[str, Any]
+class CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgs:
@@ -11117,14 +10845,11 @@ class CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMont
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class CloudExadataInfrastructureCustomerContactArgsDict(TypedDict):
-        email: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
-        """
-elif False:
-    CloudExadataInfrastructureCustomerContactArgsDict: TypeAlias = Mapping[str, Any]
+class CloudExadataInfrastructureCustomerContactArgsDict(TypedDict):
+    email: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
+    """
 
 @pulumi.input_type
 class CloudExadataInfrastructureCustomerContactArgs:
@@ -11149,26 +10874,23 @@ class CloudExadataInfrastructureCustomerContactArgs:
         pulumi.set(self, "email", value)
 
 
-if not MYPY:
-    class CloudExadataInfrastructureDefinedFileSystemConfigurationArgsDict(TypedDict):
-        is_backup_partition: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, the file system is used to create a backup prior to Exadata VM OS update.
-        """
-        is_resizable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
-        """
-        min_size_gb: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The minimum size of file system.
-        """
-        mount_point: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The mount point of file system.
-        """
-elif False:
-    CloudExadataInfrastructureDefinedFileSystemConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class CloudExadataInfrastructureDefinedFileSystemConfigurationArgsDict(TypedDict):
+    is_backup_partition: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, the file system is used to create a backup prior to Exadata VM OS update.
+    """
+    is_resizable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+    """
+    min_size_gb: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The minimum size of file system.
+    """
+    mount_point: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The mount point of file system.
+    """
 
 @pulumi.input_type
 class CloudExadataInfrastructureDefinedFileSystemConfigurationArgs:
@@ -11247,17 +10969,9 @@ if not MYPY:
         """
         Available storage size for Exascale in GBs.
         """
-        available_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Available storage size for VM storage on Exascale in GBs.
-        """
         total_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
         """
         Storage size needed for Exascale in GBs.
-        """
-        total_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Storage size needed for VM storage on Exascale in GBs.
         """
 elif False:
     CloudExadataInfrastructureExascaleConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -11333,54 +11047,51 @@ class CloudExadataInfrastructureExascaleConfigArgs:
         pulumi.set(self, "total_vm_storage_in_gbs", value)
 
 
-if not MYPY:
-    class CloudExadataInfrastructureMaintenanceWindowArgsDict(TypedDict):
-        custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
-        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict']]]]
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
-        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
-        is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
-        is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, enables the monthly patching option.
-        """
-        lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
-        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowMonthArgsDict']]]]
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
-        patching_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+class CloudExadataInfrastructureMaintenanceWindowArgsDict(TypedDict):
+    custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+    """
+    days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict']]]]
+    """
+    (Updatable) Days during the week when maintenance should be performed.
+    """
+    hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+    * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+    """
+    is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+    """
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, enables the monthly patching option.
+    """
+    lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+    """
+    months: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowMonthArgsDict']]]]
+    """
+    (Updatable) Months during the year when maintenance should be performed.
+    """
+    patching_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
-        preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
-        skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
-        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
-elif False:
-    CloudExadataInfrastructureMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
+    *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+    """
+    preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The maintenance window scheduling preference.
+    """
+    skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
+    weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+    """
 
 @pulumi.input_type
 class CloudExadataInfrastructureMaintenanceWindowArgs:
@@ -11567,14 +11278,11 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the day of the week.
-        """
-elif False:
-    CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the day of the week.
+    """
 
 @pulumi.input_type
 class CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs:
@@ -11598,14 +11306,11 @@ class CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class CloudExadataInfrastructureMaintenanceWindowMonthArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the month of the year.
-        """
-elif False:
-    CloudExadataInfrastructureMaintenanceWindowMonthArgsDict: TypeAlias = Mapping[str, Any]
+class CloudExadataInfrastructureMaintenanceWindowMonthArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the month of the year.
+    """
 
 @pulumi.input_type
 class CloudExadataInfrastructureMaintenanceWindowMonthArgs:
@@ -11629,26 +11334,23 @@ class CloudExadataInfrastructureMaintenanceWindowMonthArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class CloudVmClusterCloudAutomationUpdateDetailsArgsDict(TypedDict):
-        apply_update_time_preference: NotRequired[pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict']]
-        """
-        (Updatable) Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
-        """
-        freeze_period: NotRequired[pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict']]
-        """
-        (Updatable) Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
-        """
-        is_early_adoption_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
-        """
-        is_freeze_period_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
-        """
-elif False:
-    CloudVmClusterCloudAutomationUpdateDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class CloudVmClusterCloudAutomationUpdateDetailsArgsDict(TypedDict):
+    apply_update_time_preference: NotRequired[pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict']]
+    """
+    (Updatable) Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+    """
+    freeze_period: NotRequired[pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict']]
+    """
+    (Updatable) Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+    """
+    is_early_adoption_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+    """
+    is_freeze_period_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+    """
 
 @pulumi.input_type
 class CloudVmClusterCloudAutomationUpdateDetailsArgs:
@@ -11721,18 +11423,15 @@ class CloudVmClusterCloudAutomationUpdateDetailsArgs:
         pulumi.set(self, "is_freeze_period_enabled", value)
 
 
-if not MYPY:
-    class CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict(TypedDict):
-        apply_update_preferred_end_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
-        """
-        apply_update_preferred_start_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
-        """
-elif False:
-    CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict: TypeAlias = Mapping[str, Any]
+class CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict(TypedDict):
+    apply_update_preferred_end_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+    """
+    apply_update_preferred_start_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+    """
 
 @pulumi.input_type
 class CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs:
@@ -11773,18 +11472,15 @@ class CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs:
         pulumi.set(self, "apply_update_preferred_start_time", value)
 
 
-if not MYPY:
-    class CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict(TypedDict):
-        freeze_period_end_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) End time of the freeze period cycle.
-        """
-        freeze_period_start_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Start time of the freeze period cycle.
-        """
-elif False:
-    CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict: TypeAlias = Mapping[str, Any]
+class CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict(TypedDict):
+    freeze_period_end_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) End time of the freeze period cycle.
+    """
+    freeze_period_start_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Start time of the freeze period cycle.
+    """
 
 @pulumi.input_type
 class CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgs:
@@ -11825,22 +11521,19 @@ class CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgs:
         pulumi.set(self, "freeze_period_start_time", value)
 
 
-if not MYPY:
-    class CloudVmClusterDataCollectionOptionsArgsDict(TypedDict):
-        is_diagnostics_events_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        """
-        is_health_monitoring_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        """
-        is_incident_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
-elif False:
-    CloudVmClusterDataCollectionOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class CloudVmClusterDataCollectionOptionsArgsDict(TypedDict):
+    is_diagnostics_events_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+    """
+    is_health_monitoring_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+    """
+    is_incident_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+    """
 
 @pulumi.input_type
 class CloudVmClusterDataCollectionOptionsArgs:
@@ -11897,18 +11590,15 @@ class CloudVmClusterDataCollectionOptionsArgs:
         pulumi.set(self, "is_incident_logs_enabled", value)
 
 
-if not MYPY:
-    class CloudVmClusterFileSystemConfigurationDetailArgsDict(TypedDict):
-        file_system_size_gb: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The file system size to be allocated in GBs.
-        """
-        mount_point: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The mount point of file system.
-        """
-elif False:
-    CloudVmClusterFileSystemConfigurationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class CloudVmClusterFileSystemConfigurationDetailArgsDict(TypedDict):
+    file_system_size_gb: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The file system size to be allocated in GBs.
+    """
+    mount_point: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The mount point of file system.
+    """
 
 @pulumi.input_type
 class CloudVmClusterFileSystemConfigurationDetailArgs:
@@ -11949,26 +11639,23 @@ class CloudVmClusterFileSystemConfigurationDetailArgs:
         pulumi.set(self, "mount_point", value)
 
 
-if not MYPY:
-    class CloudVmClusterIormConfigCacheArgsDict(TypedDict):
-        db_plans: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigCacheDbPlanArgsDict']]]]
-        """
-        An array of IORM settings for all the database in the Exadata DB system.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Additional information about the current lifecycle state.
-        """
-        objective: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current value for the IORM objective. The default is `AUTO`.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the cloud VM cluster.
-        """
-elif False:
-    CloudVmClusterIormConfigCacheArgsDict: TypeAlias = Mapping[str, Any]
+class CloudVmClusterIormConfigCacheArgsDict(TypedDict):
+    db_plans: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigCacheDbPlanArgsDict']]]]
+    """
+    An array of IORM settings for all the database in the Exadata DB system.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Additional information about the current lifecycle state.
+    """
+    objective: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current value for the IORM objective. The default is `AUTO`.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the cloud VM cluster.
+    """
 
 @pulumi.input_type
 class CloudVmClusterIormConfigCacheArgs:
@@ -12041,22 +11728,19 @@ class CloudVmClusterIormConfigCacheArgs:
         pulumi.set(self, "state", value)
 
 
-if not MYPY:
-    class CloudVmClusterIormConfigCacheDbPlanArgsDict(TypedDict):
-        db_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database name. For the default `DbPlan`, the `dbName` is `default`.
-        """
-        flash_cache_limit: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
-        """
-        share: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The relative priority of this database.
-        """
-elif False:
-    CloudVmClusterIormConfigCacheDbPlanArgsDict: TypeAlias = Mapping[str, Any]
+class CloudVmClusterIormConfigCacheDbPlanArgsDict(TypedDict):
+    db_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database name. For the default `DbPlan`, the `dbName` is `default`.
+    """
+    flash_cache_limit: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+    """
+    share: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The relative priority of this database.
+    """
 
 @pulumi.input_type
 class CloudVmClusterIormConfigCacheDbPlanArgs:
@@ -12113,22 +11797,19 @@ class CloudVmClusterIormConfigCacheDbPlanArgs:
         pulumi.set(self, "share", value)
 
 
-if not MYPY:
-    class CloudVmClusterIormConfigDbPlanArgsDict(TypedDict):
-        db_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The database name. For the default `DbPlan`, the `dbName` is `default`.
-        """
-        share: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The relative priority of this database.
-        """
-        flash_cache_limit: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
-        """
-elif False:
-    CloudVmClusterIormConfigDbPlanArgsDict: TypeAlias = Mapping[str, Any]
+class CloudVmClusterIormConfigDbPlanArgsDict(TypedDict):
+    db_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The database name. For the default `DbPlan`, the `dbName` is `default`.
+    """
+    share: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The relative priority of this database.
+    """
+    flash_cache_limit: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+    """
 
 @pulumi.input_type
 class CloudVmClusterIormConfigDbPlanArgs:
@@ -12183,18 +11864,15 @@ class CloudVmClusterIormConfigDbPlanArgs:
         pulumi.set(self, "flash_cache_limit", value)
 
 
-if not MYPY:
-    class CloudVmClusterMultiCloudIdentityConnectorConfigArgsDict(TypedDict):
-        cloud_provider: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Cloud provider
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the identity connector
-        """
-elif False:
-    CloudVmClusterMultiCloudIdentityConnectorConfigArgsDict: TypeAlias = Mapping[str, Any]
+class CloudVmClusterMultiCloudIdentityConnectorConfigArgsDict(TypedDict):
+    cloud_provider: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Cloud provider
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the identity connector
+    """
 
 @pulumi.input_type
 class CloudVmClusterMultiCloudIdentityConnectorConfigArgs:
@@ -12235,22 +11913,19 @@ class CloudVmClusterMultiCloudIdentityConnectorConfigArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class DataGuardAssociationDataCollectionOptionsArgsDict(TypedDict):
-        is_diagnostics_events_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        """
-        is_health_monitoring_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        """
-        is_incident_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
-elif False:
-    DataGuardAssociationDataCollectionOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class DataGuardAssociationDataCollectionOptionsArgsDict(TypedDict):
+    is_diagnostics_events_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+    """
+    is_health_monitoring_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+    """
+    is_incident_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+    """
 
 @pulumi.input_type
 class DataGuardAssociationDataCollectionOptionsArgs:
@@ -12307,11 +11982,8 @@ class DataGuardAssociationDataCollectionOptionsArgs:
         pulumi.set(self, "is_incident_logs_enabled", value)
 
 
-if not MYPY:
-    class DataPatchDataPatchOptionArgsDict(TypedDict):
-        should_skip_closed_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
-elif False:
-    DataPatchDataPatchOptionArgsDict: TypeAlias = Mapping[str, Any]
+class DataPatchDataPatchOptionArgsDict(TypedDict):
+    should_skip_closed_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
 
 @pulumi.input_type
 class DataPatchDataPatchOptionArgs:
@@ -12330,22 +12002,19 @@ class DataPatchDataPatchOptionArgs:
         pulumi.set(self, "should_skip_closed_pdbs", value)
 
 
-if not MYPY:
-    class DatabaseConnectionStringArgsDict(TypedDict):
-        all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        All connection strings to use to connect to the Database.
-        """
-        cdb_default: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Host name based CDB Connection String.
-        """
-        cdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        IP based CDB Connection String.
-        """
-elif False:
-    DatabaseConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseConnectionStringArgsDict(TypedDict):
+    all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    All connection strings to use to connect to the Database.
+    """
+    cdb_default: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Host name based CDB Connection String.
+    """
+    cdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    IP based CDB Connection String.
+    """
 
 @pulumi.input_type
 class DatabaseConnectionStringArgs:
@@ -12402,18 +12071,15 @@ class DatabaseConnectionStringArgs:
         pulumi.set(self, "cdb_ip_default", value)
 
 
-if not MYPY:
-    class DatabaseDataGuardGroupArgsDict(TypedDict):
-        members: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseDataGuardGroupMemberArgsDict']]]]
-        """
-        List of Data Guard members, representing each database that is part of Data Guard.
-        """
-        protection_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        """
-elif False:
-    DatabaseDataGuardGroupArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseDataGuardGroupArgsDict(TypedDict):
+    members: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseDataGuardGroupMemberArgsDict']]]]
+    """
+    List of Data Guard members, representing each database that is part of Data Guard.
+    """
+    protection_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+    """
 
 @pulumi.input_type
 class DatabaseDataGuardGroupArgs:
@@ -12454,73 +12120,70 @@ class DatabaseDataGuardGroupArgs:
         pulumi.set(self, "protection_mode", value)
 
 
-if not MYPY:
-    class DatabaseDataGuardGroupMemberArgsDict(TypedDict):
-        apply_lag: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
-        """
-        apply_rate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
-        """
-        data_loss_exposure: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
-        """
-        database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
-        """
-        db_system_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        """
-        failover_readiness: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The failover readiness status of the Data Guard member.
-        """
-        failover_readiness_message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The message explaining failover readiness status. Example: `This standby database is not failover ready.`
-        """
-        is_active_data_guard_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        True if active Data Guard is enabled.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the reporting database in this Data Guard association.
-        """
-        switchover_readiness: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The switchover readiness status of the Data Guard member.
-        """
-        switchover_readiness_message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time when the last successful Data Guard refresh occurred.
-        """
-        transport_lag: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The rate at which redo logs are transported between the associated databases.  Example: `1 second`
-        """
-        transport_lag_refresh: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time when last redo transport has been done.
-        """
-        transport_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
-        * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
-        * MAXIMUM_PERFORMANCE - ASYNC
-        * MAXIMUM_PROTECTION - SYNC
-        """
-elif False:
-    DatabaseDataGuardGroupMemberArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseDataGuardGroupMemberArgsDict(TypedDict):
+    apply_lag: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+    """
+    apply_rate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+    """
+    data_loss_exposure: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+    """
+    database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+    """
+    db_system_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+    """
+    failover_readiness: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The failover readiness status of the Data Guard member.
+    """
+    failover_readiness_message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+    """
+    is_active_data_guard_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    True if active Data Guard is enabled.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the reporting database in this Data Guard association.
+    """
+    switchover_readiness: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The switchover readiness status of the Data Guard member.
+    """
+    switchover_readiness_message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time when the last successful Data Guard refresh occurred.
+    """
+    transport_lag: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+    """
+    transport_lag_refresh: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time when last redo transport has been done.
+    """
+    transport_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+    * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+    * MAXIMUM_PERFORMANCE - ASYNC
+    * MAXIMUM_PROTECTION - SYNC
+    """
 
 @pulumi.input_type
 class DatabaseDataGuardGroupMemberArgs:
@@ -12775,148 +12438,145 @@ class DatabaseDataGuardGroupMemberArgs:
         pulumi.set(self, "transport_type", value)
 
 
-if not MYPY:
-    class DatabaseDatabaseArgsDict(TypedDict):
-        admin_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        """
-        backup_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
-        backup_tde_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The password to open the TDE wallet.
-        """
-        character_set: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The character set for the database.  The default is AL32UTF8. Allowed values are:
+class DatabaseDatabaseArgsDict(TypedDict):
+    admin_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
+    """
+    backup_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    """
+    backup_tde_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The password to open the TDE wallet.
+    """
+    character_set: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The character set for the database.  The default is AL32UTF8. Allowed values are:
 
-        AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
-        """
-        database_admin_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The administrator password of the primary database in this Data Guard association.
+    AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
+    """
+    database_admin_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The administrator password of the primary database in this Data Guard association.
 
-        **The password MUST be the same as the primary admin password.**
-        """
-        database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
-        """
-        database_software_image_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        """
-        db_backup_config: NotRequired[pulumi.Input['DatabaseDatabaseDbBackupConfigArgsDict']]
-        """
-        (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        """
-        db_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        """
-        db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
-        """
-        db_workload: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+    **The password MUST be the same as the primary admin password.**
+    """
+    database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+    """
+    database_software_image_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+    """
+    db_backup_config: NotRequired[pulumi.Input['DatabaseDatabaseDbBackupConfigArgsDict']]
+    """
+    (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+    """
+    db_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+    """
+    db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+    """
+    db_workload: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
 
-        The database workload type.
-        """
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
-        encryption_key_location_details: NotRequired[pulumi.Input['DatabaseDatabaseEncryptionKeyLocationDetailsArgsDict']]
-        """
-        Types of providers supported for managing database encryption keys
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
-        is_active_data_guard_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        True if active Data Guard is enabled.
-        """
-        kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
-        kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
-        """
-        ncharacter_set: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
-        """
-        patch_options: NotRequired[pulumi.Input['DatabaseDatabasePatchOptionsArgsDict']]
-        """
-        (Updatable) Options for DB Home and Database patching
-        """
-        pdb_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        """
-        pluggable_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of pluggable databases that needs to be restored into new database.
-        """
-        protection_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        """
-        sid_prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Specifies a prefix for the `Oracle SID` of the database to be created.
-        """
-        source_database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
-        """
-        source_encryption_key_location_details: NotRequired[pulumi.Input['DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgsDict']]
-        """
-        Types of providers supported for managing database encryption keys
-        """
-        source_tde_wallet_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The TDE wallet password of the source database specified by 'sourceDatabaseId'.
-        """
-        storage_size_details: NotRequired[pulumi.Input['DatabaseDatabaseStorageSizeDetailsArgsDict']]
-        """
-        The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
-        """
-        tde_wallet_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
-        """
-        time_stamp_for_point_in_time_recovery: NotRequired[pulumi.Input[_builtins.str]]
-        transport_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
-        * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
-        * MAXIMUM_PERFORMANCE - ASYNC
-        * MAXIMUM_PROTECTION - SYNC
+    The database workload type.
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+    """
+    encryption_key_location_details: NotRequired[pulumi.Input['DatabaseDatabaseEncryptionKeyLocationDetailsArgsDict']]
+    """
+    Types of providers supported for managing database encryption keys
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+    """
+    is_active_data_guard_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    True if active Data Guard is enabled.
+    """
+    kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+    """
+    kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+    """
+    ncharacter_set: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+    """
+    patch_options: NotRequired[pulumi.Input['DatabaseDatabasePatchOptionsArgsDict']]
+    """
+    (Updatable) Options for DB Home and Database patching
+    """
+    pdb_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
+    """
+    pluggable_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of pluggable databases that needs to be restored into new database.
+    """
+    protection_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+    """
+    sid_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specifies a prefix for the `Oracle SID` of the database to be created.
+    """
+    source_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
+    """
+    source_encryption_key_location_details: NotRequired[pulumi.Input['DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgsDict']]
+    """
+    Types of providers supported for managing database encryption keys
+    """
+    source_tde_wallet_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The TDE wallet password of the source database specified by 'sourceDatabaseId'.
+    """
+    storage_size_details: NotRequired[pulumi.Input['DatabaseDatabaseStorageSizeDetailsArgsDict']]
+    """
+    The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+    """
+    tde_wallet_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+    """
+    time_stamp_for_point_in_time_recovery: NotRequired[pulumi.Input[_builtins.str]]
+    transport_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+    * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+    * MAXIMUM_PERFORMANCE - ASYNC
+    * MAXIMUM_PROTECTION - SYNC
 
-        For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+    For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
 
-        **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
-        """
-        vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
-        """
-        vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-        """
-elif False:
-    DatabaseDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+    **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+    """
+    vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+    """
 
 @pulumi.input_type
 class DatabaseDatabaseArgs:
@@ -13459,42 +13119,39 @@ class DatabaseDatabaseArgs:
         pulumi.set(self, "vm_cluster_id", value)
 
 
-if not MYPY:
-    class DatabaseDatabaseDbBackupConfigArgsDict(TypedDict):
-        auto_backup_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-        """
-        auto_backup_window: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
-        auto_full_backup_day: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-        """
-        auto_full_backup_window: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
-        backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
-        """
-        backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgsDict']]]]
-        """
-        Backup destination details.
-        """
-        recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        """
-        run_immediate_full_backup: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-        """
-elif False:
-    DatabaseDatabaseDbBackupConfigArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseDatabaseDbBackupConfigArgsDict(TypedDict):
+    auto_backup_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+    """
+    auto_backup_window: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+    """
+    auto_full_backup_day: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+    """
+    auto_full_backup_window: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+    """
+    backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
+    """
+    backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgsDict']]]]
+    """
+    Backup destination details.
+    """
+    recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+    """
+    run_immediate_full_backup: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+    """
 
 @pulumi.input_type
 class DatabaseDatabaseDbBackupConfigArgs:
@@ -13631,40 +13288,37 @@ class DatabaseDatabaseDbBackupConfigArgs:
         pulumi.set(self, "run_immediate_full_backup", value)
 
 
-if not MYPY:
-    class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
-        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
-        """
-        dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
-        is_remote: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the backup destination is cross-region or local.
-        """
-        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
-        """
-        remote_region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the database backup destination.
-        """
-        vpc_password: NotRequired[pulumi.Input[_builtins.str]]
-        vpc_user: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+    backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+    """
+    dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+    """
+    is_remote: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the backup destination is cross-region or local.
+    """
+    is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+    """
+    remote_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the database backup destination.
+    """
+    vpc_password: NotRequired[pulumi.Input[_builtins.str]]
+    vpc_user: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs:
@@ -13809,30 +13463,27 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs:
         pulumi.set(self, "vpc_user", value)
 
 
-if not MYPY:
-    class DatabaseDatabaseEncryptionKeyLocationDetailsArgsDict(TypedDict):
-        provider_type: pulumi.Input[_builtins.str]
-        """
-        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
-        """
-        aws_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provide the key OCID of a registered AWS key.
-        """
-        azure_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provide the key OCID of a registered Azure key.
-        """
-        google_cloud_provider_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provide the key OCID of a registered GCP key.
-        """
-        hsm_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provide the HSM password as you would in RDBMS for External HSM.
-        """
-elif False:
-    DatabaseDatabaseEncryptionKeyLocationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseDatabaseEncryptionKeyLocationDetailsArgsDict(TypedDict):
+    provider_type: pulumi.Input[_builtins.str]
+    """
+    Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
+    """
+    aws_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provide the key OCID of a registered AWS key.
+    """
+    azure_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provide the key OCID of a registered Azure key.
+    """
+    google_cloud_provider_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provide the key OCID of a registered GCP key.
+    """
+    hsm_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provide the HSM password as you would in RDBMS for External HSM.
+    """
 
 @pulumi.input_type
 class DatabaseDatabaseEncryptionKeyLocationDetailsArgs:
@@ -13920,18 +13571,15 @@ class DatabaseDatabaseEncryptionKeyLocationDetailsArgs:
         pulumi.set(self, "hsm_password", value)
 
 
-if not MYPY:
-    class DatabaseDatabaseManagementConfigArgsDict(TypedDict):
-        management_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of the Database Management service.
-        """
-        management_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Database Management type.
-        """
-elif False:
-    DatabaseDatabaseManagementConfigArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseDatabaseManagementConfigArgsDict(TypedDict):
+    management_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of the Database Management service.
+    """
+    management_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Database Management type.
+    """
 
 @pulumi.input_type
 class DatabaseDatabaseManagementConfigArgs:
@@ -13972,18 +13620,15 @@ class DatabaseDatabaseManagementConfigArgs:
         pulumi.set(self, "management_type", value)
 
 
-if not MYPY:
-    class DatabaseDatabasePatchOptionsArgsDict(TypedDict):
-        should_skip_closed_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Skip running datapatch on PDBs in closed state
-        """
-        should_skip_data_patch: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Skip running datapatch on database(s)
-        """
-elif False:
-    DatabaseDatabasePatchOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseDatabasePatchOptionsArgsDict(TypedDict):
+    should_skip_closed_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Skip running datapatch on PDBs in closed state
+    """
+    should_skip_data_patch: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Skip running datapatch on database(s)
+    """
 
 @pulumi.input_type
 class DatabaseDatabasePatchOptionsArgs:
@@ -14024,18 +13669,15 @@ class DatabaseDatabasePatchOptionsArgs:
         pulumi.set(self, "should_skip_data_patch", value)
 
 
-if not MYPY:
-    class DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgsDict(TypedDict):
-        provider_type: pulumi.Input[_builtins.str]
-        """
-        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
-        """
-        hsm_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provide the HSM password as you would in RDBMS for External HSM.
-        """
-elif False:
-    DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgsDict(TypedDict):
+    provider_type: pulumi.Input[_builtins.str]
+    """
+    Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
+    """
+    hsm_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provide the HSM password as you would in RDBMS for External HSM.
+    """
 
 @pulumi.input_type
 class DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs:
@@ -14075,22 +13717,19 @@ class DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs:
         pulumi.set(self, "hsm_password", value)
 
 
-if not MYPY:
-    class DatabaseDatabaseStorageSizeDetailsArgsDict(TypedDict):
-        data_storage_size_in_gb: pulumi.Input[_builtins.int]
-        """
-        The DATA storage size, in gigabytes, that is applicable for the database.
-        """
-        reco_storage_size_in_gbs: pulumi.Input[_builtins.int]
-        """
-        The RECO storage size, in gigabytes, that is applicable for the database.
-        """
-        redo_log_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The REDO Log storage size, in gigabytes, that is applicable for the database.
-        """
-elif False:
-    DatabaseDatabaseStorageSizeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseDatabaseStorageSizeDetailsArgsDict(TypedDict):
+    data_storage_size_in_gb: pulumi.Input[_builtins.int]
+    """
+    The DATA storage size, in gigabytes, that is applicable for the database.
+    """
+    reco_storage_size_in_gbs: pulumi.Input[_builtins.int]
+    """
+    The RECO storage size, in gigabytes, that is applicable for the database.
+    """
+    redo_log_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The REDO Log storage size, in gigabytes, that is applicable for the database.
+    """
 
 @pulumi.input_type
 class DatabaseDatabaseStorageSizeDetailsArgs:
@@ -14145,42 +13784,39 @@ class DatabaseDatabaseStorageSizeDetailsArgs:
         pulumi.set(self, "redo_log_storage_size_in_gbs", value)
 
 
-if not MYPY:
-    class DatabaseDbBackupConfigArgsDict(TypedDict):
-        auto_backup_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-        """
-        auto_backup_window: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
-        auto_full_backup_day: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-        """
-        auto_full_backup_window: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
-        backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
-        """
-        backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseDbBackupConfigBackupDestinationDetailArgsDict']]]]
-        """
-        Backup destination details.
-        """
-        recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        """
-        run_immediate_full_backup: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-        """
-elif False:
-    DatabaseDbBackupConfigArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseDbBackupConfigArgsDict(TypedDict):
+    auto_backup_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+    """
+    auto_backup_window: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+    """
+    auto_full_backup_day: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+    """
+    auto_full_backup_window: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+    """
+    backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
+    """
+    backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseDbBackupConfigBackupDestinationDetailArgsDict']]]]
+    """
+    Backup destination details.
+    """
+    recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+    """
+    run_immediate_full_backup: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+    """
 
 @pulumi.input_type
 class DatabaseDbBackupConfigArgs:
@@ -14317,40 +13953,37 @@ class DatabaseDbBackupConfigArgs:
         pulumi.set(self, "run_immediate_full_backup", value)
 
 
-if not MYPY:
-    class DatabaseDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
-        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
-        """
-        dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        """
-        is_remote: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the backup destination is cross-region or local.
-        """
-        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
-        """
-        remote_region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the database backup destination.
-        """
-        vpc_password: NotRequired[pulumi.Input[_builtins.str]]
-        vpc_user: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    DatabaseDbBackupConfigBackupDestinationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+    backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+    """
+    dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+    """
+    is_remote: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the backup destination is cross-region or local.
+    """
+    is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+    """
+    remote_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the database backup destination.
+    """
+    vpc_password: NotRequired[pulumi.Input[_builtins.str]]
+    vpc_user: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class DatabaseDbBackupConfigBackupDestinationDetailArgs:
@@ -14495,22 +14128,19 @@ class DatabaseDbBackupConfigBackupDestinationDetailArgs:
         pulumi.set(self, "vpc_user", value)
 
 
-if not MYPY:
-    class DatabaseSnapshotStandbyConnectionStringArgsDict(TypedDict):
-        all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        All connection strings to use to connect to the Database.
-        """
-        cdb_default: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Host name based CDB Connection String.
-        """
-        cdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        IP based CDB Connection String.
-        """
-elif False:
-    DatabaseSnapshotStandbyConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseSnapshotStandbyConnectionStringArgsDict(TypedDict):
+    all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    All connection strings to use to connect to the Database.
+    """
+    cdb_default: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Host name based CDB Connection String.
+    """
+    cdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    IP based CDB Connection String.
+    """
 
 @pulumi.input_type
 class DatabaseSnapshotStandbyConnectionStringArgs:
@@ -14567,18 +14197,15 @@ class DatabaseSnapshotStandbyConnectionStringArgs:
         pulumi.set(self, "cdb_ip_default", value)
 
 
-if not MYPY:
-    class DatabaseSnapshotStandbyDataGuardGroupArgsDict(TypedDict):
-        members: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDataGuardGroupMemberArgsDict']]]]
-        """
-        List of Data Guard members, representing each database that is part of Data Guard.
-        """
-        protection_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        """
-elif False:
-    DatabaseSnapshotStandbyDataGuardGroupArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseSnapshotStandbyDataGuardGroupArgsDict(TypedDict):
+    members: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDataGuardGroupMemberArgsDict']]]]
+    """
+    List of Data Guard members, representing each database that is part of Data Guard.
+    """
+    protection_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+    """
 
 @pulumi.input_type
 class DatabaseSnapshotStandbyDataGuardGroupArgs:
@@ -14619,49 +14246,46 @@ class DatabaseSnapshotStandbyDataGuardGroupArgs:
         pulumi.set(self, "protection_mode", value)
 
 
-if not MYPY:
-    class DatabaseSnapshotStandbyDataGuardGroupMemberArgsDict(TypedDict):
-        apply_lag: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
-        """
-        apply_rate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
-        """
-        database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
-        db_system_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        """
-        is_active_data_guard_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        True if active Data Guard is enabled.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the reporting database in this Data Guard association.
-        """
-        transport_lag: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The rate at which redo logs are transported between the associated databases.  Example: `1 second`
-        """
-        transport_lag_refresh: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time when last redo transport has been done.
-        """
-        transport_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
-        * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
-        * MAXIMUM_PERFORMANCE - ASYNC
-        * MAXIMUM_PROTECTION - SYNC
-        """
-elif False:
-    DatabaseSnapshotStandbyDataGuardGroupMemberArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseSnapshotStandbyDataGuardGroupMemberArgsDict(TypedDict):
+    apply_lag: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+    """
+    apply_rate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+    """
+    database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    """
+    db_system_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+    """
+    is_active_data_guard_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    True if active Data Guard is enabled.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the reporting database in this Data Guard association.
+    """
+    transport_lag: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+    """
+    transport_lag_refresh: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time when last redo transport has been done.
+    """
+    transport_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+    * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+    * MAXIMUM_PERFORMANCE - ASYNC
+    * MAXIMUM_PROTECTION - SYNC
+    """
 
 @pulumi.input_type
 class DatabaseSnapshotStandbyDataGuardGroupMemberArgs:
@@ -14820,18 +14444,15 @@ class DatabaseSnapshotStandbyDataGuardGroupMemberArgs:
         pulumi.set(self, "transport_type", value)
 
 
-if not MYPY:
-    class DatabaseSnapshotStandbyDatabaseManagementConfigArgsDict(TypedDict):
-        management_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of the Database Management service.
-        """
-        management_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Database Management type.
-        """
-elif False:
-    DatabaseSnapshotStandbyDatabaseManagementConfigArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseSnapshotStandbyDatabaseManagementConfigArgsDict(TypedDict):
+    management_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of the Database Management service.
+    """
+    management_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Database Management type.
+    """
 
 @pulumi.input_type
 class DatabaseSnapshotStandbyDatabaseManagementConfigArgs:
@@ -14872,42 +14493,39 @@ class DatabaseSnapshotStandbyDatabaseManagementConfigArgs:
         pulumi.set(self, "management_type", value)
 
 
-if not MYPY:
-    class DatabaseSnapshotStandbyDbBackupConfigArgsDict(TypedDict):
-        auto_backup_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-        """
-        auto_backup_window: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
-        auto_full_backup_day: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-        """
-        auto_full_backup_window: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
-        backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
-        """
-        backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgsDict']]]]
-        """
-        Backup destination details.
-        """
-        recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        """
-        run_immediate_full_backup: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-        """
-elif False:
-    DatabaseSnapshotStandbyDbBackupConfigArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseSnapshotStandbyDbBackupConfigArgsDict(TypedDict):
+    auto_backup_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+    """
+    auto_backup_window: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+    """
+    auto_full_backup_day: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+    """
+    auto_full_backup_window: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+    """
+    backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
+    """
+    backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgsDict']]]]
+    """
+    Backup destination details.
+    """
+    recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+    """
+    run_immediate_full_backup: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+    """
 
 @pulumi.input_type
 class DatabaseSnapshotStandbyDbBackupConfigArgs:
@@ -15044,34 +14662,31 @@ class DatabaseSnapshotStandbyDbBackupConfigArgs:
         pulumi.set(self, "run_immediate_full_backup", value)
 
 
-if not MYPY:
-    class DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
-        dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        """
-        internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Proxy URL to connect to object store.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the database backup destination.
-        """
-        vpc_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        """
-        vpc_user: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
-elif False:
-    DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+    dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+    """
+    internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Proxy URL to connect to object store.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the database backup destination.
+    """
+    vpc_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+    """
+    vpc_user: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+    """
 
 @pulumi.input_type
 class DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgs:
@@ -15176,22 +14791,19 @@ class DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgs:
         pulumi.set(self, "vpc_user", value)
 
 
-if not MYPY:
-    class DatabaseStorageSizeDetailArgsDict(TypedDict):
-        data_storage_size_in_gb: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The DATA storage size, in gigabytes, that is applicable for the database.
-        """
-        reco_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The RECO storage size, in gigabytes, that is applicable for the database.
-        """
-        redo_log_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The REDO Log storage size, in gigabytes, that is applicable for the database.
-        """
-elif False:
-    DatabaseStorageSizeDetailArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseStorageSizeDetailArgsDict(TypedDict):
+    data_storage_size_in_gb: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The DATA storage size, in gigabytes, that is applicable for the database.
+    """
+    reco_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The RECO storage size, in gigabytes, that is applicable for the database.
+    """
+    redo_log_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The REDO Log storage size, in gigabytes, that is applicable for the database.
+    """
 
 @pulumi.input_type
 class DatabaseStorageSizeDetailArgs:
@@ -15248,22 +14860,19 @@ class DatabaseStorageSizeDetailArgs:
         pulumi.set(self, "redo_log_storage_size_in_gbs", value)
 
 
-if not MYPY:
-    class DatabaseUpgradeConnectionStringArgsDict(TypedDict):
-        all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        All connection strings to use to connect to the Database.
-        """
-        cdb_default: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Host name based CDB Connection String.
-        """
-        cdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        IP based CDB Connection String.
-        """
-elif False:
-    DatabaseUpgradeConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseUpgradeConnectionStringArgsDict(TypedDict):
+    all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    All connection strings to use to connect to the Database.
+    """
+    cdb_default: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Host name based CDB Connection String.
+    """
+    cdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    IP based CDB Connection String.
+    """
 
 @pulumi.input_type
 class DatabaseUpgradeConnectionStringArgs:
@@ -15320,18 +14929,15 @@ class DatabaseUpgradeConnectionStringArgs:
         pulumi.set(self, "cdb_ip_default", value)
 
 
-if not MYPY:
-    class DatabaseUpgradeDataGuardGroupArgsDict(TypedDict):
-        members: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDataGuardGroupMemberArgsDict']]]]
-        """
-        List of Data Guard members, representing each database that is part of Data Guard.
-        """
-        protection_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        """
-elif False:
-    DatabaseUpgradeDataGuardGroupArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseUpgradeDataGuardGroupArgsDict(TypedDict):
+    members: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDataGuardGroupMemberArgsDict']]]]
+    """
+    List of Data Guard members, representing each database that is part of Data Guard.
+    """
+    protection_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+    """
 
 @pulumi.input_type
 class DatabaseUpgradeDataGuardGroupArgs:
@@ -15372,73 +14978,70 @@ class DatabaseUpgradeDataGuardGroupArgs:
         pulumi.set(self, "protection_mode", value)
 
 
-if not MYPY:
-    class DatabaseUpgradeDataGuardGroupMemberArgsDict(TypedDict):
-        apply_lag: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
-        """
-        apply_rate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
-        """
-        data_loss_exposure: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
-        """
-        database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
-        db_system_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        """
-        failover_readiness: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The failover readiness status of the Data Guard member.
-        """
-        failover_readiness_message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The message explaining failover readiness status. Example: `This standby database is not failover ready.`
-        """
-        is_active_data_guard_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        True if active Data Guard is enabled.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the reporting database in this Data Guard association.
-        """
-        switchover_readiness: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The switchover readiness status of the Data Guard member.
-        """
-        switchover_readiness_message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time when the last successful Data Guard refresh occurred.
-        """
-        transport_lag: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The rate at which redo logs are transported between the associated databases.  Example: `1 second`
-        """
-        transport_lag_refresh: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time when last redo transport has been done.
-        """
-        transport_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
-        * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
-        * MAXIMUM_PERFORMANCE - ASYNC
-        * MAXIMUM_PROTECTION - SYNC
-        """
-elif False:
-    DatabaseUpgradeDataGuardGroupMemberArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseUpgradeDataGuardGroupMemberArgsDict(TypedDict):
+    apply_lag: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+    """
+    apply_rate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+    """
+    data_loss_exposure: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+    """
+    database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    """
+    db_system_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+    """
+    failover_readiness: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The failover readiness status of the Data Guard member.
+    """
+    failover_readiness_message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+    """
+    is_active_data_guard_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    True if active Data Guard is enabled.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the reporting database in this Data Guard association.
+    """
+    switchover_readiness: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The switchover readiness status of the Data Guard member.
+    """
+    switchover_readiness_message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time when the last successful Data Guard refresh occurred.
+    """
+    transport_lag: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+    """
+    transport_lag_refresh: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time when last redo transport has been done.
+    """
+    transport_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+    * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+    * MAXIMUM_PERFORMANCE - ASYNC
+    * MAXIMUM_PROTECTION - SYNC
+    """
 
 @pulumi.input_type
 class DatabaseUpgradeDataGuardGroupMemberArgs:
@@ -15693,34 +15296,31 @@ class DatabaseUpgradeDataGuardGroupMemberArgs:
         pulumi.set(self, "transport_type", value)
 
 
-if not MYPY:
-    class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgsDict(TypedDict):
-        database_software_image_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
-        """
-        db_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgsDict(TypedDict):
+    database_software_image_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
+    """
+    db_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
 
-        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        """
-        options: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: "-upgradeTimezone false -keepEvents"
-        """
-        source: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The source of the Oracle Database software to be used for the upgrade.
-        * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
-        * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
+    This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+    """
+    options: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: "-upgradeTimezone false -keepEvents"
+    """
+    source: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The source of the Oracle Database software to be used for the upgrade.
+    * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
+    * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    DatabaseUpgradeDatabaseUpgradeSourceDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs:
@@ -15809,42 +15409,39 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs:
         pulumi.set(self, "source", value)
 
 
-if not MYPY:
-    class DatabaseUpgradeDbBackupConfigArgsDict(TypedDict):
-        auto_backup_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-        """
-        auto_backup_window: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
-        auto_full_backup_day: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-        """
-        auto_full_backup_window: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
-        backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
-        """
-        backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgsDict']]]]
-        """
-        Backup destination details.
-        """
-        recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        """
-        run_immediate_full_backup: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-        """
-elif False:
-    DatabaseUpgradeDbBackupConfigArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseUpgradeDbBackupConfigArgsDict(TypedDict):
+    auto_backup_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+    """
+    auto_backup_window: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+    """
+    auto_full_backup_day: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+    """
+    auto_full_backup_window: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+    """
+    backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
+    """
+    backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgsDict']]]]
+    """
+    Backup destination details.
+    """
+    recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+    """
+    run_immediate_full_backup: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+    """
 
 @pulumi.input_type
 class DatabaseUpgradeDbBackupConfigArgs:
@@ -15981,50 +15578,47 @@ class DatabaseUpgradeDbBackupConfigArgs:
         pulumi.set(self, "run_immediate_full_backup", value)
 
 
-if not MYPY:
-    class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
-        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
-        """
-        dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        """
-        internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Proxy URL to connect to object store.
-        """
-        is_remote: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the backup destination is cross-region or local.
-        """
-        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
-        """
-        remote_region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the database backup destination.
-        """
-        vpc_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        """
-        vpc_user: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
-elif False:
-    DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+    backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+    """
+    dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+    """
+    internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Proxy URL to connect to object store.
+    """
+    is_remote: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the backup destination is cross-region or local.
+    """
+    is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+    """
+    remote_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the database backup destination.
+    """
+    vpc_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+    """
+    vpc_user: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+    """
 
 @pulumi.input_type
 class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
@@ -16193,136 +15787,133 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
         pulumi.set(self, "vpc_user", value)
 
 
-if not MYPY:
-    class DbHomeDatabaseArgsDict(TypedDict):
-        admin_password: pulumi.Input[_builtins.str]
-        """
-        A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        """
-        backup_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
-        backup_tde_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The password to open the TDE wallet.
-        """
-        character_set: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The character set for the database.  The default is AL32UTF8. Allowed values are:
+class DbHomeDatabaseArgsDict(TypedDict):
+    admin_password: pulumi.Input[_builtins.str]
+    """
+    A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
+    """
+    backup_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    """
+    backup_tde_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The password to open the TDE wallet.
+    """
+    character_set: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The character set for the database.  The default is AL32UTF8. Allowed values are:
 
-        AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
-        """
-        connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbHomeDatabaseConnectionStringArgsDict']]]]
-        database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
-        database_software_image_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        """
-        db_backup_config: NotRequired[pulumi.Input['DbHomeDatabaseDbBackupConfigArgsDict']]
-        """
-        (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        """
-        db_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        """
-        db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
-        db_workload: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+    AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
+    """
+    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbHomeDatabaseConnectionStringArgsDict']]]]
+    database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    """
+    database_software_image_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+    """
+    db_backup_config: NotRequired[pulumi.Input['DbHomeDatabaseDbBackupConfigArgsDict']]
+    """
+    (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+    """
+    db_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+    """
+    db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+    db_workload: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
 
-        The database workload type.
-        """
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
-        encryption_key_location_details: NotRequired[pulumi.Input['DbHomeDatabaseEncryptionKeyLocationDetailsArgsDict']]
-        """
-        Types of providers supported for managing database encryption keys
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-        """
-        key_store_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
-        """
-        kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
-        kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Additional information about the current lifecycle state.
-        """
-        ncharacter_set: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
-        """
-        one_off_patches: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of one-off patches for Database Homes.
-        """
-        pdb_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        """
-        pluggable_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of pluggable databases that needs to be restored into new database.
-        """
-        sid_prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Specifies a prefix for the `Oracle SID` of the database to be created.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the Database Home.
-        """
-        storage_size_details: NotRequired[pulumi.Input['DbHomeDatabaseStorageSizeDetailsArgsDict']]
-        """
-        The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
-        """
-        tde_wallet_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the Database Home was created.
-        """
-        time_stamp_for_point_in_time_recovery: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
-        """
-        vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
-        """
-        vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+    The database workload type.
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+    """
+    encryption_key_location_details: NotRequired[pulumi.Input['DbHomeDatabaseEncryptionKeyLocationDetailsArgsDict']]
+    """
+    Types of providers supported for managing database encryption keys
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+    """
+    key_store_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+    """
+    kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+    """
+    kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Additional information about the current lifecycle state.
+    """
+    ncharacter_set: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+    """
+    one_off_patches: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of one-off patches for Database Homes.
+    """
+    pdb_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
+    """
+    pluggable_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of pluggable databases that needs to be restored into new database.
+    """
+    sid_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specifies a prefix for the `Oracle SID` of the database to be created.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the Database Home.
+    """
+    storage_size_details: NotRequired[pulumi.Input['DbHomeDatabaseStorageSizeDetailsArgsDict']]
+    """
+    The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+    """
+    tde_wallet_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the Database Home was created.
+    """
+    time_stamp_for_point_in_time_recovery: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+    """
+    vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    DbHomeDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class DbHomeDatabaseArgs:
@@ -16834,13 +16425,10 @@ class DbHomeDatabaseArgs:
         pulumi.set(self, "vm_cluster_id", value)
 
 
-if not MYPY:
-    class DbHomeDatabaseConnectionStringArgsDict(TypedDict):
-        all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        cdb_default: NotRequired[pulumi.Input[_builtins.str]]
-        cdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    DbHomeDatabaseConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class DbHomeDatabaseConnectionStringArgsDict(TypedDict):
+    all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    cdb_default: NotRequired[pulumi.Input[_builtins.str]]
+    cdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class DbHomeDatabaseConnectionStringArgs:
@@ -16883,42 +16471,39 @@ class DbHomeDatabaseConnectionStringArgs:
         pulumi.set(self, "cdb_ip_default", value)
 
 
-if not MYPY:
-    class DbHomeDatabaseDbBackupConfigArgsDict(TypedDict):
-        auto_backup_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-        """
-        auto_backup_window: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
-        auto_full_backup_day: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-        """
-        auto_full_backup_window: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
-        backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
-        """
-        backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict']]]]
-        """
-        Backup destination details.
-        """
-        recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        """
-        run_immediate_full_backup: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-        """
-elif False:
-    DbHomeDatabaseDbBackupConfigArgsDict: TypeAlias = Mapping[str, Any]
+class DbHomeDatabaseDbBackupConfigArgsDict(TypedDict):
+    auto_backup_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+    """
+    auto_backup_window: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+    """
+    auto_full_backup_day: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+    """
+    auto_full_backup_window: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+    """
+    backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
+    """
+    backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict']]]]
+    """
+    Backup destination details.
+    """
+    recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+    """
+    run_immediate_full_backup: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+    """
 
 @pulumi.input_type
 class DbHomeDatabaseDbBackupConfigArgs:
@@ -17055,40 +16640,37 @@ class DbHomeDatabaseDbBackupConfigArgs:
         pulumi.set(self, "run_immediate_full_backup", value)
 
 
-if not MYPY:
-    class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
-        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
-        """
-        dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
-        is_remote: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the backup destination is cross-region or local.
-        """
-        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
-        """
-        remote_region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the database backup destination. Supported values: `NFS`.
-        """
-        vpc_password: NotRequired[pulumi.Input[_builtins.str]]
-        vpc_user: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+    backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+    """
+    dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+    """
+    is_remote: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the backup destination is cross-region or local.
+    """
+    is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+    """
+    remote_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the database backup destination. Supported values: `NFS`.
+    """
+    vpc_password: NotRequired[pulumi.Input[_builtins.str]]
+    vpc_user: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
@@ -17233,24 +16815,21 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
         pulumi.set(self, "vpc_user", value)
 
 
-if not MYPY:
-    class DbHomeDatabaseEncryptionKeyLocationDetailsArgsDict(TypedDict):
-        provider_type: pulumi.Input[_builtins.str]
-        """
-        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
-        """
-        aws_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        azure_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provide the key OCID of a registered Azure key.
-        """
-        google_cloud_provider_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        hsm_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provide the HSM password as you would in RDBMS for External HSM.
-        """
-elif False:
-    DbHomeDatabaseEncryptionKeyLocationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DbHomeDatabaseEncryptionKeyLocationDetailsArgsDict(TypedDict):
+    provider_type: pulumi.Input[_builtins.str]
+    """
+    Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+    """
+    aws_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    azure_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provide the key OCID of a registered Azure key.
+    """
+    google_cloud_provider_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    hsm_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provide the HSM password as you would in RDBMS for External HSM.
+    """
 
 @pulumi.input_type
 class DbHomeDatabaseEncryptionKeyLocationDetailsArgs:
@@ -17330,19 +16909,16 @@ class DbHomeDatabaseEncryptionKeyLocationDetailsArgs:
         pulumi.set(self, "hsm_password", value)
 
 
-if not MYPY:
-    class DbHomeDatabaseStorageSizeDetailsArgsDict(TypedDict):
-        data_storage_size_in_gb: pulumi.Input[_builtins.int]
-        """
-        The DATA storage size, in gigabytes, that is applicable for the database.
-        """
-        reco_storage_size_in_gbs: pulumi.Input[_builtins.int]
-        """
-        The RECO storage size, in gigabytes, that is applicable for the database.
-        """
-        redo_log_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-elif False:
-    DbHomeDatabaseStorageSizeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DbHomeDatabaseStorageSizeDetailsArgsDict(TypedDict):
+    data_storage_size_in_gb: pulumi.Input[_builtins.int]
+    """
+    The DATA storage size, in gigabytes, that is applicable for the database.
+    """
+    reco_storage_size_in_gbs: pulumi.Input[_builtins.int]
+    """
+    The RECO storage size, in gigabytes, that is applicable for the database.
+    """
+    redo_log_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
 
 @pulumi.input_type
 class DbHomeDatabaseStorageSizeDetailsArgs:
@@ -17393,62 +16969,59 @@ class DbHomeDatabaseStorageSizeDetailsArgs:
         pulumi.set(self, "redo_log_storage_size_in_gbs", value)
 
 
-if not MYPY:
-    class DbNodeSnapshotManagementSnapshotArgsDict(TypedDict):
-        cluster_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-        """
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Defined tags for the Exadata Database Node Snapshots. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Free-form tags for the Exadata Database Node Snapshots. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node Snapshot.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Additional information about the current lifecycle state of the Exadata Database Node Snapshot.
-        """
-        mount_points: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbNodeSnapshotManagementSnapshotMountPointArgsDict']]]]
-        """
-        Details of the mount points
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The suffix of the Exadata Database Node Snapshot names (Snpashot name = Node hostname + "-" + suffix). The Exadata Database Node Snapshot name should be unique.
-        """
-        source_dbnode_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the Exadata Database Node Snapshot.
-        """
-        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time that the Exadata Database Node Snapshot was created.
-        """
-        volumes: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbNodeSnapshotManagementSnapshotVolumeArgsDict']]]]
-        """
-        Details of the volumes
-        """
-elif False:
-    DbNodeSnapshotManagementSnapshotArgsDict: TypeAlias = Mapping[str, Any]
+class DbNodeSnapshotManagementSnapshotArgsDict(TypedDict):
+    cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+    """
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Defined tags for the Exadata Database Node Snapshots. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Free-form tags for the Exadata Database Node Snapshots. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node Snapshot.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Additional information about the current lifecycle state of the Exadata Database Node Snapshot.
+    """
+    mount_points: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbNodeSnapshotManagementSnapshotMountPointArgsDict']]]]
+    """
+    Details of the mount points
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The suffix of the Exadata Database Node Snapshot names (Snpashot name = Node hostname + "-" + suffix). The Exadata Database Node Snapshot name should be unique.
+    """
+    source_dbnode_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the Exadata Database Node Snapshot.
+    """
+    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time that the Exadata Database Node Snapshot was created.
+    """
+    volumes: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbNodeSnapshotManagementSnapshotVolumeArgsDict']]]]
+    """
+    Details of the volumes
+    """
 
 @pulumi.input_type
 class DbNodeSnapshotManagementSnapshotArgs:
@@ -17665,18 +17238,15 @@ class DbNodeSnapshotManagementSnapshotArgs:
         pulumi.set(self, "volumes", value)
 
 
-if not MYPY:
-    class DbNodeSnapshotManagementSnapshotMountPointArgsDict(TypedDict):
-        db_node_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The suffix of the Exadata Database Node Snapshot names (Snpashot name = Node hostname + "-" + suffix). The Exadata Database Node Snapshot name should be unique.
-        """
-elif False:
-    DbNodeSnapshotManagementSnapshotMountPointArgsDict: TypeAlias = Mapping[str, Any]
+class DbNodeSnapshotManagementSnapshotMountPointArgsDict(TypedDict):
+    db_node_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The suffix of the Exadata Database Node Snapshot names (Snpashot name = Node hostname + "-" + suffix). The Exadata Database Node Snapshot name should be unique.
+    """
 
 @pulumi.input_type
 class DbNodeSnapshotManagementSnapshotMountPointArgs:
@@ -17717,18 +17287,15 @@ class DbNodeSnapshotManagementSnapshotMountPointArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class DbNodeSnapshotManagementSnapshotVolumeArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The suffix of the Exadata Database Node Snapshot names (Snpashot name = Node hostname + "-" + suffix). The Exadata Database Node Snapshot name should be unique.
-        """
-        size: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Volume Size
-        """
-elif False:
-    DbNodeSnapshotManagementSnapshotVolumeArgsDict: TypeAlias = Mapping[str, Any]
+class DbNodeSnapshotManagementSnapshotVolumeArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The suffix of the Exadata Database Node Snapshot names (Snpashot name = Node hostname + "-" + suffix). The Exadata Database Node Snapshot name should be unique.
+    """
+    size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Volume Size
+    """
 
 @pulumi.input_type
 class DbNodeSnapshotManagementSnapshotVolumeArgs:
@@ -17769,18 +17336,15 @@ class DbNodeSnapshotManagementSnapshotVolumeArgs:
         pulumi.set(self, "size", value)
 
 
-if not MYPY:
-    class DbNodeSnapshotMountPointArgsDict(TypedDict):
-        db_node_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Volume Name
-        """
-elif False:
-    DbNodeSnapshotMountPointArgsDict: TypeAlias = Mapping[str, Any]
+class DbNodeSnapshotMountPointArgsDict(TypedDict):
+    db_node_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node where snapshot was mounted.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Volume Name
+    """
 
 @pulumi.input_type
 class DbNodeSnapshotMountPointArgs:
@@ -17821,18 +17385,15 @@ class DbNodeSnapshotMountPointArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class DbNodeSnapshotVolumeArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Volume Name
-        """
-        size: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Volume Size
-        """
-elif False:
-    DbNodeSnapshotVolumeArgsDict: TypeAlias = Mapping[str, Any]
+class DbNodeSnapshotVolumeArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Volume Name
+    """
+    size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Volume Size
+    """
 
 @pulumi.input_type
 class DbNodeSnapshotVolumeArgs:
@@ -17873,22 +17434,19 @@ class DbNodeSnapshotVolumeArgs:
         pulumi.set(self, "size", value)
 
 
-if not MYPY:
-    class DbSystemDataCollectionOptionsArgsDict(TypedDict):
-        is_diagnostics_events_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        """
-        is_health_monitoring_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        """
-        is_incident_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
-elif False:
-    DbSystemDataCollectionOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class DbSystemDataCollectionOptionsArgsDict(TypedDict):
+    is_diagnostics_events_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+    """
+    is_health_monitoring_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+    """
+    is_incident_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+    """
 
 @pulumi.input_type
 class DbSystemDataCollectionOptionsArgs:
@@ -17945,64 +17503,61 @@ class DbSystemDataCollectionOptionsArgs:
         pulumi.set(self, "is_incident_logs_enabled", value)
 
 
-if not MYPY:
-    class DbSystemDbHomeArgsDict(TypedDict):
-        database: pulumi.Input['DbSystemDbHomeDatabaseArgsDict']
-        """
-        (Updatable) Details for creating a database by restoring from a source database system.
+class DbSystemDbHomeArgsDict(TypedDict):
+    database: pulumi.Input['DbSystemDbHomeDatabaseArgsDict']
+    """
+    (Updatable) Details for creating a database by restoring from a source database system.
 
-        **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        """
-        create_async: NotRequired[pulumi.Input[_builtins.bool]]
-        database_software_image_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to restore a database.
-        """
-        db_home_location: NotRequired[pulumi.Input[_builtins.str]]
-        db_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+    """
+    create_async: NotRequired[pulumi.Input[_builtins.bool]]
+    database_software_image_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to restore a database.
+    """
+    db_home_location: NotRequired[pulumi.Input[_builtins.str]]
+    db_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
 
-        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        """
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user-provided name of the Database Home.
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        """
-        is_unified_auditing_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether unified auditing is enabled or not
-        """
-        last_patch_history_entry_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Additional information about the current lifecycle state.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the DB system.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the DB system was created.
-        """
-elif False:
-    DbSystemDbHomeArgsDict: TypeAlias = Mapping[str, Any]
+    This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user-provided name of the Database Home.
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+    """
+    is_unified_auditing_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether unified auditing is enabled or not
+    """
+    last_patch_history_entry_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Additional information about the current lifecycle state.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the DB system.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the DB system was created.
+    """
 
 @pulumi.input_type
 class DbSystemDbHomeArgs:
@@ -18234,112 +17789,109 @@ class DbSystemDbHomeArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class DbSystemDbHomeDatabaseArgsDict(TypedDict):
-        admin_password: pulumi.Input[_builtins.str]
-        """
-        A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        """
-        backup_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
-        backup_tde_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The password to open the TDE wallet.
-        """
-        character_set: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The character set for the database.  The default is AL32UTF8. Allowed values are:
+class DbSystemDbHomeDatabaseArgsDict(TypedDict):
+    admin_password: pulumi.Input[_builtins.str]
+    """
+    A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
+    """
+    backup_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    """
+    backup_tde_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The password to open the TDE wallet.
+    """
+    character_set: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The character set for the database.  The default is AL32UTF8. Allowed values are:
 
-        AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
-        """
-        connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemDbHomeDatabaseConnectionStringArgsDict']]]]
-        database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
-        database_software_image_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        """
-        db_backup_config: NotRequired[pulumi.Input['DbSystemDbHomeDatabaseDbBackupConfigArgsDict']]
-        """
-        (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        """
-        db_domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database domain. In a distributed database system, DB_DOMAIN specifies the logical location of the database within the network structure.
-        """
-        db_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        """
-        db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
-        db_workload: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+    AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
+    """
+    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemDbHomeDatabaseConnectionStringArgsDict']]]]
+    database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    """
+    database_software_image_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+    """
+    db_backup_config: NotRequired[pulumi.Input['DbSystemDbHomeDatabaseDbBackupConfigArgsDict']]
+    """
+    (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+    """
+    db_domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database domain. In a distributed database system, DB_DOMAIN specifies the logical location of the database within the network structure.
+    """
+    db_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+    """
+    db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+    db_workload: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
 
-        The database workload type.
-        """
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        """
-        kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
-        kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Additional information about the current lifecycle state.
-        """
-        ncharacter_set: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
-        """
-        pdb_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        """
-        pluggable_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of pluggable databases that needs to be restored into new database.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the DB system.
-        """
-        tde_wallet_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the DB system was created.
-        """
-        time_stamp_for_point_in_time_recovery: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
-        """
-        vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
-        """
-elif False:
-    DbSystemDbHomeDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+    The database workload type.
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+    """
+    kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+    """
+    kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Additional information about the current lifecycle state.
+    """
+    ncharacter_set: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+    """
+    pdb_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
+    """
+    pluggable_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of pluggable databases that needs to be restored into new database.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the DB system.
+    """
+    tde_wallet_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the DB system was created.
+    """
+    time_stamp_for_point_in_time_recovery: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+    """
 
 @pulumi.input_type
 class DbSystemDbHomeDatabaseArgs:
@@ -18763,13 +18315,10 @@ class DbSystemDbHomeDatabaseArgs:
         pulumi.set(self, "vault_id", value)
 
 
-if not MYPY:
-    class DbSystemDbHomeDatabaseConnectionStringArgsDict(TypedDict):
-        all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        cdb_default: NotRequired[pulumi.Input[_builtins.str]]
-        cdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    DbSystemDbHomeDatabaseConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class DbSystemDbHomeDatabaseConnectionStringArgsDict(TypedDict):
+    all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    cdb_default: NotRequired[pulumi.Input[_builtins.str]]
+    cdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class DbSystemDbHomeDatabaseConnectionStringArgs:
@@ -18812,42 +18361,39 @@ class DbSystemDbHomeDatabaseConnectionStringArgs:
         pulumi.set(self, "cdb_ip_default", value)
 
 
-if not MYPY:
-    class DbSystemDbHomeDatabaseDbBackupConfigArgsDict(TypedDict):
-        auto_backup_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-        """
-        auto_backup_window: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
-        auto_full_backup_day: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-        """
-        auto_full_backup_window: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
-        backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
-        """
-        backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict']]]]
-        """
-        (Updatable) Backup destination details.
-        """
-        recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        """
-        run_immediate_full_backup: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-        """
-elif False:
-    DbSystemDbHomeDatabaseDbBackupConfigArgsDict: TypeAlias = Mapping[str, Any]
+class DbSystemDbHomeDatabaseDbBackupConfigArgsDict(TypedDict):
+    auto_backup_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+    """
+    auto_backup_window: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+    """
+    auto_full_backup_day: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+    """
+    auto_full_backup_window: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+    """
+    backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
+    """
+    backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict']]]]
+    """
+    (Updatable) Backup destination details.
+    """
+    recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+    """
+    run_immediate_full_backup: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+    """
 
 @pulumi.input_type
 class DbSystemDbHomeDatabaseDbBackupConfigArgs:
@@ -18984,38 +18530,35 @@ class DbSystemDbHomeDatabaseDbBackupConfigArgs:
         pulumi.set(self, "run_immediate_full_backup", value)
 
 
-if not MYPY:
-    class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
-        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
-        """
-        dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
-        is_remote: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the backup destination is cross-region or local.
-        """
-        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
-        """
-        remote_region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the database backup destination.
-        """
-elif False:
-    DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+    backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+    """
+    dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+    """
+    is_remote: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the backup destination is cross-region or local.
+    """
+    is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+    """
+    remote_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the database backup destination.
+    """
 
 @pulumi.input_type
 class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
@@ -19136,14 +18679,11 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class DbSystemDbSystemOptionsArgsDict(TypedDict):
-        storage_management: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
-        """
-elif False:
-    DbSystemDbSystemOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class DbSystemDbSystemOptionsArgsDict(TypedDict):
+    storage_management: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
+    """
 
 @pulumi.input_type
 class DbSystemDbSystemOptionsArgs:
@@ -19168,27 +18708,24 @@ class DbSystemDbSystemOptionsArgs:
         pulumi.set(self, "storage_management", value)
 
 
-if not MYPY:
-    class DbSystemIormConfigCacheArgsDict(TypedDict):
-        db_plans: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCacheDbPlanArgsDict']]]]
-        """
-        An array of IORM settings for all the database in the Exadata DB system.
-        """
-        db_system_id: NotRequired[pulumi.Input[_builtins.str]]
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Additional information about the current lifecycle state.
-        """
-        objective: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current value for the IORM objective. The default is `AUTO`.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the DB system.
-        """
-elif False:
-    DbSystemIormConfigCacheArgsDict: TypeAlias = Mapping[str, Any]
+class DbSystemIormConfigCacheArgsDict(TypedDict):
+    db_plans: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCacheDbPlanArgsDict']]]]
+    """
+    An array of IORM settings for all the database in the Exadata DB system.
+    """
+    db_system_id: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Additional information about the current lifecycle state.
+    """
+    objective: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current value for the IORM objective. The default is `AUTO`.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the DB system.
+    """
 
 @pulumi.input_type
 class DbSystemIormConfigCacheArgs:
@@ -19273,22 +18810,19 @@ class DbSystemIormConfigCacheArgs:
         pulumi.set(self, "state", value)
 
 
-if not MYPY:
-    class DbSystemIormConfigCacheDbPlanArgsDict(TypedDict):
-        db_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database name. For the default `DbPlan`, the `dbName` is `default`.
-        """
-        flash_cache_limit: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
-        """
-        share: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The relative priority of this database.
-        """
-elif False:
-    DbSystemIormConfigCacheDbPlanArgsDict: TypeAlias = Mapping[str, Any]
+class DbSystemIormConfigCacheDbPlanArgsDict(TypedDict):
+    db_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database name. For the default `DbPlan`, the `dbName` is `default`.
+    """
+    flash_cache_limit: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+    """
+    share: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The relative priority of this database.
+    """
 
 @pulumi.input_type
 class DbSystemIormConfigCacheDbPlanArgs:
@@ -19345,54 +18879,51 @@ class DbSystemIormConfigCacheDbPlanArgs:
         pulumi.set(self, "share", value)
 
 
-if not MYPY:
-    class DbSystemMaintenanceWindowArgsDict(TypedDict):
-        custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
-        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDaysOfWeekArgsDict']]]]
-        """
-        Days during the week when maintenance should be performed.
-        """
-        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
-        is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
-        is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, enables the monthly patching option.
-        """
-        lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
-        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowMonthArgsDict']]]]
-        """
-        Months during the year when maintenance should be performed.
-        """
-        patching_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-        """
-        preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The maintenance window scheduling preference.
-        """
-        skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
-        """
-        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
-        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
-elif False:
-    DbSystemMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
+class DbSystemMaintenanceWindowArgsDict(TypedDict):
+    custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+    """
+    days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDaysOfWeekArgsDict']]]]
+    """
+    Days during the week when maintenance should be performed.
+    """
+    hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+    """
+    is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+    """
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, enables the monthly patching option.
+    """
+    lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+    """
+    months: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowMonthArgsDict']]]]
+    """
+    Months during the year when maintenance should be performed.
+    """
+    patching_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+    """
+    preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The maintenance window scheduling preference.
+    """
+    skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
+    """
+    If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+    """
+    weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+    """
 
 @pulumi.input_type
 class DbSystemMaintenanceWindowArgs:
@@ -19577,14 +19108,11 @@ class DbSystemMaintenanceWindowArgs:
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class DbSystemMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    DbSystemMaintenanceWindowDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class DbSystemMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class DbSystemMaintenanceWindowDaysOfWeekArgs:
@@ -19609,56 +19137,53 @@ class DbSystemMaintenanceWindowDaysOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class DbSystemMaintenanceWindowDetailsArgsDict(TypedDict):
-        custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
-        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsDaysOfWeekArgsDict']]]]
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
-        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
-        is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
-        is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, enables the monthly patching option.
-        """
-        lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
-        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsMonthArgsDict']]]]
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
-        patching_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+class DbSystemMaintenanceWindowDetailsArgsDict(TypedDict):
+    custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+    """
+    days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsDaysOfWeekArgsDict']]]]
+    """
+    (Updatable) Days during the week when maintenance should be performed.
+    """
+    hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+    """
+    is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+    """
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, enables the monthly patching option.
+    """
+    lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+    """
+    months: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsMonthArgsDict']]]]
+    """
+    (Updatable) Months during the year when maintenance should be performed.
+    """
+    patching_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
-        preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
-        skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
-        """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
-        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
-elif False:
-    DbSystemMaintenanceWindowDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+    """
+    preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The maintenance window scheduling preference.
+    """
+    skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
+    """
+    (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+    """
+    weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+    """
 
 @pulumi.input_type
 class DbSystemMaintenanceWindowDetailsArgs:
@@ -19847,14 +19372,11 @@ class DbSystemMaintenanceWindowDetailsArgs:
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class DbSystemMaintenanceWindowDetailsDaysOfWeekArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of the day of the week.
-        """
-elif False:
-    DbSystemMaintenanceWindowDetailsDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class DbSystemMaintenanceWindowDetailsDaysOfWeekArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of the day of the week.
+    """
 
 @pulumi.input_type
 class DbSystemMaintenanceWindowDetailsDaysOfWeekArgs:
@@ -19879,14 +19401,11 @@ class DbSystemMaintenanceWindowDetailsDaysOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class DbSystemMaintenanceWindowDetailsMonthArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of the month of the year.
-        """
-elif False:
-    DbSystemMaintenanceWindowDetailsMonthArgsDict: TypeAlias = Mapping[str, Any]
+class DbSystemMaintenanceWindowDetailsMonthArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of the month of the year.
+    """
 
 @pulumi.input_type
 class DbSystemMaintenanceWindowDetailsMonthArgs:
@@ -19911,14 +19430,11 @@ class DbSystemMaintenanceWindowDetailsMonthArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class DbSystemMaintenanceWindowMonthArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    DbSystemMaintenanceWindowMonthArgsDict: TypeAlias = Mapping[str, Any]
+class DbSystemMaintenanceWindowMonthArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class DbSystemMaintenanceWindowMonthArgs:
@@ -19943,14 +19459,11 @@ class DbSystemMaintenanceWindowMonthArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class DbSystemsUpgradeDbSystemOptionArgsDict(TypedDict):
-        storage_management: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
-        """
-elif False:
-    DbSystemsUpgradeDbSystemOptionArgsDict: TypeAlias = Mapping[str, Any]
+class DbSystemsUpgradeDbSystemOptionArgsDict(TypedDict):
+    storage_management: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
+    """
 
 @pulumi.input_type
 class DbSystemsUpgradeDbSystemOptionArgs:
@@ -19975,26 +19488,23 @@ class DbSystemsUpgradeDbSystemOptionArgs:
         pulumi.set(self, "storage_management", value)
 
 
-if not MYPY:
-    class DbSystemsUpgradeIormConfigCacheArgsDict(TypedDict):
-        db_plans: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCacheDbPlanArgsDict']]]]
-        """
-        An array of IORM settings for all the database in the Exadata DB system.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Additional information about the current lifecycle state.
-        """
-        objective: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current value for the IORM objective. The default is `AUTO`.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the DB system.
-        """
-elif False:
-    DbSystemsUpgradeIormConfigCacheArgsDict: TypeAlias = Mapping[str, Any]
+class DbSystemsUpgradeIormConfigCacheArgsDict(TypedDict):
+    db_plans: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCacheDbPlanArgsDict']]]]
+    """
+    An array of IORM settings for all the database in the Exadata DB system.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Additional information about the current lifecycle state.
+    """
+    objective: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current value for the IORM objective. The default is `AUTO`.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the DB system.
+    """
 
 @pulumi.input_type
 class DbSystemsUpgradeIormConfigCacheArgs:
@@ -20067,22 +19577,19 @@ class DbSystemsUpgradeIormConfigCacheArgs:
         pulumi.set(self, "state", value)
 
 
-if not MYPY:
-    class DbSystemsUpgradeIormConfigCacheDbPlanArgsDict(TypedDict):
-        db_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database name. For the default `DbPlan`, the `dbName` is `default`.
-        """
-        flash_cache_limit: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
-        """
-        share: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The relative priority of this database.
-        """
-elif False:
-    DbSystemsUpgradeIormConfigCacheDbPlanArgsDict: TypeAlias = Mapping[str, Any]
+class DbSystemsUpgradeIormConfigCacheDbPlanArgsDict(TypedDict):
+    db_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database name. For the default `DbPlan`, the `dbName` is `default`.
+    """
+    flash_cache_limit: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+    """
+    share: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The relative priority of this database.
+    """
 
 @pulumi.input_type
 class DbSystemsUpgradeIormConfigCacheDbPlanArgs:
@@ -20139,35 +19646,32 @@ class DbSystemsUpgradeIormConfigCacheDbPlanArgs:
         pulumi.set(self, "share", value)
 
 
-if not MYPY:
-    class DbSystemsUpgradeMaintenanceWindowArgsDict(TypedDict):
-        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgsDict']]]]
-        """
-        Days during the week when maintenance should be performed.
-        """
-        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
-        lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
-        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowMonthArgsDict']]]]
-        """
-        Months during the year when maintenance should be performed.
-        """
-        preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The maintenance window scheduling preference.
-        """
-        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
-elif False:
-    DbSystemsUpgradeMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
+class DbSystemsUpgradeMaintenanceWindowArgsDict(TypedDict):
+    days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgsDict']]]]
+    """
+    Days during the week when maintenance should be performed.
+    """
+    hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+    * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+    """
+    lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+    """
+    months: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowMonthArgsDict']]]]
+    """
+    Months during the year when maintenance should be performed.
+    """
+    preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The maintenance window scheduling preference.
+    """
+    weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+    """
 
 @pulumi.input_type
 class DbSystemsUpgradeMaintenanceWindowArgs:
@@ -20274,14 +19778,11 @@ class DbSystemsUpgradeMaintenanceWindowArgs:
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs:
@@ -20306,14 +19807,11 @@ class DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class DbSystemsUpgradeMaintenanceWindowMonthArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    DbSystemsUpgradeMaintenanceWindowMonthArgsDict: TypeAlias = Mapping[str, Any]
+class DbSystemsUpgradeMaintenanceWindowMonthArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class DbSystemsUpgradeMaintenanceWindowMonthArgs:
@@ -20338,30 +19836,27 @@ class DbSystemsUpgradeMaintenanceWindowMonthArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureComputeContactArgsDict(TypedDict):
-        email: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The email for the Exadata Infrastructure contact.
-        """
-        is_contact_mos_validated: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
-        """
-        is_primary: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-        phone_number: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The phone number for the Exadata Infrastructure contact.
-        """
-elif False:
-    ExadataInfrastructureComputeContactArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureComputeContactArgsDict(TypedDict):
+    email: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The email for the Exadata Infrastructure contact.
+    """
+    is_contact_mos_validated: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+    """
+    is_primary: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
+    phone_number: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The phone number for the Exadata Infrastructure contact.
+    """
 
 @pulumi.input_type
 class ExadataInfrastructureComputeContactArgs:
@@ -20450,51 +19945,48 @@ class ExadataInfrastructureComputeContactArgs:
         pulumi.set(self, "phone_number", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureComputeMaintenanceWindowArgsDict(TypedDict):
-        custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
-        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgsDict']]]]
-        """
-        Days during the week when maintenance should be performed.
-        """
-        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
-        is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
-        is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, enables the monthly patching option.
-        """
-        lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
-        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowMonthArgsDict']]]]
-        """
-        Months during the year when maintenance should be performed.
-        """
-        patching_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-        """
-        preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The maintenance window scheduling preference.
-        """
-        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
-elif False:
-    ExadataInfrastructureComputeMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureComputeMaintenanceWindowArgsDict(TypedDict):
+    custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+    """
+    days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgsDict']]]]
+    """
+    Days during the week when maintenance should be performed.
+    """
+    hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+    * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+    """
+    is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+    """
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, enables the monthly patching option.
+    """
+    lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+    """
+    months: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowMonthArgsDict']]]]
+    """
+    Months during the year when maintenance should be performed.
+    """
+    patching_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+    """
+    preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The maintenance window scheduling preference.
+    """
+    weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+    """
 
 @pulumi.input_type
 class ExadataInfrastructureComputeMaintenanceWindowArgs:
@@ -20665,14 +20157,11 @@ class ExadataInfrastructureComputeMaintenanceWindowArgs:
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgs:
@@ -20697,14 +20186,11 @@ class ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureComputeMaintenanceWindowMonthArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    ExadataInfrastructureComputeMaintenanceWindowMonthArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureComputeMaintenanceWindowMonthArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class ExadataInfrastructureComputeMaintenanceWindowMonthArgs:
@@ -20729,30 +20215,27 @@ class ExadataInfrastructureComputeMaintenanceWindowMonthArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureConfigureExascaleManagementContactArgsDict(TypedDict):
-        email: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The email for the Exadata Infrastructure contact.
-        """
-        is_contact_mos_validated: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
-        """
-        is_primary: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-        phone_number: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The phone number for the Exadata Infrastructure contact.
-        """
-elif False:
-    ExadataInfrastructureConfigureExascaleManagementContactArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureConfigureExascaleManagementContactArgsDict(TypedDict):
+    email: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The email for the Exadata Infrastructure contact.
+    """
+    is_contact_mos_validated: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+    """
+    is_primary: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
+    phone_number: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The phone number for the Exadata Infrastructure contact.
+    """
 
 @pulumi.input_type
 class ExadataInfrastructureConfigureExascaleManagementContactArgs:
@@ -20841,26 +20324,23 @@ class ExadataInfrastructureConfigureExascaleManagementContactArgs:
         pulumi.set(self, "phone_number", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfigurationArgsDict(TypedDict):
-        is_backup_partition: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, the file system is used to create a backup prior to Exadata VM OS update.
-        """
-        is_resizable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
-        """
-        min_size_gb: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The minimum size of file system.
-        """
-        mount_point: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The mount point of file system.
-        """
-elif False:
-    ExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfigurationArgsDict(TypedDict):
+    is_backup_partition: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, the file system is used to create a backup prior to Exadata VM OS update.
+    """
+    is_resizable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+    """
+    min_size_gb: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The minimum size of file system.
+    """
+    mount_point: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The mount point of file system.
+    """
 
 @pulumi.input_type
 class ExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfigurationArgs:
@@ -20939,7 +20419,6 @@ if not MYPY:
         """
         Available storage size for Exascale in GBs.
         """
-        available_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
         total_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
         """
         Storage size needed for Exascale in GBs.
@@ -20948,7 +20427,6 @@ if not MYPY:
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        total_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
 elif False:
     ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -21023,54 +20501,51 @@ class ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgs:
         pulumi.set(self, "total_vm_storage_in_gbs", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgsDict(TypedDict):
-        custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
-        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgsDict']]]]
-        """
-        Days during the week when maintenance should be performed.
-        """
-        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
-        is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
-        is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, enables the monthly patching option.
-        """
-        lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
-        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgsDict']]]]
-        """
-        Months during the year when maintenance should be performed.
-        """
-        patching_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-        """
-        preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The maintenance window scheduling preference.
-        """
-        skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
-        """
-        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        """
-        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
-elif False:
-    ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgsDict(TypedDict):
+    custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+    """
+    days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgsDict']]]]
+    """
+    Days during the week when maintenance should be performed.
+    """
+    hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+    """
+    is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+    """
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, enables the monthly patching option.
+    """
+    lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+    """
+    months: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgsDict']]]]
+    """
+    Months during the year when maintenance should be performed.
+    """
+    patching_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+    """
+    preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The maintenance window scheduling preference.
+    """
+    skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
+    """
+    If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+    """
+    weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+    """
 
 @pulumi.input_type
 class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgs:
@@ -21255,14 +20730,11 @@ class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgs:
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgs:
@@ -21287,14 +20759,11 @@ class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWee
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the month of the year.
-        """
-elif False:
-    ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the month of the year.
+    """
 
 @pulumi.input_type
 class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgs:
@@ -21319,22 +20788,19 @@ class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgs
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureConfigureExascaleManagementNetworkBondingModeDetailArgsDict(TypedDict):
-        backup_network_bonding_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The network bonding mode for the Exadata infrastructure.
-        """
-        client_network_bonding_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The network bonding mode for the Exadata infrastructure.
-        """
-        dr_network_bonding_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The network bonding mode for the Exadata infrastructure.
-        """
-elif False:
-    ExadataInfrastructureConfigureExascaleManagementNetworkBondingModeDetailArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureConfigureExascaleManagementNetworkBondingModeDetailArgsDict(TypedDict):
+    backup_network_bonding_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The network bonding mode for the Exadata infrastructure.
+    """
+    client_network_bonding_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The network bonding mode for the Exadata infrastructure.
+    """
+    dr_network_bonding_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The network bonding mode for the Exadata infrastructure.
+    """
 
 @pulumi.input_type
 class ExadataInfrastructureConfigureExascaleManagementNetworkBondingModeDetailArgs:
@@ -21391,30 +20857,27 @@ class ExadataInfrastructureConfigureExascaleManagementNetworkBondingModeDetailAr
         pulumi.set(self, "dr_network_bonding_mode", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureContactArgsDict(TypedDict):
-        email: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The email for the Exadata Infrastructure contact.
-        """
-        is_primary: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the Exadata Infrastructure contact.
-        """
-        is_contact_mos_validated: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
-        """
-        phone_number: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The phone number for the Exadata Infrastructure contact.
-        """
-elif False:
-    ExadataInfrastructureContactArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureContactArgsDict(TypedDict):
+    email: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The email for the Exadata Infrastructure contact.
+    """
+    is_primary: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the Exadata Infrastructure contact.
+    """
+    is_contact_mos_validated: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+    """
+    phone_number: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The phone number for the Exadata Infrastructure contact.
+    """
 
 @pulumi.input_type
 class ExadataInfrastructureContactArgs:
@@ -21500,26 +20963,23 @@ class ExadataInfrastructureContactArgs:
         pulumi.set(self, "phone_number", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureDefinedFileSystemConfigurationArgsDict(TypedDict):
-        is_backup_partition: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, the file system is used to create a backup prior to Exadata VM OS update.
-        """
-        is_resizable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
-        """
-        min_size_gb: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The minimum size of file system.
-        """
-        mount_point: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The mount point of file system.
-        """
-elif False:
-    ExadataInfrastructureDefinedFileSystemConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureDefinedFileSystemConfigurationArgsDict(TypedDict):
+    is_backup_partition: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, the file system is used to create a backup prior to Exadata VM OS update.
+    """
+    is_resizable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+    """
+    min_size_gb: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The minimum size of file system.
+    """
+    mount_point: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The mount point of file system.
+    """
 
 @pulumi.input_type
 class ExadataInfrastructureDefinedFileSystemConfigurationArgs:
@@ -21598,17 +21058,9 @@ if not MYPY:
         """
         Available storage size for Exascale in GBs.
         """
-        available_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Available storage size for VM storage on Exascale in GBs.
-        """
         total_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
         """
         Storage size needed for Exascale in GBs.
-        """
-        total_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Storage size needed for VM storage on Exascale in GBs.
         """
 elif False:
     ExadataInfrastructureExascaleConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -21684,54 +21136,51 @@ class ExadataInfrastructureExascaleConfigArgs:
         pulumi.set(self, "total_vm_storage_in_gbs", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureMaintenanceWindowArgsDict(TypedDict):
-        custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
-        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict']]]]
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
-        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
-        is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
-        is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If true, enables the monthly patching option.
-        """
-        lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
-        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureMaintenanceWindowMonthArgsDict']]]]
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
-        patching_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+class ExadataInfrastructureMaintenanceWindowArgsDict(TypedDict):
+    custom_action_timeout_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+    """
+    days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict']]]]
+    """
+    (Updatable) Days during the week when maintenance should be performed.
+    """
+    hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+    * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+    """
+    is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+    """
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If true, enables the monthly patching option.
+    """
+    lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+    """
+    months: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureMaintenanceWindowMonthArgsDict']]]]
+    """
+    (Updatable) Months during the year when maintenance should be performed.
+    """
+    patching_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
-        preference: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
-        skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
-        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
-elif False:
-    ExadataInfrastructureMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
+    *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+    """
+    preference: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The maintenance window scheduling preference.
+    """
+    skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
+    weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+    """
 
 @pulumi.input_type
 class ExadataInfrastructureMaintenanceWindowArgs:
@@ -21918,14 +21367,11 @@ class ExadataInfrastructureMaintenanceWindowArgs:
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the day of the week.
-        """
-elif False:
-    ExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the day of the week.
+    """
 
 @pulumi.input_type
 class ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs:
@@ -21949,14 +21395,11 @@ class ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureMaintenanceWindowMonthArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the month of the year.
-        """
-elif False:
-    ExadataInfrastructureMaintenanceWindowMonthArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureMaintenanceWindowMonthArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the month of the year.
+    """
 
 @pulumi.input_type
 class ExadataInfrastructureMaintenanceWindowMonthArgs:
@@ -21980,22 +21423,19 @@ class ExadataInfrastructureMaintenanceWindowMonthArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureNetworkBondingModeDetailsArgsDict(TypedDict):
-        backup_network_bonding_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The network bonding mode for the Exadata infrastructure.
-        """
-        client_network_bonding_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The network bonding mode for the Exadata infrastructure.
-        """
-        dr_network_bonding_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The network bonding mode for the Exadata infrastructure.
-        """
-elif False:
-    ExadataInfrastructureNetworkBondingModeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureNetworkBondingModeDetailsArgsDict(TypedDict):
+    backup_network_bonding_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The network bonding mode for the Exadata infrastructure.
+    """
+    client_network_bonding_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The network bonding mode for the Exadata infrastructure.
+    """
+    dr_network_bonding_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The network bonding mode for the Exadata infrastructure.
+    """
 
 @pulumi.input_type
 class ExadataInfrastructureNetworkBondingModeDetailsArgs:
@@ -22052,15 +21492,12 @@ class ExadataInfrastructureNetworkBondingModeDetailsArgs:
         pulumi.set(self, "dr_network_bonding_mode", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureStorageContactArgsDict(TypedDict):
-        email: pulumi.Input[_builtins.str]
-        is_primary: pulumi.Input[_builtins.bool]
-        name: pulumi.Input[_builtins.str]
-        is_contact_mos_validated: NotRequired[pulumi.Input[_builtins.bool]]
-        phone_number: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    ExadataInfrastructureStorageContactArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureStorageContactArgsDict(TypedDict):
+    email: pulumi.Input[_builtins.str]
+    is_primary: pulumi.Input[_builtins.bool]
+    name: pulumi.Input[_builtins.str]
+    is_contact_mos_validated: NotRequired[pulumi.Input[_builtins.bool]]
+    phone_number: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class ExadataInfrastructureStorageContactArgs:
@@ -22124,16 +21561,13 @@ class ExadataInfrastructureStorageContactArgs:
         pulumi.set(self, "phone_number", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureStorageMaintenanceWindowArgsDict(TypedDict):
-        preference: pulumi.Input[_builtins.str]
-        days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgsDict']]]]
-        hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
-        months: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowMonthArgsDict']]]]
-        weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-elif False:
-    ExadataInfrastructureStorageMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureStorageMaintenanceWindowArgsDict(TypedDict):
+    preference: pulumi.Input[_builtins.str]
+    days_of_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgsDict']]]]
+    hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    lead_time_in_weeks: NotRequired[pulumi.Input[_builtins.int]]
+    months: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowMonthArgsDict']]]]
+    weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
 
 @pulumi.input_type
 class ExadataInfrastructureStorageMaintenanceWindowArgs:
@@ -22211,11 +21645,8 @@ class ExadataInfrastructureStorageMaintenanceWindowArgs:
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-elif False:
-    ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
 
 @pulumi.input_type
 class ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs:
@@ -22233,11 +21664,8 @@ class ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureStorageMaintenanceWindowMonthArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-elif False:
-    ExadataInfrastructureStorageMaintenanceWindowMonthArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureStorageMaintenanceWindowMonthArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
 
 @pulumi.input_type
 class ExadataInfrastructureStorageMaintenanceWindowMonthArgs:
@@ -22255,22 +21683,19 @@ class ExadataInfrastructureStorageMaintenanceWindowMonthArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class ExadataIormConfigDbPlanArgsDict(TypedDict):
-        db_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The database name. For the default `DbPlan`, the `dbName` is `default`.
-        """
-        share: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The relative priority of this database.
-        """
-        flash_cache_limit: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
-        """
-elif False:
-    ExadataIormConfigDbPlanArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataIormConfigDbPlanArgsDict(TypedDict):
+    db_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The database name. For the default `DbPlan`, the `dbName` is `default`.
+    """
+    share: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The relative priority of this database.
+    """
+    flash_cache_limit: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+    """
 
 @pulumi.input_type
 class ExadataIormConfigDbPlanArgs:
@@ -22325,22 +21750,19 @@ class ExadataIormConfigDbPlanArgs:
         pulumi.set(self, "flash_cache_limit", value)
 
 
-if not MYPY:
-    class ExadbVmClusterDataCollectionOptionsArgsDict(TypedDict):
-        is_diagnostics_events_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        """
-        is_health_monitoring_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        """
-        is_incident_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
-elif False:
-    ExadbVmClusterDataCollectionOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class ExadbVmClusterDataCollectionOptionsArgsDict(TypedDict):
+    is_diagnostics_events_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+    """
+    is_health_monitoring_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+    """
+    is_incident_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+    """
 
 @pulumi.input_type
 class ExadbVmClusterDataCollectionOptionsArgs:
@@ -22397,26 +21819,23 @@ class ExadbVmClusterDataCollectionOptionsArgs:
         pulumi.set(self, "is_incident_logs_enabled", value)
 
 
-if not MYPY:
-    class ExadbVmClusterIormConfigCacheArgsDict(TypedDict):
-        db_plans: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheDbPlanArgsDict']]]]
-        """
-        An array of IORM settings for all the database in the Exadata DB system.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Additional information about the current lifecycle state.
-        """
-        objective: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current value for the IORM objective. The default is `AUTO`.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the Exadata VM cluster on Exascale Infrastructure.
-        """
-elif False:
-    ExadbVmClusterIormConfigCacheArgsDict: TypeAlias = Mapping[str, Any]
+class ExadbVmClusterIormConfigCacheArgsDict(TypedDict):
+    db_plans: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheDbPlanArgsDict']]]]
+    """
+    An array of IORM settings for all the database in the Exadata DB system.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Additional information about the current lifecycle state.
+    """
+    objective: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current value for the IORM objective. The default is `AUTO`.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the Exadata VM cluster on Exascale Infrastructure.
+    """
 
 @pulumi.input_type
 class ExadbVmClusterIormConfigCacheArgs:
@@ -22489,22 +21908,19 @@ class ExadbVmClusterIormConfigCacheArgs:
         pulumi.set(self, "state", value)
 
 
-if not MYPY:
-    class ExadbVmClusterIormConfigCacheDbPlanArgsDict(TypedDict):
-        db_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database name. For the default `DbPlan`, the `dbName` is `default`.
-        """
-        flash_cache_limit: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
-        """
-        share: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The relative priority of this database.
-        """
-elif False:
-    ExadbVmClusterIormConfigCacheDbPlanArgsDict: TypeAlias = Mapping[str, Any]
+class ExadbVmClusterIormConfigCacheDbPlanArgsDict(TypedDict):
+    db_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database name. For the default `DbPlan`, the `dbName` is `default`.
+    """
+    flash_cache_limit: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+    """
+    share: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The relative priority of this database.
+    """
 
 @pulumi.input_type
 class ExadbVmClusterIormConfigCacheDbPlanArgs:
@@ -22561,34 +21977,31 @@ class ExadbVmClusterIormConfigCacheDbPlanArgs:
         pulumi.set(self, "share", value)
 
 
-if not MYPY:
-    class ExadbVmClusterNodeConfigArgsDict(TypedDict):
-        enabled_ecpu_count_per_node: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The number of ECPUs to enable for each node.
-        """
-        total_ecpu_count_per_node: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The number of Total ECPUs for each node.
-        """
-        vm_file_system_storage_size_gbs_per_node: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The file system storage in GBs for each node.
-        """
-        memory_size_in_gbs_per_node: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The memory that you want to be allocated in GBs to each node. Memory is calculated based on 11 GB per VM core reserved.
-        """
-        snapshot_file_system_storage_size_gbs_per_node: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The file system storage in GBs for snapshot for each node.
-        """
-        total_file_system_storage_size_gbs_per_node: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Total file system storage in GBs for each node.
-        """
-elif False:
-    ExadbVmClusterNodeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ExadbVmClusterNodeConfigArgsDict(TypedDict):
+    enabled_ecpu_count_per_node: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The number of ECPUs to enable for each node.
+    """
+    total_ecpu_count_per_node: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The number of Total ECPUs for each node.
+    """
+    vm_file_system_storage_size_gbs_per_node: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The file system storage in GBs for each node.
+    """
+    memory_size_in_gbs_per_node: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The memory that you want to be allocated in GBs to each node. Memory is calculated based on 11 GB per VM core reserved.
+    """
+    snapshot_file_system_storage_size_gbs_per_node: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The file system storage in GBs for snapshot for each node.
+    """
+    total_file_system_storage_size_gbs_per_node: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Total file system storage in GBs for each node.
+    """
 
 @pulumi.input_type
 class ExadbVmClusterNodeConfigArgs:
@@ -22690,23 +22103,23 @@ class ExadbVmClusterNodeConfigArgs:
         pulumi.set(self, "total_file_system_storage_size_gbs_per_node", value)
 
 
-if not MYPY:
-    class ExadbVmClusterNodeResourceArgsDict(TypedDict):
-        node_name: pulumi.Input[_builtins.str]
-        node_hostname: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name for the node.
-        """
-        node_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the node.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the Exadata VM cluster on Exascale Infrastructure.
-        """
-elif False:
-    ExadbVmClusterNodeResourceArgsDict: TypeAlias = Mapping[str, Any]
+class ExadbVmClusterNodeResourceArgsDict(TypedDict):
+    node_name: pulumi.Input[_builtins.str]
+    """
+    User provided identifier for each node. `node_name` only exists in Terraform config and state and does not exist in server side. It serves as a placeholder for a node before the node is provisioned. `node_name` 1) must be unique among all nodes 2) must not be an empty string 3) must not contain any space. 4) `node_resource` block can be removed to trigger a remove-node operation but `node_name` can not be changed.
+    """
+    node_hostname: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name for the node.
+    """
+    node_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the node.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the Exadata VM cluster on Exascale Infrastructure.
+    """
 
 @pulumi.input_type
 class ExadbVmClusterNodeResourceArgs:
@@ -22716,6 +22129,7 @@ class ExadbVmClusterNodeResourceArgs:
                  node_id: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] node_name: User provided identifier for each node. `node_name` only exists in Terraform config and state and does not exist in server side. It serves as a placeholder for a node before the node is provisioned. `node_name` 1) must be unique among all nodes 2) must not be an empty string 3) must not contain any space. 4) `node_resource` block can be removed to trigger a remove-node operation but `node_name` can not be changed.
         :param pulumi.Input[_builtins.str] node_hostname: The host name for the node.
         :param pulumi.Input[_builtins.str] node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the node.
         :param pulumi.Input[_builtins.str] state: The current state of the Exadata VM cluster on Exascale Infrastructure.
@@ -22731,6 +22145,9 @@ class ExadbVmClusterNodeResourceArgs:
     @_builtins.property
     @pulumi.getter(name="nodeName")
     def node_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        User provided identifier for each node. `node_name` only exists in Terraform config and state and does not exist in server side. It serves as a placeholder for a node before the node is provisioned. `node_name` 1) must be unique among all nodes 2) must not be an empty string 3) must not contain any space. 4) `node_resource` block can be removed to trigger a remove-node operation but `node_name` can not be changed.
+        """
         return pulumi.get(self, "node_name")
 
     @node_name.setter
@@ -22774,18 +22191,15 @@ class ExadbVmClusterNodeResourceArgs:
         pulumi.set(self, "state", value)
 
 
-if not MYPY:
-    class ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict(TypedDict):
-        total_size_in_gbs: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Total Capacity
-        """
-        available_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Available Capacity
-        """
-elif False:
-    ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict: TypeAlias = Mapping[str, Any]
+class ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict(TypedDict):
+    total_size_in_gbs: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Total Capacity
+    """
+    available_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Available Capacity
+    """
 
 @pulumi.input_type
 class ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs:
@@ -22825,37 +22239,34 @@ class ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs:
         pulumi.set(self, "available_size_in_gbs", value)
 
 
-if not MYPY:
-    class ExecutionActionActionMemberArgsDict(TypedDict):
-        member_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
-        """
-        member_order: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The priority order of the execution action member.
-        """
-        estimated_time_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The estimated time of the execution action member in minutes.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
-        * SCHEDULED
-        * IN_PROGRESS
-        * FAILED
-        * CANCELED
-        * DURATION_EXCEEDED
-        * RESCHEDULED
-        * SUCCEEDED
-        """
-        total_time_taken_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The total time taken by corresponding resource activity in minutes.
-        """
-elif False:
-    ExecutionActionActionMemberArgsDict: TypeAlias = Mapping[str, Any]
+class ExecutionActionActionMemberArgsDict(TypedDict):
+    member_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+    """
+    member_order: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The priority order of the execution action member.
+    """
+    estimated_time_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The estimated time of the execution action member in minutes.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum:
+    * SCHEDULED
+    * IN_PROGRESS
+    * FAILED
+    * CANCELED
+    * DURATION_EXCEEDED
+    * RESCHEDULED
+    * SUCCEEDED
+    """
+    total_time_taken_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The total time taken by corresponding resource activity in minutes.
+    """
 
 @pulumi.input_type
 class ExecutionActionActionMemberArgs:
@@ -22956,22 +22367,19 @@ class ExecutionActionActionMemberArgs:
         pulumi.set(self, "total_time_taken_in_mins", value)
 
 
-if not MYPY:
-    class ExternalContainerDatabaseDatabaseManagementConfigArgsDict(TypedDict):
-        database_management_connection_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
-        database_management_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of the Database Management service.
-        """
-        license_model: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle license model that applies to the external database.
-        """
-elif False:
-    ExternalContainerDatabaseDatabaseManagementConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalContainerDatabaseDatabaseManagementConfigArgsDict(TypedDict):
+    database_management_connection_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+    """
+    database_management_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of the Database Management service.
+    """
+    license_model: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle license model that applies to the external database.
+    """
 
 @pulumi.input_type
 class ExternalContainerDatabaseDatabaseManagementConfigArgs:
@@ -23028,18 +22436,15 @@ class ExternalContainerDatabaseDatabaseManagementConfigArgs:
         pulumi.set(self, "license_model", value)
 
 
-if not MYPY:
-    class ExternalContainerDatabaseStackMonitoringConfigArgsDict(TypedDict):
-        stack_monitoring_connector_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
-        stack_monitoring_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of Stack Monitoring.
-        """
-elif False:
-    ExternalContainerDatabaseStackMonitoringConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalContainerDatabaseStackMonitoringConfigArgsDict(TypedDict):
+    stack_monitoring_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+    """
+    stack_monitoring_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of Stack Monitoring.
+    """
 
 @pulumi.input_type
 class ExternalContainerDatabaseStackMonitoringConfigArgs:
@@ -23080,36 +22485,33 @@ class ExternalContainerDatabaseStackMonitoringConfigArgs:
         pulumi.set(self, "stack_monitoring_status", value)
 
 
-if not MYPY:
-    class ExternalDatabaseConnectorConnectionCredentialsArgsDict(TypedDict):
-        credential_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+class ExternalDatabaseConnectorConnectionCredentialsArgsDict(TypedDict):
+    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 
-        For example: inventorydb.abc112233445566778899
-        """
-        credential_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of credential used to connect to the database.
-        """
-        password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The password that will be used to connect to the database.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The role of the user that will be connecting to the database.
-        """
-        ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
-        username: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The username that will be used to connect to the database.
-        """
-elif False:
-    ExternalDatabaseConnectorConnectionCredentialsArgsDict: TypeAlias = Mapping[str, Any]
+    For example: inventorydb.abc112233445566778899
+    """
+    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of credential used to connect to the database.
+    """
+    password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The password that will be used to connect to the database.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The role of the user that will be connecting to the database.
+    """
+    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+    """
+    username: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The username that will be used to connect to the database.
+    """
 
 @pulumi.input_type
 class ExternalDatabaseConnectorConnectionCredentialsArgs:
@@ -23218,26 +22620,23 @@ class ExternalDatabaseConnectorConnectionCredentialsArgs:
         pulumi.set(self, "username", value)
 
 
-if not MYPY:
-    class ExternalDatabaseConnectorConnectionStringArgsDict(TypedDict):
-        hostname: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The host name of the database.
-        """
-        port: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The port used to connect to the database.
-        """
-        protocol: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The protocol used to connect to the database.
-        """
-        service: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the service alias used to connect to the database.
-        """
-elif False:
-    ExternalDatabaseConnectorConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDatabaseConnectorConnectionStringArgsDict(TypedDict):
+    hostname: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The host name of the database.
+    """
+    port: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The port used to connect to the database.
+    """
+    protocol: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The protocol used to connect to the database.
+    """
+    service: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the service alias used to connect to the database.
+    """
 
 @pulumi.input_type
 class ExternalDatabaseConnectorConnectionStringArgs:
@@ -23306,22 +22705,19 @@ class ExternalDatabaseConnectorConnectionStringArgs:
         pulumi.set(self, "service", value)
 
 
-if not MYPY:
-    class ExternalNonContainerDatabaseDatabaseManagementConfigArgsDict(TypedDict):
-        database_management_connection_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
-        database_management_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of the Database Management service.
-        """
-        license_model: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle license model that applies to the external database.
-        """
-elif False:
-    ExternalNonContainerDatabaseDatabaseManagementConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalNonContainerDatabaseDatabaseManagementConfigArgsDict(TypedDict):
+    database_management_connection_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+    """
+    database_management_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of the Database Management service.
+    """
+    license_model: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle license model that applies to the external database.
+    """
 
 @pulumi.input_type
 class ExternalNonContainerDatabaseDatabaseManagementConfigArgs:
@@ -23378,18 +22774,15 @@ class ExternalNonContainerDatabaseDatabaseManagementConfigArgs:
         pulumi.set(self, "license_model", value)
 
 
-if not MYPY:
-    class ExternalNonContainerDatabaseOperationsInsightsConfigArgsDict(TypedDict):
-        operations_insights_connector_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
-        operations_insights_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of Operations Insights
-        """
-elif False:
-    ExternalNonContainerDatabaseOperationsInsightsConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalNonContainerDatabaseOperationsInsightsConfigArgsDict(TypedDict):
+    operations_insights_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+    """
+    operations_insights_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of Operations Insights
+    """
 
 @pulumi.input_type
 class ExternalNonContainerDatabaseOperationsInsightsConfigArgs:
@@ -23430,18 +22823,15 @@ class ExternalNonContainerDatabaseOperationsInsightsConfigArgs:
         pulumi.set(self, "operations_insights_status", value)
 
 
-if not MYPY:
-    class ExternalNonContainerDatabaseStackMonitoringConfigArgsDict(TypedDict):
-        stack_monitoring_connector_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
-        stack_monitoring_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of Stack Monitoring.
-        """
-elif False:
-    ExternalNonContainerDatabaseStackMonitoringConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalNonContainerDatabaseStackMonitoringConfigArgsDict(TypedDict):
+    stack_monitoring_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+    """
+    stack_monitoring_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of Stack Monitoring.
+    """
 
 @pulumi.input_type
 class ExternalNonContainerDatabaseStackMonitoringConfigArgs:
@@ -23482,22 +22872,19 @@ class ExternalNonContainerDatabaseStackMonitoringConfigArgs:
         pulumi.set(self, "stack_monitoring_status", value)
 
 
-if not MYPY:
-    class ExternalPluggableDatabaseDatabaseManagementConfigArgsDict(TypedDict):
-        database_management_connection_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
-        database_management_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of the Database Management service.
-        """
-        license_model: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle license model that applies to the external database.
-        """
-elif False:
-    ExternalPluggableDatabaseDatabaseManagementConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalPluggableDatabaseDatabaseManagementConfigArgsDict(TypedDict):
+    database_management_connection_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+    """
+    database_management_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of the Database Management service.
+    """
+    license_model: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle license model that applies to the external database.
+    """
 
 @pulumi.input_type
 class ExternalPluggableDatabaseDatabaseManagementConfigArgs:
@@ -23554,18 +22941,15 @@ class ExternalPluggableDatabaseDatabaseManagementConfigArgs:
         pulumi.set(self, "license_model", value)
 
 
-if not MYPY:
-    class ExternalPluggableDatabaseOperationsInsightsConfigArgsDict(TypedDict):
-        operations_insights_connector_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
-        operations_insights_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of Operations Insights
-        """
-elif False:
-    ExternalPluggableDatabaseOperationsInsightsConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalPluggableDatabaseOperationsInsightsConfigArgsDict(TypedDict):
+    operations_insights_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+    """
+    operations_insights_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of Operations Insights
+    """
 
 @pulumi.input_type
 class ExternalPluggableDatabaseOperationsInsightsConfigArgs:
@@ -23606,18 +22990,15 @@ class ExternalPluggableDatabaseOperationsInsightsConfigArgs:
         pulumi.set(self, "operations_insights_status", value)
 
 
-if not MYPY:
-    class ExternalPluggableDatabaseStackMonitoringConfigArgsDict(TypedDict):
-        stack_monitoring_connector_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
-        stack_monitoring_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of Stack Monitoring.
-        """
-elif False:
-    ExternalPluggableDatabaseStackMonitoringConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalPluggableDatabaseStackMonitoringConfigArgsDict(TypedDict):
+    stack_monitoring_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+    """
+    stack_monitoring_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of Stack Monitoring.
+    """
 
 @pulumi.input_type
 class ExternalPluggableDatabaseStackMonitoringConfigArgs:
@@ -23658,22 +23039,19 @@ class ExternalPluggableDatabaseStackMonitoringConfigArgs:
         pulumi.set(self, "stack_monitoring_status", value)
 
 
-if not MYPY:
-    class KeyStoreAssociatedDatabaseArgsDict(TypedDict):
-        db_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the database that is associated with the key store.
-        """
-        db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique name of the database that is associated with the key store.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        """
-elif False:
-    KeyStoreAssociatedDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+class KeyStoreAssociatedDatabaseArgsDict(TypedDict):
+    db_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the database that is associated with the key store.
+    """
+    db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique name of the database that is associated with the key store.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+    """
 
 @pulumi.input_type
 class KeyStoreAssociatedDatabaseArgs:
@@ -23730,18 +23108,15 @@ class KeyStoreAssociatedDatabaseArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class KeyStoreAssociatedLongTermBackupArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user-friendly name for the key store. The name does not need to be unique.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        """
-elif False:
-    KeyStoreAssociatedLongTermBackupArgsDict: TypeAlias = Mapping[str, Any]
+class KeyStoreAssociatedLongTermBackupArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user-friendly name for the key store. The name does not need to be unique.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+    """
 
 @pulumi.input_type
 class KeyStoreAssociatedLongTermBackupArgs:
@@ -23782,34 +23157,31 @@ class KeyStoreAssociatedLongTermBackupArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class KeyStoreTypeDetailsArgsDict(TypedDict):
-        admin_username: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The administrator username to connect to Oracle Key Vault
-        """
-        connection_ips: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) The list of Oracle Key Vault connection IP addresses.
-        """
-        secret_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of key store.
-        """
-        vault_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+class KeyStoreTypeDetailsArgsDict(TypedDict):
+    admin_username: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The administrator username to connect to Oracle Key Vault
+    """
+    connection_ips: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) The list of Oracle Key Vault connection IP addresses.
+    """
+    secret_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of key store.
+    """
+    vault_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    KeyStoreTypeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class KeyStoreTypeDetailsArgs:
@@ -23901,26 +23273,23 @@ class KeyStoreTypeDetailsArgs:
         pulumi.set(self, "vault_id", value)
 
 
-if not MYPY:
-    class MaintenanceRunEstimatedPatchingTimeArgsDict(TypedDict):
-        estimated_db_server_patching_time: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The estimated time required in minutes for database server patching.
-        """
-        estimated_network_switches_patching_time: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The estimated time required in minutes for network switch patching.
-        """
-        estimated_storage_server_patching_time: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The estimated time required in minutes for storage server patching.
-        """
-        total_estimated_patching_time: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The estimated total time required in minutes for all patching operations.
-        """
-elif False:
-    MaintenanceRunEstimatedPatchingTimeArgsDict: TypeAlias = Mapping[str, Any]
+class MaintenanceRunEstimatedPatchingTimeArgsDict(TypedDict):
+    estimated_db_server_patching_time: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The estimated time required in minutes for database server patching.
+    """
+    estimated_network_switches_patching_time: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The estimated time required in minutes for network switch patching.
+    """
+    estimated_storage_server_patching_time: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The estimated time required in minutes for storage server patching.
+    """
+    total_estimated_patching_time: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The estimated total time required in minutes for all patching operations.
+    """
 
 @pulumi.input_type
 class MaintenanceRunEstimatedPatchingTimeArgs:
@@ -23993,22 +23362,19 @@ class MaintenanceRunEstimatedPatchingTimeArgs:
         pulumi.set(self, "total_estimated_patching_time", value)
 
 
-if not MYPY:
-    class PluggableDatabaseConnectionStringArgsDict(TypedDict):
-        all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        All connection strings to use to connect to the pluggable database.
-        """
-        pdb_default: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A host name-based PDB connection string.
-        """
-        pdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An IP-based PDB connection string.
-        """
-elif False:
-    PluggableDatabaseConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class PluggableDatabaseConnectionStringArgsDict(TypedDict):
+    all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    All connection strings to use to connect to the pluggable database.
+    """
+    pdb_default: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A host name-based PDB connection string.
+    """
+    pdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An IP-based PDB connection string.
+    """
 
 @pulumi.input_type
 class PluggableDatabaseConnectionStringArgs:
@@ -24065,30 +23431,27 @@ class PluggableDatabaseConnectionStringArgs:
         pulumi.set(self, "pdb_ip_default", value)
 
 
-if not MYPY:
-    class PluggableDatabaseManagementsManagementConnectionStringArgsDict(TypedDict):
-        enable_pluggabledatabasemanagement: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+class PluggableDatabaseManagementsManagementConnectionStringArgsDict(TypedDict):
+    enable_pluggabledatabasemanagement: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        All connection strings to use to connect to the pluggable database.
-        """
-        pdb_default: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A host name-based PDB connection string.
-        """
-        pdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An IP-based PDB connection string.
-        """
-elif False:
-    PluggableDatabaseManagementsManagementConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    All connection strings to use to connect to the pluggable database.
+    """
+    pdb_default: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A host name-based PDB connection string.
+    """
+    pdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An IP-based PDB connection string.
+    """
 
 @pulumi.input_type
 class PluggableDatabaseManagementsManagementConnectionStringArgs:
@@ -24168,18 +23531,15 @@ class PluggableDatabaseManagementsManagementConnectionStringArgs:
         pulumi.set(self, "pdb_ip_default", value)
 
 
-if not MYPY:
-    class PluggableDatabaseManagementsManagementCredentialDetailsArgsDict(TypedDict):
-        password_secret_id: pulumi.Input[_builtins.str]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
-        user_name: pulumi.Input[_builtins.str]
-        """
-        The name of the Oracle Database user that will be used to connect to the database.
-        """
-elif False:
-    PluggableDatabaseManagementsManagementCredentialDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PluggableDatabaseManagementsManagementCredentialDetailsArgsDict(TypedDict):
+    password_secret_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+    """
+    user_name: pulumi.Input[_builtins.str]
+    """
+    The name of the Oracle Database user that will be used to connect to the database.
+    """
 
 @pulumi.input_type
 class PluggableDatabaseManagementsManagementCredentialDetailsArgs:
@@ -24218,22 +23578,19 @@ class PluggableDatabaseManagementsManagementCredentialDetailsArgs:
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgsDict(TypedDict):
-        enable_pluggabledatabasemanagement: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+class PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgsDict(TypedDict):
+    enable_pluggabledatabasemanagement: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        management_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of the Pluggable Database Management service.
-        """
-elif False:
-    PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    management_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of the Pluggable Database Management service.
+    """
 
 @pulumi.input_type
 class PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs:
@@ -24281,42 +23638,39 @@ class PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArg
         pulumi.set(self, "management_status", value)
 
 
-if not MYPY:
-    class PluggableDatabasePdbCreationTypeDetailsArgsDict(TypedDict):
-        creation_type: pulumi.Input[_builtins.str]
-        """
-        The Pluggable Database creation type.
-        """
-        source_pluggable_database_id: pulumi.Input[_builtins.str]
-        """
-        The OCID of the Source Pluggable Database.
-        """
-        dblink_user_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The DB link user password.
-        """
-        dblink_username: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the DB link user.
-        """
-        is_thin_clone: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
-        """
-        refreshable_clone_details: NotRequired[pulumi.Input['PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgsDict']]
-        """
-        Parameters for creating Pluggable Database Refreshable Clone. **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        """
-        source_container_database_admin_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The DB system administrator password of the source Container Database.
-        """
-        source_pluggable_database_snapshot_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the Source Pluggable Database Snapshot id.
-        """
-elif False:
-    PluggableDatabasePdbCreationTypeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PluggableDatabasePdbCreationTypeDetailsArgsDict(TypedDict):
+    creation_type: pulumi.Input[_builtins.str]
+    """
+    The Pluggable Database creation type.
+    """
+    source_pluggable_database_id: pulumi.Input[_builtins.str]
+    """
+    The OCID of the Source Pluggable Database.
+    """
+    dblink_user_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The DB link user password.
+    """
+    dblink_username: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the DB link user.
+    """
+    is_thin_clone: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
+    """
+    refreshable_clone_details: NotRequired[pulumi.Input['PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgsDict']]
+    """
+    Parameters for creating Pluggable Database Refreshable Clone. **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+    """
+    source_container_database_admin_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The DB system administrator password of the source Container Database.
+    """
+    source_pluggable_database_snapshot_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the Source Pluggable Database Snapshot id.
+    """
 
 @pulumi.input_type
 class PluggableDatabasePdbCreationTypeDetailsArgs:
@@ -24451,14 +23805,11 @@ class PluggableDatabasePdbCreationTypeDetailsArgs:
         pulumi.set(self, "source_pluggable_database_snapshot_id", value)
 
 
-if not MYPY:
-    class PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgsDict(TypedDict):
-        is_refreshable_clone: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether Pluggable Database is a refreshable clone.
-        """
-elif False:
-    PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgsDict(TypedDict):
+    is_refreshable_clone: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Pluggable Database is a refreshable clone.
+    """
 
 @pulumi.input_type
 class PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs:
@@ -24483,18 +23834,15 @@ class PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs:
         pulumi.set(self, "is_refreshable_clone", value)
 
 
-if not MYPY:
-    class PluggableDatabasePdbNodeLevelDetailArgsDict(TypedDict):
-        node_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Node name of the Database Instance.
-        """
-        open_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-        """
-elif False:
-    PluggableDatabasePdbNodeLevelDetailArgsDict: TypeAlias = Mapping[str, Any]
+class PluggableDatabasePdbNodeLevelDetailArgsDict(TypedDict):
+    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Node name of the Database Instance.
+    """
+    open_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+    """
 
 @pulumi.input_type
 class PluggableDatabasePdbNodeLevelDetailArgs:
@@ -24535,14 +23883,11 @@ class PluggableDatabasePdbNodeLevelDetailArgs:
         pulumi.set(self, "open_mode", value)
 
 
-if not MYPY:
-    class PluggableDatabasePluggableDatabaseManagementConfigArgsDict(TypedDict):
-        management_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of the Pluggable Database Management service.
-        """
-elif False:
-    PluggableDatabasePluggableDatabaseManagementConfigArgsDict: TypeAlias = Mapping[str, Any]
+class PluggableDatabasePluggableDatabaseManagementConfigArgsDict(TypedDict):
+    management_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of the Pluggable Database Management service.
+    """
 
 @pulumi.input_type
 class PluggableDatabasePluggableDatabaseManagementConfigArgs:
@@ -24567,14 +23912,11 @@ class PluggableDatabasePluggableDatabaseManagementConfigArgs:
         pulumi.set(self, "management_status", value)
 
 
-if not MYPY:
-    class PluggableDatabaseRefreshableCloneConfigArgsDict(TypedDict):
-        is_refreshable_clone: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the Pluggable Database is a refreshable clone.
-        """
-elif False:
-    PluggableDatabaseRefreshableCloneConfigArgsDict: TypeAlias = Mapping[str, Any]
+class PluggableDatabaseRefreshableCloneConfigArgsDict(TypedDict):
+    is_refreshable_clone: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the Pluggable Database is a refreshable clone.
+    """
 
 @pulumi.input_type
 class PluggableDatabaseRefreshableCloneConfigArgs:
@@ -24599,22 +23941,19 @@ class PluggableDatabaseRefreshableCloneConfigArgs:
         pulumi.set(self, "is_refreshable_clone", value)
 
 
-if not MYPY:
-    class PluggableDatabasesLocalCloneConnectionStringArgsDict(TypedDict):
-        all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        All connection strings to use to connect to the pluggable database.
-        """
-        pdb_default: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A host name-based PDB connection string.
-        """
-        pdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An IP-based PDB connection string.
-        """
-elif False:
-    PluggableDatabasesLocalCloneConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class PluggableDatabasesLocalCloneConnectionStringArgsDict(TypedDict):
+    all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    All connection strings to use to connect to the pluggable database.
+    """
+    pdb_default: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A host name-based PDB connection string.
+    """
+    pdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An IP-based PDB connection string.
+    """
 
 @pulumi.input_type
 class PluggableDatabasesLocalCloneConnectionStringArgs:
@@ -24671,18 +24010,15 @@ class PluggableDatabasesLocalCloneConnectionStringArgs:
         pulumi.set(self, "pdb_ip_default", value)
 
 
-if not MYPY:
-    class PluggableDatabasesLocalClonePdbNodeLevelDetailArgsDict(TypedDict):
-        node_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Node name of the Database Instance.
-        """
-        open_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-        """
-elif False:
-    PluggableDatabasesLocalClonePdbNodeLevelDetailArgsDict: TypeAlias = Mapping[str, Any]
+class PluggableDatabasesLocalClonePdbNodeLevelDetailArgsDict(TypedDict):
+    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Node name of the Database Instance.
+    """
+    open_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+    """
 
 @pulumi.input_type
 class PluggableDatabasesLocalClonePdbNodeLevelDetailArgs:
@@ -24723,14 +24059,11 @@ class PluggableDatabasesLocalClonePdbNodeLevelDetailArgs:
         pulumi.set(self, "open_mode", value)
 
 
-if not MYPY:
-    class PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArgsDict(TypedDict):
-        management_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of the Pluggable Database Management service.
-        """
-elif False:
-    PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArgsDict: TypeAlias = Mapping[str, Any]
+class PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArgsDict(TypedDict):
+    management_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of the Pluggable Database Management service.
+    """
 
 @pulumi.input_type
 class PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArgs:
@@ -24755,14 +24088,11 @@ class PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArgs:
         pulumi.set(self, "management_status", value)
 
 
-if not MYPY:
-    class PluggableDatabasesLocalCloneRefreshableCloneConfigArgsDict(TypedDict):
-        is_refreshable_clone: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the Pluggable Database is a refreshable clone.
-        """
-elif False:
-    PluggableDatabasesLocalCloneRefreshableCloneConfigArgsDict: TypeAlias = Mapping[str, Any]
+class PluggableDatabasesLocalCloneRefreshableCloneConfigArgsDict(TypedDict):
+    is_refreshable_clone: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the Pluggable Database is a refreshable clone.
+    """
 
 @pulumi.input_type
 class PluggableDatabasesLocalCloneRefreshableCloneConfigArgs:
@@ -24787,22 +24117,19 @@ class PluggableDatabasesLocalCloneRefreshableCloneConfigArgs:
         pulumi.set(self, "is_refreshable_clone", value)
 
 
-if not MYPY:
-    class PluggableDatabasesRemoteCloneConnectionStringArgsDict(TypedDict):
-        all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        All connection strings to use to connect to the pluggable database.
-        """
-        pdb_default: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A host name-based PDB connection string.
-        """
-        pdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An IP-based PDB connection string.
-        """
-elif False:
-    PluggableDatabasesRemoteCloneConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class PluggableDatabasesRemoteCloneConnectionStringArgsDict(TypedDict):
+    all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    All connection strings to use to connect to the pluggable database.
+    """
+    pdb_default: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A host name-based PDB connection string.
+    """
+    pdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An IP-based PDB connection string.
+    """
 
 @pulumi.input_type
 class PluggableDatabasesRemoteCloneConnectionStringArgs:
@@ -24859,18 +24186,15 @@ class PluggableDatabasesRemoteCloneConnectionStringArgs:
         pulumi.set(self, "pdb_ip_default", value)
 
 
-if not MYPY:
-    class PluggableDatabasesRemoteClonePdbNodeLevelDetailArgsDict(TypedDict):
-        node_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Node name of the Database Instance.
-        """
-        open_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-        """
-elif False:
-    PluggableDatabasesRemoteClonePdbNodeLevelDetailArgsDict: TypeAlias = Mapping[str, Any]
+class PluggableDatabasesRemoteClonePdbNodeLevelDetailArgsDict(TypedDict):
+    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Node name of the Database Instance.
+    """
+    open_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+    """
 
 @pulumi.input_type
 class PluggableDatabasesRemoteClonePdbNodeLevelDetailArgs:
@@ -24911,14 +24235,11 @@ class PluggableDatabasesRemoteClonePdbNodeLevelDetailArgs:
         pulumi.set(self, "open_mode", value)
 
 
-if not MYPY:
-    class PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgsDict(TypedDict):
-        management_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of the Pluggable Database Management service.
-        """
-elif False:
-    PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgsDict: TypeAlias = Mapping[str, Any]
+class PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgsDict(TypedDict):
+    management_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of the Pluggable Database Management service.
+    """
 
 @pulumi.input_type
 class PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs:
@@ -24943,14 +24264,11 @@ class PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs:
         pulumi.set(self, "management_status", value)
 
 
-if not MYPY:
-    class PluggableDatabasesRemoteCloneRefreshableCloneConfigArgsDict(TypedDict):
-        is_refreshable_clone: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the Pluggable Database is a refreshable clone.
-        """
-elif False:
-    PluggableDatabasesRemoteCloneRefreshableCloneConfigArgsDict: TypeAlias = Mapping[str, Any]
+class PluggableDatabasesRemoteCloneRefreshableCloneConfigArgsDict(TypedDict):
+    is_refreshable_clone: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the Pluggable Database is a refreshable clone.
+    """
 
 @pulumi.input_type
 class PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs:
@@ -24975,22 +24293,19 @@ class PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs:
         pulumi.set(self, "is_refreshable_clone", value)
 
 
-if not MYPY:
-    class ScheduledActionActionMemberArgsDict(TypedDict):
-        member_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The ocid of the action member.
-        """
-        member_order: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The order of the action member in a scheduled action.
-        """
-        estimated_time_in_mins: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The estimated time for the intended action member.
-        """
-elif False:
-    ScheduledActionActionMemberArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduledActionActionMemberArgsDict(TypedDict):
+    member_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The ocid of the action member.
+    """
+    member_order: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The order of the action member in a scheduled action.
+    """
+    estimated_time_in_mins: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The estimated time for the intended action member.
+    """
 
 @pulumi.input_type
 class ScheduledActionActionMemberArgs:
@@ -25045,14 +24360,11 @@ class ScheduledActionActionMemberArgs:
         pulumi.set(self, "estimated_time_in_mins", value)
 
 
-if not MYPY:
-    class SchedulingPolicyCadenceStartMonthArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the month of the year.
-        """
-elif False:
-    SchedulingPolicyCadenceStartMonthArgsDict: TypeAlias = Mapping[str, Any]
+class SchedulingPolicyCadenceStartMonthArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the month of the year.
+    """
 
 @pulumi.input_type
 class SchedulingPolicyCadenceStartMonthArgs:
@@ -25076,38 +24388,35 @@ class SchedulingPolicyCadenceStartMonthArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class SchedulingPolicySchedulingWindowWindowPreferenceArgsDict(TypedDict):
-        days_of_weeks: pulumi.Input[Sequence[pulumi.Input['SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgsDict']]]
-        """
-        (Updatable) Days during the week when scheduling window should be performed.
-        """
-        duration: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
-        """
-        is_enforced_duration: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
-        """
-        months: pulumi.Input[Sequence[pulumi.Input['SchedulingPolicySchedulingWindowWindowPreferenceMonthArgsDict']]]
-        """
-        (Updatable) Months during the year when scheduled window should be performed.
-        """
-        start_time: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
-        """
-        weeks_of_months: pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]
-        """
-        (Updatable) Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed. 
+class SchedulingPolicySchedulingWindowWindowPreferenceArgsDict(TypedDict):
+    days_of_weeks: pulumi.Input[Sequence[pulumi.Input['SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgsDict']]]
+    """
+    (Updatable) Days during the week when scheduling window should be performed.
+    """
+    duration: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+    """
+    is_enforced_duration: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
+    """
+    months: pulumi.Input[Sequence[pulumi.Input['SchedulingPolicySchedulingWindowWindowPreferenceMonthArgsDict']]]
+    """
+    (Updatable) Months during the year when scheduled window should be performed.
+    """
+    start_time: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
+    """
+    weeks_of_months: pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]
+    """
+    (Updatable) Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed. 
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    SchedulingPolicySchedulingWindowWindowPreferenceArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class SchedulingPolicySchedulingWindowWindowPreferenceArgs:
@@ -25214,14 +24523,11 @@ class SchedulingPolicySchedulingWindowWindowPreferenceArgs:
         pulumi.set(self, "weeks_of_months", value)
 
 
-if not MYPY:
-    class SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the day of the week.
-        """
-elif False:
-    SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+class SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the day of the week.
+    """
 
 @pulumi.input_type
 class SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs:
@@ -25245,14 +24551,11 @@ class SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class SchedulingPolicySchedulingWindowWindowPreferenceMonthArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the month of the year.
-        """
-elif False:
-    SchedulingPolicySchedulingWindowWindowPreferenceMonthArgsDict: TypeAlias = Mapping[str, Any]
+class SchedulingPolicySchedulingWindowWindowPreferenceMonthArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the month of the year.
+    """
 
 @pulumi.input_type
 class SchedulingPolicySchedulingWindowWindowPreferenceMonthArgs:
@@ -25276,26 +24579,23 @@ class SchedulingPolicySchedulingWindowWindowPreferenceMonthArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgsDict(TypedDict):
-        apply_update_time_preferences: NotRequired[pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict']]]]
-        """
-        Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
-        """
-        freeze_periods: NotRequired[pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgsDict']]]]
-        """
-        Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
-        """
-        is_early_adoption_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
-        """
-        is_freeze_period_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
-        """
-elif False:
-    VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgsDict(TypedDict):
+    apply_update_time_preferences: NotRequired[pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict']]]]
+    """
+    Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+    """
+    freeze_periods: NotRequired[pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgsDict']]]]
+    """
+    Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+    """
+    is_early_adoption_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+    """
+    is_freeze_period_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+    """
 
 @pulumi.input_type
 class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgs:
@@ -25368,18 +24668,15 @@ class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgs:
         pulumi.set(self, "is_freeze_period_enabled", value)
 
 
-if not MYPY:
-    class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict(TypedDict):
-        apply_update_preferred_end_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
-        """
-        apply_update_preferred_start_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
-        """
-elif False:
-    VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict(TypedDict):
+    apply_update_preferred_end_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+    """
+    apply_update_preferred_start_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+    """
 
 @pulumi.input_type
 class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs:
@@ -25420,18 +24717,15 @@ class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePrefer
         pulumi.set(self, "apply_update_preferred_start_time", value)
 
 
-if not MYPY:
-    class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgsDict(TypedDict):
-        freeze_period_end_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        End time of the freeze period cycle.
-        """
-        freeze_period_start_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Start time of the freeze period cycle.
-        """
-elif False:
-    VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgsDict(TypedDict):
+    freeze_period_end_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    End time of the freeze period cycle.
+    """
+    freeze_period_start_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Start time of the freeze period cycle.
+    """
 
 @pulumi.input_type
 class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgs:
@@ -25472,22 +24766,19 @@ class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgs:
         pulumi.set(self, "freeze_period_start_time", value)
 
 
-if not MYPY:
-    class VmClusterAddVirtualNetworkDataCollectionOptionArgsDict(TypedDict):
-        is_diagnostics_events_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        """
-        is_health_monitoring_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        """
-        is_incident_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
-elif False:
-    VmClusterAddVirtualNetworkDataCollectionOptionArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterAddVirtualNetworkDataCollectionOptionArgsDict(TypedDict):
+    is_diagnostics_events_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+    """
+    is_health_monitoring_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+    """
+    is_incident_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+    """
 
 @pulumi.input_type
 class VmClusterAddVirtualNetworkDataCollectionOptionArgs:
@@ -25544,14 +24835,11 @@ class VmClusterAddVirtualNetworkDataCollectionOptionArgs:
         pulumi.set(self, "is_incident_logs_enabled", value)
 
 
-if not MYPY:
-    class VmClusterAddVirtualNetworkDbServerArgsDict(TypedDict):
-        db_server_id: pulumi.Input[_builtins.str]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
-        """
-elif False:
-    VmClusterAddVirtualNetworkDbServerArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterAddVirtualNetworkDbServerArgsDict(TypedDict):
+    db_server_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
+    """
 
 @pulumi.input_type
 class VmClusterAddVirtualNetworkDbServerArgs:
@@ -25575,18 +24863,15 @@ class VmClusterAddVirtualNetworkDbServerArgs:
         pulumi.set(self, "db_server_id", value)
 
 
-if not MYPY:
-    class VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgsDict(TypedDict):
-        file_system_size_gb: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The file system size to be allocated in GBs.
-        """
-        mount_point: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The mount point of file system.
-        """
-elif False:
-    VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgsDict(TypedDict):
+    file_system_size_gb: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The file system size to be allocated in GBs.
+    """
+    mount_point: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The mount point of file system.
+    """
 
 @pulumi.input_type
 class VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgs:
@@ -25627,26 +24912,23 @@ class VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgs:
         pulumi.set(self, "mount_point", value)
 
 
-if not MYPY:
-    class VmClusterCloudAutomationUpdateDetailsArgsDict(TypedDict):
-        apply_update_time_preference: NotRequired[pulumi.Input['VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict']]
-        """
-        (Updatable) Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
-        """
-        freeze_period: NotRequired[pulumi.Input['VmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict']]
-        """
-        (Updatable) Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
-        """
-        is_early_adoption_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
-        """
-        is_freeze_period_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
-        """
-elif False:
-    VmClusterCloudAutomationUpdateDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterCloudAutomationUpdateDetailsArgsDict(TypedDict):
+    apply_update_time_preference: NotRequired[pulumi.Input['VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict']]
+    """
+    (Updatable) Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+    """
+    freeze_period: NotRequired[pulumi.Input['VmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict']]
+    """
+    (Updatable) Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+    """
+    is_early_adoption_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+    """
+    is_freeze_period_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+    """
 
 @pulumi.input_type
 class VmClusterCloudAutomationUpdateDetailsArgs:
@@ -25719,18 +25001,15 @@ class VmClusterCloudAutomationUpdateDetailsArgs:
         pulumi.set(self, "is_freeze_period_enabled", value)
 
 
-if not MYPY:
-    class VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict(TypedDict):
-        apply_update_preferred_end_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
-        """
-        apply_update_preferred_start_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
-        """
-elif False:
-    VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict(TypedDict):
+    apply_update_preferred_end_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+    """
+    apply_update_preferred_start_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+    """
 
 @pulumi.input_type
 class VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs:
@@ -25771,18 +25050,15 @@ class VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs:
         pulumi.set(self, "apply_update_preferred_start_time", value)
 
 
-if not MYPY:
-    class VmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict(TypedDict):
-        freeze_period_end_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) End time of the freeze period cycle.
-        """
-        freeze_period_start_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Start time of the freeze period cycle.
-        """
-elif False:
-    VmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict(TypedDict):
+    freeze_period_end_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) End time of the freeze period cycle.
+    """
+    freeze_period_start_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Start time of the freeze period cycle.
+    """
 
 @pulumi.input_type
 class VmClusterCloudAutomationUpdateDetailsFreezePeriodArgs:
@@ -25823,22 +25099,19 @@ class VmClusterCloudAutomationUpdateDetailsFreezePeriodArgs:
         pulumi.set(self, "freeze_period_start_time", value)
 
 
-if not MYPY:
-    class VmClusterDataCollectionOptionsArgsDict(TypedDict):
-        is_diagnostics_events_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        """
-        is_health_monitoring_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        """
-        is_incident_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
-elif False:
-    VmClusterDataCollectionOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterDataCollectionOptionsArgsDict(TypedDict):
+    is_diagnostics_events_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+    """
+    is_health_monitoring_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+    """
+    is_incident_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+    """
 
 @pulumi.input_type
 class VmClusterDataCollectionOptionsArgs:
@@ -25895,18 +25168,15 @@ class VmClusterDataCollectionOptionsArgs:
         pulumi.set(self, "is_incident_logs_enabled", value)
 
 
-if not MYPY:
-    class VmClusterFileSystemConfigurationDetailArgsDict(TypedDict):
-        file_system_size_gb: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The file system size to be allocated in GBs.
-        """
-        mount_point: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The mount point of file system.
-        """
-elif False:
-    VmClusterFileSystemConfigurationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterFileSystemConfigurationDetailArgsDict(TypedDict):
+    file_system_size_gb: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The file system size to be allocated in GBs.
+    """
+    mount_point: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The mount point of file system.
+    """
 
 @pulumi.input_type
 class VmClusterFileSystemConfigurationDetailArgs:
@@ -25947,22 +25217,19 @@ class VmClusterFileSystemConfigurationDetailArgs:
         pulumi.set(self, "mount_point", value)
 
 
-if not MYPY:
-    class VmClusterNetworkDrScanArgsDict(TypedDict):
-        hostname: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The Disaster recovery SCAN hostname.
-        """
-        ips: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) The list of Disaster recovery SCAN IP addresses. Three addresses should be provided.
-        """
-        scan_listener_port_tcp: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The Disaster recovery SCAN TCPIP port. Default is 1521.
-        """
-elif False:
-    VmClusterNetworkDrScanArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterNetworkDrScanArgsDict(TypedDict):
+    hostname: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The Disaster recovery SCAN hostname.
+    """
+    ips: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) The list of Disaster recovery SCAN IP addresses. Three addresses should be provided.
+    """
+    scan_listener_port_tcp: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The Disaster recovery SCAN TCPIP port. Default is 1521.
+    """
 
 @pulumi.input_type
 class VmClusterNetworkDrScanArgs:
@@ -26016,30 +25283,27 @@ class VmClusterNetworkDrScanArgs:
         pulumi.set(self, "scan_listener_port_tcp", value)
 
 
-if not MYPY:
-    class VmClusterNetworkScanArgsDict(TypedDict):
-        hostname: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The SCAN hostname.
-        """
-        ips: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
-        """
-        scan_listener_port_tcp: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The SCAN TCPIP port. Default is 1521.
-        """
-        scan_listener_port_tcp_ssl: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The SCAN TCPIP SSL port. Default is 2484.
-        """
-elif False:
-    VmClusterNetworkScanArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterNetworkScanArgsDict(TypedDict):
+    hostname: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The SCAN hostname.
+    """
+    ips: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
+    """
+    scan_listener_port_tcp: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The SCAN TCPIP port. Default is 1521.
+    """
+    scan_listener_port_tcp_ssl: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The SCAN TCPIP SSL port. Default is 2484.
+    """
 
 @pulumi.input_type
 class VmClusterNetworkScanArgs:
@@ -26126,38 +25390,35 @@ class VmClusterNetworkScanArgs:
         pulumi.set(self, "scan_listener_port_tcp_ssl", value)
 
 
-if not MYPY:
-    class VmClusterNetworkVmNetworkArgsDict(TypedDict):
-        network_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The network type.
-        """
-        nodes: pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkNodeArgsDict']]]
-        """
-        (Updatable) The list of node details.
-        """
-        domain_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The network domain name.
-        """
-        gateway: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The network gateway.
-        """
-        netmask: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The network netmask.
-        """
-        vlan_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The network VLAN ID.
+class VmClusterNetworkVmNetworkArgsDict(TypedDict):
+    network_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The network type.
+    """
+    nodes: pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkNodeArgsDict']]]
+    """
+    (Updatable) The list of node details.
+    """
+    domain_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The network domain name.
+    """
+    gateway: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The network gateway.
+    """
+    netmask: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The network netmask.
+    """
+    vlan_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The network VLAN ID.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    VmClusterNetworkVmNetworkArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class VmClusterNetworkVmNetworkArgs:
@@ -26268,34 +25529,31 @@ class VmClusterNetworkVmNetworkArgs:
         pulumi.set(self, "vlan_id", value)
 
 
-if not MYPY:
-    class VmClusterNetworkVmNetworkNodeArgsDict(TypedDict):
-        hostname: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The node host name.
-        """
-        ip: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The node IP address.
-        """
-        db_server_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The Db server associated with the node.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-        """
-        vip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The node virtual IP (VIP) address.
-        """
-        vip_hostname: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The node virtual IP (VIP) host name.
-        """
-elif False:
-    VmClusterNetworkVmNetworkNodeArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterNetworkVmNetworkNodeArgsDict(TypedDict):
+    hostname: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The node host name.
+    """
+    ip: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The node IP address.
+    """
+    db_server_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The Db server associated with the node.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+    """
+    vip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The node virtual IP (VIP) address.
+    """
+    vip_hostname: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The node virtual IP (VIP) host name.
+    """
 
 @pulumi.input_type
 class VmClusterNetworkVmNetworkNodeArgs:
@@ -26398,26 +25656,23 @@ class VmClusterNetworkVmNetworkNodeArgs:
         pulumi.set(self, "vip_hostname", value)
 
 
-if not MYPY:
-    class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgsDict(TypedDict):
-        apply_update_time_preferences: NotRequired[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict']]]]
-        """
-        Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
-        """
-        freeze_periods: NotRequired[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgsDict']]]]
-        """
-        Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
-        """
-        is_early_adoption_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
-        """
-        is_freeze_period_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
-        """
-elif False:
-    VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgsDict(TypedDict):
+    apply_update_time_preferences: NotRequired[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict']]]]
+    """
+    Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+    """
+    freeze_periods: NotRequired[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgsDict']]]]
+    """
+    Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+    """
+    is_early_adoption_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+    """
+    is_freeze_period_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+    """
 
 @pulumi.input_type
 class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs:
@@ -26490,18 +25745,15 @@ class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs:
         pulumi.set(self, "is_freeze_period_enabled", value)
 
 
-if not MYPY:
-    class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict(TypedDict):
-        apply_update_preferred_end_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
-        """
-        apply_update_preferred_start_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
-        """
-elif False:
-    VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict(TypedDict):
+    apply_update_preferred_end_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+    """
+    apply_update_preferred_start_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+    """
 
 @pulumi.input_type
 class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs:
@@ -26542,18 +25794,15 @@ class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePre
         pulumi.set(self, "apply_update_preferred_start_time", value)
 
 
-if not MYPY:
-    class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgsDict(TypedDict):
-        freeze_period_end_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        End time of the freeze period cycle.
-        """
-        freeze_period_start_time: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Start time of the freeze period cycle.
-        """
-elif False:
-    VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgsDict(TypedDict):
+    freeze_period_end_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    End time of the freeze period cycle.
+    """
+    freeze_period_start_time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Start time of the freeze period cycle.
+    """
 
 @pulumi.input_type
 class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgs:
@@ -26594,22 +25843,19 @@ class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgs:
         pulumi.set(self, "freeze_period_start_time", value)
 
 
-if not MYPY:
-    class VmClusterRemoveVirtualMachineDataCollectionOptionArgsDict(TypedDict):
-        is_diagnostics_events_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        """
-        is_health_monitoring_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        """
-        is_incident_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
-elif False:
-    VmClusterRemoveVirtualMachineDataCollectionOptionArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterRemoveVirtualMachineDataCollectionOptionArgsDict(TypedDict):
+    is_diagnostics_events_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+    """
+    is_health_monitoring_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+    """
+    is_incident_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+    """
 
 @pulumi.input_type
 class VmClusterRemoveVirtualMachineDataCollectionOptionArgs:
@@ -26666,14 +25912,11 @@ class VmClusterRemoveVirtualMachineDataCollectionOptionArgs:
         pulumi.set(self, "is_incident_logs_enabled", value)
 
 
-if not MYPY:
-    class VmClusterRemoveVirtualMachineDbServerArgsDict(TypedDict):
-        db_server_id: pulumi.Input[_builtins.str]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
-        """
-elif False:
-    VmClusterRemoveVirtualMachineDbServerArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterRemoveVirtualMachineDbServerArgsDict(TypedDict):
+    db_server_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
+    """
 
 @pulumi.input_type
 class VmClusterRemoveVirtualMachineDbServerArgs:
@@ -26697,18 +25940,15 @@ class VmClusterRemoveVirtualMachineDbServerArgs:
         pulumi.set(self, "db_server_id", value)
 
 
-if not MYPY:
-    class VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgsDict(TypedDict):
-        file_system_size_gb: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The file system size to be allocated in GBs.
-        """
-        mount_point: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The mount point of file system.
-        """
-elif False:
-    VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgsDict: TypeAlias = Mapping[str, Any]
+class VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgsDict(TypedDict):
+    file_system_size_gb: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The file system size to be allocated in GBs.
+    """
+    mount_point: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The mount point of file system.
+    """
 
 @pulumi.input_type
 class VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs:
@@ -26805,13 +26045,10 @@ class GetAdvancedClusterFileSystemsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetApplicationVipsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetApplicationVipsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetApplicationVipsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetApplicationVipsFilterArgs:
@@ -26852,16 +26089,13 @@ class GetApplicationVipsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousCharacterSetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A valid Oracle character set.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousCharacterSetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousCharacterSetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A valid Oracle character set.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousCharacterSetsFilterArgs:
@@ -26908,13 +26142,10 @@ class GetAutonomousCharacterSetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousContainerDatabaseBackupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousContainerDatabaseBackupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousContainerDatabaseBackupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousContainerDatabaseBackupsFilterArgs:
@@ -26955,13 +26186,10 @@ class GetAutonomousContainerDatabaseBackupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousContainerDatabaseDataguardAssociationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousContainerDatabaseDataguardAssociationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousContainerDatabaseDataguardAssociationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs:
@@ -27002,13 +26230,10 @@ class GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousContainerDatabaseVersionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousContainerDatabaseVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousContainerDatabaseVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousContainerDatabaseVersionsFilterArgs:
@@ -27049,16 +26274,13 @@ class GetAutonomousContainerDatabaseVersionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousContainerDatabasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the month of the year.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousContainerDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousContainerDatabasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the month of the year.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousContainerDatabasesFilterArgs:
@@ -27105,13 +26327,10 @@ class GetAutonomousContainerDatabasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousContainerPatchesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousContainerPatchesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousContainerPatchesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousContainerPatchesFilterArgs:
@@ -27152,13 +26371,10 @@ class GetAutonomousContainerPatchesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousDatabaseBackupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousDatabaseBackupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousDatabaseBackupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousDatabaseBackupsFilterArgs:
@@ -27199,13 +26415,10 @@ class GetAutonomousDatabaseBackupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousDatabaseDataguardAssociationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousDatabaseDataguardAssociationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousDatabaseDataguardAssociationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousDatabaseDataguardAssociationsFilterArgs:
@@ -27246,13 +26459,10 @@ class GetAutonomousDatabaseDataguardAssociationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousDatabasePeersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousDatabasePeersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousDatabasePeersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousDatabasePeersFilterArgs:
@@ -27293,13 +26503,10 @@ class GetAutonomousDatabasePeersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousDatabaseRefreshableClonesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousDatabaseRefreshableClonesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousDatabaseRefreshableClonesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousDatabaseRefreshableClonesFilterArgs:
@@ -27340,13 +26547,10 @@ class GetAutonomousDatabaseRefreshableClonesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousDatabaseResourcePoolMembersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousDatabaseResourcePoolMembersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousDatabaseResourcePoolMembersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousDatabaseResourcePoolMembersFilterArgs:
@@ -27387,13 +26591,10 @@ class GetAutonomousDatabaseResourcePoolMembersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousDatabaseSoftwareImagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousDatabaseSoftwareImagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousDatabaseSoftwareImagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousDatabaseSoftwareImagesFilterArgs:
@@ -27434,16 +26635,13 @@ class GetAutonomousDatabaseSoftwareImagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousDatabasesClonesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the day of the week.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousDatabasesClonesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousDatabasesClonesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the day of the week.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousDatabasesClonesFilterArgs:
@@ -27490,13 +26688,10 @@ class GetAutonomousDatabasesClonesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousDatabasesEstimateCostSavingsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousDatabasesEstimateCostSavingsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousDatabasesEstimateCostSavingsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousDatabasesEstimateCostSavingsFilterArgs:
@@ -27537,16 +26732,13 @@ class GetAutonomousDatabasesEstimateCostSavingsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousDatabasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the day of the week.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousDatabasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the day of the week.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousDatabasesFilterArgs:
@@ -27593,13 +26785,10 @@ class GetAutonomousDatabasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousDbPreviewVersionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousDbPreviewVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousDbPreviewVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousDbPreviewVersionsFilterArgs:
@@ -27640,13 +26829,10 @@ class GetAutonomousDbPreviewVersionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousDbVersionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousDbVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousDbVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousDbVersionsFilterArgs:
@@ -27687,16 +26873,13 @@ class GetAutonomousDbVersionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousExadataInfrastructureShapesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the shape used for the Autonomous Exadata Infrastructure.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousExadataInfrastructureShapesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousExadataInfrastructureShapesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the shape used for the Autonomous Exadata Infrastructure.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousExadataInfrastructureShapesFilterArgs:
@@ -27743,16 +26926,13 @@ class GetAutonomousExadataInfrastructureShapesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousExadataInfrastructuresFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the month of the year.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousExadataInfrastructuresFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousExadataInfrastructuresFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the month of the year.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousExadataInfrastructuresFilterArgs:
@@ -27799,13 +26979,10 @@ class GetAutonomousExadataInfrastructuresFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousVirtualMachinesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousVirtualMachinesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousVirtualMachinesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousVirtualMachinesFilterArgs:
@@ -27846,13 +27023,10 @@ class GetAutonomousVirtualMachinesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousVmClusterAcdResourceUsagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousVmClusterAcdResourceUsagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousVmClusterAcdResourceUsagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousVmClusterAcdResourceUsagesFilterArgs:
@@ -27893,16 +27067,13 @@ class GetAutonomousVmClusterAcdResourceUsagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAutonomousVmClustersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the month of the year.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAutonomousVmClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAutonomousVmClustersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the month of the year.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAutonomousVmClustersFilterArgs:
@@ -27949,13 +27120,10 @@ class GetAutonomousVmClustersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBackupDestinationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBackupDestinationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBackupDestinationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBackupDestinationsFilterArgs:
@@ -27996,13 +27164,10 @@ class GetBackupDestinationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBackupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBackupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBackupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBackupsFilterArgs:
@@ -28043,13 +27208,10 @@ class GetBackupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs:
@@ -28090,16 +27252,13 @@ class GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCloudAutonomousVmClustersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the month of the year.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCloudAutonomousVmClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudAutonomousVmClustersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the month of the year.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCloudAutonomousVmClustersFilterArgs:
@@ -28146,16 +27305,13 @@ class GetCloudAutonomousVmClustersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCloudExadataInfrastructuresFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the month of the year.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCloudExadataInfrastructuresFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudExadataInfrastructuresFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the month of the year.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCloudExadataInfrastructuresFilterArgs:
@@ -28202,13 +27358,10 @@ class GetCloudExadataInfrastructuresFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCloudVmClustersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCloudVmClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudVmClustersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCloudVmClustersFilterArgs:
@@ -28249,13 +27402,10 @@ class GetCloudVmClustersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDataGuardAssociationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDataGuardAssociationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDataGuardAssociationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDataGuardAssociationsFilterArgs:
@@ -28296,13 +27446,10 @@ class GetDataGuardAssociationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDatabaseMaintenanceRunHistoriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDatabaseMaintenanceRunHistoriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDatabaseMaintenanceRunHistoriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDatabaseMaintenanceRunHistoriesFilterArgs:
@@ -28343,13 +27490,10 @@ class GetDatabaseMaintenanceRunHistoriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDatabasePdbConversionHistoryEntriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDatabasePdbConversionHistoryEntriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDatabasePdbConversionHistoryEntriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDatabasePdbConversionHistoryEntriesFilterArgs:
@@ -28390,13 +27534,10 @@ class GetDatabasePdbConversionHistoryEntriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDatabaseSoftwareImagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDatabaseSoftwareImagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDatabaseSoftwareImagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDatabaseSoftwareImagesFilterArgs:
@@ -28437,13 +27578,10 @@ class GetDatabaseSoftwareImagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDatabaseUpgradeHistoryEntriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDatabaseUpgradeHistoryEntriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDatabaseUpgradeHistoryEntriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDatabaseUpgradeHistoryEntriesFilterArgs:
@@ -28484,13 +27622,10 @@ class GetDatabaseUpgradeHistoryEntriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDatabasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDatabasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDatabasesFilterArgs:
@@ -28531,13 +27666,10 @@ class GetDatabasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbConnectionBundlesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbConnectionBundlesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbConnectionBundlesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbConnectionBundlesFilterArgs:
@@ -28578,13 +27710,10 @@ class GetDbConnectionBundlesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbHomePatchHistoryEntriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbHomePatchHistoryEntriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbHomePatchHistoryEntriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbHomePatchHistoryEntriesFilterArgs:
@@ -28625,13 +27754,10 @@ class GetDbHomePatchHistoryEntriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbHomePatchesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbHomePatchesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbHomePatchesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbHomePatchesFilterArgs:
@@ -28672,13 +27798,10 @@ class GetDbHomePatchesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbHomesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbHomesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbHomesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbHomesFilterArgs:
@@ -28719,13 +27842,10 @@ class GetDbHomesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbNodeConsoleConnectionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbNodeConsoleConnectionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbNodeConsoleConnectionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbNodeConsoleConnectionsFilterArgs:
@@ -28766,13 +27886,10 @@ class GetDbNodeConsoleConnectionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbNodeConsoleHistoriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbNodeConsoleHistoriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbNodeConsoleHistoriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbNodeConsoleHistoriesFilterArgs:
@@ -28813,16 +27930,13 @@ class GetDbNodeConsoleHistoriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbNodeSnapshotsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name given. The match is not case sensitive.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbNodeSnapshotsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbNodeSnapshotsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name given. The match is not case sensitive.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbNodeSnapshotsFilterArgs:
@@ -28869,13 +27983,10 @@ class GetDbNodeSnapshotsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbNodesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbNodesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbNodesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbNodesFilterArgs:
@@ -28916,13 +28027,10 @@ class GetDbNodesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbServersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbServersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbServersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbServersFilterArgs:
@@ -28963,13 +28071,10 @@ class GetDbServersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbSystemComputePerformancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbSystemComputePerformancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbSystemComputePerformancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbSystemComputePerformancesFilterArgs:
@@ -29010,13 +28115,10 @@ class GetDbSystemComputePerformancesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbSystemHistoryEntriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbSystemHistoryEntriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbSystemHistoryEntriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbSystemHistoryEntriesFilterArgs:
@@ -29057,13 +28159,10 @@ class GetDbSystemHistoryEntriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbSystemPatchesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbSystemPatchesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbSystemPatchesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbSystemPatchesFilterArgs:
@@ -29104,16 +28203,13 @@ class GetDbSystemPatchesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbSystemShapesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the shape used for the DB system.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbSystemShapesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbSystemShapesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the shape used for the DB system.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbSystemShapesFilterArgs:
@@ -29160,13 +28256,10 @@ class GetDbSystemShapesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbSystemStoragePerformancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbSystemStoragePerformancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbSystemStoragePerformancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbSystemStoragePerformancesFilterArgs:
@@ -29207,16 +28300,13 @@ class GetDbSystemStoragePerformancesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbSystemsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the month of the year.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbSystemsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbSystemsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the month of the year.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbSystemsFilterArgs:
@@ -29263,13 +28353,10 @@ class GetDbSystemsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbSystemsUpgradeHistoryEntriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbSystemsUpgradeHistoryEntriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbSystemsUpgradeHistoryEntriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbSystemsUpgradeHistoryEntriesFilterArgs:
@@ -29310,13 +28397,10 @@ class GetDbSystemsUpgradeHistoryEntriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbVersionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbVersionsFilterArgs:
@@ -29357,16 +28441,13 @@ class GetDbVersionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExadataInfrastructuresFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the month of the year.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExadataInfrastructuresFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExadataInfrastructuresFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the month of the year.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExadataInfrastructuresFilterArgs:
@@ -29413,13 +28494,10 @@ class GetExadataInfrastructuresFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExadbVmClusterUpdateHistoryEntriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExadbVmClusterUpdateHistoryEntriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExadbVmClusterUpdateHistoryEntriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExadbVmClusterUpdateHistoryEntriesFilterArgs:
@@ -29460,13 +28538,10 @@ class GetExadbVmClusterUpdateHistoryEntriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExadbVmClusterUpdatesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExadbVmClusterUpdatesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExadbVmClusterUpdatesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExadbVmClusterUpdatesFilterArgs:
@@ -29507,13 +28582,10 @@ class GetExadbVmClusterUpdatesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExadbVmClustersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExadbVmClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExadbVmClustersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExadbVmClustersFilterArgs:
@@ -29554,13 +28626,10 @@ class GetExadbVmClustersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExascaleDbStorageVaultsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExascaleDbStorageVaultsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExascaleDbStorageVaultsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExascaleDbStorageVaultsFilterArgs:
@@ -29601,13 +28670,10 @@ class GetExascaleDbStorageVaultsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExecutionActionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExecutionActionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExecutionActionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExecutionActionsFilterArgs:
@@ -29648,13 +28714,10 @@ class GetExecutionActionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExecutionWindowsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExecutionWindowsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExecutionWindowsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExecutionWindowsFilterArgs:
@@ -29695,13 +28758,10 @@ class GetExecutionWindowsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalContainerDatabasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalContainerDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalContainerDatabasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalContainerDatabasesFilterArgs:
@@ -29742,13 +28802,10 @@ class GetExternalContainerDatabasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalDatabaseConnectorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalDatabaseConnectorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalDatabaseConnectorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalDatabaseConnectorsFilterArgs:
@@ -29789,13 +28846,10 @@ class GetExternalDatabaseConnectorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalNonContainerDatabasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalNonContainerDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalNonContainerDatabasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalNonContainerDatabasesFilterArgs:
@@ -29836,13 +28890,10 @@ class GetExternalNonContainerDatabasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalPluggableDatabasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalPluggableDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalPluggableDatabasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalPluggableDatabasesFilterArgs:
@@ -29883,16 +28934,13 @@ class GetExternalPluggableDatabasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFlexComponentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name given. The match is not case sensitive.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFlexComponentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFlexComponentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name given. The match is not case sensitive.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFlexComponentsFilterArgs:
@@ -29939,13 +28987,10 @@ class GetFlexComponentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetGiVersionMinorVersionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetGiVersionMinorVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetGiVersionMinorVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetGiVersionMinorVersionsFilterArgs:
@@ -29986,13 +29031,10 @@ class GetGiVersionMinorVersionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetGiVersionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetGiVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetGiVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetGiVersionsFilterArgs:
@@ -30033,13 +29075,10 @@ class GetGiVersionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetKeyStoresFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetKeyStoresFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetKeyStoresFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetKeyStoresFilterArgs:
@@ -30080,13 +29119,10 @@ class GetKeyStoresFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMaintenanceRunsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMaintenanceRunsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMaintenanceRunsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMaintenanceRunsFilterArgs:
@@ -30127,13 +29163,10 @@ class GetMaintenanceRunsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedPreferredCredentialsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedPreferredCredentialsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedPreferredCredentialsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedPreferredCredentialsFilterArgs:
@@ -30174,13 +29207,10 @@ class GetManagedPreferredCredentialsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOneoffPatchesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOneoffPatchesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOneoffPatchesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOneoffPatchesFilterArgs:
@@ -30221,16 +29251,13 @@ class GetOneoffPatchesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPluggableDatabaseSnapshotsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name given. The match is not case sensitive.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPluggableDatabaseSnapshotsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPluggableDatabaseSnapshotsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name given. The match is not case sensitive.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPluggableDatabaseSnapshotsFilterArgs:
@@ -30277,13 +29304,10 @@ class GetPluggableDatabaseSnapshotsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPluggableDatabasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPluggableDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPluggableDatabasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPluggableDatabasesFilterArgs:
@@ -30324,13 +29348,10 @@ class GetPluggableDatabasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetScheduledActionParamsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetScheduledActionParamsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetScheduledActionParamsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetScheduledActionParamsFilterArgs:
@@ -30371,13 +29392,10 @@ class GetScheduledActionParamsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetScheduledActionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetScheduledActionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetScheduledActionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetScheduledActionsFilterArgs:
@@ -30418,13 +29436,10 @@ class GetScheduledActionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSchedulingPlansFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSchedulingPlansFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSchedulingPlansFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSchedulingPlansFilterArgs:
@@ -30465,16 +29480,13 @@ class GetSchedulingPlansFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSchedulingPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the month of the year.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSchedulingPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSchedulingPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the month of the year.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSchedulingPoliciesFilterArgs:
@@ -30521,13 +29533,10 @@ class GetSchedulingPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSchedulingPolicyRecommendedScheduledActionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSchedulingPolicyRecommendedScheduledActionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSchedulingPolicyRecommendedScheduledActionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSchedulingPolicyRecommendedScheduledActionsFilterArgs:
@@ -30568,16 +29577,13 @@ class GetSchedulingPolicyRecommendedScheduledActionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSchedulingPolicySchedulingWindowsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the month of the year.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSchedulingPolicySchedulingWindowsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSchedulingPolicySchedulingWindowsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the month of the year.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSchedulingPolicySchedulingWindowsFilterArgs:
@@ -30624,13 +29630,10 @@ class GetSchedulingPolicySchedulingWindowsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSystemVersionMinorVersionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSystemVersionMinorVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSystemVersionMinorVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSystemVersionMinorVersionsFilterArgs:
@@ -30671,13 +29674,10 @@ class GetSystemVersionMinorVersionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSystemVersionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSystemVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSystemVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSystemVersionsFilterArgs:
@@ -30718,13 +29718,10 @@ class GetSystemVersionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetVmClusterNetworksFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetVmClusterNetworksFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetVmClusterNetworksFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetVmClusterNetworksFilterArgs:
@@ -30765,13 +29762,10 @@ class GetVmClusterNetworksFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetVmClusterPatchHistoryEntriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetVmClusterPatchHistoryEntriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetVmClusterPatchHistoryEntriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetVmClusterPatchHistoryEntriesFilterArgs:
@@ -30812,13 +29806,10 @@ class GetVmClusterPatchHistoryEntriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetVmClusterPatchesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetVmClusterPatchesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetVmClusterPatchesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetVmClusterPatchesFilterArgs:
@@ -30859,38 +29850,35 @@ class GetVmClusterPatchesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetVmClusterRecommendedNetworkNetworkArgsDict(TypedDict):
-        cidr: _builtins.str
-        """
-        The cidr for the network.
-        """
-        domain: _builtins.str
-        """
-        The network domain name.
-        """
-        gateway: _builtins.str
-        """
-        The network gateway.
-        """
-        netmask: _builtins.str
-        """
-        The network netmask.
-        """
-        network_type: _builtins.str
-        """
-        The network type.
-        """
-        prefix: _builtins.str
-        """
-        The network domain name.
-        """
-        vlan_id: _builtins.str
-        """
-        The network VLAN ID.
-        """
-elif False:
-    GetVmClusterRecommendedNetworkNetworkArgsDict: TypeAlias = Mapping[str, Any]
+class GetVmClusterRecommendedNetworkNetworkArgsDict(TypedDict):
+    cidr: _builtins.str
+    """
+    The cidr for the network.
+    """
+    domain: _builtins.str
+    """
+    The network domain name.
+    """
+    gateway: _builtins.str
+    """
+    The network gateway.
+    """
+    netmask: _builtins.str
+    """
+    The network netmask.
+    """
+    network_type: _builtins.str
+    """
+    The network type.
+    """
+    prefix: _builtins.str
+    """
+    The network domain name.
+    """
+    vlan_id: _builtins.str
+    """
+    The network VLAN ID.
+    """
 
 @pulumi.input_type
 class GetVmClusterRecommendedNetworkNetworkArgs:
@@ -31004,13 +29992,10 @@ class GetVmClusterRecommendedNetworkNetworkArgs:
         pulumi.set(self, "vlan_id", value)
 
 
-if not MYPY:
-    class GetVmClusterUpdateHistoryEntriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetVmClusterUpdateHistoryEntriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetVmClusterUpdateHistoryEntriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetVmClusterUpdateHistoryEntriesFilterArgs:
@@ -31051,13 +30036,10 @@ class GetVmClusterUpdateHistoryEntriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetVmClusterUpdatesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetVmClusterUpdatesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetVmClusterUpdatesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetVmClusterUpdatesFilterArgs:
@@ -31098,13 +30080,10 @@ class GetVmClusterUpdatesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetVmClustersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetVmClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetVmClustersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetVmClustersFilterArgs:

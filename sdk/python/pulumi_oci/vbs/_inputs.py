@@ -19,18 +19,13 @@ __all__ = [
     'GetInstVbsInstancesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetInstVbsInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name given.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInstVbsInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInstVbsInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name given.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInstVbsInstancesFilterArgs:

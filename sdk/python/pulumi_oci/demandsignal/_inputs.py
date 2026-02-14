@@ -25,24 +25,19 @@ __all__ = [
     'GetOccDemandSignalsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class OccDemandSignalOccDemandSignalArgsDict(TypedDict):
-        resource_type: pulumi.Input[_builtins.str]
-        """
-        The name of the resource for the data.
-        """
-        units: pulumi.Input[_builtins.str]
-        """
-        The units of the data.
-        """
-        values: pulumi.Input[Sequence[pulumi.Input['OccDemandSignalOccDemandSignalValueArgsDict']]]
-        """
-        The values of forecast.
-        """
-elif False:
-    OccDemandSignalOccDemandSignalArgsDict: TypeAlias = Mapping[str, Any]
+class OccDemandSignalOccDemandSignalArgsDict(TypedDict):
+    resource_type: pulumi.Input[_builtins.str]
+    """
+    The name of the resource for the data.
+    """
+    units: pulumi.Input[_builtins.str]
+    """
+    The units of the data.
+    """
+    values: pulumi.Input[Sequence[pulumi.Input['OccDemandSignalOccDemandSignalValueArgsDict']]]
+    """
+    The values of forecast.
+    """
 
 @pulumi.input_type
 class OccDemandSignalOccDemandSignalArgs:
@@ -96,22 +91,19 @@ class OccDemandSignalOccDemandSignalArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class OccDemandSignalOccDemandSignalValueArgsDict(TypedDict):
-        time_expected: pulumi.Input[_builtins.str]
-        """
-        The date of the Demand Signal Value.
-        """
-        value: pulumi.Input[_builtins.float]
-        """
-        The Demand Signal Value.
-        """
-        comments: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Space provided for users to make comments regarding the value.
-        """
-elif False:
-    OccDemandSignalOccDemandSignalValueArgsDict: TypeAlias = Mapping[str, Any]
+class OccDemandSignalOccDemandSignalValueArgsDict(TypedDict):
+    time_expected: pulumi.Input[_builtins.str]
+    """
+    The date of the Demand Signal Value.
+    """
+    value: pulumi.Input[_builtins.float]
+    """
+    The Demand Signal Value.
+    """
+    comments: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Space provided for users to make comments regarding the value.
+    """
 
 @pulumi.input_type
 class OccDemandSignalOccDemandSignalValueArgs:
@@ -166,34 +158,31 @@ class OccDemandSignalOccDemandSignalValueArgs:
         pulumi.set(self, "comments", value)
 
 
-if not MYPY:
-    class OccDemandSignalPatchOperationArgsDict(TypedDict):
-        from_: pulumi.Input[_builtins.str]
-        """
-        (Updatable)
-        """
-        operation: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The operation can be one of these values: `INSERT`, `INSERT_MULTIPLE`, `MERGE`, `MOVE`, `PROHIBIT`, `REMOVE`, `REPLACE`, `REQUIRE`
-        """
-        selection: pulumi.Input[_builtins.str]
-        """
-        (Updatable)
-        """
-        value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
-        """
-        (Updatable)
-        """
-        position: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable)
-        """
-        selected_item: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable)
-        """
-elif False:
-    OccDemandSignalPatchOperationArgsDict: TypeAlias = Mapping[str, Any]
+class OccDemandSignalPatchOperationArgsDict(TypedDict):
+    from_: pulumi.Input[_builtins.str]
+    """
+    (Updatable)
+    """
+    operation: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The operation can be one of these values: `INSERT`, `INSERT_MULTIPLE`, `MERGE`, `MOVE`, `PROHIBIT`, `REMOVE`, `REPLACE`, `REQUIRE`
+    """
+    selection: pulumi.Input[_builtins.str]
+    """
+    (Updatable)
+    """
+    value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+    """
+    (Updatable)
+    """
+    position: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable)
+    """
+    selected_item: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable)
+    """
 
 @pulumi.input_type
 class OccDemandSignalPatchOperationArgs:
@@ -294,16 +283,13 @@ class OccDemandSignalPatchOperationArgs:
         pulumi.set(self, "selected_item", value)
 
 
-if not MYPY:
-    class GetOccDemandSignalsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        """
-        The values of forecast.
-        """
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOccDemandSignalsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOccDemandSignalsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    """
+    The values of forecast.
+    """
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOccDemandSignalsFilterArgs:

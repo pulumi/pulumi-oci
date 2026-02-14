@@ -745,6 +745,13 @@ class BuildPipelineStage(pulumi.CustomResource):
                  wait_criteria: Optional[pulumi.Input[Union['BuildPipelineStageWaitCriteriaArgs', 'BuildPipelineStageWaitCriteriaArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Build Pipeline Stage resource in Oracle Cloud Infrastructure Devops service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/BuildPipelineStage
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+
+        Creates a new stage.
+
         ## Example Usage
 
         ```python
@@ -841,6 +848,13 @@ class BuildPipelineStage(pulumi.CustomResource):
                  args: BuildPipelineStageArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Build Pipeline Stage resource in Oracle Cloud Infrastructure Devops service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/BuildPipelineStage
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+
+        Creates a new stage.
+
         ## Example Usage
 
         ```python

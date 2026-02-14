@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
+    /// This resource provides the O Auth Client Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/OAuthClientCertificate
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+    /// 
+    /// Create an OAuth Client Certificate
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -39,7 +46,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Import
     /// 
-    /// OAuthClientCertificates can be imported using the `id`, e.g.
+    /// OAuthClientCertificates can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate test_oauth_client_certificate "idcsEndpoint/{idcsEndpoint}/oAuthClientCertificates/{oAuthClientCertificateId}"

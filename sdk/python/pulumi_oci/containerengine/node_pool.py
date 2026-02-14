@@ -762,6 +762,13 @@ class NodePool(pulumi.CustomResource):
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/containerengine/latest/NodePool
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/container_engine
+
+        Create a new node pool.
+
         ## Example Usage
 
         ```python
@@ -882,6 +889,13 @@ class NodePool(pulumi.CustomResource):
                  args: NodePoolArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/containerengine/latest/NodePool
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/container_engine
+
+        Create a new node pool.
+
         ## Example Usage
 
         ```python

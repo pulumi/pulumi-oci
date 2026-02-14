@@ -7,6 +7,20 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Data Guard Association resource in Oracle Cloud Infrastructure Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/DataGuardAssociation
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+ *
+ * Creates a new Data Guard association.  A Data Guard association represents the replication relationship between the
+ * specified database and a peer database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
+ *
+ * All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
+ * called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
+ * You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
+ * resource in the Console. For more information, see
+ * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -168,6 +182,9 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
      */
     declare public readonly dbSystemSecurityAttributes: pulumi.Output<{[key: string]: string} | undefined>;
+    /**
+     * (Updatable) if set to true the destroy operation will destroy the standby dbHome/dbSystem that is referenced in the Data Guard Association. The Data Guard Association gets destroyed when standby dbHome/dbSystem is terminated. Only `true` is supported at this time. If you change an argument that is used during the delete operation you must run `pulumi up` first so that that the change in the value is registered in the statefile before running `terraform destroy`. `terraform destroy` only looks at what is currently on the statefile and ignores the terraform configuration files.
+     */
     declare public readonly deleteStandbyDbHomeOnDelete: pulumi.Output<string>;
     /**
      * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
@@ -537,6 +554,9 @@ export interface DataGuardAssociationState {
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
      */
     dbSystemSecurityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) if set to true the destroy operation will destroy the standby dbHome/dbSystem that is referenced in the Data Guard Association. The Data Guard Association gets destroyed when standby dbHome/dbSystem is terminated. Only `true` is supported at this time. If you change an argument that is used during the delete operation you must run `pulumi up` first so that that the change in the value is registered in the statefile before running `terraform destroy`. `terraform destroy` only looks at what is currently on the statefile and ignores the terraform configuration files.
+     */
     deleteStandbyDbHomeOnDelete?: pulumi.Input<string>;
     /**
      * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
@@ -758,6 +778,9 @@ export interface DataGuardAssociationArgs {
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
      */
     dbSystemSecurityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) if set to true the destroy operation will destroy the standby dbHome/dbSystem that is referenced in the Data Guard Association. The Data Guard Association gets destroyed when standby dbHome/dbSystem is terminated. Only `true` is supported at this time. If you change an argument that is used during the delete operation you must run `pulumi up` first so that that the change in the value is registered in the statefile before running `terraform destroy`. `terraform destroy` only looks at what is currently on the statefile and ignores the terraform configuration files.
+     */
     deleteStandbyDbHomeOnDelete: pulumi.Input<string>;
     /**
      * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.

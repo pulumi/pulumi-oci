@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FusionApps
 {
     /// <summary>
+    /// This resource provides the Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fusion-applications/latest/FusionEnvironmentServiceAttachment
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fusionapps
+    /// 
+    /// Attaches a service instance to the fusion pod.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -32,7 +39,7 @@ namespace Pulumi.Oci.FusionApps
     /// 
     /// ## Import
     /// 
-    /// FusionEnvironmentServiceAttachments can be imported using the `id`, e.g.
+    /// FusionEnvironmentServiceAttachments can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment test_fusion_environment_service_attachment "fusionEnvironments/{fusionEnvironmentId}/serviceAttachments/{serviceAttachmentId}"

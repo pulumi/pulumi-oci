@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Desktop Pool resource in Oracle Cloud Infrastructure Desktops service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/secure-desktops/latest/DesktopPool
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/desktops
+//
+// Creates a desktop pool with the given configuration parameters.
+//
 // ## Example Usage
 //
 // ```go

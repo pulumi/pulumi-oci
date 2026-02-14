@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Stream Source resource in Oracle Cloud Infrastructure Ai Vision service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vision/latest/StreamSource
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiVision
+//
+// # Registration of new streamSource
+//
 // ## Example Usage
 //
 // ```go

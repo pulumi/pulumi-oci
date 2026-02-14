@@ -85,6 +85,9 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight. This should be always set true when using terraform, when it is set to false member associations may be missing from the application.
+        /// </summary>
         public readonly bool IsAutoSyncEnabled;
         /// <summary>
         /// true if virtualization is used in the Exadata system

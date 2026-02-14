@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Lustre File System resource in Oracle Cloud Infrastructure Lustre File Storage service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/lustre/latest/LustreFileSystem
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/lustre_file_storage
+//
+// Creates a Lustre file system.
+//
 // ## Example Usage
 //
 // ```go

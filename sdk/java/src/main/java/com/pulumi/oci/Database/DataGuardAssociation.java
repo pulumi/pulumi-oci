@@ -20,6 +20,20 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Data Guard Association resource in Oracle Cloud Infrastructure Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/DataGuardAssociation
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+ * 
+ * Creates a new Data Guard association.  A Data Guard association represents the replication relationship between the
+ * specified database and a peer database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
+ * 
+ * All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
+ * called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
+ * You can also retrieve a resource&#39;s OCID by using a List API operation on that resource type, or by viewing the
+ * resource in the Console. For more information, see
+ * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+ * 
  * ## Example Usage
  * 
  * <pre>
@@ -367,9 +381,17 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
     public Output<Optional<Map<String,String>>> dbSystemSecurityAttributes() {
         return Codegen.optional(this.dbSystemSecurityAttributes);
     }
+    /**
+     * (Updatable) if set to true the destroy operation will destroy the standby dbHome/dbSystem that is referenced in the Data Guard Association. The Data Guard Association gets destroyed when standby dbHome/dbSystem is terminated. Only `true` is supported at this time. If you change an argument that is used during the delete operation you must run `pulumi up` first so that that the change in the value is registered in the statefile before running `terraform destroy`. `terraform destroy` only looks at what is currently on the statefile and ignores the terraform configuration files.
+     * 
+     */
     @Export(name="deleteStandbyDbHomeOnDelete", refs={String.class}, tree="[0]")
     private Output<String> deleteStandbyDbHomeOnDelete;
 
+    /**
+     * @return (Updatable) if set to true the destroy operation will destroy the standby dbHome/dbSystem that is referenced in the Data Guard Association. The Data Guard Association gets destroyed when standby dbHome/dbSystem is terminated. Only `true` is supported at this time. If you change an argument that is used during the delete operation you must run `pulumi up` first so that that the change in the value is registered in the statefile before running `terraform destroy`. `terraform destroy` only looks at what is currently on the statefile and ignores the terraform configuration files.
+     * 
+     */
     public Output<String> deleteStandbyDbHomeOnDelete() {
         return this.deleteStandbyDbHomeOnDelete;
     }

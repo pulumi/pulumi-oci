@@ -45,7 +45,7 @@ namespace Pulumi.Oci.DelegateAccessControl
     /// 
     /// ## Import
     /// 
-    /// DelegationSubscriptions can be imported using the `id`, e.g.
+    /// DelegationSubscriptions can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DelegateAccessControl/delegationSubscription:DelegationSubscription test_delegation_subscription "id"

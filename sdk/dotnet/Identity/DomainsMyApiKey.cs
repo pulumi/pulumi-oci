@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
+    /// This resource provides the My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/MyApiKey
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+    /// 
+    /// Add a user's own API key.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -53,7 +60,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Import
     /// 
-    /// MyApiKeys can be imported using the `id`, e.g.
+    /// MyApiKeys can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Identity/domainsMyApiKey:DomainsMyApiKey test_my_api_key "idcsEndpoint/{idcsEndpoint}/myApiKeys/{myApiKeyId}"

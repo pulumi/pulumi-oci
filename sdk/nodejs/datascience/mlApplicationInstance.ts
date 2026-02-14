@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Ml Application Instance resource in Oracle Cloud Infrastructure Data Science service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/MlApplicationInstance
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+ *
+ * Creates a new MlApplicationInstance.
+ *
  * ## Example Usage
  *
  * ```typescript

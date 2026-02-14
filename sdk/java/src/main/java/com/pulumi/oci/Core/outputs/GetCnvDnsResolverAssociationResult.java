@@ -21,6 +21,13 @@ public final class GetCnvDnsResolverAssociationResult {
      * 
      */
     private String id;
+    /**
+     * @return The current state of the association. Resolver will be created when vcn is created. But the creation happens
+     * asynchronously and may take longer because it is a background event that needs to run. The state will be PROVISIONING
+     * until the resolver is actually created. After the resolver is actually created, the state will be set to AVAILABLE. Users
+     * need to do a terraform refresh to poll and update the state file after sometime to get the dnsResolverId and state AVAILABLE.
+     * 
+     */
     private String state;
     /**
      * @return The OCID of the VCN in the association.
@@ -44,6 +51,13 @@ public final class GetCnvDnsResolverAssociationResult {
     public String id() {
         return this.id;
     }
+    /**
+     * @return The current state of the association. Resolver will be created when vcn is created. But the creation happens
+     * asynchronously and may take longer because it is a background event that needs to run. The state will be PROVISIONING
+     * until the resolver is actually created. After the resolver is actually created, the state will be set to AVAILABLE. Users
+     * need to do a terraform refresh to poll and update the state file after sometime to get the dnsResolverId and state AVAILABLE.
+     * 
+     */
     public String state() {
         return this.state;
     }

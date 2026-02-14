@@ -380,6 +380,25 @@ class Policy(pulumi.CustomResource):
                  version_date: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Policy resource in Oracle Cloud Infrastructure Identity service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/Policy
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+
+        Creates a new policy in the specified compartment (either the tenancy or another of your compartments).
+        If you're new to policies, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+
+        You must specify a *name* for the policy, which must be unique across all policies in your tenancy
+        and cannot be changed.
+
+        You must also specify a *description* for the policy (although it can be an empty string). It does not
+        have to be unique, and you can change it anytime with [UpdatePolicy](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Policy/UpdatePolicy).
+
+        You must specify one or more policy statements in the statements array. For information about writing
+        policies, see [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and
+        [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
+        New policies take effect typically within 10 seconds.
+
         ## Example Usage
 
         ```python
@@ -429,6 +448,25 @@ class Policy(pulumi.CustomResource):
                  args: PolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Policy resource in Oracle Cloud Infrastructure Identity service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/Policy
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+
+        Creates a new policy in the specified compartment (either the tenancy or another of your compartments).
+        If you're new to policies, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+
+        You must specify a *name* for the policy, which must be unique across all policies in your tenancy
+        and cannot be changed.
+
+        You must also specify a *description* for the policy (although it can be an empty string). It does not
+        have to be unique, and you can change it anytime with [UpdatePolicy](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Policy/UpdatePolicy).
+
+        You must specify one or more policy statements in the statements array. For information about writing
+        policies, see [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and
+        [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
+        New policies take effect typically within 10 seconds.
+
         ## Example Usage
 
         ```python

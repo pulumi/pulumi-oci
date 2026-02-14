@@ -474,6 +474,13 @@ class FleetResource(pulumi.CustomResource):
                  tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/FleetResource
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+
+        Add resource to a fleet in Fleet Application Management.
+
         ## Example Usage
 
         ```python
@@ -513,6 +520,13 @@ class FleetResource(pulumi.CustomResource):
                  args: FleetResourceInitArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/FleetResource
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+
+        Add resource to a fleet in Fleet Application Management.
+
         ## Example Usage
 
         ```python

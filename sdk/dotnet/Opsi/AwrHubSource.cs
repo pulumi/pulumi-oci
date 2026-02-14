@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opsi
 {
     /// <summary>
+    /// This resource provides the Awr Hub Source resource in Oracle Cloud Infrastructure Opsi service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/operations-insights/latest/AwrHubSource
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/osi
+    /// 
+    /// Register Awr Hub source
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -43,7 +50,7 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// ## Import
     /// 
-    /// AwrHubSources can be imported using the `id`, e.g.
+    /// AwrHubSources can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Opsi/awrHubSource:AwrHubSource test_awr_hub_source "id"

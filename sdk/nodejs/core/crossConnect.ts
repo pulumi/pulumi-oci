@@ -7,6 +7,31 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Cross Connect resource in Oracle Cloud Infrastructure Core service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/CrossConnect
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ *
+ * Creates a new cross-connect. Oracle recommends you create each cross-connect in a
+ * [CrossConnectGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectGroup) so you can use link aggregation
+ * with the connection.
+ *
+ * After creating the `CrossConnect` object, you need to go the FastConnect location
+ * and request to have the physical cable installed. For more information, see
+ * [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+ *
+ * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+ * compartment where you want the cross-connect to reside. If you're
+ * not sure which compartment to use, put the cross-connect in the
+ * same compartment with your VCN. For more information about
+ * compartments and access control, see
+ * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+ * For information about OCIDs, see
+ * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+ *
+ * You may optionally specify a *display name* for the cross-connect.
+ * It does not have to be unique, and you can change it. Avoid entering confidential information.
+ *
  * ## Example Usage
  *
  * ```typescript

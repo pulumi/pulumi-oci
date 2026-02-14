@@ -19,7 +19,12 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * ## Example Usage
+ * This resource provides the Event resource in Oracle Cloud Infrastructure Os Management Hub service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/Event
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+ * 
+ * Updates the tags for an event.
  * 
  * ## Import
  * 

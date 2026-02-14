@@ -17,6 +17,18 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Boot Volume Backup resource in Oracle Cloud Infrastructure Core service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/BootVolumeBackup
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ * 
+ * Creates a new boot volume backup of the specified boot volume. For general information about boot volume backups,
+ * see [Overview of Boot Volume Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/bootvolumebackups.htm)
+ * 
+ * When the request is received, the backup object is in a REQUEST_RECEIVED state.
+ * When the data is imaged, it goes into a CREATING state.
+ * After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
+ * 
  * ## Example Usage
  * 
  * <pre>

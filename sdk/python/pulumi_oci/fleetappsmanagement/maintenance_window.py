@@ -479,6 +479,13 @@ class MaintenanceWindow(pulumi.CustomResource):
                  time_schedule_start: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Maintenance Window resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/MaintenanceWindow
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+
+        Create a maintenance window in Fleet Application Management.
+
         ## Example Usage
 
         ```python
@@ -534,6 +541,13 @@ class MaintenanceWindow(pulumi.CustomResource):
                  args: MaintenanceWindowArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Maintenance Window resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/MaintenanceWindow
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+
+        Create a maintenance window in Fleet Application Management.
+
         ## Example Usage
 
         ```python

@@ -20,6 +20,10 @@ public final class PrivateApplicationPackageDetails {
      * 
      */
     private String version;
+    /**
+     * @return Base-64 payload of the Terraform zip package.
+     * 
+     */
     private String zipFileBase64encoded;
 
     private PrivateApplicationPackageDetails() {}
@@ -37,6 +41,10 @@ public final class PrivateApplicationPackageDetails {
     public String version() {
         return this.version;
     }
+    /**
+     * @return Base-64 payload of the Terraform zip package.
+     * 
+     */
     public String zipFileBase64encoded() {
         return this.zipFileBase64encoded;
     }

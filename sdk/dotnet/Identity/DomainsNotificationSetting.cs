@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Notification Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/NotificationSetting
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+    /// 
+    /// Replace Notification Settings
     /// 
     /// ## Import
     /// 
-    /// NotificationSettings can be imported using the `id`, e.g.
+    /// NotificationSettings can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Identity/domainsNotificationSetting:DomainsNotificationSetting test_notification_setting "idcsEndpoint/{idcsEndpoint}/notificationSettings/{notificationSettingId}"

@@ -43,6 +43,7 @@ class ProviderArgs:
                Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
         :param pulumi.Input[_builtins.bool] dual_stack_endpoint_enabled: (Optional) flags to enable Dual Stack endpoint.
         :param pulumi.Input[_builtins.str] fingerprint: (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ignore_defined_tags: (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
         :param pulumi.Input[_builtins.str] private_key: (Optional) A PEM formatted RSA private key for the user.
                A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
         :param pulumi.Input[_builtins.str] private_key_password: (Optional) The password used to secure the private key.
@@ -153,6 +154,9 @@ class ProviderArgs:
     @_builtins.property
     @pulumi.getter(name="ignoreDefinedTags")
     def ignore_defined_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
+        """
         return pulumi.get(self, "ignore_defined_tags")
 
     @ignore_defined_tags.setter
@@ -317,6 +321,7 @@ class Provider(pulumi.ProviderResource):
                Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
         :param pulumi.Input[_builtins.bool] dual_stack_endpoint_enabled: (Optional) flags to enable Dual Stack endpoint.
         :param pulumi.Input[_builtins.str] fingerprint: (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ignore_defined_tags: (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
         :param pulumi.Input[_builtins.str] private_key: (Optional) A PEM formatted RSA private key for the user.
                A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
         :param pulumi.Input[_builtins.str] private_key_password: (Optional) The password used to secure the private key.

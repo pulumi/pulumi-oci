@@ -67,20 +67,15 @@ __all__ = [
     'GetNetworkFirewallsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class NetworkFirewallNatConfigurationArgsDict(TypedDict):
-        must_enable_private_nat: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) The value of this field must be set to true if the network firewall policy being applied contains NAT rules. The value of this field can be set to false if the network firewall policy being applied or the currently attached firewall policy doesn't contain NAT rules.
-        """
-        nat_ip_address_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
-        """
-elif False:
-    NetworkFirewallNatConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class NetworkFirewallNatConfigurationArgsDict(TypedDict):
+    must_enable_private_nat: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) The value of this field must be set to true if the network firewall policy being applied contains NAT rules. The value of this field can be set to false if the network firewall policy being applied or the currently attached firewall policy doesn't contain NAT rules.
+    """
+    nat_ip_address_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    An array of Private NAT IP addresses that are associated with the Network Firewall. These IP addresses are reserved for NAT and shouldn't be used for any other purpose in the subnet. This list contains IP  addresses when NAT configuration is enabled. This list is empty or null IP when NAT configuration is disabled.
+    """
 
 @pulumi.input_type
 class NetworkFirewallNatConfigurationArgs:
@@ -120,18 +115,15 @@ class NetworkFirewallNatConfigurationArgs:
         pulumi.set(self, "nat_ip_address_lists", value)
 
 
-if not MYPY:
-    class NetworkFirewallPolicyDecryptionRuleConditionArgsDict(TypedDict):
-        destination_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
-        """
-        source_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of IP address list names to be evaluated against the traffic source address.
-        """
-elif False:
-    NetworkFirewallPolicyDecryptionRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
+class NetworkFirewallPolicyDecryptionRuleConditionArgsDict(TypedDict):
+    destination_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+    """
+    source_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+    """
 
 @pulumi.input_type
 class NetworkFirewallPolicyDecryptionRuleConditionArgs:

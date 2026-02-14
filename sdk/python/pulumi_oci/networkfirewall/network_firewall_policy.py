@@ -330,6 +330,7 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
             defined_tags={
                 "Operations.CostCenter": "42",
             },
+            description=network_firewall_policy_description,
             display_name=network_firewall_policy_display_name,
             freeform_tags={
                 "Department": "Finance",
@@ -386,6 +387,7 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
             defined_tags={
                 "Operations.CostCenter": "42",
             },
+            description=network_firewall_policy_description,
             display_name=network_firewall_policy_display_name,
             freeform_tags={
                 "Department": "Finance",

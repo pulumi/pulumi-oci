@@ -190,42 +190,39 @@ class DesktopPoolAvailabilityPolicyStopScheduleArgs:
         pulumi.set(self, "timezone", value)
 
 
-if not MYPY:
-    class DesktopPoolDevicePolicyArgsDict(TypedDict):
-        audio_mode: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The audio mode. NONE: No access to the local audio devices is permitted. TODESKTOP: The user may record audio on their desktop.  FROMDESKTOP: The user may play audio on their desktop. FULL: The user may play and record audio on their desktop.
-        """
-        cdm_mode: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The client local drive access mode. NONE: No access to local drives permitted. READONLY: The user may read from local drives on their desktop. FULL: The user may read from and write to their local drives on their desktop.
-        """
-        clipboard_mode: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The clipboard mode. NONE: No access to the local clipboard is permitted. TODESKTOP: The clipboard can be used to transfer data to the desktop only.  FROMDESKTOP: The clipboard can be used to transfer data from the desktop only. FULL: The clipboard can be used to transfer data to and from the desktop.
-        """
-        is_display_enabled: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Indicates whether the display is enabled.
-        """
-        is_keyboard_enabled: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Indicates whether the keyboard is enabled.
-        """
-        is_pointer_enabled: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Indicates whether the pointer is enabled.
-        """
-        is_printing_enabled: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Indicates whether printing is enabled.
-        """
-        is_video_input_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether video input is enabled.
-        """
-elif False:
-    DesktopPoolDevicePolicyArgsDict: TypeAlias = Mapping[str, Any]
+class DesktopPoolDevicePolicyArgsDict(TypedDict):
+    audio_mode: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The audio mode. NONE: No access to the local audio devices is permitted. TODESKTOP: The user may record audio on their desktop.  FROMDESKTOP: The user may play audio on their desktop. FULL: The user may play and record audio on their desktop.
+    """
+    cdm_mode: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The client local drive access mode. NONE: No access to local drives permitted. READONLY: The user may read from local drives on their desktop. FULL: The user may read from and write to their local drives on their desktop.
+    """
+    clipboard_mode: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The clipboard mode. NONE: No access to the local clipboard is permitted. TODESKTOP: The clipboard can be used to transfer data to the desktop only.  FROMDESKTOP: The clipboard can be used to transfer data from the desktop only. FULL: The clipboard can be used to transfer data to and from the desktop.
+    """
+    is_display_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Indicates whether the display is enabled.
+    """
+    is_keyboard_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Indicates whether the keyboard is enabled.
+    """
+    is_pointer_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Indicates whether the pointer is enabled.
+    """
+    is_printing_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Indicates whether printing is enabled.
+    """
+    is_video_input_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether video input is enabled.
+    """
 
 @pulumi.input_type
 class DesktopPoolDevicePolicyArgs:
@@ -355,22 +352,19 @@ class DesktopPoolDevicePolicyArgs:
         pulumi.set(self, "is_video_input_enabled", value)
 
 
-if not MYPY:
-    class DesktopPoolImageArgsDict(TypedDict):
-        image_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The OCID of the desktop image.
-        """
-        image_name: pulumi.Input[_builtins.str]
-        """
-        The name of the desktop image.
-        """
-        operating_system: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
-        """
-elif False:
-    DesktopPoolImageArgsDict: TypeAlias = Mapping[str, Any]
+class DesktopPoolImageArgsDict(TypedDict):
+    image_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The OCID of the desktop image.
+    """
+    image_name: pulumi.Input[_builtins.str]
+    """
+    The name of the desktop image.
+    """
+    operating_system: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+    """
 
 @pulumi.input_type
 class DesktopPoolImageArgs:

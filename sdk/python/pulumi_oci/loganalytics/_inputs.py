@@ -1578,30 +1578,27 @@ class NamespaceScheduledTaskActionArgs:
         pulumi.set(self, "template_details", value)
 
 
-if not MYPY:
-    class NamespaceScheduledTaskActionMetricExtractionArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
-        """
-        metric_collections: NotRequired[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgsDict']]]]
-        """
-        Details for the metrics to be collected.
-        """
-        metric_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
-        """
-        resource_group: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
-elif False:
-    NamespaceScheduledTaskActionMetricExtractionArgsDict: TypeAlias = Mapping[str, Any]
+class NamespaceScheduledTaskActionMetricExtractionArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+    """
+    metric_collections: NotRequired[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgsDict']]]]
+    """
+    Details for the metrics to be collected.
+    """
+    metric_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
+    """
+    resource_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+    """
 
 @pulumi.input_type
 class NamespaceScheduledTaskActionMetricExtractionArgs:
@@ -1690,26 +1687,23 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
         pulumi.set(self, "resource_group", value)
 
 
-if not MYPY:
-    class NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgsDict(TypedDict):
-        dimensions: NotRequired[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgsDict']]]]
-        """
-        Selected dimension fields for the metric collection.
-        """
-        metric_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The metric name for this metric collection. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
-        metric_query_field_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Output field in the query to be used as the metric value.
-        """
-        query_table_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Output table in the query.
-        """
-elif False:
-    NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgsDict: TypeAlias = Mapping[str, Any]
+class NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgsDict(TypedDict):
+    dimensions: NotRequired[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgsDict']]]]
+    """
+    Selected dimension fields for the metric collection.
+    """
+    metric_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The metric name for this metric collection. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+    """
+    metric_query_field_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Output field in the query to be used as the metric value.
+    """
+    query_table_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Output table in the query.
+    """
 
 @pulumi.input_type
 class NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs:
@@ -1782,18 +1776,15 @@ class NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs:
         pulumi.set(self, "query_table_name", value)
 
 
-if not MYPY:
-    class NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgsDict(TypedDict):
-        dimension_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Dimension name to be stored with the metric.
-        """
-        query_field_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Output field in the query to be used as the source for the metric dimension.
-        """
-elif False:
-    NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgsDict: TypeAlias = Mapping[str, Any]
+class NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgsDict(TypedDict):
+    dimension_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Dimension name to be stored with the metric.
+    """
+    query_field_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Output field in the query to be used as the source for the metric dimension.
+    """
 
 @pulumi.input_type
 class NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs:
@@ -1834,18 +1825,15 @@ class NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs:
         pulumi.set(self, "query_field_name", value)
 
 
-if not MYPY:
-    class NamespaceScheduledTaskActionTemplateDetailsArgsDict(TypedDict):
-        template_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The template Id of a particular template.  Should not be provided when a saved search ID is present.
-        """
-        template_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgsDict']]]]
-        """
-        To store macro params.
-        """
-elif False:
-    NamespaceScheduledTaskActionTemplateDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class NamespaceScheduledTaskActionTemplateDetailsArgsDict(TypedDict):
+    template_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The template Id of a particular template.  Should not be provided when a saved search ID is present.
+    """
+    template_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgsDict']]]]
+    """
+    To store macro params.
+    """
 
 @pulumi.input_type
 class NamespaceScheduledTaskActionTemplateDetailsArgs:
@@ -1954,42 +1942,39 @@ class NamespaceScheduledTaskSchedulesArgs:
         pulumi.set(self, "schedules", value)
 
 
-if not MYPY:
-    class NamespaceScheduledTaskSchedulesScheduleArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Schedule type discriminator.
-        """
-        expression: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Value in cron format.
-        """
-        misfire_policy: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Schedule misfire retry policy.
-        """
-        query_offset_secs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
-        """
-        recurring_interval: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-        """
-        repeat_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
-        """
-        time_end: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        End time for the schedule, even if the schedule would otherwise have remaining executions.
-        """
-        time_zone: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time zone, by default UTC.
-        """
-elif False:
-    NamespaceScheduledTaskSchedulesScheduleArgsDict: TypeAlias = Mapping[str, Any]
+class NamespaceScheduledTaskSchedulesScheduleArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Schedule type discriminator.
+    """
+    expression: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Value in cron format.
+    """
+    misfire_policy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Schedule misfire retry policy.
+    """
+    query_offset_secs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of seconds to offset the query time window by to accommodate capture late arriving data. For example, a schedule run at 12:00 with a 10 minute interval and queryOffsetSecs=120 will use the query time window of 11:48-11:58 rather than 11:50-12:00 without queryOffsetSecs.
+    """
+    recurring_interval: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+    """
+    repeat_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+    """
+    time_end: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    End time for the schedule, even if the schedule would otherwise have remaining executions.
+    """
+    time_zone: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time zone, by default UTC.
+    """
 
 @pulumi.input_type
 class NamespaceScheduledTaskSchedulesScheduleArgs:
@@ -2125,22 +2110,19 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
         pulumi.set(self, "time_zone", value)
 
 
-if not MYPY:
-    class NamespaceStorageArchivalConfigArchivingConfigurationArgsDict(TypedDict):
-        active_storage_duration: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
-        """
-        archival_storage_duration: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
-        """
-        time_oldest_active_bucket_ended: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) end time of the oldest active CoreGroup
-        """
-elif False:
-    NamespaceStorageArchivalConfigArchivingConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class NamespaceStorageArchivalConfigArchivingConfigurationArgsDict(TypedDict):
+    active_storage_duration: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+    """
+    archival_storage_duration: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+    """
+    time_oldest_active_bucket_ended: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) end time of the oldest active CoreGroup
+    """
 
 @pulumi.input_type
 class NamespaceStorageArchivalConfigArchivingConfigurationArgs:

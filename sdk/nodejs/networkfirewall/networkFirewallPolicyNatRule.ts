@@ -12,7 +12,7 @@ import * as utilities from "../utilities";
  *
  * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_firewall
  *
- * Creates a new NAT Rule for the Network Firewall Policy.
+ * Creates a new [NAT rule](https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat) for the Network Firewall policy.
  *
  * ## Example Usage
  *

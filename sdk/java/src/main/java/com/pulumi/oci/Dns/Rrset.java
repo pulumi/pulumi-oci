@@ -24,8 +24,7 @@ import javax.annotation.Nullable;
  * 
  *   Updates records in the specified RRSet.
  * 
- * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
- * parameter then the viewId query parameter is required.
+ * When accessing a private zone by name, the viewId query parameter is required.
  * 
  * ## Example Usage
  * 
@@ -82,13 +81,7 @@ import javax.annotation.Nullable;
  * $ pulumi import oci:Dns/rrset:Rrset test_rrset &#34;zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}&#34;
  * ```
  * 
- * For Rrsets created using `scope` and `viewId`, these Rrsets can be imported using the `id`, e.g.
- * 
- * ```sh
- * $ pulumi import oci:Dns/rrset:Rrset test_rrset &#34;zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}&#34;
- * ```
- * 
- * skip adding `{view_id}` at the end if Rrset was created without `viewId`.
+ * Note: Legacy RRSet IDs that include scope/viewId remain accepted for import for backward compatibility; however, scope is no longer a supported argument on this resource.
  * 
  */
 @ResourceType(type="oci:Dns/rrset:Rrset")

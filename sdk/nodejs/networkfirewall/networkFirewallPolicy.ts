@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
+ *     description: networkFirewallPolicyDescription,
  *     displayName: networkFirewallPolicyDisplayName,
  *     freeformTags: {
  *         Department: "Finance",

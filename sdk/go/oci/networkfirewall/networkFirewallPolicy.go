@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -38,6 +38,7 @@ import (
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
+//				Description: pulumi.Any(networkFirewallPolicyDescription),
 //				DisplayName: pulumi.Any(networkFirewallPolicyDisplayName),
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),

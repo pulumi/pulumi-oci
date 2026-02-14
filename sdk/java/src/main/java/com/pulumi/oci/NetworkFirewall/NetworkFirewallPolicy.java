@@ -51,6 +51,7 @@ import javax.annotation.Nullable;
  *         var testNetworkFirewallPolicy = new NetworkFirewallPolicy("testNetworkFirewallPolicy", NetworkFirewallPolicyArgs.builder()
  *             .compartmentId(compartmentId)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .description(networkFirewallPolicyDescription)
  *             .displayName(networkFirewallPolicyDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());

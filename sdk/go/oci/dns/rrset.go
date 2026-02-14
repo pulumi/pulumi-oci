@@ -8,7 +8,6 @@ import (
 	"reflect"
 
 	"errors"
-
 	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
@@ -20,8 +19,7 @@ import (
 //
 //	Updates records in the specified RRSet.
 //
-// When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
-// parameter then the viewId query parameter is required.
+// When accessing a private zone by name, the viewId query parameter is required.
 //
 // ## Example Usage
 //
@@ -72,13 +70,7 @@ import (
 // $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}"
 // ```
 //
-// For Rrsets created using `scope` and `viewId`, these Rrsets can be imported using the `id`, e.g.
-//
-// ```sh
-// $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}"
-// ```
-//
-// skip adding `{view_id}` at the end if Rrset was created without `viewId`.
+// Note: Legacy RRSet IDs that include scope/viewId remain accepted for import for backward compatibility; however, scope is no longer a supported argument on this resource.
 type Rrset struct {
 	pulumi.CustomResourceState
 

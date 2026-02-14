@@ -34,6 +34,7 @@ namespace Pulumi.Oci.NetworkFirewall
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
+    ///         Description = networkFirewallPolicyDescription,
     ///         DisplayName = networkFirewallPolicyDisplayName,
     ///         FreeformTags = 
     ///         {

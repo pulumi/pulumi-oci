@@ -388,6 +388,13 @@ class AdvancedClusterFileSystem(pulumi.CustomResource):
                  vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Advanced Cluster File System resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AdvancedClusterFileSystem
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates an advanced cluster file system resource.
+
         ## Example Usage
 
         ```python
@@ -429,6 +436,13 @@ class AdvancedClusterFileSystem(pulumi.CustomResource):
                  args: AdvancedClusterFileSystemArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Advanced Cluster File System resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AdvancedClusterFileSystem
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates an advanced cluster file system resource.
+
         ## Example Usage
 
         ```python

@@ -293,8 +293,7 @@ class Rrset(pulumi.CustomResource):
 
           Updates records in the specified RRSet.
 
-        When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
-        parameter then the viewId query parameter is required.
+        When accessing a private zone by name, the view_id query parameter is required.
 
         ## Example Usage
 
@@ -327,13 +326,7 @@ class Rrset(pulumi.CustomResource):
         $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}"
         ```
 
-        For Rrsets created using `scope` and `view_id`, these Rrsets can be imported using the `id`, e.g.
-
-        ```sh
-        $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}"
-        ```
-
-        skip adding `{view_id}` at the end if Rrset was created without `view_id`.
+        Note: Legacy RRSet IDs that include scope/viewId remain accepted for import for backward compatibility; however, scope is no longer a supported argument on this resource.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -361,8 +354,7 @@ class Rrset(pulumi.CustomResource):
 
           Updates records in the specified RRSet.
 
-        When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
-        parameter then the viewId query parameter is required.
+        When accessing a private zone by name, the view_id query parameter is required.
 
         ## Example Usage
 
@@ -395,13 +387,7 @@ class Rrset(pulumi.CustomResource):
         $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}"
         ```
 
-        For Rrsets created using `scope` and `view_id`, these Rrsets can be imported using the `id`, e.g.
-
-        ```sh
-        $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}"
-        ```
-
-        skip adding `{view_id}` at the end if Rrset was created without `view_id`.
+        Note: Legacy RRSet IDs that include scope/viewId remain accepted for import for backward compatibility; however, scope is no longer a supported argument on this resource.
 
         :param str resource_name: The name of the resource.
         :param RrsetArgs args: The arguments to use to populate this resource's properties.

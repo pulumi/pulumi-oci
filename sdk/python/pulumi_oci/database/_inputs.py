@@ -10476,16 +10476,16 @@ class CloudExadataInfrastructureConfigureExascaleManagementExascaleConfigArgsDic
     """
     Available storage size for Exascale in GBs.
     """
+    available_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
     total_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
     """
     Storage size needed for Exascale in GBs.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    CloudExadataInfrastructureConfigureExascaleManagementExascaleConfigArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    total_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
 
 @pulumi.input_type
 class CloudExadataInfrastructureConfigureExascaleManagementExascaleConfigArgs:
@@ -10963,18 +10963,23 @@ class CloudExadataInfrastructureDefinedFileSystemConfigurationArgs:
         pulumi.set(self, "mount_point", value)
 
 
-if not MYPY:
-    class CloudExadataInfrastructureExascaleConfigArgsDict(TypedDict):
-        available_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Available storage size for Exascale in GBs.
-        """
-        total_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Storage size needed for Exascale in GBs.
-        """
-elif False:
-    CloudExadataInfrastructureExascaleConfigArgsDict: TypeAlias = Mapping[str, Any]
+class CloudExadataInfrastructureExascaleConfigArgsDict(TypedDict):
+    available_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Available storage size for Exascale in GBs.
+    """
+    available_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Available storage size for VM storage on Exascale in GBs.
+    """
+    total_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Storage size needed for Exascale in GBs.
+    """
+    total_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Storage size needed for VM storage on Exascale in GBs.
+    """
 
 @pulumi.input_type
 class CloudExadataInfrastructureExascaleConfigArgs:
@@ -20413,22 +20418,21 @@ class ExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfigura
         pulumi.set(self, "mount_point", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgsDict(TypedDict):
-        available_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Available storage size for Exascale in GBs.
-        """
-        total_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Storage size needed for Exascale in GBs.
+class ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgsDict(TypedDict):
+    available_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Available storage size for Exascale in GBs.
+    """
+    available_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    total_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Storage size needed for Exascale in GBs.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    total_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
 
 @pulumi.input_type
 class ExadataInfrastructureConfigureExascaleManagementExascaleConfigArgs:
@@ -21052,18 +21056,23 @@ class ExadataInfrastructureDefinedFileSystemConfigurationArgs:
         pulumi.set(self, "mount_point", value)
 
 
-if not MYPY:
-    class ExadataInfrastructureExascaleConfigArgsDict(TypedDict):
-        available_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Available storage size for Exascale in GBs.
-        """
-        total_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Storage size needed for Exascale in GBs.
-        """
-elif False:
-    ExadataInfrastructureExascaleConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ExadataInfrastructureExascaleConfigArgsDict(TypedDict):
+    available_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Available storage size for Exascale in GBs.
+    """
+    available_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Available storage size for VM storage on Exascale in GBs.
+    """
+    total_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Storage size needed for Exascale in GBs.
+    """
+    total_vm_storage_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Storage size needed for VM storage on Exascale in GBs.
+    """
 
 @pulumi.input_type
 class ExadataInfrastructureExascaleConfigArgs:
@@ -25989,16 +25998,13 @@ class VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs:
         pulumi.set(self, "mount_point", value)
 
 
-if not MYPY:
-    class GetAdvancedClusterFileSystemsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name given. The match is not case sensitive.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAdvancedClusterFileSystemsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAdvancedClusterFileSystemsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name given. The match is not case sensitive.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAdvancedClusterFileSystemsFilterArgs:

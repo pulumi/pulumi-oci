@@ -61,9 +61,25 @@ public final class GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCol
      * 
      */
     private String state;
+    /**
+     * @return The OCID of the subnet that the private endpoint belongs to.
+     * 
+     */
     private String subnetId;
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     private Map<String,String> systemTags;
+    /**
+     * @return The date and time that the Generative AI private endpoint was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * 
+     */
     private String timeCreated;
+    /**
+     * @return The date and time that the Generative AI private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * 
+     */
     private String timeUpdated;
 
     private GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem() {}
@@ -142,15 +158,31 @@ public final class GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCol
     public String state() {
         return this.state;
     }
+    /**
+     * @return The OCID of the subnet that the private endpoint belongs to.
+     * 
+     */
     public String subnetId() {
         return this.subnetId;
     }
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     public Map<String,String> systemTags() {
         return this.systemTags;
     }
+    /**
+     * @return The date and time that the Generative AI private endpoint was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * 
+     */
     public String timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * @return The date and time that the Generative AI private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     * 
+     */
     public String timeUpdated() {
         return this.timeUpdated;
     }

@@ -49,6 +49,12 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         }
 
         /// <summary>
+        /// Job Phase group display name e.g. 'Step 1: Migration'
+        /// </summary>
+        [Input("groupDisplayName")]
+        public Input<string>? GroupDisplayName { get; set; }
+
+        /// <summary>
         /// True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
         /// </summary>
         [Input("isAdvisorReportAvailable")]

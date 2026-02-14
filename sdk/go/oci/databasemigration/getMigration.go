@@ -63,8 +63,10 @@ type LookupMigrationResult struct {
 	// List of Migration Parameter objects.
 	AdvancedParameters []GetMigrationAdvancedParameter `pulumi:"advancedParameters"`
 	// Details about Oracle Advisor Settings.
-	AdvisorSettings        []GetMigrationAdvisorSetting `pulumi:"advisorSettings"`
-	BulkIncludeExcludeData string                       `pulumi:"bulkIncludeExcludeData"`
+	AdvisorSettings []GetMigrationAdvisorSetting `pulumi:"advisorSettings"`
+	// The OCID of the resource being referenced.
+	AssessmentId           string `pulumi:"assessmentId"`
+	BulkIncludeExcludeData string `pulumi:"bulkIncludeExcludeData"`
 	// The OCID of the resource being referenced.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Optional additional properties for data transfer.
@@ -160,6 +162,11 @@ func (o LookupMigrationResultOutput) AdvancedParameters() GetMigrationAdvancedPa
 // Details about Oracle Advisor Settings.
 func (o LookupMigrationResultOutput) AdvisorSettings() GetMigrationAdvisorSettingArrayOutput {
 	return o.ApplyT(func(v LookupMigrationResult) []GetMigrationAdvisorSetting { return v.AdvisorSettings }).(GetMigrationAdvisorSettingArrayOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o LookupMigrationResultOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMigrationResult) string { return v.AssessmentId }).(pulumi.StringOutput)
 }
 
 func (o LookupMigrationResultOutput) BulkIncludeExcludeData() pulumi.StringOutput {

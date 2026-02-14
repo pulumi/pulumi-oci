@@ -7089,6 +7089,7 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
         """
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: An optional description of the dedicated AI cluster.
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
@@ -7141,6 +7142,9 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter
     def description(self) -> _builtins.str:
+        """
+        An optional description of the dedicated AI cluster.
+        """
         return pulumi.get(self, "description")
 
     @_builtins.property
@@ -7645,6 +7649,10 @@ class GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemRe
         :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
         :param _builtins.str private_endpoint_ip: The private IP address (in the customer's VCN) that represents the access point for the associated endpoint service.
         :param _builtins.str state: The lifecycle state of Generative AI private endpoints.
+        :param _builtins.str subnet_id: The OCID of the subnet that the private endpoint belongs to.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time that the Generative AI private endpoint was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time that the Generative AI private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -7759,21 +7767,33 @@ class GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemRe
     @_builtins.property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
+        """
+        The OCID of the subnet that the private endpoint belongs to.
+        """
         return pulumi.get(self, "subnet_id")
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
+        """
+        The date and time that the Generative AI private endpoint was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        """
         return pulumi.get(self, "time_created")
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
+        """
+        The date and time that the Generative AI private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        """
         return pulumi.get(self, "time_updated")
 
 
@@ -7906,8 +7926,11 @@ class GetImportedModelsImportedModelCollectionItemResult(dict):
         """
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The ID of the importedModel.
+        :param _builtins.str lifecycle_details: Additional information about the current state of the imported model, providing more detailed and actionable context.
         :param _builtins.str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param _builtins.str time_created: The date and time that the imported model was created in the format of an RFC3339 datetime string.
         :param _builtins.str vendor: A filter to return only resources that match the entire vendor given.
         """
         pulumi.set(__self__, "capabilities", capabilities)
@@ -7966,6 +7989,9 @@ class GetImportedModelsImportedModelCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
@@ -7979,6 +8005,9 @@ class GetImportedModelsImportedModelCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional information about the current state of the imported model, providing more detailed and actionable context.
+        """
         return pulumi.get(self, "lifecycle_details")
 
     @_builtins.property
@@ -8002,6 +8031,9 @@ class GetImportedModelsImportedModelCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
+        """
+        The date and time that the imported model was created in the format of an RFC3339 datetime string.
+        """
         return pulumi.get(self, "time_created")
 
     @_builtins.property
@@ -8321,6 +8353,7 @@ class GetModelsModelCollectionItemResult(dict):
                  vendor: _builtins.str,
                  version: _builtins.str):
         """
+        :param Sequence[_builtins.str] capabilities: Describes what this model can be used for.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param _builtins.str description: An optional description of the model.
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
@@ -8359,6 +8392,9 @@ class GetModelsModelCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter
     def capabilities(self) -> Sequence[_builtins.str]:
+        """
+        Describes what this model can be used for.
+        """
         return pulumi.get(self, "capabilities")
 
     @_builtins.property

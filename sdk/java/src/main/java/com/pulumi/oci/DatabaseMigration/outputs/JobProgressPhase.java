@@ -37,6 +37,11 @@ public final class JobProgressPhase {
      */
     private @Nullable List<JobProgressPhaseExtract> extracts;
     /**
+     * @return Job Phase group display name e.g. &#39;Step 1: Migration&#39;
+     * 
+     */
+    private @Nullable String groupDisplayName;
+    /**
      * @return True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
      * 
      */
@@ -102,6 +107,13 @@ public final class JobProgressPhase {
         return this.extracts == null ? List.of() : this.extracts;
     }
     /**
+     * @return Job Phase group display name e.g. &#39;Step 1: Migration&#39;
+     * 
+     */
+    public Optional<String> groupDisplayName() {
+        return Optional.ofNullable(this.groupDisplayName);
+    }
+    /**
      * @return True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
      * 
      */
@@ -164,6 +176,7 @@ public final class JobProgressPhase {
         private @Nullable Integer durationInMs;
         private @Nullable List<String> editableParameterFiles;
         private @Nullable List<JobProgressPhaseExtract> extracts;
+        private @Nullable String groupDisplayName;
         private @Nullable Boolean isAdvisorReportAvailable;
         private @Nullable Boolean isSuspendAvailable;
         private @Nullable String issue;
@@ -178,6 +191,7 @@ public final class JobProgressPhase {
     	      this.durationInMs = defaults.durationInMs;
     	      this.editableParameterFiles = defaults.editableParameterFiles;
     	      this.extracts = defaults.extracts;
+    	      this.groupDisplayName = defaults.groupDisplayName;
     	      this.isAdvisorReportAvailable = defaults.isAdvisorReportAvailable;
     	      this.isSuspendAvailable = defaults.isSuspendAvailable;
     	      this.issue = defaults.issue;
@@ -216,6 +230,12 @@ public final class JobProgressPhase {
         }
         public Builder extracts(JobProgressPhaseExtract... extracts) {
             return extracts(List.of(extracts));
+        }
+        @CustomType.Setter
+        public Builder groupDisplayName(@Nullable String groupDisplayName) {
+
+            this.groupDisplayName = groupDisplayName;
+            return this;
         }
         @CustomType.Setter
         public Builder isAdvisorReportAvailable(@Nullable Boolean isAdvisorReportAvailable) {
@@ -268,6 +288,7 @@ public final class JobProgressPhase {
             _resultValue.durationInMs = durationInMs;
             _resultValue.editableParameterFiles = editableParameterFiles;
             _resultValue.extracts = extracts;
+            _resultValue.groupDisplayName = groupDisplayName;
             _resultValue.isAdvisorReportAvailable = isAdvisorReportAvailable;
             _resultValue.isSuspendAvailable = isSuspendAvailable;
             _resultValue.issue = issue;

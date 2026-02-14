@@ -30,9 +30,11 @@ class CrossConnectArgs:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  far_cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 interface_name: Optional[pulumi.Input[_builtins.str]] = None,
                  is_active: Optional[pulumi.Input[_builtins.bool]] = None,
                  macsec_properties: Optional[pulumi.Input['CrossConnectMacsecPropertiesArgs']] = None,
-                 near_cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 near_cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 oci_physical_device_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CrossConnect resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment to contain the cross-connect.
@@ -48,9 +50,11 @@ class CrossConnectArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] far_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] interface_name: The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
         :param pulumi.Input[_builtins.bool] is_active: (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
         :param pulumi.Input['CrossConnectMacsecPropertiesArgs'] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         :param pulumi.Input[_builtins.str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
+        :param pulumi.Input[_builtins.str] oci_physical_device_name: The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "location_name", location_name)
@@ -67,12 +71,16 @@ class CrossConnectArgs:
             pulumi.set(__self__, "far_cross_connect_or_cross_connect_group_id", far_cross_connect_or_cross_connect_group_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if interface_name is not None:
+            pulumi.set(__self__, "interface_name", interface_name)
         if is_active is not None:
             pulumi.set(__self__, "is_active", is_active)
         if macsec_properties is not None:
             pulumi.set(__self__, "macsec_properties", macsec_properties)
         if near_cross_connect_or_cross_connect_group_id is not None:
             pulumi.set(__self__, "near_cross_connect_or_cross_connect_group_id", near_cross_connect_or_cross_connect_group_id)
+        if oci_physical_device_name is not None:
+            pulumi.set(__self__, "oci_physical_device_name", oci_physical_device_name)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -187,6 +195,18 @@ class CrossConnectArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="interfaceName")
+    def interface_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+        """
+        return pulumi.get(self, "interface_name")
+
+    @interface_name.setter
+    def interface_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "interface_name", value)
+
+    @_builtins.property
     @pulumi.getter(name="isActive")
     def is_active(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
@@ -222,6 +242,18 @@ class CrossConnectArgs:
     def near_cross_connect_or_cross_connect_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "near_cross_connect_or_cross_connect_group_id", value)
 
+    @_builtins.property
+    @pulumi.getter(name="ociPhysicalDeviceName")
+    def oci_physical_device_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
+        """
+        return pulumi.get(self, "oci_physical_device_name")
+
+    @oci_physical_device_name.setter
+    def oci_physical_device_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "oci_physical_device_name", value)
+
 
 @pulumi.input_type
 class _CrossConnectState:
@@ -233,6 +265,7 @@ class _CrossConnectState:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  far_cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 interface_name: Optional[pulumi.Input[_builtins.str]] = None,
                  is_active: Optional[pulumi.Input[_builtins.bool]] = None,
                  location_name: Optional[pulumi.Input[_builtins.str]] = None,
                  macsec_properties: Optional[pulumi.Input['CrossConnectMacsecPropertiesArgs']] = None,
@@ -252,12 +285,13 @@ class _CrossConnectState:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] far_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] interface_name: The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
         :param pulumi.Input[_builtins.bool] is_active: (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
         :param pulumi.Input[_builtins.str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
         :param pulumi.Input['CrossConnectMacsecPropertiesArgs'] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         :param pulumi.Input[_builtins.str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[_builtins.str] oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
-        :param pulumi.Input[_builtins.str] oci_physical_device_name: The FastConnect device that terminates the physical connection.
+        :param pulumi.Input[_builtins.str] oci_physical_device_name: The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
         :param pulumi.Input[_builtins.str] port_name: A string identifying the meet-me room port for this cross-connect.
         :param pulumi.Input[_builtins.str] port_speed_shape_name: The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps` 
                
@@ -281,6 +315,8 @@ class _CrossConnectState:
             pulumi.set(__self__, "far_cross_connect_or_cross_connect_group_id", far_cross_connect_or_cross_connect_group_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if interface_name is not None:
+            pulumi.set(__self__, "interface_name", interface_name)
         if is_active is not None:
             pulumi.set(__self__, "is_active", is_active)
         if location_name is not None:
@@ -387,6 +423,18 @@ class _CrossConnectState:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="interfaceName")
+    def interface_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+        """
+        return pulumi.get(self, "interface_name")
+
+    @interface_name.setter
+    def interface_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "interface_name", value)
+
+    @_builtins.property
     @pulumi.getter(name="isActive")
     def is_active(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
@@ -450,7 +498,7 @@ class _CrossConnectState:
     @pulumi.getter(name="ociPhysicalDeviceName")
     def oci_physical_device_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The FastConnect device that terminates the physical connection.
+        The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
         """
         return pulumi.get(self, "oci_physical_device_name")
 
@@ -524,10 +572,12 @@ class CrossConnect(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  far_cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 interface_name: Optional[pulumi.Input[_builtins.str]] = None,
                  is_active: Optional[pulumi.Input[_builtins.bool]] = None,
                  location_name: Optional[pulumi.Input[_builtins.str]] = None,
                  macsec_properties: Optional[pulumi.Input[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']]] = None,
                  near_cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 oci_physical_device_name: Optional[pulumi.Input[_builtins.str]] = None,
                  port_speed_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
@@ -576,6 +626,7 @@ class CrossConnect(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            interface_name=cross_connect_interface_name,
             macsec_properties={
                 "state": cross_connect_macsec_properties_state,
                 "encryption_cipher": cross_connect_macsec_properties_encryption_cipher,
@@ -585,7 +636,8 @@ class CrossConnect(pulumi.CustomResource):
                     "connectivity_association_name_secret_id": test_secret["id"],
                 },
             },
-            near_cross_connect_or_cross_connect_group_id=test_cross_connect_group["id"])
+            near_cross_connect_or_cross_connect_group_id=test_cross_connect_group["id"],
+            oci_physical_device_name=cross_connect_oci_physical_device_name)
         ```
 
         ## Import
@@ -605,10 +657,12 @@ class CrossConnect(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] far_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] interface_name: The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
         :param pulumi.Input[_builtins.bool] is_active: (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
         :param pulumi.Input[_builtins.str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
         :param pulumi.Input[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         :param pulumi.Input[_builtins.str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
+        :param pulumi.Input[_builtins.str] oci_physical_device_name: The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
         :param pulumi.Input[_builtins.str] port_speed_shape_name: The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps` 
                
                
@@ -667,6 +721,7 @@ class CrossConnect(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            interface_name=cross_connect_interface_name,
             macsec_properties={
                 "state": cross_connect_macsec_properties_state,
                 "encryption_cipher": cross_connect_macsec_properties_encryption_cipher,
@@ -676,7 +731,8 @@ class CrossConnect(pulumi.CustomResource):
                     "connectivity_association_name_secret_id": test_secret["id"],
                 },
             },
-            near_cross_connect_or_cross_connect_group_id=test_cross_connect_group["id"])
+            near_cross_connect_or_cross_connect_group_id=test_cross_connect_group["id"],
+            oci_physical_device_name=cross_connect_oci_physical_device_name)
         ```
 
         ## Import
@@ -709,10 +765,12 @@ class CrossConnect(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  far_cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 interface_name: Optional[pulumi.Input[_builtins.str]] = None,
                  is_active: Optional[pulumi.Input[_builtins.bool]] = None,
                  location_name: Optional[pulumi.Input[_builtins.str]] = None,
                  macsec_properties: Optional[pulumi.Input[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']]] = None,
                  near_cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 oci_physical_device_name: Optional[pulumi.Input[_builtins.str]] = None,
                  port_speed_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -732,17 +790,18 @@ class CrossConnect(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["far_cross_connect_or_cross_connect_group_id"] = far_cross_connect_or_cross_connect_group_id
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["interface_name"] = interface_name
             __props__.__dict__["is_active"] = is_active
             if location_name is None and not opts.urn:
                 raise TypeError("Missing required property 'location_name'")
             __props__.__dict__["location_name"] = location_name
             __props__.__dict__["macsec_properties"] = macsec_properties
             __props__.__dict__["near_cross_connect_or_cross_connect_group_id"] = near_cross_connect_or_cross_connect_group_id
+            __props__.__dict__["oci_physical_device_name"] = oci_physical_device_name
             if port_speed_shape_name is None and not opts.urn:
                 raise TypeError("Missing required property 'port_speed_shape_name'")
             __props__.__dict__["port_speed_shape_name"] = port_speed_shape_name
             __props__.__dict__["oci_logical_device_name"] = None
-            __props__.__dict__["oci_physical_device_name"] = None
             __props__.__dict__["port_name"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
@@ -763,6 +822,7 @@ class CrossConnect(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             far_cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            interface_name: Optional[pulumi.Input[_builtins.str]] = None,
             is_active: Optional[pulumi.Input[_builtins.bool]] = None,
             location_name: Optional[pulumi.Input[_builtins.str]] = None,
             macsec_properties: Optional[pulumi.Input[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']]] = None,
@@ -787,12 +847,13 @@ class CrossConnect(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] far_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] interface_name: The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
         :param pulumi.Input[_builtins.bool] is_active: (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
         :param pulumi.Input[_builtins.str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
         :param pulumi.Input[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         :param pulumi.Input[_builtins.str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[_builtins.str] oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
-        :param pulumi.Input[_builtins.str] oci_physical_device_name: The FastConnect device that terminates the physical connection.
+        :param pulumi.Input[_builtins.str] oci_physical_device_name: The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
         :param pulumi.Input[_builtins.str] port_name: A string identifying the meet-me room port for this cross-connect.
         :param pulumi.Input[_builtins.str] port_speed_shape_name: The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps` 
                
@@ -813,6 +874,7 @@ class CrossConnect(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["far_cross_connect_or_cross_connect_group_id"] = far_cross_connect_or_cross_connect_group_id
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["interface_name"] = interface_name
         __props__.__dict__["is_active"] = is_active
         __props__.__dict__["location_name"] = location_name
         __props__.__dict__["macsec_properties"] = macsec_properties
@@ -882,6 +944,14 @@ class CrossConnect(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
+    @pulumi.getter(name="interfaceName")
+    def interface_name(self) -> pulumi.Output[_builtins.str]:
+        """
+        The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+        """
+        return pulumi.get(self, "interface_name")
+
+    @_builtins.property
     @pulumi.getter(name="isActive")
     def is_active(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
@@ -925,7 +995,7 @@ class CrossConnect(pulumi.CustomResource):
     @pulumi.getter(name="ociPhysicalDeviceName")
     def oci_physical_device_name(self) -> pulumi.Output[_builtins.str]:
         """
-        The FastConnect device that terminates the physical connection.
+        The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
         """
         return pulumi.get(self, "oci_physical_device_name")
 

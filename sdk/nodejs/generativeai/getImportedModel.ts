@@ -49,13 +49,22 @@ export interface GetImportedModelResult {
     readonly definedTags: {[key: string]: string};
     readonly description: string;
     readonly displayName: string;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
     readonly freeformTags: {[key: string]: string};
     readonly id: string;
     readonly importedModelId: string;
+    /**
+     * Additional information about the current state of the imported model, providing more detailed and actionable context.
+     */
     readonly lifecycleDetails: string;
     readonly previousState: string;
     readonly state: string;
     readonly systemTags: {[key: string]: string};
+    /**
+     * The date and time that the imported model was created in the format of an RFC3339 datetime string.
+     */
     readonly timeCreated: string;
     readonly timeUpdated: string;
     readonly vendor: string;

@@ -47,6 +47,12 @@ import (
 //				InitVariables: &mysql.MysqlConfigurationInitVariablesArgs{
 //					LowerCaseTableNames: pulumi.Any(mysqlConfigurationInitVariablesLowerCaseTableNames),
 //				},
+//				Options: mysql.MysqlConfigurationOptionArray{
+//					&mysql.MysqlConfigurationOptionArgs{
+//						Name:  pulumi.Any(mysqlConfigurationOptionsName),
+//						Value: pulumi.Any(mysqlConfigurationOptionsValue),
+//					},
+//				},
 //				ParentConfigurationId: pulumi.Any(testConfiguration.Id),
 //				Variables: &mysql.MysqlConfigurationVariablesArgs{
 //					AutoIncrementIncrement:                 pulumi.Any(mysqlConfigurationVariablesAutoIncrementIncrement),
@@ -198,8 +204,10 @@ type MysqlConfiguration struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
-	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 	InitVariables MysqlConfigurationInitVariablesOutput `pulumi:"initVariables"`
+	// The MySQL options defined in the Configuration.
+	Options MysqlConfigurationOptionArrayOutput `pulumi:"options"`
 	// The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
 	ParentConfigurationId pulumi.StringOutput `pulumi:"parentConfigurationId"`
 	// The name of the associated Shape.
@@ -214,7 +222,7 @@ type MysqlConfiguration struct {
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// The Configuration type, DEFAULT or CUSTOM.
 	Type pulumi.StringOutput `pulumi:"type"`
-	// User-defined service variables.
+	// DEPRECATED -- please use the `options` field instead. User-defined service variables.
 	Variables MysqlConfigurationVariablesOutput `pulumi:"variables"`
 }
 
@@ -264,8 +272,10 @@ type mysqlConfigurationState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 	InitVariables *MysqlConfigurationInitVariables `pulumi:"initVariables"`
+	// The MySQL options defined in the Configuration.
+	Options []MysqlConfigurationOption `pulumi:"options"`
 	// The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
 	ParentConfigurationId *string `pulumi:"parentConfigurationId"`
 	// The name of the associated Shape.
@@ -280,7 +290,7 @@ type mysqlConfigurationState struct {
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The Configuration type, DEFAULT or CUSTOM.
 	Type *string `pulumi:"type"`
-	// User-defined service variables.
+	// DEPRECATED -- please use the `options` field instead. User-defined service variables.
 	Variables *MysqlConfigurationVariables `pulumi:"variables"`
 }
 
@@ -295,8 +305,10 @@ type MysqlConfigurationState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
-	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 	InitVariables MysqlConfigurationInitVariablesPtrInput
+	// The MySQL options defined in the Configuration.
+	Options MysqlConfigurationOptionArrayInput
 	// The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
 	ParentConfigurationId pulumi.StringPtrInput
 	// The name of the associated Shape.
@@ -311,7 +323,7 @@ type MysqlConfigurationState struct {
 	TimeUpdated pulumi.StringPtrInput
 	// The Configuration type, DEFAULT or CUSTOM.
 	Type pulumi.StringPtrInput
-	// User-defined service variables.
+	// DEPRECATED -- please use the `options` field instead. User-defined service variables.
 	Variables MysqlConfigurationVariablesPtrInput
 }
 
@@ -330,13 +342,15 @@ type mysqlConfigurationArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 	InitVariables *MysqlConfigurationInitVariables `pulumi:"initVariables"`
+	// The MySQL options defined in the Configuration.
+	Options []MysqlConfigurationOption `pulumi:"options"`
 	// The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
 	ParentConfigurationId *string `pulumi:"parentConfigurationId"`
 	// The name of the associated Shape.
 	ShapeName string `pulumi:"shapeName"`
-	// User-defined service variables.
+	// DEPRECATED -- please use the `options` field instead. User-defined service variables.
 	Variables *MysqlConfigurationVariables `pulumi:"variables"`
 }
 
@@ -352,13 +366,15 @@ type MysqlConfigurationArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
-	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 	InitVariables MysqlConfigurationInitVariablesPtrInput
+	// The MySQL options defined in the Configuration.
+	Options MysqlConfigurationOptionArrayInput
 	// The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
 	ParentConfigurationId pulumi.StringPtrInput
 	// The name of the associated Shape.
 	ShapeName pulumi.StringInput
-	// User-defined service variables.
+	// DEPRECATED -- please use the `options` field instead. User-defined service variables.
 	Variables MysqlConfigurationVariablesPtrInput
 }
 
@@ -474,9 +490,14 @@ func (o MysqlConfigurationOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *MysqlConfiguration) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 func (o MysqlConfigurationOutput) InitVariables() MysqlConfigurationInitVariablesOutput {
 	return o.ApplyT(func(v *MysqlConfiguration) MysqlConfigurationInitVariablesOutput { return v.InitVariables }).(MysqlConfigurationInitVariablesOutput)
+}
+
+// The MySQL options defined in the Configuration.
+func (o MysqlConfigurationOutput) Options() MysqlConfigurationOptionArrayOutput {
+	return o.ApplyT(func(v *MysqlConfiguration) MysqlConfigurationOptionArrayOutput { return v.Options }).(MysqlConfigurationOptionArrayOutput)
 }
 
 // The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
@@ -514,7 +535,7 @@ func (o MysqlConfigurationOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlConfiguration) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
-// User-defined service variables.
+// DEPRECATED -- please use the `options` field instead. User-defined service variables.
 func (o MysqlConfigurationOutput) Variables() MysqlConfigurationVariablesOutput {
 	return o.ApplyT(func(v *MysqlConfiguration) MysqlConfigurationVariablesOutput { return v.Variables }).(MysqlConfigurationVariablesOutput)
 }

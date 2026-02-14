@@ -46,7 +46,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Inputs
         private InputList<string>? _targets;
 
         /// <summary>
-        /// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+        /// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
         /// </summary>
         public InputList<string> Targets
         {

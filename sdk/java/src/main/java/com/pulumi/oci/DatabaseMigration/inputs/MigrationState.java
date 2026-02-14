@@ -56,6 +56,21 @@ public final class MigrationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The OCID of the resource being referenced.
+     * 
+     */
+    @Import(name="assessmentId")
+    private @Nullable Output<String> assessmentId;
+
+    /**
+     * @return The OCID of the resource being referenced.
+     * 
+     */
+    public Optional<Output<String>> assessmentId() {
+        return Optional.ofNullable(this.assessmentId);
+    }
+
+    /**
      * Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
      * 
      */
@@ -456,6 +471,7 @@ public final class MigrationState extends com.pulumi.resources.ResourceArgs {
     private MigrationState(MigrationState $) {
         this.advancedParameters = $.advancedParameters;
         this.advisorSettings = $.advisorSettings;
+        this.assessmentId = $.assessmentId;
         this.bulkIncludeExcludeData = $.bulkIncludeExcludeData;
         this.compartmentId = $.compartmentId;
         this.dataTransferMediumDetails = $.dataTransferMediumDetails;
@@ -552,6 +568,27 @@ public final class MigrationState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder advisorSettings(MigrationAdvisorSettingsArgs advisorSettings) {
             return advisorSettings(Output.of(advisorSettings));
+        }
+
+        /**
+         * @param assessmentId The OCID of the resource being referenced.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assessmentId(@Nullable Output<String> assessmentId) {
+            $.assessmentId = assessmentId;
+            return this;
+        }
+
+        /**
+         * @param assessmentId The OCID of the resource being referenced.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assessmentId(String assessmentId) {
+            return assessmentId(Output.of(assessmentId));
         }
 
         /**

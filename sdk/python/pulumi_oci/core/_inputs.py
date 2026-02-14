@@ -3377,6 +3377,15 @@ class ComputeCapacityReportShapeAvailabilityArgs:
 
 
 class ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgsDict(TypedDict):
+    baseline_ocpu_utilization: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+
+    The following values are supported:
+    * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+    * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+    * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+    """
     memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
     """
     The total amount of memory available to the instance, in gigabytes.
@@ -3397,10 +3406,17 @@ class ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgsDict(TypedDic
 @pulumi.input_type
 class ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs:
     def __init__(__self__, *,
+                 baseline_ocpu_utilization: Optional[pulumi.Input[_builtins.str]] = None,
                  memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
                  nvmes: Optional[pulumi.Input[_builtins.int]] = None,
                  ocpus: Optional[pulumi.Input[_builtins.float]] = None):
         """
+        :param pulumi.Input[_builtins.str] baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+               
+               The following values are supported:
+               * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+               * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+               * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param pulumi.Input[_builtins.float] memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param pulumi.Input[_builtins.int] nvmes: The number of NVMe drives to be used for storage.
         :param pulumi.Input[_builtins.float] ocpus: The total number of OCPUs available to the instance. 
@@ -3409,12 +3425,31 @@ class ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if baseline_ocpu_utilization is not None:
+            pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if nvmes is not None:
             pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="baselineOcpuUtilization")
+    def baseline_ocpu_utilization(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+
+        The following values are supported:
+        * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @baseline_ocpu_utilization.setter
+    def baseline_ocpu_utilization(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "baseline_ocpu_utilization", value)
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")

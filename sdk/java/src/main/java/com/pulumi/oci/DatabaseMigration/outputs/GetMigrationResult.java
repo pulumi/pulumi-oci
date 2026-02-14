@@ -30,6 +30,11 @@ public final class GetMigrationResult {
      * 
      */
     private List<GetMigrationAdvisorSetting> advisorSettings;
+    /**
+     * @return The OCID of the resource being referenced.
+     * 
+     */
+    private String assessmentId;
     private String bulkIncludeExcludeData;
     /**
      * @return The OCID of the resource being referenced.
@@ -169,6 +174,13 @@ public final class GetMigrationResult {
      */
     public List<GetMigrationAdvisorSetting> advisorSettings() {
         return this.advisorSettings;
+    }
+    /**
+     * @return The OCID of the resource being referenced.
+     * 
+     */
+    public String assessmentId() {
+        return this.assessmentId;
     }
     public String bulkIncludeExcludeData() {
         return this.bulkIncludeExcludeData;
@@ -362,6 +374,7 @@ public final class GetMigrationResult {
     public static final class Builder {
         private List<GetMigrationAdvancedParameter> advancedParameters;
         private List<GetMigrationAdvisorSetting> advisorSettings;
+        private String assessmentId;
         private String bulkIncludeExcludeData;
         private String compartmentId;
         private List<GetMigrationDataTransferMediumDetail> dataTransferMediumDetails;
@@ -395,6 +408,7 @@ public final class GetMigrationResult {
     	      Objects.requireNonNull(defaults);
     	      this.advancedParameters = defaults.advancedParameters;
     	      this.advisorSettings = defaults.advisorSettings;
+    	      this.assessmentId = defaults.assessmentId;
     	      this.bulkIncludeExcludeData = defaults.bulkIncludeExcludeData;
     	      this.compartmentId = defaults.compartmentId;
     	      this.dataTransferMediumDetails = defaults.dataTransferMediumDetails;
@@ -446,6 +460,14 @@ public final class GetMigrationResult {
         }
         public Builder advisorSettings(GetMigrationAdvisorSetting... advisorSettings) {
             return advisorSettings(List.of(advisorSettings));
+        }
+        @CustomType.Setter
+        public Builder assessmentId(String assessmentId) {
+            if (assessmentId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationResult", "assessmentId");
+            }
+            this.assessmentId = assessmentId;
+            return this;
         }
         @CustomType.Setter
         public Builder bulkIncludeExcludeData(String bulkIncludeExcludeData) {
@@ -693,6 +715,7 @@ public final class GetMigrationResult {
             final var _resultValue = new GetMigrationResult();
             _resultValue.advancedParameters = advancedParameters;
             _resultValue.advisorSettings = advisorSettings;
+            _resultValue.assessmentId = assessmentId;
             _resultValue.bulkIncludeExcludeData = bulkIncludeExcludeData;
             _resultValue.compartmentId = compartmentId;
             _resultValue.dataTransferMediumDetails = dataTransferMediumDetails;

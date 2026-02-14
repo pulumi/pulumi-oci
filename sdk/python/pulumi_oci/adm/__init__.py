@@ -18,6 +18,7 @@ from .get_remediation_runs import *
 from .get_vulnerability_audit import *
 from .get_vulnerability_audit_application_dependency_vulnerabilities import *
 from .get_vulnerability_audit_application_dependency_vulnerability import *
+from .get_vulnerability_audit_vulnerability import *
 from .get_vulnerability_audits import *
 from .knowledge_base import *
 from .remediation_recipe import *

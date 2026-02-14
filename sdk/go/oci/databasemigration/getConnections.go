@@ -37,6 +37,7 @@ import (
 //				DisplayName:        pulumi.StringRef(connectionDisplayName),
 //				SourceConnectionId: pulumi.StringRef(testConnection.Id),
 //				State:              pulumi.StringRef(connectionState),
+//				TechnologySubType:  pulumi.StringRef(connectionTechnologySubType),
 //				TechnologyTypes:    connectionTechnologyType,
 //			}, nil)
 //			if err != nil {
@@ -70,6 +71,8 @@ type GetConnectionsArgs struct {
 	SourceConnectionId *string `pulumi:"sourceConnectionId"`
 	// The current state of the Database Migration Deployment.
 	State *string `pulumi:"state"`
+	// The database technology sub-type.
+	TechnologySubType *string `pulumi:"technologySubType"`
 	// The array of technology types.
 	TechnologyTypes []string `pulumi:"technologyTypes"`
 }
@@ -89,7 +92,8 @@ type GetConnectionsResult struct {
 	Id                 string  `pulumi:"id"`
 	SourceConnectionId *string `pulumi:"sourceConnectionId"`
 	// The Connection's current lifecycle state.
-	State *string `pulumi:"state"`
+	State             *string `pulumi:"state"`
+	TechnologySubType *string `pulumi:"technologySubType"`
 	// The type of MySQL source or target connection. Example: OCI_MYSQL represents Oracle Cloud Infrastructure MySQL HeatWave Database Service
 	TechnologyTypes []string `pulumi:"technologyTypes"`
 }
@@ -116,6 +120,8 @@ type GetConnectionsOutputArgs struct {
 	SourceConnectionId pulumi.StringPtrInput `pulumi:"sourceConnectionId"`
 	// The current state of the Database Migration Deployment.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// The database technology sub-type.
+	TechnologySubType pulumi.StringPtrInput `pulumi:"technologySubType"`
 	// The array of technology types.
 	TechnologyTypes pulumi.StringArrayInput `pulumi:"technologyTypes"`
 }
@@ -175,6 +181,10 @@ func (o GetConnectionsResultOutput) SourceConnectionId() pulumi.StringPtrOutput 
 // The Connection's current lifecycle state.
 func (o GetConnectionsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetConnectionsResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+func (o GetConnectionsResultOutput) TechnologySubType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectionsResult) *string { return v.TechnologySubType }).(pulumi.StringPtrOutput)
 }
 
 // The type of MySQL source or target connection. Example: OCI_MYSQL represents Oracle Cloud Infrastructure MySQL HeatWave Database Service

@@ -126,6 +126,9 @@ namespace Pulumi.Oci.GenerativeAi
     [OutputType]
     public sealed class GetGenerativeAiPrivateEndpointResult
     {
+        /// <summary>
+        /// The OCID of the compartment that contains the private endpoint.
+        /// </summary>
         public readonly string CompartmentId;
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
@@ -164,9 +167,21 @@ namespace Pulumi.Oci.GenerativeAi
         /// The current state of the Generative AI Private Endpoint.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// The OCID of the subnet that the private endpoint belongs to.
+        /// </summary>
         public readonly string SubnetId;
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
+        /// The date and time that the Generative AI private endpoint was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The date and time that the Generative AI private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        /// </summary>
         public readonly string TimeUpdated;
 
         [OutputConstructor]

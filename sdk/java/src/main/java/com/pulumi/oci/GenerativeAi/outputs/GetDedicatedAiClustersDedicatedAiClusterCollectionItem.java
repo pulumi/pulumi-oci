@@ -25,6 +25,10 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
      * 
      */
     private Map<String,String> definedTags;
+    /**
+     * @return An optional description of the dedicated AI cluster.
+     * 
+     */
     private String description;
     /**
      * @return A filter to return only resources that match the given display name exactly.
@@ -100,6 +104,10 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
     public Map<String,String> definedTags() {
         return this.definedTags;
     }
+    /**
+     * @return An optional description of the dedicated AI cluster.
+     * 
+     */
     public String description() {
         return this.description;
     }

@@ -15,6 +15,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetGenerativeAiPrivateEndpointsResult {
+    /**
+     * @return The OCID of the compartment that contains the private endpoint.
+     * 
+     */
     private String compartmentId;
     /**
      * @return A user friendly name. It doesn&#39;t have to be unique. Avoid entering confidential information.
@@ -39,6 +43,10 @@ public final class GetGenerativeAiPrivateEndpointsResult {
     private @Nullable String state;
 
     private GetGenerativeAiPrivateEndpointsResult() {}
+    /**
+     * @return The OCID of the compartment that contains the private endpoint.
+     * 
+     */
     public String compartmentId() {
         return this.compartmentId;
     }

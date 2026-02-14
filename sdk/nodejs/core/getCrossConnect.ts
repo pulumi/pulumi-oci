@@ -73,6 +73,7 @@ export interface GetCrossConnectResult {
      * The cross-connect's Oracle ID (OCID).
      */
     readonly id: string;
+    readonly interfaceName: string;
     readonly isActive: boolean;
     /**
      * The name of the FastConnect location where this cross-connect is installed.

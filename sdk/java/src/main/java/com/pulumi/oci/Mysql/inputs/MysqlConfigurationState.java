@@ -6,8 +6,10 @@ package com.pulumi.oci.Mysql.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Mysql.inputs.MysqlConfigurationInitVariablesArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlConfigurationOptionArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlConfigurationVariablesArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -94,18 +96,33 @@ public final class MysqlConfigurationState extends com.pulumi.resources.Resource
     }
 
     /**
-     * User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+     * DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      * 
      */
     @Import(name="initVariables")
     private @Nullable Output<MysqlConfigurationInitVariablesArgs> initVariables;
 
     /**
-     * @return User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+     * @return DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      * 
      */
     public Optional<Output<MysqlConfigurationInitVariablesArgs>> initVariables() {
         return Optional.ofNullable(this.initVariables);
+    }
+
+    /**
+     * The MySQL options defined in the Configuration.
+     * 
+     */
+    @Import(name="options")
+    private @Nullable Output<List<MysqlConfigurationOptionArgs>> options;
+
+    /**
+     * @return The MySQL options defined in the Configuration.
+     * 
+     */
+    public Optional<Output<List<MysqlConfigurationOptionArgs>>> options() {
+        return Optional.ofNullable(this.options);
     }
 
     /**
@@ -214,14 +231,14 @@ public final class MysqlConfigurationState extends com.pulumi.resources.Resource
     }
 
     /**
-     * User-defined service variables.
+     * DEPRECATED -- please use the `options` field instead. User-defined service variables.
      * 
      */
     @Import(name="variables")
     private @Nullable Output<MysqlConfigurationVariablesArgs> variables;
 
     /**
-     * @return User-defined service variables.
+     * @return DEPRECATED -- please use the `options` field instead. User-defined service variables.
      * 
      */
     public Optional<Output<MysqlConfigurationVariablesArgs>> variables() {
@@ -237,6 +254,7 @@ public final class MysqlConfigurationState extends com.pulumi.resources.Resource
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.initVariables = $.initVariables;
+        this.options = $.options;
         this.parentConfigurationId = $.parentConfigurationId;
         this.shapeName = $.shapeName;
         this.state = $.state;
@@ -371,7 +389,7 @@ public final class MysqlConfigurationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param initVariables User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+         * @param initVariables DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
          * 
          * @return builder
          * 
@@ -382,13 +400,44 @@ public final class MysqlConfigurationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param initVariables User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+         * @param initVariables DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
          * 
          * @return builder
          * 
          */
         public Builder initVariables(MysqlConfigurationInitVariablesArgs initVariables) {
             return initVariables(Output.of(initVariables));
+        }
+
+        /**
+         * @param options The MySQL options defined in the Configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder options(@Nullable Output<List<MysqlConfigurationOptionArgs>> options) {
+            $.options = options;
+            return this;
+        }
+
+        /**
+         * @param options The MySQL options defined in the Configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder options(List<MysqlConfigurationOptionArgs> options) {
+            return options(Output.of(options));
+        }
+
+        /**
+         * @param options The MySQL options defined in the Configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder options(MysqlConfigurationOptionArgs... options) {
+            return options(List.of(options));
         }
 
         /**
@@ -539,7 +588,7 @@ public final class MysqlConfigurationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param variables User-defined service variables.
+         * @param variables DEPRECATED -- please use the `options` field instead. User-defined service variables.
          * 
          * @return builder
          * 
@@ -550,7 +599,7 @@ public final class MysqlConfigurationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param variables User-defined service variables.
+         * @param variables DEPRECATED -- please use the `options` field instead. User-defined service variables.
          * 
          * @return builder
          * 

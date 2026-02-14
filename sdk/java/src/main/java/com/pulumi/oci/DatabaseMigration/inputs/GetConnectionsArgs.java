@@ -101,6 +101,21 @@ public final class GetConnectionsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * The database technology sub-type.
+     * 
+     */
+    @Import(name="technologySubType")
+    private @Nullable Output<String> technologySubType;
+
+    /**
+     * @return The database technology sub-type.
+     * 
+     */
+    public Optional<Output<String>> technologySubType() {
+        return Optional.ofNullable(this.technologySubType);
+    }
+
+    /**
      * The array of technology types.
      * 
      */
@@ -124,6 +139,7 @@ public final class GetConnectionsArgs extends com.pulumi.resources.InvokeArgs {
         this.filters = $.filters;
         this.sourceConnectionId = $.sourceConnectionId;
         this.state = $.state;
+        this.technologySubType = $.technologySubType;
         this.technologyTypes = $.technologyTypes;
     }
 
@@ -271,6 +287,27 @@ public final class GetConnectionsArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param technologySubType The database technology sub-type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder technologySubType(@Nullable Output<String> technologySubType) {
+            $.technologySubType = technologySubType;
+            return this;
+        }
+
+        /**
+         * @param technologySubType The database technology sub-type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder technologySubType(String technologySubType) {
+            return technologySubType(Output.of(technologySubType));
         }
 
         /**

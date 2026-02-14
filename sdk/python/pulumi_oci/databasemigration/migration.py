@@ -23,11 +23,10 @@ class MigrationArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  database_combination: pulumi.Input[_builtins.str],
-                 source_database_connection_id: pulumi.Input[_builtins.str],
-                 target_database_connection_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
                  advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]] = None,
                  advisor_settings: Optional[pulumi.Input['MigrationAdvisorSettingsArgs']] = None,
+                 assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  bulk_include_exclude_data: Optional[pulumi.Input[_builtins.str]] = None,
                  data_transfer_medium_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -40,20 +39,21 @@ class MigrationArgs:
                  include_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]] = None,
                  initial_load_settings: Optional[pulumi.Input['MigrationInitialLoadSettingsArgs']] = None,
                  source_container_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_standby_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 source_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 source_standby_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Migration resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[_builtins.str] database_combination: (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
-        :param pulumi.Input[_builtins.str] source_database_connection_id: (Updatable) The OCID of the resource being referenced.
-        :param pulumi.Input[_builtins.str] target_database_connection_id: (Updatable) The OCID of the resource being referenced.
-        :param pulumi.Input[_builtins.str] type: (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+        :param pulumi.Input[_builtins.str] type: (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication. 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]] advanced_parameters: (Updatable) List of Migration Parameter objects.
         :param pulumi.Input['MigrationAdvisorSettingsArgs'] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
+        :param pulumi.Input[_builtins.str] assessment_id: The OCID of the resource being referenced.
         :param pulumi.Input[_builtins.str] bulk_include_exclude_data: Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
         :param pulumi.Input['MigrationDataTransferMediumDetailsArgs'] data_transfer_medium_details: (Updatable) Optional additional properties for data transfer.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -66,17 +66,19 @@ class MigrationArgs:
         :param pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
         :param pulumi.Input['MigrationInitialLoadSettingsArgs'] initial_load_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
         :param pulumi.Input[_builtins.str] source_container_database_connection_id: (Updatable) The OCID of the resource being referenced.
+        :param pulumi.Input[_builtins.str] source_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[_builtins.str] source_standby_database_connection_id: (Updatable) The OCID of the resource being referenced.
+        :param pulumi.Input[_builtins.str] target_database_connection_id: (Updatable) The OCID of the resource being referenced.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "database_combination", database_combination)
-        pulumi.set(__self__, "source_database_connection_id", source_database_connection_id)
-        pulumi.set(__self__, "target_database_connection_id", target_database_connection_id)
         pulumi.set(__self__, "type", type)
         if advanced_parameters is not None:
             pulumi.set(__self__, "advanced_parameters", advanced_parameters)
         if advisor_settings is not None:
             pulumi.set(__self__, "advisor_settings", advisor_settings)
+        if assessment_id is not None:
+            pulumi.set(__self__, "assessment_id", assessment_id)
         if bulk_include_exclude_data is not None:
             pulumi.set(__self__, "bulk_include_exclude_data", bulk_include_exclude_data)
         if data_transfer_medium_details is not None:
@@ -101,8 +103,12 @@ class MigrationArgs:
             pulumi.set(__self__, "initial_load_settings", initial_load_settings)
         if source_container_database_connection_id is not None:
             pulumi.set(__self__, "source_container_database_connection_id", source_container_database_connection_id)
+        if source_database_connection_id is not None:
+            pulumi.set(__self__, "source_database_connection_id", source_database_connection_id)
         if source_standby_database_connection_id is not None:
             pulumi.set(__self__, "source_standby_database_connection_id", source_standby_database_connection_id)
+        if target_database_connection_id is not None:
+            pulumi.set(__self__, "target_database_connection_id", target_database_connection_id)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -129,34 +135,10 @@ class MigrationArgs:
         pulumi.set(self, "database_combination", value)
 
     @_builtins.property
-    @pulumi.getter(name="sourceDatabaseConnectionId")
-    def source_database_connection_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        (Updatable) The OCID of the resource being referenced.
-        """
-        return pulumi.get(self, "source_database_connection_id")
-
-    @source_database_connection_id.setter
-    def source_database_connection_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "source_database_connection_id", value)
-
-    @_builtins.property
-    @pulumi.getter(name="targetDatabaseConnectionId")
-    def target_database_connection_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        (Updatable) The OCID of the resource being referenced.
-        """
-        return pulumi.get(self, "target_database_connection_id")
-
-    @target_database_connection_id.setter
-    def target_database_connection_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "target_database_connection_id", value)
-
-    @_builtins.property
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+        (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication. 
 
 
         ** IMPORTANT **
@@ -191,6 +173,18 @@ class MigrationArgs:
     @advisor_settings.setter
     def advisor_settings(self, value: Optional[pulumi.Input['MigrationAdvisorSettingsArgs']]):
         pulumi.set(self, "advisor_settings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "assessment_id")
+
+    @assessment_id.setter
+    def assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "assessment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="bulkIncludeExcludeData")
@@ -337,6 +331,18 @@ class MigrationArgs:
         pulumi.set(self, "source_container_database_connection_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="sourceDatabaseConnectionId")
+    def source_database_connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "source_database_connection_id")
+
+    @source_database_connection_id.setter
+    def source_database_connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "source_database_connection_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="sourceStandbyDatabaseConnectionId")
     def source_standby_database_connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -348,12 +354,25 @@ class MigrationArgs:
     def source_standby_database_connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "source_standby_database_connection_id", value)
 
+    @_builtins.property
+    @pulumi.getter(name="targetDatabaseConnectionId")
+    def target_database_connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "target_database_connection_id")
+
+    @target_database_connection_id.setter
+    def target_database_connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_database_connection_id", value)
+
 
 @pulumi.input_type
 class _MigrationState:
     def __init__(__self__, *,
                  advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]] = None,
                  advisor_settings: Optional[pulumi.Input['MigrationAdvisorSettingsArgs']] = None,
+                 assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  bulk_include_exclude_data: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  data_transfer_medium_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']] = None,
@@ -384,6 +403,7 @@ class _MigrationState:
         Input properties used for looking up and filtering Migration resources.
         :param pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]] advanced_parameters: (Updatable) List of Migration Parameter objects.
         :param pulumi.Input['MigrationAdvisorSettingsArgs'] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
+        :param pulumi.Input[_builtins.str] assessment_id: The OCID of the resource being referenced.
         :param pulumi.Input[_builtins.str] bulk_include_exclude_data: Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input['MigrationDataTransferMediumDetailsArgs'] data_transfer_medium_details: (Updatable) Optional additional properties for data transfer.
@@ -408,7 +428,7 @@ class _MigrationState:
         :param pulumi.Input[_builtins.str] time_created: An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[_builtins.str] time_last_migration: An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[_builtins.str] time_updated: An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[_builtins.str] type: (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+        :param pulumi.Input[_builtins.str] type: (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication. 
                
                
                ** IMPORTANT **
@@ -419,6 +439,8 @@ class _MigrationState:
             pulumi.set(__self__, "advanced_parameters", advanced_parameters)
         if advisor_settings is not None:
             pulumi.set(__self__, "advisor_settings", advisor_settings)
+        if assessment_id is not None:
+            pulumi.set(__self__, "assessment_id", assessment_id)
         if bulk_include_exclude_data is not None:
             pulumi.set(__self__, "bulk_include_exclude_data", bulk_include_exclude_data)
         if compartment_id is not None:
@@ -495,6 +517,18 @@ class _MigrationState:
     @advisor_settings.setter
     def advisor_settings(self, value: Optional[pulumi.Input['MigrationAdvisorSettingsArgs']]):
         pulumi.set(self, "advisor_settings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "assessment_id")
+
+    @assessment_id.setter
+    def assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "assessment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="bulkIncludeExcludeData")
@@ -788,7 +822,7 @@ class _MigrationState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+        (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication. 
 
 
         ** IMPORTANT **
@@ -821,6 +855,7 @@ class Migration(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]]] = None,
                  advisor_settings: Optional[pulumi.Input[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']]] = None,
+                 assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  bulk_include_exclude_data: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  data_transfer_medium_details: Optional[pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']]] = None,
@@ -861,8 +896,6 @@ class Migration(pulumi.CustomResource):
         test_migration = oci.databasemigration.Migration("test_migration",
             compartment_id=compartment_id,
             database_combination=migration_database_combination,
-            source_database_connection_id=test_connection["id"],
-            target_database_connection_id=test_connection["id"],
             type=migration_type,
             advanced_parameters=[{
                 "data_type": migration_advanced_parameters_data_type,
@@ -873,6 +906,7 @@ class Migration(pulumi.CustomResource):
                 "is_ignore_errors": migration_advisor_settings_is_ignore_errors,
                 "is_skip_advisor": migration_advisor_settings_is_skip_advisor,
             },
+            assessment_id=test_assessment["id"],
             bulk_include_exclude_data=migration_bulk_include_exclude_data,
             data_transfer_medium_details={
                 "type": migration_data_transfer_medium_details_type,
@@ -983,7 +1017,9 @@ class Migration(pulumi.CustomResource):
                 },
             },
             source_container_database_connection_id=test_connection["id"],
-            source_standby_database_connection_id=test_connection["id"])
+            source_database_connection_id=test_connection["id"],
+            source_standby_database_connection_id=test_connection["id"],
+            target_database_connection_id=test_connection["id"])
         ```
 
         ## Import
@@ -998,6 +1034,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]] advanced_parameters: (Updatable) List of Migration Parameter objects.
         :param pulumi.Input[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
+        :param pulumi.Input[_builtins.str] assessment_id: The OCID of the resource being referenced.
         :param pulumi.Input[_builtins.str] bulk_include_exclude_data: Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']] data_transfer_medium_details: (Updatable) Optional additional properties for data transfer.
@@ -1015,7 +1052,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] source_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[_builtins.str] source_standby_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[_builtins.str] target_database_connection_id: (Updatable) The OCID of the resource being referenced.
-        :param pulumi.Input[_builtins.str] type: (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+        :param pulumi.Input[_builtins.str] type: (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication. 
                
                
                ** IMPORTANT **
@@ -1048,8 +1085,6 @@ class Migration(pulumi.CustomResource):
         test_migration = oci.databasemigration.Migration("test_migration",
             compartment_id=compartment_id,
             database_combination=migration_database_combination,
-            source_database_connection_id=test_connection["id"],
-            target_database_connection_id=test_connection["id"],
             type=migration_type,
             advanced_parameters=[{
                 "data_type": migration_advanced_parameters_data_type,
@@ -1060,6 +1095,7 @@ class Migration(pulumi.CustomResource):
                 "is_ignore_errors": migration_advisor_settings_is_ignore_errors,
                 "is_skip_advisor": migration_advisor_settings_is_skip_advisor,
             },
+            assessment_id=test_assessment["id"],
             bulk_include_exclude_data=migration_bulk_include_exclude_data,
             data_transfer_medium_details={
                 "type": migration_data_transfer_medium_details_type,
@@ -1170,7 +1206,9 @@ class Migration(pulumi.CustomResource):
                 },
             },
             source_container_database_connection_id=test_connection["id"],
-            source_standby_database_connection_id=test_connection["id"])
+            source_database_connection_id=test_connection["id"],
+            source_standby_database_connection_id=test_connection["id"],
+            target_database_connection_id=test_connection["id"])
         ```
 
         ## Import
@@ -1198,6 +1236,7 @@ class Migration(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]]] = None,
                  advisor_settings: Optional[pulumi.Input[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']]] = None,
+                 assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  bulk_include_exclude_data: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  data_transfer_medium_details: Optional[pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']]] = None,
@@ -1227,6 +1266,7 @@ class Migration(pulumi.CustomResource):
 
             __props__.__dict__["advanced_parameters"] = advanced_parameters
             __props__.__dict__["advisor_settings"] = advisor_settings
+            __props__.__dict__["assessment_id"] = assessment_id
             __props__.__dict__["bulk_include_exclude_data"] = bulk_include_exclude_data
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -1245,12 +1285,8 @@ class Migration(pulumi.CustomResource):
             __props__.__dict__["include_objects"] = include_objects
             __props__.__dict__["initial_load_settings"] = initial_load_settings
             __props__.__dict__["source_container_database_connection_id"] = source_container_database_connection_id
-            if source_database_connection_id is None and not opts.urn:
-                raise TypeError("Missing required property 'source_database_connection_id'")
             __props__.__dict__["source_database_connection_id"] = source_database_connection_id
             __props__.__dict__["source_standby_database_connection_id"] = source_standby_database_connection_id
-            if target_database_connection_id is None and not opts.urn:
-                raise TypeError("Missing required property 'target_database_connection_id'")
             __props__.__dict__["target_database_connection_id"] = target_database_connection_id
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
@@ -1275,6 +1311,7 @@ class Migration(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]]] = None,
             advisor_settings: Optional[pulumi.Input[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']]] = None,
+            assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
             bulk_include_exclude_data: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             data_transfer_medium_details: Optional[pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']]] = None,
@@ -1310,6 +1347,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]] advanced_parameters: (Updatable) List of Migration Parameter objects.
         :param pulumi.Input[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
+        :param pulumi.Input[_builtins.str] assessment_id: The OCID of the resource being referenced.
         :param pulumi.Input[_builtins.str] bulk_include_exclude_data: Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']] data_transfer_medium_details: (Updatable) Optional additional properties for data transfer.
@@ -1334,7 +1372,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[_builtins.str] time_last_migration: An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[_builtins.str] time_updated: An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[_builtins.str] type: (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+        :param pulumi.Input[_builtins.str] type: (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication. 
                
                
                ** IMPORTANT **
@@ -1347,6 +1385,7 @@ class Migration(pulumi.CustomResource):
 
         __props__.__dict__["advanced_parameters"] = advanced_parameters
         __props__.__dict__["advisor_settings"] = advisor_settings
+        __props__.__dict__["assessment_id"] = assessment_id
         __props__.__dict__["bulk_include_exclude_data"] = bulk_include_exclude_data
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["data_transfer_medium_details"] = data_transfer_medium_details
@@ -1390,6 +1429,14 @@ class Migration(pulumi.CustomResource):
         (Updatable) Optional Pre-Migration advisor settings.
         """
         return pulumi.get(self, "advisor_settings")
+
+    @_builtins.property
+    @pulumi.getter(name="assessmentId")
+    def assessment_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "assessment_id")
 
     @_builtins.property
     @pulumi.getter(name="bulkIncludeExcludeData")
@@ -1587,7 +1634,7 @@ class Migration(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+        (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication. 
 
 
         ** IMPORTANT **

@@ -73,8 +73,9 @@ type LookupCrossConnectResult struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The cross-connect's Oracle ID (OCID).
-	Id       string `pulumi:"id"`
-	IsActive bool   `pulumi:"isActive"`
+	Id            string `pulumi:"id"`
+	InterfaceName string `pulumi:"interfaceName"`
+	IsActive      bool   `pulumi:"isActive"`
 	// The name of the FastConnect location where this cross-connect is installed.
 	LocationName string `pulumi:"locationName"`
 	// Properties used for MACsec (if capable).
@@ -169,6 +170,10 @@ func (o LookupCrossConnectResultOutput) FreeformTags() pulumi.StringMapOutput {
 // The cross-connect's Oracle ID (OCID).
 func (o LookupCrossConnectResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCrossConnectResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupCrossConnectResultOutput) InterfaceName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCrossConnectResult) string { return v.InterfaceName }).(pulumi.StringOutput)
 }
 
 func (o LookupCrossConnectResultOutput) IsActive() pulumi.BoolOutput {

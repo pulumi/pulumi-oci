@@ -26,6 +26,8 @@ __all__ = [
     'VulnerabilityAuditSource',
     'VulnerabilityAuditUsageData',
     'VulnerabilityAuditVulnerability',
+    'VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange',
+    'VulnerabilityAuditVulnerabilityMetric',
     'GetKnowledgebasesFilterResult',
     'GetKnowledgebasesKnowledgeBaseCollectionResult',
     'GetKnowledgebasesKnowledgeBaseCollectionItemResult',
@@ -59,13 +61,23 @@ __all__ = [
     'GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionResult',
     'GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemResult',
     'GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityResult',
+    'GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeResult',
+    'GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricResult',
     'GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterResult',
     'GetVulnerabilityAuditApplicationDependencyVulnerabilityItemResult',
     'GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityResult',
+    'GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeResult',
+    'GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricResult',
     'GetVulnerabilityAuditConfigurationResult',
     'GetVulnerabilityAuditSourceResult',
     'GetVulnerabilityAuditUsageDataResult',
     'GetVulnerabilityAuditVulnerabilityResult',
+    'GetVulnerabilityAuditVulnerabilityFilterResult',
+    'GetVulnerabilityAuditVulnerabilityItemResult',
+    'GetVulnerabilityAuditVulnerabilityItemMetricResult',
+    'GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityResult',
+    'GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeResult',
+    'GetVulnerabilityAuditVulnerabilityMetricResult',
     'GetVulnerabilityAuditsFilterResult',
     'GetVulnerabilityAuditsVulnerabilityAuditCollectionResult',
     'GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult',
@@ -74,6 +86,8 @@ __all__ = [
     'GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceResult',
     'GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataResult',
     'GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult',
+    'GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeResult',
+    'GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricResult',
 ]
 
 @pulumi.output_type
@@ -900,6 +914,8 @@ class VulnerabilityAuditVulnerability(dict):
             suggest = "is_false_positive"
         elif key == "isIgnored":
             suggest = "is_ignored"
+        elif key == "matchingVulnerableArtifactVersionRanges":
+            suggest = "matching_vulnerable_artifact_version_ranges"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in VulnerabilityAuditVulnerability. Access the value via the '{suggest}' property getter instead.")
@@ -918,6 +934,8 @@ class VulnerabilityAuditVulnerability(dict):
                  id: Optional[_builtins.str] = None,
                  is_false_positive: Optional[_builtins.bool] = None,
                  is_ignored: Optional[_builtins.bool] = None,
+                 matching_vulnerable_artifact_version_ranges: Optional[Sequence['outputs.VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange']] = None,
+                 metrics: Optional[Sequence['outputs.VulnerabilityAuditVulnerabilityMetric']] = None,
                  severity: Optional[_builtins.str] = None,
                  source: Optional[_builtins.str] = None):
         """
@@ -926,6 +944,8 @@ class VulnerabilityAuditVulnerability(dict):
         :param _builtins.str id: Unique vulnerability identifier, e.g. CVE-1999-0067.
         :param _builtins.bool is_false_positive: Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
         :param _builtins.bool is_ignored: Indicates if the vulnerability was ignored according to the audit configuration.
+        :param Sequence['VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs'] matching_vulnerable_artifact_version_ranges: List of artifact version ranges affected by a particular vulnerability.
+        :param Sequence['VulnerabilityAuditVulnerabilityMetricArgs'] metrics: List of reported metrics by the source.
         :param _builtins.str severity: ADM qualitative severity score. Can be either NONE, LOW, MEDIUM, HIGH or CRITICAL.
         :param _builtins.str source: vulnerability audit source.
         """
@@ -939,6 +959,10 @@ class VulnerabilityAuditVulnerability(dict):
             pulumi.set(__self__, "is_false_positive", is_false_positive)
         if is_ignored is not None:
             pulumi.set(__self__, "is_ignored", is_ignored)
+        if matching_vulnerable_artifact_version_ranges is not None:
+            pulumi.set(__self__, "matching_vulnerable_artifact_version_ranges", matching_vulnerable_artifact_version_ranges)
+        if metrics is not None:
+            pulumi.set(__self__, "metrics", metrics)
         if severity is not None:
             pulumi.set(__self__, "severity", severity)
         if source is not None:
@@ -985,6 +1009,22 @@ class VulnerabilityAuditVulnerability(dict):
         return pulumi.get(self, "is_ignored")
 
     @_builtins.property
+    @pulumi.getter(name="matchingVulnerableArtifactVersionRanges")
+    def matching_vulnerable_artifact_version_ranges(self) -> Optional[Sequence['outputs.VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange']]:
+        """
+        List of artifact version ranges affected by a particular vulnerability.
+        """
+        return pulumi.get(self, "matching_vulnerable_artifact_version_ranges")
+
+    @_builtins.property
+    @pulumi.getter
+    def metrics(self) -> Optional[Sequence['outputs.VulnerabilityAuditVulnerabilityMetric']]:
+        """
+        List of reported metrics by the source.
+        """
+        return pulumi.get(self, "metrics")
+
+    @_builtins.property
     @pulumi.getter
     def severity(self) -> Optional[_builtins.str]:
         """
@@ -999,6 +1039,139 @@ class VulnerabilityAuditVulnerability(dict):
         vulnerability audit source.
         """
         return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "versionEndExcluding":
+            suggest = "version_end_excluding"
+        elif key == "versionEndIncluding":
+            suggest = "version_end_including"
+        elif key == "versionStartExcluding":
+            suggest = "version_start_excluding"
+        elif key == "versionStartIncluding":
+            suggest = "version_start_including"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 version_end_excluding: Optional[_builtins.str] = None,
+                 version_end_including: Optional[_builtins.str] = None,
+                 version_start_excluding: Optional[_builtins.str] = None,
+                 version_start_including: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str version_end_excluding: The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+        :param _builtins.str version_end_including: Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+        :param _builtins.str version_start_excluding: The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+        :param _builtins.str version_start_including: The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+        """
+        if version_end_excluding is not None:
+            pulumi.set(__self__, "version_end_excluding", version_end_excluding)
+        if version_end_including is not None:
+            pulumi.set(__self__, "version_end_including", version_end_including)
+        if version_start_excluding is not None:
+            pulumi.set(__self__, "version_start_excluding", version_start_excluding)
+        if version_start_including is not None:
+            pulumi.set(__self__, "version_start_including", version_start_including)
+
+    @_builtins.property
+    @pulumi.getter(name="versionEndExcluding")
+    def version_end_excluding(self) -> Optional[_builtins.str]:
+        """
+        The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+        """
+        return pulumi.get(self, "version_end_excluding")
+
+    @_builtins.property
+    @pulumi.getter(name="versionEndIncluding")
+    def version_end_including(self) -> Optional[_builtins.str]:
+        """
+        Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+        """
+        return pulumi.get(self, "version_end_including")
+
+    @_builtins.property
+    @pulumi.getter(name="versionStartExcluding")
+    def version_start_excluding(self) -> Optional[_builtins.str]:
+        """
+        The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+        """
+        return pulumi.get(self, "version_start_excluding")
+
+    @_builtins.property
+    @pulumi.getter(name="versionStartIncluding")
+    def version_start_including(self) -> Optional[_builtins.str]:
+        """
+        The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+        """
+        return pulumi.get(self, "version_start_including")
+
+
+@pulumi.output_type
+class VulnerabilityAuditVulnerabilityMetric(dict):
+    def __init__(__self__, *,
+                 score: Optional[_builtins.float] = None,
+                 source: Optional[_builtins.str] = None,
+                 type: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.float score: Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+        :param _builtins.str source: vulnerability audit source.
+        :param _builtins.str type: Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+        :param _builtins.str value: Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+        """
+        if score is not None:
+            pulumi.set(__self__, "score", score)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def score(self) -> Optional[_builtins.float]:
+        """
+        Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+        """
+        return pulumi.get(self, "score")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> Optional[_builtins.str]:
+        """
+        vulnerability audit source.
+        """
+        return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[_builtins.str]:
+        """
+        Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -2912,6 +3085,8 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
                  id: _builtins.str,
                  is_false_positive: _builtins.bool,
                  is_ignored: _builtins.bool,
+                 matching_vulnerable_artifact_version_ranges: Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeResult'],
+                 metrics: Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricResult'],
                  severity: _builtins.str,
                  source: _builtins.str):
         """
@@ -2920,6 +3095,8 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
         :param _builtins.str id: Unique vulnerability identifier, e.g. CVE-1999-0067.
         :param _builtins.bool is_false_positive: Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
         :param _builtins.bool is_ignored: Indicates if the vulnerability was ignored according to the audit configuration.
+        :param Sequence['GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs'] matching_vulnerable_artifact_version_ranges: List of artifact version ranges affected by a particular vulnerability.
+        :param Sequence['GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArgs'] metrics: List of reported metrics by the source.
         :param _builtins.str severity: ADM qualitative severity score. Can be either NONE, LOW, MEDIUM, HIGH or CRITICAL.
         :param _builtins.str source: Source that published the vulnerability
         """
@@ -2928,6 +3105,8 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_false_positive", is_false_positive)
         pulumi.set(__self__, "is_ignored", is_ignored)
+        pulumi.set(__self__, "matching_vulnerable_artifact_version_ranges", matching_vulnerable_artifact_version_ranges)
+        pulumi.set(__self__, "metrics", metrics)
         pulumi.set(__self__, "severity", severity)
         pulumi.set(__self__, "source", source)
 
@@ -2972,6 +3151,22 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
         return pulumi.get(self, "is_ignored")
 
     @_builtins.property
+    @pulumi.getter(name="matchingVulnerableArtifactVersionRanges")
+    def matching_vulnerable_artifact_version_ranges(self) -> Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeResult']:
+        """
+        List of artifact version ranges affected by a particular vulnerability.
+        """
+        return pulumi.get(self, "matching_vulnerable_artifact_version_ranges")
+
+    @_builtins.property
+    @pulumi.getter
+    def metrics(self) -> Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricResult']:
+        """
+        List of reported metrics by the source.
+        """
+        return pulumi.get(self, "metrics")
+
+    @_builtins.property
     @pulumi.getter
     def severity(self) -> _builtins.str:
         """
@@ -2986,6 +3181,108 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
         Source that published the vulnerability
         """
         return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeResult(dict):
+    def __init__(__self__, *,
+                 version_end_excluding: _builtins.str,
+                 version_end_including: _builtins.str,
+                 version_start_excluding: _builtins.str,
+                 version_start_including: _builtins.str):
+        """
+        :param _builtins.str version_end_excluding: The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+        :param _builtins.str version_end_including: Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+        :param _builtins.str version_start_excluding: The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+        :param _builtins.str version_start_including: The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+        """
+        pulumi.set(__self__, "version_end_excluding", version_end_excluding)
+        pulumi.set(__self__, "version_end_including", version_end_including)
+        pulumi.set(__self__, "version_start_excluding", version_start_excluding)
+        pulumi.set(__self__, "version_start_including", version_start_including)
+
+    @_builtins.property
+    @pulumi.getter(name="versionEndExcluding")
+    def version_end_excluding(self) -> _builtins.str:
+        """
+        The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+        """
+        return pulumi.get(self, "version_end_excluding")
+
+    @_builtins.property
+    @pulumi.getter(name="versionEndIncluding")
+    def version_end_including(self) -> _builtins.str:
+        """
+        Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+        """
+        return pulumi.get(self, "version_end_including")
+
+    @_builtins.property
+    @pulumi.getter(name="versionStartExcluding")
+    def version_start_excluding(self) -> _builtins.str:
+        """
+        The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+        """
+        return pulumi.get(self, "version_start_excluding")
+
+    @_builtins.property
+    @pulumi.getter(name="versionStartIncluding")
+    def version_start_including(self) -> _builtins.str:
+        """
+        The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+        """
+        return pulumi.get(self, "version_start_including")
+
+
+@pulumi.output_type
+class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricResult(dict):
+    def __init__(__self__, *,
+                 score: _builtins.float,
+                 source: _builtins.str,
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.float score: Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+        :param _builtins.str source: Source that published the vulnerability
+        :param _builtins.str type: Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+        :param _builtins.str value: Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+        """
+        pulumi.set(__self__, "score", score)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def score(self) -> _builtins.float:
+        """
+        Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+        """
+        return pulumi.get(self, "score")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> _builtins.str:
+        """
+        Source that published the vulnerability
+        """
+        return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -3092,6 +3389,8 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityRe
                  id: _builtins.str,
                  is_false_positive: _builtins.bool,
                  is_ignored: _builtins.bool,
+                 matching_vulnerable_artifact_version_ranges: Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeResult'],
+                 metrics: Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricResult'],
                  severity: _builtins.str,
                  source: _builtins.str):
         """
@@ -3105,6 +3404,8 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityRe
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_false_positive", is_false_positive)
         pulumi.set(__self__, "is_ignored", is_ignored)
+        pulumi.set(__self__, "matching_vulnerable_artifact_version_ranges", matching_vulnerable_artifact_version_ranges)
+        pulumi.set(__self__, "metrics", metrics)
         pulumi.set(__self__, "severity", severity)
         pulumi.set(__self__, "source", source)
 
@@ -3146,6 +3447,16 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityRe
         return pulumi.get(self, "is_ignored")
 
     @_builtins.property
+    @pulumi.getter(name="matchingVulnerableArtifactVersionRanges")
+    def matching_vulnerable_artifact_version_ranges(self) -> Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeResult']:
+        return pulumi.get(self, "matching_vulnerable_artifact_version_ranges")
+
+    @_builtins.property
+    @pulumi.getter
+    def metrics(self) -> Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricResult']:
+        return pulumi.get(self, "metrics")
+
+    @_builtins.property
     @pulumi.getter
     def severity(self) -> _builtins.str:
         return pulumi.get(self, "severity")
@@ -3154,6 +3465,72 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityRe
     @pulumi.getter
     def source(self) -> _builtins.str:
         return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeResult(dict):
+    def __init__(__self__, *,
+                 version_end_excluding: _builtins.str,
+                 version_end_including: _builtins.str,
+                 version_start_excluding: _builtins.str,
+                 version_start_including: _builtins.str):
+        pulumi.set(__self__, "version_end_excluding", version_end_excluding)
+        pulumi.set(__self__, "version_end_including", version_end_including)
+        pulumi.set(__self__, "version_start_excluding", version_start_excluding)
+        pulumi.set(__self__, "version_start_including", version_start_including)
+
+    @_builtins.property
+    @pulumi.getter(name="versionEndExcluding")
+    def version_end_excluding(self) -> _builtins.str:
+        return pulumi.get(self, "version_end_excluding")
+
+    @_builtins.property
+    @pulumi.getter(name="versionEndIncluding")
+    def version_end_including(self) -> _builtins.str:
+        return pulumi.get(self, "version_end_including")
+
+    @_builtins.property
+    @pulumi.getter(name="versionStartExcluding")
+    def version_start_excluding(self) -> _builtins.str:
+        return pulumi.get(self, "version_start_excluding")
+
+    @_builtins.property
+    @pulumi.getter(name="versionStartIncluding")
+    def version_start_including(self) -> _builtins.str:
+        return pulumi.get(self, "version_start_including")
+
+
+@pulumi.output_type
+class GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricResult(dict):
+    def __init__(__self__, *,
+                 score: _builtins.float,
+                 source: _builtins.str,
+                 type: _builtins.str,
+                 value: _builtins.str):
+        pulumi.set(__self__, "score", score)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def score(self) -> _builtins.float:
+        return pulumi.get(self, "score")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> _builtins.str:
+        return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -3216,7 +3593,7 @@ class GetVulnerabilityAuditSourceResult(dict):
         """
         :param _builtins.str description: Description of the external resource source.
         :param _builtins.str oci_resource_id: The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
-        :param _builtins.str type: Source type of the vulnerability audit.
+        :param _builtins.str type: Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "oci_resource_id", oci_resource_id)
@@ -3242,7 +3619,7 @@ class GetVulnerabilityAuditSourceResult(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        Source type of the vulnerability audit.
+        Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
         """
         return pulumi.get(self, "type")
 
@@ -3306,6 +3683,8 @@ class GetVulnerabilityAuditVulnerabilityResult(dict):
                  id: _builtins.str,
                  is_false_positive: _builtins.bool,
                  is_ignored: _builtins.bool,
+                 matching_vulnerable_artifact_version_ranges: Sequence['outputs.GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeResult'],
+                 metrics: Sequence['outputs.GetVulnerabilityAuditVulnerabilityMetricResult'],
                  severity: _builtins.str,
                  source: _builtins.str):
         """
@@ -3314,6 +3693,8 @@ class GetVulnerabilityAuditVulnerabilityResult(dict):
         :param _builtins.str id: Unique vulnerability identifier, e.g. CVE-1999-0067.
         :param _builtins.bool is_false_positive: Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
         :param _builtins.bool is_ignored: Indicates if the vulnerability was ignored according to the audit configuration.
+        :param Sequence['GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs'] matching_vulnerable_artifact_version_ranges: List of artifact version ranges affected by a particular vulnerability.
+        :param Sequence['GetVulnerabilityAuditVulnerabilityMetricArgs'] metrics: List of reported metrics by the source.
         :param _builtins.str severity: ADM qualitative severity score. Can be either NONE, LOW, MEDIUM, HIGH or CRITICAL.
         :param _builtins.str source: Source that published the vulnerability
         """
@@ -3322,6 +3703,8 @@ class GetVulnerabilityAuditVulnerabilityResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_false_positive", is_false_positive)
         pulumi.set(__self__, "is_ignored", is_ignored)
+        pulumi.set(__self__, "matching_vulnerable_artifact_version_ranges", matching_vulnerable_artifact_version_ranges)
+        pulumi.set(__self__, "metrics", metrics)
         pulumi.set(__self__, "severity", severity)
         pulumi.set(__self__, "source", source)
 
@@ -3366,6 +3749,22 @@ class GetVulnerabilityAuditVulnerabilityResult(dict):
         return pulumi.get(self, "is_ignored")
 
     @_builtins.property
+    @pulumi.getter(name="matchingVulnerableArtifactVersionRanges")
+    def matching_vulnerable_artifact_version_ranges(self) -> Sequence['outputs.GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeResult']:
+        """
+        List of artifact version ranges affected by a particular vulnerability.
+        """
+        return pulumi.get(self, "matching_vulnerable_artifact_version_ranges")
+
+    @_builtins.property
+    @pulumi.getter
+    def metrics(self) -> Sequence['outputs.GetVulnerabilityAuditVulnerabilityMetricResult']:
+        """
+        List of reported metrics by the source.
+        """
+        return pulumi.get(self, "metrics")
+
+    @_builtins.property
     @pulumi.getter
     def severity(self) -> _builtins.str:
         """
@@ -3380,6 +3779,276 @@ class GetVulnerabilityAuditVulnerabilityResult(dict):
         Source that published the vulnerability
         """
         return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class GetVulnerabilityAuditVulnerabilityFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetVulnerabilityAuditVulnerabilityItemResult(dict):
+    def __init__(__self__, *,
+                 is_direct_vulnerability: _builtins.bool,
+                 metrics: Sequence['outputs.GetVulnerabilityAuditVulnerabilityItemMetricResult'],
+                 references: Sequence[_builtins.str],
+                 related_vulnerabilities: Sequence['outputs.GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityResult'],
+                 severity: _builtins.str,
+                 source: _builtins.str,
+                 status: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 vulnerability_description: _builtins.str,
+                 vulnerability_id: _builtins.str,
+                 vulnerability_summary: _builtins.str):
+        pulumi.set(__self__, "is_direct_vulnerability", is_direct_vulnerability)
+        pulumi.set(__self__, "metrics", metrics)
+        pulumi.set(__self__, "references", references)
+        pulumi.set(__self__, "related_vulnerabilities", related_vulnerabilities)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "vulnerability_description", vulnerability_description)
+        pulumi.set(__self__, "vulnerability_id", vulnerability_id)
+        pulumi.set(__self__, "vulnerability_summary", vulnerability_summary)
+
+    @_builtins.property
+    @pulumi.getter(name="isDirectVulnerability")
+    def is_direct_vulnerability(self) -> _builtins.bool:
+        return pulumi.get(self, "is_direct_vulnerability")
+
+    @_builtins.property
+    @pulumi.getter
+    def metrics(self) -> Sequence['outputs.GetVulnerabilityAuditVulnerabilityItemMetricResult']:
+        return pulumi.get(self, "metrics")
+
+    @_builtins.property
+    @pulumi.getter
+    def references(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "references")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedVulnerabilities")
+    def related_vulnerabilities(self) -> Sequence['outputs.GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityResult']:
+        return pulumi.get(self, "related_vulnerabilities")
+
+    @_builtins.property
+    @pulumi.getter
+    def severity(self) -> _builtins.str:
+        return pulumi.get(self, "severity")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> _builtins.str:
+        return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="vulnerabilityDescription")
+    def vulnerability_description(self) -> _builtins.str:
+        return pulumi.get(self, "vulnerability_description")
+
+    @_builtins.property
+    @pulumi.getter(name="vulnerabilityId")
+    def vulnerability_id(self) -> _builtins.str:
+        return pulumi.get(self, "vulnerability_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vulnerabilitySummary")
+    def vulnerability_summary(self) -> _builtins.str:
+        return pulumi.get(self, "vulnerability_summary")
+
+
+@pulumi.output_type
+class GetVulnerabilityAuditVulnerabilityItemMetricResult(dict):
+    def __init__(__self__, *,
+                 score: _builtins.float,
+                 source: _builtins.str,
+                 type: _builtins.str,
+                 value: _builtins.str):
+        pulumi.set(__self__, "score", score)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def score(self) -> _builtins.float:
+        return pulumi.get(self, "score")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> _builtins.str:
+        return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityResult(dict):
+    def __init__(__self__, *,
+                 id: _builtins.str,
+                 source: _builtins.str):
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "source", source)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> _builtins.str:
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeResult(dict):
+    def __init__(__self__, *,
+                 version_end_excluding: _builtins.str,
+                 version_end_including: _builtins.str,
+                 version_start_excluding: _builtins.str,
+                 version_start_including: _builtins.str):
+        """
+        :param _builtins.str version_end_excluding: The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+        :param _builtins.str version_end_including: Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+        :param _builtins.str version_start_excluding: The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+        :param _builtins.str version_start_including: The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+        """
+        pulumi.set(__self__, "version_end_excluding", version_end_excluding)
+        pulumi.set(__self__, "version_end_including", version_end_including)
+        pulumi.set(__self__, "version_start_excluding", version_start_excluding)
+        pulumi.set(__self__, "version_start_including", version_start_including)
+
+    @_builtins.property
+    @pulumi.getter(name="versionEndExcluding")
+    def version_end_excluding(self) -> _builtins.str:
+        """
+        The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+        """
+        return pulumi.get(self, "version_end_excluding")
+
+    @_builtins.property
+    @pulumi.getter(name="versionEndIncluding")
+    def version_end_including(self) -> _builtins.str:
+        """
+        Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+        """
+        return pulumi.get(self, "version_end_including")
+
+    @_builtins.property
+    @pulumi.getter(name="versionStartExcluding")
+    def version_start_excluding(self) -> _builtins.str:
+        """
+        The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+        """
+        return pulumi.get(self, "version_start_excluding")
+
+    @_builtins.property
+    @pulumi.getter(name="versionStartIncluding")
+    def version_start_including(self) -> _builtins.str:
+        """
+        The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+        """
+        return pulumi.get(self, "version_start_including")
+
+
+@pulumi.output_type
+class GetVulnerabilityAuditVulnerabilityMetricResult(dict):
+    def __init__(__self__, *,
+                 score: _builtins.float,
+                 source: _builtins.str,
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.float score: Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+        :param _builtins.str source: Source that published the vulnerability
+        :param _builtins.str type: Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+        :param _builtins.str value: Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+        """
+        pulumi.set(__self__, "score", score)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def score(self) -> _builtins.float:
+        """
+        Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+        """
+        return pulumi.get(self, "score")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> _builtins.str:
+        """
+        Source that published the vulnerability
+        """
+        return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -3459,7 +4128,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         :param _builtins.bool is_success: A filter to return only successful or failed Vulnerability Audits.
-        :param _builtins.str knowledge_base_id: A filter to return only Vulnerability Audits that were created against the specified knowledge base.
+        :param _builtins.str knowledge_base_id: A filter to return only Audits that were created against the specified knowledge base.
         :param _builtins.str lifecycle_details: Details on the lifecycle state.
         :param _builtins.float max_observed_cvss_v2score: Maximum Common Vulnerability Scoring System Version 2 score observed for non-ignored vulnerable application dependencies.
         :param _builtins.float max_observed_cvss_v2score_with_ignored: Maximum Common Vulnerability Scoring System Version 2 score observed for vulnerable application dependencies including ignored ones.
@@ -3577,7 +4246,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
     @pulumi.getter(name="knowledgeBaseId")
     def knowledge_base_id(self) -> _builtins.str:
         """
-        A filter to return only Vulnerability Audits that were created against the specified knowledge base.
+        A filter to return only Audits that were created against the specified knowledge base.
         """
         return pulumi.get(self, "knowledge_base_id")
 
@@ -3803,7 +4472,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceResult(dict):
         """
         :param _builtins.str description: Description of the external resource source.
         :param _builtins.str oci_resource_id: The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
-        :param _builtins.str type: Source type of the vulnerability audit.
+        :param _builtins.str type: Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "oci_resource_id", oci_resource_id)
@@ -3829,7 +4498,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceResult(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        Source type of the vulnerability audit.
+        Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
         """
         return pulumi.get(self, "type")
 
@@ -3893,6 +4562,8 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult(
                  id: _builtins.str,
                  is_false_positive: _builtins.bool,
                  is_ignored: _builtins.bool,
+                 matching_vulnerable_artifact_version_ranges: Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeResult'],
+                 metrics: Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricResult'],
                  severity: _builtins.str,
                  source: _builtins.str):
         """
@@ -3901,6 +4572,8 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult(
         :param _builtins.str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         :param _builtins.bool is_false_positive: Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
         :param _builtins.bool is_ignored: Indicates if the vulnerability was ignored according to the audit configuration.
+        :param Sequence['GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs'] matching_vulnerable_artifact_version_ranges: List of artifact version ranges affected by a particular vulnerability.
+        :param Sequence['GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArgs'] metrics: List of reported metrics by the source.
         :param _builtins.str severity: ADM qualitative severity score. Can be either NONE, LOW, MEDIUM, HIGH or CRITICAL.
         :param _builtins.str source: Source that published the vulnerability
         """
@@ -3909,6 +4582,8 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult(
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_false_positive", is_false_positive)
         pulumi.set(__self__, "is_ignored", is_ignored)
+        pulumi.set(__self__, "matching_vulnerable_artifact_version_ranges", matching_vulnerable_artifact_version_ranges)
+        pulumi.set(__self__, "metrics", metrics)
         pulumi.set(__self__, "severity", severity)
         pulumi.set(__self__, "source", source)
 
@@ -3953,6 +4628,22 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult(
         return pulumi.get(self, "is_ignored")
 
     @_builtins.property
+    @pulumi.getter(name="matchingVulnerableArtifactVersionRanges")
+    def matching_vulnerable_artifact_version_ranges(self) -> Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeResult']:
+        """
+        List of artifact version ranges affected by a particular vulnerability.
+        """
+        return pulumi.get(self, "matching_vulnerable_artifact_version_ranges")
+
+    @_builtins.property
+    @pulumi.getter
+    def metrics(self) -> Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricResult']:
+        """
+        List of reported metrics by the source.
+        """
+        return pulumi.get(self, "metrics")
+
+    @_builtins.property
     @pulumi.getter
     def severity(self) -> _builtins.str:
         """
@@ -3967,5 +4658,107 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult(
         Source that published the vulnerability
         """
         return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeResult(dict):
+    def __init__(__self__, *,
+                 version_end_excluding: _builtins.str,
+                 version_end_including: _builtins.str,
+                 version_start_excluding: _builtins.str,
+                 version_start_including: _builtins.str):
+        """
+        :param _builtins.str version_end_excluding: The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+        :param _builtins.str version_end_including: Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+        :param _builtins.str version_start_excluding: The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+        :param _builtins.str version_start_including: The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+        """
+        pulumi.set(__self__, "version_end_excluding", version_end_excluding)
+        pulumi.set(__self__, "version_end_including", version_end_including)
+        pulumi.set(__self__, "version_start_excluding", version_start_excluding)
+        pulumi.set(__self__, "version_start_including", version_start_including)
+
+    @_builtins.property
+    @pulumi.getter(name="versionEndExcluding")
+    def version_end_excluding(self) -> _builtins.str:
+        """
+        The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+        """
+        return pulumi.get(self, "version_end_excluding")
+
+    @_builtins.property
+    @pulumi.getter(name="versionEndIncluding")
+    def version_end_including(self) -> _builtins.str:
+        """
+        Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+        """
+        return pulumi.get(self, "version_end_including")
+
+    @_builtins.property
+    @pulumi.getter(name="versionStartExcluding")
+    def version_start_excluding(self) -> _builtins.str:
+        """
+        The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+        """
+        return pulumi.get(self, "version_start_excluding")
+
+    @_builtins.property
+    @pulumi.getter(name="versionStartIncluding")
+    def version_start_including(self) -> _builtins.str:
+        """
+        The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+        """
+        return pulumi.get(self, "version_start_including")
+
+
+@pulumi.output_type
+class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricResult(dict):
+    def __init__(__self__, *,
+                 score: _builtins.float,
+                 source: _builtins.str,
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.float score: Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+        :param _builtins.str source: Source that published the vulnerability
+        :param _builtins.str type: Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+        :param _builtins.str value: Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+        """
+        pulumi.set(__self__, "score", score)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def score(self) -> _builtins.float:
+        """
+        Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+        """
+        return pulumi.get(self, "score")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> _builtins.str:
+        """
+        Source that published the vulnerability
+        """
+        return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+        """
+        return pulumi.get(self, "value")
 
 

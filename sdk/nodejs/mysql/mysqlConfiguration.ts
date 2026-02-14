@@ -34,6 +34,10 @@ import * as utilities from "../utilities";
  *     initVariables: {
  *         lowerCaseTableNames: mysqlConfigurationInitVariablesLowerCaseTableNames,
  *     },
+ *     options: [{
+ *         name: mysqlConfigurationOptionsName,
+ *         value: mysqlConfigurationOptionsValue,
+ *     }],
  *     parentConfigurationId: testConfiguration.id,
  *     variables: {
  *         autoIncrementIncrement: mysqlConfigurationVariablesAutoIncrementIncrement,
@@ -215,9 +219,13 @@ export class MysqlConfiguration extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+     * DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      */
     declare public readonly initVariables: pulumi.Output<outputs.Mysql.MysqlConfigurationInitVariables>;
+    /**
+     * The MySQL options defined in the Configuration.
+     */
+    declare public readonly options: pulumi.Output<outputs.Mysql.MysqlConfigurationOption[]>;
     /**
      * The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
      */
@@ -247,7 +255,7 @@ export class MysqlConfiguration extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly type: pulumi.Output<string>;
     /**
-     * User-defined service variables.
+     * DEPRECATED -- please use the `options` field instead. User-defined service variables.
      */
     declare public readonly variables: pulumi.Output<outputs.Mysql.MysqlConfigurationVariables>;
 
@@ -270,6 +278,7 @@ export class MysqlConfiguration extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["initVariables"] = state?.initVariables;
+            resourceInputs["options"] = state?.options;
             resourceInputs["parentConfigurationId"] = state?.parentConfigurationId;
             resourceInputs["shapeName"] = state?.shapeName;
             resourceInputs["state"] = state?.state;
@@ -292,6 +301,7 @@ export class MysqlConfiguration extends pulumi.CustomResource {
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["initVariables"] = args?.initVariables;
+            resourceInputs["options"] = args?.options;
             resourceInputs["parentConfigurationId"] = args?.parentConfigurationId;
             resourceInputs["shapeName"] = args?.shapeName;
             resourceInputs["variables"] = args?.variables;
@@ -331,9 +341,13 @@ export interface MysqlConfigurationState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+     * DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      */
     initVariables?: pulumi.Input<inputs.Mysql.MysqlConfigurationInitVariables>;
+    /**
+     * The MySQL options defined in the Configuration.
+     */
+    options?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlConfigurationOption>[]>;
     /**
      * The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
      */
@@ -363,7 +377,7 @@ export interface MysqlConfigurationState {
      */
     type?: pulumi.Input<string>;
     /**
-     * User-defined service variables.
+     * DEPRECATED -- please use the `options` field instead. User-defined service variables.
      */
     variables?: pulumi.Input<inputs.Mysql.MysqlConfigurationVariables>;
 }
@@ -393,9 +407,13 @@ export interface MysqlConfigurationArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+     * DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      */
     initVariables?: pulumi.Input<inputs.Mysql.MysqlConfigurationInitVariables>;
+    /**
+     * The MySQL options defined in the Configuration.
+     */
+    options?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlConfigurationOption>[]>;
     /**
      * The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
      */
@@ -405,7 +423,7 @@ export interface MysqlConfigurationArgs {
      */
     shapeName: pulumi.Input<string>;
     /**
-     * User-defined service variables.
+     * DEPRECATED -- please use the `options` field instead. User-defined service variables.
      */
     variables?: pulumi.Input<inputs.Mysql.MysqlConfigurationVariables>;
 }

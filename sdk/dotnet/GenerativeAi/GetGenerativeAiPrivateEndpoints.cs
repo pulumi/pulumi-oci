@@ -187,6 +187,9 @@ namespace Pulumi.Oci.GenerativeAi
     [OutputType]
     public sealed class GetGenerativeAiPrivateEndpointsResult
     {
+        /// <summary>
+        /// The OCID of the compartment that contains the private endpoint.
+        /// </summary>
         public readonly string CompartmentId;
         /// <summary>
         /// A user friendly name. It doesn't have to be unique. Avoid entering confidential information.

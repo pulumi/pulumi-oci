@@ -25,6 +25,7 @@ import * as utilities from "../utilities";
  *     displayName: connectionDisplayName,
  *     sourceConnectionId: testConnection.id,
  *     state: connectionState,
+ *     technologySubType: connectionTechnologySubType,
  *     technologyTypes: connectionTechnologyType,
  * });
  * ```
@@ -38,6 +39,7 @@ export function getConnections(args: GetConnectionsArgs, opts?: pulumi.InvokeOpt
         "filters": args.filters,
         "sourceConnectionId": args.sourceConnectionId,
         "state": args.state,
+        "technologySubType": args.technologySubType,
         "technologyTypes": args.technologyTypes,
     }, opts);
 }
@@ -67,6 +69,10 @@ export interface GetConnectionsArgs {
      * The current state of the Database Migration Deployment.
      */
     state?: string;
+    /**
+     * The database technology sub-type.
+     */
+    technologySubType?: string;
     /**
      * The array of technology types.
      */
@@ -103,6 +109,7 @@ export interface GetConnectionsResult {
      * The Connection's current lifecycle state.
      */
     readonly state?: string;
+    readonly technologySubType?: string;
     /**
      * The type of MySQL source or target connection. Example: OCI_MYSQL represents Oracle Cloud Infrastructure MySQL HeatWave Database Service
      */
@@ -127,6 +134,7 @@ export interface GetConnectionsResult {
  *     displayName: connectionDisplayName,
  *     sourceConnectionId: testConnection.id,
  *     state: connectionState,
+ *     technologySubType: connectionTechnologySubType,
  *     technologyTypes: connectionTechnologyType,
  * });
  * ```
@@ -140,6 +148,7 @@ export function getConnectionsOutput(args: GetConnectionsOutputArgs, opts?: pulu
         "filters": args.filters,
         "sourceConnectionId": args.sourceConnectionId,
         "state": args.state,
+        "technologySubType": args.technologySubType,
         "technologyTypes": args.technologyTypes,
     }, opts);
 }
@@ -169,6 +178,10 @@ export interface GetConnectionsOutputArgs {
      * The current state of the Database Migration Deployment.
      */
     state?: pulumi.Input<string>;
+    /**
+     * The database technology sub-type.
+     */
+    technologySubType?: pulumi.Input<string>;
     /**
      * The array of technology types.
      */

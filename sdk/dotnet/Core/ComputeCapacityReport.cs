@@ -44,6 +44,7 @@ namespace Pulumi.Oci.Core
     ///                 FaultDomain = computeCapacityReportShapeAvailabilitiesFaultDomain,
     ///                 InstanceShapeConfig = new Oci.Core.Inputs.ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs
     ///                 {
+    ///                     BaselineOcpuUtilization = computeCapacityReportShapeAvailabilitiesInstanceShapeConfigBaselineOcpuUtilization,
     ///                     MemoryInGbs = computeCapacityReportShapeAvailabilitiesInstanceShapeConfigMemoryInGbs,
     ///                     Nvmes = computeCapacityReportShapeAvailabilitiesInstanceShapeConfigNvmes,
     ///                     Ocpus = computeCapacityReportShapeAvailabilitiesInstanceShapeConfigOcpus,

@@ -41,6 +41,10 @@ export interface GetMigrationsResult {
      * Details about Oracle Advisor Settings.
      */
     readonly advisorSettings: outputs.DatabaseMigration.GetMigrationsAdvisorSetting[];
+    /**
+     * The OCID of the resource being referenced.
+     */
+    readonly assessmentId: string;
     readonly bulkIncludeExcludeData: string;
     /**
      * The OCID of the resource being referenced.

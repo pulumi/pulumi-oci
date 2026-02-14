@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Double;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -15,6 +16,31 @@ import javax.annotation.Nullable;
 public final class ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs Empty = new ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs();
+
+    /**
+     * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+     * 
+     * The following values are supported:
+     * * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+     * * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+     * * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     * 
+     */
+    @Import(name="baselineOcpuUtilization")
+    private @Nullable Output<String> baselineOcpuUtilization;
+
+    /**
+     * @return The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+     * 
+     * The following values are supported:
+     * * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+     * * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+     * * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     * 
+     */
+    public Optional<Output<String>> baselineOcpuUtilization() {
+        return Optional.ofNullable(this.baselineOcpuUtilization);
+    }
 
     /**
      * The total amount of memory available to the instance, in gigabytes.
@@ -70,6 +96,7 @@ public final class ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs
     private ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs() {}
 
     private ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs(ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs $) {
+        this.baselineOcpuUtilization = $.baselineOcpuUtilization;
         this.memoryInGbs = $.memoryInGbs;
         this.nvmes = $.nvmes;
         this.ocpus = $.ocpus;
@@ -91,6 +118,37 @@ public final class ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs
 
         public Builder(ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs defaults) {
             $ = new ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param baselineOcpuUtilization The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         * 
+         * The following values are supported:
+         * * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+         * * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+         * * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder baselineOcpuUtilization(@Nullable Output<String> baselineOcpuUtilization) {
+            $.baselineOcpuUtilization = baselineOcpuUtilization;
+            return this;
+        }
+
+        /**
+         * @param baselineOcpuUtilization The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         * 
+         * The following values are supported:
+         * * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+         * * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+         * * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder baselineOcpuUtilization(String baselineOcpuUtilization) {
+            return baselineOcpuUtilization(Output.of(baselineOcpuUtilization));
         }
 
         /**

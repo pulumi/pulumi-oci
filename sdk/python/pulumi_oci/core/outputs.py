@@ -3085,7 +3085,9 @@ class ComputeCapacityReportShapeAvailabilityInstanceShapeConfig(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "memoryInGbs":
+        if key == "baselineOcpuUtilization":
+            suggest = "baseline_ocpu_utilization"
+        elif key == "memoryInGbs":
             suggest = "memory_in_gbs"
 
         if suggest:
@@ -3100,10 +3102,17 @@ class ComputeCapacityReportShapeAvailabilityInstanceShapeConfig(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 baseline_ocpu_utilization: Optional[_builtins.str] = None,
                  memory_in_gbs: Optional[_builtins.float] = None,
                  nvmes: Optional[_builtins.int] = None,
                  ocpus: Optional[_builtins.float] = None):
         """
+        :param _builtins.str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+               
+               The following values are supported:
+               * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+               * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+               * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param _builtins.int nvmes: The number of NVMe drives to be used for storage.
         :param _builtins.float ocpus: The total number of OCPUs available to the instance. 
@@ -3112,12 +3121,27 @@ class ComputeCapacityReportShapeAvailabilityInstanceShapeConfig(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if baseline_ocpu_utilization is not None:
+            pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if nvmes is not None:
             pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="baselineOcpuUtilization")
+    def baseline_ocpu_utilization(self) -> Optional[_builtins.str]:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+
+        The following values are supported:
+        * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "baseline_ocpu_utilization")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -26809,6 +26833,7 @@ class GetCrossConnectsCrossConnectResult(dict):
                  far_cross_connect_or_cross_connect_group_id: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 interface_name: _builtins.str,
                  is_active: _builtins.bool,
                  location_name: _builtins.str,
                  macsec_properties: Sequence['outputs.GetCrossConnectsCrossConnectMacsecPropertyResult'],
@@ -26844,6 +26869,7 @@ class GetCrossConnectsCrossConnectResult(dict):
         pulumi.set(__self__, "far_cross_connect_or_cross_connect_group_id", far_cross_connect_or_cross_connect_group_id)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "interface_name", interface_name)
         pulumi.set(__self__, "is_active", is_active)
         pulumi.set(__self__, "location_name", location_name)
         pulumi.set(__self__, "macsec_properties", macsec_properties)
@@ -26915,6 +26941,11 @@ class GetCrossConnectsCrossConnectResult(dict):
         The cross-connect's Oracle ID (OCID).
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="interfaceName")
+    def interface_name(self) -> _builtins.str:
+        return pulumi.get(self, "interface_name")
 
     @_builtins.property
     @pulumi.getter(name="isActive")

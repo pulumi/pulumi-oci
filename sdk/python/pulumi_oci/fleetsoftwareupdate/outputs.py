@@ -215,7 +215,7 @@ class FsuCollectionComponentFleetDiscovery(dict):
         :param Sequence['FsuCollectionComponentFleetDiscoveryFilterArgs'] filters: Filters to perform the target discovery.
         :param _builtins.str fsu_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
         :param _builtins.str query: [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
-        :param Sequence[_builtins.str] targets: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+        :param Sequence[_builtins.str] targets: OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
         """
         pulumi.set(__self__, "strategy", strategy)
         if filters is not None:
@@ -263,7 +263,7 @@ class FsuCollectionComponentFleetDiscovery(dict):
     @pulumi.getter
     def targets(self) -> Optional[Sequence[_builtins.str]]:
         """
-        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+        OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
         """
         return pulumi.get(self, "targets")
 
@@ -462,7 +462,7 @@ class FsuCollectionFleetDiscovery(dict):
         :param Sequence['FsuCollectionFleetDiscoveryFilterArgs'] filters: Filters to perform the target discovery.
         :param _builtins.str fsu_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
         :param _builtins.str query: [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
-        :param Sequence[_builtins.str] targets: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+        :param Sequence[_builtins.str] targets: OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
         """
         pulumi.set(__self__, "strategy", strategy)
         if filters is not None:
@@ -510,7 +510,7 @@ class FsuCollectionFleetDiscovery(dict):
     @pulumi.getter
     def targets(self) -> Optional[Sequence[_builtins.str]]:
         """
-        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+        OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
         """
         return pulumi.get(self, "targets")
 
@@ -1373,7 +1373,7 @@ class GetFsuCollectionComponentFleetDiscoveryResult(dict):
         :param _builtins.str fsu_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
         :param _builtins.str query: [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
         :param _builtins.str strategy: Supported fleet discovery strategies.
-        :param Sequence[_builtins.str] targets: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+        :param Sequence[_builtins.str] targets: OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
         """
         pulumi.set(__self__, "filters", filters)
         pulumi.set(__self__, "fsu_discovery_id", fsu_discovery_id)
@@ -1417,7 +1417,7 @@ class GetFsuCollectionComponentFleetDiscoveryResult(dict):
     @pulumi.getter
     def targets(self) -> Sequence[_builtins.str]:
         """
-        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+        OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
         """
         return pulumi.get(self, "targets")
 
@@ -1570,7 +1570,7 @@ class GetFsuCollectionFleetDiscoveryResult(dict):
         :param _builtins.str fsu_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
         :param _builtins.str query: [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
         :param _builtins.str strategy: Supported fleet discovery strategies.
-        :param Sequence[_builtins.str] targets: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+        :param Sequence[_builtins.str] targets: OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
         """
         pulumi.set(__self__, "filters", filters)
         pulumi.set(__self__, "fsu_discovery_id", fsu_discovery_id)
@@ -1614,7 +1614,7 @@ class GetFsuCollectionFleetDiscoveryResult(dict):
     @pulumi.getter
     def targets(self) -> Sequence[_builtins.str]:
         """
-        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+        OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
         """
         return pulumi.get(self, "targets")
 
@@ -2091,7 +2091,7 @@ class GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscovery
         :param _builtins.str fsu_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
         :param _builtins.str query: [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
         :param _builtins.str strategy: Supported fleet discovery strategies.
-        :param Sequence[_builtins.str] targets: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+        :param Sequence[_builtins.str] targets: OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
         """
         pulumi.set(__self__, "filters", filters)
         pulumi.set(__self__, "fsu_discovery_id", fsu_discovery_id)
@@ -2135,7 +2135,7 @@ class GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscovery
     @pulumi.getter
     def targets(self) -> Sequence[_builtins.str]:
         """
-        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+        OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
         """
         return pulumi.get(self, "targets")
 
@@ -2288,7 +2288,7 @@ class GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryResult(di
         :param _builtins.str fsu_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
         :param _builtins.str query: [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
         :param _builtins.str strategy: Supported fleet discovery strategies.
-        :param Sequence[_builtins.str] targets: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+        :param Sequence[_builtins.str] targets: OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
         """
         pulumi.set(__self__, "filters", filters)
         pulumi.set(__self__, "fsu_discovery_id", fsu_discovery_id)
@@ -2332,7 +2332,7 @@ class GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryResult(di
     @pulumi.getter
     def targets(self) -> Sequence[_builtins.str]:
         """
-        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+        OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
         """
         return pulumi.get(self, "targets")
 

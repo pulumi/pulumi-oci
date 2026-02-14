@@ -42,6 +42,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// The cross-connect's Oracle ID (OCID).
         /// </summary>
         public readonly string Id;
+        public readonly string InterfaceName;
         public readonly bool IsActive;
         /// <summary>
         /// The name of the FastConnect location where this cross-connect is installed.
@@ -95,6 +96,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string id,
 
+            string interfaceName,
+
             bool isActive,
 
             string locationName,
@@ -123,6 +126,7 @@ namespace Pulumi.Oci.Core.Outputs
             FarCrossConnectOrCrossConnectGroupId = farCrossConnectOrCrossConnectGroupId;
             FreeformTags = freeformTags;
             Id = id;
+            InterfaceName = interfaceName;
             IsActive = isActive;
             LocationName = locationName;
             MacsecProperties = macsecProperties;

@@ -45,6 +45,14 @@ namespace Pulumi.Oci.Mysql
     ///         {
     ///             LowerCaseTableNames = mysqlConfigurationInitVariablesLowerCaseTableNames,
     ///         },
+    ///         Options = new[]
+    ///         {
+    ///             new Oci.Mysql.Inputs.MysqlConfigurationOptionArgs
+    ///             {
+    ///                 Name = mysqlConfigurationOptionsName,
+    ///                 Value = mysqlConfigurationOptionsValue,
+    ///             },
+    ///         },
     ///         ParentConfigurationId = testConfiguration.Id,
     ///         Variables = new Oci.Mysql.Inputs.MysqlConfigurationVariablesArgs
     ///         {
@@ -214,10 +222,16 @@ namespace Pulumi.Oci.Mysql
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        /// DEPRECATED -- please use the `Options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
         /// </summary>
         [Output("initVariables")]
         public Output<Outputs.MysqlConfigurationInitVariables> InitVariables { get; private set; } = null!;
+
+        /// <summary>
+        /// The MySQL options defined in the Configuration.
+        /// </summary>
+        [Output("options")]
+        public Output<ImmutableArray<Outputs.MysqlConfigurationOption>> Options { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
@@ -262,7 +276,7 @@ namespace Pulumi.Oci.Mysql
         public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
-        /// User-defined service variables.
+        /// DEPRECATED -- please use the `Options` field instead. User-defined service variables.
         /// </summary>
         [Output("variables")]
         public Output<Outputs.MysqlConfigurationVariables> Variables { get; private set; } = null!;
@@ -356,10 +370,22 @@ namespace Pulumi.Oci.Mysql
         }
 
         /// <summary>
-        /// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        /// DEPRECATED -- please use the `Options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
         /// </summary>
         [Input("initVariables")]
         public Input<Inputs.MysqlConfigurationInitVariablesArgs>? InitVariables { get; set; }
+
+        [Input("options")]
+        private InputList<Inputs.MysqlConfigurationOptionArgs>? _options;
+
+        /// <summary>
+        /// The MySQL options defined in the Configuration.
+        /// </summary>
+        public InputList<Inputs.MysqlConfigurationOptionArgs> Options
+        {
+            get => _options ?? (_options = new InputList<Inputs.MysqlConfigurationOptionArgs>());
+            set => _options = value;
+        }
 
         /// <summary>
         /// The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
@@ -374,7 +400,7 @@ namespace Pulumi.Oci.Mysql
         public Input<string> ShapeName { get; set; } = null!;
 
         /// <summary>
-        /// User-defined service variables.
+        /// DEPRECATED -- please use the `Options` field instead. User-defined service variables.
         /// </summary>
         [Input("variables")]
         public Input<Inputs.MysqlConfigurationVariablesArgs>? Variables { get; set; }
@@ -430,10 +456,22 @@ namespace Pulumi.Oci.Mysql
         }
 
         /// <summary>
-        /// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        /// DEPRECATED -- please use the `Options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
         /// </summary>
         [Input("initVariables")]
         public Input<Inputs.MysqlConfigurationInitVariablesGetArgs>? InitVariables { get; set; }
+
+        [Input("options")]
+        private InputList<Inputs.MysqlConfigurationOptionGetArgs>? _options;
+
+        /// <summary>
+        /// The MySQL options defined in the Configuration.
+        /// </summary>
+        public InputList<Inputs.MysqlConfigurationOptionGetArgs> Options
+        {
+            get => _options ?? (_options = new InputList<Inputs.MysqlConfigurationOptionGetArgs>());
+            set => _options = value;
+        }
 
         /// <summary>
         /// The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
@@ -484,7 +522,7 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// User-defined service variables.
+        /// DEPRECATED -- please use the `Options` field instead. User-defined service variables.
         /// </summary>
         [Input("variables")]
         public Input<Inputs.MysqlConfigurationVariablesGetArgs>? Variables { get; set; }

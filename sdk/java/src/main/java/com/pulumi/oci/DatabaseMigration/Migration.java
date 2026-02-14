@@ -83,8 +83,6 @@ import javax.annotation.Nullable;
  *         var testMigration = new Migration("testMigration", MigrationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .databaseCombination(migrationDatabaseCombination)
- *             .sourceDatabaseConnectionId(testConnection.id())
- *             .targetDatabaseConnectionId(testConnection.id())
  *             .type(migrationType)
  *             .advancedParameters(MigrationAdvancedParameterArgs.builder()
  *                 .dataType(migrationAdvancedParametersDataType)
@@ -95,6 +93,7 @@ import javax.annotation.Nullable;
  *                 .isIgnoreErrors(migrationAdvisorSettingsIsIgnoreErrors)
  *                 .isSkipAdvisor(migrationAdvisorSettingsIsSkipAdvisor)
  *                 .build())
+ *             .assessmentId(testAssessment.id())
  *             .bulkIncludeExcludeData(migrationBulkIncludeExcludeData)
  *             .dataTransferMediumDetails(MigrationDataTransferMediumDetailsArgs.builder()
  *                 .type(migrationDataTransferMediumDetailsType)
@@ -203,7 +202,9 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .build())
  *             .sourceContainerDatabaseConnectionId(testConnection.id())
+ *             .sourceDatabaseConnectionId(testConnection.id())
  *             .sourceStandbyDatabaseConnectionId(testConnection.id())
+ *             .targetDatabaseConnectionId(testConnection.id())
  *             .build());
  * 
  *     }
@@ -249,6 +250,20 @@ public class Migration extends com.pulumi.resources.CustomResource {
      */
     public Output<MigrationAdvisorSettings> advisorSettings() {
         return this.advisorSettings;
+    }
+    /**
+     * The OCID of the resource being referenced.
+     * 
+     */
+    @Export(name="assessmentId", refs={String.class}, tree="[0]")
+    private Output<String> assessmentId;
+
+    /**
+     * @return The OCID of the resource being referenced.
+     * 
+     */
+    public Output<String> assessmentId() {
+        return this.assessmentId;
     }
     /**
      * Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.

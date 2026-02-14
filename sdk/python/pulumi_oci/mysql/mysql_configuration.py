@@ -28,6 +28,7 @@ class MysqlConfigurationArgs:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  init_variables: Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']] = None,
+                 options: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]]] = None,
                  parent_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
                  variables: Optional[pulumi.Input['MysqlConfigurationVariablesArgs']] = None):
         """
@@ -38,9 +39,10 @@ class MysqlConfigurationArgs:
         :param pulumi.Input[_builtins.str] description: (Updatable) User-provided data about the Configuration.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the Configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input['MysqlConfigurationInitVariablesArgs'] init_variables: User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        :param pulumi.Input['MysqlConfigurationInitVariablesArgs'] init_variables: DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        :param pulumi.Input[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]] options: The MySQL options defined in the Configuration.
         :param pulumi.Input[_builtins.str] parent_configuration_id: The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
-        :param pulumi.Input['MysqlConfigurationVariablesArgs'] variables: User-defined service variables.
+        :param pulumi.Input['MysqlConfigurationVariablesArgs'] variables: DEPRECATED -- please use the `options` field instead. User-defined service variables.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "shape_name", shape_name)
@@ -54,6 +56,8 @@ class MysqlConfigurationArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if init_variables is not None:
             pulumi.set(__self__, "init_variables", init_variables)
+        if options is not None:
+            pulumi.set(__self__, "options", options)
         if parent_configuration_id is not None:
             pulumi.set(__self__, "parent_configuration_id", parent_configuration_id)
         if variables is not None:
@@ -135,13 +139,25 @@ class MysqlConfigurationArgs:
     @pulumi.getter(name="initVariables")
     def init_variables(self) -> Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']]:
         """
-        User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
         """
         return pulumi.get(self, "init_variables")
 
     @init_variables.setter
     def init_variables(self, value: Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']]):
         pulumi.set(self, "init_variables", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]]]:
+        """
+        The MySQL options defined in the Configuration.
+        """
+        return pulumi.get(self, "options")
+
+    @options.setter
+    def options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]]]):
+        pulumi.set(self, "options", value)
 
     @_builtins.property
     @pulumi.getter(name="parentConfigurationId")
@@ -159,7 +175,7 @@ class MysqlConfigurationArgs:
     @pulumi.getter
     def variables(self) -> Optional[pulumi.Input['MysqlConfigurationVariablesArgs']]:
         """
-        User-defined service variables.
+        DEPRECATED -- please use the `options` field instead. User-defined service variables.
         """
         return pulumi.get(self, "variables")
 
@@ -177,6 +193,7 @@ class _MysqlConfigurationState:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  init_variables: Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']] = None,
+                 options: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]]] = None,
                  parent_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
                  shape_name: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
@@ -192,7 +209,8 @@ class _MysqlConfigurationState:
         :param pulumi.Input[_builtins.str] description: (Updatable) User-provided data about the Configuration.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the Configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input['MysqlConfigurationInitVariablesArgs'] init_variables: User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        :param pulumi.Input['MysqlConfigurationInitVariablesArgs'] init_variables: DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        :param pulumi.Input[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]] options: The MySQL options defined in the Configuration.
         :param pulumi.Input[_builtins.str] parent_configuration_id: The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
         :param pulumi.Input[_builtins.str] shape_name: The name of the associated Shape.
         :param pulumi.Input[_builtins.str] state: The current state of the Configuration.
@@ -200,7 +218,7 @@ class _MysqlConfigurationState:
         :param pulumi.Input[_builtins.str] time_created: The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[_builtins.str] type: The Configuration type, DEFAULT or CUSTOM.
-        :param pulumi.Input['MysqlConfigurationVariablesArgs'] variables: User-defined service variables.
+        :param pulumi.Input['MysqlConfigurationVariablesArgs'] variables: DEPRECATED -- please use the `options` field instead. User-defined service variables.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -214,6 +232,8 @@ class _MysqlConfigurationState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if init_variables is not None:
             pulumi.set(__self__, "init_variables", init_variables)
+        if options is not None:
+            pulumi.set(__self__, "options", options)
         if parent_configuration_id is not None:
             pulumi.set(__self__, "parent_configuration_id", parent_configuration_id)
         if shape_name is not None:
@@ -295,13 +315,25 @@ class _MysqlConfigurationState:
     @pulumi.getter(name="initVariables")
     def init_variables(self) -> Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']]:
         """
-        User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
         """
         return pulumi.get(self, "init_variables")
 
     @init_variables.setter
     def init_variables(self, value: Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']]):
         pulumi.set(self, "init_variables", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]]]:
+        """
+        The MySQL options defined in the Configuration.
+        """
+        return pulumi.get(self, "options")
+
+    @options.setter
+    def options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlConfigurationOptionArgs']]]]):
+        pulumi.set(self, "options", value)
 
     @_builtins.property
     @pulumi.getter(name="parentConfigurationId")
@@ -391,7 +423,7 @@ class _MysqlConfigurationState:
     @pulumi.getter
     def variables(self) -> Optional[pulumi.Input['MysqlConfigurationVariablesArgs']]:
         """
-        User-defined service variables.
+        DEPRECATED -- please use the `options` field instead. User-defined service variables.
         """
         return pulumi.get(self, "variables")
 
@@ -412,6 +444,7 @@ class MysqlConfiguration(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  init_variables: Optional[pulumi.Input[Union['MysqlConfigurationInitVariablesArgs', 'MysqlConfigurationInitVariablesArgsDict']]] = None,
+                 options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlConfigurationOptionArgs', 'MysqlConfigurationOptionArgsDict']]]]] = None,
                  parent_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
                  shape_name: Optional[pulumi.Input[_builtins.str]] = None,
                  variables: Optional[pulumi.Input[Union['MysqlConfigurationVariablesArgs', 'MysqlConfigurationVariablesArgsDict']]] = None,
@@ -444,6 +477,10 @@ class MysqlConfiguration(pulumi.CustomResource):
             init_variables={
                 "lower_case_table_names": mysql_configuration_init_variables_lower_case_table_names,
             },
+            options=[{
+                "name": mysql_configuration_options_name,
+                "value": mysql_configuration_options_value,
+            }],
             parent_configuration_id=test_configuration["id"],
             variables={
                 "auto_increment_increment": mysql_configuration_variables_auto_increment_increment,
@@ -582,10 +619,11 @@ class MysqlConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) User-provided data about the Configuration.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the Configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Union['MysqlConfigurationInitVariablesArgs', 'MysqlConfigurationInitVariablesArgsDict']] init_variables: User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        :param pulumi.Input[Union['MysqlConfigurationInitVariablesArgs', 'MysqlConfigurationInitVariablesArgsDict']] init_variables: DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlConfigurationOptionArgs', 'MysqlConfigurationOptionArgsDict']]]] options: The MySQL options defined in the Configuration.
         :param pulumi.Input[_builtins.str] parent_configuration_id: The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
         :param pulumi.Input[_builtins.str] shape_name: The name of the associated Shape.
-        :param pulumi.Input[Union['MysqlConfigurationVariablesArgs', 'MysqlConfigurationVariablesArgsDict']] variables: User-defined service variables.
+        :param pulumi.Input[Union['MysqlConfigurationVariablesArgs', 'MysqlConfigurationVariablesArgsDict']] variables: DEPRECATED -- please use the `options` field instead. User-defined service variables.
         """
         ...
     @overload
@@ -621,6 +659,10 @@ class MysqlConfiguration(pulumi.CustomResource):
             init_variables={
                 "lower_case_table_names": mysql_configuration_init_variables_lower_case_table_names,
             },
+            options=[{
+                "name": mysql_configuration_options_name,
+                "value": mysql_configuration_options_value,
+            }],
             parent_configuration_id=test_configuration["id"],
             variables={
                 "auto_increment_increment": mysql_configuration_variables_auto_increment_increment,
@@ -773,6 +815,7 @@ class MysqlConfiguration(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  init_variables: Optional[pulumi.Input[Union['MysqlConfigurationInitVariablesArgs', 'MysqlConfigurationInitVariablesArgsDict']]] = None,
+                 options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlConfigurationOptionArgs', 'MysqlConfigurationOptionArgsDict']]]]] = None,
                  parent_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
                  shape_name: Optional[pulumi.Input[_builtins.str]] = None,
                  variables: Optional[pulumi.Input[Union['MysqlConfigurationVariablesArgs', 'MysqlConfigurationVariablesArgsDict']]] = None,
@@ -793,6 +836,7 @@ class MysqlConfiguration(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["init_variables"] = init_variables
+            __props__.__dict__["options"] = options
             __props__.__dict__["parent_configuration_id"] = parent_configuration_id
             if shape_name is None and not opts.urn:
                 raise TypeError("Missing required property 'shape_name'")
@@ -819,6 +863,7 @@ class MysqlConfiguration(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             init_variables: Optional[pulumi.Input[Union['MysqlConfigurationInitVariablesArgs', 'MysqlConfigurationInitVariablesArgsDict']]] = None,
+            options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlConfigurationOptionArgs', 'MysqlConfigurationOptionArgsDict']]]]] = None,
             parent_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
             shape_name: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
@@ -839,7 +884,8 @@ class MysqlConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) User-provided data about the Configuration.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the Configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Union['MysqlConfigurationInitVariablesArgs', 'MysqlConfigurationInitVariablesArgsDict']] init_variables: User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        :param pulumi.Input[Union['MysqlConfigurationInitVariablesArgs', 'MysqlConfigurationInitVariablesArgsDict']] init_variables: DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlConfigurationOptionArgs', 'MysqlConfigurationOptionArgsDict']]]] options: The MySQL options defined in the Configuration.
         :param pulumi.Input[_builtins.str] parent_configuration_id: The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
         :param pulumi.Input[_builtins.str] shape_name: The name of the associated Shape.
         :param pulumi.Input[_builtins.str] state: The current state of the Configuration.
@@ -847,7 +893,7 @@ class MysqlConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[_builtins.str] type: The Configuration type, DEFAULT or CUSTOM.
-        :param pulumi.Input[Union['MysqlConfigurationVariablesArgs', 'MysqlConfigurationVariablesArgsDict']] variables: User-defined service variables.
+        :param pulumi.Input[Union['MysqlConfigurationVariablesArgs', 'MysqlConfigurationVariablesArgsDict']] variables: DEPRECATED -- please use the `options` field instead. User-defined service variables.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -859,6 +905,7 @@ class MysqlConfiguration(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["init_variables"] = init_variables
+        __props__.__dict__["options"] = options
         __props__.__dict__["parent_configuration_id"] = parent_configuration_id
         __props__.__dict__["shape_name"] = shape_name
         __props__.__dict__["state"] = state
@@ -913,9 +960,17 @@ class MysqlConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="initVariables")
     def init_variables(self) -> pulumi.Output['outputs.MysqlConfigurationInitVariables']:
         """
-        User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
         """
         return pulumi.get(self, "init_variables")
+
+    @_builtins.property
+    @pulumi.getter
+    def options(self) -> pulumi.Output[Sequence['outputs.MysqlConfigurationOption']]:
+        """
+        The MySQL options defined in the Configuration.
+        """
+        return pulumi.get(self, "options")
 
     @_builtins.property
     @pulumi.getter(name="parentConfigurationId")
@@ -977,7 +1032,7 @@ class MysqlConfiguration(pulumi.CustomResource):
     @pulumi.getter
     def variables(self) -> pulumi.Output['outputs.MysqlConfigurationVariables']:
         """
-        User-defined service variables.
+        DEPRECATED -- please use the `options` field instead. User-defined service variables.
         """
         return pulumi.get(self, "variables")
 

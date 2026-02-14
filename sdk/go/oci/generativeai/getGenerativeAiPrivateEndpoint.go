@@ -58,6 +58,7 @@ type LookupGenerativeAiPrivateEndpointArgs struct {
 
 // A collection of values returned by getGenerativeAiPrivateEndpoint.
 type LookupGenerativeAiPrivateEndpointResult struct {
+	// The OCID of the compartment that contains the private endpoint.
 	CompartmentId string            `pulumi:"compartmentId"`
 	DefinedTags   map[string]string `pulumi:"definedTags"`
 	// A description of this private endpoint.
@@ -79,11 +80,15 @@ type LookupGenerativeAiPrivateEndpointResult struct {
 	// The private IP address (in the customer's VCN) that represents the access point for the associated endpoint service.
 	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
 	// The current state of the Generative AI Private Endpoint.
-	State       string            `pulumi:"state"`
-	SubnetId    string            `pulumi:"subnetId"`
-	SystemTags  map[string]string `pulumi:"systemTags"`
-	TimeCreated string            `pulumi:"timeCreated"`
-	TimeUpdated string            `pulumi:"timeUpdated"`
+	State string `pulumi:"state"`
+	// The OCID of the subnet that the private endpoint belongs to.
+	SubnetId string `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time that the Generative AI private endpoint was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the Generative AI private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
 func LookupGenerativeAiPrivateEndpointOutput(ctx *pulumi.Context, args LookupGenerativeAiPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupGenerativeAiPrivateEndpointResultOutput {
@@ -120,6 +125,7 @@ func (o LookupGenerativeAiPrivateEndpointResultOutput) ToLookupGenerativeAiPriva
 	return o
 }
 
+// The OCID of the compartment that contains the private endpoint.
 func (o LookupGenerativeAiPrivateEndpointResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -184,18 +190,22 @@ func (o LookupGenerativeAiPrivateEndpointResultOutput) State() pulumi.StringOutp
 	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.State }).(pulumi.StringOutput)
 }
 
+// The OCID of the subnet that the private endpoint belongs to.
 func (o LookupGenerativeAiPrivateEndpointResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o LookupGenerativeAiPrivateEndpointResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
+// The date and time that the Generative AI private endpoint was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o LookupGenerativeAiPrivateEndpointResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// The date and time that the Generative AI private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o LookupGenerativeAiPrivateEndpointResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

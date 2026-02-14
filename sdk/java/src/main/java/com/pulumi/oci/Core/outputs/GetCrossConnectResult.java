@@ -51,6 +51,7 @@ public final class GetCrossConnectResult {
      * 
      */
     private String id;
+    private String interfaceName;
     private Boolean isActive;
     /**
      * @return The name of the FastConnect location where this cross-connect is installed.
@@ -150,6 +151,9 @@ public final class GetCrossConnectResult {
     public String id() {
         return this.id;
     }
+    public String interfaceName() {
+        return this.interfaceName;
+    }
     public Boolean isActive() {
         return this.isActive;
     }
@@ -231,6 +235,7 @@ public final class GetCrossConnectResult {
         private String farCrossConnectOrCrossConnectGroupId;
         private Map<String,String> freeformTags;
         private String id;
+        private String interfaceName;
         private Boolean isActive;
         private String locationName;
         private List<GetCrossConnectMacsecProperty> macsecProperties;
@@ -253,6 +258,7 @@ public final class GetCrossConnectResult {
     	      this.farCrossConnectOrCrossConnectGroupId = defaults.farCrossConnectOrCrossConnectGroupId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.interfaceName = defaults.interfaceName;
     	      this.isActive = defaults.isActive;
     	      this.locationName = defaults.locationName;
     	      this.macsecProperties = defaults.macsecProperties;
@@ -335,6 +341,14 @@ public final class GetCrossConnectResult {
               throw new MissingRequiredPropertyException("GetCrossConnectResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder interfaceName(String interfaceName) {
+            if (interfaceName == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectResult", "interfaceName");
+            }
+            this.interfaceName = interfaceName;
             return this;
         }
         @CustomType.Setter
@@ -431,6 +445,7 @@ public final class GetCrossConnectResult {
             _resultValue.farCrossConnectOrCrossConnectGroupId = farCrossConnectOrCrossConnectGroupId;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.interfaceName = interfaceName;
             _resultValue.isActive = isActive;
             _resultValue.locationName = locationName;
             _resultValue.macsecProperties = macsecProperties;

@@ -6,15 +6,30 @@ import builtins as _builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .assessment import *
+from .assessment_assessor_action import *
 from .connection import *
+from .get_assessment import *
+from .get_assessment_assessor import *
+from .get_assessment_assessor_check import *
+from .get_assessment_assessor_check_affected_objects import *
+from .get_assessment_assessor_checks import *
+from .get_assessment_assessors import *
+from .get_assessment_object_types import *
+from .get_assessments import *
 from .get_connection import *
+from .get_connection_databaseconnectiontypes import *
 from .get_connections import *
 from .get_job_advisor_report import *
+from .get_job_advisor_report_check_objects import *
+from .get_job_advisor_report_checks import *
 from .get_job_output import *
 from .get_migration import *
 from .get_migration_object_types import *
 from .get_migrations import *
+from .get_script import *
 from .job import *
+from .job_advisor_report_check import *
 from .migration import *
 from ._inputs import *
 from . import outputs

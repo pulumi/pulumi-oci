@@ -57,6 +57,21 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The OCID of the resource being referenced.
+     * 
+     */
+    @Import(name="assessmentId")
+    private @Nullable Output<String> assessmentId;
+
+    /**
+     * @return The OCID of the resource being referenced.
+     * 
+     */
+    public Optional<Output<String>> assessmentId() {
+        return Optional.ofNullable(this.assessmentId);
+    }
+
+    /**
      * Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
      * 
      */
@@ -270,15 +285,15 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) The OCID of the resource being referenced.
      * 
      */
-    @Import(name="sourceDatabaseConnectionId", required=true)
-    private Output<String> sourceDatabaseConnectionId;
+    @Import(name="sourceDatabaseConnectionId")
+    private @Nullable Output<String> sourceDatabaseConnectionId;
 
     /**
      * @return (Updatable) The OCID of the resource being referenced.
      * 
      */
-    public Output<String> sourceDatabaseConnectionId() {
-        return this.sourceDatabaseConnectionId;
+    public Optional<Output<String>> sourceDatabaseConnectionId() {
+        return Optional.ofNullable(this.sourceDatabaseConnectionId);
     }
 
     /**
@@ -300,15 +315,15 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) The OCID of the resource being referenced.
      * 
      */
-    @Import(name="targetDatabaseConnectionId", required=true)
-    private Output<String> targetDatabaseConnectionId;
+    @Import(name="targetDatabaseConnectionId")
+    private @Nullable Output<String> targetDatabaseConnectionId;
 
     /**
      * @return (Updatable) The OCID of the resource being referenced.
      * 
      */
-    public Output<String> targetDatabaseConnectionId() {
-        return this.targetDatabaseConnectionId;
+    public Optional<Output<String>> targetDatabaseConnectionId() {
+        return Optional.ofNullable(this.targetDatabaseConnectionId);
     }
 
     /**
@@ -337,6 +352,7 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
     private MigrationArgs(MigrationArgs $) {
         this.advancedParameters = $.advancedParameters;
         this.advisorSettings = $.advisorSettings;
+        this.assessmentId = $.assessmentId;
         this.bulkIncludeExcludeData = $.bulkIncludeExcludeData;
         this.compartmentId = $.compartmentId;
         this.dataTransferMediumDetails = $.dataTransferMediumDetails;
@@ -425,6 +441,27 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder advisorSettings(MigrationAdvisorSettingsArgs advisorSettings) {
             return advisorSettings(Output.of(advisorSettings));
+        }
+
+        /**
+         * @param assessmentId The OCID of the resource being referenced.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assessmentId(@Nullable Output<String> assessmentId) {
+            $.assessmentId = assessmentId;
+            return this;
+        }
+
+        /**
+         * @param assessmentId The OCID of the resource being referenced.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assessmentId(String assessmentId) {
+            return assessmentId(Output.of(assessmentId));
         }
 
         /**
@@ -747,7 +784,7 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder sourceDatabaseConnectionId(Output<String> sourceDatabaseConnectionId) {
+        public Builder sourceDatabaseConnectionId(@Nullable Output<String> sourceDatabaseConnectionId) {
             $.sourceDatabaseConnectionId = sourceDatabaseConnectionId;
             return this;
         }
@@ -789,7 +826,7 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder targetDatabaseConnectionId(Output<String> targetDatabaseConnectionId) {
+        public Builder targetDatabaseConnectionId(@Nullable Output<String> targetDatabaseConnectionId) {
             $.targetDatabaseConnectionId = targetDatabaseConnectionId;
             return this;
         }
@@ -837,12 +874,6 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
             }
             if ($.databaseCombination == null) {
                 throw new MissingRequiredPropertyException("MigrationArgs", "databaseCombination");
-            }
-            if ($.sourceDatabaseConnectionId == null) {
-                throw new MissingRequiredPropertyException("MigrationArgs", "sourceDatabaseConnectionId");
-            }
-            if ($.targetDatabaseConnectionId == null) {
-                throw new MissingRequiredPropertyException("MigrationArgs", "targetDatabaseConnectionId");
             }
             if ($.type == null) {
                 throw new MissingRequiredPropertyException("MigrationArgs", "type");

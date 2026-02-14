@@ -111,6 +111,7 @@ type DedicatedAiCluster struct {
 	// * LARGE_GENERIC_4
 	// * SMALL_GENERIC_V2
 	// * LARGE_GENERIC_2
+	// * LARGE_GENERIC_V3
 	// * SMALL_GENERIC_V1
 	// * MEDIUM_GENERIC_V1
 	// * LARGE_GENERIC_V1
@@ -241,6 +242,7 @@ type dedicatedAiClusterState struct {
 	// * LARGE_GENERIC_4
 	// * SMALL_GENERIC_V2
 	// * LARGE_GENERIC_2
+	// * LARGE_GENERIC_V3
 	// * SMALL_GENERIC_V1
 	// * MEDIUM_GENERIC_V1
 	// * LARGE_GENERIC_V1
@@ -330,6 +332,7 @@ type DedicatedAiClusterState struct {
 	// * LARGE_GENERIC_4
 	// * SMALL_GENERIC_V2
 	// * LARGE_GENERIC_2
+	// * LARGE_GENERIC_V3
 	// * SMALL_GENERIC_V1
 	// * MEDIUM_GENERIC_V1
 	// * LARGE_GENERIC_V1
@@ -411,6 +414,7 @@ type dedicatedAiClusterArgs struct {
 	// * LARGE_GENERIC_4
 	// * SMALL_GENERIC_V2
 	// * LARGE_GENERIC_2
+	// * LARGE_GENERIC_V3
 	// * SMALL_GENERIC_V1
 	// * MEDIUM_GENERIC_V1
 	// * LARGE_GENERIC_V1
@@ -489,6 +493,7 @@ type DedicatedAiClusterArgs struct {
 	// * LARGE_GENERIC_4
 	// * SMALL_GENERIC_V2
 	// * LARGE_GENERIC_2
+	// * LARGE_GENERIC_V3
 	// * SMALL_GENERIC_V1
 	// * MEDIUM_GENERIC_V1
 	// * LARGE_GENERIC_V1
@@ -703,6 +708,7 @@ func (o DedicatedAiClusterOutput) UnitCount() pulumi.IntOutput {
 // * LARGE_GENERIC_4
 // * SMALL_GENERIC_V2
 // * LARGE_GENERIC_2
+// * LARGE_GENERIC_V3
 // * SMALL_GENERIC_V1
 // * MEDIUM_GENERIC_V1
 // * LARGE_GENERIC_V1

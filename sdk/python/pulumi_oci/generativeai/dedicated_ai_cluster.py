@@ -53,6 +53,7 @@ class DedicatedAiClusterArgs:
                * LARGE_GENERIC_4
                * SMALL_GENERIC_V2
                * LARGE_GENERIC_2
+               * LARGE_GENERIC_V3
                * SMALL_GENERIC_V1
                * MEDIUM_GENERIC_V1
                * LARGE_GENERIC_V1
@@ -171,6 +172,7 @@ class DedicatedAiClusterArgs:
         * LARGE_GENERIC_4
         * SMALL_GENERIC_V2
         * LARGE_GENERIC_2
+        * LARGE_GENERIC_V3
         * SMALL_GENERIC_V1
         * MEDIUM_GENERIC_V1
         * LARGE_GENERIC_V1
@@ -319,6 +321,7 @@ class _DedicatedAiClusterState:
                * LARGE_GENERIC_4
                * SMALL_GENERIC_V2
                * LARGE_GENERIC_2
+               * LARGE_GENERIC_V3
                * SMALL_GENERIC_V1
                * MEDIUM_GENERIC_V1
                * LARGE_GENERIC_V1
@@ -569,6 +572,7 @@ class _DedicatedAiClusterState:
         * LARGE_GENERIC_4
         * SMALL_GENERIC_V2
         * LARGE_GENERIC_2
+        * LARGE_GENERIC_V3
         * SMALL_GENERIC_V1
         * MEDIUM_GENERIC_V1
         * LARGE_GENERIC_V1
@@ -698,6 +702,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
                * LARGE_GENERIC_4
                * SMALL_GENERIC_V2
                * LARGE_GENERIC_2
+               * LARGE_GENERIC_V3
                * SMALL_GENERIC_V1
                * MEDIUM_GENERIC_V1
                * LARGE_GENERIC_V1
@@ -900,6 +905,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
                * LARGE_GENERIC_4
                * SMALL_GENERIC_V2
                * LARGE_GENERIC_2
+               * LARGE_GENERIC_V3
                * SMALL_GENERIC_V1
                * MEDIUM_GENERIC_V1
                * LARGE_GENERIC_V1
@@ -1089,6 +1095,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
         * LARGE_GENERIC_4
         * SMALL_GENERIC_V2
         * LARGE_GENERIC_2
+        * LARGE_GENERIC_V3
         * SMALL_GENERIC_V1
         * MEDIUM_GENERIC_V1
         * LARGE_GENERIC_V1

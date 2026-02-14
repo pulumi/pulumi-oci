@@ -16,6 +16,10 @@ import java.util.Objects;
 @CustomType
 public final class GetModelResult {
     private String baseModelId;
+    /**
+     * @return Describes what this model can be used for.
+     * 
+     */
     private List<String> capabilities;
     private String compartmentId;
     private Map<String,String> definedTags;
@@ -61,6 +65,10 @@ public final class GetModelResult {
     public String baseModelId() {
         return this.baseModelId;
     }
+    /**
+     * @return Describes what this model can be used for.
+     * 
+     */
     public List<String> capabilities() {
         return this.capabilities;
     }

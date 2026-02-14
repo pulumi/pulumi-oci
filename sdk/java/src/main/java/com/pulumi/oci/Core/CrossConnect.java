@@ -79,6 +79,7 @@ import javax.annotation.Nullable;
  *             .displayName(crossConnectDisplayName)
  *             .farCrossConnectOrCrossConnectGroupId(testCrossConnectGroup.id())
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .interfaceName(crossConnectInterfaceName)
  *             .macsecProperties(CrossConnectMacsecPropertiesArgs.builder()
  *                 .state(crossConnectMacsecPropertiesState)
  *                 .encryptionCipher(crossConnectMacsecPropertiesEncryptionCipher)
@@ -89,6 +90,7 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .build())
  *             .nearCrossConnectOrCrossConnectGroupId(testCrossConnectGroup.id())
+ *             .ociPhysicalDeviceName(crossConnectOciPhysicalDeviceName)
  *             .build());
  * 
  *     }
@@ -206,6 +208,20 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+     * 
+     */
+    @Export(name="interfaceName", refs={String.class}, tree="[0]")
+    private Output<String> interfaceName;
+
+    /**
+     * @return The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
+     * 
+     */
+    public Output<String> interfaceName() {
+        return this.interfaceName;
+    }
+    /**
      * (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you&#39;ve confirmed the cross-connect&#39;s light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
      * 
      */
@@ -276,14 +292,14 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
         return this.ociLogicalDeviceName;
     }
     /**
-     * The FastConnect device that terminates the physical connection.
+     * The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
      * 
      */
     @Export(name="ociPhysicalDeviceName", refs={String.class}, tree="[0]")
     private Output<String> ociPhysicalDeviceName;
 
     /**
-     * @return The FastConnect device that terminates the physical connection.
+     * @return The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
      * 
      */
     public Output<String> ociPhysicalDeviceName() {

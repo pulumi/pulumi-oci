@@ -65,6 +65,11 @@ export const getVulnerabilityAuditApplicationDependencyVulnerability: typeof imp
 export const getVulnerabilityAuditApplicationDependencyVulnerabilityOutput: typeof import("./getVulnerabilityAuditApplicationDependencyVulnerability").getVulnerabilityAuditApplicationDependencyVulnerabilityOutput = null as any;
 utilities.lazyLoad(exports, ["getVulnerabilityAuditApplicationDependencyVulnerability","getVulnerabilityAuditApplicationDependencyVulnerabilityOutput"], () => require("./getVulnerabilityAuditApplicationDependencyVulnerability"));
 
+export { GetVulnerabilityAuditVulnerabilityArgs, GetVulnerabilityAuditVulnerabilityResult, GetVulnerabilityAuditVulnerabilityOutputArgs } from "./getVulnerabilityAuditVulnerability";
+export const getVulnerabilityAuditVulnerability: typeof import("./getVulnerabilityAuditVulnerability").getVulnerabilityAuditVulnerability = null as any;
+export const getVulnerabilityAuditVulnerabilityOutput: typeof import("./getVulnerabilityAuditVulnerability").getVulnerabilityAuditVulnerabilityOutput = null as any;
+utilities.lazyLoad(exports, ["getVulnerabilityAuditVulnerability","getVulnerabilityAuditVulnerabilityOutput"], () => require("./getVulnerabilityAuditVulnerability"));
+
 export { GetVulnerabilityAuditsArgs, GetVulnerabilityAuditsResult, GetVulnerabilityAuditsOutputArgs } from "./getVulnerabilityAudits";
 export const getVulnerabilityAudits: typeof import("./getVulnerabilityAudits").getVulnerabilityAudits = null as any;
 export const getVulnerabilityAuditsOutput: typeof import("./getVulnerabilityAudits").getVulnerabilityAuditsOutput = null as any;

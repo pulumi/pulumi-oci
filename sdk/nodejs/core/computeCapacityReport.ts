@@ -32,6 +32,7 @@ import * as utilities from "../utilities";
  *         instanceShape: computeCapacityReportShapeAvailabilitiesInstanceShape,
  *         faultDomain: computeCapacityReportShapeAvailabilitiesFaultDomain,
  *         instanceShapeConfig: {
+ *             baselineOcpuUtilization: computeCapacityReportShapeAvailabilitiesInstanceShapeConfigBaselineOcpuUtilization,
  *             memoryInGbs: computeCapacityReportShapeAvailabilitiesInstanceShapeConfigMemoryInGbs,
  *             nvmes: computeCapacityReportShapeAvailabilitiesInstanceShapeConfigNvmes,
  *             ocpus: computeCapacityReportShapeAvailabilitiesInstanceShapeConfigOcpus,

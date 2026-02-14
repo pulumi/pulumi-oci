@@ -58,7 +58,8 @@ type LookupModelArgs struct {
 
 // A collection of values returned by getModel.
 type LookupModelResult struct {
-	BaseModelId   string            `pulumi:"baseModelId"`
+	BaseModelId string `pulumi:"baseModelId"`
+	// Describes what this model can be used for.
 	Capabilities  []string          `pulumi:"capabilities"`
 	CompartmentId string            `pulumi:"compartmentId"`
 	DefinedTags   map[string]string `pulumi:"definedTags"`
@@ -124,6 +125,7 @@ func (o LookupModelResultOutput) BaseModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.BaseModelId }).(pulumi.StringOutput)
 }
 
+// Describes what this model can be used for.
 func (o LookupModelResultOutput) Capabilities() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupModelResult) []string { return v.Capabilities }).(pulumi.StringArrayOutput)
 }

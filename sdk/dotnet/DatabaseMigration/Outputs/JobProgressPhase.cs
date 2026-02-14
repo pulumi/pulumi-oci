@@ -30,6 +30,10 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.JobProgressPhaseExtract> Extracts;
         /// <summary>
+        /// Job Phase group display name e.g. 'Step 1: Migration'
+        /// </summary>
+        public readonly string? GroupDisplayName;
+        /// <summary>
         /// True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
         /// </summary>
         public readonly bool? IsAdvisorReportAvailable;
@@ -68,6 +72,8 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
             ImmutableArray<Outputs.JobProgressPhaseExtract> extracts,
 
+            string? groupDisplayName,
+
             bool? isAdvisorReportAvailable,
 
             bool? isSuspendAvailable,
@@ -86,6 +92,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
             DurationInMs = durationInMs;
             EditableParameterFiles = editableParameterFiles;
             Extracts = extracts;
+            GroupDisplayName = groupDisplayName;
             IsAdvisorReportAvailable = isAdvisorReportAvailable;
             IsSuspendAvailable = isSuspendAvailable;
             Issue = issue;

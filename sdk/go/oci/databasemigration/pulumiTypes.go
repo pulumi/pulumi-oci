@@ -13,6 +13,749 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AssessmentAssessorActionItem struct {
+	// The property name.
+	Name string `pulumi:"name"`
+	// The property value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Value string `pulumi:"value"`
+}
+
+// AssessmentAssessorActionItemInput is an input type that accepts AssessmentAssessorActionItemArgs and AssessmentAssessorActionItemOutput values.
+// You can construct a concrete instance of `AssessmentAssessorActionItemInput` via:
+//
+//	AssessmentAssessorActionItemArgs{...}
+type AssessmentAssessorActionItemInput interface {
+	pulumi.Input
+
+	ToAssessmentAssessorActionItemOutput() AssessmentAssessorActionItemOutput
+	ToAssessmentAssessorActionItemOutputWithContext(context.Context) AssessmentAssessorActionItemOutput
+}
+
+type AssessmentAssessorActionItemArgs struct {
+	// The property name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The property value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (AssessmentAssessorActionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssessmentAssessorActionItem)(nil)).Elem()
+}
+
+func (i AssessmentAssessorActionItemArgs) ToAssessmentAssessorActionItemOutput() AssessmentAssessorActionItemOutput {
+	return i.ToAssessmentAssessorActionItemOutputWithContext(context.Background())
+}
+
+func (i AssessmentAssessorActionItemArgs) ToAssessmentAssessorActionItemOutputWithContext(ctx context.Context) AssessmentAssessorActionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssessmentAssessorActionItemOutput)
+}
+
+// AssessmentAssessorActionItemArrayInput is an input type that accepts AssessmentAssessorActionItemArray and AssessmentAssessorActionItemArrayOutput values.
+// You can construct a concrete instance of `AssessmentAssessorActionItemArrayInput` via:
+//
+//	AssessmentAssessorActionItemArray{ AssessmentAssessorActionItemArgs{...} }
+type AssessmentAssessorActionItemArrayInput interface {
+	pulumi.Input
+
+	ToAssessmentAssessorActionItemArrayOutput() AssessmentAssessorActionItemArrayOutput
+	ToAssessmentAssessorActionItemArrayOutputWithContext(context.Context) AssessmentAssessorActionItemArrayOutput
+}
+
+type AssessmentAssessorActionItemArray []AssessmentAssessorActionItemInput
+
+func (AssessmentAssessorActionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssessmentAssessorActionItem)(nil)).Elem()
+}
+
+func (i AssessmentAssessorActionItemArray) ToAssessmentAssessorActionItemArrayOutput() AssessmentAssessorActionItemArrayOutput {
+	return i.ToAssessmentAssessorActionItemArrayOutputWithContext(context.Background())
+}
+
+func (i AssessmentAssessorActionItemArray) ToAssessmentAssessorActionItemArrayOutputWithContext(ctx context.Context) AssessmentAssessorActionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssessmentAssessorActionItemArrayOutput)
+}
+
+type AssessmentAssessorActionItemOutput struct{ *pulumi.OutputState }
+
+func (AssessmentAssessorActionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssessmentAssessorActionItem)(nil)).Elem()
+}
+
+func (o AssessmentAssessorActionItemOutput) ToAssessmentAssessorActionItemOutput() AssessmentAssessorActionItemOutput {
+	return o
+}
+
+func (o AssessmentAssessorActionItemOutput) ToAssessmentAssessorActionItemOutputWithContext(ctx context.Context) AssessmentAssessorActionItemOutput {
+	return o
+}
+
+// The property name.
+func (o AssessmentAssessorActionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v AssessmentAssessorActionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The property value.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o AssessmentAssessorActionItemOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v AssessmentAssessorActionItem) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type AssessmentAssessorActionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (AssessmentAssessorActionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssessmentAssessorActionItem)(nil)).Elem()
+}
+
+func (o AssessmentAssessorActionItemArrayOutput) ToAssessmentAssessorActionItemArrayOutput() AssessmentAssessorActionItemArrayOutput {
+	return o
+}
+
+func (o AssessmentAssessorActionItemArrayOutput) ToAssessmentAssessorActionItemArrayOutputWithContext(ctx context.Context) AssessmentAssessorActionItemArrayOutput {
+	return o
+}
+
+func (o AssessmentAssessorActionItemArrayOutput) Index(i pulumi.IntInput) AssessmentAssessorActionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AssessmentAssessorActionItem {
+		return vs[0].([]AssessmentAssessorActionItem)[vs[1].(int)]
+	}).(AssessmentAssessorActionItemOutput)
+}
+
+type AssessmentExcludeObject struct {
+	// Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+	IsOmitExcludedTableFromReplication *bool `pulumi:"isOmitExcludedTableFromReplication"`
+	// Name of the object (regular expression is allowed)
+	Object string `pulumi:"object"`
+	// Owner of the object (regular expression is allowed)
+	Owner *string `pulumi:"owner"`
+	// Schema of the object (regular expression is allowed)
+	Schema *string `pulumi:"schema"`
+	// Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+	Type *string `pulumi:"type"`
+}
+
+// AssessmentExcludeObjectInput is an input type that accepts AssessmentExcludeObjectArgs and AssessmentExcludeObjectOutput values.
+// You can construct a concrete instance of `AssessmentExcludeObjectInput` via:
+//
+//	AssessmentExcludeObjectArgs{...}
+type AssessmentExcludeObjectInput interface {
+	pulumi.Input
+
+	ToAssessmentExcludeObjectOutput() AssessmentExcludeObjectOutput
+	ToAssessmentExcludeObjectOutputWithContext(context.Context) AssessmentExcludeObjectOutput
+}
+
+type AssessmentExcludeObjectArgs struct {
+	// Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+	IsOmitExcludedTableFromReplication pulumi.BoolPtrInput `pulumi:"isOmitExcludedTableFromReplication"`
+	// Name of the object (regular expression is allowed)
+	Object pulumi.StringInput `pulumi:"object"`
+	// Owner of the object (regular expression is allowed)
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Schema of the object (regular expression is allowed)
+	Schema pulumi.StringPtrInput `pulumi:"schema"`
+	// Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (AssessmentExcludeObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssessmentExcludeObject)(nil)).Elem()
+}
+
+func (i AssessmentExcludeObjectArgs) ToAssessmentExcludeObjectOutput() AssessmentExcludeObjectOutput {
+	return i.ToAssessmentExcludeObjectOutputWithContext(context.Background())
+}
+
+func (i AssessmentExcludeObjectArgs) ToAssessmentExcludeObjectOutputWithContext(ctx context.Context) AssessmentExcludeObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssessmentExcludeObjectOutput)
+}
+
+// AssessmentExcludeObjectArrayInput is an input type that accepts AssessmentExcludeObjectArray and AssessmentExcludeObjectArrayOutput values.
+// You can construct a concrete instance of `AssessmentExcludeObjectArrayInput` via:
+//
+//	AssessmentExcludeObjectArray{ AssessmentExcludeObjectArgs{...} }
+type AssessmentExcludeObjectArrayInput interface {
+	pulumi.Input
+
+	ToAssessmentExcludeObjectArrayOutput() AssessmentExcludeObjectArrayOutput
+	ToAssessmentExcludeObjectArrayOutputWithContext(context.Context) AssessmentExcludeObjectArrayOutput
+}
+
+type AssessmentExcludeObjectArray []AssessmentExcludeObjectInput
+
+func (AssessmentExcludeObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssessmentExcludeObject)(nil)).Elem()
+}
+
+func (i AssessmentExcludeObjectArray) ToAssessmentExcludeObjectArrayOutput() AssessmentExcludeObjectArrayOutput {
+	return i.ToAssessmentExcludeObjectArrayOutputWithContext(context.Background())
+}
+
+func (i AssessmentExcludeObjectArray) ToAssessmentExcludeObjectArrayOutputWithContext(ctx context.Context) AssessmentExcludeObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssessmentExcludeObjectArrayOutput)
+}
+
+type AssessmentExcludeObjectOutput struct{ *pulumi.OutputState }
+
+func (AssessmentExcludeObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssessmentExcludeObject)(nil)).Elem()
+}
+
+func (o AssessmentExcludeObjectOutput) ToAssessmentExcludeObjectOutput() AssessmentExcludeObjectOutput {
+	return o
+}
+
+func (o AssessmentExcludeObjectOutput) ToAssessmentExcludeObjectOutputWithContext(ctx context.Context) AssessmentExcludeObjectOutput {
+	return o
+}
+
+// Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+func (o AssessmentExcludeObjectOutput) IsOmitExcludedTableFromReplication() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AssessmentExcludeObject) *bool { return v.IsOmitExcludedTableFromReplication }).(pulumi.BoolPtrOutput)
+}
+
+// Name of the object (regular expression is allowed)
+func (o AssessmentExcludeObjectOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v AssessmentExcludeObject) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// Owner of the object (regular expression is allowed)
+func (o AssessmentExcludeObjectOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssessmentExcludeObject) *string { return v.Owner }).(pulumi.StringPtrOutput)
+}
+
+// Schema of the object (regular expression is allowed)
+func (o AssessmentExcludeObjectOutput) Schema() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssessmentExcludeObject) *string { return v.Schema }).(pulumi.StringPtrOutput)
+}
+
+// Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+func (o AssessmentExcludeObjectOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssessmentExcludeObject) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type AssessmentExcludeObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (AssessmentExcludeObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssessmentExcludeObject)(nil)).Elem()
+}
+
+func (o AssessmentExcludeObjectArrayOutput) ToAssessmentExcludeObjectArrayOutput() AssessmentExcludeObjectArrayOutput {
+	return o
+}
+
+func (o AssessmentExcludeObjectArrayOutput) ToAssessmentExcludeObjectArrayOutputWithContext(ctx context.Context) AssessmentExcludeObjectArrayOutput {
+	return o
+}
+
+func (o AssessmentExcludeObjectArrayOutput) Index(i pulumi.IntInput) AssessmentExcludeObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AssessmentExcludeObject {
+		return vs[0].([]AssessmentExcludeObject)[vs[1].(int)]
+	}).(AssessmentExcludeObjectOutput)
+}
+
+type AssessmentIncludeObject struct {
+	// Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+	IsOmitExcludedTableFromReplication *bool `pulumi:"isOmitExcludedTableFromReplication"`
+	// Name of the object (regular expression is allowed)
+	Object string `pulumi:"object"`
+	// Owner of the object (regular expression is allowed)
+	Owner *string `pulumi:"owner"`
+	// Schema of the object (regular expression is allowed)
+	Schema *string `pulumi:"schema"`
+	// Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+	Type *string `pulumi:"type"`
+}
+
+// AssessmentIncludeObjectInput is an input type that accepts AssessmentIncludeObjectArgs and AssessmentIncludeObjectOutput values.
+// You can construct a concrete instance of `AssessmentIncludeObjectInput` via:
+//
+//	AssessmentIncludeObjectArgs{...}
+type AssessmentIncludeObjectInput interface {
+	pulumi.Input
+
+	ToAssessmentIncludeObjectOutput() AssessmentIncludeObjectOutput
+	ToAssessmentIncludeObjectOutputWithContext(context.Context) AssessmentIncludeObjectOutput
+}
+
+type AssessmentIncludeObjectArgs struct {
+	// Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+	IsOmitExcludedTableFromReplication pulumi.BoolPtrInput `pulumi:"isOmitExcludedTableFromReplication"`
+	// Name of the object (regular expression is allowed)
+	Object pulumi.StringInput `pulumi:"object"`
+	// Owner of the object (regular expression is allowed)
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Schema of the object (regular expression is allowed)
+	Schema pulumi.StringPtrInput `pulumi:"schema"`
+	// Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (AssessmentIncludeObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssessmentIncludeObject)(nil)).Elem()
+}
+
+func (i AssessmentIncludeObjectArgs) ToAssessmentIncludeObjectOutput() AssessmentIncludeObjectOutput {
+	return i.ToAssessmentIncludeObjectOutputWithContext(context.Background())
+}
+
+func (i AssessmentIncludeObjectArgs) ToAssessmentIncludeObjectOutputWithContext(ctx context.Context) AssessmentIncludeObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssessmentIncludeObjectOutput)
+}
+
+// AssessmentIncludeObjectArrayInput is an input type that accepts AssessmentIncludeObjectArray and AssessmentIncludeObjectArrayOutput values.
+// You can construct a concrete instance of `AssessmentIncludeObjectArrayInput` via:
+//
+//	AssessmentIncludeObjectArray{ AssessmentIncludeObjectArgs{...} }
+type AssessmentIncludeObjectArrayInput interface {
+	pulumi.Input
+
+	ToAssessmentIncludeObjectArrayOutput() AssessmentIncludeObjectArrayOutput
+	ToAssessmentIncludeObjectArrayOutputWithContext(context.Context) AssessmentIncludeObjectArrayOutput
+}
+
+type AssessmentIncludeObjectArray []AssessmentIncludeObjectInput
+
+func (AssessmentIncludeObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssessmentIncludeObject)(nil)).Elem()
+}
+
+func (i AssessmentIncludeObjectArray) ToAssessmentIncludeObjectArrayOutput() AssessmentIncludeObjectArrayOutput {
+	return i.ToAssessmentIncludeObjectArrayOutputWithContext(context.Background())
+}
+
+func (i AssessmentIncludeObjectArray) ToAssessmentIncludeObjectArrayOutputWithContext(ctx context.Context) AssessmentIncludeObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssessmentIncludeObjectArrayOutput)
+}
+
+type AssessmentIncludeObjectOutput struct{ *pulumi.OutputState }
+
+func (AssessmentIncludeObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssessmentIncludeObject)(nil)).Elem()
+}
+
+func (o AssessmentIncludeObjectOutput) ToAssessmentIncludeObjectOutput() AssessmentIncludeObjectOutput {
+	return o
+}
+
+func (o AssessmentIncludeObjectOutput) ToAssessmentIncludeObjectOutputWithContext(ctx context.Context) AssessmentIncludeObjectOutput {
+	return o
+}
+
+// Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+func (o AssessmentIncludeObjectOutput) IsOmitExcludedTableFromReplication() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AssessmentIncludeObject) *bool { return v.IsOmitExcludedTableFromReplication }).(pulumi.BoolPtrOutput)
+}
+
+// Name of the object (regular expression is allowed)
+func (o AssessmentIncludeObjectOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v AssessmentIncludeObject) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// Owner of the object (regular expression is allowed)
+func (o AssessmentIncludeObjectOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssessmentIncludeObject) *string { return v.Owner }).(pulumi.StringPtrOutput)
+}
+
+// Schema of the object (regular expression is allowed)
+func (o AssessmentIncludeObjectOutput) Schema() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssessmentIncludeObject) *string { return v.Schema }).(pulumi.StringPtrOutput)
+}
+
+// Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+func (o AssessmentIncludeObjectOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssessmentIncludeObject) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type AssessmentIncludeObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (AssessmentIncludeObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssessmentIncludeObject)(nil)).Elem()
+}
+
+func (o AssessmentIncludeObjectArrayOutput) ToAssessmentIncludeObjectArrayOutput() AssessmentIncludeObjectArrayOutput {
+	return o
+}
+
+func (o AssessmentIncludeObjectArrayOutput) ToAssessmentIncludeObjectArrayOutputWithContext(ctx context.Context) AssessmentIncludeObjectArrayOutput {
+	return o
+}
+
+func (o AssessmentIncludeObjectArrayOutput) Index(i pulumi.IntInput) AssessmentIncludeObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AssessmentIncludeObject {
+		return vs[0].([]AssessmentIncludeObject)[vs[1].(int)]
+	}).(AssessmentIncludeObjectOutput)
+}
+
+type AssessmentSourceDatabaseConnection struct {
+	// (Updatable) The OCID of the resource being referenced.
+	Id string `pulumi:"id"`
+}
+
+// AssessmentSourceDatabaseConnectionInput is an input type that accepts AssessmentSourceDatabaseConnectionArgs and AssessmentSourceDatabaseConnectionOutput values.
+// You can construct a concrete instance of `AssessmentSourceDatabaseConnectionInput` via:
+//
+//	AssessmentSourceDatabaseConnectionArgs{...}
+type AssessmentSourceDatabaseConnectionInput interface {
+	pulumi.Input
+
+	ToAssessmentSourceDatabaseConnectionOutput() AssessmentSourceDatabaseConnectionOutput
+	ToAssessmentSourceDatabaseConnectionOutputWithContext(context.Context) AssessmentSourceDatabaseConnectionOutput
+}
+
+type AssessmentSourceDatabaseConnectionArgs struct {
+	// (Updatable) The OCID of the resource being referenced.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (AssessmentSourceDatabaseConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssessmentSourceDatabaseConnection)(nil)).Elem()
+}
+
+func (i AssessmentSourceDatabaseConnectionArgs) ToAssessmentSourceDatabaseConnectionOutput() AssessmentSourceDatabaseConnectionOutput {
+	return i.ToAssessmentSourceDatabaseConnectionOutputWithContext(context.Background())
+}
+
+func (i AssessmentSourceDatabaseConnectionArgs) ToAssessmentSourceDatabaseConnectionOutputWithContext(ctx context.Context) AssessmentSourceDatabaseConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssessmentSourceDatabaseConnectionOutput)
+}
+
+func (i AssessmentSourceDatabaseConnectionArgs) ToAssessmentSourceDatabaseConnectionPtrOutput() AssessmentSourceDatabaseConnectionPtrOutput {
+	return i.ToAssessmentSourceDatabaseConnectionPtrOutputWithContext(context.Background())
+}
+
+func (i AssessmentSourceDatabaseConnectionArgs) ToAssessmentSourceDatabaseConnectionPtrOutputWithContext(ctx context.Context) AssessmentSourceDatabaseConnectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssessmentSourceDatabaseConnectionOutput).ToAssessmentSourceDatabaseConnectionPtrOutputWithContext(ctx)
+}
+
+// AssessmentSourceDatabaseConnectionPtrInput is an input type that accepts AssessmentSourceDatabaseConnectionArgs, AssessmentSourceDatabaseConnectionPtr and AssessmentSourceDatabaseConnectionPtrOutput values.
+// You can construct a concrete instance of `AssessmentSourceDatabaseConnectionPtrInput` via:
+//
+//	        AssessmentSourceDatabaseConnectionArgs{...}
+//
+//	or:
+//
+//	        nil
+type AssessmentSourceDatabaseConnectionPtrInput interface {
+	pulumi.Input
+
+	ToAssessmentSourceDatabaseConnectionPtrOutput() AssessmentSourceDatabaseConnectionPtrOutput
+	ToAssessmentSourceDatabaseConnectionPtrOutputWithContext(context.Context) AssessmentSourceDatabaseConnectionPtrOutput
+}
+
+type assessmentSourceDatabaseConnectionPtrType AssessmentSourceDatabaseConnectionArgs
+
+func AssessmentSourceDatabaseConnectionPtr(v *AssessmentSourceDatabaseConnectionArgs) AssessmentSourceDatabaseConnectionPtrInput {
+	return (*assessmentSourceDatabaseConnectionPtrType)(v)
+}
+
+func (*assessmentSourceDatabaseConnectionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssessmentSourceDatabaseConnection)(nil)).Elem()
+}
+
+func (i *assessmentSourceDatabaseConnectionPtrType) ToAssessmentSourceDatabaseConnectionPtrOutput() AssessmentSourceDatabaseConnectionPtrOutput {
+	return i.ToAssessmentSourceDatabaseConnectionPtrOutputWithContext(context.Background())
+}
+
+func (i *assessmentSourceDatabaseConnectionPtrType) ToAssessmentSourceDatabaseConnectionPtrOutputWithContext(ctx context.Context) AssessmentSourceDatabaseConnectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssessmentSourceDatabaseConnectionPtrOutput)
+}
+
+type AssessmentSourceDatabaseConnectionOutput struct{ *pulumi.OutputState }
+
+func (AssessmentSourceDatabaseConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssessmentSourceDatabaseConnection)(nil)).Elem()
+}
+
+func (o AssessmentSourceDatabaseConnectionOutput) ToAssessmentSourceDatabaseConnectionOutput() AssessmentSourceDatabaseConnectionOutput {
+	return o
+}
+
+func (o AssessmentSourceDatabaseConnectionOutput) ToAssessmentSourceDatabaseConnectionOutputWithContext(ctx context.Context) AssessmentSourceDatabaseConnectionOutput {
+	return o
+}
+
+func (o AssessmentSourceDatabaseConnectionOutput) ToAssessmentSourceDatabaseConnectionPtrOutput() AssessmentSourceDatabaseConnectionPtrOutput {
+	return o.ToAssessmentSourceDatabaseConnectionPtrOutputWithContext(context.Background())
+}
+
+func (o AssessmentSourceDatabaseConnectionOutput) ToAssessmentSourceDatabaseConnectionPtrOutputWithContext(ctx context.Context) AssessmentSourceDatabaseConnectionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssessmentSourceDatabaseConnection) *AssessmentSourceDatabaseConnection {
+		return &v
+	}).(AssessmentSourceDatabaseConnectionPtrOutput)
+}
+
+// (Updatable) The OCID of the resource being referenced.
+func (o AssessmentSourceDatabaseConnectionOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v AssessmentSourceDatabaseConnection) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type AssessmentSourceDatabaseConnectionPtrOutput struct{ *pulumi.OutputState }
+
+func (AssessmentSourceDatabaseConnectionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssessmentSourceDatabaseConnection)(nil)).Elem()
+}
+
+func (o AssessmentSourceDatabaseConnectionPtrOutput) ToAssessmentSourceDatabaseConnectionPtrOutput() AssessmentSourceDatabaseConnectionPtrOutput {
+	return o
+}
+
+func (o AssessmentSourceDatabaseConnectionPtrOutput) ToAssessmentSourceDatabaseConnectionPtrOutputWithContext(ctx context.Context) AssessmentSourceDatabaseConnectionPtrOutput {
+	return o
+}
+
+func (o AssessmentSourceDatabaseConnectionPtrOutput) Elem() AssessmentSourceDatabaseConnectionOutput {
+	return o.ApplyT(func(v *AssessmentSourceDatabaseConnection) AssessmentSourceDatabaseConnection {
+		if v != nil {
+			return *v
+		}
+		var ret AssessmentSourceDatabaseConnection
+		return ret
+	}).(AssessmentSourceDatabaseConnectionOutput)
+}
+
+// (Updatable) The OCID of the resource being referenced.
+func (o AssessmentSourceDatabaseConnectionPtrOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssessmentSourceDatabaseConnection) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Id
+	}).(pulumi.StringPtrOutput)
+}
+
+type AssessmentTargetDatabaseConnection struct {
+	// (Updatable) Defines the type of connection. For example, ORACLE.
+	ConnectionType *string `pulumi:"connectionType"`
+	// (Updatable) The database version
+	DatabaseVersion *string `pulumi:"databaseVersion"`
+	// (Updatable) The OCID of the resource being referenced.
+	Id *string `pulumi:"id"`
+	// (Updatable) Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
+	TechnologySubType *string `pulumi:"technologySubType"`
+	// (Updatable) The technology type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TechnologyType *string `pulumi:"technologyType"`
+}
+
+// AssessmentTargetDatabaseConnectionInput is an input type that accepts AssessmentTargetDatabaseConnectionArgs and AssessmentTargetDatabaseConnectionOutput values.
+// You can construct a concrete instance of `AssessmentTargetDatabaseConnectionInput` via:
+//
+//	AssessmentTargetDatabaseConnectionArgs{...}
+type AssessmentTargetDatabaseConnectionInput interface {
+	pulumi.Input
+
+	ToAssessmentTargetDatabaseConnectionOutput() AssessmentTargetDatabaseConnectionOutput
+	ToAssessmentTargetDatabaseConnectionOutputWithContext(context.Context) AssessmentTargetDatabaseConnectionOutput
+}
+
+type AssessmentTargetDatabaseConnectionArgs struct {
+	// (Updatable) Defines the type of connection. For example, ORACLE.
+	ConnectionType pulumi.StringPtrInput `pulumi:"connectionType"`
+	// (Updatable) The database version
+	DatabaseVersion pulumi.StringPtrInput `pulumi:"databaseVersion"`
+	// (Updatable) The OCID of the resource being referenced.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// (Updatable) Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
+	TechnologySubType pulumi.StringPtrInput `pulumi:"technologySubType"`
+	// (Updatable) The technology type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TechnologyType pulumi.StringPtrInput `pulumi:"technologyType"`
+}
+
+func (AssessmentTargetDatabaseConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssessmentTargetDatabaseConnection)(nil)).Elem()
+}
+
+func (i AssessmentTargetDatabaseConnectionArgs) ToAssessmentTargetDatabaseConnectionOutput() AssessmentTargetDatabaseConnectionOutput {
+	return i.ToAssessmentTargetDatabaseConnectionOutputWithContext(context.Background())
+}
+
+func (i AssessmentTargetDatabaseConnectionArgs) ToAssessmentTargetDatabaseConnectionOutputWithContext(ctx context.Context) AssessmentTargetDatabaseConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssessmentTargetDatabaseConnectionOutput)
+}
+
+func (i AssessmentTargetDatabaseConnectionArgs) ToAssessmentTargetDatabaseConnectionPtrOutput() AssessmentTargetDatabaseConnectionPtrOutput {
+	return i.ToAssessmentTargetDatabaseConnectionPtrOutputWithContext(context.Background())
+}
+
+func (i AssessmentTargetDatabaseConnectionArgs) ToAssessmentTargetDatabaseConnectionPtrOutputWithContext(ctx context.Context) AssessmentTargetDatabaseConnectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssessmentTargetDatabaseConnectionOutput).ToAssessmentTargetDatabaseConnectionPtrOutputWithContext(ctx)
+}
+
+// AssessmentTargetDatabaseConnectionPtrInput is an input type that accepts AssessmentTargetDatabaseConnectionArgs, AssessmentTargetDatabaseConnectionPtr and AssessmentTargetDatabaseConnectionPtrOutput values.
+// You can construct a concrete instance of `AssessmentTargetDatabaseConnectionPtrInput` via:
+//
+//	        AssessmentTargetDatabaseConnectionArgs{...}
+//
+//	or:
+//
+//	        nil
+type AssessmentTargetDatabaseConnectionPtrInput interface {
+	pulumi.Input
+
+	ToAssessmentTargetDatabaseConnectionPtrOutput() AssessmentTargetDatabaseConnectionPtrOutput
+	ToAssessmentTargetDatabaseConnectionPtrOutputWithContext(context.Context) AssessmentTargetDatabaseConnectionPtrOutput
+}
+
+type assessmentTargetDatabaseConnectionPtrType AssessmentTargetDatabaseConnectionArgs
+
+func AssessmentTargetDatabaseConnectionPtr(v *AssessmentTargetDatabaseConnectionArgs) AssessmentTargetDatabaseConnectionPtrInput {
+	return (*assessmentTargetDatabaseConnectionPtrType)(v)
+}
+
+func (*assessmentTargetDatabaseConnectionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssessmentTargetDatabaseConnection)(nil)).Elem()
+}
+
+func (i *assessmentTargetDatabaseConnectionPtrType) ToAssessmentTargetDatabaseConnectionPtrOutput() AssessmentTargetDatabaseConnectionPtrOutput {
+	return i.ToAssessmentTargetDatabaseConnectionPtrOutputWithContext(context.Background())
+}
+
+func (i *assessmentTargetDatabaseConnectionPtrType) ToAssessmentTargetDatabaseConnectionPtrOutputWithContext(ctx context.Context) AssessmentTargetDatabaseConnectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssessmentTargetDatabaseConnectionPtrOutput)
+}
+
+type AssessmentTargetDatabaseConnectionOutput struct{ *pulumi.OutputState }
+
+func (AssessmentTargetDatabaseConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssessmentTargetDatabaseConnection)(nil)).Elem()
+}
+
+func (o AssessmentTargetDatabaseConnectionOutput) ToAssessmentTargetDatabaseConnectionOutput() AssessmentTargetDatabaseConnectionOutput {
+	return o
+}
+
+func (o AssessmentTargetDatabaseConnectionOutput) ToAssessmentTargetDatabaseConnectionOutputWithContext(ctx context.Context) AssessmentTargetDatabaseConnectionOutput {
+	return o
+}
+
+func (o AssessmentTargetDatabaseConnectionOutput) ToAssessmentTargetDatabaseConnectionPtrOutput() AssessmentTargetDatabaseConnectionPtrOutput {
+	return o.ToAssessmentTargetDatabaseConnectionPtrOutputWithContext(context.Background())
+}
+
+func (o AssessmentTargetDatabaseConnectionOutput) ToAssessmentTargetDatabaseConnectionPtrOutputWithContext(ctx context.Context) AssessmentTargetDatabaseConnectionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssessmentTargetDatabaseConnection) *AssessmentTargetDatabaseConnection {
+		return &v
+	}).(AssessmentTargetDatabaseConnectionPtrOutput)
+}
+
+// (Updatable) Defines the type of connection. For example, ORACLE.
+func (o AssessmentTargetDatabaseConnectionOutput) ConnectionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssessmentTargetDatabaseConnection) *string { return v.ConnectionType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The database version
+func (o AssessmentTargetDatabaseConnectionOutput) DatabaseVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssessmentTargetDatabaseConnection) *string { return v.DatabaseVersion }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the resource being referenced.
+func (o AssessmentTargetDatabaseConnectionOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssessmentTargetDatabaseConnection) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
+func (o AssessmentTargetDatabaseConnectionOutput) TechnologySubType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssessmentTargetDatabaseConnection) *string { return v.TechnologySubType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The technology type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o AssessmentTargetDatabaseConnectionOutput) TechnologyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssessmentTargetDatabaseConnection) *string { return v.TechnologyType }).(pulumi.StringPtrOutput)
+}
+
+type AssessmentTargetDatabaseConnectionPtrOutput struct{ *pulumi.OutputState }
+
+func (AssessmentTargetDatabaseConnectionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssessmentTargetDatabaseConnection)(nil)).Elem()
+}
+
+func (o AssessmentTargetDatabaseConnectionPtrOutput) ToAssessmentTargetDatabaseConnectionPtrOutput() AssessmentTargetDatabaseConnectionPtrOutput {
+	return o
+}
+
+func (o AssessmentTargetDatabaseConnectionPtrOutput) ToAssessmentTargetDatabaseConnectionPtrOutputWithContext(ctx context.Context) AssessmentTargetDatabaseConnectionPtrOutput {
+	return o
+}
+
+func (o AssessmentTargetDatabaseConnectionPtrOutput) Elem() AssessmentTargetDatabaseConnectionOutput {
+	return o.ApplyT(func(v *AssessmentTargetDatabaseConnection) AssessmentTargetDatabaseConnection {
+		if v != nil {
+			return *v
+		}
+		var ret AssessmentTargetDatabaseConnection
+		return ret
+	}).(AssessmentTargetDatabaseConnectionOutput)
+}
+
+// (Updatable) Defines the type of connection. For example, ORACLE.
+func (o AssessmentTargetDatabaseConnectionPtrOutput) ConnectionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssessmentTargetDatabaseConnection) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ConnectionType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The database version
+func (o AssessmentTargetDatabaseConnectionPtrOutput) DatabaseVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssessmentTargetDatabaseConnection) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DatabaseVersion
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the resource being referenced.
+func (o AssessmentTargetDatabaseConnectionPtrOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssessmentTargetDatabaseConnection) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Id
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
+func (o AssessmentTargetDatabaseConnectionPtrOutput) TechnologySubType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssessmentTargetDatabaseConnection) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TechnologySubType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The technology type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o AssessmentTargetDatabaseConnectionPtrOutput) TechnologyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssessmentTargetDatabaseConnection) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TechnologyType
+	}).(pulumi.StringPtrOutput)
+}
+
 type ConnectionAdditionalAttribute struct {
 	// (Updatable) The name of the property entry.
 	Name *string `pulumi:"name"`
@@ -214,6 +957,565 @@ func (o ConnectionIngressIpArrayOutput) Index(i pulumi.IntInput) ConnectionIngre
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConnectionIngressIp {
 		return vs[0].([]ConnectionIngressIp)[vs[1].(int)]
 	}).(ConnectionIngressIpOutput)
+}
+
+type JobAdvisorReportCheckItem struct {
+	// Fixing the issue.
+	Action *string `pulumi:"action"`
+	// Array of the column of the objects table.
+	Columns []JobAdvisorReportCheckItemColumn `pulumi:"columns"`
+	// Pre-Migration сheck display name.
+	DisplayName *string `pulumi:"displayName"`
+	// The path to the fixup script for this check.
+	FixupScriptLocation *string `pulumi:"fixupScriptLocation"`
+	// Impact of the issue on data migration.
+	Impact *string `pulumi:"impact"`
+	// If false, objects cannot be excluded from migration.
+	IsExclusionAllowed *bool `pulumi:"isExclusionAllowed"`
+	// (Updatable) User flag for advisor report check.
+	IsReviewed *bool `pulumi:"isReviewed"`
+	// Description of the issue.
+	Issue *string `pulumi:"issue"`
+	// Pre-Migration сheck id.
+	Key *string `pulumi:"key"`
+	// Metadata of object.
+	Metadatas []JobAdvisorReportCheckItemMetadata `pulumi:"metadatas"`
+	// Number of database objects to migrate.
+	ObjectCount *int `pulumi:"objectCount"`
+	// Pre-Migration advisor result.
+	ResultType *string `pulumi:"resultType"`
+}
+
+// JobAdvisorReportCheckItemInput is an input type that accepts JobAdvisorReportCheckItemArgs and JobAdvisorReportCheckItemOutput values.
+// You can construct a concrete instance of `JobAdvisorReportCheckItemInput` via:
+//
+//	JobAdvisorReportCheckItemArgs{...}
+type JobAdvisorReportCheckItemInput interface {
+	pulumi.Input
+
+	ToJobAdvisorReportCheckItemOutput() JobAdvisorReportCheckItemOutput
+	ToJobAdvisorReportCheckItemOutputWithContext(context.Context) JobAdvisorReportCheckItemOutput
+}
+
+type JobAdvisorReportCheckItemArgs struct {
+	// Fixing the issue.
+	Action pulumi.StringPtrInput `pulumi:"action"`
+	// Array of the column of the objects table.
+	Columns JobAdvisorReportCheckItemColumnArrayInput `pulumi:"columns"`
+	// Pre-Migration сheck display name.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// The path to the fixup script for this check.
+	FixupScriptLocation pulumi.StringPtrInput `pulumi:"fixupScriptLocation"`
+	// Impact of the issue on data migration.
+	Impact pulumi.StringPtrInput `pulumi:"impact"`
+	// If false, objects cannot be excluded from migration.
+	IsExclusionAllowed pulumi.BoolPtrInput `pulumi:"isExclusionAllowed"`
+	// (Updatable) User flag for advisor report check.
+	IsReviewed pulumi.BoolPtrInput `pulumi:"isReviewed"`
+	// Description of the issue.
+	Issue pulumi.StringPtrInput `pulumi:"issue"`
+	// Pre-Migration сheck id.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Metadata of object.
+	Metadatas JobAdvisorReportCheckItemMetadataArrayInput `pulumi:"metadatas"`
+	// Number of database objects to migrate.
+	ObjectCount pulumi.IntPtrInput `pulumi:"objectCount"`
+	// Pre-Migration advisor result.
+	ResultType pulumi.StringPtrInput `pulumi:"resultType"`
+}
+
+func (JobAdvisorReportCheckItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobAdvisorReportCheckItem)(nil)).Elem()
+}
+
+func (i JobAdvisorReportCheckItemArgs) ToJobAdvisorReportCheckItemOutput() JobAdvisorReportCheckItemOutput {
+	return i.ToJobAdvisorReportCheckItemOutputWithContext(context.Background())
+}
+
+func (i JobAdvisorReportCheckItemArgs) ToJobAdvisorReportCheckItemOutputWithContext(ctx context.Context) JobAdvisorReportCheckItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobAdvisorReportCheckItemOutput)
+}
+
+// JobAdvisorReportCheckItemArrayInput is an input type that accepts JobAdvisorReportCheckItemArray and JobAdvisorReportCheckItemArrayOutput values.
+// You can construct a concrete instance of `JobAdvisorReportCheckItemArrayInput` via:
+//
+//	JobAdvisorReportCheckItemArray{ JobAdvisorReportCheckItemArgs{...} }
+type JobAdvisorReportCheckItemArrayInput interface {
+	pulumi.Input
+
+	ToJobAdvisorReportCheckItemArrayOutput() JobAdvisorReportCheckItemArrayOutput
+	ToJobAdvisorReportCheckItemArrayOutputWithContext(context.Context) JobAdvisorReportCheckItemArrayOutput
+}
+
+type JobAdvisorReportCheckItemArray []JobAdvisorReportCheckItemInput
+
+func (JobAdvisorReportCheckItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobAdvisorReportCheckItem)(nil)).Elem()
+}
+
+func (i JobAdvisorReportCheckItemArray) ToJobAdvisorReportCheckItemArrayOutput() JobAdvisorReportCheckItemArrayOutput {
+	return i.ToJobAdvisorReportCheckItemArrayOutputWithContext(context.Background())
+}
+
+func (i JobAdvisorReportCheckItemArray) ToJobAdvisorReportCheckItemArrayOutputWithContext(ctx context.Context) JobAdvisorReportCheckItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobAdvisorReportCheckItemArrayOutput)
+}
+
+type JobAdvisorReportCheckItemOutput struct{ *pulumi.OutputState }
+
+func (JobAdvisorReportCheckItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobAdvisorReportCheckItem)(nil)).Elem()
+}
+
+func (o JobAdvisorReportCheckItemOutput) ToJobAdvisorReportCheckItemOutput() JobAdvisorReportCheckItemOutput {
+	return o
+}
+
+func (o JobAdvisorReportCheckItemOutput) ToJobAdvisorReportCheckItemOutputWithContext(ctx context.Context) JobAdvisorReportCheckItemOutput {
+	return o
+}
+
+// Fixing the issue.
+func (o JobAdvisorReportCheckItemOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckItem) *string { return v.Action }).(pulumi.StringPtrOutput)
+}
+
+// Array of the column of the objects table.
+func (o JobAdvisorReportCheckItemOutput) Columns() JobAdvisorReportCheckItemColumnArrayOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckItem) []JobAdvisorReportCheckItemColumn { return v.Columns }).(JobAdvisorReportCheckItemColumnArrayOutput)
+}
+
+// Pre-Migration сheck display name.
+func (o JobAdvisorReportCheckItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// The path to the fixup script for this check.
+func (o JobAdvisorReportCheckItemOutput) FixupScriptLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckItem) *string { return v.FixupScriptLocation }).(pulumi.StringPtrOutput)
+}
+
+// Impact of the issue on data migration.
+func (o JobAdvisorReportCheckItemOutput) Impact() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckItem) *string { return v.Impact }).(pulumi.StringPtrOutput)
+}
+
+// If false, objects cannot be excluded from migration.
+func (o JobAdvisorReportCheckItemOutput) IsExclusionAllowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckItem) *bool { return v.IsExclusionAllowed }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) User flag for advisor report check.
+func (o JobAdvisorReportCheckItemOutput) IsReviewed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckItem) *bool { return v.IsReviewed }).(pulumi.BoolPtrOutput)
+}
+
+// Description of the issue.
+func (o JobAdvisorReportCheckItemOutput) Issue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckItem) *string { return v.Issue }).(pulumi.StringPtrOutput)
+}
+
+// Pre-Migration сheck id.
+func (o JobAdvisorReportCheckItemOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckItem) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Metadata of object.
+func (o JobAdvisorReportCheckItemOutput) Metadatas() JobAdvisorReportCheckItemMetadataArrayOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckItem) []JobAdvisorReportCheckItemMetadata { return v.Metadatas }).(JobAdvisorReportCheckItemMetadataArrayOutput)
+}
+
+// Number of database objects to migrate.
+func (o JobAdvisorReportCheckItemOutput) ObjectCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckItem) *int { return v.ObjectCount }).(pulumi.IntPtrOutput)
+}
+
+// Pre-Migration advisor result.
+func (o JobAdvisorReportCheckItemOutput) ResultType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckItem) *string { return v.ResultType }).(pulumi.StringPtrOutput)
+}
+
+type JobAdvisorReportCheckItemArrayOutput struct{ *pulumi.OutputState }
+
+func (JobAdvisorReportCheckItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobAdvisorReportCheckItem)(nil)).Elem()
+}
+
+func (o JobAdvisorReportCheckItemArrayOutput) ToJobAdvisorReportCheckItemArrayOutput() JobAdvisorReportCheckItemArrayOutput {
+	return o
+}
+
+func (o JobAdvisorReportCheckItemArrayOutput) ToJobAdvisorReportCheckItemArrayOutputWithContext(ctx context.Context) JobAdvisorReportCheckItemArrayOutput {
+	return o
+}
+
+func (o JobAdvisorReportCheckItemArrayOutput) Index(i pulumi.IntInput) JobAdvisorReportCheckItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JobAdvisorReportCheckItem {
+		return vs[0].([]JobAdvisorReportCheckItem)[vs[1].(int)]
+	}).(JobAdvisorReportCheckItemOutput)
+}
+
+type JobAdvisorReportCheckItemColumn struct {
+	// Pre-Migration сheck display name.
+	DisplayName *string `pulumi:"displayName"`
+	// Pre-Migration сheck id.
+	Key *string `pulumi:"key"`
+}
+
+// JobAdvisorReportCheckItemColumnInput is an input type that accepts JobAdvisorReportCheckItemColumnArgs and JobAdvisorReportCheckItemColumnOutput values.
+// You can construct a concrete instance of `JobAdvisorReportCheckItemColumnInput` via:
+//
+//	JobAdvisorReportCheckItemColumnArgs{...}
+type JobAdvisorReportCheckItemColumnInput interface {
+	pulumi.Input
+
+	ToJobAdvisorReportCheckItemColumnOutput() JobAdvisorReportCheckItemColumnOutput
+	ToJobAdvisorReportCheckItemColumnOutputWithContext(context.Context) JobAdvisorReportCheckItemColumnOutput
+}
+
+type JobAdvisorReportCheckItemColumnArgs struct {
+	// Pre-Migration сheck display name.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// Pre-Migration сheck id.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+}
+
+func (JobAdvisorReportCheckItemColumnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobAdvisorReportCheckItemColumn)(nil)).Elem()
+}
+
+func (i JobAdvisorReportCheckItemColumnArgs) ToJobAdvisorReportCheckItemColumnOutput() JobAdvisorReportCheckItemColumnOutput {
+	return i.ToJobAdvisorReportCheckItemColumnOutputWithContext(context.Background())
+}
+
+func (i JobAdvisorReportCheckItemColumnArgs) ToJobAdvisorReportCheckItemColumnOutputWithContext(ctx context.Context) JobAdvisorReportCheckItemColumnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobAdvisorReportCheckItemColumnOutput)
+}
+
+// JobAdvisorReportCheckItemColumnArrayInput is an input type that accepts JobAdvisorReportCheckItemColumnArray and JobAdvisorReportCheckItemColumnArrayOutput values.
+// You can construct a concrete instance of `JobAdvisorReportCheckItemColumnArrayInput` via:
+//
+//	JobAdvisorReportCheckItemColumnArray{ JobAdvisorReportCheckItemColumnArgs{...} }
+type JobAdvisorReportCheckItemColumnArrayInput interface {
+	pulumi.Input
+
+	ToJobAdvisorReportCheckItemColumnArrayOutput() JobAdvisorReportCheckItemColumnArrayOutput
+	ToJobAdvisorReportCheckItemColumnArrayOutputWithContext(context.Context) JobAdvisorReportCheckItemColumnArrayOutput
+}
+
+type JobAdvisorReportCheckItemColumnArray []JobAdvisorReportCheckItemColumnInput
+
+func (JobAdvisorReportCheckItemColumnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobAdvisorReportCheckItemColumn)(nil)).Elem()
+}
+
+func (i JobAdvisorReportCheckItemColumnArray) ToJobAdvisorReportCheckItemColumnArrayOutput() JobAdvisorReportCheckItemColumnArrayOutput {
+	return i.ToJobAdvisorReportCheckItemColumnArrayOutputWithContext(context.Background())
+}
+
+func (i JobAdvisorReportCheckItemColumnArray) ToJobAdvisorReportCheckItemColumnArrayOutputWithContext(ctx context.Context) JobAdvisorReportCheckItemColumnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobAdvisorReportCheckItemColumnArrayOutput)
+}
+
+type JobAdvisorReportCheckItemColumnOutput struct{ *pulumi.OutputState }
+
+func (JobAdvisorReportCheckItemColumnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobAdvisorReportCheckItemColumn)(nil)).Elem()
+}
+
+func (o JobAdvisorReportCheckItemColumnOutput) ToJobAdvisorReportCheckItemColumnOutput() JobAdvisorReportCheckItemColumnOutput {
+	return o
+}
+
+func (o JobAdvisorReportCheckItemColumnOutput) ToJobAdvisorReportCheckItemColumnOutputWithContext(ctx context.Context) JobAdvisorReportCheckItemColumnOutput {
+	return o
+}
+
+// Pre-Migration сheck display name.
+func (o JobAdvisorReportCheckItemColumnOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckItemColumn) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// Pre-Migration сheck id.
+func (o JobAdvisorReportCheckItemColumnOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckItemColumn) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+type JobAdvisorReportCheckItemColumnArrayOutput struct{ *pulumi.OutputState }
+
+func (JobAdvisorReportCheckItemColumnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobAdvisorReportCheckItemColumn)(nil)).Elem()
+}
+
+func (o JobAdvisorReportCheckItemColumnArrayOutput) ToJobAdvisorReportCheckItemColumnArrayOutput() JobAdvisorReportCheckItemColumnArrayOutput {
+	return o
+}
+
+func (o JobAdvisorReportCheckItemColumnArrayOutput) ToJobAdvisorReportCheckItemColumnArrayOutputWithContext(ctx context.Context) JobAdvisorReportCheckItemColumnArrayOutput {
+	return o
+}
+
+func (o JobAdvisorReportCheckItemColumnArrayOutput) Index(i pulumi.IntInput) JobAdvisorReportCheckItemColumnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JobAdvisorReportCheckItemColumn {
+		return vs[0].([]JobAdvisorReportCheckItemColumn)[vs[1].(int)]
+	}).(JobAdvisorReportCheckItemColumnOutput)
+}
+
+type JobAdvisorReportCheckItemMetadata struct {
+	// The field that stores the name of the object.
+	ObjectNameColumn *string `pulumi:"objectNameColumn"`
+	// The field that stores the type of the object.
+	ObjectTypeColumn *string `pulumi:"objectTypeColumn"`
+	// The field that stores the fixed type of the object.
+	ObjectTypeFixed *string `pulumi:"objectTypeFixed"`
+	// The field that stores the owner of the object.
+	SchemaOwnerColumn *string `pulumi:"schemaOwnerColumn"`
+}
+
+// JobAdvisorReportCheckItemMetadataInput is an input type that accepts JobAdvisorReportCheckItemMetadataArgs and JobAdvisorReportCheckItemMetadataOutput values.
+// You can construct a concrete instance of `JobAdvisorReportCheckItemMetadataInput` via:
+//
+//	JobAdvisorReportCheckItemMetadataArgs{...}
+type JobAdvisorReportCheckItemMetadataInput interface {
+	pulumi.Input
+
+	ToJobAdvisorReportCheckItemMetadataOutput() JobAdvisorReportCheckItemMetadataOutput
+	ToJobAdvisorReportCheckItemMetadataOutputWithContext(context.Context) JobAdvisorReportCheckItemMetadataOutput
+}
+
+type JobAdvisorReportCheckItemMetadataArgs struct {
+	// The field that stores the name of the object.
+	ObjectNameColumn pulumi.StringPtrInput `pulumi:"objectNameColumn"`
+	// The field that stores the type of the object.
+	ObjectTypeColumn pulumi.StringPtrInput `pulumi:"objectTypeColumn"`
+	// The field that stores the fixed type of the object.
+	ObjectTypeFixed pulumi.StringPtrInput `pulumi:"objectTypeFixed"`
+	// The field that stores the owner of the object.
+	SchemaOwnerColumn pulumi.StringPtrInput `pulumi:"schemaOwnerColumn"`
+}
+
+func (JobAdvisorReportCheckItemMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobAdvisorReportCheckItemMetadata)(nil)).Elem()
+}
+
+func (i JobAdvisorReportCheckItemMetadataArgs) ToJobAdvisorReportCheckItemMetadataOutput() JobAdvisorReportCheckItemMetadataOutput {
+	return i.ToJobAdvisorReportCheckItemMetadataOutputWithContext(context.Background())
+}
+
+func (i JobAdvisorReportCheckItemMetadataArgs) ToJobAdvisorReportCheckItemMetadataOutputWithContext(ctx context.Context) JobAdvisorReportCheckItemMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobAdvisorReportCheckItemMetadataOutput)
+}
+
+// JobAdvisorReportCheckItemMetadataArrayInput is an input type that accepts JobAdvisorReportCheckItemMetadataArray and JobAdvisorReportCheckItemMetadataArrayOutput values.
+// You can construct a concrete instance of `JobAdvisorReportCheckItemMetadataArrayInput` via:
+//
+//	JobAdvisorReportCheckItemMetadataArray{ JobAdvisorReportCheckItemMetadataArgs{...} }
+type JobAdvisorReportCheckItemMetadataArrayInput interface {
+	pulumi.Input
+
+	ToJobAdvisorReportCheckItemMetadataArrayOutput() JobAdvisorReportCheckItemMetadataArrayOutput
+	ToJobAdvisorReportCheckItemMetadataArrayOutputWithContext(context.Context) JobAdvisorReportCheckItemMetadataArrayOutput
+}
+
+type JobAdvisorReportCheckItemMetadataArray []JobAdvisorReportCheckItemMetadataInput
+
+func (JobAdvisorReportCheckItemMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobAdvisorReportCheckItemMetadata)(nil)).Elem()
+}
+
+func (i JobAdvisorReportCheckItemMetadataArray) ToJobAdvisorReportCheckItemMetadataArrayOutput() JobAdvisorReportCheckItemMetadataArrayOutput {
+	return i.ToJobAdvisorReportCheckItemMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i JobAdvisorReportCheckItemMetadataArray) ToJobAdvisorReportCheckItemMetadataArrayOutputWithContext(ctx context.Context) JobAdvisorReportCheckItemMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobAdvisorReportCheckItemMetadataArrayOutput)
+}
+
+type JobAdvisorReportCheckItemMetadataOutput struct{ *pulumi.OutputState }
+
+func (JobAdvisorReportCheckItemMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobAdvisorReportCheckItemMetadata)(nil)).Elem()
+}
+
+func (o JobAdvisorReportCheckItemMetadataOutput) ToJobAdvisorReportCheckItemMetadataOutput() JobAdvisorReportCheckItemMetadataOutput {
+	return o
+}
+
+func (o JobAdvisorReportCheckItemMetadataOutput) ToJobAdvisorReportCheckItemMetadataOutputWithContext(ctx context.Context) JobAdvisorReportCheckItemMetadataOutput {
+	return o
+}
+
+// The field that stores the name of the object.
+func (o JobAdvisorReportCheckItemMetadataOutput) ObjectNameColumn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckItemMetadata) *string { return v.ObjectNameColumn }).(pulumi.StringPtrOutput)
+}
+
+// The field that stores the type of the object.
+func (o JobAdvisorReportCheckItemMetadataOutput) ObjectTypeColumn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckItemMetadata) *string { return v.ObjectTypeColumn }).(pulumi.StringPtrOutput)
+}
+
+// The field that stores the fixed type of the object.
+func (o JobAdvisorReportCheckItemMetadataOutput) ObjectTypeFixed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckItemMetadata) *string { return v.ObjectTypeFixed }).(pulumi.StringPtrOutput)
+}
+
+// The field that stores the owner of the object.
+func (o JobAdvisorReportCheckItemMetadataOutput) SchemaOwnerColumn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckItemMetadata) *string { return v.SchemaOwnerColumn }).(pulumi.StringPtrOutput)
+}
+
+type JobAdvisorReportCheckItemMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (JobAdvisorReportCheckItemMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobAdvisorReportCheckItemMetadata)(nil)).Elem()
+}
+
+func (o JobAdvisorReportCheckItemMetadataArrayOutput) ToJobAdvisorReportCheckItemMetadataArrayOutput() JobAdvisorReportCheckItemMetadataArrayOutput {
+	return o
+}
+
+func (o JobAdvisorReportCheckItemMetadataArrayOutput) ToJobAdvisorReportCheckItemMetadataArrayOutputWithContext(ctx context.Context) JobAdvisorReportCheckItemMetadataArrayOutput {
+	return o
+}
+
+func (o JobAdvisorReportCheckItemMetadataArrayOutput) Index(i pulumi.IntInput) JobAdvisorReportCheckItemMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JobAdvisorReportCheckItemMetadata {
+		return vs[0].([]JobAdvisorReportCheckItemMetadata)[vs[1].(int)]
+	}).(JobAdvisorReportCheckItemMetadataOutput)
+}
+
+type JobAdvisorReportCheckSummary struct {
+	// Number of BLOCKER results in the extended advisor report.
+	BlockerResultsTotalCount *int `pulumi:"blockerResultsTotalCount"`
+	// Number of FATAL results in the extended advisor report.
+	FatalResultsTotalCount *int `pulumi:"fatalResultsTotalCount"`
+	// Number of INFORMATIONAL results in the extended advisor report.
+	InformationalResultsTotalCount *int `pulumi:"informationalResultsTotalCount"`
+	// Number of PASS results in the extended advisor report.
+	PassResultsTotalCount *int `pulumi:"passResultsTotalCount"`
+	// Number of WARNING results in the extended advisor report.
+	WarningResultsTotalCount *int `pulumi:"warningResultsTotalCount"`
+}
+
+// JobAdvisorReportCheckSummaryInput is an input type that accepts JobAdvisorReportCheckSummaryArgs and JobAdvisorReportCheckSummaryOutput values.
+// You can construct a concrete instance of `JobAdvisorReportCheckSummaryInput` via:
+//
+//	JobAdvisorReportCheckSummaryArgs{...}
+type JobAdvisorReportCheckSummaryInput interface {
+	pulumi.Input
+
+	ToJobAdvisorReportCheckSummaryOutput() JobAdvisorReportCheckSummaryOutput
+	ToJobAdvisorReportCheckSummaryOutputWithContext(context.Context) JobAdvisorReportCheckSummaryOutput
+}
+
+type JobAdvisorReportCheckSummaryArgs struct {
+	// Number of BLOCKER results in the extended advisor report.
+	BlockerResultsTotalCount pulumi.IntPtrInput `pulumi:"blockerResultsTotalCount"`
+	// Number of FATAL results in the extended advisor report.
+	FatalResultsTotalCount pulumi.IntPtrInput `pulumi:"fatalResultsTotalCount"`
+	// Number of INFORMATIONAL results in the extended advisor report.
+	InformationalResultsTotalCount pulumi.IntPtrInput `pulumi:"informationalResultsTotalCount"`
+	// Number of PASS results in the extended advisor report.
+	PassResultsTotalCount pulumi.IntPtrInput `pulumi:"passResultsTotalCount"`
+	// Number of WARNING results in the extended advisor report.
+	WarningResultsTotalCount pulumi.IntPtrInput `pulumi:"warningResultsTotalCount"`
+}
+
+func (JobAdvisorReportCheckSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobAdvisorReportCheckSummary)(nil)).Elem()
+}
+
+func (i JobAdvisorReportCheckSummaryArgs) ToJobAdvisorReportCheckSummaryOutput() JobAdvisorReportCheckSummaryOutput {
+	return i.ToJobAdvisorReportCheckSummaryOutputWithContext(context.Background())
+}
+
+func (i JobAdvisorReportCheckSummaryArgs) ToJobAdvisorReportCheckSummaryOutputWithContext(ctx context.Context) JobAdvisorReportCheckSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobAdvisorReportCheckSummaryOutput)
+}
+
+// JobAdvisorReportCheckSummaryArrayInput is an input type that accepts JobAdvisorReportCheckSummaryArray and JobAdvisorReportCheckSummaryArrayOutput values.
+// You can construct a concrete instance of `JobAdvisorReportCheckSummaryArrayInput` via:
+//
+//	JobAdvisorReportCheckSummaryArray{ JobAdvisorReportCheckSummaryArgs{...} }
+type JobAdvisorReportCheckSummaryArrayInput interface {
+	pulumi.Input
+
+	ToJobAdvisorReportCheckSummaryArrayOutput() JobAdvisorReportCheckSummaryArrayOutput
+	ToJobAdvisorReportCheckSummaryArrayOutputWithContext(context.Context) JobAdvisorReportCheckSummaryArrayOutput
+}
+
+type JobAdvisorReportCheckSummaryArray []JobAdvisorReportCheckSummaryInput
+
+func (JobAdvisorReportCheckSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobAdvisorReportCheckSummary)(nil)).Elem()
+}
+
+func (i JobAdvisorReportCheckSummaryArray) ToJobAdvisorReportCheckSummaryArrayOutput() JobAdvisorReportCheckSummaryArrayOutput {
+	return i.ToJobAdvisorReportCheckSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i JobAdvisorReportCheckSummaryArray) ToJobAdvisorReportCheckSummaryArrayOutputWithContext(ctx context.Context) JobAdvisorReportCheckSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobAdvisorReportCheckSummaryArrayOutput)
+}
+
+type JobAdvisorReportCheckSummaryOutput struct{ *pulumi.OutputState }
+
+func (JobAdvisorReportCheckSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobAdvisorReportCheckSummary)(nil)).Elem()
+}
+
+func (o JobAdvisorReportCheckSummaryOutput) ToJobAdvisorReportCheckSummaryOutput() JobAdvisorReportCheckSummaryOutput {
+	return o
+}
+
+func (o JobAdvisorReportCheckSummaryOutput) ToJobAdvisorReportCheckSummaryOutputWithContext(ctx context.Context) JobAdvisorReportCheckSummaryOutput {
+	return o
+}
+
+// Number of BLOCKER results in the extended advisor report.
+func (o JobAdvisorReportCheckSummaryOutput) BlockerResultsTotalCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckSummary) *int { return v.BlockerResultsTotalCount }).(pulumi.IntPtrOutput)
+}
+
+// Number of FATAL results in the extended advisor report.
+func (o JobAdvisorReportCheckSummaryOutput) FatalResultsTotalCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckSummary) *int { return v.FatalResultsTotalCount }).(pulumi.IntPtrOutput)
+}
+
+// Number of INFORMATIONAL results in the extended advisor report.
+func (o JobAdvisorReportCheckSummaryOutput) InformationalResultsTotalCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckSummary) *int { return v.InformationalResultsTotalCount }).(pulumi.IntPtrOutput)
+}
+
+// Number of PASS results in the extended advisor report.
+func (o JobAdvisorReportCheckSummaryOutput) PassResultsTotalCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckSummary) *int { return v.PassResultsTotalCount }).(pulumi.IntPtrOutput)
+}
+
+// Number of WARNING results in the extended advisor report.
+func (o JobAdvisorReportCheckSummaryOutput) WarningResultsTotalCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v JobAdvisorReportCheckSummary) *int { return v.WarningResultsTotalCount }).(pulumi.IntPtrOutput)
+}
+
+type JobAdvisorReportCheckSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (JobAdvisorReportCheckSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobAdvisorReportCheckSummary)(nil)).Elem()
+}
+
+func (o JobAdvisorReportCheckSummaryArrayOutput) ToJobAdvisorReportCheckSummaryArrayOutput() JobAdvisorReportCheckSummaryArrayOutput {
+	return o
+}
+
+func (o JobAdvisorReportCheckSummaryArrayOutput) ToJobAdvisorReportCheckSummaryArrayOutputWithContext(ctx context.Context) JobAdvisorReportCheckSummaryArrayOutput {
+	return o
+}
+
+func (o JobAdvisorReportCheckSummaryArrayOutput) Index(i pulumi.IntInput) JobAdvisorReportCheckSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JobAdvisorReportCheckSummary {
+		return vs[0].([]JobAdvisorReportCheckSummary)[vs[1].(int)]
+	}).(JobAdvisorReportCheckSummaryOutput)
 }
 
 type JobCollectTracesData struct {
@@ -633,6 +1935,8 @@ type JobProgressPhase struct {
 	EditableParameterFiles []string `pulumi:"editableParameterFiles"`
 	// Summary of phase status results.
 	Extracts []JobProgressPhaseExtract `pulumi:"extracts"`
+	// Job Phase group display name e.g. 'Step 1: Migration'
+	GroupDisplayName *string `pulumi:"groupDisplayName"`
 	// True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
 	IsAdvisorReportAvailable *bool `pulumi:"isAdvisorReportAvailable"`
 	// This is returned as true if the current phase can be suspended.
@@ -669,6 +1973,8 @@ type JobProgressPhaseArgs struct {
 	EditableParameterFiles pulumi.StringArrayInput `pulumi:"editableParameterFiles"`
 	// Summary of phase status results.
 	Extracts JobProgressPhaseExtractArrayInput `pulumi:"extracts"`
+	// Job Phase group display name e.g. 'Step 1: Migration'
+	GroupDisplayName pulumi.StringPtrInput `pulumi:"groupDisplayName"`
 	// True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
 	IsAdvisorReportAvailable pulumi.BoolPtrInput `pulumi:"isAdvisorReportAvailable"`
 	// This is returned as true if the current phase can be suspended.
@@ -754,6 +2060,11 @@ func (o JobProgressPhaseOutput) EditableParameterFiles() pulumi.StringArrayOutpu
 // Summary of phase status results.
 func (o JobProgressPhaseOutput) Extracts() JobProgressPhaseExtractArrayOutput {
 	return o.ApplyT(func(v JobProgressPhase) []JobProgressPhaseExtract { return v.Extracts }).(JobProgressPhaseExtractArrayOutput)
+}
+
+// Job Phase group display name e.g. 'Step 1: Migration'
+func (o JobProgressPhaseOutput) GroupDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobProgressPhase) *string { return v.GroupDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
@@ -5040,6 +6351,7786 @@ func (o MigrationInitialLoadSettingsTablespaceDetailsPtrOutput) TargetType() pul
 	}).(pulumi.StringPtrOutput)
 }
 
+type GetAssessmentAssessorActionType struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// Defines if the action is enabled or disabled.
+	IsDisabled bool `pulumi:"isDisabled"`
+	// The Assessor Name.
+	Name string `pulumi:"name"`
+	// The OCID of the resource being referenced.
+	ResourceId string `pulumi:"resourceId"`
+	// The Assessor Action Title.
+	Title string `pulumi:"title"`
+	// User defined properties
+	UserDefinedProperties []GetAssessmentAssessorActionUserDefinedProperty `pulumi:"userDefinedProperties"`
+}
+
+// GetAssessmentAssessorActionTypeInput is an input type that accepts GetAssessmentAssessorActionTypeArgs and GetAssessmentAssessorActionTypeOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorActionTypeInput` via:
+//
+//	GetAssessmentAssessorActionTypeArgs{...}
+type GetAssessmentAssessorActionTypeInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorActionTypeOutput() GetAssessmentAssessorActionTypeOutput
+	ToGetAssessmentAssessorActionTypeOutputWithContext(context.Context) GetAssessmentAssessorActionTypeOutput
+}
+
+type GetAssessmentAssessorActionTypeArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Defines if the action is enabled or disabled.
+	IsDisabled pulumi.BoolInput `pulumi:"isDisabled"`
+	// The Assessor Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The OCID of the resource being referenced.
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// The Assessor Action Title.
+	Title pulumi.StringInput `pulumi:"title"`
+	// User defined properties
+	UserDefinedProperties GetAssessmentAssessorActionUserDefinedPropertyArrayInput `pulumi:"userDefinedProperties"`
+}
+
+func (GetAssessmentAssessorActionTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorActionType)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorActionTypeArgs) ToGetAssessmentAssessorActionTypeOutput() GetAssessmentAssessorActionTypeOutput {
+	return i.ToGetAssessmentAssessorActionTypeOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorActionTypeArgs) ToGetAssessmentAssessorActionTypeOutputWithContext(ctx context.Context) GetAssessmentAssessorActionTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorActionTypeOutput)
+}
+
+// GetAssessmentAssessorActionTypeArrayInput is an input type that accepts GetAssessmentAssessorActionTypeArray and GetAssessmentAssessorActionTypeArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorActionTypeArrayInput` via:
+//
+//	GetAssessmentAssessorActionTypeArray{ GetAssessmentAssessorActionTypeArgs{...} }
+type GetAssessmentAssessorActionTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorActionTypeArrayOutput() GetAssessmentAssessorActionTypeArrayOutput
+	ToGetAssessmentAssessorActionTypeArrayOutputWithContext(context.Context) GetAssessmentAssessorActionTypeArrayOutput
+}
+
+type GetAssessmentAssessorActionTypeArray []GetAssessmentAssessorActionTypeInput
+
+func (GetAssessmentAssessorActionTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorActionType)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorActionTypeArray) ToGetAssessmentAssessorActionTypeArrayOutput() GetAssessmentAssessorActionTypeArrayOutput {
+	return i.ToGetAssessmentAssessorActionTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorActionTypeArray) ToGetAssessmentAssessorActionTypeArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorActionTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorActionTypeArrayOutput)
+}
+
+type GetAssessmentAssessorActionTypeOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorActionTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorActionType)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorActionTypeOutput) ToGetAssessmentAssessorActionTypeOutput() GetAssessmentAssessorActionTypeOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorActionTypeOutput) ToGetAssessmentAssessorActionTypeOutputWithContext(ctx context.Context) GetAssessmentAssessorActionTypeOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorActionTypeOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionType) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorActionTypeOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionType) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Defines if the action is enabled or disabled.
+func (o GetAssessmentAssessorActionTypeOutput) IsDisabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionType) bool { return v.IsDisabled }).(pulumi.BoolOutput)
+}
+
+// The Assessor Name.
+func (o GetAssessmentAssessorActionTypeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionType) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o GetAssessmentAssessorActionTypeOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionType) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+// The Assessor Action Title.
+func (o GetAssessmentAssessorActionTypeOutput) Title() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionType) string { return v.Title }).(pulumi.StringOutput)
+}
+
+// User defined properties
+func (o GetAssessmentAssessorActionTypeOutput) UserDefinedProperties() GetAssessmentAssessorActionUserDefinedPropertyArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionType) []GetAssessmentAssessorActionUserDefinedProperty {
+		return v.UserDefinedProperties
+	}).(GetAssessmentAssessorActionUserDefinedPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorActionTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorActionTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorActionType)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorActionTypeArrayOutput) ToGetAssessmentAssessorActionTypeArrayOutput() GetAssessmentAssessorActionTypeArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorActionTypeArrayOutput) ToGetAssessmentAssessorActionTypeArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorActionTypeArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorActionTypeArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorActionTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorActionType {
+		return vs[0].([]GetAssessmentAssessorActionType)[vs[1].(int)]
+	}).(GetAssessmentAssessorActionTypeOutput)
+}
+
+type GetAssessmentAssessorActionUserDefinedProperty struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// The Help link text.
+	HelpLinkText string `pulumi:"helpLinkText"`
+	// The Help URL.
+	HelpLinkUrl string `pulumi:"helpLinkUrl"`
+	// Array of user defined properties.
+	Properties []GetAssessmentAssessorActionUserDefinedPropertyProperty `pulumi:"properties"`
+}
+
+// GetAssessmentAssessorActionUserDefinedPropertyInput is an input type that accepts GetAssessmentAssessorActionUserDefinedPropertyArgs and GetAssessmentAssessorActionUserDefinedPropertyOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorActionUserDefinedPropertyInput` via:
+//
+//	GetAssessmentAssessorActionUserDefinedPropertyArgs{...}
+type GetAssessmentAssessorActionUserDefinedPropertyInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorActionUserDefinedPropertyOutput() GetAssessmentAssessorActionUserDefinedPropertyOutput
+	ToGetAssessmentAssessorActionUserDefinedPropertyOutputWithContext(context.Context) GetAssessmentAssessorActionUserDefinedPropertyOutput
+}
+
+type GetAssessmentAssessorActionUserDefinedPropertyArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The Help link text.
+	HelpLinkText pulumi.StringInput `pulumi:"helpLinkText"`
+	// The Help URL.
+	HelpLinkUrl pulumi.StringInput `pulumi:"helpLinkUrl"`
+	// Array of user defined properties.
+	Properties GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayInput `pulumi:"properties"`
+}
+
+func (GetAssessmentAssessorActionUserDefinedPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorActionUserDefinedPropertyArgs) ToGetAssessmentAssessorActionUserDefinedPropertyOutput() GetAssessmentAssessorActionUserDefinedPropertyOutput {
+	return i.ToGetAssessmentAssessorActionUserDefinedPropertyOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorActionUserDefinedPropertyArgs) ToGetAssessmentAssessorActionUserDefinedPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorActionUserDefinedPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorActionUserDefinedPropertyOutput)
+}
+
+// GetAssessmentAssessorActionUserDefinedPropertyArrayInput is an input type that accepts GetAssessmentAssessorActionUserDefinedPropertyArray and GetAssessmentAssessorActionUserDefinedPropertyArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorActionUserDefinedPropertyArrayInput` via:
+//
+//	GetAssessmentAssessorActionUserDefinedPropertyArray{ GetAssessmentAssessorActionUserDefinedPropertyArgs{...} }
+type GetAssessmentAssessorActionUserDefinedPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorActionUserDefinedPropertyArrayOutput() GetAssessmentAssessorActionUserDefinedPropertyArrayOutput
+	ToGetAssessmentAssessorActionUserDefinedPropertyArrayOutputWithContext(context.Context) GetAssessmentAssessorActionUserDefinedPropertyArrayOutput
+}
+
+type GetAssessmentAssessorActionUserDefinedPropertyArray []GetAssessmentAssessorActionUserDefinedPropertyInput
+
+func (GetAssessmentAssessorActionUserDefinedPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorActionUserDefinedPropertyArray) ToGetAssessmentAssessorActionUserDefinedPropertyArrayOutput() GetAssessmentAssessorActionUserDefinedPropertyArrayOutput {
+	return i.ToGetAssessmentAssessorActionUserDefinedPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorActionUserDefinedPropertyArray) ToGetAssessmentAssessorActionUserDefinedPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorActionUserDefinedPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorActionUserDefinedPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorActionUserDefinedPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorActionUserDefinedPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorActionUserDefinedPropertyOutput) ToGetAssessmentAssessorActionUserDefinedPropertyOutput() GetAssessmentAssessorActionUserDefinedPropertyOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorActionUserDefinedPropertyOutput) ToGetAssessmentAssessorActionUserDefinedPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorActionUserDefinedPropertyOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorActionUserDefinedPropertyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionUserDefinedProperty) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorActionUserDefinedPropertyOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionUserDefinedProperty) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The Help link text.
+func (o GetAssessmentAssessorActionUserDefinedPropertyOutput) HelpLinkText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionUserDefinedProperty) string { return v.HelpLinkText }).(pulumi.StringOutput)
+}
+
+// The Help URL.
+func (o GetAssessmentAssessorActionUserDefinedPropertyOutput) HelpLinkUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionUserDefinedProperty) string { return v.HelpLinkUrl }).(pulumi.StringOutput)
+}
+
+// Array of user defined properties.
+func (o GetAssessmentAssessorActionUserDefinedPropertyOutput) Properties() GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionUserDefinedProperty) []GetAssessmentAssessorActionUserDefinedPropertyProperty {
+		return v.Properties
+	}).(GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorActionUserDefinedPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorActionUserDefinedPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorActionUserDefinedPropertyArrayOutput) ToGetAssessmentAssessorActionUserDefinedPropertyArrayOutput() GetAssessmentAssessorActionUserDefinedPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorActionUserDefinedPropertyArrayOutput) ToGetAssessmentAssessorActionUserDefinedPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorActionUserDefinedPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorActionUserDefinedPropertyArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorActionUserDefinedPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorActionUserDefinedProperty {
+		return vs[0].([]GetAssessmentAssessorActionUserDefinedProperty)[vs[1].(int)]
+	}).(GetAssessmentAssessorActionUserDefinedPropertyOutput)
+}
+
+type GetAssessmentAssessorActionUserDefinedPropertyProperty struct {
+	// The default value of the property.
+	DefaultValue string `pulumi:"defaultValue"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// True if the property is required, false otherwise
+	IsRequired bool `pulumi:"isRequired"`
+	// Maximum length of the text
+	MaxLength int `pulumi:"maxLength"`
+	// Minimum length of the text
+	MinLength int `pulumi:"minLength"`
+	// The Assessor Name.
+	Name string `pulumi:"name"`
+	// User defined property options.
+	Options []GetAssessmentAssessorActionUserDefinedPropertyPropertyOption `pulumi:"options"`
+	// The type of the user defined property.
+	Type string `pulumi:"type"`
+	// The value of the property.
+	Value string `pulumi:"value"`
+}
+
+// GetAssessmentAssessorActionUserDefinedPropertyPropertyInput is an input type that accepts GetAssessmentAssessorActionUserDefinedPropertyPropertyArgs and GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorActionUserDefinedPropertyPropertyInput` via:
+//
+//	GetAssessmentAssessorActionUserDefinedPropertyPropertyArgs{...}
+type GetAssessmentAssessorActionUserDefinedPropertyPropertyInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOutput() GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput
+	ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOutputWithContext(context.Context) GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput
+}
+
+type GetAssessmentAssessorActionUserDefinedPropertyPropertyArgs struct {
+	// The default value of the property.
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// True if the property is required, false otherwise
+	IsRequired pulumi.BoolInput `pulumi:"isRequired"`
+	// Maximum length of the text
+	MaxLength pulumi.IntInput `pulumi:"maxLength"`
+	// Minimum length of the text
+	MinLength pulumi.IntInput `pulumi:"minLength"`
+	// The Assessor Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// User defined property options.
+	Options GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayInput `pulumi:"options"`
+	// The type of the user defined property.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value of the property.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAssessmentAssessorActionUserDefinedPropertyPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorActionUserDefinedPropertyPropertyArgs) ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOutput() GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput {
+	return i.ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorActionUserDefinedPropertyPropertyArgs) ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput)
+}
+
+// GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayInput is an input type that accepts GetAssessmentAssessorActionUserDefinedPropertyPropertyArray and GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayInput` via:
+//
+//	GetAssessmentAssessorActionUserDefinedPropertyPropertyArray{ GetAssessmentAssessorActionUserDefinedPropertyPropertyArgs{...} }
+type GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput() GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput
+	ToGetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutputWithContext(context.Context) GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput
+}
+
+type GetAssessmentAssessorActionUserDefinedPropertyPropertyArray []GetAssessmentAssessorActionUserDefinedPropertyPropertyInput
+
+func (GetAssessmentAssessorActionUserDefinedPropertyPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorActionUserDefinedPropertyPropertyArray) ToGetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput() GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput {
+	return i.ToGetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorActionUserDefinedPropertyPropertyArray) ToGetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput) ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOutput() GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput) ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput {
+	return o
+}
+
+// The default value of the property.
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionUserDefinedPropertyProperty) string { return v.DefaultValue }).(pulumi.StringOutput)
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionUserDefinedPropertyProperty) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionUserDefinedPropertyProperty) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// True if the property is required, false otherwise
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput) IsRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionUserDefinedPropertyProperty) bool { return v.IsRequired }).(pulumi.BoolOutput)
+}
+
+// Maximum length of the text
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput) MaxLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionUserDefinedPropertyProperty) int { return v.MaxLength }).(pulumi.IntOutput)
+}
+
+// Minimum length of the text
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput) MinLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionUserDefinedPropertyProperty) int { return v.MinLength }).(pulumi.IntOutput)
+}
+
+// The Assessor Name.
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionUserDefinedPropertyProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// User defined property options.
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput) Options() GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionUserDefinedPropertyProperty) []GetAssessmentAssessorActionUserDefinedPropertyPropertyOption {
+		return v.Options
+	}).(GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput)
+}
+
+// The type of the user defined property.
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionUserDefinedPropertyProperty) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The value of the property.
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionUserDefinedPropertyProperty) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput) ToGetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput() GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput) ToGetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorActionUserDefinedPropertyProperty {
+		return vs[0].([]GetAssessmentAssessorActionUserDefinedPropertyProperty)[vs[1].(int)]
+	}).(GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput)
+}
+
+type GetAssessmentAssessorActionUserDefinedPropertyPropertyOption struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// The value of the property.
+	Value string `pulumi:"value"`
+}
+
+// GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionInput is an input type that accepts GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArgs and GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionInput` via:
+//
+//	GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArgs{...}
+type GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput() GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput
+	ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutputWithContext(context.Context) GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput
+}
+
+type GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The value of the property.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArgs) ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput() GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput {
+	return i.ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArgs) ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutputWithContext(ctx context.Context) GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput)
+}
+
+// GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayInput is an input type that accepts GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArray and GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayInput` via:
+//
+//	GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArray{ GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArgs{...} }
+type GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput() GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput
+	ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(context.Context) GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput
+}
+
+type GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArray []GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionInput
+
+func (GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArray) ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput() GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return i.ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArray) ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput)
+}
+
+type GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput) ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput() GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput) ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutputWithContext(ctx context.Context) GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionUserDefinedPropertyPropertyOption) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionUserDefinedPropertyPropertyOption) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The value of the property.
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorActionUserDefinedPropertyPropertyOption) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput) ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput() GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput) ToGetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorActionUserDefinedPropertyPropertyOption {
+		return vs[0].([]GetAssessmentAssessorActionUserDefinedPropertyPropertyOption)[vs[1].(int)]
+	}).(GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput)
+}
+
+type GetAssessmentAssessorAssessorGroup struct {
+	// Assessor group actions.
+	Actions []GetAssessmentAssessorAssessorGroupAction `pulumi:"actions"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// The Assessor Name.
+	Name string `pulumi:"name"`
+}
+
+// GetAssessmentAssessorAssessorGroupInput is an input type that accepts GetAssessmentAssessorAssessorGroupArgs and GetAssessmentAssessorAssessorGroupOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorAssessorGroupInput` via:
+//
+//	GetAssessmentAssessorAssessorGroupArgs{...}
+type GetAssessmentAssessorAssessorGroupInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorAssessorGroupOutput() GetAssessmentAssessorAssessorGroupOutput
+	ToGetAssessmentAssessorAssessorGroupOutputWithContext(context.Context) GetAssessmentAssessorAssessorGroupOutput
+}
+
+type GetAssessmentAssessorAssessorGroupArgs struct {
+	// Assessor group actions.
+	Actions GetAssessmentAssessorAssessorGroupActionArrayInput `pulumi:"actions"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The Assessor Name.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetAssessmentAssessorAssessorGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorAssessorGroup)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorAssessorGroupArgs) ToGetAssessmentAssessorAssessorGroupOutput() GetAssessmentAssessorAssessorGroupOutput {
+	return i.ToGetAssessmentAssessorAssessorGroupOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorAssessorGroupArgs) ToGetAssessmentAssessorAssessorGroupOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorAssessorGroupOutput)
+}
+
+// GetAssessmentAssessorAssessorGroupArrayInput is an input type that accepts GetAssessmentAssessorAssessorGroupArray and GetAssessmentAssessorAssessorGroupArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorAssessorGroupArrayInput` via:
+//
+//	GetAssessmentAssessorAssessorGroupArray{ GetAssessmentAssessorAssessorGroupArgs{...} }
+type GetAssessmentAssessorAssessorGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorAssessorGroupArrayOutput() GetAssessmentAssessorAssessorGroupArrayOutput
+	ToGetAssessmentAssessorAssessorGroupArrayOutputWithContext(context.Context) GetAssessmentAssessorAssessorGroupArrayOutput
+}
+
+type GetAssessmentAssessorAssessorGroupArray []GetAssessmentAssessorAssessorGroupInput
+
+func (GetAssessmentAssessorAssessorGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorAssessorGroup)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorAssessorGroupArray) ToGetAssessmentAssessorAssessorGroupArrayOutput() GetAssessmentAssessorAssessorGroupArrayOutput {
+	return i.ToGetAssessmentAssessorAssessorGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorAssessorGroupArray) ToGetAssessmentAssessorAssessorGroupArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorAssessorGroupArrayOutput)
+}
+
+type GetAssessmentAssessorAssessorGroupOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorAssessorGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorAssessorGroup)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorAssessorGroupOutput) ToGetAssessmentAssessorAssessorGroupOutput() GetAssessmentAssessorAssessorGroupOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorAssessorGroupOutput) ToGetAssessmentAssessorAssessorGroupOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupOutput {
+	return o
+}
+
+// Assessor group actions.
+func (o GetAssessmentAssessorAssessorGroupOutput) Actions() GetAssessmentAssessorAssessorGroupActionArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroup) []GetAssessmentAssessorAssessorGroupAction {
+		return v.Actions
+	}).(GetAssessmentAssessorAssessorGroupActionArrayOutput)
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorAssessorGroupOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroup) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorAssessorGroupOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroup) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The Assessor Name.
+func (o GetAssessmentAssessorAssessorGroupOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroup) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorAssessorGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorAssessorGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorAssessorGroup)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorAssessorGroupArrayOutput) ToGetAssessmentAssessorAssessorGroupArrayOutput() GetAssessmentAssessorAssessorGroupArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorAssessorGroupArrayOutput) ToGetAssessmentAssessorAssessorGroupArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorAssessorGroupArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorAssessorGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorAssessorGroup {
+		return vs[0].([]GetAssessmentAssessorAssessorGroup)[vs[1].(int)]
+	}).(GetAssessmentAssessorAssessorGroupOutput)
+}
+
+type GetAssessmentAssessorAssessorGroupAction struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// Defines if the action is enabled or disabled.
+	IsDisabled bool `pulumi:"isDisabled"`
+	// The Assessor Name.
+	Name string `pulumi:"name"`
+	// The OCID of the resource being referenced.
+	ResourceId string `pulumi:"resourceId"`
+	// The Assessor Action Title.
+	Title string `pulumi:"title"`
+	// User defined properties
+	UserDefinedProperties []GetAssessmentAssessorAssessorGroupActionUserDefinedProperty `pulumi:"userDefinedProperties"`
+}
+
+// GetAssessmentAssessorAssessorGroupActionInput is an input type that accepts GetAssessmentAssessorAssessorGroupActionArgs and GetAssessmentAssessorAssessorGroupActionOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorAssessorGroupActionInput` via:
+//
+//	GetAssessmentAssessorAssessorGroupActionArgs{...}
+type GetAssessmentAssessorAssessorGroupActionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorAssessorGroupActionOutput() GetAssessmentAssessorAssessorGroupActionOutput
+	ToGetAssessmentAssessorAssessorGroupActionOutputWithContext(context.Context) GetAssessmentAssessorAssessorGroupActionOutput
+}
+
+type GetAssessmentAssessorAssessorGroupActionArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Defines if the action is enabled or disabled.
+	IsDisabled pulumi.BoolInput `pulumi:"isDisabled"`
+	// The Assessor Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The OCID of the resource being referenced.
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// The Assessor Action Title.
+	Title pulumi.StringInput `pulumi:"title"`
+	// User defined properties
+	UserDefinedProperties GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayInput `pulumi:"userDefinedProperties"`
+}
+
+func (GetAssessmentAssessorAssessorGroupActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorAssessorGroupAction)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorAssessorGroupActionArgs) ToGetAssessmentAssessorAssessorGroupActionOutput() GetAssessmentAssessorAssessorGroupActionOutput {
+	return i.ToGetAssessmentAssessorAssessorGroupActionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorAssessorGroupActionArgs) ToGetAssessmentAssessorAssessorGroupActionOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorAssessorGroupActionOutput)
+}
+
+// GetAssessmentAssessorAssessorGroupActionArrayInput is an input type that accepts GetAssessmentAssessorAssessorGroupActionArray and GetAssessmentAssessorAssessorGroupActionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorAssessorGroupActionArrayInput` via:
+//
+//	GetAssessmentAssessorAssessorGroupActionArray{ GetAssessmentAssessorAssessorGroupActionArgs{...} }
+type GetAssessmentAssessorAssessorGroupActionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorAssessorGroupActionArrayOutput() GetAssessmentAssessorAssessorGroupActionArrayOutput
+	ToGetAssessmentAssessorAssessorGroupActionArrayOutputWithContext(context.Context) GetAssessmentAssessorAssessorGroupActionArrayOutput
+}
+
+type GetAssessmentAssessorAssessorGroupActionArray []GetAssessmentAssessorAssessorGroupActionInput
+
+func (GetAssessmentAssessorAssessorGroupActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorAssessorGroupAction)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorAssessorGroupActionArray) ToGetAssessmentAssessorAssessorGroupActionArrayOutput() GetAssessmentAssessorAssessorGroupActionArrayOutput {
+	return i.ToGetAssessmentAssessorAssessorGroupActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorAssessorGroupActionArray) ToGetAssessmentAssessorAssessorGroupActionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorAssessorGroupActionArrayOutput)
+}
+
+type GetAssessmentAssessorAssessorGroupActionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorAssessorGroupActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorAssessorGroupAction)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionOutput) ToGetAssessmentAssessorAssessorGroupActionOutput() GetAssessmentAssessorAssessorGroupActionOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionOutput) ToGetAssessmentAssessorAssessorGroupActionOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupActionOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorAssessorGroupActionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupAction) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorAssessorGroupActionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupAction) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Defines if the action is enabled or disabled.
+func (o GetAssessmentAssessorAssessorGroupActionOutput) IsDisabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupAction) bool { return v.IsDisabled }).(pulumi.BoolOutput)
+}
+
+// The Assessor Name.
+func (o GetAssessmentAssessorAssessorGroupActionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupAction) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o GetAssessmentAssessorAssessorGroupActionOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupAction) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+// The Assessor Action Title.
+func (o GetAssessmentAssessorAssessorGroupActionOutput) Title() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupAction) string { return v.Title }).(pulumi.StringOutput)
+}
+
+// User defined properties
+func (o GetAssessmentAssessorAssessorGroupActionOutput) UserDefinedProperties() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupAction) []GetAssessmentAssessorAssessorGroupActionUserDefinedProperty {
+		return v.UserDefinedProperties
+	}).(GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorAssessorGroupActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorAssessorGroupActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorAssessorGroupAction)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionArrayOutput) ToGetAssessmentAssessorAssessorGroupActionArrayOutput() GetAssessmentAssessorAssessorGroupActionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionArrayOutput) ToGetAssessmentAssessorAssessorGroupActionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupActionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorAssessorGroupActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorAssessorGroupAction {
+		return vs[0].([]GetAssessmentAssessorAssessorGroupAction)[vs[1].(int)]
+	}).(GetAssessmentAssessorAssessorGroupActionOutput)
+}
+
+type GetAssessmentAssessorAssessorGroupActionUserDefinedProperty struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// The Help link text.
+	HelpLinkText string `pulumi:"helpLinkText"`
+	// The Help URL.
+	HelpLinkUrl string `pulumi:"helpLinkUrl"`
+	// Array of user defined properties.
+	Properties []GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty `pulumi:"properties"`
+}
+
+// GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyInput is an input type that accepts GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArgs and GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyInput` via:
+//
+//	GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArgs{...}
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput
+	ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutputWithContext(context.Context) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput
+}
+
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The Help link text.
+	HelpLinkText pulumi.StringInput `pulumi:"helpLinkText"`
+	// The Help URL.
+	HelpLinkUrl pulumi.StringInput `pulumi:"helpLinkUrl"`
+	// Array of user defined properties.
+	Properties GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayInput `pulumi:"properties"`
+}
+
+func (GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorAssessorGroupActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArgs) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput {
+	return i.ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArgs) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput)
+}
+
+// GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayInput is an input type that accepts GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArray and GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayInput` via:
+//
+//	GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArray{ GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArgs{...} }
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput
+	ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutputWithContext(context.Context) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput
+}
+
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArray []GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyInput
+
+func (GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorAssessorGroupActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArray) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput {
+	return i.ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArray) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorAssessorGroupActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupActionUserDefinedProperty) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupActionUserDefinedProperty) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The Help link text.
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput) HelpLinkText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupActionUserDefinedProperty) string { return v.HelpLinkText }).(pulumi.StringOutput)
+}
+
+// The Help URL.
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput) HelpLinkUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupActionUserDefinedProperty) string { return v.HelpLinkUrl }).(pulumi.StringOutput)
+}
+
+// Array of user defined properties.
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput) Properties() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupActionUserDefinedProperty) []GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty {
+		return v.Properties
+	}).(GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorAssessorGroupActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorAssessorGroupActionUserDefinedProperty {
+		return vs[0].([]GetAssessmentAssessorAssessorGroupActionUserDefinedProperty)[vs[1].(int)]
+	}).(GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput)
+}
+
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty struct {
+	// The default value of the property.
+	DefaultValue string `pulumi:"defaultValue"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// True if the property is required, false otherwise
+	IsRequired bool `pulumi:"isRequired"`
+	// Maximum length of the text
+	MaxLength int `pulumi:"maxLength"`
+	// Minimum length of the text
+	MinLength int `pulumi:"minLength"`
+	// The Assessor Name.
+	Name string `pulumi:"name"`
+	// User defined property options.
+	Options []GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOption `pulumi:"options"`
+	// The type of the user defined property.
+	Type string `pulumi:"type"`
+	// The value of the property.
+	Value string `pulumi:"value"`
+}
+
+// GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyInput is an input type that accepts GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArgs and GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyInput` via:
+//
+//	GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArgs{...}
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput
+	ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutputWithContext(context.Context) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput
+}
+
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArgs struct {
+	// The default value of the property.
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// True if the property is required, false otherwise
+	IsRequired pulumi.BoolInput `pulumi:"isRequired"`
+	// Maximum length of the text
+	MaxLength pulumi.IntInput `pulumi:"maxLength"`
+	// Minimum length of the text
+	MinLength pulumi.IntInput `pulumi:"minLength"`
+	// The Assessor Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// User defined property options.
+	Options GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayInput `pulumi:"options"`
+	// The type of the user defined property.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value of the property.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArgs) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput {
+	return i.ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArgs) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput)
+}
+
+// GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayInput is an input type that accepts GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArray and GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayInput` via:
+//
+//	GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArray{ GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArgs{...} }
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput
+	ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutputWithContext(context.Context) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput
+}
+
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArray []GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyInput
+
+func (GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArray) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput {
+	return i.ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArray) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput {
+	return o
+}
+
+// The default value of the property.
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty) string {
+		return v.DefaultValue
+	}).(pulumi.StringOutput)
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// True if the property is required, false otherwise
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput) IsRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty) bool { return v.IsRequired }).(pulumi.BoolOutput)
+}
+
+// Maximum length of the text
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput) MaxLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty) int { return v.MaxLength }).(pulumi.IntOutput)
+}
+
+// Minimum length of the text
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput) MinLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty) int { return v.MinLength }).(pulumi.IntOutput)
+}
+
+// The Assessor Name.
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// User defined property options.
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput) Options() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty) []GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOption {
+		return v.Options
+	}).(GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput)
+}
+
+// The type of the user defined property.
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The value of the property.
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty {
+		return vs[0].([]GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyProperty)[vs[1].(int)]
+	}).(GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput)
+}
+
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOption struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// The value of the property.
+	Value string `pulumi:"value"`
+}
+
+// GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionInput is an input type that accepts GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArgs and GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionInput` via:
+//
+//	GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArgs{...}
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput
+	ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutputWithContext(context.Context) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput
+}
+
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The value of the property.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArgs) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput {
+	return i.ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArgs) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput)
+}
+
+// GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayInput is an input type that accepts GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArray and GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayInput` via:
+//
+//	GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArray{ GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArgs{...} }
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput
+	ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(context.Context) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput
+}
+
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArray []GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionInput
+
+func (GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArray) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return i.ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArray) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput)
+}
+
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOption) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOption) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The value of the property.
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOption) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput() GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput) ToGetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOption {
+		return vs[0].([]GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOption)[vs[1].(int)]
+	}).(GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput)
+}
+
+type GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollection struct {
+	// Items in collection.
+	Items []GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItem `pulumi:"items"`
+}
+
+// GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionInput is an input type that accepts GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArgs and GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionInput` via:
+//
+//	GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArgs{...}
+type GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput() GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput
+	ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutputWithContext(context.Context) GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput
+}
+
+type GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArgs struct {
+	// Items in collection.
+	Items GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollection)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArgs) ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput() GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput {
+	return i.ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArgs) ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput)
+}
+
+// GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayInput is an input type that accepts GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArray and GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayInput` via:
+//
+//	GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArray{ GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArgs{...} }
+type GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutput() GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutput
+	ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutputWithContext(context.Context) GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutput
+}
+
+type GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArray []GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionInput
+
+func (GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollection)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArray) ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutput() GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutput {
+	return i.ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArray) ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutput)
+}
+
+type GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollection)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput) ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput() GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput) ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput {
+	return o
+}
+
+// Items in collection.
+func (o GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput) Items() GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollection) []GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItem {
+		return v.Items
+	}).(GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput)
+}
+
+type GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollection)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutput) ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutput() GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutput) ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollection {
+		return vs[0].([]GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollection)[vs[1].(int)]
+	}).(GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput)
+}
+
+type GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItem struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	Fields      map[string]string `pulumi:"fields"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// If the object was excluded from migration, then it is true.
+	IsExcluded bool `pulumi:"isExcluded"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+}
+
+// GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemInput is an input type that accepts GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArgs and GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemInput` via:
+//
+//	GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArgs{...}
+type GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput() GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput
+	ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutputWithContext(context.Context) GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput
+}
+
+type GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	Fields      pulumi.StringMapInput `pulumi:"fields"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// If the object was excluded from migration, then it is true.
+	IsExcluded pulumi.BoolInput `pulumi:"isExcluded"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+}
+
+func (GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItem)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArgs) ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput() GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput {
+	return i.ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArgs) ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput)
+}
+
+// GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayInput is an input type that accepts GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArray and GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayInput` via:
+//
+//	GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArray{ GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArgs{...} }
+type GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput() GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput
+	ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutputWithContext(context.Context) GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput
+}
+
+type GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArray []GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemInput
+
+func (GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItem)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArray) ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput() GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput {
+	return i.ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArray) ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput)
+}
+
+type GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItem)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput) ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput() GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput) ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput) Fields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItem) map[string]string {
+		return v.Fields
+	}).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+func (o GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// If the object was excluded from migration, then it is true.
+func (o GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput) IsExcluded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItem) bool {
+		return v.IsExcluded
+	}).(pulumi.BoolOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+type GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItem)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput) ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput() GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput) ToGetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItem {
+		return vs[0].([]GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItem)[vs[1].(int)]
+	}).(GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput)
+}
+
+type GetAssessmentAssessorCheckAffectedObjectsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAssessmentAssessorCheckAffectedObjectsFilterInput is an input type that accepts GetAssessmentAssessorCheckAffectedObjectsFilterArgs and GetAssessmentAssessorCheckAffectedObjectsFilterOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckAffectedObjectsFilterInput` via:
+//
+//	GetAssessmentAssessorCheckAffectedObjectsFilterArgs{...}
+type GetAssessmentAssessorCheckAffectedObjectsFilterInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckAffectedObjectsFilterOutput() GetAssessmentAssessorCheckAffectedObjectsFilterOutput
+	ToGetAssessmentAssessorCheckAffectedObjectsFilterOutputWithContext(context.Context) GetAssessmentAssessorCheckAffectedObjectsFilterOutput
+}
+
+type GetAssessmentAssessorCheckAffectedObjectsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAssessmentAssessorCheckAffectedObjectsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckAffectedObjectsFilter)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckAffectedObjectsFilterArgs) ToGetAssessmentAssessorCheckAffectedObjectsFilterOutput() GetAssessmentAssessorCheckAffectedObjectsFilterOutput {
+	return i.ToGetAssessmentAssessorCheckAffectedObjectsFilterOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckAffectedObjectsFilterArgs) ToGetAssessmentAssessorCheckAffectedObjectsFilterOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckAffectedObjectsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckAffectedObjectsFilterOutput)
+}
+
+// GetAssessmentAssessorCheckAffectedObjectsFilterArrayInput is an input type that accepts GetAssessmentAssessorCheckAffectedObjectsFilterArray and GetAssessmentAssessorCheckAffectedObjectsFilterArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckAffectedObjectsFilterArrayInput` via:
+//
+//	GetAssessmentAssessorCheckAffectedObjectsFilterArray{ GetAssessmentAssessorCheckAffectedObjectsFilterArgs{...} }
+type GetAssessmentAssessorCheckAffectedObjectsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckAffectedObjectsFilterArrayOutput() GetAssessmentAssessorCheckAffectedObjectsFilterArrayOutput
+	ToGetAssessmentAssessorCheckAffectedObjectsFilterArrayOutputWithContext(context.Context) GetAssessmentAssessorCheckAffectedObjectsFilterArrayOutput
+}
+
+type GetAssessmentAssessorCheckAffectedObjectsFilterArray []GetAssessmentAssessorCheckAffectedObjectsFilterInput
+
+func (GetAssessmentAssessorCheckAffectedObjectsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckAffectedObjectsFilter)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckAffectedObjectsFilterArray) ToGetAssessmentAssessorCheckAffectedObjectsFilterArrayOutput() GetAssessmentAssessorCheckAffectedObjectsFilterArrayOutput {
+	return i.ToGetAssessmentAssessorCheckAffectedObjectsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckAffectedObjectsFilterArray) ToGetAssessmentAssessorCheckAffectedObjectsFilterArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckAffectedObjectsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckAffectedObjectsFilterArrayOutput)
+}
+
+type GetAssessmentAssessorCheckAffectedObjectsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckAffectedObjectsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckAffectedObjectsFilter)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsFilterOutput) ToGetAssessmentAssessorCheckAffectedObjectsFilterOutput() GetAssessmentAssessorCheckAffectedObjectsFilterOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsFilterOutput) ToGetAssessmentAssessorCheckAffectedObjectsFilterOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckAffectedObjectsFilterOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckAffectedObjectsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckAffectedObjectsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckAffectedObjectsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAssessmentAssessorCheckAffectedObjectsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckAffectedObjectsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckAffectedObjectsFilter)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsFilterArrayOutput) ToGetAssessmentAssessorCheckAffectedObjectsFilterArrayOutput() GetAssessmentAssessorCheckAffectedObjectsFilterArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsFilterArrayOutput) ToGetAssessmentAssessorCheckAffectedObjectsFilterArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckAffectedObjectsFilterArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckAffectedObjectsFilterArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorCheckAffectedObjectsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorCheckAffectedObjectsFilter {
+		return vs[0].([]GetAssessmentAssessorCheckAffectedObjectsFilter)[vs[1].(int)]
+	}).(GetAssessmentAssessorCheckAffectedObjectsFilterOutput)
+}
+
+type GetAssessmentAssessorCheckAssessorCheckGroup struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// True if the group is expanded, false otherwise.
+	IsExpanded bool `pulumi:"isExpanded"`
+	// The Name of the Check.
+	Name string `pulumi:"name"`
+}
+
+// GetAssessmentAssessorCheckAssessorCheckGroupInput is an input type that accepts GetAssessmentAssessorCheckAssessorCheckGroupArgs and GetAssessmentAssessorCheckAssessorCheckGroupOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckAssessorCheckGroupInput` via:
+//
+//	GetAssessmentAssessorCheckAssessorCheckGroupArgs{...}
+type GetAssessmentAssessorCheckAssessorCheckGroupInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckAssessorCheckGroupOutput() GetAssessmentAssessorCheckAssessorCheckGroupOutput
+	ToGetAssessmentAssessorCheckAssessorCheckGroupOutputWithContext(context.Context) GetAssessmentAssessorCheckAssessorCheckGroupOutput
+}
+
+type GetAssessmentAssessorCheckAssessorCheckGroupArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// True if the group is expanded, false otherwise.
+	IsExpanded pulumi.BoolInput `pulumi:"isExpanded"`
+	// The Name of the Check.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetAssessmentAssessorCheckAssessorCheckGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckAssessorCheckGroup)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckAssessorCheckGroupArgs) ToGetAssessmentAssessorCheckAssessorCheckGroupOutput() GetAssessmentAssessorCheckAssessorCheckGroupOutput {
+	return i.ToGetAssessmentAssessorCheckAssessorCheckGroupOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckAssessorCheckGroupArgs) ToGetAssessmentAssessorCheckAssessorCheckGroupOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckAssessorCheckGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckAssessorCheckGroupOutput)
+}
+
+// GetAssessmentAssessorCheckAssessorCheckGroupArrayInput is an input type that accepts GetAssessmentAssessorCheckAssessorCheckGroupArray and GetAssessmentAssessorCheckAssessorCheckGroupArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckAssessorCheckGroupArrayInput` via:
+//
+//	GetAssessmentAssessorCheckAssessorCheckGroupArray{ GetAssessmentAssessorCheckAssessorCheckGroupArgs{...} }
+type GetAssessmentAssessorCheckAssessorCheckGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckAssessorCheckGroupArrayOutput() GetAssessmentAssessorCheckAssessorCheckGroupArrayOutput
+	ToGetAssessmentAssessorCheckAssessorCheckGroupArrayOutputWithContext(context.Context) GetAssessmentAssessorCheckAssessorCheckGroupArrayOutput
+}
+
+type GetAssessmentAssessorCheckAssessorCheckGroupArray []GetAssessmentAssessorCheckAssessorCheckGroupInput
+
+func (GetAssessmentAssessorCheckAssessorCheckGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckAssessorCheckGroup)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckAssessorCheckGroupArray) ToGetAssessmentAssessorCheckAssessorCheckGroupArrayOutput() GetAssessmentAssessorCheckAssessorCheckGroupArrayOutput {
+	return i.ToGetAssessmentAssessorCheckAssessorCheckGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckAssessorCheckGroupArray) ToGetAssessmentAssessorCheckAssessorCheckGroupArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckAssessorCheckGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckAssessorCheckGroupArrayOutput)
+}
+
+type GetAssessmentAssessorCheckAssessorCheckGroupOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckAssessorCheckGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckAssessorCheckGroup)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckAssessorCheckGroupOutput) ToGetAssessmentAssessorCheckAssessorCheckGroupOutput() GetAssessmentAssessorCheckAssessorCheckGroupOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckAssessorCheckGroupOutput) ToGetAssessmentAssessorCheckAssessorCheckGroupOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckAssessorCheckGroupOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorCheckAssessorCheckGroupOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckAssessorCheckGroup) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorCheckAssessorCheckGroupOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckAssessorCheckGroup) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// True if the group is expanded, false otherwise.
+func (o GetAssessmentAssessorCheckAssessorCheckGroupOutput) IsExpanded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckAssessorCheckGroup) bool { return v.IsExpanded }).(pulumi.BoolOutput)
+}
+
+// The Name of the Check.
+func (o GetAssessmentAssessorCheckAssessorCheckGroupOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckAssessorCheckGroup) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorCheckAssessorCheckGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckAssessorCheckGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckAssessorCheckGroup)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckAssessorCheckGroupArrayOutput) ToGetAssessmentAssessorCheckAssessorCheckGroupArrayOutput() GetAssessmentAssessorCheckAssessorCheckGroupArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckAssessorCheckGroupArrayOutput) ToGetAssessmentAssessorCheckAssessorCheckGroupArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckAssessorCheckGroupArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckAssessorCheckGroupArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorCheckAssessorCheckGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorCheckAssessorCheckGroup {
+		return vs[0].([]GetAssessmentAssessorCheckAssessorCheckGroup)[vs[1].(int)]
+	}).(GetAssessmentAssessorCheckAssessorCheckGroupOutput)
+}
+
+type GetAssessmentAssessorCheckCheckAction struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The Name of the Check.
+	Name string `pulumi:"name"`
+	// User defined properties
+	UserDefinedProperties []GetAssessmentAssessorCheckCheckActionUserDefinedProperty `pulumi:"userDefinedProperties"`
+}
+
+// GetAssessmentAssessorCheckCheckActionInput is an input type that accepts GetAssessmentAssessorCheckCheckActionArgs and GetAssessmentAssessorCheckCheckActionOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckCheckActionInput` via:
+//
+//	GetAssessmentAssessorCheckCheckActionArgs{...}
+type GetAssessmentAssessorCheckCheckActionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckCheckActionOutput() GetAssessmentAssessorCheckCheckActionOutput
+	ToGetAssessmentAssessorCheckCheckActionOutputWithContext(context.Context) GetAssessmentAssessorCheckCheckActionOutput
+}
+
+type GetAssessmentAssessorCheckCheckActionArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The Name of the Check.
+	Name pulumi.StringInput `pulumi:"name"`
+	// User defined properties
+	UserDefinedProperties GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayInput `pulumi:"userDefinedProperties"`
+}
+
+func (GetAssessmentAssessorCheckCheckActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckCheckAction)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckCheckActionArgs) ToGetAssessmentAssessorCheckCheckActionOutput() GetAssessmentAssessorCheckCheckActionOutput {
+	return i.ToGetAssessmentAssessorCheckCheckActionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckCheckActionArgs) ToGetAssessmentAssessorCheckCheckActionOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckCheckActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckCheckActionOutput)
+}
+
+// GetAssessmentAssessorCheckCheckActionArrayInput is an input type that accepts GetAssessmentAssessorCheckCheckActionArray and GetAssessmentAssessorCheckCheckActionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckCheckActionArrayInput` via:
+//
+//	GetAssessmentAssessorCheckCheckActionArray{ GetAssessmentAssessorCheckCheckActionArgs{...} }
+type GetAssessmentAssessorCheckCheckActionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckCheckActionArrayOutput() GetAssessmentAssessorCheckCheckActionArrayOutput
+	ToGetAssessmentAssessorCheckCheckActionArrayOutputWithContext(context.Context) GetAssessmentAssessorCheckCheckActionArrayOutput
+}
+
+type GetAssessmentAssessorCheckCheckActionArray []GetAssessmentAssessorCheckCheckActionInput
+
+func (GetAssessmentAssessorCheckCheckActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckCheckAction)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckCheckActionArray) ToGetAssessmentAssessorCheckCheckActionArrayOutput() GetAssessmentAssessorCheckCheckActionArrayOutput {
+	return i.ToGetAssessmentAssessorCheckCheckActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckCheckActionArray) ToGetAssessmentAssessorCheckCheckActionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckCheckActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckCheckActionArrayOutput)
+}
+
+type GetAssessmentAssessorCheckCheckActionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckCheckActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckCheckAction)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckCheckActionOutput) ToGetAssessmentAssessorCheckCheckActionOutput() GetAssessmentAssessorCheckCheckActionOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckCheckActionOutput) ToGetAssessmentAssessorCheckCheckActionOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckCheckActionOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorCheckCheckActionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckAction) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorCheckCheckActionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckAction) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The Name of the Check.
+func (o GetAssessmentAssessorCheckCheckActionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckAction) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// User defined properties
+func (o GetAssessmentAssessorCheckCheckActionOutput) UserDefinedProperties() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckAction) []GetAssessmentAssessorCheckCheckActionUserDefinedProperty {
+		return v.UserDefinedProperties
+	}).(GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorCheckCheckActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckCheckActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckCheckAction)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckCheckActionArrayOutput) ToGetAssessmentAssessorCheckCheckActionArrayOutput() GetAssessmentAssessorCheckCheckActionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckCheckActionArrayOutput) ToGetAssessmentAssessorCheckCheckActionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckCheckActionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckCheckActionArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorCheckCheckActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorCheckCheckAction {
+		return vs[0].([]GetAssessmentAssessorCheckCheckAction)[vs[1].(int)]
+	}).(GetAssessmentAssessorCheckCheckActionOutput)
+}
+
+type GetAssessmentAssessorCheckCheckActionUserDefinedProperty struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The Help link text.
+	HelpLinkText string `pulumi:"helpLinkText"`
+	// The Help URL.
+	HelpLinkUrl string `pulumi:"helpLinkUrl"`
+	// Array of user defined properties.
+	Properties []GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty `pulumi:"properties"`
+}
+
+// GetAssessmentAssessorCheckCheckActionUserDefinedPropertyInput is an input type that accepts GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArgs and GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckCheckActionUserDefinedPropertyInput` via:
+//
+//	GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArgs{...}
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput
+	ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutputWithContext(context.Context) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput
+}
+
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The Help link text.
+	HelpLinkText pulumi.StringInput `pulumi:"helpLinkText"`
+	// The Help URL.
+	HelpLinkUrl pulumi.StringInput `pulumi:"helpLinkUrl"`
+	// Array of user defined properties.
+	Properties GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayInput `pulumi:"properties"`
+}
+
+func (GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckCheckActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArgs) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput {
+	return i.ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArgs) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput)
+}
+
+// GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayInput is an input type that accepts GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArray and GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayInput` via:
+//
+//	GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArray{ GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArgs{...} }
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput
+	ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutputWithContext(context.Context) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput
+}
+
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArray []GetAssessmentAssessorCheckCheckActionUserDefinedPropertyInput
+
+func (GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckCheckActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArray) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput {
+	return i.ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArray) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckCheckActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckActionUserDefinedProperty) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckActionUserDefinedProperty) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The Help link text.
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput) HelpLinkText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckActionUserDefinedProperty) string { return v.HelpLinkText }).(pulumi.StringOutput)
+}
+
+// The Help URL.
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput) HelpLinkUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckActionUserDefinedProperty) string { return v.HelpLinkUrl }).(pulumi.StringOutput)
+}
+
+// Array of user defined properties.
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput) Properties() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckActionUserDefinedProperty) []GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty {
+		return v.Properties
+	}).(GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckCheckActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorCheckCheckActionUserDefinedProperty {
+		return vs[0].([]GetAssessmentAssessorCheckCheckActionUserDefinedProperty)[vs[1].(int)]
+	}).(GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput)
+}
+
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty struct {
+	// The default value of the property.
+	DefaultValue string `pulumi:"defaultValue"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// True if the property is required, false otherwise
+	IsRequired bool `pulumi:"isRequired"`
+	// Maximum length of the text
+	MaxLength int `pulumi:"maxLength"`
+	// Minimum length of the text
+	MinLength int `pulumi:"minLength"`
+	// The Name of the Check.
+	Name string `pulumi:"name"`
+	// User defined property options.
+	Options []GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOption `pulumi:"options"`
+	// The type of the user defined property.
+	Type string `pulumi:"type"`
+	// The value of the property.
+	Value string `pulumi:"value"`
+}
+
+// GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyInput is an input type that accepts GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArgs and GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyInput` via:
+//
+//	GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArgs{...}
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput
+	ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutputWithContext(context.Context) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput
+}
+
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArgs struct {
+	// The default value of the property.
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// True if the property is required, false otherwise
+	IsRequired pulumi.BoolInput `pulumi:"isRequired"`
+	// Maximum length of the text
+	MaxLength pulumi.IntInput `pulumi:"maxLength"`
+	// Minimum length of the text
+	MinLength pulumi.IntInput `pulumi:"minLength"`
+	// The Name of the Check.
+	Name pulumi.StringInput `pulumi:"name"`
+	// User defined property options.
+	Options GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayInput `pulumi:"options"`
+	// The type of the user defined property.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value of the property.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArgs) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput {
+	return i.ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArgs) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput)
+}
+
+// GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayInput is an input type that accepts GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArray and GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayInput` via:
+//
+//	GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArray{ GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArgs{...} }
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput
+	ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutputWithContext(context.Context) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput
+}
+
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArray []GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyInput
+
+func (GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArray) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput {
+	return i.ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArray) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput {
+	return o
+}
+
+// The default value of the property.
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty) string { return v.DefaultValue }).(pulumi.StringOutput)
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// True if the property is required, false otherwise
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput) IsRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty) bool { return v.IsRequired }).(pulumi.BoolOutput)
+}
+
+// Maximum length of the text
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput) MaxLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty) int { return v.MaxLength }).(pulumi.IntOutput)
+}
+
+// Minimum length of the text
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput) MinLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty) int { return v.MinLength }).(pulumi.IntOutput)
+}
+
+// The Name of the Check.
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// User defined property options.
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput) Options() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty) []GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOption {
+		return v.Options
+	}).(GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput)
+}
+
+// The type of the user defined property.
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The value of the property.
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty {
+		return vs[0].([]GetAssessmentAssessorCheckCheckActionUserDefinedPropertyProperty)[vs[1].(int)]
+	}).(GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput)
+}
+
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOption struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The value of the property.
+	Value string `pulumi:"value"`
+}
+
+// GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionInput is an input type that accepts GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArgs and GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionInput` via:
+//
+//	GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArgs{...}
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput
+	ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutputWithContext(context.Context) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput
+}
+
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The value of the property.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArgs) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput {
+	return i.ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArgs) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput)
+}
+
+// GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayInput is an input type that accepts GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArray and GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayInput` via:
+//
+//	GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArray{ GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArgs{...} }
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput
+	ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(context.Context) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput
+}
+
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArray []GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionInput
+
+func (GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArray) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return i.ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArray) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput)
+}
+
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOption) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOption) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The value of the property.
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOption) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput() GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput) ToGetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOption {
+		return vs[0].([]GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOption)[vs[1].(int)]
+	}).(GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput)
+}
+
+type GetAssessmentAssessorCheckColumn struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Pre-Migration сheck id.
+	Key string `pulumi:"key"`
+}
+
+// GetAssessmentAssessorCheckColumnInput is an input type that accepts GetAssessmentAssessorCheckColumnArgs and GetAssessmentAssessorCheckColumnOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckColumnInput` via:
+//
+//	GetAssessmentAssessorCheckColumnArgs{...}
+type GetAssessmentAssessorCheckColumnInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckColumnOutput() GetAssessmentAssessorCheckColumnOutput
+	ToGetAssessmentAssessorCheckColumnOutputWithContext(context.Context) GetAssessmentAssessorCheckColumnOutput
+}
+
+type GetAssessmentAssessorCheckColumnArgs struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Pre-Migration сheck id.
+	Key pulumi.StringInput `pulumi:"key"`
+}
+
+func (GetAssessmentAssessorCheckColumnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckColumn)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckColumnArgs) ToGetAssessmentAssessorCheckColumnOutput() GetAssessmentAssessorCheckColumnOutput {
+	return i.ToGetAssessmentAssessorCheckColumnOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckColumnArgs) ToGetAssessmentAssessorCheckColumnOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckColumnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckColumnOutput)
+}
+
+// GetAssessmentAssessorCheckColumnArrayInput is an input type that accepts GetAssessmentAssessorCheckColumnArray and GetAssessmentAssessorCheckColumnArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckColumnArrayInput` via:
+//
+//	GetAssessmentAssessorCheckColumnArray{ GetAssessmentAssessorCheckColumnArgs{...} }
+type GetAssessmentAssessorCheckColumnArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckColumnArrayOutput() GetAssessmentAssessorCheckColumnArrayOutput
+	ToGetAssessmentAssessorCheckColumnArrayOutputWithContext(context.Context) GetAssessmentAssessorCheckColumnArrayOutput
+}
+
+type GetAssessmentAssessorCheckColumnArray []GetAssessmentAssessorCheckColumnInput
+
+func (GetAssessmentAssessorCheckColumnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckColumn)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckColumnArray) ToGetAssessmentAssessorCheckColumnArrayOutput() GetAssessmentAssessorCheckColumnArrayOutput {
+	return i.ToGetAssessmentAssessorCheckColumnArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckColumnArray) ToGetAssessmentAssessorCheckColumnArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckColumnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckColumnArrayOutput)
+}
+
+type GetAssessmentAssessorCheckColumnOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckColumnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckColumn)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckColumnOutput) ToGetAssessmentAssessorCheckColumnOutput() GetAssessmentAssessorCheckColumnOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckColumnOutput) ToGetAssessmentAssessorCheckColumnOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckColumnOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorCheckColumnOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckColumn) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Pre-Migration сheck id.
+func (o GetAssessmentAssessorCheckColumnOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckColumn) string { return v.Key }).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorCheckColumnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckColumnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckColumn)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckColumnArrayOutput) ToGetAssessmentAssessorCheckColumnArrayOutput() GetAssessmentAssessorCheckColumnArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckColumnArrayOutput) ToGetAssessmentAssessorCheckColumnArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckColumnArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckColumnArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorCheckColumnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorCheckColumn {
+		return vs[0].([]GetAssessmentAssessorCheckColumn)[vs[1].(int)]
+	}).(GetAssessmentAssessorCheckColumnOutput)
+}
+
+type GetAssessmentAssessorCheckLogLocation struct {
+	// Name of the bucket containing the log file.
+	Bucket string `pulumi:"bucket"`
+	// Object Storage namespace.
+	Namespace string `pulumi:"namespace"`
+	// Log object name.
+	Object string `pulumi:"object"`
+}
+
+// GetAssessmentAssessorCheckLogLocationInput is an input type that accepts GetAssessmentAssessorCheckLogLocationArgs and GetAssessmentAssessorCheckLogLocationOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckLogLocationInput` via:
+//
+//	GetAssessmentAssessorCheckLogLocationArgs{...}
+type GetAssessmentAssessorCheckLogLocationInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckLogLocationOutput() GetAssessmentAssessorCheckLogLocationOutput
+	ToGetAssessmentAssessorCheckLogLocationOutputWithContext(context.Context) GetAssessmentAssessorCheckLogLocationOutput
+}
+
+type GetAssessmentAssessorCheckLogLocationArgs struct {
+	// Name of the bucket containing the log file.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Object Storage namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Log object name.
+	Object pulumi.StringInput `pulumi:"object"`
+}
+
+func (GetAssessmentAssessorCheckLogLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckLogLocation)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckLogLocationArgs) ToGetAssessmentAssessorCheckLogLocationOutput() GetAssessmentAssessorCheckLogLocationOutput {
+	return i.ToGetAssessmentAssessorCheckLogLocationOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckLogLocationArgs) ToGetAssessmentAssessorCheckLogLocationOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckLogLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckLogLocationOutput)
+}
+
+// GetAssessmentAssessorCheckLogLocationArrayInput is an input type that accepts GetAssessmentAssessorCheckLogLocationArray and GetAssessmentAssessorCheckLogLocationArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckLogLocationArrayInput` via:
+//
+//	GetAssessmentAssessorCheckLogLocationArray{ GetAssessmentAssessorCheckLogLocationArgs{...} }
+type GetAssessmentAssessorCheckLogLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckLogLocationArrayOutput() GetAssessmentAssessorCheckLogLocationArrayOutput
+	ToGetAssessmentAssessorCheckLogLocationArrayOutputWithContext(context.Context) GetAssessmentAssessorCheckLogLocationArrayOutput
+}
+
+type GetAssessmentAssessorCheckLogLocationArray []GetAssessmentAssessorCheckLogLocationInput
+
+func (GetAssessmentAssessorCheckLogLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckLogLocation)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckLogLocationArray) ToGetAssessmentAssessorCheckLogLocationArrayOutput() GetAssessmentAssessorCheckLogLocationArrayOutput {
+	return i.ToGetAssessmentAssessorCheckLogLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckLogLocationArray) ToGetAssessmentAssessorCheckLogLocationArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckLogLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckLogLocationArrayOutput)
+}
+
+type GetAssessmentAssessorCheckLogLocationOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckLogLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckLogLocation)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckLogLocationOutput) ToGetAssessmentAssessorCheckLogLocationOutput() GetAssessmentAssessorCheckLogLocationOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckLogLocationOutput) ToGetAssessmentAssessorCheckLogLocationOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckLogLocationOutput {
+	return o
+}
+
+// Name of the bucket containing the log file.
+func (o GetAssessmentAssessorCheckLogLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Object Storage namespace.
+func (o GetAssessmentAssessorCheckLogLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckLogLocation) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Log object name.
+func (o GetAssessmentAssessorCheckLogLocationOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckLogLocation) string { return v.Object }).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorCheckLogLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckLogLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckLogLocation)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckLogLocationArrayOutput) ToGetAssessmentAssessorCheckLogLocationArrayOutput() GetAssessmentAssessorCheckLogLocationArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckLogLocationArrayOutput) ToGetAssessmentAssessorCheckLogLocationArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckLogLocationArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckLogLocationArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorCheckLogLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorCheckLogLocation {
+		return vs[0].([]GetAssessmentAssessorCheckLogLocation)[vs[1].(int)]
+	}).(GetAssessmentAssessorCheckLogLocationOutput)
+}
+
+type GetAssessmentAssessorCheckMetadata struct {
+	// The field that stores the name of the object.
+	ObjectNameColumn string `pulumi:"objectNameColumn"`
+	// The field that stores the type of the object.
+	ObjectTypeColumn string `pulumi:"objectTypeColumn"`
+	// The field that stores the fixed type of the object.
+	ObjectTypeFixed string `pulumi:"objectTypeFixed"`
+	// The field that stores the owner of the object.
+	SchemaOwnerColumn string `pulumi:"schemaOwnerColumn"`
+}
+
+// GetAssessmentAssessorCheckMetadataInput is an input type that accepts GetAssessmentAssessorCheckMetadataArgs and GetAssessmentAssessorCheckMetadataOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckMetadataInput` via:
+//
+//	GetAssessmentAssessorCheckMetadataArgs{...}
+type GetAssessmentAssessorCheckMetadataInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckMetadataOutput() GetAssessmentAssessorCheckMetadataOutput
+	ToGetAssessmentAssessorCheckMetadataOutputWithContext(context.Context) GetAssessmentAssessorCheckMetadataOutput
+}
+
+type GetAssessmentAssessorCheckMetadataArgs struct {
+	// The field that stores the name of the object.
+	ObjectNameColumn pulumi.StringInput `pulumi:"objectNameColumn"`
+	// The field that stores the type of the object.
+	ObjectTypeColumn pulumi.StringInput `pulumi:"objectTypeColumn"`
+	// The field that stores the fixed type of the object.
+	ObjectTypeFixed pulumi.StringInput `pulumi:"objectTypeFixed"`
+	// The field that stores the owner of the object.
+	SchemaOwnerColumn pulumi.StringInput `pulumi:"schemaOwnerColumn"`
+}
+
+func (GetAssessmentAssessorCheckMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckMetadata)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckMetadataArgs) ToGetAssessmentAssessorCheckMetadataOutput() GetAssessmentAssessorCheckMetadataOutput {
+	return i.ToGetAssessmentAssessorCheckMetadataOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckMetadataArgs) ToGetAssessmentAssessorCheckMetadataOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckMetadataOutput)
+}
+
+// GetAssessmentAssessorCheckMetadataArrayInput is an input type that accepts GetAssessmentAssessorCheckMetadataArray and GetAssessmentAssessorCheckMetadataArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorCheckMetadataArrayInput` via:
+//
+//	GetAssessmentAssessorCheckMetadataArray{ GetAssessmentAssessorCheckMetadataArgs{...} }
+type GetAssessmentAssessorCheckMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorCheckMetadataArrayOutput() GetAssessmentAssessorCheckMetadataArrayOutput
+	ToGetAssessmentAssessorCheckMetadataArrayOutputWithContext(context.Context) GetAssessmentAssessorCheckMetadataArrayOutput
+}
+
+type GetAssessmentAssessorCheckMetadataArray []GetAssessmentAssessorCheckMetadataInput
+
+func (GetAssessmentAssessorCheckMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckMetadata)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorCheckMetadataArray) ToGetAssessmentAssessorCheckMetadataArrayOutput() GetAssessmentAssessorCheckMetadataArrayOutput {
+	return i.ToGetAssessmentAssessorCheckMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorCheckMetadataArray) ToGetAssessmentAssessorCheckMetadataArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorCheckMetadataArrayOutput)
+}
+
+type GetAssessmentAssessorCheckMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorCheckMetadata)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckMetadataOutput) ToGetAssessmentAssessorCheckMetadataOutput() GetAssessmentAssessorCheckMetadataOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckMetadataOutput) ToGetAssessmentAssessorCheckMetadataOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckMetadataOutput {
+	return o
+}
+
+// The field that stores the name of the object.
+func (o GetAssessmentAssessorCheckMetadataOutput) ObjectNameColumn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckMetadata) string { return v.ObjectNameColumn }).(pulumi.StringOutput)
+}
+
+// The field that stores the type of the object.
+func (o GetAssessmentAssessorCheckMetadataOutput) ObjectTypeColumn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckMetadata) string { return v.ObjectTypeColumn }).(pulumi.StringOutput)
+}
+
+// The field that stores the fixed type of the object.
+func (o GetAssessmentAssessorCheckMetadataOutput) ObjectTypeFixed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckMetadata) string { return v.ObjectTypeFixed }).(pulumi.StringOutput)
+}
+
+// The field that stores the owner of the object.
+func (o GetAssessmentAssessorCheckMetadataOutput) SchemaOwnerColumn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorCheckMetadata) string { return v.SchemaOwnerColumn }).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorCheckMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorCheckMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorCheckMetadata)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorCheckMetadataArrayOutput) ToGetAssessmentAssessorCheckMetadataArrayOutput() GetAssessmentAssessorCheckMetadataArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckMetadataArrayOutput) ToGetAssessmentAssessorCheckMetadataArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorCheckMetadataArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorCheckMetadataArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorCheckMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorCheckMetadata {
+		return vs[0].([]GetAssessmentAssessorCheckMetadata)[vs[1].(int)]
+	}).(GetAssessmentAssessorCheckMetadataOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollection struct {
+	Items []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArgs and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArgs{...}
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArgs struct {
+	Items GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollection)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput)
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArray and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArray{ GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArgs{...} }
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArray []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionInput
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollection)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollection)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput) Items() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollection) []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem {
+		return v.Items
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollection)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorChecksAssessorCheckSummaryCollection {
+		return vs[0].([]GetAssessmentAssessorChecksAssessorCheckSummaryCollection)[vs[1].(int)]
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem struct {
+	// Fixing the issue.
+	Action string `pulumi:"action"`
+	// Assessor Check Group
+	AssessorCheckGroups []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroup `pulumi:"assessorCheckGroups"`
+	// The current state of the Assessor Check.
+	AssessorCheckState string `pulumi:"assessorCheckState"`
+	// Assessor Check Action
+	CheckActions []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckAction `pulumi:"checkActions"`
+	// Array of the column of the objects table.
+	Columns []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumn `pulumi:"columns"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The path to the fixup script for this check.
+	FixupScriptLocation string `pulumi:"fixupScriptLocation"`
+	// The Help link text.
+	HelpLinkText string `pulumi:"helpLinkText"`
+	// The Help URL.
+	HelpLinkUrl string `pulumi:"helpLinkUrl"`
+	// Impact of the issue on data migration.
+	Impact string `pulumi:"impact"`
+	// If false, objects cannot be excluded from migration.
+	IsExclusionAllowed bool `pulumi:"isExclusionAllowed"`
+	// Description of the issue.
+	Issue string `pulumi:"issue"`
+	// Pre-Migration сheck id.
+	Key string `pulumi:"key"`
+	// Details to access log file in the specified Object Storage bucket, if any.
+	LogLocations []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocation `pulumi:"logLocations"`
+	// Metadata of object.
+	Metadatas []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadata `pulumi:"metadatas"`
+	// The Name of the Check.
+	Name string `pulumi:"name"`
+	// Number of database objects to migrate.
+	ObjectCount int `pulumi:"objectCount"`
+	// The objects display name.
+	ObjectsDisplayName string `pulumi:"objectsDisplayName"`
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArgs and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArgs{...}
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArgs struct {
+	// Fixing the issue.
+	Action pulumi.StringInput `pulumi:"action"`
+	// Assessor Check Group
+	AssessorCheckGroups GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayInput `pulumi:"assessorCheckGroups"`
+	// The current state of the Assessor Check.
+	AssessorCheckState pulumi.StringInput `pulumi:"assessorCheckState"`
+	// Assessor Check Action
+	CheckActions GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayInput `pulumi:"checkActions"`
+	// Array of the column of the objects table.
+	Columns GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayInput `pulumi:"columns"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The path to the fixup script for this check.
+	FixupScriptLocation pulumi.StringInput `pulumi:"fixupScriptLocation"`
+	// The Help link text.
+	HelpLinkText pulumi.StringInput `pulumi:"helpLinkText"`
+	// The Help URL.
+	HelpLinkUrl pulumi.StringInput `pulumi:"helpLinkUrl"`
+	// Impact of the issue on data migration.
+	Impact pulumi.StringInput `pulumi:"impact"`
+	// If false, objects cannot be excluded from migration.
+	IsExclusionAllowed pulumi.BoolInput `pulumi:"isExclusionAllowed"`
+	// Description of the issue.
+	Issue pulumi.StringInput `pulumi:"issue"`
+	// Pre-Migration сheck id.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Details to access log file in the specified Object Storage bucket, if any.
+	LogLocations GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayInput `pulumi:"logLocations"`
+	// Metadata of object.
+	Metadatas GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayInput `pulumi:"metadatas"`
+	// The Name of the Check.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Number of database objects to migrate.
+	ObjectCount pulumi.IntInput `pulumi:"objectCount"`
+	// The objects display name.
+	ObjectsDisplayName pulumi.StringInput `pulumi:"objectsDisplayName"`
+}
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput)
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArray and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArray{ GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArgs{...} }
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArray []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemInput
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput {
+	return o
+}
+
+// Fixing the issue.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// Assessor Check Group
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) AssessorCheckGroups() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroup {
+		return v.AssessorCheckGroups
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput)
+}
+
+// The current state of the Assessor Check.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) AssessorCheckState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) string {
+		return v.AssessorCheckState
+	}).(pulumi.StringOutput)
+}
+
+// Assessor Check Action
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) CheckActions() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckAction {
+		return v.CheckActions
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput)
+}
+
+// Array of the column of the objects table.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) Columns() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumn {
+		return v.Columns
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput)
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The path to the fixup script for this check.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) FixupScriptLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) string {
+		return v.FixupScriptLocation
+	}).(pulumi.StringOutput)
+}
+
+// The Help link text.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) HelpLinkText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) string { return v.HelpLinkText }).(pulumi.StringOutput)
+}
+
+// The Help URL.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) HelpLinkUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) string { return v.HelpLinkUrl }).(pulumi.StringOutput)
+}
+
+// Impact of the issue on data migration.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) Impact() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) string { return v.Impact }).(pulumi.StringOutput)
+}
+
+// If false, objects cannot be excluded from migration.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) IsExclusionAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) bool {
+		return v.IsExclusionAllowed
+	}).(pulumi.BoolOutput)
+}
+
+// Description of the issue.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) Issue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) string { return v.Issue }).(pulumi.StringOutput)
+}
+
+// Pre-Migration сheck id.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Details to access log file in the specified Object Storage bucket, if any.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) LogLocations() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocation {
+		return v.LogLocations
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput)
+}
+
+// Metadata of object.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) Metadatas() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadata {
+		return v.Metadatas
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput)
+}
+
+// The Name of the Check.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Number of database objects to migrate.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) ObjectCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) int { return v.ObjectCount }).(pulumi.IntOutput)
+}
+
+// The objects display name.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput) ObjectsDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem) string {
+		return v.ObjectsDisplayName
+	}).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem {
+		return vs[0].([]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItem)[vs[1].(int)]
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroup struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// True if the group is expanded, false otherwise.
+	IsExpanded bool `pulumi:"isExpanded"`
+	// The Name of the Check.
+	Name string `pulumi:"name"`
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArgs and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArgs{...}
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// True if the group is expanded, false otherwise.
+	IsExpanded pulumi.BoolInput `pulumi:"isExpanded"`
+	// The Name of the Check.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroup)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput)
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArray and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArray{ GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArgs{...} }
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArray []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupInput
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroup)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroup)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroup) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroup) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// True if the group is expanded, false otherwise.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput) IsExpanded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroup) bool {
+		return v.IsExpanded
+	}).(pulumi.BoolOutput)
+}
+
+// The Name of the Check.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroup) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroup)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroup {
+		return vs[0].([]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroup)[vs[1].(int)]
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckAction struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The Name of the Check.
+	Name string `pulumi:"name"`
+	// User defined properties
+	UserDefinedProperties []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedProperty `pulumi:"userDefinedProperties"`
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArgs and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArgs{...}
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The Name of the Check.
+	Name pulumi.StringInput `pulumi:"name"`
+	// User defined properties
+	UserDefinedProperties GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayInput `pulumi:"userDefinedProperties"`
+}
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckAction)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput)
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArray and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArray{ GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArgs{...} }
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArray []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionInput
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckAction)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckAction)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckAction) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckAction) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The Name of the Check.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckAction) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// User defined properties
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput) UserDefinedProperties() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckAction) []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedProperty {
+		return v.UserDefinedProperties
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckAction)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckAction {
+		return vs[0].([]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckAction)[vs[1].(int)]
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedProperty struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The Help link text.
+	HelpLinkText string `pulumi:"helpLinkText"`
+	// The Help URL.
+	HelpLinkUrl string `pulumi:"helpLinkUrl"`
+	// Array of user defined properties.
+	Properties []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty `pulumi:"properties"`
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArgs and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArgs{...}
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The Help link text.
+	HelpLinkText pulumi.StringInput `pulumi:"helpLinkText"`
+	// The Help URL.
+	HelpLinkUrl pulumi.StringInput `pulumi:"helpLinkUrl"`
+	// Array of user defined properties.
+	Properties GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayInput `pulumi:"properties"`
+}
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput)
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArray and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArray{ GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArgs{...} }
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArray []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyInput
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedProperty) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedProperty) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The Help link text.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput) HelpLinkText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedProperty) string {
+		return v.HelpLinkText
+	}).(pulumi.StringOutput)
+}
+
+// The Help URL.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput) HelpLinkUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedProperty) string {
+		return v.HelpLinkUrl
+	}).(pulumi.StringOutput)
+}
+
+// Array of user defined properties.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput) Properties() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedProperty) []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty {
+		return v.Properties
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedProperty {
+		return vs[0].([]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedProperty)[vs[1].(int)]
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty struct {
+	// The default value of the property.
+	DefaultValue string `pulumi:"defaultValue"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// True if the property is required, false otherwise
+	IsRequired bool `pulumi:"isRequired"`
+	// Maximum length of the text
+	MaxLength int `pulumi:"maxLength"`
+	// Minimum length of the text
+	MinLength int `pulumi:"minLength"`
+	// The Name of the Check.
+	Name string `pulumi:"name"`
+	// User defined property options.
+	Options []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOption `pulumi:"options"`
+	// The type of the user defined property.
+	Type string `pulumi:"type"`
+	// The value of the property.
+	Value string `pulumi:"value"`
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArgs and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArgs{...}
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArgs struct {
+	// The default value of the property.
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// True if the property is required, false otherwise
+	IsRequired pulumi.BoolInput `pulumi:"isRequired"`
+	// Maximum length of the text
+	MaxLength pulumi.IntInput `pulumi:"maxLength"`
+	// Minimum length of the text
+	MinLength pulumi.IntInput `pulumi:"minLength"`
+	// The Name of the Check.
+	Name pulumi.StringInput `pulumi:"name"`
+	// User defined property options.
+	Options GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayInput `pulumi:"options"`
+	// The type of the user defined property.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value of the property.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput)
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArray and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArray{ GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArgs{...} }
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArray []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyInput
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput {
+	return o
+}
+
+// The default value of the property.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty) string {
+		return v.DefaultValue
+	}).(pulumi.StringOutput)
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// True if the property is required, false otherwise
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput) IsRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty) bool {
+		return v.IsRequired
+	}).(pulumi.BoolOutput)
+}
+
+// Maximum length of the text
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput) MaxLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty) int {
+		return v.MaxLength
+	}).(pulumi.IntOutput)
+}
+
+// Minimum length of the text
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput) MinLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty) int {
+		return v.MinLength
+	}).(pulumi.IntOutput)
+}
+
+// The Name of the Check.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// User defined property options.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput) Options() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty) []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOption {
+		return v.Options
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput)
+}
+
+// The type of the user defined property.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+// The value of the property.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty {
+		return vs[0].([]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyProperty)[vs[1].(int)]
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOption struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The value of the property.
+	Value string `pulumi:"value"`
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArgs and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArgs{...}
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The value of the property.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput)
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArray and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArray{ GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArgs{...} }
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArray []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionInput
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOption) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOption) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The value of the property.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOption) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOption {
+		return vs[0].([]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOption)[vs[1].(int)]
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumn struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Pre-Migration сheck id.
+	Key string `pulumi:"key"`
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArgs and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArgs{...}
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArgs struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Pre-Migration сheck id.
+	Key pulumi.StringInput `pulumi:"key"`
+}
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumn)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput)
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArray and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArray{ GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArgs{...} }
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArray []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnInput
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumn)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumn)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumn) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Pre-Migration сheck id.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumn) string { return v.Key }).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumn)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumn {
+		return vs[0].([]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumn)[vs[1].(int)]
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocation struct {
+	// Name of the bucket containing the log file.
+	Bucket string `pulumi:"bucket"`
+	// Object Storage namespace.
+	Namespace string `pulumi:"namespace"`
+	// Log object name.
+	Object string `pulumi:"object"`
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArgs and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArgs{...}
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArgs struct {
+	// Name of the bucket containing the log file.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Object Storage namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Log object name.
+	Object pulumi.StringInput `pulumi:"object"`
+}
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocation)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput)
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArray and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArray{ GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArgs{...} }
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArray []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationInput
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocation)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocation)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput {
+	return o
+}
+
+// Name of the bucket containing the log file.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocation) string {
+		return v.Bucket
+	}).(pulumi.StringOutput)
+}
+
+// Object Storage namespace.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocation) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// Log object name.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocation) string {
+		return v.Object
+	}).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocation)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocation {
+		return vs[0].([]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocation)[vs[1].(int)]
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadata struct {
+	// The field that stores the name of the object.
+	ObjectNameColumn string `pulumi:"objectNameColumn"`
+	// The field that stores the type of the object.
+	ObjectTypeColumn string `pulumi:"objectTypeColumn"`
+	// The field that stores the fixed type of the object.
+	ObjectTypeFixed string `pulumi:"objectTypeFixed"`
+	// The field that stores the owner of the object.
+	SchemaOwnerColumn string `pulumi:"schemaOwnerColumn"`
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArgs and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArgs{...}
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArgs struct {
+	// The field that stores the name of the object.
+	ObjectNameColumn pulumi.StringInput `pulumi:"objectNameColumn"`
+	// The field that stores the type of the object.
+	ObjectTypeColumn pulumi.StringInput `pulumi:"objectTypeColumn"`
+	// The field that stores the fixed type of the object.
+	ObjectTypeFixed pulumi.StringInput `pulumi:"objectTypeFixed"`
+	// The field that stores the owner of the object.
+	SchemaOwnerColumn pulumi.StringInput `pulumi:"schemaOwnerColumn"`
+}
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArgs) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput)
+}
+
+// GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayInput is an input type that accepts GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArray and GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayInput` via:
+//
+//	GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArray{ GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArgs{...} }
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput
+	ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutputWithContext(context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArray []GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataInput
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput {
+	return i.ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArray) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput {
+	return o
+}
+
+// The field that stores the name of the object.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput) ObjectNameColumn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadata) string {
+		return v.ObjectNameColumn
+	}).(pulumi.StringOutput)
+}
+
+// The field that stores the type of the object.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput) ObjectTypeColumn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadata) string {
+		return v.ObjectTypeColumn
+	}).(pulumi.StringOutput)
+}
+
+// The field that stores the fixed type of the object.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput) ObjectTypeFixed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadata) string {
+		return v.ObjectTypeFixed
+	}).(pulumi.StringOutput)
+}
+
+// The field that stores the owner of the object.
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput) SchemaOwnerColumn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadata) string {
+		return v.SchemaOwnerColumn
+	}).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput() GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput) ToGetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadata {
+		return vs[0].([]GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadata)[vs[1].(int)]
+	}).(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput)
+}
+
+type GetAssessmentAssessorChecksFilter struct {
+	// The Name of the Check.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAssessmentAssessorChecksFilterInput is an input type that accepts GetAssessmentAssessorChecksFilterArgs and GetAssessmentAssessorChecksFilterOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksFilterInput` via:
+//
+//	GetAssessmentAssessorChecksFilterArgs{...}
+type GetAssessmentAssessorChecksFilterInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksFilterOutput() GetAssessmentAssessorChecksFilterOutput
+	ToGetAssessmentAssessorChecksFilterOutputWithContext(context.Context) GetAssessmentAssessorChecksFilterOutput
+}
+
+type GetAssessmentAssessorChecksFilterArgs struct {
+	// The Name of the Check.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAssessmentAssessorChecksFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksFilter)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksFilterArgs) ToGetAssessmentAssessorChecksFilterOutput() GetAssessmentAssessorChecksFilterOutput {
+	return i.ToGetAssessmentAssessorChecksFilterOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksFilterArgs) ToGetAssessmentAssessorChecksFilterOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksFilterOutput)
+}
+
+// GetAssessmentAssessorChecksFilterArrayInput is an input type that accepts GetAssessmentAssessorChecksFilterArray and GetAssessmentAssessorChecksFilterArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorChecksFilterArrayInput` via:
+//
+//	GetAssessmentAssessorChecksFilterArray{ GetAssessmentAssessorChecksFilterArgs{...} }
+type GetAssessmentAssessorChecksFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorChecksFilterArrayOutput() GetAssessmentAssessorChecksFilterArrayOutput
+	ToGetAssessmentAssessorChecksFilterArrayOutputWithContext(context.Context) GetAssessmentAssessorChecksFilterArrayOutput
+}
+
+type GetAssessmentAssessorChecksFilterArray []GetAssessmentAssessorChecksFilterInput
+
+func (GetAssessmentAssessorChecksFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksFilter)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorChecksFilterArray) ToGetAssessmentAssessorChecksFilterArrayOutput() GetAssessmentAssessorChecksFilterArrayOutput {
+	return i.ToGetAssessmentAssessorChecksFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorChecksFilterArray) ToGetAssessmentAssessorChecksFilterArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorChecksFilterArrayOutput)
+}
+
+type GetAssessmentAssessorChecksFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorChecksFilter)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksFilterOutput) ToGetAssessmentAssessorChecksFilterOutput() GetAssessmentAssessorChecksFilterOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksFilterOutput) ToGetAssessmentAssessorChecksFilterOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksFilterOutput {
+	return o
+}
+
+// The Name of the Check.
+func (o GetAssessmentAssessorChecksFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentAssessorChecksFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAssessmentAssessorChecksFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorChecksFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAssessmentAssessorChecksFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorChecksFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorChecksFilter)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorChecksFilterArrayOutput) ToGetAssessmentAssessorChecksFilterArrayOutput() GetAssessmentAssessorChecksFilterArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksFilterArrayOutput) ToGetAssessmentAssessorChecksFilterArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorChecksFilterArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorChecksFilterArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorChecksFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorChecksFilter {
+		return vs[0].([]GetAssessmentAssessorChecksFilter)[vs[1].(int)]
+	}).(GetAssessmentAssessorChecksFilterOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollection struct {
+	Items []GetAssessmentAssessorsAssessorSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionArgs and GetAssessmentAssessorsAssessorSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionArgs{...}
+type GetAssessmentAssessorsAssessorSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionOutput() GetAssessmentAssessorsAssessorSummaryCollectionOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionArgs struct {
+	Items GetAssessmentAssessorsAssessorSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollection)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionOutput() GetAssessmentAssessorsAssessorSummaryCollectionOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionOutput)
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionArrayInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionArray and GetAssessmentAssessorsAssessorSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionArrayInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionArray{ GetAssessmentAssessorsAssessorSummaryCollectionArgs{...} }
+type GetAssessmentAssessorsAssessorSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionArrayOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionArrayOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionArrayOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionArray []GetAssessmentAssessorsAssessorSummaryCollectionInput
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollection)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionArray) ToGetAssessmentAssessorsAssessorSummaryCollectionArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionArrayOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionArray) ToGetAssessmentAssessorsAssessorSummaryCollectionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionArrayOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollection)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionOutput() GetAssessmentAssessorsAssessorSummaryCollectionOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionOutput) Items() GetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollection) []GetAssessmentAssessorsAssessorSummaryCollectionItem {
+		return v.Items
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollection)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorsAssessorSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorsAssessorSummaryCollection {
+		return vs[0].([]GetAssessmentAssessorsAssessorSummaryCollection)[vs[1].(int)]
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItem struct {
+	// Assessor group actions.
+	Actions []GetAssessmentAssessorsAssessorSummaryCollectionItemAction `pulumi:"actions"`
+	// The OCID of the Assessment
+	AssessmentId string `pulumi:"assessmentId"`
+	// Assessor Group
+	AssessorGroups []GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroup `pulumi:"assessorGroups"`
+	// The Assessor Result text.
+	AssessorResult string `pulumi:"assessorResult"`
+	// The Summary of all Checks.
+	ChecksSummary string `pulumi:"checksSummary"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// True if DB restart required after running the script, false otherwise.
+	DoesScriptRequireRestart bool `pulumi:"doesScriptRequireRestart"`
+	// True if script is available either from 'script' property of through download, false otherwise.
+	HasScript bool `pulumi:"hasScript"`
+	// The Help link text.
+	HelpLinkText string `pulumi:"helpLinkText"`
+	// The Help URL.
+	HelpLinkUrl string `pulumi:"helpLinkUrl"`
+	// The Assessor Name.
+	Name string `pulumi:"name"`
+	// The generated SQL script. Can be empty if the script exceeds maxLength. In this case the property 'hasScript' indicates that the script is available for download.
+	Script string `pulumi:"script"`
+	// The lifecycle state of the Assessor.
+	State string `pulumi:"state"`
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemArgs and GetAssessmentAssessorsAssessorSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemArgs{...}
+type GetAssessmentAssessorsAssessorSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemArgs struct {
+	// Assessor group actions.
+	Actions GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayInput `pulumi:"actions"`
+	// The OCID of the Assessment
+	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
+	// Assessor Group
+	AssessorGroups GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayInput `pulumi:"assessorGroups"`
+	// The Assessor Result text.
+	AssessorResult pulumi.StringInput `pulumi:"assessorResult"`
+	// The Summary of all Checks.
+	ChecksSummary pulumi.StringInput `pulumi:"checksSummary"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// True if DB restart required after running the script, false otherwise.
+	DoesScriptRequireRestart pulumi.BoolInput `pulumi:"doesScriptRequireRestart"`
+	// True if script is available either from 'script' property of through download, false otherwise.
+	HasScript pulumi.BoolInput `pulumi:"hasScript"`
+	// The Help link text.
+	HelpLinkText pulumi.StringInput `pulumi:"helpLinkText"`
+	// The Help URL.
+	HelpLinkUrl pulumi.StringInput `pulumi:"helpLinkUrl"`
+	// The Assessor Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The generated SQL script. Can be empty if the script exceeds maxLength. In this case the property 'hasScript' indicates that the script is available for download.
+	Script pulumi.StringInput `pulumi:"script"`
+	// The lifecycle state of the Assessor.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemOutput)
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemArrayInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemArray and GetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemArrayInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemArray{ GetAssessmentAssessorsAssessorSummaryCollectionItemArgs{...} }
+type GetAssessmentAssessorsAssessorSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemArray []GetAssessmentAssessorsAssessorSummaryCollectionItemInput
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemOutput {
+	return o
+}
+
+// Assessor group actions.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemOutput) Actions() GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItem) []GetAssessmentAssessorsAssessorSummaryCollectionItemAction {
+		return v.Actions
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput)
+}
+
+// The OCID of the Assessment
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemOutput) AssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItem) string { return v.AssessmentId }).(pulumi.StringOutput)
+}
+
+// Assessor Group
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemOutput) AssessorGroups() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItem) []GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroup {
+		return v.AssessorGroups
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput)
+}
+
+// The Assessor Result text.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemOutput) AssessorResult() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItem) string { return v.AssessorResult }).(pulumi.StringOutput)
+}
+
+// The Summary of all Checks.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemOutput) ChecksSummary() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItem) string { return v.ChecksSummary }).(pulumi.StringOutput)
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// True if DB restart required after running the script, false otherwise.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemOutput) DoesScriptRequireRestart() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItem) bool { return v.DoesScriptRequireRestart }).(pulumi.BoolOutput)
+}
+
+// True if script is available either from 'script' property of through download, false otherwise.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemOutput) HasScript() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItem) bool { return v.HasScript }).(pulumi.BoolOutput)
+}
+
+// The Help link text.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemOutput) HelpLinkText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItem) string { return v.HelpLinkText }).(pulumi.StringOutput)
+}
+
+// The Help URL.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemOutput) HelpLinkUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItem) string { return v.HelpLinkUrl }).(pulumi.StringOutput)
+}
+
+// The Assessor Name.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The generated SQL script. Can be empty if the script exceeds maxLength. In this case the property 'hasScript' indicates that the script is available for download.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemOutput) Script() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItem) string { return v.Script }).(pulumi.StringOutput)
+}
+
+// The lifecycle state of the Assessor.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorsAssessorSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorsAssessorSummaryCollectionItem {
+		return vs[0].([]GetAssessmentAssessorsAssessorSummaryCollectionItem)[vs[1].(int)]
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAction struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Defines if the action is enabled or disabled.
+	IsDisabled bool `pulumi:"isDisabled"`
+	// The Assessor Name.
+	Name string `pulumi:"name"`
+	// The OCID of the resource being referenced.
+	ResourceId string `pulumi:"resourceId"`
+	// The Assessor Action Title.
+	Title string `pulumi:"title"`
+	// User defined properties
+	UserDefinedProperties []GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedProperty `pulumi:"userDefinedProperties"`
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemActionInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemActionArgs and GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemActionInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemActionArgs{...}
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Defines if the action is enabled or disabled.
+	IsDisabled pulumi.BoolInput `pulumi:"isDisabled"`
+	// The Assessor Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The OCID of the resource being referenced.
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// The Assessor Action Title.
+	Title pulumi.StringInput `pulumi:"title"`
+	// User defined properties
+	UserDefinedProperties GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayInput `pulumi:"userDefinedProperties"`
+}
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAction)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemActionArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemActionArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput)
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemActionArray and GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemActionArray{ GetAssessmentAssessorsAssessorSummaryCollectionItemActionArgs{...} }
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionArray []GetAssessmentAssessorsAssessorSummaryCollectionItemActionInput
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItemAction)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemActionArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemActionArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAction)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAction) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAction) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Defines if the action is enabled or disabled.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput) IsDisabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAction) bool { return v.IsDisabled }).(pulumi.BoolOutput)
+}
+
+// The Assessor Name.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAction) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAction) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+// The Assessor Action Title.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput) Title() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAction) string { return v.Title }).(pulumi.StringOutput)
+}
+
+// User defined properties
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput) UserDefinedProperties() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAction) []GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedProperty {
+		return v.UserDefinedProperties
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItemAction)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorsAssessorSummaryCollectionItemAction {
+		return vs[0].([]GetAssessmentAssessorsAssessorSummaryCollectionItemAction)[vs[1].(int)]
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedProperty struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The Help link text.
+	HelpLinkText string `pulumi:"helpLinkText"`
+	// The Help URL.
+	HelpLinkUrl string `pulumi:"helpLinkUrl"`
+	// Array of user defined properties.
+	Properties []GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty `pulumi:"properties"`
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArgs and GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArgs{...}
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The Help link text.
+	HelpLinkText pulumi.StringInput `pulumi:"helpLinkText"`
+	// The Help URL.
+	HelpLinkUrl pulumi.StringInput `pulumi:"helpLinkUrl"`
+	// Array of user defined properties.
+	Properties GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayInput `pulumi:"properties"`
+}
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput)
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArray and GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArray{ GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArgs{...} }
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArray []GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyInput
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedProperty) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedProperty) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The Help link text.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput) HelpLinkText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedProperty) string {
+		return v.HelpLinkText
+	}).(pulumi.StringOutput)
+}
+
+// The Help URL.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput) HelpLinkUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedProperty) string {
+		return v.HelpLinkUrl
+	}).(pulumi.StringOutput)
+}
+
+// Array of user defined properties.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput) Properties() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedProperty) []GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty {
+		return v.Properties
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedProperty {
+		return vs[0].([]GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedProperty)[vs[1].(int)]
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty struct {
+	// The default value of the property.
+	DefaultValue string `pulumi:"defaultValue"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// True if the property is required, false otherwise
+	IsRequired bool `pulumi:"isRequired"`
+	// Maximum length of the text
+	MaxLength int `pulumi:"maxLength"`
+	// Minimum length of the text
+	MinLength int `pulumi:"minLength"`
+	// The Assessor Name.
+	Name string `pulumi:"name"`
+	// User defined property options.
+	Options []GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOption `pulumi:"options"`
+	// The type of the user defined property.
+	Type string `pulumi:"type"`
+	// The value of the property.
+	Value string `pulumi:"value"`
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArgs and GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArgs{...}
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArgs struct {
+	// The default value of the property.
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// True if the property is required, false otherwise
+	IsRequired pulumi.BoolInput `pulumi:"isRequired"`
+	// Maximum length of the text
+	MaxLength pulumi.IntInput `pulumi:"maxLength"`
+	// Minimum length of the text
+	MinLength pulumi.IntInput `pulumi:"minLength"`
+	// The Assessor Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// User defined property options.
+	Options GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayInput `pulumi:"options"`
+	// The type of the user defined property.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value of the property.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput)
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArray and GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArray{ GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArgs{...} }
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArray []GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyInput
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput {
+	return o
+}
+
+// The default value of the property.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty) string {
+		return v.DefaultValue
+	}).(pulumi.StringOutput)
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// True if the property is required, false otherwise
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput) IsRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty) bool {
+		return v.IsRequired
+	}).(pulumi.BoolOutput)
+}
+
+// Maximum length of the text
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput) MaxLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty) int {
+		return v.MaxLength
+	}).(pulumi.IntOutput)
+}
+
+// Minimum length of the text
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput) MinLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty) int {
+		return v.MinLength
+	}).(pulumi.IntOutput)
+}
+
+// The Assessor Name.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// User defined property options.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput) Options() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty) []GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOption {
+		return v.Options
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput)
+}
+
+// The type of the user defined property.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+// The value of the property.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty {
+		return vs[0].([]GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyProperty)[vs[1].(int)]
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOption struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The value of the property.
+	Value string `pulumi:"value"`
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArgs and GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArgs{...}
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The value of the property.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput)
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArray and GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArray{ GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArgs{...} }
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArray []GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionInput
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOption) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOption) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The value of the property.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOption) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOption {
+		return vs[0].([]GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOption)[vs[1].(int)]
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroup struct {
+	// Assessor group actions.
+	Actions []GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupAction `pulumi:"actions"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The Assessor Name.
+	Name string `pulumi:"name"`
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArgs and GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArgs{...}
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArgs struct {
+	// Assessor group actions.
+	Actions GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayInput `pulumi:"actions"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The Assessor Name.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroup)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput)
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArray and GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArray{ GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArgs{...} }
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArray []GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupInput
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroup)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroup)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput {
+	return o
+}
+
+// Assessor group actions.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput) Actions() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroup) []GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupAction {
+		return v.Actions
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput)
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroup) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroup) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The Assessor Name.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroup) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroup)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroup {
+		return vs[0].([]GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroup)[vs[1].(int)]
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupAction struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Defines if the action is enabled or disabled.
+	IsDisabled bool `pulumi:"isDisabled"`
+	// The Assessor Name.
+	Name string `pulumi:"name"`
+	// The OCID of the resource being referenced.
+	ResourceId string `pulumi:"resourceId"`
+	// The Assessor Action Title.
+	Title string `pulumi:"title"`
+	// User defined properties
+	UserDefinedProperties []GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedProperty `pulumi:"userDefinedProperties"`
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArgs and GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArgs{...}
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Defines if the action is enabled or disabled.
+	IsDisabled pulumi.BoolInput `pulumi:"isDisabled"`
+	// The Assessor Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The OCID of the resource being referenced.
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// The Assessor Action Title.
+	Title pulumi.StringInput `pulumi:"title"`
+	// User defined properties
+	UserDefinedProperties GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayInput `pulumi:"userDefinedProperties"`
+}
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupAction)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput)
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArray and GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArray{ GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArgs{...} }
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArray []GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionInput
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupAction)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupAction)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupAction) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupAction) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Defines if the action is enabled or disabled.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput) IsDisabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupAction) bool {
+		return v.IsDisabled
+	}).(pulumi.BoolOutput)
+}
+
+// The Assessor Name.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupAction) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupAction) string {
+		return v.ResourceId
+	}).(pulumi.StringOutput)
+}
+
+// The Assessor Action Title.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput) Title() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupAction) string { return v.Title }).(pulumi.StringOutput)
+}
+
+// User defined properties
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput) UserDefinedProperties() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupAction) []GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedProperty {
+		return v.UserDefinedProperties
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupAction)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupAction {
+		return vs[0].([]GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupAction)[vs[1].(int)]
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedProperty struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The Help link text.
+	HelpLinkText string `pulumi:"helpLinkText"`
+	// The Help URL.
+	HelpLinkUrl string `pulumi:"helpLinkUrl"`
+	// Array of user defined properties.
+	Properties []GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty `pulumi:"properties"`
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArgs and GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArgs{...}
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The Help link text.
+	HelpLinkText pulumi.StringInput `pulumi:"helpLinkText"`
+	// The Help URL.
+	HelpLinkUrl pulumi.StringInput `pulumi:"helpLinkUrl"`
+	// Array of user defined properties.
+	Properties GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayInput `pulumi:"properties"`
+}
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput)
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArray and GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArray{ GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArgs{...} }
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArray []GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyInput
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedProperty) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedProperty) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The Help link text.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput) HelpLinkText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedProperty) string {
+		return v.HelpLinkText
+	}).(pulumi.StringOutput)
+}
+
+// The Help URL.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput) HelpLinkUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedProperty) string {
+		return v.HelpLinkUrl
+	}).(pulumi.StringOutput)
+}
+
+// Array of user defined properties.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput) Properties() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedProperty) []GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty {
+		return v.Properties
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedProperty {
+		return vs[0].([]GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedProperty)[vs[1].(int)]
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty struct {
+	// The default value of the property.
+	DefaultValue string `pulumi:"defaultValue"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// True if the property is required, false otherwise
+	IsRequired bool `pulumi:"isRequired"`
+	// Maximum length of the text
+	MaxLength int `pulumi:"maxLength"`
+	// Minimum length of the text
+	MinLength int `pulumi:"minLength"`
+	// The Assessor Name.
+	Name string `pulumi:"name"`
+	// User defined property options.
+	Options []GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOption `pulumi:"options"`
+	// The type of the user defined property.
+	Type string `pulumi:"type"`
+	// The value of the property.
+	Value string `pulumi:"value"`
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArgs and GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArgs{...}
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArgs struct {
+	// The default value of the property.
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// True if the property is required, false otherwise
+	IsRequired pulumi.BoolInput `pulumi:"isRequired"`
+	// Maximum length of the text
+	MaxLength pulumi.IntInput `pulumi:"maxLength"`
+	// Minimum length of the text
+	MinLength pulumi.IntInput `pulumi:"minLength"`
+	// The Assessor Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// User defined property options.
+	Options GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayInput `pulumi:"options"`
+	// The type of the user defined property.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value of the property.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput)
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArray and GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArray{ GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArgs{...} }
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArray []GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyInput
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput {
+	return o
+}
+
+// The default value of the property.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty) string {
+		return v.DefaultValue
+	}).(pulumi.StringOutput)
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// True if the property is required, false otherwise
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput) IsRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty) bool {
+		return v.IsRequired
+	}).(pulumi.BoolOutput)
+}
+
+// Maximum length of the text
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput) MaxLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty) int {
+		return v.MaxLength
+	}).(pulumi.IntOutput)
+}
+
+// Minimum length of the text
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput) MinLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty) int {
+		return v.MinLength
+	}).(pulumi.IntOutput)
+}
+
+// The Assessor Name.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// User defined property options.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput) Options() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty) []GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOption {
+		return v.Options
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput)
+}
+
+// The type of the user defined property.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+// The value of the property.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty {
+		return vs[0].([]GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyProperty)[vs[1].(int)]
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOption struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The value of the property.
+	Value string `pulumi:"value"`
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArgs and GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArgs{...}
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArgs struct {
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The value of the property.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArgs) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput)
+}
+
+// GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayInput is an input type that accepts GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArray and GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayInput` via:
+//
+//	GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArray{ GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArgs{...} }
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput
+	ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArray []GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionInput
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return i.ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArray) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput {
+	return o
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOption) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOption) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The value of the property.
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOption) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOption)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput() GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput) ToGetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOption {
+		return vs[0].([]GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOption)[vs[1].(int)]
+	}).(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput)
+}
+
+type GetAssessmentAssessorsFilter struct {
+	// The Assessor Name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAssessmentAssessorsFilterInput is an input type that accepts GetAssessmentAssessorsFilterArgs and GetAssessmentAssessorsFilterOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsFilterInput` via:
+//
+//	GetAssessmentAssessorsFilterArgs{...}
+type GetAssessmentAssessorsFilterInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsFilterOutput() GetAssessmentAssessorsFilterOutput
+	ToGetAssessmentAssessorsFilterOutputWithContext(context.Context) GetAssessmentAssessorsFilterOutput
+}
+
+type GetAssessmentAssessorsFilterArgs struct {
+	// The Assessor Name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAssessmentAssessorsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsFilter)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsFilterArgs) ToGetAssessmentAssessorsFilterOutput() GetAssessmentAssessorsFilterOutput {
+	return i.ToGetAssessmentAssessorsFilterOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsFilterArgs) ToGetAssessmentAssessorsFilterOutputWithContext(ctx context.Context) GetAssessmentAssessorsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsFilterOutput)
+}
+
+// GetAssessmentAssessorsFilterArrayInput is an input type that accepts GetAssessmentAssessorsFilterArray and GetAssessmentAssessorsFilterArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentAssessorsFilterArrayInput` via:
+//
+//	GetAssessmentAssessorsFilterArray{ GetAssessmentAssessorsFilterArgs{...} }
+type GetAssessmentAssessorsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentAssessorsFilterArrayOutput() GetAssessmentAssessorsFilterArrayOutput
+	ToGetAssessmentAssessorsFilterArrayOutputWithContext(context.Context) GetAssessmentAssessorsFilterArrayOutput
+}
+
+type GetAssessmentAssessorsFilterArray []GetAssessmentAssessorsFilterInput
+
+func (GetAssessmentAssessorsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsFilter)(nil)).Elem()
+}
+
+func (i GetAssessmentAssessorsFilterArray) ToGetAssessmentAssessorsFilterArrayOutput() GetAssessmentAssessorsFilterArrayOutput {
+	return i.ToGetAssessmentAssessorsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentAssessorsFilterArray) ToGetAssessmentAssessorsFilterArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentAssessorsFilterArrayOutput)
+}
+
+type GetAssessmentAssessorsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentAssessorsFilter)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsFilterOutput) ToGetAssessmentAssessorsFilterOutput() GetAssessmentAssessorsFilterOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsFilterOutput) ToGetAssessmentAssessorsFilterOutputWithContext(ctx context.Context) GetAssessmentAssessorsFilterOutput {
+	return o
+}
+
+// The Assessor Name.
+func (o GetAssessmentAssessorsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentAssessorsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAssessmentAssessorsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAssessmentAssessorsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAssessmentAssessorsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentAssessorsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentAssessorsFilter)(nil)).Elem()
+}
+
+func (o GetAssessmentAssessorsFilterArrayOutput) ToGetAssessmentAssessorsFilterArrayOutput() GetAssessmentAssessorsFilterArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsFilterArrayOutput) ToGetAssessmentAssessorsFilterArrayOutputWithContext(ctx context.Context) GetAssessmentAssessorsFilterArrayOutput {
+	return o
+}
+
+func (o GetAssessmentAssessorsFilterArrayOutput) Index(i pulumi.IntInput) GetAssessmentAssessorsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentAssessorsFilter {
+		return vs[0].([]GetAssessmentAssessorsFilter)[vs[1].(int)]
+	}).(GetAssessmentAssessorsFilterOutput)
+}
+
+type GetAssessmentExcludeObject struct {
+	IsOmitExcludedTableFromReplication bool   `pulumi:"isOmitExcludedTableFromReplication"`
+	Object                             string `pulumi:"object"`
+	Owner                              string `pulumi:"owner"`
+	Schema                             string `pulumi:"schema"`
+	Type                               string `pulumi:"type"`
+}
+
+// GetAssessmentExcludeObjectInput is an input type that accepts GetAssessmentExcludeObjectArgs and GetAssessmentExcludeObjectOutput values.
+// You can construct a concrete instance of `GetAssessmentExcludeObjectInput` via:
+//
+//	GetAssessmentExcludeObjectArgs{...}
+type GetAssessmentExcludeObjectInput interface {
+	pulumi.Input
+
+	ToGetAssessmentExcludeObjectOutput() GetAssessmentExcludeObjectOutput
+	ToGetAssessmentExcludeObjectOutputWithContext(context.Context) GetAssessmentExcludeObjectOutput
+}
+
+type GetAssessmentExcludeObjectArgs struct {
+	IsOmitExcludedTableFromReplication pulumi.BoolInput   `pulumi:"isOmitExcludedTableFromReplication"`
+	Object                             pulumi.StringInput `pulumi:"object"`
+	Owner                              pulumi.StringInput `pulumi:"owner"`
+	Schema                             pulumi.StringInput `pulumi:"schema"`
+	Type                               pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetAssessmentExcludeObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentExcludeObject)(nil)).Elem()
+}
+
+func (i GetAssessmentExcludeObjectArgs) ToGetAssessmentExcludeObjectOutput() GetAssessmentExcludeObjectOutput {
+	return i.ToGetAssessmentExcludeObjectOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentExcludeObjectArgs) ToGetAssessmentExcludeObjectOutputWithContext(ctx context.Context) GetAssessmentExcludeObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentExcludeObjectOutput)
+}
+
+// GetAssessmentExcludeObjectArrayInput is an input type that accepts GetAssessmentExcludeObjectArray and GetAssessmentExcludeObjectArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentExcludeObjectArrayInput` via:
+//
+//	GetAssessmentExcludeObjectArray{ GetAssessmentExcludeObjectArgs{...} }
+type GetAssessmentExcludeObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentExcludeObjectArrayOutput() GetAssessmentExcludeObjectArrayOutput
+	ToGetAssessmentExcludeObjectArrayOutputWithContext(context.Context) GetAssessmentExcludeObjectArrayOutput
+}
+
+type GetAssessmentExcludeObjectArray []GetAssessmentExcludeObjectInput
+
+func (GetAssessmentExcludeObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentExcludeObject)(nil)).Elem()
+}
+
+func (i GetAssessmentExcludeObjectArray) ToGetAssessmentExcludeObjectArrayOutput() GetAssessmentExcludeObjectArrayOutput {
+	return i.ToGetAssessmentExcludeObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentExcludeObjectArray) ToGetAssessmentExcludeObjectArrayOutputWithContext(ctx context.Context) GetAssessmentExcludeObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentExcludeObjectArrayOutput)
+}
+
+type GetAssessmentExcludeObjectOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentExcludeObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentExcludeObject)(nil)).Elem()
+}
+
+func (o GetAssessmentExcludeObjectOutput) ToGetAssessmentExcludeObjectOutput() GetAssessmentExcludeObjectOutput {
+	return o
+}
+
+func (o GetAssessmentExcludeObjectOutput) ToGetAssessmentExcludeObjectOutputWithContext(ctx context.Context) GetAssessmentExcludeObjectOutput {
+	return o
+}
+
+func (o GetAssessmentExcludeObjectOutput) IsOmitExcludedTableFromReplication() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentExcludeObject) bool { return v.IsOmitExcludedTableFromReplication }).(pulumi.BoolOutput)
+}
+
+func (o GetAssessmentExcludeObjectOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentExcludeObject) string { return v.Object }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentExcludeObjectOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentExcludeObject) string { return v.Owner }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentExcludeObjectOutput) Schema() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentExcludeObject) string { return v.Schema }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentExcludeObjectOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentExcludeObject) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetAssessmentExcludeObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentExcludeObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentExcludeObject)(nil)).Elem()
+}
+
+func (o GetAssessmentExcludeObjectArrayOutput) ToGetAssessmentExcludeObjectArrayOutput() GetAssessmentExcludeObjectArrayOutput {
+	return o
+}
+
+func (o GetAssessmentExcludeObjectArrayOutput) ToGetAssessmentExcludeObjectArrayOutputWithContext(ctx context.Context) GetAssessmentExcludeObjectArrayOutput {
+	return o
+}
+
+func (o GetAssessmentExcludeObjectArrayOutput) Index(i pulumi.IntInput) GetAssessmentExcludeObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentExcludeObject {
+		return vs[0].([]GetAssessmentExcludeObject)[vs[1].(int)]
+	}).(GetAssessmentExcludeObjectOutput)
+}
+
+type GetAssessmentIncludeObject struct {
+	IsOmitExcludedTableFromReplication bool   `pulumi:"isOmitExcludedTableFromReplication"`
+	Object                             string `pulumi:"object"`
+	Owner                              string `pulumi:"owner"`
+	Schema                             string `pulumi:"schema"`
+	Type                               string `pulumi:"type"`
+}
+
+// GetAssessmentIncludeObjectInput is an input type that accepts GetAssessmentIncludeObjectArgs and GetAssessmentIncludeObjectOutput values.
+// You can construct a concrete instance of `GetAssessmentIncludeObjectInput` via:
+//
+//	GetAssessmentIncludeObjectArgs{...}
+type GetAssessmentIncludeObjectInput interface {
+	pulumi.Input
+
+	ToGetAssessmentIncludeObjectOutput() GetAssessmentIncludeObjectOutput
+	ToGetAssessmentIncludeObjectOutputWithContext(context.Context) GetAssessmentIncludeObjectOutput
+}
+
+type GetAssessmentIncludeObjectArgs struct {
+	IsOmitExcludedTableFromReplication pulumi.BoolInput   `pulumi:"isOmitExcludedTableFromReplication"`
+	Object                             pulumi.StringInput `pulumi:"object"`
+	Owner                              pulumi.StringInput `pulumi:"owner"`
+	Schema                             pulumi.StringInput `pulumi:"schema"`
+	Type                               pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetAssessmentIncludeObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentIncludeObject)(nil)).Elem()
+}
+
+func (i GetAssessmentIncludeObjectArgs) ToGetAssessmentIncludeObjectOutput() GetAssessmentIncludeObjectOutput {
+	return i.ToGetAssessmentIncludeObjectOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentIncludeObjectArgs) ToGetAssessmentIncludeObjectOutputWithContext(ctx context.Context) GetAssessmentIncludeObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentIncludeObjectOutput)
+}
+
+// GetAssessmentIncludeObjectArrayInput is an input type that accepts GetAssessmentIncludeObjectArray and GetAssessmentIncludeObjectArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentIncludeObjectArrayInput` via:
+//
+//	GetAssessmentIncludeObjectArray{ GetAssessmentIncludeObjectArgs{...} }
+type GetAssessmentIncludeObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentIncludeObjectArrayOutput() GetAssessmentIncludeObjectArrayOutput
+	ToGetAssessmentIncludeObjectArrayOutputWithContext(context.Context) GetAssessmentIncludeObjectArrayOutput
+}
+
+type GetAssessmentIncludeObjectArray []GetAssessmentIncludeObjectInput
+
+func (GetAssessmentIncludeObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentIncludeObject)(nil)).Elem()
+}
+
+func (i GetAssessmentIncludeObjectArray) ToGetAssessmentIncludeObjectArrayOutput() GetAssessmentIncludeObjectArrayOutput {
+	return i.ToGetAssessmentIncludeObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentIncludeObjectArray) ToGetAssessmentIncludeObjectArrayOutputWithContext(ctx context.Context) GetAssessmentIncludeObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentIncludeObjectArrayOutput)
+}
+
+type GetAssessmentIncludeObjectOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentIncludeObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentIncludeObject)(nil)).Elem()
+}
+
+func (o GetAssessmentIncludeObjectOutput) ToGetAssessmentIncludeObjectOutput() GetAssessmentIncludeObjectOutput {
+	return o
+}
+
+func (o GetAssessmentIncludeObjectOutput) ToGetAssessmentIncludeObjectOutputWithContext(ctx context.Context) GetAssessmentIncludeObjectOutput {
+	return o
+}
+
+func (o GetAssessmentIncludeObjectOutput) IsOmitExcludedTableFromReplication() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentIncludeObject) bool { return v.IsOmitExcludedTableFromReplication }).(pulumi.BoolOutput)
+}
+
+func (o GetAssessmentIncludeObjectOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentIncludeObject) string { return v.Object }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentIncludeObjectOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentIncludeObject) string { return v.Owner }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentIncludeObjectOutput) Schema() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentIncludeObject) string { return v.Schema }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentIncludeObjectOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentIncludeObject) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetAssessmentIncludeObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentIncludeObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentIncludeObject)(nil)).Elem()
+}
+
+func (o GetAssessmentIncludeObjectArrayOutput) ToGetAssessmentIncludeObjectArrayOutput() GetAssessmentIncludeObjectArrayOutput {
+	return o
+}
+
+func (o GetAssessmentIncludeObjectArrayOutput) ToGetAssessmentIncludeObjectArrayOutputWithContext(ctx context.Context) GetAssessmentIncludeObjectArrayOutput {
+	return o
+}
+
+func (o GetAssessmentIncludeObjectArrayOutput) Index(i pulumi.IntInput) GetAssessmentIncludeObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentIncludeObject {
+		return vs[0].([]GetAssessmentIncludeObject)[vs[1].(int)]
+	}).(GetAssessmentIncludeObjectOutput)
+}
+
+type GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollection struct {
+	// Items in collection.
+	Items []GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionInput is an input type that accepts GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArgs and GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionInput` via:
+//
+//	GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArgs{...}
+type GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput() GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput
+	ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutputWithContext(context.Context) GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput
+}
+
+type GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArgs struct {
+	// Items in collection.
+	Items GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollection)(nil)).Elem()
+}
+
+func (i GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArgs) ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput() GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput {
+	return i.ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArgs) ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutputWithContext(ctx context.Context) GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput)
+}
+
+// GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayInput is an input type that accepts GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArray and GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayInput` via:
+//
+//	GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArray{ GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArgs{...} }
+type GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutput() GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutput
+	ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutputWithContext(context.Context) GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutput
+}
+
+type GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArray []GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionInput
+
+func (GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollection)(nil)).Elem()
+}
+
+func (i GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArray) ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutput() GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutput {
+	return i.ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArray) ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutputWithContext(ctx context.Context) GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutput)
+}
+
+type GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollection)(nil)).Elem()
+}
+
+func (o GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput) ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput() GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput {
+	return o
+}
+
+func (o GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput) ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutputWithContext(ctx context.Context) GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput {
+	return o
+}
+
+// Items in collection.
+func (o GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput) Items() GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollection) []GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItem {
+		return v.Items
+	}).(GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput)
+}
+
+type GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollection)(nil)).Elem()
+}
+
+func (o GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutput) ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutput() GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutput) ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutputWithContext(ctx context.Context) GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollection {
+		return vs[0].([]GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollection)[vs[1].(int)]
+	}).(GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput)
+}
+
+type GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItem struct {
+	// Object type name
+	Name string `pulumi:"name"`
+}
+
+// GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemInput is an input type that accepts GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArgs and GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemInput` via:
+//
+//	GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArgs{...}
+type GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput() GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput
+	ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutputWithContext(context.Context) GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput
+}
+
+type GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArgs struct {
+	// Object type name
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArgs) ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput() GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput {
+	return i.ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArgs) ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutputWithContext(ctx context.Context) GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput)
+}
+
+// GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayInput is an input type that accepts GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArray and GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayInput` via:
+//
+//	GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArray{ GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArgs{...} }
+type GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput() GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput
+	ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutputWithContext(context.Context) GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput
+}
+
+type GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArray []GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemInput
+
+func (GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArray) ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput() GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput {
+	return i.ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArray) ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput)
+}
+
+type GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput) ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput() GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput) ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutputWithContext(ctx context.Context) GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput {
+	return o
+}
+
+// Object type name
+func (o GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput) ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput() GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput) ToGetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItem {
+		return vs[0].([]GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItem)[vs[1].(int)]
+	}).(GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput)
+}
+
+type GetAssessmentObjectTypesFilter struct {
+	// Object type name
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAssessmentObjectTypesFilterInput is an input type that accepts GetAssessmentObjectTypesFilterArgs and GetAssessmentObjectTypesFilterOutput values.
+// You can construct a concrete instance of `GetAssessmentObjectTypesFilterInput` via:
+//
+//	GetAssessmentObjectTypesFilterArgs{...}
+type GetAssessmentObjectTypesFilterInput interface {
+	pulumi.Input
+
+	ToGetAssessmentObjectTypesFilterOutput() GetAssessmentObjectTypesFilterOutput
+	ToGetAssessmentObjectTypesFilterOutputWithContext(context.Context) GetAssessmentObjectTypesFilterOutput
+}
+
+type GetAssessmentObjectTypesFilterArgs struct {
+	// Object type name
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAssessmentObjectTypesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentObjectTypesFilter)(nil)).Elem()
+}
+
+func (i GetAssessmentObjectTypesFilterArgs) ToGetAssessmentObjectTypesFilterOutput() GetAssessmentObjectTypesFilterOutput {
+	return i.ToGetAssessmentObjectTypesFilterOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentObjectTypesFilterArgs) ToGetAssessmentObjectTypesFilterOutputWithContext(ctx context.Context) GetAssessmentObjectTypesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentObjectTypesFilterOutput)
+}
+
+// GetAssessmentObjectTypesFilterArrayInput is an input type that accepts GetAssessmentObjectTypesFilterArray and GetAssessmentObjectTypesFilterArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentObjectTypesFilterArrayInput` via:
+//
+//	GetAssessmentObjectTypesFilterArray{ GetAssessmentObjectTypesFilterArgs{...} }
+type GetAssessmentObjectTypesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentObjectTypesFilterArrayOutput() GetAssessmentObjectTypesFilterArrayOutput
+	ToGetAssessmentObjectTypesFilterArrayOutputWithContext(context.Context) GetAssessmentObjectTypesFilterArrayOutput
+}
+
+type GetAssessmentObjectTypesFilterArray []GetAssessmentObjectTypesFilterInput
+
+func (GetAssessmentObjectTypesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentObjectTypesFilter)(nil)).Elem()
+}
+
+func (i GetAssessmentObjectTypesFilterArray) ToGetAssessmentObjectTypesFilterArrayOutput() GetAssessmentObjectTypesFilterArrayOutput {
+	return i.ToGetAssessmentObjectTypesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentObjectTypesFilterArray) ToGetAssessmentObjectTypesFilterArrayOutputWithContext(ctx context.Context) GetAssessmentObjectTypesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentObjectTypesFilterArrayOutput)
+}
+
+type GetAssessmentObjectTypesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentObjectTypesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentObjectTypesFilter)(nil)).Elem()
+}
+
+func (o GetAssessmentObjectTypesFilterOutput) ToGetAssessmentObjectTypesFilterOutput() GetAssessmentObjectTypesFilterOutput {
+	return o
+}
+
+func (o GetAssessmentObjectTypesFilterOutput) ToGetAssessmentObjectTypesFilterOutputWithContext(ctx context.Context) GetAssessmentObjectTypesFilterOutput {
+	return o
+}
+
+// Object type name
+func (o GetAssessmentObjectTypesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentObjectTypesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentObjectTypesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAssessmentObjectTypesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAssessmentObjectTypesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAssessmentObjectTypesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAssessmentObjectTypesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentObjectTypesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentObjectTypesFilter)(nil)).Elem()
+}
+
+func (o GetAssessmentObjectTypesFilterArrayOutput) ToGetAssessmentObjectTypesFilterArrayOutput() GetAssessmentObjectTypesFilterArrayOutput {
+	return o
+}
+
+func (o GetAssessmentObjectTypesFilterArrayOutput) ToGetAssessmentObjectTypesFilterArrayOutputWithContext(ctx context.Context) GetAssessmentObjectTypesFilterArrayOutput {
+	return o
+}
+
+func (o GetAssessmentObjectTypesFilterArrayOutput) Index(i pulumi.IntInput) GetAssessmentObjectTypesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentObjectTypesFilter {
+		return vs[0].([]GetAssessmentObjectTypesFilter)[vs[1].(int)]
+	}).(GetAssessmentObjectTypesFilterOutput)
+}
+
+type GetAssessmentSourceDatabaseConnection struct {
+	// The OCID of the resource being referenced.
+	Id string `pulumi:"id"`
+}
+
+// GetAssessmentSourceDatabaseConnectionInput is an input type that accepts GetAssessmentSourceDatabaseConnectionArgs and GetAssessmentSourceDatabaseConnectionOutput values.
+// You can construct a concrete instance of `GetAssessmentSourceDatabaseConnectionInput` via:
+//
+//	GetAssessmentSourceDatabaseConnectionArgs{...}
+type GetAssessmentSourceDatabaseConnectionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentSourceDatabaseConnectionOutput() GetAssessmentSourceDatabaseConnectionOutput
+	ToGetAssessmentSourceDatabaseConnectionOutputWithContext(context.Context) GetAssessmentSourceDatabaseConnectionOutput
+}
+
+type GetAssessmentSourceDatabaseConnectionArgs struct {
+	// The OCID of the resource being referenced.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetAssessmentSourceDatabaseConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentSourceDatabaseConnection)(nil)).Elem()
+}
+
+func (i GetAssessmentSourceDatabaseConnectionArgs) ToGetAssessmentSourceDatabaseConnectionOutput() GetAssessmentSourceDatabaseConnectionOutput {
+	return i.ToGetAssessmentSourceDatabaseConnectionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentSourceDatabaseConnectionArgs) ToGetAssessmentSourceDatabaseConnectionOutputWithContext(ctx context.Context) GetAssessmentSourceDatabaseConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentSourceDatabaseConnectionOutput)
+}
+
+// GetAssessmentSourceDatabaseConnectionArrayInput is an input type that accepts GetAssessmentSourceDatabaseConnectionArray and GetAssessmentSourceDatabaseConnectionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentSourceDatabaseConnectionArrayInput` via:
+//
+//	GetAssessmentSourceDatabaseConnectionArray{ GetAssessmentSourceDatabaseConnectionArgs{...} }
+type GetAssessmentSourceDatabaseConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentSourceDatabaseConnectionArrayOutput() GetAssessmentSourceDatabaseConnectionArrayOutput
+	ToGetAssessmentSourceDatabaseConnectionArrayOutputWithContext(context.Context) GetAssessmentSourceDatabaseConnectionArrayOutput
+}
+
+type GetAssessmentSourceDatabaseConnectionArray []GetAssessmentSourceDatabaseConnectionInput
+
+func (GetAssessmentSourceDatabaseConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentSourceDatabaseConnection)(nil)).Elem()
+}
+
+func (i GetAssessmentSourceDatabaseConnectionArray) ToGetAssessmentSourceDatabaseConnectionArrayOutput() GetAssessmentSourceDatabaseConnectionArrayOutput {
+	return i.ToGetAssessmentSourceDatabaseConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentSourceDatabaseConnectionArray) ToGetAssessmentSourceDatabaseConnectionArrayOutputWithContext(ctx context.Context) GetAssessmentSourceDatabaseConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentSourceDatabaseConnectionArrayOutput)
+}
+
+type GetAssessmentSourceDatabaseConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentSourceDatabaseConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentSourceDatabaseConnection)(nil)).Elem()
+}
+
+func (o GetAssessmentSourceDatabaseConnectionOutput) ToGetAssessmentSourceDatabaseConnectionOutput() GetAssessmentSourceDatabaseConnectionOutput {
+	return o
+}
+
+func (o GetAssessmentSourceDatabaseConnectionOutput) ToGetAssessmentSourceDatabaseConnectionOutputWithContext(ctx context.Context) GetAssessmentSourceDatabaseConnectionOutput {
+	return o
+}
+
+// The OCID of the resource being referenced.
+func (o GetAssessmentSourceDatabaseConnectionOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentSourceDatabaseConnection) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetAssessmentSourceDatabaseConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentSourceDatabaseConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentSourceDatabaseConnection)(nil)).Elem()
+}
+
+func (o GetAssessmentSourceDatabaseConnectionArrayOutput) ToGetAssessmentSourceDatabaseConnectionArrayOutput() GetAssessmentSourceDatabaseConnectionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentSourceDatabaseConnectionArrayOutput) ToGetAssessmentSourceDatabaseConnectionArrayOutputWithContext(ctx context.Context) GetAssessmentSourceDatabaseConnectionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentSourceDatabaseConnectionArrayOutput) Index(i pulumi.IntInput) GetAssessmentSourceDatabaseConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentSourceDatabaseConnection {
+		return vs[0].([]GetAssessmentSourceDatabaseConnection)[vs[1].(int)]
+	}).(GetAssessmentSourceDatabaseConnectionOutput)
+}
+
+type GetAssessmentTargetDatabaseConnection struct {
+	// Defines the type of connection. For example, ORACLE.
+	ConnectionType string `pulumi:"connectionType"`
+	// The database version
+	DatabaseVersion string `pulumi:"databaseVersion"`
+	// The OCID of the resource being referenced.
+	Id string `pulumi:"id"`
+	// Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
+	TechnologySubType string `pulumi:"technologySubType"`
+	// The technology type.
+	TechnologyType string `pulumi:"technologyType"`
+}
+
+// GetAssessmentTargetDatabaseConnectionInput is an input type that accepts GetAssessmentTargetDatabaseConnectionArgs and GetAssessmentTargetDatabaseConnectionOutput values.
+// You can construct a concrete instance of `GetAssessmentTargetDatabaseConnectionInput` via:
+//
+//	GetAssessmentTargetDatabaseConnectionArgs{...}
+type GetAssessmentTargetDatabaseConnectionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentTargetDatabaseConnectionOutput() GetAssessmentTargetDatabaseConnectionOutput
+	ToGetAssessmentTargetDatabaseConnectionOutputWithContext(context.Context) GetAssessmentTargetDatabaseConnectionOutput
+}
+
+type GetAssessmentTargetDatabaseConnectionArgs struct {
+	// Defines the type of connection. For example, ORACLE.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+	// The database version
+	DatabaseVersion pulumi.StringInput `pulumi:"databaseVersion"`
+	// The OCID of the resource being referenced.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
+	TechnologySubType pulumi.StringInput `pulumi:"technologySubType"`
+	// The technology type.
+	TechnologyType pulumi.StringInput `pulumi:"technologyType"`
+}
+
+func (GetAssessmentTargetDatabaseConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentTargetDatabaseConnection)(nil)).Elem()
+}
+
+func (i GetAssessmentTargetDatabaseConnectionArgs) ToGetAssessmentTargetDatabaseConnectionOutput() GetAssessmentTargetDatabaseConnectionOutput {
+	return i.ToGetAssessmentTargetDatabaseConnectionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentTargetDatabaseConnectionArgs) ToGetAssessmentTargetDatabaseConnectionOutputWithContext(ctx context.Context) GetAssessmentTargetDatabaseConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentTargetDatabaseConnectionOutput)
+}
+
+// GetAssessmentTargetDatabaseConnectionArrayInput is an input type that accepts GetAssessmentTargetDatabaseConnectionArray and GetAssessmentTargetDatabaseConnectionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentTargetDatabaseConnectionArrayInput` via:
+//
+//	GetAssessmentTargetDatabaseConnectionArray{ GetAssessmentTargetDatabaseConnectionArgs{...} }
+type GetAssessmentTargetDatabaseConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentTargetDatabaseConnectionArrayOutput() GetAssessmentTargetDatabaseConnectionArrayOutput
+	ToGetAssessmentTargetDatabaseConnectionArrayOutputWithContext(context.Context) GetAssessmentTargetDatabaseConnectionArrayOutput
+}
+
+type GetAssessmentTargetDatabaseConnectionArray []GetAssessmentTargetDatabaseConnectionInput
+
+func (GetAssessmentTargetDatabaseConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentTargetDatabaseConnection)(nil)).Elem()
+}
+
+func (i GetAssessmentTargetDatabaseConnectionArray) ToGetAssessmentTargetDatabaseConnectionArrayOutput() GetAssessmentTargetDatabaseConnectionArrayOutput {
+	return i.ToGetAssessmentTargetDatabaseConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentTargetDatabaseConnectionArray) ToGetAssessmentTargetDatabaseConnectionArrayOutputWithContext(ctx context.Context) GetAssessmentTargetDatabaseConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentTargetDatabaseConnectionArrayOutput)
+}
+
+type GetAssessmentTargetDatabaseConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentTargetDatabaseConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentTargetDatabaseConnection)(nil)).Elem()
+}
+
+func (o GetAssessmentTargetDatabaseConnectionOutput) ToGetAssessmentTargetDatabaseConnectionOutput() GetAssessmentTargetDatabaseConnectionOutput {
+	return o
+}
+
+func (o GetAssessmentTargetDatabaseConnectionOutput) ToGetAssessmentTargetDatabaseConnectionOutputWithContext(ctx context.Context) GetAssessmentTargetDatabaseConnectionOutput {
+	return o
+}
+
+// Defines the type of connection. For example, ORACLE.
+func (o GetAssessmentTargetDatabaseConnectionOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentTargetDatabaseConnection) string { return v.ConnectionType }).(pulumi.StringOutput)
+}
+
+// The database version
+func (o GetAssessmentTargetDatabaseConnectionOutput) DatabaseVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentTargetDatabaseConnection) string { return v.DatabaseVersion }).(pulumi.StringOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o GetAssessmentTargetDatabaseConnectionOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentTargetDatabaseConnection) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
+func (o GetAssessmentTargetDatabaseConnectionOutput) TechnologySubType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentTargetDatabaseConnection) string { return v.TechnologySubType }).(pulumi.StringOutput)
+}
+
+// The technology type.
+func (o GetAssessmentTargetDatabaseConnectionOutput) TechnologyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentTargetDatabaseConnection) string { return v.TechnologyType }).(pulumi.StringOutput)
+}
+
+type GetAssessmentTargetDatabaseConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentTargetDatabaseConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentTargetDatabaseConnection)(nil)).Elem()
+}
+
+func (o GetAssessmentTargetDatabaseConnectionArrayOutput) ToGetAssessmentTargetDatabaseConnectionArrayOutput() GetAssessmentTargetDatabaseConnectionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentTargetDatabaseConnectionArrayOutput) ToGetAssessmentTargetDatabaseConnectionArrayOutputWithContext(ctx context.Context) GetAssessmentTargetDatabaseConnectionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentTargetDatabaseConnectionArrayOutput) Index(i pulumi.IntInput) GetAssessmentTargetDatabaseConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentTargetDatabaseConnection {
+		return vs[0].([]GetAssessmentTargetDatabaseConnection)[vs[1].(int)]
+	}).(GetAssessmentTargetDatabaseConnectionOutput)
+}
+
+type GetAssessmentsAssessmentCollection struct {
+	Items []GetAssessmentsAssessmentCollectionItem `pulumi:"items"`
+}
+
+// GetAssessmentsAssessmentCollectionInput is an input type that accepts GetAssessmentsAssessmentCollectionArgs and GetAssessmentsAssessmentCollectionOutput values.
+// You can construct a concrete instance of `GetAssessmentsAssessmentCollectionInput` via:
+//
+//	GetAssessmentsAssessmentCollectionArgs{...}
+type GetAssessmentsAssessmentCollectionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentsAssessmentCollectionOutput() GetAssessmentsAssessmentCollectionOutput
+	ToGetAssessmentsAssessmentCollectionOutputWithContext(context.Context) GetAssessmentsAssessmentCollectionOutput
+}
+
+type GetAssessmentsAssessmentCollectionArgs struct {
+	Items GetAssessmentsAssessmentCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAssessmentsAssessmentCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentsAssessmentCollection)(nil)).Elem()
+}
+
+func (i GetAssessmentsAssessmentCollectionArgs) ToGetAssessmentsAssessmentCollectionOutput() GetAssessmentsAssessmentCollectionOutput {
+	return i.ToGetAssessmentsAssessmentCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentsAssessmentCollectionArgs) ToGetAssessmentsAssessmentCollectionOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentsAssessmentCollectionOutput)
+}
+
+// GetAssessmentsAssessmentCollectionArrayInput is an input type that accepts GetAssessmentsAssessmentCollectionArray and GetAssessmentsAssessmentCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentsAssessmentCollectionArrayInput` via:
+//
+//	GetAssessmentsAssessmentCollectionArray{ GetAssessmentsAssessmentCollectionArgs{...} }
+type GetAssessmentsAssessmentCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentsAssessmentCollectionArrayOutput() GetAssessmentsAssessmentCollectionArrayOutput
+	ToGetAssessmentsAssessmentCollectionArrayOutputWithContext(context.Context) GetAssessmentsAssessmentCollectionArrayOutput
+}
+
+type GetAssessmentsAssessmentCollectionArray []GetAssessmentsAssessmentCollectionInput
+
+func (GetAssessmentsAssessmentCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentsAssessmentCollection)(nil)).Elem()
+}
+
+func (i GetAssessmentsAssessmentCollectionArray) ToGetAssessmentsAssessmentCollectionArrayOutput() GetAssessmentsAssessmentCollectionArrayOutput {
+	return i.ToGetAssessmentsAssessmentCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentsAssessmentCollectionArray) ToGetAssessmentsAssessmentCollectionArrayOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentsAssessmentCollectionArrayOutput)
+}
+
+type GetAssessmentsAssessmentCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentsAssessmentCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentsAssessmentCollection)(nil)).Elem()
+}
+
+func (o GetAssessmentsAssessmentCollectionOutput) ToGetAssessmentsAssessmentCollectionOutput() GetAssessmentsAssessmentCollectionOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionOutput) ToGetAssessmentsAssessmentCollectionOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionOutput) Items() GetAssessmentsAssessmentCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollection) []GetAssessmentsAssessmentCollectionItem { return v.Items }).(GetAssessmentsAssessmentCollectionItemArrayOutput)
+}
+
+type GetAssessmentsAssessmentCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentsAssessmentCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentsAssessmentCollection)(nil)).Elem()
+}
+
+func (o GetAssessmentsAssessmentCollectionArrayOutput) ToGetAssessmentsAssessmentCollectionArrayOutput() GetAssessmentsAssessmentCollectionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionArrayOutput) ToGetAssessmentsAssessmentCollectionArrayOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionArrayOutput) Index(i pulumi.IntInput) GetAssessmentsAssessmentCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentsAssessmentCollection {
+		return vs[0].([]GetAssessmentsAssessmentCollection)[vs[1].(int)]
+	}).(GetAssessmentsAssessmentCollectionOutput)
+}
+
+type GetAssessmentsAssessmentCollectionItem struct {
+	// Time allowed for the application downtime.
+	AcceptableDowntime string `pulumi:"acceptableDowntime"`
+	// The migration type of the migration to be performed.
+	AssessmentMigrationType string `pulumi:"assessmentMigrationType"`
+	BulkIncludeExcludeData  string `pulumi:"bulkIncludeExcludeData"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The type of assessment creation.
+	CreationType string `pulumi:"creationType"`
+	// The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+	DatabaseCombination string `pulumi:"databaseCombination"`
+	// The size of a source database.
+	DatabaseDataSize string `pulumi:"databaseDataSize"`
+	// DDL expectation values.
+	DdlExpectation string `pulumi:"ddlExpectation"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName    string                                                `pulumi:"displayName"`
+	ExcludeObjects []GetAssessmentsAssessmentCollectionItemExcludeObject `pulumi:"excludeObjects"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the resource being referenced.
+	Id             string                                                `pulumi:"id"`
+	IncludeObjects []GetAssessmentsAssessmentCollectionItemIncludeObject `pulumi:"includeObjects"`
+	// True if CDB should be defined, false otherwise.
+	IsCdbSupported bool `pulumi:"isCdbSupported"`
+	// The OCID of the resource being referenced.
+	MigrationId string `pulumi:"migrationId"`
+	// A network speed in Megabits per second.
+	NetworkSpeedMegabitPerSecond string `pulumi:"networkSpeedMegabitPerSecond"`
+	// Source Assessment Connection object
+	SourceDatabaseConnections []GetAssessmentsAssessmentCollectionItemSourceDatabaseConnection `pulumi:"sourceDatabaseConnections"`
+	// The lifecycle state of the Assessment.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Target Assessment Connection object
+	TargetDatabaseConnections []GetAssessmentsAssessmentCollectionItemTargetDatabaseConnection `pulumi:"targetDatabaseConnections"`
+	// An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated string `pulumi:"timeCreated"`
+	// An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetAssessmentsAssessmentCollectionItemInput is an input type that accepts GetAssessmentsAssessmentCollectionItemArgs and GetAssessmentsAssessmentCollectionItemOutput values.
+// You can construct a concrete instance of `GetAssessmentsAssessmentCollectionItemInput` via:
+//
+//	GetAssessmentsAssessmentCollectionItemArgs{...}
+type GetAssessmentsAssessmentCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAssessmentsAssessmentCollectionItemOutput() GetAssessmentsAssessmentCollectionItemOutput
+	ToGetAssessmentsAssessmentCollectionItemOutputWithContext(context.Context) GetAssessmentsAssessmentCollectionItemOutput
+}
+
+type GetAssessmentsAssessmentCollectionItemArgs struct {
+	// Time allowed for the application downtime.
+	AcceptableDowntime pulumi.StringInput `pulumi:"acceptableDowntime"`
+	// The migration type of the migration to be performed.
+	AssessmentMigrationType pulumi.StringInput `pulumi:"assessmentMigrationType"`
+	BulkIncludeExcludeData  pulumi.StringInput `pulumi:"bulkIncludeExcludeData"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The type of assessment creation.
+	CreationType pulumi.StringInput `pulumi:"creationType"`
+	// The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+	DatabaseCombination pulumi.StringInput `pulumi:"databaseCombination"`
+	// The size of a source database.
+	DatabaseDataSize pulumi.StringInput `pulumi:"databaseDataSize"`
+	// DDL expectation values.
+	DdlExpectation pulumi.StringInput `pulumi:"ddlExpectation"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName    pulumi.StringInput                                            `pulumi:"displayName"`
+	ExcludeObjects GetAssessmentsAssessmentCollectionItemExcludeObjectArrayInput `pulumi:"excludeObjects"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the resource being referenced.
+	Id             pulumi.StringInput                                            `pulumi:"id"`
+	IncludeObjects GetAssessmentsAssessmentCollectionItemIncludeObjectArrayInput `pulumi:"includeObjects"`
+	// True if CDB should be defined, false otherwise.
+	IsCdbSupported pulumi.BoolInput `pulumi:"isCdbSupported"`
+	// The OCID of the resource being referenced.
+	MigrationId pulumi.StringInput `pulumi:"migrationId"`
+	// A network speed in Megabits per second.
+	NetworkSpeedMegabitPerSecond pulumi.StringInput `pulumi:"networkSpeedMegabitPerSecond"`
+	// Source Assessment Connection object
+	SourceDatabaseConnections GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayInput `pulumi:"sourceDatabaseConnections"`
+	// The lifecycle state of the Assessment.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Target Assessment Connection object
+	TargetDatabaseConnections GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayInput `pulumi:"targetDatabaseConnections"`
+	// An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetAssessmentsAssessmentCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentsAssessmentCollectionItem)(nil)).Elem()
+}
+
+func (i GetAssessmentsAssessmentCollectionItemArgs) ToGetAssessmentsAssessmentCollectionItemOutput() GetAssessmentsAssessmentCollectionItemOutput {
+	return i.ToGetAssessmentsAssessmentCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentsAssessmentCollectionItemArgs) ToGetAssessmentsAssessmentCollectionItemOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentsAssessmentCollectionItemOutput)
+}
+
+// GetAssessmentsAssessmentCollectionItemArrayInput is an input type that accepts GetAssessmentsAssessmentCollectionItemArray and GetAssessmentsAssessmentCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentsAssessmentCollectionItemArrayInput` via:
+//
+//	GetAssessmentsAssessmentCollectionItemArray{ GetAssessmentsAssessmentCollectionItemArgs{...} }
+type GetAssessmentsAssessmentCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentsAssessmentCollectionItemArrayOutput() GetAssessmentsAssessmentCollectionItemArrayOutput
+	ToGetAssessmentsAssessmentCollectionItemArrayOutputWithContext(context.Context) GetAssessmentsAssessmentCollectionItemArrayOutput
+}
+
+type GetAssessmentsAssessmentCollectionItemArray []GetAssessmentsAssessmentCollectionItemInput
+
+func (GetAssessmentsAssessmentCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentsAssessmentCollectionItem)(nil)).Elem()
+}
+
+func (i GetAssessmentsAssessmentCollectionItemArray) ToGetAssessmentsAssessmentCollectionItemArrayOutput() GetAssessmentsAssessmentCollectionItemArrayOutput {
+	return i.ToGetAssessmentsAssessmentCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentsAssessmentCollectionItemArray) ToGetAssessmentsAssessmentCollectionItemArrayOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentsAssessmentCollectionItemArrayOutput)
+}
+
+type GetAssessmentsAssessmentCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentsAssessmentCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentsAssessmentCollectionItem)(nil)).Elem()
+}
+
+func (o GetAssessmentsAssessmentCollectionItemOutput) ToGetAssessmentsAssessmentCollectionItemOutput() GetAssessmentsAssessmentCollectionItemOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionItemOutput) ToGetAssessmentsAssessmentCollectionItemOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemOutput {
+	return o
+}
+
+// Time allowed for the application downtime.
+func (o GetAssessmentsAssessmentCollectionItemOutput) AcceptableDowntime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) string { return v.AcceptableDowntime }).(pulumi.StringOutput)
+}
+
+// The migration type of the migration to be performed.
+func (o GetAssessmentsAssessmentCollectionItemOutput) AssessmentMigrationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) string { return v.AssessmentMigrationType }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentsAssessmentCollectionItemOutput) BulkIncludeExcludeData() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) string { return v.BulkIncludeExcludeData }).(pulumi.StringOutput)
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetAssessmentsAssessmentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The type of assessment creation.
+func (o GetAssessmentsAssessmentCollectionItemOutput) CreationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) string { return v.CreationType }).(pulumi.StringOutput)
+}
+
+// The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+func (o GetAssessmentsAssessmentCollectionItemOutput) DatabaseCombination() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) string { return v.DatabaseCombination }).(pulumi.StringOutput)
+}
+
+// The size of a source database.
+func (o GetAssessmentsAssessmentCollectionItemOutput) DatabaseDataSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) string { return v.DatabaseDataSize }).(pulumi.StringOutput)
+}
+
+// DDL expectation values.
+func (o GetAssessmentsAssessmentCollectionItemOutput) DdlExpectation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) string { return v.DdlExpectation }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetAssessmentsAssessmentCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetAssessmentsAssessmentCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetAssessmentsAssessmentCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentsAssessmentCollectionItemOutput) ExcludeObjects() GetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) []GetAssessmentsAssessmentCollectionItemExcludeObject {
+		return v.ExcludeObjects
+	}).(GetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+func (o GetAssessmentsAssessmentCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o GetAssessmentsAssessmentCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentsAssessmentCollectionItemOutput) IncludeObjects() GetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) []GetAssessmentsAssessmentCollectionItemIncludeObject {
+		return v.IncludeObjects
+	}).(GetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput)
+}
+
+// True if CDB should be defined, false otherwise.
+func (o GetAssessmentsAssessmentCollectionItemOutput) IsCdbSupported() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) bool { return v.IsCdbSupported }).(pulumi.BoolOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o GetAssessmentsAssessmentCollectionItemOutput) MigrationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) string { return v.MigrationId }).(pulumi.StringOutput)
+}
+
+// A network speed in Megabits per second.
+func (o GetAssessmentsAssessmentCollectionItemOutput) NetworkSpeedMegabitPerSecond() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) string { return v.NetworkSpeedMegabitPerSecond }).(pulumi.StringOutput)
+}
+
+// Source Assessment Connection object
+func (o GetAssessmentsAssessmentCollectionItemOutput) SourceDatabaseConnections() GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) []GetAssessmentsAssessmentCollectionItemSourceDatabaseConnection {
+		return v.SourceDatabaseConnections
+	}).(GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput)
+}
+
+// The lifecycle state of the Assessment.
+func (o GetAssessmentsAssessmentCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetAssessmentsAssessmentCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// Target Assessment Connection object
+func (o GetAssessmentsAssessmentCollectionItemOutput) TargetDatabaseConnections() GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) []GetAssessmentsAssessmentCollectionItemTargetDatabaseConnection {
+		return v.TargetDatabaseConnections
+	}).(GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput)
+}
+
+// An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
+func (o GetAssessmentsAssessmentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
+func (o GetAssessmentsAssessmentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetAssessmentsAssessmentCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentsAssessmentCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentsAssessmentCollectionItem)(nil)).Elem()
+}
+
+func (o GetAssessmentsAssessmentCollectionItemArrayOutput) ToGetAssessmentsAssessmentCollectionItemArrayOutput() GetAssessmentsAssessmentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionItemArrayOutput) ToGetAssessmentsAssessmentCollectionItemArrayOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAssessmentsAssessmentCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentsAssessmentCollectionItem {
+		return vs[0].([]GetAssessmentsAssessmentCollectionItem)[vs[1].(int)]
+	}).(GetAssessmentsAssessmentCollectionItemOutput)
+}
+
+type GetAssessmentsAssessmentCollectionItemExcludeObject struct {
+	IsOmitExcludedTableFromReplication bool   `pulumi:"isOmitExcludedTableFromReplication"`
+	Object                             string `pulumi:"object"`
+	Owner                              string `pulumi:"owner"`
+	Schema                             string `pulumi:"schema"`
+	Type                               string `pulumi:"type"`
+}
+
+// GetAssessmentsAssessmentCollectionItemExcludeObjectInput is an input type that accepts GetAssessmentsAssessmentCollectionItemExcludeObjectArgs and GetAssessmentsAssessmentCollectionItemExcludeObjectOutput values.
+// You can construct a concrete instance of `GetAssessmentsAssessmentCollectionItemExcludeObjectInput` via:
+//
+//	GetAssessmentsAssessmentCollectionItemExcludeObjectArgs{...}
+type GetAssessmentsAssessmentCollectionItemExcludeObjectInput interface {
+	pulumi.Input
+
+	ToGetAssessmentsAssessmentCollectionItemExcludeObjectOutput() GetAssessmentsAssessmentCollectionItemExcludeObjectOutput
+	ToGetAssessmentsAssessmentCollectionItemExcludeObjectOutputWithContext(context.Context) GetAssessmentsAssessmentCollectionItemExcludeObjectOutput
+}
+
+type GetAssessmentsAssessmentCollectionItemExcludeObjectArgs struct {
+	IsOmitExcludedTableFromReplication pulumi.BoolInput   `pulumi:"isOmitExcludedTableFromReplication"`
+	Object                             pulumi.StringInput `pulumi:"object"`
+	Owner                              pulumi.StringInput `pulumi:"owner"`
+	Schema                             pulumi.StringInput `pulumi:"schema"`
+	Type                               pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetAssessmentsAssessmentCollectionItemExcludeObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentsAssessmentCollectionItemExcludeObject)(nil)).Elem()
+}
+
+func (i GetAssessmentsAssessmentCollectionItemExcludeObjectArgs) ToGetAssessmentsAssessmentCollectionItemExcludeObjectOutput() GetAssessmentsAssessmentCollectionItemExcludeObjectOutput {
+	return i.ToGetAssessmentsAssessmentCollectionItemExcludeObjectOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentsAssessmentCollectionItemExcludeObjectArgs) ToGetAssessmentsAssessmentCollectionItemExcludeObjectOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemExcludeObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentsAssessmentCollectionItemExcludeObjectOutput)
+}
+
+// GetAssessmentsAssessmentCollectionItemExcludeObjectArrayInput is an input type that accepts GetAssessmentsAssessmentCollectionItemExcludeObjectArray and GetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentsAssessmentCollectionItemExcludeObjectArrayInput` via:
+//
+//	GetAssessmentsAssessmentCollectionItemExcludeObjectArray{ GetAssessmentsAssessmentCollectionItemExcludeObjectArgs{...} }
+type GetAssessmentsAssessmentCollectionItemExcludeObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput() GetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput
+	ToGetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutputWithContext(context.Context) GetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput
+}
+
+type GetAssessmentsAssessmentCollectionItemExcludeObjectArray []GetAssessmentsAssessmentCollectionItemExcludeObjectInput
+
+func (GetAssessmentsAssessmentCollectionItemExcludeObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentsAssessmentCollectionItemExcludeObject)(nil)).Elem()
+}
+
+func (i GetAssessmentsAssessmentCollectionItemExcludeObjectArray) ToGetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput() GetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput {
+	return i.ToGetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentsAssessmentCollectionItemExcludeObjectArray) ToGetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput)
+}
+
+type GetAssessmentsAssessmentCollectionItemExcludeObjectOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentsAssessmentCollectionItemExcludeObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentsAssessmentCollectionItemExcludeObject)(nil)).Elem()
+}
+
+func (o GetAssessmentsAssessmentCollectionItemExcludeObjectOutput) ToGetAssessmentsAssessmentCollectionItemExcludeObjectOutput() GetAssessmentsAssessmentCollectionItemExcludeObjectOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionItemExcludeObjectOutput) ToGetAssessmentsAssessmentCollectionItemExcludeObjectOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemExcludeObjectOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionItemExcludeObjectOutput) IsOmitExcludedTableFromReplication() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItemExcludeObject) bool {
+		return v.IsOmitExcludedTableFromReplication
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetAssessmentsAssessmentCollectionItemExcludeObjectOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItemExcludeObject) string { return v.Object }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentsAssessmentCollectionItemExcludeObjectOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItemExcludeObject) string { return v.Owner }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentsAssessmentCollectionItemExcludeObjectOutput) Schema() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItemExcludeObject) string { return v.Schema }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentsAssessmentCollectionItemExcludeObjectOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItemExcludeObject) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentsAssessmentCollectionItemExcludeObject)(nil)).Elem()
+}
+
+func (o GetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput) ToGetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput() GetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput) ToGetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput) Index(i pulumi.IntInput) GetAssessmentsAssessmentCollectionItemExcludeObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentsAssessmentCollectionItemExcludeObject {
+		return vs[0].([]GetAssessmentsAssessmentCollectionItemExcludeObject)[vs[1].(int)]
+	}).(GetAssessmentsAssessmentCollectionItemExcludeObjectOutput)
+}
+
+type GetAssessmentsAssessmentCollectionItemIncludeObject struct {
+	IsOmitExcludedTableFromReplication bool   `pulumi:"isOmitExcludedTableFromReplication"`
+	Object                             string `pulumi:"object"`
+	Owner                              string `pulumi:"owner"`
+	Schema                             string `pulumi:"schema"`
+	Type                               string `pulumi:"type"`
+}
+
+// GetAssessmentsAssessmentCollectionItemIncludeObjectInput is an input type that accepts GetAssessmentsAssessmentCollectionItemIncludeObjectArgs and GetAssessmentsAssessmentCollectionItemIncludeObjectOutput values.
+// You can construct a concrete instance of `GetAssessmentsAssessmentCollectionItemIncludeObjectInput` via:
+//
+//	GetAssessmentsAssessmentCollectionItemIncludeObjectArgs{...}
+type GetAssessmentsAssessmentCollectionItemIncludeObjectInput interface {
+	pulumi.Input
+
+	ToGetAssessmentsAssessmentCollectionItemIncludeObjectOutput() GetAssessmentsAssessmentCollectionItemIncludeObjectOutput
+	ToGetAssessmentsAssessmentCollectionItemIncludeObjectOutputWithContext(context.Context) GetAssessmentsAssessmentCollectionItemIncludeObjectOutput
+}
+
+type GetAssessmentsAssessmentCollectionItemIncludeObjectArgs struct {
+	IsOmitExcludedTableFromReplication pulumi.BoolInput   `pulumi:"isOmitExcludedTableFromReplication"`
+	Object                             pulumi.StringInput `pulumi:"object"`
+	Owner                              pulumi.StringInput `pulumi:"owner"`
+	Schema                             pulumi.StringInput `pulumi:"schema"`
+	Type                               pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetAssessmentsAssessmentCollectionItemIncludeObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentsAssessmentCollectionItemIncludeObject)(nil)).Elem()
+}
+
+func (i GetAssessmentsAssessmentCollectionItemIncludeObjectArgs) ToGetAssessmentsAssessmentCollectionItemIncludeObjectOutput() GetAssessmentsAssessmentCollectionItemIncludeObjectOutput {
+	return i.ToGetAssessmentsAssessmentCollectionItemIncludeObjectOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentsAssessmentCollectionItemIncludeObjectArgs) ToGetAssessmentsAssessmentCollectionItemIncludeObjectOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemIncludeObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentsAssessmentCollectionItemIncludeObjectOutput)
+}
+
+// GetAssessmentsAssessmentCollectionItemIncludeObjectArrayInput is an input type that accepts GetAssessmentsAssessmentCollectionItemIncludeObjectArray and GetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentsAssessmentCollectionItemIncludeObjectArrayInput` via:
+//
+//	GetAssessmentsAssessmentCollectionItemIncludeObjectArray{ GetAssessmentsAssessmentCollectionItemIncludeObjectArgs{...} }
+type GetAssessmentsAssessmentCollectionItemIncludeObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput() GetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput
+	ToGetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutputWithContext(context.Context) GetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput
+}
+
+type GetAssessmentsAssessmentCollectionItemIncludeObjectArray []GetAssessmentsAssessmentCollectionItemIncludeObjectInput
+
+func (GetAssessmentsAssessmentCollectionItemIncludeObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentsAssessmentCollectionItemIncludeObject)(nil)).Elem()
+}
+
+func (i GetAssessmentsAssessmentCollectionItemIncludeObjectArray) ToGetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput() GetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput {
+	return i.ToGetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentsAssessmentCollectionItemIncludeObjectArray) ToGetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput)
+}
+
+type GetAssessmentsAssessmentCollectionItemIncludeObjectOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentsAssessmentCollectionItemIncludeObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentsAssessmentCollectionItemIncludeObject)(nil)).Elem()
+}
+
+func (o GetAssessmentsAssessmentCollectionItemIncludeObjectOutput) ToGetAssessmentsAssessmentCollectionItemIncludeObjectOutput() GetAssessmentsAssessmentCollectionItemIncludeObjectOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionItemIncludeObjectOutput) ToGetAssessmentsAssessmentCollectionItemIncludeObjectOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemIncludeObjectOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionItemIncludeObjectOutput) IsOmitExcludedTableFromReplication() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItemIncludeObject) bool {
+		return v.IsOmitExcludedTableFromReplication
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetAssessmentsAssessmentCollectionItemIncludeObjectOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItemIncludeObject) string { return v.Object }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentsAssessmentCollectionItemIncludeObjectOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItemIncludeObject) string { return v.Owner }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentsAssessmentCollectionItemIncludeObjectOutput) Schema() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItemIncludeObject) string { return v.Schema }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentsAssessmentCollectionItemIncludeObjectOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItemIncludeObject) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentsAssessmentCollectionItemIncludeObject)(nil)).Elem()
+}
+
+func (o GetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput) ToGetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput() GetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput) ToGetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput) Index(i pulumi.IntInput) GetAssessmentsAssessmentCollectionItemIncludeObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentsAssessmentCollectionItemIncludeObject {
+		return vs[0].([]GetAssessmentsAssessmentCollectionItemIncludeObject)[vs[1].(int)]
+	}).(GetAssessmentsAssessmentCollectionItemIncludeObjectOutput)
+}
+
+type GetAssessmentsAssessmentCollectionItemSourceDatabaseConnection struct {
+	// The OCID of the resource being referenced.
+	Id string `pulumi:"id"`
+}
+
+// GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionInput is an input type that accepts GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArgs and GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput values.
+// You can construct a concrete instance of `GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionInput` via:
+//
+//	GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArgs{...}
+type GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput() GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput
+	ToGetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutputWithContext(context.Context) GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput
+}
+
+type GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArgs struct {
+	// The OCID of the resource being referenced.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentsAssessmentCollectionItemSourceDatabaseConnection)(nil)).Elem()
+}
+
+func (i GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArgs) ToGetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput() GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput {
+	return i.ToGetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArgs) ToGetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput)
+}
+
+// GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayInput is an input type that accepts GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArray and GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayInput` via:
+//
+//	GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArray{ GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArgs{...} }
+type GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput() GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput
+	ToGetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutputWithContext(context.Context) GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput
+}
+
+type GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArray []GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionInput
+
+func (GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentsAssessmentCollectionItemSourceDatabaseConnection)(nil)).Elem()
+}
+
+func (i GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArray) ToGetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput() GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput {
+	return i.ToGetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArray) ToGetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput)
+}
+
+type GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentsAssessmentCollectionItemSourceDatabaseConnection)(nil)).Elem()
+}
+
+func (o GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput) ToGetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput() GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput) ToGetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput {
+	return o
+}
+
+// The OCID of the resource being referenced.
+func (o GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItemSourceDatabaseConnection) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentsAssessmentCollectionItemSourceDatabaseConnection)(nil)).Elem()
+}
+
+func (o GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput) ToGetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput() GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput) ToGetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput) Index(i pulumi.IntInput) GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentsAssessmentCollectionItemSourceDatabaseConnection {
+		return vs[0].([]GetAssessmentsAssessmentCollectionItemSourceDatabaseConnection)[vs[1].(int)]
+	}).(GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput)
+}
+
+type GetAssessmentsAssessmentCollectionItemTargetDatabaseConnection struct {
+	// Defines the type of connection. For example, ORACLE.
+	ConnectionType string `pulumi:"connectionType"`
+	// The database version
+	DatabaseVersion string `pulumi:"databaseVersion"`
+	// The OCID of the resource being referenced.
+	Id string `pulumi:"id"`
+	// Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
+	TechnologySubType string `pulumi:"technologySubType"`
+	// The technology type.
+	TechnologyType string `pulumi:"technologyType"`
+}
+
+// GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionInput is an input type that accepts GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArgs and GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput values.
+// You can construct a concrete instance of `GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionInput` via:
+//
+//	GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArgs{...}
+type GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionInput interface {
+	pulumi.Input
+
+	ToGetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput() GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput
+	ToGetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutputWithContext(context.Context) GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput
+}
+
+type GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArgs struct {
+	// Defines the type of connection. For example, ORACLE.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+	// The database version
+	DatabaseVersion pulumi.StringInput `pulumi:"databaseVersion"`
+	// The OCID of the resource being referenced.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
+	TechnologySubType pulumi.StringInput `pulumi:"technologySubType"`
+	// The technology type.
+	TechnologyType pulumi.StringInput `pulumi:"technologyType"`
+}
+
+func (GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentsAssessmentCollectionItemTargetDatabaseConnection)(nil)).Elem()
+}
+
+func (i GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArgs) ToGetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput() GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput {
+	return i.ToGetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArgs) ToGetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput)
+}
+
+// GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayInput is an input type that accepts GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArray and GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayInput` via:
+//
+//	GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArray{ GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArgs{...} }
+type GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput() GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput
+	ToGetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutputWithContext(context.Context) GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput
+}
+
+type GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArray []GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionInput
+
+func (GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentsAssessmentCollectionItemTargetDatabaseConnection)(nil)).Elem()
+}
+
+func (i GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArray) ToGetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput() GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput {
+	return i.ToGetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArray) ToGetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput)
+}
+
+type GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentsAssessmentCollectionItemTargetDatabaseConnection)(nil)).Elem()
+}
+
+func (o GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput) ToGetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput() GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput) ToGetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput {
+	return o
+}
+
+// Defines the type of connection. For example, ORACLE.
+func (o GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItemTargetDatabaseConnection) string { return v.ConnectionType }).(pulumi.StringOutput)
+}
+
+// The database version
+func (o GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput) DatabaseVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItemTargetDatabaseConnection) string {
+		return v.DatabaseVersion
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItemTargetDatabaseConnection) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
+func (o GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput) TechnologySubType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItemTargetDatabaseConnection) string {
+		return v.TechnologySubType
+	}).(pulumi.StringOutput)
+}
+
+// The technology type.
+func (o GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput) TechnologyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsAssessmentCollectionItemTargetDatabaseConnection) string { return v.TechnologyType }).(pulumi.StringOutput)
+}
+
+type GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentsAssessmentCollectionItemTargetDatabaseConnection)(nil)).Elem()
+}
+
+func (o GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput) ToGetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput() GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput) ToGetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutputWithContext(ctx context.Context) GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput {
+	return o
+}
+
+func (o GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput) Index(i pulumi.IntInput) GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentsAssessmentCollectionItemTargetDatabaseConnection {
+		return vs[0].([]GetAssessmentsAssessmentCollectionItemTargetDatabaseConnection)[vs[1].(int)]
+	}).(GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput)
+}
+
+type GetAssessmentsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAssessmentsFilterInput is an input type that accepts GetAssessmentsFilterArgs and GetAssessmentsFilterOutput values.
+// You can construct a concrete instance of `GetAssessmentsFilterInput` via:
+//
+//	GetAssessmentsFilterArgs{...}
+type GetAssessmentsFilterInput interface {
+	pulumi.Input
+
+	ToGetAssessmentsFilterOutput() GetAssessmentsFilterOutput
+	ToGetAssessmentsFilterOutputWithContext(context.Context) GetAssessmentsFilterOutput
+}
+
+type GetAssessmentsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAssessmentsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentsFilter)(nil)).Elem()
+}
+
+func (i GetAssessmentsFilterArgs) ToGetAssessmentsFilterOutput() GetAssessmentsFilterOutput {
+	return i.ToGetAssessmentsFilterOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentsFilterArgs) ToGetAssessmentsFilterOutputWithContext(ctx context.Context) GetAssessmentsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentsFilterOutput)
+}
+
+// GetAssessmentsFilterArrayInput is an input type that accepts GetAssessmentsFilterArray and GetAssessmentsFilterArrayOutput values.
+// You can construct a concrete instance of `GetAssessmentsFilterArrayInput` via:
+//
+//	GetAssessmentsFilterArray{ GetAssessmentsFilterArgs{...} }
+type GetAssessmentsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAssessmentsFilterArrayOutput() GetAssessmentsFilterArrayOutput
+	ToGetAssessmentsFilterArrayOutputWithContext(context.Context) GetAssessmentsFilterArrayOutput
+}
+
+type GetAssessmentsFilterArray []GetAssessmentsFilterInput
+
+func (GetAssessmentsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentsFilter)(nil)).Elem()
+}
+
+func (i GetAssessmentsFilterArray) ToGetAssessmentsFilterArrayOutput() GetAssessmentsFilterArrayOutput {
+	return i.ToGetAssessmentsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssessmentsFilterArray) ToGetAssessmentsFilterArrayOutputWithContext(ctx context.Context) GetAssessmentsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssessmentsFilterArrayOutput)
+}
+
+type GetAssessmentsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssessmentsFilter)(nil)).Elem()
+}
+
+func (o GetAssessmentsFilterOutput) ToGetAssessmentsFilterOutput() GetAssessmentsFilterOutput {
+	return o
+}
+
+func (o GetAssessmentsFilterOutput) ToGetAssessmentsFilterOutputWithContext(ctx context.Context) GetAssessmentsFilterOutput {
+	return o
+}
+
+func (o GetAssessmentsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssessmentsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAssessmentsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAssessmentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAssessmentsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAssessmentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAssessmentsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssessmentsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssessmentsFilter)(nil)).Elem()
+}
+
+func (o GetAssessmentsFilterArrayOutput) ToGetAssessmentsFilterArrayOutput() GetAssessmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetAssessmentsFilterArrayOutput) ToGetAssessmentsFilterArrayOutputWithContext(ctx context.Context) GetAssessmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetAssessmentsFilterArrayOutput) Index(i pulumi.IntInput) GetAssessmentsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssessmentsFilter {
+		return vs[0].([]GetAssessmentsFilter)[vs[1].(int)]
+	}).(GetAssessmentsFilterOutput)
+}
+
 type GetConnectionAdditionalAttribute struct {
 	// The name of the property entry.
 	Name string `pulumi:"name"`
@@ -5144,6 +14235,563 @@ func (o GetConnectionAdditionalAttributeArrayOutput) Index(i pulumi.IntInput) Ge
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionAdditionalAttribute {
 		return vs[0].([]GetConnectionAdditionalAttribute)[vs[1].(int)]
 	}).(GetConnectionAdditionalAttributeOutput)
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollection struct {
+	// Items in collection.
+	Items []GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItem `pulumi:"items"`
+}
+
+// GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionInput is an input type that accepts GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArgs and GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput values.
+// You can construct a concrete instance of `GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionInput` via:
+//
+//	GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArgs{...}
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionInput interface {
+	pulumi.Input
+
+	ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput
+	ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutputWithContext(context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArgs struct {
+	// Items in collection.
+	Items GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollection)(nil)).Elem()
+}
+
+func (i GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArgs) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput {
+	return i.ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutputWithContext(context.Background())
+}
+
+func (i GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArgs) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput)
+}
+
+// GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayInput is an input type that accepts GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArray and GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutput values.
+// You can construct a concrete instance of `GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayInput` via:
+//
+//	GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArray{ GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArgs{...} }
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutput
+	ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutputWithContext(context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutput
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArray []GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionInput
+
+func (GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollection)(nil)).Elem()
+}
+
+func (i GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArray) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutput {
+	return i.ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArray) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutput)
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollection)(nil)).Elem()
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput {
+	return o
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput {
+	return o
+}
+
+// Items in collection.
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput) Items() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollection) []GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItem {
+		return v.Items
+	}).(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput)
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollection)(nil)).Elem()
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutput) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutput {
+	return o
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutput) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutput {
+	return o
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutput) Index(i pulumi.IntInput) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollection {
+		return vs[0].([]GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollection)[vs[1].(int)]
+	}).(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput)
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItem struct {
+	// The array of connection types.
+	ConnectionType string `pulumi:"connectionType"`
+	// Array of technology type objects
+	TechnologyTypes []GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyType `pulumi:"technologyTypes"`
+}
+
+// GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemInput is an input type that accepts GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArgs and GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput values.
+// You can construct a concrete instance of `GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemInput` via:
+//
+//	GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArgs{...}
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput
+	ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutputWithContext(context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArgs struct {
+	// The array of connection types.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+	// Array of technology type objects
+	TechnologyTypes GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayInput `pulumi:"technologyTypes"`
+}
+
+func (GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItem)(nil)).Elem()
+}
+
+func (i GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArgs) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput {
+	return i.ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArgs) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput)
+}
+
+// GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayInput is an input type that accepts GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArray and GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayInput` via:
+//
+//	GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArray{ GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArgs{...} }
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput
+	ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutputWithContext(context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArray []GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemInput
+
+func (GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItem)(nil)).Elem()
+}
+
+func (i GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArray) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput {
+	return i.ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArray) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput)
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItem)(nil)).Elem()
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput {
+	return o
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput {
+	return o
+}
+
+// The array of connection types.
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItem) string {
+		return v.ConnectionType
+	}).(pulumi.StringOutput)
+}
+
+// Array of technology type objects
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput) TechnologyTypes() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput {
+	return o.ApplyT(func(v GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItem) []GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyType {
+		return v.TechnologyTypes
+	}).(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput)
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItem)(nil)).Elem()
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItem {
+		return vs[0].([]GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItem)[vs[1].(int)]
+	}).(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput)
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyType struct {
+	// Array of database versions
+	DatabaseVersions []string `pulumi:"databaseVersions"`
+	// Array of technology sub-types e.g. ADW_SHARED.
+	TechnologySubTypes []GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubType `pulumi:"technologySubTypes"`
+	// The array of technology types.
+	TechnologyType string `pulumi:"technologyType"`
+}
+
+// GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeInput is an input type that accepts GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArgs and GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput values.
+// You can construct a concrete instance of `GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeInput` via:
+//
+//	GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArgs{...}
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeInput interface {
+	pulumi.Input
+
+	ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput
+	ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutputWithContext(context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArgs struct {
+	// Array of database versions
+	DatabaseVersions pulumi.StringArrayInput `pulumi:"databaseVersions"`
+	// Array of technology sub-types e.g. ADW_SHARED.
+	TechnologySubTypes GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayInput `pulumi:"technologySubTypes"`
+	// The array of technology types.
+	TechnologyType pulumi.StringInput `pulumi:"technologyType"`
+}
+
+func (GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyType)(nil)).Elem()
+}
+
+func (i GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArgs) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput {
+	return i.ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutputWithContext(context.Background())
+}
+
+func (i GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArgs) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput)
+}
+
+// GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayInput is an input type that accepts GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArray and GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput values.
+// You can construct a concrete instance of `GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayInput` via:
+//
+//	GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArray{ GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArgs{...} }
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput
+	ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutputWithContext(context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArray []GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeInput
+
+func (GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyType)(nil)).Elem()
+}
+
+func (i GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArray) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput {
+	return i.ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArray) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput)
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyType)(nil)).Elem()
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput {
+	return o
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput {
+	return o
+}
+
+// Array of database versions
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput) DatabaseVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyType) []string {
+		return v.DatabaseVersions
+	}).(pulumi.StringArrayOutput)
+}
+
+// Array of technology sub-types e.g. ADW_SHARED.
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput) TechnologySubTypes() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput {
+	return o.ApplyT(func(v GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyType) []GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubType {
+		return v.TechnologySubTypes
+	}).(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput)
+}
+
+// The array of technology types.
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput) TechnologyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyType) string {
+		return v.TechnologyType
+	}).(pulumi.StringOutput)
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyType)(nil)).Elem()
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput {
+	return o
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput {
+	return o
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput) Index(i pulumi.IntInput) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyType {
+		return vs[0].([]GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyType)[vs[1].(int)]
+	}).(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput)
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubType struct {
+	// Array of database versions
+	DatabaseVersions []string `pulumi:"databaseVersions"`
+	// Technology sub-type e.g. ADW_SHARED.
+	TechnologySubType string `pulumi:"technologySubType"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	TechnologySubTypeDisplayName string `pulumi:"technologySubTypeDisplayName"`
+}
+
+// GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeInput is an input type that accepts GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArgs and GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput values.
+// You can construct a concrete instance of `GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeInput` via:
+//
+//	GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArgs{...}
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeInput interface {
+	pulumi.Input
+
+	ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput
+	ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutputWithContext(context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArgs struct {
+	// Array of database versions
+	DatabaseVersions pulumi.StringArrayInput `pulumi:"databaseVersions"`
+	// Technology sub-type e.g. ADW_SHARED.
+	TechnologySubType pulumi.StringInput `pulumi:"technologySubType"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	TechnologySubTypeDisplayName pulumi.StringInput `pulumi:"technologySubTypeDisplayName"`
+}
+
+func (GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubType)(nil)).Elem()
+}
+
+func (i GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArgs) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput {
+	return i.ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutputWithContext(context.Background())
+}
+
+func (i GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArgs) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput)
+}
+
+// GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayInput is an input type that accepts GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArray and GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput values.
+// You can construct a concrete instance of `GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayInput` via:
+//
+//	GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArray{ GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArgs{...} }
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput
+	ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutputWithContext(context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArray []GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeInput
+
+func (GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubType)(nil)).Elem()
+}
+
+func (i GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArray) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput {
+	return i.ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArray) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput)
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubType)(nil)).Elem()
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput {
+	return o
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput {
+	return o
+}
+
+// Array of database versions
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput) DatabaseVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubType) []string {
+		return v.DatabaseVersions
+	}).(pulumi.StringArrayOutput)
+}
+
+// Technology sub-type e.g. ADW_SHARED.
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput) TechnologySubType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubType) string {
+		return v.TechnologySubType
+	}).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput) TechnologySubTypeDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubType) string {
+		return v.TechnologySubTypeDisplayName
+	}).(pulumi.StringOutput)
+}
+
+type GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubType)(nil)).Elem()
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput() GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput {
+	return o
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput) ToGetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput {
+	return o
+}
+
+func (o GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput) Index(i pulumi.IntInput) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubType {
+		return vs[0].([]GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubType)[vs[1].(int)]
+	}).(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput)
+}
+
+type GetConnectionDatabaseconnectiontypesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetConnectionDatabaseconnectiontypesFilterInput is an input type that accepts GetConnectionDatabaseconnectiontypesFilterArgs and GetConnectionDatabaseconnectiontypesFilterOutput values.
+// You can construct a concrete instance of `GetConnectionDatabaseconnectiontypesFilterInput` via:
+//
+//	GetConnectionDatabaseconnectiontypesFilterArgs{...}
+type GetConnectionDatabaseconnectiontypesFilterInput interface {
+	pulumi.Input
+
+	ToGetConnectionDatabaseconnectiontypesFilterOutput() GetConnectionDatabaseconnectiontypesFilterOutput
+	ToGetConnectionDatabaseconnectiontypesFilterOutputWithContext(context.Context) GetConnectionDatabaseconnectiontypesFilterOutput
+}
+
+type GetConnectionDatabaseconnectiontypesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetConnectionDatabaseconnectiontypesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionDatabaseconnectiontypesFilter)(nil)).Elem()
+}
+
+func (i GetConnectionDatabaseconnectiontypesFilterArgs) ToGetConnectionDatabaseconnectiontypesFilterOutput() GetConnectionDatabaseconnectiontypesFilterOutput {
+	return i.ToGetConnectionDatabaseconnectiontypesFilterOutputWithContext(context.Background())
+}
+
+func (i GetConnectionDatabaseconnectiontypesFilterArgs) ToGetConnectionDatabaseconnectiontypesFilterOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionDatabaseconnectiontypesFilterOutput)
+}
+
+// GetConnectionDatabaseconnectiontypesFilterArrayInput is an input type that accepts GetConnectionDatabaseconnectiontypesFilterArray and GetConnectionDatabaseconnectiontypesFilterArrayOutput values.
+// You can construct a concrete instance of `GetConnectionDatabaseconnectiontypesFilterArrayInput` via:
+//
+//	GetConnectionDatabaseconnectiontypesFilterArray{ GetConnectionDatabaseconnectiontypesFilterArgs{...} }
+type GetConnectionDatabaseconnectiontypesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionDatabaseconnectiontypesFilterArrayOutput() GetConnectionDatabaseconnectiontypesFilterArrayOutput
+	ToGetConnectionDatabaseconnectiontypesFilterArrayOutputWithContext(context.Context) GetConnectionDatabaseconnectiontypesFilterArrayOutput
+}
+
+type GetConnectionDatabaseconnectiontypesFilterArray []GetConnectionDatabaseconnectiontypesFilterInput
+
+func (GetConnectionDatabaseconnectiontypesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionDatabaseconnectiontypesFilter)(nil)).Elem()
+}
+
+func (i GetConnectionDatabaseconnectiontypesFilterArray) ToGetConnectionDatabaseconnectiontypesFilterArrayOutput() GetConnectionDatabaseconnectiontypesFilterArrayOutput {
+	return i.ToGetConnectionDatabaseconnectiontypesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionDatabaseconnectiontypesFilterArray) ToGetConnectionDatabaseconnectiontypesFilterArrayOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionDatabaseconnectiontypesFilterArrayOutput)
+}
+
+type GetConnectionDatabaseconnectiontypesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionDatabaseconnectiontypesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionDatabaseconnectiontypesFilter)(nil)).Elem()
+}
+
+func (o GetConnectionDatabaseconnectiontypesFilterOutput) ToGetConnectionDatabaseconnectiontypesFilterOutput() GetConnectionDatabaseconnectiontypesFilterOutput {
+	return o
+}
+
+func (o GetConnectionDatabaseconnectiontypesFilterOutput) ToGetConnectionDatabaseconnectiontypesFilterOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesFilterOutput {
+	return o
+}
+
+func (o GetConnectionDatabaseconnectiontypesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionDatabaseconnectiontypesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionDatabaseconnectiontypesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetConnectionDatabaseconnectiontypesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetConnectionDatabaseconnectiontypesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConnectionDatabaseconnectiontypesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetConnectionDatabaseconnectiontypesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionDatabaseconnectiontypesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionDatabaseconnectiontypesFilter)(nil)).Elem()
+}
+
+func (o GetConnectionDatabaseconnectiontypesFilterArrayOutput) ToGetConnectionDatabaseconnectiontypesFilterArrayOutput() GetConnectionDatabaseconnectiontypesFilterArrayOutput {
+	return o
+}
+
+func (o GetConnectionDatabaseconnectiontypesFilterArrayOutput) ToGetConnectionDatabaseconnectiontypesFilterArrayOutputWithContext(ctx context.Context) GetConnectionDatabaseconnectiontypesFilterArrayOutput {
+	return o
+}
+
+func (o GetConnectionDatabaseconnectiontypesFilterArrayOutput) Index(i pulumi.IntInput) GetConnectionDatabaseconnectiontypesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionDatabaseconnectiontypesFilter {
+		return vs[0].([]GetConnectionDatabaseconnectiontypesFilter)[vs[1].(int)]
+	}).(GetConnectionDatabaseconnectiontypesFilterOutput)
 }
 
 type GetConnectionIngressIp struct {
@@ -6102,6 +15750,1433 @@ func (o GetConnectionsFilterArrayOutput) Index(i pulumi.IntInput) GetConnections
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsFilter {
 		return vs[0].([]GetConnectionsFilter)[vs[1].(int)]
 	}).(GetConnectionsFilterOutput)
+}
+
+type GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollection struct {
+	// Array of check objects.
+	Items []GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItem `pulumi:"items"`
+}
+
+// GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionInput is an input type that accepts GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArgs and GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionInput` via:
+//
+//	GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArgs{...}
+type GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput() GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput
+	ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutputWithContext(context.Context) GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput
+}
+
+type GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArgs struct {
+	// Array of check objects.
+	Items GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollection)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArgs) ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput() GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput {
+	return i.ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArgs) ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutputWithContext(ctx context.Context) GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput)
+}
+
+// GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayInput is an input type that accepts GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArray and GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayInput` via:
+//
+//	GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArray{ GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArgs{...} }
+type GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutput() GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutput
+	ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutputWithContext(context.Context) GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutput
+}
+
+type GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArray []GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionInput
+
+func (GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollection)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArray) ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutput() GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutput {
+	return i.ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArray) ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutput)
+}
+
+type GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollection)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput) ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput() GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput) ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutputWithContext(ctx context.Context) GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput {
+	return o
+}
+
+// Array of check objects.
+func (o GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput) Items() GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollection) []GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItem {
+		return v.Items
+	}).(GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput)
+}
+
+type GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollection)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutput) ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutput() GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutput) ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutput) Index(i pulumi.IntInput) GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollection {
+		return vs[0].([]GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollection)[vs[1].(int)]
+	}).(GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput)
+}
+
+type GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItem struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	Fields      map[string]string `pulumi:"fields"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// If the object was excluded from migration, then it is true.
+	IsExcluded bool `pulumi:"isExcluded"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+}
+
+// GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemInput is an input type that accepts GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArgs and GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemInput` via:
+//
+//	GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArgs{...}
+type GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput() GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput
+	ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutputWithContext(context.Context) GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput
+}
+
+type GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	Fields      pulumi.StringMapInput `pulumi:"fields"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// If the object was excluded from migration, then it is true.
+	IsExcluded pulumi.BoolInput `pulumi:"isExcluded"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+}
+
+func (GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItem)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArgs) ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput() GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput {
+	return i.ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArgs) ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutputWithContext(ctx context.Context) GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput)
+}
+
+// GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayInput is an input type that accepts GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArray and GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayInput` via:
+//
+//	GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArray{ GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArgs{...} }
+type GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput() GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput
+	ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutputWithContext(context.Context) GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput
+}
+
+type GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArray []GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemInput
+
+func (GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItem)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArray) ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput() GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput {
+	return i.ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArray) ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput)
+}
+
+type GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItem)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput) ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput() GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput) ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutputWithContext(ctx context.Context) GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+func (o GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput) Fields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItem) map[string]string {
+		return v.Fields
+	}).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+func (o GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// If the object was excluded from migration, then it is true.
+func (o GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput) IsExcluded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItem) bool {
+		return v.IsExcluded
+	}).(pulumi.BoolOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+type GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItem)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput) ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput() GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput) ToGetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItem {
+		return vs[0].([]GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItem)[vs[1].(int)]
+	}).(GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput)
+}
+
+type GetJobAdvisorReportCheckObjectsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetJobAdvisorReportCheckObjectsFilterInput is an input type that accepts GetJobAdvisorReportCheckObjectsFilterArgs and GetJobAdvisorReportCheckObjectsFilterOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportCheckObjectsFilterInput` via:
+//
+//	GetJobAdvisorReportCheckObjectsFilterArgs{...}
+type GetJobAdvisorReportCheckObjectsFilterInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportCheckObjectsFilterOutput() GetJobAdvisorReportCheckObjectsFilterOutput
+	ToGetJobAdvisorReportCheckObjectsFilterOutputWithContext(context.Context) GetJobAdvisorReportCheckObjectsFilterOutput
+}
+
+type GetJobAdvisorReportCheckObjectsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetJobAdvisorReportCheckObjectsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportCheckObjectsFilter)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportCheckObjectsFilterArgs) ToGetJobAdvisorReportCheckObjectsFilterOutput() GetJobAdvisorReportCheckObjectsFilterOutput {
+	return i.ToGetJobAdvisorReportCheckObjectsFilterOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportCheckObjectsFilterArgs) ToGetJobAdvisorReportCheckObjectsFilterOutputWithContext(ctx context.Context) GetJobAdvisorReportCheckObjectsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportCheckObjectsFilterOutput)
+}
+
+// GetJobAdvisorReportCheckObjectsFilterArrayInput is an input type that accepts GetJobAdvisorReportCheckObjectsFilterArray and GetJobAdvisorReportCheckObjectsFilterArrayOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportCheckObjectsFilterArrayInput` via:
+//
+//	GetJobAdvisorReportCheckObjectsFilterArray{ GetJobAdvisorReportCheckObjectsFilterArgs{...} }
+type GetJobAdvisorReportCheckObjectsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportCheckObjectsFilterArrayOutput() GetJobAdvisorReportCheckObjectsFilterArrayOutput
+	ToGetJobAdvisorReportCheckObjectsFilterArrayOutputWithContext(context.Context) GetJobAdvisorReportCheckObjectsFilterArrayOutput
+}
+
+type GetJobAdvisorReportCheckObjectsFilterArray []GetJobAdvisorReportCheckObjectsFilterInput
+
+func (GetJobAdvisorReportCheckObjectsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportCheckObjectsFilter)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportCheckObjectsFilterArray) ToGetJobAdvisorReportCheckObjectsFilterArrayOutput() GetJobAdvisorReportCheckObjectsFilterArrayOutput {
+	return i.ToGetJobAdvisorReportCheckObjectsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportCheckObjectsFilterArray) ToGetJobAdvisorReportCheckObjectsFilterArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportCheckObjectsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportCheckObjectsFilterArrayOutput)
+}
+
+type GetJobAdvisorReportCheckObjectsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportCheckObjectsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportCheckObjectsFilter)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportCheckObjectsFilterOutput) ToGetJobAdvisorReportCheckObjectsFilterOutput() GetJobAdvisorReportCheckObjectsFilterOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportCheckObjectsFilterOutput) ToGetJobAdvisorReportCheckObjectsFilterOutputWithContext(ctx context.Context) GetJobAdvisorReportCheckObjectsFilterOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportCheckObjectsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportCheckObjectsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetJobAdvisorReportCheckObjectsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportCheckObjectsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetJobAdvisorReportCheckObjectsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportCheckObjectsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetJobAdvisorReportCheckObjectsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportCheckObjectsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportCheckObjectsFilter)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportCheckObjectsFilterArrayOutput) ToGetJobAdvisorReportCheckObjectsFilterArrayOutput() GetJobAdvisorReportCheckObjectsFilterArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportCheckObjectsFilterArrayOutput) ToGetJobAdvisorReportCheckObjectsFilterArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportCheckObjectsFilterArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportCheckObjectsFilterArrayOutput) Index(i pulumi.IntInput) GetJobAdvisorReportCheckObjectsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobAdvisorReportCheckObjectsFilter {
+		return vs[0].([]GetJobAdvisorReportCheckObjectsFilter)[vs[1].(int)]
+	}).(GetJobAdvisorReportCheckObjectsFilterOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollection struct {
+	// Array of advisor check items.
+	Items []GetJobAdvisorReportChecksAdvisorReportCheckCollectionItem `pulumi:"items"`
+	// Pre-Migration extended advisor report summary.
+	Summaries []GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummary `pulumi:"summaries"`
+}
+
+// GetJobAdvisorReportChecksAdvisorReportCheckCollectionInput is an input type that accepts GetJobAdvisorReportChecksAdvisorReportCheckCollectionArgs and GetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportChecksAdvisorReportCheckCollectionInput` via:
+//
+//	GetJobAdvisorReportChecksAdvisorReportCheckCollectionArgs{...}
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionOutputWithContext(context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionArgs struct {
+	// Array of advisor check items.
+	Items GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayInput `pulumi:"items"`
+	// Pre-Migration extended advisor report summary.
+	Summaries GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayInput `pulumi:"summaries"`
+}
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollection)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionArgs) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput {
+	return i.ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionArgs) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput)
+}
+
+// GetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayInput is an input type that accepts GetJobAdvisorReportChecksAdvisorReportCheckCollectionArray and GetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayInput` via:
+//
+//	GetJobAdvisorReportChecksAdvisorReportCheckCollectionArray{ GetJobAdvisorReportChecksAdvisorReportCheckCollectionArgs{...} }
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutput
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutputWithContext(context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutput
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionArray []GetJobAdvisorReportChecksAdvisorReportCheckCollectionInput
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportChecksAdvisorReportCheckCollection)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionArray) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutput {
+	return i.ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionArray) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollection)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput {
+	return o
+}
+
+// Array of advisor check items.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput) Items() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollection) []GetJobAdvisorReportChecksAdvisorReportCheckCollectionItem {
+		return v.Items
+	}).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput)
+}
+
+// Pre-Migration extended advisor report summary.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput) Summaries() GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollection) []GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummary {
+		return v.Summaries
+	}).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportChecksAdvisorReportCheckCollection)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutput) Index(i pulumi.IntInput) GetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobAdvisorReportChecksAdvisorReportCheckCollection {
+		return vs[0].([]GetJobAdvisorReportChecksAdvisorReportCheckCollection)[vs[1].(int)]
+	}).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItem struct {
+	AdvisorReportCheckId string `pulumi:"advisorReportCheckId"`
+	// User flag for advisor report check.
+	IsReviewed bool `pulumi:"isReviewed"`
+	// Array of advisor check items.
+	Items []GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem `pulumi:"items"`
+	// The OCID of the job
+	JobId string `pulumi:"jobId"`
+	// Pre-Migration extended advisor report summary.
+	Summaries []GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummary `pulumi:"summaries"`
+}
+
+// GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemInput is an input type that accepts GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArgs and GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemInput` via:
+//
+//	GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArgs{...}
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutputWithContext(context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArgs struct {
+	AdvisorReportCheckId pulumi.StringInput `pulumi:"advisorReportCheckId"`
+	// User flag for advisor report check.
+	IsReviewed pulumi.BoolInput `pulumi:"isReviewed"`
+	// Array of advisor check items.
+	Items GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayInput `pulumi:"items"`
+	// The OCID of the job
+	JobId pulumi.StringInput `pulumi:"jobId"`
+	// Pre-Migration extended advisor report summary.
+	Summaries GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayInput `pulumi:"summaries"`
+}
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItem)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArgs) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput {
+	return i.ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArgs) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput)
+}
+
+// GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayInput is an input type that accepts GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArray and GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayInput` via:
+//
+//	GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArray{ GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArgs{...} }
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutputWithContext(context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArray []GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemInput
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportChecksAdvisorReportCheckCollectionItem)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArray) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput {
+	return i.ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArray) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItem)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput) AdvisorReportCheckId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItem) string {
+		return v.AdvisorReportCheckId
+	}).(pulumi.StringOutput)
+}
+
+// User flag for advisor report check.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput) IsReviewed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItem) bool { return v.IsReviewed }).(pulumi.BoolOutput)
+}
+
+// Array of advisor check items.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput) Items() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItem) []GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem {
+		return v.Items
+	}).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput)
+}
+
+// The OCID of the job
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput) JobId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItem) string { return v.JobId }).(pulumi.StringOutput)
+}
+
+// Pre-Migration extended advisor report summary.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput) Summaries() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItem) []GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummary {
+		return v.Summaries
+	}).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportChecksAdvisorReportCheckCollectionItem)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput) Index(i pulumi.IntInput) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItem {
+		return vs[0].([]GetJobAdvisorReportChecksAdvisorReportCheckCollectionItem)[vs[1].(int)]
+	}).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem struct {
+	// Fixing the issue.
+	Action string `pulumi:"action"`
+	// Array of the column of the objects table.
+	Columns []GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumn `pulumi:"columns"`
+	// Pre-Migration сheck display name.
+	DisplayName string `pulumi:"displayName"`
+	// The path to the fixup script for this check.
+	FixupScriptLocation string `pulumi:"fixupScriptLocation"`
+	// Impact of the issue on data migration.
+	Impact string `pulumi:"impact"`
+	// If false, objects cannot be excluded from migration.
+	IsExclusionAllowed bool `pulumi:"isExclusionAllowed"`
+	// User flag for advisor report check.
+	IsReviewed bool `pulumi:"isReviewed"`
+	// Description of the issue.
+	Issue string `pulumi:"issue"`
+	// Pre-Migration сheck id.
+	Key string `pulumi:"key"`
+	// Metadata of object.
+	Metadatas []GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadata `pulumi:"metadatas"`
+	// Number of database objects to migrate.
+	ObjectCount int `pulumi:"objectCount"`
+	// Pre-Migration advisor result.
+	ResultType string `pulumi:"resultType"`
+}
+
+// GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemInput is an input type that accepts GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArgs and GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemInput` via:
+//
+//	GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArgs{...}
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutputWithContext(context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArgs struct {
+	// Fixing the issue.
+	Action pulumi.StringInput `pulumi:"action"`
+	// Array of the column of the objects table.
+	Columns GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayInput `pulumi:"columns"`
+	// Pre-Migration сheck display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The path to the fixup script for this check.
+	FixupScriptLocation pulumi.StringInput `pulumi:"fixupScriptLocation"`
+	// Impact of the issue on data migration.
+	Impact pulumi.StringInput `pulumi:"impact"`
+	// If false, objects cannot be excluded from migration.
+	IsExclusionAllowed pulumi.BoolInput `pulumi:"isExclusionAllowed"`
+	// User flag for advisor report check.
+	IsReviewed pulumi.BoolInput `pulumi:"isReviewed"`
+	// Description of the issue.
+	Issue pulumi.StringInput `pulumi:"issue"`
+	// Pre-Migration сheck id.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Metadata of object.
+	Metadatas GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayInput `pulumi:"metadatas"`
+	// Number of database objects to migrate.
+	ObjectCount pulumi.IntInput `pulumi:"objectCount"`
+	// Pre-Migration advisor result.
+	ResultType pulumi.StringInput `pulumi:"resultType"`
+}
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArgs) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput {
+	return i.ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArgs) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput)
+}
+
+// GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayInput is an input type that accepts GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArray and GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayInput` via:
+//
+//	GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArray{ GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArgs{...} }
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutputWithContext(context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArray []GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemInput
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArray) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput {
+	return i.ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArray) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput {
+	return o
+}
+
+// Fixing the issue.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// Array of the column of the objects table.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput) Columns() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem) []GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumn {
+		return v.Columns
+	}).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput)
+}
+
+// Pre-Migration сheck display name.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The path to the fixup script for this check.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput) FixupScriptLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem) string {
+		return v.FixupScriptLocation
+	}).(pulumi.StringOutput)
+}
+
+// Impact of the issue on data migration.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput) Impact() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem) string { return v.Impact }).(pulumi.StringOutput)
+}
+
+// If false, objects cannot be excluded from migration.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput) IsExclusionAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem) bool {
+		return v.IsExclusionAllowed
+	}).(pulumi.BoolOutput)
+}
+
+// User flag for advisor report check.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput) IsReviewed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem) bool { return v.IsReviewed }).(pulumi.BoolOutput)
+}
+
+// Description of the issue.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput) Issue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem) string { return v.Issue }).(pulumi.StringOutput)
+}
+
+// Pre-Migration сheck id.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Metadata of object.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput) Metadatas() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem) []GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadata {
+		return v.Metadatas
+	}).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput)
+}
+
+// Number of database objects to migrate.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput) ObjectCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem) int { return v.ObjectCount }).(pulumi.IntOutput)
+}
+
+// Pre-Migration advisor result.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput) ResultType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem) string { return v.ResultType }).(pulumi.StringOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput) Index(i pulumi.IntInput) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem {
+		return vs[0].([]GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItem)[vs[1].(int)]
+	}).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumn struct {
+	// Pre-Migration сheck display name.
+	DisplayName string `pulumi:"displayName"`
+	// Pre-Migration сheck id.
+	Key string `pulumi:"key"`
+}
+
+// GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnInput is an input type that accepts GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArgs and GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnInput` via:
+//
+//	GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArgs{...}
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutputWithContext(context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArgs struct {
+	// Pre-Migration сheck display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Pre-Migration сheck id.
+	Key pulumi.StringInput `pulumi:"key"`
+}
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumn)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArgs) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput {
+	return i.ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArgs) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput)
+}
+
+// GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayInput is an input type that accepts GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArray and GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayInput` via:
+//
+//	GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArray{ GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArgs{...} }
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutputWithContext(context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArray []GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnInput
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumn)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArray) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput {
+	return i.ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArray) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumn)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput {
+	return o
+}
+
+// Pre-Migration сheck display name.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumn) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Pre-Migration сheck id.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumn) string { return v.Key }).(pulumi.StringOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumn)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput) Index(i pulumi.IntInput) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumn {
+		return vs[0].([]GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumn)[vs[1].(int)]
+	}).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadata struct {
+	// The field that stores the name of the object.
+	ObjectNameColumn string `pulumi:"objectNameColumn"`
+	// The field that stores the type of the object.
+	ObjectTypeColumn string `pulumi:"objectTypeColumn"`
+	// The field that stores the fixed type of the object.
+	ObjectTypeFixed string `pulumi:"objectTypeFixed"`
+	// The field that stores the owner of the object.
+	SchemaOwnerColumn string `pulumi:"schemaOwnerColumn"`
+}
+
+// GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataInput is an input type that accepts GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArgs and GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataInput` via:
+//
+//	GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArgs{...}
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutputWithContext(context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArgs struct {
+	// The field that stores the name of the object.
+	ObjectNameColumn pulumi.StringInput `pulumi:"objectNameColumn"`
+	// The field that stores the type of the object.
+	ObjectTypeColumn pulumi.StringInput `pulumi:"objectTypeColumn"`
+	// The field that stores the fixed type of the object.
+	ObjectTypeFixed pulumi.StringInput `pulumi:"objectTypeFixed"`
+	// The field that stores the owner of the object.
+	SchemaOwnerColumn pulumi.StringInput `pulumi:"schemaOwnerColumn"`
+}
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadata)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArgs) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput {
+	return i.ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArgs) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput)
+}
+
+// GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayInput is an input type that accepts GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArray and GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayInput` via:
+//
+//	GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArray{ GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArgs{...} }
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutputWithContext(context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArray []GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataInput
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadata)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArray) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput {
+	return i.ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArray) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadata)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput {
+	return o
+}
+
+// The field that stores the name of the object.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput) ObjectNameColumn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadata) string {
+		return v.ObjectNameColumn
+	}).(pulumi.StringOutput)
+}
+
+// The field that stores the type of the object.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput) ObjectTypeColumn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadata) string {
+		return v.ObjectTypeColumn
+	}).(pulumi.StringOutput)
+}
+
+// The field that stores the fixed type of the object.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput) ObjectTypeFixed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadata) string {
+		return v.ObjectTypeFixed
+	}).(pulumi.StringOutput)
+}
+
+// The field that stores the owner of the object.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput) SchemaOwnerColumn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadata) string {
+		return v.SchemaOwnerColumn
+	}).(pulumi.StringOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadata)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput) Index(i pulumi.IntInput) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadata {
+		return vs[0].([]GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadata)[vs[1].(int)]
+	}).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummary struct {
+	// Number of BLOCKER results in the extended advisor report.
+	BlockerResultsTotalCount int `pulumi:"blockerResultsTotalCount"`
+	// Number of FATAL results in the extended advisor report.
+	FatalResultsTotalCount int `pulumi:"fatalResultsTotalCount"`
+	// Number of INFORMATIONAL results in the extended advisor report.
+	InformationalResultsTotalCount int `pulumi:"informationalResultsTotalCount"`
+	// Number of PASS results in the extended advisor report.
+	PassResultsTotalCount int `pulumi:"passResultsTotalCount"`
+	// Number of WARNING results in the extended advisor report.
+	WarningResultsTotalCount int `pulumi:"warningResultsTotalCount"`
+}
+
+// GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryInput is an input type that accepts GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArgs and GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryInput` via:
+//
+//	GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArgs{...}
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutputWithContext(context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArgs struct {
+	// Number of BLOCKER results in the extended advisor report.
+	BlockerResultsTotalCount pulumi.IntInput `pulumi:"blockerResultsTotalCount"`
+	// Number of FATAL results in the extended advisor report.
+	FatalResultsTotalCount pulumi.IntInput `pulumi:"fatalResultsTotalCount"`
+	// Number of INFORMATIONAL results in the extended advisor report.
+	InformationalResultsTotalCount pulumi.IntInput `pulumi:"informationalResultsTotalCount"`
+	// Number of PASS results in the extended advisor report.
+	PassResultsTotalCount pulumi.IntInput `pulumi:"passResultsTotalCount"`
+	// Number of WARNING results in the extended advisor report.
+	WarningResultsTotalCount pulumi.IntInput `pulumi:"warningResultsTotalCount"`
+}
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummary)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArgs) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput {
+	return i.ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArgs) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput)
+}
+
+// GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayInput is an input type that accepts GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArray and GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayInput` via:
+//
+//	GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArray{ GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArgs{...} }
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutputWithContext(context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArray []GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryInput
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummary)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArray) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput {
+	return i.ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArray) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummary)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput {
+	return o
+}
+
+// Number of BLOCKER results in the extended advisor report.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput) BlockerResultsTotalCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummary) int {
+		return v.BlockerResultsTotalCount
+	}).(pulumi.IntOutput)
+}
+
+// Number of FATAL results in the extended advisor report.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput) FatalResultsTotalCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummary) int {
+		return v.FatalResultsTotalCount
+	}).(pulumi.IntOutput)
+}
+
+// Number of INFORMATIONAL results in the extended advisor report.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput) InformationalResultsTotalCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummary) int {
+		return v.InformationalResultsTotalCount
+	}).(pulumi.IntOutput)
+}
+
+// Number of PASS results in the extended advisor report.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput) PassResultsTotalCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummary) int {
+		return v.PassResultsTotalCount
+	}).(pulumi.IntOutput)
+}
+
+// Number of WARNING results in the extended advisor report.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput) WarningResultsTotalCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummary) int {
+		return v.WarningResultsTotalCount
+	}).(pulumi.IntOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummary)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput) Index(i pulumi.IntInput) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummary {
+		return vs[0].([]GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummary)[vs[1].(int)]
+	}).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummary struct {
+	// Number of BLOCKER results in the extended advisor report.
+	BlockerResultsTotalCount int `pulumi:"blockerResultsTotalCount"`
+	// Number of FATAL results in the extended advisor report.
+	FatalResultsTotalCount int `pulumi:"fatalResultsTotalCount"`
+	// Number of INFORMATIONAL results in the extended advisor report.
+	InformationalResultsTotalCount int `pulumi:"informationalResultsTotalCount"`
+	// Number of PASS results in the extended advisor report.
+	PassResultsTotalCount int `pulumi:"passResultsTotalCount"`
+	// Number of WARNING results in the extended advisor report.
+	WarningResultsTotalCount int `pulumi:"warningResultsTotalCount"`
+}
+
+// GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryInput is an input type that accepts GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArgs and GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryInput` via:
+//
+//	GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArgs{...}
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutputWithContext(context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArgs struct {
+	// Number of BLOCKER results in the extended advisor report.
+	BlockerResultsTotalCount pulumi.IntInput `pulumi:"blockerResultsTotalCount"`
+	// Number of FATAL results in the extended advisor report.
+	FatalResultsTotalCount pulumi.IntInput `pulumi:"fatalResultsTotalCount"`
+	// Number of INFORMATIONAL results in the extended advisor report.
+	InformationalResultsTotalCount pulumi.IntInput `pulumi:"informationalResultsTotalCount"`
+	// Number of PASS results in the extended advisor report.
+	PassResultsTotalCount pulumi.IntInput `pulumi:"passResultsTotalCount"`
+	// Number of WARNING results in the extended advisor report.
+	WarningResultsTotalCount pulumi.IntInput `pulumi:"warningResultsTotalCount"`
+}
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummary)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArgs) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput {
+	return i.ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArgs) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput)
+}
+
+// GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayInput is an input type that accepts GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArray and GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayInput` via:
+//
+//	GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArray{ GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArgs{...} }
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput
+	ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutputWithContext(context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArray []GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryInput
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummary)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArray) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput {
+	return i.ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArray) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummary)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput {
+	return o
+}
+
+// Number of BLOCKER results in the extended advisor report.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput) BlockerResultsTotalCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummary) int {
+		return v.BlockerResultsTotalCount
+	}).(pulumi.IntOutput)
+}
+
+// Number of FATAL results in the extended advisor report.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput) FatalResultsTotalCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummary) int {
+		return v.FatalResultsTotalCount
+	}).(pulumi.IntOutput)
+}
+
+// Number of INFORMATIONAL results in the extended advisor report.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput) InformationalResultsTotalCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummary) int {
+		return v.InformationalResultsTotalCount
+	}).(pulumi.IntOutput)
+}
+
+// Number of PASS results in the extended advisor report.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput) PassResultsTotalCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummary) int {
+		return v.PassResultsTotalCount
+	}).(pulumi.IntOutput)
+}
+
+// Number of WARNING results in the extended advisor report.
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput) WarningResultsTotalCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummary) int {
+		return v.WarningResultsTotalCount
+	}).(pulumi.IntOutput)
+}
+
+type GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummary)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput() GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput) ToGetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput) Index(i pulumi.IntInput) GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummary {
+		return vs[0].([]GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummary)[vs[1].(int)]
+	}).(GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput)
+}
+
+type GetJobAdvisorReportChecksFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetJobAdvisorReportChecksFilterInput is an input type that accepts GetJobAdvisorReportChecksFilterArgs and GetJobAdvisorReportChecksFilterOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportChecksFilterInput` via:
+//
+//	GetJobAdvisorReportChecksFilterArgs{...}
+type GetJobAdvisorReportChecksFilterInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportChecksFilterOutput() GetJobAdvisorReportChecksFilterOutput
+	ToGetJobAdvisorReportChecksFilterOutputWithContext(context.Context) GetJobAdvisorReportChecksFilterOutput
+}
+
+type GetJobAdvisorReportChecksFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetJobAdvisorReportChecksFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportChecksFilter)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportChecksFilterArgs) ToGetJobAdvisorReportChecksFilterOutput() GetJobAdvisorReportChecksFilterOutput {
+	return i.ToGetJobAdvisorReportChecksFilterOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportChecksFilterArgs) ToGetJobAdvisorReportChecksFilterOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportChecksFilterOutput)
+}
+
+// GetJobAdvisorReportChecksFilterArrayInput is an input type that accepts GetJobAdvisorReportChecksFilterArray and GetJobAdvisorReportChecksFilterArrayOutput values.
+// You can construct a concrete instance of `GetJobAdvisorReportChecksFilterArrayInput` via:
+//
+//	GetJobAdvisorReportChecksFilterArray{ GetJobAdvisorReportChecksFilterArgs{...} }
+type GetJobAdvisorReportChecksFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetJobAdvisorReportChecksFilterArrayOutput() GetJobAdvisorReportChecksFilterArrayOutput
+	ToGetJobAdvisorReportChecksFilterArrayOutputWithContext(context.Context) GetJobAdvisorReportChecksFilterArrayOutput
+}
+
+type GetJobAdvisorReportChecksFilterArray []GetJobAdvisorReportChecksFilterInput
+
+func (GetJobAdvisorReportChecksFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportChecksFilter)(nil)).Elem()
+}
+
+func (i GetJobAdvisorReportChecksFilterArray) ToGetJobAdvisorReportChecksFilterArrayOutput() GetJobAdvisorReportChecksFilterArrayOutput {
+	return i.ToGetJobAdvisorReportChecksFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobAdvisorReportChecksFilterArray) ToGetJobAdvisorReportChecksFilterArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportChecksFilterArrayOutput)
+}
+
+type GetJobAdvisorReportChecksFilterOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportChecksFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobAdvisorReportChecksFilter)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportChecksFilterOutput) ToGetJobAdvisorReportChecksFilterOutput() GetJobAdvisorReportChecksFilterOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksFilterOutput) ToGetJobAdvisorReportChecksFilterOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksFilterOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetJobAdvisorReportChecksFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetJobAdvisorReportChecksFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportChecksFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetJobAdvisorReportChecksFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobAdvisorReportChecksFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobAdvisorReportChecksFilter)(nil)).Elem()
+}
+
+func (o GetJobAdvisorReportChecksFilterArrayOutput) ToGetJobAdvisorReportChecksFilterArrayOutput() GetJobAdvisorReportChecksFilterArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksFilterArrayOutput) ToGetJobAdvisorReportChecksFilterArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportChecksFilterArrayOutput {
+	return o
+}
+
+func (o GetJobAdvisorReportChecksFilterArrayOutput) Index(i pulumi.IntInput) GetJobAdvisorReportChecksFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobAdvisorReportChecksFilter {
+		return vs[0].([]GetJobAdvisorReportChecksFilter)[vs[1].(int)]
+	}).(GetJobAdvisorReportChecksFilterOutput)
 }
 
 type GetJobAdvisorReportReportLocationDetail struct {
@@ -12114,10 +23189,28 @@ func (o GetMigrationsInitialLoadSettingTablespaceDetailArrayOutput) Index(i pulu
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AssessmentAssessorActionItemInput)(nil)).Elem(), AssessmentAssessorActionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssessmentAssessorActionItemArrayInput)(nil)).Elem(), AssessmentAssessorActionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssessmentExcludeObjectInput)(nil)).Elem(), AssessmentExcludeObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssessmentExcludeObjectArrayInput)(nil)).Elem(), AssessmentExcludeObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssessmentIncludeObjectInput)(nil)).Elem(), AssessmentIncludeObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssessmentIncludeObjectArrayInput)(nil)).Elem(), AssessmentIncludeObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssessmentSourceDatabaseConnectionInput)(nil)).Elem(), AssessmentSourceDatabaseConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssessmentSourceDatabaseConnectionPtrInput)(nil)).Elem(), AssessmentSourceDatabaseConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssessmentTargetDatabaseConnectionInput)(nil)).Elem(), AssessmentTargetDatabaseConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssessmentTargetDatabaseConnectionPtrInput)(nil)).Elem(), AssessmentTargetDatabaseConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionAdditionalAttributeInput)(nil)).Elem(), ConnectionAdditionalAttributeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionAdditionalAttributeArrayInput)(nil)).Elem(), ConnectionAdditionalAttributeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionIngressIpInput)(nil)).Elem(), ConnectionIngressIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionIngressIpArrayInput)(nil)).Elem(), ConnectionIngressIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobAdvisorReportCheckItemInput)(nil)).Elem(), JobAdvisorReportCheckItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobAdvisorReportCheckItemArrayInput)(nil)).Elem(), JobAdvisorReportCheckItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobAdvisorReportCheckItemColumnInput)(nil)).Elem(), JobAdvisorReportCheckItemColumnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobAdvisorReportCheckItemColumnArrayInput)(nil)).Elem(), JobAdvisorReportCheckItemColumnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobAdvisorReportCheckItemMetadataInput)(nil)).Elem(), JobAdvisorReportCheckItemMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobAdvisorReportCheckItemMetadataArrayInput)(nil)).Elem(), JobAdvisorReportCheckItemMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobAdvisorReportCheckSummaryInput)(nil)).Elem(), JobAdvisorReportCheckSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobAdvisorReportCheckSummaryArrayInput)(nil)).Elem(), JobAdvisorReportCheckSummaryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobCollectTracesDataInput)(nil)).Elem(), JobCollectTracesDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobCollectTracesDataArrayInput)(nil)).Elem(), JobCollectTracesDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobParameterFileVersionInput)(nil)).Elem(), JobParameterFileVersionArgs{})
@@ -12176,8 +23269,132 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationInitialLoadSettingsMetadataRemapArrayInput)(nil)).Elem(), MigrationInitialLoadSettingsMetadataRemapArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationInitialLoadSettingsTablespaceDetailsInput)(nil)).Elem(), MigrationInitialLoadSettingsTablespaceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationInitialLoadSettingsTablespaceDetailsPtrInput)(nil)).Elem(), MigrationInitialLoadSettingsTablespaceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorActionTypeInput)(nil)).Elem(), GetAssessmentAssessorActionTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorActionTypeArrayInput)(nil)).Elem(), GetAssessmentAssessorActionTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorActionUserDefinedPropertyInput)(nil)).Elem(), GetAssessmentAssessorActionUserDefinedPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorActionUserDefinedPropertyArrayInput)(nil)).Elem(), GetAssessmentAssessorActionUserDefinedPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorActionUserDefinedPropertyPropertyInput)(nil)).Elem(), GetAssessmentAssessorActionUserDefinedPropertyPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayInput)(nil)).Elem(), GetAssessmentAssessorActionUserDefinedPropertyPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionInput)(nil)).Elem(), GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayInput)(nil)).Elem(), GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorAssessorGroupInput)(nil)).Elem(), GetAssessmentAssessorAssessorGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorAssessorGroupArrayInput)(nil)).Elem(), GetAssessmentAssessorAssessorGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorAssessorGroupActionInput)(nil)).Elem(), GetAssessmentAssessorAssessorGroupActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorAssessorGroupActionArrayInput)(nil)).Elem(), GetAssessmentAssessorAssessorGroupActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyInput)(nil)).Elem(), GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayInput)(nil)).Elem(), GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyInput)(nil)).Elem(), GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayInput)(nil)).Elem(), GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionInput)(nil)).Elem(), GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayInput)(nil)).Elem(), GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionInput)(nil)).Elem(), GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayInput)(nil)).Elem(), GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemInput)(nil)).Elem(), GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayInput)(nil)).Elem(), GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckAffectedObjectsFilterInput)(nil)).Elem(), GetAssessmentAssessorCheckAffectedObjectsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckAffectedObjectsFilterArrayInput)(nil)).Elem(), GetAssessmentAssessorCheckAffectedObjectsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckAssessorCheckGroupInput)(nil)).Elem(), GetAssessmentAssessorCheckAssessorCheckGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckAssessorCheckGroupArrayInput)(nil)).Elem(), GetAssessmentAssessorCheckAssessorCheckGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckCheckActionInput)(nil)).Elem(), GetAssessmentAssessorCheckCheckActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckCheckActionArrayInput)(nil)).Elem(), GetAssessmentAssessorCheckCheckActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckCheckActionUserDefinedPropertyInput)(nil)).Elem(), GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayInput)(nil)).Elem(), GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyInput)(nil)).Elem(), GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayInput)(nil)).Elem(), GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionInput)(nil)).Elem(), GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayInput)(nil)).Elem(), GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckColumnInput)(nil)).Elem(), GetAssessmentAssessorCheckColumnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckColumnArrayInput)(nil)).Elem(), GetAssessmentAssessorCheckColumnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckLogLocationInput)(nil)).Elem(), GetAssessmentAssessorCheckLogLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckLogLocationArrayInput)(nil)).Elem(), GetAssessmentAssessorCheckLogLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckMetadataInput)(nil)).Elem(), GetAssessmentAssessorCheckMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorCheckMetadataArrayInput)(nil)).Elem(), GetAssessmentAssessorCheckMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayInput)(nil)).Elem(), GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksFilterInput)(nil)).Elem(), GetAssessmentAssessorChecksFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorChecksFilterArrayInput)(nil)).Elem(), GetAssessmentAssessorChecksFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionArrayInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemArrayInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemActionInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayInput)(nil)).Elem(), GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsFilterInput)(nil)).Elem(), GetAssessmentAssessorsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentAssessorsFilterArrayInput)(nil)).Elem(), GetAssessmentAssessorsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentExcludeObjectInput)(nil)).Elem(), GetAssessmentExcludeObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentExcludeObjectArrayInput)(nil)).Elem(), GetAssessmentExcludeObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentIncludeObjectInput)(nil)).Elem(), GetAssessmentIncludeObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentIncludeObjectArrayInput)(nil)).Elem(), GetAssessmentIncludeObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionInput)(nil)).Elem(), GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayInput)(nil)).Elem(), GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemInput)(nil)).Elem(), GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayInput)(nil)).Elem(), GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentObjectTypesFilterInput)(nil)).Elem(), GetAssessmentObjectTypesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentObjectTypesFilterArrayInput)(nil)).Elem(), GetAssessmentObjectTypesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentSourceDatabaseConnectionInput)(nil)).Elem(), GetAssessmentSourceDatabaseConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentSourceDatabaseConnectionArrayInput)(nil)).Elem(), GetAssessmentSourceDatabaseConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentTargetDatabaseConnectionInput)(nil)).Elem(), GetAssessmentTargetDatabaseConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentTargetDatabaseConnectionArrayInput)(nil)).Elem(), GetAssessmentTargetDatabaseConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentsAssessmentCollectionInput)(nil)).Elem(), GetAssessmentsAssessmentCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentsAssessmentCollectionArrayInput)(nil)).Elem(), GetAssessmentsAssessmentCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentsAssessmentCollectionItemInput)(nil)).Elem(), GetAssessmentsAssessmentCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentsAssessmentCollectionItemArrayInput)(nil)).Elem(), GetAssessmentsAssessmentCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentsAssessmentCollectionItemExcludeObjectInput)(nil)).Elem(), GetAssessmentsAssessmentCollectionItemExcludeObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentsAssessmentCollectionItemExcludeObjectArrayInput)(nil)).Elem(), GetAssessmentsAssessmentCollectionItemExcludeObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentsAssessmentCollectionItemIncludeObjectInput)(nil)).Elem(), GetAssessmentsAssessmentCollectionItemIncludeObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentsAssessmentCollectionItemIncludeObjectArrayInput)(nil)).Elem(), GetAssessmentsAssessmentCollectionItemIncludeObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionInput)(nil)).Elem(), GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayInput)(nil)).Elem(), GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionInput)(nil)).Elem(), GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayInput)(nil)).Elem(), GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentsFilterInput)(nil)).Elem(), GetAssessmentsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssessmentsFilterArrayInput)(nil)).Elem(), GetAssessmentsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAdditionalAttributeInput)(nil)).Elem(), GetConnectionAdditionalAttributeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAdditionalAttributeArrayInput)(nil)).Elem(), GetConnectionAdditionalAttributeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionInput)(nil)).Elem(), GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayInput)(nil)).Elem(), GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemInput)(nil)).Elem(), GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayInput)(nil)).Elem(), GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeInput)(nil)).Elem(), GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayInput)(nil)).Elem(), GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeInput)(nil)).Elem(), GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayInput)(nil)).Elem(), GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionDatabaseconnectiontypesFilterInput)(nil)).Elem(), GetConnectionDatabaseconnectiontypesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionDatabaseconnectiontypesFilterArrayInput)(nil)).Elem(), GetConnectionDatabaseconnectiontypesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionIngressIpInput)(nil)).Elem(), GetConnectionIngressIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionIngressIpArrayInput)(nil)).Elem(), GetConnectionIngressIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionInput)(nil)).Elem(), GetConnectionsConnectionCollectionArgs{})
@@ -12190,6 +23407,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemIngressIpArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemIngressIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsFilterInput)(nil)).Elem(), GetConnectionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsFilterArrayInput)(nil)).Elem(), GetConnectionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionInput)(nil)).Elem(), GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayInput)(nil)).Elem(), GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemInput)(nil)).Elem(), GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayInput)(nil)).Elem(), GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportCheckObjectsFilterInput)(nil)).Elem(), GetJobAdvisorReportCheckObjectsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportCheckObjectsFilterArrayInput)(nil)).Elem(), GetJobAdvisorReportCheckObjectsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionInput)(nil)).Elem(), GetJobAdvisorReportChecksAdvisorReportCheckCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayInput)(nil)).Elem(), GetJobAdvisorReportChecksAdvisorReportCheckCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemInput)(nil)).Elem(), GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayInput)(nil)).Elem(), GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemInput)(nil)).Elem(), GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayInput)(nil)).Elem(), GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnInput)(nil)).Elem(), GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayInput)(nil)).Elem(), GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataInput)(nil)).Elem(), GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayInput)(nil)).Elem(), GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryInput)(nil)).Elem(), GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayInput)(nil)).Elem(), GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryInput)(nil)).Elem(), GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayInput)(nil)).Elem(), GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportChecksFilterInput)(nil)).Elem(), GetJobAdvisorReportChecksFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportChecksFilterArrayInput)(nil)).Elem(), GetJobAdvisorReportChecksFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportReportLocationDetailInput)(nil)).Elem(), GetJobAdvisorReportReportLocationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportReportLocationDetailArrayInput)(nil)).Elem(), GetJobAdvisorReportReportLocationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportReportLocationDetailObjectStorageDetailInput)(nil)).Elem(), GetJobAdvisorReportReportLocationDetailObjectStorageDetailArgs{})
@@ -12290,10 +23529,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsInitialLoadSettingMetadataRemapArrayInput)(nil)).Elem(), GetMigrationsInitialLoadSettingMetadataRemapArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsInitialLoadSettingTablespaceDetailInput)(nil)).Elem(), GetMigrationsInitialLoadSettingTablespaceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsInitialLoadSettingTablespaceDetailArrayInput)(nil)).Elem(), GetMigrationsInitialLoadSettingTablespaceDetailArray{})
+	pulumi.RegisterOutputType(AssessmentAssessorActionItemOutput{})
+	pulumi.RegisterOutputType(AssessmentAssessorActionItemArrayOutput{})
+	pulumi.RegisterOutputType(AssessmentExcludeObjectOutput{})
+	pulumi.RegisterOutputType(AssessmentExcludeObjectArrayOutput{})
+	pulumi.RegisterOutputType(AssessmentIncludeObjectOutput{})
+	pulumi.RegisterOutputType(AssessmentIncludeObjectArrayOutput{})
+	pulumi.RegisterOutputType(AssessmentSourceDatabaseConnectionOutput{})
+	pulumi.RegisterOutputType(AssessmentSourceDatabaseConnectionPtrOutput{})
+	pulumi.RegisterOutputType(AssessmentTargetDatabaseConnectionOutput{})
+	pulumi.RegisterOutputType(AssessmentTargetDatabaseConnectionPtrOutput{})
 	pulumi.RegisterOutputType(ConnectionAdditionalAttributeOutput{})
 	pulumi.RegisterOutputType(ConnectionAdditionalAttributeArrayOutput{})
 	pulumi.RegisterOutputType(ConnectionIngressIpOutput{})
 	pulumi.RegisterOutputType(ConnectionIngressIpArrayOutput{})
+	pulumi.RegisterOutputType(JobAdvisorReportCheckItemOutput{})
+	pulumi.RegisterOutputType(JobAdvisorReportCheckItemArrayOutput{})
+	pulumi.RegisterOutputType(JobAdvisorReportCheckItemColumnOutput{})
+	pulumi.RegisterOutputType(JobAdvisorReportCheckItemColumnArrayOutput{})
+	pulumi.RegisterOutputType(JobAdvisorReportCheckItemMetadataOutput{})
+	pulumi.RegisterOutputType(JobAdvisorReportCheckItemMetadataArrayOutput{})
+	pulumi.RegisterOutputType(JobAdvisorReportCheckSummaryOutput{})
+	pulumi.RegisterOutputType(JobAdvisorReportCheckSummaryArrayOutput{})
 	pulumi.RegisterOutputType(JobCollectTracesDataOutput{})
 	pulumi.RegisterOutputType(JobCollectTracesDataArrayOutput{})
 	pulumi.RegisterOutputType(JobParameterFileVersionOutput{})
@@ -12352,8 +23609,132 @@ func init() {
 	pulumi.RegisterOutputType(MigrationInitialLoadSettingsMetadataRemapArrayOutput{})
 	pulumi.RegisterOutputType(MigrationInitialLoadSettingsTablespaceDetailsOutput{})
 	pulumi.RegisterOutputType(MigrationInitialLoadSettingsTablespaceDetailsPtrOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorActionTypeOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorActionTypeArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorActionUserDefinedPropertyOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorActionUserDefinedPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorActionUserDefinedPropertyPropertyOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorActionUserDefinedPropertyPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorActionUserDefinedPropertyPropertyOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorAssessorGroupOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorAssessorGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorAssessorGroupActionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorAssessorGroupActionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckAffectedObjectsAffectedObjectsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckAffectedObjectsFilterOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckAffectedObjectsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckAssessorCheckGroupOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckAssessorCheckGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckCheckActionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckCheckActionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckCheckActionUserDefinedPropertyOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckCheckActionUserDefinedPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckCheckActionUserDefinedPropertyPropertyOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckColumnOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckColumnArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckLogLocationOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckLogLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckMetadataOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorCheckMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemAssessorCheckGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemCheckActionUserDefinedPropertyPropertyOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemColumnArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemLogLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksAssessorCheckSummaryCollectionItemMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksFilterOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorChecksFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemActionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemActionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemActionUserDefinedPropertyPropertyOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsAssessorSummaryCollectionItemAssessorGroupActionUserDefinedPropertyPropertyOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsFilterOutput{})
+	pulumi.RegisterOutputType(GetAssessmentAssessorsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentExcludeObjectOutput{})
+	pulumi.RegisterOutputType(GetAssessmentExcludeObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentIncludeObjectOutput{})
+	pulumi.RegisterOutputType(GetAssessmentIncludeObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAssessmentObjectTypesAssessmentObjectTypeSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentObjectTypesFilterOutput{})
+	pulumi.RegisterOutputType(GetAssessmentObjectTypesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentSourceDatabaseConnectionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentSourceDatabaseConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentTargetDatabaseConnectionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentTargetDatabaseConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentsAssessmentCollectionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentsAssessmentCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentsAssessmentCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAssessmentsAssessmentCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentsAssessmentCollectionItemExcludeObjectOutput{})
+	pulumi.RegisterOutputType(GetAssessmentsAssessmentCollectionItemExcludeObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentsAssessmentCollectionItemIncludeObjectOutput{})
+	pulumi.RegisterOutputType(GetAssessmentsAssessmentCollectionItemIncludeObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentsAssessmentCollectionItemSourceDatabaseConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionOutput{})
+	pulumi.RegisterOutputType(GetAssessmentsAssessmentCollectionItemTargetDatabaseConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAssessmentsFilterOutput{})
+	pulumi.RegisterOutputType(GetAssessmentsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionAdditionalAttributeOutput{})
 	pulumi.RegisterOutputType(GetConnectionAdditionalAttributeArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionOutput{})
+	pulumi.RegisterOutputType(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeOutput{})
+	pulumi.RegisterOutputType(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeOutput{})
+	pulumi.RegisterOutputType(GetConnectionDatabaseconnectiontypesDatabaseConnectionTypeCollectionItemTechnologyTypeTechnologySubTypeArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionDatabaseconnectiontypesFilterOutput{})
+	pulumi.RegisterOutputType(GetConnectionDatabaseconnectiontypesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionIngressIpOutput{})
 	pulumi.RegisterOutputType(GetConnectionIngressIpArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionOutput{})
@@ -12366,6 +23747,28 @@ func init() {
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemIngressIpArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsFilterOutput{})
 	pulumi.RegisterOutputType(GetConnectionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportCheckObjectsAdvisorReportCheckObjectsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportCheckObjectsFilterOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportCheckObjectsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportChecksAdvisorReportCheckCollectionOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportChecksAdvisorReportCheckCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemArrayOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemColumnArrayOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemItemMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportChecksAdvisorReportCheckCollectionItemSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportChecksAdvisorReportCheckCollectionSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportChecksFilterOutput{})
+	pulumi.RegisterOutputType(GetJobAdvisorReportChecksFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetJobAdvisorReportReportLocationDetailOutput{})
 	pulumi.RegisterOutputType(GetJobAdvisorReportReportLocationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobAdvisorReportReportLocationDetailObjectStorageDetailOutput{})

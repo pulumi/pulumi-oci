@@ -63,6 +63,9 @@ export interface GetGenerativeAiPrivateEndpointsArgs {
  * A collection of values returned by getGenerativeAiPrivateEndpoints.
  */
 export interface GetGenerativeAiPrivateEndpointsResult {
+    /**
+     * The OCID of the compartment that contains the private endpoint.
+     */
     readonly compartmentId: string;
     /**
      * A user friendly name. It doesn't have to be unique. Avoid entering confidential information.

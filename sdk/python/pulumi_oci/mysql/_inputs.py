@@ -67,6 +67,8 @@ __all__ = [
     'MysqlBackupValidateBackupDetailArgsDict',
     'MysqlConfigurationInitVariablesArgs',
     'MysqlConfigurationInitVariablesArgsDict',
+    'MysqlConfigurationOptionArgs',
+    'MysqlConfigurationOptionArgsDict',
     'MysqlConfigurationVariablesArgs',
     'MysqlConfigurationVariablesArgsDict',
     'MysqlDbSystemBackupPolicyArgs',
@@ -2899,6 +2901,54 @@ class MysqlConfigurationInitVariablesArgs:
         pulumi.set(self, "lower_case_table_names", value)
 
 
+class MysqlConfigurationOptionArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    The option name.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The option value.
+    """
+
+@pulumi.input_type
+class MysqlConfigurationOptionArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str],
+                 value: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: The option name.
+        :param pulumi.Input[_builtins.str] value: The option value.
+        """
+        pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The option name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The option value.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
 class MysqlConfigurationVariablesArgsDict(TypedDict):
     auto_increment_increment: NotRequired[pulumi.Input[_builtins.int]]
     """
@@ -4181,10 +4231,10 @@ class MysqlConfigurationVariablesArgs:
         if query_alloc_block_size is not None:
             pulumi.set(__self__, "query_alloc_block_size", query_alloc_block_size)
         if query_prealloc_size is not None:
-            pulumi.set(__self__, "query_prealloc_size", query_prealloc_size)
-        if range_optimizer_max_mem_size is not None:
             warnings.warn("""The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
-            pulumi.log.warn("""range_optimizer_max_mem_size is deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
+            pulumi.log.warn("""query_prealloc_size is deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
+        if query_prealloc_size is not None:
+            pulumi.set(__self__, "query_prealloc_size", query_prealloc_size)
         if range_optimizer_max_mem_size is not None:
             pulumi.set(__self__, "range_optimizer_max_mem_size", range_optimizer_max_mem_size)
         if regexp_time_limit is not None:
@@ -5484,6 +5534,7 @@ class MysqlConfigurationVariablesArgs:
 
     @_builtins.property
     @pulumi.getter(name="queryPreallocSize")
+    @_utilities.deprecated("""The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def query_prealloc_size(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
@@ -5496,7 +5547,6 @@ class MysqlConfigurationVariablesArgs:
 
     @_builtins.property
     @pulumi.getter(name="rangeOptimizerMaxMemSize")
-    @_utilities.deprecated("""The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def range_optimizer_max_mem_size(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans. 
@@ -8419,6 +8469,9 @@ class GetMysqlBackupsFilterArgs:
 
 class GetMysqlConfigurationsFilterArgsDict(TypedDict):
     name: _builtins.str
+    """
+    The option name.
+    """
     values: Sequence[_builtins.str]
     regex: NotRequired[_builtins.bool]
 
@@ -8428,6 +8481,9 @@ class GetMysqlConfigurationsFilterArgs:
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The option name.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -8436,6 +8492,9 @@ class GetMysqlConfigurationsFilterArgs:
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        """
+        The option name.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

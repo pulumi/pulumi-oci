@@ -243,7 +243,7 @@ type FsuCollectionComponentFleetDiscovery struct {
 	Query *string `pulumi:"query"`
 	// Supported fleet discovery strategies.
 	Strategy string `pulumi:"strategy"`
-	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+	// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 	Targets []string `pulumi:"targets"`
 }
 
@@ -267,7 +267,7 @@ type FsuCollectionComponentFleetDiscoveryArgs struct {
 	Query pulumi.StringPtrInput `pulumi:"query"`
 	// Supported fleet discovery strategies.
 	Strategy pulumi.StringInput `pulumi:"strategy"`
-	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+	// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 	Targets pulumi.StringArrayInput `pulumi:"targets"`
 }
 
@@ -370,7 +370,7 @@ func (o FsuCollectionComponentFleetDiscoveryOutput) Strategy() pulumi.StringOutp
 	return o.ApplyT(func(v FsuCollectionComponentFleetDiscovery) string { return v.Strategy }).(pulumi.StringOutput)
 }
 
-// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 func (o FsuCollectionComponentFleetDiscoveryOutput) Targets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v FsuCollectionComponentFleetDiscovery) []string { return v.Targets }).(pulumi.StringArrayOutput)
 }
@@ -439,7 +439,7 @@ func (o FsuCollectionComponentFleetDiscoveryPtrOutput) Strategy() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 func (o FsuCollectionComponentFleetDiscoveryPtrOutput) Targets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *FsuCollectionComponentFleetDiscovery) []string {
 		if v == nil {
@@ -735,7 +735,7 @@ type FsuCollectionFleetDiscovery struct {
 	Query *string `pulumi:"query"`
 	// Supported fleet discovery strategies.
 	Strategy string `pulumi:"strategy"`
-	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+	// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 	Targets []string `pulumi:"targets"`
 }
 
@@ -759,7 +759,7 @@ type FsuCollectionFleetDiscoveryArgs struct {
 	Query pulumi.StringPtrInput `pulumi:"query"`
 	// Supported fleet discovery strategies.
 	Strategy pulumi.StringInput `pulumi:"strategy"`
-	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+	// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 	Targets pulumi.StringArrayInput `pulumi:"targets"`
 }
 
@@ -860,7 +860,7 @@ func (o FsuCollectionFleetDiscoveryOutput) Strategy() pulumi.StringOutput {
 	return o.ApplyT(func(v FsuCollectionFleetDiscovery) string { return v.Strategy }).(pulumi.StringOutput)
 }
 
-// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 func (o FsuCollectionFleetDiscoveryOutput) Targets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v FsuCollectionFleetDiscovery) []string { return v.Targets }).(pulumi.StringArrayOutput)
 }
@@ -929,7 +929,7 @@ func (o FsuCollectionFleetDiscoveryPtrOutput) Strategy() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
-// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 func (o FsuCollectionFleetDiscoveryPtrOutput) Targets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *FsuCollectionFleetDiscovery) []string {
 		if v == nil {
@@ -2874,7 +2874,7 @@ type GetFsuCollectionComponentFleetDiscovery struct {
 	Query string `pulumi:"query"`
 	// Supported fleet discovery strategies.
 	Strategy string `pulumi:"strategy"`
-	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+	// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 	Targets []string `pulumi:"targets"`
 }
 
@@ -2898,7 +2898,7 @@ type GetFsuCollectionComponentFleetDiscoveryArgs struct {
 	Query pulumi.StringInput `pulumi:"query"`
 	// Supported fleet discovery strategies.
 	Strategy pulumi.StringInput `pulumi:"strategy"`
-	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+	// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 	Targets pulumi.StringArrayInput `pulumi:"targets"`
 }
 
@@ -2975,7 +2975,7 @@ func (o GetFsuCollectionComponentFleetDiscoveryOutput) Strategy() pulumi.StringO
 	return o.ApplyT(func(v GetFsuCollectionComponentFleetDiscovery) string { return v.Strategy }).(pulumi.StringOutput)
 }
 
-// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 func (o GetFsuCollectionComponentFleetDiscoveryOutput) Targets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFsuCollectionComponentFleetDiscovery) []string { return v.Targets }).(pulumi.StringArrayOutput)
 }
@@ -3286,7 +3286,7 @@ type GetFsuCollectionFleetDiscovery struct {
 	Query string `pulumi:"query"`
 	// Supported fleet discovery strategies.
 	Strategy string `pulumi:"strategy"`
-	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+	// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 	Targets []string `pulumi:"targets"`
 }
 
@@ -3310,7 +3310,7 @@ type GetFsuCollectionFleetDiscoveryArgs struct {
 	Query pulumi.StringInput `pulumi:"query"`
 	// Supported fleet discovery strategies.
 	Strategy pulumi.StringInput `pulumi:"strategy"`
-	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+	// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 	Targets pulumi.StringArrayInput `pulumi:"targets"`
 }
 
@@ -3385,7 +3385,7 @@ func (o GetFsuCollectionFleetDiscoveryOutput) Strategy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCollectionFleetDiscovery) string { return v.Strategy }).(pulumi.StringOutput)
 }
 
-// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 func (o GetFsuCollectionFleetDiscoveryOutput) Targets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFsuCollectionFleetDiscovery) []string { return v.Targets }).(pulumi.StringArrayOutput)
 }
@@ -4386,7 +4386,7 @@ type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscovery 
 	Query string `pulumi:"query"`
 	// Supported fleet discovery strategies.
 	Strategy string `pulumi:"strategy"`
-	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+	// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 	Targets []string `pulumi:"targets"`
 }
 
@@ -4410,7 +4410,7 @@ type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryA
 	Query pulumi.StringInput `pulumi:"query"`
 	// Supported fleet discovery strategies.
 	Strategy pulumi.StringInput `pulumi:"strategy"`
-	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+	// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 	Targets pulumi.StringArrayInput `pulumi:"targets"`
 }
 
@@ -4493,7 +4493,7 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscove
 	}).(pulumi.StringOutput)
 }
 
-// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput) Targets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscovery) []string {
 		return v.Targets
@@ -4826,7 +4826,7 @@ type GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery struct {
 	Query string `pulumi:"query"`
 	// Supported fleet discovery strategies.
 	Strategy string `pulumi:"strategy"`
-	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+	// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 	Targets []string `pulumi:"targets"`
 }
 
@@ -4850,7 +4850,7 @@ type GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryArgs struc
 	Query pulumi.StringInput `pulumi:"query"`
 	// Supported fleet discovery strategies.
 	Strategy pulumi.StringInput `pulumi:"strategy"`
-	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+	// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 	Targets pulumi.StringArrayInput `pulumi:"targets"`
 }
 
@@ -4929,7 +4929,7 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryOutput)
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery) string { return v.Strategy }).(pulumi.StringOutput)
 }
 
-// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed. For EXA-DB-XS service type Collections only ExaDBVMClusters are allowed.
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryOutput) Targets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery) []string { return v.Targets }).(pulumi.StringArrayOutput)
 }

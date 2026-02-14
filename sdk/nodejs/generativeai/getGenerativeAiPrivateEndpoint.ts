@@ -41,6 +41,9 @@ export interface GetGenerativeAiPrivateEndpointArgs {
  * A collection of values returned by getGenerativeAiPrivateEndpoint.
  */
 export interface GetGenerativeAiPrivateEndpointResult {
+    /**
+     * The OCID of the compartment that contains the private endpoint.
+     */
     readonly compartmentId: string;
     readonly definedTags: {[key: string]: string};
     /**
@@ -79,9 +82,21 @@ export interface GetGenerativeAiPrivateEndpointResult {
      * The current state of the Generative AI Private Endpoint.
      */
     readonly state: string;
+    /**
+     * The OCID of the subnet that the private endpoint belongs to.
+     */
     readonly subnetId: string;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
     readonly systemTags: {[key: string]: string};
+    /**
+     * The date and time that the Generative AI private endpoint was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     */
     readonly timeCreated: string;
+    /**
+     * The date and time that the Generative AI private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     */
     readonly timeUpdated: string;
 }
 /**

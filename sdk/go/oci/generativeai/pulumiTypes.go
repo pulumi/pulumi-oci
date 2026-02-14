@@ -18119,7 +18119,8 @@ type GetDedicatedAiClustersDedicatedAiClusterCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	Description string            `pulumi:"description"`
+	// An optional description of the dedicated AI cluster.
+	Description string `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -18161,7 +18162,8 @@ type GetDedicatedAiClustersDedicatedAiClusterCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	Description pulumi.StringInput    `pulumi:"description"`
+	// An optional description of the dedicated AI cluster.
+	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -18253,6 +18255,7 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) DefinedTag
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// An optional description of the dedicated AI cluster.
 func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -19429,11 +19432,15 @@ type GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem st
 	// The private IP address (in the customer's VCN) that represents the access point for the associated endpoint service.
 	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
 	// The lifecycle state of Generative AI private endpoints.
-	State       string            `pulumi:"state"`
-	SubnetId    string            `pulumi:"subnetId"`
-	SystemTags  map[string]string `pulumi:"systemTags"`
-	TimeCreated string            `pulumi:"timeCreated"`
-	TimeUpdated string            `pulumi:"timeUpdated"`
+	State string `pulumi:"state"`
+	// The OCID of the subnet that the private endpoint belongs to.
+	SubnetId string `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time that the Generative AI private endpoint was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the Generative AI private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
 // GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemInput is an input type that accepts GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArgs and GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput values.
@@ -19469,11 +19476,15 @@ type GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArg
 	// The private IP address (in the customer's VCN) that represents the access point for the associated endpoint service.
 	PrivateEndpointIp pulumi.StringInput `pulumi:"privateEndpointIp"`
 	// The lifecycle state of Generative AI private endpoints.
-	State       pulumi.StringInput    `pulumi:"state"`
-	SubnetId    pulumi.StringInput    `pulumi:"subnetId"`
-	SystemTags  pulumi.StringMapInput `pulumi:"systemTags"`
-	TimeCreated pulumi.StringInput    `pulumi:"timeCreated"`
-	TimeUpdated pulumi.StringInput    `pulumi:"timeUpdated"`
+	State pulumi.StringInput `pulumi:"state"`
+	// The OCID of the subnet that the private endpoint belongs to.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time that the Generative AI private endpoint was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the Generative AI private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
 
 func (GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArgs) ElementType() reflect.Type {
@@ -19610,24 +19621,28 @@ func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem
 	}).(pulumi.StringOutput)
 }
 
+// The OCID of the subnet that the private endpoint belongs to.
 func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) string {
 		return v.SubnetId
 	}).(pulumi.StringOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) map[string]string {
 		return v.SystemTags
 	}).(pulumi.StringMapOutput)
 }
 
+// The date and time that the Generative AI private endpoint was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) string {
 		return v.TimeCreated
 	}).(pulumi.StringOutput)
 }
 
+// The date and time that the Generative AI private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) string {
 		return v.TimeUpdated
@@ -20006,17 +20021,20 @@ type GetImportedModelsImportedModelCollectionItem struct {
 	DefinedTags   map[string]string                                        `pulumi:"definedTags"`
 	Description   string                                                   `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName  string            `pulumi:"displayName"`
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The ID of the importedModel.
-	Id               string `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// Additional information about the current state of the imported model, providing more detailed and actionable context.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	PreviousState    string `pulumi:"previousState"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State       string            `pulumi:"state"`
-	SystemTags  map[string]string `pulumi:"systemTags"`
-	TimeCreated string            `pulumi:"timeCreated"`
-	TimeUpdated string            `pulumi:"timeUpdated"`
+	State      string            `pulumi:"state"`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time that the imported model was created in the format of an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	TimeUpdated string `pulumi:"timeUpdated"`
 	// A filter to return only resources that match the entire vendor given.
 	Vendor  string `pulumi:"vendor"`
 	Version string `pulumi:"version"`
@@ -20041,17 +20059,20 @@ type GetImportedModelsImportedModelCollectionItemArgs struct {
 	DefinedTags   pulumi.StringMapInput                                            `pulumi:"definedTags"`
 	Description   pulumi.StringInput                                               `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName  pulumi.StringInput    `pulumi:"displayName"`
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The ID of the importedModel.
-	Id               pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current state of the imported model, providing more detailed and actionable context.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	PreviousState    pulumi.StringInput `pulumi:"previousState"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State       pulumi.StringInput    `pulumi:"state"`
-	SystemTags  pulumi.StringMapInput `pulumi:"systemTags"`
-	TimeCreated pulumi.StringInput    `pulumi:"timeCreated"`
-	TimeUpdated pulumi.StringInput    `pulumi:"timeUpdated"`
+	State      pulumi.StringInput    `pulumi:"state"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time that the imported model was created in the format of an RFC3339 datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// A filter to return only resources that match the entire vendor given.
 	Vendor  pulumi.StringInput `pulumi:"vendor"`
 	Version pulumi.StringInput `pulumi:"version"`
@@ -20136,6 +20157,7 @@ func (o GetImportedModelsImportedModelCollectionItemOutput) DisplayName() pulumi
 	return o.ApplyT(func(v GetImportedModelsImportedModelCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o GetImportedModelsImportedModelCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetImportedModelsImportedModelCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
@@ -20145,6 +20167,7 @@ func (o GetImportedModelsImportedModelCollectionItemOutput) Id() pulumi.StringOu
 	return o.ApplyT(func(v GetImportedModelsImportedModelCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Additional information about the current state of the imported model, providing more detailed and actionable context.
 func (o GetImportedModelsImportedModelCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImportedModelsImportedModelCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
@@ -20162,6 +20185,7 @@ func (o GetImportedModelsImportedModelCollectionItemOutput) SystemTags() pulumi.
 	return o.ApplyT(func(v GetImportedModelsImportedModelCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
+// The date and time that the imported model was created in the format of an RFC3339 datetime string.
 func (o GetImportedModelsImportedModelCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImportedModelsImportedModelCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
@@ -21020,7 +21044,8 @@ func (o GetModelsModelCollectionArrayOutput) Index(i pulumi.IntInput) GetModelsM
 }
 
 type GetModelsModelCollectionItem struct {
-	BaseModelId  string   `pulumi:"baseModelId"`
+	BaseModelId string `pulumi:"baseModelId"`
+	// Describes what this model can be used for.
 	Capabilities []string `pulumi:"capabilities"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string            `pulumi:"compartmentId"`
@@ -21062,7 +21087,8 @@ type GetModelsModelCollectionItemInput interface {
 }
 
 type GetModelsModelCollectionItemArgs struct {
-	BaseModelId  pulumi.StringInput      `pulumi:"baseModelId"`
+	BaseModelId pulumi.StringInput `pulumi:"baseModelId"`
+	// Describes what this model can be used for.
 	Capabilities pulumi.StringArrayInput `pulumi:"capabilities"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput    `pulumi:"compartmentId"`
@@ -21147,6 +21173,7 @@ func (o GetModelsModelCollectionItemOutput) BaseModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.BaseModelId }).(pulumi.StringOutput)
 }
 
+// Describes what this model can be used for.
 func (o GetModelsModelCollectionItemOutput) Capabilities() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) []string { return v.Capabilities }).(pulumi.StringArrayOutput)
 }

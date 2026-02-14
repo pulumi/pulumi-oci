@@ -10,9 +10,11 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Mysql.MysqlConfigurationArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlConfigurationState;
 import com.pulumi.oci.Mysql.outputs.MysqlConfigurationInitVariables;
+import com.pulumi.oci.Mysql.outputs.MysqlConfigurationOption;
 import com.pulumi.oci.Mysql.outputs.MysqlConfigurationVariables;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -36,6 +38,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Mysql.MysqlConfiguration;
  * import com.pulumi.oci.Mysql.MysqlConfigurationArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlConfigurationInitVariablesArgs;
+ * import com.pulumi.oci.Mysql.inputs.MysqlConfigurationOptionArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlConfigurationVariablesArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -59,6 +62,10 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .initVariables(MysqlConfigurationInitVariablesArgs.builder()
  *                 .lowerCaseTableNames(mysqlConfigurationInitVariablesLowerCaseTableNames)
+ *                 .build())
+ *             .options(MysqlConfigurationOptionArgs.builder()
+ *                 .name(mysqlConfigurationOptionsName)
+ *                 .value(mysqlConfigurationOptionsValue)
  *                 .build())
  *             .parentConfigurationId(testConfiguration.id())
  *             .variables(MysqlConfigurationVariablesArgs.builder()
@@ -270,18 +277,32 @@ public class MysqlConfiguration extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+     * DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      * 
      */
     @Export(name="initVariables", refs={MysqlConfigurationInitVariables.class}, tree="[0]")
     private Output<MysqlConfigurationInitVariables> initVariables;
 
     /**
-     * @return User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+     * @return DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      * 
      */
     public Output<MysqlConfigurationInitVariables> initVariables() {
         return this.initVariables;
+    }
+    /**
+     * The MySQL options defined in the Configuration.
+     * 
+     */
+    @Export(name="options", refs={List.class,MysqlConfigurationOption.class}, tree="[0,1]")
+    private Output<List<MysqlConfigurationOption>> options;
+
+    /**
+     * @return The MySQL options defined in the Configuration.
+     * 
+     */
+    public Output<List<MysqlConfigurationOption>> options() {
+        return this.options;
     }
     /**
      * The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
@@ -382,14 +403,14 @@ public class MysqlConfiguration extends com.pulumi.resources.CustomResource {
         return this.type;
     }
     /**
-     * User-defined service variables.
+     * DEPRECATED -- please use the `options` field instead. User-defined service variables.
      * 
      */
     @Export(name="variables", refs={MysqlConfigurationVariables.class}, tree="[0]")
     private Output<MysqlConfigurationVariables> variables;
 
     /**
-     * @return User-defined service variables.
+     * @return DEPRECATED -- please use the `options` field instead. User-defined service variables.
      * 
      */
     public Output<MysqlConfigurationVariables> variables() {

@@ -46,9 +46,10 @@ import (
 //						InstanceShape: pulumi.Any(computeCapacityReportShapeAvailabilitiesInstanceShape),
 //						FaultDomain:   pulumi.Any(computeCapacityReportShapeAvailabilitiesFaultDomain),
 //						InstanceShapeConfig: &core.ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs{
-//							MemoryInGbs: pulumi.Any(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigMemoryInGbs),
-//							Nvmes:       pulumi.Any(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigNvmes),
-//							Ocpus:       pulumi.Any(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigOcpus),
+//							BaselineOcpuUtilization: pulumi.Any(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigBaselineOcpuUtilization),
+//							MemoryInGbs:             pulumi.Any(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigMemoryInGbs),
+//							Nvmes:                   pulumi.Any(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigNvmes),
+//							Ocpus:                   pulumi.Any(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigOcpus),
 //						},
 //					},
 //				},

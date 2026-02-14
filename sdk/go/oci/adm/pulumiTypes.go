@@ -1822,6 +1822,10 @@ type VulnerabilityAuditVulnerability struct {
 	IsFalsePositive *bool `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored *bool `pulumi:"isIgnored"`
+	// List of artifact version ranges affected by a particular vulnerability.
+	MatchingVulnerableArtifactVersionRanges []VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange `pulumi:"matchingVulnerableArtifactVersionRanges"`
+	// List of reported metrics by the source.
+	Metrics []VulnerabilityAuditVulnerabilityMetric `pulumi:"metrics"`
 	// ADM qualitative severity score. Can be either NONE, LOW, MEDIUM, HIGH or CRITICAL.
 	Severity *string `pulumi:"severity"`
 	// vulnerability audit source.
@@ -1850,6 +1854,10 @@ type VulnerabilityAuditVulnerabilityArgs struct {
 	IsFalsePositive pulumi.BoolPtrInput `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored pulumi.BoolPtrInput `pulumi:"isIgnored"`
+	// List of artifact version ranges affected by a particular vulnerability.
+	MatchingVulnerableArtifactVersionRanges VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput `pulumi:"matchingVulnerableArtifactVersionRanges"`
+	// List of reported metrics by the source.
+	Metrics VulnerabilityAuditVulnerabilityMetricArrayInput `pulumi:"metrics"`
 	// ADM qualitative severity score. Can be either NONE, LOW, MEDIUM, HIGH or CRITICAL.
 	Severity pulumi.StringPtrInput `pulumi:"severity"`
 	// vulnerability audit source.
@@ -1932,6 +1940,18 @@ func (o VulnerabilityAuditVulnerabilityOutput) IsIgnored() pulumi.BoolPtrOutput 
 	return o.ApplyT(func(v VulnerabilityAuditVulnerability) *bool { return v.IsIgnored }).(pulumi.BoolPtrOutput)
 }
 
+// List of artifact version ranges affected by a particular vulnerability.
+func (o VulnerabilityAuditVulnerabilityOutput) MatchingVulnerableArtifactVersionRanges() VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return o.ApplyT(func(v VulnerabilityAuditVulnerability) []VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange {
+		return v.MatchingVulnerableArtifactVersionRanges
+	}).(VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput)
+}
+
+// List of reported metrics by the source.
+func (o VulnerabilityAuditVulnerabilityOutput) Metrics() VulnerabilityAuditVulnerabilityMetricArrayOutput {
+	return o.ApplyT(func(v VulnerabilityAuditVulnerability) []VulnerabilityAuditVulnerabilityMetric { return v.Metrics }).(VulnerabilityAuditVulnerabilityMetricArrayOutput)
+}
+
 // ADM qualitative severity score. Can be either NONE, LOW, MEDIUM, HIGH or CRITICAL.
 func (o VulnerabilityAuditVulnerabilityOutput) Severity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VulnerabilityAuditVulnerability) *string { return v.Severity }).(pulumi.StringPtrOutput)
@@ -1960,6 +1980,262 @@ func (o VulnerabilityAuditVulnerabilityArrayOutput) Index(i pulumi.IntInput) Vul
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VulnerabilityAuditVulnerability {
 		return vs[0].([]VulnerabilityAuditVulnerability)[vs[1].(int)]
 	}).(VulnerabilityAuditVulnerabilityOutput)
+}
+
+type VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange struct {
+	// The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+	VersionEndExcluding *string `pulumi:"versionEndExcluding"`
+	// Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+	VersionEndIncluding *string `pulumi:"versionEndIncluding"`
+	// The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+	VersionStartExcluding *string `pulumi:"versionStartExcluding"`
+	// The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+	VersionStartIncluding *string `pulumi:"versionStartIncluding"`
+}
+
+// VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeInput is an input type that accepts VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs and VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput values.
+// You can construct a concrete instance of `VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeInput` via:
+//
+//	VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs{...}
+type VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeInput interface {
+	pulumi.Input
+
+	ToVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput() VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput
+	ToVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(context.Context) VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput
+}
+
+type VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs struct {
+	// The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+	VersionEndExcluding pulumi.StringPtrInput `pulumi:"versionEndExcluding"`
+	// Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+	VersionEndIncluding pulumi.StringPtrInput `pulumi:"versionEndIncluding"`
+	// The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+	VersionStartExcluding pulumi.StringPtrInput `pulumi:"versionStartExcluding"`
+	// The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+	VersionStartIncluding pulumi.StringPtrInput `pulumi:"versionStartIncluding"`
+}
+
+func (VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (i VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs) ToVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput() VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return i.ToVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs) ToVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(ctx context.Context) VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput)
+}
+
+// VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput is an input type that accepts VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArray and VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput values.
+// You can construct a concrete instance of `VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput` via:
+//
+//	VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArray{ VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs{...} }
+type VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput interface {
+	pulumi.Input
+
+	ToVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput() VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput
+	ToVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(context.Context) VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput
+}
+
+type VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArray []VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeInput
+
+func (VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (i VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArray) ToVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput() VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return i.ToVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArray) ToVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(ctx context.Context) VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput)
+}
+
+type VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (o VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) ToVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput() VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return o
+}
+
+func (o VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) ToVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(ctx context.Context) VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return o
+}
+
+// The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+func (o VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionEndExcluding() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange) *string {
+		return v.VersionEndExcluding
+	}).(pulumi.StringPtrOutput)
+}
+
+// Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+func (o VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionEndIncluding() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange) *string {
+		return v.VersionEndIncluding
+	}).(pulumi.StringPtrOutput)
+}
+
+// The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+func (o VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionStartExcluding() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange) *string {
+		return v.VersionStartExcluding
+	}).(pulumi.StringPtrOutput)
+}
+
+// The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+func (o VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionStartIncluding() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange) *string {
+		return v.VersionStartIncluding
+	}).(pulumi.StringPtrOutput)
+}
+
+type VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (o VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) ToVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput() VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return o
+}
+
+func (o VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) ToVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(ctx context.Context) VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return o
+}
+
+func (o VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) Index(i pulumi.IntInput) VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange {
+		return vs[0].([]VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange)[vs[1].(int)]
+	}).(VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput)
+}
+
+type VulnerabilityAuditVulnerabilityMetric struct {
+	// Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+	Score *float64 `pulumi:"score"`
+	// vulnerability audit source.
+	Source *string `pulumi:"source"`
+	// Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+	Type *string `pulumi:"type"`
+	// Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+	Value *string `pulumi:"value"`
+}
+
+// VulnerabilityAuditVulnerabilityMetricInput is an input type that accepts VulnerabilityAuditVulnerabilityMetricArgs and VulnerabilityAuditVulnerabilityMetricOutput values.
+// You can construct a concrete instance of `VulnerabilityAuditVulnerabilityMetricInput` via:
+//
+//	VulnerabilityAuditVulnerabilityMetricArgs{...}
+type VulnerabilityAuditVulnerabilityMetricInput interface {
+	pulumi.Input
+
+	ToVulnerabilityAuditVulnerabilityMetricOutput() VulnerabilityAuditVulnerabilityMetricOutput
+	ToVulnerabilityAuditVulnerabilityMetricOutputWithContext(context.Context) VulnerabilityAuditVulnerabilityMetricOutput
+}
+
+type VulnerabilityAuditVulnerabilityMetricArgs struct {
+	// Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+	Score pulumi.Float64PtrInput `pulumi:"score"`
+	// vulnerability audit source.
+	Source pulumi.StringPtrInput `pulumi:"source"`
+	// Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (VulnerabilityAuditVulnerabilityMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityAuditVulnerabilityMetric)(nil)).Elem()
+}
+
+func (i VulnerabilityAuditVulnerabilityMetricArgs) ToVulnerabilityAuditVulnerabilityMetricOutput() VulnerabilityAuditVulnerabilityMetricOutput {
+	return i.ToVulnerabilityAuditVulnerabilityMetricOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityAuditVulnerabilityMetricArgs) ToVulnerabilityAuditVulnerabilityMetricOutputWithContext(ctx context.Context) VulnerabilityAuditVulnerabilityMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditVulnerabilityMetricOutput)
+}
+
+// VulnerabilityAuditVulnerabilityMetricArrayInput is an input type that accepts VulnerabilityAuditVulnerabilityMetricArray and VulnerabilityAuditVulnerabilityMetricArrayOutput values.
+// You can construct a concrete instance of `VulnerabilityAuditVulnerabilityMetricArrayInput` via:
+//
+//	VulnerabilityAuditVulnerabilityMetricArray{ VulnerabilityAuditVulnerabilityMetricArgs{...} }
+type VulnerabilityAuditVulnerabilityMetricArrayInput interface {
+	pulumi.Input
+
+	ToVulnerabilityAuditVulnerabilityMetricArrayOutput() VulnerabilityAuditVulnerabilityMetricArrayOutput
+	ToVulnerabilityAuditVulnerabilityMetricArrayOutputWithContext(context.Context) VulnerabilityAuditVulnerabilityMetricArrayOutput
+}
+
+type VulnerabilityAuditVulnerabilityMetricArray []VulnerabilityAuditVulnerabilityMetricInput
+
+func (VulnerabilityAuditVulnerabilityMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VulnerabilityAuditVulnerabilityMetric)(nil)).Elem()
+}
+
+func (i VulnerabilityAuditVulnerabilityMetricArray) ToVulnerabilityAuditVulnerabilityMetricArrayOutput() VulnerabilityAuditVulnerabilityMetricArrayOutput {
+	return i.ToVulnerabilityAuditVulnerabilityMetricArrayOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityAuditVulnerabilityMetricArray) ToVulnerabilityAuditVulnerabilityMetricArrayOutputWithContext(ctx context.Context) VulnerabilityAuditVulnerabilityMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditVulnerabilityMetricArrayOutput)
+}
+
+type VulnerabilityAuditVulnerabilityMetricOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityAuditVulnerabilityMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityAuditVulnerabilityMetric)(nil)).Elem()
+}
+
+func (o VulnerabilityAuditVulnerabilityMetricOutput) ToVulnerabilityAuditVulnerabilityMetricOutput() VulnerabilityAuditVulnerabilityMetricOutput {
+	return o
+}
+
+func (o VulnerabilityAuditVulnerabilityMetricOutput) ToVulnerabilityAuditVulnerabilityMetricOutputWithContext(ctx context.Context) VulnerabilityAuditVulnerabilityMetricOutput {
+	return o
+}
+
+// Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+func (o VulnerabilityAuditVulnerabilityMetricOutput) Score() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v VulnerabilityAuditVulnerabilityMetric) *float64 { return v.Score }).(pulumi.Float64PtrOutput)
+}
+
+// vulnerability audit source.
+func (o VulnerabilityAuditVulnerabilityMetricOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VulnerabilityAuditVulnerabilityMetric) *string { return v.Source }).(pulumi.StringPtrOutput)
+}
+
+// Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+func (o VulnerabilityAuditVulnerabilityMetricOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VulnerabilityAuditVulnerabilityMetric) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+func (o VulnerabilityAuditVulnerabilityMetricOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VulnerabilityAuditVulnerabilityMetric) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type VulnerabilityAuditVulnerabilityMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityAuditVulnerabilityMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VulnerabilityAuditVulnerabilityMetric)(nil)).Elem()
+}
+
+func (o VulnerabilityAuditVulnerabilityMetricArrayOutput) ToVulnerabilityAuditVulnerabilityMetricArrayOutput() VulnerabilityAuditVulnerabilityMetricArrayOutput {
+	return o
+}
+
+func (o VulnerabilityAuditVulnerabilityMetricArrayOutput) ToVulnerabilityAuditVulnerabilityMetricArrayOutputWithContext(ctx context.Context) VulnerabilityAuditVulnerabilityMetricArrayOutput {
+	return o
+}
+
+func (o VulnerabilityAuditVulnerabilityMetricArrayOutput) Index(i pulumi.IntInput) VulnerabilityAuditVulnerabilityMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VulnerabilityAuditVulnerabilityMetric {
+		return vs[0].([]VulnerabilityAuditVulnerabilityMetric)[vs[1].(int)]
+	}).(VulnerabilityAuditVulnerabilityMetricOutput)
 }
 
 type GetKnowledgebasesFilter struct {
@@ -6299,6 +6575,10 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepende
 	IsFalsePositive bool `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored bool `pulumi:"isIgnored"`
+	// List of artifact version ranges affected by a particular vulnerability.
+	MatchingVulnerableArtifactVersionRanges []GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange `pulumi:"matchingVulnerableArtifactVersionRanges"`
+	// List of reported metrics by the source.
+	Metrics []GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetric `pulumi:"metrics"`
 	// ADM qualitative severity score. Can be either NONE, LOW, MEDIUM, HIGH or CRITICAL.
 	Severity string `pulumi:"severity"`
 	// Source that published the vulnerability
@@ -6327,6 +6607,10 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepende
 	IsFalsePositive pulumi.BoolInput `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored pulumi.BoolInput `pulumi:"isIgnored"`
+	// List of artifact version ranges affected by a particular vulnerability.
+	MatchingVulnerableArtifactVersionRanges GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput `pulumi:"matchingVulnerableArtifactVersionRanges"`
+	// List of reported metrics by the source.
+	Metrics GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayInput `pulumi:"metrics"`
 	// ADM qualitative severity score. Can be either NONE, LOW, MEDIUM, HIGH or CRITICAL.
 	Severity pulumi.StringInput `pulumi:"severity"`
 	// Source that published the vulnerability
@@ -6419,6 +6703,20 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	}).(pulumi.BoolOutput)
 }
 
+// List of artifact version ranges affected by a particular vulnerability.
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput) MatchingVulnerableArtifactVersionRanges() GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability) []GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange {
+		return v.MatchingVulnerableArtifactVersionRanges
+	}).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput)
+}
+
+// List of reported metrics by the source.
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput) Metrics() GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability) []GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetric {
+		return v.Metrics
+	}).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput)
+}
+
 // ADM qualitative severity score. Can be either NONE, LOW, MEDIUM, HIGH or CRITICAL.
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput) Severity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability) string {
@@ -6451,6 +6749,270 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability {
 		return vs[0].([]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability)[vs[1].(int)]
 	}).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput)
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange struct {
+	// The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+	VersionEndExcluding string `pulumi:"versionEndExcluding"`
+	// Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+	VersionEndIncluding string `pulumi:"versionEndIncluding"`
+	// The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+	VersionStartExcluding string `pulumi:"versionStartExcluding"`
+	// The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+	VersionStartIncluding string `pulumi:"versionStartIncluding"`
+}
+
+// GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeInput` via:
+//
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs{...}
+type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput
+	ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs struct {
+	// The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+	VersionEndExcluding pulumi.StringInput `pulumi:"versionEndExcluding"`
+	// Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+	VersionEndIncluding pulumi.StringInput `pulumi:"versionEndIncluding"`
+	// The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+	VersionStartExcluding pulumi.StringInput `pulumi:"versionStartExcluding"`
+	// The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+	VersionStartIncluding pulumi.StringInput `pulumi:"versionStartIncluding"`
+}
+
+func (GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput)
+}
+
+// GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput` via:
+//
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray{ GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs{...} }
+type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput
+	ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray []GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeInput
+
+func (GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput)
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return o
+}
+
+// The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionEndExcluding() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange) string {
+		return v.VersionEndExcluding
+	}).(pulumi.StringOutput)
+}
+
+// Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionEndIncluding() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange) string {
+		return v.VersionEndIncluding
+	}).(pulumi.StringOutput)
+}
+
+// The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionStartExcluding() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange) string {
+		return v.VersionStartExcluding
+	}).(pulumi.StringOutput)
+}
+
+// The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionStartIncluding() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange) string {
+		return v.VersionStartIncluding
+	}).(pulumi.StringOutput)
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange {
+		return vs[0].([]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange)[vs[1].(int)]
+	}).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput)
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetric struct {
+	// Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+	Score float64 `pulumi:"score"`
+	// Source that published the vulnerability
+	Source string `pulumi:"source"`
+	// Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+	Type string `pulumi:"type"`
+	// Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+	Value string `pulumi:"value"`
+}
+
+// GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArgs and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricInput` via:
+//
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArgs{...}
+type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput
+	ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutputWithContext(context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArgs struct {
+	// Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+	Score pulumi.Float64Input `pulumi:"score"`
+	// Source that published the vulnerability
+	Source pulumi.StringInput `pulumi:"source"`
+	// Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetric)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArgs) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput {
+	return i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArgs) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput)
+}
+
+// GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArray and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayInput` via:
+//
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArray{ GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArgs{...} }
+type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput
+	ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutputWithContext(context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArray []GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricInput
+
+func (GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetric)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArray) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput {
+	return i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArray) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput)
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetric)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput {
+	return o
+}
+
+// Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput) Score() pulumi.Float64Output {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetric) float64 {
+		return v.Score
+	}).(pulumi.Float64Output)
+}
+
+// Source that published the vulnerability
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetric) string {
+		return v.Source
+	}).(pulumi.StringOutput)
+}
+
+// Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetric) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+// Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetric) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetric)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetric {
+		return vs[0].([]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetric)[vs[1].(int)]
+	}).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput)
 }
 
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter struct {
@@ -6713,9 +7275,11 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability st
 	Id              string `pulumi:"id"`
 	IsFalsePositive bool   `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
-	IsIgnored bool   `pulumi:"isIgnored"`
-	Severity  string `pulumi:"severity"`
-	Source    string `pulumi:"source"`
+	IsIgnored                               bool                                                                                                             `pulumi:"isIgnored"`
+	MatchingVulnerableArtifactVersionRanges []GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRange `pulumi:"matchingVulnerableArtifactVersionRanges"`
+	Metrics                                 []GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetric                                 `pulumi:"metrics"`
+	Severity                                string                                                                                                           `pulumi:"severity"`
+	Source                                  string                                                                                                           `pulumi:"source"`
 }
 
 // GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArgs and GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput values.
@@ -6738,9 +7302,11 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArg
 	Id              pulumi.StringInput `pulumi:"id"`
 	IsFalsePositive pulumi.BoolInput   `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
-	IsIgnored pulumi.BoolInput   `pulumi:"isIgnored"`
-	Severity  pulumi.StringInput `pulumi:"severity"`
-	Source    pulumi.StringInput `pulumi:"source"`
+	IsIgnored                               pulumi.BoolInput                                                                                                         `pulumi:"isIgnored"`
+	MatchingVulnerableArtifactVersionRanges GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput `pulumi:"matchingVulnerableArtifactVersionRanges"`
+	Metrics                                 GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayInput                                 `pulumi:"metrics"`
+	Severity                                pulumi.StringInput                                                                                                       `pulumi:"severity"`
+	Source                                  pulumi.StringInput                                                                                                       `pulumi:"source"`
 }
 
 func (GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArgs) ElementType() reflect.Type {
@@ -6826,6 +7392,18 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability
 	}).(pulumi.BoolOutput)
 }
 
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput) MatchingVulnerableArtifactVersionRanges() GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability) []GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRange {
+		return v.MatchingVulnerableArtifactVersionRanges
+	}).(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput)
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput) Metrics() GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability) []GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetric {
+		return v.Metrics
+	}).(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput)
+}
+
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput) Severity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability) string {
 		return v.Severity
@@ -6856,6 +7434,246 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability {
 		return vs[0].([]GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability)[vs[1].(int)]
 	}).(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput)
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRange struct {
+	VersionEndExcluding   string `pulumi:"versionEndExcluding"`
+	VersionEndIncluding   string `pulumi:"versionEndIncluding"`
+	VersionStartExcluding string `pulumi:"versionStartExcluding"`
+	VersionStartIncluding string `pulumi:"versionStartIncluding"`
+}
+
+// GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs and GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeInput` via:
+//
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs{...}
+type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput
+	ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs struct {
+	VersionEndExcluding   pulumi.StringInput `pulumi:"versionEndExcluding"`
+	VersionEndIncluding   pulumi.StringInput `pulumi:"versionEndIncluding"`
+	VersionStartExcluding pulumi.StringInput `pulumi:"versionStartExcluding"`
+	VersionStartIncluding pulumi.StringInput `pulumi:"versionStartIncluding"`
+}
+
+func (GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput)
+}
+
+// GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray and GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput` via:
+//
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray{ GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs{...} }
+type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput
+	ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray []GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeInput
+
+func (GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput)
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionEndExcluding() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRange) string {
+		return v.VersionEndExcluding
+	}).(pulumi.StringOutput)
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionEndIncluding() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRange) string {
+		return v.VersionEndIncluding
+	}).(pulumi.StringOutput)
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionStartExcluding() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRange) string {
+		return v.VersionStartExcluding
+	}).(pulumi.StringOutput)
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionStartIncluding() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRange) string {
+		return v.VersionStartIncluding
+	}).(pulumi.StringOutput)
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRange {
+		return vs[0].([]GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRange)[vs[1].(int)]
+	}).(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput)
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetric struct {
+	Score  float64 `pulumi:"score"`
+	Source string  `pulumi:"source"`
+	Type   string  `pulumi:"type"`
+	Value  string  `pulumi:"value"`
+}
+
+// GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArgs and GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricInput` via:
+//
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArgs{...}
+type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput
+	ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutputWithContext(context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArgs struct {
+	Score  pulumi.Float64Input `pulumi:"score"`
+	Source pulumi.StringInput  `pulumi:"source"`
+	Type   pulumi.StringInput  `pulumi:"type"`
+	Value  pulumi.StringInput  `pulumi:"value"`
+}
+
+func (GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetric)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArgs) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput {
+	return i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArgs) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput)
+}
+
+// GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArray and GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayInput` via:
+//
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArray{ GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArgs{...} }
+type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput
+	ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutputWithContext(context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArray []GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricInput
+
+func (GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetric)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArray) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput {
+	return i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArray) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput)
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetric)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput) Score() pulumi.Float64Output {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetric) float64 {
+		return v.Score
+	}).(pulumi.Float64Output)
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetric) string {
+		return v.Source
+	}).(pulumi.StringOutput)
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetric) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetric) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetric)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput() GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetric {
+		return vs[0].([]GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetric)[vs[1].(int)]
+	}).(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput)
 }
 
 type GetVulnerabilityAuditConfiguration struct {
@@ -6987,7 +7805,7 @@ type GetVulnerabilityAuditSource struct {
 	Description string `pulumi:"description"`
 	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
 	OciResourceId string `pulumi:"ociResourceId"`
-	// Source type of the vulnerability audit.
+	// Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
 	Type string `pulumi:"type"`
 }
 
@@ -7007,7 +7825,7 @@ type GetVulnerabilityAuditSourceArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
 	OciResourceId pulumi.StringInput `pulumi:"ociResourceId"`
-	// Source type of the vulnerability audit.
+	// Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -7072,7 +7890,7 @@ func (o GetVulnerabilityAuditSourceOutput) OciResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditSource) string { return v.OciResourceId }).(pulumi.StringOutput)
 }
 
-// Source type of the vulnerability audit.
+// Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
 func (o GetVulnerabilityAuditSourceOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditSource) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -7232,6 +8050,10 @@ type GetVulnerabilityAuditVulnerability struct {
 	IsFalsePositive bool `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored bool `pulumi:"isIgnored"`
+	// List of artifact version ranges affected by a particular vulnerability.
+	MatchingVulnerableArtifactVersionRanges []GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange `pulumi:"matchingVulnerableArtifactVersionRanges"`
+	// List of reported metrics by the source.
+	Metrics []GetVulnerabilityAuditVulnerabilityMetric `pulumi:"metrics"`
 	// ADM qualitative severity score. Can be either NONE, LOW, MEDIUM, HIGH or CRITICAL.
 	Severity string `pulumi:"severity"`
 	// Source that published the vulnerability
@@ -7260,6 +8082,10 @@ type GetVulnerabilityAuditVulnerabilityArgs struct {
 	IsFalsePositive pulumi.BoolInput `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored pulumi.BoolInput `pulumi:"isIgnored"`
+	// List of artifact version ranges affected by a particular vulnerability.
+	MatchingVulnerableArtifactVersionRanges GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput `pulumi:"matchingVulnerableArtifactVersionRanges"`
+	// List of reported metrics by the source.
+	Metrics GetVulnerabilityAuditVulnerabilityMetricArrayInput `pulumi:"metrics"`
 	// ADM qualitative severity score. Can be either NONE, LOW, MEDIUM, HIGH or CRITICAL.
 	Severity pulumi.StringInput `pulumi:"severity"`
 	// Source that published the vulnerability
@@ -7342,6 +8168,20 @@ func (o GetVulnerabilityAuditVulnerabilityOutput) IsIgnored() pulumi.BoolOutput 
 	return o.ApplyT(func(v GetVulnerabilityAuditVulnerability) bool { return v.IsIgnored }).(pulumi.BoolOutput)
 }
 
+// List of artifact version ranges affected by a particular vulnerability.
+func (o GetVulnerabilityAuditVulnerabilityOutput) MatchingVulnerableArtifactVersionRanges() GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerability) []GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange {
+		return v.MatchingVulnerableArtifactVersionRanges
+	}).(GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput)
+}
+
+// List of reported metrics by the source.
+func (o GetVulnerabilityAuditVulnerabilityOutput) Metrics() GetVulnerabilityAuditVulnerabilityMetricArrayOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerability) []GetVulnerabilityAuditVulnerabilityMetric {
+		return v.Metrics
+	}).(GetVulnerabilityAuditVulnerabilityMetricArrayOutput)
+}
+
 // ADM qualitative severity score. Can be either NONE, LOW, MEDIUM, HIGH or CRITICAL.
 func (o GetVulnerabilityAuditVulnerabilityOutput) Severity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditVulnerability) string { return v.Severity }).(pulumi.StringOutput)
@@ -7370,6 +8210,744 @@ func (o GetVulnerabilityAuditVulnerabilityArrayOutput) Index(i pulumi.IntInput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditVulnerability {
 		return vs[0].([]GetVulnerabilityAuditVulnerability)[vs[1].(int)]
 	}).(GetVulnerabilityAuditVulnerabilityOutput)
+}
+
+type GetVulnerabilityAuditVulnerabilityFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetVulnerabilityAuditVulnerabilityFilterInput is an input type that accepts GetVulnerabilityAuditVulnerabilityFilterArgs and GetVulnerabilityAuditVulnerabilityFilterOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditVulnerabilityFilterInput` via:
+//
+//	GetVulnerabilityAuditVulnerabilityFilterArgs{...}
+type GetVulnerabilityAuditVulnerabilityFilterInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditVulnerabilityFilterOutput() GetVulnerabilityAuditVulnerabilityFilterOutput
+	ToGetVulnerabilityAuditVulnerabilityFilterOutputWithContext(context.Context) GetVulnerabilityAuditVulnerabilityFilterOutput
+}
+
+type GetVulnerabilityAuditVulnerabilityFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetVulnerabilityAuditVulnerabilityFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityFilter)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditVulnerabilityFilterArgs) ToGetVulnerabilityAuditVulnerabilityFilterOutput() GetVulnerabilityAuditVulnerabilityFilterOutput {
+	return i.ToGetVulnerabilityAuditVulnerabilityFilterOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditVulnerabilityFilterArgs) ToGetVulnerabilityAuditVulnerabilityFilterOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditVulnerabilityFilterOutput)
+}
+
+// GetVulnerabilityAuditVulnerabilityFilterArrayInput is an input type that accepts GetVulnerabilityAuditVulnerabilityFilterArray and GetVulnerabilityAuditVulnerabilityFilterArrayOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditVulnerabilityFilterArrayInput` via:
+//
+//	GetVulnerabilityAuditVulnerabilityFilterArray{ GetVulnerabilityAuditVulnerabilityFilterArgs{...} }
+type GetVulnerabilityAuditVulnerabilityFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditVulnerabilityFilterArrayOutput() GetVulnerabilityAuditVulnerabilityFilterArrayOutput
+	ToGetVulnerabilityAuditVulnerabilityFilterArrayOutputWithContext(context.Context) GetVulnerabilityAuditVulnerabilityFilterArrayOutput
+}
+
+type GetVulnerabilityAuditVulnerabilityFilterArray []GetVulnerabilityAuditVulnerabilityFilterInput
+
+func (GetVulnerabilityAuditVulnerabilityFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditVulnerabilityFilter)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditVulnerabilityFilterArray) ToGetVulnerabilityAuditVulnerabilityFilterArrayOutput() GetVulnerabilityAuditVulnerabilityFilterArrayOutput {
+	return i.ToGetVulnerabilityAuditVulnerabilityFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditVulnerabilityFilterArray) ToGetVulnerabilityAuditVulnerabilityFilterArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditVulnerabilityFilterArrayOutput)
+}
+
+type GetVulnerabilityAuditVulnerabilityFilterOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditVulnerabilityFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityFilter)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditVulnerabilityFilterOutput) ToGetVulnerabilityAuditVulnerabilityFilterOutput() GetVulnerabilityAuditVulnerabilityFilterOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityFilterOutput) ToGetVulnerabilityAuditVulnerabilityFilterOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityFilterOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVulnerabilityAuditVulnerabilityFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetVulnerabilityAuditVulnerabilityFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetVulnerabilityAuditVulnerabilityFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditVulnerabilityFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditVulnerabilityFilter)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditVulnerabilityFilterArrayOutput) ToGetVulnerabilityAuditVulnerabilityFilterArrayOutput() GetVulnerabilityAuditVulnerabilityFilterArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityFilterArrayOutput) ToGetVulnerabilityAuditVulnerabilityFilterArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityFilterArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityFilterArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditVulnerabilityFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditVulnerabilityFilter {
+		return vs[0].([]GetVulnerabilityAuditVulnerabilityFilter)[vs[1].(int)]
+	}).(GetVulnerabilityAuditVulnerabilityFilterOutput)
+}
+
+type GetVulnerabilityAuditVulnerabilityItem struct {
+	IsDirectVulnerability    bool                                                         `pulumi:"isDirectVulnerability"`
+	Metrics                  []GetVulnerabilityAuditVulnerabilityItemMetric               `pulumi:"metrics"`
+	References               []string                                                     `pulumi:"references"`
+	RelatedVulnerabilities   []GetVulnerabilityAuditVulnerabilityItemRelatedVulnerability `pulumi:"relatedVulnerabilities"`
+	Severity                 string                                                       `pulumi:"severity"`
+	Source                   string                                                       `pulumi:"source"`
+	Status                   string                                                       `pulumi:"status"`
+	TimeCreated              string                                                       `pulumi:"timeCreated"`
+	TimeUpdated              string                                                       `pulumi:"timeUpdated"`
+	VulnerabilityDescription string                                                       `pulumi:"vulnerabilityDescription"`
+	VulnerabilityId          string                                                       `pulumi:"vulnerabilityId"`
+	VulnerabilitySummary     string                                                       `pulumi:"vulnerabilitySummary"`
+}
+
+// GetVulnerabilityAuditVulnerabilityItemInput is an input type that accepts GetVulnerabilityAuditVulnerabilityItemArgs and GetVulnerabilityAuditVulnerabilityItemOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditVulnerabilityItemInput` via:
+//
+//	GetVulnerabilityAuditVulnerabilityItemArgs{...}
+type GetVulnerabilityAuditVulnerabilityItemInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditVulnerabilityItemOutput() GetVulnerabilityAuditVulnerabilityItemOutput
+	ToGetVulnerabilityAuditVulnerabilityItemOutputWithContext(context.Context) GetVulnerabilityAuditVulnerabilityItemOutput
+}
+
+type GetVulnerabilityAuditVulnerabilityItemArgs struct {
+	IsDirectVulnerability    pulumi.BoolInput                                                     `pulumi:"isDirectVulnerability"`
+	Metrics                  GetVulnerabilityAuditVulnerabilityItemMetricArrayInput               `pulumi:"metrics"`
+	References               pulumi.StringArrayInput                                              `pulumi:"references"`
+	RelatedVulnerabilities   GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayInput `pulumi:"relatedVulnerabilities"`
+	Severity                 pulumi.StringInput                                                   `pulumi:"severity"`
+	Source                   pulumi.StringInput                                                   `pulumi:"source"`
+	Status                   pulumi.StringInput                                                   `pulumi:"status"`
+	TimeCreated              pulumi.StringInput                                                   `pulumi:"timeCreated"`
+	TimeUpdated              pulumi.StringInput                                                   `pulumi:"timeUpdated"`
+	VulnerabilityDescription pulumi.StringInput                                                   `pulumi:"vulnerabilityDescription"`
+	VulnerabilityId          pulumi.StringInput                                                   `pulumi:"vulnerabilityId"`
+	VulnerabilitySummary     pulumi.StringInput                                                   `pulumi:"vulnerabilitySummary"`
+}
+
+func (GetVulnerabilityAuditVulnerabilityItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityItem)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditVulnerabilityItemArgs) ToGetVulnerabilityAuditVulnerabilityItemOutput() GetVulnerabilityAuditVulnerabilityItemOutput {
+	return i.ToGetVulnerabilityAuditVulnerabilityItemOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditVulnerabilityItemArgs) ToGetVulnerabilityAuditVulnerabilityItemOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditVulnerabilityItemOutput)
+}
+
+// GetVulnerabilityAuditVulnerabilityItemArrayInput is an input type that accepts GetVulnerabilityAuditVulnerabilityItemArray and GetVulnerabilityAuditVulnerabilityItemArrayOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditVulnerabilityItemArrayInput` via:
+//
+//	GetVulnerabilityAuditVulnerabilityItemArray{ GetVulnerabilityAuditVulnerabilityItemArgs{...} }
+type GetVulnerabilityAuditVulnerabilityItemArrayInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditVulnerabilityItemArrayOutput() GetVulnerabilityAuditVulnerabilityItemArrayOutput
+	ToGetVulnerabilityAuditVulnerabilityItemArrayOutputWithContext(context.Context) GetVulnerabilityAuditVulnerabilityItemArrayOutput
+}
+
+type GetVulnerabilityAuditVulnerabilityItemArray []GetVulnerabilityAuditVulnerabilityItemInput
+
+func (GetVulnerabilityAuditVulnerabilityItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditVulnerabilityItem)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditVulnerabilityItemArray) ToGetVulnerabilityAuditVulnerabilityItemArrayOutput() GetVulnerabilityAuditVulnerabilityItemArrayOutput {
+	return i.ToGetVulnerabilityAuditVulnerabilityItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditVulnerabilityItemArray) ToGetVulnerabilityAuditVulnerabilityItemArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditVulnerabilityItemArrayOutput)
+}
+
+type GetVulnerabilityAuditVulnerabilityItemOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditVulnerabilityItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityItem)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemOutput) ToGetVulnerabilityAuditVulnerabilityItemOutput() GetVulnerabilityAuditVulnerabilityItemOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemOutput) ToGetVulnerabilityAuditVulnerabilityItemOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityItemOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemOutput) IsDirectVulnerability() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityItem) bool { return v.IsDirectVulnerability }).(pulumi.BoolOutput)
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemOutput) Metrics() GetVulnerabilityAuditVulnerabilityItemMetricArrayOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityItem) []GetVulnerabilityAuditVulnerabilityItemMetric {
+		return v.Metrics
+	}).(GetVulnerabilityAuditVulnerabilityItemMetricArrayOutput)
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemOutput) References() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityItem) []string { return v.References }).(pulumi.StringArrayOutput)
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemOutput) RelatedVulnerabilities() GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityItem) []GetVulnerabilityAuditVulnerabilityItemRelatedVulnerability {
+		return v.RelatedVulnerabilities
+	}).(GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput)
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemOutput) Severity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityItem) string { return v.Severity }).(pulumi.StringOutput)
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityItem) string { return v.Source }).(pulumi.StringOutput)
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemOutput) VulnerabilityDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityItem) string { return v.VulnerabilityDescription }).(pulumi.StringOutput)
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemOutput) VulnerabilityId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityItem) string { return v.VulnerabilityId }).(pulumi.StringOutput)
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemOutput) VulnerabilitySummary() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityItem) string { return v.VulnerabilitySummary }).(pulumi.StringOutput)
+}
+
+type GetVulnerabilityAuditVulnerabilityItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditVulnerabilityItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditVulnerabilityItem)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemArrayOutput) ToGetVulnerabilityAuditVulnerabilityItemArrayOutput() GetVulnerabilityAuditVulnerabilityItemArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemArrayOutput) ToGetVulnerabilityAuditVulnerabilityItemArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityItemArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditVulnerabilityItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditVulnerabilityItem {
+		return vs[0].([]GetVulnerabilityAuditVulnerabilityItem)[vs[1].(int)]
+	}).(GetVulnerabilityAuditVulnerabilityItemOutput)
+}
+
+type GetVulnerabilityAuditVulnerabilityItemMetric struct {
+	Score  float64 `pulumi:"score"`
+	Source string  `pulumi:"source"`
+	Type   string  `pulumi:"type"`
+	Value  string  `pulumi:"value"`
+}
+
+// GetVulnerabilityAuditVulnerabilityItemMetricInput is an input type that accepts GetVulnerabilityAuditVulnerabilityItemMetricArgs and GetVulnerabilityAuditVulnerabilityItemMetricOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditVulnerabilityItemMetricInput` via:
+//
+//	GetVulnerabilityAuditVulnerabilityItemMetricArgs{...}
+type GetVulnerabilityAuditVulnerabilityItemMetricInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditVulnerabilityItemMetricOutput() GetVulnerabilityAuditVulnerabilityItemMetricOutput
+	ToGetVulnerabilityAuditVulnerabilityItemMetricOutputWithContext(context.Context) GetVulnerabilityAuditVulnerabilityItemMetricOutput
+}
+
+type GetVulnerabilityAuditVulnerabilityItemMetricArgs struct {
+	Score  pulumi.Float64Input `pulumi:"score"`
+	Source pulumi.StringInput  `pulumi:"source"`
+	Type   pulumi.StringInput  `pulumi:"type"`
+	Value  pulumi.StringInput  `pulumi:"value"`
+}
+
+func (GetVulnerabilityAuditVulnerabilityItemMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityItemMetric)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditVulnerabilityItemMetricArgs) ToGetVulnerabilityAuditVulnerabilityItemMetricOutput() GetVulnerabilityAuditVulnerabilityItemMetricOutput {
+	return i.ToGetVulnerabilityAuditVulnerabilityItemMetricOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditVulnerabilityItemMetricArgs) ToGetVulnerabilityAuditVulnerabilityItemMetricOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityItemMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditVulnerabilityItemMetricOutput)
+}
+
+// GetVulnerabilityAuditVulnerabilityItemMetricArrayInput is an input type that accepts GetVulnerabilityAuditVulnerabilityItemMetricArray and GetVulnerabilityAuditVulnerabilityItemMetricArrayOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditVulnerabilityItemMetricArrayInput` via:
+//
+//	GetVulnerabilityAuditVulnerabilityItemMetricArray{ GetVulnerabilityAuditVulnerabilityItemMetricArgs{...} }
+type GetVulnerabilityAuditVulnerabilityItemMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditVulnerabilityItemMetricArrayOutput() GetVulnerabilityAuditVulnerabilityItemMetricArrayOutput
+	ToGetVulnerabilityAuditVulnerabilityItemMetricArrayOutputWithContext(context.Context) GetVulnerabilityAuditVulnerabilityItemMetricArrayOutput
+}
+
+type GetVulnerabilityAuditVulnerabilityItemMetricArray []GetVulnerabilityAuditVulnerabilityItemMetricInput
+
+func (GetVulnerabilityAuditVulnerabilityItemMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditVulnerabilityItemMetric)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditVulnerabilityItemMetricArray) ToGetVulnerabilityAuditVulnerabilityItemMetricArrayOutput() GetVulnerabilityAuditVulnerabilityItemMetricArrayOutput {
+	return i.ToGetVulnerabilityAuditVulnerabilityItemMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditVulnerabilityItemMetricArray) ToGetVulnerabilityAuditVulnerabilityItemMetricArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityItemMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditVulnerabilityItemMetricArrayOutput)
+}
+
+type GetVulnerabilityAuditVulnerabilityItemMetricOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditVulnerabilityItemMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityItemMetric)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemMetricOutput) ToGetVulnerabilityAuditVulnerabilityItemMetricOutput() GetVulnerabilityAuditVulnerabilityItemMetricOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemMetricOutput) ToGetVulnerabilityAuditVulnerabilityItemMetricOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityItemMetricOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemMetricOutput) Score() pulumi.Float64Output {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityItemMetric) float64 { return v.Score }).(pulumi.Float64Output)
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemMetricOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityItemMetric) string { return v.Source }).(pulumi.StringOutput)
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemMetricOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityItemMetric) string { return v.Type }).(pulumi.StringOutput)
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemMetricOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityItemMetric) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVulnerabilityAuditVulnerabilityItemMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditVulnerabilityItemMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditVulnerabilityItemMetric)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemMetricArrayOutput) ToGetVulnerabilityAuditVulnerabilityItemMetricArrayOutput() GetVulnerabilityAuditVulnerabilityItemMetricArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemMetricArrayOutput) ToGetVulnerabilityAuditVulnerabilityItemMetricArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityItemMetricArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemMetricArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditVulnerabilityItemMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditVulnerabilityItemMetric {
+		return vs[0].([]GetVulnerabilityAuditVulnerabilityItemMetric)[vs[1].(int)]
+	}).(GetVulnerabilityAuditVulnerabilityItemMetricOutput)
+}
+
+type GetVulnerabilityAuditVulnerabilityItemRelatedVulnerability struct {
+	Id     string `pulumi:"id"`
+	Source string `pulumi:"source"`
+}
+
+// GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityInput is an input type that accepts GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArgs and GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityInput` via:
+//
+//	GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArgs{...}
+type GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput() GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput
+	ToGetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutputWithContext(context.Context) GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput
+}
+
+type GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArgs struct {
+	Id     pulumi.StringInput `pulumi:"id"`
+	Source pulumi.StringInput `pulumi:"source"`
+}
+
+func (GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityItemRelatedVulnerability)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArgs) ToGetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput() GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput {
+	return i.ToGetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArgs) ToGetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput)
+}
+
+// GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayInput is an input type that accepts GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArray and GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayInput` via:
+//
+//	GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArray{ GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArgs{...} }
+type GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput() GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput
+	ToGetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutputWithContext(context.Context) GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput
+}
+
+type GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArray []GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityInput
+
+func (GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditVulnerabilityItemRelatedVulnerability)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArray) ToGetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput() GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput {
+	return i.ToGetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArray) ToGetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput)
+}
+
+type GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityItemRelatedVulnerability)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput) ToGetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput() GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput) ToGetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityItemRelatedVulnerability) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityItemRelatedVulnerability) string { return v.Source }).(pulumi.StringOutput)
+}
+
+type GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditVulnerabilityItemRelatedVulnerability)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput) ToGetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput() GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput) ToGetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditVulnerabilityItemRelatedVulnerability {
+		return vs[0].([]GetVulnerabilityAuditVulnerabilityItemRelatedVulnerability)[vs[1].(int)]
+	}).(GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput)
+}
+
+type GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange struct {
+	// The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+	VersionEndExcluding string `pulumi:"versionEndExcluding"`
+	// Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+	VersionEndIncluding string `pulumi:"versionEndIncluding"`
+	// The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+	VersionStartExcluding string `pulumi:"versionStartExcluding"`
+	// The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+	VersionStartIncluding string `pulumi:"versionStartIncluding"`
+}
+
+// GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeInput is an input type that accepts GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs and GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeInput` via:
+//
+//	GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs{...}
+type GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput() GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput
+	ToGetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(context.Context) GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput
+}
+
+type GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs struct {
+	// The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+	VersionEndExcluding pulumi.StringInput `pulumi:"versionEndExcluding"`
+	// Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+	VersionEndIncluding pulumi.StringInput `pulumi:"versionEndIncluding"`
+	// The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+	VersionStartExcluding pulumi.StringInput `pulumi:"versionStartExcluding"`
+	// The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+	VersionStartIncluding pulumi.StringInput `pulumi:"versionStartIncluding"`
+}
+
+func (GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs) ToGetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput() GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return i.ToGetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs) ToGetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput)
+}
+
+// GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput is an input type that accepts GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArray and GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput` via:
+//
+//	GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArray{ GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs{...} }
+type GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput() GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput
+	ToGetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(context.Context) GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput
+}
+
+type GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArray []GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeInput
+
+func (GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArray) ToGetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput() GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return i.ToGetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArray) ToGetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput)
+}
+
+type GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) ToGetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput() GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) ToGetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return o
+}
+
+// The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+func (o GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionEndExcluding() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange) string {
+		return v.VersionEndExcluding
+	}).(pulumi.StringOutput)
+}
+
+// Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+func (o GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionEndIncluding() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange) string {
+		return v.VersionEndIncluding
+	}).(pulumi.StringOutput)
+}
+
+// The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+func (o GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionStartExcluding() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange) string {
+		return v.VersionStartExcluding
+	}).(pulumi.StringOutput)
+}
+
+// The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+func (o GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionStartIncluding() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange) string {
+		return v.VersionStartIncluding
+	}).(pulumi.StringOutput)
+}
+
+type GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) ToGetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput() GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) ToGetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange {
+		return vs[0].([]GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRange)[vs[1].(int)]
+	}).(GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput)
+}
+
+type GetVulnerabilityAuditVulnerabilityMetric struct {
+	// Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+	Score float64 `pulumi:"score"`
+	// Source that published the vulnerability
+	Source string `pulumi:"source"`
+	// Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+	Type string `pulumi:"type"`
+	// Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+	Value string `pulumi:"value"`
+}
+
+// GetVulnerabilityAuditVulnerabilityMetricInput is an input type that accepts GetVulnerabilityAuditVulnerabilityMetricArgs and GetVulnerabilityAuditVulnerabilityMetricOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditVulnerabilityMetricInput` via:
+//
+//	GetVulnerabilityAuditVulnerabilityMetricArgs{...}
+type GetVulnerabilityAuditVulnerabilityMetricInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditVulnerabilityMetricOutput() GetVulnerabilityAuditVulnerabilityMetricOutput
+	ToGetVulnerabilityAuditVulnerabilityMetricOutputWithContext(context.Context) GetVulnerabilityAuditVulnerabilityMetricOutput
+}
+
+type GetVulnerabilityAuditVulnerabilityMetricArgs struct {
+	// Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+	Score pulumi.Float64Input `pulumi:"score"`
+	// Source that published the vulnerability
+	Source pulumi.StringInput `pulumi:"source"`
+	// Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVulnerabilityAuditVulnerabilityMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityMetric)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditVulnerabilityMetricArgs) ToGetVulnerabilityAuditVulnerabilityMetricOutput() GetVulnerabilityAuditVulnerabilityMetricOutput {
+	return i.ToGetVulnerabilityAuditVulnerabilityMetricOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditVulnerabilityMetricArgs) ToGetVulnerabilityAuditVulnerabilityMetricOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditVulnerabilityMetricOutput)
+}
+
+// GetVulnerabilityAuditVulnerabilityMetricArrayInput is an input type that accepts GetVulnerabilityAuditVulnerabilityMetricArray and GetVulnerabilityAuditVulnerabilityMetricArrayOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditVulnerabilityMetricArrayInput` via:
+//
+//	GetVulnerabilityAuditVulnerabilityMetricArray{ GetVulnerabilityAuditVulnerabilityMetricArgs{...} }
+type GetVulnerabilityAuditVulnerabilityMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditVulnerabilityMetricArrayOutput() GetVulnerabilityAuditVulnerabilityMetricArrayOutput
+	ToGetVulnerabilityAuditVulnerabilityMetricArrayOutputWithContext(context.Context) GetVulnerabilityAuditVulnerabilityMetricArrayOutput
+}
+
+type GetVulnerabilityAuditVulnerabilityMetricArray []GetVulnerabilityAuditVulnerabilityMetricInput
+
+func (GetVulnerabilityAuditVulnerabilityMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditVulnerabilityMetric)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditVulnerabilityMetricArray) ToGetVulnerabilityAuditVulnerabilityMetricArrayOutput() GetVulnerabilityAuditVulnerabilityMetricArrayOutput {
+	return i.ToGetVulnerabilityAuditVulnerabilityMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditVulnerabilityMetricArray) ToGetVulnerabilityAuditVulnerabilityMetricArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditVulnerabilityMetricArrayOutput)
+}
+
+type GetVulnerabilityAuditVulnerabilityMetricOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditVulnerabilityMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityMetric)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditVulnerabilityMetricOutput) ToGetVulnerabilityAuditVulnerabilityMetricOutput() GetVulnerabilityAuditVulnerabilityMetricOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityMetricOutput) ToGetVulnerabilityAuditVulnerabilityMetricOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityMetricOutput {
+	return o
+}
+
+// Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+func (o GetVulnerabilityAuditVulnerabilityMetricOutput) Score() pulumi.Float64Output {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityMetric) float64 { return v.Score }).(pulumi.Float64Output)
+}
+
+// Source that published the vulnerability
+func (o GetVulnerabilityAuditVulnerabilityMetricOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityMetric) string { return v.Source }).(pulumi.StringOutput)
+}
+
+// Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+func (o GetVulnerabilityAuditVulnerabilityMetricOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityMetric) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+func (o GetVulnerabilityAuditVulnerabilityMetricOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerabilityMetric) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVulnerabilityAuditVulnerabilityMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditVulnerabilityMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditVulnerabilityMetric)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditVulnerabilityMetricArrayOutput) ToGetVulnerabilityAuditVulnerabilityMetricArrayOutput() GetVulnerabilityAuditVulnerabilityMetricArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityMetricArrayOutput) ToGetVulnerabilityAuditVulnerabilityMetricArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityMetricArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityMetricArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditVulnerabilityMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditVulnerabilityMetric {
+		return vs[0].([]GetVulnerabilityAuditVulnerabilityMetric)[vs[1].(int)]
+	}).(GetVulnerabilityAuditVulnerabilityMetricOutput)
 }
 
 type GetVulnerabilityAuditsFilter struct {
@@ -7592,7 +9170,7 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItem struct {
 	Id string `pulumi:"id"`
 	// A filter to return only successful or failed Vulnerability Audits.
 	IsSuccess bool `pulumi:"isSuccess"`
-	// A filter to return only Vulnerability Audits that were created against the specified knowledge base.
+	// A filter to return only Audits that were created against the specified knowledge base.
 	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
 	// Details on the lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -7657,7 +9235,7 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter to return only successful or failed Vulnerability Audits.
 	IsSuccess pulumi.BoolInput `pulumi:"isSuccess"`
-	// A filter to return only Vulnerability Audits that were created against the specified knowledge base.
+	// A filter to return only Audits that were created against the specified knowledge base.
 	KnowledgeBaseId pulumi.StringInput `pulumi:"knowledgeBaseId"`
 	// Details on the lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
@@ -7794,7 +9372,7 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) IsSuccess(
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) bool { return v.IsSuccess }).(pulumi.BoolOutput)
 }
 
-// A filter to return only Vulnerability Audits that were created against the specified knowledge base.
+// A filter to return only Audits that were created against the specified knowledge base.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) KnowledgeBaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) string { return v.KnowledgeBaseId }).(pulumi.StringOutput)
 }
@@ -8174,7 +9752,7 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource struct {
 	Description string `pulumi:"description"`
 	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
 	OciResourceId string `pulumi:"ociResourceId"`
-	// Source type of the vulnerability audit.
+	// Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
 	Type string `pulumi:"type"`
 }
 
@@ -8194,7 +9772,7 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
 	OciResourceId pulumi.StringInput `pulumi:"ociResourceId"`
-	// Source type of the vulnerability audit.
+	// Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -8259,7 +9837,7 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput) OciR
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource) string { return v.OciResourceId }).(pulumi.StringOutput)
 }
 
-// Source type of the vulnerability audit.
+// Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -8419,6 +9997,10 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability struct 
 	IsFalsePositive bool `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored bool `pulumi:"isIgnored"`
+	// List of artifact version ranges affected by a particular vulnerability.
+	MatchingVulnerableArtifactVersionRanges []GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange `pulumi:"matchingVulnerableArtifactVersionRanges"`
+	// List of reported metrics by the source.
+	Metrics []GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetric `pulumi:"metrics"`
 	// ADM qualitative severity score. Can be either NONE, LOW, MEDIUM, HIGH or CRITICAL.
 	Severity string `pulumi:"severity"`
 	// Source that published the vulnerability
@@ -8447,6 +10029,10 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs str
 	IsFalsePositive pulumi.BoolInput `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored pulumi.BoolInput `pulumi:"isIgnored"`
+	// List of artifact version ranges affected by a particular vulnerability.
+	MatchingVulnerableArtifactVersionRanges GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput `pulumi:"matchingVulnerableArtifactVersionRanges"`
+	// List of reported metrics by the source.
+	Metrics GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayInput `pulumi:"metrics"`
 	// ADM qualitative severity score. Can be either NONE, LOW, MEDIUM, HIGH or CRITICAL.
 	Severity pulumi.StringInput `pulumi:"severity"`
 	// Source that published the vulnerability
@@ -8535,6 +10121,20 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutpu
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability) bool { return v.IsIgnored }).(pulumi.BoolOutput)
 }
 
+// List of artifact version ranges affected by a particular vulnerability.
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput) MatchingVulnerableArtifactVersionRanges() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability) []GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange {
+		return v.MatchingVulnerableArtifactVersionRanges
+	}).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput)
+}
+
+// List of reported metrics by the source.
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput) Metrics() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability) []GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetric {
+		return v.Metrics
+	}).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput)
+}
+
 // ADM qualitative severity score. Can be either NONE, LOW, MEDIUM, HIGH or CRITICAL.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput) Severity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability) string { return v.Severity }).(pulumi.StringOutput)
@@ -8565,6 +10165,270 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArray
 	}).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput)
 }
 
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange struct {
+	// The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+	VersionEndExcluding string `pulumi:"versionEndExcluding"`
+	// Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+	VersionEndIncluding string `pulumi:"versionEndIncluding"`
+	// The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+	VersionStartExcluding string `pulumi:"versionStartExcluding"`
+	// The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+	VersionStartIncluding string `pulumi:"versionStartIncluding"`
+}
+
+// GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeInput` via:
+//
+//	GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs{...}
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput
+	ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput
+}
+
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs struct {
+	// The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+	VersionEndExcluding pulumi.StringInput `pulumi:"versionEndExcluding"`
+	// Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+	VersionEndIncluding pulumi.StringInput `pulumi:"versionEndIncluding"`
+	// The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+	VersionStartExcluding pulumi.StringInput `pulumi:"versionStartExcluding"`
+	// The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+	VersionStartIncluding pulumi.StringInput `pulumi:"versionStartIncluding"`
+}
+
+func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput)
+}
+
+// GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput` via:
+//
+//	GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray{ GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs{...} }
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput
+	ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput
+}
+
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray []GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeInput
+
+func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput)
+}
+
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return o
+}
+
+// The version immediately after the last affected version. Versions up to, but not including this version, are vulnerable.
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionEndExcluding() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange) string {
+		return v.VersionEndExcluding
+	}).(pulumi.StringOutput)
+}
+
+// Marks the latest version that is affected by the vulnerability. This version and all preceding versions, going back to versionStartExcluding or versionStartIncluding, are considered vulnerable.
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionEndIncluding() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange) string {
+		return v.VersionEndIncluding
+	}).(pulumi.StringOutput)
+}
+
+// The version immediately before the start of affected versions. The specified version is not affected, but versions immediately after are, up to versionStartIncluding or beyond, if not otherwise defined.
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionStartExcluding() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange) string {
+		return v.VersionStartExcluding
+	}).(pulumi.StringOutput)
+}
+
+// The first version affected by the vulnerability. This version and those following it are considered vulnerable until versionEndExcluding or versionEndIncluding is reached.
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput) VersionStartIncluding() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange) string {
+		return v.VersionStartIncluding
+	}).(pulumi.StringOutput)
+}
+
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange {
+		return vs[0].([]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRange)[vs[1].(int)]
+	}).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput)
+}
+
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetric struct {
+	// Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+	Score float64 `pulumi:"score"`
+	// Source that published the vulnerability
+	Source string `pulumi:"source"`
+	// Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+	Type string `pulumi:"type"`
+	// Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+	Value string `pulumi:"value"`
+}
+
+// GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArgs and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricInput` via:
+//
+//	GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArgs{...}
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput
+	ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutputWithContext(context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput
+}
+
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArgs struct {
+	// Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+	Score pulumi.Float64Input `pulumi:"score"`
+	// Source that published the vulnerability
+	Source pulumi.StringInput `pulumi:"source"`
+	// Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetric)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArgs) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput {
+	return i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArgs) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput)
+}
+
+// GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayInput` via:
+//
+//	GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArray{ GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArgs{...} }
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput
+	ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutputWithContext(context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput
+}
+
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArray []GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricInput
+
+func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetric)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArray) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput {
+	return i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArray) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput)
+}
+
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetric)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput {
+	return o
+}
+
+// Numerical representation of metric (if exists). For example for CVSS vectors, the score is the base score according to the CVSS scoring system.
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput) Score() pulumi.Float64Output {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetric) float64 {
+		return v.Score
+	}).(pulumi.Float64Output)
+}
+
+// Source that published the vulnerability
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetric) string {
+		return v.Source
+	}).(pulumi.StringOutput)
+}
+
+// Type of the vulnerability metric e.g., CVSS2, CVSS3, Severity.
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetric) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+// Value of the vulnerability metric e.g., a string representation of a severity value or a cvss vector.
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetric) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetric)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetric {
+		return vs[0].([]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetric)[vs[1].(int)]
+	}).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*RemediationRecipeDetectConfigurationInput)(nil)).Elem(), RemediationRecipeDetectConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RemediationRecipeDetectConfigurationPtrInput)(nil)).Elem(), RemediationRecipeDetectConfigurationArgs{})
@@ -8586,6 +10450,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityAuditUsageDataPtrInput)(nil)).Elem(), VulnerabilityAuditUsageDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityAuditVulnerabilityInput)(nil)).Elem(), VulnerabilityAuditVulnerabilityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityAuditVulnerabilityArrayInput)(nil)).Elem(), VulnerabilityAuditVulnerabilityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeInput)(nil)).Elem(), VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput)(nil)).Elem(), VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityAuditVulnerabilityMetricInput)(nil)).Elem(), VulnerabilityAuditVulnerabilityMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityAuditVulnerabilityMetricArrayInput)(nil)).Elem(), VulnerabilityAuditVulnerabilityMetricArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKnowledgebasesFilterInput)(nil)).Elem(), GetKnowledgebasesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKnowledgebasesFilterArrayInput)(nil)).Elem(), GetKnowledgebasesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKnowledgebasesKnowledgeBaseCollectionInput)(nil)).Elem(), GetKnowledgebasesKnowledgeBaseCollectionArgs{})
@@ -8652,12 +10520,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilityItemInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditConfigurationInput)(nil)).Elem(), GetVulnerabilityAuditConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditConfigurationArrayInput)(nil)).Elem(), GetVulnerabilityAuditConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditSourceInput)(nil)).Elem(), GetVulnerabilityAuditSourceArgs{})
@@ -8666,6 +10542,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditUsageDataArrayInput)(nil)).Elem(), GetVulnerabilityAuditUsageDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityInput)(nil)).Elem(), GetVulnerabilityAuditVulnerabilityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityArrayInput)(nil)).Elem(), GetVulnerabilityAuditVulnerabilityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityFilterInput)(nil)).Elem(), GetVulnerabilityAuditVulnerabilityFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityFilterArrayInput)(nil)).Elem(), GetVulnerabilityAuditVulnerabilityFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityItemInput)(nil)).Elem(), GetVulnerabilityAuditVulnerabilityItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityItemArrayInput)(nil)).Elem(), GetVulnerabilityAuditVulnerabilityItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityItemMetricInput)(nil)).Elem(), GetVulnerabilityAuditVulnerabilityItemMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityItemMetricArrayInput)(nil)).Elem(), GetVulnerabilityAuditVulnerabilityItemMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityInput)(nil)).Elem(), GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayInput)(nil)).Elem(), GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeInput)(nil)).Elem(), GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput)(nil)).Elem(), GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityMetricInput)(nil)).Elem(), GetVulnerabilityAuditVulnerabilityMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityMetricArrayInput)(nil)).Elem(), GetVulnerabilityAuditVulnerabilityMetricArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsFilterInput)(nil)).Elem(), GetVulnerabilityAuditsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsFilterArrayInput)(nil)).Elem(), GetVulnerabilityAuditsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionInput)(nil)).Elem(), GetVulnerabilityAuditsVulnerabilityAuditCollectionArgs{})
@@ -8682,6 +10570,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayInput)(nil)).Elem(), GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityInput)(nil)).Elem(), GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayInput)(nil)).Elem(), GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeInput)(nil)).Elem(), GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayInput)(nil)).Elem(), GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricInput)(nil)).Elem(), GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayInput)(nil)).Elem(), GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArray{})
 	pulumi.RegisterOutputType(RemediationRecipeDetectConfigurationOutput{})
 	pulumi.RegisterOutputType(RemediationRecipeDetectConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(RemediationRecipeNetworkConfigurationOutput{})
@@ -8702,6 +10594,10 @@ func init() {
 	pulumi.RegisterOutputType(VulnerabilityAuditUsageDataPtrOutput{})
 	pulumi.RegisterOutputType(VulnerabilityAuditVulnerabilityOutput{})
 	pulumi.RegisterOutputType(VulnerabilityAuditVulnerabilityArrayOutput{})
+	pulumi.RegisterOutputType(VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput{})
+	pulumi.RegisterOutputType(VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput{})
+	pulumi.RegisterOutputType(VulnerabilityAuditVulnerabilityMetricOutput{})
+	pulumi.RegisterOutputType(VulnerabilityAuditVulnerabilityMetricArrayOutput{})
 	pulumi.RegisterOutputType(GetKnowledgebasesFilterOutput{})
 	pulumi.RegisterOutputType(GetKnowledgebasesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetKnowledgebasesKnowledgeBaseCollectionOutput{})
@@ -8768,12 +10664,20 @@ func init() {
 	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityMetricArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityMetricArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditConfigurationOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditSourceOutput{})
@@ -8782,6 +10686,18 @@ func init() {
 	pulumi.RegisterOutputType(GetVulnerabilityAuditUsageDataArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditVulnerabilityOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditVulnerabilityArrayOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditVulnerabilityFilterOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditVulnerabilityFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditVulnerabilityItemOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditVulnerabilityItemArrayOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditVulnerabilityItemMetricOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditVulnerabilityItemMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditVulnerabilityItemRelatedVulnerabilityArrayOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditVulnerabilityMetricOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditVulnerabilityMetricArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditsFilterOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput{})
@@ -8798,4 +10714,8 @@ func init() {
 	pulumi.RegisterOutputType(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMatchingVulnerableArtifactVersionRangeArrayOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityMetricArrayOutput{})
 }

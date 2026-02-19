@@ -56,6 +56,7 @@ __all__ = [
     'ComputeCapacityReservationInstanceReservationConfigClusterConfig',
     'ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig',
     'ComputeCapacityTopologyCapacitySource',
+    'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig',
     'ComputeGpuMemoryFabricMemoryFabricPreferences',
     'ComputeHostConfigurationData',
     'ComputeHostConfigurationDataCheckDetail',
@@ -351,11 +352,13 @@ __all__ = [
     'GetComputeGlobalImageCapabilitySchemasFilterResult',
     'GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersionResult',
     'GetComputeGlobalImageCapabilitySchemasVersionsFilterResult',
+    'GetComputeGpuMemoryClusterGpuMemoryClusterScaleConfigResult',
     'GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionResult',
     'GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionItemResult',
     'GetComputeGpuMemoryClusterInstancesFilterResult',
     'GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionResult',
     'GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemResult',
+    'GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemGpuMemoryClusterScaleConfigResult',
     'GetComputeGpuMemoryClustersFilterResult',
     'GetComputeGpuMemoryFabricMemoryFabricPreferenceResult',
     'GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionResult',
@@ -3458,6 +3461,69 @@ class ComputeCapacityTopologyCapacitySource(dict):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of this capacity source.
         """
         return pulumi.get(self, "compartment_id")
+
+
+@pulumi.output_type
+class ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isUpsizeEnabled":
+            suggest = "is_upsize_enabled"
+        elif key == "isDownsizeEnabled":
+            suggest = "is_downsize_enabled"
+        elif key == "targetSize":
+            suggest = "target_size"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_upsize_enabled: _builtins.bool,
+                 is_downsize_enabled: Optional[_builtins.bool] = None,
+                 target_size: Optional[_builtins.str] = None):
+        """
+        :param _builtins.bool is_upsize_enabled: (Updatable) Enables upsizing towards the target size.
+        :param _builtins.bool is_downsize_enabled: (Updatable) Enables downsizing towards the target size.
+        :param _builtins.str target_size: (Updatable) The configured target size for the GPU Memory cluster.
+        """
+        pulumi.set(__self__, "is_upsize_enabled", is_upsize_enabled)
+        if is_downsize_enabled is not None:
+            pulumi.set(__self__, "is_downsize_enabled", is_downsize_enabled)
+        if target_size is not None:
+            pulumi.set(__self__, "target_size", target_size)
+
+    @_builtins.property
+    @pulumi.getter(name="isUpsizeEnabled")
+    def is_upsize_enabled(self) -> _builtins.bool:
+        """
+        (Updatable) Enables upsizing towards the target size.
+        """
+        return pulumi.get(self, "is_upsize_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isDownsizeEnabled")
+    def is_downsize_enabled(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Enables downsizing towards the target size.
+        """
+        return pulumi.get(self, "is_downsize_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="targetSize")
+    def target_size(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The configured target size for the GPU Memory cluster.
+        """
+        return pulumi.get(self, "target_size")
 
 
 @pulumi.output_type
@@ -24232,6 +24298,46 @@ class GetComputeGlobalImageCapabilitySchemasVersionsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetComputeGpuMemoryClusterGpuMemoryClusterScaleConfigResult(dict):
+    def __init__(__self__, *,
+                 is_downsize_enabled: _builtins.bool,
+                 is_upsize_enabled: _builtins.bool,
+                 target_size: _builtins.str):
+        """
+        :param _builtins.bool is_downsize_enabled: Whether downsizing is enabled.
+        :param _builtins.bool is_upsize_enabled: Whether upsizing is enabled.
+        :param _builtins.str target_size: The configured target size for the GPU Memory cluster.
+        """
+        pulumi.set(__self__, "is_downsize_enabled", is_downsize_enabled)
+        pulumi.set(__self__, "is_upsize_enabled", is_upsize_enabled)
+        pulumi.set(__self__, "target_size", target_size)
+
+    @_builtins.property
+    @pulumi.getter(name="isDownsizeEnabled")
+    def is_downsize_enabled(self) -> _builtins.bool:
+        """
+        Whether downsizing is enabled.
+        """
+        return pulumi.get(self, "is_downsize_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isUpsizeEnabled")
+    def is_upsize_enabled(self) -> _builtins.bool:
+        """
+        Whether upsizing is enabled.
+        """
+        return pulumi.get(self, "is_upsize_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="targetSize")
+    def target_size(self) -> _builtins.str:
+        """
+        The configured target size for the GPU Memory cluster.
+        """
+        return pulumi.get(self, "target_size")
+
+
+@pulumi.output_type
 class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionItemResult']):
@@ -24414,6 +24520,7 @@ class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemResult(dic
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
+                 gpu_memory_cluster_scale_configs: Sequence['outputs.GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemGpuMemoryClusterScaleConfigResult'],
                  gpu_memory_fabric_id: _builtins.str,
                  id: _builtins.str,
                  instance_configuration_id: _builtins.str,
@@ -24428,6 +24535,7 @@ class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemResult(dic
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Sequence['GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemGpuMemoryClusterScaleConfigArgs'] gpu_memory_cluster_scale_configs: Configuration settings for GPU Memory Cluster scaling.
         :param _builtins.str gpu_memory_fabric_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
         :param _builtins.str instance_configuration_id: The OCID of the Instance Configuration used to source launch details for this instance.
@@ -24442,6 +24550,7 @@ class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemResult(dic
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "gpu_memory_cluster_scale_configs", gpu_memory_cluster_scale_configs)
         pulumi.set(__self__, "gpu_memory_fabric_id", gpu_memory_fabric_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
@@ -24499,6 +24608,14 @@ class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemResult(dic
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
+    @pulumi.getter(name="gpuMemoryClusterScaleConfigs")
+    def gpu_memory_cluster_scale_configs(self) -> Sequence['outputs.GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemGpuMemoryClusterScaleConfigResult']:
+        """
+        Configuration settings for GPU Memory Cluster scaling.
+        """
+        return pulumi.get(self, "gpu_memory_cluster_scale_configs")
+
+    @_builtins.property
     @pulumi.getter(name="gpuMemoryFabricId")
     def gpu_memory_fabric_id(self) -> _builtins.str:
         """
@@ -24553,6 +24670,46 @@ class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemResult(dic
         The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemGpuMemoryClusterScaleConfigResult(dict):
+    def __init__(__self__, *,
+                 is_downsize_enabled: _builtins.bool,
+                 is_upsize_enabled: _builtins.bool,
+                 target_size: _builtins.str):
+        """
+        :param _builtins.bool is_downsize_enabled: Whether downsizing is enabled.
+        :param _builtins.bool is_upsize_enabled: Whether upsizing is enabled.
+        :param _builtins.str target_size: The configured target size for the GPU Memory cluster.
+        """
+        pulumi.set(__self__, "is_downsize_enabled", is_downsize_enabled)
+        pulumi.set(__self__, "is_upsize_enabled", is_upsize_enabled)
+        pulumi.set(__self__, "target_size", target_size)
+
+    @_builtins.property
+    @pulumi.getter(name="isDownsizeEnabled")
+    def is_downsize_enabled(self) -> _builtins.bool:
+        """
+        Whether downsizing is enabled.
+        """
+        return pulumi.get(self, "is_downsize_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isUpsizeEnabled")
+    def is_upsize_enabled(self) -> _builtins.bool:
+        """
+        Whether upsizing is enabled.
+        """
+        return pulumi.get(self, "is_upsize_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="targetSize")
+    def target_size(self) -> _builtins.str:
+        """
+        The configured target size for the GPU Memory cluster.
+        """
+        return pulumi.get(self, "target_size")
 
 
 @pulumi.output_type

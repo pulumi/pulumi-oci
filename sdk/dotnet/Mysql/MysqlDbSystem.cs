@@ -116,6 +116,14 @@ namespace Pulumi.Oci.Mysql
     ///         Maintenance = new Oci.Mysql.Inputs.MysqlDbSystemMaintenanceArgs
     ///         {
     ///             WindowStartTime = mysqlDbSystemMaintenanceWindowStartTime,
+    ///             MaintenanceDisabledWindows = new[]
+    ///             {
+    ///                 new Oci.Mysql.Inputs.MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs
+    ///                 {
+    ///                     TimeEnd = mysqlDbSystemMaintenanceMaintenanceDisabledWindowsTimeEnd,
+    ///                     TimeStart = mysqlDbSystemMaintenanceMaintenanceDisabledWindowsTimeStart,
+    ///                 },
+    ///             },
     ///             MaintenanceScheduleType = mysqlDbSystemMaintenanceMaintenanceScheduleType,
     ///             VersionPreference = mysqlDbSystemMaintenanceVersionPreference,
     ///             VersionTrackPreference = mysqlDbSystemMaintenanceVersionTrackPreference,

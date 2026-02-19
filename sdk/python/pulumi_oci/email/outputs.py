@@ -17,6 +17,8 @@ from . import outputs
 
 __all__ = [
     'EmailDomainLock',
+    'EmailIpPoolLock',
+    'EmailIpPoolOutboundIpsResponse',
     'EmailReturnPathLock',
     'SenderLock',
     'GetDkimsDkimCollectionResult',
@@ -27,6 +29,16 @@ __all__ = [
     'GetEmailDomainsEmailDomainCollectionItemResult',
     'GetEmailDomainsEmailDomainCollectionItemLockResult',
     'GetEmailDomainsFilterResult',
+    'GetEmailIpPoolLockResult',
+    'GetEmailIpPoolOutboundIpsResponseResult',
+    'GetEmailIpPoolsEmailIpPoolCollectionResult',
+    'GetEmailIpPoolsEmailIpPoolCollectionItemResult',
+    'GetEmailIpPoolsEmailIpPoolCollectionItemLockResult',
+    'GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseResult',
+    'GetEmailIpPoolsFilterResult',
+    'GetEmailOutboundIpsEmailOutboundIpCollectionResult',
+    'GetEmailOutboundIpsEmailOutboundIpCollectionItemResult',
+    'GetEmailOutboundIpsFilterResult',
     'GetEmailReturnPathLockResult',
     'GetEmailReturnPathsEmailReturnPathCollectionResult',
     'GetEmailReturnPathsEmailReturnPathCollectionItemResult',
@@ -126,6 +138,170 @@ class EmailDomainLock(dict):
         Lock type.
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class EmailIpPoolLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in EmailIpPoolLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        EmailIpPoolLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        EmailIpPoolLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: Optional[_builtins.str] = None,
+                 message: Optional[_builtins.str] = None,
+                 related_resource_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None,
+                 type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this IpPool.
+        :param _builtins.str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param _builtins.str time_created: The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        :param _builtins.str type: Lock type.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this IpPool.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[_builtins.str]:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class EmailIpPoolOutboundIpsResponse(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "assignmentState":
+            suggest = "assignment_state"
+        elif key == "lifecycleDetails":
+            suggest = "lifecycle_details"
+        elif key == "outboundIp":
+            suggest = "outbound_ip"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in EmailIpPoolOutboundIpsResponse. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        EmailIpPoolOutboundIpsResponse.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        EmailIpPoolOutboundIpsResponse.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 assignment_state: Optional[_builtins.str] = None,
+                 lifecycle_details: Optional[_builtins.str] = None,
+                 outbound_ip: Optional[_builtins.str] = None,
+                 state: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str assignment_state: The assignment state of the public IP address.
+        :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+        :param _builtins.str outbound_ip: The public IP address assigned to the tenancy.
+        :param _builtins.str state: The current state of the IpPool.
+        """
+        if assignment_state is not None:
+            pulumi.set(__self__, "assignment_state", assignment_state)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if outbound_ip is not None:
+            pulumi.set(__self__, "outbound_ip", outbound_ip)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="assignmentState")
+    def assignment_state(self) -> Optional[_builtins.str]:
+        """
+        The assignment state of the public IP address.
+        """
+        return pulumi.get(self, "assignment_state")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[_builtins.str]:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="outboundIp")
+    def outbound_ip(self) -> Optional[_builtins.str]:
+        """
+        The public IP address assigned to the tenancy.
+        """
+        return pulumi.get(self, "outbound_ip")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[_builtins.str]:
+        """
+        The current state of the IpPool.
+        """
+        return pulumi.get(self, "state")
 
 
 @pulumi.output_type
@@ -881,6 +1057,530 @@ class GetEmailDomainsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetEmailIpPoolLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The lock compartment ID.
+        :param _builtins.str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param _builtins.str time_created: The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        :param _builtins.str type: Lock type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The lock compartment ID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetEmailIpPoolOutboundIpsResponseResult(dict):
+    def __init__(__self__, *,
+                 assignment_state: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 outbound_ip: _builtins.str,
+                 state: _builtins.str):
+        """
+        :param _builtins.str assignment_state: The assignment state of the public IP address.
+        :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+        :param _builtins.str outbound_ip: The public IP address assigned to the tenancy.
+        :param _builtins.str state: The current state of the IpPool.
+        """
+        pulumi.set(__self__, "assignment_state", assignment_state)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "outbound_ip", outbound_ip)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="assignmentState")
+    def assignment_state(self) -> _builtins.str:
+        """
+        The assignment state of the public IP address.
+        """
+        return pulumi.get(self, "assignment_state")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="outboundIp")
+    def outbound_ip(self) -> _builtins.str:
+        """
+        The public IP address assigned to the tenancy.
+        """
+        return pulumi.get(self, "outbound_ip")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the IpPool.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetEmailIpPoolsEmailIpPoolCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetEmailIpPoolsEmailIpPoolCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetEmailIpPoolsEmailIpPoolCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetEmailIpPoolsEmailIpPoolCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 locks: Sequence['outputs.GetEmailIpPoolsEmailIpPoolCollectionItemLockResult'],
+                 name: _builtins.str,
+                 outbound_ips: Sequence[_builtins.str],
+                 outbound_ips_responses: Sequence['outputs.GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseResult'],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The OCID for the compartment.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: The description of the IpPool. Avoid entering confidential information.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: A filter to only return resources that match the given id exactly.
+        :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+        :param Sequence['GetEmailIpPoolsEmailIpPoolCollectionItemLockArgs'] locks: Locks associated with this resource.
+        :param _builtins.str name: A filter to only return resources that match the given name exactly.
+        :param Sequence[_builtins.str] outbound_ips: Summary of outbound IPs assigned to the IpPool.
+        :param _builtins.str state: Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        :param _builtins.str time_updated: The time of the last change to the IpPool, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "outbound_ips", outbound_ips)
+        pulumi.set(__self__, "outbound_ips_responses", outbound_ips_responses)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The OCID for the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the IpPool. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        A filter to only return resources that match the given id exactly.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetEmailIpPoolsEmailIpPoolCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to only return resources that match the given name exactly.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="outboundIps")
+    def outbound_ips(self) -> Sequence[_builtins.str]:
+        """
+        Summary of outbound IPs assigned to the IpPool.
+        """
+        return pulumi.get(self, "outbound_ips")
+
+    @_builtins.property
+    @pulumi.getter(name="outboundIpsResponses")
+    def outbound_ips_responses(self) -> Sequence['outputs.GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseResult']:
+        return pulumi.get(self, "outbound_ips_responses")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time of the last change to the IpPool, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetEmailIpPoolsEmailIpPoolCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The OCID for the compartment.
+        :param _builtins.str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param _builtins.str time_created: The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        :param _builtins.str type: Lock type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The OCID for the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseResult(dict):
+    def __init__(__self__, *,
+                 assignment_state: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 outbound_ip: _builtins.str,
+                 state: _builtins.str):
+        """
+        :param _builtins.str assignment_state: The assignment state of the public IP address.
+        :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+        :param _builtins.str outbound_ip: The public IP address assigned to the tenancy.
+        :param _builtins.str state: Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+        """
+        pulumi.set(__self__, "assignment_state", assignment_state)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "outbound_ip", outbound_ip)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="assignmentState")
+    def assignment_state(self) -> _builtins.str:
+        """
+        The assignment state of the public IP address.
+        """
+        return pulumi.get(self, "assignment_state")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="outboundIp")
+    def outbound_ip(self) -> _builtins.str:
+        """
+        The public IP address assigned to the tenancy.
+        """
+        return pulumi.get(self, "outbound_ip")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetEmailIpPoolsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A filter to only return resources that match the given name exactly.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to only return resources that match the given name exactly.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetEmailOutboundIpsEmailOutboundIpCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetEmailOutboundIpsEmailOutboundIpCollectionItemResult']):
+        """
+        :param Sequence['GetEmailOutboundIpsEmailOutboundIpCollectionItemArgs'] items: List of public IPs.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetEmailOutboundIpsEmailOutboundIpCollectionItemResult']:
+        """
+        List of public IPs.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetEmailOutboundIpsEmailOutboundIpCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 assignment_state: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 outbound_ip: _builtins.str,
+                 state: _builtins.str):
+        """
+        :param _builtins.str assignment_state: Filter returned list by specified assignment state.
+        :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+        :param _builtins.str outbound_ip: The outbound IP address assigned to the tenancy.
+        :param _builtins.str state: Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+        """
+        pulumi.set(__self__, "assignment_state", assignment_state)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "outbound_ip", outbound_ip)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="assignmentState")
+    def assignment_state(self) -> _builtins.str:
+        """
+        Filter returned list by specified assignment state.
+        """
+        return pulumi.get(self, "assignment_state")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="outboundIp")
+    def outbound_ip(self) -> _builtins.str:
+        """
+        The outbound IP address assigned to the tenancy.
+        """
+        return pulumi.get(self, "outbound_ip")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetEmailOutboundIpsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetEmailReturnPathLockResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
@@ -1317,6 +2017,7 @@ class GetSendersSenderResult(dict):
                  defined_tags: Mapping[str, _builtins.str],
                  email_address: _builtins.str,
                  email_domain_id: _builtins.str,
+                 email_ip_pool_id: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  is_spf: _builtins.bool,
@@ -1329,6 +2030,7 @@ class GetSendersSenderResult(dict):
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str email_address: The email address of the approved sender.
         :param _builtins.str email_domain_id: The email domain used to assert responsibility for emails sent from this sender.
+        :param _builtins.str email_ip_pool_id: A filter to only return resources that match the given IpPool resource exactly.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The unique OCID of the sender.
         :param _builtins.bool is_spf: Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
@@ -1341,6 +2043,7 @@ class GetSendersSenderResult(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "email_address", email_address)
         pulumi.set(__self__, "email_domain_id", email_domain_id)
+        pulumi.set(__self__, "email_ip_pool_id", email_ip_pool_id)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_spf", is_spf)
@@ -1380,6 +2083,14 @@ class GetSendersSenderResult(dict):
         The email domain used to assert responsibility for emails sent from this sender.
         """
         return pulumi.get(self, "email_domain_id")
+
+    @_builtins.property
+    @pulumi.getter(name="emailIpPoolId")
+    def email_ip_pool_id(self) -> _builtins.str:
+        """
+        A filter to only return resources that match the given IpPool resource exactly.
+        """
+        return pulumi.get(self, "email_ip_pool_id")
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")

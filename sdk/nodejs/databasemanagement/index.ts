@@ -65,6 +65,31 @@ export type CloudDbSystemDiscovery = import("./cloudDbSystemDiscovery").CloudDbS
 export const CloudDbSystemDiscovery: typeof import("./cloudDbSystemDiscovery").CloudDbSystemDiscovery = null as any;
 utilities.lazyLoad(exports, ["CloudDbSystemDiscovery"], () => require("./cloudDbSystemDiscovery"));
 
+export { CloudExadataInfrastructureArgs, CloudExadataInfrastructureState } from "./cloudExadataInfrastructure";
+export type CloudExadataInfrastructure = import("./cloudExadataInfrastructure").CloudExadataInfrastructure;
+export const CloudExadataInfrastructure: typeof import("./cloudExadataInfrastructure").CloudExadataInfrastructure = null as any;
+utilities.lazyLoad(exports, ["CloudExadataInfrastructure"], () => require("./cloudExadataInfrastructure"));
+
+export { CloudExadataInfrastructureManagedexadataManagementArgs, CloudExadataInfrastructureManagedexadataManagementState } from "./cloudExadataInfrastructureManagedexadataManagement";
+export type CloudExadataInfrastructureManagedexadataManagement = import("./cloudExadataInfrastructureManagedexadataManagement").CloudExadataInfrastructureManagedexadataManagement;
+export const CloudExadataInfrastructureManagedexadataManagement: typeof import("./cloudExadataInfrastructureManagedexadataManagement").CloudExadataInfrastructureManagedexadataManagement = null as any;
+utilities.lazyLoad(exports, ["CloudExadataInfrastructureManagedexadataManagement"], () => require("./cloudExadataInfrastructureManagedexadataManagement"));
+
+export { CloudExadataStorageConnectorArgs, CloudExadataStorageConnectorState } from "./cloudExadataStorageConnector";
+export type CloudExadataStorageConnector = import("./cloudExadataStorageConnector").CloudExadataStorageConnector;
+export const CloudExadataStorageConnector: typeof import("./cloudExadataStorageConnector").CloudExadataStorageConnector = null as any;
+utilities.lazyLoad(exports, ["CloudExadataStorageConnector"], () => require("./cloudExadataStorageConnector"));
+
+export { CloudExadataStorageGridArgs, CloudExadataStorageGridState } from "./cloudExadataStorageGrid";
+export type CloudExadataStorageGrid = import("./cloudExadataStorageGrid").CloudExadataStorageGrid;
+export const CloudExadataStorageGrid: typeof import("./cloudExadataStorageGrid").CloudExadataStorageGrid = null as any;
+utilities.lazyLoad(exports, ["CloudExadataStorageGrid"], () => require("./cloudExadataStorageGrid"));
+
+export { CloudExadataStorageServerArgs, CloudExadataStorageServerState } from "./cloudExadataStorageServer";
+export type CloudExadataStorageServer = import("./cloudExadataStorageServer").CloudExadataStorageServer;
+export const CloudExadataStorageServer: typeof import("./cloudExadataStorageServer").CloudExadataStorageServer = null as any;
+utilities.lazyLoad(exports, ["CloudExadataStorageServer"], () => require("./cloudExadataStorageServer"));
+
 export { CloudListenerArgs, CloudListenerState } from "./cloudListener";
 export type CloudListener = import("./cloudListener").CloudListener;
 export const CloudListener: typeof import("./cloudListener").CloudListener = null as any;
@@ -305,6 +330,51 @@ export const getCloudDbSystems: typeof import("./getCloudDbSystems").getCloudDbS
 export const getCloudDbSystemsOutput: typeof import("./getCloudDbSystems").getCloudDbSystemsOutput = null as any;
 utilities.lazyLoad(exports, ["getCloudDbSystems","getCloudDbSystemsOutput"], () => require("./getCloudDbSystems"));
 
+export { GetCloudExadataInfrastructureArgs, GetCloudExadataInfrastructureResult, GetCloudExadataInfrastructureOutputArgs } from "./getCloudExadataInfrastructure";
+export const getCloudExadataInfrastructure: typeof import("./getCloudExadataInfrastructure").getCloudExadataInfrastructure = null as any;
+export const getCloudExadataInfrastructureOutput: typeof import("./getCloudExadataInfrastructure").getCloudExadataInfrastructureOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudExadataInfrastructure","getCloudExadataInfrastructureOutput"], () => require("./getCloudExadataInfrastructure"));
+
+export { GetCloudExadataInfrastructuresArgs, GetCloudExadataInfrastructuresResult, GetCloudExadataInfrastructuresOutputArgs } from "./getCloudExadataInfrastructures";
+export const getCloudExadataInfrastructures: typeof import("./getCloudExadataInfrastructures").getCloudExadataInfrastructures = null as any;
+export const getCloudExadataInfrastructuresOutput: typeof import("./getCloudExadataInfrastructures").getCloudExadataInfrastructuresOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudExadataInfrastructures","getCloudExadataInfrastructuresOutput"], () => require("./getCloudExadataInfrastructures"));
+
+export { GetCloudExadataStorageConnectorArgs, GetCloudExadataStorageConnectorResult, GetCloudExadataStorageConnectorOutputArgs } from "./getCloudExadataStorageConnector";
+export const getCloudExadataStorageConnector: typeof import("./getCloudExadataStorageConnector").getCloudExadataStorageConnector = null as any;
+export const getCloudExadataStorageConnectorOutput: typeof import("./getCloudExadataStorageConnector").getCloudExadataStorageConnectorOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudExadataStorageConnector","getCloudExadataStorageConnectorOutput"], () => require("./getCloudExadataStorageConnector"));
+
+export { GetCloudExadataStorageConnectorsArgs, GetCloudExadataStorageConnectorsResult, GetCloudExadataStorageConnectorsOutputArgs } from "./getCloudExadataStorageConnectors";
+export const getCloudExadataStorageConnectors: typeof import("./getCloudExadataStorageConnectors").getCloudExadataStorageConnectors = null as any;
+export const getCloudExadataStorageConnectorsOutput: typeof import("./getCloudExadataStorageConnectors").getCloudExadataStorageConnectorsOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudExadataStorageConnectors","getCloudExadataStorageConnectorsOutput"], () => require("./getCloudExadataStorageConnectors"));
+
+export { GetCloudExadataStorageGridArgs, GetCloudExadataStorageGridResult, GetCloudExadataStorageGridOutputArgs } from "./getCloudExadataStorageGrid";
+export const getCloudExadataStorageGrid: typeof import("./getCloudExadataStorageGrid").getCloudExadataStorageGrid = null as any;
+export const getCloudExadataStorageGridOutput: typeof import("./getCloudExadataStorageGrid").getCloudExadataStorageGridOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudExadataStorageGrid","getCloudExadataStorageGridOutput"], () => require("./getCloudExadataStorageGrid"));
+
+export { GetCloudExadataStorageServerArgs, GetCloudExadataStorageServerResult, GetCloudExadataStorageServerOutputArgs } from "./getCloudExadataStorageServer";
+export const getCloudExadataStorageServer: typeof import("./getCloudExadataStorageServer").getCloudExadataStorageServer = null as any;
+export const getCloudExadataStorageServerOutput: typeof import("./getCloudExadataStorageServer").getCloudExadataStorageServerOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudExadataStorageServer","getCloudExadataStorageServerOutput"], () => require("./getCloudExadataStorageServer"));
+
+export { GetCloudExadataStorageServerIormPlanArgs, GetCloudExadataStorageServerIormPlanResult, GetCloudExadataStorageServerIormPlanOutputArgs } from "./getCloudExadataStorageServerIormPlan";
+export const getCloudExadataStorageServerIormPlan: typeof import("./getCloudExadataStorageServerIormPlan").getCloudExadataStorageServerIormPlan = null as any;
+export const getCloudExadataStorageServerIormPlanOutput: typeof import("./getCloudExadataStorageServerIormPlan").getCloudExadataStorageServerIormPlanOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudExadataStorageServerIormPlan","getCloudExadataStorageServerIormPlanOutput"], () => require("./getCloudExadataStorageServerIormPlan"));
+
+export { GetCloudExadataStorageServerOpenAlertHistoryArgs, GetCloudExadataStorageServerOpenAlertHistoryResult, GetCloudExadataStorageServerOpenAlertHistoryOutputArgs } from "./getCloudExadataStorageServerOpenAlertHistory";
+export const getCloudExadataStorageServerOpenAlertHistory: typeof import("./getCloudExadataStorageServerOpenAlertHistory").getCloudExadataStorageServerOpenAlertHistory = null as any;
+export const getCloudExadataStorageServerOpenAlertHistoryOutput: typeof import("./getCloudExadataStorageServerOpenAlertHistory").getCloudExadataStorageServerOpenAlertHistoryOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudExadataStorageServerOpenAlertHistory","getCloudExadataStorageServerOpenAlertHistoryOutput"], () => require("./getCloudExadataStorageServerOpenAlertHistory"));
+
+export { GetCloudExadataStorageServersArgs, GetCloudExadataStorageServersResult, GetCloudExadataStorageServersOutputArgs } from "./getCloudExadataStorageServers";
+export const getCloudExadataStorageServers: typeof import("./getCloudExadataStorageServers").getCloudExadataStorageServers = null as any;
+export const getCloudExadataStorageServersOutput: typeof import("./getCloudExadataStorageServers").getCloudExadataStorageServersOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudExadataStorageServers","getCloudExadataStorageServersOutput"], () => require("./getCloudExadataStorageServers"));
+
 export { GetCloudListenerArgs, GetCloudListenerResult, GetCloudListenerOutputArgs } from "./getCloudListener";
 export const getCloudListener: typeof import("./getCloudListener").getCloudListener = null as any;
 export const getCloudListenerOutput: typeof import("./getCloudListener").getCloudListenerOutput = null as any;
@@ -339,6 +409,11 @@ export { GetDbManagementPrivateEndpointsArgs, GetDbManagementPrivateEndpointsRes
 export const getDbManagementPrivateEndpoints: typeof import("./getDbManagementPrivateEndpoints").getDbManagementPrivateEndpoints = null as any;
 export const getDbManagementPrivateEndpointsOutput: typeof import("./getDbManagementPrivateEndpoints").getDbManagementPrivateEndpointsOutput = null as any;
 utilities.lazyLoad(exports, ["getDbManagementPrivateEndpoints","getDbManagementPrivateEndpointsOutput"], () => require("./getDbManagementPrivateEndpoints"));
+
+export { GetExadataInfrastructureFleetMetricArgs, GetExadataInfrastructureFleetMetricResult, GetExadataInfrastructureFleetMetricOutputArgs } from "./getExadataInfrastructureFleetMetric";
+export const getExadataInfrastructureFleetMetric: typeof import("./getExadataInfrastructureFleetMetric").getExadataInfrastructureFleetMetric = null as any;
+export const getExadataInfrastructureFleetMetricOutput: typeof import("./getExadataInfrastructureFleetMetric").getExadataInfrastructureFleetMetricOutput = null as any;
+utilities.lazyLoad(exports, ["getExadataInfrastructureFleetMetric","getExadataInfrastructureFleetMetricOutput"], () => require("./getExadataInfrastructureFleetMetric"));
 
 export { GetExternalAsmArgs, GetExternalAsmResult, GetExternalAsmOutputArgs } from "./getExternalAsm";
 export const getExternalAsm: typeof import("./getExternalAsm").getExternalAsm = null as any;
@@ -934,6 +1009,16 @@ const _module = {
                 return new CloudDbSystemConnector(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/cloudDbSystemDiscovery:CloudDbSystemDiscovery":
                 return new CloudDbSystemDiscovery(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/cloudExadataInfrastructure:CloudExadataInfrastructure":
+                return new CloudExadataInfrastructure(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/cloudExadataInfrastructureManagedexadataManagement:CloudExadataInfrastructureManagedexadataManagement":
+                return new CloudExadataInfrastructureManagedexadataManagement(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/cloudExadataStorageConnector:CloudExadataStorageConnector":
+                return new CloudExadataStorageConnector(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/cloudExadataStorageGrid:CloudExadataStorageGrid":
+                return new CloudExadataStorageGrid(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/cloudExadataStorageServer:CloudExadataStorageServer":
+                return new CloudExadataStorageServer(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/cloudListener:CloudListener":
                 return new CloudListener(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement":
@@ -1015,6 +1100,11 @@ pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudDbSystemCl
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudDbSystemCloudStackMonitoringsManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudDbSystemConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudDbSystemDiscovery", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudExadataInfrastructure", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudExadataInfrastructureManagedexadataManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudExadataStorageConnector", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudExadataStorageGrid", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudExadataStorageServer", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudListener", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/databaseDbmFeaturesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/dbManagementPrivateEndpoint", _module)

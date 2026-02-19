@@ -5,13 +5,20 @@ package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Mysql.outputs.MysqlDbSystemMaintenanceMaintenanceDisabledWindow;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
 public final class MysqlDbSystemMaintenance {
+    /**
+     * @return (Updatable) Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+     * 
+     */
+    private @Nullable List<MysqlDbSystemMaintenanceMaintenanceDisabledWindow> maintenanceDisabledWindows;
     /**
      * @return (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
      * 
@@ -54,6 +61,13 @@ public final class MysqlDbSystemMaintenance {
     private String windowStartTime;
 
     private MysqlDbSystemMaintenance() {}
+    /**
+     * @return (Updatable) Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+     * 
+     */
+    public List<MysqlDbSystemMaintenanceMaintenanceDisabledWindow> maintenanceDisabledWindows() {
+        return this.maintenanceDisabledWindows == null ? List.of() : this.maintenanceDisabledWindows;
+    }
     /**
      * @return (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
      * 
@@ -116,6 +130,7 @@ public final class MysqlDbSystemMaintenance {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<MysqlDbSystemMaintenanceMaintenanceDisabledWindow> maintenanceDisabledWindows;
         private @Nullable String maintenanceScheduleType;
         private @Nullable String targetVersion;
         private @Nullable String timeScheduled;
@@ -125,6 +140,7 @@ public final class MysqlDbSystemMaintenance {
         public Builder() {}
         public Builder(MysqlDbSystemMaintenance defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.maintenanceDisabledWindows = defaults.maintenanceDisabledWindows;
     	      this.maintenanceScheduleType = defaults.maintenanceScheduleType;
     	      this.targetVersion = defaults.targetVersion;
     	      this.timeScheduled = defaults.timeScheduled;
@@ -133,6 +149,15 @@ public final class MysqlDbSystemMaintenance {
     	      this.windowStartTime = defaults.windowStartTime;
         }
 
+        @CustomType.Setter
+        public Builder maintenanceDisabledWindows(@Nullable List<MysqlDbSystemMaintenanceMaintenanceDisabledWindow> maintenanceDisabledWindows) {
+
+            this.maintenanceDisabledWindows = maintenanceDisabledWindows;
+            return this;
+        }
+        public Builder maintenanceDisabledWindows(MysqlDbSystemMaintenanceMaintenanceDisabledWindow... maintenanceDisabledWindows) {
+            return maintenanceDisabledWindows(List.of(maintenanceDisabledWindows));
+        }
         @CustomType.Setter
         public Builder maintenanceScheduleType(@Nullable String maintenanceScheduleType) {
 
@@ -173,6 +198,7 @@ public final class MysqlDbSystemMaintenance {
         }
         public MysqlDbSystemMaintenance build() {
             final var _resultValue = new MysqlDbSystemMaintenance();
+            _resultValue.maintenanceDisabledWindows = maintenanceDisabledWindows;
             _resultValue.maintenanceScheduleType = maintenanceScheduleType;
             _resultValue.targetVersion = targetVersion;
             _resultValue.timeScheduled = timeScheduled;

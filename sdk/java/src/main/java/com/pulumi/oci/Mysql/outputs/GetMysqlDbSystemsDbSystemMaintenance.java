@@ -5,11 +5,18 @@ package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindow;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetMysqlDbSystemsDbSystemMaintenance {
+    /**
+     * @return Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+     * 
+     */
+    private List<GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindow> maintenanceDisabledWindows;
     /**
      * @return The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
      * 
@@ -42,6 +49,13 @@ public final class GetMysqlDbSystemsDbSystemMaintenance {
     private String windowStartTime;
 
     private GetMysqlDbSystemsDbSystemMaintenance() {}
+    /**
+     * @return Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+     * 
+     */
+    public List<GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindow> maintenanceDisabledWindows() {
+        return this.maintenanceDisabledWindows;
+    }
     /**
      * @return The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
      * 
@@ -94,6 +108,7 @@ public final class GetMysqlDbSystemsDbSystemMaintenance {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindow> maintenanceDisabledWindows;
         private String maintenanceScheduleType;
         private String targetVersion;
         private String timeScheduled;
@@ -103,6 +118,7 @@ public final class GetMysqlDbSystemsDbSystemMaintenance {
         public Builder() {}
         public Builder(GetMysqlDbSystemsDbSystemMaintenance defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.maintenanceDisabledWindows = defaults.maintenanceDisabledWindows;
     	      this.maintenanceScheduleType = defaults.maintenanceScheduleType;
     	      this.targetVersion = defaults.targetVersion;
     	      this.timeScheduled = defaults.timeScheduled;
@@ -111,6 +127,17 @@ public final class GetMysqlDbSystemsDbSystemMaintenance {
     	      this.windowStartTime = defaults.windowStartTime;
         }
 
+        @CustomType.Setter
+        public Builder maintenanceDisabledWindows(List<GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindow> maintenanceDisabledWindows) {
+            if (maintenanceDisabledWindows == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystemMaintenance", "maintenanceDisabledWindows");
+            }
+            this.maintenanceDisabledWindows = maintenanceDisabledWindows;
+            return this;
+        }
+        public Builder maintenanceDisabledWindows(GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindow... maintenanceDisabledWindows) {
+            return maintenanceDisabledWindows(List.of(maintenanceDisabledWindows));
+        }
         @CustomType.Setter
         public Builder maintenanceScheduleType(String maintenanceScheduleType) {
             if (maintenanceScheduleType == null) {
@@ -161,6 +188,7 @@ public final class GetMysqlDbSystemsDbSystemMaintenance {
         }
         public GetMysqlDbSystemsDbSystemMaintenance build() {
             final var _resultValue = new GetMysqlDbSystemsDbSystemMaintenance();
+            _resultValue.maintenanceDisabledWindows = maintenanceDisabledWindows;
             _resultValue.maintenanceScheduleType = maintenanceScheduleType;
             _resultValue.targetVersion = targetVersion;
             _resultValue.timeScheduled = timeScheduled;

@@ -20,6 +20,11 @@ export const getChannels: typeof import("./getChannels").getChannels = null as a
 export const getChannelsOutput: typeof import("./getChannels").getChannelsOutput = null as any;
 utilities.lazyLoad(exports, ["getChannels","getChannelsOutput"], () => require("./getChannels"));
 
+export { GetDbSystemMaintenanceEventsArgs, GetDbSystemMaintenanceEventsResult, GetDbSystemMaintenanceEventsOutputArgs } from "./getDbSystemMaintenanceEvents";
+export const getDbSystemMaintenanceEvents: typeof import("./getDbSystemMaintenanceEvents").getDbSystemMaintenanceEvents = null as any;
+export const getDbSystemMaintenanceEventsOutput: typeof import("./getDbSystemMaintenanceEvents").getDbSystemMaintenanceEventsOutput = null as any;
+utilities.lazyLoad(exports, ["getDbSystemMaintenanceEvents","getDbSystemMaintenanceEventsOutput"], () => require("./getDbSystemMaintenanceEvents"));
+
 export { GetHeatWaveClusterArgs, GetHeatWaveClusterResult, GetHeatWaveClusterOutputArgs } from "./getHeatWaveCluster";
 export const getHeatWaveCluster: typeof import("./getHeatWaveCluster").getHeatWaveCluster = null as any;
 export const getHeatWaveClusterOutput: typeof import("./getHeatWaveCluster").getHeatWaveClusterOutput = null as any;

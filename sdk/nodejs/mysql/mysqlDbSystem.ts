@@ -86,6 +86,10 @@ import * as utilities from "../utilities";
  *     isHighlyAvailable: mysqlDbSystemIsHighlyAvailable,
  *     maintenance: {
  *         windowStartTime: mysqlDbSystemMaintenanceWindowStartTime,
+ *         maintenanceDisabledWindows: [{
+ *             timeEnd: mysqlDbSystemMaintenanceMaintenanceDisabledWindowsTimeEnd,
+ *             timeStart: mysqlDbSystemMaintenanceMaintenanceDisabledWindowsTimeStart,
+ *         }],
  *         maintenanceScheduleType: mysqlDbSystemMaintenanceMaintenanceScheduleType,
  *         versionPreference: mysqlDbSystemMaintenanceVersionPreference,
  *         versionTrackPreference: mysqlDbSystemMaintenanceVersionTrackPreference,

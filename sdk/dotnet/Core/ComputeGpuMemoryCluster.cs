@@ -42,6 +42,12 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         GpuMemoryClusterScaleConfig = new Oci.Core.Inputs.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs
+    ///         {
+    ///             IsUpsizeEnabled = computeGpuMemoryClusterGpuMemoryClusterScaleConfigIsUpsizeEnabled,
+    ///             IsDownsizeEnabled = computeGpuMemoryClusterGpuMemoryClusterScaleConfigIsDownsizeEnabled,
+    ///             TargetSize = computeGpuMemoryClusterGpuMemoryClusterScaleConfigTargetSize,
+    ///         },
     ///         GpuMemoryFabricId = testGpuMemoryFabric.Id,
     ///         Size = computeGpuMemoryClusterSize,
     ///     });
@@ -95,6 +101,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Configuration settings for GPU Memory Cluster scaling.
+        /// </summary>
+        [Output("gpuMemoryClusterScaleConfig")]
+        public Output<Outputs.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig> GpuMemoryClusterScaleConfig { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
@@ -231,6 +243,12 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
+        /// (Updatable) Configuration settings for GPU Memory Cluster scaling.
+        /// </summary>
+        [Input("gpuMemoryClusterScaleConfig")]
+        public Input<Inputs.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs>? GpuMemoryClusterScaleConfig { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
         /// </summary>
         [Input("gpuMemoryFabricId")]
@@ -307,6 +325,12 @@ namespace Pulumi.Oci.Core
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) Configuration settings for GPU Memory Cluster scaling.
+        /// </summary>
+        [Input("gpuMemoryClusterScaleConfig")]
+        public Input<Inputs.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigGetArgs>? GpuMemoryClusterScaleConfig { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.

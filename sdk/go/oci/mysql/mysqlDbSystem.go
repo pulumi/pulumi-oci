@@ -104,7 +104,13 @@ import (
 //				IpAddress:         pulumi.Any(mysqlDbSystemIpAddress),
 //				IsHighlyAvailable: pulumi.Any(mysqlDbSystemIsHighlyAvailable),
 //				Maintenance: &mysql.MysqlDbSystemMaintenanceArgs{
-//					WindowStartTime:         pulumi.Any(mysqlDbSystemMaintenanceWindowStartTime),
+//					WindowStartTime: pulumi.Any(mysqlDbSystemMaintenanceWindowStartTime),
+//					MaintenanceDisabledWindows: mysql.MysqlDbSystemMaintenanceMaintenanceDisabledWindowArray{
+//						&mysql.MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs{
+//							TimeEnd:   pulumi.Any(mysqlDbSystemMaintenanceMaintenanceDisabledWindowsTimeEnd),
+//							TimeStart: pulumi.Any(mysqlDbSystemMaintenanceMaintenanceDisabledWindowsTimeStart),
+//						},
+//					},
 //					MaintenanceScheduleType: pulumi.Any(mysqlDbSystemMaintenanceMaintenanceScheduleType),
 //					VersionPreference:       pulumi.Any(mysqlDbSystemMaintenanceVersionPreference),
 //					VersionTrackPreference:  pulumi.Any(mysqlDbSystemMaintenanceVersionTrackPreference),

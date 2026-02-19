@@ -12,6 +12,18 @@ namespace Pulumi.Oci.Mysql.Inputs
 
     public sealed class MysqlBackupDbSystemSnapshotMaintenanceGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("maintenanceDisabledWindows")]
+        private InputList<Inputs.MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowGetArgs>? _maintenanceDisabledWindows;
+
+        /// <summary>
+        /// Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+        /// </summary>
+        public InputList<Inputs.MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowGetArgs> MaintenanceDisabledWindows
+        {
+            get => _maintenanceDisabledWindows ?? (_maintenanceDisabledWindows = new InputList<Inputs.MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowGetArgs>());
+            set => _maintenanceDisabledWindows = value;
+        }
+
         /// <summary>
         /// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
         /// </summary>

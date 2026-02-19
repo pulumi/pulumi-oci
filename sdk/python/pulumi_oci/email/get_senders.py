@@ -28,7 +28,7 @@ class GetSendersResult:
     """
     A collection of values returned by getSenders.
     """
-    def __init__(__self__, compartment_id=None, domain=None, email_address=None, filters=None, id=None, senders=None, state=None):
+    def __init__(__self__, compartment_id=None, domain=None, email_address=None, email_ip_pool_id=None, filters=None, id=None, senders=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -38,6 +38,9 @@ class GetSendersResult:
         if email_address and not isinstance(email_address, str):
             raise TypeError("Expected argument 'email_address' to be a str")
         pulumi.set(__self__, "email_address", email_address)
+        if email_ip_pool_id and not isinstance(email_ip_pool_id, str):
+            raise TypeError("Expected argument 'email_ip_pool_id' to be a str")
+        pulumi.set(__self__, "email_ip_pool_id", email_ip_pool_id)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -71,6 +74,14 @@ class GetSendersResult:
         The email address of the sender.
         """
         return pulumi.get(self, "email_address")
+
+    @_builtins.property
+    @pulumi.getter(name="emailIpPoolId")
+    def email_ip_pool_id(self) -> Optional[_builtins.str]:
+        """
+        The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+        """
+        return pulumi.get(self, "email_ip_pool_id")
 
     @_builtins.property
     @pulumi.getter
@@ -111,6 +122,7 @@ class AwaitableGetSendersResult(GetSendersResult):
             compartment_id=self.compartment_id,
             domain=self.domain,
             email_address=self.email_address,
+            email_ip_pool_id=self.email_ip_pool_id,
             filters=self.filters,
             id=self.id,
             senders=self.senders,
@@ -120,6 +132,7 @@ class AwaitableGetSendersResult(GetSendersResult):
 def get_senders(compartment_id: Optional[_builtins.str] = None,
                 domain: Optional[_builtins.str] = None,
                 email_address: Optional[_builtins.str] = None,
+                email_ip_pool_id: Optional[_builtins.str] = None,
                 filters: Optional[Sequence[Union['GetSendersFilterArgs', 'GetSendersFilterArgsDict']]] = None,
                 state: Optional[_builtins.str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSendersResult:
@@ -137,6 +150,7 @@ def get_senders(compartment_id: Optional[_builtins.str] = None,
     test_senders = oci.Email.get_senders(compartment_id=compartment_id,
         domain=sender_domain,
         email_address=sender_email_address,
+        email_ip_pool_id=test_email_ip_pool["id"],
         state=sender_state)
     ```
 
@@ -144,12 +158,14 @@ def get_senders(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.str compartment_id: The OCID for the compartment.
     :param _builtins.str domain: A filter to only return resources that match the given domain exactly.
     :param _builtins.str email_address: The email address of the approved sender.
+    :param _builtins.str email_ip_pool_id: A filter to only return resources that match the given IpPool resource exactly.
     :param _builtins.str state: The current state of a sender.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['domain'] = domain
     __args__['emailAddress'] = email_address
+    __args__['emailIpPoolId'] = email_ip_pool_id
     __args__['filters'] = filters
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -159,6 +175,7 @@ def get_senders(compartment_id: Optional[_builtins.str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         domain=pulumi.get(__ret__, 'domain'),
         email_address=pulumi.get(__ret__, 'email_address'),
+        email_ip_pool_id=pulumi.get(__ret__, 'email_ip_pool_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         senders=pulumi.get(__ret__, 'senders'),
@@ -166,6 +183,7 @@ def get_senders(compartment_id: Optional[_builtins.str] = None,
 def get_senders_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                        domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                        email_address: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                       email_ip_pool_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSendersFilterArgs', 'GetSendersFilterArgsDict']]]]] = None,
                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSendersResult]:
@@ -183,6 +201,7 @@ def get_senders_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     test_senders = oci.Email.get_senders(compartment_id=compartment_id,
         domain=sender_domain,
         email_address=sender_email_address,
+        email_ip_pool_id=test_email_ip_pool["id"],
         state=sender_state)
     ```
 
@@ -190,12 +209,14 @@ def get_senders_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     :param _builtins.str compartment_id: The OCID for the compartment.
     :param _builtins.str domain: A filter to only return resources that match the given domain exactly.
     :param _builtins.str email_address: The email address of the approved sender.
+    :param _builtins.str email_ip_pool_id: A filter to only return resources that match the given IpPool resource exactly.
     :param _builtins.str state: The current state of a sender.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['domain'] = domain
     __args__['emailAddress'] = email_address
+    __args__['emailIpPoolId'] = email_ip_pool_id
     __args__['filters'] = filters
     __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -204,6 +225,7 @@ def get_senders_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         domain=pulumi.get(__response__, 'domain'),
         email_address=pulumi.get(__response__, 'email_address'),
+        email_ip_pool_id=pulumi.get(__response__, 'email_ip_pool_id'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         senders=pulumi.get(__response__, 'senders'),

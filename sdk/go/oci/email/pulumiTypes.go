@@ -146,6 +146,263 @@ func (o EmailDomainLockArrayOutput) Index(i pulumi.IntInput) EmailDomainLockOutp
 	}).(EmailDomainLockOutput)
 }
 
+type EmailIpPoolLock struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this IpPool.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Lock type.
+	Type *string `pulumi:"type"`
+}
+
+// EmailIpPoolLockInput is an input type that accepts EmailIpPoolLockArgs and EmailIpPoolLockOutput values.
+// You can construct a concrete instance of `EmailIpPoolLockInput` via:
+//
+//	EmailIpPoolLockArgs{...}
+type EmailIpPoolLockInput interface {
+	pulumi.Input
+
+	ToEmailIpPoolLockOutput() EmailIpPoolLockOutput
+	ToEmailIpPoolLockOutputWithContext(context.Context) EmailIpPoolLockOutput
+}
+
+type EmailIpPoolLockArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this IpPool.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (EmailIpPoolLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*EmailIpPoolLock)(nil)).Elem()
+}
+
+func (i EmailIpPoolLockArgs) ToEmailIpPoolLockOutput() EmailIpPoolLockOutput {
+	return i.ToEmailIpPoolLockOutputWithContext(context.Background())
+}
+
+func (i EmailIpPoolLockArgs) ToEmailIpPoolLockOutputWithContext(ctx context.Context) EmailIpPoolLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EmailIpPoolLockOutput)
+}
+
+// EmailIpPoolLockArrayInput is an input type that accepts EmailIpPoolLockArray and EmailIpPoolLockArrayOutput values.
+// You can construct a concrete instance of `EmailIpPoolLockArrayInput` via:
+//
+//	EmailIpPoolLockArray{ EmailIpPoolLockArgs{...} }
+type EmailIpPoolLockArrayInput interface {
+	pulumi.Input
+
+	ToEmailIpPoolLockArrayOutput() EmailIpPoolLockArrayOutput
+	ToEmailIpPoolLockArrayOutputWithContext(context.Context) EmailIpPoolLockArrayOutput
+}
+
+type EmailIpPoolLockArray []EmailIpPoolLockInput
+
+func (EmailIpPoolLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EmailIpPoolLock)(nil)).Elem()
+}
+
+func (i EmailIpPoolLockArray) ToEmailIpPoolLockArrayOutput() EmailIpPoolLockArrayOutput {
+	return i.ToEmailIpPoolLockArrayOutputWithContext(context.Background())
+}
+
+func (i EmailIpPoolLockArray) ToEmailIpPoolLockArrayOutputWithContext(ctx context.Context) EmailIpPoolLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EmailIpPoolLockArrayOutput)
+}
+
+type EmailIpPoolLockOutput struct{ *pulumi.OutputState }
+
+func (EmailIpPoolLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*EmailIpPoolLock)(nil)).Elem()
+}
+
+func (o EmailIpPoolLockOutput) ToEmailIpPoolLockOutput() EmailIpPoolLockOutput {
+	return o
+}
+
+func (o EmailIpPoolLockOutput) ToEmailIpPoolLockOutputWithContext(ctx context.Context) EmailIpPoolLockOutput {
+	return o
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this IpPool.
+func (o EmailIpPoolLockOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailIpPoolLock) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o EmailIpPoolLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailIpPoolLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o EmailIpPoolLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailIpPoolLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+func (o EmailIpPoolLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailIpPoolLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Lock type.
+func (o EmailIpPoolLockOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailIpPoolLock) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type EmailIpPoolLockArrayOutput struct{ *pulumi.OutputState }
+
+func (EmailIpPoolLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EmailIpPoolLock)(nil)).Elem()
+}
+
+func (o EmailIpPoolLockArrayOutput) ToEmailIpPoolLockArrayOutput() EmailIpPoolLockArrayOutput {
+	return o
+}
+
+func (o EmailIpPoolLockArrayOutput) ToEmailIpPoolLockArrayOutputWithContext(ctx context.Context) EmailIpPoolLockArrayOutput {
+	return o
+}
+
+func (o EmailIpPoolLockArrayOutput) Index(i pulumi.IntInput) EmailIpPoolLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) EmailIpPoolLock {
+		return vs[0].([]EmailIpPoolLock)[vs[1].(int)]
+	}).(EmailIpPoolLockOutput)
+}
+
+type EmailIpPoolOutboundIpsResponse struct {
+	// The assignment state of the public IP address.
+	AssignmentState *string `pulumi:"assignmentState"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// The public IP address assigned to the tenancy.
+	OutboundIp *string `pulumi:"outboundIp"`
+	// The current state of the IpPool.
+	State *string `pulumi:"state"`
+}
+
+// EmailIpPoolOutboundIpsResponseInput is an input type that accepts EmailIpPoolOutboundIpsResponseArgs and EmailIpPoolOutboundIpsResponseOutput values.
+// You can construct a concrete instance of `EmailIpPoolOutboundIpsResponseInput` via:
+//
+//	EmailIpPoolOutboundIpsResponseArgs{...}
+type EmailIpPoolOutboundIpsResponseInput interface {
+	pulumi.Input
+
+	ToEmailIpPoolOutboundIpsResponseOutput() EmailIpPoolOutboundIpsResponseOutput
+	ToEmailIpPoolOutboundIpsResponseOutputWithContext(context.Context) EmailIpPoolOutboundIpsResponseOutput
+}
+
+type EmailIpPoolOutboundIpsResponseArgs struct {
+	// The assignment state of the public IP address.
+	AssignmentState pulumi.StringPtrInput `pulumi:"assignmentState"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
+	// The public IP address assigned to the tenancy.
+	OutboundIp pulumi.StringPtrInput `pulumi:"outboundIp"`
+	// The current state of the IpPool.
+	State pulumi.StringPtrInput `pulumi:"state"`
+}
+
+func (EmailIpPoolOutboundIpsResponseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*EmailIpPoolOutboundIpsResponse)(nil)).Elem()
+}
+
+func (i EmailIpPoolOutboundIpsResponseArgs) ToEmailIpPoolOutboundIpsResponseOutput() EmailIpPoolOutboundIpsResponseOutput {
+	return i.ToEmailIpPoolOutboundIpsResponseOutputWithContext(context.Background())
+}
+
+func (i EmailIpPoolOutboundIpsResponseArgs) ToEmailIpPoolOutboundIpsResponseOutputWithContext(ctx context.Context) EmailIpPoolOutboundIpsResponseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EmailIpPoolOutboundIpsResponseOutput)
+}
+
+// EmailIpPoolOutboundIpsResponseArrayInput is an input type that accepts EmailIpPoolOutboundIpsResponseArray and EmailIpPoolOutboundIpsResponseArrayOutput values.
+// You can construct a concrete instance of `EmailIpPoolOutboundIpsResponseArrayInput` via:
+//
+//	EmailIpPoolOutboundIpsResponseArray{ EmailIpPoolOutboundIpsResponseArgs{...} }
+type EmailIpPoolOutboundIpsResponseArrayInput interface {
+	pulumi.Input
+
+	ToEmailIpPoolOutboundIpsResponseArrayOutput() EmailIpPoolOutboundIpsResponseArrayOutput
+	ToEmailIpPoolOutboundIpsResponseArrayOutputWithContext(context.Context) EmailIpPoolOutboundIpsResponseArrayOutput
+}
+
+type EmailIpPoolOutboundIpsResponseArray []EmailIpPoolOutboundIpsResponseInput
+
+func (EmailIpPoolOutboundIpsResponseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EmailIpPoolOutboundIpsResponse)(nil)).Elem()
+}
+
+func (i EmailIpPoolOutboundIpsResponseArray) ToEmailIpPoolOutboundIpsResponseArrayOutput() EmailIpPoolOutboundIpsResponseArrayOutput {
+	return i.ToEmailIpPoolOutboundIpsResponseArrayOutputWithContext(context.Background())
+}
+
+func (i EmailIpPoolOutboundIpsResponseArray) ToEmailIpPoolOutboundIpsResponseArrayOutputWithContext(ctx context.Context) EmailIpPoolOutboundIpsResponseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EmailIpPoolOutboundIpsResponseArrayOutput)
+}
+
+type EmailIpPoolOutboundIpsResponseOutput struct{ *pulumi.OutputState }
+
+func (EmailIpPoolOutboundIpsResponseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*EmailIpPoolOutboundIpsResponse)(nil)).Elem()
+}
+
+func (o EmailIpPoolOutboundIpsResponseOutput) ToEmailIpPoolOutboundIpsResponseOutput() EmailIpPoolOutboundIpsResponseOutput {
+	return o
+}
+
+func (o EmailIpPoolOutboundIpsResponseOutput) ToEmailIpPoolOutboundIpsResponseOutputWithContext(ctx context.Context) EmailIpPoolOutboundIpsResponseOutput {
+	return o
+}
+
+// The assignment state of the public IP address.
+func (o EmailIpPoolOutboundIpsResponseOutput) AssignmentState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailIpPoolOutboundIpsResponse) *string { return v.AssignmentState }).(pulumi.StringPtrOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+func (o EmailIpPoolOutboundIpsResponseOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailIpPoolOutboundIpsResponse) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
+}
+
+// The public IP address assigned to the tenancy.
+func (o EmailIpPoolOutboundIpsResponseOutput) OutboundIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailIpPoolOutboundIpsResponse) *string { return v.OutboundIp }).(pulumi.StringPtrOutput)
+}
+
+// The current state of the IpPool.
+func (o EmailIpPoolOutboundIpsResponseOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailIpPoolOutboundIpsResponse) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+type EmailIpPoolOutboundIpsResponseArrayOutput struct{ *pulumi.OutputState }
+
+func (EmailIpPoolOutboundIpsResponseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EmailIpPoolOutboundIpsResponse)(nil)).Elem()
+}
+
+func (o EmailIpPoolOutboundIpsResponseArrayOutput) ToEmailIpPoolOutboundIpsResponseArrayOutput() EmailIpPoolOutboundIpsResponseArrayOutput {
+	return o
+}
+
+func (o EmailIpPoolOutboundIpsResponseArrayOutput) ToEmailIpPoolOutboundIpsResponseArrayOutputWithContext(ctx context.Context) EmailIpPoolOutboundIpsResponseArrayOutput {
+	return o
+}
+
+func (o EmailIpPoolOutboundIpsResponseArrayOutput) Index(i pulumi.IntInput) EmailIpPoolOutboundIpsResponseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) EmailIpPoolOutboundIpsResponse {
+		return vs[0].([]EmailIpPoolOutboundIpsResponse)[vs[1].(int)]
+	}).(EmailIpPoolOutboundIpsResponseOutput)
+}
+
 type EmailReturnPathLock struct {
 	// The lock compartment ID.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -1549,6 +1806,1269 @@ func (o GetEmailDomainsFilterArrayOutput) Index(i pulumi.IntInput) GetEmailDomai
 	}).(GetEmailDomainsFilterOutput)
 }
 
+type GetEmailIpPoolLock struct {
+	// The lock compartment ID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Lock type.
+	Type string `pulumi:"type"`
+}
+
+// GetEmailIpPoolLockInput is an input type that accepts GetEmailIpPoolLockArgs and GetEmailIpPoolLockOutput values.
+// You can construct a concrete instance of `GetEmailIpPoolLockInput` via:
+//
+//	GetEmailIpPoolLockArgs{...}
+type GetEmailIpPoolLockInput interface {
+	pulumi.Input
+
+	ToGetEmailIpPoolLockOutput() GetEmailIpPoolLockOutput
+	ToGetEmailIpPoolLockOutputWithContext(context.Context) GetEmailIpPoolLockOutput
+}
+
+type GetEmailIpPoolLockArgs struct {
+	// The lock compartment ID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetEmailIpPoolLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailIpPoolLock)(nil)).Elem()
+}
+
+func (i GetEmailIpPoolLockArgs) ToGetEmailIpPoolLockOutput() GetEmailIpPoolLockOutput {
+	return i.ToGetEmailIpPoolLockOutputWithContext(context.Background())
+}
+
+func (i GetEmailIpPoolLockArgs) ToGetEmailIpPoolLockOutputWithContext(ctx context.Context) GetEmailIpPoolLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailIpPoolLockOutput)
+}
+
+// GetEmailIpPoolLockArrayInput is an input type that accepts GetEmailIpPoolLockArray and GetEmailIpPoolLockArrayOutput values.
+// You can construct a concrete instance of `GetEmailIpPoolLockArrayInput` via:
+//
+//	GetEmailIpPoolLockArray{ GetEmailIpPoolLockArgs{...} }
+type GetEmailIpPoolLockArrayInput interface {
+	pulumi.Input
+
+	ToGetEmailIpPoolLockArrayOutput() GetEmailIpPoolLockArrayOutput
+	ToGetEmailIpPoolLockArrayOutputWithContext(context.Context) GetEmailIpPoolLockArrayOutput
+}
+
+type GetEmailIpPoolLockArray []GetEmailIpPoolLockInput
+
+func (GetEmailIpPoolLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailIpPoolLock)(nil)).Elem()
+}
+
+func (i GetEmailIpPoolLockArray) ToGetEmailIpPoolLockArrayOutput() GetEmailIpPoolLockArrayOutput {
+	return i.ToGetEmailIpPoolLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetEmailIpPoolLockArray) ToGetEmailIpPoolLockArrayOutputWithContext(ctx context.Context) GetEmailIpPoolLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailIpPoolLockArrayOutput)
+}
+
+type GetEmailIpPoolLockOutput struct{ *pulumi.OutputState }
+
+func (GetEmailIpPoolLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailIpPoolLock)(nil)).Elem()
+}
+
+func (o GetEmailIpPoolLockOutput) ToGetEmailIpPoolLockOutput() GetEmailIpPoolLockOutput {
+	return o
+}
+
+func (o GetEmailIpPoolLockOutput) ToGetEmailIpPoolLockOutputWithContext(ctx context.Context) GetEmailIpPoolLockOutput {
+	return o
+}
+
+// The lock compartment ID.
+func (o GetEmailIpPoolLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o GetEmailIpPoolLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o GetEmailIpPoolLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+func (o GetEmailIpPoolLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Lock type.
+func (o GetEmailIpPoolLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetEmailIpPoolLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEmailIpPoolLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailIpPoolLock)(nil)).Elem()
+}
+
+func (o GetEmailIpPoolLockArrayOutput) ToGetEmailIpPoolLockArrayOutput() GetEmailIpPoolLockArrayOutput {
+	return o
+}
+
+func (o GetEmailIpPoolLockArrayOutput) ToGetEmailIpPoolLockArrayOutputWithContext(ctx context.Context) GetEmailIpPoolLockArrayOutput {
+	return o
+}
+
+func (o GetEmailIpPoolLockArrayOutput) Index(i pulumi.IntInput) GetEmailIpPoolLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailIpPoolLock {
+		return vs[0].([]GetEmailIpPoolLock)[vs[1].(int)]
+	}).(GetEmailIpPoolLockOutput)
+}
+
+type GetEmailIpPoolOutboundIpsResponse struct {
+	// The assignment state of the public IP address.
+	AssignmentState string `pulumi:"assignmentState"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The public IP address assigned to the tenancy.
+	OutboundIp string `pulumi:"outboundIp"`
+	// The current state of the IpPool.
+	State string `pulumi:"state"`
+}
+
+// GetEmailIpPoolOutboundIpsResponseInput is an input type that accepts GetEmailIpPoolOutboundIpsResponseArgs and GetEmailIpPoolOutboundIpsResponseOutput values.
+// You can construct a concrete instance of `GetEmailIpPoolOutboundIpsResponseInput` via:
+//
+//	GetEmailIpPoolOutboundIpsResponseArgs{...}
+type GetEmailIpPoolOutboundIpsResponseInput interface {
+	pulumi.Input
+
+	ToGetEmailIpPoolOutboundIpsResponseOutput() GetEmailIpPoolOutboundIpsResponseOutput
+	ToGetEmailIpPoolOutboundIpsResponseOutputWithContext(context.Context) GetEmailIpPoolOutboundIpsResponseOutput
+}
+
+type GetEmailIpPoolOutboundIpsResponseArgs struct {
+	// The assignment state of the public IP address.
+	AssignmentState pulumi.StringInput `pulumi:"assignmentState"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The public IP address assigned to the tenancy.
+	OutboundIp pulumi.StringInput `pulumi:"outboundIp"`
+	// The current state of the IpPool.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetEmailIpPoolOutboundIpsResponseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailIpPoolOutboundIpsResponse)(nil)).Elem()
+}
+
+func (i GetEmailIpPoolOutboundIpsResponseArgs) ToGetEmailIpPoolOutboundIpsResponseOutput() GetEmailIpPoolOutboundIpsResponseOutput {
+	return i.ToGetEmailIpPoolOutboundIpsResponseOutputWithContext(context.Background())
+}
+
+func (i GetEmailIpPoolOutboundIpsResponseArgs) ToGetEmailIpPoolOutboundIpsResponseOutputWithContext(ctx context.Context) GetEmailIpPoolOutboundIpsResponseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailIpPoolOutboundIpsResponseOutput)
+}
+
+// GetEmailIpPoolOutboundIpsResponseArrayInput is an input type that accepts GetEmailIpPoolOutboundIpsResponseArray and GetEmailIpPoolOutboundIpsResponseArrayOutput values.
+// You can construct a concrete instance of `GetEmailIpPoolOutboundIpsResponseArrayInput` via:
+//
+//	GetEmailIpPoolOutboundIpsResponseArray{ GetEmailIpPoolOutboundIpsResponseArgs{...} }
+type GetEmailIpPoolOutboundIpsResponseArrayInput interface {
+	pulumi.Input
+
+	ToGetEmailIpPoolOutboundIpsResponseArrayOutput() GetEmailIpPoolOutboundIpsResponseArrayOutput
+	ToGetEmailIpPoolOutboundIpsResponseArrayOutputWithContext(context.Context) GetEmailIpPoolOutboundIpsResponseArrayOutput
+}
+
+type GetEmailIpPoolOutboundIpsResponseArray []GetEmailIpPoolOutboundIpsResponseInput
+
+func (GetEmailIpPoolOutboundIpsResponseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailIpPoolOutboundIpsResponse)(nil)).Elem()
+}
+
+func (i GetEmailIpPoolOutboundIpsResponseArray) ToGetEmailIpPoolOutboundIpsResponseArrayOutput() GetEmailIpPoolOutboundIpsResponseArrayOutput {
+	return i.ToGetEmailIpPoolOutboundIpsResponseArrayOutputWithContext(context.Background())
+}
+
+func (i GetEmailIpPoolOutboundIpsResponseArray) ToGetEmailIpPoolOutboundIpsResponseArrayOutputWithContext(ctx context.Context) GetEmailIpPoolOutboundIpsResponseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailIpPoolOutboundIpsResponseArrayOutput)
+}
+
+type GetEmailIpPoolOutboundIpsResponseOutput struct{ *pulumi.OutputState }
+
+func (GetEmailIpPoolOutboundIpsResponseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailIpPoolOutboundIpsResponse)(nil)).Elem()
+}
+
+func (o GetEmailIpPoolOutboundIpsResponseOutput) ToGetEmailIpPoolOutboundIpsResponseOutput() GetEmailIpPoolOutboundIpsResponseOutput {
+	return o
+}
+
+func (o GetEmailIpPoolOutboundIpsResponseOutput) ToGetEmailIpPoolOutboundIpsResponseOutputWithContext(ctx context.Context) GetEmailIpPoolOutboundIpsResponseOutput {
+	return o
+}
+
+// The assignment state of the public IP address.
+func (o GetEmailIpPoolOutboundIpsResponseOutput) AssignmentState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolOutboundIpsResponse) string { return v.AssignmentState }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+func (o GetEmailIpPoolOutboundIpsResponseOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolOutboundIpsResponse) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The public IP address assigned to the tenancy.
+func (o GetEmailIpPoolOutboundIpsResponseOutput) OutboundIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolOutboundIpsResponse) string { return v.OutboundIp }).(pulumi.StringOutput)
+}
+
+// The current state of the IpPool.
+func (o GetEmailIpPoolOutboundIpsResponseOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolOutboundIpsResponse) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetEmailIpPoolOutboundIpsResponseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEmailIpPoolOutboundIpsResponseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailIpPoolOutboundIpsResponse)(nil)).Elem()
+}
+
+func (o GetEmailIpPoolOutboundIpsResponseArrayOutput) ToGetEmailIpPoolOutboundIpsResponseArrayOutput() GetEmailIpPoolOutboundIpsResponseArrayOutput {
+	return o
+}
+
+func (o GetEmailIpPoolOutboundIpsResponseArrayOutput) ToGetEmailIpPoolOutboundIpsResponseArrayOutputWithContext(ctx context.Context) GetEmailIpPoolOutboundIpsResponseArrayOutput {
+	return o
+}
+
+func (o GetEmailIpPoolOutboundIpsResponseArrayOutput) Index(i pulumi.IntInput) GetEmailIpPoolOutboundIpsResponseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailIpPoolOutboundIpsResponse {
+		return vs[0].([]GetEmailIpPoolOutboundIpsResponse)[vs[1].(int)]
+	}).(GetEmailIpPoolOutboundIpsResponseOutput)
+}
+
+type GetEmailIpPoolsEmailIpPoolCollection struct {
+	Items []GetEmailIpPoolsEmailIpPoolCollectionItem `pulumi:"items"`
+}
+
+// GetEmailIpPoolsEmailIpPoolCollectionInput is an input type that accepts GetEmailIpPoolsEmailIpPoolCollectionArgs and GetEmailIpPoolsEmailIpPoolCollectionOutput values.
+// You can construct a concrete instance of `GetEmailIpPoolsEmailIpPoolCollectionInput` via:
+//
+//	GetEmailIpPoolsEmailIpPoolCollectionArgs{...}
+type GetEmailIpPoolsEmailIpPoolCollectionInput interface {
+	pulumi.Input
+
+	ToGetEmailIpPoolsEmailIpPoolCollectionOutput() GetEmailIpPoolsEmailIpPoolCollectionOutput
+	ToGetEmailIpPoolsEmailIpPoolCollectionOutputWithContext(context.Context) GetEmailIpPoolsEmailIpPoolCollectionOutput
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionArgs struct {
+	Items GetEmailIpPoolsEmailIpPoolCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetEmailIpPoolsEmailIpPoolCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailIpPoolsEmailIpPoolCollection)(nil)).Elem()
+}
+
+func (i GetEmailIpPoolsEmailIpPoolCollectionArgs) ToGetEmailIpPoolsEmailIpPoolCollectionOutput() GetEmailIpPoolsEmailIpPoolCollectionOutput {
+	return i.ToGetEmailIpPoolsEmailIpPoolCollectionOutputWithContext(context.Background())
+}
+
+func (i GetEmailIpPoolsEmailIpPoolCollectionArgs) ToGetEmailIpPoolsEmailIpPoolCollectionOutputWithContext(ctx context.Context) GetEmailIpPoolsEmailIpPoolCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailIpPoolsEmailIpPoolCollectionOutput)
+}
+
+// GetEmailIpPoolsEmailIpPoolCollectionArrayInput is an input type that accepts GetEmailIpPoolsEmailIpPoolCollectionArray and GetEmailIpPoolsEmailIpPoolCollectionArrayOutput values.
+// You can construct a concrete instance of `GetEmailIpPoolsEmailIpPoolCollectionArrayInput` via:
+//
+//	GetEmailIpPoolsEmailIpPoolCollectionArray{ GetEmailIpPoolsEmailIpPoolCollectionArgs{...} }
+type GetEmailIpPoolsEmailIpPoolCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetEmailIpPoolsEmailIpPoolCollectionArrayOutput() GetEmailIpPoolsEmailIpPoolCollectionArrayOutput
+	ToGetEmailIpPoolsEmailIpPoolCollectionArrayOutputWithContext(context.Context) GetEmailIpPoolsEmailIpPoolCollectionArrayOutput
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionArray []GetEmailIpPoolsEmailIpPoolCollectionInput
+
+func (GetEmailIpPoolsEmailIpPoolCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailIpPoolsEmailIpPoolCollection)(nil)).Elem()
+}
+
+func (i GetEmailIpPoolsEmailIpPoolCollectionArray) ToGetEmailIpPoolsEmailIpPoolCollectionArrayOutput() GetEmailIpPoolsEmailIpPoolCollectionArrayOutput {
+	return i.ToGetEmailIpPoolsEmailIpPoolCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetEmailIpPoolsEmailIpPoolCollectionArray) ToGetEmailIpPoolsEmailIpPoolCollectionArrayOutputWithContext(ctx context.Context) GetEmailIpPoolsEmailIpPoolCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailIpPoolsEmailIpPoolCollectionArrayOutput)
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetEmailIpPoolsEmailIpPoolCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailIpPoolsEmailIpPoolCollection)(nil)).Elem()
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionOutput) ToGetEmailIpPoolsEmailIpPoolCollectionOutput() GetEmailIpPoolsEmailIpPoolCollectionOutput {
+	return o
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionOutput) ToGetEmailIpPoolsEmailIpPoolCollectionOutputWithContext(ctx context.Context) GetEmailIpPoolsEmailIpPoolCollectionOutput {
+	return o
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionOutput) Items() GetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollection) []GetEmailIpPoolsEmailIpPoolCollectionItem {
+		return v.Items
+	}).(GetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput)
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEmailIpPoolsEmailIpPoolCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailIpPoolsEmailIpPoolCollection)(nil)).Elem()
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionArrayOutput) ToGetEmailIpPoolsEmailIpPoolCollectionArrayOutput() GetEmailIpPoolsEmailIpPoolCollectionArrayOutput {
+	return o
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionArrayOutput) ToGetEmailIpPoolsEmailIpPoolCollectionArrayOutputWithContext(ctx context.Context) GetEmailIpPoolsEmailIpPoolCollectionArrayOutput {
+	return o
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionArrayOutput) Index(i pulumi.IntInput) GetEmailIpPoolsEmailIpPoolCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailIpPoolsEmailIpPoolCollection {
+		return vs[0].([]GetEmailIpPoolsEmailIpPoolCollection)[vs[1].(int)]
+	}).(GetEmailIpPoolsEmailIpPoolCollectionOutput)
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionItem struct {
+	// The OCID for the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The description of the IpPool. Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// A filter to only return resources that match the given id exactly.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetEmailIpPoolsEmailIpPoolCollectionItemLock `pulumi:"locks"`
+	// A filter to only return resources that match the given name exactly.
+	Name string `pulumi:"name"`
+	// Summary of outbound IPs assigned to the IpPool.
+	OutboundIps          []string                                                      `pulumi:"outboundIps"`
+	OutboundIpsResponses []GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponse `pulumi:"outboundIpsResponses"`
+	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time of the last change to the IpPool, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetEmailIpPoolsEmailIpPoolCollectionItemInput is an input type that accepts GetEmailIpPoolsEmailIpPoolCollectionItemArgs and GetEmailIpPoolsEmailIpPoolCollectionItemOutput values.
+// You can construct a concrete instance of `GetEmailIpPoolsEmailIpPoolCollectionItemInput` via:
+//
+//	GetEmailIpPoolsEmailIpPoolCollectionItemArgs{...}
+type GetEmailIpPoolsEmailIpPoolCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetEmailIpPoolsEmailIpPoolCollectionItemOutput() GetEmailIpPoolsEmailIpPoolCollectionItemOutput
+	ToGetEmailIpPoolsEmailIpPoolCollectionItemOutputWithContext(context.Context) GetEmailIpPoolsEmailIpPoolCollectionItemOutput
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionItemArgs struct {
+	// The OCID for the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The description of the IpPool. Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// A filter to only return resources that match the given id exactly.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayInput `pulumi:"locks"`
+	// A filter to only return resources that match the given name exactly.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Summary of outbound IPs assigned to the IpPool.
+	OutboundIps          pulumi.StringArrayInput                                               `pulumi:"outboundIps"`
+	OutboundIpsResponses GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayInput `pulumi:"outboundIpsResponses"`
+	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time of the last change to the IpPool, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetEmailIpPoolsEmailIpPoolCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailIpPoolsEmailIpPoolCollectionItem)(nil)).Elem()
+}
+
+func (i GetEmailIpPoolsEmailIpPoolCollectionItemArgs) ToGetEmailIpPoolsEmailIpPoolCollectionItemOutput() GetEmailIpPoolsEmailIpPoolCollectionItemOutput {
+	return i.ToGetEmailIpPoolsEmailIpPoolCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetEmailIpPoolsEmailIpPoolCollectionItemArgs) ToGetEmailIpPoolsEmailIpPoolCollectionItemOutputWithContext(ctx context.Context) GetEmailIpPoolsEmailIpPoolCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailIpPoolsEmailIpPoolCollectionItemOutput)
+}
+
+// GetEmailIpPoolsEmailIpPoolCollectionItemArrayInput is an input type that accepts GetEmailIpPoolsEmailIpPoolCollectionItemArray and GetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetEmailIpPoolsEmailIpPoolCollectionItemArrayInput` via:
+//
+//	GetEmailIpPoolsEmailIpPoolCollectionItemArray{ GetEmailIpPoolsEmailIpPoolCollectionItemArgs{...} }
+type GetEmailIpPoolsEmailIpPoolCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput() GetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput
+	ToGetEmailIpPoolsEmailIpPoolCollectionItemArrayOutputWithContext(context.Context) GetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionItemArray []GetEmailIpPoolsEmailIpPoolCollectionItemInput
+
+func (GetEmailIpPoolsEmailIpPoolCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailIpPoolsEmailIpPoolCollectionItem)(nil)).Elem()
+}
+
+func (i GetEmailIpPoolsEmailIpPoolCollectionItemArray) ToGetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput() GetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput {
+	return i.ToGetEmailIpPoolsEmailIpPoolCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetEmailIpPoolsEmailIpPoolCollectionItemArray) ToGetEmailIpPoolsEmailIpPoolCollectionItemArrayOutputWithContext(ctx context.Context) GetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput)
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetEmailIpPoolsEmailIpPoolCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailIpPoolsEmailIpPoolCollectionItem)(nil)).Elem()
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) ToGetEmailIpPoolsEmailIpPoolCollectionItemOutput() GetEmailIpPoolsEmailIpPoolCollectionItemOutput {
+	return o
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) ToGetEmailIpPoolsEmailIpPoolCollectionItemOutputWithContext(ctx context.Context) GetEmailIpPoolsEmailIpPoolCollectionItemOutput {
+	return o
+}
+
+// The OCID for the compartment.
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The description of the IpPool. Avoid entering confidential information.
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to only return resources that match the given id exactly.
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) Locks() GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItem) []GetEmailIpPoolsEmailIpPoolCollectionItemLock {
+		return v.Locks
+	}).(GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput)
+}
+
+// A filter to only return resources that match the given name exactly.
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Summary of outbound IPs assigned to the IpPool.
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) OutboundIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItem) []string { return v.OutboundIps }).(pulumi.StringArrayOutput)
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) OutboundIpsResponses() GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItem) []GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponse {
+		return v.OutboundIpsResponses
+	}).(GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput)
+}
+
+// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time of the last change to the IpPool, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailIpPoolsEmailIpPoolCollectionItem)(nil)).Elem()
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput) ToGetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput() GetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput) ToGetEmailIpPoolsEmailIpPoolCollectionItemArrayOutputWithContext(ctx context.Context) GetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput) Index(i pulumi.IntInput) GetEmailIpPoolsEmailIpPoolCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailIpPoolsEmailIpPoolCollectionItem {
+		return vs[0].([]GetEmailIpPoolsEmailIpPoolCollectionItem)[vs[1].(int)]
+	}).(GetEmailIpPoolsEmailIpPoolCollectionItemOutput)
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionItemLock struct {
+	// The OCID for the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Lock type.
+	Type string `pulumi:"type"`
+}
+
+// GetEmailIpPoolsEmailIpPoolCollectionItemLockInput is an input type that accepts GetEmailIpPoolsEmailIpPoolCollectionItemLockArgs and GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetEmailIpPoolsEmailIpPoolCollectionItemLockInput` via:
+//
+//	GetEmailIpPoolsEmailIpPoolCollectionItemLockArgs{...}
+type GetEmailIpPoolsEmailIpPoolCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetEmailIpPoolsEmailIpPoolCollectionItemLockOutput() GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput
+	ToGetEmailIpPoolsEmailIpPoolCollectionItemLockOutputWithContext(context.Context) GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionItemLockArgs struct {
+	// The OCID for the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetEmailIpPoolsEmailIpPoolCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailIpPoolsEmailIpPoolCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetEmailIpPoolsEmailIpPoolCollectionItemLockArgs) ToGetEmailIpPoolsEmailIpPoolCollectionItemLockOutput() GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput {
+	return i.ToGetEmailIpPoolsEmailIpPoolCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetEmailIpPoolsEmailIpPoolCollectionItemLockArgs) ToGetEmailIpPoolsEmailIpPoolCollectionItemLockOutputWithContext(ctx context.Context) GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput)
+}
+
+// GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayInput is an input type that accepts GetEmailIpPoolsEmailIpPoolCollectionItemLockArray and GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayInput` via:
+//
+//	GetEmailIpPoolsEmailIpPoolCollectionItemLockArray{ GetEmailIpPoolsEmailIpPoolCollectionItemLockArgs{...} }
+type GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput() GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput
+	ToGetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutputWithContext(context.Context) GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionItemLockArray []GetEmailIpPoolsEmailIpPoolCollectionItemLockInput
+
+func (GetEmailIpPoolsEmailIpPoolCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailIpPoolsEmailIpPoolCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetEmailIpPoolsEmailIpPoolCollectionItemLockArray) ToGetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput() GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput {
+	return i.ToGetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetEmailIpPoolsEmailIpPoolCollectionItemLockArray) ToGetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutputWithContext(ctx context.Context) GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput)
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailIpPoolsEmailIpPoolCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput) ToGetEmailIpPoolsEmailIpPoolCollectionItemLockOutput() GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput {
+	return o
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput) ToGetEmailIpPoolsEmailIpPoolCollectionItemLockOutputWithContext(ctx context.Context) GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput {
+	return o
+}
+
+// The OCID for the compartment.
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItemLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItemLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItemLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Lock type.
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailIpPoolsEmailIpPoolCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput) ToGetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput() GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput) ToGetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutputWithContext(ctx context.Context) GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailIpPoolsEmailIpPoolCollectionItemLock {
+		return vs[0].([]GetEmailIpPoolsEmailIpPoolCollectionItemLock)[vs[1].(int)]
+	}).(GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput)
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponse struct {
+	// The assignment state of the public IP address.
+	AssignmentState string `pulumi:"assignmentState"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The public IP address assigned to the tenancy.
+	OutboundIp string `pulumi:"outboundIp"`
+	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+	State string `pulumi:"state"`
+}
+
+// GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseInput is an input type that accepts GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArgs and GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput values.
+// You can construct a concrete instance of `GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseInput` via:
+//
+//	GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArgs{...}
+type GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseInput interface {
+	pulumi.Input
+
+	ToGetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput() GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput
+	ToGetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutputWithContext(context.Context) GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArgs struct {
+	// The assignment state of the public IP address.
+	AssignmentState pulumi.StringInput `pulumi:"assignmentState"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The public IP address assigned to the tenancy.
+	OutboundIp pulumi.StringInput `pulumi:"outboundIp"`
+	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponse)(nil)).Elem()
+}
+
+func (i GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArgs) ToGetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput() GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput {
+	return i.ToGetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutputWithContext(context.Background())
+}
+
+func (i GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArgs) ToGetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutputWithContext(ctx context.Context) GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput)
+}
+
+// GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayInput is an input type that accepts GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArray and GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput values.
+// You can construct a concrete instance of `GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayInput` via:
+//
+//	GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArray{ GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArgs{...} }
+type GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayInput interface {
+	pulumi.Input
+
+	ToGetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput() GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput
+	ToGetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutputWithContext(context.Context) GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArray []GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseInput
+
+func (GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponse)(nil)).Elem()
+}
+
+func (i GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArray) ToGetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput() GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput {
+	return i.ToGetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutputWithContext(context.Background())
+}
+
+func (i GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArray) ToGetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutputWithContext(ctx context.Context) GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput)
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput struct{ *pulumi.OutputState }
+
+func (GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponse)(nil)).Elem()
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput) ToGetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput() GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput {
+	return o
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput) ToGetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutputWithContext(ctx context.Context) GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput {
+	return o
+}
+
+// The assignment state of the public IP address.
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput) AssignmentState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponse) string { return v.AssignmentState }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponse) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The public IP address assigned to the tenancy.
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput) OutboundIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponse) string { return v.OutboundIp }).(pulumi.StringOutput)
+}
+
+// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponse) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponse)(nil)).Elem()
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput) ToGetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput() GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput {
+	return o
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput) ToGetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutputWithContext(ctx context.Context) GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput {
+	return o
+}
+
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput) Index(i pulumi.IntInput) GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponse {
+		return vs[0].([]GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponse)[vs[1].(int)]
+	}).(GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput)
+}
+
+type GetEmailIpPoolsFilter struct {
+	// A filter to only return resources that match the given name exactly.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetEmailIpPoolsFilterInput is an input type that accepts GetEmailIpPoolsFilterArgs and GetEmailIpPoolsFilterOutput values.
+// You can construct a concrete instance of `GetEmailIpPoolsFilterInput` via:
+//
+//	GetEmailIpPoolsFilterArgs{...}
+type GetEmailIpPoolsFilterInput interface {
+	pulumi.Input
+
+	ToGetEmailIpPoolsFilterOutput() GetEmailIpPoolsFilterOutput
+	ToGetEmailIpPoolsFilterOutputWithContext(context.Context) GetEmailIpPoolsFilterOutput
+}
+
+type GetEmailIpPoolsFilterArgs struct {
+	// A filter to only return resources that match the given name exactly.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetEmailIpPoolsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailIpPoolsFilter)(nil)).Elem()
+}
+
+func (i GetEmailIpPoolsFilterArgs) ToGetEmailIpPoolsFilterOutput() GetEmailIpPoolsFilterOutput {
+	return i.ToGetEmailIpPoolsFilterOutputWithContext(context.Background())
+}
+
+func (i GetEmailIpPoolsFilterArgs) ToGetEmailIpPoolsFilterOutputWithContext(ctx context.Context) GetEmailIpPoolsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailIpPoolsFilterOutput)
+}
+
+// GetEmailIpPoolsFilterArrayInput is an input type that accepts GetEmailIpPoolsFilterArray and GetEmailIpPoolsFilterArrayOutput values.
+// You can construct a concrete instance of `GetEmailIpPoolsFilterArrayInput` via:
+//
+//	GetEmailIpPoolsFilterArray{ GetEmailIpPoolsFilterArgs{...} }
+type GetEmailIpPoolsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetEmailIpPoolsFilterArrayOutput() GetEmailIpPoolsFilterArrayOutput
+	ToGetEmailIpPoolsFilterArrayOutputWithContext(context.Context) GetEmailIpPoolsFilterArrayOutput
+}
+
+type GetEmailIpPoolsFilterArray []GetEmailIpPoolsFilterInput
+
+func (GetEmailIpPoolsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailIpPoolsFilter)(nil)).Elem()
+}
+
+func (i GetEmailIpPoolsFilterArray) ToGetEmailIpPoolsFilterArrayOutput() GetEmailIpPoolsFilterArrayOutput {
+	return i.ToGetEmailIpPoolsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetEmailIpPoolsFilterArray) ToGetEmailIpPoolsFilterArrayOutputWithContext(ctx context.Context) GetEmailIpPoolsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailIpPoolsFilterArrayOutput)
+}
+
+type GetEmailIpPoolsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetEmailIpPoolsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailIpPoolsFilter)(nil)).Elem()
+}
+
+func (o GetEmailIpPoolsFilterOutput) ToGetEmailIpPoolsFilterOutput() GetEmailIpPoolsFilterOutput {
+	return o
+}
+
+func (o GetEmailIpPoolsFilterOutput) ToGetEmailIpPoolsFilterOutputWithContext(ctx context.Context) GetEmailIpPoolsFilterOutput {
+	return o
+}
+
+// A filter to only return resources that match the given name exactly.
+func (o GetEmailIpPoolsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetEmailIpPoolsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetEmailIpPoolsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetEmailIpPoolsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEmailIpPoolsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailIpPoolsFilter)(nil)).Elem()
+}
+
+func (o GetEmailIpPoolsFilterArrayOutput) ToGetEmailIpPoolsFilterArrayOutput() GetEmailIpPoolsFilterArrayOutput {
+	return o
+}
+
+func (o GetEmailIpPoolsFilterArrayOutput) ToGetEmailIpPoolsFilterArrayOutputWithContext(ctx context.Context) GetEmailIpPoolsFilterArrayOutput {
+	return o
+}
+
+func (o GetEmailIpPoolsFilterArrayOutput) Index(i pulumi.IntInput) GetEmailIpPoolsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailIpPoolsFilter {
+		return vs[0].([]GetEmailIpPoolsFilter)[vs[1].(int)]
+	}).(GetEmailIpPoolsFilterOutput)
+}
+
+type GetEmailOutboundIpsEmailOutboundIpCollection struct {
+	// List of public IPs.
+	Items []GetEmailOutboundIpsEmailOutboundIpCollectionItem `pulumi:"items"`
+}
+
+// GetEmailOutboundIpsEmailOutboundIpCollectionInput is an input type that accepts GetEmailOutboundIpsEmailOutboundIpCollectionArgs and GetEmailOutboundIpsEmailOutboundIpCollectionOutput values.
+// You can construct a concrete instance of `GetEmailOutboundIpsEmailOutboundIpCollectionInput` via:
+//
+//	GetEmailOutboundIpsEmailOutboundIpCollectionArgs{...}
+type GetEmailOutboundIpsEmailOutboundIpCollectionInput interface {
+	pulumi.Input
+
+	ToGetEmailOutboundIpsEmailOutboundIpCollectionOutput() GetEmailOutboundIpsEmailOutboundIpCollectionOutput
+	ToGetEmailOutboundIpsEmailOutboundIpCollectionOutputWithContext(context.Context) GetEmailOutboundIpsEmailOutboundIpCollectionOutput
+}
+
+type GetEmailOutboundIpsEmailOutboundIpCollectionArgs struct {
+	// List of public IPs.
+	Items GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetEmailOutboundIpsEmailOutboundIpCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailOutboundIpsEmailOutboundIpCollection)(nil)).Elem()
+}
+
+func (i GetEmailOutboundIpsEmailOutboundIpCollectionArgs) ToGetEmailOutboundIpsEmailOutboundIpCollectionOutput() GetEmailOutboundIpsEmailOutboundIpCollectionOutput {
+	return i.ToGetEmailOutboundIpsEmailOutboundIpCollectionOutputWithContext(context.Background())
+}
+
+func (i GetEmailOutboundIpsEmailOutboundIpCollectionArgs) ToGetEmailOutboundIpsEmailOutboundIpCollectionOutputWithContext(ctx context.Context) GetEmailOutboundIpsEmailOutboundIpCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailOutboundIpsEmailOutboundIpCollectionOutput)
+}
+
+// GetEmailOutboundIpsEmailOutboundIpCollectionArrayInput is an input type that accepts GetEmailOutboundIpsEmailOutboundIpCollectionArray and GetEmailOutboundIpsEmailOutboundIpCollectionArrayOutput values.
+// You can construct a concrete instance of `GetEmailOutboundIpsEmailOutboundIpCollectionArrayInput` via:
+//
+//	GetEmailOutboundIpsEmailOutboundIpCollectionArray{ GetEmailOutboundIpsEmailOutboundIpCollectionArgs{...} }
+type GetEmailOutboundIpsEmailOutboundIpCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetEmailOutboundIpsEmailOutboundIpCollectionArrayOutput() GetEmailOutboundIpsEmailOutboundIpCollectionArrayOutput
+	ToGetEmailOutboundIpsEmailOutboundIpCollectionArrayOutputWithContext(context.Context) GetEmailOutboundIpsEmailOutboundIpCollectionArrayOutput
+}
+
+type GetEmailOutboundIpsEmailOutboundIpCollectionArray []GetEmailOutboundIpsEmailOutboundIpCollectionInput
+
+func (GetEmailOutboundIpsEmailOutboundIpCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailOutboundIpsEmailOutboundIpCollection)(nil)).Elem()
+}
+
+func (i GetEmailOutboundIpsEmailOutboundIpCollectionArray) ToGetEmailOutboundIpsEmailOutboundIpCollectionArrayOutput() GetEmailOutboundIpsEmailOutboundIpCollectionArrayOutput {
+	return i.ToGetEmailOutboundIpsEmailOutboundIpCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetEmailOutboundIpsEmailOutboundIpCollectionArray) ToGetEmailOutboundIpsEmailOutboundIpCollectionArrayOutputWithContext(ctx context.Context) GetEmailOutboundIpsEmailOutboundIpCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailOutboundIpsEmailOutboundIpCollectionArrayOutput)
+}
+
+type GetEmailOutboundIpsEmailOutboundIpCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetEmailOutboundIpsEmailOutboundIpCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailOutboundIpsEmailOutboundIpCollection)(nil)).Elem()
+}
+
+func (o GetEmailOutboundIpsEmailOutboundIpCollectionOutput) ToGetEmailOutboundIpsEmailOutboundIpCollectionOutput() GetEmailOutboundIpsEmailOutboundIpCollectionOutput {
+	return o
+}
+
+func (o GetEmailOutboundIpsEmailOutboundIpCollectionOutput) ToGetEmailOutboundIpsEmailOutboundIpCollectionOutputWithContext(ctx context.Context) GetEmailOutboundIpsEmailOutboundIpCollectionOutput {
+	return o
+}
+
+// List of public IPs.
+func (o GetEmailOutboundIpsEmailOutboundIpCollectionOutput) Items() GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetEmailOutboundIpsEmailOutboundIpCollection) []GetEmailOutboundIpsEmailOutboundIpCollectionItem {
+		return v.Items
+	}).(GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput)
+}
+
+type GetEmailOutboundIpsEmailOutboundIpCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEmailOutboundIpsEmailOutboundIpCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailOutboundIpsEmailOutboundIpCollection)(nil)).Elem()
+}
+
+func (o GetEmailOutboundIpsEmailOutboundIpCollectionArrayOutput) ToGetEmailOutboundIpsEmailOutboundIpCollectionArrayOutput() GetEmailOutboundIpsEmailOutboundIpCollectionArrayOutput {
+	return o
+}
+
+func (o GetEmailOutboundIpsEmailOutboundIpCollectionArrayOutput) ToGetEmailOutboundIpsEmailOutboundIpCollectionArrayOutputWithContext(ctx context.Context) GetEmailOutboundIpsEmailOutboundIpCollectionArrayOutput {
+	return o
+}
+
+func (o GetEmailOutboundIpsEmailOutboundIpCollectionArrayOutput) Index(i pulumi.IntInput) GetEmailOutboundIpsEmailOutboundIpCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailOutboundIpsEmailOutboundIpCollection {
+		return vs[0].([]GetEmailOutboundIpsEmailOutboundIpCollection)[vs[1].(int)]
+	}).(GetEmailOutboundIpsEmailOutboundIpCollectionOutput)
+}
+
+type GetEmailOutboundIpsEmailOutboundIpCollectionItem struct {
+	// Filter returned list by specified assignment state.
+	AssignmentState string `pulumi:"assignmentState"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The outbound IP address assigned to the tenancy.
+	OutboundIp string `pulumi:"outboundIp"`
+	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+	State string `pulumi:"state"`
+}
+
+// GetEmailOutboundIpsEmailOutboundIpCollectionItemInput is an input type that accepts GetEmailOutboundIpsEmailOutboundIpCollectionItemArgs and GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput values.
+// You can construct a concrete instance of `GetEmailOutboundIpsEmailOutboundIpCollectionItemInput` via:
+//
+//	GetEmailOutboundIpsEmailOutboundIpCollectionItemArgs{...}
+type GetEmailOutboundIpsEmailOutboundIpCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetEmailOutboundIpsEmailOutboundIpCollectionItemOutput() GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput
+	ToGetEmailOutboundIpsEmailOutboundIpCollectionItemOutputWithContext(context.Context) GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput
+}
+
+type GetEmailOutboundIpsEmailOutboundIpCollectionItemArgs struct {
+	// Filter returned list by specified assignment state.
+	AssignmentState pulumi.StringInput `pulumi:"assignmentState"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The outbound IP address assigned to the tenancy.
+	OutboundIp pulumi.StringInput `pulumi:"outboundIp"`
+	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetEmailOutboundIpsEmailOutboundIpCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailOutboundIpsEmailOutboundIpCollectionItem)(nil)).Elem()
+}
+
+func (i GetEmailOutboundIpsEmailOutboundIpCollectionItemArgs) ToGetEmailOutboundIpsEmailOutboundIpCollectionItemOutput() GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput {
+	return i.ToGetEmailOutboundIpsEmailOutboundIpCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetEmailOutboundIpsEmailOutboundIpCollectionItemArgs) ToGetEmailOutboundIpsEmailOutboundIpCollectionItemOutputWithContext(ctx context.Context) GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput)
+}
+
+// GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayInput is an input type that accepts GetEmailOutboundIpsEmailOutboundIpCollectionItemArray and GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayInput` via:
+//
+//	GetEmailOutboundIpsEmailOutboundIpCollectionItemArray{ GetEmailOutboundIpsEmailOutboundIpCollectionItemArgs{...} }
+type GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput() GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput
+	ToGetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutputWithContext(context.Context) GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput
+}
+
+type GetEmailOutboundIpsEmailOutboundIpCollectionItemArray []GetEmailOutboundIpsEmailOutboundIpCollectionItemInput
+
+func (GetEmailOutboundIpsEmailOutboundIpCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailOutboundIpsEmailOutboundIpCollectionItem)(nil)).Elem()
+}
+
+func (i GetEmailOutboundIpsEmailOutboundIpCollectionItemArray) ToGetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput() GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput {
+	return i.ToGetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetEmailOutboundIpsEmailOutboundIpCollectionItemArray) ToGetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutputWithContext(ctx context.Context) GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput)
+}
+
+type GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailOutboundIpsEmailOutboundIpCollectionItem)(nil)).Elem()
+}
+
+func (o GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput) ToGetEmailOutboundIpsEmailOutboundIpCollectionItemOutput() GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput {
+	return o
+}
+
+func (o GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput) ToGetEmailOutboundIpsEmailOutboundIpCollectionItemOutputWithContext(ctx context.Context) GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput {
+	return o
+}
+
+// Filter returned list by specified assignment state.
+func (o GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput) AssignmentState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailOutboundIpsEmailOutboundIpCollectionItem) string { return v.AssignmentState }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+func (o GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailOutboundIpsEmailOutboundIpCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The outbound IP address assigned to the tenancy.
+func (o GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput) OutboundIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailOutboundIpsEmailOutboundIpCollectionItem) string { return v.OutboundIp }).(pulumi.StringOutput)
+}
+
+// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+func (o GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailOutboundIpsEmailOutboundIpCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailOutboundIpsEmailOutboundIpCollectionItem)(nil)).Elem()
+}
+
+func (o GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput) ToGetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput() GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput) ToGetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutputWithContext(ctx context.Context) GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput) Index(i pulumi.IntInput) GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailOutboundIpsEmailOutboundIpCollectionItem {
+		return vs[0].([]GetEmailOutboundIpsEmailOutboundIpCollectionItem)[vs[1].(int)]
+	}).(GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput)
+}
+
+type GetEmailOutboundIpsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetEmailOutboundIpsFilterInput is an input type that accepts GetEmailOutboundIpsFilterArgs and GetEmailOutboundIpsFilterOutput values.
+// You can construct a concrete instance of `GetEmailOutboundIpsFilterInput` via:
+//
+//	GetEmailOutboundIpsFilterArgs{...}
+type GetEmailOutboundIpsFilterInput interface {
+	pulumi.Input
+
+	ToGetEmailOutboundIpsFilterOutput() GetEmailOutboundIpsFilterOutput
+	ToGetEmailOutboundIpsFilterOutputWithContext(context.Context) GetEmailOutboundIpsFilterOutput
+}
+
+type GetEmailOutboundIpsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetEmailOutboundIpsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailOutboundIpsFilter)(nil)).Elem()
+}
+
+func (i GetEmailOutboundIpsFilterArgs) ToGetEmailOutboundIpsFilterOutput() GetEmailOutboundIpsFilterOutput {
+	return i.ToGetEmailOutboundIpsFilterOutputWithContext(context.Background())
+}
+
+func (i GetEmailOutboundIpsFilterArgs) ToGetEmailOutboundIpsFilterOutputWithContext(ctx context.Context) GetEmailOutboundIpsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailOutboundIpsFilterOutput)
+}
+
+// GetEmailOutboundIpsFilterArrayInput is an input type that accepts GetEmailOutboundIpsFilterArray and GetEmailOutboundIpsFilterArrayOutput values.
+// You can construct a concrete instance of `GetEmailOutboundIpsFilterArrayInput` via:
+//
+//	GetEmailOutboundIpsFilterArray{ GetEmailOutboundIpsFilterArgs{...} }
+type GetEmailOutboundIpsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetEmailOutboundIpsFilterArrayOutput() GetEmailOutboundIpsFilterArrayOutput
+	ToGetEmailOutboundIpsFilterArrayOutputWithContext(context.Context) GetEmailOutboundIpsFilterArrayOutput
+}
+
+type GetEmailOutboundIpsFilterArray []GetEmailOutboundIpsFilterInput
+
+func (GetEmailOutboundIpsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailOutboundIpsFilter)(nil)).Elem()
+}
+
+func (i GetEmailOutboundIpsFilterArray) ToGetEmailOutboundIpsFilterArrayOutput() GetEmailOutboundIpsFilterArrayOutput {
+	return i.ToGetEmailOutboundIpsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetEmailOutboundIpsFilterArray) ToGetEmailOutboundIpsFilterArrayOutputWithContext(ctx context.Context) GetEmailOutboundIpsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailOutboundIpsFilterArrayOutput)
+}
+
+type GetEmailOutboundIpsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetEmailOutboundIpsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailOutboundIpsFilter)(nil)).Elem()
+}
+
+func (o GetEmailOutboundIpsFilterOutput) ToGetEmailOutboundIpsFilterOutput() GetEmailOutboundIpsFilterOutput {
+	return o
+}
+
+func (o GetEmailOutboundIpsFilterOutput) ToGetEmailOutboundIpsFilterOutputWithContext(ctx context.Context) GetEmailOutboundIpsFilterOutput {
+	return o
+}
+
+func (o GetEmailOutboundIpsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailOutboundIpsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetEmailOutboundIpsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetEmailOutboundIpsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetEmailOutboundIpsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetEmailOutboundIpsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetEmailOutboundIpsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEmailOutboundIpsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailOutboundIpsFilter)(nil)).Elem()
+}
+
+func (o GetEmailOutboundIpsFilterArrayOutput) ToGetEmailOutboundIpsFilterArrayOutput() GetEmailOutboundIpsFilterArrayOutput {
+	return o
+}
+
+func (o GetEmailOutboundIpsFilterArrayOutput) ToGetEmailOutboundIpsFilterArrayOutputWithContext(ctx context.Context) GetEmailOutboundIpsFilterArrayOutput {
+	return o
+}
+
+func (o GetEmailOutboundIpsFilterArrayOutput) Index(i pulumi.IntInput) GetEmailOutboundIpsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailOutboundIpsFilter {
+		return vs[0].([]GetEmailOutboundIpsFilter)[vs[1].(int)]
+	}).(GetEmailOutboundIpsFilterOutput)
+}
+
 type GetEmailReturnPathLock struct {
 	// The lock compartment ID.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -2493,6 +4013,8 @@ type GetSendersSender struct {
 	EmailAddress string `pulumi:"emailAddress"`
 	// The email domain used to assert responsibility for emails sent from this sender.
 	EmailDomainId string `pulumi:"emailDomainId"`
+	// A filter to only return resources that match the given IpPool resource exactly.
+	EmailIpPoolId string `pulumi:"emailIpPoolId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique OCID of the sender.
@@ -2529,6 +4051,8 @@ type GetSendersSenderArgs struct {
 	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
 	// The email domain used to assert responsibility for emails sent from this sender.
 	EmailDomainId pulumi.StringInput `pulumi:"emailDomainId"`
+	// A filter to only return resources that match the given IpPool resource exactly.
+	EmailIpPoolId pulumi.StringInput `pulumi:"emailIpPoolId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The unique OCID of the sender.
@@ -2614,6 +4138,11 @@ func (o GetSendersSenderOutput) EmailAddress() pulumi.StringOutput {
 // The email domain used to assert responsibility for emails sent from this sender.
 func (o GetSendersSenderOutput) EmailDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSendersSender) string { return v.EmailDomainId }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that match the given IpPool resource exactly.
+func (o GetSendersSenderOutput) EmailIpPoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSendersSender) string { return v.EmailIpPoolId }).(pulumi.StringOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -3082,6 +4611,10 @@ func (o GetSuppressionsSuppressionArrayOutput) Index(i pulumi.IntInput) GetSuppr
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*EmailDomainLockInput)(nil)).Elem(), EmailDomainLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EmailDomainLockArrayInput)(nil)).Elem(), EmailDomainLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EmailIpPoolLockInput)(nil)).Elem(), EmailIpPoolLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EmailIpPoolLockArrayInput)(nil)).Elem(), EmailIpPoolLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EmailIpPoolOutboundIpsResponseInput)(nil)).Elem(), EmailIpPoolOutboundIpsResponseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EmailIpPoolOutboundIpsResponseArrayInput)(nil)).Elem(), EmailIpPoolOutboundIpsResponseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EmailReturnPathLockInput)(nil)).Elem(), EmailReturnPathLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EmailReturnPathLockArrayInput)(nil)).Elem(), EmailReturnPathLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SenderLockInput)(nil)).Elem(), SenderLockArgs{})
@@ -3102,6 +4635,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailDomainsEmailDomainCollectionItemLockArrayInput)(nil)).Elem(), GetEmailDomainsEmailDomainCollectionItemLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailDomainsFilterInput)(nil)).Elem(), GetEmailDomainsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailDomainsFilterArrayInput)(nil)).Elem(), GetEmailDomainsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailIpPoolLockInput)(nil)).Elem(), GetEmailIpPoolLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailIpPoolLockArrayInput)(nil)).Elem(), GetEmailIpPoolLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailIpPoolOutboundIpsResponseInput)(nil)).Elem(), GetEmailIpPoolOutboundIpsResponseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailIpPoolOutboundIpsResponseArrayInput)(nil)).Elem(), GetEmailIpPoolOutboundIpsResponseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailIpPoolsEmailIpPoolCollectionInput)(nil)).Elem(), GetEmailIpPoolsEmailIpPoolCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailIpPoolsEmailIpPoolCollectionArrayInput)(nil)).Elem(), GetEmailIpPoolsEmailIpPoolCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailIpPoolsEmailIpPoolCollectionItemInput)(nil)).Elem(), GetEmailIpPoolsEmailIpPoolCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailIpPoolsEmailIpPoolCollectionItemArrayInput)(nil)).Elem(), GetEmailIpPoolsEmailIpPoolCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailIpPoolsEmailIpPoolCollectionItemLockInput)(nil)).Elem(), GetEmailIpPoolsEmailIpPoolCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayInput)(nil)).Elem(), GetEmailIpPoolsEmailIpPoolCollectionItemLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseInput)(nil)).Elem(), GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayInput)(nil)).Elem(), GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailIpPoolsFilterInput)(nil)).Elem(), GetEmailIpPoolsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailIpPoolsFilterArrayInput)(nil)).Elem(), GetEmailIpPoolsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailOutboundIpsEmailOutboundIpCollectionInput)(nil)).Elem(), GetEmailOutboundIpsEmailOutboundIpCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailOutboundIpsEmailOutboundIpCollectionArrayInput)(nil)).Elem(), GetEmailOutboundIpsEmailOutboundIpCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailOutboundIpsEmailOutboundIpCollectionItemInput)(nil)).Elem(), GetEmailOutboundIpsEmailOutboundIpCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayInput)(nil)).Elem(), GetEmailOutboundIpsEmailOutboundIpCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailOutboundIpsFilterInput)(nil)).Elem(), GetEmailOutboundIpsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailOutboundIpsFilterArrayInput)(nil)).Elem(), GetEmailOutboundIpsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathLockInput)(nil)).Elem(), GetEmailReturnPathLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathLockArrayInput)(nil)).Elem(), GetEmailReturnPathLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathsEmailReturnPathCollectionInput)(nil)).Elem(), GetEmailReturnPathsEmailReturnPathCollectionArgs{})
@@ -3126,6 +4679,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSuppressionsSuppressionArrayInput)(nil)).Elem(), GetSuppressionsSuppressionArray{})
 	pulumi.RegisterOutputType(EmailDomainLockOutput{})
 	pulumi.RegisterOutputType(EmailDomainLockArrayOutput{})
+	pulumi.RegisterOutputType(EmailIpPoolLockOutput{})
+	pulumi.RegisterOutputType(EmailIpPoolLockArrayOutput{})
+	pulumi.RegisterOutputType(EmailIpPoolOutboundIpsResponseOutput{})
+	pulumi.RegisterOutputType(EmailIpPoolOutboundIpsResponseArrayOutput{})
 	pulumi.RegisterOutputType(EmailReturnPathLockOutput{})
 	pulumi.RegisterOutputType(EmailReturnPathLockArrayOutput{})
 	pulumi.RegisterOutputType(SenderLockOutput{})
@@ -3146,6 +4703,26 @@ func init() {
 	pulumi.RegisterOutputType(GetEmailDomainsEmailDomainCollectionItemLockArrayOutput{})
 	pulumi.RegisterOutputType(GetEmailDomainsFilterOutput{})
 	pulumi.RegisterOutputType(GetEmailDomainsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetEmailIpPoolLockOutput{})
+	pulumi.RegisterOutputType(GetEmailIpPoolLockArrayOutput{})
+	pulumi.RegisterOutputType(GetEmailIpPoolOutboundIpsResponseOutput{})
+	pulumi.RegisterOutputType(GetEmailIpPoolOutboundIpsResponseArrayOutput{})
+	pulumi.RegisterOutputType(GetEmailIpPoolsEmailIpPoolCollectionOutput{})
+	pulumi.RegisterOutputType(GetEmailIpPoolsEmailIpPoolCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetEmailIpPoolsEmailIpPoolCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetEmailIpPoolsEmailIpPoolCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetEmailIpPoolsEmailIpPoolCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetEmailIpPoolsEmailIpPoolCollectionItemLockArrayOutput{})
+	pulumi.RegisterOutputType(GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput{})
+	pulumi.RegisterOutputType(GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput{})
+	pulumi.RegisterOutputType(GetEmailIpPoolsFilterOutput{})
+	pulumi.RegisterOutputType(GetEmailIpPoolsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetEmailOutboundIpsEmailOutboundIpCollectionOutput{})
+	pulumi.RegisterOutputType(GetEmailOutboundIpsEmailOutboundIpCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetEmailOutboundIpsFilterOutput{})
+	pulumi.RegisterOutputType(GetEmailOutboundIpsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetEmailReturnPathLockOutput{})
 	pulumi.RegisterOutputType(GetEmailReturnPathLockArrayOutput{})
 	pulumi.RegisterOutputType(GetEmailReturnPathsEmailReturnPathCollectionOutput{})

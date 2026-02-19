@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -66,6 +68,10 @@ export interface GetComputeGpuMemoryClusterResult {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     readonly freeformTags: {[key: string]: string};
+    /**
+     * Configuration settings for GPU Memory Cluster scaling.
+     */
+    readonly gpuMemoryClusterScaleConfigs: outputs.Core.GetComputeGpuMemoryClusterGpuMemoryClusterScaleConfig[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
      */

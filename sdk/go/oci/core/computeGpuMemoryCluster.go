@@ -45,6 +45,11 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				GpuMemoryClusterScaleConfig: &core.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs{
+//					IsUpsizeEnabled:   pulumi.Any(computeGpuMemoryClusterGpuMemoryClusterScaleConfigIsUpsizeEnabled),
+//					IsDownsizeEnabled: pulumi.Any(computeGpuMemoryClusterGpuMemoryClusterScaleConfigIsDownsizeEnabled),
+//					TargetSize:        pulumi.Any(computeGpuMemoryClusterGpuMemoryClusterScaleConfigTargetSize),
+//				},
 //				GpuMemoryFabricId: pulumi.Any(testGpuMemoryFabric.Id),
 //				Size:              pulumi.Any(computeGpuMemoryClusterSize),
 //			})
@@ -79,6 +84,8 @@ type ComputeGpuMemoryCluster struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// (Updatable) Configuration settings for GPU Memory Cluster scaling.
+	GpuMemoryClusterScaleConfig ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigOutput `pulumi:"gpuMemoryClusterScaleConfig"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
 	GpuMemoryFabricId pulumi.StringOutput `pulumi:"gpuMemoryFabricId"`
 	// (Updatable) Instance Configuration to be used for this GPU Memory Cluster
@@ -150,6 +157,8 @@ type computeGpuMemoryClusterState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) Configuration settings for GPU Memory Cluster scaling.
+	GpuMemoryClusterScaleConfig *ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig `pulumi:"gpuMemoryClusterScaleConfig"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
 	GpuMemoryFabricId *string `pulumi:"gpuMemoryFabricId"`
 	// (Updatable) Instance Configuration to be used for this GPU Memory Cluster
@@ -180,6 +189,8 @@ type ComputeGpuMemoryClusterState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) Configuration settings for GPU Memory Cluster scaling.
+	GpuMemoryClusterScaleConfig ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
 	GpuMemoryFabricId pulumi.StringPtrInput
 	// (Updatable) Instance Configuration to be used for this GPU Memory Cluster
@@ -214,6 +225,8 @@ type computeGpuMemoryClusterArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) Configuration settings for GPU Memory Cluster scaling.
+	GpuMemoryClusterScaleConfig *ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig `pulumi:"gpuMemoryClusterScaleConfig"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
 	GpuMemoryFabricId *string `pulumi:"gpuMemoryFabricId"`
 	// (Updatable) Instance Configuration to be used for this GPU Memory Cluster
@@ -239,6 +252,8 @@ type ComputeGpuMemoryClusterArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) Configuration settings for GPU Memory Cluster scaling.
+	GpuMemoryClusterScaleConfig ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
 	GpuMemoryFabricId pulumi.StringPtrInput
 	// (Updatable) Instance Configuration to be used for this GPU Memory Cluster
@@ -365,6 +380,13 @@ func (o ComputeGpuMemoryClusterOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o ComputeGpuMemoryClusterOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *ComputeGpuMemoryCluster) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) Configuration settings for GPU Memory Cluster scaling.
+func (o ComputeGpuMemoryClusterOutput) GpuMemoryClusterScaleConfig() ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigOutput {
+	return o.ApplyT(func(v *ComputeGpuMemoryCluster) ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigOutput {
+		return v.GpuMemoryClusterScaleConfig
+	}).(ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.

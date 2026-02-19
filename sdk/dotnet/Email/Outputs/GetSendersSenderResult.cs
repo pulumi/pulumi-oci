@@ -30,6 +30,10 @@ namespace Pulumi.Oci.Email.Outputs
         /// </summary>
         public readonly string EmailDomainId;
         /// <summary>
+        /// A filter to only return resources that match the given IpPool resource exactly.
+        /// </summary>
+        public readonly string EmailIpPoolId;
+        /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
@@ -68,6 +72,8 @@ namespace Pulumi.Oci.Email.Outputs
 
             string emailDomainId,
 
+            string emailIpPoolId,
+
             ImmutableDictionary<string, string> freeformTags,
 
             string id,
@@ -86,6 +92,7 @@ namespace Pulumi.Oci.Email.Outputs
             DefinedTags = definedTags;
             EmailAddress = emailAddress;
             EmailDomainId = emailDomainId;
+            EmailIpPoolId = emailIpPoolId;
             FreeformTags = freeformTags;
             Id = id;
             IsSpf = isSpf;

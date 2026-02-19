@@ -24,12 +24,14 @@ class SenderArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  email_address: pulumi.Input[_builtins.str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 email_ip_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Sender resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the sender.
         :param pulumi.Input[_builtins.str] email_address: The email address of the sender.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[_builtins.str] email_ip_pool_id: (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
                
                
@@ -40,6 +42,8 @@ class SenderArgs:
         pulumi.set(__self__, "email_address", email_address)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if email_ip_pool_id is not None:
+            pulumi.set(__self__, "email_ip_pool_id", email_ip_pool_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
 
@@ -80,6 +84,18 @@ class SenderArgs:
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="emailIpPoolId")
+    def email_ip_pool_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+        """
+        return pulumi.get(self, "email_ip_pool_id")
+
+    @email_ip_pool_id.setter
+    def email_ip_pool_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "email_ip_pool_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -103,6 +119,7 @@ class _SenderState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  email_address: Optional[pulumi.Input[_builtins.str]] = None,
                  email_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 email_ip_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_spf: Optional[pulumi.Input[_builtins.bool]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['SenderLockArgs']]]] = None,
@@ -115,6 +132,7 @@ class _SenderState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] email_address: The email address of the sender.
         :param pulumi.Input[_builtins.str] email_domain_id: The email domain used to assert responsibility for emails sent from this sender.
+        :param pulumi.Input[_builtins.str] email_ip_pool_id: (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
                
                
@@ -134,6 +152,8 @@ class _SenderState:
             pulumi.set(__self__, "email_address", email_address)
         if email_domain_id is not None:
             pulumi.set(__self__, "email_domain_id", email_domain_id)
+        if email_ip_pool_id is not None:
+            pulumi.set(__self__, "email_ip_pool_id", email_ip_pool_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_spf is not None:
@@ -194,6 +214,18 @@ class _SenderState:
     @email_domain_id.setter
     def email_domain_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "email_domain_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="emailIpPoolId")
+    def email_ip_pool_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+        """
+        return pulumi.get(self, "email_ip_pool_id")
+
+    @email_ip_pool_id.setter
+    def email_ip_pool_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "email_ip_pool_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
@@ -281,6 +313,7 @@ class Sender(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  email_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 email_ip_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
@@ -303,6 +336,7 @@ class Sender(pulumi.CustomResource):
             defined_tags={
                 "Operations.CostCenter": "42",
             },
+            email_ip_pool_id=test_email_ip_pool["id"],
             freeform_tags={
                 "Department": "Finance",
             })
@@ -321,6 +355,7 @@ class Sender(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the sender.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] email_address: The email address of the sender.
+        :param pulumi.Input[_builtins.str] email_ip_pool_id: (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
                
                
@@ -353,6 +388,7 @@ class Sender(pulumi.CustomResource):
             defined_tags={
                 "Operations.CostCenter": "42",
             },
+            email_ip_pool_id=test_email_ip_pool["id"],
             freeform_tags={
                 "Department": "Finance",
             })
@@ -384,6 +420,7 @@ class Sender(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  email_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 email_ip_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -401,6 +438,7 @@ class Sender(pulumi.CustomResource):
             if email_address is None and not opts.urn:
                 raise TypeError("Missing required property 'email_address'")
             __props__.__dict__["email_address"] = email_address
+            __props__.__dict__["email_ip_pool_id"] = email_ip_pool_id
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["email_domain_id"] = None
             __props__.__dict__["is_spf"] = None
@@ -422,6 +460,7 @@ class Sender(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             email_address: Optional[pulumi.Input[_builtins.str]] = None,
             email_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
+            email_ip_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_spf: Optional[pulumi.Input[_builtins.bool]] = None,
             locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SenderLockArgs', 'SenderLockArgsDict']]]]] = None,
@@ -439,6 +478,7 @@ class Sender(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] email_address: The email address of the sender.
         :param pulumi.Input[_builtins.str] email_domain_id: The email domain used to assert responsibility for emails sent from this sender.
+        :param pulumi.Input[_builtins.str] email_ip_pool_id: (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
                
                
@@ -458,6 +498,7 @@ class Sender(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["email_address"] = email_address
         __props__.__dict__["email_domain_id"] = email_domain_id
+        __props__.__dict__["email_ip_pool_id"] = email_ip_pool_id
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_spf"] = is_spf
         __props__.__dict__["locks"] = locks
@@ -497,6 +538,14 @@ class Sender(pulumi.CustomResource):
         The email domain used to assert responsibility for emails sent from this sender.
         """
         return pulumi.get(self, "email_domain_id")
+
+    @_builtins.property
+    @pulumi.getter(name="emailIpPoolId")
+    def email_ip_pool_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+        """
+        return pulumi.get(self, "email_ip_pool_id")
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")

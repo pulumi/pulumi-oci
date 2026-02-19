@@ -35,6 +35,7 @@ namespace Pulumi.Oci.Email
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
+    ///         EmailIpPoolId = testEmailIpPool.Id,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -78,6 +79,12 @@ namespace Pulumi.Oci.Email
         /// </summary>
         [Output("emailDomainId")]
         public Output<string> EmailDomainId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+        /// </summary>
+        [Output("emailIpPoolId")]
+        public Output<string> EmailIpPoolId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
@@ -189,6 +196,12 @@ namespace Pulumi.Oci.Email
         [Input("emailAddress", required: true)]
         public Input<string> EmailAddress { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+        /// </summary>
+        [Input("emailIpPoolId")]
+        public Input<string>? EmailIpPoolId { get; set; }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
@@ -242,6 +255,12 @@ namespace Pulumi.Oci.Email
         /// </summary>
         [Input("emailDomainId")]
         public Input<string>? EmailDomainId { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+        /// </summary>
+        [Input("emailIpPoolId")]
+        public Input<string>? EmailIpPoolId { get; set; }
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;

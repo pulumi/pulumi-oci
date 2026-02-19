@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -104,6 +105,21 @@ public final class ComputeGpuMemoryClusterState extends com.pulumi.resources.Res
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * (Updatable) Configuration settings for GPU Memory Cluster scaling.
+     * 
+     */
+    @Import(name="gpuMemoryClusterScaleConfig")
+    private @Nullable Output<ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs> gpuMemoryClusterScaleConfig;
+
+    /**
+     * @return (Updatable) Configuration settings for GPU Memory Cluster scaling.
+     * 
+     */
+    public Optional<Output<ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs>> gpuMemoryClusterScaleConfig() {
+        return Optional.ofNullable(this.gpuMemoryClusterScaleConfig);
     }
 
     /**
@@ -211,6 +227,7 @@ public final class ComputeGpuMemoryClusterState extends com.pulumi.resources.Res
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.gpuMemoryClusterScaleConfig = $.gpuMemoryClusterScaleConfig;
         this.gpuMemoryFabricId = $.gpuMemoryFabricId;
         this.instanceConfigurationId = $.instanceConfigurationId;
         this.size = $.size;
@@ -361,6 +378,27 @@ public final class ComputeGpuMemoryClusterState extends com.pulumi.resources.Res
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param gpuMemoryClusterScaleConfig (Updatable) Configuration settings for GPU Memory Cluster scaling.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder gpuMemoryClusterScaleConfig(@Nullable Output<ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs> gpuMemoryClusterScaleConfig) {
+            $.gpuMemoryClusterScaleConfig = gpuMemoryClusterScaleConfig;
+            return this;
+        }
+
+        /**
+         * @param gpuMemoryClusterScaleConfig (Updatable) Configuration settings for GPU Memory Cluster scaling.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder gpuMemoryClusterScaleConfig(ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs gpuMemoryClusterScaleConfig) {
+            return gpuMemoryClusterScaleConfig(Output.of(gpuMemoryClusterScaleConfig));
         }
 
         /**

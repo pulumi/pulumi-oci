@@ -1287,6 +1287,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "ContainerEngine/clusterPublicApiEndpointDecommissionManager",
+  "fqn": "pulumi_oci.containerengine",
+  "classes": {
+   "oci:ContainerEngine/clusterPublicApiEndpointDecommissionManager:ClusterPublicApiEndpointDecommissionManager": "ClusterPublicApiEndpointDecommissionManager"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "ContainerEngine/clusterStartCredentialRotationManagement",
   "fqn": "pulumi_oci.containerengine",
   "classes": {
@@ -3551,6 +3559,46 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DatabaseManagement/cloudExadataInfrastructure",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/cloudExadataInfrastructure:CloudExadataInfrastructure": "CloudExadataInfrastructure"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/cloudExadataInfrastructureManagedexadataManagement",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/cloudExadataInfrastructureManagedexadataManagement:CloudExadataInfrastructureManagedexadataManagement": "CloudExadataInfrastructureManagedexadataManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/cloudExadataStorageConnector",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/cloudExadataStorageConnector:CloudExadataStorageConnector": "CloudExadataStorageConnector"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/cloudExadataStorageGrid",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/cloudExadataStorageGrid:CloudExadataStorageGrid": "CloudExadataStorageGrid"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/cloudExadataStorageServer",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/cloudExadataStorageServer:CloudExadataStorageServer": "CloudExadataStorageServer"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DatabaseManagement/cloudListener",
   "fqn": "pulumi_oci.databasemanagement",
   "classes": {
@@ -4195,6 +4243,14 @@ _utilities.register(
   "fqn": "pulumi_oci.email",
   "classes": {
    "oci:Email/emailDomain:EmailDomain": "EmailDomain"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Email/emailIpPool",
+  "fqn": "pulumi_oci.email",
+  "classes": {
+   "oci:Email/emailIpPool:EmailIpPool": "EmailIpPool"
   }
  },
  {

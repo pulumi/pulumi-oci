@@ -63,6 +63,21 @@ public final class SenderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+     * 
+     */
+    @Import(name="emailIpPoolId")
+    private @Nullable Output<String> emailIpPoolId;
+
+    /**
+     * @return (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+     * 
+     */
+    public Optional<Output<String>> emailIpPoolId() {
+        return Optional.ofNullable(this.emailIpPoolId);
+    }
+
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      * ** IMPORTANT **
@@ -89,6 +104,7 @@ public final class SenderArgs extends com.pulumi.resources.ResourceArgs {
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.emailAddress = $.emailAddress;
+        this.emailIpPoolId = $.emailIpPoolId;
         this.freeformTags = $.freeformTags;
     }
 
@@ -171,6 +187,27 @@ public final class SenderArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder emailAddress(String emailAddress) {
             return emailAddress(Output.of(emailAddress));
+        }
+
+        /**
+         * @param emailIpPoolId (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder emailIpPoolId(@Nullable Output<String> emailIpPoolId) {
+            $.emailIpPoolId = emailIpPoolId;
+            return this;
+        }
+
+        /**
+         * @param emailIpPoolId (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder emailIpPoolId(String emailIpPoolId) {
+            return emailIpPoolId(Output.of(emailIpPoolId));
         }
 
         /**

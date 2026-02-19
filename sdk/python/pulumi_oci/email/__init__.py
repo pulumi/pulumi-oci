@@ -8,12 +8,16 @@ import typing
 # Export this package's modules as members:
 from .dkim import *
 from .email_domain import *
+from .email_ip_pool import *
 from .email_return_path import *
 from .get_configuration import *
 from .get_dkim import *
 from .get_dkims import *
 from .get_email_domain import *
 from .get_email_domains import *
+from .get_email_ip_pool import *
+from .get_email_ip_pools import *
+from .get_email_outbound_ips import *
 from .get_email_return_path import *
 from .get_email_return_paths import *
 from .get_sender import *

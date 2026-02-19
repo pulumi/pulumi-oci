@@ -123,7 +123,7 @@ def get_addon_options(addon_name: Optional[_builtins.str] = None,
 
     :param _builtins.str addon_name: The name of the addon.
     :param _builtins.str kubernetes_version: The kubernetes version to fetch the addons.
-    :param _builtins.bool should_show_all_versions: Whether to show all add-on versions
+    :param _builtins.bool should_show_all_versions: Specifies whether all add-on versions should be displayed. The default value is false. If set to true, the API will return all available add-on versions, including deprecated versions and detailed build numbers. Please note that the use of deprecated versions, as well as the specification of a particular build of a supported version, is not recommended for standard operations.
     """
     __args__ = dict()
     __args__['addonName'] = addon_name
@@ -164,7 +164,7 @@ def get_addon_options_output(addon_name: Optional[pulumi.Input[Optional[_builtin
 
     :param _builtins.str addon_name: The name of the addon.
     :param _builtins.str kubernetes_version: The kubernetes version to fetch the addons.
-    :param _builtins.bool should_show_all_versions: Whether to show all add-on versions
+    :param _builtins.bool should_show_all_versions: Specifies whether all add-on versions should be displayed. The default value is false. If set to true, the API will return all available add-on versions, including deprecated versions and detailed build numbers. Please note that the use of deprecated versions, as well as the specification of a particular build of a supported version, is not recommended for standard operations.
     """
     __args__ = dict()
     __args__['addonName'] = addon_name

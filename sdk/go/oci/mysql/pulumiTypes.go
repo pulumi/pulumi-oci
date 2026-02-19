@@ -2792,6 +2792,8 @@ func (o MysqlBackupDbSystemSnapshotEndpointArrayOutput) Index(i pulumi.IntInput)
 }
 
 type MysqlBackupDbSystemSnapshotMaintenance struct {
+	// Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+	MaintenanceDisabledWindows []MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow `pulumi:"maintenanceDisabledWindows"`
 	// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
 	MaintenanceScheduleType *string `pulumi:"maintenanceScheduleType"`
 	// The version that is expected to be targeted during the next scheduled maintenance run.
@@ -2818,6 +2820,8 @@ type MysqlBackupDbSystemSnapshotMaintenanceInput interface {
 }
 
 type MysqlBackupDbSystemSnapshotMaintenanceArgs struct {
+	// Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+	MaintenanceDisabledWindows MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayInput `pulumi:"maintenanceDisabledWindows"`
 	// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
 	MaintenanceScheduleType pulumi.StringPtrInput `pulumi:"maintenanceScheduleType"`
 	// The version that is expected to be targeted during the next scheduled maintenance run.
@@ -2883,6 +2887,13 @@ func (o MysqlBackupDbSystemSnapshotMaintenanceOutput) ToMysqlBackupDbSystemSnaps
 	return o
 }
 
+// Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+func (o MysqlBackupDbSystemSnapshotMaintenanceOutput) MaintenanceDisabledWindows() MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotMaintenance) []MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow {
+		return v.MaintenanceDisabledWindows
+	}).(MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput)
+}
+
 // The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
 func (o MysqlBackupDbSystemSnapshotMaintenanceOutput) MaintenanceScheduleType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotMaintenance) *string { return v.MaintenanceScheduleType }).(pulumi.StringPtrOutput)
@@ -2931,6 +2942,112 @@ func (o MysqlBackupDbSystemSnapshotMaintenanceArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotMaintenance {
 		return vs[0].([]MysqlBackupDbSystemSnapshotMaintenance)[vs[1].(int)]
 	}).(MysqlBackupDbSystemSnapshotMaintenanceOutput)
+}
+
+type MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow struct {
+	// The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEnd *string `pulumi:"timeEnd"`
+	// The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeStart *string `pulumi:"timeStart"`
+}
+
+// MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowInput is an input type that accepts MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs and MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowInput` via:
+//
+//	MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs{...}
+type MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput() MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput
+	ToMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput
+}
+
+type MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs struct {
+	// The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
+	// The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
+}
+
+func (MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs) ToMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput() MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput {
+	return i.ToMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs) ToMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput)
+}
+
+// MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArray and MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayInput` via:
+//
+//	MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArray{ MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs{...} }
+type MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput() MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput
+	ToMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput
+}
+
+type MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArray []MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowInput
+
+func (MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArray) ToMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput() MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return i.ToMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArray) ToMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput)
+}
+
+type MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput) ToMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput() MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput) ToMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput {
+	return o
+}
+
+// The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
+}
+
+// The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
+}
+
+type MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput) ToMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput() MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput) ToMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow {
+		return vs[0].([]MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow)[vs[1].(int)]
+	}).(MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput)
 }
 
 type MysqlBackupDbSystemSnapshotReadEndpoint struct {
@@ -9845,6 +9962,8 @@ func (o MysqlDbSystemHeatWaveClusterArrayOutput) Index(i pulumi.IntInput) MysqlD
 }
 
 type MysqlDbSystemMaintenance struct {
+	// (Updatable) Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+	MaintenanceDisabledWindows []MysqlDbSystemMaintenanceMaintenanceDisabledWindow `pulumi:"maintenanceDisabledWindows"`
 	// (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
 	MaintenanceScheduleType *string `pulumi:"maintenanceScheduleType"`
 	// The version that is expected to be targeted during the next scheduled maintenance run.
@@ -9881,6 +10000,8 @@ type MysqlDbSystemMaintenanceInput interface {
 }
 
 type MysqlDbSystemMaintenanceArgs struct {
+	// (Updatable) Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+	MaintenanceDisabledWindows MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayInput `pulumi:"maintenanceDisabledWindows"`
 	// (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
 	MaintenanceScheduleType pulumi.StringPtrInput `pulumi:"maintenanceScheduleType"`
 	// The version that is expected to be targeted during the next scheduled maintenance run.
@@ -9982,6 +10103,13 @@ func (o MysqlDbSystemMaintenanceOutput) ToMysqlDbSystemMaintenancePtrOutputWithC
 	}).(MysqlDbSystemMaintenancePtrOutput)
 }
 
+// (Updatable) Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+func (o MysqlDbSystemMaintenanceOutput) MaintenanceDisabledWindows() MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return o.ApplyT(func(v MysqlDbSystemMaintenance) []MysqlDbSystemMaintenanceMaintenanceDisabledWindow {
+		return v.MaintenanceDisabledWindows
+	}).(MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput)
+}
+
 // (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
 func (o MysqlDbSystemMaintenanceOutput) MaintenanceScheduleType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemMaintenance) *string { return v.MaintenanceScheduleType }).(pulumi.StringPtrOutput)
@@ -10044,6 +10172,16 @@ func (o MysqlDbSystemMaintenancePtrOutput) Elem() MysqlDbSystemMaintenanceOutput
 		var ret MysqlDbSystemMaintenance
 		return ret
 	}).(MysqlDbSystemMaintenanceOutput)
+}
+
+// (Updatable) Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+func (o MysqlDbSystemMaintenancePtrOutput) MaintenanceDisabledWindows() MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return o.ApplyT(func(v *MysqlDbSystemMaintenance) []MysqlDbSystemMaintenanceMaintenanceDisabledWindow {
+		if v == nil {
+			return nil
+		}
+		return v.MaintenanceDisabledWindows
+	}).(MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput)
 }
 
 // (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
@@ -10114,6 +10252,112 @@ func (o MysqlDbSystemMaintenancePtrOutput) WindowStartTime() pulumi.StringPtrOut
 		}
 		return &v.WindowStartTime
 	}).(pulumi.StringPtrOutput)
+}
+
+type MysqlDbSystemMaintenanceMaintenanceDisabledWindow struct {
+	// (Updatable) The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEnd string `pulumi:"timeEnd"`
+	// (Updatable) The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeStart string `pulumi:"timeStart"`
+}
+
+// MysqlDbSystemMaintenanceMaintenanceDisabledWindowInput is an input type that accepts MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs and MysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput values.
+// You can construct a concrete instance of `MysqlDbSystemMaintenanceMaintenanceDisabledWindowInput` via:
+//
+//	MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs{...}
+type MysqlDbSystemMaintenanceMaintenanceDisabledWindowInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput() MysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput
+	ToMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutputWithContext(context.Context) MysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput
+}
+
+type MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs struct {
+	// (Updatable) The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	// (Updatable) The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+}
+
+func (MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (i MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs) ToMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput() MysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput {
+	return i.ToMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs) ToMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutputWithContext(ctx context.Context) MysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput)
+}
+
+// MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayInput is an input type that accepts MysqlDbSystemMaintenanceMaintenanceDisabledWindowArray and MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput values.
+// You can construct a concrete instance of `MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayInput` via:
+//
+//	MysqlDbSystemMaintenanceMaintenanceDisabledWindowArray{ MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs{...} }
+type MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput() MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput
+	ToMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(context.Context) MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput
+}
+
+type MysqlDbSystemMaintenanceMaintenanceDisabledWindowArray []MysqlDbSystemMaintenanceMaintenanceDisabledWindowInput
+
+func (MysqlDbSystemMaintenanceMaintenanceDisabledWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlDbSystemMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (i MysqlDbSystemMaintenanceMaintenanceDisabledWindowArray) ToMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput() MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return i.ToMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemMaintenanceMaintenanceDisabledWindowArray) ToMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(ctx context.Context) MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput)
+}
+
+type MysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (o MysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput) ToMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput() MysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput {
+	return o
+}
+
+func (o MysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput) ToMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutputWithContext(ctx context.Context) MysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput {
+	return o
+}
+
+// (Updatable) The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o MysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput) TimeEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v MysqlDbSystemMaintenanceMaintenanceDisabledWindow) string { return v.TimeEnd }).(pulumi.StringOutput)
+}
+
+// (Updatable) The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o MysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput) TimeStart() pulumi.StringOutput {
+	return o.ApplyT(func(v MysqlDbSystemMaintenanceMaintenanceDisabledWindow) string { return v.TimeStart }).(pulumi.StringOutput)
+}
+
+type MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlDbSystemMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (o MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput) ToMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput() MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return o
+}
+
+func (o MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput) ToMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(ctx context.Context) MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return o
+}
+
+func (o MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemMaintenanceMaintenanceDisabledWindow {
+		return vs[0].([]MysqlDbSystemMaintenanceMaintenanceDisabledWindow)[vs[1].(int)]
+	}).(MysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput)
 }
 
 type MysqlDbSystemPointInTimeRecoveryDetail struct {
@@ -13010,6 +13254,323 @@ func (o GetChannelsFilterArrayOutput) Index(i pulumi.IntInput) GetChannelsFilter
 	}).(GetChannelsFilterOutput)
 }
 
+type GetDbSystemMaintenanceEventsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbSystemMaintenanceEventsFilterInput is an input type that accepts GetDbSystemMaintenanceEventsFilterArgs and GetDbSystemMaintenanceEventsFilterOutput values.
+// You can construct a concrete instance of `GetDbSystemMaintenanceEventsFilterInput` via:
+//
+//	GetDbSystemMaintenanceEventsFilterArgs{...}
+type GetDbSystemMaintenanceEventsFilterInput interface {
+	pulumi.Input
+
+	ToGetDbSystemMaintenanceEventsFilterOutput() GetDbSystemMaintenanceEventsFilterOutput
+	ToGetDbSystemMaintenanceEventsFilterOutputWithContext(context.Context) GetDbSystemMaintenanceEventsFilterOutput
+}
+
+type GetDbSystemMaintenanceEventsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbSystemMaintenanceEventsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemMaintenanceEventsFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemMaintenanceEventsFilterArgs) ToGetDbSystemMaintenanceEventsFilterOutput() GetDbSystemMaintenanceEventsFilterOutput {
+	return i.ToGetDbSystemMaintenanceEventsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemMaintenanceEventsFilterArgs) ToGetDbSystemMaintenanceEventsFilterOutputWithContext(ctx context.Context) GetDbSystemMaintenanceEventsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemMaintenanceEventsFilterOutput)
+}
+
+// GetDbSystemMaintenanceEventsFilterArrayInput is an input type that accepts GetDbSystemMaintenanceEventsFilterArray and GetDbSystemMaintenanceEventsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemMaintenanceEventsFilterArrayInput` via:
+//
+//	GetDbSystemMaintenanceEventsFilterArray{ GetDbSystemMaintenanceEventsFilterArgs{...} }
+type GetDbSystemMaintenanceEventsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemMaintenanceEventsFilterArrayOutput() GetDbSystemMaintenanceEventsFilterArrayOutput
+	ToGetDbSystemMaintenanceEventsFilterArrayOutputWithContext(context.Context) GetDbSystemMaintenanceEventsFilterArrayOutput
+}
+
+type GetDbSystemMaintenanceEventsFilterArray []GetDbSystemMaintenanceEventsFilterInput
+
+func (GetDbSystemMaintenanceEventsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemMaintenanceEventsFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemMaintenanceEventsFilterArray) ToGetDbSystemMaintenanceEventsFilterArrayOutput() GetDbSystemMaintenanceEventsFilterArrayOutput {
+	return i.ToGetDbSystemMaintenanceEventsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemMaintenanceEventsFilterArray) ToGetDbSystemMaintenanceEventsFilterArrayOutputWithContext(ctx context.Context) GetDbSystemMaintenanceEventsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemMaintenanceEventsFilterArrayOutput)
+}
+
+type GetDbSystemMaintenanceEventsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemMaintenanceEventsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemMaintenanceEventsFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemMaintenanceEventsFilterOutput) ToGetDbSystemMaintenanceEventsFilterOutput() GetDbSystemMaintenanceEventsFilterOutput {
+	return o
+}
+
+func (o GetDbSystemMaintenanceEventsFilterOutput) ToGetDbSystemMaintenanceEventsFilterOutputWithContext(ctx context.Context) GetDbSystemMaintenanceEventsFilterOutput {
+	return o
+}
+
+func (o GetDbSystemMaintenanceEventsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemMaintenanceEventsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemMaintenanceEventsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbSystemMaintenanceEventsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbSystemMaintenanceEventsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemMaintenanceEventsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbSystemMaintenanceEventsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemMaintenanceEventsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemMaintenanceEventsFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemMaintenanceEventsFilterArrayOutput) ToGetDbSystemMaintenanceEventsFilterArrayOutput() GetDbSystemMaintenanceEventsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemMaintenanceEventsFilterArrayOutput) ToGetDbSystemMaintenanceEventsFilterArrayOutputWithContext(ctx context.Context) GetDbSystemMaintenanceEventsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemMaintenanceEventsFilterArrayOutput) Index(i pulumi.IntInput) GetDbSystemMaintenanceEventsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemMaintenanceEventsFilter {
+		return vs[0].([]GetDbSystemMaintenanceEventsFilter)[vs[1].(int)]
+	}).(GetDbSystemMaintenanceEventsFilterOutput)
+}
+
+type GetDbSystemMaintenanceEventsMaintenanceEvent struct {
+	// The OCID of the compartment the maintenance event belongs to.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DbSystemId string `pulumi:"dbSystemId"`
+	// The nature of the maintenance event.
+	MaintenanceAction string `pulumi:"maintenanceAction"`
+	MaintenanceNotes  string `pulumi:"maintenanceNotes"`
+	// The MySQL instances operated during a maintenance event.
+	MaintenanceScope string `pulumi:"maintenanceScope"`
+	// The last status of the maintenance event.
+	MaintenanceStatus string `pulumi:"maintenanceStatus"`
+	// How the maintenance event was triggered.
+	MaintenanceType string `pulumi:"maintenanceType"`
+	// The MySQL version after the maintenance event.
+	MysqlVersionAfterMaintenance string `pulumi:"mysqlVersionAfterMaintenance"`
+	// The MySQL version before the maintenance event.
+	MysqlVersionBeforeMaintenance string `pulumi:"mysqlVersionBeforeMaintenance"`
+	// The date and time the record was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the maintenance event ended, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time the DB System came back online during the maintenance, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeMysqlSwitchOverEnded string `pulumi:"timeMysqlSwitchOverEnded"`
+	// The date and time the DB System was initially down during the maintenance, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeMysqlSwitchOverStarted string `pulumi:"timeMysqlSwitchOverStarted"`
+	// The date and time the maintenance event started, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetDbSystemMaintenanceEventsMaintenanceEventInput is an input type that accepts GetDbSystemMaintenanceEventsMaintenanceEventArgs and GetDbSystemMaintenanceEventsMaintenanceEventOutput values.
+// You can construct a concrete instance of `GetDbSystemMaintenanceEventsMaintenanceEventInput` via:
+//
+//	GetDbSystemMaintenanceEventsMaintenanceEventArgs{...}
+type GetDbSystemMaintenanceEventsMaintenanceEventInput interface {
+	pulumi.Input
+
+	ToGetDbSystemMaintenanceEventsMaintenanceEventOutput() GetDbSystemMaintenanceEventsMaintenanceEventOutput
+	ToGetDbSystemMaintenanceEventsMaintenanceEventOutputWithContext(context.Context) GetDbSystemMaintenanceEventsMaintenanceEventOutput
+}
+
+type GetDbSystemMaintenanceEventsMaintenanceEventArgs struct {
+	// The OCID of the compartment the maintenance event belongs to.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// The nature of the maintenance event.
+	MaintenanceAction pulumi.StringInput `pulumi:"maintenanceAction"`
+	MaintenanceNotes  pulumi.StringInput `pulumi:"maintenanceNotes"`
+	// The MySQL instances operated during a maintenance event.
+	MaintenanceScope pulumi.StringInput `pulumi:"maintenanceScope"`
+	// The last status of the maintenance event.
+	MaintenanceStatus pulumi.StringInput `pulumi:"maintenanceStatus"`
+	// How the maintenance event was triggered.
+	MaintenanceType pulumi.StringInput `pulumi:"maintenanceType"`
+	// The MySQL version after the maintenance event.
+	MysqlVersionAfterMaintenance pulumi.StringInput `pulumi:"mysqlVersionAfterMaintenance"`
+	// The MySQL version before the maintenance event.
+	MysqlVersionBeforeMaintenance pulumi.StringInput `pulumi:"mysqlVersionBeforeMaintenance"`
+	// The date and time the record was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the maintenance event ended, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time the DB System came back online during the maintenance, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeMysqlSwitchOverEnded pulumi.StringInput `pulumi:"timeMysqlSwitchOverEnded"`
+	// The date and time the DB System was initially down during the maintenance, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeMysqlSwitchOverStarted pulumi.StringInput `pulumi:"timeMysqlSwitchOverStarted"`
+	// The date and time the maintenance event started, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetDbSystemMaintenanceEventsMaintenanceEventArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemMaintenanceEventsMaintenanceEvent)(nil)).Elem()
+}
+
+func (i GetDbSystemMaintenanceEventsMaintenanceEventArgs) ToGetDbSystemMaintenanceEventsMaintenanceEventOutput() GetDbSystemMaintenanceEventsMaintenanceEventOutput {
+	return i.ToGetDbSystemMaintenanceEventsMaintenanceEventOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemMaintenanceEventsMaintenanceEventArgs) ToGetDbSystemMaintenanceEventsMaintenanceEventOutputWithContext(ctx context.Context) GetDbSystemMaintenanceEventsMaintenanceEventOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemMaintenanceEventsMaintenanceEventOutput)
+}
+
+// GetDbSystemMaintenanceEventsMaintenanceEventArrayInput is an input type that accepts GetDbSystemMaintenanceEventsMaintenanceEventArray and GetDbSystemMaintenanceEventsMaintenanceEventArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemMaintenanceEventsMaintenanceEventArrayInput` via:
+//
+//	GetDbSystemMaintenanceEventsMaintenanceEventArray{ GetDbSystemMaintenanceEventsMaintenanceEventArgs{...} }
+type GetDbSystemMaintenanceEventsMaintenanceEventArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemMaintenanceEventsMaintenanceEventArrayOutput() GetDbSystemMaintenanceEventsMaintenanceEventArrayOutput
+	ToGetDbSystemMaintenanceEventsMaintenanceEventArrayOutputWithContext(context.Context) GetDbSystemMaintenanceEventsMaintenanceEventArrayOutput
+}
+
+type GetDbSystemMaintenanceEventsMaintenanceEventArray []GetDbSystemMaintenanceEventsMaintenanceEventInput
+
+func (GetDbSystemMaintenanceEventsMaintenanceEventArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemMaintenanceEventsMaintenanceEvent)(nil)).Elem()
+}
+
+func (i GetDbSystemMaintenanceEventsMaintenanceEventArray) ToGetDbSystemMaintenanceEventsMaintenanceEventArrayOutput() GetDbSystemMaintenanceEventsMaintenanceEventArrayOutput {
+	return i.ToGetDbSystemMaintenanceEventsMaintenanceEventArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemMaintenanceEventsMaintenanceEventArray) ToGetDbSystemMaintenanceEventsMaintenanceEventArrayOutputWithContext(ctx context.Context) GetDbSystemMaintenanceEventsMaintenanceEventArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemMaintenanceEventsMaintenanceEventArrayOutput)
+}
+
+type GetDbSystemMaintenanceEventsMaintenanceEventOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemMaintenanceEventsMaintenanceEventOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemMaintenanceEventsMaintenanceEvent)(nil)).Elem()
+}
+
+func (o GetDbSystemMaintenanceEventsMaintenanceEventOutput) ToGetDbSystemMaintenanceEventsMaintenanceEventOutput() GetDbSystemMaintenanceEventsMaintenanceEventOutput {
+	return o
+}
+
+func (o GetDbSystemMaintenanceEventsMaintenanceEventOutput) ToGetDbSystemMaintenanceEventsMaintenanceEventOutputWithContext(ctx context.Context) GetDbSystemMaintenanceEventsMaintenanceEventOutput {
+	return o
+}
+
+// The OCID of the compartment the maintenance event belongs to.
+func (o GetDbSystemMaintenanceEventsMaintenanceEventOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemMaintenanceEventsMaintenanceEvent) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetDbSystemMaintenanceEventsMaintenanceEventOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemMaintenanceEventsMaintenanceEvent) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// The nature of the maintenance event.
+func (o GetDbSystemMaintenanceEventsMaintenanceEventOutput) MaintenanceAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemMaintenanceEventsMaintenanceEvent) string { return v.MaintenanceAction }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemMaintenanceEventsMaintenanceEventOutput) MaintenanceNotes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemMaintenanceEventsMaintenanceEvent) string { return v.MaintenanceNotes }).(pulumi.StringOutput)
+}
+
+// The MySQL instances operated during a maintenance event.
+func (o GetDbSystemMaintenanceEventsMaintenanceEventOutput) MaintenanceScope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemMaintenanceEventsMaintenanceEvent) string { return v.MaintenanceScope }).(pulumi.StringOutput)
+}
+
+// The last status of the maintenance event.
+func (o GetDbSystemMaintenanceEventsMaintenanceEventOutput) MaintenanceStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemMaintenanceEventsMaintenanceEvent) string { return v.MaintenanceStatus }).(pulumi.StringOutput)
+}
+
+// How the maintenance event was triggered.
+func (o GetDbSystemMaintenanceEventsMaintenanceEventOutput) MaintenanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemMaintenanceEventsMaintenanceEvent) string { return v.MaintenanceType }).(pulumi.StringOutput)
+}
+
+// The MySQL version after the maintenance event.
+func (o GetDbSystemMaintenanceEventsMaintenanceEventOutput) MysqlVersionAfterMaintenance() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemMaintenanceEventsMaintenanceEvent) string { return v.MysqlVersionAfterMaintenance }).(pulumi.StringOutput)
+}
+
+// The MySQL version before the maintenance event.
+func (o GetDbSystemMaintenanceEventsMaintenanceEventOutput) MysqlVersionBeforeMaintenance() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemMaintenanceEventsMaintenanceEvent) string { return v.MysqlVersionBeforeMaintenance }).(pulumi.StringOutput)
+}
+
+// The date and time the record was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetDbSystemMaintenanceEventsMaintenanceEventOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemMaintenanceEventsMaintenanceEvent) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance event ended, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetDbSystemMaintenanceEventsMaintenanceEventOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemMaintenanceEventsMaintenanceEvent) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// The date and time the DB System came back online during the maintenance, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetDbSystemMaintenanceEventsMaintenanceEventOutput) TimeMysqlSwitchOverEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemMaintenanceEventsMaintenanceEvent) string { return v.TimeMysqlSwitchOverEnded }).(pulumi.StringOutput)
+}
+
+// The date and time the DB System was initially down during the maintenance, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetDbSystemMaintenanceEventsMaintenanceEventOutput) TimeMysqlSwitchOverStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemMaintenanceEventsMaintenanceEvent) string { return v.TimeMysqlSwitchOverStarted }).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance event started, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetDbSystemMaintenanceEventsMaintenanceEventOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemMaintenanceEventsMaintenanceEvent) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+type GetDbSystemMaintenanceEventsMaintenanceEventArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemMaintenanceEventsMaintenanceEventArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemMaintenanceEventsMaintenanceEvent)(nil)).Elem()
+}
+
+func (o GetDbSystemMaintenanceEventsMaintenanceEventArrayOutput) ToGetDbSystemMaintenanceEventsMaintenanceEventArrayOutput() GetDbSystemMaintenanceEventsMaintenanceEventArrayOutput {
+	return o
+}
+
+func (o GetDbSystemMaintenanceEventsMaintenanceEventArrayOutput) ToGetDbSystemMaintenanceEventsMaintenanceEventArrayOutputWithContext(ctx context.Context) GetDbSystemMaintenanceEventsMaintenanceEventArrayOutput {
+	return o
+}
+
+func (o GetDbSystemMaintenanceEventsMaintenanceEventArrayOutput) Index(i pulumi.IntInput) GetDbSystemMaintenanceEventsMaintenanceEventOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemMaintenanceEventsMaintenanceEvent {
+		return vs[0].([]GetDbSystemMaintenanceEventsMaintenanceEvent)[vs[1].(int)]
+	}).(GetDbSystemMaintenanceEventsMaintenanceEventOutput)
+}
+
 type GetHeatWaveClusterClusterNode struct {
 	// The ID of the node within MySQL HeatWave cluster.
 	NodeId string `pulumi:"nodeId"`
@@ -14793,6 +15354,8 @@ func (o GetMysqlBackupDbSystemSnapshotEndpointArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetMysqlBackupDbSystemSnapshotMaintenance struct {
+	// Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+	MaintenanceDisabledWindows []GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow `pulumi:"maintenanceDisabledWindows"`
 	// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
 	MaintenanceScheduleType string `pulumi:"maintenanceScheduleType"`
 	// The version that is expected to be targeted during the next scheduled maintenance run.
@@ -14819,6 +15382,8 @@ type GetMysqlBackupDbSystemSnapshotMaintenanceInput interface {
 }
 
 type GetMysqlBackupDbSystemSnapshotMaintenanceArgs struct {
+	// Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+	MaintenanceDisabledWindows GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayInput `pulumi:"maintenanceDisabledWindows"`
 	// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
 	MaintenanceScheduleType pulumi.StringInput `pulumi:"maintenanceScheduleType"`
 	// The version that is expected to be targeted during the next scheduled maintenance run.
@@ -14884,6 +15449,13 @@ func (o GetMysqlBackupDbSystemSnapshotMaintenanceOutput) ToGetMysqlBackupDbSyste
 	return o
 }
 
+// Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+func (o GetMysqlBackupDbSystemSnapshotMaintenanceOutput) MaintenanceDisabledWindows() GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotMaintenance) []GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow {
+		return v.MaintenanceDisabledWindows
+	}).(GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput)
+}
+
 // The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
 func (o GetMysqlBackupDbSystemSnapshotMaintenanceOutput) MaintenanceScheduleType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotMaintenance) string { return v.MaintenanceScheduleType }).(pulumi.StringOutput)
@@ -14932,6 +15504,112 @@ func (o GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput) Index(i pulumi.Int
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotMaintenance {
 		return vs[0].([]GetMysqlBackupDbSystemSnapshotMaintenance)[vs[1].(int)]
 	}).(GetMysqlBackupDbSystemSnapshotMaintenanceOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow struct {
+	// The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEnd string `pulumi:"timeEnd"`
+	// The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeStart string `pulumi:"timeStart"`
+}
+
+// GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowInput is an input type that accepts GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs and GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs{...}
+type GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput() GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput
+	ToGetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs struct {
+	// The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	// The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+}
+
+func (GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs) ToGetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput() GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs) ToGetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput)
+}
+
+// GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArray and GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArray{ GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs{...} }
+type GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput() GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput
+	ToGetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArray []GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowInput
+
+func (GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArray) ToGetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput() GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArray) ToGetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput) ToGetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput() GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput) ToGetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput {
+	return o
+}
+
+// The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput) TimeEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow) string { return v.TimeEnd }).(pulumi.StringOutput)
+}
+
+// The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput) TimeStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow) string { return v.TimeStart }).(pulumi.StringOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput) ToGetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput() GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput) ToGetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow {
+		return vs[0].([]GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow)[vs[1].(int)]
+	}).(GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput)
 }
 
 type GetMysqlBackupDbSystemSnapshotReadEndpoint struct {
@@ -21712,6 +22390,8 @@ func (o GetMysqlDbSystemHeatWaveClusterArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetMysqlDbSystemMaintenance struct {
+	// Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+	MaintenanceDisabledWindows []GetMysqlDbSystemMaintenanceMaintenanceDisabledWindow `pulumi:"maintenanceDisabledWindows"`
 	// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
 	MaintenanceScheduleType string `pulumi:"maintenanceScheduleType"`
 	// The version that is expected to be targeted during the next scheduled maintenance run.
@@ -21738,6 +22418,8 @@ type GetMysqlDbSystemMaintenanceInput interface {
 }
 
 type GetMysqlDbSystemMaintenanceArgs struct {
+	// Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+	MaintenanceDisabledWindows GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayInput `pulumi:"maintenanceDisabledWindows"`
 	// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
 	MaintenanceScheduleType pulumi.StringInput `pulumi:"maintenanceScheduleType"`
 	// The version that is expected to be targeted during the next scheduled maintenance run.
@@ -21803,6 +22485,13 @@ func (o GetMysqlDbSystemMaintenanceOutput) ToGetMysqlDbSystemMaintenanceOutputWi
 	return o
 }
 
+// Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+func (o GetMysqlDbSystemMaintenanceOutput) MaintenanceDisabledWindows() GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemMaintenance) []GetMysqlDbSystemMaintenanceMaintenanceDisabledWindow {
+		return v.MaintenanceDisabledWindows
+	}).(GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput)
+}
+
 // The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
 func (o GetMysqlDbSystemMaintenanceOutput) MaintenanceScheduleType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemMaintenance) string { return v.MaintenanceScheduleType }).(pulumi.StringOutput)
@@ -21851,6 +22540,112 @@ func (o GetMysqlDbSystemMaintenanceArrayOutput) Index(i pulumi.IntInput) GetMysq
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemMaintenance {
 		return vs[0].([]GetMysqlDbSystemMaintenance)[vs[1].(int)]
 	}).(GetMysqlDbSystemMaintenanceOutput)
+}
+
+type GetMysqlDbSystemMaintenanceMaintenanceDisabledWindow struct {
+	// The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEnd string `pulumi:"timeEnd"`
+	// The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeStart string `pulumi:"timeStart"`
+}
+
+// GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowInput is an input type that accepts GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs and GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowInput` via:
+//
+//	GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs{...}
+type GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput() GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput
+	ToGetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutputWithContext(context.Context) GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput
+}
+
+type GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs struct {
+	// The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	// The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+}
+
+func (GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs) ToGetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput() GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput {
+	return i.ToGetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs) ToGetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutputWithContext(ctx context.Context) GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput)
+}
+
+// GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayInput is an input type that accepts GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArray and GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayInput` via:
+//
+//	GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArray{ GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs{...} }
+type GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput() GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput
+	ToGetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(context.Context) GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput
+}
+
+type GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArray []GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowInput
+
+func (GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArray) ToGetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput() GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return i.ToGetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArray) ToGetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput)
+}
+
+type GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput) ToGetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput() GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput) ToGetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutputWithContext(ctx context.Context) GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput {
+	return o
+}
+
+// The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput) TimeEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemMaintenanceMaintenanceDisabledWindow) string { return v.TimeEnd }).(pulumi.StringOutput)
+}
+
+// The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput) TimeStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemMaintenanceMaintenanceDisabledWindow) string { return v.TimeStart }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput) ToGetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput() GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput) ToGetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemMaintenanceMaintenanceDisabledWindow {
+		return vs[0].([]GetMysqlDbSystemMaintenanceMaintenanceDisabledWindow)[vs[1].(int)]
+	}).(GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput)
 }
 
 type GetMysqlDbSystemPointInTimeRecoveryDetail struct {
@@ -25164,6 +25959,8 @@ func (o GetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutput) Index(i pulumi.IntI
 }
 
 type GetMysqlDbSystemsDbSystemMaintenance struct {
+	// Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+	MaintenanceDisabledWindows []GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindow `pulumi:"maintenanceDisabledWindows"`
 	// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
 	MaintenanceScheduleType string `pulumi:"maintenanceScheduleType"`
 	// The version that is expected to be targeted during the next scheduled maintenance run.
@@ -25190,6 +25987,8 @@ type GetMysqlDbSystemsDbSystemMaintenanceInput interface {
 }
 
 type GetMysqlDbSystemsDbSystemMaintenanceArgs struct {
+	// Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+	MaintenanceDisabledWindows GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayInput `pulumi:"maintenanceDisabledWindows"`
 	// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
 	MaintenanceScheduleType pulumi.StringInput `pulumi:"maintenanceScheduleType"`
 	// The version that is expected to be targeted during the next scheduled maintenance run.
@@ -25255,6 +26054,13 @@ func (o GetMysqlDbSystemsDbSystemMaintenanceOutput) ToGetMysqlDbSystemsDbSystemM
 	return o
 }
 
+// Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+func (o GetMysqlDbSystemsDbSystemMaintenanceOutput) MaintenanceDisabledWindows() GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemMaintenance) []GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindow {
+		return v.MaintenanceDisabledWindows
+	}).(GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput)
+}
+
 // The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
 func (o GetMysqlDbSystemsDbSystemMaintenanceOutput) MaintenanceScheduleType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemMaintenance) string { return v.MaintenanceScheduleType }).(pulumi.StringOutput)
@@ -25303,6 +26109,112 @@ func (o GetMysqlDbSystemsDbSystemMaintenanceArrayOutput) Index(i pulumi.IntInput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemMaintenance {
 		return vs[0].([]GetMysqlDbSystemsDbSystemMaintenance)[vs[1].(int)]
 	}).(GetMysqlDbSystemsDbSystemMaintenanceOutput)
+}
+
+type GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindow struct {
+	// The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEnd string `pulumi:"timeEnd"`
+	// The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeStart string `pulumi:"timeStart"`
+}
+
+// GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowInput is an input type that accepts GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArgs and GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowInput` via:
+//
+//	GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArgs{...}
+type GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput() GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput
+	ToGetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput
+}
+
+type GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArgs struct {
+	// The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	// The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+}
+
+func (GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArgs) ToGetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput() GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput {
+	return i.ToGetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArgs) ToGetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput)
+}
+
+// GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArray and GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayInput` via:
+//
+//	GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArray{ GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArgs{...} }
+type GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput() GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput
+	ToGetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArray []GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowInput
+
+func (GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArray) ToGetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput() GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArray) ToGetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput) ToGetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput() GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput) ToGetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput {
+	return o
+}
+
+// The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput) TimeEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindow) string { return v.TimeEnd }).(pulumi.StringOutput)
+}
+
+// The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput) TimeStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindow) string { return v.TimeStart }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindow)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput) ToGetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput() GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput) ToGetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindow {
+		return vs[0].([]GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindow)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput)
 }
 
 type GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail struct {
@@ -27680,6 +28592,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotEndpointArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotMaintenanceInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotMaintenanceArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotMaintenanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotReadEndpointInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotReadEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotReadEndpointArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotReadEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotRestInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotRestArgs{})
@@ -27736,6 +28650,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemHeatWaveClusterArrayInput)(nil)).Elem(), MysqlDbSystemHeatWaveClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemMaintenanceInput)(nil)).Elem(), MysqlDbSystemMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemMaintenancePtrInput)(nil)).Elem(), MysqlDbSystemMaintenanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemMaintenanceMaintenanceDisabledWindowInput)(nil)).Elem(), MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayInput)(nil)).Elem(), MysqlDbSystemMaintenanceMaintenanceDisabledWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemPointInTimeRecoveryDetailInput)(nil)).Elem(), MysqlDbSystemPointInTimeRecoveryDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), MysqlDbSystemPointInTimeRecoveryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemReadEndpointInput)(nil)).Elem(), MysqlDbSystemReadEndpointArgs{})
@@ -27776,6 +28692,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelsChannelTargetFilterArrayInput)(nil)).Elem(), GetChannelsChannelTargetFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelsFilterInput)(nil)).Elem(), GetChannelsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelsFilterArrayInput)(nil)).Elem(), GetChannelsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemMaintenanceEventsFilterInput)(nil)).Elem(), GetDbSystemMaintenanceEventsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemMaintenanceEventsFilterArrayInput)(nil)).Elem(), GetDbSystemMaintenanceEventsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemMaintenanceEventsMaintenanceEventInput)(nil)).Elem(), GetDbSystemMaintenanceEventsMaintenanceEventArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemMaintenanceEventsMaintenanceEventArrayInput)(nil)).Elem(), GetDbSystemMaintenanceEventsMaintenanceEventArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHeatWaveClusterClusterNodeInput)(nil)).Elem(), GetHeatWaveClusterClusterNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHeatWaveClusterClusterNodeArrayInput)(nil)).Elem(), GetHeatWaveClusterClusterNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupBackupValidationDetailInput)(nil)).Elem(), GetMysqlBackupBackupValidationDetailArgs{})
@@ -27802,6 +28722,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotEndpointArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotMaintenanceInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotMaintenanceArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotMaintenanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotReadEndpointInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotReadEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotReadEndpointArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotReadEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotRestInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotRestArgs{})
@@ -27876,6 +28798,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemHeatWaveClusterArrayInput)(nil)).Elem(), GetMysqlDbSystemHeatWaveClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemMaintenanceInput)(nil)).Elem(), GetMysqlDbSystemMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemMaintenanceArrayInput)(nil)).Elem(), GetMysqlDbSystemMaintenanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowInput)(nil)).Elem(), GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayInput)(nil)).Elem(), GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemPointInTimeRecoveryDetailInput)(nil)).Elem(), GetMysqlDbSystemPointInTimeRecoveryDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), GetMysqlDbSystemPointInTimeRecoveryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemReadEndpointInput)(nil)).Elem(), GetMysqlDbSystemReadEndpointArgs{})
@@ -27924,6 +28848,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemHeatWaveClusterArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemHeatWaveClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemMaintenanceInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemMaintenanceArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemMaintenanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemReadEndpointInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemReadEndpointArgs{})
@@ -27998,6 +28924,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotEndpointArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotMaintenanceOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotMaintenanceArrayOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotReadEndpointOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotReadEndpointArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotRestOutput{})
@@ -28054,6 +28982,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlDbSystemHeatWaveClusterArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemMaintenanceOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemMaintenancePtrOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemPointInTimeRecoveryDetailOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemPointInTimeRecoveryDetailArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemReadEndpointOutput{})
@@ -28094,6 +29024,10 @@ func init() {
 	pulumi.RegisterOutputType(GetChannelsChannelTargetFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetChannelsFilterOutput{})
 	pulumi.RegisterOutputType(GetChannelsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemMaintenanceEventsFilterOutput{})
+	pulumi.RegisterOutputType(GetDbSystemMaintenanceEventsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemMaintenanceEventsMaintenanceEventOutput{})
+	pulumi.RegisterOutputType(GetDbSystemMaintenanceEventsMaintenanceEventArrayOutput{})
 	pulumi.RegisterOutputType(GetHeatWaveClusterClusterNodeOutput{})
 	pulumi.RegisterOutputType(GetHeatWaveClusterClusterNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupBackupValidationDetailOutput{})
@@ -28120,6 +29054,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotMaintenanceOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotReadEndpointOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotRestOutput{})
@@ -28194,6 +29130,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemHeatWaveClusterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemMaintenanceOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemMaintenanceArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemPointInTimeRecoveryDetailOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemReadEndpointOutput{})
@@ -28242,6 +29180,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemMaintenanceOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemMaintenanceArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemReadEndpointOutput{})

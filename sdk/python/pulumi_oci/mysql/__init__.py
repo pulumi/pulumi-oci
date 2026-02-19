@@ -9,6 +9,7 @@ import typing
 from .channel import *
 from .get_channel import *
 from .get_channels import *
+from .get_db_system_maintenance_events import *
 from .get_heat_wave_cluster import *
 from .get_mysql_backup import *
 from .get_mysql_backups import *

@@ -52,6 +52,24 @@ import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemDiscoveryPlainAr
 import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemsArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataInfrastructureArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataInfrastructurePlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataInfrastructuresArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataInfrastructuresPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageConnectorArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageConnectorPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageConnectorsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageConnectorsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageGridArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageGridPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerIormPlanArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerIormPlanPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerOpenAlertHistoryArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerOpenAlertHistoryPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServersArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServersPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenerArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenerPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenerServicesArgs;
@@ -66,6 +84,8 @@ import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointAs
 import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointsArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExadataInfrastructureFleetMetricArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetExadataInfrastructureFleetMetricPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmConfigurationArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetExternalAsmConfigurationPlainArgs;
@@ -302,6 +322,15 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetCloudDbSystemDiscoveriesResu
 import com.pulumi.oci.DatabaseManagement.outputs.GetCloudDbSystemDiscoveryResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetCloudDbSystemResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetCloudDbSystemsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudExadataInfrastructureResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudExadataInfrastructuresResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudExadataStorageConnectorResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudExadataStorageConnectorsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudExadataStorageGridResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudExadataStorageServerIormPlanResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudExadataStorageServerOpenAlertHistoryResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudExadataStorageServerResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudExadataStorageServersResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetCloudListenerResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetCloudListenerServicesResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetCloudListenersResult;
@@ -309,6 +338,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointA
 import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointAssociatedDatabasesResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExadataInfrastructureFleetMetricResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmConfigurationResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmDiskGroupsResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmInstanceResult;
@@ -5777,6 +5807,1926 @@ public final class DatabaseManagementFunctions {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudDbSystems:getCloudDbSystems", TypeShape.of(GetCloudDbSystemsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata infrastructure specified by exadataInfrastructureId. It includes the VMCluster and storage grid within the
+     * Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructure = DatabaseManagementFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseManagementCloudExadataInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataInfrastructureResult> getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs args) {
+        return getCloudExadataInfrastructure(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata infrastructure specified by exadataInfrastructureId. It includes the VMCluster and storage grid within the
+     * Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructure = DatabaseManagementFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseManagementCloudExadataInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataInfrastructureResult> getCloudExadataInfrastructurePlain(GetCloudExadataInfrastructurePlainArgs args) {
+        return getCloudExadataInfrastructurePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata infrastructure specified by exadataInfrastructureId. It includes the VMCluster and storage grid within the
+     * Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructure = DatabaseManagementFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseManagementCloudExadataInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataInfrastructureResult> getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudExadataInfrastructure:getCloudExadataInfrastructure", TypeShape.of(GetCloudExadataInfrastructureResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata infrastructure specified by exadataInfrastructureId. It includes the VMCluster and storage grid within the
+     * Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructure = DatabaseManagementFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseManagementCloudExadataInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataInfrastructureResult> getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudExadataInfrastructure:getCloudExadataInfrastructure", TypeShape.of(GetCloudExadataInfrastructureResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata infrastructure specified by exadataInfrastructureId. It includes the VMCluster and storage grid within the
+     * Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructure = DatabaseManagementFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseManagementCloudExadataInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataInfrastructureResult> getCloudExadataInfrastructurePlain(GetCloudExadataInfrastructurePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudExadataInfrastructure:getCloudExadataInfrastructure", TypeShape.of(GetCloudExadataInfrastructureResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata infrastructure resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructures = DatabaseManagementFunctions.getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudExadataInfrastructureDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataInfrastructuresResult> getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs args) {
+        return getCloudExadataInfrastructures(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata infrastructure resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructures = DatabaseManagementFunctions.getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudExadataInfrastructureDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataInfrastructuresResult> getCloudExadataInfrastructuresPlain(GetCloudExadataInfrastructuresPlainArgs args) {
+        return getCloudExadataInfrastructuresPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata infrastructure resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructures = DatabaseManagementFunctions.getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudExadataInfrastructureDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataInfrastructuresResult> getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudExadataInfrastructures:getCloudExadataInfrastructures", TypeShape.of(GetCloudExadataInfrastructuresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata infrastructure resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructures = DatabaseManagementFunctions.getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudExadataInfrastructureDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataInfrastructuresResult> getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudExadataInfrastructures:getCloudExadataInfrastructures", TypeShape.of(GetCloudExadataInfrastructuresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata infrastructure resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructures = DatabaseManagementFunctions.getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudExadataInfrastructureDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataInfrastructuresResult> getCloudExadataInfrastructuresPlain(GetCloudExadataInfrastructuresPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudExadataInfrastructures:getCloudExadataInfrastructures", TypeShape.of(GetCloudExadataInfrastructuresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server connector specified by exadataStorageConnectorId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageConnector = DatabaseManagementFunctions.getCloudExadataStorageConnector(GetCloudExadataStorageConnectorArgs.builder()
+     *             .cloudExadataStorageConnectorId(testCloudExadataStorageConnectorOciDatabaseManagementCloudExadataStorageConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageConnectorResult> getCloudExadataStorageConnector(GetCloudExadataStorageConnectorArgs args) {
+        return getCloudExadataStorageConnector(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server connector specified by exadataStorageConnectorId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageConnector = DatabaseManagementFunctions.getCloudExadataStorageConnector(GetCloudExadataStorageConnectorArgs.builder()
+     *             .cloudExadataStorageConnectorId(testCloudExadataStorageConnectorOciDatabaseManagementCloudExadataStorageConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataStorageConnectorResult> getCloudExadataStorageConnectorPlain(GetCloudExadataStorageConnectorPlainArgs args) {
+        return getCloudExadataStorageConnectorPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server connector specified by exadataStorageConnectorId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageConnector = DatabaseManagementFunctions.getCloudExadataStorageConnector(GetCloudExadataStorageConnectorArgs.builder()
+     *             .cloudExadataStorageConnectorId(testCloudExadataStorageConnectorOciDatabaseManagementCloudExadataStorageConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageConnectorResult> getCloudExadataStorageConnector(GetCloudExadataStorageConnectorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudExadataStorageConnector:getCloudExadataStorageConnector", TypeShape.of(GetCloudExadataStorageConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server connector specified by exadataStorageConnectorId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageConnector = DatabaseManagementFunctions.getCloudExadataStorageConnector(GetCloudExadataStorageConnectorArgs.builder()
+     *             .cloudExadataStorageConnectorId(testCloudExadataStorageConnectorOciDatabaseManagementCloudExadataStorageConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageConnectorResult> getCloudExadataStorageConnector(GetCloudExadataStorageConnectorArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudExadataStorageConnector:getCloudExadataStorageConnector", TypeShape.of(GetCloudExadataStorageConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server connector specified by exadataStorageConnectorId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageConnector = DatabaseManagementFunctions.getCloudExadataStorageConnector(GetCloudExadataStorageConnectorArgs.builder()
+     *             .cloudExadataStorageConnectorId(testCloudExadataStorageConnectorOciDatabaseManagementCloudExadataStorageConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataStorageConnectorResult> getCloudExadataStorageConnectorPlain(GetCloudExadataStorageConnectorPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudExadataStorageConnector:getCloudExadataStorageConnector", TypeShape.of(GetCloudExadataStorageConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage server connectors for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageConnectors = DatabaseManagementFunctions.getCloudExadataStorageConnectors(GetCloudExadataStorageConnectorsArgs.builder()
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudExadataStorageConnectorDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageConnectorsResult> getCloudExadataStorageConnectors(GetCloudExadataStorageConnectorsArgs args) {
+        return getCloudExadataStorageConnectors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage server connectors for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageConnectors = DatabaseManagementFunctions.getCloudExadataStorageConnectors(GetCloudExadataStorageConnectorsArgs.builder()
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudExadataStorageConnectorDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataStorageConnectorsResult> getCloudExadataStorageConnectorsPlain(GetCloudExadataStorageConnectorsPlainArgs args) {
+        return getCloudExadataStorageConnectorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage server connectors for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageConnectors = DatabaseManagementFunctions.getCloudExadataStorageConnectors(GetCloudExadataStorageConnectorsArgs.builder()
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudExadataStorageConnectorDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageConnectorsResult> getCloudExadataStorageConnectors(GetCloudExadataStorageConnectorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudExadataStorageConnectors:getCloudExadataStorageConnectors", TypeShape.of(GetCloudExadataStorageConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage server connectors for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageConnectors = DatabaseManagementFunctions.getCloudExadataStorageConnectors(GetCloudExadataStorageConnectorsArgs.builder()
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudExadataStorageConnectorDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageConnectorsResult> getCloudExadataStorageConnectors(GetCloudExadataStorageConnectorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudExadataStorageConnectors:getCloudExadataStorageConnectors", TypeShape.of(GetCloudExadataStorageConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage server connectors for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageConnectors = DatabaseManagementFunctions.getCloudExadataStorageConnectors(GetCloudExadataStorageConnectorsArgs.builder()
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudExadataStorageConnectorDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataStorageConnectorsResult> getCloudExadataStorageConnectorsPlain(GetCloudExadataStorageConnectorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudExadataStorageConnectors:getCloudExadataStorageConnectors", TypeShape.of(GetCloudExadataStorageConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageGridArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageGrid = DatabaseManagementFunctions.getCloudExadataStorageGrid(GetCloudExadataStorageGridArgs.builder()
+     *             .cloudExadataStorageGridId(testCloudExadataStorageGridOciDatabaseManagementCloudExadataStorageGrid.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageGridResult> getCloudExadataStorageGrid(GetCloudExadataStorageGridArgs args) {
+        return getCloudExadataStorageGrid(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageGridArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageGrid = DatabaseManagementFunctions.getCloudExadataStorageGrid(GetCloudExadataStorageGridArgs.builder()
+     *             .cloudExadataStorageGridId(testCloudExadataStorageGridOciDatabaseManagementCloudExadataStorageGrid.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataStorageGridResult> getCloudExadataStorageGridPlain(GetCloudExadataStorageGridPlainArgs args) {
+        return getCloudExadataStorageGridPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageGridArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageGrid = DatabaseManagementFunctions.getCloudExadataStorageGrid(GetCloudExadataStorageGridArgs.builder()
+     *             .cloudExadataStorageGridId(testCloudExadataStorageGridOciDatabaseManagementCloudExadataStorageGrid.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageGridResult> getCloudExadataStorageGrid(GetCloudExadataStorageGridArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudExadataStorageGrid:getCloudExadataStorageGrid", TypeShape.of(GetCloudExadataStorageGridResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageGridArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageGrid = DatabaseManagementFunctions.getCloudExadataStorageGrid(GetCloudExadataStorageGridArgs.builder()
+     *             .cloudExadataStorageGridId(testCloudExadataStorageGridOciDatabaseManagementCloudExadataStorageGrid.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageGridResult> getCloudExadataStorageGrid(GetCloudExadataStorageGridArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudExadataStorageGrid:getCloudExadataStorageGrid", TypeShape.of(GetCloudExadataStorageGridResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageGridArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageGrid = DatabaseManagementFunctions.getCloudExadataStorageGrid(GetCloudExadataStorageGridArgs.builder()
+     *             .cloudExadataStorageGridId(testCloudExadataStorageGridOciDatabaseManagementCloudExadataStorageGrid.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataStorageGridResult> getCloudExadataStorageGridPlain(GetCloudExadataStorageGridPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudExadataStorageGrid:getCloudExadataStorageGrid", TypeShape.of(GetCloudExadataStorageGridResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the summary for the Exadata storage server specified by exadataStorageServerId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServer = DatabaseManagementFunctions.getCloudExadataStorageServer(GetCloudExadataStorageServerArgs.builder()
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServerOciDatabaseManagementCloudExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageServerResult> getCloudExadataStorageServer(GetCloudExadataStorageServerArgs args) {
+        return getCloudExadataStorageServer(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the summary for the Exadata storage server specified by exadataStorageServerId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServer = DatabaseManagementFunctions.getCloudExadataStorageServer(GetCloudExadataStorageServerArgs.builder()
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServerOciDatabaseManagementCloudExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataStorageServerResult> getCloudExadataStorageServerPlain(GetCloudExadataStorageServerPlainArgs args) {
+        return getCloudExadataStorageServerPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the summary for the Exadata storage server specified by exadataStorageServerId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServer = DatabaseManagementFunctions.getCloudExadataStorageServer(GetCloudExadataStorageServerArgs.builder()
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServerOciDatabaseManagementCloudExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageServerResult> getCloudExadataStorageServer(GetCloudExadataStorageServerArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudExadataStorageServer:getCloudExadataStorageServer", TypeShape.of(GetCloudExadataStorageServerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the summary for the Exadata storage server specified by exadataStorageServerId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServer = DatabaseManagementFunctions.getCloudExadataStorageServer(GetCloudExadataStorageServerArgs.builder()
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServerOciDatabaseManagementCloudExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageServerResult> getCloudExadataStorageServer(GetCloudExadataStorageServerArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudExadataStorageServer:getCloudExadataStorageServer", TypeShape.of(GetCloudExadataStorageServerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the summary for the Exadata storage server specified by exadataStorageServerId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServer = DatabaseManagementFunctions.getCloudExadataStorageServer(GetCloudExadataStorageServerArgs.builder()
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServerOciDatabaseManagementCloudExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataStorageServerResult> getCloudExadataStorageServerPlain(GetCloudExadataStorageServerPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudExadataStorageServer:getCloudExadataStorageServer", TypeShape.of(GetCloudExadataStorageServerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the IORM plan from the specific Exadata storage server.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerIormPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServerIormPlan = DatabaseManagementFunctions.getCloudExadataStorageServerIormPlan(GetCloudExadataStorageServerIormPlanArgs.builder()
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageServerIormPlanResult> getCloudExadataStorageServerIormPlan(GetCloudExadataStorageServerIormPlanArgs args) {
+        return getCloudExadataStorageServerIormPlan(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the IORM plan from the specific Exadata storage server.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerIormPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServerIormPlan = DatabaseManagementFunctions.getCloudExadataStorageServerIormPlan(GetCloudExadataStorageServerIormPlanArgs.builder()
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataStorageServerIormPlanResult> getCloudExadataStorageServerIormPlanPlain(GetCloudExadataStorageServerIormPlanPlainArgs args) {
+        return getCloudExadataStorageServerIormPlanPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the IORM plan from the specific Exadata storage server.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerIormPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServerIormPlan = DatabaseManagementFunctions.getCloudExadataStorageServerIormPlan(GetCloudExadataStorageServerIormPlanArgs.builder()
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageServerIormPlanResult> getCloudExadataStorageServerIormPlan(GetCloudExadataStorageServerIormPlanArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudExadataStorageServerIormPlan:getCloudExadataStorageServerIormPlan", TypeShape.of(GetCloudExadataStorageServerIormPlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the IORM plan from the specific Exadata storage server.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerIormPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServerIormPlan = DatabaseManagementFunctions.getCloudExadataStorageServerIormPlan(GetCloudExadataStorageServerIormPlanArgs.builder()
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageServerIormPlanResult> getCloudExadataStorageServerIormPlan(GetCloudExadataStorageServerIormPlanArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudExadataStorageServerIormPlan:getCloudExadataStorageServerIormPlan", TypeShape.of(GetCloudExadataStorageServerIormPlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the IORM plan from the specific Exadata storage server.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerIormPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServerIormPlan = DatabaseManagementFunctions.getCloudExadataStorageServerIormPlan(GetCloudExadataStorageServerIormPlanArgs.builder()
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataStorageServerIormPlanResult> getCloudExadataStorageServerIormPlanPlain(GetCloudExadataStorageServerIormPlanPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudExadataStorageServerIormPlan:getCloudExadataStorageServerIormPlan", TypeShape.of(GetCloudExadataStorageServerIormPlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Server Open Alert History resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the open alerts from the specified Exadata storage server.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerOpenAlertHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getCloudExadataStorageServerOpenAlertHistory(GetCloudExadataStorageServerOpenAlertHistoryArgs.builder()
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageServerOpenAlertHistoryResult> getCloudExadataStorageServerOpenAlertHistory(GetCloudExadataStorageServerOpenAlertHistoryArgs args) {
+        return getCloudExadataStorageServerOpenAlertHistory(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Server Open Alert History resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the open alerts from the specified Exadata storage server.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerOpenAlertHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getCloudExadataStorageServerOpenAlertHistory(GetCloudExadataStorageServerOpenAlertHistoryArgs.builder()
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataStorageServerOpenAlertHistoryResult> getCloudExadataStorageServerOpenAlertHistoryPlain(GetCloudExadataStorageServerOpenAlertHistoryPlainArgs args) {
+        return getCloudExadataStorageServerOpenAlertHistoryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Server Open Alert History resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the open alerts from the specified Exadata storage server.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerOpenAlertHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getCloudExadataStorageServerOpenAlertHistory(GetCloudExadataStorageServerOpenAlertHistoryArgs.builder()
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageServerOpenAlertHistoryResult> getCloudExadataStorageServerOpenAlertHistory(GetCloudExadataStorageServerOpenAlertHistoryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudExadataStorageServerOpenAlertHistory:getCloudExadataStorageServerOpenAlertHistory", TypeShape.of(GetCloudExadataStorageServerOpenAlertHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Server Open Alert History resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the open alerts from the specified Exadata storage server.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerOpenAlertHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getCloudExadataStorageServerOpenAlertHistory(GetCloudExadataStorageServerOpenAlertHistoryArgs.builder()
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageServerOpenAlertHistoryResult> getCloudExadataStorageServerOpenAlertHistory(GetCloudExadataStorageServerOpenAlertHistoryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudExadataStorageServerOpenAlertHistory:getCloudExadataStorageServerOpenAlertHistory", TypeShape.of(GetCloudExadataStorageServerOpenAlertHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Exadata Storage Server Open Alert History resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the open alerts from the specified Exadata storage server.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServerOpenAlertHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getCloudExadataStorageServerOpenAlertHistory(GetCloudExadataStorageServerOpenAlertHistoryArgs.builder()
+     *             .cloudExadataStorageServerId(testCloudExadataStorageServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataStorageServerOpenAlertHistoryResult> getCloudExadataStorageServerOpenAlertHistoryPlain(GetCloudExadataStorageServerOpenAlertHistoryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudExadataStorageServerOpenAlertHistory:getCloudExadataStorageServerOpenAlertHistory", TypeShape.of(GetCloudExadataStorageServerOpenAlertHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Exadata Storage Servers in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage servers for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServers = DatabaseManagementFunctions.getCloudExadataStorageServers(GetCloudExadataStorageServersArgs.builder()
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudExadataStorageServerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageServersResult> getCloudExadataStorageServers(GetCloudExadataStorageServersArgs args) {
+        return getCloudExadataStorageServers(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Exadata Storage Servers in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage servers for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServers = DatabaseManagementFunctions.getCloudExadataStorageServers(GetCloudExadataStorageServersArgs.builder()
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudExadataStorageServerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataStorageServersResult> getCloudExadataStorageServersPlain(GetCloudExadataStorageServersPlainArgs args) {
+        return getCloudExadataStorageServersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Exadata Storage Servers in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage servers for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServers = DatabaseManagementFunctions.getCloudExadataStorageServers(GetCloudExadataStorageServersArgs.builder()
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudExadataStorageServerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageServersResult> getCloudExadataStorageServers(GetCloudExadataStorageServersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudExadataStorageServers:getCloudExadataStorageServers", TypeShape.of(GetCloudExadataStorageServersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Exadata Storage Servers in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage servers for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServers = DatabaseManagementFunctions.getCloudExadataStorageServers(GetCloudExadataStorageServersArgs.builder()
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudExadataStorageServerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCloudExadataStorageServersResult> getCloudExadataStorageServers(GetCloudExadataStorageServersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudExadataStorageServers:getCloudExadataStorageServers", TypeShape.of(GetCloudExadataStorageServersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Exadata Storage Servers in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the Exadata storage servers for the specified Exadata infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudExadataStorageServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataStorageServers = DatabaseManagementFunctions.getCloudExadataStorageServers(GetCloudExadataStorageServersArgs.builder()
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudExadataStorageServerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCloudExadataStorageServersResult> getCloudExadataStorageServersPlain(GetCloudExadataStorageServersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudExadataStorageServers:getCloudExadataStorageServers", TypeShape.of(GetCloudExadataStorageServersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Cloud Listener resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the details for the cloud listener specified by `cloudListenerId`.
@@ -7393,6 +9343,246 @@ public final class DatabaseManagementFunctions {
      */
     public static CompletableFuture<GetDbManagementPrivateEndpointsResult> getDbManagementPrivateEndpointsPlain(GetDbManagementPrivateEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getDbManagementPrivateEndpoints:getDbManagementPrivateEndpoints", TypeShape.of(GetDbManagementPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exadata Infrastructure Fleet Metric resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the health metrics for a fleet of Exadata infrastructure in a compartment.
+     * The CompartmentId query parameters must be provided to retrieve the health metrics.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExadataInfrastructureFleetMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructureFleetMetric = DatabaseManagementFunctions.getExadataInfrastructureFleetMetric(GetExadataInfrastructureFleetMetricArgs.builder()
+     *             .compareBaselineTime(exadataInfrastructureFleetMetricCompareBaselineTime)
+     *             .compareTargetTime(exadataInfrastructureFleetMetricCompareTargetTime)
+     *             .compartmentId(compartmentId)
+     *             .compareType(exadataInfrastructureFleetMetricCompareType)
+     *             .filterByExadataInfrastructureDeploymentType(exadataInfrastructureFleetMetricFilterByExadataInfrastructureDeploymentType)
+     *             .filterByExadataInfrastructureLifecycleState(exadataInfrastructureFleetMetricFilterByExadataInfrastructureLifecycleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetExadataInfrastructureFleetMetricResult> getExadataInfrastructureFleetMetric(GetExadataInfrastructureFleetMetricArgs args) {
+        return getExadataInfrastructureFleetMetric(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Exadata Infrastructure Fleet Metric resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the health metrics for a fleet of Exadata infrastructure in a compartment.
+     * The CompartmentId query parameters must be provided to retrieve the health metrics.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExadataInfrastructureFleetMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructureFleetMetric = DatabaseManagementFunctions.getExadataInfrastructureFleetMetric(GetExadataInfrastructureFleetMetricArgs.builder()
+     *             .compareBaselineTime(exadataInfrastructureFleetMetricCompareBaselineTime)
+     *             .compareTargetTime(exadataInfrastructureFleetMetricCompareTargetTime)
+     *             .compartmentId(compartmentId)
+     *             .compareType(exadataInfrastructureFleetMetricCompareType)
+     *             .filterByExadataInfrastructureDeploymentType(exadataInfrastructureFleetMetricFilterByExadataInfrastructureDeploymentType)
+     *             .filterByExadataInfrastructureLifecycleState(exadataInfrastructureFleetMetricFilterByExadataInfrastructureLifecycleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetExadataInfrastructureFleetMetricResult> getExadataInfrastructureFleetMetricPlain(GetExadataInfrastructureFleetMetricPlainArgs args) {
+        return getExadataInfrastructureFleetMetricPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Exadata Infrastructure Fleet Metric resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the health metrics for a fleet of Exadata infrastructure in a compartment.
+     * The CompartmentId query parameters must be provided to retrieve the health metrics.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExadataInfrastructureFleetMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructureFleetMetric = DatabaseManagementFunctions.getExadataInfrastructureFleetMetric(GetExadataInfrastructureFleetMetricArgs.builder()
+     *             .compareBaselineTime(exadataInfrastructureFleetMetricCompareBaselineTime)
+     *             .compareTargetTime(exadataInfrastructureFleetMetricCompareTargetTime)
+     *             .compartmentId(compartmentId)
+     *             .compareType(exadataInfrastructureFleetMetricCompareType)
+     *             .filterByExadataInfrastructureDeploymentType(exadataInfrastructureFleetMetricFilterByExadataInfrastructureDeploymentType)
+     *             .filterByExadataInfrastructureLifecycleState(exadataInfrastructureFleetMetricFilterByExadataInfrastructureLifecycleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetExadataInfrastructureFleetMetricResult> getExadataInfrastructureFleetMetric(GetExadataInfrastructureFleetMetricArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExadataInfrastructureFleetMetric:getExadataInfrastructureFleetMetric", TypeShape.of(GetExadataInfrastructureFleetMetricResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exadata Infrastructure Fleet Metric resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the health metrics for a fleet of Exadata infrastructure in a compartment.
+     * The CompartmentId query parameters must be provided to retrieve the health metrics.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExadataInfrastructureFleetMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructureFleetMetric = DatabaseManagementFunctions.getExadataInfrastructureFleetMetric(GetExadataInfrastructureFleetMetricArgs.builder()
+     *             .compareBaselineTime(exadataInfrastructureFleetMetricCompareBaselineTime)
+     *             .compareTargetTime(exadataInfrastructureFleetMetricCompareTargetTime)
+     *             .compartmentId(compartmentId)
+     *             .compareType(exadataInfrastructureFleetMetricCompareType)
+     *             .filterByExadataInfrastructureDeploymentType(exadataInfrastructureFleetMetricFilterByExadataInfrastructureDeploymentType)
+     *             .filterByExadataInfrastructureLifecycleState(exadataInfrastructureFleetMetricFilterByExadataInfrastructureLifecycleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetExadataInfrastructureFleetMetricResult> getExadataInfrastructureFleetMetric(GetExadataInfrastructureFleetMetricArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getExadataInfrastructureFleetMetric:getExadataInfrastructureFleetMetric", TypeShape.of(GetExadataInfrastructureFleetMetricResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exadata Infrastructure Fleet Metric resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the health metrics for a fleet of Exadata infrastructure in a compartment.
+     * The CompartmentId query parameters must be provided to retrieve the health metrics.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetExadataInfrastructureFleetMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructureFleetMetric = DatabaseManagementFunctions.getExadataInfrastructureFleetMetric(GetExadataInfrastructureFleetMetricArgs.builder()
+     *             .compareBaselineTime(exadataInfrastructureFleetMetricCompareBaselineTime)
+     *             .compareTargetTime(exadataInfrastructureFleetMetricCompareTargetTime)
+     *             .compartmentId(compartmentId)
+     *             .compareType(exadataInfrastructureFleetMetricCompareType)
+     *             .filterByExadataInfrastructureDeploymentType(exadataInfrastructureFleetMetricFilterByExadataInfrastructureDeploymentType)
+     *             .filterByExadataInfrastructureLifecycleState(exadataInfrastructureFleetMetricFilterByExadataInfrastructureLifecycleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetExadataInfrastructureFleetMetricResult> getExadataInfrastructureFleetMetricPlain(GetExadataInfrastructureFleetMetricPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getExadataInfrastructureFleetMetric:getExadataInfrastructureFleetMetric", TypeShape.of(GetExadataInfrastructureFleetMetricResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific External Asm resource in Oracle Cloud Infrastructure Database Management service.

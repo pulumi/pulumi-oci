@@ -13705,6 +13705,21 @@ export namespace Core {
         compartmentId?: pulumi.Input<string>;
     }
 
+    export interface ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig {
+        /**
+         * (Updatable) Enables downsizing towards the target size.
+         */
+        isDownsizeEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Enables upsizing towards the target size.
+         */
+        isUpsizeEnabled: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The configured target size for the GPU Memory cluster.
+         */
+        targetSize?: pulumi.Input<string>;
+    }
+
     export interface ComputeGpuMemoryFabricMemoryFabricPreferences {
         /**
          * (Updatable) The desired firmware bundle id on the GPU memory fabric.
@@ -35936,6 +35951,317 @@ export namespace DatabaseManagement {
         metadata?: pulumi.Input<string>;
     }
 
+    export interface CloudExadataInfrastructureStorageGrid {
+        /**
+         * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+         */
+        additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) The name of the Exadata infrastructure.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * The internal ID of the Exadata resource.
+         */
+        internalId?: pulumi.Input<string>;
+        /**
+         * The details of the lifecycle state of the Exadata resource.
+         */
+        lifecycleDetails?: pulumi.Input<string>;
+        /**
+         * The type of Exadata resource.
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The number of Exadata storage servers in the Exadata infrastructure.
+         */
+        serverCount?: pulumi.Input<number>;
+        /**
+         * The current lifecycle state of the database resource.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * The status of the Exadata resource.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * The timestamp of the creation of the Exadata resource.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The timestamp of the last update of the Exadata resource.
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * The version of the Exadata resource.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface CloudExadataInfrastructureVmCluster {
+        /**
+         * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+         */
+        additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * The infrastructure deployment type.
+         */
+        deploymentType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the Exadata infrastructure.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The Oracle home directory.
+         */
+        homeDirectory?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * The internal ID of the Exadata resource.
+         */
+        internalId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Oracle license model that applies to the database management resources.
+         */
+        licenseModel?: pulumi.Input<string>;
+        /**
+         * The details of the lifecycle state of the Exadata resource.
+         */
+        lifecycleDetails?: pulumi.Input<string>;
+        /**
+         * The type of Exadata resource.
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The current lifecycle state of the database resource.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * The status of the Exadata resource.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * The timestamp of the creation of the Exadata resource.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The timestamp of the last update of the Exadata resource.
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * The version of the Exadata resource.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface CloudExadataStorageConnectorCredentialInfo {
+        /**
+         * (Updatable) The password of the user.
+         */
+        password: pulumi.Input<string>;
+        /**
+         * (Updatable) The full path of the SSL truststore location in the agent.
+         */
+        sslTrustStoreLocation?: pulumi.Input<string>;
+        /**
+         * (Updatable) The password of the SSL truststore location in the agent.
+         */
+        sslTrustStorePassword?: pulumi.Input<string>;
+        /**
+         * (Updatable) The SSL truststore type.
+         */
+        sslTrustStoreType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the user.
+         */
+        username: pulumi.Input<string>;
+    }
+
+    export interface CloudExadataStorageGridStorageServer {
+        /**
+         * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+         */
+        additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
+         */
+        connectorId?: pulumi.Input<string>;
+        /**
+         * The CPU count of the Exadata storage server.
+         */
+        cpuCount?: pulumi.Input<number>;
+        /**
+         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * The internal ID of the Exadata resource.
+         */
+        internalId?: pulumi.Input<string>;
+        /**
+         * The IP address of the Exadata storage server.
+         */
+        ipAddress?: pulumi.Input<string>;
+        /**
+         * The details of the lifecycle state of the Exadata resource.
+         */
+        lifecycleDetails?: pulumi.Input<string>;
+        /**
+         * The make model of the Exadata storage server.
+         */
+        makeModel?: pulumi.Input<string>;
+        /**
+         * The maximum flash disk IO operations per second of the Exadata storage server.
+         */
+        maxFlashDiskIops?: pulumi.Input<number>;
+        /**
+         * The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+         */
+        maxFlashDiskThroughput?: pulumi.Input<number>;
+        /**
+         * The maximum hard disk IO operations per second of the Exadata storage server.
+         */
+        maxHardDiskIops?: pulumi.Input<number>;
+        /**
+         * The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+         */
+        maxHardDiskThroughput?: pulumi.Input<number>;
+        /**
+         * The Exadata storage server memory size in GB.
+         */
+        memoryGb?: pulumi.Input<number>;
+        /**
+         * The type of Exadata resource.
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The current lifecycle state of the database resource.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * The status of the Exadata resource.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * The timestamp of the creation of the Exadata resource.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The timestamp of the last update of the Exadata resource.
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * The version of the Exadata resource.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface CloudExadataStorageServerConnector {
+        /**
+         * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+         */
+        additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+         */
+        agentId?: pulumi.Input<string>;
+        /**
+         * The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+         */
+        connectionUri?: pulumi.Input<string>;
+        /**
+         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * The internal ID of the Exadata resource.
+         */
+        internalId?: pulumi.Input<string>;
+        /**
+         * The details of the lifecycle state of the Exadata resource.
+         */
+        lifecycleDetails?: pulumi.Input<string>;
+        /**
+         * The type of Exadata resource.
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * The current lifecycle state of the database resource.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * The status of the Exadata resource.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+         */
+        storageServerId?: pulumi.Input<string>;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * The timestamp of the creation of the Exadata resource.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The timestamp of the last update of the Exadata resource.
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * The version of the Exadata resource.
+         */
+        version?: pulumi.Input<string>;
+    }
+
     export interface CloudListenerEndpoint {
         /**
          * The host name or IP address.
@@ -37892,6 +38218,42 @@ export namespace DatabaseManagement {
     }
 
     export interface GetCloudDbSystemsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCloudExadataInfrastructuresFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCloudExadataInfrastructuresFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCloudExadataStorageConnectorsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCloudExadataStorageConnectorsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCloudExadataStorageServersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCloudExadataStorageServersFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -44090,6 +44452,48 @@ export namespace Email {
         type?: pulumi.Input<string>;
     }
 
+    export interface EmailIpPoolLock {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this IpPool.
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Lock type.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface EmailIpPoolOutboundIpsResponse {
+        /**
+         * The assignment state of the public IP address.
+         */
+        assignmentState?: pulumi.Input<string>;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+         */
+        lifecycleDetails?: pulumi.Input<string>;
+        /**
+         * The public IP address assigned to the tenancy.
+         */
+        outboundIp?: pulumi.Input<string>;
+        /**
+         * The current state of the IpPool.
+         */
+        state?: pulumi.Input<string>;
+    }
+
     export interface EmailReturnPathLock {
         /**
          * The lock compartment ID.
@@ -44144,6 +44548,36 @@ export namespace Email {
         /**
          * A filter to only return resources that match the given name exactly.
          */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetEmailIpPoolsFilter {
+        /**
+         * A filter to only return resources that match the given name exactly.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetEmailIpPoolsFilterArgs {
+        /**
+         * A filter to only return resources that match the given name exactly.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetEmailOutboundIpsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetEmailOutboundIpsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -84311,6 +84745,18 @@ export namespace Mysql {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetDbSystemMaintenanceEventsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbSystemMaintenanceEventsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetMysqlBackupsFilter {
         name: string;
         regex?: boolean;
@@ -84748,6 +85194,10 @@ export namespace Mysql {
 
     export interface MysqlBackupDbSystemSnapshotMaintenance {
         /**
+         * Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+         */
+        maintenanceDisabledWindows?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow>[]>;
+        /**
          * The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
          */
         maintenanceScheduleType?: pulumi.Input<string>;
@@ -84771,6 +85221,17 @@ export namespace Mysql {
          * The start time of the maintenance window.
          */
         windowStartTime?: pulumi.Input<string>;
+    }
+
+    export interface MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow {
+        /**
+         * The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
+        timeEnd?: pulumi.Input<string>;
+        /**
+         * The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
+        timeStart?: pulumi.Input<string>;
     }
 
     export interface MysqlBackupDbSystemSnapshotReadEndpoint {
@@ -85943,6 +86404,10 @@ export namespace Mysql {
 
     export interface MysqlDbSystemMaintenance {
         /**
+         * (Updatable) Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+         */
+        maintenanceDisabledWindows?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemMaintenanceMaintenanceDisabledWindow>[]>;
+        /**
          * (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
          */
         maintenanceScheduleType?: pulumi.Input<string>;
@@ -85976,6 +86441,17 @@ export namespace Mysql {
          * If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
          */
         windowStartTime: pulumi.Input<string>;
+    }
+
+    export interface MysqlDbSystemMaintenanceMaintenanceDisabledWindow {
+        /**
+         * (Updatable) The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
+        timeEnd: pulumi.Input<string>;
+        /**
+         * (Updatable) The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
+        timeStart: pulumi.Input<string>;
     }
 
     export interface MysqlDbSystemPointInTimeRecoveryDetail {

@@ -15,6 +15,11 @@ export type EmailDomain = import("./emailDomain").EmailDomain;
 export const EmailDomain: typeof import("./emailDomain").EmailDomain = null as any;
 utilities.lazyLoad(exports, ["EmailDomain"], () => require("./emailDomain"));
 
+export { EmailIpPoolArgs, EmailIpPoolState } from "./emailIpPool";
+export type EmailIpPool = import("./emailIpPool").EmailIpPool;
+export const EmailIpPool: typeof import("./emailIpPool").EmailIpPool = null as any;
+utilities.lazyLoad(exports, ["EmailIpPool"], () => require("./emailIpPool"));
+
 export { EmailReturnPathArgs, EmailReturnPathState } from "./emailReturnPath";
 export type EmailReturnPath = import("./emailReturnPath").EmailReturnPath;
 export const EmailReturnPath: typeof import("./emailReturnPath").EmailReturnPath = null as any;
@@ -44,6 +49,21 @@ export { GetEmailDomainsArgs, GetEmailDomainsResult, GetEmailDomainsOutputArgs }
 export const getEmailDomains: typeof import("./getEmailDomains").getEmailDomains = null as any;
 export const getEmailDomainsOutput: typeof import("./getEmailDomains").getEmailDomainsOutput = null as any;
 utilities.lazyLoad(exports, ["getEmailDomains","getEmailDomainsOutput"], () => require("./getEmailDomains"));
+
+export { GetEmailIpPoolArgs, GetEmailIpPoolResult, GetEmailIpPoolOutputArgs } from "./getEmailIpPool";
+export const getEmailIpPool: typeof import("./getEmailIpPool").getEmailIpPool = null as any;
+export const getEmailIpPoolOutput: typeof import("./getEmailIpPool").getEmailIpPoolOutput = null as any;
+utilities.lazyLoad(exports, ["getEmailIpPool","getEmailIpPoolOutput"], () => require("./getEmailIpPool"));
+
+export { GetEmailIpPoolsArgs, GetEmailIpPoolsResult, GetEmailIpPoolsOutputArgs } from "./getEmailIpPools";
+export const getEmailIpPools: typeof import("./getEmailIpPools").getEmailIpPools = null as any;
+export const getEmailIpPoolsOutput: typeof import("./getEmailIpPools").getEmailIpPoolsOutput = null as any;
+utilities.lazyLoad(exports, ["getEmailIpPools","getEmailIpPoolsOutput"], () => require("./getEmailIpPools"));
+
+export { GetEmailOutboundIpsArgs, GetEmailOutboundIpsResult, GetEmailOutboundIpsOutputArgs } from "./getEmailOutboundIps";
+export const getEmailOutboundIps: typeof import("./getEmailOutboundIps").getEmailOutboundIps = null as any;
+export const getEmailOutboundIpsOutput: typeof import("./getEmailOutboundIps").getEmailOutboundIpsOutput = null as any;
+utilities.lazyLoad(exports, ["getEmailOutboundIps","getEmailOutboundIpsOutput"], () => require("./getEmailOutboundIps"));
 
 export { GetEmailReturnPathArgs, GetEmailReturnPathResult, GetEmailReturnPathOutputArgs } from "./getEmailReturnPath";
 export const getEmailReturnPath: typeof import("./getEmailReturnPath").getEmailReturnPath = null as any;
@@ -94,6 +114,8 @@ const _module = {
                 return new Dkim(name, <any>undefined, { urn })
             case "oci:Email/emailDomain:EmailDomain":
                 return new EmailDomain(name, <any>undefined, { urn })
+            case "oci:Email/emailIpPool:EmailIpPool":
+                return new EmailIpPool(name, <any>undefined, { urn })
             case "oci:Email/emailReturnPath:EmailReturnPath":
                 return new EmailReturnPath(name, <any>undefined, { urn })
             case "oci:Email/sender:Sender":
@@ -107,6 +129,7 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "Email/dkim", _module)
 pulumi.runtime.registerResourceModule("oci", "Email/emailDomain", _module)
+pulumi.runtime.registerResourceModule("oci", "Email/emailIpPool", _module)
 pulumi.runtime.registerResourceModule("oci", "Email/emailReturnPath", _module)
 pulumi.runtime.registerResourceModule("oci", "Email/sender", _module)
 pulumi.runtime.registerResourceModule("oci", "Email/suppression", _module)

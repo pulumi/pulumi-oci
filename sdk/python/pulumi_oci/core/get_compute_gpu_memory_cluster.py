@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetComputeGpuMemoryClusterResult',
@@ -26,7 +27,7 @@ class GetComputeGpuMemoryClusterResult:
     """
     A collection of values returned by getComputeGpuMemoryCluster.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, compute_cluster_id=None, compute_gpu_memory_cluster_id=None, defined_tags=None, display_name=None, freeform_tags=None, gpu_memory_fabric_id=None, id=None, instance_configuration_id=None, size=None, state=None, system_tags=None, time_created=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, compute_cluster_id=None, compute_gpu_memory_cluster_id=None, defined_tags=None, display_name=None, freeform_tags=None, gpu_memory_cluster_scale_configs=None, gpu_memory_fabric_id=None, id=None, instance_configuration_id=None, size=None, state=None, system_tags=None, time_created=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -48,6 +49,9 @@ class GetComputeGpuMemoryClusterResult:
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if gpu_memory_cluster_scale_configs and not isinstance(gpu_memory_cluster_scale_configs, list):
+            raise TypeError("Expected argument 'gpu_memory_cluster_scale_configs' to be a list")
+        pulumi.set(__self__, "gpu_memory_cluster_scale_configs", gpu_memory_cluster_scale_configs)
         if gpu_memory_fabric_id and not isinstance(gpu_memory_fabric_id, str):
             raise TypeError("Expected argument 'gpu_memory_fabric_id' to be a str")
         pulumi.set(__self__, "gpu_memory_fabric_id", gpu_memory_fabric_id)
@@ -124,6 +128,14 @@ class GetComputeGpuMemoryClusterResult:
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
+    @pulumi.getter(name="gpuMemoryClusterScaleConfigs")
+    def gpu_memory_cluster_scale_configs(self) -> Sequence['outputs.GetComputeGpuMemoryClusterGpuMemoryClusterScaleConfigResult']:
+        """
+        Configuration settings for GPU Memory Cluster scaling.
+        """
+        return pulumi.get(self, "gpu_memory_cluster_scale_configs")
+
+    @_builtins.property
     @pulumi.getter(name="gpuMemoryFabricId")
     def gpu_memory_fabric_id(self) -> _builtins.str:
         """
@@ -193,6 +205,7 @@ class AwaitableGetComputeGpuMemoryClusterResult(GetComputeGpuMemoryClusterResult
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
+            gpu_memory_cluster_scale_configs=self.gpu_memory_cluster_scale_configs,
             gpu_memory_fabric_id=self.gpu_memory_fabric_id,
             id=self.id,
             instance_configuration_id=self.instance_configuration_id,
@@ -234,6 +247,7 @@ def get_compute_gpu_memory_cluster(compute_gpu_memory_cluster_id: Optional[_buil
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        gpu_memory_cluster_scale_configs=pulumi.get(__ret__, 'gpu_memory_cluster_scale_configs'),
         gpu_memory_fabric_id=pulumi.get(__ret__, 'gpu_memory_fabric_id'),
         id=pulumi.get(__ret__, 'id'),
         instance_configuration_id=pulumi.get(__ret__, 'instance_configuration_id'),
@@ -272,6 +286,7 @@ def get_compute_gpu_memory_cluster_output(compute_gpu_memory_cluster_id: Optiona
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        gpu_memory_cluster_scale_configs=pulumi.get(__response__, 'gpu_memory_cluster_scale_configs'),
         gpu_memory_fabric_id=pulumi.get(__response__, 'gpu_memory_fabric_id'),
         id=pulumi.get(__response__, 'id'),
         instance_configuration_id=pulumi.get(__response__, 'instance_configuration_id'),

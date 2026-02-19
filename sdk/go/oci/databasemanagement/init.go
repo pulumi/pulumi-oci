@@ -45,6 +45,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &CloudDbSystemConnector{}
 	case "oci:DatabaseManagement/cloudDbSystemDiscovery:CloudDbSystemDiscovery":
 		r = &CloudDbSystemDiscovery{}
+	case "oci:DatabaseManagement/cloudExadataInfrastructure:CloudExadataInfrastructure":
+		r = &CloudExadataInfrastructure{}
+	case "oci:DatabaseManagement/cloudExadataInfrastructureManagedexadataManagement:CloudExadataInfrastructureManagedexadataManagement":
+		r = &CloudExadataInfrastructureManagedexadataManagement{}
+	case "oci:DatabaseManagement/cloudExadataStorageConnector:CloudExadataStorageConnector":
+		r = &CloudExadataStorageConnector{}
+	case "oci:DatabaseManagement/cloudExadataStorageGrid:CloudExadataStorageGrid":
+		r = &CloudExadataStorageGrid{}
+	case "oci:DatabaseManagement/cloudExadataStorageServer:CloudExadataStorageServer":
+		r = &CloudExadataStorageServer{}
 	case "oci:DatabaseManagement/cloudListener:CloudListener":
 		r = &CloudListener{}
 	case "oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement":
@@ -180,6 +190,31 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DatabaseManagement/cloudDbSystemDiscovery",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/cloudExadataInfrastructure",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/cloudExadataInfrastructureManagedexadataManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/cloudExadataStorageConnector",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/cloudExadataStorageGrid",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/cloudExadataStorageServer",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

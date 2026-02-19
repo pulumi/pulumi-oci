@@ -17,6 +17,10 @@ from .. import _utilities
 __all__ = [
     'EmailDomainLockArgs',
     'EmailDomainLockArgsDict',
+    'EmailIpPoolLockArgs',
+    'EmailIpPoolLockArgsDict',
+    'EmailIpPoolOutboundIpsResponseArgs',
+    'EmailIpPoolOutboundIpsResponseArgsDict',
     'EmailReturnPathLockArgs',
     'EmailReturnPathLockArgsDict',
     'SenderLockArgs',
@@ -25,6 +29,10 @@ __all__ = [
     'GetDkimsFilterArgsDict',
     'GetEmailDomainsFilterArgs',
     'GetEmailDomainsFilterArgsDict',
+    'GetEmailIpPoolsFilterArgs',
+    'GetEmailIpPoolsFilterArgsDict',
+    'GetEmailOutboundIpsFilterArgs',
+    'GetEmailOutboundIpsFilterArgsDict',
     'GetEmailReturnPathsFilterArgs',
     'GetEmailReturnPathsFilterArgsDict',
     'GetSendersFilterArgs',
@@ -140,6 +148,204 @@ class EmailDomainLockArgs:
     @type.setter
     def type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "type", value)
+
+
+class EmailIpPoolLockArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this IpPool.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Lock type.
+    """
+
+@pulumi.input_type
+class EmailIpPoolLockArgs:
+    def __init__(__self__, *,
+                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 message: Optional[pulumi.Input[_builtins.str]] = None,
+                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this IpPool.
+        :param pulumi.Input[_builtins.str] message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param pulumi.Input[_builtins.str] related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param pulumi.Input[_builtins.str] time_created: The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        :param pulumi.Input[_builtins.str] type: Lock type.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this IpPool.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the IpPool was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+class EmailIpPoolOutboundIpsResponseArgsDict(TypedDict):
+    assignment_state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The assignment state of the public IP address.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+    """
+    outbound_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The public IP address assigned to the tenancy.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the IpPool.
+    """
+
+@pulumi.input_type
+class EmailIpPoolOutboundIpsResponseArgs:
+    def __init__(__self__, *,
+                 assignment_state: Optional[pulumi.Input[_builtins.str]] = None,
+                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+                 outbound_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 state: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] assignment_state: The assignment state of the public IP address.
+        :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+        :param pulumi.Input[_builtins.str] outbound_ip: The public IP address assigned to the tenancy.
+        :param pulumi.Input[_builtins.str] state: The current state of the IpPool.
+        """
+        if assignment_state is not None:
+            pulumi.set(__self__, "assignment_state", assignment_state)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if outbound_ip is not None:
+            pulumi.set(__self__, "outbound_ip", outbound_ip)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="assignmentState")
+    def assignment_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The assignment state of the public IP address.
+        """
+        return pulumi.get(self, "assignment_state")
+
+    @assignment_state.setter
+    def assignment_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "assignment_state", value)
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "lifecycle_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="outboundIp")
+    def outbound_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The public IP address assigned to the tenancy.
+        """
+        return pulumi.get(self, "outbound_ip")
+
+    @outbound_ip.setter
+    def outbound_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "outbound_ip", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The current state of the IpPool.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "state", value)
 
 
 class EmailReturnPathLockArgsDict(TypedDict):
@@ -441,6 +647,103 @@ class GetEmailDomainsFilterArgs:
         """
         A filter to only return resources that match the given name exactly.
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetEmailIpPoolsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to only return resources that match the given name exactly.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetEmailIpPoolsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A filter to only return resources that match the given name exactly.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to only return resources that match the given name exactly.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetEmailOutboundIpsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetEmailOutboundIpsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
         return pulumi.get(self, "name")
 
     @name.setter

@@ -5,7 +5,9 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -14,6 +16,21 @@ import javax.annotation.Nullable;
 public final class MysqlBackupDbSystemSnapshotMaintenanceArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final MysqlBackupDbSystemSnapshotMaintenanceArgs Empty = new MysqlBackupDbSystemSnapshotMaintenanceArgs();
+
+    /**
+     * Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+     * 
+     */
+    @Import(name="maintenanceDisabledWindows")
+    private @Nullable Output<List<MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs>> maintenanceDisabledWindows;
+
+    /**
+     * @return Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+     * 
+     */
+    public Optional<Output<List<MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs>>> maintenanceDisabledWindows() {
+        return Optional.ofNullable(this.maintenanceDisabledWindows);
+    }
 
     /**
      * The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
@@ -108,6 +125,7 @@ public final class MysqlBackupDbSystemSnapshotMaintenanceArgs extends com.pulumi
     private MysqlBackupDbSystemSnapshotMaintenanceArgs() {}
 
     private MysqlBackupDbSystemSnapshotMaintenanceArgs(MysqlBackupDbSystemSnapshotMaintenanceArgs $) {
+        this.maintenanceDisabledWindows = $.maintenanceDisabledWindows;
         this.maintenanceScheduleType = $.maintenanceScheduleType;
         this.targetVersion = $.targetVersion;
         this.timeScheduled = $.timeScheduled;
@@ -132,6 +150,37 @@ public final class MysqlBackupDbSystemSnapshotMaintenanceArgs extends com.pulumi
 
         public Builder(MysqlBackupDbSystemSnapshotMaintenanceArgs defaults) {
             $ = new MysqlBackupDbSystemSnapshotMaintenanceArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param maintenanceDisabledWindows Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceDisabledWindows(@Nullable Output<List<MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs>> maintenanceDisabledWindows) {
+            $.maintenanceDisabledWindows = maintenanceDisabledWindows;
+            return this;
+        }
+
+        /**
+         * @param maintenanceDisabledWindows Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceDisabledWindows(List<MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs> maintenanceDisabledWindows) {
+            return maintenanceDisabledWindows(Output.of(maintenanceDisabledWindows));
+        }
+
+        /**
+         * @param maintenanceDisabledWindows Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceDisabledWindows(MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs... maintenanceDisabledWindows) {
+            return maintenanceDisabledWindows(List.of(maintenanceDisabledWindows));
         }
 
         /**

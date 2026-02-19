@@ -5,7 +5,9 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemGpuMemoryClusterScaleConfig;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -41,6 +43,11 @@ public final class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionI
      * 
      */
     private Map<String,String> freeformTags;
+    /**
+     * @return Configuration settings for GPU Memory Cluster scaling.
+     * 
+     */
+    private List<GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemGpuMemoryClusterScaleConfig> gpuMemoryClusterScaleConfigs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
      * 
@@ -121,6 +128,13 @@ public final class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionI
         return this.freeformTags;
     }
     /**
+     * @return Configuration settings for GPU Memory Cluster scaling.
+     * 
+     */
+    public List<GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemGpuMemoryClusterScaleConfig> gpuMemoryClusterScaleConfigs() {
+        return this.gpuMemoryClusterScaleConfigs;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
      * 
      */
@@ -185,6 +199,7 @@ public final class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionI
         private Map<String,String> definedTags;
         private String displayName;
         private Map<String,String> freeformTags;
+        private List<GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemGpuMemoryClusterScaleConfig> gpuMemoryClusterScaleConfigs;
         private String gpuMemoryFabricId;
         private String id;
         private String instanceConfigurationId;
@@ -201,6 +216,7 @@ public final class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionI
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.gpuMemoryClusterScaleConfigs = defaults.gpuMemoryClusterScaleConfigs;
     	      this.gpuMemoryFabricId = defaults.gpuMemoryFabricId;
     	      this.id = defaults.id;
     	      this.instanceConfigurationId = defaults.instanceConfigurationId;
@@ -257,6 +273,17 @@ public final class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionI
             }
             this.freeformTags = freeformTags;
             return this;
+        }
+        @CustomType.Setter
+        public Builder gpuMemoryClusterScaleConfigs(List<GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemGpuMemoryClusterScaleConfig> gpuMemoryClusterScaleConfigs) {
+            if (gpuMemoryClusterScaleConfigs == null) {
+              throw new MissingRequiredPropertyException("GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItem", "gpuMemoryClusterScaleConfigs");
+            }
+            this.gpuMemoryClusterScaleConfigs = gpuMemoryClusterScaleConfigs;
+            return this;
+        }
+        public Builder gpuMemoryClusterScaleConfigs(GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemGpuMemoryClusterScaleConfig... gpuMemoryClusterScaleConfigs) {
+            return gpuMemoryClusterScaleConfigs(List.of(gpuMemoryClusterScaleConfigs));
         }
         @CustomType.Setter
         public Builder gpuMemoryFabricId(String gpuMemoryFabricId) {
@@ -322,6 +349,7 @@ public final class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionI
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.gpuMemoryClusterScaleConfigs = gpuMemoryClusterScaleConfigs;
             _resultValue.gpuMemoryFabricId = gpuMemoryFabricId;
             _resultValue.id = id;
             _resultValue.instanceConfigurationId = instanceConfigurationId;

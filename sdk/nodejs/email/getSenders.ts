@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     domain: senderDomain,
  *     emailAddress: senderEmailAddress,
+ *     emailIpPoolId: testEmailIpPool.id,
  *     state: senderState,
  * });
  * ```
@@ -31,6 +32,7 @@ export function getSenders(args: GetSendersArgs, opts?: pulumi.InvokeOptions): P
         "compartmentId": args.compartmentId,
         "domain": args.domain,
         "emailAddress": args.emailAddress,
+        "emailIpPoolId": args.emailIpPoolId,
         "filters": args.filters,
         "state": args.state,
     }, opts);
@@ -52,6 +54,10 @@ export interface GetSendersArgs {
      * The email address of the approved sender.
      */
     emailAddress?: string;
+    /**
+     * A filter to only return resources that match the given IpPool resource exactly.
+     */
+    emailIpPoolId?: string;
     filters?: inputs.Email.GetSendersFilter[];
     /**
      * The current state of a sender.
@@ -72,6 +78,10 @@ export interface GetSendersResult {
      * The email address of the sender.
      */
     readonly emailAddress?: string;
+    /**
+     * The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+     */
+    readonly emailIpPoolId?: string;
     readonly filters?: outputs.Email.GetSendersFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -101,6 +111,7 @@ export interface GetSendersResult {
  *     compartmentId: compartmentId,
  *     domain: senderDomain,
  *     emailAddress: senderEmailAddress,
+ *     emailIpPoolId: testEmailIpPool.id,
  *     state: senderState,
  * });
  * ```
@@ -111,6 +122,7 @@ export function getSendersOutput(args: GetSendersOutputArgs, opts?: pulumi.Invok
         "compartmentId": args.compartmentId,
         "domain": args.domain,
         "emailAddress": args.emailAddress,
+        "emailIpPoolId": args.emailIpPoolId,
         "filters": args.filters,
         "state": args.state,
     }, opts);
@@ -132,6 +144,10 @@ export interface GetSendersOutputArgs {
      * The email address of the approved sender.
      */
     emailAddress?: pulumi.Input<string>;
+    /**
+     * A filter to only return resources that match the given IpPool resource exactly.
+     */
+    emailIpPoolId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Email.GetSendersFilterArgs>[]>;
     /**
      * The current state of a sender.

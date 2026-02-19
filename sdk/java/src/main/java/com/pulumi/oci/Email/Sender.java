@@ -53,6 +53,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .emailAddress(senderEmailAddress)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .emailIpPoolId(testEmailIpPool.id())
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 
@@ -127,6 +128,20 @@ public class Sender extends com.pulumi.resources.CustomResource {
      */
     public Output<String> emailDomainId() {
         return this.emailDomainId;
+    }
+    /**
+     * (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+     * 
+     */
+    @Export(name="emailIpPoolId", refs={String.class}, tree="[0]")
+    private Output<String> emailIpPoolId;
+
+    /**
+     * @return (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+     * 
+     */
+    public Output<String> emailIpPoolId() {
+        return this.emailIpPoolId;
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`

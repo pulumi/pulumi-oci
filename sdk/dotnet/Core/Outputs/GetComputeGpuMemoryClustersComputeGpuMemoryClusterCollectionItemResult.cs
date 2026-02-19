@@ -38,6 +38,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
+        /// Configuration settings for GPU Memory Cluster scaling.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemGpuMemoryClusterScaleConfigResult> GpuMemoryClusterScaleConfigs;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
         /// </summary>
         public readonly string GpuMemoryFabricId;
@@ -80,6 +84,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableDictionary<string, string> freeformTags,
 
+            ImmutableArray<Outputs.GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemGpuMemoryClusterScaleConfigResult> gpuMemoryClusterScaleConfigs,
+
             string gpuMemoryFabricId,
 
             string id,
@@ -100,6 +106,7 @@ namespace Pulumi.Oci.Core.Outputs
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
+            GpuMemoryClusterScaleConfigs = gpuMemoryClusterScaleConfigs;
             GpuMemoryFabricId = gpuMemoryFabricId;
             Id = id;
             InstanceConfigurationId = instanceConfigurationId;

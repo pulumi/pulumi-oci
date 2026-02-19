@@ -33,6 +33,7 @@ import (
 //				CompartmentId: compartmentId,
 //				Domain:        pulumi.StringRef(senderDomain),
 //				EmailAddress:  pulumi.StringRef(senderEmailAddress),
+//				EmailIpPoolId: pulumi.StringRef(testEmailIpPool.Id),
 //				State:         pulumi.StringRef(senderState),
 //			}, nil)
 //			if err != nil {
@@ -60,8 +61,10 @@ type GetSendersArgs struct {
 	// A filter to only return resources that match the given domain exactly.
 	Domain *string `pulumi:"domain"`
 	// The email address of the approved sender.
-	EmailAddress *string            `pulumi:"emailAddress"`
-	Filters      []GetSendersFilter `pulumi:"filters"`
+	EmailAddress *string `pulumi:"emailAddress"`
+	// A filter to only return resources that match the given IpPool resource exactly.
+	EmailIpPoolId *string            `pulumi:"emailIpPoolId"`
+	Filters       []GetSendersFilter `pulumi:"filters"`
 	// The current state of a sender.
 	State *string `pulumi:"state"`
 }
@@ -72,8 +75,10 @@ type GetSendersResult struct {
 	CompartmentId string  `pulumi:"compartmentId"`
 	Domain        *string `pulumi:"domain"`
 	// The email address of the sender.
-	EmailAddress *string            `pulumi:"emailAddress"`
-	Filters      []GetSendersFilter `pulumi:"filters"`
+	EmailAddress *string `pulumi:"emailAddress"`
+	// The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+	EmailIpPoolId *string            `pulumi:"emailIpPoolId"`
+	Filters       []GetSendersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The list of senders.
@@ -98,8 +103,10 @@ type GetSendersOutputArgs struct {
 	// A filter to only return resources that match the given domain exactly.
 	Domain pulumi.StringPtrInput `pulumi:"domain"`
 	// The email address of the approved sender.
-	EmailAddress pulumi.StringPtrInput      `pulumi:"emailAddress"`
-	Filters      GetSendersFilterArrayInput `pulumi:"filters"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
+	// A filter to only return resources that match the given IpPool resource exactly.
+	EmailIpPoolId pulumi.StringPtrInput      `pulumi:"emailIpPoolId"`
+	Filters       GetSendersFilterArrayInput `pulumi:"filters"`
 	// The current state of a sender.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
@@ -135,6 +142,11 @@ func (o GetSendersResultOutput) Domain() pulumi.StringPtrOutput {
 // The email address of the sender.
 func (o GetSendersResultOutput) EmailAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSendersResult) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
+}
+
+// The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+func (o GetSendersResultOutput) EmailIpPoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSendersResult) *string { return v.EmailIpPoolId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSendersResultOutput) Filters() GetSendersFilterArrayOutput {

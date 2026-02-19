@@ -22,6 +22,8 @@ import com.pulumi.oci.ContainerEngine.inputs.GetClusterKubeConfigPlainArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetClusterOptionArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetClusterOptionPlainArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetClusterPlainArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetClusterPublicApiEndpointDecommissionStatusArgs;
+import com.pulumi.oci.ContainerEngine.inputs.GetClusterPublicApiEndpointDecommissionStatusPlainArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingPlainArgs;
 import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingsArgs;
@@ -54,6 +56,7 @@ import com.pulumi.oci.ContainerEngine.outputs.GetAddonsResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterCredentialRotationStatusResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterKubeConfigResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterOptionResult;
+import com.pulumi.oci.ContainerEngine.outputs.GetClusterPublicApiEndpointDecommissionStatusResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterWorkloadMappingResult;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterWorkloadMappingsResult;
@@ -1586,6 +1589,216 @@ public final class ContainerEngineFunctions {
      */
     public static CompletableFuture<GetClusterOptionResult> getClusterOptionPlain(GetClusterOptionPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getClusterOption:getClusterOption", TypeShape.of(GetClusterOptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cluster Public Api Endpoint Decommission Status resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get cluster public api endpoint decommission status.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterPublicApiEndpointDecommissionStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterPublicApiEndpointDecommissionStatus = ContainerEngineFunctions.getClusterPublicApiEndpointDecommissionStatus(GetClusterPublicApiEndpointDecommissionStatusArgs.builder()
+     *             .clusterId(testCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetClusterPublicApiEndpointDecommissionStatusResult> getClusterPublicApiEndpointDecommissionStatus(GetClusterPublicApiEndpointDecommissionStatusArgs args) {
+        return getClusterPublicApiEndpointDecommissionStatus(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cluster Public Api Endpoint Decommission Status resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get cluster public api endpoint decommission status.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterPublicApiEndpointDecommissionStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterPublicApiEndpointDecommissionStatus = ContainerEngineFunctions.getClusterPublicApiEndpointDecommissionStatus(GetClusterPublicApiEndpointDecommissionStatusArgs.builder()
+     *             .clusterId(testCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetClusterPublicApiEndpointDecommissionStatusResult> getClusterPublicApiEndpointDecommissionStatusPlain(GetClusterPublicApiEndpointDecommissionStatusPlainArgs args) {
+        return getClusterPublicApiEndpointDecommissionStatusPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cluster Public Api Endpoint Decommission Status resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get cluster public api endpoint decommission status.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterPublicApiEndpointDecommissionStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterPublicApiEndpointDecommissionStatus = ContainerEngineFunctions.getClusterPublicApiEndpointDecommissionStatus(GetClusterPublicApiEndpointDecommissionStatusArgs.builder()
+     *             .clusterId(testCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetClusterPublicApiEndpointDecommissionStatusResult> getClusterPublicApiEndpointDecommissionStatus(GetClusterPublicApiEndpointDecommissionStatusArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getClusterPublicApiEndpointDecommissionStatus:getClusterPublicApiEndpointDecommissionStatus", TypeShape.of(GetClusterPublicApiEndpointDecommissionStatusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cluster Public Api Endpoint Decommission Status resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get cluster public api endpoint decommission status.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterPublicApiEndpointDecommissionStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterPublicApiEndpointDecommissionStatus = ContainerEngineFunctions.getClusterPublicApiEndpointDecommissionStatus(GetClusterPublicApiEndpointDecommissionStatusArgs.builder()
+     *             .clusterId(testCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetClusterPublicApiEndpointDecommissionStatusResult> getClusterPublicApiEndpointDecommissionStatus(GetClusterPublicApiEndpointDecommissionStatusArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ContainerEngine/getClusterPublicApiEndpointDecommissionStatus:getClusterPublicApiEndpointDecommissionStatus", TypeShape.of(GetClusterPublicApiEndpointDecommissionStatusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cluster Public Api Endpoint Decommission Status resource in Oracle Cloud Infrastructure Container Engine service.
+     * 
+     * Get cluster public api endpoint decommission status.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterPublicApiEndpointDecommissionStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterPublicApiEndpointDecommissionStatus = ContainerEngineFunctions.getClusterPublicApiEndpointDecommissionStatus(GetClusterPublicApiEndpointDecommissionStatusArgs.builder()
+     *             .clusterId(testCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetClusterPublicApiEndpointDecommissionStatusResult> getClusterPublicApiEndpointDecommissionStatusPlain(GetClusterPublicApiEndpointDecommissionStatusPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ContainerEngine/getClusterPublicApiEndpointDecommissionStatus:getClusterPublicApiEndpointDecommissionStatus", TypeShape.of(GetClusterPublicApiEndpointDecommissionStatusResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.

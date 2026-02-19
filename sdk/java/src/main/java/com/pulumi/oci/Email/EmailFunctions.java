@@ -18,6 +18,12 @@ import com.pulumi.oci.Email.inputs.GetEmailDomainArgs;
 import com.pulumi.oci.Email.inputs.GetEmailDomainPlainArgs;
 import com.pulumi.oci.Email.inputs.GetEmailDomainsArgs;
 import com.pulumi.oci.Email.inputs.GetEmailDomainsPlainArgs;
+import com.pulumi.oci.Email.inputs.GetEmailIpPoolArgs;
+import com.pulumi.oci.Email.inputs.GetEmailIpPoolPlainArgs;
+import com.pulumi.oci.Email.inputs.GetEmailIpPoolsArgs;
+import com.pulumi.oci.Email.inputs.GetEmailIpPoolsPlainArgs;
+import com.pulumi.oci.Email.inputs.GetEmailOutboundIpsArgs;
+import com.pulumi.oci.Email.inputs.GetEmailOutboundIpsPlainArgs;
 import com.pulumi.oci.Email.inputs.GetEmailReturnPathArgs;
 import com.pulumi.oci.Email.inputs.GetEmailReturnPathPlainArgs;
 import com.pulumi.oci.Email.inputs.GetEmailReturnPathsArgs;
@@ -35,6 +41,9 @@ import com.pulumi.oci.Email.outputs.GetDkimResult;
 import com.pulumi.oci.Email.outputs.GetDkimsResult;
 import com.pulumi.oci.Email.outputs.GetEmailDomainResult;
 import com.pulumi.oci.Email.outputs.GetEmailDomainsResult;
+import com.pulumi.oci.Email.outputs.GetEmailIpPoolResult;
+import com.pulumi.oci.Email.outputs.GetEmailIpPoolsResult;
+import com.pulumi.oci.Email.outputs.GetEmailOutboundIpsResult;
 import com.pulumi.oci.Email.outputs.GetEmailReturnPathResult;
 import com.pulumi.oci.Email.outputs.GetEmailReturnPathsResult;
 import com.pulumi.oci.Email.outputs.GetSenderResult;
@@ -1126,6 +1135,666 @@ public final class EmailFunctions {
         return Deployment.getInstance().invokeAsync("oci:Email/getEmailDomains:getEmailDomains", TypeShape.of(GetEmailDomainsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Email Ip Pool resource in Oracle Cloud Infrastructure Email service.
+     * 
+     * Retrieves the specified IpPool by identifier
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailIpPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailIpPool = EmailFunctions.getEmailIpPool(GetEmailIpPoolArgs.builder()
+     *             .emailIpPoolId(testEmailIpPoolOciEmailEmailIpPool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetEmailIpPoolResult> getEmailIpPool(GetEmailIpPoolArgs args) {
+        return getEmailIpPool(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Email Ip Pool resource in Oracle Cloud Infrastructure Email service.
+     * 
+     * Retrieves the specified IpPool by identifier
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailIpPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailIpPool = EmailFunctions.getEmailIpPool(GetEmailIpPoolArgs.builder()
+     *             .emailIpPoolId(testEmailIpPoolOciEmailEmailIpPool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetEmailIpPoolResult> getEmailIpPoolPlain(GetEmailIpPoolPlainArgs args) {
+        return getEmailIpPoolPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Email Ip Pool resource in Oracle Cloud Infrastructure Email service.
+     * 
+     * Retrieves the specified IpPool by identifier
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailIpPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailIpPool = EmailFunctions.getEmailIpPool(GetEmailIpPoolArgs.builder()
+     *             .emailIpPoolId(testEmailIpPoolOciEmailEmailIpPool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetEmailIpPoolResult> getEmailIpPool(GetEmailIpPoolArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Email/getEmailIpPool:getEmailIpPool", TypeShape.of(GetEmailIpPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Email Ip Pool resource in Oracle Cloud Infrastructure Email service.
+     * 
+     * Retrieves the specified IpPool by identifier
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailIpPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailIpPool = EmailFunctions.getEmailIpPool(GetEmailIpPoolArgs.builder()
+     *             .emailIpPoolId(testEmailIpPoolOciEmailEmailIpPool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetEmailIpPoolResult> getEmailIpPool(GetEmailIpPoolArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Email/getEmailIpPool:getEmailIpPool", TypeShape.of(GetEmailIpPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Email Ip Pool resource in Oracle Cloud Infrastructure Email service.
+     * 
+     * Retrieves the specified IpPool by identifier
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailIpPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailIpPool = EmailFunctions.getEmailIpPool(GetEmailIpPoolArgs.builder()
+     *             .emailIpPoolId(testEmailIpPoolOciEmailEmailIpPool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetEmailIpPoolResult> getEmailIpPoolPlain(GetEmailIpPoolPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Email/getEmailIpPool:getEmailIpPool", TypeShape.of(GetEmailIpPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Email Ip Pools in Oracle Cloud Infrastructure Email service.
+     * 
+     * Returns a list of EmailIpPools.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailIpPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailIpPools = EmailFunctions.getEmailIpPools(GetEmailIpPoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(emailIpPoolId)
+     *             .name(emailIpPoolName)
+     *             .state(emailIpPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetEmailIpPoolsResult> getEmailIpPools(GetEmailIpPoolsArgs args) {
+        return getEmailIpPools(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Email Ip Pools in Oracle Cloud Infrastructure Email service.
+     * 
+     * Returns a list of EmailIpPools.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailIpPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailIpPools = EmailFunctions.getEmailIpPools(GetEmailIpPoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(emailIpPoolId)
+     *             .name(emailIpPoolName)
+     *             .state(emailIpPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetEmailIpPoolsResult> getEmailIpPoolsPlain(GetEmailIpPoolsPlainArgs args) {
+        return getEmailIpPoolsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Email Ip Pools in Oracle Cloud Infrastructure Email service.
+     * 
+     * Returns a list of EmailIpPools.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailIpPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailIpPools = EmailFunctions.getEmailIpPools(GetEmailIpPoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(emailIpPoolId)
+     *             .name(emailIpPoolName)
+     *             .state(emailIpPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetEmailIpPoolsResult> getEmailIpPools(GetEmailIpPoolsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Email/getEmailIpPools:getEmailIpPools", TypeShape.of(GetEmailIpPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Email Ip Pools in Oracle Cloud Infrastructure Email service.
+     * 
+     * Returns a list of EmailIpPools.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailIpPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailIpPools = EmailFunctions.getEmailIpPools(GetEmailIpPoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(emailIpPoolId)
+     *             .name(emailIpPoolName)
+     *             .state(emailIpPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetEmailIpPoolsResult> getEmailIpPools(GetEmailIpPoolsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Email/getEmailIpPools:getEmailIpPools", TypeShape.of(GetEmailIpPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Email Ip Pools in Oracle Cloud Infrastructure Email service.
+     * 
+     * Returns a list of EmailIpPools.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailIpPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailIpPools = EmailFunctions.getEmailIpPools(GetEmailIpPoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(emailIpPoolId)
+     *             .name(emailIpPoolName)
+     *             .state(emailIpPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetEmailIpPoolsResult> getEmailIpPoolsPlain(GetEmailIpPoolsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Email/getEmailIpPools:getEmailIpPools", TypeShape.of(GetEmailIpPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Email Outbound Ips in Oracle Cloud Infrastructure Email service.
+     * 
+     * Returns a list of all Outbound Public IPs assigned for a given tenant.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailOutboundIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailOutboundIps = EmailFunctions.getEmailOutboundIps(GetEmailOutboundIpsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .assignmentState(emailOutboundIpAssignmentState)
+     *             .outboundIp(emailOutboundIpOutboundIp)
+     *             .state(emailOutboundIpState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetEmailOutboundIpsResult> getEmailOutboundIps(GetEmailOutboundIpsArgs args) {
+        return getEmailOutboundIps(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Email Outbound Ips in Oracle Cloud Infrastructure Email service.
+     * 
+     * Returns a list of all Outbound Public IPs assigned for a given tenant.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailOutboundIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailOutboundIps = EmailFunctions.getEmailOutboundIps(GetEmailOutboundIpsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .assignmentState(emailOutboundIpAssignmentState)
+     *             .outboundIp(emailOutboundIpOutboundIp)
+     *             .state(emailOutboundIpState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetEmailOutboundIpsResult> getEmailOutboundIpsPlain(GetEmailOutboundIpsPlainArgs args) {
+        return getEmailOutboundIpsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Email Outbound Ips in Oracle Cloud Infrastructure Email service.
+     * 
+     * Returns a list of all Outbound Public IPs assigned for a given tenant.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailOutboundIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailOutboundIps = EmailFunctions.getEmailOutboundIps(GetEmailOutboundIpsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .assignmentState(emailOutboundIpAssignmentState)
+     *             .outboundIp(emailOutboundIpOutboundIp)
+     *             .state(emailOutboundIpState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetEmailOutboundIpsResult> getEmailOutboundIps(GetEmailOutboundIpsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Email/getEmailOutboundIps:getEmailOutboundIps", TypeShape.of(GetEmailOutboundIpsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Email Outbound Ips in Oracle Cloud Infrastructure Email service.
+     * 
+     * Returns a list of all Outbound Public IPs assigned for a given tenant.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailOutboundIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailOutboundIps = EmailFunctions.getEmailOutboundIps(GetEmailOutboundIpsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .assignmentState(emailOutboundIpAssignmentState)
+     *             .outboundIp(emailOutboundIpOutboundIp)
+     *             .state(emailOutboundIpState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetEmailOutboundIpsResult> getEmailOutboundIps(GetEmailOutboundIpsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Email/getEmailOutboundIps:getEmailOutboundIps", TypeShape.of(GetEmailOutboundIpsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Email Outbound Ips in Oracle Cloud Infrastructure Email service.
+     * 
+     * Returns a list of all Outbound Public IPs assigned for a given tenant.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailOutboundIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailOutboundIps = EmailFunctions.getEmailOutboundIps(GetEmailOutboundIpsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .assignmentState(emailOutboundIpAssignmentState)
+     *             .outboundIp(emailOutboundIpOutboundIp)
+     *             .state(emailOutboundIpState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetEmailOutboundIpsResult> getEmailOutboundIpsPlain(GetEmailOutboundIpsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Email/getEmailOutboundIps:getEmailOutboundIps", TypeShape.of(GetEmailOutboundIpsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Email Return Path resource in Oracle Cloud Infrastructure Email service.
      * 
      * Retrieves the specified email return path.
@@ -1900,6 +2569,7 @@ public final class EmailFunctions {
      *             .compartmentId(compartmentId)
      *             .domain(senderDomain)
      *             .emailAddress(senderEmailAddress)
+     *             .emailIpPoolId(testEmailIpPool.id())
      *             .state(senderState)
      *             .build());
      * 
@@ -1945,6 +2615,7 @@ public final class EmailFunctions {
      *             .compartmentId(compartmentId)
      *             .domain(senderDomain)
      *             .emailAddress(senderEmailAddress)
+     *             .emailIpPoolId(testEmailIpPool.id())
      *             .state(senderState)
      *             .build());
      * 
@@ -1990,6 +2661,7 @@ public final class EmailFunctions {
      *             .compartmentId(compartmentId)
      *             .domain(senderDomain)
      *             .emailAddress(senderEmailAddress)
+     *             .emailIpPoolId(testEmailIpPool.id())
      *             .state(senderState)
      *             .build());
      * 
@@ -2035,6 +2707,7 @@ public final class EmailFunctions {
      *             .compartmentId(compartmentId)
      *             .domain(senderDomain)
      *             .emailAddress(senderEmailAddress)
+     *             .emailIpPoolId(testEmailIpPool.id())
      *             .state(senderState)
      *             .build());
      * 
@@ -2080,6 +2753,7 @@ public final class EmailFunctions {
      *             .compartmentId(compartmentId)
      *             .domain(senderDomain)
      *             .emailAddress(senderEmailAddress)
+     *             .emailIpPoolId(testEmailIpPool.id())
      *             .state(senderState)
      *             .build());
      * 

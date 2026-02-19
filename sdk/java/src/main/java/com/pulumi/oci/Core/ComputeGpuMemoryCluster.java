@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Core.ComputeGpuMemoryClusterArgs;
 import com.pulumi.oci.Core.inputs.ComputeGpuMemoryClusterState;
+import com.pulumi.oci.Core.outputs.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.Map;
@@ -33,6 +34,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Core.ComputeGpuMemoryCluster;
  * import com.pulumi.oci.Core.ComputeGpuMemoryClusterArgs;
+ * import com.pulumi.oci.Core.inputs.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -54,6 +56,11 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(computeGpuMemoryClusterDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .gpuMemoryClusterScaleConfig(ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs.builder()
+ *                 .isUpsizeEnabled(computeGpuMemoryClusterGpuMemoryClusterScaleConfigIsUpsizeEnabled)
+ *                 .isDownsizeEnabled(computeGpuMemoryClusterGpuMemoryClusterScaleConfigIsDownsizeEnabled)
+ *                 .targetSize(computeGpuMemoryClusterGpuMemoryClusterScaleConfigTargetSize)
+ *                 .build())
  *             .gpuMemoryFabricId(testGpuMemoryFabric.id())
  *             .size(computeGpuMemoryClusterSize)
  *             .build());
@@ -157,6 +164,20 @@ public class ComputeGpuMemoryCluster extends com.pulumi.resources.CustomResource
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * (Updatable) Configuration settings for GPU Memory Cluster scaling.
+     * 
+     */
+    @Export(name="gpuMemoryClusterScaleConfig", refs={ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig.class}, tree="[0]")
+    private Output<ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig> gpuMemoryClusterScaleConfig;
+
+    /**
+     * @return (Updatable) Configuration settings for GPU Memory Cluster scaling.
+     * 
+     */
+    public Output<ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig> gpuMemoryClusterScaleConfig() {
+        return this.gpuMemoryClusterScaleConfig;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.

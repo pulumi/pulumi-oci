@@ -71,6 +71,8 @@ type LookupComputeGpuMemoryClusterResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Configuration settings for GPU Memory Cluster scaling.
+	GpuMemoryClusterScaleConfigs []GetComputeGpuMemoryClusterGpuMemoryClusterScaleConfig `pulumi:"gpuMemoryClusterScaleConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
 	GpuMemoryFabricId string `pulumi:"gpuMemoryFabricId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
@@ -153,6 +155,13 @@ func (o LookupComputeGpuMemoryClusterResultOutput) DisplayName() pulumi.StringOu
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o LookupComputeGpuMemoryClusterResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupComputeGpuMemoryClusterResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Configuration settings for GPU Memory Cluster scaling.
+func (o LookupComputeGpuMemoryClusterResultOutput) GpuMemoryClusterScaleConfigs() GetComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArrayOutput {
+	return o.ApplyT(func(v LookupComputeGpuMemoryClusterResult) []GetComputeGpuMemoryClusterGpuMemoryClusterScaleConfig {
+		return v.GpuMemoryClusterScaleConfigs
+	}).(GetComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.

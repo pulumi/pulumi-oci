@@ -59,7 +59,7 @@ type GetAddonOptionsArgs struct {
 	Filters   []GetAddonOptionsFilter `pulumi:"filters"`
 	// The kubernetes version to fetch the addons.
 	KubernetesVersion string `pulumi:"kubernetesVersion"`
-	// Whether to show all add-on versions
+	// Specifies whether all add-on versions should be displayed. The default value is false. If set to true, the API will return all available add-on versions, including deprecated versions and detailed build numbers. Please note that the use of deprecated versions, as well as the specification of a particular build of a supported version, is not recommended for standard operations.
 	ShouldShowAllVersions *bool `pulumi:"shouldShowAllVersions"`
 }
 
@@ -91,7 +91,7 @@ type GetAddonOptionsOutputArgs struct {
 	Filters   GetAddonOptionsFilterArrayInput `pulumi:"filters"`
 	// The kubernetes version to fetch the addons.
 	KubernetesVersion pulumi.StringInput `pulumi:"kubernetesVersion"`
-	// Whether to show all add-on versions
+	// Specifies whether all add-on versions should be displayed. The default value is false. If set to true, the API will return all available add-on versions, including deprecated versions and detailed build numbers. Please note that the use of deprecated versions, as well as the specification of a particular build of a supported version, is not recommended for standard operations.
 	ShouldShowAllVersions pulumi.BoolPtrInput `pulumi:"shouldShowAllVersions"`
 }
 

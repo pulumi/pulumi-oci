@@ -20,6 +20,11 @@ export type ClusterCompleteCredentialRotationManagement = import("./clusterCompl
 export const ClusterCompleteCredentialRotationManagement: typeof import("./clusterCompleteCredentialRotationManagement").ClusterCompleteCredentialRotationManagement = null as any;
 utilities.lazyLoad(exports, ["ClusterCompleteCredentialRotationManagement"], () => require("./clusterCompleteCredentialRotationManagement"));
 
+export { ClusterPublicApiEndpointDecommissionManagerArgs, ClusterPublicApiEndpointDecommissionManagerState } from "./clusterPublicApiEndpointDecommissionManager";
+export type ClusterPublicApiEndpointDecommissionManager = import("./clusterPublicApiEndpointDecommissionManager").ClusterPublicApiEndpointDecommissionManager;
+export const ClusterPublicApiEndpointDecommissionManager: typeof import("./clusterPublicApiEndpointDecommissionManager").ClusterPublicApiEndpointDecommissionManager = null as any;
+utilities.lazyLoad(exports, ["ClusterPublicApiEndpointDecommissionManager"], () => require("./clusterPublicApiEndpointDecommissionManager"));
+
 export { ClusterStartCredentialRotationManagementArgs, ClusterStartCredentialRotationManagementState } from "./clusterStartCredentialRotationManagement";
 export type ClusterStartCredentialRotationManagement = import("./clusterStartCredentialRotationManagement").ClusterStartCredentialRotationManagement;
 export const ClusterStartCredentialRotationManagement: typeof import("./clusterStartCredentialRotationManagement").ClusterStartCredentialRotationManagement = null as any;
@@ -69,6 +74,11 @@ export { GetClusterOptionArgs, GetClusterOptionResult, GetClusterOptionOutputArg
 export const getClusterOption: typeof import("./getClusterOption").getClusterOption = null as any;
 export const getClusterOptionOutput: typeof import("./getClusterOption").getClusterOptionOutput = null as any;
 utilities.lazyLoad(exports, ["getClusterOption","getClusterOptionOutput"], () => require("./getClusterOption"));
+
+export { GetClusterPublicApiEndpointDecommissionStatusArgs, GetClusterPublicApiEndpointDecommissionStatusResult, GetClusterPublicApiEndpointDecommissionStatusOutputArgs } from "./getClusterPublicApiEndpointDecommissionStatus";
+export const getClusterPublicApiEndpointDecommissionStatus: typeof import("./getClusterPublicApiEndpointDecommissionStatus").getClusterPublicApiEndpointDecommissionStatus = null as any;
+export const getClusterPublicApiEndpointDecommissionStatusOutput: typeof import("./getClusterPublicApiEndpointDecommissionStatus").getClusterPublicApiEndpointDecommissionStatusOutput = null as any;
+utilities.lazyLoad(exports, ["getClusterPublicApiEndpointDecommissionStatus","getClusterPublicApiEndpointDecommissionStatusOutput"], () => require("./getClusterPublicApiEndpointDecommissionStatus"));
 
 export { GetClusterWorkloadMappingArgs, GetClusterWorkloadMappingResult, GetClusterWorkloadMappingOutputArgs } from "./getClusterWorkloadMapping";
 export const getClusterWorkloadMapping: typeof import("./getClusterWorkloadMapping").getClusterWorkloadMapping = null as any;
@@ -156,6 +166,8 @@ const _module = {
                 return new Cluster(name, <any>undefined, { urn })
             case "oci:ContainerEngine/clusterCompleteCredentialRotationManagement:ClusterCompleteCredentialRotationManagement":
                 return new ClusterCompleteCredentialRotationManagement(name, <any>undefined, { urn })
+            case "oci:ContainerEngine/clusterPublicApiEndpointDecommissionManager:ClusterPublicApiEndpointDecommissionManager":
+                return new ClusterPublicApiEndpointDecommissionManager(name, <any>undefined, { urn })
             case "oci:ContainerEngine/clusterStartCredentialRotationManagement:ClusterStartCredentialRotationManagement":
                 return new ClusterStartCredentialRotationManagement(name, <any>undefined, { urn })
             case "oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping":
@@ -174,6 +186,7 @@ const _module = {
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/addon", _module)
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/cluster", _module)
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/clusterCompleteCredentialRotationManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "ContainerEngine/clusterPublicApiEndpointDecommissionManager", _module)
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/clusterStartCredentialRotationManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/clusterWorkloadMapping", _module)
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/containerInstance", _module)

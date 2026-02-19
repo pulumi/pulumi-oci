@@ -39,6 +39,7 @@ import (
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
+//				EmailIpPoolId: pulumi.Any(testEmailIpPool.Id),
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
@@ -70,6 +71,8 @@ type Sender struct {
 	EmailAddress pulumi.StringOutput `pulumi:"emailAddress"`
 	// The email domain used to assert responsibility for emails sent from this sender.
 	EmailDomainId pulumi.StringOutput `pulumi:"emailDomainId"`
+	// (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+	EmailIpPoolId pulumi.StringOutput `pulumi:"emailIpPoolId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
@@ -131,6 +134,8 @@ type senderState struct {
 	EmailAddress *string `pulumi:"emailAddress"`
 	// The email domain used to assert responsibility for emails sent from this sender.
 	EmailDomainId *string `pulumi:"emailDomainId"`
+	// (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+	EmailIpPoolId *string `pulumi:"emailIpPoolId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
@@ -157,6 +162,8 @@ type SenderState struct {
 	EmailAddress pulumi.StringPtrInput
 	// The email domain used to assert responsibility for emails sent from this sender.
 	EmailDomainId pulumi.StringPtrInput
+	// (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+	EmailIpPoolId pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
@@ -185,6 +192,8 @@ type senderArgs struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The email address of the sender.
 	EmailAddress string `pulumi:"emailAddress"`
+	// (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+	EmailIpPoolId *string `pulumi:"emailIpPoolId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
@@ -200,6 +209,8 @@ type SenderArgs struct {
 	DefinedTags pulumi.StringMapInput
 	// The email address of the sender.
 	EmailAddress pulumi.StringInput
+	// (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+	EmailIpPoolId pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
@@ -312,6 +323,11 @@ func (o SenderOutput) EmailAddress() pulumi.StringOutput {
 // The email domain used to assert responsibility for emails sent from this sender.
 func (o SenderOutput) EmailDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sender) pulumi.StringOutput { return v.EmailDomainId }).(pulumi.StringOutput)
+}
+
+// (Updatable) An optional field. The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+func (o SenderOutput) EmailIpPoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Sender) pulumi.StringOutput { return v.EmailIpPoolId }).(pulumi.StringOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`

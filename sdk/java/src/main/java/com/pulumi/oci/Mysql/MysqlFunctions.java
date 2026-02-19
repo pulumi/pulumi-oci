@@ -12,6 +12,8 @@ import com.pulumi.oci.Mysql.inputs.GetChannelArgs;
 import com.pulumi.oci.Mysql.inputs.GetChannelPlainArgs;
 import com.pulumi.oci.Mysql.inputs.GetChannelsArgs;
 import com.pulumi.oci.Mysql.inputs.GetChannelsPlainArgs;
+import com.pulumi.oci.Mysql.inputs.GetDbSystemMaintenanceEventsArgs;
+import com.pulumi.oci.Mysql.inputs.GetDbSystemMaintenanceEventsPlainArgs;
 import com.pulumi.oci.Mysql.inputs.GetHeatWaveClusterArgs;
 import com.pulumi.oci.Mysql.inputs.GetHeatWaveClusterPlainArgs;
 import com.pulumi.oci.Mysql.inputs.GetMysqlBackupArgs;
@@ -36,6 +38,7 @@ import com.pulumi.oci.Mysql.inputs.GetShapesArgs;
 import com.pulumi.oci.Mysql.inputs.GetShapesPlainArgs;
 import com.pulumi.oci.Mysql.outputs.GetChannelResult;
 import com.pulumi.oci.Mysql.outputs.GetChannelsResult;
+import com.pulumi.oci.Mysql.outputs.GetDbSystemMaintenanceEventsResult;
 import com.pulumi.oci.Mysql.outputs.GetHeatWaveClusterResult;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupResult;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsResult;
@@ -505,6 +508,241 @@ public final class MysqlFunctions {
      */
     public static CompletableFuture<GetChannelsResult> getChannelsPlain(GetChannelsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Mysql/getChannels:getChannels", TypeShape.of(GetChannelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db System Maintenance Events in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * List all the maintenance events.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetDbSystemMaintenanceEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemMaintenanceEvents = MysqlFunctions.getDbSystemMaintenanceEvents(GetDbSystemMaintenanceEventsArgs.builder()
+     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .maintenanceAction(dbSystemMaintenanceEventMaintenanceAction)
+     *             .maintenanceStatus(dbSystemMaintenanceEventMaintenanceStatus)
+     *             .maintenanceType(dbSystemMaintenanceEventMaintenanceType)
+     *             .mysqlVersionAfterMaintenance(dbSystemMaintenanceEventMysqlVersionAfterMaintenance)
+     *             .mysqlVersionBeforeMaintenance(dbSystemMaintenanceEventMysqlVersionBeforeMaintenance)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbSystemMaintenanceEventsResult> getDbSystemMaintenanceEvents(GetDbSystemMaintenanceEventsArgs args) {
+        return getDbSystemMaintenanceEvents(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Db System Maintenance Events in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * List all the maintenance events.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetDbSystemMaintenanceEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemMaintenanceEvents = MysqlFunctions.getDbSystemMaintenanceEvents(GetDbSystemMaintenanceEventsArgs.builder()
+     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .maintenanceAction(dbSystemMaintenanceEventMaintenanceAction)
+     *             .maintenanceStatus(dbSystemMaintenanceEventMaintenanceStatus)
+     *             .maintenanceType(dbSystemMaintenanceEventMaintenanceType)
+     *             .mysqlVersionAfterMaintenance(dbSystemMaintenanceEventMysqlVersionAfterMaintenance)
+     *             .mysqlVersionBeforeMaintenance(dbSystemMaintenanceEventMysqlVersionBeforeMaintenance)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbSystemMaintenanceEventsResult> getDbSystemMaintenanceEventsPlain(GetDbSystemMaintenanceEventsPlainArgs args) {
+        return getDbSystemMaintenanceEventsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Db System Maintenance Events in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * List all the maintenance events.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetDbSystemMaintenanceEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemMaintenanceEvents = MysqlFunctions.getDbSystemMaintenanceEvents(GetDbSystemMaintenanceEventsArgs.builder()
+     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .maintenanceAction(dbSystemMaintenanceEventMaintenanceAction)
+     *             .maintenanceStatus(dbSystemMaintenanceEventMaintenanceStatus)
+     *             .maintenanceType(dbSystemMaintenanceEventMaintenanceType)
+     *             .mysqlVersionAfterMaintenance(dbSystemMaintenanceEventMysqlVersionAfterMaintenance)
+     *             .mysqlVersionBeforeMaintenance(dbSystemMaintenanceEventMysqlVersionBeforeMaintenance)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbSystemMaintenanceEventsResult> getDbSystemMaintenanceEvents(GetDbSystemMaintenanceEventsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Mysql/getDbSystemMaintenanceEvents:getDbSystemMaintenanceEvents", TypeShape.of(GetDbSystemMaintenanceEventsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db System Maintenance Events in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * List all the maintenance events.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetDbSystemMaintenanceEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemMaintenanceEvents = MysqlFunctions.getDbSystemMaintenanceEvents(GetDbSystemMaintenanceEventsArgs.builder()
+     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .maintenanceAction(dbSystemMaintenanceEventMaintenanceAction)
+     *             .maintenanceStatus(dbSystemMaintenanceEventMaintenanceStatus)
+     *             .maintenanceType(dbSystemMaintenanceEventMaintenanceType)
+     *             .mysqlVersionAfterMaintenance(dbSystemMaintenanceEventMysqlVersionAfterMaintenance)
+     *             .mysqlVersionBeforeMaintenance(dbSystemMaintenanceEventMysqlVersionBeforeMaintenance)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbSystemMaintenanceEventsResult> getDbSystemMaintenanceEvents(GetDbSystemMaintenanceEventsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Mysql/getDbSystemMaintenanceEvents:getDbSystemMaintenanceEvents", TypeShape.of(GetDbSystemMaintenanceEventsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db System Maintenance Events in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * List all the maintenance events.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetDbSystemMaintenanceEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemMaintenanceEvents = MysqlFunctions.getDbSystemMaintenanceEvents(GetDbSystemMaintenanceEventsArgs.builder()
+     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .maintenanceAction(dbSystemMaintenanceEventMaintenanceAction)
+     *             .maintenanceStatus(dbSystemMaintenanceEventMaintenanceStatus)
+     *             .maintenanceType(dbSystemMaintenanceEventMaintenanceType)
+     *             .mysqlVersionAfterMaintenance(dbSystemMaintenanceEventMysqlVersionAfterMaintenance)
+     *             .mysqlVersionBeforeMaintenance(dbSystemMaintenanceEventMysqlVersionBeforeMaintenance)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbSystemMaintenanceEventsResult> getDbSystemMaintenanceEventsPlain(GetDbSystemMaintenanceEventsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Mysql/getDbSystemMaintenanceEvents:getDbSystemMaintenanceEvents", TypeShape.of(GetDbSystemMaintenanceEventsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific HeatWave cluster resource in Oracle Cloud Infrastructure MySQL Database service.

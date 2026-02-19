@@ -63,6 +63,21 @@ public final class GetSendersArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.emailAddress);
     }
 
+    /**
+     * A filter to only return resources that match the given IpPool resource exactly.
+     * 
+     */
+    @Import(name="emailIpPoolId")
+    private @Nullable Output<String> emailIpPoolId;
+
+    /**
+     * @return A filter to only return resources that match the given IpPool resource exactly.
+     * 
+     */
+    public Optional<Output<String>> emailIpPoolId() {
+        return Optional.ofNullable(this.emailIpPoolId);
+    }
+
     @Import(name="filters")
     private @Nullable Output<List<GetSendersFilterArgs>> filters;
 
@@ -91,6 +106,7 @@ public final class GetSendersArgs extends com.pulumi.resources.InvokeArgs {
         this.compartmentId = $.compartmentId;
         this.domain = $.domain;
         this.emailAddress = $.emailAddress;
+        this.emailIpPoolId = $.emailIpPoolId;
         this.filters = $.filters;
         this.state = $.state;
     }
@@ -174,6 +190,27 @@ public final class GetSendersArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder emailAddress(String emailAddress) {
             return emailAddress(Output.of(emailAddress));
+        }
+
+        /**
+         * @param emailIpPoolId A filter to only return resources that match the given IpPool resource exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder emailIpPoolId(@Nullable Output<String> emailIpPoolId) {
+            $.emailIpPoolId = emailIpPoolId;
+            return this;
+        }
+
+        /**
+         * @param emailIpPoolId A filter to only return resources that match the given IpPool resource exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder emailIpPoolId(String emailIpPoolId) {
+            return emailIpPoolId(Output.of(emailIpPoolId));
         }
 
         public Builder filters(@Nullable Output<List<GetSendersFilterArgs>> filters) {

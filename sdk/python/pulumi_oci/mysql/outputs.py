@@ -34,6 +34,7 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotEncryptData',
     'MysqlBackupDbSystemSnapshotEndpoint',
     'MysqlBackupDbSystemSnapshotMaintenance',
+    'MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow',
     'MysqlBackupDbSystemSnapshotReadEndpoint',
     'MysqlBackupDbSystemSnapshotRest',
     'MysqlBackupDbSystemSnapshotSecureConnection',
@@ -62,6 +63,7 @@ __all__ = [
     'MysqlDbSystemEndpoint',
     'MysqlDbSystemHeatWaveCluster',
     'MysqlDbSystemMaintenance',
+    'MysqlDbSystemMaintenanceMaintenanceDisabledWindow',
     'MysqlDbSystemPointInTimeRecoveryDetail',
     'MysqlDbSystemReadEndpoint',
     'MysqlDbSystemRest',
@@ -82,6 +84,8 @@ __all__ = [
     'GetChannelsChannelTargetResult',
     'GetChannelsChannelTargetFilterResult',
     'GetChannelsFilterResult',
+    'GetDbSystemMaintenanceEventsFilterResult',
+    'GetDbSystemMaintenanceEventsMaintenanceEventResult',
     'GetHeatWaveClusterClusterNodeResult',
     'GetMysqlBackupBackupValidationDetailResult',
     'GetMysqlBackupBackupValidationDetailPreparedBackupDetailResult',
@@ -95,6 +99,7 @@ __all__ = [
     'GetMysqlBackupDbSystemSnapshotEncryptDataResult',
     'GetMysqlBackupDbSystemSnapshotEndpointResult',
     'GetMysqlBackupDbSystemSnapshotMaintenanceResult',
+    'GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowResult',
     'GetMysqlBackupDbSystemSnapshotReadEndpointResult',
     'GetMysqlBackupDbSystemSnapshotRestResult',
     'GetMysqlBackupDbSystemSnapshotSecureConnectionResult',
@@ -132,6 +137,7 @@ __all__ = [
     'GetMysqlDbSystemEndpointResult',
     'GetMysqlDbSystemHeatWaveClusterResult',
     'GetMysqlDbSystemMaintenanceResult',
+    'GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowResult',
     'GetMysqlDbSystemPointInTimeRecoveryDetailResult',
     'GetMysqlDbSystemReadEndpointResult',
     'GetMysqlDbSystemRestResult',
@@ -156,6 +162,7 @@ __all__ = [
     'GetMysqlDbSystemsDbSystemEndpointResult',
     'GetMysqlDbSystemsDbSystemHeatWaveClusterResult',
     'GetMysqlDbSystemsDbSystemMaintenanceResult',
+    'GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowResult',
     'GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailResult',
     'GetMysqlDbSystemsDbSystemReadEndpointResult',
     'GetMysqlDbSystemsDbSystemRestResult',
@@ -1898,7 +1905,9 @@ class MysqlBackupDbSystemSnapshotMaintenance(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "maintenanceScheduleType":
+        if key == "maintenanceDisabledWindows":
+            suggest = "maintenance_disabled_windows"
+        elif key == "maintenanceScheduleType":
             suggest = "maintenance_schedule_type"
         elif key == "targetVersion":
             suggest = "target_version"
@@ -1923,6 +1932,7 @@ class MysqlBackupDbSystemSnapshotMaintenance(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 maintenance_disabled_windows: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow']] = None,
                  maintenance_schedule_type: Optional[_builtins.str] = None,
                  target_version: Optional[_builtins.str] = None,
                  time_scheduled: Optional[_builtins.str] = None,
@@ -1930,6 +1940,7 @@ class MysqlBackupDbSystemSnapshotMaintenance(dict):
                  version_track_preference: Optional[_builtins.str] = None,
                  window_start_time: Optional[_builtins.str] = None):
         """
+        :param Sequence['MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs'] maintenance_disabled_windows: Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
         :param _builtins.str maintenance_schedule_type: The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
         :param _builtins.str target_version: The version that is expected to be targeted during the next scheduled maintenance run.
         :param _builtins.str time_scheduled: The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -1937,6 +1948,8 @@ class MysqlBackupDbSystemSnapshotMaintenance(dict):
         :param _builtins.str version_track_preference: The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
         :param _builtins.str window_start_time: The start time of the maintenance window.
         """
+        if maintenance_disabled_windows is not None:
+            pulumi.set(__self__, "maintenance_disabled_windows", maintenance_disabled_windows)
         if maintenance_schedule_type is not None:
             pulumi.set(__self__, "maintenance_schedule_type", maintenance_schedule_type)
         if target_version is not None:
@@ -1949,6 +1962,14 @@ class MysqlBackupDbSystemSnapshotMaintenance(dict):
             pulumi.set(__self__, "version_track_preference", version_track_preference)
         if window_start_time is not None:
             pulumi.set(__self__, "window_start_time", window_start_time)
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceDisabledWindows")
+    def maintenance_disabled_windows(self) -> Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow']]:
+        """
+        Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+        """
+        return pulumi.get(self, "maintenance_disabled_windows")
 
     @_builtins.property
     @pulumi.getter(name="maintenanceScheduleType")
@@ -1997,6 +2018,56 @@ class MysqlBackupDbSystemSnapshotMaintenance(dict):
         The start time of the maintenance window.
         """
         return pulumi.get(self, "window_start_time")
+
+
+@pulumi.output_type
+class MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "timeEnd":
+            suggest = "time_end"
+        elif key == "timeStart":
+            suggest = "time_start"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 time_end: Optional[_builtins.str] = None,
+                 time_start: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str time_end: The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_start: The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        if time_end is not None:
+            pulumi.set(__self__, "time_end", time_end)
+        if time_start is not None:
+            pulumi.set(__self__, "time_start", time_start)
+
+    @_builtins.property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> Optional[_builtins.str]:
+        """
+        The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_end")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStart")
+    def time_start(self) -> Optional[_builtins.str]:
+        """
+        The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_start")
 
 
 @pulumi.output_type
@@ -5894,6 +5965,8 @@ class MysqlDbSystemMaintenance(dict):
         suggest = None
         if key == "windowStartTime":
             suggest = "window_start_time"
+        elif key == "maintenanceDisabledWindows":
+            suggest = "maintenance_disabled_windows"
         elif key == "maintenanceScheduleType":
             suggest = "maintenance_schedule_type"
         elif key == "targetVersion":
@@ -5918,6 +5991,7 @@ class MysqlDbSystemMaintenance(dict):
 
     def __init__(__self__, *,
                  window_start_time: _builtins.str,
+                 maintenance_disabled_windows: Optional[Sequence['outputs.MysqlDbSystemMaintenanceMaintenanceDisabledWindow']] = None,
                  maintenance_schedule_type: Optional[_builtins.str] = None,
                  target_version: Optional[_builtins.str] = None,
                  time_scheduled: Optional[_builtins.str] = None,
@@ -5933,6 +6007,7 @@ class MysqlDbSystemMaintenance(dict):
                "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
                
                If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
+        :param Sequence['MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs'] maintenance_disabled_windows: (Updatable) Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
         :param _builtins.str maintenance_schedule_type: (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
         :param _builtins.str target_version: The version that is expected to be targeted during the next scheduled maintenance run.
         :param _builtins.str time_scheduled: The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -5942,6 +6017,8 @@ class MysqlDbSystemMaintenance(dict):
         :param _builtins.str version_track_preference: (Updatable) The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
         """
         pulumi.set(__self__, "window_start_time", window_start_time)
+        if maintenance_disabled_windows is not None:
+            pulumi.set(__self__, "maintenance_disabled_windows", maintenance_disabled_windows)
         if maintenance_schedule_type is not None:
             pulumi.set(__self__, "maintenance_schedule_type", maintenance_schedule_type)
         if target_version is not None:
@@ -5968,6 +6045,14 @@ class MysqlDbSystemMaintenance(dict):
         If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
         """
         return pulumi.get(self, "window_start_time")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceDisabledWindows")
+    def maintenance_disabled_windows(self) -> Optional[Sequence['outputs.MysqlDbSystemMaintenanceMaintenanceDisabledWindow']]:
+        """
+        (Updatable) Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+        """
+        return pulumi.get(self, "maintenance_disabled_windows")
 
     @_builtins.property
     @pulumi.getter(name="maintenanceScheduleType")
@@ -6010,6 +6095,54 @@ class MysqlDbSystemMaintenance(dict):
         (Updatable) The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
         """
         return pulumi.get(self, "version_track_preference")
+
+
+@pulumi.output_type
+class MysqlDbSystemMaintenanceMaintenanceDisabledWindow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "timeEnd":
+            suggest = "time_end"
+        elif key == "timeStart":
+            suggest = "time_start"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MysqlDbSystemMaintenanceMaintenanceDisabledWindow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MysqlDbSystemMaintenanceMaintenanceDisabledWindow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MysqlDbSystemMaintenanceMaintenanceDisabledWindow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 time_end: _builtins.str,
+                 time_start: _builtins.str):
+        """
+        :param _builtins.str time_end: (Updatable) The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_start: (Updatable) The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        pulumi.set(__self__, "time_end", time_end)
+        pulumi.set(__self__, "time_start", time_start)
+
+    @_builtins.property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> _builtins.str:
+        """
+        (Updatable) The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_end")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStart")
+    def time_start(self) -> _builtins.str:
+        """
+        (Updatable) The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_start")
 
 
 @pulumi.output_type
@@ -7275,6 +7408,190 @@ class GetChannelsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetDbSystemMaintenanceEventsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDbSystemMaintenanceEventsMaintenanceEventResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 db_system_id: _builtins.str,
+                 maintenance_action: _builtins.str,
+                 maintenance_notes: _builtins.str,
+                 maintenance_scope: _builtins.str,
+                 maintenance_status: _builtins.str,
+                 maintenance_type: _builtins.str,
+                 mysql_version_after_maintenance: _builtins.str,
+                 mysql_version_before_maintenance: _builtins.str,
+                 time_created: _builtins.str,
+                 time_ended: _builtins.str,
+                 time_mysql_switch_over_ended: _builtins.str,
+                 time_mysql_switch_over_started: _builtins.str,
+                 time_started: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The OCID of the compartment the maintenance event belongs to.
+        :param _builtins.str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param _builtins.str maintenance_action: The nature of the maintenance event.
+        :param _builtins.str maintenance_scope: The MySQL instances operated during a maintenance event.
+        :param _builtins.str maintenance_status: The last status of the maintenance event.
+        :param _builtins.str maintenance_type: How the maintenance event was triggered.
+        :param _builtins.str mysql_version_after_maintenance: The MySQL version after the maintenance event.
+        :param _builtins.str mysql_version_before_maintenance: The MySQL version before the maintenance event.
+        :param _builtins.str time_created: The date and time the record was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_ended: The date and time the maintenance event ended, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_mysql_switch_over_ended: The date and time the DB System came back online during the maintenance, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_mysql_switch_over_started: The date and time the DB System was initially down during the maintenance, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_started: The date and time the maintenance event started, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "maintenance_action", maintenance_action)
+        pulumi.set(__self__, "maintenance_notes", maintenance_notes)
+        pulumi.set(__self__, "maintenance_scope", maintenance_scope)
+        pulumi.set(__self__, "maintenance_status", maintenance_status)
+        pulumi.set(__self__, "maintenance_type", maintenance_type)
+        pulumi.set(__self__, "mysql_version_after_maintenance", mysql_version_after_maintenance)
+        pulumi.set(__self__, "mysql_version_before_maintenance", mysql_version_before_maintenance)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_mysql_switch_over_ended", time_mysql_switch_over_ended)
+        pulumi.set(__self__, "time_mysql_switch_over_started", time_mysql_switch_over_started)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The OCID of the compartment the maintenance event belongs to.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> _builtins.str:
+        """
+        The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceAction")
+    def maintenance_action(self) -> _builtins.str:
+        """
+        The nature of the maintenance event.
+        """
+        return pulumi.get(self, "maintenance_action")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceNotes")
+    def maintenance_notes(self) -> _builtins.str:
+        return pulumi.get(self, "maintenance_notes")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceScope")
+    def maintenance_scope(self) -> _builtins.str:
+        """
+        The MySQL instances operated during a maintenance event.
+        """
+        return pulumi.get(self, "maintenance_scope")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceStatus")
+    def maintenance_status(self) -> _builtins.str:
+        """
+        The last status of the maintenance event.
+        """
+        return pulumi.get(self, "maintenance_status")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceType")
+    def maintenance_type(self) -> _builtins.str:
+        """
+        How the maintenance event was triggered.
+        """
+        return pulumi.get(self, "maintenance_type")
+
+    @_builtins.property
+    @pulumi.getter(name="mysqlVersionAfterMaintenance")
+    def mysql_version_after_maintenance(self) -> _builtins.str:
+        """
+        The MySQL version after the maintenance event.
+        """
+        return pulumi.get(self, "mysql_version_after_maintenance")
+
+    @_builtins.property
+    @pulumi.getter(name="mysqlVersionBeforeMaintenance")
+    def mysql_version_before_maintenance(self) -> _builtins.str:
+        """
+        The MySQL version before the maintenance event.
+        """
+        return pulumi.get(self, "mysql_version_before_maintenance")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the record was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> _builtins.str:
+        """
+        The date and time the maintenance event ended, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_ended")
+
+    @_builtins.property
+    @pulumi.getter(name="timeMysqlSwitchOverEnded")
+    def time_mysql_switch_over_ended(self) -> _builtins.str:
+        """
+        The date and time the DB System came back online during the maintenance, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_mysql_switch_over_ended")
+
+    @_builtins.property
+    @pulumi.getter(name="timeMysqlSwitchOverStarted")
+    def time_mysql_switch_over_started(self) -> _builtins.str:
+        """
+        The date and time the DB System was initially down during the maintenance, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_mysql_switch_over_started")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> _builtins.str:
+        """
+        The date and time the maintenance event started, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
 class GetHeatWaveClusterClusterNodeResult(dict):
     def __init__(__self__, *,
                  node_id: _builtins.str,
@@ -8219,6 +8536,7 @@ class GetMysqlBackupDbSystemSnapshotEndpointResult(dict):
 @pulumi.output_type
 class GetMysqlBackupDbSystemSnapshotMaintenanceResult(dict):
     def __init__(__self__, *,
+                 maintenance_disabled_windows: Sequence['outputs.GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowResult'],
                  maintenance_schedule_type: _builtins.str,
                  target_version: _builtins.str,
                  time_scheduled: _builtins.str,
@@ -8226,6 +8544,7 @@ class GetMysqlBackupDbSystemSnapshotMaintenanceResult(dict):
                  version_track_preference: _builtins.str,
                  window_start_time: _builtins.str):
         """
+        :param Sequence['GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs'] maintenance_disabled_windows: Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
         :param _builtins.str maintenance_schedule_type: The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
         :param _builtins.str target_version: The version that is expected to be targeted during the next scheduled maintenance run.
         :param _builtins.str time_scheduled: The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -8233,12 +8552,21 @@ class GetMysqlBackupDbSystemSnapshotMaintenanceResult(dict):
         :param _builtins.str version_track_preference: The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
         :param _builtins.str window_start_time: The start time of the maintenance window.
         """
+        pulumi.set(__self__, "maintenance_disabled_windows", maintenance_disabled_windows)
         pulumi.set(__self__, "maintenance_schedule_type", maintenance_schedule_type)
         pulumi.set(__self__, "target_version", target_version)
         pulumi.set(__self__, "time_scheduled", time_scheduled)
         pulumi.set(__self__, "version_preference", version_preference)
         pulumi.set(__self__, "version_track_preference", version_track_preference)
         pulumi.set(__self__, "window_start_time", window_start_time)
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceDisabledWindows")
+    def maintenance_disabled_windows(self) -> Sequence['outputs.GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowResult']:
+        """
+        Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+        """
+        return pulumi.get(self, "maintenance_disabled_windows")
 
     @_builtins.property
     @pulumi.getter(name="maintenanceScheduleType")
@@ -8287,6 +8615,35 @@ class GetMysqlBackupDbSystemSnapshotMaintenanceResult(dict):
         The start time of the maintenance window.
         """
         return pulumi.get(self, "window_start_time")
+
+
+@pulumi.output_type
+class GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowResult(dict):
+    def __init__(__self__, *,
+                 time_end: _builtins.str,
+                 time_start: _builtins.str):
+        """
+        :param _builtins.str time_end: The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_start: The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        pulumi.set(__self__, "time_end", time_end)
+        pulumi.set(__self__, "time_start", time_start)
+
+    @_builtins.property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> _builtins.str:
+        """
+        The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_end")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStart")
+    def time_start(self) -> _builtins.str:
+        """
+        The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_start")
 
 
 @pulumi.output_type
@@ -12820,6 +13177,7 @@ class GetMysqlDbSystemHeatWaveClusterResult(dict):
 @pulumi.output_type
 class GetMysqlDbSystemMaintenanceResult(dict):
     def __init__(__self__, *,
+                 maintenance_disabled_windows: Sequence['outputs.GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowResult'],
                  maintenance_schedule_type: _builtins.str,
                  target_version: _builtins.str,
                  time_scheduled: _builtins.str,
@@ -12827,6 +13185,7 @@ class GetMysqlDbSystemMaintenanceResult(dict):
                  version_track_preference: _builtins.str,
                  window_start_time: _builtins.str):
         """
+        :param Sequence['GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs'] maintenance_disabled_windows: Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
         :param _builtins.str maintenance_schedule_type: The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
         :param _builtins.str target_version: The version that is expected to be targeted during the next scheduled maintenance run.
         :param _builtins.str time_scheduled: The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -12834,12 +13193,21 @@ class GetMysqlDbSystemMaintenanceResult(dict):
         :param _builtins.str version_track_preference: The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
         :param _builtins.str window_start_time: The start time of the maintenance window.
         """
+        pulumi.set(__self__, "maintenance_disabled_windows", maintenance_disabled_windows)
         pulumi.set(__self__, "maintenance_schedule_type", maintenance_schedule_type)
         pulumi.set(__self__, "target_version", target_version)
         pulumi.set(__self__, "time_scheduled", time_scheduled)
         pulumi.set(__self__, "version_preference", version_preference)
         pulumi.set(__self__, "version_track_preference", version_track_preference)
         pulumi.set(__self__, "window_start_time", window_start_time)
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceDisabledWindows")
+    def maintenance_disabled_windows(self) -> Sequence['outputs.GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowResult']:
+        """
+        Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+        """
+        return pulumi.get(self, "maintenance_disabled_windows")
 
     @_builtins.property
     @pulumi.getter(name="maintenanceScheduleType")
@@ -12888,6 +13256,35 @@ class GetMysqlDbSystemMaintenanceResult(dict):
         The start time of the maintenance window.
         """
         return pulumi.get(self, "window_start_time")
+
+
+@pulumi.output_type
+class GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowResult(dict):
+    def __init__(__self__, *,
+                 time_end: _builtins.str,
+                 time_start: _builtins.str):
+        """
+        :param _builtins.str time_end: The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_start: The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        pulumi.set(__self__, "time_end", time_end)
+        pulumi.set(__self__, "time_start", time_start)
+
+    @_builtins.property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> _builtins.str:
+        """
+        The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_end")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStart")
+    def time_start(self) -> _builtins.str:
+        """
+        The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_start")
 
 
 @pulumi.output_type
@@ -14586,6 +14983,7 @@ class GetMysqlDbSystemsDbSystemHeatWaveClusterResult(dict):
 @pulumi.output_type
 class GetMysqlDbSystemsDbSystemMaintenanceResult(dict):
     def __init__(__self__, *,
+                 maintenance_disabled_windows: Sequence['outputs.GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowResult'],
                  maintenance_schedule_type: _builtins.str,
                  target_version: _builtins.str,
                  time_scheduled: _builtins.str,
@@ -14593,6 +14991,7 @@ class GetMysqlDbSystemsDbSystemMaintenanceResult(dict):
                  version_track_preference: _builtins.str,
                  window_start_time: _builtins.str):
         """
+        :param Sequence['GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArgs'] maintenance_disabled_windows: Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
         :param _builtins.str maintenance_schedule_type: The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
         :param _builtins.str target_version: The version that is expected to be targeted during the next scheduled maintenance run.
         :param _builtins.str time_scheduled: The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -14600,12 +14999,21 @@ class GetMysqlDbSystemsDbSystemMaintenanceResult(dict):
         :param _builtins.str version_track_preference: The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
         :param _builtins.str window_start_time: The start time of the maintenance window.
         """
+        pulumi.set(__self__, "maintenance_disabled_windows", maintenance_disabled_windows)
         pulumi.set(__self__, "maintenance_schedule_type", maintenance_schedule_type)
         pulumi.set(__self__, "target_version", target_version)
         pulumi.set(__self__, "time_scheduled", time_scheduled)
         pulumi.set(__self__, "version_preference", version_preference)
         pulumi.set(__self__, "version_track_preference", version_track_preference)
         pulumi.set(__self__, "window_start_time", window_start_time)
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceDisabledWindows")
+    def maintenance_disabled_windows(self) -> Sequence['outputs.GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowResult']:
+        """
+        Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+        """
+        return pulumi.get(self, "maintenance_disabled_windows")
 
     @_builtins.property
     @pulumi.getter(name="maintenanceScheduleType")
@@ -14654,6 +15062,35 @@ class GetMysqlDbSystemsDbSystemMaintenanceResult(dict):
         The start time of the maintenance window.
         """
         return pulumi.get(self, "window_start_time")
+
+
+@pulumi.output_type
+class GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowResult(dict):
+    def __init__(__self__, *,
+                 time_end: _builtins.str,
+                 time_start: _builtins.str):
+        """
+        :param _builtins.str time_end: The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_start: The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        pulumi.set(__self__, "time_end", time_end)
+        pulumi.set(__self__, "time_start", time_start)
+
+    @_builtins.property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> _builtins.str:
+        """
+        The time until when maintenance is disabled. Must be set together with timeStart and must be after timeStart. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_end")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStart")
+    def time_start(self) -> _builtins.str:
+        """
+        The time from when maintenance is disabled. Must be set together with timeEnd and must be before timeEnd. as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_start")
 
 
 @pulumi.output_type

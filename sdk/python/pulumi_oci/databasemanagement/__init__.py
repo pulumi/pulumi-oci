@@ -18,6 +18,11 @@ from .cloud_db_system_cloud_database_managements_management import *
 from .cloud_db_system_cloud_stack_monitorings_management import *
 from .cloud_db_system_connector import *
 from .cloud_db_system_discovery import *
+from .cloud_exadata_infrastructure import *
+from .cloud_exadata_infrastructure_managedexadata_management import *
+from .cloud_exadata_storage_connector import *
+from .cloud_exadata_storage_grid import *
+from .cloud_exadata_storage_server import *
 from .cloud_listener import *
 from .database_dbm_features_management import *
 from .db_management_private_endpoint import *
@@ -66,6 +71,15 @@ from .get_cloud_db_system_connectors import *
 from .get_cloud_db_system_discoveries import *
 from .get_cloud_db_system_discovery import *
 from .get_cloud_db_systems import *
+from .get_cloud_exadata_infrastructure import *
+from .get_cloud_exadata_infrastructures import *
+from .get_cloud_exadata_storage_connector import *
+from .get_cloud_exadata_storage_connectors import *
+from .get_cloud_exadata_storage_grid import *
+from .get_cloud_exadata_storage_server import *
+from .get_cloud_exadata_storage_server_iorm_plan import *
+from .get_cloud_exadata_storage_server_open_alert_history import *
+from .get_cloud_exadata_storage_servers import *
 from .get_cloud_listener import *
 from .get_cloud_listener_services import *
 from .get_cloud_listeners import *
@@ -73,6 +87,7 @@ from .get_db_management_private_endpoint import *
 from .get_db_management_private_endpoint_associated_database import *
 from .get_db_management_private_endpoint_associated_databases import *
 from .get_db_management_private_endpoints import *
+from .get_exadata_infrastructure_fleet_metric import *
 from .get_external_asm import *
 from .get_external_asm_configuration import *
 from .get_external_asm_disk_groups import *

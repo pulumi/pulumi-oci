@@ -1619,6 +1619,10 @@ class MysqlDbSystem(pulumi.CustomResource):
             is_highly_available=mysql_db_system_is_highly_available,
             maintenance={
                 "window_start_time": mysql_db_system_maintenance_window_start_time,
+                "maintenance_disabled_windows": [{
+                    "time_end": mysql_db_system_maintenance_maintenance_disabled_windows_time_end,
+                    "time_start": mysql_db_system_maintenance_maintenance_disabled_windows_time_start,
+                }],
                 "maintenance_schedule_type": mysql_db_system_maintenance_maintenance_schedule_type,
                 "version_preference": mysql_db_system_maintenance_version_preference,
                 "version_track_preference": mysql_db_system_maintenance_version_track_preference,
@@ -1804,6 +1808,10 @@ class MysqlDbSystem(pulumi.CustomResource):
             is_highly_available=mysql_db_system_is_highly_available,
             maintenance={
                 "window_start_time": mysql_db_system_maintenance_window_start_time,
+                "maintenance_disabled_windows": [{
+                    "time_end": mysql_db_system_maintenance_maintenance_disabled_windows_time_end,
+                    "time_start": mysql_db_system_maintenance_maintenance_disabled_windows_time_start,
+                }],
                 "maintenance_schedule_type": mysql_db_system_maintenance_maintenance_schedule_type,
                 "version_preference": mysql_db_system_maintenance_version_preference,
                 "version_track_preference": mysql_db_system_maintenance_version_track_preference,

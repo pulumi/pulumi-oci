@@ -32,6 +32,7 @@ namespace Pulumi.Oci.Email
         ///         CompartmentId = compartmentId,
         ///         Domain = senderDomain,
         ///         EmailAddress = senderEmailAddress,
+        ///         EmailIpPoolId = testEmailIpPool.Id,
         ///         State = senderState,
         ///     });
         /// 
@@ -62,6 +63,7 @@ namespace Pulumi.Oci.Email
         ///         CompartmentId = compartmentId,
         ///         Domain = senderDomain,
         ///         EmailAddress = senderEmailAddress,
+        ///         EmailIpPoolId = testEmailIpPool.Id,
         ///         State = senderState,
         ///     });
         /// 
@@ -92,6 +94,7 @@ namespace Pulumi.Oci.Email
         ///         CompartmentId = compartmentId,
         ///         Domain = senderDomain,
         ///         EmailAddress = senderEmailAddress,
+        ///         EmailIpPoolId = testEmailIpPool.Id,
         ///         State = senderState,
         ///     });
         /// 
@@ -122,6 +125,12 @@ namespace Pulumi.Oci.Email
         /// </summary>
         [Input("emailAddress")]
         public string? EmailAddress { get; set; }
+
+        /// <summary>
+        /// A filter to only return resources that match the given IpPool resource exactly.
+        /// </summary>
+        [Input("emailIpPoolId")]
+        public string? EmailIpPoolId { get; set; }
 
         [Input("filters")]
         private List<Inputs.GetSendersFilterArgs>? _filters;
@@ -163,6 +172,12 @@ namespace Pulumi.Oci.Email
         [Input("emailAddress")]
         public Input<string>? EmailAddress { get; set; }
 
+        /// <summary>
+        /// A filter to only return resources that match the given IpPool resource exactly.
+        /// </summary>
+        [Input("emailIpPoolId")]
+        public Input<string>? EmailIpPoolId { get; set; }
+
         [Input("filters")]
         private InputList<Inputs.GetSendersFilterInputArgs>? _filters;
         public InputList<Inputs.GetSendersFilterInputArgs> Filters
@@ -196,6 +211,10 @@ namespace Pulumi.Oci.Email
         /// The email address of the sender.
         /// </summary>
         public readonly string? EmailAddress;
+        /// <summary>
+        /// The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+        /// </summary>
+        public readonly string? EmailIpPoolId;
         public readonly ImmutableArray<Outputs.GetSendersFilterResult> Filters;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -218,6 +237,8 @@ namespace Pulumi.Oci.Email
 
             string? emailAddress,
 
+            string? emailIpPoolId,
+
             ImmutableArray<Outputs.GetSendersFilterResult> filters,
 
             string id,
@@ -229,6 +250,7 @@ namespace Pulumi.Oci.Email
             CompartmentId = compartmentId;
             Domain = domain;
             EmailAddress = emailAddress;
+            EmailIpPoolId = emailIpPoolId;
             Filters = filters;
             Id = id;
             Senders = senders;

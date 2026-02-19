@@ -6,7 +6,9 @@ package com.pulumi.oci.Mysql.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -15,6 +17,21 @@ import javax.annotation.Nullable;
 public final class MysqlDbSystemMaintenanceArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final MysqlDbSystemMaintenanceArgs Empty = new MysqlDbSystemMaintenanceArgs();
+
+    /**
+     * (Updatable) Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+     * 
+     */
+    @Import(name="maintenanceDisabledWindows")
+    private @Nullable Output<List<MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs>> maintenanceDisabledWindows;
+
+    /**
+     * @return (Updatable) Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+     * 
+     */
+    public Optional<Output<List<MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs>>> maintenanceDisabledWindows() {
+        return Optional.ofNullable(this.maintenanceDisabledWindows);
+    }
 
     /**
      * (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
@@ -129,6 +146,7 @@ public final class MysqlDbSystemMaintenanceArgs extends com.pulumi.resources.Res
     private MysqlDbSystemMaintenanceArgs() {}
 
     private MysqlDbSystemMaintenanceArgs(MysqlDbSystemMaintenanceArgs $) {
+        this.maintenanceDisabledWindows = $.maintenanceDisabledWindows;
         this.maintenanceScheduleType = $.maintenanceScheduleType;
         this.targetVersion = $.targetVersion;
         this.timeScheduled = $.timeScheduled;
@@ -153,6 +171,37 @@ public final class MysqlDbSystemMaintenanceArgs extends com.pulumi.resources.Res
 
         public Builder(MysqlDbSystemMaintenanceArgs defaults) {
             $ = new MysqlDbSystemMaintenanceArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param maintenanceDisabledWindows (Updatable) Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceDisabledWindows(@Nullable Output<List<MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs>> maintenanceDisabledWindows) {
+            $.maintenanceDisabledWindows = maintenanceDisabledWindows;
+            return this;
+        }
+
+        /**
+         * @param maintenanceDisabledWindows (Updatable) Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceDisabledWindows(List<MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs> maintenanceDisabledWindows) {
+            return maintenanceDisabledWindows(Output.of(maintenanceDisabledWindows));
+        }
+
+        /**
+         * @param maintenanceDisabledWindows (Updatable) Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceDisabledWindows(MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs... maintenanceDisabledWindows) {
+            return maintenanceDisabledWindows(List.of(maintenanceDisabledWindows));
         }
 
         /**

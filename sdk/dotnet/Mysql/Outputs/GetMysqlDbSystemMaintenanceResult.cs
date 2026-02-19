@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Mysql.Outputs
     public sealed class GetMysqlDbSystemMaintenanceResult
     {
         /// <summary>
+        /// Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowResult> MaintenanceDisabledWindows;
+        /// <summary>
         /// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
         /// </summary>
         public readonly string MaintenanceScheduleType;
@@ -40,6 +44,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
         [OutputConstructor]
         private GetMysqlDbSystemMaintenanceResult(
+            ImmutableArray<Outputs.GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowResult> maintenanceDisabledWindows,
+
             string maintenanceScheduleType,
 
             string targetVersion,
@@ -52,6 +58,7 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string windowStartTime)
         {
+            MaintenanceDisabledWindows = maintenanceDisabledWindows;
             MaintenanceScheduleType = maintenanceScheduleType;
             TargetVersion = targetVersion;
             TimeScheduled = timeScheduled;

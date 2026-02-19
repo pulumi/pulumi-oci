@@ -26,6 +26,11 @@ public final class GetSendersResult {
      * 
      */
     private @Nullable String emailAddress;
+    /**
+     * @return The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+     * 
+     */
+    private @Nullable String emailIpPoolId;
     private @Nullable List<GetSendersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -60,6 +65,13 @@ public final class GetSendersResult {
      */
     public Optional<String> emailAddress() {
         return Optional.ofNullable(this.emailAddress);
+    }
+    /**
+     * @return The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+     * 
+     */
+    public Optional<String> emailIpPoolId() {
+        return Optional.ofNullable(this.emailIpPoolId);
     }
     public List<GetSendersFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -98,6 +110,7 @@ public final class GetSendersResult {
         private String compartmentId;
         private @Nullable String domain;
         private @Nullable String emailAddress;
+        private @Nullable String emailIpPoolId;
         private @Nullable List<GetSendersFilter> filters;
         private String id;
         private List<GetSendersSender> senders;
@@ -108,6 +121,7 @@ public final class GetSendersResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.domain = defaults.domain;
     	      this.emailAddress = defaults.emailAddress;
+    	      this.emailIpPoolId = defaults.emailIpPoolId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.senders = defaults.senders;
@@ -132,6 +146,12 @@ public final class GetSendersResult {
         public Builder emailAddress(@Nullable String emailAddress) {
 
             this.emailAddress = emailAddress;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder emailIpPoolId(@Nullable String emailIpPoolId) {
+
+            this.emailIpPoolId = emailIpPoolId;
             return this;
         }
         @CustomType.Setter
@@ -173,6 +193,7 @@ public final class GetSendersResult {
             _resultValue.compartmentId = compartmentId;
             _resultValue.domain = domain;
             _resultValue.emailAddress = emailAddress;
+            _resultValue.emailIpPoolId = emailIpPoolId;
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.senders = senders;

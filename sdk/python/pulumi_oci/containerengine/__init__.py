@@ -9,6 +9,7 @@ import typing
 from .addon import *
 from .cluster import *
 from .cluster_complete_credential_rotation_management import *
+from .cluster_public_api_endpoint_decommission_manager import *
 from .cluster_start_credential_rotation_management import *
 from .cluster_workload_mapping import *
 from .container_instance import *
@@ -19,6 +20,7 @@ from .get_cluster import *
 from .get_cluster_credential_rotation_status import *
 from .get_cluster_kube_config import *
 from .get_cluster_option import *
+from .get_cluster_public_api_endpoint_decommission_status import *
 from .get_cluster_workload_mapping import *
 from .get_cluster_workload_mappings import *
 from .get_clusters import *

@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['ComputeGpuMemoryClusterArgs', 'ComputeGpuMemoryCluster']
 
@@ -26,6 +28,7 @@ class ComputeGpuMemoryClusterArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gpu_memory_cluster_scale_config: Optional[pulumi.Input['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs']] = None,
                  gpu_memory_fabric_id: Optional[pulumi.Input[_builtins.str]] = None,
                  size: Optional[pulumi.Input[_builtins.str]] = None):
         """
@@ -37,6 +40,7 @@ class ComputeGpuMemoryClusterArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs'] gpu_memory_cluster_scale_config: (Updatable) Configuration settings for GPU Memory Cluster scaling.
         :param pulumi.Input[_builtins.str] gpu_memory_fabric_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
         :param pulumi.Input[_builtins.str] size: (Updatable) The number of instances currently running in the GpuMemoryCluster 
                
@@ -54,6 +58,8 @@ class ComputeGpuMemoryClusterArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if gpu_memory_cluster_scale_config is not None:
+            pulumi.set(__self__, "gpu_memory_cluster_scale_config", gpu_memory_cluster_scale_config)
         if gpu_memory_fabric_id is not None:
             pulumi.set(__self__, "gpu_memory_fabric_id", gpu_memory_fabric_id)
         if size is not None:
@@ -144,6 +150,18 @@ class ComputeGpuMemoryClusterArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="gpuMemoryClusterScaleConfig")
+    def gpu_memory_cluster_scale_config(self) -> Optional[pulumi.Input['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs']]:
+        """
+        (Updatable) Configuration settings for GPU Memory Cluster scaling.
+        """
+        return pulumi.get(self, "gpu_memory_cluster_scale_config")
+
+    @gpu_memory_cluster_scale_config.setter
+    def gpu_memory_cluster_scale_config(self, value: Optional[pulumi.Input['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs']]):
+        pulumi.set(self, "gpu_memory_cluster_scale_config", value)
+
+    @_builtins.property
     @pulumi.getter(name="gpuMemoryFabricId")
     def gpu_memory_fabric_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -181,6 +199,7 @@ class _ComputeGpuMemoryClusterState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gpu_memory_cluster_scale_config: Optional[pulumi.Input['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs']] = None,
                  gpu_memory_fabric_id: Optional[pulumi.Input[_builtins.str]] = None,
                  instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
                  size: Optional[pulumi.Input[_builtins.str]] = None,
@@ -195,6 +214,7 @@ class _ComputeGpuMemoryClusterState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs'] gpu_memory_cluster_scale_config: (Updatable) Configuration settings for GPU Memory Cluster scaling.
         :param pulumi.Input[_builtins.str] gpu_memory_fabric_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
         :param pulumi.Input[_builtins.str] instance_configuration_id: (Updatable) Instance Configuration to be used for this GPU Memory Cluster
         :param pulumi.Input[_builtins.str] size: (Updatable) The number of instances currently running in the GpuMemoryCluster 
@@ -218,6 +238,8 @@ class _ComputeGpuMemoryClusterState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if gpu_memory_cluster_scale_config is not None:
+            pulumi.set(__self__, "gpu_memory_cluster_scale_config", gpu_memory_cluster_scale_config)
         if gpu_memory_fabric_id is not None:
             pulumi.set(__self__, "gpu_memory_fabric_id", gpu_memory_fabric_id)
         if instance_configuration_id is not None:
@@ -302,6 +324,18 @@ class _ComputeGpuMemoryClusterState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="gpuMemoryClusterScaleConfig")
+    def gpu_memory_cluster_scale_config(self) -> Optional[pulumi.Input['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs']]:
+        """
+        (Updatable) Configuration settings for GPU Memory Cluster scaling.
+        """
+        return pulumi.get(self, "gpu_memory_cluster_scale_config")
+
+    @gpu_memory_cluster_scale_config.setter
+    def gpu_memory_cluster_scale_config(self, value: Optional[pulumi.Input['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs']]):
+        pulumi.set(self, "gpu_memory_cluster_scale_config", value)
 
     @_builtins.property
     @pulumi.getter(name="gpuMemoryFabricId")
@@ -392,6 +426,7 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gpu_memory_cluster_scale_config: Optional[pulumi.Input[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict']]] = None,
                  gpu_memory_fabric_id: Optional[pulumi.Input[_builtins.str]] = None,
                  instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
                  size: Optional[pulumi.Input[_builtins.str]] = None,
@@ -422,6 +457,11 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            gpu_memory_cluster_scale_config={
+                "is_upsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_upsize_enabled,
+                "is_downsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_downsize_enabled,
+                "target_size": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_target_size,
+            },
             gpu_memory_fabric_id=test_gpu_memory_fabric["id"],
             size=compute_gpu_memory_cluster_size)
         ```
@@ -442,6 +482,7 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict']] gpu_memory_cluster_scale_config: (Updatable) Configuration settings for GPU Memory Cluster scaling.
         :param pulumi.Input[_builtins.str] gpu_memory_fabric_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
         :param pulumi.Input[_builtins.str] instance_configuration_id: (Updatable) Instance Configuration to be used for this GPU Memory Cluster
         :param pulumi.Input[_builtins.str] size: (Updatable) The number of instances currently running in the GpuMemoryCluster 
@@ -482,6 +523,11 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            gpu_memory_cluster_scale_config={
+                "is_upsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_upsize_enabled,
+                "is_downsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_downsize_enabled,
+                "target_size": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_target_size,
+            },
             gpu_memory_fabric_id=test_gpu_memory_fabric["id"],
             size=compute_gpu_memory_cluster_size)
         ```
@@ -515,6 +561,7 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gpu_memory_cluster_scale_config: Optional[pulumi.Input[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict']]] = None,
                  gpu_memory_fabric_id: Optional[pulumi.Input[_builtins.str]] = None,
                  instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
                  size: Optional[pulumi.Input[_builtins.str]] = None,
@@ -539,6 +586,7 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["gpu_memory_cluster_scale_config"] = gpu_memory_cluster_scale_config
             __props__.__dict__["gpu_memory_fabric_id"] = gpu_memory_fabric_id
             if instance_configuration_id is None and not opts.urn:
                 raise TypeError("Missing required property 'instance_configuration_id'")
@@ -563,6 +611,7 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gpu_memory_cluster_scale_config: Optional[pulumi.Input[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict']]] = None,
             gpu_memory_fabric_id: Optional[pulumi.Input[_builtins.str]] = None,
             instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
             size: Optional[pulumi.Input[_builtins.str]] = None,
@@ -582,6 +631,7 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict']] gpu_memory_cluster_scale_config: (Updatable) Configuration settings for GPU Memory Cluster scaling.
         :param pulumi.Input[_builtins.str] gpu_memory_fabric_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
         :param pulumi.Input[_builtins.str] instance_configuration_id: (Updatable) Instance Configuration to be used for this GPU Memory Cluster
         :param pulumi.Input[_builtins.str] size: (Updatable) The number of instances currently running in the GpuMemoryCluster 
@@ -603,6 +653,7 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["gpu_memory_cluster_scale_config"] = gpu_memory_cluster_scale_config
         __props__.__dict__["gpu_memory_fabric_id"] = gpu_memory_fabric_id
         __props__.__dict__["instance_configuration_id"] = instance_configuration_id
         __props__.__dict__["size"] = size
@@ -658,6 +709,14 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="gpuMemoryClusterScaleConfig")
+    def gpu_memory_cluster_scale_config(self) -> pulumi.Output['outputs.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig']:
+        """
+        (Updatable) Configuration settings for GPU Memory Cluster scaling.
+        """
+        return pulumi.get(self, "gpu_memory_cluster_scale_config")
 
     @_builtins.property
     @pulumi.getter(name="gpuMemoryFabricId")

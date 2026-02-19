@@ -27,7 +27,7 @@ class GetSenderResult:
     """
     A collection of values returned by getSender.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, email_address=None, email_domain_id=None, freeform_tags=None, id=None, is_spf=None, locks=None, sender_id=None, state=None, system_tags=None, time_created=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, email_address=None, email_domain_id=None, email_ip_pool_id=None, freeform_tags=None, id=None, is_spf=None, locks=None, sender_id=None, state=None, system_tags=None, time_created=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -40,6 +40,9 @@ class GetSenderResult:
         if email_domain_id and not isinstance(email_domain_id, str):
             raise TypeError("Expected argument 'email_domain_id' to be a str")
         pulumi.set(__self__, "email_domain_id", email_domain_id)
+        if email_ip_pool_id and not isinstance(email_ip_pool_id, str):
+            raise TypeError("Expected argument 'email_ip_pool_id' to be a str")
+        pulumi.set(__self__, "email_ip_pool_id", email_ip_pool_id)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -96,6 +99,14 @@ class GetSenderResult:
         The email domain used to assert responsibility for emails sent from this sender.
         """
         return pulumi.get(self, "email_domain_id")
+
+    @_builtins.property
+    @pulumi.getter(name="emailIpPoolId")
+    def email_ip_pool_id(self) -> _builtins.str:
+        """
+        The IpPool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used to submit an email by Email Delivery when sent from this sender.
+        """
+        return pulumi.get(self, "email_ip_pool_id")
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
@@ -169,6 +180,7 @@ class AwaitableGetSenderResult(GetSenderResult):
             defined_tags=self.defined_tags,
             email_address=self.email_address,
             email_domain_id=self.email_domain_id,
+            email_ip_pool_id=self.email_ip_pool_id,
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_spf=self.is_spf,
@@ -208,6 +220,7 @@ def get_sender(sender_id: Optional[_builtins.str] = None,
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         email_address=pulumi.get(__ret__, 'email_address'),
         email_domain_id=pulumi.get(__ret__, 'email_domain_id'),
+        email_ip_pool_id=pulumi.get(__ret__, 'email_ip_pool_id'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_spf=pulumi.get(__ret__, 'is_spf'),
@@ -244,6 +257,7 @@ def get_sender_output(sender_id: Optional[pulumi.Input[_builtins.str]] = None,
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         email_address=pulumi.get(__response__, 'email_address'),
         email_domain_id=pulumi.get(__response__, 'email_domain_id'),
+        email_ip_pool_id=pulumi.get(__response__, 'email_ip_pool_id'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         is_spf=pulumi.get(__response__, 'is_spf'),

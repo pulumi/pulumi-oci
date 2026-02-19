@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,6 +31,11 @@ import * as utilities from "../utilities";
  *     displayName: computeGpuMemoryClusterDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
+ *     },
+ *     gpuMemoryClusterScaleConfig: {
+ *         isUpsizeEnabled: computeGpuMemoryClusterGpuMemoryClusterScaleConfigIsUpsizeEnabled,
+ *         isDownsizeEnabled: computeGpuMemoryClusterGpuMemoryClusterScaleConfigIsDownsizeEnabled,
+ *         targetSize: computeGpuMemoryClusterGpuMemoryClusterScaleConfigTargetSize,
  *     },
  *     gpuMemoryFabricId: testGpuMemoryFabric.id,
  *     size: computeGpuMemoryClusterSize,
@@ -96,6 +103,10 @@ export class ComputeGpuMemoryCluster extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * (Updatable) Configuration settings for GPU Memory Cluster scaling.
+     */
+    declare public readonly gpuMemoryClusterScaleConfig: pulumi.Output<outputs.Core.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
      */
     declare public readonly gpuMemoryFabricId: pulumi.Output<string>;
@@ -143,6 +154,7 @@ export class ComputeGpuMemoryCluster extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["gpuMemoryClusterScaleConfig"] = state?.gpuMemoryClusterScaleConfig;
             resourceInputs["gpuMemoryFabricId"] = state?.gpuMemoryFabricId;
             resourceInputs["instanceConfigurationId"] = state?.instanceConfigurationId;
             resourceInputs["size"] = state?.size;
@@ -169,6 +181,7 @@ export class ComputeGpuMemoryCluster extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["gpuMemoryClusterScaleConfig"] = args?.gpuMemoryClusterScaleConfig;
             resourceInputs["gpuMemoryFabricId"] = args?.gpuMemoryFabricId;
             resourceInputs["instanceConfigurationId"] = args?.instanceConfigurationId;
             resourceInputs["size"] = args?.size;
@@ -209,6 +222,10 @@ export interface ComputeGpuMemoryClusterState {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) Configuration settings for GPU Memory Cluster scaling.
+     */
+    gpuMemoryClusterScaleConfig?: pulumi.Input<inputs.Core.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
      */
@@ -267,6 +284,10 @@ export interface ComputeGpuMemoryClusterArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) Configuration settings for GPU Memory Cluster scaling.
+     */
+    gpuMemoryClusterScaleConfig?: pulumi.Input<inputs.Core.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
      */

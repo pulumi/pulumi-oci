@@ -62,6 +62,21 @@ public final class GetSendersPlainArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.emailAddress);
     }
 
+    /**
+     * A filter to only return resources that match the given IpPool resource exactly.
+     * 
+     */
+    @Import(name="emailIpPoolId")
+    private @Nullable String emailIpPoolId;
+
+    /**
+     * @return A filter to only return resources that match the given IpPool resource exactly.
+     * 
+     */
+    public Optional<String> emailIpPoolId() {
+        return Optional.ofNullable(this.emailIpPoolId);
+    }
+
     @Import(name="filters")
     private @Nullable List<GetSendersFilter> filters;
 
@@ -90,6 +105,7 @@ public final class GetSendersPlainArgs extends com.pulumi.resources.InvokeArgs {
         this.compartmentId = $.compartmentId;
         this.domain = $.domain;
         this.emailAddress = $.emailAddress;
+        this.emailIpPoolId = $.emailIpPoolId;
         this.filters = $.filters;
         this.state = $.state;
     }
@@ -142,6 +158,17 @@ public final class GetSendersPlainArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder emailAddress(@Nullable String emailAddress) {
             $.emailAddress = emailAddress;
+            return this;
+        }
+
+        /**
+         * @param emailIpPoolId A filter to only return resources that match the given IpPool resource exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder emailIpPoolId(@Nullable String emailIpPoolId) {
+            $.emailIpPoolId = emailIpPoolId;
             return this;
         }
 

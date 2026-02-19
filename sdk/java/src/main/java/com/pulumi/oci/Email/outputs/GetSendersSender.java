@@ -35,6 +35,11 @@ public final class GetSendersSender {
      */
     private String emailDomainId;
     /**
+     * @return A filter to only return resources that match the given IpPool resource exactly.
+     * 
+     */
+    private String emailIpPoolId;
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -100,6 +105,13 @@ public final class GetSendersSender {
         return this.emailDomainId;
     }
     /**
+     * @return A filter to only return resources that match the given IpPool resource exactly.
+     * 
+     */
+    public String emailIpPoolId() {
+        return this.emailIpPoolId;
+    }
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -162,6 +174,7 @@ public final class GetSendersSender {
         private Map<String,String> definedTags;
         private String emailAddress;
         private String emailDomainId;
+        private String emailIpPoolId;
         private Map<String,String> freeformTags;
         private String id;
         private Boolean isSpf;
@@ -176,6 +189,7 @@ public final class GetSendersSender {
     	      this.definedTags = defaults.definedTags;
     	      this.emailAddress = defaults.emailAddress;
     	      this.emailDomainId = defaults.emailDomainId;
+    	      this.emailIpPoolId = defaults.emailIpPoolId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isSpf = defaults.isSpf;
@@ -215,6 +229,14 @@ public final class GetSendersSender {
               throw new MissingRequiredPropertyException("GetSendersSender", "emailDomainId");
             }
             this.emailDomainId = emailDomainId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder emailIpPoolId(String emailIpPoolId) {
+            if (emailIpPoolId == null) {
+              throw new MissingRequiredPropertyException("GetSendersSender", "emailIpPoolId");
+            }
+            this.emailIpPoolId = emailIpPoolId;
             return this;
         }
         @CustomType.Setter
@@ -282,6 +304,7 @@ public final class GetSendersSender {
             _resultValue.definedTags = definedTags;
             _resultValue.emailAddress = emailAddress;
             _resultValue.emailDomainId = emailDomainId;
+            _resultValue.emailIpPoolId = emailIpPoolId;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isSpf = isSpf;

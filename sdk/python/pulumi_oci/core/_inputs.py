@@ -95,6 +95,8 @@ __all__ = [
     'ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgsDict',
     'ComputeCapacityTopologyCapacitySourceArgs',
     'ComputeCapacityTopologyCapacitySourceArgsDict',
+    'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs',
+    'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict',
     'ComputeGpuMemoryFabricMemoryFabricPreferencesArgs',
     'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict',
     'ComputeHostConfigurationDataArgs',
@@ -3818,6 +3820,74 @@ class ComputeCapacityTopologyCapacitySourceArgs:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
+
+
+class ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict(TypedDict):
+    is_upsize_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Enables upsizing towards the target size.
+    """
+    is_downsize_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables downsizing towards the target size.
+    """
+    target_size: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The configured target size for the GPU Memory cluster.
+    """
+
+@pulumi.input_type
+class ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs:
+    def __init__(__self__, *,
+                 is_upsize_enabled: pulumi.Input[_builtins.bool],
+                 is_downsize_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 target_size: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] is_upsize_enabled: (Updatable) Enables upsizing towards the target size.
+        :param pulumi.Input[_builtins.bool] is_downsize_enabled: (Updatable) Enables downsizing towards the target size.
+        :param pulumi.Input[_builtins.str] target_size: (Updatable) The configured target size for the GPU Memory cluster.
+        """
+        pulumi.set(__self__, "is_upsize_enabled", is_upsize_enabled)
+        if is_downsize_enabled is not None:
+            pulumi.set(__self__, "is_downsize_enabled", is_downsize_enabled)
+        if target_size is not None:
+            pulumi.set(__self__, "target_size", target_size)
+
+    @_builtins.property
+    @pulumi.getter(name="isUpsizeEnabled")
+    def is_upsize_enabled(self) -> pulumi.Input[_builtins.bool]:
+        """
+        (Updatable) Enables upsizing towards the target size.
+        """
+        return pulumi.get(self, "is_upsize_enabled")
+
+    @is_upsize_enabled.setter
+    def is_upsize_enabled(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "is_upsize_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isDownsizeEnabled")
+    def is_downsize_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Enables downsizing towards the target size.
+        """
+        return pulumi.get(self, "is_downsize_enabled")
+
+    @is_downsize_enabled.setter
+    def is_downsize_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_downsize_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetSize")
+    def target_size(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The configured target size for the GPU Memory cluster.
+        """
+        return pulumi.get(self, "target_size")
+
+    @target_size.setter
+    def target_size(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_size", value)
 
 
 class ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict(TypedDict):

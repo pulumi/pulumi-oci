@@ -191,24 +191,30 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.name);
     }
 
-    /**
-     * The authoritative nameservers for the zone.
-     * 
-     */
     @Import(name="nameservers")
     private @Nullable Output<List<ZoneNameserverArgs>> nameservers;
 
-    /**
-     * @return The authoritative nameservers for the zone.
-     * 
-     */
     public Optional<Output<List<ZoneNameserverArgs>>> nameservers() {
         return Optional.ofNullable(this.nameservers);
     }
 
     /**
+     * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+     * 
+     */
+    @Import(name="resolutionMode")
+    private @Nullable Output<String> resolutionMode;
+
+    /**
+     * @return (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+     * 
+     */
+    public Optional<Output<String>> resolutionMode() {
+        return Optional.ofNullable(this.resolutionMode);
+    }
+
+    /**
      * Specifies to operate only on resources that have a matching DNS scope.
-     * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
      * 
      */
     @Import(name="scope")
@@ -216,7 +222,6 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return Specifies to operate only on resources that have a matching DNS scope.
-     * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
      * 
      */
     public Optional<Output<String>> scope() {
@@ -334,6 +339,8 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
+     * When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
+     * 
      */
     @Import(name="zoneType")
     private @Nullable Output<String> zoneType;
@@ -343,6 +350,8 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     * When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
      * 
      */
     public Optional<Output<String>> zoneType() {
@@ -362,6 +371,7 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
         this.isProtected = $.isProtected;
         this.name = $.name;
         this.nameservers = $.nameservers;
+        this.resolutionMode = $.resolutionMode;
         this.scope = $.scope;
         this.self = $.self;
         this.serial = $.serial;
@@ -642,40 +652,42 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
             return name(Output.of(name));
         }
 
-        /**
-         * @param nameservers The authoritative nameservers for the zone.
-         * 
-         * @return builder
-         * 
-         */
         public Builder nameservers(@Nullable Output<List<ZoneNameserverArgs>> nameservers) {
             $.nameservers = nameservers;
             return this;
         }
 
-        /**
-         * @param nameservers The authoritative nameservers for the zone.
-         * 
-         * @return builder
-         * 
-         */
         public Builder nameservers(List<ZoneNameserverArgs> nameservers) {
             return nameservers(Output.of(nameservers));
         }
 
-        /**
-         * @param nameservers The authoritative nameservers for the zone.
-         * 
-         * @return builder
-         * 
-         */
         public Builder nameservers(ZoneNameserverArgs... nameservers) {
             return nameservers(List.of(nameservers));
         }
 
         /**
+         * @param resolutionMode (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resolutionMode(@Nullable Output<String> resolutionMode) {
+            $.resolutionMode = resolutionMode;
+            return this;
+        }
+
+        /**
+         * @param resolutionMode (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resolutionMode(String resolutionMode) {
+            return resolutionMode(Output.of(resolutionMode));
+        }
+
+        /**
          * @param scope Specifies to operate only on resources that have a matching DNS scope.
-         * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
          * 
          * @return builder
          * 
@@ -687,7 +699,6 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scope Specifies to operate only on resources that have a matching DNS scope.
-         * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
          * 
          * @return builder
          * 
@@ -859,6 +870,8 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
+         * When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
+         * 
          * @return builder
          * 
          */
@@ -872,6 +885,8 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
          * 
          * @return builder
          * 

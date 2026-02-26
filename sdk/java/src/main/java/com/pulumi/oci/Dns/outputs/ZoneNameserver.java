@@ -11,17 +11,9 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ZoneNameserver {
-    /**
-     * @return The hostname of the nameserver.
-     * 
-     */
     private @Nullable String hostname;
 
     private ZoneNameserver() {}
-    /**
-     * @return The hostname of the nameserver.
-     * 
-     */
     public Optional<String> hostname() {
         return Optional.ofNullable(this.hostname);
     }

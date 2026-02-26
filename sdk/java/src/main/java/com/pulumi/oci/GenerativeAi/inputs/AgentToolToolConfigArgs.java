@@ -9,11 +9,14 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigApiSchemaArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigDatabaseConnectionArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigDatabaseSchemaArgs;
+import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigEmbeddingLlmCustomizationArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigFunctionArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigGenerationLlmCustomizationArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigHttpEndpointAuthConfigArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigIclExamplesArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigKnowledgeBaseConfigArgs;
+import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigReasoningLlmCustomizationArgs;
+import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigRerankingLlmCustomizationArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigTableAndColumnDescriptionArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -100,6 +103,21 @@ public final class AgentToolToolConfigArgs extends com.pulumi.resources.Resource
      */
     public Optional<Output<String>> dialect() {
         return Optional.ofNullable(this.dialect);
+    }
+
+    /**
+     * (Updatable) Configuration to customize LLM.
+     * 
+     */
+    @Import(name="embeddingLlmCustomization")
+    private @Nullable Output<AgentToolToolConfigEmbeddingLlmCustomizationArgs> embeddingLlmCustomization;
+
+    /**
+     * @return (Updatable) Configuration to customize LLM.
+     * 
+     */
+    public Optional<Output<AgentToolToolConfigEmbeddingLlmCustomizationArgs>> embeddingLlmCustomization() {
+        return Optional.ofNullable(this.embeddingLlmCustomization);
     }
 
     /**
@@ -190,6 +208,51 @@ public final class AgentToolToolConfigArgs extends com.pulumi.resources.Resource
      */
     public Optional<Output<String>> modelSize() {
         return Optional.ofNullable(this.modelSize);
+    }
+
+    /**
+     * (Updatable) Configuration to customize LLM.
+     * 
+     */
+    @Import(name="reasoningLlmCustomization")
+    private @Nullable Output<AgentToolToolConfigReasoningLlmCustomizationArgs> reasoningLlmCustomization;
+
+    /**
+     * @return (Updatable) Configuration to customize LLM.
+     * 
+     */
+    public Optional<Output<AgentToolToolConfigReasoningLlmCustomizationArgs>> reasoningLlmCustomization() {
+        return Optional.ofNullable(this.reasoningLlmCustomization);
+    }
+
+    /**
+     * (Updatable) Configuration to customize LLM.
+     * 
+     */
+    @Import(name="rerankingLlmCustomization")
+    private @Nullable Output<AgentToolToolConfigRerankingLlmCustomizationArgs> rerankingLlmCustomization;
+
+    /**
+     * @return (Updatable) Configuration to customize LLM.
+     * 
+     */
+    public Optional<Output<AgentToolToolConfigRerankingLlmCustomizationArgs>> rerankingLlmCustomization() {
+        return Optional.ofNullable(this.rerankingLlmCustomization);
+    }
+
+    /**
+     * (Updatable) The runtimeVersion of the system prompt.
+     * 
+     */
+    @Import(name="runtimeVersion")
+    private @Nullable Output<String> runtimeVersion;
+
+    /**
+     * @return (Updatable) The runtimeVersion of the system prompt.
+     * 
+     */
+    public Optional<Output<String>> runtimeVersion() {
+        return Optional.ofNullable(this.runtimeVersion);
     }
 
     /**
@@ -287,12 +350,16 @@ public final class AgentToolToolConfigArgs extends com.pulumi.resources.Resource
         this.databaseConnection = $.databaseConnection;
         this.databaseSchema = $.databaseSchema;
         this.dialect = $.dialect;
+        this.embeddingLlmCustomization = $.embeddingLlmCustomization;
         this.function = $.function;
         this.generationLlmCustomization = $.generationLlmCustomization;
         this.httpEndpointAuthConfig = $.httpEndpointAuthConfig;
         this.iclExamples = $.iclExamples;
         this.knowledgeBaseConfigs = $.knowledgeBaseConfigs;
         this.modelSize = $.modelSize;
+        this.reasoningLlmCustomization = $.reasoningLlmCustomization;
+        this.rerankingLlmCustomization = $.rerankingLlmCustomization;
+        this.runtimeVersion = $.runtimeVersion;
         this.shouldEnableSelfCorrection = $.shouldEnableSelfCorrection;
         this.shouldEnableSqlExecution = $.shouldEnableSqlExecution;
         this.subnetId = $.subnetId;
@@ -421,6 +488,27 @@ public final class AgentToolToolConfigArgs extends com.pulumi.resources.Resource
          */
         public Builder dialect(String dialect) {
             return dialect(Output.of(dialect));
+        }
+
+        /**
+         * @param embeddingLlmCustomization (Updatable) Configuration to customize LLM.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder embeddingLlmCustomization(@Nullable Output<AgentToolToolConfigEmbeddingLlmCustomizationArgs> embeddingLlmCustomization) {
+            $.embeddingLlmCustomization = embeddingLlmCustomization;
+            return this;
+        }
+
+        /**
+         * @param embeddingLlmCustomization (Updatable) Configuration to customize LLM.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder embeddingLlmCustomization(AgentToolToolConfigEmbeddingLlmCustomizationArgs embeddingLlmCustomization) {
+            return embeddingLlmCustomization(Output.of(embeddingLlmCustomization));
         }
 
         /**
@@ -557,6 +645,69 @@ public final class AgentToolToolConfigArgs extends com.pulumi.resources.Resource
          */
         public Builder modelSize(String modelSize) {
             return modelSize(Output.of(modelSize));
+        }
+
+        /**
+         * @param reasoningLlmCustomization (Updatable) Configuration to customize LLM.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reasoningLlmCustomization(@Nullable Output<AgentToolToolConfigReasoningLlmCustomizationArgs> reasoningLlmCustomization) {
+            $.reasoningLlmCustomization = reasoningLlmCustomization;
+            return this;
+        }
+
+        /**
+         * @param reasoningLlmCustomization (Updatable) Configuration to customize LLM.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reasoningLlmCustomization(AgentToolToolConfigReasoningLlmCustomizationArgs reasoningLlmCustomization) {
+            return reasoningLlmCustomization(Output.of(reasoningLlmCustomization));
+        }
+
+        /**
+         * @param rerankingLlmCustomization (Updatable) Configuration to customize LLM.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rerankingLlmCustomization(@Nullable Output<AgentToolToolConfigRerankingLlmCustomizationArgs> rerankingLlmCustomization) {
+            $.rerankingLlmCustomization = rerankingLlmCustomization;
+            return this;
+        }
+
+        /**
+         * @param rerankingLlmCustomization (Updatable) Configuration to customize LLM.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rerankingLlmCustomization(AgentToolToolConfigRerankingLlmCustomizationArgs rerankingLlmCustomization) {
+            return rerankingLlmCustomization(Output.of(rerankingLlmCustomization));
+        }
+
+        /**
+         * @param runtimeVersion (Updatable) The runtimeVersion of the system prompt.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeVersion(@Nullable Output<String> runtimeVersion) {
+            $.runtimeVersion = runtimeVersion;
+            return this;
+        }
+
+        /**
+         * @param runtimeVersion (Updatable) The runtimeVersion of the system prompt.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeVersion(String runtimeVersion) {
+            return runtimeVersion(Output.of(runtimeVersion));
         }
 
         /**

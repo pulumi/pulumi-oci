@@ -49,10 +49,16 @@ __all__ = [
     'FsuCycleStageActionScheduleArgsDict',
     'FsuCycleUpgradeDetailsArgs',
     'FsuCycleUpgradeDetailsArgsDict',
+    'FsuReadinessCheckIssueArgs',
+    'FsuReadinessCheckIssueArgsDict',
+    'FsuReadinessCheckTargetArgs',
+    'FsuReadinessCheckTargetArgsDict',
     'GetFsuCollectionsFilterArgs',
     'GetFsuCollectionsFilterArgsDict',
     'GetFsuCyclesFilterArgs',
     'GetFsuCyclesFilterArgsDict',
+    'GetFsuReadinessChecksFilterArgs',
+    'GetFsuReadinessChecksFilterArgsDict',
 ]
 
 class FsuCollectionActiveFsuCycleArgsDict(TypedDict):
@@ -1564,6 +1570,142 @@ class FsuCycleUpgradeDetailsArgs:
         pulumi.set(self, "max_drain_timeout_in_seconds", value)
 
 
+class FsuReadinessCheckIssueArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Description of the patching issue.
+    """
+    impacted_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the patching issue.
+    """
+    recommended_action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Recommended action to perform to address or further triage the patching issue.
+    """
+
+@pulumi.input_type
+class FsuReadinessCheckIssueArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 impacted_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 recommended_action: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: Description of the patching issue.
+        :param pulumi.Input[_builtins.str] impacted_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+        :param pulumi.Input[_builtins.str] name: Name of the patching issue.
+        :param pulumi.Input[_builtins.str] recommended_action: Recommended action to perform to address or further triage the patching issue.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if impacted_resource_id is not None:
+            pulumi.set(__self__, "impacted_resource_id", impacted_resource_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if recommended_action is not None:
+            pulumi.set(__self__, "recommended_action", recommended_action)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Description of the patching issue.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="impactedResourceId")
+    def impacted_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+        """
+        return pulumi.get(self, "impacted_resource_id")
+
+    @impacted_resource_id.setter
+    def impacted_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "impacted_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Name of the patching issue.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="recommendedAction")
+    def recommended_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Recommended action to perform to address or further triage the patching issue.
+        """
+        return pulumi.get(self, "recommended_action")
+
+    @recommended_action.setter
+    def recommended_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "recommended_action", value)
+
+
+class FsuReadinessCheckTargetArgsDict(TypedDict):
+    entity_id: pulumi.Input[_builtins.str]
+    """
+    Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+    """
+    entity_type: pulumi.Input[_builtins.str]
+    """
+    Resource entity type
+    """
+
+@pulumi.input_type
+class FsuReadinessCheckTargetArgs:
+    def __init__(__self__, *,
+                 entity_id: pulumi.Input[_builtins.str],
+                 entity_type: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] entity_id: Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param pulumi.Input[_builtins.str] entity_type: Resource entity type
+        """
+        pulumi.set(__self__, "entity_id", entity_id)
+        pulumi.set(__self__, "entity_type", entity_type)
+
+    @_builtins.property
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        """
+        return pulumi.get(self, "entity_id")
+
+    @entity_id.setter
+    def entity_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "entity_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Resource entity type
+        """
+        return pulumi.get(self, "entity_type")
+
+    @entity_type.setter
+    def entity_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "entity_type", value)
+
+
 class GetFsuCollectionsFilterArgsDict(TypedDict):
     name: _builtins.str
     values: Sequence[_builtins.str]
@@ -1627,6 +1769,59 @@ class GetFsuCyclesFilterArgs:
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetFsuReadinessChecksFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the patching issue.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetFsuReadinessChecksFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of the patching issue.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the patching issue.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

@@ -17,11 +17,26 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// (Updatable) If specified, the default instruction is replaced with provided instruction.
         /// </summary>
         public readonly string? Instruction;
+        /// <summary>
+        /// (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+        /// </summary>
+        public readonly ImmutableDictionary<string, string>? LlmHyperParameters;
+        /// <summary>
+        /// (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
+        /// </summary>
+        public readonly Outputs.AgentAgentLlmConfigRoutingLlmCustomizationLlmSelection? LlmSelection;
 
         [OutputConstructor]
-        private AgentAgentLlmConfigRoutingLlmCustomization(string? instruction)
+        private AgentAgentLlmConfigRoutingLlmCustomization(
+            string? instruction,
+
+            ImmutableDictionary<string, string>? llmHyperParameters,
+
+            Outputs.AgentAgentLlmConfigRoutingLlmCustomizationLlmSelection? llmSelection)
         {
             Instruction = instruction;
+            LlmHyperParameters = llmHyperParameters;
+            LlmSelection = llmSelection;
         }
     }
 }

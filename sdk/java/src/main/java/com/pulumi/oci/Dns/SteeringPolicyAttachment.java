@@ -27,6 +27,8 @@ import javax.annotation.Nullable;
  * For the purposes of access control, the attachment is automatically placed
  * into the same compartment as the domain&#39;s zone.
  * 
+ * Attachments cannot be created for private zones.
+ * 
  * ## Example Usage
  * 
  * <pre>
@@ -187,7 +189,7 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
         return this.timeCreated;
     }
     /**
-     * The OCID of the attached zone.
+     * The OCID of the attached zone. Must be a public zone.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -197,7 +199,7 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
     private Output<String> zoneId;
 
     /**
-     * @return The OCID of the attached zone.
+     * @return The OCID of the attached zone. Must be a public zone.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

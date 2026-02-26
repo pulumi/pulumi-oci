@@ -17,11 +17,19 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// Configuration to customize LLM.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationResult> RoutingLlmCustomizations;
+        /// <summary>
+        /// The runtimeVersion of the system prompt.
+        /// </summary>
+        public readonly string RuntimeVersion;
 
         [OutputConstructor]
-        private GetAgentAgentsAgentCollectionItemLlmConfigResult(ImmutableArray<Outputs.GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationResult> routingLlmCustomizations)
+        private GetAgentAgentsAgentCollectionItemLlmConfigResult(
+            ImmutableArray<Outputs.GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationResult> routingLlmCustomizations,
+
+            string runtimeVersion)
         {
             RoutingLlmCustomizations = routingLlmCustomizations;
+            RuntimeVersion = runtimeVersion;
         }
     }
 }

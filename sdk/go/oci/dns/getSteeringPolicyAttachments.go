@@ -103,7 +103,7 @@ type GetSteeringPolicyAttachmentsResult struct {
 	SteeringPolicyId                *string `pulumi:"steeringPolicyId"`
 	TimeCreatedGreaterThanOrEqualTo *string `pulumi:"timeCreatedGreaterThanOrEqualTo"`
 	TimeCreatedLessThan             *string `pulumi:"timeCreatedLessThan"`
-	// The OCID of the attached zone.
+	// The OCID of the attached zone. Must be a public zone.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
@@ -212,7 +212,7 @@ func (o GetSteeringPolicyAttachmentsResultOutput) TimeCreatedLessThan() pulumi.S
 	return o.ApplyT(func(v GetSteeringPolicyAttachmentsResult) *string { return v.TimeCreatedLessThan }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the attached zone.
+// The OCID of the attached zone. Must be a public zone.
 func (o GetSteeringPolicyAttachmentsResultOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSteeringPolicyAttachmentsResult) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }

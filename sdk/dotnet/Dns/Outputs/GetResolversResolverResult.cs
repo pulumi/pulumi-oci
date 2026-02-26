@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Dns.Outputs
         public readonly string ResolverId;
         public readonly ImmutableArray<Outputs.GetResolversResolverRuleResult> Rules;
         /// <summary>
-        /// Value must be `PRIVATE` when listing private name resolvers.
+        /// Value must be `PRIVATE` when listing private resolvers.
         /// </summary>
         public readonly string Scope;
         /// <summary>

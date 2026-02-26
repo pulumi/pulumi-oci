@@ -38,6 +38,8 @@ import com.pulumi.oci.Dns.inputs.GetViewArgs;
 import com.pulumi.oci.Dns.inputs.GetViewPlainArgs;
 import com.pulumi.oci.Dns.inputs.GetViewsArgs;
 import com.pulumi.oci.Dns.inputs.GetViewsPlainArgs;
+import com.pulumi.oci.Dns.inputs.GetZoneArgs;
+import com.pulumi.oci.Dns.inputs.GetZonePlainArgs;
 import com.pulumi.oci.Dns.inputs.GetZonesArgs;
 import com.pulumi.oci.Dns.inputs.GetZonesPlainArgs;
 import com.pulumi.oci.Dns.outputs.GetRecordsResult;
@@ -55,6 +57,7 @@ import com.pulumi.oci.Dns.outputs.GetTsigKeyResult;
 import com.pulumi.oci.Dns.outputs.GetTsigKeysResult;
 import com.pulumi.oci.Dns.outputs.GetViewResult;
 import com.pulumi.oci.Dns.outputs.GetViewsResult;
+import com.pulumi.oci.Dns.outputs.GetZoneResult;
 import com.pulumi.oci.Dns.outputs.GetZonesResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
@@ -3703,6 +3706,421 @@ public final class DnsFunctions {
      */
     public static CompletableFuture<GetViewsResult> getViewsPlain(GetViewsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Dns/getViews:getViews", TypeShape.of(GetViewsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Zone in Oracle Cloud Infrastructure DNS service.
+     * 
+     * Gets information about a specific zone by name or OCID.
+     * 
+     * Notes:
+     * - When accessing a private zone by name, the `viewId` must be provided and `scope` must be `PRIVATE`.
+     * - The `compartmentId` request parameter is deprecated by the service for GetZone and can generally be omitted.
+     * 
+     * ## Example Usage
+     * 
+     * Using zone OCID:
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var target = DnsFunctions.getZone(GetZoneArgs.builder()
+     *             .zoneNameOrId(zoneOcid)
+     *             .scope("PRIVATE")
+     *             .viewId(testView.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     * Using zone name (private zone):
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var targetByName = DnsFunctions.getZone(GetZoneArgs.builder()
+     *             .zoneNameOrId(String.format("%s.example.internal.", testTenancy.name()))
+     *             .scope("PRIVATE")
+     *             .viewId(testView.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetZoneResult> getZone(GetZoneArgs args) {
+        return getZone(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Zone in Oracle Cloud Infrastructure DNS service.
+     * 
+     * Gets information about a specific zone by name or OCID.
+     * 
+     * Notes:
+     * - When accessing a private zone by name, the `viewId` must be provided and `scope` must be `PRIVATE`.
+     * - The `compartmentId` request parameter is deprecated by the service for GetZone and can generally be omitted.
+     * 
+     * ## Example Usage
+     * 
+     * Using zone OCID:
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var target = DnsFunctions.getZone(GetZoneArgs.builder()
+     *             .zoneNameOrId(zoneOcid)
+     *             .scope("PRIVATE")
+     *             .viewId(testView.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     * Using zone name (private zone):
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var targetByName = DnsFunctions.getZone(GetZoneArgs.builder()
+     *             .zoneNameOrId(String.format("%s.example.internal.", testTenancy.name()))
+     *             .scope("PRIVATE")
+     *             .viewId(testView.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetZoneResult> getZonePlain(GetZonePlainArgs args) {
+        return getZonePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Zone in Oracle Cloud Infrastructure DNS service.
+     * 
+     * Gets information about a specific zone by name or OCID.
+     * 
+     * Notes:
+     * - When accessing a private zone by name, the `viewId` must be provided and `scope` must be `PRIVATE`.
+     * - The `compartmentId` request parameter is deprecated by the service for GetZone and can generally be omitted.
+     * 
+     * ## Example Usage
+     * 
+     * Using zone OCID:
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var target = DnsFunctions.getZone(GetZoneArgs.builder()
+     *             .zoneNameOrId(zoneOcid)
+     *             .scope("PRIVATE")
+     *             .viewId(testView.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     * Using zone name (private zone):
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var targetByName = DnsFunctions.getZone(GetZoneArgs.builder()
+     *             .zoneNameOrId(String.format("%s.example.internal.", testTenancy.name()))
+     *             .scope("PRIVATE")
+     *             .viewId(testView.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetZoneResult> getZone(GetZoneArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Dns/getZone:getZone", TypeShape.of(GetZoneResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Zone in Oracle Cloud Infrastructure DNS service.
+     * 
+     * Gets information about a specific zone by name or OCID.
+     * 
+     * Notes:
+     * - When accessing a private zone by name, the `viewId` must be provided and `scope` must be `PRIVATE`.
+     * - The `compartmentId` request parameter is deprecated by the service for GetZone and can generally be omitted.
+     * 
+     * ## Example Usage
+     * 
+     * Using zone OCID:
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var target = DnsFunctions.getZone(GetZoneArgs.builder()
+     *             .zoneNameOrId(zoneOcid)
+     *             .scope("PRIVATE")
+     *             .viewId(testView.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     * Using zone name (private zone):
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var targetByName = DnsFunctions.getZone(GetZoneArgs.builder()
+     *             .zoneNameOrId(String.format("%s.example.internal.", testTenancy.name()))
+     *             .scope("PRIVATE")
+     *             .viewId(testView.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetZoneResult> getZone(GetZoneArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Dns/getZone:getZone", TypeShape.of(GetZoneResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Zone in Oracle Cloud Infrastructure DNS service.
+     * 
+     * Gets information about a specific zone by name or OCID.
+     * 
+     * Notes:
+     * - When accessing a private zone by name, the `viewId` must be provided and `scope` must be `PRIVATE`.
+     * - The `compartmentId` request parameter is deprecated by the service for GetZone and can generally be omitted.
+     * 
+     * ## Example Usage
+     * 
+     * Using zone OCID:
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var target = DnsFunctions.getZone(GetZoneArgs.builder()
+     *             .zoneNameOrId(zoneOcid)
+     *             .scope("PRIVATE")
+     *             .viewId(testView.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     * Using zone name (private zone):
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var targetByName = DnsFunctions.getZone(GetZoneArgs.builder()
+     *             .zoneNameOrId(String.format("%s.example.internal.", testTenancy.name()))
+     *             .scope("PRIVATE")
+     *             .viewId(testView.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetZoneResult> getZonePlain(GetZonePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Dns/getZone:getZone", TypeShape.of(GetZoneResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.

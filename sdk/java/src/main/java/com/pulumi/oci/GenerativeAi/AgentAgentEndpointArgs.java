@@ -10,6 +10,7 @@ import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointContentModerationCon
 import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointGuardrailConfigArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointHumanInputConfigArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointOutputConfigArgs;
+import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointProvisionedCapacityConfigArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointSessionConfigArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -189,6 +190,21 @@ public final class AgentAgentEndpointArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * (Updatable) The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
+     * 
+     */
+    @Import(name="provisionedCapacityConfig")
+    private @Nullable Output<AgentAgentEndpointProvisionedCapacityConfigArgs> provisionedCapacityConfig;
+
+    /**
+     * @return (Updatable) The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
+     * 
+     */
+    public Optional<Output<AgentAgentEndpointProvisionedCapacityConfigArgs>> provisionedCapacityConfig() {
+        return Optional.ofNullable(this.provisionedCapacityConfig);
+    }
+
+    /**
      * (Updatable) Session Configuration on AgentEndpoint.
      * 
      */
@@ -283,6 +299,7 @@ public final class AgentAgentEndpointArgs extends com.pulumi.resources.ResourceA
         this.humanInputConfig = $.humanInputConfig;
         this.metadata = $.metadata;
         this.outputConfig = $.outputConfig;
+        this.provisionedCapacityConfig = $.provisionedCapacityConfig;
         this.sessionConfig = $.sessionConfig;
         this.shouldEnableCitation = $.shouldEnableCitation;
         this.shouldEnableMultiLanguage = $.shouldEnableMultiLanguage;
@@ -537,6 +554,27 @@ public final class AgentAgentEndpointArgs extends com.pulumi.resources.ResourceA
          */
         public Builder outputConfig(AgentAgentEndpointOutputConfigArgs outputConfig) {
             return outputConfig(Output.of(outputConfig));
+        }
+
+        /**
+         * @param provisionedCapacityConfig (Updatable) The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder provisionedCapacityConfig(@Nullable Output<AgentAgentEndpointProvisionedCapacityConfigArgs> provisionedCapacityConfig) {
+            $.provisionedCapacityConfig = provisionedCapacityConfig;
+            return this;
+        }
+
+        /**
+         * @param provisionedCapacityConfig (Updatable) The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder provisionedCapacityConfig(AgentAgentEndpointProvisionedCapacityConfigArgs provisionedCapacityConfig) {
+            return provisionedCapacityConfig(Output.of(provisionedCapacityConfig));
         }
 
         /**

@@ -15,6 +15,7 @@ import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotMaintenanceArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotReadEndpointArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotRestArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotSecureConnectionArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -539,6 +540,21 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         return Optional.ofNullable(this.subnetId);
     }
 
+    /**
+     * Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    @Import(name="telemetryConfiguration")
+    private @Nullable Output<MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs> telemetryConfiguration;
+
+    /**
+     * @return Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    public Optional<Output<MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs>> telemetryConfiguration() {
+        return Optional.ofNullable(this.telemetryConfiguration);
+    }
+
     private MysqlBackupDbSystemSnapshotArgs() {}
 
     private MysqlBackupDbSystemSnapshotArgs(MysqlBackupDbSystemSnapshotArgs $) {
@@ -576,6 +592,7 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         this.securityAttributes = $.securityAttributes;
         this.shapeName = $.shapeName;
         this.subnetId = $.subnetId;
+        this.telemetryConfiguration = $.telemetryConfiguration;
     }
 
     public static Builder builder() {
@@ -1418,6 +1435,27 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
+        }
+
+        /**
+         * @param telemetryConfiguration Telemetry configuration details of a DB System or a read replica.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder telemetryConfiguration(@Nullable Output<MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs> telemetryConfiguration) {
+            $.telemetryConfiguration = telemetryConfiguration;
+            return this;
+        }
+
+        /**
+         * @param telemetryConfiguration Telemetry configuration details of a DB System or a read replica.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder telemetryConfiguration(MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs telemetryConfiguration) {
+            return telemetryConfiguration(Output.of(telemetryConfiguration));
         }
 
         public MysqlBackupDbSystemSnapshotArgs build() {

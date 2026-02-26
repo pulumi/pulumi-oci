@@ -27,7 +27,7 @@ class GetSqlEndpointResult:
     """
     A collection of values returned by getSqlEndpoint.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, driver_shape=None, driver_shape_configs=None, executor_shape=None, executor_shape_configs=None, freeform_tags=None, id=None, jdbc_endpoint_url=None, lake_id=None, max_executor_count=None, metastore_id=None, min_executor_count=None, network_configurations=None, spark_advanced_configurations=None, sql_endpoint_id=None, sql_endpoint_version=None, state=None, state_message=None, system_tags=None, time_created=None, time_updated=None, warehouse_bucket_uri=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, driver_shape=None, driver_shape_configs=None, executor_shape=None, executor_shape_configs=None, freeform_tags=None, id=None, jdbc_endpoint_url=None, lake_id=None, log_compartment_id=None, log_display_name=None, log_group_id=None, log_retention_duration=None, max_executor_count=None, metastore_id=None, min_executor_count=None, network_configurations=None, spark_advanced_configurations=None, sql_endpoint_id=None, sql_endpoint_version=None, state=None, state_message=None, system_tags=None, time_created=None, time_updated=None, warehouse_bucket_uri=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -64,6 +64,18 @@ class GetSqlEndpointResult:
         if lake_id and not isinstance(lake_id, str):
             raise TypeError("Expected argument 'lake_id' to be a str")
         pulumi.set(__self__, "lake_id", lake_id)
+        if log_compartment_id and not isinstance(log_compartment_id, str):
+            raise TypeError("Expected argument 'log_compartment_id' to be a str")
+        pulumi.set(__self__, "log_compartment_id", log_compartment_id)
+        if log_display_name and not isinstance(log_display_name, str):
+            raise TypeError("Expected argument 'log_display_name' to be a str")
+        pulumi.set(__self__, "log_display_name", log_display_name)
+        if log_group_id and not isinstance(log_group_id, str):
+            raise TypeError("Expected argument 'log_group_id' to be a str")
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_retention_duration and not isinstance(log_retention_duration, int):
+            raise TypeError("Expected argument 'log_retention_duration' to be a int")
+        pulumi.set(__self__, "log_retention_duration", log_retention_duration)
         if max_executor_count and not isinstance(max_executor_count, int):
             raise TypeError("Expected argument 'max_executor_count' to be a int")
         pulumi.set(__self__, "max_executor_count", max_executor_count)
@@ -201,6 +213,26 @@ class GetSqlEndpointResult:
         return pulumi.get(self, "lake_id")
 
     @_builtins.property
+    @pulumi.getter(name="logCompartmentId")
+    def log_compartment_id(self) -> _builtins.str:
+        return pulumi.get(self, "log_compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="logDisplayName")
+    def log_display_name(self) -> _builtins.str:
+        return pulumi.get(self, "log_display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> _builtins.str:
+        return pulumi.get(self, "log_group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="logRetentionDuration")
+    def log_retention_duration(self) -> _builtins.int:
+        return pulumi.get(self, "log_retention_duration")
+
+    @_builtins.property
     @pulumi.getter(name="maxExecutorCount")
     def max_executor_count(self) -> _builtins.int:
         """
@@ -320,6 +352,10 @@ class AwaitableGetSqlEndpointResult(GetSqlEndpointResult):
             id=self.id,
             jdbc_endpoint_url=self.jdbc_endpoint_url,
             lake_id=self.lake_id,
+            log_compartment_id=self.log_compartment_id,
+            log_display_name=self.log_display_name,
+            log_group_id=self.log_group_id,
+            log_retention_duration=self.log_retention_duration,
             max_executor_count=self.max_executor_count,
             metastore_id=self.metastore_id,
             min_executor_count=self.min_executor_count,
@@ -372,6 +408,10 @@ def get_sql_endpoint(sql_endpoint_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         jdbc_endpoint_url=pulumi.get(__ret__, 'jdbc_endpoint_url'),
         lake_id=pulumi.get(__ret__, 'lake_id'),
+        log_compartment_id=pulumi.get(__ret__, 'log_compartment_id'),
+        log_display_name=pulumi.get(__ret__, 'log_display_name'),
+        log_group_id=pulumi.get(__ret__, 'log_group_id'),
+        log_retention_duration=pulumi.get(__ret__, 'log_retention_duration'),
         max_executor_count=pulumi.get(__ret__, 'max_executor_count'),
         metastore_id=pulumi.get(__ret__, 'metastore_id'),
         min_executor_count=pulumi.get(__ret__, 'min_executor_count'),
@@ -421,6 +461,10 @@ def get_sql_endpoint_output(sql_endpoint_id: Optional[pulumi.Input[_builtins.str
         id=pulumi.get(__response__, 'id'),
         jdbc_endpoint_url=pulumi.get(__response__, 'jdbc_endpoint_url'),
         lake_id=pulumi.get(__response__, 'lake_id'),
+        log_compartment_id=pulumi.get(__response__, 'log_compartment_id'),
+        log_display_name=pulumi.get(__response__, 'log_display_name'),
+        log_group_id=pulumi.get(__response__, 'log_group_id'),
+        log_retention_duration=pulumi.get(__response__, 'log_retention_duration'),
         max_executor_count=pulumi.get(__response__, 'max_executor_count'),
         metastore_id=pulumi.get(__response__, 'metastore_id'),
         min_executor_count=pulumi.get(__response__, 'min_executor_count'),

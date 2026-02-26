@@ -151,7 +151,7 @@ def get_resolvers(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.str compartment_id: The OCID of the compartment the resource belongs to.
     :param _builtins.str display_name: The displayName of a resource.
     :param _builtins.str id: The OCID of a resource.
-    :param _builtins.str scope: Value must be `PRIVATE` when listing private name resolvers.
+    :param _builtins.str scope: Value must be `PRIVATE` when listing private resolvers.
     :param _builtins.str state: The state of a resource.
     """
     __args__ = dict()
@@ -206,7 +206,7 @@ def get_resolvers_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
     :param _builtins.str compartment_id: The OCID of the compartment the resource belongs to.
     :param _builtins.str display_name: The displayName of a resource.
     :param _builtins.str id: The OCID of a resource.
-    :param _builtins.str scope: Value must be `PRIVATE` when listing private name resolvers.
+    :param _builtins.str scope: Value must be `PRIVATE` when listing private resolvers.
     :param _builtins.str state: The state of a resource.
     """
     __args__ = dict()

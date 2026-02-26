@@ -58,7 +58,7 @@ func LookupResolver(ctx *pulumi.Context, args *LookupResolverArgs, opts ...pulum
 type LookupResolverArgs struct {
 	// The OCID of the target resolver.
 	ResolverId string `pulumi:"resolverId"`
-	// Value must be `PRIVATE` when listing private name resolvers.
+	// Value must be `PRIVATE` when listing private resolvers.
 	Scope *string `pulumi:"scope"`
 }
 
@@ -85,7 +85,7 @@ type LookupResolverResult struct {
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected bool   `pulumi:"isProtected"`
 	ResolverId  string `pulumi:"resolverId"`
-	// Rules for the resolver. Rules are evaluated in order.
+	// Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
 	Rules []GetResolverRule `pulumi:"rules"`
 	Scope *string           `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
@@ -111,7 +111,7 @@ func LookupResolverOutput(ctx *pulumi.Context, args LookupResolverOutputArgs, op
 type LookupResolverOutputArgs struct {
 	// The OCID of the target resolver.
 	ResolverId pulumi.StringInput `pulumi:"resolverId"`
-	// Value must be `PRIVATE` when listing private name resolvers.
+	// Value must be `PRIVATE` when listing private resolvers.
 	Scope pulumi.StringPtrInput `pulumi:"scope"`
 }
 
@@ -188,7 +188,7 @@ func (o LookupResolverResultOutput) ResolverId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverResult) string { return v.ResolverId }).(pulumi.StringOutput)
 }
 
-// Rules for the resolver. Rules are evaluated in order.
+// Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
 func (o LookupResolverResultOutput) Rules() GetResolverRuleArrayOutput {
 	return o.ApplyT(func(v LookupResolverResult) []GetResolverRule { return v.Rules }).(GetResolverRuleArrayOutput)
 }

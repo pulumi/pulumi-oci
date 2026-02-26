@@ -85,6 +85,11 @@ export const getViews: typeof import("./getViews").getViews = null as any;
 export const getViewsOutput: typeof import("./getViews").getViewsOutput = null as any;
 utilities.lazyLoad(exports, ["getViews","getViewsOutput"], () => require("./getViews"));
 
+export { GetZoneArgs, GetZoneResult, GetZoneOutputArgs } from "./getZone";
+export const getZone: typeof import("./getZone").getZone = null as any;
+export const getZoneOutput: typeof import("./getZone").getZoneOutput = null as any;
+utilities.lazyLoad(exports, ["getZone","getZoneOutput"], () => require("./getZone"));
+
 export { GetZonesArgs, GetZonesResult, GetZonesOutputArgs } from "./getZones";
 export const getZones: typeof import("./getZones").getZones = null as any;
 export const getZonesOutput: typeof import("./getZones").getZonesOutput = null as any;

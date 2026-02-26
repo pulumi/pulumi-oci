@@ -27,7 +27,7 @@ class GetAgentAgentEndpointResult:
     """
     A collection of values returned by getAgentAgentEndpoint.
     """
-    def __init__(__self__, agent_endpoint_id=None, agent_id=None, compartment_id=None, content_moderation_configs=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, guardrail_configs=None, human_input_configs=None, id=None, lifecycle_details=None, metadata=None, output_configs=None, session_configs=None, should_enable_citation=None, should_enable_multi_language=None, should_enable_session=None, should_enable_trace=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, agent_endpoint_id=None, agent_id=None, compartment_id=None, content_moderation_configs=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, guardrail_configs=None, human_input_configs=None, id=None, lifecycle_details=None, metadata=None, output_configs=None, provisioned_capacity_configs=None, session_configs=None, should_enable_citation=None, should_enable_multi_language=None, should_enable_session=None, should_enable_trace=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if agent_endpoint_id and not isinstance(agent_endpoint_id, str):
             raise TypeError("Expected argument 'agent_endpoint_id' to be a str")
         pulumi.set(__self__, "agent_endpoint_id", agent_endpoint_id)
@@ -70,6 +70,9 @@ class GetAgentAgentEndpointResult:
         if output_configs and not isinstance(output_configs, list):
             raise TypeError("Expected argument 'output_configs' to be a list")
         pulumi.set(__self__, "output_configs", output_configs)
+        if provisioned_capacity_configs and not isinstance(provisioned_capacity_configs, list):
+            raise TypeError("Expected argument 'provisioned_capacity_configs' to be a list")
+        pulumi.set(__self__, "provisioned_capacity_configs", provisioned_capacity_configs)
         if session_configs and not isinstance(session_configs, list):
             raise TypeError("Expected argument 'session_configs' to be a list")
         pulumi.set(__self__, "session_configs", session_configs)
@@ -208,6 +211,14 @@ class GetAgentAgentEndpointResult:
         return pulumi.get(self, "output_configs")
 
     @_builtins.property
+    @pulumi.getter(name="provisionedCapacityConfigs")
+    def provisioned_capacity_configs(self) -> Sequence['outputs.GetAgentAgentEndpointProvisionedCapacityConfigResult']:
+        """
+        The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
+        """
+        return pulumi.get(self, "provisioned_capacity_configs")
+
+    @_builtins.property
     @pulumi.getter(name="sessionConfigs")
     def session_configs(self) -> Sequence['outputs.GetAgentAgentEndpointSessionConfigResult']:
         """
@@ -300,6 +311,7 @@ class AwaitableGetAgentAgentEndpointResult(GetAgentAgentEndpointResult):
             lifecycle_details=self.lifecycle_details,
             metadata=self.metadata,
             output_configs=self.output_configs,
+            provisioned_capacity_configs=self.provisioned_capacity_configs,
             session_configs=self.session_configs,
             should_enable_citation=self.should_enable_citation,
             should_enable_multi_language=self.should_enable_multi_language,
@@ -350,6 +362,7 @@ def get_agent_agent_endpoint(agent_endpoint_id: Optional[_builtins.str] = None,
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         metadata=pulumi.get(__ret__, 'metadata'),
         output_configs=pulumi.get(__ret__, 'output_configs'),
+        provisioned_capacity_configs=pulumi.get(__ret__, 'provisioned_capacity_configs'),
         session_configs=pulumi.get(__ret__, 'session_configs'),
         should_enable_citation=pulumi.get(__ret__, 'should_enable_citation'),
         should_enable_multi_language=pulumi.get(__ret__, 'should_enable_multi_language'),
@@ -397,6 +410,7 @@ def get_agent_agent_endpoint_output(agent_endpoint_id: Optional[pulumi.Input[_bu
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         metadata=pulumi.get(__response__, 'metadata'),
         output_configs=pulumi.get(__response__, 'output_configs'),
+        provisioned_capacity_configs=pulumi.get(__response__, 'provisioned_capacity_configs'),
         session_configs=pulumi.get(__response__, 'session_configs'),
         should_enable_citation=pulumi.get(__response__, 'should_enable_citation'),
         should_enable_multi_language=pulumi.get(__response__, 'should_enable_multi_language'),

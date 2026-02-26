@@ -8,11 +8,14 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigApiSchema;
 import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigDatabaseConnection;
 import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigDatabaseSchema;
+import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigEmbeddingLlmCustomization;
 import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigFunction;
 import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigGenerationLlmCustomization;
 import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigHttpEndpointAuthConfig;
 import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigIclExamples;
 import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigKnowledgeBaseConfig;
+import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigReasoningLlmCustomization;
+import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigRerankingLlmCustomization;
 import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigTableAndColumnDescription;
 import java.lang.Boolean;
 import java.lang.String;
@@ -49,6 +52,11 @@ public final class AgentToolToolConfig {
      */
     private @Nullable String dialect;
     /**
+     * @return (Updatable) Configuration to customize LLM.
+     * 
+     */
+    private @Nullable AgentToolToolConfigEmbeddingLlmCustomization embeddingLlmCustomization;
+    /**
      * @return (Updatable) Details of Function for Function calling tool.
      * 
      */
@@ -78,6 +86,21 @@ public final class AgentToolToolConfig {
      * 
      */
     private @Nullable String modelSize;
+    /**
+     * @return (Updatable) Configuration to customize LLM.
+     * 
+     */
+    private @Nullable AgentToolToolConfigReasoningLlmCustomization reasoningLlmCustomization;
+    /**
+     * @return (Updatable) Configuration to customize LLM.
+     * 
+     */
+    private @Nullable AgentToolToolConfigRerankingLlmCustomization rerankingLlmCustomization;
+    /**
+     * @return (Updatable) The runtimeVersion of the system prompt.
+     * 
+     */
+    private @Nullable String runtimeVersion;
     /**
      * @return (Updatable) To enable/disable self correction.
      * 
@@ -147,6 +170,13 @@ public final class AgentToolToolConfig {
         return Optional.ofNullable(this.dialect);
     }
     /**
+     * @return (Updatable) Configuration to customize LLM.
+     * 
+     */
+    public Optional<AgentToolToolConfigEmbeddingLlmCustomization> embeddingLlmCustomization() {
+        return Optional.ofNullable(this.embeddingLlmCustomization);
+    }
+    /**
      * @return (Updatable) Details of Function for Function calling tool.
      * 
      */
@@ -187,6 +217,27 @@ public final class AgentToolToolConfig {
      */
     public Optional<String> modelSize() {
         return Optional.ofNullable(this.modelSize);
+    }
+    /**
+     * @return (Updatable) Configuration to customize LLM.
+     * 
+     */
+    public Optional<AgentToolToolConfigReasoningLlmCustomization> reasoningLlmCustomization() {
+        return Optional.ofNullable(this.reasoningLlmCustomization);
+    }
+    /**
+     * @return (Updatable) Configuration to customize LLM.
+     * 
+     */
+    public Optional<AgentToolToolConfigRerankingLlmCustomization> rerankingLlmCustomization() {
+        return Optional.ofNullable(this.rerankingLlmCustomization);
+    }
+    /**
+     * @return (Updatable) The runtimeVersion of the system prompt.
+     * 
+     */
+    public Optional<String> runtimeVersion() {
+        return Optional.ofNullable(this.runtimeVersion);
     }
     /**
      * @return (Updatable) To enable/disable self correction.
@@ -244,12 +295,16 @@ public final class AgentToolToolConfig {
         private @Nullable AgentToolToolConfigDatabaseConnection databaseConnection;
         private @Nullable AgentToolToolConfigDatabaseSchema databaseSchema;
         private @Nullable String dialect;
+        private @Nullable AgentToolToolConfigEmbeddingLlmCustomization embeddingLlmCustomization;
         private @Nullable AgentToolToolConfigFunction function;
         private @Nullable AgentToolToolConfigGenerationLlmCustomization generationLlmCustomization;
         private @Nullable AgentToolToolConfigHttpEndpointAuthConfig httpEndpointAuthConfig;
         private @Nullable AgentToolToolConfigIclExamples iclExamples;
         private @Nullable List<AgentToolToolConfigKnowledgeBaseConfig> knowledgeBaseConfigs;
         private @Nullable String modelSize;
+        private @Nullable AgentToolToolConfigReasoningLlmCustomization reasoningLlmCustomization;
+        private @Nullable AgentToolToolConfigRerankingLlmCustomization rerankingLlmCustomization;
+        private @Nullable String runtimeVersion;
         private @Nullable Boolean shouldEnableSelfCorrection;
         private @Nullable Boolean shouldEnableSqlExecution;
         private @Nullable String subnetId;
@@ -263,12 +318,16 @@ public final class AgentToolToolConfig {
     	      this.databaseConnection = defaults.databaseConnection;
     	      this.databaseSchema = defaults.databaseSchema;
     	      this.dialect = defaults.dialect;
+    	      this.embeddingLlmCustomization = defaults.embeddingLlmCustomization;
     	      this.function = defaults.function;
     	      this.generationLlmCustomization = defaults.generationLlmCustomization;
     	      this.httpEndpointAuthConfig = defaults.httpEndpointAuthConfig;
     	      this.iclExamples = defaults.iclExamples;
     	      this.knowledgeBaseConfigs = defaults.knowledgeBaseConfigs;
     	      this.modelSize = defaults.modelSize;
+    	      this.reasoningLlmCustomization = defaults.reasoningLlmCustomization;
+    	      this.rerankingLlmCustomization = defaults.rerankingLlmCustomization;
+    	      this.runtimeVersion = defaults.runtimeVersion;
     	      this.shouldEnableSelfCorrection = defaults.shouldEnableSelfCorrection;
     	      this.shouldEnableSqlExecution = defaults.shouldEnableSqlExecution;
     	      this.subnetId = defaults.subnetId;
@@ -304,6 +363,12 @@ public final class AgentToolToolConfig {
         public Builder dialect(@Nullable String dialect) {
 
             this.dialect = dialect;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder embeddingLlmCustomization(@Nullable AgentToolToolConfigEmbeddingLlmCustomization embeddingLlmCustomization) {
+
+            this.embeddingLlmCustomization = embeddingLlmCustomization;
             return this;
         }
         @CustomType.Setter
@@ -346,6 +411,24 @@ public final class AgentToolToolConfig {
             return this;
         }
         @CustomType.Setter
+        public Builder reasoningLlmCustomization(@Nullable AgentToolToolConfigReasoningLlmCustomization reasoningLlmCustomization) {
+
+            this.reasoningLlmCustomization = reasoningLlmCustomization;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder rerankingLlmCustomization(@Nullable AgentToolToolConfigRerankingLlmCustomization rerankingLlmCustomization) {
+
+            this.rerankingLlmCustomization = rerankingLlmCustomization;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder runtimeVersion(@Nullable String runtimeVersion) {
+
+            this.runtimeVersion = runtimeVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shouldEnableSelfCorrection(@Nullable Boolean shouldEnableSelfCorrection) {
 
             this.shouldEnableSelfCorrection = shouldEnableSelfCorrection;
@@ -384,12 +467,16 @@ public final class AgentToolToolConfig {
             _resultValue.databaseConnection = databaseConnection;
             _resultValue.databaseSchema = databaseSchema;
             _resultValue.dialect = dialect;
+            _resultValue.embeddingLlmCustomization = embeddingLlmCustomization;
             _resultValue.function = function;
             _resultValue.generationLlmCustomization = generationLlmCustomization;
             _resultValue.httpEndpointAuthConfig = httpEndpointAuthConfig;
             _resultValue.iclExamples = iclExamples;
             _resultValue.knowledgeBaseConfigs = knowledgeBaseConfigs;
             _resultValue.modelSize = modelSize;
+            _resultValue.reasoningLlmCustomization = reasoningLlmCustomization;
+            _resultValue.rerankingLlmCustomization = rerankingLlmCustomization;
+            _resultValue.runtimeVersion = runtimeVersion;
             _resultValue.shouldEnableSelfCorrection = shouldEnableSelfCorrection;
             _resultValue.shouldEnableSqlExecution = shouldEnableSqlExecution;
             _resultValue.subnetId = subnetId;

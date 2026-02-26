@@ -106,6 +106,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// Telemetry configuration details of a DB System or a read replica.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetReplicasReplicaTelemetryConfigurationResult> TelemetryConfigurations;
+        /// <summary>
         /// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         public readonly string TimeCreated;
@@ -162,6 +166,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string state,
 
+            ImmutableArray<Outputs.GetReplicasReplicaTelemetryConfigurationResult> telemetryConfigurations,
+
             string timeCreated,
 
             string timeUpdated)
@@ -189,6 +195,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             SecurityAttributes = securityAttributes;
             ShapeName = shapeName;
             State = state;
+            TelemetryConfigurations = telemetryConfigurations;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

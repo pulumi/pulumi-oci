@@ -81,6 +81,10 @@ namespace Pulumi.Oci.DataFlow
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         LogCompartmentId = testCompartment.Id,
+    ///         LogDisplayName = sqlEndpointLogDisplayName,
+    ///         LogGroupId = testLogGroup.Id,
+    ///         LogRetentionDuration = sqlEndpointLogRetentionDuration,
     ///         SparkAdvancedConfigurations = sqlEndpointSparkAdvancedConfigurations,
     ///     });
     /// 
@@ -163,6 +167,30 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         [Output("lakeId")]
         public Output<string> LakeId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+        /// </summary>
+        [Output("logCompartmentId")]
+        public Output<string> LogCompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The friendly name of the log object used with the SQL Endpoint.
+        /// </summary>
+        [Output("logDisplayName")]
+        public Output<string> LogDisplayName { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The identifier of the log group used with the SQL Endpoint.
+        /// </summary>
+        [Output("logGroupId")]
+        public Output<string> LogGroupId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Log retention duration in days
+        /// </summary>
+        [Output("logRetentionDuration")]
+        public Output<int> LogRetentionDuration { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The maximum number of executors.
@@ -353,6 +381,30 @@ namespace Pulumi.Oci.DataFlow
         }
 
         /// <summary>
+        /// (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+        /// </summary>
+        [Input("logCompartmentId")]
+        public Input<string>? LogCompartmentId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The friendly name of the log object used with the SQL Endpoint.
+        /// </summary>
+        [Input("logDisplayName")]
+        public Input<string>? LogDisplayName { get; set; }
+
+        /// <summary>
+        /// (Updatable) The identifier of the log group used with the SQL Endpoint.
+        /// </summary>
+        [Input("logGroupId")]
+        public Input<string>? LogGroupId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Log retention duration in days
+        /// </summary>
+        [Input("logRetentionDuration")]
+        public Input<int>? LogRetentionDuration { get; set; }
+
+        /// <summary>
         /// (Updatable) The maximum number of executors.
         /// </summary>
         [Input("maxExecutorCount", required: true)]
@@ -489,6 +541,30 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         [Input("lakeId")]
         public Input<string>? LakeId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+        /// </summary>
+        [Input("logCompartmentId")]
+        public Input<string>? LogCompartmentId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The friendly name of the log object used with the SQL Endpoint.
+        /// </summary>
+        [Input("logDisplayName")]
+        public Input<string>? LogDisplayName { get; set; }
+
+        /// <summary>
+        /// (Updatable) The identifier of the log group used with the SQL Endpoint.
+        /// </summary>
+        [Input("logGroupId")]
+        public Input<string>? LogGroupId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Log retention duration in days
+        /// </summary>
+        [Input("logRetentionDuration")]
+        public Input<int>? LogRetentionDuration { get; set; }
 
         /// <summary>
         /// (Updatable) The maximum number of executors.

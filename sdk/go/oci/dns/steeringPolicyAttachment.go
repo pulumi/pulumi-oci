@@ -24,6 +24,8 @@ import (
 // For the purposes of access control, the attachment is automatically placed
 // into the same compartment as the domain's zone.
 //
+// Attachments cannot be created for private zones.
+//
 // ## Example Usage
 //
 // ```go
@@ -79,7 +81,7 @@ type SteeringPolicyAttachment struct {
 	SteeringPolicyId pulumi.StringOutput `pulumi:"steeringPolicyId"`
 	// The date and time the resource was created, expressed in RFC 3339 timestamp format.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The OCID of the attached zone.
+	// The OCID of the attached zone. Must be a public zone.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -141,7 +143,7 @@ type steeringPolicyAttachmentState struct {
 	SteeringPolicyId *string `pulumi:"steeringPolicyId"`
 	// The date and time the resource was created, expressed in RFC 3339 timestamp format.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The OCID of the attached zone.
+	// The OCID of the attached zone. Must be a public zone.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -165,7 +167,7 @@ type SteeringPolicyAttachmentState struct {
 	SteeringPolicyId pulumi.StringPtrInput
 	// The date and time the resource was created, expressed in RFC 3339 timestamp format.
 	TimeCreated pulumi.StringPtrInput
-	// The OCID of the attached zone.
+	// The OCID of the attached zone. Must be a public zone.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -183,7 +185,7 @@ type steeringPolicyAttachmentArgs struct {
 	DomainName string `pulumi:"domainName"`
 	// The OCID of the attached steering policy.
 	SteeringPolicyId string `pulumi:"steeringPolicyId"`
-	// The OCID of the attached zone.
+	// The OCID of the attached zone. Must be a public zone.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -198,7 +200,7 @@ type SteeringPolicyAttachmentArgs struct {
 	DomainName pulumi.StringInput
 	// The OCID of the attached steering policy.
 	SteeringPolicyId pulumi.StringInput
-	// The OCID of the attached zone.
+	// The OCID of the attached zone. Must be a public zone.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -332,7 +334,7 @@ func (o SteeringPolicyAttachmentOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *SteeringPolicyAttachment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The OCID of the attached zone.
+// The OCID of the attached zone. Must be a public zone.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

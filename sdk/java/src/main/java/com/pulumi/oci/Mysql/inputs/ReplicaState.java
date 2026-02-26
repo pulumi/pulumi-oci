@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Mysql.inputs.ReplicaEncryptDataArgs;
 import com.pulumi.oci.Mysql.inputs.ReplicaReplicaOverridesArgs;
 import com.pulumi.oci.Mysql.inputs.ReplicaSecureConnectionArgs;
+import com.pulumi.oci.Mysql.inputs.ReplicaTelemetryConfigurationArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -353,6 +354,21 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    @Import(name="telemetryConfigurations")
+    private @Nullable Output<List<ReplicaTelemetryConfigurationArgs>> telemetryConfigurations;
+
+    /**
+     * @return Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    public Optional<Output<List<ReplicaTelemetryConfigurationArgs>>> telemetryConfigurations() {
+        return Optional.ofNullable(this.telemetryConfigurations);
+    }
+
+    /**
      * The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
@@ -407,6 +423,7 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
         this.securityAttributes = $.securityAttributes;
         this.shapeName = $.shapeName;
         this.state = $.state;
+        this.telemetryConfigurations = $.telemetryConfigurations;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
     }
@@ -919,6 +936,37 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param telemetryConfigurations Telemetry configuration details of a DB System or a read replica.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder telemetryConfigurations(@Nullable Output<List<ReplicaTelemetryConfigurationArgs>> telemetryConfigurations) {
+            $.telemetryConfigurations = telemetryConfigurations;
+            return this;
+        }
+
+        /**
+         * @param telemetryConfigurations Telemetry configuration details of a DB System or a read replica.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder telemetryConfigurations(List<ReplicaTelemetryConfigurationArgs> telemetryConfigurations) {
+            return telemetryConfigurations(Output.of(telemetryConfigurations));
+        }
+
+        /**
+         * @param telemetryConfigurations Telemetry configuration details of a DB System or a read replica.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder telemetryConfigurations(ReplicaTelemetryConfigurationArgs... telemetryConfigurations) {
+            return telemetryConfigurations(List.of(telemetryConfigurations));
         }
 
         /**

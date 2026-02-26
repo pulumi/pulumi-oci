@@ -46,12 +46,6 @@ namespace Pulumi.Oci.Dns
     /// 
     /// ## Import
     /// 
-    /// For legacy ResolverEndpoints created without `Scope`, these ResolverEndpoints can be imported using the `Id`, e.g.
-    /// 
-    /// ```sh
-    /// $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{resolverEndpointName}"
-    /// ```
-    /// 
     /// For ResolverEndpoints created using `Scope`, these ResolverEndpoints can be imported using the `Id`, e.g.
     /// 
     /// ```sh

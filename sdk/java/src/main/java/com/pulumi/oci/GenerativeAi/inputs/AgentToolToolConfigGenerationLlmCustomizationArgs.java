@@ -5,7 +5,9 @@ package com.pulumi.oci.GenerativeAi.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -30,10 +32,42 @@ public final class AgentToolToolConfigGenerationLlmCustomizationArgs extends com
         return Optional.ofNullable(this.instruction);
     }
 
+    /**
+     * (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+     * 
+     */
+    @Import(name="llmHyperParameters")
+    private @Nullable Output<Map<String,String>> llmHyperParameters;
+
+    /**
+     * @return (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+     * 
+     */
+    public Optional<Output<Map<String,String>>> llmHyperParameters() {
+        return Optional.ofNullable(this.llmHyperParameters);
+    }
+
+    /**
+     * (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
+     * 
+     */
+    @Import(name="llmSelection")
+    private @Nullable Output<AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs> llmSelection;
+
+    /**
+     * @return (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
+     * 
+     */
+    public Optional<Output<AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs>> llmSelection() {
+        return Optional.ofNullable(this.llmSelection);
+    }
+
     private AgentToolToolConfigGenerationLlmCustomizationArgs() {}
 
     private AgentToolToolConfigGenerationLlmCustomizationArgs(AgentToolToolConfigGenerationLlmCustomizationArgs $) {
         this.instruction = $.instruction;
+        this.llmHyperParameters = $.llmHyperParameters;
+        this.llmSelection = $.llmSelection;
     }
 
     public static Builder builder() {
@@ -73,6 +107,48 @@ public final class AgentToolToolConfigGenerationLlmCustomizationArgs extends com
          */
         public Builder instruction(String instruction) {
             return instruction(Output.of(instruction));
+        }
+
+        /**
+         * @param llmHyperParameters (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder llmHyperParameters(@Nullable Output<Map<String,String>> llmHyperParameters) {
+            $.llmHyperParameters = llmHyperParameters;
+            return this;
+        }
+
+        /**
+         * @param llmHyperParameters (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder llmHyperParameters(Map<String,String> llmHyperParameters) {
+            return llmHyperParameters(Output.of(llmHyperParameters));
+        }
+
+        /**
+         * @param llmSelection (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder llmSelection(@Nullable Output<AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs> llmSelection) {
+            $.llmSelection = llmSelection;
+            return this;
+        }
+
+        /**
+         * @param llmSelection (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder llmSelection(AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs llmSelection) {
+            return llmSelection(Output.of(llmSelection));
         }
 
         public AgentToolToolConfigGenerationLlmCustomizationArgs build() {

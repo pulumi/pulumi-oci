@@ -105,6 +105,8 @@ type LookupReplicaResult struct {
 	ShapeName string `pulumi:"shapeName"`
 	// The state of the read replica.
 	State string `pulumi:"state"`
+	// Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfigurations []GetReplicaTelemetryConfiguration `pulumi:"telemetryConfigurations"`
 	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -262,6 +264,11 @@ func (o LookupReplicaResultOutput) ShapeName() pulumi.StringOutput {
 // The state of the read replica.
 func (o LookupReplicaResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReplicaResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Telemetry configuration details of a DB System or a read replica.
+func (o LookupReplicaResultOutput) TelemetryConfigurations() GetReplicaTelemetryConfigurationArrayOutput {
+	return o.ApplyT(func(v LookupReplicaResult) []GetReplicaTelemetryConfiguration { return v.TelemetryConfigurations }).(GetReplicaTelemetryConfigurationArrayOutput)
 }
 
 // The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).

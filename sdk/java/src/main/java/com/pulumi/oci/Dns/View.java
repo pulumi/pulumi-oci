@@ -13,7 +13,6 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Map;
-import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -158,7 +157,7 @@ public class View extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="scope", refs={String.class}, tree="[0]")
-    private Output</* @Nullable */ String> scope;
+    private Output<String> scope;
 
     /**
      * @return If specified, must be `PRIVATE` when creating a view for private zones.
@@ -167,8 +166,8 @@ public class View extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Optional<String>> scope() {
-        return Codegen.optional(this.scope);
+    public Output<String> scope() {
+        return this.scope;
     }
     /**
      * The canonical absolute URL of the resource.

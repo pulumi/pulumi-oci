@@ -41,12 +41,8 @@ class ResolverArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
                **Example:** `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
+        :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         """
         pulumi.set(__self__, "resolver_id", resolver_id)
         if attached_views is not None:
@@ -144,7 +140,7 @@ class ResolverArgs:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]]]:
         """
-        (Updatable) Rules for the resolver. Rules are evaluated in order.
+        (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
         """
         return pulumi.get(self, "rules")
 
@@ -156,11 +152,7 @@ class ResolverArgs:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Specifies to operate only on resources that have a matching DNS scope. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        Specifies to operate only on resources that have a matching DNS scope.
         """
         return pulumi.get(self, "scope")
 
@@ -204,12 +196,8 @@ class _ResolverState:
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[_builtins.str] resolver_id: The OCID of the target resolver.
-        :param pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
+        :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[_builtins.str] state: The current state of the resource.
         :param pulumi.Input[_builtins.str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
@@ -376,7 +364,7 @@ class _ResolverState:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]]]:
         """
-        (Updatable) Rules for the resolver. Rules are evaluated in order.
+        (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
         """
         return pulumi.get(self, "rules")
 
@@ -388,11 +376,7 @@ class _ResolverState:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Specifies to operate only on resources that have a matching DNS scope. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        Specifies to operate only on resources that have a matching DNS scope.
         """
         return pulumi.get(self, "scope")
 
@@ -472,8 +456,12 @@ class Resolver(pulumi.CustomResource):
 
         Updates the specified resolver with your new information.
 
-        Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until created VCN's state shows as Available in OCI console before updating DNS resolver properties.
-        Also a VCN cannot be deleted while its resolver has resolver endpoints. Additionally a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove the rules from a resolver user needs to update the resolver resource. Since DNS Resolver gets deleted when VCN is deleted there is no support for Delete for DNS Resolver.
+        Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until the created VCN's state shows as Available in the OCI Console before updating DNS resolver properties.
+        A VCN cannot be deleted while its resolver has resolver endpoints. Additionally, a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove rules from a resolver, update the resolver resource.
+
+        Destroy behavior: This resource does not delete the underlying DNS Resolver. The resolver itself is deleted only when the attached VCN is deleted. When this Terraform resource is destroyed, managed properties on the resolver (for example, attached views and rules) are cleared so the VCN can be deleted.
+
+        Default view behavior on VCN delete: If the resolver's default view contains customer-created zones, deleting the VCN (which deletes the resolver) can convert that default view into a non-protected regular view. That view may persist even if it was never imported into Terraform state. To avoid orphaned resources, either delete the zones from the default view before deleting the VCN, or plan to clean up the resulting view afterward.
 
         ## Import
 
@@ -495,12 +483,8 @@ class Resolver(pulumi.CustomResource):
                
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] resolver_id: The OCID of the target resolver.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleArgs', 'ResolverRuleArgsDict']]]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleArgs', 'ResolverRuleArgsDict']]]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
+        :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         """
         ...
     @overload
@@ -516,8 +500,12 @@ class Resolver(pulumi.CustomResource):
 
         Updates the specified resolver with your new information.
 
-        Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until created VCN's state shows as Available in OCI console before updating DNS resolver properties.
-        Also a VCN cannot be deleted while its resolver has resolver endpoints. Additionally a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove the rules from a resolver user needs to update the resolver resource. Since DNS Resolver gets deleted when VCN is deleted there is no support for Delete for DNS Resolver.
+        Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until the created VCN's state shows as Available in the OCI Console before updating DNS resolver properties.
+        A VCN cannot be deleted while its resolver has resolver endpoints. Additionally, a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove rules from a resolver, update the resolver resource.
+
+        Destroy behavior: This resource does not delete the underlying DNS Resolver. The resolver itself is deleted only when the attached VCN is deleted. When this Terraform resource is destroyed, managed properties on the resolver (for example, attached views and rules) are cleared so the VCN can be deleted.
+
+        Default view behavior on VCN delete: If the resolver's default view contains customer-created zones, deleting the VCN (which deletes the resolver) can convert that default view into a non-protected regular view. That view may persist even if it was never imported into Terraform state. To avoid orphaned resources, either delete the zones from the default view before deleting the VCN, or plan to clean up the resulting view afterward.
 
         ## Import
 
@@ -624,12 +612,8 @@ class Resolver(pulumi.CustomResource):
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[_builtins.str] resolver_id: The OCID of the target resolver.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleArgs', 'ResolverRuleArgsDict']]]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleArgs', 'ResolverRuleArgsDict']]]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
+        :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[_builtins.str] state: The current state of the resource.
         :param pulumi.Input[_builtins.str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
@@ -745,7 +729,7 @@ class Resolver(pulumi.CustomResource):
     @pulumi.getter
     def rules(self) -> pulumi.Output[Optional[Sequence['outputs.ResolverRule']]]:
         """
-        (Updatable) Rules for the resolver. Rules are evaluated in order.
+        (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
         """
         return pulumi.get(self, "rules")
 
@@ -753,11 +737,7 @@ class Resolver(pulumi.CustomResource):
     @pulumi.getter
     def scope(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Specifies to operate only on resources that have a matching DNS scope. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        Specifies to operate only on resources that have a matching DNS scope.
         """
         return pulumi.get(self, "scope")
 

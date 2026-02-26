@@ -29,6 +29,7 @@ class ZoneArgs:
                  external_masters: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
+                 resolution_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  view_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
@@ -39,6 +40,8 @@ class ZoneArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+               
+               When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
                **Example:** `{"Operations": {"CostCenter": "42"}}`
@@ -61,8 +64,8 @@ class ZoneArgs:
                
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] name: The name of the zone.
-        :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope. 
-               This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
+        :param pulumi.Input[_builtins.str] resolution_mode: (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] view_id: The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -79,6 +82,8 @@ class ZoneArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if resolution_mode is not None:
+            pulumi.set(__self__, "resolution_mode", resolution_mode)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
         if view_id is not None:
@@ -105,6 +110,8 @@ class ZoneArgs:
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+
+        When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
         """
         return pulumi.get(self, "zone_type")
 
@@ -201,11 +208,22 @@ class ZoneArgs:
         pulumi.set(self, "name", value)
 
     @_builtins.property
+    @pulumi.getter(name="resolutionMode")
+    def resolution_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        """
+        return pulumi.get(self, "resolution_mode")
+
+    @resolution_mode.setter
+    def resolution_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "resolution_mode", value)
+
+    @_builtins.property
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Specifies to operate only on resources that have a matching DNS scope. 
-        This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
+        Specifies to operate only on resources that have a matching DNS scope.
         """
         return pulumi.get(self, "scope")
 
@@ -239,6 +257,7 @@ class _ZoneState:
                  is_protected: Optional[pulumi.Input[_builtins.bool]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  nameservers: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneNameserverArgs']]]] = None,
+                 resolution_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  self: Optional[pulumi.Input[_builtins.str]] = None,
                  serial: Optional[pulumi.Input[_builtins.int]] = None,
@@ -275,9 +294,8 @@ class _ZoneState:
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[_builtins.str] name: The name of the zone.
-        :param pulumi.Input[Sequence[pulumi.Input['ZoneNameserverArgs']]] nameservers: The authoritative nameservers for the zone.
-        :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope. 
-               This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
+        :param pulumi.Input[_builtins.str] resolution_mode: (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[_builtins.int] serial: The current serial of the zone. As seen in the zone's SOA record.
         :param pulumi.Input[_builtins.str] state: The current state of the zone resource.
@@ -290,6 +308,8 @@ class _ZoneState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+               
+               When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -311,6 +331,8 @@ class _ZoneState:
             pulumi.set(__self__, "name", name)
         if nameservers is not None:
             pulumi.set(__self__, "nameservers", nameservers)
+        if resolution_mode is not None:
+            pulumi.set(__self__, "resolution_mode", resolution_mode)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
         if self is not None:
@@ -457,9 +479,6 @@ class _ZoneState:
     @_builtins.property
     @pulumi.getter
     def nameservers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ZoneNameserverArgs']]]]:
-        """
-        The authoritative nameservers for the zone.
-        """
         return pulumi.get(self, "nameservers")
 
     @nameservers.setter
@@ -467,11 +486,22 @@ class _ZoneState:
         pulumi.set(self, "nameservers", value)
 
     @_builtins.property
+    @pulumi.getter(name="resolutionMode")
+    def resolution_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        """
+        return pulumi.get(self, "resolution_mode")
+
+    @resolution_mode.setter
+    def resolution_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "resolution_mode", value)
+
+    @_builtins.property
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Specifies to operate only on resources that have a matching DNS scope. 
-        This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
+        Specifies to operate only on resources that have a matching DNS scope.
         """
         return pulumi.get(self, "scope")
 
@@ -572,6 +602,8 @@ class _ZoneState:
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+
+        When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
         """
         return pulumi.get(self, "zone_type")
 
@@ -593,6 +625,7 @@ class Zone(pulumi.CustomResource):
                  external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
+                 resolution_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  view_id: Optional[pulumi.Input[_builtins.str]] = None,
                  zone_type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -631,6 +664,7 @@ class Zone(pulumi.CustomResource):
                 "tsig_key_id": test_tsig_key["id"],
             }],
             freeform_tags=zone_freeform_tags,
+            resolution_mode=zone_resolution_mode,
             scope=zone_scope,
             view_id=test_view["id"])
         ```
@@ -668,14 +702,16 @@ class Zone(pulumi.CustomResource):
                
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] name: The name of the zone.
-        :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope. 
-               This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
+        :param pulumi.Input[_builtins.str] resolution_mode: (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] view_id: The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
         :param pulumi.Input[_builtins.str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+               
+               When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
         """
         ...
     @overload
@@ -717,6 +753,7 @@ class Zone(pulumi.CustomResource):
                 "tsig_key_id": test_tsig_key["id"],
             }],
             freeform_tags=zone_freeform_tags,
+            resolution_mode=zone_resolution_mode,
             scope=zone_scope,
             view_id=test_view["id"])
         ```
@@ -751,6 +788,7 @@ class Zone(pulumi.CustomResource):
                  external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
+                 resolution_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  view_id: Optional[pulumi.Input[_builtins.str]] = None,
                  zone_type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -772,6 +810,7 @@ class Zone(pulumi.CustomResource):
             __props__.__dict__["external_masters"] = external_masters
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["name"] = name
+            __props__.__dict__["resolution_mode"] = resolution_mode
             __props__.__dict__["scope"] = scope
             __props__.__dict__["view_id"] = view_id
             if zone_type is None and not opts.urn:
@@ -806,6 +845,7 @@ class Zone(pulumi.CustomResource):
             is_protected: Optional[pulumi.Input[_builtins.bool]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
             nameservers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneNameserverArgs', 'ZoneNameserverArgsDict']]]]] = None,
+            resolution_mode: Optional[pulumi.Input[_builtins.str]] = None,
             scope: Optional[pulumi.Input[_builtins.str]] = None,
             self: Optional[pulumi.Input[_builtins.str]] = None,
             serial: Optional[pulumi.Input[_builtins.int]] = None,
@@ -847,9 +887,8 @@ class Zone(pulumi.CustomResource):
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[_builtins.str] name: The name of the zone.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneNameserverArgs', 'ZoneNameserverArgsDict']]]] nameservers: The authoritative nameservers for the zone.
-        :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope. 
-               This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
+        :param pulumi.Input[_builtins.str] resolution_mode: (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[_builtins.int] serial: The current serial of the zone. As seen in the zone's SOA record.
         :param pulumi.Input[_builtins.str] state: The current state of the zone resource.
@@ -862,6 +901,8 @@ class Zone(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+               
+               When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -877,6 +918,7 @@ class Zone(pulumi.CustomResource):
         __props__.__dict__["is_protected"] = is_protected
         __props__.__dict__["name"] = name
         __props__.__dict__["nameservers"] = nameservers
+        __props__.__dict__["resolution_mode"] = resolution_mode
         __props__.__dict__["scope"] = scope
         __props__.__dict__["self"] = self
         __props__.__dict__["serial"] = serial
@@ -979,17 +1021,21 @@ class Zone(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter
     def nameservers(self) -> pulumi.Output[Sequence['outputs.ZoneNameserver']]:
-        """
-        The authoritative nameservers for the zone.
-        """
         return pulumi.get(self, "nameservers")
+
+    @_builtins.property
+    @pulumi.getter(name="resolutionMode")
+    def resolution_mode(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        """
+        return pulumi.get(self, "resolution_mode")
 
     @_builtins.property
     @pulumi.getter
     def scope(self) -> pulumi.Output[_builtins.str]:
         """
-        Specifies to operate only on resources that have a matching DNS scope. 
-        This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
+        Specifies to operate only on resources that have a matching DNS scope.
         """
         return pulumi.get(self, "scope")
 
@@ -1058,6 +1104,8 @@ class Zone(pulumi.CustomResource):
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+
+        When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
         """
         return pulumi.get(self, "zone_type")
 

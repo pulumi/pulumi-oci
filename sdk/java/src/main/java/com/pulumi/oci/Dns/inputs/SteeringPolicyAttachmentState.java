@@ -137,7 +137,7 @@ public final class SteeringPolicyAttachmentState extends com.pulumi.resources.Re
     }
 
     /**
-     * The OCID of the attached zone.
+     * The OCID of the attached zone. Must be a public zone.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -147,7 +147,7 @@ public final class SteeringPolicyAttachmentState extends com.pulumi.resources.Re
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return The OCID of the attached zone.
+     * @return The OCID of the attached zone. Must be a public zone.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -368,7 +368,7 @@ public final class SteeringPolicyAttachmentState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param zoneId The OCID of the attached zone.
+         * @param zoneId The OCID of the attached zone. Must be a public zone.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -382,7 +382,7 @@ public final class SteeringPolicyAttachmentState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param zoneId The OCID of the attached zone.
+         * @param zoneId The OCID of the attached zone. Must be a public zone.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

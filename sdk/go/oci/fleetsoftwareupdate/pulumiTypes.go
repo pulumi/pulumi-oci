@@ -2644,6 +2644,236 @@ func (o FsuCycleUpgradeDetailsPtrOutput) MaxDrainTimeoutInSeconds() pulumi.IntPt
 	}).(pulumi.IntPtrOutput)
 }
 
+type FsuReadinessCheckIssue struct {
+	// Description of the patching issue.
+	Description *string `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+	ImpactedResourceId *string `pulumi:"impactedResourceId"`
+	// Name of the patching issue.
+	Name *string `pulumi:"name"`
+	// Recommended action to perform to address or further triage the patching issue.
+	RecommendedAction *string `pulumi:"recommendedAction"`
+}
+
+// FsuReadinessCheckIssueInput is an input type that accepts FsuReadinessCheckIssueArgs and FsuReadinessCheckIssueOutput values.
+// You can construct a concrete instance of `FsuReadinessCheckIssueInput` via:
+//
+//	FsuReadinessCheckIssueArgs{...}
+type FsuReadinessCheckIssueInput interface {
+	pulumi.Input
+
+	ToFsuReadinessCheckIssueOutput() FsuReadinessCheckIssueOutput
+	ToFsuReadinessCheckIssueOutputWithContext(context.Context) FsuReadinessCheckIssueOutput
+}
+
+type FsuReadinessCheckIssueArgs struct {
+	// Description of the patching issue.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+	ImpactedResourceId pulumi.StringPtrInput `pulumi:"impactedResourceId"`
+	// Name of the patching issue.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Recommended action to perform to address or further triage the patching issue.
+	RecommendedAction pulumi.StringPtrInput `pulumi:"recommendedAction"`
+}
+
+func (FsuReadinessCheckIssueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FsuReadinessCheckIssue)(nil)).Elem()
+}
+
+func (i FsuReadinessCheckIssueArgs) ToFsuReadinessCheckIssueOutput() FsuReadinessCheckIssueOutput {
+	return i.ToFsuReadinessCheckIssueOutputWithContext(context.Background())
+}
+
+func (i FsuReadinessCheckIssueArgs) ToFsuReadinessCheckIssueOutputWithContext(ctx context.Context) FsuReadinessCheckIssueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuReadinessCheckIssueOutput)
+}
+
+// FsuReadinessCheckIssueArrayInput is an input type that accepts FsuReadinessCheckIssueArray and FsuReadinessCheckIssueArrayOutput values.
+// You can construct a concrete instance of `FsuReadinessCheckIssueArrayInput` via:
+//
+//	FsuReadinessCheckIssueArray{ FsuReadinessCheckIssueArgs{...} }
+type FsuReadinessCheckIssueArrayInput interface {
+	pulumi.Input
+
+	ToFsuReadinessCheckIssueArrayOutput() FsuReadinessCheckIssueArrayOutput
+	ToFsuReadinessCheckIssueArrayOutputWithContext(context.Context) FsuReadinessCheckIssueArrayOutput
+}
+
+type FsuReadinessCheckIssueArray []FsuReadinessCheckIssueInput
+
+func (FsuReadinessCheckIssueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FsuReadinessCheckIssue)(nil)).Elem()
+}
+
+func (i FsuReadinessCheckIssueArray) ToFsuReadinessCheckIssueArrayOutput() FsuReadinessCheckIssueArrayOutput {
+	return i.ToFsuReadinessCheckIssueArrayOutputWithContext(context.Background())
+}
+
+func (i FsuReadinessCheckIssueArray) ToFsuReadinessCheckIssueArrayOutputWithContext(ctx context.Context) FsuReadinessCheckIssueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuReadinessCheckIssueArrayOutput)
+}
+
+type FsuReadinessCheckIssueOutput struct{ *pulumi.OutputState }
+
+func (FsuReadinessCheckIssueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FsuReadinessCheckIssue)(nil)).Elem()
+}
+
+func (o FsuReadinessCheckIssueOutput) ToFsuReadinessCheckIssueOutput() FsuReadinessCheckIssueOutput {
+	return o
+}
+
+func (o FsuReadinessCheckIssueOutput) ToFsuReadinessCheckIssueOutputWithContext(ctx context.Context) FsuReadinessCheckIssueOutput {
+	return o
+}
+
+// Description of the patching issue.
+func (o FsuReadinessCheckIssueOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FsuReadinessCheckIssue) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+func (o FsuReadinessCheckIssueOutput) ImpactedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FsuReadinessCheckIssue) *string { return v.ImpactedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// Name of the patching issue.
+func (o FsuReadinessCheckIssueOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FsuReadinessCheckIssue) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Recommended action to perform to address or further triage the patching issue.
+func (o FsuReadinessCheckIssueOutput) RecommendedAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FsuReadinessCheckIssue) *string { return v.RecommendedAction }).(pulumi.StringPtrOutput)
+}
+
+type FsuReadinessCheckIssueArrayOutput struct{ *pulumi.OutputState }
+
+func (FsuReadinessCheckIssueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FsuReadinessCheckIssue)(nil)).Elem()
+}
+
+func (o FsuReadinessCheckIssueArrayOutput) ToFsuReadinessCheckIssueArrayOutput() FsuReadinessCheckIssueArrayOutput {
+	return o
+}
+
+func (o FsuReadinessCheckIssueArrayOutput) ToFsuReadinessCheckIssueArrayOutputWithContext(ctx context.Context) FsuReadinessCheckIssueArrayOutput {
+	return o
+}
+
+func (o FsuReadinessCheckIssueArrayOutput) Index(i pulumi.IntInput) FsuReadinessCheckIssueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FsuReadinessCheckIssue {
+		return vs[0].([]FsuReadinessCheckIssue)[vs[1].(int)]
+	}).(FsuReadinessCheckIssueOutput)
+}
+
+type FsuReadinessCheckTarget struct {
+	// Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	EntityId string `pulumi:"entityId"`
+	// Resource entity type
+	EntityType string `pulumi:"entityType"`
+}
+
+// FsuReadinessCheckTargetInput is an input type that accepts FsuReadinessCheckTargetArgs and FsuReadinessCheckTargetOutput values.
+// You can construct a concrete instance of `FsuReadinessCheckTargetInput` via:
+//
+//	FsuReadinessCheckTargetArgs{...}
+type FsuReadinessCheckTargetInput interface {
+	pulumi.Input
+
+	ToFsuReadinessCheckTargetOutput() FsuReadinessCheckTargetOutput
+	ToFsuReadinessCheckTargetOutputWithContext(context.Context) FsuReadinessCheckTargetOutput
+}
+
+type FsuReadinessCheckTargetArgs struct {
+	// Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	EntityId pulumi.StringInput `pulumi:"entityId"`
+	// Resource entity type
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+}
+
+func (FsuReadinessCheckTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FsuReadinessCheckTarget)(nil)).Elem()
+}
+
+func (i FsuReadinessCheckTargetArgs) ToFsuReadinessCheckTargetOutput() FsuReadinessCheckTargetOutput {
+	return i.ToFsuReadinessCheckTargetOutputWithContext(context.Background())
+}
+
+func (i FsuReadinessCheckTargetArgs) ToFsuReadinessCheckTargetOutputWithContext(ctx context.Context) FsuReadinessCheckTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuReadinessCheckTargetOutput)
+}
+
+// FsuReadinessCheckTargetArrayInput is an input type that accepts FsuReadinessCheckTargetArray and FsuReadinessCheckTargetArrayOutput values.
+// You can construct a concrete instance of `FsuReadinessCheckTargetArrayInput` via:
+//
+//	FsuReadinessCheckTargetArray{ FsuReadinessCheckTargetArgs{...} }
+type FsuReadinessCheckTargetArrayInput interface {
+	pulumi.Input
+
+	ToFsuReadinessCheckTargetArrayOutput() FsuReadinessCheckTargetArrayOutput
+	ToFsuReadinessCheckTargetArrayOutputWithContext(context.Context) FsuReadinessCheckTargetArrayOutput
+}
+
+type FsuReadinessCheckTargetArray []FsuReadinessCheckTargetInput
+
+func (FsuReadinessCheckTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FsuReadinessCheckTarget)(nil)).Elem()
+}
+
+func (i FsuReadinessCheckTargetArray) ToFsuReadinessCheckTargetArrayOutput() FsuReadinessCheckTargetArrayOutput {
+	return i.ToFsuReadinessCheckTargetArrayOutputWithContext(context.Background())
+}
+
+func (i FsuReadinessCheckTargetArray) ToFsuReadinessCheckTargetArrayOutputWithContext(ctx context.Context) FsuReadinessCheckTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuReadinessCheckTargetArrayOutput)
+}
+
+type FsuReadinessCheckTargetOutput struct{ *pulumi.OutputState }
+
+func (FsuReadinessCheckTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FsuReadinessCheckTarget)(nil)).Elem()
+}
+
+func (o FsuReadinessCheckTargetOutput) ToFsuReadinessCheckTargetOutput() FsuReadinessCheckTargetOutput {
+	return o
+}
+
+func (o FsuReadinessCheckTargetOutput) ToFsuReadinessCheckTargetOutputWithContext(ctx context.Context) FsuReadinessCheckTargetOutput {
+	return o
+}
+
+// Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+func (o FsuReadinessCheckTargetOutput) EntityId() pulumi.StringOutput {
+	return o.ApplyT(func(v FsuReadinessCheckTarget) string { return v.EntityId }).(pulumi.StringOutput)
+}
+
+// Resource entity type
+func (o FsuReadinessCheckTargetOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v FsuReadinessCheckTarget) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+type FsuReadinessCheckTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (FsuReadinessCheckTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FsuReadinessCheckTarget)(nil)).Elem()
+}
+
+func (o FsuReadinessCheckTargetArrayOutput) ToFsuReadinessCheckTargetArrayOutput() FsuReadinessCheckTargetArrayOutput {
+	return o
+}
+
+func (o FsuReadinessCheckTargetArrayOutput) ToFsuReadinessCheckTargetArrayOutputWithContext(ctx context.Context) FsuReadinessCheckTargetArrayOutput {
+	return o
+}
+
+func (o FsuReadinessCheckTargetArrayOutput) Index(i pulumi.IntInput) FsuReadinessCheckTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FsuReadinessCheckTarget {
+		return vs[0].([]FsuReadinessCheckTarget)[vs[1].(int)]
+	}).(FsuReadinessCheckTargetOutput)
+}
+
 type GetFsuCollectionActiveFsuCycle struct {
 	// The user-friendly name for the Exadata Fleet Update Collection.
 	DisplayName string `pulumi:"displayName"`
@@ -7971,6 +8201,898 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput) Index
 	}).(GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput)
 }
 
+type GetFsuReadinessCheckIssue struct {
+	// Description of the patching issue.
+	Description string `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+	ImpactedResourceId string `pulumi:"impactedResourceId"`
+	// Name of the patching issue.
+	Name string `pulumi:"name"`
+	// Recommended action to perform to address or further triage the patching issue.
+	RecommendedAction string `pulumi:"recommendedAction"`
+}
+
+// GetFsuReadinessCheckIssueInput is an input type that accepts GetFsuReadinessCheckIssueArgs and GetFsuReadinessCheckIssueOutput values.
+// You can construct a concrete instance of `GetFsuReadinessCheckIssueInput` via:
+//
+//	GetFsuReadinessCheckIssueArgs{...}
+type GetFsuReadinessCheckIssueInput interface {
+	pulumi.Input
+
+	ToGetFsuReadinessCheckIssueOutput() GetFsuReadinessCheckIssueOutput
+	ToGetFsuReadinessCheckIssueOutputWithContext(context.Context) GetFsuReadinessCheckIssueOutput
+}
+
+type GetFsuReadinessCheckIssueArgs struct {
+	// Description of the patching issue.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+	ImpactedResourceId pulumi.StringInput `pulumi:"impactedResourceId"`
+	// Name of the patching issue.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Recommended action to perform to address or further triage the patching issue.
+	RecommendedAction pulumi.StringInput `pulumi:"recommendedAction"`
+}
+
+func (GetFsuReadinessCheckIssueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuReadinessCheckIssue)(nil)).Elem()
+}
+
+func (i GetFsuReadinessCheckIssueArgs) ToGetFsuReadinessCheckIssueOutput() GetFsuReadinessCheckIssueOutput {
+	return i.ToGetFsuReadinessCheckIssueOutputWithContext(context.Background())
+}
+
+func (i GetFsuReadinessCheckIssueArgs) ToGetFsuReadinessCheckIssueOutputWithContext(ctx context.Context) GetFsuReadinessCheckIssueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuReadinessCheckIssueOutput)
+}
+
+// GetFsuReadinessCheckIssueArrayInput is an input type that accepts GetFsuReadinessCheckIssueArray and GetFsuReadinessCheckIssueArrayOutput values.
+// You can construct a concrete instance of `GetFsuReadinessCheckIssueArrayInput` via:
+//
+//	GetFsuReadinessCheckIssueArray{ GetFsuReadinessCheckIssueArgs{...} }
+type GetFsuReadinessCheckIssueArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuReadinessCheckIssueArrayOutput() GetFsuReadinessCheckIssueArrayOutput
+	ToGetFsuReadinessCheckIssueArrayOutputWithContext(context.Context) GetFsuReadinessCheckIssueArrayOutput
+}
+
+type GetFsuReadinessCheckIssueArray []GetFsuReadinessCheckIssueInput
+
+func (GetFsuReadinessCheckIssueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuReadinessCheckIssue)(nil)).Elem()
+}
+
+func (i GetFsuReadinessCheckIssueArray) ToGetFsuReadinessCheckIssueArrayOutput() GetFsuReadinessCheckIssueArrayOutput {
+	return i.ToGetFsuReadinessCheckIssueArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuReadinessCheckIssueArray) ToGetFsuReadinessCheckIssueArrayOutputWithContext(ctx context.Context) GetFsuReadinessCheckIssueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuReadinessCheckIssueArrayOutput)
+}
+
+type GetFsuReadinessCheckIssueOutput struct{ *pulumi.OutputState }
+
+func (GetFsuReadinessCheckIssueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuReadinessCheckIssue)(nil)).Elem()
+}
+
+func (o GetFsuReadinessCheckIssueOutput) ToGetFsuReadinessCheckIssueOutput() GetFsuReadinessCheckIssueOutput {
+	return o
+}
+
+func (o GetFsuReadinessCheckIssueOutput) ToGetFsuReadinessCheckIssueOutputWithContext(ctx context.Context) GetFsuReadinessCheckIssueOutput {
+	return o
+}
+
+// Description of the patching issue.
+func (o GetFsuReadinessCheckIssueOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessCheckIssue) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+func (o GetFsuReadinessCheckIssueOutput) ImpactedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessCheckIssue) string { return v.ImpactedResourceId }).(pulumi.StringOutput)
+}
+
+// Name of the patching issue.
+func (o GetFsuReadinessCheckIssueOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessCheckIssue) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Recommended action to perform to address or further triage the patching issue.
+func (o GetFsuReadinessCheckIssueOutput) RecommendedAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessCheckIssue) string { return v.RecommendedAction }).(pulumi.StringOutput)
+}
+
+type GetFsuReadinessCheckIssueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuReadinessCheckIssueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuReadinessCheckIssue)(nil)).Elem()
+}
+
+func (o GetFsuReadinessCheckIssueArrayOutput) ToGetFsuReadinessCheckIssueArrayOutput() GetFsuReadinessCheckIssueArrayOutput {
+	return o
+}
+
+func (o GetFsuReadinessCheckIssueArrayOutput) ToGetFsuReadinessCheckIssueArrayOutputWithContext(ctx context.Context) GetFsuReadinessCheckIssueArrayOutput {
+	return o
+}
+
+func (o GetFsuReadinessCheckIssueArrayOutput) Index(i pulumi.IntInput) GetFsuReadinessCheckIssueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuReadinessCheckIssue {
+		return vs[0].([]GetFsuReadinessCheckIssue)[vs[1].(int)]
+	}).(GetFsuReadinessCheckIssueOutput)
+}
+
+type GetFsuReadinessCheckTarget struct {
+	// Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	EntityId string `pulumi:"entityId"`
+	// Resource entity type
+	EntityType string `pulumi:"entityType"`
+}
+
+// GetFsuReadinessCheckTargetInput is an input type that accepts GetFsuReadinessCheckTargetArgs and GetFsuReadinessCheckTargetOutput values.
+// You can construct a concrete instance of `GetFsuReadinessCheckTargetInput` via:
+//
+//	GetFsuReadinessCheckTargetArgs{...}
+type GetFsuReadinessCheckTargetInput interface {
+	pulumi.Input
+
+	ToGetFsuReadinessCheckTargetOutput() GetFsuReadinessCheckTargetOutput
+	ToGetFsuReadinessCheckTargetOutputWithContext(context.Context) GetFsuReadinessCheckTargetOutput
+}
+
+type GetFsuReadinessCheckTargetArgs struct {
+	// Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	EntityId pulumi.StringInput `pulumi:"entityId"`
+	// Resource entity type
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+}
+
+func (GetFsuReadinessCheckTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuReadinessCheckTarget)(nil)).Elem()
+}
+
+func (i GetFsuReadinessCheckTargetArgs) ToGetFsuReadinessCheckTargetOutput() GetFsuReadinessCheckTargetOutput {
+	return i.ToGetFsuReadinessCheckTargetOutputWithContext(context.Background())
+}
+
+func (i GetFsuReadinessCheckTargetArgs) ToGetFsuReadinessCheckTargetOutputWithContext(ctx context.Context) GetFsuReadinessCheckTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuReadinessCheckTargetOutput)
+}
+
+// GetFsuReadinessCheckTargetArrayInput is an input type that accepts GetFsuReadinessCheckTargetArray and GetFsuReadinessCheckTargetArrayOutput values.
+// You can construct a concrete instance of `GetFsuReadinessCheckTargetArrayInput` via:
+//
+//	GetFsuReadinessCheckTargetArray{ GetFsuReadinessCheckTargetArgs{...} }
+type GetFsuReadinessCheckTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuReadinessCheckTargetArrayOutput() GetFsuReadinessCheckTargetArrayOutput
+	ToGetFsuReadinessCheckTargetArrayOutputWithContext(context.Context) GetFsuReadinessCheckTargetArrayOutput
+}
+
+type GetFsuReadinessCheckTargetArray []GetFsuReadinessCheckTargetInput
+
+func (GetFsuReadinessCheckTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuReadinessCheckTarget)(nil)).Elem()
+}
+
+func (i GetFsuReadinessCheckTargetArray) ToGetFsuReadinessCheckTargetArrayOutput() GetFsuReadinessCheckTargetArrayOutput {
+	return i.ToGetFsuReadinessCheckTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuReadinessCheckTargetArray) ToGetFsuReadinessCheckTargetArrayOutputWithContext(ctx context.Context) GetFsuReadinessCheckTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuReadinessCheckTargetArrayOutput)
+}
+
+type GetFsuReadinessCheckTargetOutput struct{ *pulumi.OutputState }
+
+func (GetFsuReadinessCheckTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuReadinessCheckTarget)(nil)).Elem()
+}
+
+func (o GetFsuReadinessCheckTargetOutput) ToGetFsuReadinessCheckTargetOutput() GetFsuReadinessCheckTargetOutput {
+	return o
+}
+
+func (o GetFsuReadinessCheckTargetOutput) ToGetFsuReadinessCheckTargetOutputWithContext(ctx context.Context) GetFsuReadinessCheckTargetOutput {
+	return o
+}
+
+// Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+func (o GetFsuReadinessCheckTargetOutput) EntityId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessCheckTarget) string { return v.EntityId }).(pulumi.StringOutput)
+}
+
+// Resource entity type
+func (o GetFsuReadinessCheckTargetOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessCheckTarget) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+type GetFsuReadinessCheckTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuReadinessCheckTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuReadinessCheckTarget)(nil)).Elem()
+}
+
+func (o GetFsuReadinessCheckTargetArrayOutput) ToGetFsuReadinessCheckTargetArrayOutput() GetFsuReadinessCheckTargetArrayOutput {
+	return o
+}
+
+func (o GetFsuReadinessCheckTargetArrayOutput) ToGetFsuReadinessCheckTargetArrayOutputWithContext(ctx context.Context) GetFsuReadinessCheckTargetArrayOutput {
+	return o
+}
+
+func (o GetFsuReadinessCheckTargetArrayOutput) Index(i pulumi.IntInput) GetFsuReadinessCheckTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuReadinessCheckTarget {
+		return vs[0].([]GetFsuReadinessCheckTarget)[vs[1].(int)]
+	}).(GetFsuReadinessCheckTargetOutput)
+}
+
+type GetFsuReadinessChecksFilter struct {
+	// Name of the patching issue.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFsuReadinessChecksFilterInput is an input type that accepts GetFsuReadinessChecksFilterArgs and GetFsuReadinessChecksFilterOutput values.
+// You can construct a concrete instance of `GetFsuReadinessChecksFilterInput` via:
+//
+//	GetFsuReadinessChecksFilterArgs{...}
+type GetFsuReadinessChecksFilterInput interface {
+	pulumi.Input
+
+	ToGetFsuReadinessChecksFilterOutput() GetFsuReadinessChecksFilterOutput
+	ToGetFsuReadinessChecksFilterOutputWithContext(context.Context) GetFsuReadinessChecksFilterOutput
+}
+
+type GetFsuReadinessChecksFilterArgs struct {
+	// Name of the patching issue.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFsuReadinessChecksFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuReadinessChecksFilter)(nil)).Elem()
+}
+
+func (i GetFsuReadinessChecksFilterArgs) ToGetFsuReadinessChecksFilterOutput() GetFsuReadinessChecksFilterOutput {
+	return i.ToGetFsuReadinessChecksFilterOutputWithContext(context.Background())
+}
+
+func (i GetFsuReadinessChecksFilterArgs) ToGetFsuReadinessChecksFilterOutputWithContext(ctx context.Context) GetFsuReadinessChecksFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuReadinessChecksFilterOutput)
+}
+
+// GetFsuReadinessChecksFilterArrayInput is an input type that accepts GetFsuReadinessChecksFilterArray and GetFsuReadinessChecksFilterArrayOutput values.
+// You can construct a concrete instance of `GetFsuReadinessChecksFilterArrayInput` via:
+//
+//	GetFsuReadinessChecksFilterArray{ GetFsuReadinessChecksFilterArgs{...} }
+type GetFsuReadinessChecksFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuReadinessChecksFilterArrayOutput() GetFsuReadinessChecksFilterArrayOutput
+	ToGetFsuReadinessChecksFilterArrayOutputWithContext(context.Context) GetFsuReadinessChecksFilterArrayOutput
+}
+
+type GetFsuReadinessChecksFilterArray []GetFsuReadinessChecksFilterInput
+
+func (GetFsuReadinessChecksFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuReadinessChecksFilter)(nil)).Elem()
+}
+
+func (i GetFsuReadinessChecksFilterArray) ToGetFsuReadinessChecksFilterArrayOutput() GetFsuReadinessChecksFilterArrayOutput {
+	return i.ToGetFsuReadinessChecksFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuReadinessChecksFilterArray) ToGetFsuReadinessChecksFilterArrayOutputWithContext(ctx context.Context) GetFsuReadinessChecksFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuReadinessChecksFilterArrayOutput)
+}
+
+type GetFsuReadinessChecksFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFsuReadinessChecksFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuReadinessChecksFilter)(nil)).Elem()
+}
+
+func (o GetFsuReadinessChecksFilterOutput) ToGetFsuReadinessChecksFilterOutput() GetFsuReadinessChecksFilterOutput {
+	return o
+}
+
+func (o GetFsuReadinessChecksFilterOutput) ToGetFsuReadinessChecksFilterOutputWithContext(ctx context.Context) GetFsuReadinessChecksFilterOutput {
+	return o
+}
+
+// Name of the patching issue.
+func (o GetFsuReadinessChecksFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFsuReadinessChecksFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFsuReadinessChecksFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFsuReadinessChecksFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuReadinessChecksFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuReadinessChecksFilter)(nil)).Elem()
+}
+
+func (o GetFsuReadinessChecksFilterArrayOutput) ToGetFsuReadinessChecksFilterArrayOutput() GetFsuReadinessChecksFilterArrayOutput {
+	return o
+}
+
+func (o GetFsuReadinessChecksFilterArrayOutput) ToGetFsuReadinessChecksFilterArrayOutputWithContext(ctx context.Context) GetFsuReadinessChecksFilterArrayOutput {
+	return o
+}
+
+func (o GetFsuReadinessChecksFilterArrayOutput) Index(i pulumi.IntInput) GetFsuReadinessChecksFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuReadinessChecksFilter {
+		return vs[0].([]GetFsuReadinessChecksFilter)[vs[1].(int)]
+	}).(GetFsuReadinessChecksFilterOutput)
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollection struct {
+	Items []GetFsuReadinessChecksFsuReadinessCheckCollectionItem `pulumi:"items"`
+}
+
+// GetFsuReadinessChecksFsuReadinessCheckCollectionInput is an input type that accepts GetFsuReadinessChecksFsuReadinessCheckCollectionArgs and GetFsuReadinessChecksFsuReadinessCheckCollectionOutput values.
+// You can construct a concrete instance of `GetFsuReadinessChecksFsuReadinessCheckCollectionInput` via:
+//
+//	GetFsuReadinessChecksFsuReadinessCheckCollectionArgs{...}
+type GetFsuReadinessChecksFsuReadinessCheckCollectionInput interface {
+	pulumi.Input
+
+	ToGetFsuReadinessChecksFsuReadinessCheckCollectionOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionOutput
+	ToGetFsuReadinessChecksFsuReadinessCheckCollectionOutputWithContext(context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionOutput
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionArgs struct {
+	Items GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFsuReadinessChecksFsuReadinessCheckCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuReadinessChecksFsuReadinessCheckCollection)(nil)).Elem()
+}
+
+func (i GetFsuReadinessChecksFsuReadinessCheckCollectionArgs) ToGetFsuReadinessChecksFsuReadinessCheckCollectionOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionOutput {
+	return i.ToGetFsuReadinessChecksFsuReadinessCheckCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFsuReadinessChecksFsuReadinessCheckCollectionArgs) ToGetFsuReadinessChecksFsuReadinessCheckCollectionOutputWithContext(ctx context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuReadinessChecksFsuReadinessCheckCollectionOutput)
+}
+
+// GetFsuReadinessChecksFsuReadinessCheckCollectionArrayInput is an input type that accepts GetFsuReadinessChecksFsuReadinessCheckCollectionArray and GetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFsuReadinessChecksFsuReadinessCheckCollectionArrayInput` via:
+//
+//	GetFsuReadinessChecksFsuReadinessCheckCollectionArray{ GetFsuReadinessChecksFsuReadinessCheckCollectionArgs{...} }
+type GetFsuReadinessChecksFsuReadinessCheckCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutput
+	ToGetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutputWithContext(context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutput
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionArray []GetFsuReadinessChecksFsuReadinessCheckCollectionInput
+
+func (GetFsuReadinessChecksFsuReadinessCheckCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuReadinessChecksFsuReadinessCheckCollection)(nil)).Elem()
+}
+
+func (i GetFsuReadinessChecksFsuReadinessCheckCollectionArray) ToGetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutput {
+	return i.ToGetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuReadinessChecksFsuReadinessCheckCollectionArray) ToGetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutputWithContext(ctx context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutput)
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFsuReadinessChecksFsuReadinessCheckCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuReadinessChecksFsuReadinessCheckCollection)(nil)).Elem()
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionOutput) ToGetFsuReadinessChecksFsuReadinessCheckCollectionOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionOutput {
+	return o
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionOutput) ToGetFsuReadinessChecksFsuReadinessCheckCollectionOutputWithContext(ctx context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionOutput {
+	return o
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionOutput) Items() GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollection) []GetFsuReadinessChecksFsuReadinessCheckCollectionItem {
+		return v.Items
+	}).(GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput)
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuReadinessChecksFsuReadinessCheckCollection)(nil)).Elem()
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutput) ToGetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutput {
+	return o
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutput) ToGetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutputWithContext(ctx context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutput {
+	return o
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutput) Index(i pulumi.IntInput) GetFsuReadinessChecksFsuReadinessCheckCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuReadinessChecksFsuReadinessCheckCollection {
+		return vs[0].([]GetFsuReadinessChecksFsuReadinessCheckCollection)[vs[1].(int)]
+	}).(GetFsuReadinessChecksFsuReadinessCheckCollectionOutput)
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItem struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Readiness Check.
+	Id string `pulumi:"id"`
+	// Number of issues found during the Exadata Fleet Update Readiness Check run.
+	IssueCount int `pulumi:"issueCount"`
+	// Issues found during the Exadata Fleet Update Readiness Check run.
+	Issues []GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssue `pulumi:"issues"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources whose lifecycleState matches the specified lifecycleState.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// List of targets that will run the Exadata Fleet Update Readiness Check. The targets have to be of the same entity type.
+	Targets []GetFsuReadinessChecksFsuReadinessCheckCollectionItemTarget `pulumi:"targets"`
+	// The date and time the Exadata Fleet Update Readiness Check was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Exadata Fleet Update Readiness Check was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeFinished string `pulumi:"timeFinished"`
+	// The date and time the Exadata Fleet Update Readiness Check was updated, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// A filter to return only resources whose type matches the specified type.
+	Type string `pulumi:"type"`
+}
+
+// GetFsuReadinessChecksFsuReadinessCheckCollectionItemInput is an input type that accepts GetFsuReadinessChecksFsuReadinessCheckCollectionItemArgs and GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput values.
+// You can construct a concrete instance of `GetFsuReadinessChecksFsuReadinessCheckCollectionItemInput` via:
+//
+//	GetFsuReadinessChecksFsuReadinessCheckCollectionItemArgs{...}
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput
+	ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemOutputWithContext(context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Readiness Check.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Number of issues found during the Exadata Fleet Update Readiness Check run.
+	IssueCount pulumi.IntInput `pulumi:"issueCount"`
+	// Issues found during the Exadata Fleet Update Readiness Check run.
+	Issues GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayInput `pulumi:"issues"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources whose lifecycleState matches the specified lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// List of targets that will run the Exadata Fleet Update Readiness Check. The targets have to be of the same entity type.
+	Targets GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayInput `pulumi:"targets"`
+	// The date and time the Exadata Fleet Update Readiness Check was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the Exadata Fleet Update Readiness Check was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// The date and time the Exadata Fleet Update Readiness Check was updated, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// A filter to return only resources whose type matches the specified type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetFsuReadinessChecksFsuReadinessCheckCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuReadinessChecksFsuReadinessCheckCollectionItem)(nil)).Elem()
+}
+
+func (i GetFsuReadinessChecksFsuReadinessCheckCollectionItemArgs) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput {
+	return i.ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFsuReadinessChecksFsuReadinessCheckCollectionItemArgs) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemOutputWithContext(ctx context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput)
+}
+
+// GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayInput is an input type that accepts GetFsuReadinessChecksFsuReadinessCheckCollectionItemArray and GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayInput` via:
+//
+//	GetFsuReadinessChecksFsuReadinessCheckCollectionItemArray{ GetFsuReadinessChecksFsuReadinessCheckCollectionItemArgs{...} }
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput
+	ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutputWithContext(context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemArray []GetFsuReadinessChecksFsuReadinessCheckCollectionItemInput
+
+func (GetFsuReadinessChecksFsuReadinessCheckCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuReadinessChecksFsuReadinessCheckCollectionItem)(nil)).Elem()
+}
+
+func (i GetFsuReadinessChecksFsuReadinessCheckCollectionItemArray) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput {
+	return i.ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuReadinessChecksFsuReadinessCheckCollectionItemArray) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutputWithContext(ctx context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput)
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuReadinessChecksFsuReadinessCheckCollectionItem)(nil)).Elem()
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput {
+	return o
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemOutputWithContext(ctx context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Readiness Check.
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Number of issues found during the Exadata Fleet Update Readiness Check run.
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput) IssueCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItem) int { return v.IssueCount }).(pulumi.IntOutput)
+}
+
+// Issues found during the Exadata Fleet Update Readiness Check run.
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput) Issues() GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItem) []GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssue {
+		return v.Issues
+	}).(GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources whose lifecycleState matches the specified lifecycleState.
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// List of targets that will run the Exadata Fleet Update Readiness Check. The targets have to be of the same entity type.
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput) Targets() GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItem) []GetFsuReadinessChecksFsuReadinessCheckCollectionItemTarget {
+		return v.Targets
+	}).(GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput)
+}
+
+// The date and time the Exadata Fleet Update Readiness Check was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the Exadata Fleet Update Readiness Check was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItem) string { return v.TimeFinished }).(pulumi.StringOutput)
+}
+
+// The date and time the Exadata Fleet Update Readiness Check was updated, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources whose type matches the specified type.
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuReadinessChecksFsuReadinessCheckCollectionItem)(nil)).Elem()
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutputWithContext(ctx context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuReadinessChecksFsuReadinessCheckCollectionItem {
+		return vs[0].([]GetFsuReadinessChecksFsuReadinessCheckCollectionItem)[vs[1].(int)]
+	}).(GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput)
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssue struct {
+	// Description of the patching issue.
+	Description string `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+	ImpactedResourceId string `pulumi:"impactedResourceId"`
+	// Name of the patching issue.
+	Name string `pulumi:"name"`
+	// Recommended action to perform to address or further triage the patching issue.
+	RecommendedAction string `pulumi:"recommendedAction"`
+}
+
+// GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueInput is an input type that accepts GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArgs and GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput values.
+// You can construct a concrete instance of `GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueInput` via:
+//
+//	GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArgs{...}
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueInput interface {
+	pulumi.Input
+
+	ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput
+	ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutputWithContext(context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArgs struct {
+	// Description of the patching issue.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+	ImpactedResourceId pulumi.StringInput `pulumi:"impactedResourceId"`
+	// Name of the patching issue.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Recommended action to perform to address or further triage the patching issue.
+	RecommendedAction pulumi.StringInput `pulumi:"recommendedAction"`
+}
+
+func (GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssue)(nil)).Elem()
+}
+
+func (i GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArgs) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput {
+	return i.ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutputWithContext(context.Background())
+}
+
+func (i GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArgs) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutputWithContext(ctx context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput)
+}
+
+// GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayInput is an input type that accepts GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArray and GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput values.
+// You can construct a concrete instance of `GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayInput` via:
+//
+//	GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArray{ GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArgs{...} }
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput
+	ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutputWithContext(context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArray []GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueInput
+
+func (GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssue)(nil)).Elem()
+}
+
+func (i GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArray) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput {
+	return i.ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArray) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutputWithContext(ctx context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput)
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput struct{ *pulumi.OutputState }
+
+func (GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssue)(nil)).Elem()
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput {
+	return o
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutputWithContext(ctx context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput {
+	return o
+}
+
+// Description of the patching issue.
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssue) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput) ImpactedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssue) string { return v.ImpactedResourceId }).(pulumi.StringOutput)
+}
+
+// Name of the patching issue.
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssue) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Recommended action to perform to address or further triage the patching issue.
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput) RecommendedAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssue) string { return v.RecommendedAction }).(pulumi.StringOutput)
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssue)(nil)).Elem()
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput {
+	return o
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutputWithContext(ctx context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput {
+	return o
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput) Index(i pulumi.IntInput) GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssue {
+		return vs[0].([]GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssue)[vs[1].(int)]
+	}).(GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput)
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemTarget struct {
+	// Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	EntityId string `pulumi:"entityId"`
+	// Resource entity type
+	EntityType string `pulumi:"entityType"`
+}
+
+// GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetInput is an input type that accepts GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArgs and GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput values.
+// You can construct a concrete instance of `GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetInput` via:
+//
+//	GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArgs{...}
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetInput interface {
+	pulumi.Input
+
+	ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput
+	ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutputWithContext(context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArgs struct {
+	// Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	EntityId pulumi.StringInput `pulumi:"entityId"`
+	// Resource entity type
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+}
+
+func (GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuReadinessChecksFsuReadinessCheckCollectionItemTarget)(nil)).Elem()
+}
+
+func (i GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArgs) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput {
+	return i.ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutputWithContext(context.Background())
+}
+
+func (i GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArgs) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutputWithContext(ctx context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput)
+}
+
+// GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayInput is an input type that accepts GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArray and GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput values.
+// You can construct a concrete instance of `GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayInput` via:
+//
+//	GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArray{ GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArgs{...} }
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput
+	ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutputWithContext(context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArray []GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetInput
+
+func (GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuReadinessChecksFsuReadinessCheckCollectionItemTarget)(nil)).Elem()
+}
+
+func (i GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArray) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput {
+	return i.ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArray) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutputWithContext(ctx context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput)
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput struct{ *pulumi.OutputState }
+
+func (GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuReadinessChecksFsuReadinessCheckCollectionItemTarget)(nil)).Elem()
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput {
+	return o
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutputWithContext(ctx context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput {
+	return o
+}
+
+// Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput) EntityId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItemTarget) string { return v.EntityId }).(pulumi.StringOutput)
+}
+
+// Resource entity type
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuReadinessChecksFsuReadinessCheckCollectionItemTarget) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+type GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuReadinessChecksFsuReadinessCheckCollectionItemTarget)(nil)).Elem()
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput() GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput {
+	return o
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput) ToGetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutputWithContext(ctx context.Context) GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput {
+	return o
+}
+
+func (o GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput) Index(i pulumi.IntInput) GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuReadinessChecksFsuReadinessCheckCollectionItemTarget {
+		return vs[0].([]GetFsuReadinessChecksFsuReadinessCheckCollectionItemTarget)[vs[1].(int)]
+	}).(GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCollectionActiveFsuCycleInput)(nil)).Elem(), FsuCollectionActiveFsuCycleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCollectionActiveFsuCycleArrayInput)(nil)).Elem(), FsuCollectionActiveFsuCycleArray{})
@@ -8005,6 +9127,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCycleStageActionSchedulePtrInput)(nil)).Elem(), FsuCycleStageActionScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCycleUpgradeDetailsInput)(nil)).Elem(), FsuCycleUpgradeDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCycleUpgradeDetailsPtrInput)(nil)).Elem(), FsuCycleUpgradeDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FsuReadinessCheckIssueInput)(nil)).Elem(), FsuReadinessCheckIssueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FsuReadinessCheckIssueArrayInput)(nil)).Elem(), FsuReadinessCheckIssueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FsuReadinessCheckTargetInput)(nil)).Elem(), FsuReadinessCheckTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FsuReadinessCheckTargetArrayInput)(nil)).Elem(), FsuReadinessCheckTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionActiveFsuCycleInput)(nil)).Elem(), GetFsuCollectionActiveFsuCycleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionActiveFsuCycleArrayInput)(nil)).Elem(), GetFsuCollectionActiveFsuCycleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionComponentInput)(nil)).Elem(), GetFsuCollectionComponentArgs{})
@@ -8085,6 +9211,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleArrayInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuReadinessCheckIssueInput)(nil)).Elem(), GetFsuReadinessCheckIssueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuReadinessCheckIssueArrayInput)(nil)).Elem(), GetFsuReadinessCheckIssueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuReadinessCheckTargetInput)(nil)).Elem(), GetFsuReadinessCheckTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuReadinessCheckTargetArrayInput)(nil)).Elem(), GetFsuReadinessCheckTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuReadinessChecksFilterInput)(nil)).Elem(), GetFsuReadinessChecksFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuReadinessChecksFilterArrayInput)(nil)).Elem(), GetFsuReadinessChecksFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuReadinessChecksFsuReadinessCheckCollectionInput)(nil)).Elem(), GetFsuReadinessChecksFsuReadinessCheckCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuReadinessChecksFsuReadinessCheckCollectionArrayInput)(nil)).Elem(), GetFsuReadinessChecksFsuReadinessCheckCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuReadinessChecksFsuReadinessCheckCollectionItemInput)(nil)).Elem(), GetFsuReadinessChecksFsuReadinessCheckCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayInput)(nil)).Elem(), GetFsuReadinessChecksFsuReadinessCheckCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueInput)(nil)).Elem(), GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayInput)(nil)).Elem(), GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetInput)(nil)).Elem(), GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayInput)(nil)).Elem(), GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArray{})
 	pulumi.RegisterOutputType(FsuCollectionActiveFsuCycleOutput{})
 	pulumi.RegisterOutputType(FsuCollectionActiveFsuCycleArrayOutput{})
 	pulumi.RegisterOutputType(FsuCollectionComponentOutput{})
@@ -8118,6 +9258,10 @@ func init() {
 	pulumi.RegisterOutputType(FsuCycleStageActionSchedulePtrOutput{})
 	pulumi.RegisterOutputType(FsuCycleUpgradeDetailsOutput{})
 	pulumi.RegisterOutputType(FsuCycleUpgradeDetailsPtrOutput{})
+	pulumi.RegisterOutputType(FsuReadinessCheckIssueOutput{})
+	pulumi.RegisterOutputType(FsuReadinessCheckIssueArrayOutput{})
+	pulumi.RegisterOutputType(FsuReadinessCheckTargetOutput{})
+	pulumi.RegisterOutputType(FsuReadinessCheckTargetArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCollectionActiveFsuCycleOutput{})
 	pulumi.RegisterOutputType(GetFsuCollectionActiveFsuCycleArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCollectionComponentOutput{})
@@ -8198,4 +9342,18 @@ func init() {
 	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput{})
 	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuReadinessCheckIssueOutput{})
+	pulumi.RegisterOutputType(GetFsuReadinessCheckIssueArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuReadinessCheckTargetOutput{})
+	pulumi.RegisterOutputType(GetFsuReadinessCheckTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuReadinessChecksFilterOutput{})
+	pulumi.RegisterOutputType(GetFsuReadinessChecksFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuReadinessChecksFsuReadinessCheckCollectionOutput{})
+	pulumi.RegisterOutputType(GetFsuReadinessChecksFsuReadinessCheckCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuReadinessChecksFsuReadinessCheckCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFsuReadinessChecksFsuReadinessCheckCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueOutput{})
+	pulumi.RegisterOutputType(GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetOutput{})
+	pulumi.RegisterOutputType(GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArrayOutput{})
 }

@@ -31,14 +31,14 @@ public final class MysqlDbSystemChannelTargetFilterArgs extends com.pulumi.resou
     }
 
     /**
-     * The body of the filter rule. This can represent a database, a table, or a database pair (represented as &#34;db1-&gt;db2&#34;). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+     * Value of the destination configuration variable.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return The body of the filter rule. This can represent a database, a table, or a database pair (represented as &#34;db1-&gt;db2&#34;). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+     * @return Value of the destination configuration variable.
      * 
      */
     public Optional<Output<String>> value() {
@@ -92,7 +92,7 @@ public final class MysqlDbSystemChannelTargetFilterArgs extends com.pulumi.resou
         }
 
         /**
-         * @param value The body of the filter rule. This can represent a database, a table, or a database pair (represented as &#34;db1-&gt;db2&#34;). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+         * @param value Value of the destination configuration variable.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class MysqlDbSystemChannelTargetFilterArgs extends com.pulumi.resou
         }
 
         /**
-         * @param value The body of the filter rule. This can represent a database, a table, or a database pair (represented as &#34;db1-&gt;db2&#34;). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+         * @param value Value of the destination configuration variable.
          * 
          * @return builder
          * 

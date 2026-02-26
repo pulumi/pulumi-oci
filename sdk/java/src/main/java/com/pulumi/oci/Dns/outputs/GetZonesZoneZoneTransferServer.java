@@ -12,53 +12,21 @@ import java.util.Objects;
 
 @CustomType
 public final class GetZonesZoneZoneTransferServer {
-    /**
-     * @return The server&#39;s IP address (IPv4 or IPv6).
-     * 
-     */
     private String address;
-    /**
-     * @return A Boolean flag indicating whether or not the server is a zone data transfer destination.
-     * 
-     */
     private Boolean isTransferDestination;
-    /**
-     * @return A Boolean flag indicating whether or not the server is a zone data transfer source.
-     * 
-     */
     private Boolean isTransferSource;
-    /**
-     * @return The server&#39;s port. Port value must be a value of 53, otherwise omit the port value.
-     * 
-     */
     private Integer port;
 
     private GetZonesZoneZoneTransferServer() {}
-    /**
-     * @return The server&#39;s IP address (IPv4 or IPv6).
-     * 
-     */
     public String address() {
         return this.address;
     }
-    /**
-     * @return A Boolean flag indicating whether or not the server is a zone data transfer destination.
-     * 
-     */
     public Boolean isTransferDestination() {
         return this.isTransferDestination;
     }
-    /**
-     * @return A Boolean flag indicating whether or not the server is a zone data transfer source.
-     * 
-     */
     public Boolean isTransferSource() {
         return this.isTransferSource;
     }
-    /**
-     * @return The server&#39;s port. Port value must be a value of 53, otherwise omit the port value.
-     * 
-     */
     public Integer port() {
         return this.port;
     }

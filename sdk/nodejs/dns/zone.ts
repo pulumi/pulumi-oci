@@ -40,6 +40,7 @@ import * as utilities from "../utilities";
  *         tsigKeyId: testTsigKey.id,
  *     }],
  *     freeformTags: zoneFreeformTags,
+ *     resolutionMode: zoneResolutionMode,
  *     scope: zoneScope,
  *     viewId: testView.id,
  * });
@@ -133,13 +134,13 @@ export class Zone extends pulumi.CustomResource {
      * The name of the zone.
      */
     declare public readonly name: pulumi.Output<string>;
-    /**
-     * The authoritative nameservers for the zone.
-     */
     declare public /*out*/ readonly nameservers: pulumi.Output<outputs.Dns.ZoneNameserver[]>;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope. 
-     * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
+     * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+     */
+    declare public readonly resolutionMode: pulumi.Output<string>;
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
      */
     declare public readonly scope: pulumi.Output<string>;
     /**
@@ -176,6 +177,8 @@ export class Zone extends pulumi.CustomResource {
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     *
+     * When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
      */
     declare public readonly zoneType: pulumi.Output<string>;
 
@@ -202,6 +205,7 @@ export class Zone extends pulumi.CustomResource {
             resourceInputs["isProtected"] = state?.isProtected;
             resourceInputs["name"] = state?.name;
             resourceInputs["nameservers"] = state?.nameservers;
+            resourceInputs["resolutionMode"] = state?.resolutionMode;
             resourceInputs["scope"] = state?.scope;
             resourceInputs["self"] = state?.self;
             resourceInputs["serial"] = state?.serial;
@@ -226,6 +230,7 @@ export class Zone extends pulumi.CustomResource {
             resourceInputs["externalMasters"] = args?.externalMasters;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["name"] = args?.name;
+            resourceInputs["resolutionMode"] = args?.resolutionMode;
             resourceInputs["scope"] = args?.scope;
             resourceInputs["viewId"] = args?.viewId;
             resourceInputs["zoneType"] = args?.zoneType;
@@ -300,13 +305,13 @@ export interface ZoneState {
      * The name of the zone.
      */
     name?: pulumi.Input<string>;
-    /**
-     * The authoritative nameservers for the zone.
-     */
     nameservers?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneNameserver>[]>;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope. 
-     * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
+     * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+     */
+    resolutionMode?: pulumi.Input<string>;
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
      */
     scope?: pulumi.Input<string>;
     /**
@@ -343,6 +348,8 @@ export interface ZoneState {
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     *
+     * When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
      */
     zoneType?: pulumi.Input<string>;
 }
@@ -396,8 +403,11 @@ export interface ZoneArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope. 
-     * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
+     * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+     */
+    resolutionMode?: pulumi.Input<string>;
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
      */
     scope?: pulumi.Input<string>;
     /**
@@ -410,6 +420,8 @@ export interface ZoneArgs {
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     *
+     * When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
      */
     zoneType: pulumi.Input<string>;
 }

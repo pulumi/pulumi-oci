@@ -162,6 +162,7 @@ class _ReplicaState:
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape_name: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
+                 telemetry_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ReplicaTelemetryConfigurationArgs']]]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
@@ -188,6 +189,7 @@ class _ReplicaState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] shape_name: The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[_builtins.str] state: The state of the read replica.
+        :param pulumi.Input[Sequence[pulumi.Input['ReplicaTelemetryConfigurationArgs']]] telemetry_configurations: Telemetry configuration details of a DB System or a read replica.
         :param pulumi.Input[_builtins.str] time_created: The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
@@ -235,6 +237,8 @@ class _ReplicaState:
             pulumi.set(__self__, "shape_name", shape_name)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if telemetry_configurations is not None:
+            pulumi.set(__self__, "telemetry_configurations", telemetry_configurations)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -505,6 +509,18 @@ class _ReplicaState:
         pulumi.set(self, "state", value)
 
     @_builtins.property
+    @pulumi.getter(name="telemetryConfigurations")
+    def telemetry_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ReplicaTelemetryConfigurationArgs']]]]:
+        """
+        Telemetry configuration details of a DB System or a read replica.
+        """
+        return pulumi.get(self, "telemetry_configurations")
+
+    @telemetry_configurations.setter
+    def telemetry_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ReplicaTelemetryConfigurationArgs']]]]):
+        pulumi.set(self, "telemetry_configurations", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -574,6 +590,16 @@ class Replica(pulumi.CustomResource):
                 "nsg_ids": replica_replica_overrides_nsg_ids,
                 "security_attributes": replica_replica_overrides_security_attributes,
                 "shape_name": test_shape["name"],
+                "telemetry_configuration": {
+                    "logs": [{
+                        "destination": replica_replica_overrides_telemetry_configuration_logs_destination,
+                        "destination_configurations": [{
+                            "key": replica_replica_overrides_telemetry_configuration_logs_destination_configurations_key,
+                            "value": replica_replica_overrides_telemetry_configuration_logs_destination_configurations_value,
+                        }],
+                        "log_types": replica_replica_overrides_telemetry_configuration_logs_log_types,
+                    }],
+                },
             })
         ```
 
@@ -632,6 +658,16 @@ class Replica(pulumi.CustomResource):
                 "nsg_ids": replica_replica_overrides_nsg_ids,
                 "security_attributes": replica_replica_overrides_security_attributes,
                 "shape_name": test_shape["name"],
+                "telemetry_configuration": {
+                    "logs": [{
+                        "destination": replica_replica_overrides_telemetry_configuration_logs_destination,
+                        "destination_configurations": [{
+                            "key": replica_replica_overrides_telemetry_configuration_logs_destination_configurations_key,
+                            "value": replica_replica_overrides_telemetry_configuration_logs_destination_configurations_value,
+                        }],
+                        "log_types": replica_replica_overrides_telemetry_configuration_logs_log_types,
+                    }],
+                },
             })
         ```
 
@@ -698,6 +734,7 @@ class Replica(pulumi.CustomResource):
             __props__.__dict__["security_attributes"] = None
             __props__.__dict__["shape_name"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["telemetry_configurations"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         super(Replica, __self__).__init__(
@@ -732,6 +769,7 @@ class Replica(pulumi.CustomResource):
             security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             shape_name: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
+            telemetry_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReplicaTelemetryConfigurationArgs', 'ReplicaTelemetryConfigurationArgsDict']]]]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'Replica':
         """
@@ -763,6 +801,7 @@ class Replica(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] shape_name: The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[_builtins.str] state: The state of the read replica.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ReplicaTelemetryConfigurationArgs', 'ReplicaTelemetryConfigurationArgsDict']]]] telemetry_configurations: Telemetry configuration details of a DB System or a read replica.
         :param pulumi.Input[_builtins.str] time_created: The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
@@ -792,6 +831,7 @@ class Replica(pulumi.CustomResource):
         __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["shape_name"] = shape_name
         __props__.__dict__["state"] = state
+        __props__.__dict__["telemetry_configurations"] = telemetry_configurations
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return Replica(resource_name, opts=opts, __props__=__props__)
@@ -971,6 +1011,14 @@ class Replica(pulumi.CustomResource):
         The state of the read replica.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="telemetryConfigurations")
+    def telemetry_configurations(self) -> pulumi.Output[Sequence['outputs.ReplicaTelemetryConfiguration']]:
+        """
+        Telemetry configuration details of a DB System or a read replica.
+        """
+        return pulumi.get(self, "telemetry_configurations")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

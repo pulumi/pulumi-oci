@@ -93,6 +93,10 @@ import javax.annotation.Nullable;
  *                 .ocpus(sqlEndpointExecutorShapeConfigOcpus)
  *                 .build())
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .logCompartmentId(testCompartment.id())
+ *             .logDisplayName(sqlEndpointLogDisplayName)
+ *             .logGroupId(testLogGroup.id())
+ *             .logRetentionDuration(sqlEndpointLogRetentionDuration)
  *             .sparkAdvancedConfigurations(sqlEndpointSparkAdvancedConfigurations)
  *             .build());
  * 
@@ -265,6 +269,62 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lakeId() {
         return this.lakeId;
+    }
+    /**
+     * (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+     * 
+     */
+    @Export(name="logCompartmentId", refs={String.class}, tree="[0]")
+    private Output<String> logCompartmentId;
+
+    /**
+     * @return (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+     * 
+     */
+    public Output<String> logCompartmentId() {
+        return this.logCompartmentId;
+    }
+    /**
+     * (Updatable) The friendly name of the log object used with the SQL Endpoint.
+     * 
+     */
+    @Export(name="logDisplayName", refs={String.class}, tree="[0]")
+    private Output<String> logDisplayName;
+
+    /**
+     * @return (Updatable) The friendly name of the log object used with the SQL Endpoint.
+     * 
+     */
+    public Output<String> logDisplayName() {
+        return this.logDisplayName;
+    }
+    /**
+     * (Updatable) The identifier of the log group used with the SQL Endpoint.
+     * 
+     */
+    @Export(name="logGroupId", refs={String.class}, tree="[0]")
+    private Output<String> logGroupId;
+
+    /**
+     * @return (Updatable) The identifier of the log group used with the SQL Endpoint.
+     * 
+     */
+    public Output<String> logGroupId() {
+        return this.logGroupId;
+    }
+    /**
+     * (Updatable) Log retention duration in days
+     * 
+     */
+    @Export(name="logRetentionDuration", refs={Integer.class}, tree="[0]")
+    private Output<Integer> logRetentionDuration;
+
+    /**
+     * @return (Updatable) Log retention duration in days
+     * 
+     */
+    public Output<Integer> logRetentionDuration() {
+        return this.logRetentionDuration;
     }
     /**
      * (Updatable) The maximum number of executors.

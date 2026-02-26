@@ -51,10 +51,6 @@ public final class GetZonesResult {
     private @Nullable String state;
     private @Nullable String timeCreatedGreaterThanOrEqualTo;
     private @Nullable String timeCreatedLessThan;
-    /**
-     * @return The OCID of the TSIG key.
-     * 
-     */
     private @Nullable String tsigKeyId;
     /**
      * @return The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
@@ -133,10 +129,6 @@ public final class GetZonesResult {
     public Optional<String> timeCreatedLessThan() {
         return Optional.ofNullable(this.timeCreatedLessThan);
     }
-    /**
-     * @return The OCID of the TSIG key.
-     * 
-     */
     public Optional<String> tsigKeyId() {
         return Optional.ofNullable(this.tsigKeyId);
     }

@@ -33,6 +33,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         /// </summary>
         public readonly string ShapeName;
+        /// <summary>
+        /// Telemetry configuration details of a DB System or a read replica.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetReplicasReplicaReplicaOverrideTelemetryConfigurationResult> TelemetryConfigurations;
 
         [OutputConstructor]
         private GetReplicasReplicaReplicaOverrideResult(
@@ -44,13 +48,16 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             ImmutableDictionary<string, string> securityAttributes,
 
-            string shapeName)
+            string shapeName,
+
+            ImmutableArray<Outputs.GetReplicasReplicaReplicaOverrideTelemetryConfigurationResult> telemetryConfigurations)
         {
             ConfigurationId = configurationId;
             MysqlVersion = mysqlVersion;
             NsgIds = nsgIds;
             SecurityAttributes = securityAttributes;
             ShapeName = shapeName;
+            TelemetryConfigurations = telemetryConfigurations;
         }
     }
 }

@@ -77,7 +77,7 @@ type LookupSteeringPolicyAttachmentResult struct {
 	SteeringPolicyId string `pulumi:"steeringPolicyId"`
 	// The date and time the resource was created, expressed in RFC 3339 timestamp format.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The OCID of the attached zone.
+	// The OCID of the attached zone. Must be a public zone.
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -164,7 +164,7 @@ func (o LookupSteeringPolicyAttachmentResultOutput) TimeCreated() pulumi.StringO
 	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The OCID of the attached zone.
+// The OCID of the attached zone. Must be a public zone.
 func (o LookupSteeringPolicyAttachmentResultOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) string { return v.ZoneId }).(pulumi.StringOutput)
 }

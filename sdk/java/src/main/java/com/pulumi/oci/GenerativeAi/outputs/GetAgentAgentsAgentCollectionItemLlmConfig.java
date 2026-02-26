@@ -6,6 +6,7 @@ package com.pulumi.oci.GenerativeAi.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization;
+import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 
@@ -16,6 +17,11 @@ public final class GetAgentAgentsAgentCollectionItemLlmConfig {
      * 
      */
     private List<GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization> routingLlmCustomizations;
+    /**
+     * @return The runtimeVersion of the system prompt.
+     * 
+     */
+    private String runtimeVersion;
 
     private GetAgentAgentsAgentCollectionItemLlmConfig() {}
     /**
@@ -24,6 +30,13 @@ public final class GetAgentAgentsAgentCollectionItemLlmConfig {
      */
     public List<GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization> routingLlmCustomizations() {
         return this.routingLlmCustomizations;
+    }
+    /**
+     * @return The runtimeVersion of the system prompt.
+     * 
+     */
+    public String runtimeVersion() {
+        return this.runtimeVersion;
     }
 
     public static Builder builder() {
@@ -36,10 +49,12 @@ public final class GetAgentAgentsAgentCollectionItemLlmConfig {
     @CustomType.Builder
     public static final class Builder {
         private List<GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization> routingLlmCustomizations;
+        private String runtimeVersion;
         public Builder() {}
         public Builder(GetAgentAgentsAgentCollectionItemLlmConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.routingLlmCustomizations = defaults.routingLlmCustomizations;
+    	      this.runtimeVersion = defaults.runtimeVersion;
         }
 
         @CustomType.Setter
@@ -53,9 +68,18 @@ public final class GetAgentAgentsAgentCollectionItemLlmConfig {
         public Builder routingLlmCustomizations(GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization... routingLlmCustomizations) {
             return routingLlmCustomizations(List.of(routingLlmCustomizations));
         }
+        @CustomType.Setter
+        public Builder runtimeVersion(String runtimeVersion) {
+            if (runtimeVersion == null) {
+              throw new MissingRequiredPropertyException("GetAgentAgentsAgentCollectionItemLlmConfig", "runtimeVersion");
+            }
+            this.runtimeVersion = runtimeVersion;
+            return this;
+        }
         public GetAgentAgentsAgentCollectionItemLlmConfig build() {
             final var _resultValue = new GetAgentAgentsAgentCollectionItemLlmConfig();
             _resultValue.routingLlmCustomizations = routingLlmCustomizations;
+            _resultValue.runtimeVersion = runtimeVersion;
             return _resultValue;
         }
     }

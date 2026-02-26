@@ -186,6 +186,66 @@ public final class SqlEndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+     * 
+     */
+    @Import(name="logCompartmentId")
+    private @Nullable Output<String> logCompartmentId;
+
+    /**
+     * @return (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+     * 
+     */
+    public Optional<Output<String>> logCompartmentId() {
+        return Optional.ofNullable(this.logCompartmentId);
+    }
+
+    /**
+     * (Updatable) The friendly name of the log object used with the SQL Endpoint.
+     * 
+     */
+    @Import(name="logDisplayName")
+    private @Nullable Output<String> logDisplayName;
+
+    /**
+     * @return (Updatable) The friendly name of the log object used with the SQL Endpoint.
+     * 
+     */
+    public Optional<Output<String>> logDisplayName() {
+        return Optional.ofNullable(this.logDisplayName);
+    }
+
+    /**
+     * (Updatable) The identifier of the log group used with the SQL Endpoint.
+     * 
+     */
+    @Import(name="logGroupId")
+    private @Nullable Output<String> logGroupId;
+
+    /**
+     * @return (Updatable) The identifier of the log group used with the SQL Endpoint.
+     * 
+     */
+    public Optional<Output<String>> logGroupId() {
+        return Optional.ofNullable(this.logGroupId);
+    }
+
+    /**
+     * (Updatable) Log retention duration in days
+     * 
+     */
+    @Import(name="logRetentionDuration")
+    private @Nullable Output<Integer> logRetentionDuration;
+
+    /**
+     * @return (Updatable) Log retention duration in days
+     * 
+     */
+    public Optional<Output<Integer>> logRetentionDuration() {
+        return Optional.ofNullable(this.logRetentionDuration);
+    }
+
+    /**
      * (Updatable) The maximum number of executors.
      * 
      */
@@ -385,6 +445,10 @@ public final class SqlEndpointState extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.jdbcEndpointUrl = $.jdbcEndpointUrl;
         this.lakeId = $.lakeId;
+        this.logCompartmentId = $.logCompartmentId;
+        this.logDisplayName = $.logDisplayName;
+        this.logGroupId = $.logGroupId;
+        this.logRetentionDuration = $.logRetentionDuration;
         this.maxExecutorCount = $.maxExecutorCount;
         this.metastoreId = $.metastoreId;
         this.minExecutorCount = $.minExecutorCount;
@@ -646,6 +710,90 @@ public final class SqlEndpointState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder lakeId(String lakeId) {
             return lakeId(Output.of(lakeId));
+        }
+
+        /**
+         * @param logCompartmentId (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logCompartmentId(@Nullable Output<String> logCompartmentId) {
+            $.logCompartmentId = logCompartmentId;
+            return this;
+        }
+
+        /**
+         * @param logCompartmentId (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logCompartmentId(String logCompartmentId) {
+            return logCompartmentId(Output.of(logCompartmentId));
+        }
+
+        /**
+         * @param logDisplayName (Updatable) The friendly name of the log object used with the SQL Endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logDisplayName(@Nullable Output<String> logDisplayName) {
+            $.logDisplayName = logDisplayName;
+            return this;
+        }
+
+        /**
+         * @param logDisplayName (Updatable) The friendly name of the log object used with the SQL Endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logDisplayName(String logDisplayName) {
+            return logDisplayName(Output.of(logDisplayName));
+        }
+
+        /**
+         * @param logGroupId (Updatable) The identifier of the log group used with the SQL Endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logGroupId(@Nullable Output<String> logGroupId) {
+            $.logGroupId = logGroupId;
+            return this;
+        }
+
+        /**
+         * @param logGroupId (Updatable) The identifier of the log group used with the SQL Endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logGroupId(String logGroupId) {
+            return logGroupId(Output.of(logGroupId));
+        }
+
+        /**
+         * @param logRetentionDuration (Updatable) Log retention duration in days
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logRetentionDuration(@Nullable Output<Integer> logRetentionDuration) {
+            $.logRetentionDuration = logRetentionDuration;
+            return this;
+        }
+
+        /**
+         * @param logRetentionDuration (Updatable) Log retention duration in days
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logRetentionDuration(Integer logRetentionDuration) {
+            return logRetentionDuration(Output.of(logRetentionDuration));
         }
 
         /**

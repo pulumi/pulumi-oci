@@ -22,6 +22,7 @@ from .get_tsig_key import *
 from .get_tsig_keys import *
 from .get_view import *
 from .get_views import *
+from .get_zone import *
 from .get_zones import *
 from .record import *
 from .resolver import *

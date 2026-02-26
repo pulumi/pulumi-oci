@@ -38,10 +38,17 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigApiSchemaArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigDatabaseConnectionArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigDatabaseSchemaArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigEmbeddingLlmCustomizationArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigEmbeddingLlmCustomizationLlmSelectionArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigFunctionArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigGenerationLlmCustomizationArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigHttpEndpointAuthConfigArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigIclExamplesArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigReasoningLlmCustomizationArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigReasoningLlmCustomizationLlmSelectionArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigRerankingLlmCustomizationArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigRerankingLlmCustomizationLlmSelectionArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigTableAndColumnDescriptionArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -82,6 +89,15 @@ import javax.annotation.Nullable;
  *                     .prefix(toolToolConfigDatabaseSchemaPrefix)
  *                     .build())
  *                 .dialect(toolToolConfigDialect)
+ *                 .embeddingLlmCustomization(AgentToolToolConfigEmbeddingLlmCustomizationArgs.builder()
+ *                     .instruction(toolToolConfigEmbeddingLlmCustomizationInstruction)
+ *                     .llmHyperParameters(toolToolConfigEmbeddingLlmCustomizationLlmHyperParameters)
+ *                     .llmSelection(AgentToolToolConfigEmbeddingLlmCustomizationLlmSelectionArgs.builder()
+ *                         .llmSelectionType(toolToolConfigEmbeddingLlmCustomizationLlmSelectionLlmSelectionType)
+ *                         .endpointId(testEndpoint.id())
+ *                         .modelId(testModel.id())
+ *                         .build())
+ *                     .build())
  *                 .function(AgentToolToolConfigFunctionArgs.builder()
  *                     .description(toolToolConfigFunctionDescription)
  *                     .name(toolToolConfigFunctionName)
@@ -89,6 +105,12 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .generationLlmCustomization(AgentToolToolConfigGenerationLlmCustomizationArgs.builder()
  *                     .instruction(toolToolConfigGenerationLlmCustomizationInstruction)
+ *                     .llmHyperParameters(toolToolConfigGenerationLlmCustomizationLlmHyperParameters)
+ *                     .llmSelection(AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs.builder()
+ *                         .llmSelectionType(toolToolConfigGenerationLlmCustomizationLlmSelectionLlmSelectionType)
+ *                         .endpointId(testEndpoint.id())
+ *                         .modelId(testModel.id())
+ *                         .build())
  *                     .build())
  *                 .httpEndpointAuthConfig(AgentToolToolConfigHttpEndpointAuthConfigArgs.builder()
  *                     .httpEndpointAuthSources(AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs.builder()
@@ -115,6 +137,25 @@ import javax.annotation.Nullable;
  *                     .knowledgeBaseId(testKnowledgeBase.id())
  *                     .build())
  *                 .modelSize(toolToolConfigModelSize)
+ *                 .reasoningLlmCustomization(AgentToolToolConfigReasoningLlmCustomizationArgs.builder()
+ *                     .instruction(toolToolConfigReasoningLlmCustomizationInstruction)
+ *                     .llmHyperParameters(toolToolConfigReasoningLlmCustomizationLlmHyperParameters)
+ *                     .llmSelection(AgentToolToolConfigReasoningLlmCustomizationLlmSelectionArgs.builder()
+ *                         .llmSelectionType(toolToolConfigReasoningLlmCustomizationLlmSelectionLlmSelectionType)
+ *                         .endpointId(testEndpoint.id())
+ *                         .modelId(testModel.id())
+ *                         .build())
+ *                     .build())
+ *                 .rerankingLlmCustomization(AgentToolToolConfigRerankingLlmCustomizationArgs.builder()
+ *                     .instruction(toolToolConfigRerankingLlmCustomizationInstruction)
+ *                     .llmHyperParameters(toolToolConfigRerankingLlmCustomizationLlmHyperParameters)
+ *                     .llmSelection(AgentToolToolConfigRerankingLlmCustomizationLlmSelectionArgs.builder()
+ *                         .llmSelectionType(toolToolConfigRerankingLlmCustomizationLlmSelectionLlmSelectionType)
+ *                         .endpointId(testEndpoint.id())
+ *                         .modelId(testModel.id())
+ *                         .build())
+ *                     .build())
+ *                 .runtimeVersion(toolToolConfigRuntimeVersion)
  *                 .shouldEnableSelfCorrection(toolToolConfigShouldEnableSelfCorrection)
  *                 .shouldEnableSqlExecution(toolToolConfigShouldEnableSqlExecution)
  *                 .subnetId(testSubnet.id())

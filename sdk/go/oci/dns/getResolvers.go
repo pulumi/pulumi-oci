@@ -68,7 +68,7 @@ type GetResolversArgs struct {
 	Filters     []GetResolversFilter `pulumi:"filters"`
 	// The OCID of a resource.
 	Id *string `pulumi:"id"`
-	// Value must be `PRIVATE` when listing private name resolvers.
+	// Value must be `PRIVATE` when listing private resolvers.
 	Scope string `pulumi:"scope"`
 	// The state of a resource.
 	State *string `pulumi:"state"`
@@ -108,7 +108,7 @@ type GetResolversOutputArgs struct {
 	Filters     GetResolversFilterArrayInput `pulumi:"filters"`
 	// The OCID of a resource.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// Value must be `PRIVATE` when listing private name resolvers.
+	// Value must be `PRIVATE` when listing private resolvers.
 	Scope pulumi.StringInput `pulumi:"scope"`
 	// The state of a resource.
 	State pulumi.StringPtrInput `pulumi:"state"`

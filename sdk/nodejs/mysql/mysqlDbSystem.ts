@@ -116,6 +116,16 @@ import * as utilities from "../utilities";
  *         sourceType: mysqlDbSystemSourceSourceType,
  *         backupId: testBackup.id,
  *     },
+ *     telemetryConfiguration: {
+ *         logs: [{
+ *             destination: mysqlDbSystemTelemetryConfigurationLogsDestination,
+ *             destinationConfigurations: [{
+ *                 key: mysqlDbSystemTelemetryConfigurationLogsDestinationConfigurationsKey,
+ *                 value: mysqlDbSystemTelemetryConfigurationLogsDestinationConfigurationsValue,
+ *             }],
+ *             logTypes: mysqlDbSystemTelemetryConfigurationLogsLogTypes,
+ *         }],
+ *     },
  * });
  * ```
  *
@@ -362,6 +372,10 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * (Updatable) Details required to configure how MySQL telemetry should be exposed.
+     */
+    declare public readonly telemetryConfiguration: pulumi.Output<outputs.Mysql.MysqlDbSystemTelemetryConfiguration>;
+    /**
      * The date and time the DB System was created.
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
@@ -429,6 +443,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["state"] = state?.state;
             resourceInputs["subnetId"] = state?.subnetId;
             resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["telemetryConfiguration"] = state?.telemetryConfiguration;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
@@ -483,6 +498,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["source"] = args?.source;
             resourceInputs["state"] = args?.state;
             resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["telemetryConfiguration"] = args?.telemetryConfiguration;
             resourceInputs["channels"] = undefined /*out*/;
             resourceInputs["currentPlacements"] = undefined /*out*/;
             resourceInputs["endpoints"] = undefined /*out*/;
@@ -712,6 +728,10 @@ export interface MysqlDbSystemState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * (Updatable) Details required to configure how MySQL telemetry should be exposed.
+     */
+    telemetryConfiguration?: pulumi.Input<inputs.Mysql.MysqlDbSystemTelemetryConfiguration>;
+    /**
      * The date and time the DB System was created.
      */
     timeCreated?: pulumi.Input<string>;
@@ -899,4 +919,8 @@ export interface MysqlDbSystemArgs {
      * The OCID of the subnet the DB System is associated with.
      */
     subnetId: pulumi.Input<string>;
+    /**
+     * (Updatable) Details required to configure how MySQL telemetry should be exposed.
+     */
+    telemetryConfiguration?: pulumi.Input<inputs.Mysql.MysqlDbSystemTelemetryConfiguration>;
 }

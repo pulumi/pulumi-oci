@@ -91,6 +91,10 @@ export interface GetSqlEndpointResult {
      * The OCID of Oracle Cloud Infrastructure Lake.
      */
     readonly lakeId: string;
+    readonly logCompartmentId: string;
+    readonly logDisplayName: string;
+    readonly logGroupId: string;
+    readonly logRetentionDuration: number;
     /**
      * The maximum number of executors.
      */

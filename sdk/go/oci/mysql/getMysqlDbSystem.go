@@ -155,6 +155,8 @@ type LookupMysqlDbSystemResult struct {
 	SubnetId string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfigurations []GetMysqlDbSystemTelemetryConfiguration `pulumi:"telemetryConfigurations"`
 	// The date and time the DB System was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
@@ -436,6 +438,13 @@ func (o LookupMysqlDbSystemResultOutput) SubnetId() pulumi.StringOutput {
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o LookupMysqlDbSystemResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// Telemetry configuration details of a DB System or a read replica.
+func (o LookupMysqlDbSystemResultOutput) TelemetryConfigurations() GetMysqlDbSystemTelemetryConfigurationArrayOutput {
+	return o.ApplyT(func(v LookupMysqlDbSystemResult) []GetMysqlDbSystemTelemetryConfiguration {
+		return v.TelemetryConfigurations
+	}).(GetMysqlDbSystemTelemetryConfigurationArrayOutput)
 }
 
 // The date and time the DB System was created.

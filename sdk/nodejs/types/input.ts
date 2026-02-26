@@ -44091,7 +44091,7 @@ export namespace Dns {
          */
         action: pulumi.Input<string>;
         /**
-         * (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+         * (Updatable) A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
          */
         clientAddressConditions?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -44099,7 +44099,7 @@ export namespace Dns {
          */
         destinationAddresses: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+         * (Updatable) A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
          */
         qnameCoverConditions?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -44402,9 +44402,6 @@ export namespace Dns {
     }
 
     export interface ZoneNameserver {
-        /**
-         * The hostname of the nameserver.
-         */
         hostname?: pulumi.Input<string>;
     }
 
@@ -48078,6 +48075,36 @@ export namespace FleetSoftwareUpdate {
         maxDrainTimeoutInSeconds?: pulumi.Input<number>;
     }
 
+    export interface FsuReadinessCheckIssue {
+        /**
+         * Description of the patching issue.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+         */
+        impactedResourceId?: pulumi.Input<string>;
+        /**
+         * Name of the patching issue.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Recommended action to perform to address or further triage the patching issue.
+         */
+        recommendedAction?: pulumi.Input<string>;
+    }
+
+    export interface FsuReadinessCheckTarget {
+        /**
+         * Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         */
+        entityId: pulumi.Input<string>;
+        /**
+         * Resource entity type
+         */
+        entityType: pulumi.Input<string>;
+    }
+
     export interface GetFsuCollectionsFilter {
         name: string;
         regex?: boolean;
@@ -48097,6 +48124,24 @@ export namespace FleetSoftwareUpdate {
     }
 
     export interface GetFsuCyclesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFsuReadinessChecksFilter {
+        /**
+         * Name of the patching issue.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFsuReadinessChecksFilterArgs {
+        /**
+         * Name of the patching issue.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -48639,6 +48684,43 @@ export namespace GenerativeAi {
         prefix?: pulumi.Input<string>;
     }
 
+    export interface AgentAgentEndpointProvisionedCapacityConfig {
+        /**
+         * (Updatable) Configuration for agent platform component.
+         */
+        platformRuntimeConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfig>;
+        /**
+         * (Updatable) An OCID that uniquely identifies an Provisioned Capacity.
+         */
+        provisionedCapacityId: pulumi.Input<string>;
+        /**
+         * (Updatable) RAG and SQL will be tools.
+         */
+        toolRuntimeConfigs?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfig>[]>;
+    }
+
+    export interface AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfig {
+        /**
+         * (Updatable) The type of Platform runtime config.
+         */
+        platformRuntimeConfigType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The version of the Core. The latest version will be displayed as default.
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfig {
+        /**
+         * (Updatable) The type of the tool.
+         */
+        toolRuntimeConfigType: pulumi.Input<string>;
+        /**
+         * (Updatable) The version of the components.
+         */
+        version?: pulumi.Input<string>;
+    }
+
     export interface AgentAgentEndpointSessionConfig {
         /**
          * (Updatable) The session will become inactive after this timeout.
@@ -48651,6 +48733,10 @@ export namespace GenerativeAi {
          * (Updatable) Configuration to customize LLM.
          */
         routingLlmCustomization?: pulumi.Input<inputs.GenerativeAi.AgentAgentLlmConfigRoutingLlmCustomization>;
+        /**
+         * (Updatable) The runtimeVersion of the system prompt.
+         */
+        runtimeVersion?: pulumi.Input<string>;
     }
 
     export interface AgentAgentLlmConfigRoutingLlmCustomization {
@@ -48658,6 +48744,29 @@ export namespace GenerativeAi {
          * (Updatable) If specified, the default instruction is replaced with provided instruction.
          */
         instruction?: pulumi.Input<string>;
+        /**
+         * (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+         */
+        llmHyperParameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
+         */
+        llmSelection?: pulumi.Input<inputs.GenerativeAi.AgentAgentLlmConfigRoutingLlmCustomizationLlmSelection>;
+    }
+
+    export interface AgentAgentLlmConfigRoutingLlmCustomizationLlmSelection {
+        /**
+         * (Updatable) The OCID of the GenAI endpoint
+         */
+        endpointId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of LLM selection
+         */
+        llmSelectionType: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the GenAI model
+         */
+        modelId?: pulumi.Input<string>;
     }
 
     export interface AgentDataIngestionJobDataIngestionJobStatistic {
@@ -48851,6 +48960,10 @@ export namespace GenerativeAi {
          */
         dialect?: pulumi.Input<string>;
         /**
+         * (Updatable) Configuration to customize LLM.
+         */
+        embeddingLlmCustomization?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigEmbeddingLlmCustomization>;
+        /**
          * (Updatable) Details of Function for Function calling tool.
          */
         function?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigFunction>;
@@ -48874,6 +48987,18 @@ export namespace GenerativeAi {
          * (Updatable) Size of the model.
          */
         modelSize?: pulumi.Input<string>;
+        /**
+         * (Updatable) Configuration to customize LLM.
+         */
+        reasoningLlmCustomization?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigReasoningLlmCustomization>;
+        /**
+         * (Updatable) Configuration to customize LLM.
+         */
+        rerankingLlmCustomization?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigRerankingLlmCustomization>;
+        /**
+         * (Updatable) The runtimeVersion of the system prompt.
+         */
+        runtimeVersion?: pulumi.Input<string>;
         /**
          * (Updatable) To enable/disable self correction.
          */
@@ -48965,6 +49090,36 @@ export namespace GenerativeAi {
         prefix?: pulumi.Input<string>;
     }
 
+    export interface AgentToolToolConfigEmbeddingLlmCustomization {
+        /**
+         * (Updatable) If specified, the default instruction is replaced with provided instruction.
+         */
+        instruction?: pulumi.Input<string>;
+        /**
+         * (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+         */
+        llmHyperParameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
+         */
+        llmSelection?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigEmbeddingLlmCustomizationLlmSelection>;
+    }
+
+    export interface AgentToolToolConfigEmbeddingLlmCustomizationLlmSelection {
+        /**
+         * (Updatable) The OCID of the GenAI endpoint
+         */
+        endpointId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of LLM selection
+         */
+        llmSelectionType: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the GenAI model
+         */
+        modelId?: pulumi.Input<string>;
+    }
+
     export interface AgentToolToolConfigFunction {
         /**
          * (Updatable) A description of the function.
@@ -48985,6 +49140,29 @@ export namespace GenerativeAi {
          * (Updatable) If specified, the default instruction is replaced with provided instruction.
          */
         instruction?: pulumi.Input<string>;
+        /**
+         * (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+         */
+        llmHyperParameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
+         */
+        llmSelection?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigGenerationLlmCustomizationLlmSelection>;
+    }
+
+    export interface AgentToolToolConfigGenerationLlmCustomizationLlmSelection {
+        /**
+         * (Updatable) The OCID of the GenAI endpoint
+         */
+        endpointId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of LLM selection
+         */
+        llmSelectionType: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the GenAI model
+         */
+        modelId?: pulumi.Input<string>;
     }
 
     export interface AgentToolToolConfigHttpEndpointAuthConfig {
@@ -49066,6 +49244,66 @@ export namespace GenerativeAi {
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
          */
         knowledgeBaseId?: pulumi.Input<string>;
+    }
+
+    export interface AgentToolToolConfigReasoningLlmCustomization {
+        /**
+         * (Updatable) If specified, the default instruction is replaced with provided instruction.
+         */
+        instruction?: pulumi.Input<string>;
+        /**
+         * (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+         */
+        llmHyperParameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
+         */
+        llmSelection?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigReasoningLlmCustomizationLlmSelection>;
+    }
+
+    export interface AgentToolToolConfigReasoningLlmCustomizationLlmSelection {
+        /**
+         * (Updatable) The OCID of the GenAI endpoint
+         */
+        endpointId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of LLM selection
+         */
+        llmSelectionType: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the GenAI model
+         */
+        modelId?: pulumi.Input<string>;
+    }
+
+    export interface AgentToolToolConfigRerankingLlmCustomization {
+        /**
+         * (Updatable) If specified, the default instruction is replaced with provided instruction.
+         */
+        instruction?: pulumi.Input<string>;
+        /**
+         * (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+         */
+        llmHyperParameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
+         */
+        llmSelection?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigRerankingLlmCustomizationLlmSelection>;
+    }
+
+    export interface AgentToolToolConfigRerankingLlmCustomizationLlmSelection {
+        /**
+         * (Updatable) The OCID of the GenAI endpoint
+         */
+        endpointId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of LLM selection
+         */
+        llmSelectionType: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the GenAI model
+         */
+        modelId?: pulumi.Input<string>;
     }
 
     export interface AgentToolToolConfigTableAndColumnDescription {
@@ -49184,6 +49422,18 @@ export namespace GenerativeAi {
         /**
          * The index name in opensearch.
          */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAgentProvisionedCapacitiesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAgentProvisionedCapacitiesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -85038,6 +85288,10 @@ export namespace Mysql {
          * The OCID of the subnet the DB System is associated with.
          */
         subnetId?: pulumi.Input<string>;
+        /**
+         * Telemetry configuration details of a DB System or a read replica.
+         */
+        telemetryConfiguration?: pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotTelemetryConfiguration>;
     }
 
     export interface MysqlBackupDbSystemSnapshotBackupPolicy {
@@ -85288,6 +85542,39 @@ export namespace Mysql {
          * The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
          */
         region?: pulumi.Input<string>;
+    }
+
+    export interface MysqlBackupDbSystemSnapshotTelemetryConfiguration {
+        /**
+         * Telemetry configuration details for logging.
+         */
+        logs?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotTelemetryConfigurationLog>[]>;
+    }
+
+    export interface MysqlBackupDbSystemSnapshotTelemetryConfigurationLog {
+        /**
+         * Type of destination where MySQL telemetry is exposed to.
+         */
+        destination: pulumi.Input<string>;
+        /**
+         * List of configuration variables for a given destination type.
+         */
+        destinationConfigurations: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration>[]>;
+        /**
+         * List of MySQL telemetry types that can be exposed on a telemetry destination
+         */
+        logTypes: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration {
+        /**
+         * Name of the destination configuration variable.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * Value of the destination configuration variable.
+         */
+        value: pulumi.Input<string>;
     }
 
     export interface MysqlBackupEncryptData {
@@ -86240,7 +86527,7 @@ export namespace Mysql {
          */
         type?: pulumi.Input<string>;
         /**
-         * The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+         * Value of the destination configuration variable.
          */
         value?: pulumi.Input<string>;
     }
@@ -86533,6 +86820,39 @@ export namespace Mysql {
         sourceUrl?: pulumi.Input<string>;
     }
 
+    export interface MysqlDbSystemTelemetryConfiguration {
+        /**
+         * (Updatable) Telemetry configuration details for logging.
+         */
+        logs?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemTelemetryConfigurationLog>[]>;
+    }
+
+    export interface MysqlDbSystemTelemetryConfigurationLog {
+        /**
+         * (Updatable) Type of destination where MySQL telemetry is exposed to. Use `LOG_ANALYTICS` to send logs to OCI Log Analytics.
+         */
+        destination: pulumi.Input<string>;
+        /**
+         * (Updatable) List of configuration variables for a given destination type.
+         */
+        destinationConfigurations: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemTelemetryConfigurationLogDestinationConfiguration>[]>;
+        /**
+         * (Updatable) List of MySQL telemetry types that can be exposed on a telemetry destination
+         */
+        logTypes: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface MysqlDbSystemTelemetryConfigurationLogDestinationConfiguration {
+        /**
+         * (Updatable) Name of the destination configuration variable. Use `log-group-id` to  specify Log Analytics Log Group OCID. Also specify `log-set` when using the Log Partitioning feature of Log Analytics.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the destination configuration variable.
+         */
+        value: pulumi.Input<string>;
+    }
+
     export interface ReplicaEncryptData {
         /**
          * Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
@@ -86562,13 +86882,46 @@ export namespace Mysql {
          */
         securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
-         * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
          */
         shapeName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Telemetry configuration details of a DB System or a read replica.
+         */
+        telemetryConfiguration?: pulumi.Input<inputs.Mysql.ReplicaReplicaOverridesTelemetryConfiguration>;
+    }
+
+    export interface ReplicaReplicaOverridesTelemetryConfiguration {
+        /**
+         * (Updatable) Telemetry configuration details for logging.
+         */
+        logs?: pulumi.Input<pulumi.Input<inputs.Mysql.ReplicaReplicaOverridesTelemetryConfigurationLog>[]>;
+    }
+
+    export interface ReplicaReplicaOverridesTelemetryConfigurationLog {
+        /**
+         * Type of destination where MySQL telemetry is exposed to.
+         */
+        destination: pulumi.Input<string>;
+        /**
+         * List of configuration variables for a given destination type.
+         */
+        destinationConfigurations: pulumi.Input<pulumi.Input<inputs.Mysql.ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfiguration>[]>;
+        /**
+         * List of MySQL telemetry types that can be exposed on a telemetry destination
+         */
+        logTypes: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfiguration {
+        /**
+         * Name of the destination configuration variable.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * Value of the destination configuration variable.
+         */
+        value: pulumi.Input<string>;
     }
 
     export interface ReplicaSecureConnection {
@@ -86580,6 +86933,39 @@ export namespace Mysql {
          * The OCID of the certificate to use.
          */
         certificateId?: pulumi.Input<string>;
+    }
+
+    export interface ReplicaTelemetryConfiguration {
+        /**
+         * Telemetry configuration details for logging.
+         */
+        logs?: pulumi.Input<pulumi.Input<inputs.Mysql.ReplicaTelemetryConfigurationLog>[]>;
+    }
+
+    export interface ReplicaTelemetryConfigurationLog {
+        /**
+         * Type of destination where MySQL telemetry is exposed to.
+         */
+        destination?: pulumi.Input<string>;
+        /**
+         * List of configuration variables for a given destination type.
+         */
+        destinationConfigurations?: pulumi.Input<pulumi.Input<inputs.Mysql.ReplicaTelemetryConfigurationLogDestinationConfiguration>[]>;
+        /**
+         * List of MySQL telemetry types that can be exposed on a telemetry destination
+         */
+        logTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ReplicaTelemetryConfigurationLogDestinationConfiguration {
+        /**
+         * Name of the destination configuration variable.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value of the destination configuration variable.
+         */
+        value?: pulumi.Input<string>;
     }
 }
 

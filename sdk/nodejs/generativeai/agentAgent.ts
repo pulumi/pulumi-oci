@@ -34,7 +34,14 @@ import * as utilities from "../utilities";
  *     llmConfig: {
  *         routingLlmCustomization: {
  *             instruction: agentLlmConfigRoutingLlmCustomizationInstruction,
+ *             llmHyperParameters: agentLlmConfigRoutingLlmCustomizationLlmHyperParameters,
+ *             llmSelection: {
+ *                 llmSelectionType: agentLlmConfigRoutingLlmCustomizationLlmSelectionLlmSelectionType,
+ *                 endpointId: testEndpoint.id,
+ *                 modelId: testModel.id,
+ *             },
  *         },
+ *         runtimeVersion: agentLlmConfigRuntimeVersion,
  *     },
  *     welcomeMessage: agentWelcomeMessage,
  * });

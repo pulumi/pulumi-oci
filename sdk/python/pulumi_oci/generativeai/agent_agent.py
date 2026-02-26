@@ -428,7 +428,14 @@ class AgentAgent(pulumi.CustomResource):
             llm_config={
                 "routing_llm_customization": {
                     "instruction": agent_llm_config_routing_llm_customization_instruction,
+                    "llm_hyper_parameters": agent_llm_config_routing_llm_customization_llm_hyper_parameters,
+                    "llm_selection": {
+                        "llm_selection_type": agent_llm_config_routing_llm_customization_llm_selection_llm_selection_type,
+                        "endpoint_id": test_endpoint["id"],
+                        "model_id": test_model["id"],
+                    },
                 },
+                "runtime_version": agent_llm_config_runtime_version,
             },
             welcome_message=agent_welcome_message)
         ```
@@ -490,7 +497,14 @@ class AgentAgent(pulumi.CustomResource):
             llm_config={
                 "routing_llm_customization": {
                     "instruction": agent_llm_config_routing_llm_customization_instruction,
+                    "llm_hyper_parameters": agent_llm_config_routing_llm_customization_llm_hyper_parameters,
+                    "llm_selection": {
+                        "llm_selection_type": agent_llm_config_routing_llm_customization_llm_selection_llm_selection_type,
+                        "endpoint_id": test_endpoint["id"],
+                        "model_id": test_model["id"],
+                    },
                 },
+                "runtime_version": agent_llm_config_runtime_version,
             },
             welcome_message=agent_welcome_message)
         ```

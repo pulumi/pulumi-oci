@@ -11,15 +11,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetZonesZoneExternalMaster {
-    /**
-     * @return The server&#39;s IP address (IPv4 or IPv6).
-     * 
-     */
     private String address;
-    /**
-     * @return The server&#39;s port. Port value must be a value of 53, otherwise omit the port value.
-     * 
-     */
     private Integer port;
     /**
      * @return Search for zones that are associated with a TSIG key.
@@ -28,17 +20,9 @@ public final class GetZonesZoneExternalMaster {
     private String tsigKeyId;
 
     private GetZonesZoneExternalMaster() {}
-    /**
-     * @return The server&#39;s IP address (IPv4 or IPv6).
-     * 
-     */
     public String address() {
         return this.address;
     }
-    /**
-     * @return The server&#39;s port. Port value must be a value of 53, otherwise omit the port value.
-     * 
-     */
     public Integer port() {
         return this.port;
     }

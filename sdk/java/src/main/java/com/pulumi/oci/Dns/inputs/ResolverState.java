@@ -180,14 +180,14 @@ public final class ResolverState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Rules for the resolver. Rules are evaluated in order.
+     * (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
      * 
      */
     @Import(name="rules")
     private @Nullable Output<List<ResolverRuleArgs>> rules;
 
     /**
-     * @return (Updatable) Rules for the resolver. Rules are evaluated in order.
+     * @return (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
      * 
      */
     public Optional<Output<List<ResolverRuleArgs>>> rules() {
@@ -197,18 +197,12 @@ public final class ResolverState extends com.pulumi.resources.ResourceArgs {
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="scope")
     private @Nullable Output<String> scope;
 
     /**
      * @return Specifies to operate only on resources that have a matching DNS scope.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> scope() {
@@ -553,7 +547,7 @@ public final class ResolverState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rules (Updatable) Rules for the resolver. Rules are evaluated in order.
+         * @param rules (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
          * 
          * @return builder
          * 
@@ -564,7 +558,7 @@ public final class ResolverState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rules (Updatable) Rules for the resolver. Rules are evaluated in order.
+         * @param rules (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
          * 
          * @return builder
          * 
@@ -574,7 +568,7 @@ public final class ResolverState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rules (Updatable) Rules for the resolver. Rules are evaluated in order.
+         * @param rules (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
          * 
          * @return builder
          * 
@@ -586,9 +580,6 @@ public final class ResolverState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param scope Specifies to operate only on resources that have a matching DNS scope.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -599,9 +590,6 @@ public final class ResolverState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scope Specifies to operate only on resources that have a matching DNS scope.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

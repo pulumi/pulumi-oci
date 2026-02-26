@@ -61,7 +61,7 @@ export interface GetResolversArgs {
      */
     id?: string;
     /**
-     * Value must be `PRIVATE` when listing private name resolvers.
+     * Value must be `PRIVATE` when listing private resolvers.
      */
     scope: string;
     /**
@@ -152,7 +152,7 @@ export interface GetResolversOutputArgs {
      */
     id?: pulumi.Input<string>;
     /**
-     * Value must be `PRIVATE` when listing private name resolvers.
+     * Value must be `PRIVATE` when listing private resolvers.
      */
     scope: pulumi.Input<string>;
     /**

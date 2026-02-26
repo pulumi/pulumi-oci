@@ -14,6 +14,7 @@ import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotMaintenance;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotReadEndpoint;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotRest;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotSecureConnection;
+import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotTelemetryConfiguration;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -195,6 +196,11 @@ public final class MysqlBackupDbSystemSnapshot {
      * 
      */
     private @Nullable String subnetId;
+    /**
+     * @return Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    private @Nullable MysqlBackupDbSystemSnapshotTelemetryConfiguration telemetryConfiguration;
 
     private MysqlBackupDbSystemSnapshot() {}
     /**
@@ -435,6 +441,13 @@ public final class MysqlBackupDbSystemSnapshot {
     public Optional<String> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }
+    /**
+     * @return Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    public Optional<MysqlBackupDbSystemSnapshotTelemetryConfiguration> telemetryConfiguration() {
+        return Optional.ofNullable(this.telemetryConfiguration);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -479,6 +492,7 @@ public final class MysqlBackupDbSystemSnapshot {
         private @Nullable Map<String,String> securityAttributes;
         private @Nullable String shapeName;
         private @Nullable String subnetId;
+        private @Nullable MysqlBackupDbSystemSnapshotTelemetryConfiguration telemetryConfiguration;
         public Builder() {}
         public Builder(MysqlBackupDbSystemSnapshot defaults) {
     	      Objects.requireNonNull(defaults);
@@ -516,6 +530,7 @@ public final class MysqlBackupDbSystemSnapshot {
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.shapeName = defaults.shapeName;
     	      this.subnetId = defaults.subnetId;
+    	      this.telemetryConfiguration = defaults.telemetryConfiguration;
         }
 
         @CustomType.Setter
@@ -755,6 +770,12 @@ public final class MysqlBackupDbSystemSnapshot {
             this.subnetId = subnetId;
             return this;
         }
+        @CustomType.Setter
+        public Builder telemetryConfiguration(@Nullable MysqlBackupDbSystemSnapshotTelemetryConfiguration telemetryConfiguration) {
+
+            this.telemetryConfiguration = telemetryConfiguration;
+            return this;
+        }
         public MysqlBackupDbSystemSnapshot build() {
             final var _resultValue = new MysqlBackupDbSystemSnapshot();
             _resultValue.adminUsername = adminUsername;
@@ -791,6 +812,7 @@ public final class MysqlBackupDbSystemSnapshot {
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.shapeName = shapeName;
             _resultValue.subnetId = subnetId;
+            _resultValue.telemetryConfiguration = telemetryConfiguration;
             return _resultValue;
         }
     }

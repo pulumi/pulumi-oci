@@ -77,7 +77,7 @@ type View struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Scope pulumi.StringPtrOutput `pulumi:"scope"`
+	Scope pulumi.StringOutput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringOutput `pulumi:"self"`
 	// The current state of the resource.
@@ -345,8 +345,8 @@ func (o ViewOutput) IsProtected() pulumi.BoolOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ViewOutput) Scope() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *View) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
+func (o ViewOutput) Scope() pulumi.StringOutput {
+	return o.ApplyT(func(v *View) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
 }
 
 // The canonical absolute URL of the resource.

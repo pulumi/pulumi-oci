@@ -307,7 +307,7 @@ namespace Pulumi.Oci.Dns
         public readonly string? TimeCreatedGreaterThanOrEqualTo;
         public readonly string? TimeCreatedLessThan;
         /// <summary>
-        /// The OCID of the attached zone.
+        /// The OCID of the attached zone. Must be a public zone.
         /// </summary>
         public readonly string? ZoneId;
 

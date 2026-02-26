@@ -13,6 +13,7 @@ import com.pulumi.oci.GenerativeAi.outputs.AgentAgentEndpointContentModerationCo
 import com.pulumi.oci.GenerativeAi.outputs.AgentAgentEndpointGuardrailConfig;
 import com.pulumi.oci.GenerativeAi.outputs.AgentAgentEndpointHumanInputConfig;
 import com.pulumi.oci.GenerativeAi.outputs.AgentAgentEndpointOutputConfig;
+import com.pulumi.oci.GenerativeAi.outputs.AgentAgentEndpointProvisionedCapacityConfig;
 import com.pulumi.oci.GenerativeAi.outputs.AgentAgentEndpointSessionConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -47,6 +48,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointHumanInputConfigArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointOutputConfigArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointOutputConfigOutputLocationArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointProvisionedCapacityConfigArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointSessionConfigArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -97,6 +100,17 @@ import javax.annotation.Nullable;
  *                     .prefix(agentEndpointOutputConfigOutputLocationPrefix)
  *                     .build())
  *                 .retentionPeriodInMinutes(agentEndpointOutputConfigRetentionPeriodInMinutes)
+ *                 .build())
+ *             .provisionedCapacityConfig(AgentAgentEndpointProvisionedCapacityConfigArgs.builder()
+ *                 .provisionedCapacityId(testProvisionedCapacity.id())
+ *                 .platformRuntimeConfig(AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgs.builder()
+ *                     .platformRuntimeConfigType(agentEndpointProvisionedCapacityConfigPlatformRuntimeConfigPlatformRuntimeConfigType)
+ *                     .version(agentEndpointProvisionedCapacityConfigPlatformRuntimeConfigVersion)
+ *                     .build())
+ *                 .toolRuntimeConfigs(AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfigArgs.builder()
+ *                     .toolRuntimeConfigType(agentEndpointProvisionedCapacityConfigToolRuntimeConfigsToolRuntimeConfigType)
+ *                     .version(agentEndpointProvisionedCapacityConfigToolRuntimeConfigsVersion)
+ *                     .build())
  *                 .build())
  *             .sessionConfig(AgentAgentEndpointSessionConfigArgs.builder()
  *                 .idleTimeoutInSeconds(agentEndpointSessionConfigIdleTimeoutInSeconds)
@@ -290,6 +304,20 @@ public class AgentAgentEndpoint extends com.pulumi.resources.CustomResource {
      */
     public Output<AgentAgentEndpointOutputConfig> outputConfig() {
         return this.outputConfig;
+    }
+    /**
+     * (Updatable) The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
+     * 
+     */
+    @Export(name="provisionedCapacityConfig", refs={AgentAgentEndpointProvisionedCapacityConfig.class}, tree="[0]")
+    private Output<AgentAgentEndpointProvisionedCapacityConfig> provisionedCapacityConfig;
+
+    /**
+     * @return (Updatable) The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
+     * 
+     */
+    public Output<AgentAgentEndpointProvisionedCapacityConfig> provisionedCapacityConfig() {
+        return this.provisionedCapacityConfig;
     }
     /**
      * (Updatable) Session Configuration on AgentEndpoint.

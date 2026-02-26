@@ -1083,11 +1083,11 @@ class ResolverRuleArgsDict(TypedDict):
     """
     client_address_conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
     """
-    (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+    (Updatable) A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
     """
     qname_cover_conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
     """
-    (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+    (Updatable) A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
     """
 
 @pulumi.input_type
@@ -1103,8 +1103,8 @@ class ResolverRuleArgs:
                * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] destination_addresses: (Updatable) IP addresses to which queries should be forwarded. Currently limited to a single address.
         :param pulumi.Input[_builtins.str] source_endpoint_name: (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] client_address_conditions: (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] qname_cover_conditions: (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] client_address_conditions: (Updatable) A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] qname_cover_conditions: (Updatable) A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
         """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "destination_addresses", destination_addresses)
@@ -1155,7 +1155,7 @@ class ResolverRuleArgs:
     @pulumi.getter(name="clientAddressConditions")
     def client_address_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+        (Updatable) A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
         """
         return pulumi.get(self, "client_address_conditions")
 
@@ -1167,7 +1167,7 @@ class ResolverRuleArgs:
     @pulumi.getter(name="qnameCoverConditions")
     def qname_cover_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+        (Updatable) A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
         """
         return pulumi.get(self, "qname_cover_conditions")
 
@@ -2551,26 +2551,17 @@ class ZoneExternalMasterArgs:
 
 class ZoneNameserverArgsDict(TypedDict):
     hostname: NotRequired[pulumi.Input[_builtins.str]]
-    """
-    The hostname of the nameserver.
-    """
 
 @pulumi.input_type
 class ZoneNameserverArgs:
     def __init__(__self__, *,
                  hostname: Optional[pulumi.Input[_builtins.str]] = None):
-        """
-        :param pulumi.Input[_builtins.str] hostname: The hostname of the nameserver.
-        """
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
 
     @_builtins.property
     @pulumi.getter
     def hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The hostname of the nameserver.
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter

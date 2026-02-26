@@ -58,7 +58,7 @@ public final class GetSteeringPolicyAttachmentResult {
      */
     private String timeCreated;
     /**
-     * @return The OCID of the attached zone.
+     * @return The OCID of the attached zone. Must be a public zone.
      * 
      */
     private String zoneId;
@@ -131,7 +131,7 @@ public final class GetSteeringPolicyAttachmentResult {
         return this.timeCreated;
     }
     /**
-     * @return The OCID of the attached zone.
+     * @return The OCID of the attached zone. Must be a public zone.
      * 
      */
     public String zoneId() {

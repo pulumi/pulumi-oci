@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Mysql.outputs.ReplicaReplicaOverridesTelemetryConfiguration;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -36,11 +37,13 @@ public final class ReplicaReplicaOverrides {
     /**
      * @return (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     private @Nullable String shapeName;
+    /**
+     * @return (Updatable) Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    private @Nullable ReplicaReplicaOverridesTelemetryConfiguration telemetryConfiguration;
 
     private ReplicaReplicaOverrides() {}
     /**
@@ -74,12 +77,16 @@ public final class ReplicaReplicaOverrides {
     /**
      * @return (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Optional<String> shapeName() {
         return Optional.ofNullable(this.shapeName);
+    }
+    /**
+     * @return (Updatable) Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    public Optional<ReplicaReplicaOverridesTelemetryConfiguration> telemetryConfiguration() {
+        return Optional.ofNullable(this.telemetryConfiguration);
     }
 
     public static Builder builder() {
@@ -96,6 +103,7 @@ public final class ReplicaReplicaOverrides {
         private @Nullable List<String> nsgIds;
         private @Nullable Map<String,String> securityAttributes;
         private @Nullable String shapeName;
+        private @Nullable ReplicaReplicaOverridesTelemetryConfiguration telemetryConfiguration;
         public Builder() {}
         public Builder(ReplicaReplicaOverrides defaults) {
     	      Objects.requireNonNull(defaults);
@@ -104,6 +112,7 @@ public final class ReplicaReplicaOverrides {
     	      this.nsgIds = defaults.nsgIds;
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.shapeName = defaults.shapeName;
+    	      this.telemetryConfiguration = defaults.telemetryConfiguration;
         }
 
         @CustomType.Setter
@@ -139,6 +148,12 @@ public final class ReplicaReplicaOverrides {
             this.shapeName = shapeName;
             return this;
         }
+        @CustomType.Setter
+        public Builder telemetryConfiguration(@Nullable ReplicaReplicaOverridesTelemetryConfiguration telemetryConfiguration) {
+
+            this.telemetryConfiguration = telemetryConfiguration;
+            return this;
+        }
         public ReplicaReplicaOverrides build() {
             final var _resultValue = new ReplicaReplicaOverrides();
             _resultValue.configurationId = configurationId;
@@ -146,6 +161,7 @@ public final class ReplicaReplicaOverrides {
             _resultValue.nsgIds = nsgIds;
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.shapeName = shapeName;
+            _resultValue.telemetryConfiguration = telemetryConfiguration;
             return _resultValue;
         }
     }

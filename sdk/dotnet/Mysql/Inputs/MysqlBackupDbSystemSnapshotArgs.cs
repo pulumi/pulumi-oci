@@ -300,6 +300,12 @@ namespace Pulumi.Oci.Mysql.Inputs
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
 
+        /// <summary>
+        /// Telemetry configuration details of a DB System or a read replica.
+        /// </summary>
+        [Input("telemetryConfiguration")]
+        public Input<Inputs.MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs>? TelemetryConfiguration { get; set; }
+
         public MysqlBackupDbSystemSnapshotArgs()
         {
         }

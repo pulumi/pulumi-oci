@@ -35,6 +35,10 @@ class SqlEndpointArgs:
                  driver_shape_config: Optional[pulumi.Input['SqlEndpointDriverShapeConfigArgs']] = None,
                  executor_shape_config: Optional[pulumi.Input['SqlEndpointExecutorShapeConfigArgs']] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 log_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 log_display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 log_retention_duration: Optional[pulumi.Input[_builtins.int]] = None,
                  spark_advanced_configurations: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
@@ -53,6 +57,10 @@ class SqlEndpointArgs:
         :param pulumi.Input['SqlEndpointDriverShapeConfigArgs'] driver_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input['SqlEndpointExecutorShapeConfigArgs'] executor_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] log_compartment_id: (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+        :param pulumi.Input[_builtins.str] log_display_name: (Updatable) The friendly name of the log object used with the SQL Endpoint.
+        :param pulumi.Input[_builtins.str] log_group_id: (Updatable) The identifier of the log group used with the SQL Endpoint.
+        :param pulumi.Input[_builtins.int] log_retention_duration: (Updatable) Log retention duration in days
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] spark_advanced_configurations: (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`. 
                
@@ -79,6 +87,14 @@ class SqlEndpointArgs:
             pulumi.set(__self__, "executor_shape_config", executor_shape_config)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if log_compartment_id is not None:
+            pulumi.set(__self__, "log_compartment_id", log_compartment_id)
+        if log_display_name is not None:
+            pulumi.set(__self__, "log_display_name", log_display_name)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_retention_duration is not None:
+            pulumi.set(__self__, "log_retention_duration", log_retention_duration)
         if spark_advanced_configurations is not None:
             pulumi.set(__self__, "spark_advanced_configurations", spark_advanced_configurations)
         if state is not None:
@@ -253,6 +269,54 @@ class SqlEndpointArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="logCompartmentId")
+    def log_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+        """
+        return pulumi.get(self, "log_compartment_id")
+
+    @log_compartment_id.setter
+    def log_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "log_compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="logDisplayName")
+    def log_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The friendly name of the log object used with the SQL Endpoint.
+        """
+        return pulumi.get(self, "log_display_name")
+
+    @log_display_name.setter
+    def log_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "log_display_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The identifier of the log group used with the SQL Endpoint.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @log_group_id.setter
+    def log_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "log_group_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="logRetentionDuration")
+    def log_retention_duration(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) Log retention duration in days
+        """
+        return pulumi.get(self, "log_retention_duration")
+
+    @log_retention_duration.setter
+    def log_retention_duration(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "log_retention_duration", value)
+
+    @_builtins.property
     @pulumi.getter(name="sparkAdvancedConfigurations")
     def spark_advanced_configurations(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -295,6 +359,10 @@ class _SqlEndpointState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  jdbc_endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
                  lake_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 log_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 log_display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 log_retention_duration: Optional[pulumi.Input[_builtins.int]] = None,
                  max_executor_count: Optional[pulumi.Input[_builtins.int]] = None,
                  metastore_id: Optional[pulumi.Input[_builtins.str]] = None,
                  min_executor_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -320,6 +388,10 @@ class _SqlEndpointState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] jdbc_endpoint_url: The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
         :param pulumi.Input[_builtins.str] lake_id: Oracle Cloud Infrastructure lake OCID
+        :param pulumi.Input[_builtins.str] log_compartment_id: (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+        :param pulumi.Input[_builtins.str] log_display_name: (Updatable) The friendly name of the log object used with the SQL Endpoint.
+        :param pulumi.Input[_builtins.str] log_group_id: (Updatable) The identifier of the log group used with the SQL Endpoint.
+        :param pulumi.Input[_builtins.int] log_retention_duration: (Updatable) Log retention duration in days
         :param pulumi.Input[_builtins.int] max_executor_count: (Updatable) The maximum number of executors.
         :param pulumi.Input[_builtins.str] metastore_id: Metastore OCID
         :param pulumi.Input[_builtins.int] min_executor_count: (Updatable) The minimum number of executors.
@@ -359,6 +431,14 @@ class _SqlEndpointState:
             pulumi.set(__self__, "jdbc_endpoint_url", jdbc_endpoint_url)
         if lake_id is not None:
             pulumi.set(__self__, "lake_id", lake_id)
+        if log_compartment_id is not None:
+            pulumi.set(__self__, "log_compartment_id", log_compartment_id)
+        if log_display_name is not None:
+            pulumi.set(__self__, "log_display_name", log_display_name)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_retention_duration is not None:
+            pulumi.set(__self__, "log_retention_duration", log_retention_duration)
         if max_executor_count is not None:
             pulumi.set(__self__, "max_executor_count", max_executor_count)
         if metastore_id is not None:
@@ -515,6 +595,54 @@ class _SqlEndpointState:
     @lake_id.setter
     def lake_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "lake_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="logCompartmentId")
+    def log_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+        """
+        return pulumi.get(self, "log_compartment_id")
+
+    @log_compartment_id.setter
+    def log_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "log_compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="logDisplayName")
+    def log_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The friendly name of the log object used with the SQL Endpoint.
+        """
+        return pulumi.get(self, "log_display_name")
+
+    @log_display_name.setter
+    def log_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "log_display_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The identifier of the log group used with the SQL Endpoint.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @log_group_id.setter
+    def log_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "log_group_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="logRetentionDuration")
+    def log_retention_duration(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) Log retention duration in days
+        """
+        return pulumi.get(self, "log_retention_duration")
+
+    @log_retention_duration.setter
+    def log_retention_duration(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "log_retention_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="maxExecutorCount")
@@ -680,6 +808,10 @@ class SqlEndpoint(pulumi.CustomResource):
                  executor_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  executor_shape_config: Optional[pulumi.Input[Union['SqlEndpointExecutorShapeConfigArgs', 'SqlEndpointExecutorShapeConfigArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 log_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 log_display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 log_retention_duration: Optional[pulumi.Input[_builtins.int]] = None,
                  max_executor_count: Optional[pulumi.Input[_builtins.int]] = None,
                  metastore_id: Optional[pulumi.Input[_builtins.str]] = None,
                  min_executor_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -746,6 +878,10 @@ class SqlEndpoint(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            log_compartment_id=test_compartment["id"],
+            log_display_name=sql_endpoint_log_display_name,
+            log_group_id=test_log_group["id"],
+            log_retention_duration=sql_endpoint_log_retention_duration,
             spark_advanced_configurations=sql_endpoint_spark_advanced_configurations)
         ```
 
@@ -768,6 +904,10 @@ class SqlEndpoint(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] executor_shape: The shape of the SQL Endpoint worker instance.
         :param pulumi.Input[Union['SqlEndpointExecutorShapeConfigArgs', 'SqlEndpointExecutorShapeConfigArgsDict']] executor_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] log_compartment_id: (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+        :param pulumi.Input[_builtins.str] log_display_name: (Updatable) The friendly name of the log object used with the SQL Endpoint.
+        :param pulumi.Input[_builtins.str] log_group_id: (Updatable) The identifier of the log group used with the SQL Endpoint.
+        :param pulumi.Input[_builtins.int] log_retention_duration: (Updatable) Log retention duration in days
         :param pulumi.Input[_builtins.int] max_executor_count: (Updatable) The maximum number of executors.
         :param pulumi.Input[_builtins.str] metastore_id: Metastore OCID
         :param pulumi.Input[_builtins.int] min_executor_count: (Updatable) The minimum number of executors.
@@ -844,6 +984,10 @@ class SqlEndpoint(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            log_compartment_id=test_compartment["id"],
+            log_display_name=sql_endpoint_log_display_name,
+            log_group_id=test_log_group["id"],
+            log_retention_duration=sql_endpoint_log_retention_duration,
             spark_advanced_configurations=sql_endpoint_spark_advanced_configurations)
         ```
 
@@ -879,6 +1023,10 @@ class SqlEndpoint(pulumi.CustomResource):
                  executor_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  executor_shape_config: Optional[pulumi.Input[Union['SqlEndpointExecutorShapeConfigArgs', 'SqlEndpointExecutorShapeConfigArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 log_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 log_display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 log_retention_duration: Optional[pulumi.Input[_builtins.int]] = None,
                  max_executor_count: Optional[pulumi.Input[_builtins.int]] = None,
                  metastore_id: Optional[pulumi.Input[_builtins.str]] = None,
                  min_executor_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -912,6 +1060,10 @@ class SqlEndpoint(pulumi.CustomResource):
             __props__.__dict__["executor_shape"] = executor_shape
             __props__.__dict__["executor_shape_config"] = executor_shape_config
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["log_compartment_id"] = log_compartment_id
+            __props__.__dict__["log_display_name"] = log_display_name
+            __props__.__dict__["log_group_id"] = log_group_id
+            __props__.__dict__["log_retention_duration"] = log_retention_duration
             if max_executor_count is None and not opts.urn:
                 raise TypeError("Missing required property 'max_executor_count'")
             __props__.__dict__["max_executor_count"] = max_executor_count
@@ -957,6 +1109,10 @@ class SqlEndpoint(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             jdbc_endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
             lake_id: Optional[pulumi.Input[_builtins.str]] = None,
+            log_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+            log_display_name: Optional[pulumi.Input[_builtins.str]] = None,
+            log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+            log_retention_duration: Optional[pulumi.Input[_builtins.int]] = None,
             max_executor_count: Optional[pulumi.Input[_builtins.int]] = None,
             metastore_id: Optional[pulumi.Input[_builtins.str]] = None,
             min_executor_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -987,6 +1143,10 @@ class SqlEndpoint(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] jdbc_endpoint_url: The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
         :param pulumi.Input[_builtins.str] lake_id: Oracle Cloud Infrastructure lake OCID
+        :param pulumi.Input[_builtins.str] log_compartment_id: (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+        :param pulumi.Input[_builtins.str] log_display_name: (Updatable) The friendly name of the log object used with the SQL Endpoint.
+        :param pulumi.Input[_builtins.str] log_group_id: (Updatable) The identifier of the log group used with the SQL Endpoint.
+        :param pulumi.Input[_builtins.int] log_retention_duration: (Updatable) Log retention duration in days
         :param pulumi.Input[_builtins.int] max_executor_count: (Updatable) The maximum number of executors.
         :param pulumi.Input[_builtins.str] metastore_id: Metastore OCID
         :param pulumi.Input[_builtins.int] min_executor_count: (Updatable) The minimum number of executors.
@@ -1019,6 +1179,10 @@ class SqlEndpoint(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["jdbc_endpoint_url"] = jdbc_endpoint_url
         __props__.__dict__["lake_id"] = lake_id
+        __props__.__dict__["log_compartment_id"] = log_compartment_id
+        __props__.__dict__["log_display_name"] = log_display_name
+        __props__.__dict__["log_group_id"] = log_group_id
+        __props__.__dict__["log_retention_duration"] = log_retention_duration
         __props__.__dict__["max_executor_count"] = max_executor_count
         __props__.__dict__["metastore_id"] = metastore_id
         __props__.__dict__["min_executor_count"] = min_executor_count
@@ -1120,6 +1284,38 @@ class SqlEndpoint(pulumi.CustomResource):
         Oracle Cloud Infrastructure lake OCID
         """
         return pulumi.get(self, "lake_id")
+
+    @_builtins.property
+    @pulumi.getter(name="logCompartmentId")
+    def log_compartment_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+        """
+        return pulumi.get(self, "log_compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="logDisplayName")
+    def log_display_name(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The friendly name of the log object used with the SQL Endpoint.
+        """
+        return pulumi.get(self, "log_display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The identifier of the log group used with the SQL Endpoint.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="logRetentionDuration")
+    def log_retention_duration(self) -> pulumi.Output[_builtins.int]:
+        """
+        (Updatable) Log retention duration in days
+        """
+        return pulumi.get(self, "log_retention_duration")
 
     @_builtins.property
     @pulumi.getter(name="maxExecutorCount")

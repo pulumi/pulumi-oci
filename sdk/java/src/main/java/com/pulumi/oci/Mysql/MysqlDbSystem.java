@@ -25,6 +25,7 @@ import com.pulumi.oci.Mysql.outputs.MysqlDbSystemReadEndpoint;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemRest;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemSecureConnections;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemSource;
+import com.pulumi.oci.Mysql.outputs.MysqlDbSystemTelemetryConfiguration;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -65,6 +66,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemRestArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSecureConnectionsArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSourceArgs;
+ * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemTelemetryConfigurationArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -165,6 +167,16 @@ import javax.annotation.Nullable;
  *             .source(MysqlDbSystemSourceArgs.builder()
  *                 .sourceType(mysqlDbSystemSourceSourceType)
  *                 .backupId(testBackup.id())
+ *                 .build())
+ *             .telemetryConfiguration(MysqlDbSystemTelemetryConfigurationArgs.builder()
+ *                 .logs(MysqlDbSystemTelemetryConfigurationLogArgs.builder()
+ *                     .destination(mysqlDbSystemTelemetryConfigurationLogsDestination)
+ *                     .destinationConfigurations(MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs.builder()
+ *                         .key(mysqlDbSystemTelemetryConfigurationLogsDestinationConfigurationsKey)
+ *                         .value(mysqlDbSystemTelemetryConfigurationLogsDestinationConfigurationsValue)
+ *                         .build())
+ *                     .logTypes(mysqlDbSystemTelemetryConfigurationLogsLogTypes)
+ *                     .build())
  *                 .build())
  *             .build());
  * 
@@ -871,6 +883,20 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * (Updatable) Details required to configure how MySQL telemetry should be exposed.
+     * 
+     */
+    @Export(name="telemetryConfiguration", refs={MysqlDbSystemTelemetryConfiguration.class}, tree="[0]")
+    private Output<MysqlDbSystemTelemetryConfiguration> telemetryConfiguration;
+
+    /**
+     * @return (Updatable) Details required to configure how MySQL telemetry should be exposed.
+     * 
+     */
+    public Output<MysqlDbSystemTelemetryConfiguration> telemetryConfiguration() {
+        return this.telemetryConfiguration;
     }
     /**
      * The date and time the DB System was created.

@@ -39,15 +39,7 @@ public final class GetZonesZone {
      * 
      */
     private String dnssecState;
-    /**
-     * @return External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
-     * 
-     */
     private List<GetZonesZoneExternalDownstream> externalDownstreams;
-    /**
-     * @return External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
-     * 
-     */
     private List<GetZonesZoneExternalMaster> externalMasters;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -69,11 +61,12 @@ public final class GetZonesZone {
      * 
      */
     private String name;
+    private List<GetZonesZoneNameserver> nameservers;
     /**
-     * @return The authoritative nameservers for the zone.
+     * @return The resolution mode of a zone defines behavior related to how query responses can be handled.
      * 
      */
-    private List<GetZonesZoneNameserver> nameservers;
+    private String resolutionMode;
     /**
      * @return Specifies to operate only on resources that have a matching DNS scope.
      * 
@@ -109,10 +102,6 @@ public final class GetZonesZone {
      * 
      */
     private String viewId;
-    /**
-     * @return The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
-     * 
-     */
     private List<GetZonesZoneZoneTransferServer> zoneTransferServers;
     /**
      * @return Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
@@ -149,17 +138,9 @@ public final class GetZonesZone {
     public String dnssecState() {
         return this.dnssecState;
     }
-    /**
-     * @return External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
-     * 
-     */
     public List<GetZonesZoneExternalDownstream> externalDownstreams() {
         return this.externalDownstreams;
     }
-    /**
-     * @return External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
-     * 
-     */
     public List<GetZonesZoneExternalMaster> externalMasters() {
         return this.externalMasters;
     }
@@ -191,12 +172,15 @@ public final class GetZonesZone {
     public String name() {
         return this.name;
     }
-    /**
-     * @return The authoritative nameservers for the zone.
-     * 
-     */
     public List<GetZonesZoneNameserver> nameservers() {
         return this.nameservers;
+    }
+    /**
+     * @return The resolution mode of a zone defines behavior related to how query responses can be handled.
+     * 
+     */
+    public String resolutionMode() {
+        return this.resolutionMode;
     }
     /**
      * @return Specifies to operate only on resources that have a matching DNS scope.
@@ -247,10 +231,6 @@ public final class GetZonesZone {
     public String viewId() {
         return this.viewId;
     }
-    /**
-     * @return The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
-     * 
-     */
     public List<GetZonesZoneZoneTransferServer> zoneTransferServers() {
         return this.zoneTransferServers;
     }
@@ -282,6 +262,7 @@ public final class GetZonesZone {
         private Boolean isProtected;
         private String name;
         private List<GetZonesZoneNameserver> nameservers;
+        private String resolutionMode;
         private String scope;
         private String self;
         private Integer serial;
@@ -305,6 +286,7 @@ public final class GetZonesZone {
     	      this.isProtected = defaults.isProtected;
     	      this.name = defaults.name;
     	      this.nameservers = defaults.nameservers;
+    	      this.resolutionMode = defaults.resolutionMode;
     	      this.scope = defaults.scope;
     	      this.self = defaults.self;
     	      this.serial = defaults.serial;
@@ -417,6 +399,14 @@ public final class GetZonesZone {
             return nameservers(List.of(nameservers));
         }
         @CustomType.Setter
+        public Builder resolutionMode(String resolutionMode) {
+            if (resolutionMode == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "resolutionMode");
+            }
+            this.resolutionMode = resolutionMode;
+            return this;
+        }
+        @CustomType.Setter
         public Builder scope(String scope) {
             if (scope == null) {
               throw new MissingRequiredPropertyException("GetZonesZone", "scope");
@@ -504,6 +494,7 @@ public final class GetZonesZone {
             _resultValue.isProtected = isProtected;
             _resultValue.name = name;
             _resultValue.nameservers = nameservers;
+            _resultValue.resolutionMode = resolutionMode;
             _resultValue.scope = scope;
             _resultValue.self = self;
             _resultValue.serial = serial;

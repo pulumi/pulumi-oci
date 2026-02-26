@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &FsuCollection{}
 	case "oci:FleetSoftwareUpdate/fsuCycle:FsuCycle":
 		r = &FsuCycle{}
+	case "oci:FleetSoftwareUpdate/fsuReadinessCheck:FsuReadinessCheck":
+		r = &FsuReadinessCheck{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -46,6 +48,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"FleetSoftwareUpdate/fsuCycle",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"FleetSoftwareUpdate/fsuReadinessCheck",
 		&module{version},
 	)
 }

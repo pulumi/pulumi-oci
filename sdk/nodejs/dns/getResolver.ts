@@ -43,7 +43,7 @@ export interface GetResolverArgs {
      */
     resolverId: string;
     /**
-     * Value must be `PRIVATE` when listing private name resolvers.
+     * Value must be `PRIVATE` when listing private resolvers.
      */
     scope?: string;
 }
@@ -94,7 +94,7 @@ export interface GetResolverResult {
     readonly isProtected: boolean;
     readonly resolverId: string;
     /**
-     * Rules for the resolver. Rules are evaluated in order.
+     * Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
      */
     readonly rules: outputs.Dns.GetResolverRule[];
     readonly scope?: string;
@@ -152,7 +152,7 @@ export interface GetResolverOutputArgs {
      */
     resolverId: pulumi.Input<string>;
     /**
-     * Value must be `PRIVATE` when listing private name resolvers.
+     * Value must be `PRIVATE` when listing private resolvers.
      */
     scope?: pulumi.Input<string>;
 }

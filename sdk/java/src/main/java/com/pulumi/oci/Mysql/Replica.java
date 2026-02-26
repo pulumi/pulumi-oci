@@ -12,6 +12,7 @@ import com.pulumi.oci.Mysql.inputs.ReplicaState;
 import com.pulumi.oci.Mysql.outputs.ReplicaEncryptData;
 import com.pulumi.oci.Mysql.outputs.ReplicaReplicaOverrides;
 import com.pulumi.oci.Mysql.outputs.ReplicaSecureConnection;
+import com.pulumi.oci.Mysql.outputs.ReplicaTelemetryConfiguration;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -40,6 +41,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Mysql.Replica;
  * import com.pulumi.oci.Mysql.ReplicaArgs;
  * import com.pulumi.oci.Mysql.inputs.ReplicaReplicaOverridesArgs;
+ * import com.pulumi.oci.Mysql.inputs.ReplicaReplicaOverridesTelemetryConfigurationArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -66,6 +68,16 @@ import javax.annotation.Nullable;
  *                 .nsgIds(replicaReplicaOverridesNsgIds)
  *                 .securityAttributes(replicaReplicaOverridesSecurityAttributes)
  *                 .shapeName(testShape.name())
+ *                 .telemetryConfiguration(ReplicaReplicaOverridesTelemetryConfigurationArgs.builder()
+ *                     .logs(ReplicaReplicaOverridesTelemetryConfigurationLogArgs.builder()
+ *                         .destination(replicaReplicaOverridesTelemetryConfigurationLogsDestination)
+ *                         .destinationConfigurations(ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArgs.builder()
+ *                             .key(replicaReplicaOverridesTelemetryConfigurationLogsDestinationConfigurationsKey)
+ *                             .value(replicaReplicaOverridesTelemetryConfigurationLogsDestinationConfigurationsValue)
+ *                             .build())
+ *                         .logTypes(replicaReplicaOverridesTelemetryConfigurationLogsLogTypes)
+ *                         .build())
+ *                     .build())
  *                 .build())
  *             .build());
  * 
@@ -392,6 +404,20 @@ public class Replica extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    @Export(name="telemetryConfigurations", refs={List.class,ReplicaTelemetryConfiguration.class}, tree="[0,1]")
+    private Output<List<ReplicaTelemetryConfiguration>> telemetryConfigurations;
+
+    /**
+     * @return Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    public Output<List<ReplicaTelemetryConfiguration>> telemetryConfigurations() {
+        return this.telemetryConfigurations;
     }
     /**
      * The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).

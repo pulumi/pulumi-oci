@@ -231,6 +231,10 @@ export interface GetMysqlDbSystemResult {
      */
     readonly systemTags: {[key: string]: string};
     /**
+     * Telemetry configuration details of a DB System or a read replica.
+     */
+    readonly telemetryConfigurations: outputs.Mysql.GetMysqlDbSystemTelemetryConfiguration[];
+    /**
      * The date and time the DB System was created.
      */
     readonly timeCreated: string;

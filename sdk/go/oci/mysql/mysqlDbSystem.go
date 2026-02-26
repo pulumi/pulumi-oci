@@ -137,6 +137,20 @@ import (
 //					SourceType: pulumi.Any(mysqlDbSystemSourceSourceType),
 //					BackupId:   pulumi.Any(testBackup.Id),
 //				},
+//				TelemetryConfiguration: &mysql.MysqlDbSystemTelemetryConfigurationArgs{
+//					Logs: mysql.MysqlDbSystemTelemetryConfigurationLogArray{
+//						&mysql.MysqlDbSystemTelemetryConfigurationLogArgs{
+//							Destination: pulumi.Any(mysqlDbSystemTelemetryConfigurationLogsDestination),
+//							DestinationConfigurations: mysql.MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArray{
+//								&mysql.MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs{
+//									Key:   pulumi.Any(mysqlDbSystemTelemetryConfigurationLogsDestinationConfigurationsKey),
+//									Value: pulumi.Any(mysqlDbSystemTelemetryConfigurationLogsDestinationConfigurationsValue),
+//								},
+//							},
+//							LogTypes: pulumi.Any(mysqlDbSystemTelemetryConfigurationLogsLogTypes),
+//						},
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -271,6 +285,8 @@ type MysqlDbSystem struct {
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
+	// (Updatable) Details required to configure how MySQL telemetry should be exposed.
+	TelemetryConfiguration MysqlDbSystemTelemetryConfigurationOutput `pulumi:"telemetryConfiguration"`
 	// The date and time the DB System was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
@@ -440,6 +456,8 @@ type mysqlDbSystemState struct {
 	SubnetId *string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// (Updatable) Details required to configure how MySQL telemetry should be exposed.
+	TelemetryConfiguration *MysqlDbSystemTelemetryConfiguration `pulumi:"telemetryConfiguration"`
 	// The date and time the DB System was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
@@ -561,6 +579,8 @@ type MysqlDbSystemState struct {
 	SubnetId pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
+	// (Updatable) Details required to configure how MySQL telemetry should be exposed.
+	TelemetryConfiguration MysqlDbSystemTelemetryConfigurationPtrInput
 	// The date and time the DB System was created.
 	TimeCreated pulumi.StringPtrInput
 	// The time the DB System was last updated.
@@ -670,6 +690,8 @@ type mysqlDbSystemArgs struct {
 	State *string `pulumi:"state"`
 	// The OCID of the subnet the DB System is associated with.
 	SubnetId string `pulumi:"subnetId"`
+	// (Updatable) Details required to configure how MySQL telemetry should be exposed.
+	TelemetryConfiguration *MysqlDbSystemTelemetryConfiguration `pulumi:"telemetryConfiguration"`
 }
 
 // The set of arguments for constructing a MysqlDbSystem resource.
@@ -772,6 +794,8 @@ type MysqlDbSystemArgs struct {
 	State pulumi.StringPtrInput
 	// The OCID of the subnet the DB System is associated with.
 	SubnetId pulumi.StringInput
+	// (Updatable) Details required to configure how MySQL telemetry should be exposed.
+	TelemetryConfiguration MysqlDbSystemTelemetryConfigurationPtrInput
 }
 
 func (MysqlDbSystemArgs) ElementType() reflect.Type {
@@ -1113,6 +1137,11 @@ func (o MysqlDbSystemOutput) SubnetId() pulumi.StringOutput {
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o MysqlDbSystemOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) Details required to configure how MySQL telemetry should be exposed.
+func (o MysqlDbSystemOutput) TelemetryConfiguration() MysqlDbSystemTelemetryConfigurationOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemTelemetryConfigurationOutput { return v.TelemetryConfiguration }).(MysqlDbSystemTelemetryConfigurationOutput)
 }
 
 // The date and time the DB System was created.

@@ -15,6 +15,11 @@ export type FsuCycle = import("./fsuCycle").FsuCycle;
 export const FsuCycle: typeof import("./fsuCycle").FsuCycle = null as any;
 utilities.lazyLoad(exports, ["FsuCycle"], () => require("./fsuCycle"));
 
+export { FsuReadinessCheckArgs, FsuReadinessCheckState } from "./fsuReadinessCheck";
+export type FsuReadinessCheck = import("./fsuReadinessCheck").FsuReadinessCheck;
+export const FsuReadinessCheck: typeof import("./fsuReadinessCheck").FsuReadinessCheck = null as any;
+utilities.lazyLoad(exports, ["FsuReadinessCheck"], () => require("./fsuReadinessCheck"));
+
 export { GetFsuCollectionArgs, GetFsuCollectionResult, GetFsuCollectionOutputArgs } from "./getFsuCollection";
 export const getFsuCollection: typeof import("./getFsuCollection").getFsuCollection = null as any;
 export const getFsuCollectionOutput: typeof import("./getFsuCollection").getFsuCollectionOutput = null as any;
@@ -35,6 +40,16 @@ export const getFsuCycles: typeof import("./getFsuCycles").getFsuCycles = null a
 export const getFsuCyclesOutput: typeof import("./getFsuCycles").getFsuCyclesOutput = null as any;
 utilities.lazyLoad(exports, ["getFsuCycles","getFsuCyclesOutput"], () => require("./getFsuCycles"));
 
+export { GetFsuReadinessCheckArgs, GetFsuReadinessCheckResult, GetFsuReadinessCheckOutputArgs } from "./getFsuReadinessCheck";
+export const getFsuReadinessCheck: typeof import("./getFsuReadinessCheck").getFsuReadinessCheck = null as any;
+export const getFsuReadinessCheckOutput: typeof import("./getFsuReadinessCheck").getFsuReadinessCheckOutput = null as any;
+utilities.lazyLoad(exports, ["getFsuReadinessCheck","getFsuReadinessCheckOutput"], () => require("./getFsuReadinessCheck"));
+
+export { GetFsuReadinessChecksArgs, GetFsuReadinessChecksResult, GetFsuReadinessChecksOutputArgs } from "./getFsuReadinessChecks";
+export const getFsuReadinessChecks: typeof import("./getFsuReadinessChecks").getFsuReadinessChecks = null as any;
+export const getFsuReadinessChecksOutput: typeof import("./getFsuReadinessChecks").getFsuReadinessChecksOutput = null as any;
+utilities.lazyLoad(exports, ["getFsuReadinessChecks","getFsuReadinessChecksOutput"], () => require("./getFsuReadinessChecks"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -44,6 +59,8 @@ const _module = {
                 return new FsuCollection(name, <any>undefined, { urn })
             case "oci:FleetSoftwareUpdate/fsuCycle:FsuCycle":
                 return new FsuCycle(name, <any>undefined, { urn })
+            case "oci:FleetSoftwareUpdate/fsuReadinessCheck:FsuReadinessCheck":
+                return new FsuReadinessCheck(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -51,3 +68,4 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "FleetSoftwareUpdate/fsuCollection", _module)
 pulumi.runtime.registerResourceModule("oci", "FleetSoftwareUpdate/fsuCycle", _module)
+pulumi.runtime.registerResourceModule("oci", "FleetSoftwareUpdate/fsuReadinessCheck", _module)

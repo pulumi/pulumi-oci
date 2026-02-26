@@ -43,6 +43,12 @@ namespace Pulumi.Oci.GenerativeAi.Inputs
         public Input<string>? Dialect { get; set; }
 
         /// <summary>
+        /// (Updatable) Configuration to customize LLM.
+        /// </summary>
+        [Input("embeddingLlmCustomization")]
+        public Input<Inputs.AgentToolToolConfigEmbeddingLlmCustomizationGetArgs>? EmbeddingLlmCustomization { get; set; }
+
+        /// <summary>
         /// (Updatable) Details of Function for Function calling tool.
         /// </summary>
         [Input("function")]
@@ -83,6 +89,24 @@ namespace Pulumi.Oci.GenerativeAi.Inputs
         /// </summary>
         [Input("modelSize")]
         public Input<string>? ModelSize { get; set; }
+
+        /// <summary>
+        /// (Updatable) Configuration to customize LLM.
+        /// </summary>
+        [Input("reasoningLlmCustomization")]
+        public Input<Inputs.AgentToolToolConfigReasoningLlmCustomizationGetArgs>? ReasoningLlmCustomization { get; set; }
+
+        /// <summary>
+        /// (Updatable) Configuration to customize LLM.
+        /// </summary>
+        [Input("rerankingLlmCustomization")]
+        public Input<Inputs.AgentToolToolConfigRerankingLlmCustomizationGetArgs>? RerankingLlmCustomization { get; set; }
+
+        /// <summary>
+        /// (Updatable) The runtimeVersion of the system prompt.
+        /// </summary>
+        [Input("runtimeVersion")]
+        public Input<string>? RuntimeVersion { get; set; }
 
         /// <summary>
         /// (Updatable) To enable/disable self correction.

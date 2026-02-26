@@ -35,14 +35,14 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+     * (Updatable) A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
      * 
      */
     @Import(name="clientAddressConditions")
     private @Nullable Output<List<String>> clientAddressConditions;
 
     /**
-     * @return (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+     * @return (Updatable) A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
      * 
      */
     public Optional<Output<List<String>>> clientAddressConditions() {
@@ -65,14 +65,14 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+     * (Updatable) A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
      * 
      */
     @Import(name="qnameCoverConditions")
     private @Nullable Output<List<String>> qnameCoverConditions;
 
     /**
-     * @return (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+     * @return (Updatable) A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
      * 
      */
     public Optional<Output<List<String>>> qnameCoverConditions() {
@@ -146,7 +146,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clientAddressConditions (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+         * @param clientAddressConditions (Updatable) A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clientAddressConditions (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+         * @param clientAddressConditions (Updatable) A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clientAddressConditions (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+         * @param clientAddressConditions (Updatable) A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
          * 
          * @return builder
          * 
@@ -208,7 +208,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param qnameCoverConditions (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+         * @param qnameCoverConditions (Updatable) A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
          * 
          * @return builder
          * 
@@ -219,7 +219,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param qnameCoverConditions (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+         * @param qnameCoverConditions (Updatable) A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
          * 
          * @return builder
          * 
@@ -229,7 +229,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param qnameCoverConditions (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+         * @param qnameCoverConditions (Updatable) A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
          * 
          * @return builder
          * 

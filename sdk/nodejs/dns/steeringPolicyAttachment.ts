@@ -17,6 +17,8 @@ import * as utilities from "../utilities";
  * For the purposes of access control, the attachment is automatically placed
  * into the same compartment as the domain's zone.
  *
+ * Attachments cannot be created for private zones.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -100,7 +102,7 @@ export class SteeringPolicyAttachment extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
-     * The OCID of the attached zone.
+     * The OCID of the attached zone. Must be a public zone.
      *
      *
      * ** IMPORTANT **
@@ -193,7 +195,7 @@ export interface SteeringPolicyAttachmentState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The OCID of the attached zone.
+     * The OCID of the attached zone. Must be a public zone.
      *
      *
      * ** IMPORTANT **
@@ -219,7 +221,7 @@ export interface SteeringPolicyAttachmentArgs {
      */
     steeringPolicyId: pulumi.Input<string>;
     /**
-     * The OCID of the attached zone.
+     * The OCID of the attached zone. Must be a public zone.
      *
      *
      * ** IMPORTANT **

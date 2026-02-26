@@ -51,7 +51,7 @@ public final class GetSteeringPolicyAttachmentsResult {
     private @Nullable String timeCreatedGreaterThanOrEqualTo;
     private @Nullable String timeCreatedLessThan;
     /**
-     * @return The OCID of the attached zone.
+     * @return The OCID of the attached zone. Must be a public zone.
      * 
      */
     private @Nullable String zoneId;
@@ -115,7 +115,7 @@ public final class GetSteeringPolicyAttachmentsResult {
         return Optional.ofNullable(this.timeCreatedLessThan);
     }
     /**
-     * @return The OCID of the attached zone.
+     * @return The OCID of the attached zone. Must be a public zone.
      * 
      */
     public Optional<String> zoneId() {

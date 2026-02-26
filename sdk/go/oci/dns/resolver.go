@@ -19,8 +19,12 @@ import (
 //
 // Updates the specified resolver with your new information.
 //
-// Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until created VCN's state shows as Available in OCI console before updating DNS resolver properties.
-// Also a VCN cannot be deleted while its resolver has resolver endpoints. Additionally a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove the rules from a resolver user needs to update the resolver resource. Since DNS Resolver gets deleted when VCN is deleted there is no support for Delete for DNS Resolver.
+// Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until the created VCN's state shows as Available in the OCI Console before updating DNS resolver properties.
+// A VCN cannot be deleted while its resolver has resolver endpoints. Additionally, a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove rules from a resolver, update the resolver resource.
+//
+// Destroy behavior: This resource does not delete the underlying DNS Resolver. The resolver itself is deleted only when the attached VCN is deleted. When this Terraform resource is destroyed, managed properties on the resolver (for example, attached views and rules) are cleared so the VCN can be deleted.
+//
+// Default view behavior on VCN delete: If the resolver's default view contains customer-created zones, deleting the VCN (which deletes the resolver) can convert that default view into a non-protected regular view. That view may persist even if it was never imported into Terraform state. To avoid orphaned resources, either delete the zones from the default view before deleting the VCN, or plan to clean up the resulting view afterward.
 //
 // ## Import
 //
@@ -56,12 +60,9 @@ type Resolver struct {
 	IsProtected pulumi.BoolOutput `pulumi:"isProtected"`
 	// The OCID of the target resolver.
 	ResolverId pulumi.StringOutput `pulumi:"resolverId"`
-	// (Updatable) Rules for the resolver. Rules are evaluated in order.
+	// (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
 	Rules ResolverRuleArrayOutput `pulumi:"rules"`
 	// Specifies to operate only on resources that have a matching DNS scope.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringOutput `pulumi:"self"`
@@ -130,12 +131,9 @@ type resolverState struct {
 	IsProtected *bool `pulumi:"isProtected"`
 	// The OCID of the target resolver.
 	ResolverId *string `pulumi:"resolverId"`
-	// (Updatable) Rules for the resolver. Rules are evaluated in order.
+	// (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
 	Rules []ResolverRule `pulumi:"rules"`
 	// Specifies to operate only on resources that have a matching DNS scope.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope *string `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self *string `pulumi:"self"`
@@ -172,12 +170,9 @@ type ResolverState struct {
 	IsProtected pulumi.BoolPtrInput
 	// The OCID of the target resolver.
 	ResolverId pulumi.StringPtrInput
-	// (Updatable) Rules for the resolver. Rules are evaluated in order.
+	// (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
 	Rules ResolverRuleArrayInput
 	// Specifies to operate only on resources that have a matching DNS scope.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope pulumi.StringPtrInput
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringPtrInput
@@ -210,12 +205,9 @@ type resolverArgs struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the target resolver.
 	ResolverId string `pulumi:"resolverId"`
-	// (Updatable) Rules for the resolver. Rules are evaluated in order.
+	// (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
 	Rules []ResolverRule `pulumi:"rules"`
 	// Specifies to operate only on resources that have a matching DNS scope.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope *string `pulumi:"scope"`
 }
 
@@ -237,12 +229,9 @@ type ResolverArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// The OCID of the target resolver.
 	ResolverId pulumi.StringInput
-	// (Updatable) Rules for the resolver. Rules are evaluated in order.
+	// (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
 	Rules ResolverRuleArrayInput
 	// Specifies to operate only on resources that have a matching DNS scope.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope pulumi.StringPtrInput
 }
 
@@ -387,15 +376,12 @@ func (o ResolverOutput) ResolverId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Resolver) pulumi.StringOutput { return v.ResolverId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Rules for the resolver. Rules are evaluated in order.
+// (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
 func (o ResolverOutput) Rules() ResolverRuleArrayOutput {
 	return o.ApplyT(func(v *Resolver) ResolverRuleArrayOutput { return v.Rules }).(ResolverRuleArrayOutput)
 }
 
 // Specifies to operate only on resources that have a matching DNS scope.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ResolverOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Resolver) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }

@@ -23,7 +23,7 @@ namespace Pulumi.Oci.Dns.Inputs
         private InputList<string>? _clientAddressConditions;
 
         /// <summary>
-        /// (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+        /// (Updatable) A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
         /// </summary>
         public InputList<string> ClientAddressConditions
         {
@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Dns.Inputs
         private InputList<string>? _qnameCoverConditions;
 
         /// <summary>
-        /// (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+        /// (Updatable) A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
         /// </summary>
         public InputList<string> QnameCoverConditions
         {

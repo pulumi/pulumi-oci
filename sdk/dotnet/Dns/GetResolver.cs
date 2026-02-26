@@ -115,7 +115,7 @@ namespace Pulumi.Oci.Dns
         public string ResolverId { get; set; } = null!;
 
         /// <summary>
-        /// Value must be `PRIVATE` when listing private name resolvers.
+        /// Value must be `PRIVATE` when listing private resolvers.
         /// </summary>
         [Input("scope")]
         public string? Scope { get; set; }
@@ -135,7 +135,7 @@ namespace Pulumi.Oci.Dns
         public Input<string> ResolverId { get; set; } = null!;
 
         /// <summary>
-        /// Value must be `PRIVATE` when listing private name resolvers.
+        /// Value must be `PRIVATE` when listing private resolvers.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
@@ -192,7 +192,7 @@ namespace Pulumi.Oci.Dns
         public readonly bool IsProtected;
         public readonly string ResolverId;
         /// <summary>
-        /// Rules for the resolver. Rules are evaluated in order.
+        /// Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetResolverRuleResult> Rules;
         public readonly string? Scope;

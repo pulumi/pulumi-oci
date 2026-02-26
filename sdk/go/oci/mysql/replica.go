@@ -50,6 +50,20 @@ import (
 //					NsgIds:             pulumi.Any(replicaReplicaOverridesNsgIds),
 //					SecurityAttributes: pulumi.Any(replicaReplicaOverridesSecurityAttributes),
 //					ShapeName:          pulumi.Any(testShape.Name),
+//					TelemetryConfiguration: &mysql.ReplicaReplicaOverridesTelemetryConfigurationArgs{
+//						Logs: mysql.ReplicaReplicaOverridesTelemetryConfigurationLogArray{
+//							&mysql.ReplicaReplicaOverridesTelemetryConfigurationLogArgs{
+//								Destination: pulumi.Any(replicaReplicaOverridesTelemetryConfigurationLogsDestination),
+//								DestinationConfigurations: mysql.ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArray{
+//									&mysql.ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArgs{
+//										Key:   pulumi.Any(replicaReplicaOverridesTelemetryConfigurationLogsDestinationConfigurationsKey),
+//										Value: pulumi.Any(replicaReplicaOverridesTelemetryConfigurationLogsDestinationConfigurationsValue),
+//									},
+//								},
+//								LogTypes: pulumi.Any(replicaReplicaOverridesTelemetryConfigurationLogsLogTypes),
+//							},
+//						},
+//					},
 //				},
 //			})
 //			if err != nil {
@@ -115,6 +129,8 @@ type Replica struct {
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
 	// The state of the read replica.
 	State pulumi.StringOutput `pulumi:"state"`
+	// Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfigurations ReplicaTelemetryConfigurationArrayOutput `pulumi:"telemetryConfigurations"`
 	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -198,6 +214,8 @@ type replicaState struct {
 	ShapeName *string `pulumi:"shapeName"`
 	// The state of the read replica.
 	State *string `pulumi:"state"`
+	// Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfigurations []ReplicaTelemetryConfiguration `pulumi:"telemetryConfigurations"`
 	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -249,6 +267,8 @@ type ReplicaState struct {
 	ShapeName pulumi.StringPtrInput
 	// The state of the read replica.
 	State pulumi.StringPtrInput
+	// Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfigurations ReplicaTelemetryConfigurationArrayInput
 	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated pulumi.StringPtrInput
 	// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -489,6 +509,11 @@ func (o ReplicaOutput) ShapeName() pulumi.StringOutput {
 // The state of the read replica.
 func (o ReplicaOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Replica) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// Telemetry configuration details of a DB System or a read replica.
+func (o ReplicaOutput) TelemetryConfigurations() ReplicaTelemetryConfigurationArrayOutput {
+	return o.ApplyT(func(v *Replica) ReplicaTelemetryConfigurationArrayOutput { return v.TelemetryConfigurations }).(ReplicaTelemetryConfigurationArrayOutput)
 }
 
 // The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).

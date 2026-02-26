@@ -13,21 +13,9 @@ namespace Pulumi.Oci.Dns.Outputs
     [OutputType]
     public sealed class GetZonesZoneZoneTransferServerResult
     {
-        /// <summary>
-        /// The server's IP address (IPv4 or IPv6).
-        /// </summary>
         public readonly string Address;
-        /// <summary>
-        /// A Boolean flag indicating whether or not the server is a zone data transfer destination.
-        /// </summary>
         public readonly bool IsTransferDestination;
-        /// <summary>
-        /// A Boolean flag indicating whether or not the server is a zone data transfer source.
-        /// </summary>
         public readonly bool IsTransferSource;
-        /// <summary>
-        /// The server's port. Port value must be a value of 53, otherwise omit the port value.
-        /// </summary>
         public readonly int Port;
 
         [OutputConstructor]

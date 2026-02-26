@@ -61,6 +61,10 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// The OCID of Oracle Cloud Infrastructure Lake.
         /// </summary>
         public readonly string LakeId;
+        public readonly string LogCompartmentId;
+        public readonly string LogDisplayName;
+        public readonly string LogGroupId;
+        public readonly int LogRetentionDuration;
         /// <summary>
         /// The maximum number of executors.
         /// </summary>
@@ -136,6 +140,14 @@ namespace Pulumi.Oci.DataFlow.Outputs
 
             string lakeId,
 
+            string logCompartmentId,
+
+            string logDisplayName,
+
+            string logGroupId,
+
+            int logRetentionDuration,
+
             int maxExecutorCount,
 
             string metastoreId,
@@ -172,6 +184,10 @@ namespace Pulumi.Oci.DataFlow.Outputs
             Id = id;
             JdbcEndpointUrl = jdbcEndpointUrl;
             LakeId = lakeId;
+            LogCompartmentId = logCompartmentId;
+            LogDisplayName = logDisplayName;
+            LogGroupId = logGroupId;
+            LogRetentionDuration = logRetentionDuration;
             MaxExecutorCount = maxExecutorCount;
             MetastoreId = metastoreId;
             MinExecutorCount = minExecutorCount;

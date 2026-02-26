@@ -30,6 +30,10 @@ import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBaseArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasePlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacitiesArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacitiesPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacityArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacityPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsArgs;
@@ -65,6 +69,8 @@ import com.pulumi.oci.GenerativeAi.outputs.GetAgentDataSourceResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentDataSourcesResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentKnowledgeBaseResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentKnowledgeBasesResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentProvisionedCapacitiesResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentProvisionedCapacityResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolsResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetDedicatedAiClusterResult;
@@ -2959,6 +2965,531 @@ public final class GenerativeAiFunctions {
      */
     public static CompletableFuture<GetAgentKnowledgeBasesResult> getAgentKnowledgeBasesPlain(GetAgentKnowledgeBasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getAgentKnowledgeBases:getAgentKnowledgeBases", TypeShape.of(GetAgentKnowledgeBasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Provisioned Capacities in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets a list of provisioned capacities.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProvisionedCapacities = GenerativeAiFunctions.getAgentProvisionedCapacities(GetAgentProvisionedCapacitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(provisionedCapacityDisplayName)
+     *             .provisionedCapacityId(testProvisionedCapacity.id())
+     *             .state(provisionedCapacityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAgentProvisionedCapacitiesResult> getAgentProvisionedCapacities() {
+        return getAgentProvisionedCapacities(GetAgentProvisionedCapacitiesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Provisioned Capacities in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets a list of provisioned capacities.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProvisionedCapacities = GenerativeAiFunctions.getAgentProvisionedCapacities(GetAgentProvisionedCapacitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(provisionedCapacityDisplayName)
+     *             .provisionedCapacityId(testProvisionedCapacity.id())
+     *             .state(provisionedCapacityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAgentProvisionedCapacitiesResult> getAgentProvisionedCapacitiesPlain() {
+        return getAgentProvisionedCapacitiesPlain(GetAgentProvisionedCapacitiesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Provisioned Capacities in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets a list of provisioned capacities.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProvisionedCapacities = GenerativeAiFunctions.getAgentProvisionedCapacities(GetAgentProvisionedCapacitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(provisionedCapacityDisplayName)
+     *             .provisionedCapacityId(testProvisionedCapacity.id())
+     *             .state(provisionedCapacityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAgentProvisionedCapacitiesResult> getAgentProvisionedCapacities(GetAgentProvisionedCapacitiesArgs args) {
+        return getAgentProvisionedCapacities(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Provisioned Capacities in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets a list of provisioned capacities.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProvisionedCapacities = GenerativeAiFunctions.getAgentProvisionedCapacities(GetAgentProvisionedCapacitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(provisionedCapacityDisplayName)
+     *             .provisionedCapacityId(testProvisionedCapacity.id())
+     *             .state(provisionedCapacityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAgentProvisionedCapacitiesResult> getAgentProvisionedCapacitiesPlain(GetAgentProvisionedCapacitiesPlainArgs args) {
+        return getAgentProvisionedCapacitiesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Provisioned Capacities in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets a list of provisioned capacities.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProvisionedCapacities = GenerativeAiFunctions.getAgentProvisionedCapacities(GetAgentProvisionedCapacitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(provisionedCapacityDisplayName)
+     *             .provisionedCapacityId(testProvisionedCapacity.id())
+     *             .state(provisionedCapacityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAgentProvisionedCapacitiesResult> getAgentProvisionedCapacities(GetAgentProvisionedCapacitiesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentProvisionedCapacities:getAgentProvisionedCapacities", TypeShape.of(GetAgentProvisionedCapacitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Provisioned Capacities in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets a list of provisioned capacities.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProvisionedCapacities = GenerativeAiFunctions.getAgentProvisionedCapacities(GetAgentProvisionedCapacitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(provisionedCapacityDisplayName)
+     *             .provisionedCapacityId(testProvisionedCapacity.id())
+     *             .state(provisionedCapacityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAgentProvisionedCapacitiesResult> getAgentProvisionedCapacities(GetAgentProvisionedCapacitiesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentProvisionedCapacities:getAgentProvisionedCapacities", TypeShape.of(GetAgentProvisionedCapacitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Provisioned Capacities in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets a list of provisioned capacities.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProvisionedCapacities = GenerativeAiFunctions.getAgentProvisionedCapacities(GetAgentProvisionedCapacitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(provisionedCapacityDisplayName)
+     *             .provisionedCapacityId(testProvisionedCapacity.id())
+     *             .state(provisionedCapacityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAgentProvisionedCapacitiesResult> getAgentProvisionedCapacitiesPlain(GetAgentProvisionedCapacitiesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getAgentProvisionedCapacities:getAgentProvisionedCapacities", TypeShape.of(GetAgentProvisionedCapacitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Provisioned Capacity resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets information about a provisioned capacity.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProvisionedCapacity = GenerativeAiFunctions.getAgentProvisionedCapacity(GetAgentProvisionedCapacityArgs.builder()
+     *             .provisionedCapacityId(testProvisionedCapacityOciGenerativeAiAgentProvisionedCapacity.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAgentProvisionedCapacityResult> getAgentProvisionedCapacity(GetAgentProvisionedCapacityArgs args) {
+        return getAgentProvisionedCapacity(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Provisioned Capacity resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets information about a provisioned capacity.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProvisionedCapacity = GenerativeAiFunctions.getAgentProvisionedCapacity(GetAgentProvisionedCapacityArgs.builder()
+     *             .provisionedCapacityId(testProvisionedCapacityOciGenerativeAiAgentProvisionedCapacity.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAgentProvisionedCapacityResult> getAgentProvisionedCapacityPlain(GetAgentProvisionedCapacityPlainArgs args) {
+        return getAgentProvisionedCapacityPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Provisioned Capacity resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets information about a provisioned capacity.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProvisionedCapacity = GenerativeAiFunctions.getAgentProvisionedCapacity(GetAgentProvisionedCapacityArgs.builder()
+     *             .provisionedCapacityId(testProvisionedCapacityOciGenerativeAiAgentProvisionedCapacity.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAgentProvisionedCapacityResult> getAgentProvisionedCapacity(GetAgentProvisionedCapacityArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentProvisionedCapacity:getAgentProvisionedCapacity", TypeShape.of(GetAgentProvisionedCapacityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Provisioned Capacity resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets information about a provisioned capacity.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProvisionedCapacity = GenerativeAiFunctions.getAgentProvisionedCapacity(GetAgentProvisionedCapacityArgs.builder()
+     *             .provisionedCapacityId(testProvisionedCapacityOciGenerativeAiAgentProvisionedCapacity.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAgentProvisionedCapacityResult> getAgentProvisionedCapacity(GetAgentProvisionedCapacityArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentProvisionedCapacity:getAgentProvisionedCapacity", TypeShape.of(GetAgentProvisionedCapacityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Provisioned Capacity resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets information about a provisioned capacity.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProvisionedCapacity = GenerativeAiFunctions.getAgentProvisionedCapacity(GetAgentProvisionedCapacityArgs.builder()
+     *             .provisionedCapacityId(testProvisionedCapacityOciGenerativeAiAgentProvisionedCapacity.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAgentProvisionedCapacityResult> getAgentProvisionedCapacityPlain(GetAgentProvisionedCapacityPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getAgentProvisionedCapacity:getAgentProvisionedCapacity", TypeShape.of(GetAgentProvisionedCapacityResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Tool resource in Oracle Cloud Infrastructure Generative Ai Agent service.

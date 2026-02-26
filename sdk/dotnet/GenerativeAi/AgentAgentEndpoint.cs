@@ -79,6 +79,23 @@ namespace Pulumi.Oci.GenerativeAi
     ///             },
     ///             RetentionPeriodInMinutes = agentEndpointOutputConfigRetentionPeriodInMinutes,
     ///         },
+    ///         ProvisionedCapacityConfig = new Oci.GenerativeAi.Inputs.AgentAgentEndpointProvisionedCapacityConfigArgs
+    ///         {
+    ///             ProvisionedCapacityId = testProvisionedCapacity.Id,
+    ///             PlatformRuntimeConfig = new Oci.GenerativeAi.Inputs.AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgs
+    ///             {
+    ///                 PlatformRuntimeConfigType = agentEndpointProvisionedCapacityConfigPlatformRuntimeConfigPlatformRuntimeConfigType,
+    ///                 Version = agentEndpointProvisionedCapacityConfigPlatformRuntimeConfigVersion,
+    ///             },
+    ///             ToolRuntimeConfigs = new[]
+    ///             {
+    ///                 new Oci.GenerativeAi.Inputs.AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfigArgs
+    ///                 {
+    ///                     ToolRuntimeConfigType = agentEndpointProvisionedCapacityConfigToolRuntimeConfigsToolRuntimeConfigType,
+    ///                     Version = agentEndpointProvisionedCapacityConfigToolRuntimeConfigsVersion,
+    ///                 },
+    ///             },
+    ///         },
     ///         SessionConfig = new Oci.GenerativeAi.Inputs.AgentAgentEndpointSessionConfigArgs
     ///         {
     ///             IdleTimeoutInSeconds = agentEndpointSessionConfigIdleTimeoutInSeconds,
@@ -174,6 +191,12 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         [Output("outputConfig")]
         public Output<Outputs.AgentAgentEndpointOutputConfig> OutputConfig { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
+        /// </summary>
+        [Output("provisionedCapacityConfig")]
+        public Output<Outputs.AgentAgentEndpointProvisionedCapacityConfig> ProvisionedCapacityConfig { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Session Configuration on AgentEndpoint.
@@ -364,6 +387,12 @@ namespace Pulumi.Oci.GenerativeAi
         public Input<Inputs.AgentAgentEndpointOutputConfigArgs>? OutputConfig { get; set; }
 
         /// <summary>
+        /// (Updatable) The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
+        /// </summary>
+        [Input("provisionedCapacityConfig")]
+        public Input<Inputs.AgentAgentEndpointProvisionedCapacityConfigArgs>? ProvisionedCapacityConfig { get; set; }
+
+        /// <summary>
         /// (Updatable) Session Configuration on AgentEndpoint.
         /// </summary>
         [Input("sessionConfig")]
@@ -494,6 +523,12 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         [Input("outputConfig")]
         public Input<Inputs.AgentAgentEndpointOutputConfigGetArgs>? OutputConfig { get; set; }
+
+        /// <summary>
+        /// (Updatable) The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
+        /// </summary>
+        [Input("provisionedCapacityConfig")]
+        public Input<Inputs.AgentAgentEndpointProvisionedCapacityConfigGetArgs>? ProvisionedCapacityConfig { get; set; }
 
         /// <summary>
         /// (Updatable) Session Configuration on AgentEndpoint.

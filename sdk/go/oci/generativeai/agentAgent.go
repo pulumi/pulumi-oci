@@ -46,8 +46,15 @@ import (
 //				KnowledgeBaseIds: pulumi.Any(agentKnowledgeBaseIds),
 //				LlmConfig: &generativeai.AgentAgentLlmConfigArgs{
 //					RoutingLlmCustomization: &generativeai.AgentAgentLlmConfigRoutingLlmCustomizationArgs{
-//						Instruction: pulumi.Any(agentLlmConfigRoutingLlmCustomizationInstruction),
+//						Instruction:        pulumi.Any(agentLlmConfigRoutingLlmCustomizationInstruction),
+//						LlmHyperParameters: pulumi.Any(agentLlmConfigRoutingLlmCustomizationLlmHyperParameters),
+//						LlmSelection: &generativeai.AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionArgs{
+//							LlmSelectionType: pulumi.Any(agentLlmConfigRoutingLlmCustomizationLlmSelectionLlmSelectionType),
+//							EndpointId:       pulumi.Any(testEndpoint.Id),
+//							ModelId:          pulumi.Any(testModel.Id),
+//						},
 //					},
+//					RuntimeVersion: pulumi.Any(agentLlmConfigRuntimeVersion),
 //				},
 //				WelcomeMessage: pulumi.Any(agentWelcomeMessage),
 //			})

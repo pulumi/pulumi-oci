@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Mysql.outputs.GetReplicasReplicaReplicaOverrideTelemetryConfiguration;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +38,11 @@ public final class GetReplicasReplicaReplicaOverride {
      * 
      */
     private String shapeName;
+    /**
+     * @return Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    private List<GetReplicasReplicaReplicaOverrideTelemetryConfiguration> telemetryConfigurations;
 
     private GetReplicasReplicaReplicaOverride() {}
     /**
@@ -74,6 +80,13 @@ public final class GetReplicasReplicaReplicaOverride {
     public String shapeName() {
         return this.shapeName;
     }
+    /**
+     * @return Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    public List<GetReplicasReplicaReplicaOverrideTelemetryConfiguration> telemetryConfigurations() {
+        return this.telemetryConfigurations;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -89,6 +102,7 @@ public final class GetReplicasReplicaReplicaOverride {
         private List<String> nsgIds;
         private Map<String,String> securityAttributes;
         private String shapeName;
+        private List<GetReplicasReplicaReplicaOverrideTelemetryConfiguration> telemetryConfigurations;
         public Builder() {}
         public Builder(GetReplicasReplicaReplicaOverride defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,6 +111,7 @@ public final class GetReplicasReplicaReplicaOverride {
     	      this.nsgIds = defaults.nsgIds;
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.shapeName = defaults.shapeName;
+    	      this.telemetryConfigurations = defaults.telemetryConfigurations;
         }
 
         @CustomType.Setter
@@ -142,6 +157,17 @@ public final class GetReplicasReplicaReplicaOverride {
             this.shapeName = shapeName;
             return this;
         }
+        @CustomType.Setter
+        public Builder telemetryConfigurations(List<GetReplicasReplicaReplicaOverrideTelemetryConfiguration> telemetryConfigurations) {
+            if (telemetryConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetReplicasReplicaReplicaOverride", "telemetryConfigurations");
+            }
+            this.telemetryConfigurations = telemetryConfigurations;
+            return this;
+        }
+        public Builder telemetryConfigurations(GetReplicasReplicaReplicaOverrideTelemetryConfiguration... telemetryConfigurations) {
+            return telemetryConfigurations(List.of(telemetryConfigurations));
+        }
         public GetReplicasReplicaReplicaOverride build() {
             final var _resultValue = new GetReplicasReplicaReplicaOverride();
             _resultValue.configurationId = configurationId;
@@ -149,6 +175,7 @@ public final class GetReplicasReplicaReplicaOverride {
             _resultValue.nsgIds = nsgIds;
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.shapeName = shapeName;
+            _resultValue.telemetryConfigurations = telemetryConfigurations;
             return _resultValue;
         }
     }

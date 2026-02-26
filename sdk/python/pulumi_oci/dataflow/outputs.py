@@ -4244,6 +4244,10 @@ class GetSqlEndpointsSqlEndpointCollectionItemResult(dict):
                  id: _builtins.str,
                  jdbc_endpoint_url: _builtins.str,
                  lake_id: _builtins.str,
+                 log_compartment_id: _builtins.str,
+                 log_display_name: _builtins.str,
+                 log_group_id: _builtins.str,
+                 log_retention_duration: _builtins.int,
                  max_executor_count: _builtins.int,
                  metastore_id: _builtins.str,
                  min_executor_count: _builtins.int,
@@ -4294,6 +4298,10 @@ class GetSqlEndpointsSqlEndpointCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "jdbc_endpoint_url", jdbc_endpoint_url)
         pulumi.set(__self__, "lake_id", lake_id)
+        pulumi.set(__self__, "log_compartment_id", log_compartment_id)
+        pulumi.set(__self__, "log_display_name", log_display_name)
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_retention_duration", log_retention_duration)
         pulumi.set(__self__, "max_executor_count", max_executor_count)
         pulumi.set(__self__, "metastore_id", metastore_id)
         pulumi.set(__self__, "min_executor_count", min_executor_count)
@@ -4402,6 +4410,26 @@ class GetSqlEndpointsSqlEndpointCollectionItemResult(dict):
         The OCID of Oracle Cloud Infrastructure Lake.
         """
         return pulumi.get(self, "lake_id")
+
+    @_builtins.property
+    @pulumi.getter(name="logCompartmentId")
+    def log_compartment_id(self) -> _builtins.str:
+        return pulumi.get(self, "log_compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="logDisplayName")
+    def log_display_name(self) -> _builtins.str:
+        return pulumi.get(self, "log_display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> _builtins.str:
+        return pulumi.get(self, "log_group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="logRetentionDuration")
+    def log_retention_duration(self) -> _builtins.int:
+        return pulumi.get(self, "log_retention_duration")
 
     @_builtins.property
     @pulumi.getter(name="maxExecutorCount")

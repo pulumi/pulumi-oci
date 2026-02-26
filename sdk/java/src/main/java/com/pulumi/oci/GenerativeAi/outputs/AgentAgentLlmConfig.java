@@ -5,6 +5,7 @@ package com.pulumi.oci.GenerativeAi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.GenerativeAi.outputs.AgentAgentLlmConfigRoutingLlmCustomization;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -16,6 +17,11 @@ public final class AgentAgentLlmConfig {
      * 
      */
     private @Nullable AgentAgentLlmConfigRoutingLlmCustomization routingLlmCustomization;
+    /**
+     * @return (Updatable) The runtimeVersion of the system prompt.
+     * 
+     */
+    private @Nullable String runtimeVersion;
 
     private AgentAgentLlmConfig() {}
     /**
@@ -24,6 +30,13 @@ public final class AgentAgentLlmConfig {
      */
     public Optional<AgentAgentLlmConfigRoutingLlmCustomization> routingLlmCustomization() {
         return Optional.ofNullable(this.routingLlmCustomization);
+    }
+    /**
+     * @return (Updatable) The runtimeVersion of the system prompt.
+     * 
+     */
+    public Optional<String> runtimeVersion() {
+        return Optional.ofNullable(this.runtimeVersion);
     }
 
     public static Builder builder() {
@@ -36,10 +49,12 @@ public final class AgentAgentLlmConfig {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable AgentAgentLlmConfigRoutingLlmCustomization routingLlmCustomization;
+        private @Nullable String runtimeVersion;
         public Builder() {}
         public Builder(AgentAgentLlmConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.routingLlmCustomization = defaults.routingLlmCustomization;
+    	      this.runtimeVersion = defaults.runtimeVersion;
         }
 
         @CustomType.Setter
@@ -48,9 +63,16 @@ public final class AgentAgentLlmConfig {
             this.routingLlmCustomization = routingLlmCustomization;
             return this;
         }
+        @CustomType.Setter
+        public Builder runtimeVersion(@Nullable String runtimeVersion) {
+
+            this.runtimeVersion = runtimeVersion;
+            return this;
+        }
         public AgentAgentLlmConfig build() {
             final var _resultValue = new AgentAgentLlmConfig();
             _resultValue.routingLlmCustomization = routingLlmCustomization;
+            _resultValue.runtimeVersion = runtimeVersion;
             return _resultValue;
         }
     }

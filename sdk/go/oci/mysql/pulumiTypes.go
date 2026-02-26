@@ -1464,6 +1464,8 @@ type MysqlBackupDbSystemSnapshot struct {
 	ShapeName *string `pulumi:"shapeName"`
 	// The OCID of the subnet the DB System is associated with.
 	SubnetId *string `pulumi:"subnetId"`
+	// Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfiguration *MysqlBackupDbSystemSnapshotTelemetryConfiguration `pulumi:"telemetryConfiguration"`
 }
 
 // MysqlBackupDbSystemSnapshotInput is an input type that accepts MysqlBackupDbSystemSnapshotArgs and MysqlBackupDbSystemSnapshotOutput values.
@@ -1546,6 +1548,8 @@ type MysqlBackupDbSystemSnapshotArgs struct {
 	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
 	// The OCID of the subnet the DB System is associated with.
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+	// Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfiguration MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrInput `pulumi:"telemetryConfiguration"`
 }
 
 func (MysqlBackupDbSystemSnapshotArgs) ElementType() reflect.Type {
@@ -1773,6 +1777,13 @@ func (o MysqlBackupDbSystemSnapshotOutput) ShapeName() pulumi.StringPtrOutput {
 // The OCID of the subnet the DB System is associated with.
 func (o MysqlBackupDbSystemSnapshotOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+// Telemetry configuration details of a DB System or a read replica.
+func (o MysqlBackupDbSystemSnapshotOutput) TelemetryConfiguration() MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *MysqlBackupDbSystemSnapshotTelemetryConfiguration {
+		return v.TelemetryConfiguration
+	}).(MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput)
 }
 
 type MysqlBackupDbSystemSnapshotArrayOutput struct{ *pulumi.OutputState }
@@ -3499,6 +3510,372 @@ func (o MysqlBackupDbSystemSnapshotSummaryArrayOutput) Index(i pulumi.IntInput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotSummary {
 		return vs[0].([]MysqlBackupDbSystemSnapshotSummary)[vs[1].(int)]
 	}).(MysqlBackupDbSystemSnapshotSummaryOutput)
+}
+
+type MysqlBackupDbSystemSnapshotTelemetryConfiguration struct {
+	// Telemetry configuration details for logging.
+	Logs []MysqlBackupDbSystemSnapshotTelemetryConfigurationLog `pulumi:"logs"`
+}
+
+// MysqlBackupDbSystemSnapshotTelemetryConfigurationInput is an input type that accepts MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs and MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotTelemetryConfigurationInput` via:
+//
+//	MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs{...}
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput
+	ToMysqlBackupDbSystemSnapshotTelemetryConfigurationOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput
+}
+
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs struct {
+	// Telemetry configuration details for logging.
+	Logs MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayInput `pulumi:"logs"`
+}
+
+func (MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput {
+	return i.ToMysqlBackupDbSystemSnapshotTelemetryConfigurationOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput)
+}
+
+func (i MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput {
+	return i.ToMysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput).ToMysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutputWithContext(ctx)
+}
+
+// MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrInput is an input type that accepts MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs, MysqlBackupDbSystemSnapshotTelemetryConfigurationPtr and MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrInput` via:
+//
+//	        MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput
+	ToMysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput
+}
+
+type mysqlBackupDbSystemSnapshotTelemetryConfigurationPtrType MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs
+
+func MysqlBackupDbSystemSnapshotTelemetryConfigurationPtr(v *MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs) MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrInput {
+	return (*mysqlBackupDbSystemSnapshotTelemetryConfigurationPtrType)(v)
+}
+
+func (*mysqlBackupDbSystemSnapshotTelemetryConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlBackupDbSystemSnapshotTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i *mysqlBackupDbSystemSnapshotTelemetryConfigurationPtrType) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput {
+	return i.ToMysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *mysqlBackupDbSystemSnapshotTelemetryConfigurationPtrType) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput)
+}
+
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput {
+	return o.ToMysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlBackupDbSystemSnapshotTelemetryConfiguration) *MysqlBackupDbSystemSnapshotTelemetryConfiguration {
+		return &v
+	}).(MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput)
+}
+
+// Telemetry configuration details for logging.
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput) Logs() MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotTelemetryConfiguration) []MysqlBackupDbSystemSnapshotTelemetryConfigurationLog {
+		return v.Logs
+	}).(MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput)
+}
+
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlBackupDbSystemSnapshotTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput) Elem() MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput {
+	return o.ApplyT(func(v *MysqlBackupDbSystemSnapshotTelemetryConfiguration) MysqlBackupDbSystemSnapshotTelemetryConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret MysqlBackupDbSystemSnapshotTelemetryConfiguration
+		return ret
+	}).(MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput)
+}
+
+// Telemetry configuration details for logging.
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput) Logs() MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput {
+	return o.ApplyT(func(v *MysqlBackupDbSystemSnapshotTelemetryConfiguration) []MysqlBackupDbSystemSnapshotTelemetryConfigurationLog {
+		if v == nil {
+			return nil
+		}
+		return v.Logs
+	}).(MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput)
+}
+
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationLog struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination string `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations []MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes []string `pulumi:"logTypes"`
+}
+
+// MysqlBackupDbSystemSnapshotTelemetryConfigurationLogInput is an input type that accepts MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs and MysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotTelemetryConfigurationLogInput` via:
+//
+//	MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs{...}
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationLogInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput
+	ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput
+}
+
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination pulumi.StringInput `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayInput `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes pulumi.StringArrayInput `pulumi:"logTypes"`
+}
+
+func (MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput {
+	return i.ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput)
+}
+
+// MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArray and MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayInput` via:
+//
+//	MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArray{ MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs{...} }
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput
+	ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput
+}
+
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArray []MysqlBackupDbSystemSnapshotTelemetryConfigurationLogInput
+
+func (MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArray) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput {
+	return i.ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArray) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput)
+}
+
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput {
+	return o
+}
+
+// Type of destination where MySQL telemetry is exposed to.
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput) Destination() pulumi.StringOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotTelemetryConfigurationLog) string { return v.Destination }).(pulumi.StringOutput)
+}
+
+// List of configuration variables for a given destination type.
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput) DestinationConfigurations() MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotTelemetryConfigurationLog) []MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration {
+		return v.DestinationConfigurations
+	}).(MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+// List of MySQL telemetry types that can be exposed on a telemetry destination
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput) LogTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotTelemetryConfigurationLog) []string { return v.LogTypes }).(pulumi.StringArrayOutput)
+}
+
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotTelemetryConfigurationLog {
+		return vs[0].([]MysqlBackupDbSystemSnapshotTelemetryConfigurationLog)[vs[1].(int)]
+	}).(MysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput)
+}
+
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration struct {
+	// Name of the destination configuration variable.
+	Key string `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value string `pulumi:"value"`
+}
+
+// MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationInput is an input type that accepts MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArgs and MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationInput` via:
+//
+//	MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArgs{...}
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput
+	ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput
+}
+
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArgs struct {
+	// Name of the destination configuration variable.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArgs) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput {
+	return i.ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArgs) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput)
+}
+
+// MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArray and MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayInput` via:
+//
+//	MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArray{ MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArgs{...} }
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput
+	ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput
+}
+
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArray []MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationInput
+
+func (MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArray) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return i.ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArray) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+// Name of the destination configuration variable.
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Value of the destination configuration variable.
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput() MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration {
+		return vs[0].([]MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration)[vs[1].(int)]
+	}).(MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput)
 }
 
 type MysqlBackupEncryptData struct {
@@ -8661,7 +9038,7 @@ func (o MysqlDbSystemChannelTargetArrayOutput) Index(i pulumi.IntInput) MysqlDbS
 type MysqlDbSystemChannelTargetFilter struct {
 	// The type of the filter rule.
 	Type *string `pulumi:"type"`
-	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+	// Value of the destination configuration variable.
 	Value *string `pulumi:"value"`
 }
 
@@ -8679,7 +9056,7 @@ type MysqlDbSystemChannelTargetFilterInput interface {
 type MysqlDbSystemChannelTargetFilterArgs struct {
 	// The type of the filter rule.
 	Type pulumi.StringPtrInput `pulumi:"type"`
-	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+	// Value of the destination configuration variable.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -8739,7 +9116,7 @@ func (o MysqlDbSystemChannelTargetFilterOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannelTargetFilter) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
-// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+// Value of the destination configuration variable.
 func (o MysqlDbSystemChannelTargetFilterOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannelTargetFilter) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -11201,6 +11578,366 @@ func (o MysqlDbSystemSourcePtrOutput) SourceUrl() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type MysqlDbSystemTelemetryConfiguration struct {
+	// (Updatable) Telemetry configuration details for logging.
+	Logs []MysqlDbSystemTelemetryConfigurationLog `pulumi:"logs"`
+}
+
+// MysqlDbSystemTelemetryConfigurationInput is an input type that accepts MysqlDbSystemTelemetryConfigurationArgs and MysqlDbSystemTelemetryConfigurationOutput values.
+// You can construct a concrete instance of `MysqlDbSystemTelemetryConfigurationInput` via:
+//
+//	MysqlDbSystemTelemetryConfigurationArgs{...}
+type MysqlDbSystemTelemetryConfigurationInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemTelemetryConfigurationOutput() MysqlDbSystemTelemetryConfigurationOutput
+	ToMysqlDbSystemTelemetryConfigurationOutputWithContext(context.Context) MysqlDbSystemTelemetryConfigurationOutput
+}
+
+type MysqlDbSystemTelemetryConfigurationArgs struct {
+	// (Updatable) Telemetry configuration details for logging.
+	Logs MysqlDbSystemTelemetryConfigurationLogArrayInput `pulumi:"logs"`
+}
+
+func (MysqlDbSystemTelemetryConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i MysqlDbSystemTelemetryConfigurationArgs) ToMysqlDbSystemTelemetryConfigurationOutput() MysqlDbSystemTelemetryConfigurationOutput {
+	return i.ToMysqlDbSystemTelemetryConfigurationOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemTelemetryConfigurationArgs) ToMysqlDbSystemTelemetryConfigurationOutputWithContext(ctx context.Context) MysqlDbSystemTelemetryConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemTelemetryConfigurationOutput)
+}
+
+func (i MysqlDbSystemTelemetryConfigurationArgs) ToMysqlDbSystemTelemetryConfigurationPtrOutput() MysqlDbSystemTelemetryConfigurationPtrOutput {
+	return i.ToMysqlDbSystemTelemetryConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemTelemetryConfigurationArgs) ToMysqlDbSystemTelemetryConfigurationPtrOutputWithContext(ctx context.Context) MysqlDbSystemTelemetryConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemTelemetryConfigurationOutput).ToMysqlDbSystemTelemetryConfigurationPtrOutputWithContext(ctx)
+}
+
+// MysqlDbSystemTelemetryConfigurationPtrInput is an input type that accepts MysqlDbSystemTelemetryConfigurationArgs, MysqlDbSystemTelemetryConfigurationPtr and MysqlDbSystemTelemetryConfigurationPtrOutput values.
+// You can construct a concrete instance of `MysqlDbSystemTelemetryConfigurationPtrInput` via:
+//
+//	        MysqlDbSystemTelemetryConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type MysqlDbSystemTelemetryConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemTelemetryConfigurationPtrOutput() MysqlDbSystemTelemetryConfigurationPtrOutput
+	ToMysqlDbSystemTelemetryConfigurationPtrOutputWithContext(context.Context) MysqlDbSystemTelemetryConfigurationPtrOutput
+}
+
+type mysqlDbSystemTelemetryConfigurationPtrType MysqlDbSystemTelemetryConfigurationArgs
+
+func MysqlDbSystemTelemetryConfigurationPtr(v *MysqlDbSystemTelemetryConfigurationArgs) MysqlDbSystemTelemetryConfigurationPtrInput {
+	return (*mysqlDbSystemTelemetryConfigurationPtrType)(v)
+}
+
+func (*mysqlDbSystemTelemetryConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i *mysqlDbSystemTelemetryConfigurationPtrType) ToMysqlDbSystemTelemetryConfigurationPtrOutput() MysqlDbSystemTelemetryConfigurationPtrOutput {
+	return i.ToMysqlDbSystemTelemetryConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *mysqlDbSystemTelemetryConfigurationPtrType) ToMysqlDbSystemTelemetryConfigurationPtrOutputWithContext(ctx context.Context) MysqlDbSystemTelemetryConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemTelemetryConfigurationPtrOutput)
+}
+
+type MysqlDbSystemTelemetryConfigurationOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemTelemetryConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o MysqlDbSystemTelemetryConfigurationOutput) ToMysqlDbSystemTelemetryConfigurationOutput() MysqlDbSystemTelemetryConfigurationOutput {
+	return o
+}
+
+func (o MysqlDbSystemTelemetryConfigurationOutput) ToMysqlDbSystemTelemetryConfigurationOutputWithContext(ctx context.Context) MysqlDbSystemTelemetryConfigurationOutput {
+	return o
+}
+
+func (o MysqlDbSystemTelemetryConfigurationOutput) ToMysqlDbSystemTelemetryConfigurationPtrOutput() MysqlDbSystemTelemetryConfigurationPtrOutput {
+	return o.ToMysqlDbSystemTelemetryConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o MysqlDbSystemTelemetryConfigurationOutput) ToMysqlDbSystemTelemetryConfigurationPtrOutputWithContext(ctx context.Context) MysqlDbSystemTelemetryConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlDbSystemTelemetryConfiguration) *MysqlDbSystemTelemetryConfiguration {
+		return &v
+	}).(MysqlDbSystemTelemetryConfigurationPtrOutput)
+}
+
+// (Updatable) Telemetry configuration details for logging.
+func (o MysqlDbSystemTelemetryConfigurationOutput) Logs() MysqlDbSystemTelemetryConfigurationLogArrayOutput {
+	return o.ApplyT(func(v MysqlDbSystemTelemetryConfiguration) []MysqlDbSystemTelemetryConfigurationLog { return v.Logs }).(MysqlDbSystemTelemetryConfigurationLogArrayOutput)
+}
+
+type MysqlDbSystemTelemetryConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemTelemetryConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o MysqlDbSystemTelemetryConfigurationPtrOutput) ToMysqlDbSystemTelemetryConfigurationPtrOutput() MysqlDbSystemTelemetryConfigurationPtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemTelemetryConfigurationPtrOutput) ToMysqlDbSystemTelemetryConfigurationPtrOutputWithContext(ctx context.Context) MysqlDbSystemTelemetryConfigurationPtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemTelemetryConfigurationPtrOutput) Elem() MysqlDbSystemTelemetryConfigurationOutput {
+	return o.ApplyT(func(v *MysqlDbSystemTelemetryConfiguration) MysqlDbSystemTelemetryConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret MysqlDbSystemTelemetryConfiguration
+		return ret
+	}).(MysqlDbSystemTelemetryConfigurationOutput)
+}
+
+// (Updatable) Telemetry configuration details for logging.
+func (o MysqlDbSystemTelemetryConfigurationPtrOutput) Logs() MysqlDbSystemTelemetryConfigurationLogArrayOutput {
+	return o.ApplyT(func(v *MysqlDbSystemTelemetryConfiguration) []MysqlDbSystemTelemetryConfigurationLog {
+		if v == nil {
+			return nil
+		}
+		return v.Logs
+	}).(MysqlDbSystemTelemetryConfigurationLogArrayOutput)
+}
+
+type MysqlDbSystemTelemetryConfigurationLog struct {
+	// (Updatable) Type of destination where MySQL telemetry is exposed to. Use `LOG_ANALYTICS` to send logs to OCI Log Analytics.
+	Destination string `pulumi:"destination"`
+	// (Updatable) List of configuration variables for a given destination type.
+	DestinationConfigurations []MysqlDbSystemTelemetryConfigurationLogDestinationConfiguration `pulumi:"destinationConfigurations"`
+	// (Updatable) List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes []string `pulumi:"logTypes"`
+}
+
+// MysqlDbSystemTelemetryConfigurationLogInput is an input type that accepts MysqlDbSystemTelemetryConfigurationLogArgs and MysqlDbSystemTelemetryConfigurationLogOutput values.
+// You can construct a concrete instance of `MysqlDbSystemTelemetryConfigurationLogInput` via:
+//
+//	MysqlDbSystemTelemetryConfigurationLogArgs{...}
+type MysqlDbSystemTelemetryConfigurationLogInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemTelemetryConfigurationLogOutput() MysqlDbSystemTelemetryConfigurationLogOutput
+	ToMysqlDbSystemTelemetryConfigurationLogOutputWithContext(context.Context) MysqlDbSystemTelemetryConfigurationLogOutput
+}
+
+type MysqlDbSystemTelemetryConfigurationLogArgs struct {
+	// (Updatable) Type of destination where MySQL telemetry is exposed to. Use `LOG_ANALYTICS` to send logs to OCI Log Analytics.
+	Destination pulumi.StringInput `pulumi:"destination"`
+	// (Updatable) List of configuration variables for a given destination type.
+	DestinationConfigurations MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayInput `pulumi:"destinationConfigurations"`
+	// (Updatable) List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes pulumi.StringArrayInput `pulumi:"logTypes"`
+}
+
+func (MysqlDbSystemTelemetryConfigurationLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i MysqlDbSystemTelemetryConfigurationLogArgs) ToMysqlDbSystemTelemetryConfigurationLogOutput() MysqlDbSystemTelemetryConfigurationLogOutput {
+	return i.ToMysqlDbSystemTelemetryConfigurationLogOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemTelemetryConfigurationLogArgs) ToMysqlDbSystemTelemetryConfigurationLogOutputWithContext(ctx context.Context) MysqlDbSystemTelemetryConfigurationLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemTelemetryConfigurationLogOutput)
+}
+
+// MysqlDbSystemTelemetryConfigurationLogArrayInput is an input type that accepts MysqlDbSystemTelemetryConfigurationLogArray and MysqlDbSystemTelemetryConfigurationLogArrayOutput values.
+// You can construct a concrete instance of `MysqlDbSystemTelemetryConfigurationLogArrayInput` via:
+//
+//	MysqlDbSystemTelemetryConfigurationLogArray{ MysqlDbSystemTelemetryConfigurationLogArgs{...} }
+type MysqlDbSystemTelemetryConfigurationLogArrayInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemTelemetryConfigurationLogArrayOutput() MysqlDbSystemTelemetryConfigurationLogArrayOutput
+	ToMysqlDbSystemTelemetryConfigurationLogArrayOutputWithContext(context.Context) MysqlDbSystemTelemetryConfigurationLogArrayOutput
+}
+
+type MysqlDbSystemTelemetryConfigurationLogArray []MysqlDbSystemTelemetryConfigurationLogInput
+
+func (MysqlDbSystemTelemetryConfigurationLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlDbSystemTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i MysqlDbSystemTelemetryConfigurationLogArray) ToMysqlDbSystemTelemetryConfigurationLogArrayOutput() MysqlDbSystemTelemetryConfigurationLogArrayOutput {
+	return i.ToMysqlDbSystemTelemetryConfigurationLogArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemTelemetryConfigurationLogArray) ToMysqlDbSystemTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) MysqlDbSystemTelemetryConfigurationLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemTelemetryConfigurationLogArrayOutput)
+}
+
+type MysqlDbSystemTelemetryConfigurationLogOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemTelemetryConfigurationLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o MysqlDbSystemTelemetryConfigurationLogOutput) ToMysqlDbSystemTelemetryConfigurationLogOutput() MysqlDbSystemTelemetryConfigurationLogOutput {
+	return o
+}
+
+func (o MysqlDbSystemTelemetryConfigurationLogOutput) ToMysqlDbSystemTelemetryConfigurationLogOutputWithContext(ctx context.Context) MysqlDbSystemTelemetryConfigurationLogOutput {
+	return o
+}
+
+// (Updatable) Type of destination where MySQL telemetry is exposed to. Use `LOG_ANALYTICS` to send logs to OCI Log Analytics.
+func (o MysqlDbSystemTelemetryConfigurationLogOutput) Destination() pulumi.StringOutput {
+	return o.ApplyT(func(v MysqlDbSystemTelemetryConfigurationLog) string { return v.Destination }).(pulumi.StringOutput)
+}
+
+// (Updatable) List of configuration variables for a given destination type.
+func (o MysqlDbSystemTelemetryConfigurationLogOutput) DestinationConfigurations() MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o.ApplyT(func(v MysqlDbSystemTelemetryConfigurationLog) []MysqlDbSystemTelemetryConfigurationLogDestinationConfiguration {
+		return v.DestinationConfigurations
+	}).(MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+// (Updatable) List of MySQL telemetry types that can be exposed on a telemetry destination
+func (o MysqlDbSystemTelemetryConfigurationLogOutput) LogTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MysqlDbSystemTelemetryConfigurationLog) []string { return v.LogTypes }).(pulumi.StringArrayOutput)
+}
+
+type MysqlDbSystemTelemetryConfigurationLogArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemTelemetryConfigurationLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlDbSystemTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o MysqlDbSystemTelemetryConfigurationLogArrayOutput) ToMysqlDbSystemTelemetryConfigurationLogArrayOutput() MysqlDbSystemTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o MysqlDbSystemTelemetryConfigurationLogArrayOutput) ToMysqlDbSystemTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) MysqlDbSystemTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o MysqlDbSystemTelemetryConfigurationLogArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemTelemetryConfigurationLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemTelemetryConfigurationLog {
+		return vs[0].([]MysqlDbSystemTelemetryConfigurationLog)[vs[1].(int)]
+	}).(MysqlDbSystemTelemetryConfigurationLogOutput)
+}
+
+type MysqlDbSystemTelemetryConfigurationLogDestinationConfiguration struct {
+	// (Updatable) Name of the destination configuration variable. Use `log-group-id` to  specify Log Analytics Log Group OCID. Also specify `log-set` when using the Log Partitioning feature of Log Analytics.
+	Key string `pulumi:"key"`
+	// (Updatable) Value of the destination configuration variable.
+	Value string `pulumi:"value"`
+}
+
+// MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationInput is an input type that accepts MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs and MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput values.
+// You can construct a concrete instance of `MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationInput` via:
+//
+//	MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs{...}
+type MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput() MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput
+	ToMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Context) MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput
+}
+
+type MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs struct {
+	// (Updatable) Name of the destination configuration variable. Use `log-group-id` to  specify Log Analytics Log Group OCID. Also specify `log-set` when using the Log Partitioning feature of Log Analytics.
+	Key pulumi.StringInput `pulumi:"key"`
+	// (Updatable) Value of the destination configuration variable.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs) ToMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput() MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput {
+	return i.ToMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs) ToMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput)
+}
+
+// MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayInput is an input type that accepts MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArray and MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput values.
+// You can construct a concrete instance of `MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayInput` via:
+//
+//	MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArray{ MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs{...} }
+type MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput() MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput
+	ToMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Context) MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput
+}
+
+type MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArray []MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationInput
+
+func (MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlDbSystemTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArray) ToMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput() MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return i.ToMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArray) ToMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+type MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput) ToMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput() MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+func (o MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput) ToMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+// (Updatable) Name of the destination configuration variable. Use `log-group-id` to  specify Log Analytics Log Group OCID. Also specify `log-set` when using the Log Partitioning feature of Log Analytics.
+func (o MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v MysqlDbSystemTelemetryConfigurationLogDestinationConfiguration) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// (Updatable) Value of the destination configuration variable.
+func (o MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v MysqlDbSystemTelemetryConfigurationLogDestinationConfiguration) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlDbSystemTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput() MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemTelemetryConfigurationLogDestinationConfiguration {
+		return vs[0].([]MysqlDbSystemTelemetryConfigurationLogDestinationConfiguration)[vs[1].(int)]
+	}).(MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput)
+}
+
 type ReplicaEncryptData struct {
 	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
 	KeyGenerationType *string `pulumi:"keyGenerationType"`
@@ -11317,10 +12054,9 @@ type ReplicaReplicaOverrides struct {
 	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShapeName *string `pulumi:"shapeName"`
+	// (Updatable) Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfiguration *ReplicaReplicaOverridesTelemetryConfiguration `pulumi:"telemetryConfiguration"`
 }
 
 // ReplicaReplicaOverridesInput is an input type that accepts ReplicaReplicaOverridesArgs and ReplicaReplicaOverridesOutput values.
@@ -11344,10 +12080,9 @@ type ReplicaReplicaOverridesArgs struct {
 	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
+	// (Updatable) Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfiguration ReplicaReplicaOverridesTelemetryConfigurationPtrInput `pulumi:"telemetryConfiguration"`
 }
 
 func (ReplicaReplicaOverridesArgs) ElementType() reflect.Type {
@@ -11448,11 +12183,15 @@ func (o ReplicaReplicaOverridesOutput) SecurityAttributes() pulumi.StringMapOutp
 }
 
 // (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ReplicaReplicaOverridesOutput) ShapeName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ReplicaReplicaOverrides) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Telemetry configuration details of a DB System or a read replica.
+func (o ReplicaReplicaOverridesOutput) TelemetryConfiguration() ReplicaReplicaOverridesTelemetryConfigurationPtrOutput {
+	return o.ApplyT(func(v ReplicaReplicaOverrides) *ReplicaReplicaOverridesTelemetryConfiguration {
+		return v.TelemetryConfiguration
+	}).(ReplicaReplicaOverridesTelemetryConfigurationPtrOutput)
 }
 
 type ReplicaReplicaOverridesPtrOutput struct{ *pulumi.OutputState }
@@ -11520,9 +12259,6 @@ func (o ReplicaReplicaOverridesPtrOutput) SecurityAttributes() pulumi.StringMapO
 }
 
 // (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ReplicaReplicaOverridesPtrOutput) ShapeName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ReplicaReplicaOverrides) *string {
 		if v == nil {
@@ -11530,6 +12266,380 @@ func (o ReplicaReplicaOverridesPtrOutput) ShapeName() pulumi.StringPtrOutput {
 		}
 		return v.ShapeName
 	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Telemetry configuration details of a DB System or a read replica.
+func (o ReplicaReplicaOverridesPtrOutput) TelemetryConfiguration() ReplicaReplicaOverridesTelemetryConfigurationPtrOutput {
+	return o.ApplyT(func(v *ReplicaReplicaOverrides) *ReplicaReplicaOverridesTelemetryConfiguration {
+		if v == nil {
+			return nil
+		}
+		return v.TelemetryConfiguration
+	}).(ReplicaReplicaOverridesTelemetryConfigurationPtrOutput)
+}
+
+type ReplicaReplicaOverridesTelemetryConfiguration struct {
+	// (Updatable) Telemetry configuration details for logging.
+	Logs []ReplicaReplicaOverridesTelemetryConfigurationLog `pulumi:"logs"`
+}
+
+// ReplicaReplicaOverridesTelemetryConfigurationInput is an input type that accepts ReplicaReplicaOverridesTelemetryConfigurationArgs and ReplicaReplicaOverridesTelemetryConfigurationOutput values.
+// You can construct a concrete instance of `ReplicaReplicaOverridesTelemetryConfigurationInput` via:
+//
+//	ReplicaReplicaOverridesTelemetryConfigurationArgs{...}
+type ReplicaReplicaOverridesTelemetryConfigurationInput interface {
+	pulumi.Input
+
+	ToReplicaReplicaOverridesTelemetryConfigurationOutput() ReplicaReplicaOverridesTelemetryConfigurationOutput
+	ToReplicaReplicaOverridesTelemetryConfigurationOutputWithContext(context.Context) ReplicaReplicaOverridesTelemetryConfigurationOutput
+}
+
+type ReplicaReplicaOverridesTelemetryConfigurationArgs struct {
+	// (Updatable) Telemetry configuration details for logging.
+	Logs ReplicaReplicaOverridesTelemetryConfigurationLogArrayInput `pulumi:"logs"`
+}
+
+func (ReplicaReplicaOverridesTelemetryConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicaReplicaOverridesTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i ReplicaReplicaOverridesTelemetryConfigurationArgs) ToReplicaReplicaOverridesTelemetryConfigurationOutput() ReplicaReplicaOverridesTelemetryConfigurationOutput {
+	return i.ToReplicaReplicaOverridesTelemetryConfigurationOutputWithContext(context.Background())
+}
+
+func (i ReplicaReplicaOverridesTelemetryConfigurationArgs) ToReplicaReplicaOverridesTelemetryConfigurationOutputWithContext(ctx context.Context) ReplicaReplicaOverridesTelemetryConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaReplicaOverridesTelemetryConfigurationOutput)
+}
+
+func (i ReplicaReplicaOverridesTelemetryConfigurationArgs) ToReplicaReplicaOverridesTelemetryConfigurationPtrOutput() ReplicaReplicaOverridesTelemetryConfigurationPtrOutput {
+	return i.ToReplicaReplicaOverridesTelemetryConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i ReplicaReplicaOverridesTelemetryConfigurationArgs) ToReplicaReplicaOverridesTelemetryConfigurationPtrOutputWithContext(ctx context.Context) ReplicaReplicaOverridesTelemetryConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaReplicaOverridesTelemetryConfigurationOutput).ToReplicaReplicaOverridesTelemetryConfigurationPtrOutputWithContext(ctx)
+}
+
+// ReplicaReplicaOverridesTelemetryConfigurationPtrInput is an input type that accepts ReplicaReplicaOverridesTelemetryConfigurationArgs, ReplicaReplicaOverridesTelemetryConfigurationPtr and ReplicaReplicaOverridesTelemetryConfigurationPtrOutput values.
+// You can construct a concrete instance of `ReplicaReplicaOverridesTelemetryConfigurationPtrInput` via:
+//
+//	        ReplicaReplicaOverridesTelemetryConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type ReplicaReplicaOverridesTelemetryConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToReplicaReplicaOverridesTelemetryConfigurationPtrOutput() ReplicaReplicaOverridesTelemetryConfigurationPtrOutput
+	ToReplicaReplicaOverridesTelemetryConfigurationPtrOutputWithContext(context.Context) ReplicaReplicaOverridesTelemetryConfigurationPtrOutput
+}
+
+type replicaReplicaOverridesTelemetryConfigurationPtrType ReplicaReplicaOverridesTelemetryConfigurationArgs
+
+func ReplicaReplicaOverridesTelemetryConfigurationPtr(v *ReplicaReplicaOverridesTelemetryConfigurationArgs) ReplicaReplicaOverridesTelemetryConfigurationPtrInput {
+	return (*replicaReplicaOverridesTelemetryConfigurationPtrType)(v)
+}
+
+func (*replicaReplicaOverridesTelemetryConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ReplicaReplicaOverridesTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i *replicaReplicaOverridesTelemetryConfigurationPtrType) ToReplicaReplicaOverridesTelemetryConfigurationPtrOutput() ReplicaReplicaOverridesTelemetryConfigurationPtrOutput {
+	return i.ToReplicaReplicaOverridesTelemetryConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *replicaReplicaOverridesTelemetryConfigurationPtrType) ToReplicaReplicaOverridesTelemetryConfigurationPtrOutputWithContext(ctx context.Context) ReplicaReplicaOverridesTelemetryConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaReplicaOverridesTelemetryConfigurationPtrOutput)
+}
+
+type ReplicaReplicaOverridesTelemetryConfigurationOutput struct{ *pulumi.OutputState }
+
+func (ReplicaReplicaOverridesTelemetryConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicaReplicaOverridesTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o ReplicaReplicaOverridesTelemetryConfigurationOutput) ToReplicaReplicaOverridesTelemetryConfigurationOutput() ReplicaReplicaOverridesTelemetryConfigurationOutput {
+	return o
+}
+
+func (o ReplicaReplicaOverridesTelemetryConfigurationOutput) ToReplicaReplicaOverridesTelemetryConfigurationOutputWithContext(ctx context.Context) ReplicaReplicaOverridesTelemetryConfigurationOutput {
+	return o
+}
+
+func (o ReplicaReplicaOverridesTelemetryConfigurationOutput) ToReplicaReplicaOverridesTelemetryConfigurationPtrOutput() ReplicaReplicaOverridesTelemetryConfigurationPtrOutput {
+	return o.ToReplicaReplicaOverridesTelemetryConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o ReplicaReplicaOverridesTelemetryConfigurationOutput) ToReplicaReplicaOverridesTelemetryConfigurationPtrOutputWithContext(ctx context.Context) ReplicaReplicaOverridesTelemetryConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ReplicaReplicaOverridesTelemetryConfiguration) *ReplicaReplicaOverridesTelemetryConfiguration {
+		return &v
+	}).(ReplicaReplicaOverridesTelemetryConfigurationPtrOutput)
+}
+
+// (Updatable) Telemetry configuration details for logging.
+func (o ReplicaReplicaOverridesTelemetryConfigurationOutput) Logs() ReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput {
+	return o.ApplyT(func(v ReplicaReplicaOverridesTelemetryConfiguration) []ReplicaReplicaOverridesTelemetryConfigurationLog {
+		return v.Logs
+	}).(ReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput)
+}
+
+type ReplicaReplicaOverridesTelemetryConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (ReplicaReplicaOverridesTelemetryConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ReplicaReplicaOverridesTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o ReplicaReplicaOverridesTelemetryConfigurationPtrOutput) ToReplicaReplicaOverridesTelemetryConfigurationPtrOutput() ReplicaReplicaOverridesTelemetryConfigurationPtrOutput {
+	return o
+}
+
+func (o ReplicaReplicaOverridesTelemetryConfigurationPtrOutput) ToReplicaReplicaOverridesTelemetryConfigurationPtrOutputWithContext(ctx context.Context) ReplicaReplicaOverridesTelemetryConfigurationPtrOutput {
+	return o
+}
+
+func (o ReplicaReplicaOverridesTelemetryConfigurationPtrOutput) Elem() ReplicaReplicaOverridesTelemetryConfigurationOutput {
+	return o.ApplyT(func(v *ReplicaReplicaOverridesTelemetryConfiguration) ReplicaReplicaOverridesTelemetryConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret ReplicaReplicaOverridesTelemetryConfiguration
+		return ret
+	}).(ReplicaReplicaOverridesTelemetryConfigurationOutput)
+}
+
+// (Updatable) Telemetry configuration details for logging.
+func (o ReplicaReplicaOverridesTelemetryConfigurationPtrOutput) Logs() ReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput {
+	return o.ApplyT(func(v *ReplicaReplicaOverridesTelemetryConfiguration) []ReplicaReplicaOverridesTelemetryConfigurationLog {
+		if v == nil {
+			return nil
+		}
+		return v.Logs
+	}).(ReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput)
+}
+
+type ReplicaReplicaOverridesTelemetryConfigurationLog struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination string `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations []ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfiguration `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes []string `pulumi:"logTypes"`
+}
+
+// ReplicaReplicaOverridesTelemetryConfigurationLogInput is an input type that accepts ReplicaReplicaOverridesTelemetryConfigurationLogArgs and ReplicaReplicaOverridesTelemetryConfigurationLogOutput values.
+// You can construct a concrete instance of `ReplicaReplicaOverridesTelemetryConfigurationLogInput` via:
+//
+//	ReplicaReplicaOverridesTelemetryConfigurationLogArgs{...}
+type ReplicaReplicaOverridesTelemetryConfigurationLogInput interface {
+	pulumi.Input
+
+	ToReplicaReplicaOverridesTelemetryConfigurationLogOutput() ReplicaReplicaOverridesTelemetryConfigurationLogOutput
+	ToReplicaReplicaOverridesTelemetryConfigurationLogOutputWithContext(context.Context) ReplicaReplicaOverridesTelemetryConfigurationLogOutput
+}
+
+type ReplicaReplicaOverridesTelemetryConfigurationLogArgs struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination pulumi.StringInput `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayInput `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes pulumi.StringArrayInput `pulumi:"logTypes"`
+}
+
+func (ReplicaReplicaOverridesTelemetryConfigurationLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicaReplicaOverridesTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i ReplicaReplicaOverridesTelemetryConfigurationLogArgs) ToReplicaReplicaOverridesTelemetryConfigurationLogOutput() ReplicaReplicaOverridesTelemetryConfigurationLogOutput {
+	return i.ToReplicaReplicaOverridesTelemetryConfigurationLogOutputWithContext(context.Background())
+}
+
+func (i ReplicaReplicaOverridesTelemetryConfigurationLogArgs) ToReplicaReplicaOverridesTelemetryConfigurationLogOutputWithContext(ctx context.Context) ReplicaReplicaOverridesTelemetryConfigurationLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaReplicaOverridesTelemetryConfigurationLogOutput)
+}
+
+// ReplicaReplicaOverridesTelemetryConfigurationLogArrayInput is an input type that accepts ReplicaReplicaOverridesTelemetryConfigurationLogArray and ReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput values.
+// You can construct a concrete instance of `ReplicaReplicaOverridesTelemetryConfigurationLogArrayInput` via:
+//
+//	ReplicaReplicaOverridesTelemetryConfigurationLogArray{ ReplicaReplicaOverridesTelemetryConfigurationLogArgs{...} }
+type ReplicaReplicaOverridesTelemetryConfigurationLogArrayInput interface {
+	pulumi.Input
+
+	ToReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput() ReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput
+	ToReplicaReplicaOverridesTelemetryConfigurationLogArrayOutputWithContext(context.Context) ReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput
+}
+
+type ReplicaReplicaOverridesTelemetryConfigurationLogArray []ReplicaReplicaOverridesTelemetryConfigurationLogInput
+
+func (ReplicaReplicaOverridesTelemetryConfigurationLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ReplicaReplicaOverridesTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i ReplicaReplicaOverridesTelemetryConfigurationLogArray) ToReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput() ReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput {
+	return i.ToReplicaReplicaOverridesTelemetryConfigurationLogArrayOutputWithContext(context.Background())
+}
+
+func (i ReplicaReplicaOverridesTelemetryConfigurationLogArray) ToReplicaReplicaOverridesTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) ReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput)
+}
+
+type ReplicaReplicaOverridesTelemetryConfigurationLogOutput struct{ *pulumi.OutputState }
+
+func (ReplicaReplicaOverridesTelemetryConfigurationLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicaReplicaOverridesTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o ReplicaReplicaOverridesTelemetryConfigurationLogOutput) ToReplicaReplicaOverridesTelemetryConfigurationLogOutput() ReplicaReplicaOverridesTelemetryConfigurationLogOutput {
+	return o
+}
+
+func (o ReplicaReplicaOverridesTelemetryConfigurationLogOutput) ToReplicaReplicaOverridesTelemetryConfigurationLogOutputWithContext(ctx context.Context) ReplicaReplicaOverridesTelemetryConfigurationLogOutput {
+	return o
+}
+
+// Type of destination where MySQL telemetry is exposed to.
+func (o ReplicaReplicaOverridesTelemetryConfigurationLogOutput) Destination() pulumi.StringOutput {
+	return o.ApplyT(func(v ReplicaReplicaOverridesTelemetryConfigurationLog) string { return v.Destination }).(pulumi.StringOutput)
+}
+
+// List of configuration variables for a given destination type.
+func (o ReplicaReplicaOverridesTelemetryConfigurationLogOutput) DestinationConfigurations() ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o.ApplyT(func(v ReplicaReplicaOverridesTelemetryConfigurationLog) []ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfiguration {
+		return v.DestinationConfigurations
+	}).(ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+// List of MySQL telemetry types that can be exposed on a telemetry destination
+func (o ReplicaReplicaOverridesTelemetryConfigurationLogOutput) LogTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ReplicaReplicaOverridesTelemetryConfigurationLog) []string { return v.LogTypes }).(pulumi.StringArrayOutput)
+}
+
+type ReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput struct{ *pulumi.OutputState }
+
+func (ReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ReplicaReplicaOverridesTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o ReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput) ToReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput() ReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o ReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput) ToReplicaReplicaOverridesTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) ReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o ReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput) Index(i pulumi.IntInput) ReplicaReplicaOverridesTelemetryConfigurationLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ReplicaReplicaOverridesTelemetryConfigurationLog {
+		return vs[0].([]ReplicaReplicaOverridesTelemetryConfigurationLog)[vs[1].(int)]
+	}).(ReplicaReplicaOverridesTelemetryConfigurationLogOutput)
+}
+
+type ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfiguration struct {
+	// Name of the destination configuration variable.
+	Key string `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value string `pulumi:"value"`
+}
+
+// ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationInput is an input type that accepts ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArgs and ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput values.
+// You can construct a concrete instance of `ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationInput` via:
+//
+//	ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArgs{...}
+type ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationInput interface {
+	pulumi.Input
+
+	ToReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput() ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput
+	ToReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Context) ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput
+}
+
+type ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArgs struct {
+	// Name of the destination configuration variable.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArgs) ToReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput() ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput {
+	return i.ToReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Background())
+}
+
+func (i ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArgs) ToReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput)
+}
+
+// ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayInput is an input type that accepts ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArray and ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput values.
+// You can construct a concrete instance of `ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayInput` via:
+//
+//	ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArray{ ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArgs{...} }
+type ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput() ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput
+	ToReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Context) ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput
+}
+
+type ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArray []ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationInput
+
+func (ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArray) ToReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput() ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return i.ToReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArray) ToReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+type ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput struct{ *pulumi.OutputState }
+
+func (ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput) ToReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput() ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+func (o ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput) ToReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+// Name of the destination configuration variable.
+func (o ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfiguration) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value of the destination configuration variable.
+func (o ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfiguration) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput() ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput) Index(i pulumi.IntInput) ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfiguration {
+		return vs[0].([]ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfiguration)[vs[1].(int)]
+	}).(ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput)
 }
 
 type ReplicaSecureConnection struct {
@@ -11636,6 +12746,326 @@ func (o ReplicaSecureConnectionArrayOutput) Index(i pulumi.IntInput) ReplicaSecu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ReplicaSecureConnection {
 		return vs[0].([]ReplicaSecureConnection)[vs[1].(int)]
 	}).(ReplicaSecureConnectionOutput)
+}
+
+type ReplicaTelemetryConfiguration struct {
+	// Telemetry configuration details for logging.
+	Logs []ReplicaTelemetryConfigurationLog `pulumi:"logs"`
+}
+
+// ReplicaTelemetryConfigurationInput is an input type that accepts ReplicaTelemetryConfigurationArgs and ReplicaTelemetryConfigurationOutput values.
+// You can construct a concrete instance of `ReplicaTelemetryConfigurationInput` via:
+//
+//	ReplicaTelemetryConfigurationArgs{...}
+type ReplicaTelemetryConfigurationInput interface {
+	pulumi.Input
+
+	ToReplicaTelemetryConfigurationOutput() ReplicaTelemetryConfigurationOutput
+	ToReplicaTelemetryConfigurationOutputWithContext(context.Context) ReplicaTelemetryConfigurationOutput
+}
+
+type ReplicaTelemetryConfigurationArgs struct {
+	// Telemetry configuration details for logging.
+	Logs ReplicaTelemetryConfigurationLogArrayInput `pulumi:"logs"`
+}
+
+func (ReplicaTelemetryConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicaTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i ReplicaTelemetryConfigurationArgs) ToReplicaTelemetryConfigurationOutput() ReplicaTelemetryConfigurationOutput {
+	return i.ToReplicaTelemetryConfigurationOutputWithContext(context.Background())
+}
+
+func (i ReplicaTelemetryConfigurationArgs) ToReplicaTelemetryConfigurationOutputWithContext(ctx context.Context) ReplicaTelemetryConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaTelemetryConfigurationOutput)
+}
+
+// ReplicaTelemetryConfigurationArrayInput is an input type that accepts ReplicaTelemetryConfigurationArray and ReplicaTelemetryConfigurationArrayOutput values.
+// You can construct a concrete instance of `ReplicaTelemetryConfigurationArrayInput` via:
+//
+//	ReplicaTelemetryConfigurationArray{ ReplicaTelemetryConfigurationArgs{...} }
+type ReplicaTelemetryConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToReplicaTelemetryConfigurationArrayOutput() ReplicaTelemetryConfigurationArrayOutput
+	ToReplicaTelemetryConfigurationArrayOutputWithContext(context.Context) ReplicaTelemetryConfigurationArrayOutput
+}
+
+type ReplicaTelemetryConfigurationArray []ReplicaTelemetryConfigurationInput
+
+func (ReplicaTelemetryConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ReplicaTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i ReplicaTelemetryConfigurationArray) ToReplicaTelemetryConfigurationArrayOutput() ReplicaTelemetryConfigurationArrayOutput {
+	return i.ToReplicaTelemetryConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i ReplicaTelemetryConfigurationArray) ToReplicaTelemetryConfigurationArrayOutputWithContext(ctx context.Context) ReplicaTelemetryConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaTelemetryConfigurationArrayOutput)
+}
+
+type ReplicaTelemetryConfigurationOutput struct{ *pulumi.OutputState }
+
+func (ReplicaTelemetryConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicaTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o ReplicaTelemetryConfigurationOutput) ToReplicaTelemetryConfigurationOutput() ReplicaTelemetryConfigurationOutput {
+	return o
+}
+
+func (o ReplicaTelemetryConfigurationOutput) ToReplicaTelemetryConfigurationOutputWithContext(ctx context.Context) ReplicaTelemetryConfigurationOutput {
+	return o
+}
+
+// Telemetry configuration details for logging.
+func (o ReplicaTelemetryConfigurationOutput) Logs() ReplicaTelemetryConfigurationLogArrayOutput {
+	return o.ApplyT(func(v ReplicaTelemetryConfiguration) []ReplicaTelemetryConfigurationLog { return v.Logs }).(ReplicaTelemetryConfigurationLogArrayOutput)
+}
+
+type ReplicaTelemetryConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (ReplicaTelemetryConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ReplicaTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o ReplicaTelemetryConfigurationArrayOutput) ToReplicaTelemetryConfigurationArrayOutput() ReplicaTelemetryConfigurationArrayOutput {
+	return o
+}
+
+func (o ReplicaTelemetryConfigurationArrayOutput) ToReplicaTelemetryConfigurationArrayOutputWithContext(ctx context.Context) ReplicaTelemetryConfigurationArrayOutput {
+	return o
+}
+
+func (o ReplicaTelemetryConfigurationArrayOutput) Index(i pulumi.IntInput) ReplicaTelemetryConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ReplicaTelemetryConfiguration {
+		return vs[0].([]ReplicaTelemetryConfiguration)[vs[1].(int)]
+	}).(ReplicaTelemetryConfigurationOutput)
+}
+
+type ReplicaTelemetryConfigurationLog struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination *string `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations []ReplicaTelemetryConfigurationLogDestinationConfiguration `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes []string `pulumi:"logTypes"`
+}
+
+// ReplicaTelemetryConfigurationLogInput is an input type that accepts ReplicaTelemetryConfigurationLogArgs and ReplicaTelemetryConfigurationLogOutput values.
+// You can construct a concrete instance of `ReplicaTelemetryConfigurationLogInput` via:
+//
+//	ReplicaTelemetryConfigurationLogArgs{...}
+type ReplicaTelemetryConfigurationLogInput interface {
+	pulumi.Input
+
+	ToReplicaTelemetryConfigurationLogOutput() ReplicaTelemetryConfigurationLogOutput
+	ToReplicaTelemetryConfigurationLogOutputWithContext(context.Context) ReplicaTelemetryConfigurationLogOutput
+}
+
+type ReplicaTelemetryConfigurationLogArgs struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination pulumi.StringPtrInput `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations ReplicaTelemetryConfigurationLogDestinationConfigurationArrayInput `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes pulumi.StringArrayInput `pulumi:"logTypes"`
+}
+
+func (ReplicaTelemetryConfigurationLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicaTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i ReplicaTelemetryConfigurationLogArgs) ToReplicaTelemetryConfigurationLogOutput() ReplicaTelemetryConfigurationLogOutput {
+	return i.ToReplicaTelemetryConfigurationLogOutputWithContext(context.Background())
+}
+
+func (i ReplicaTelemetryConfigurationLogArgs) ToReplicaTelemetryConfigurationLogOutputWithContext(ctx context.Context) ReplicaTelemetryConfigurationLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaTelemetryConfigurationLogOutput)
+}
+
+// ReplicaTelemetryConfigurationLogArrayInput is an input type that accepts ReplicaTelemetryConfigurationLogArray and ReplicaTelemetryConfigurationLogArrayOutput values.
+// You can construct a concrete instance of `ReplicaTelemetryConfigurationLogArrayInput` via:
+//
+//	ReplicaTelemetryConfigurationLogArray{ ReplicaTelemetryConfigurationLogArgs{...} }
+type ReplicaTelemetryConfigurationLogArrayInput interface {
+	pulumi.Input
+
+	ToReplicaTelemetryConfigurationLogArrayOutput() ReplicaTelemetryConfigurationLogArrayOutput
+	ToReplicaTelemetryConfigurationLogArrayOutputWithContext(context.Context) ReplicaTelemetryConfigurationLogArrayOutput
+}
+
+type ReplicaTelemetryConfigurationLogArray []ReplicaTelemetryConfigurationLogInput
+
+func (ReplicaTelemetryConfigurationLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ReplicaTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i ReplicaTelemetryConfigurationLogArray) ToReplicaTelemetryConfigurationLogArrayOutput() ReplicaTelemetryConfigurationLogArrayOutput {
+	return i.ToReplicaTelemetryConfigurationLogArrayOutputWithContext(context.Background())
+}
+
+func (i ReplicaTelemetryConfigurationLogArray) ToReplicaTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) ReplicaTelemetryConfigurationLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaTelemetryConfigurationLogArrayOutput)
+}
+
+type ReplicaTelemetryConfigurationLogOutput struct{ *pulumi.OutputState }
+
+func (ReplicaTelemetryConfigurationLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicaTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o ReplicaTelemetryConfigurationLogOutput) ToReplicaTelemetryConfigurationLogOutput() ReplicaTelemetryConfigurationLogOutput {
+	return o
+}
+
+func (o ReplicaTelemetryConfigurationLogOutput) ToReplicaTelemetryConfigurationLogOutputWithContext(ctx context.Context) ReplicaTelemetryConfigurationLogOutput {
+	return o
+}
+
+// Type of destination where MySQL telemetry is exposed to.
+func (o ReplicaTelemetryConfigurationLogOutput) Destination() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ReplicaTelemetryConfigurationLog) *string { return v.Destination }).(pulumi.StringPtrOutput)
+}
+
+// List of configuration variables for a given destination type.
+func (o ReplicaTelemetryConfigurationLogOutput) DestinationConfigurations() ReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o.ApplyT(func(v ReplicaTelemetryConfigurationLog) []ReplicaTelemetryConfigurationLogDestinationConfiguration {
+		return v.DestinationConfigurations
+	}).(ReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+// List of MySQL telemetry types that can be exposed on a telemetry destination
+func (o ReplicaTelemetryConfigurationLogOutput) LogTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ReplicaTelemetryConfigurationLog) []string { return v.LogTypes }).(pulumi.StringArrayOutput)
+}
+
+type ReplicaTelemetryConfigurationLogArrayOutput struct{ *pulumi.OutputState }
+
+func (ReplicaTelemetryConfigurationLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ReplicaTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o ReplicaTelemetryConfigurationLogArrayOutput) ToReplicaTelemetryConfigurationLogArrayOutput() ReplicaTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o ReplicaTelemetryConfigurationLogArrayOutput) ToReplicaTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) ReplicaTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o ReplicaTelemetryConfigurationLogArrayOutput) Index(i pulumi.IntInput) ReplicaTelemetryConfigurationLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ReplicaTelemetryConfigurationLog {
+		return vs[0].([]ReplicaTelemetryConfigurationLog)[vs[1].(int)]
+	}).(ReplicaTelemetryConfigurationLogOutput)
+}
+
+type ReplicaTelemetryConfigurationLogDestinationConfiguration struct {
+	// Name of the destination configuration variable.
+	Key *string `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value *string `pulumi:"value"`
+}
+
+// ReplicaTelemetryConfigurationLogDestinationConfigurationInput is an input type that accepts ReplicaTelemetryConfigurationLogDestinationConfigurationArgs and ReplicaTelemetryConfigurationLogDestinationConfigurationOutput values.
+// You can construct a concrete instance of `ReplicaTelemetryConfigurationLogDestinationConfigurationInput` via:
+//
+//	ReplicaTelemetryConfigurationLogDestinationConfigurationArgs{...}
+type ReplicaTelemetryConfigurationLogDestinationConfigurationInput interface {
+	pulumi.Input
+
+	ToReplicaTelemetryConfigurationLogDestinationConfigurationOutput() ReplicaTelemetryConfigurationLogDestinationConfigurationOutput
+	ToReplicaTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Context) ReplicaTelemetryConfigurationLogDestinationConfigurationOutput
+}
+
+type ReplicaTelemetryConfigurationLogDestinationConfigurationArgs struct {
+	// Name of the destination configuration variable.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ReplicaTelemetryConfigurationLogDestinationConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicaTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i ReplicaTelemetryConfigurationLogDestinationConfigurationArgs) ToReplicaTelemetryConfigurationLogDestinationConfigurationOutput() ReplicaTelemetryConfigurationLogDestinationConfigurationOutput {
+	return i.ToReplicaTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Background())
+}
+
+func (i ReplicaTelemetryConfigurationLogDestinationConfigurationArgs) ToReplicaTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) ReplicaTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaTelemetryConfigurationLogDestinationConfigurationOutput)
+}
+
+// ReplicaTelemetryConfigurationLogDestinationConfigurationArrayInput is an input type that accepts ReplicaTelemetryConfigurationLogDestinationConfigurationArray and ReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput values.
+// You can construct a concrete instance of `ReplicaTelemetryConfigurationLogDestinationConfigurationArrayInput` via:
+//
+//	ReplicaTelemetryConfigurationLogDestinationConfigurationArray{ ReplicaTelemetryConfigurationLogDestinationConfigurationArgs{...} }
+type ReplicaTelemetryConfigurationLogDestinationConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput() ReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput
+	ToReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Context) ReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput
+}
+
+type ReplicaTelemetryConfigurationLogDestinationConfigurationArray []ReplicaTelemetryConfigurationLogDestinationConfigurationInput
+
+func (ReplicaTelemetryConfigurationLogDestinationConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ReplicaTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i ReplicaTelemetryConfigurationLogDestinationConfigurationArray) ToReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput() ReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return i.ToReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i ReplicaTelemetryConfigurationLogDestinationConfigurationArray) ToReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) ReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+type ReplicaTelemetryConfigurationLogDestinationConfigurationOutput struct{ *pulumi.OutputState }
+
+func (ReplicaTelemetryConfigurationLogDestinationConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicaTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o ReplicaTelemetryConfigurationLogDestinationConfigurationOutput) ToReplicaTelemetryConfigurationLogDestinationConfigurationOutput() ReplicaTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+func (o ReplicaTelemetryConfigurationLogDestinationConfigurationOutput) ToReplicaTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) ReplicaTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+// Name of the destination configuration variable.
+func (o ReplicaTelemetryConfigurationLogDestinationConfigurationOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ReplicaTelemetryConfigurationLogDestinationConfiguration) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Value of the destination configuration variable.
+func (o ReplicaTelemetryConfigurationLogDestinationConfigurationOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ReplicaTelemetryConfigurationLogDestinationConfiguration) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (ReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ReplicaTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o ReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput() ReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o ReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) ReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o ReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput) Index(i pulumi.IntInput) ReplicaTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ReplicaTelemetryConfigurationLogDestinationConfiguration {
+		return vs[0].([]ReplicaTelemetryConfigurationLogDestinationConfiguration)[vs[1].(int)]
+	}).(ReplicaTelemetryConfigurationLogDestinationConfigurationOutput)
 }
 
 type GetChannelSource struct {
@@ -14016,6 +15446,8 @@ type GetMysqlBackupDbSystemSnapshot struct {
 	ShapeName string `pulumi:"shapeName"`
 	// The OCID of the subnet the DB System is associated with.
 	SubnetId string `pulumi:"subnetId"`
+	// Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfigurations []GetMysqlBackupDbSystemSnapshotTelemetryConfiguration `pulumi:"telemetryConfigurations"`
 }
 
 // GetMysqlBackupDbSystemSnapshotInput is an input type that accepts GetMysqlBackupDbSystemSnapshotArgs and GetMysqlBackupDbSystemSnapshotOutput values.
@@ -14098,6 +15530,8 @@ type GetMysqlBackupDbSystemSnapshotArgs struct {
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
 	// The OCID of the subnet the DB System is associated with.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfigurations GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayInput `pulumi:"telemetryConfigurations"`
 }
 
 func (GetMysqlBackupDbSystemSnapshotArgs) ElementType() reflect.Type {
@@ -14335,6 +15769,13 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) ShapeName() pulumi.StringOutput {
 // The OCID of the subnet the DB System is associated with.
 func (o GetMysqlBackupDbSystemSnapshotOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// Telemetry configuration details of a DB System or a read replica.
+func (o GetMysqlBackupDbSystemSnapshotOutput) TelemetryConfigurations() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) []GetMysqlBackupDbSystemSnapshotTelemetryConfiguration {
+		return v.TelemetryConfigurations
+	}).(GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput)
 }
 
 type GetMysqlBackupDbSystemSnapshotArrayOutput struct{ *pulumi.OutputState }
@@ -16061,6 +17502,332 @@ func (o GetMysqlBackupDbSystemSnapshotSummaryArrayOutput) Index(i pulumi.IntInpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotSummary {
 		return vs[0].([]GetMysqlBackupDbSystemSnapshotSummary)[vs[1].(int)]
 	}).(GetMysqlBackupDbSystemSnapshotSummaryOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotTelemetryConfiguration struct {
+	// Telemetry configuration details for logging.
+	Logs []GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLog `pulumi:"logs"`
+}
+
+// GetMysqlBackupDbSystemSnapshotTelemetryConfigurationInput is an input type that accepts GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArgs and GetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotTelemetryConfigurationInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArgs{...}
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput
+	ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArgs struct {
+	// Telemetry configuration details for logging.
+	Logs GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayInput `pulumi:"logs"`
+}
+
+func (GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArgs) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArgs) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput)
+}
+
+// GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArray and GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArray{ GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArgs{...} }
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput
+	ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArray []GetMysqlBackupDbSystemSnapshotTelemetryConfigurationInput
+
+func (GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArray) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArray) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput {
+	return o
+}
+
+// Telemetry configuration details for logging.
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput) Logs() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotTelemetryConfiguration) []GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLog {
+		return v.Logs
+	}).(GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotTelemetryConfiguration {
+		return vs[0].([]GetMysqlBackupDbSystemSnapshotTelemetryConfiguration)[vs[1].(int)]
+	}).(GetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLog struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination string `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations []GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes []string `pulumi:"logTypes"`
+}
+
+// GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogInput is an input type that accepts GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs and GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs{...}
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput
+	ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination pulumi.StringInput `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayInput `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes pulumi.StringArrayInput `pulumi:"logTypes"`
+}
+
+func (GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput)
+}
+
+// GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArray and GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArray{ GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs{...} }
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput
+	ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArray []GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogInput
+
+func (GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArray) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArray) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput {
+	return o
+}
+
+// Type of destination where MySQL telemetry is exposed to.
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput) Destination() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLog) string { return v.Destination }).(pulumi.StringOutput)
+}
+
+// List of configuration variables for a given destination type.
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput) DestinationConfigurations() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLog) []GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration {
+		return v.DestinationConfigurations
+	}).(GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+// List of MySQL telemetry types that can be exposed on a telemetry destination
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput) LogTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLog) []string { return v.LogTypes }).(pulumi.StringArrayOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLog {
+		return vs[0].([]GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLog)[vs[1].(int)]
+	}).(GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration struct {
+	// Name of the destination configuration variable.
+	Key string `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value string `pulumi:"value"`
+}
+
+// GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationInput is an input type that accepts GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArgs and GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArgs{...}
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput
+	ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArgs struct {
+	// Name of the destination configuration variable.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArgs) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArgs) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput)
+}
+
+// GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArray and GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArray{ GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArgs{...} }
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput
+	ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArray []GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationInput
+
+func (GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArray) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArray) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+// Name of the destination configuration variable.
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Value of the destination configuration variable.
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToGetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration {
+		return vs[0].([]GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration)[vs[1].(int)]
+	}).(GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput)
 }
 
 type GetMysqlBackupEncryptData struct {
@@ -21312,7 +23079,7 @@ func (o GetMysqlDbSystemChannelTargetArrayOutput) Index(i pulumi.IntInput) GetMy
 type GetMysqlDbSystemChannelTargetFilter struct {
 	// The type of the filter rule.
 	Type string `pulumi:"type"`
-	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+	// Value of the destination configuration variable.
 	Value string `pulumi:"value"`
 }
 
@@ -21330,7 +23097,7 @@ type GetMysqlDbSystemChannelTargetFilterInput interface {
 type GetMysqlDbSystemChannelTargetFilterArgs struct {
 	// The type of the filter rule.
 	Type pulumi.StringInput `pulumi:"type"`
-	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+	// Value of the destination configuration variable.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -21390,7 +23157,7 @@ func (o GetMysqlDbSystemChannelTargetFilterOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemChannelTargetFilter) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+// Value of the destination configuration variable.
 func (o GetMysqlDbSystemChannelTargetFilterOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemChannelTargetFilter) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -23220,6 +24987,328 @@ func (o GetMysqlDbSystemSourceArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSy
 	}).(GetMysqlDbSystemSourceOutput)
 }
 
+type GetMysqlDbSystemTelemetryConfiguration struct {
+	// Telemetry configuration details for logging.
+	Logs []GetMysqlDbSystemTelemetryConfigurationLog `pulumi:"logs"`
+}
+
+// GetMysqlDbSystemTelemetryConfigurationInput is an input type that accepts GetMysqlDbSystemTelemetryConfigurationArgs and GetMysqlDbSystemTelemetryConfigurationOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemTelemetryConfigurationInput` via:
+//
+//	GetMysqlDbSystemTelemetryConfigurationArgs{...}
+type GetMysqlDbSystemTelemetryConfigurationInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemTelemetryConfigurationOutput() GetMysqlDbSystemTelemetryConfigurationOutput
+	ToGetMysqlDbSystemTelemetryConfigurationOutputWithContext(context.Context) GetMysqlDbSystemTelemetryConfigurationOutput
+}
+
+type GetMysqlDbSystemTelemetryConfigurationArgs struct {
+	// Telemetry configuration details for logging.
+	Logs GetMysqlDbSystemTelemetryConfigurationLogArrayInput `pulumi:"logs"`
+}
+
+func (GetMysqlDbSystemTelemetryConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemTelemetryConfigurationArgs) ToGetMysqlDbSystemTelemetryConfigurationOutput() GetMysqlDbSystemTelemetryConfigurationOutput {
+	return i.ToGetMysqlDbSystemTelemetryConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemTelemetryConfigurationArgs) ToGetMysqlDbSystemTelemetryConfigurationOutputWithContext(ctx context.Context) GetMysqlDbSystemTelemetryConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemTelemetryConfigurationOutput)
+}
+
+// GetMysqlDbSystemTelemetryConfigurationArrayInput is an input type that accepts GetMysqlDbSystemTelemetryConfigurationArray and GetMysqlDbSystemTelemetryConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemTelemetryConfigurationArrayInput` via:
+//
+//	GetMysqlDbSystemTelemetryConfigurationArray{ GetMysqlDbSystemTelemetryConfigurationArgs{...} }
+type GetMysqlDbSystemTelemetryConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemTelemetryConfigurationArrayOutput() GetMysqlDbSystemTelemetryConfigurationArrayOutput
+	ToGetMysqlDbSystemTelemetryConfigurationArrayOutputWithContext(context.Context) GetMysqlDbSystemTelemetryConfigurationArrayOutput
+}
+
+type GetMysqlDbSystemTelemetryConfigurationArray []GetMysqlDbSystemTelemetryConfigurationInput
+
+func (GetMysqlDbSystemTelemetryConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemTelemetryConfigurationArray) ToGetMysqlDbSystemTelemetryConfigurationArrayOutput() GetMysqlDbSystemTelemetryConfigurationArrayOutput {
+	return i.ToGetMysqlDbSystemTelemetryConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemTelemetryConfigurationArray) ToGetMysqlDbSystemTelemetryConfigurationArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemTelemetryConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemTelemetryConfigurationArrayOutput)
+}
+
+type GetMysqlDbSystemTelemetryConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemTelemetryConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemTelemetryConfigurationOutput) ToGetMysqlDbSystemTelemetryConfigurationOutput() GetMysqlDbSystemTelemetryConfigurationOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemTelemetryConfigurationOutput) ToGetMysqlDbSystemTelemetryConfigurationOutputWithContext(ctx context.Context) GetMysqlDbSystemTelemetryConfigurationOutput {
+	return o
+}
+
+// Telemetry configuration details for logging.
+func (o GetMysqlDbSystemTelemetryConfigurationOutput) Logs() GetMysqlDbSystemTelemetryConfigurationLogArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemTelemetryConfiguration) []GetMysqlDbSystemTelemetryConfigurationLog {
+		return v.Logs
+	}).(GetMysqlDbSystemTelemetryConfigurationLogArrayOutput)
+}
+
+type GetMysqlDbSystemTelemetryConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemTelemetryConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemTelemetryConfigurationArrayOutput) ToGetMysqlDbSystemTelemetryConfigurationArrayOutput() GetMysqlDbSystemTelemetryConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemTelemetryConfigurationArrayOutput) ToGetMysqlDbSystemTelemetryConfigurationArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemTelemetryConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemTelemetryConfigurationArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemTelemetryConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemTelemetryConfiguration {
+		return vs[0].([]GetMysqlDbSystemTelemetryConfiguration)[vs[1].(int)]
+	}).(GetMysqlDbSystemTelemetryConfigurationOutput)
+}
+
+type GetMysqlDbSystemTelemetryConfigurationLog struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination string `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations []GetMysqlDbSystemTelemetryConfigurationLogDestinationConfiguration `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes []string `pulumi:"logTypes"`
+}
+
+// GetMysqlDbSystemTelemetryConfigurationLogInput is an input type that accepts GetMysqlDbSystemTelemetryConfigurationLogArgs and GetMysqlDbSystemTelemetryConfigurationLogOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemTelemetryConfigurationLogInput` via:
+//
+//	GetMysqlDbSystemTelemetryConfigurationLogArgs{...}
+type GetMysqlDbSystemTelemetryConfigurationLogInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemTelemetryConfigurationLogOutput() GetMysqlDbSystemTelemetryConfigurationLogOutput
+	ToGetMysqlDbSystemTelemetryConfigurationLogOutputWithContext(context.Context) GetMysqlDbSystemTelemetryConfigurationLogOutput
+}
+
+type GetMysqlDbSystemTelemetryConfigurationLogArgs struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination pulumi.StringInput `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayInput `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes pulumi.StringArrayInput `pulumi:"logTypes"`
+}
+
+func (GetMysqlDbSystemTelemetryConfigurationLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemTelemetryConfigurationLogArgs) ToGetMysqlDbSystemTelemetryConfigurationLogOutput() GetMysqlDbSystemTelemetryConfigurationLogOutput {
+	return i.ToGetMysqlDbSystemTelemetryConfigurationLogOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemTelemetryConfigurationLogArgs) ToGetMysqlDbSystemTelemetryConfigurationLogOutputWithContext(ctx context.Context) GetMysqlDbSystemTelemetryConfigurationLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemTelemetryConfigurationLogOutput)
+}
+
+// GetMysqlDbSystemTelemetryConfigurationLogArrayInput is an input type that accepts GetMysqlDbSystemTelemetryConfigurationLogArray and GetMysqlDbSystemTelemetryConfigurationLogArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemTelemetryConfigurationLogArrayInput` via:
+//
+//	GetMysqlDbSystemTelemetryConfigurationLogArray{ GetMysqlDbSystemTelemetryConfigurationLogArgs{...} }
+type GetMysqlDbSystemTelemetryConfigurationLogArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemTelemetryConfigurationLogArrayOutput() GetMysqlDbSystemTelemetryConfigurationLogArrayOutput
+	ToGetMysqlDbSystemTelemetryConfigurationLogArrayOutputWithContext(context.Context) GetMysqlDbSystemTelemetryConfigurationLogArrayOutput
+}
+
+type GetMysqlDbSystemTelemetryConfigurationLogArray []GetMysqlDbSystemTelemetryConfigurationLogInput
+
+func (GetMysqlDbSystemTelemetryConfigurationLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemTelemetryConfigurationLogArray) ToGetMysqlDbSystemTelemetryConfigurationLogArrayOutput() GetMysqlDbSystemTelemetryConfigurationLogArrayOutput {
+	return i.ToGetMysqlDbSystemTelemetryConfigurationLogArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemTelemetryConfigurationLogArray) ToGetMysqlDbSystemTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemTelemetryConfigurationLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemTelemetryConfigurationLogArrayOutput)
+}
+
+type GetMysqlDbSystemTelemetryConfigurationLogOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemTelemetryConfigurationLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemTelemetryConfigurationLogOutput) ToGetMysqlDbSystemTelemetryConfigurationLogOutput() GetMysqlDbSystemTelemetryConfigurationLogOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemTelemetryConfigurationLogOutput) ToGetMysqlDbSystemTelemetryConfigurationLogOutputWithContext(ctx context.Context) GetMysqlDbSystemTelemetryConfigurationLogOutput {
+	return o
+}
+
+// Type of destination where MySQL telemetry is exposed to.
+func (o GetMysqlDbSystemTelemetryConfigurationLogOutput) Destination() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemTelemetryConfigurationLog) string { return v.Destination }).(pulumi.StringOutput)
+}
+
+// List of configuration variables for a given destination type.
+func (o GetMysqlDbSystemTelemetryConfigurationLogOutput) DestinationConfigurations() GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemTelemetryConfigurationLog) []GetMysqlDbSystemTelemetryConfigurationLogDestinationConfiguration {
+		return v.DestinationConfigurations
+	}).(GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+// List of MySQL telemetry types that can be exposed on a telemetry destination
+func (o GetMysqlDbSystemTelemetryConfigurationLogOutput) LogTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemTelemetryConfigurationLog) []string { return v.LogTypes }).(pulumi.StringArrayOutput)
+}
+
+type GetMysqlDbSystemTelemetryConfigurationLogArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemTelemetryConfigurationLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemTelemetryConfigurationLogArrayOutput) ToGetMysqlDbSystemTelemetryConfigurationLogArrayOutput() GetMysqlDbSystemTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemTelemetryConfigurationLogArrayOutput) ToGetMysqlDbSystemTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemTelemetryConfigurationLogArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemTelemetryConfigurationLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemTelemetryConfigurationLog {
+		return vs[0].([]GetMysqlDbSystemTelemetryConfigurationLog)[vs[1].(int)]
+	}).(GetMysqlDbSystemTelemetryConfigurationLogOutput)
+}
+
+type GetMysqlDbSystemTelemetryConfigurationLogDestinationConfiguration struct {
+	// Name of the destination configuration variable.
+	Key string `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value string `pulumi:"value"`
+}
+
+// GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationInput is an input type that accepts GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs and GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationInput` via:
+//
+//	GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs{...}
+type GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput() GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput
+	ToGetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Context) GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput
+}
+
+type GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs struct {
+	// Name of the destination configuration variable.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs) ToGetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput() GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput {
+	return i.ToGetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs) ToGetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput)
+}
+
+// GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayInput is an input type that accepts GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArray and GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayInput` via:
+//
+//	GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArray{ GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs{...} }
+type GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput
+	ToGetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Context) GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput
+}
+
+type GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArray []GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationInput
+
+func (GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArray) ToGetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return i.ToGetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArray) ToGetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+type GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput) ToGetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput() GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput) ToGetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+// Name of the destination configuration variable.
+func (o GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemTelemetryConfigurationLogDestinationConfiguration) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value of the destination configuration variable.
+func (o GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemTelemetryConfigurationLogDestinationConfiguration) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToGetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToGetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemTelemetryConfigurationLogDestinationConfiguration {
+		return vs[0].([]GetMysqlDbSystemTelemetryConfigurationLogDestinationConfiguration)[vs[1].(int)]
+	}).(GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput)
+}
+
 type GetMysqlDbSystemsDbSystem struct {
 	// The access mode indicating if the database access is unrestricted (to all MySQL user accounts),  or restricted (to only certain users with specific privileges):
 	// * UNRESTRICTED: the access to the database is not restricted;
@@ -23316,6 +25405,8 @@ type GetMysqlDbSystemsDbSystem struct {
 	SubnetId string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfigurations []GetMysqlDbSystemsDbSystemTelemetryConfiguration `pulumi:"telemetryConfigurations"`
 	// The date and time the DB System was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
@@ -23429,6 +25520,8 @@ type GetMysqlDbSystemsDbSystemArgs struct {
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfigurations GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayInput `pulumi:"telemetryConfigurations"`
 	// The date and time the DB System was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
@@ -23732,6 +25825,13 @@ func (o GetMysqlDbSystemsDbSystemOutput) SubnetId() pulumi.StringOutput {
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o GetMysqlDbSystemsDbSystemOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// Telemetry configuration details of a DB System or a read replica.
+func (o GetMysqlDbSystemsDbSystemOutput) TelemetryConfigurations() GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) []GetMysqlDbSystemsDbSystemTelemetryConfiguration {
+		return v.TelemetryConfigurations
+	}).(GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput)
 }
 
 // The date and time the DB System was created.
@@ -24881,7 +26981,7 @@ func (o GetMysqlDbSystemsDbSystemChannelTargetArrayOutput) Index(i pulumi.IntInp
 type GetMysqlDbSystemsDbSystemChannelTargetFilter struct {
 	// The type of the filter rule.
 	Type string `pulumi:"type"`
-	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+	// Value of the destination configuration variable.
 	Value string `pulumi:"value"`
 }
 
@@ -24899,7 +26999,7 @@ type GetMysqlDbSystemsDbSystemChannelTargetFilterInput interface {
 type GetMysqlDbSystemsDbSystemChannelTargetFilterArgs struct {
 	// The type of the filter rule.
 	Type pulumi.StringInput `pulumi:"type"`
-	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+	// Value of the destination configuration variable.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -24959,7 +27059,7 @@ func (o GetMysqlDbSystemsDbSystemChannelTargetFilterOutput) Type() pulumi.String
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTargetFilter) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+// Value of the destination configuration variable.
 func (o GetMysqlDbSystemsDbSystemChannelTargetFilterOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTargetFilter) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -26789,6 +28889,332 @@ func (o GetMysqlDbSystemsDbSystemSourceArrayOutput) Index(i pulumi.IntInput) Get
 	}).(GetMysqlDbSystemsDbSystemSourceOutput)
 }
 
+type GetMysqlDbSystemsDbSystemTelemetryConfiguration struct {
+	// Telemetry configuration details for logging.
+	Logs []GetMysqlDbSystemsDbSystemTelemetryConfigurationLog `pulumi:"logs"`
+}
+
+// GetMysqlDbSystemsDbSystemTelemetryConfigurationInput is an input type that accepts GetMysqlDbSystemsDbSystemTelemetryConfigurationArgs and GetMysqlDbSystemsDbSystemTelemetryConfigurationOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemTelemetryConfigurationInput` via:
+//
+//	GetMysqlDbSystemsDbSystemTelemetryConfigurationArgs{...}
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemTelemetryConfigurationOutput() GetMysqlDbSystemsDbSystemTelemetryConfigurationOutput
+	ToGetMysqlDbSystemsDbSystemTelemetryConfigurationOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemTelemetryConfigurationOutput
+}
+
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationArgs struct {
+	// Telemetry configuration details for logging.
+	Logs GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayInput `pulumi:"logs"`
+}
+
+func (GetMysqlDbSystemsDbSystemTelemetryConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemTelemetryConfigurationArgs) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationOutput() GetMysqlDbSystemsDbSystemTelemetryConfigurationOutput {
+	return i.ToGetMysqlDbSystemsDbSystemTelemetryConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemTelemetryConfigurationArgs) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemTelemetryConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemTelemetryConfigurationOutput)
+}
+
+// GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemTelemetryConfigurationArray and GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayInput` via:
+//
+//	GetMysqlDbSystemsDbSystemTelemetryConfigurationArray{ GetMysqlDbSystemsDbSystemTelemetryConfigurationArgs{...} }
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput() GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput
+	ToGetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationArray []GetMysqlDbSystemsDbSystemTelemetryConfigurationInput
+
+func (GetMysqlDbSystemsDbSystemTelemetryConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemTelemetryConfigurationArray) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput() GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemTelemetryConfigurationArray) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemTelemetryConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationOutput) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationOutput() GetMysqlDbSystemsDbSystemTelemetryConfigurationOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationOutput) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemTelemetryConfigurationOutput {
+	return o
+}
+
+// Telemetry configuration details for logging.
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationOutput) Logs() GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemTelemetryConfiguration) []GetMysqlDbSystemsDbSystemTelemetryConfigurationLog {
+		return v.Logs
+	}).(GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput() GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemTelemetryConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemTelemetryConfiguration {
+		return vs[0].([]GetMysqlDbSystemsDbSystemTelemetryConfiguration)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemTelemetryConfigurationOutput)
+}
+
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationLog struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination string `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations []GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfiguration `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes []string `pulumi:"logTypes"`
+}
+
+// GetMysqlDbSystemsDbSystemTelemetryConfigurationLogInput is an input type that accepts GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArgs and GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemTelemetryConfigurationLogInput` via:
+//
+//	GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArgs{...}
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationLogInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput() GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput
+	ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput
+}
+
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArgs struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination pulumi.StringInput `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayInput `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes pulumi.StringArrayInput `pulumi:"logTypes"`
+}
+
+func (GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArgs) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput() GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput {
+	return i.ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArgs) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput)
+}
+
+// GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArray and GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayInput` via:
+//
+//	GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArray{ GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArgs{...} }
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput() GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput
+	ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArray []GetMysqlDbSystemsDbSystemTelemetryConfigurationLogInput
+
+func (GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArray) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput() GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArray) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput() GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput {
+	return o
+}
+
+// Type of destination where MySQL telemetry is exposed to.
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput) Destination() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemTelemetryConfigurationLog) string { return v.Destination }).(pulumi.StringOutput)
+}
+
+// List of configuration variables for a given destination type.
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput) DestinationConfigurations() GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemTelemetryConfigurationLog) []GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfiguration {
+		return v.DestinationConfigurations
+	}).(GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+// List of MySQL telemetry types that can be exposed on a telemetry destination
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput) LogTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemTelemetryConfigurationLog) []string { return v.LogTypes }).(pulumi.StringArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput() GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemTelemetryConfigurationLog {
+		return vs[0].([]GetMysqlDbSystemsDbSystemTelemetryConfigurationLog)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput)
+}
+
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfiguration struct {
+	// Name of the destination configuration variable.
+	Key string `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value string `pulumi:"value"`
+}
+
+// GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationInput is an input type that accepts GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArgs and GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationInput` via:
+//
+//	GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArgs{...}
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput() GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput
+	ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput
+}
+
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArgs struct {
+	// Name of the destination configuration variable.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArgs) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput() GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput {
+	return i.ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArgs) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput)
+}
+
+// GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArray and GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayInput` via:
+//
+//	GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArray{ GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArgs{...} }
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput
+	ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArray []GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationInput
+
+func (GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArray) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArray) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput() GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+// Name of the destination configuration variable.
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfiguration) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Value of the destination configuration variable.
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfiguration) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToGetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfiguration {
+		return vs[0].([]GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfiguration)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput)
+}
+
 type GetMysqlDbSystemsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -27330,6 +29756,8 @@ type GetReplicaReplicaOverride struct {
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName string `pulumi:"shapeName"`
+	// Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfigurations []GetReplicaReplicaOverrideTelemetryConfiguration `pulumi:"telemetryConfigurations"`
 }
 
 // GetReplicaReplicaOverrideInput is an input type that accepts GetReplicaReplicaOverrideArgs and GetReplicaReplicaOverrideOutput values.
@@ -27354,6 +29782,8 @@ type GetReplicaReplicaOverrideArgs struct {
 	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	// Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfigurations GetReplicaReplicaOverrideTelemetryConfigurationArrayInput `pulumi:"telemetryConfigurations"`
 }
 
 func (GetReplicaReplicaOverrideArgs) ElementType() reflect.Type {
@@ -27432,6 +29862,13 @@ func (o GetReplicaReplicaOverrideOutput) ShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicaReplicaOverride) string { return v.ShapeName }).(pulumi.StringOutput)
 }
 
+// Telemetry configuration details of a DB System or a read replica.
+func (o GetReplicaReplicaOverrideOutput) TelemetryConfigurations() GetReplicaReplicaOverrideTelemetryConfigurationArrayOutput {
+	return o.ApplyT(func(v GetReplicaReplicaOverride) []GetReplicaReplicaOverrideTelemetryConfiguration {
+		return v.TelemetryConfigurations
+	}).(GetReplicaReplicaOverrideTelemetryConfigurationArrayOutput)
+}
+
 type GetReplicaReplicaOverrideArrayOutput struct{ *pulumi.OutputState }
 
 func (GetReplicaReplicaOverrideArrayOutput) ElementType() reflect.Type {
@@ -27450,6 +29887,332 @@ func (o GetReplicaReplicaOverrideArrayOutput) Index(i pulumi.IntInput) GetReplic
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicaReplicaOverride {
 		return vs[0].([]GetReplicaReplicaOverride)[vs[1].(int)]
 	}).(GetReplicaReplicaOverrideOutput)
+}
+
+type GetReplicaReplicaOverrideTelemetryConfiguration struct {
+	// Telemetry configuration details for logging.
+	Logs []GetReplicaReplicaOverrideTelemetryConfigurationLog `pulumi:"logs"`
+}
+
+// GetReplicaReplicaOverrideTelemetryConfigurationInput is an input type that accepts GetReplicaReplicaOverrideTelemetryConfigurationArgs and GetReplicaReplicaOverrideTelemetryConfigurationOutput values.
+// You can construct a concrete instance of `GetReplicaReplicaOverrideTelemetryConfigurationInput` via:
+//
+//	GetReplicaReplicaOverrideTelemetryConfigurationArgs{...}
+type GetReplicaReplicaOverrideTelemetryConfigurationInput interface {
+	pulumi.Input
+
+	ToGetReplicaReplicaOverrideTelemetryConfigurationOutput() GetReplicaReplicaOverrideTelemetryConfigurationOutput
+	ToGetReplicaReplicaOverrideTelemetryConfigurationOutputWithContext(context.Context) GetReplicaReplicaOverrideTelemetryConfigurationOutput
+}
+
+type GetReplicaReplicaOverrideTelemetryConfigurationArgs struct {
+	// Telemetry configuration details for logging.
+	Logs GetReplicaReplicaOverrideTelemetryConfigurationLogArrayInput `pulumi:"logs"`
+}
+
+func (GetReplicaReplicaOverrideTelemetryConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicaReplicaOverrideTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i GetReplicaReplicaOverrideTelemetryConfigurationArgs) ToGetReplicaReplicaOverrideTelemetryConfigurationOutput() GetReplicaReplicaOverrideTelemetryConfigurationOutput {
+	return i.ToGetReplicaReplicaOverrideTelemetryConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetReplicaReplicaOverrideTelemetryConfigurationArgs) ToGetReplicaReplicaOverrideTelemetryConfigurationOutputWithContext(ctx context.Context) GetReplicaReplicaOverrideTelemetryConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaReplicaOverrideTelemetryConfigurationOutput)
+}
+
+// GetReplicaReplicaOverrideTelemetryConfigurationArrayInput is an input type that accepts GetReplicaReplicaOverrideTelemetryConfigurationArray and GetReplicaReplicaOverrideTelemetryConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetReplicaReplicaOverrideTelemetryConfigurationArrayInput` via:
+//
+//	GetReplicaReplicaOverrideTelemetryConfigurationArray{ GetReplicaReplicaOverrideTelemetryConfigurationArgs{...} }
+type GetReplicaReplicaOverrideTelemetryConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicaReplicaOverrideTelemetryConfigurationArrayOutput() GetReplicaReplicaOverrideTelemetryConfigurationArrayOutput
+	ToGetReplicaReplicaOverrideTelemetryConfigurationArrayOutputWithContext(context.Context) GetReplicaReplicaOverrideTelemetryConfigurationArrayOutput
+}
+
+type GetReplicaReplicaOverrideTelemetryConfigurationArray []GetReplicaReplicaOverrideTelemetryConfigurationInput
+
+func (GetReplicaReplicaOverrideTelemetryConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicaReplicaOverrideTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i GetReplicaReplicaOverrideTelemetryConfigurationArray) ToGetReplicaReplicaOverrideTelemetryConfigurationArrayOutput() GetReplicaReplicaOverrideTelemetryConfigurationArrayOutput {
+	return i.ToGetReplicaReplicaOverrideTelemetryConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicaReplicaOverrideTelemetryConfigurationArray) ToGetReplicaReplicaOverrideTelemetryConfigurationArrayOutputWithContext(ctx context.Context) GetReplicaReplicaOverrideTelemetryConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaReplicaOverrideTelemetryConfigurationArrayOutput)
+}
+
+type GetReplicaReplicaOverrideTelemetryConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetReplicaReplicaOverrideTelemetryConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicaReplicaOverrideTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o GetReplicaReplicaOverrideTelemetryConfigurationOutput) ToGetReplicaReplicaOverrideTelemetryConfigurationOutput() GetReplicaReplicaOverrideTelemetryConfigurationOutput {
+	return o
+}
+
+func (o GetReplicaReplicaOverrideTelemetryConfigurationOutput) ToGetReplicaReplicaOverrideTelemetryConfigurationOutputWithContext(ctx context.Context) GetReplicaReplicaOverrideTelemetryConfigurationOutput {
+	return o
+}
+
+// Telemetry configuration details for logging.
+func (o GetReplicaReplicaOverrideTelemetryConfigurationOutput) Logs() GetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput {
+	return o.ApplyT(func(v GetReplicaReplicaOverrideTelemetryConfiguration) []GetReplicaReplicaOverrideTelemetryConfigurationLog {
+		return v.Logs
+	}).(GetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput)
+}
+
+type GetReplicaReplicaOverrideTelemetryConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicaReplicaOverrideTelemetryConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicaReplicaOverrideTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o GetReplicaReplicaOverrideTelemetryConfigurationArrayOutput) ToGetReplicaReplicaOverrideTelemetryConfigurationArrayOutput() GetReplicaReplicaOverrideTelemetryConfigurationArrayOutput {
+	return o
+}
+
+func (o GetReplicaReplicaOverrideTelemetryConfigurationArrayOutput) ToGetReplicaReplicaOverrideTelemetryConfigurationArrayOutputWithContext(ctx context.Context) GetReplicaReplicaOverrideTelemetryConfigurationArrayOutput {
+	return o
+}
+
+func (o GetReplicaReplicaOverrideTelemetryConfigurationArrayOutput) Index(i pulumi.IntInput) GetReplicaReplicaOverrideTelemetryConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicaReplicaOverrideTelemetryConfiguration {
+		return vs[0].([]GetReplicaReplicaOverrideTelemetryConfiguration)[vs[1].(int)]
+	}).(GetReplicaReplicaOverrideTelemetryConfigurationOutput)
+}
+
+type GetReplicaReplicaOverrideTelemetryConfigurationLog struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination string `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations []GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes []string `pulumi:"logTypes"`
+}
+
+// GetReplicaReplicaOverrideTelemetryConfigurationLogInput is an input type that accepts GetReplicaReplicaOverrideTelemetryConfigurationLogArgs and GetReplicaReplicaOverrideTelemetryConfigurationLogOutput values.
+// You can construct a concrete instance of `GetReplicaReplicaOverrideTelemetryConfigurationLogInput` via:
+//
+//	GetReplicaReplicaOverrideTelemetryConfigurationLogArgs{...}
+type GetReplicaReplicaOverrideTelemetryConfigurationLogInput interface {
+	pulumi.Input
+
+	ToGetReplicaReplicaOverrideTelemetryConfigurationLogOutput() GetReplicaReplicaOverrideTelemetryConfigurationLogOutput
+	ToGetReplicaReplicaOverrideTelemetryConfigurationLogOutputWithContext(context.Context) GetReplicaReplicaOverrideTelemetryConfigurationLogOutput
+}
+
+type GetReplicaReplicaOverrideTelemetryConfigurationLogArgs struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination pulumi.StringInput `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayInput `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes pulumi.StringArrayInput `pulumi:"logTypes"`
+}
+
+func (GetReplicaReplicaOverrideTelemetryConfigurationLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicaReplicaOverrideTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i GetReplicaReplicaOverrideTelemetryConfigurationLogArgs) ToGetReplicaReplicaOverrideTelemetryConfigurationLogOutput() GetReplicaReplicaOverrideTelemetryConfigurationLogOutput {
+	return i.ToGetReplicaReplicaOverrideTelemetryConfigurationLogOutputWithContext(context.Background())
+}
+
+func (i GetReplicaReplicaOverrideTelemetryConfigurationLogArgs) ToGetReplicaReplicaOverrideTelemetryConfigurationLogOutputWithContext(ctx context.Context) GetReplicaReplicaOverrideTelemetryConfigurationLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaReplicaOverrideTelemetryConfigurationLogOutput)
+}
+
+// GetReplicaReplicaOverrideTelemetryConfigurationLogArrayInput is an input type that accepts GetReplicaReplicaOverrideTelemetryConfigurationLogArray and GetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput values.
+// You can construct a concrete instance of `GetReplicaReplicaOverrideTelemetryConfigurationLogArrayInput` via:
+//
+//	GetReplicaReplicaOverrideTelemetryConfigurationLogArray{ GetReplicaReplicaOverrideTelemetryConfigurationLogArgs{...} }
+type GetReplicaReplicaOverrideTelemetryConfigurationLogArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput() GetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput
+	ToGetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutputWithContext(context.Context) GetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput
+}
+
+type GetReplicaReplicaOverrideTelemetryConfigurationLogArray []GetReplicaReplicaOverrideTelemetryConfigurationLogInput
+
+func (GetReplicaReplicaOverrideTelemetryConfigurationLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicaReplicaOverrideTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i GetReplicaReplicaOverrideTelemetryConfigurationLogArray) ToGetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput() GetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput {
+	return i.ToGetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicaReplicaOverrideTelemetryConfigurationLogArray) ToGetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) GetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput)
+}
+
+type GetReplicaReplicaOverrideTelemetryConfigurationLogOutput struct{ *pulumi.OutputState }
+
+func (GetReplicaReplicaOverrideTelemetryConfigurationLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicaReplicaOverrideTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o GetReplicaReplicaOverrideTelemetryConfigurationLogOutput) ToGetReplicaReplicaOverrideTelemetryConfigurationLogOutput() GetReplicaReplicaOverrideTelemetryConfigurationLogOutput {
+	return o
+}
+
+func (o GetReplicaReplicaOverrideTelemetryConfigurationLogOutput) ToGetReplicaReplicaOverrideTelemetryConfigurationLogOutputWithContext(ctx context.Context) GetReplicaReplicaOverrideTelemetryConfigurationLogOutput {
+	return o
+}
+
+// Type of destination where MySQL telemetry is exposed to.
+func (o GetReplicaReplicaOverrideTelemetryConfigurationLogOutput) Destination() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicaReplicaOverrideTelemetryConfigurationLog) string { return v.Destination }).(pulumi.StringOutput)
+}
+
+// List of configuration variables for a given destination type.
+func (o GetReplicaReplicaOverrideTelemetryConfigurationLogOutput) DestinationConfigurations() GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o.ApplyT(func(v GetReplicaReplicaOverrideTelemetryConfigurationLog) []GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration {
+		return v.DestinationConfigurations
+	}).(GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+// List of MySQL telemetry types that can be exposed on a telemetry destination
+func (o GetReplicaReplicaOverrideTelemetryConfigurationLogOutput) LogTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetReplicaReplicaOverrideTelemetryConfigurationLog) []string { return v.LogTypes }).(pulumi.StringArrayOutput)
+}
+
+type GetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicaReplicaOverrideTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o GetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput) ToGetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput() GetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o GetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput) ToGetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) GetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o GetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput) Index(i pulumi.IntInput) GetReplicaReplicaOverrideTelemetryConfigurationLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicaReplicaOverrideTelemetryConfigurationLog {
+		return vs[0].([]GetReplicaReplicaOverrideTelemetryConfigurationLog)[vs[1].(int)]
+	}).(GetReplicaReplicaOverrideTelemetryConfigurationLogOutput)
+}
+
+type GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration struct {
+	// Name of the destination configuration variable.
+	Key string `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value string `pulumi:"value"`
+}
+
+// GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationInput is an input type that accepts GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArgs and GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput values.
+// You can construct a concrete instance of `GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationInput` via:
+//
+//	GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArgs{...}
+type GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationInput interface {
+	pulumi.Input
+
+	ToGetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput() GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput
+	ToGetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Context) GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput
+}
+
+type GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArgs struct {
+	// Name of the destination configuration variable.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArgs) ToGetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput() GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput {
+	return i.ToGetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArgs) ToGetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput)
+}
+
+// GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayInput is an input type that accepts GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArray and GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayInput` via:
+//
+//	GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArray{ GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArgs{...} }
+type GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput
+	ToGetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Context) GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput
+}
+
+type GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArray []GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationInput
+
+func (GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArray) ToGetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return i.ToGetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArray) ToGetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+type GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput) ToGetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput() GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+func (o GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput) ToGetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+// Name of the destination configuration variable.
+func (o GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Value of the destination configuration variable.
+func (o GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToGetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToGetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput) Index(i pulumi.IntInput) GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration {
+		return vs[0].([]GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration)[vs[1].(int)]
+	}).(GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput)
 }
 
 type GetReplicaSecureConnection struct {
@@ -27556,6 +30319,326 @@ func (o GetReplicaSecureConnectionArrayOutput) Index(i pulumi.IntInput) GetRepli
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicaSecureConnection {
 		return vs[0].([]GetReplicaSecureConnection)[vs[1].(int)]
 	}).(GetReplicaSecureConnectionOutput)
+}
+
+type GetReplicaTelemetryConfiguration struct {
+	// Telemetry configuration details for logging.
+	Logs []GetReplicaTelemetryConfigurationLog `pulumi:"logs"`
+}
+
+// GetReplicaTelemetryConfigurationInput is an input type that accepts GetReplicaTelemetryConfigurationArgs and GetReplicaTelemetryConfigurationOutput values.
+// You can construct a concrete instance of `GetReplicaTelemetryConfigurationInput` via:
+//
+//	GetReplicaTelemetryConfigurationArgs{...}
+type GetReplicaTelemetryConfigurationInput interface {
+	pulumi.Input
+
+	ToGetReplicaTelemetryConfigurationOutput() GetReplicaTelemetryConfigurationOutput
+	ToGetReplicaTelemetryConfigurationOutputWithContext(context.Context) GetReplicaTelemetryConfigurationOutput
+}
+
+type GetReplicaTelemetryConfigurationArgs struct {
+	// Telemetry configuration details for logging.
+	Logs GetReplicaTelemetryConfigurationLogArrayInput `pulumi:"logs"`
+}
+
+func (GetReplicaTelemetryConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicaTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i GetReplicaTelemetryConfigurationArgs) ToGetReplicaTelemetryConfigurationOutput() GetReplicaTelemetryConfigurationOutput {
+	return i.ToGetReplicaTelemetryConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetReplicaTelemetryConfigurationArgs) ToGetReplicaTelemetryConfigurationOutputWithContext(ctx context.Context) GetReplicaTelemetryConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaTelemetryConfigurationOutput)
+}
+
+// GetReplicaTelemetryConfigurationArrayInput is an input type that accepts GetReplicaTelemetryConfigurationArray and GetReplicaTelemetryConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetReplicaTelemetryConfigurationArrayInput` via:
+//
+//	GetReplicaTelemetryConfigurationArray{ GetReplicaTelemetryConfigurationArgs{...} }
+type GetReplicaTelemetryConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicaTelemetryConfigurationArrayOutput() GetReplicaTelemetryConfigurationArrayOutput
+	ToGetReplicaTelemetryConfigurationArrayOutputWithContext(context.Context) GetReplicaTelemetryConfigurationArrayOutput
+}
+
+type GetReplicaTelemetryConfigurationArray []GetReplicaTelemetryConfigurationInput
+
+func (GetReplicaTelemetryConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicaTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i GetReplicaTelemetryConfigurationArray) ToGetReplicaTelemetryConfigurationArrayOutput() GetReplicaTelemetryConfigurationArrayOutput {
+	return i.ToGetReplicaTelemetryConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicaTelemetryConfigurationArray) ToGetReplicaTelemetryConfigurationArrayOutputWithContext(ctx context.Context) GetReplicaTelemetryConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaTelemetryConfigurationArrayOutput)
+}
+
+type GetReplicaTelemetryConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetReplicaTelemetryConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicaTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o GetReplicaTelemetryConfigurationOutput) ToGetReplicaTelemetryConfigurationOutput() GetReplicaTelemetryConfigurationOutput {
+	return o
+}
+
+func (o GetReplicaTelemetryConfigurationOutput) ToGetReplicaTelemetryConfigurationOutputWithContext(ctx context.Context) GetReplicaTelemetryConfigurationOutput {
+	return o
+}
+
+// Telemetry configuration details for logging.
+func (o GetReplicaTelemetryConfigurationOutput) Logs() GetReplicaTelemetryConfigurationLogArrayOutput {
+	return o.ApplyT(func(v GetReplicaTelemetryConfiguration) []GetReplicaTelemetryConfigurationLog { return v.Logs }).(GetReplicaTelemetryConfigurationLogArrayOutput)
+}
+
+type GetReplicaTelemetryConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicaTelemetryConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicaTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o GetReplicaTelemetryConfigurationArrayOutput) ToGetReplicaTelemetryConfigurationArrayOutput() GetReplicaTelemetryConfigurationArrayOutput {
+	return o
+}
+
+func (o GetReplicaTelemetryConfigurationArrayOutput) ToGetReplicaTelemetryConfigurationArrayOutputWithContext(ctx context.Context) GetReplicaTelemetryConfigurationArrayOutput {
+	return o
+}
+
+func (o GetReplicaTelemetryConfigurationArrayOutput) Index(i pulumi.IntInput) GetReplicaTelemetryConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicaTelemetryConfiguration {
+		return vs[0].([]GetReplicaTelemetryConfiguration)[vs[1].(int)]
+	}).(GetReplicaTelemetryConfigurationOutput)
+}
+
+type GetReplicaTelemetryConfigurationLog struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination string `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations []GetReplicaTelemetryConfigurationLogDestinationConfiguration `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes []string `pulumi:"logTypes"`
+}
+
+// GetReplicaTelemetryConfigurationLogInput is an input type that accepts GetReplicaTelemetryConfigurationLogArgs and GetReplicaTelemetryConfigurationLogOutput values.
+// You can construct a concrete instance of `GetReplicaTelemetryConfigurationLogInput` via:
+//
+//	GetReplicaTelemetryConfigurationLogArgs{...}
+type GetReplicaTelemetryConfigurationLogInput interface {
+	pulumi.Input
+
+	ToGetReplicaTelemetryConfigurationLogOutput() GetReplicaTelemetryConfigurationLogOutput
+	ToGetReplicaTelemetryConfigurationLogOutputWithContext(context.Context) GetReplicaTelemetryConfigurationLogOutput
+}
+
+type GetReplicaTelemetryConfigurationLogArgs struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination pulumi.StringInput `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayInput `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes pulumi.StringArrayInput `pulumi:"logTypes"`
+}
+
+func (GetReplicaTelemetryConfigurationLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicaTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i GetReplicaTelemetryConfigurationLogArgs) ToGetReplicaTelemetryConfigurationLogOutput() GetReplicaTelemetryConfigurationLogOutput {
+	return i.ToGetReplicaTelemetryConfigurationLogOutputWithContext(context.Background())
+}
+
+func (i GetReplicaTelemetryConfigurationLogArgs) ToGetReplicaTelemetryConfigurationLogOutputWithContext(ctx context.Context) GetReplicaTelemetryConfigurationLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaTelemetryConfigurationLogOutput)
+}
+
+// GetReplicaTelemetryConfigurationLogArrayInput is an input type that accepts GetReplicaTelemetryConfigurationLogArray and GetReplicaTelemetryConfigurationLogArrayOutput values.
+// You can construct a concrete instance of `GetReplicaTelemetryConfigurationLogArrayInput` via:
+//
+//	GetReplicaTelemetryConfigurationLogArray{ GetReplicaTelemetryConfigurationLogArgs{...} }
+type GetReplicaTelemetryConfigurationLogArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicaTelemetryConfigurationLogArrayOutput() GetReplicaTelemetryConfigurationLogArrayOutput
+	ToGetReplicaTelemetryConfigurationLogArrayOutputWithContext(context.Context) GetReplicaTelemetryConfigurationLogArrayOutput
+}
+
+type GetReplicaTelemetryConfigurationLogArray []GetReplicaTelemetryConfigurationLogInput
+
+func (GetReplicaTelemetryConfigurationLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicaTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i GetReplicaTelemetryConfigurationLogArray) ToGetReplicaTelemetryConfigurationLogArrayOutput() GetReplicaTelemetryConfigurationLogArrayOutput {
+	return i.ToGetReplicaTelemetryConfigurationLogArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicaTelemetryConfigurationLogArray) ToGetReplicaTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) GetReplicaTelemetryConfigurationLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaTelemetryConfigurationLogArrayOutput)
+}
+
+type GetReplicaTelemetryConfigurationLogOutput struct{ *pulumi.OutputState }
+
+func (GetReplicaTelemetryConfigurationLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicaTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o GetReplicaTelemetryConfigurationLogOutput) ToGetReplicaTelemetryConfigurationLogOutput() GetReplicaTelemetryConfigurationLogOutput {
+	return o
+}
+
+func (o GetReplicaTelemetryConfigurationLogOutput) ToGetReplicaTelemetryConfigurationLogOutputWithContext(ctx context.Context) GetReplicaTelemetryConfigurationLogOutput {
+	return o
+}
+
+// Type of destination where MySQL telemetry is exposed to.
+func (o GetReplicaTelemetryConfigurationLogOutput) Destination() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicaTelemetryConfigurationLog) string { return v.Destination }).(pulumi.StringOutput)
+}
+
+// List of configuration variables for a given destination type.
+func (o GetReplicaTelemetryConfigurationLogOutput) DestinationConfigurations() GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o.ApplyT(func(v GetReplicaTelemetryConfigurationLog) []GetReplicaTelemetryConfigurationLogDestinationConfiguration {
+		return v.DestinationConfigurations
+	}).(GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+// List of MySQL telemetry types that can be exposed on a telemetry destination
+func (o GetReplicaTelemetryConfigurationLogOutput) LogTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetReplicaTelemetryConfigurationLog) []string { return v.LogTypes }).(pulumi.StringArrayOutput)
+}
+
+type GetReplicaTelemetryConfigurationLogArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicaTelemetryConfigurationLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicaTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o GetReplicaTelemetryConfigurationLogArrayOutput) ToGetReplicaTelemetryConfigurationLogArrayOutput() GetReplicaTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o GetReplicaTelemetryConfigurationLogArrayOutput) ToGetReplicaTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) GetReplicaTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o GetReplicaTelemetryConfigurationLogArrayOutput) Index(i pulumi.IntInput) GetReplicaTelemetryConfigurationLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicaTelemetryConfigurationLog {
+		return vs[0].([]GetReplicaTelemetryConfigurationLog)[vs[1].(int)]
+	}).(GetReplicaTelemetryConfigurationLogOutput)
+}
+
+type GetReplicaTelemetryConfigurationLogDestinationConfiguration struct {
+	// Name of the destination configuration variable.
+	Key string `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value string `pulumi:"value"`
+}
+
+// GetReplicaTelemetryConfigurationLogDestinationConfigurationInput is an input type that accepts GetReplicaTelemetryConfigurationLogDestinationConfigurationArgs and GetReplicaTelemetryConfigurationLogDestinationConfigurationOutput values.
+// You can construct a concrete instance of `GetReplicaTelemetryConfigurationLogDestinationConfigurationInput` via:
+//
+//	GetReplicaTelemetryConfigurationLogDestinationConfigurationArgs{...}
+type GetReplicaTelemetryConfigurationLogDestinationConfigurationInput interface {
+	pulumi.Input
+
+	ToGetReplicaTelemetryConfigurationLogDestinationConfigurationOutput() GetReplicaTelemetryConfigurationLogDestinationConfigurationOutput
+	ToGetReplicaTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Context) GetReplicaTelemetryConfigurationLogDestinationConfigurationOutput
+}
+
+type GetReplicaTelemetryConfigurationLogDestinationConfigurationArgs struct {
+	// Name of the destination configuration variable.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetReplicaTelemetryConfigurationLogDestinationConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicaTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i GetReplicaTelemetryConfigurationLogDestinationConfigurationArgs) ToGetReplicaTelemetryConfigurationLogDestinationConfigurationOutput() GetReplicaTelemetryConfigurationLogDestinationConfigurationOutput {
+	return i.ToGetReplicaTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetReplicaTelemetryConfigurationLogDestinationConfigurationArgs) ToGetReplicaTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) GetReplicaTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaTelemetryConfigurationLogDestinationConfigurationOutput)
+}
+
+// GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayInput is an input type that accepts GetReplicaTelemetryConfigurationLogDestinationConfigurationArray and GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayInput` via:
+//
+//	GetReplicaTelemetryConfigurationLogDestinationConfigurationArray{ GetReplicaTelemetryConfigurationLogDestinationConfigurationArgs{...} }
+type GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput
+	ToGetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Context) GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput
+}
+
+type GetReplicaTelemetryConfigurationLogDestinationConfigurationArray []GetReplicaTelemetryConfigurationLogDestinationConfigurationInput
+
+func (GetReplicaTelemetryConfigurationLogDestinationConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicaTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i GetReplicaTelemetryConfigurationLogDestinationConfigurationArray) ToGetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return i.ToGetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicaTelemetryConfigurationLogDestinationConfigurationArray) ToGetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+type GetReplicaTelemetryConfigurationLogDestinationConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetReplicaTelemetryConfigurationLogDestinationConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicaTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o GetReplicaTelemetryConfigurationLogDestinationConfigurationOutput) ToGetReplicaTelemetryConfigurationLogDestinationConfigurationOutput() GetReplicaTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+func (o GetReplicaTelemetryConfigurationLogDestinationConfigurationOutput) ToGetReplicaTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) GetReplicaTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+// Name of the destination configuration variable.
+func (o GetReplicaTelemetryConfigurationLogDestinationConfigurationOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicaTelemetryConfigurationLogDestinationConfiguration) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value of the destination configuration variable.
+func (o GetReplicaTelemetryConfigurationLogDestinationConfigurationOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicaTelemetryConfigurationLogDestinationConfiguration) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicaTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToGetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToGetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput) Index(i pulumi.IntInput) GetReplicaTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicaTelemetryConfigurationLogDestinationConfiguration {
+		return vs[0].([]GetReplicaTelemetryConfigurationLogDestinationConfiguration)[vs[1].(int)]
+	}).(GetReplicaTelemetryConfigurationLogDestinationConfigurationOutput)
 }
 
 type GetReplicasFilter struct {
@@ -27711,6 +30794,8 @@ type GetReplicasReplica struct {
 	ShapeName string `pulumi:"shapeName"`
 	// The LifecycleState of the read replica.
 	State string `pulumi:"state"`
+	// Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfigurations []GetReplicasReplicaTelemetryConfiguration `pulumi:"telemetryConfigurations"`
 	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -27775,6 +30860,8 @@ type GetReplicasReplicaArgs struct {
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
 	// The LifecycleState of the read replica.
 	State pulumi.StringInput `pulumi:"state"`
+	// Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfigurations GetReplicasReplicaTelemetryConfigurationArrayInput `pulumi:"telemetryConfigurations"`
 	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -27947,6 +31034,13 @@ func (o GetReplicasReplicaOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicasReplica) string { return v.State }).(pulumi.StringOutput)
 }
 
+// Telemetry configuration details of a DB System or a read replica.
+func (o GetReplicasReplicaOutput) TelemetryConfigurations() GetReplicasReplicaTelemetryConfigurationArrayOutput {
+	return o.ApplyT(func(v GetReplicasReplica) []GetReplicasReplicaTelemetryConfiguration {
+		return v.TelemetryConfigurations
+	}).(GetReplicasReplicaTelemetryConfigurationArrayOutput)
+}
+
 // The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 func (o GetReplicasReplicaOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicasReplica) string { return v.TimeCreated }).(pulumi.StringOutput)
@@ -28094,6 +31188,8 @@ type GetReplicasReplicaReplicaOverride struct {
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName string `pulumi:"shapeName"`
+	// Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfigurations []GetReplicasReplicaReplicaOverrideTelemetryConfiguration `pulumi:"telemetryConfigurations"`
 }
 
 // GetReplicasReplicaReplicaOverrideInput is an input type that accepts GetReplicasReplicaReplicaOverrideArgs and GetReplicasReplicaReplicaOverrideOutput values.
@@ -28118,6 +31214,8 @@ type GetReplicasReplicaReplicaOverrideArgs struct {
 	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	// Telemetry configuration details of a DB System or a read replica.
+	TelemetryConfigurations GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayInput `pulumi:"telemetryConfigurations"`
 }
 
 func (GetReplicasReplicaReplicaOverrideArgs) ElementType() reflect.Type {
@@ -28196,6 +31294,13 @@ func (o GetReplicasReplicaReplicaOverrideOutput) ShapeName() pulumi.StringOutput
 	return o.ApplyT(func(v GetReplicasReplicaReplicaOverride) string { return v.ShapeName }).(pulumi.StringOutput)
 }
 
+// Telemetry configuration details of a DB System or a read replica.
+func (o GetReplicasReplicaReplicaOverrideOutput) TelemetryConfigurations() GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput {
+	return o.ApplyT(func(v GetReplicasReplicaReplicaOverride) []GetReplicasReplicaReplicaOverrideTelemetryConfiguration {
+		return v.TelemetryConfigurations
+	}).(GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput)
+}
+
 type GetReplicasReplicaReplicaOverrideArrayOutput struct{ *pulumi.OutputState }
 
 func (GetReplicasReplicaReplicaOverrideArrayOutput) ElementType() reflect.Type {
@@ -28214,6 +31319,332 @@ func (o GetReplicasReplicaReplicaOverrideArrayOutput) Index(i pulumi.IntInput) G
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasReplicaReplicaOverride {
 		return vs[0].([]GetReplicasReplicaReplicaOverride)[vs[1].(int)]
 	}).(GetReplicasReplicaReplicaOverrideOutput)
+}
+
+type GetReplicasReplicaReplicaOverrideTelemetryConfiguration struct {
+	// Telemetry configuration details for logging.
+	Logs []GetReplicasReplicaReplicaOverrideTelemetryConfigurationLog `pulumi:"logs"`
+}
+
+// GetReplicasReplicaReplicaOverrideTelemetryConfigurationInput is an input type that accepts GetReplicasReplicaReplicaOverrideTelemetryConfigurationArgs and GetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaReplicaOverrideTelemetryConfigurationInput` via:
+//
+//	GetReplicasReplicaReplicaOverrideTelemetryConfigurationArgs{...}
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput() GetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput
+	ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationOutputWithContext(context.Context) GetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput
+}
+
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationArgs struct {
+	// Telemetry configuration details for logging.
+	Logs GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayInput `pulumi:"logs"`
+}
+
+func (GetReplicasReplicaReplicaOverrideTelemetryConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplicaReplicaOverrideTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaReplicaOverrideTelemetryConfigurationArgs) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput() GetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput {
+	return i.ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaReplicaOverrideTelemetryConfigurationArgs) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationOutputWithContext(ctx context.Context) GetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput)
+}
+
+// GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayInput is an input type that accepts GetReplicasReplicaReplicaOverrideTelemetryConfigurationArray and GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayInput` via:
+//
+//	GetReplicasReplicaReplicaOverrideTelemetryConfigurationArray{ GetReplicasReplicaReplicaOverrideTelemetryConfigurationArgs{...} }
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput() GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput
+	ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutputWithContext(context.Context) GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput
+}
+
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationArray []GetReplicasReplicaReplicaOverrideTelemetryConfigurationInput
+
+func (GetReplicasReplicaReplicaOverrideTelemetryConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplicaReplicaOverrideTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaReplicaOverrideTelemetryConfigurationArray) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput() GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput {
+	return i.ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaReplicaOverrideTelemetryConfigurationArray) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutputWithContext(ctx context.Context) GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput)
+}
+
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplicaReplicaOverrideTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput() GetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput {
+	return o
+}
+
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationOutputWithContext(ctx context.Context) GetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput {
+	return o
+}
+
+// Telemetry configuration details for logging.
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput) Logs() GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput {
+	return o.ApplyT(func(v GetReplicasReplicaReplicaOverrideTelemetryConfiguration) []GetReplicasReplicaReplicaOverrideTelemetryConfigurationLog {
+		return v.Logs
+	}).(GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput)
+}
+
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplicaReplicaOverrideTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput() GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutputWithContext(ctx context.Context) GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput) Index(i pulumi.IntInput) GetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasReplicaReplicaOverrideTelemetryConfiguration {
+		return vs[0].([]GetReplicasReplicaReplicaOverrideTelemetryConfiguration)[vs[1].(int)]
+	}).(GetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput)
+}
+
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationLog struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination string `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations []GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes []string `pulumi:"logTypes"`
+}
+
+// GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogInput is an input type that accepts GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArgs and GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogInput` via:
+//
+//	GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArgs{...}
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput() GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput
+	ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutputWithContext(context.Context) GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput
+}
+
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArgs struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination pulumi.StringInput `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayInput `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes pulumi.StringArrayInput `pulumi:"logTypes"`
+}
+
+func (GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplicaReplicaOverrideTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArgs) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput() GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput {
+	return i.ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArgs) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutputWithContext(ctx context.Context) GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput)
+}
+
+// GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayInput is an input type that accepts GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArray and GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayInput` via:
+//
+//	GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArray{ GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArgs{...} }
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput() GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput
+	ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutputWithContext(context.Context) GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput
+}
+
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArray []GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogInput
+
+func (GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplicaReplicaOverrideTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArray) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput() GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput {
+	return i.ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArray) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput)
+}
+
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplicaReplicaOverrideTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput() GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput {
+	return o
+}
+
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutputWithContext(ctx context.Context) GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput {
+	return o
+}
+
+// Type of destination where MySQL telemetry is exposed to.
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput) Destination() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplicaReplicaOverrideTelemetryConfigurationLog) string { return v.Destination }).(pulumi.StringOutput)
+}
+
+// List of configuration variables for a given destination type.
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput) DestinationConfigurations() GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o.ApplyT(func(v GetReplicasReplicaReplicaOverrideTelemetryConfigurationLog) []GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration {
+		return v.DestinationConfigurations
+	}).(GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+// List of MySQL telemetry types that can be exposed on a telemetry destination
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput) LogTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetReplicasReplicaReplicaOverrideTelemetryConfigurationLog) []string { return v.LogTypes }).(pulumi.StringArrayOutput)
+}
+
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplicaReplicaOverrideTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput() GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput) Index(i pulumi.IntInput) GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasReplicaReplicaOverrideTelemetryConfigurationLog {
+		return vs[0].([]GetReplicasReplicaReplicaOverrideTelemetryConfigurationLog)[vs[1].(int)]
+	}).(GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput)
+}
+
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration struct {
+	// Name of the destination configuration variable.
+	Key string `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value string `pulumi:"value"`
+}
+
+// GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationInput is an input type that accepts GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArgs and GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationInput` via:
+//
+//	GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArgs{...}
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput() GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput
+	ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Context) GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput
+}
+
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArgs struct {
+	// Name of the destination configuration variable.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArgs) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput() GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput {
+	return i.ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArgs) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput)
+}
+
+// GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayInput is an input type that accepts GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArray and GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayInput` via:
+//
+//	GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArray{ GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArgs{...} }
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput
+	ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Context) GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput
+}
+
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArray []GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationInput
+
+func (GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArray) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return i.ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArray) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput() GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+// Name of the destination configuration variable.
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Value of the destination configuration variable.
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToGetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput) Index(i pulumi.IntInput) GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration {
+		return vs[0].([]GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfiguration)[vs[1].(int)]
+	}).(GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput)
 }
 
 type GetReplicasReplicaSecureConnection struct {
@@ -28320,6 +31751,328 @@ func (o GetReplicasReplicaSecureConnectionArrayOutput) Index(i pulumi.IntInput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasReplicaSecureConnection {
 		return vs[0].([]GetReplicasReplicaSecureConnection)[vs[1].(int)]
 	}).(GetReplicasReplicaSecureConnectionOutput)
+}
+
+type GetReplicasReplicaTelemetryConfiguration struct {
+	// Telemetry configuration details for logging.
+	Logs []GetReplicasReplicaTelemetryConfigurationLog `pulumi:"logs"`
+}
+
+// GetReplicasReplicaTelemetryConfigurationInput is an input type that accepts GetReplicasReplicaTelemetryConfigurationArgs and GetReplicasReplicaTelemetryConfigurationOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaTelemetryConfigurationInput` via:
+//
+//	GetReplicasReplicaTelemetryConfigurationArgs{...}
+type GetReplicasReplicaTelemetryConfigurationInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaTelemetryConfigurationOutput() GetReplicasReplicaTelemetryConfigurationOutput
+	ToGetReplicasReplicaTelemetryConfigurationOutputWithContext(context.Context) GetReplicasReplicaTelemetryConfigurationOutput
+}
+
+type GetReplicasReplicaTelemetryConfigurationArgs struct {
+	// Telemetry configuration details for logging.
+	Logs GetReplicasReplicaTelemetryConfigurationLogArrayInput `pulumi:"logs"`
+}
+
+func (GetReplicasReplicaTelemetryConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplicaTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaTelemetryConfigurationArgs) ToGetReplicasReplicaTelemetryConfigurationOutput() GetReplicasReplicaTelemetryConfigurationOutput {
+	return i.ToGetReplicasReplicaTelemetryConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaTelemetryConfigurationArgs) ToGetReplicasReplicaTelemetryConfigurationOutputWithContext(ctx context.Context) GetReplicasReplicaTelemetryConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaTelemetryConfigurationOutput)
+}
+
+// GetReplicasReplicaTelemetryConfigurationArrayInput is an input type that accepts GetReplicasReplicaTelemetryConfigurationArray and GetReplicasReplicaTelemetryConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaTelemetryConfigurationArrayInput` via:
+//
+//	GetReplicasReplicaTelemetryConfigurationArray{ GetReplicasReplicaTelemetryConfigurationArgs{...} }
+type GetReplicasReplicaTelemetryConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaTelemetryConfigurationArrayOutput() GetReplicasReplicaTelemetryConfigurationArrayOutput
+	ToGetReplicasReplicaTelemetryConfigurationArrayOutputWithContext(context.Context) GetReplicasReplicaTelemetryConfigurationArrayOutput
+}
+
+type GetReplicasReplicaTelemetryConfigurationArray []GetReplicasReplicaTelemetryConfigurationInput
+
+func (GetReplicasReplicaTelemetryConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplicaTelemetryConfiguration)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaTelemetryConfigurationArray) ToGetReplicasReplicaTelemetryConfigurationArrayOutput() GetReplicasReplicaTelemetryConfigurationArrayOutput {
+	return i.ToGetReplicasReplicaTelemetryConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaTelemetryConfigurationArray) ToGetReplicasReplicaTelemetryConfigurationArrayOutputWithContext(ctx context.Context) GetReplicasReplicaTelemetryConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaTelemetryConfigurationArrayOutput)
+}
+
+type GetReplicasReplicaTelemetryConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaTelemetryConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplicaTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaTelemetryConfigurationOutput) ToGetReplicasReplicaTelemetryConfigurationOutput() GetReplicasReplicaTelemetryConfigurationOutput {
+	return o
+}
+
+func (o GetReplicasReplicaTelemetryConfigurationOutput) ToGetReplicasReplicaTelemetryConfigurationOutputWithContext(ctx context.Context) GetReplicasReplicaTelemetryConfigurationOutput {
+	return o
+}
+
+// Telemetry configuration details for logging.
+func (o GetReplicasReplicaTelemetryConfigurationOutput) Logs() GetReplicasReplicaTelemetryConfigurationLogArrayOutput {
+	return o.ApplyT(func(v GetReplicasReplicaTelemetryConfiguration) []GetReplicasReplicaTelemetryConfigurationLog {
+		return v.Logs
+	}).(GetReplicasReplicaTelemetryConfigurationLogArrayOutput)
+}
+
+type GetReplicasReplicaTelemetryConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaTelemetryConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplicaTelemetryConfiguration)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaTelemetryConfigurationArrayOutput) ToGetReplicasReplicaTelemetryConfigurationArrayOutput() GetReplicasReplicaTelemetryConfigurationArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaTelemetryConfigurationArrayOutput) ToGetReplicasReplicaTelemetryConfigurationArrayOutputWithContext(ctx context.Context) GetReplicasReplicaTelemetryConfigurationArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaTelemetryConfigurationArrayOutput) Index(i pulumi.IntInput) GetReplicasReplicaTelemetryConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasReplicaTelemetryConfiguration {
+		return vs[0].([]GetReplicasReplicaTelemetryConfiguration)[vs[1].(int)]
+	}).(GetReplicasReplicaTelemetryConfigurationOutput)
+}
+
+type GetReplicasReplicaTelemetryConfigurationLog struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination string `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations []GetReplicasReplicaTelemetryConfigurationLogDestinationConfiguration `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes []string `pulumi:"logTypes"`
+}
+
+// GetReplicasReplicaTelemetryConfigurationLogInput is an input type that accepts GetReplicasReplicaTelemetryConfigurationLogArgs and GetReplicasReplicaTelemetryConfigurationLogOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaTelemetryConfigurationLogInput` via:
+//
+//	GetReplicasReplicaTelemetryConfigurationLogArgs{...}
+type GetReplicasReplicaTelemetryConfigurationLogInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaTelemetryConfigurationLogOutput() GetReplicasReplicaTelemetryConfigurationLogOutput
+	ToGetReplicasReplicaTelemetryConfigurationLogOutputWithContext(context.Context) GetReplicasReplicaTelemetryConfigurationLogOutput
+}
+
+type GetReplicasReplicaTelemetryConfigurationLogArgs struct {
+	// Type of destination where MySQL telemetry is exposed to.
+	Destination pulumi.StringInput `pulumi:"destination"`
+	// List of configuration variables for a given destination type.
+	DestinationConfigurations GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayInput `pulumi:"destinationConfigurations"`
+	// List of MySQL telemetry types that can be exposed on a telemetry destination
+	LogTypes pulumi.StringArrayInput `pulumi:"logTypes"`
+}
+
+func (GetReplicasReplicaTelemetryConfigurationLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplicaTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaTelemetryConfigurationLogArgs) ToGetReplicasReplicaTelemetryConfigurationLogOutput() GetReplicasReplicaTelemetryConfigurationLogOutput {
+	return i.ToGetReplicasReplicaTelemetryConfigurationLogOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaTelemetryConfigurationLogArgs) ToGetReplicasReplicaTelemetryConfigurationLogOutputWithContext(ctx context.Context) GetReplicasReplicaTelemetryConfigurationLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaTelemetryConfigurationLogOutput)
+}
+
+// GetReplicasReplicaTelemetryConfigurationLogArrayInput is an input type that accepts GetReplicasReplicaTelemetryConfigurationLogArray and GetReplicasReplicaTelemetryConfigurationLogArrayOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaTelemetryConfigurationLogArrayInput` via:
+//
+//	GetReplicasReplicaTelemetryConfigurationLogArray{ GetReplicasReplicaTelemetryConfigurationLogArgs{...} }
+type GetReplicasReplicaTelemetryConfigurationLogArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaTelemetryConfigurationLogArrayOutput() GetReplicasReplicaTelemetryConfigurationLogArrayOutput
+	ToGetReplicasReplicaTelemetryConfigurationLogArrayOutputWithContext(context.Context) GetReplicasReplicaTelemetryConfigurationLogArrayOutput
+}
+
+type GetReplicasReplicaTelemetryConfigurationLogArray []GetReplicasReplicaTelemetryConfigurationLogInput
+
+func (GetReplicasReplicaTelemetryConfigurationLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplicaTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaTelemetryConfigurationLogArray) ToGetReplicasReplicaTelemetryConfigurationLogArrayOutput() GetReplicasReplicaTelemetryConfigurationLogArrayOutput {
+	return i.ToGetReplicasReplicaTelemetryConfigurationLogArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaTelemetryConfigurationLogArray) ToGetReplicasReplicaTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) GetReplicasReplicaTelemetryConfigurationLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaTelemetryConfigurationLogArrayOutput)
+}
+
+type GetReplicasReplicaTelemetryConfigurationLogOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaTelemetryConfigurationLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplicaTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaTelemetryConfigurationLogOutput) ToGetReplicasReplicaTelemetryConfigurationLogOutput() GetReplicasReplicaTelemetryConfigurationLogOutput {
+	return o
+}
+
+func (o GetReplicasReplicaTelemetryConfigurationLogOutput) ToGetReplicasReplicaTelemetryConfigurationLogOutputWithContext(ctx context.Context) GetReplicasReplicaTelemetryConfigurationLogOutput {
+	return o
+}
+
+// Type of destination where MySQL telemetry is exposed to.
+func (o GetReplicasReplicaTelemetryConfigurationLogOutput) Destination() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplicaTelemetryConfigurationLog) string { return v.Destination }).(pulumi.StringOutput)
+}
+
+// List of configuration variables for a given destination type.
+func (o GetReplicasReplicaTelemetryConfigurationLogOutput) DestinationConfigurations() GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o.ApplyT(func(v GetReplicasReplicaTelemetryConfigurationLog) []GetReplicasReplicaTelemetryConfigurationLogDestinationConfiguration {
+		return v.DestinationConfigurations
+	}).(GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+// List of MySQL telemetry types that can be exposed on a telemetry destination
+func (o GetReplicasReplicaTelemetryConfigurationLogOutput) LogTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetReplicasReplicaTelemetryConfigurationLog) []string { return v.LogTypes }).(pulumi.StringArrayOutput)
+}
+
+type GetReplicasReplicaTelemetryConfigurationLogArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaTelemetryConfigurationLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplicaTelemetryConfigurationLog)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaTelemetryConfigurationLogArrayOutput) ToGetReplicasReplicaTelemetryConfigurationLogArrayOutput() GetReplicasReplicaTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaTelemetryConfigurationLogArrayOutput) ToGetReplicasReplicaTelemetryConfigurationLogArrayOutputWithContext(ctx context.Context) GetReplicasReplicaTelemetryConfigurationLogArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaTelemetryConfigurationLogArrayOutput) Index(i pulumi.IntInput) GetReplicasReplicaTelemetryConfigurationLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasReplicaTelemetryConfigurationLog {
+		return vs[0].([]GetReplicasReplicaTelemetryConfigurationLog)[vs[1].(int)]
+	}).(GetReplicasReplicaTelemetryConfigurationLogOutput)
+}
+
+type GetReplicasReplicaTelemetryConfigurationLogDestinationConfiguration struct {
+	// Name of the destination configuration variable.
+	Key string `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value string `pulumi:"value"`
+}
+
+// GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationInput is an input type that accepts GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArgs and GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationInput` via:
+//
+//	GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArgs{...}
+type GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput() GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput
+	ToGetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Context) GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput
+}
+
+type GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArgs struct {
+	// Name of the destination configuration variable.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value of the destination configuration variable.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplicaTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArgs) ToGetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput() GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput {
+	return i.ToGetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArgs) ToGetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput)
+}
+
+// GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayInput is an input type that accepts GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArray and GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayInput` via:
+//
+//	GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArray{ GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArgs{...} }
+type GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput
+	ToGetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Context) GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput
+}
+
+type GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArray []GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationInput
+
+func (GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplicaTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArray) ToGetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return i.ToGetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArray) ToGetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput)
+}
+
+type GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplicaTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput) ToGetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput() GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+func (o GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput) ToGetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutputWithContext(ctx context.Context) GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput {
+	return o
+}
+
+// Name of the destination configuration variable.
+func (o GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplicaTelemetryConfigurationLogDestinationConfiguration) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value of the destination configuration variable.
+func (o GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplicaTelemetryConfigurationLogDestinationConfiguration) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplicaTelemetryConfigurationLogDestinationConfiguration)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToGetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput() GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput) ToGetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutputWithContext(ctx context.Context) GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput) Index(i pulumi.IntInput) GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasReplicaTelemetryConfigurationLogDestinationConfiguration {
+		return vs[0].([]GetReplicasReplicaTelemetryConfigurationLogDestinationConfiguration)[vs[1].(int)]
+	}).(GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput)
 }
 
 type GetShapesFilter struct {
@@ -28602,6 +32355,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotSecureConnectionArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotSummaryInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotSummaryArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotTelemetryConfigurationInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotTelemetryConfigurationLogInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupEncryptDataInput)(nil)).Elem(), MysqlBackupEncryptDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupEncryptDataPtrInput)(nil)).Elem(), MysqlBackupEncryptDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupSourceDetailsInput)(nil)).Elem(), MysqlBackupSourceDetailsArgs{})
@@ -28662,12 +32421,30 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSecureConnectionsPtrInput)(nil)).Elem(), MysqlDbSystemSecureConnectionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourceInput)(nil)).Elem(), MysqlDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourcePtrInput)(nil)).Elem(), MysqlDbSystemSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemTelemetryConfigurationInput)(nil)).Elem(), MysqlDbSystemTelemetryConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemTelemetryConfigurationPtrInput)(nil)).Elem(), MysqlDbSystemTelemetryConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemTelemetryConfigurationLogInput)(nil)).Elem(), MysqlDbSystemTelemetryConfigurationLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemTelemetryConfigurationLogArrayInput)(nil)).Elem(), MysqlDbSystemTelemetryConfigurationLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationInput)(nil)).Elem(), MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayInput)(nil)).Elem(), MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaEncryptDataInput)(nil)).Elem(), ReplicaEncryptDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaEncryptDataArrayInput)(nil)).Elem(), ReplicaEncryptDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaReplicaOverridesInput)(nil)).Elem(), ReplicaReplicaOverridesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaReplicaOverridesPtrInput)(nil)).Elem(), ReplicaReplicaOverridesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaReplicaOverridesTelemetryConfigurationInput)(nil)).Elem(), ReplicaReplicaOverridesTelemetryConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaReplicaOverridesTelemetryConfigurationPtrInput)(nil)).Elem(), ReplicaReplicaOverridesTelemetryConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaReplicaOverridesTelemetryConfigurationLogInput)(nil)).Elem(), ReplicaReplicaOverridesTelemetryConfigurationLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaReplicaOverridesTelemetryConfigurationLogArrayInput)(nil)).Elem(), ReplicaReplicaOverridesTelemetryConfigurationLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationInput)(nil)).Elem(), ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayInput)(nil)).Elem(), ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaSecureConnectionInput)(nil)).Elem(), ReplicaSecureConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaSecureConnectionArrayInput)(nil)).Elem(), ReplicaSecureConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaTelemetryConfigurationInput)(nil)).Elem(), ReplicaTelemetryConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaTelemetryConfigurationArrayInput)(nil)).Elem(), ReplicaTelemetryConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaTelemetryConfigurationLogInput)(nil)).Elem(), ReplicaTelemetryConfigurationLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaTelemetryConfigurationLogArrayInput)(nil)).Elem(), ReplicaTelemetryConfigurationLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaTelemetryConfigurationLogDestinationConfigurationInput)(nil)).Elem(), ReplicaTelemetryConfigurationLogDestinationConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaTelemetryConfigurationLogDestinationConfigurationArrayInput)(nil)).Elem(), ReplicaTelemetryConfigurationLogDestinationConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceInput)(nil)).Elem(), GetChannelSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceArrayInput)(nil)).Elem(), GetChannelSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceAnonymousTransactionsHandlingInput)(nil)).Elem(), GetChannelSourceAnonymousTransactionsHandlingArgs{})
@@ -28732,6 +32509,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotSecureConnectionArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotSummaryInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotSummaryArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotTelemetryConfigurationInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupEncryptDataInput)(nil)).Elem(), GetMysqlBackupEncryptDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupEncryptDataArrayInput)(nil)).Elem(), GetMysqlBackupEncryptDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupSourceDetailInput)(nil)).Elem(), GetMysqlBackupSourceDetailArgs{})
@@ -28810,6 +32593,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSecureConnectionArrayInput)(nil)).Elem(), GetMysqlDbSystemSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSourceInput)(nil)).Elem(), GetMysqlDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSourceArrayInput)(nil)).Elem(), GetMysqlDbSystemSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemTelemetryConfigurationInput)(nil)).Elem(), GetMysqlDbSystemTelemetryConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemTelemetryConfigurationArrayInput)(nil)).Elem(), GetMysqlDbSystemTelemetryConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemTelemetryConfigurationLogInput)(nil)).Elem(), GetMysqlDbSystemTelemetryConfigurationLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemTelemetryConfigurationLogArrayInput)(nil)).Elem(), GetMysqlDbSystemTelemetryConfigurationLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationInput)(nil)).Elem(), GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayInput)(nil)).Elem(), GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemBackupPolicyInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemBackupPolicyArgs{})
@@ -28860,6 +32649,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSecureConnectionArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSourceInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSourceArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemTelemetryConfigurationInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemTelemetryConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemTelemetryConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemTelemetryConfigurationLogInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsFilterInput)(nil)).Elem(), GetMysqlDbSystemsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsFilterArrayInput)(nil)).Elem(), GetMysqlDbSystemsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlVersionFilterInput)(nil)).Elem(), GetMysqlVersionFilterArgs{})
@@ -28872,8 +32667,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaEncryptDataArrayInput)(nil)).Elem(), GetReplicaEncryptDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaReplicaOverrideInput)(nil)).Elem(), GetReplicaReplicaOverrideArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaReplicaOverrideArrayInput)(nil)).Elem(), GetReplicaReplicaOverrideArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaReplicaOverrideTelemetryConfigurationInput)(nil)).Elem(), GetReplicaReplicaOverrideTelemetryConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaReplicaOverrideTelemetryConfigurationArrayInput)(nil)).Elem(), GetReplicaReplicaOverrideTelemetryConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaReplicaOverrideTelemetryConfigurationLogInput)(nil)).Elem(), GetReplicaReplicaOverrideTelemetryConfigurationLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaReplicaOverrideTelemetryConfigurationLogArrayInput)(nil)).Elem(), GetReplicaReplicaOverrideTelemetryConfigurationLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationInput)(nil)).Elem(), GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayInput)(nil)).Elem(), GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaSecureConnectionInput)(nil)).Elem(), GetReplicaSecureConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaSecureConnectionArrayInput)(nil)).Elem(), GetReplicaSecureConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaTelemetryConfigurationInput)(nil)).Elem(), GetReplicaTelemetryConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaTelemetryConfigurationArrayInput)(nil)).Elem(), GetReplicaTelemetryConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaTelemetryConfigurationLogInput)(nil)).Elem(), GetReplicaTelemetryConfigurationLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaTelemetryConfigurationLogArrayInput)(nil)).Elem(), GetReplicaTelemetryConfigurationLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaTelemetryConfigurationLogDestinationConfigurationInput)(nil)).Elem(), GetReplicaTelemetryConfigurationLogDestinationConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayInput)(nil)).Elem(), GetReplicaTelemetryConfigurationLogDestinationConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasFilterInput)(nil)).Elem(), GetReplicasFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasFilterArrayInput)(nil)).Elem(), GetReplicasFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaInput)(nil)).Elem(), GetReplicasReplicaArgs{})
@@ -28882,8 +32689,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaEncryptDataArrayInput)(nil)).Elem(), GetReplicasReplicaEncryptDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaReplicaOverrideInput)(nil)).Elem(), GetReplicasReplicaReplicaOverrideArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaReplicaOverrideArrayInput)(nil)).Elem(), GetReplicasReplicaReplicaOverrideArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaReplicaOverrideTelemetryConfigurationInput)(nil)).Elem(), GetReplicasReplicaReplicaOverrideTelemetryConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayInput)(nil)).Elem(), GetReplicasReplicaReplicaOverrideTelemetryConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogInput)(nil)).Elem(), GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayInput)(nil)).Elem(), GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationInput)(nil)).Elem(), GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayInput)(nil)).Elem(), GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaSecureConnectionInput)(nil)).Elem(), GetReplicasReplicaSecureConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaSecureConnectionArrayInput)(nil)).Elem(), GetReplicasReplicaSecureConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaTelemetryConfigurationInput)(nil)).Elem(), GetReplicasReplicaTelemetryConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaTelemetryConfigurationArrayInput)(nil)).Elem(), GetReplicasReplicaTelemetryConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaTelemetryConfigurationLogInput)(nil)).Elem(), GetReplicasReplicaTelemetryConfigurationLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaTelemetryConfigurationLogArrayInput)(nil)).Elem(), GetReplicasReplicaTelemetryConfigurationLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationInput)(nil)).Elem(), GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayInput)(nil)).Elem(), GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesFilterInput)(nil)).Elem(), GetShapesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesFilterArrayInput)(nil)).Elem(), GetShapesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeInput)(nil)).Elem(), GetShapesShapeArgs{})
@@ -28934,6 +32753,12 @@ func init() {
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotSummaryOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotSummaryArrayOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotTelemetryConfigurationOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotTelemetryConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupEncryptDataOutput{})
 	pulumi.RegisterOutputType(MysqlBackupEncryptDataPtrOutput{})
 	pulumi.RegisterOutputType(MysqlBackupSourceDetailsOutput{})
@@ -28994,12 +32819,30 @@ func init() {
 	pulumi.RegisterOutputType(MysqlDbSystemSecureConnectionsPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSourceOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSourcePtrOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemTelemetryConfigurationOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemTelemetryConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemTelemetryConfigurationLogOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemTelemetryConfigurationLogArrayOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(ReplicaEncryptDataOutput{})
 	pulumi.RegisterOutputType(ReplicaEncryptDataArrayOutput{})
 	pulumi.RegisterOutputType(ReplicaReplicaOverridesOutput{})
 	pulumi.RegisterOutputType(ReplicaReplicaOverridesPtrOutput{})
+	pulumi.RegisterOutputType(ReplicaReplicaOverridesTelemetryConfigurationOutput{})
+	pulumi.RegisterOutputType(ReplicaReplicaOverridesTelemetryConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(ReplicaReplicaOverridesTelemetryConfigurationLogOutput{})
+	pulumi.RegisterOutputType(ReplicaReplicaOverridesTelemetryConfigurationLogArrayOutput{})
+	pulumi.RegisterOutputType(ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationOutput{})
+	pulumi.RegisterOutputType(ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(ReplicaSecureConnectionOutput{})
 	pulumi.RegisterOutputType(ReplicaSecureConnectionArrayOutput{})
+	pulumi.RegisterOutputType(ReplicaTelemetryConfigurationOutput{})
+	pulumi.RegisterOutputType(ReplicaTelemetryConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(ReplicaTelemetryConfigurationLogOutput{})
+	pulumi.RegisterOutputType(ReplicaTelemetryConfigurationLogArrayOutput{})
+	pulumi.RegisterOutputType(ReplicaTelemetryConfigurationLogDestinationConfigurationOutput{})
+	pulumi.RegisterOutputType(ReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceAnonymousTransactionsHandlingOutput{})
@@ -29064,6 +32907,12 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotSummaryOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotTelemetryConfigurationOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupEncryptDataOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupEncryptDataArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupSourceDetailOutput{})
@@ -29142,6 +32991,12 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemSourceOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemTelemetryConfigurationOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemTelemetryConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemTelemetryConfigurationLogOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemTelemetryConfigurationLogArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemBackupPolicyOutput{})
@@ -29192,6 +33047,12 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSourceOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemTelemetryConfigurationOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsFilterOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlVersionFilterOutput{})
@@ -29204,8 +33065,20 @@ func init() {
 	pulumi.RegisterOutputType(GetReplicaEncryptDataArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicaReplicaOverrideOutput{})
 	pulumi.RegisterOutputType(GetReplicaReplicaOverrideArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicaReplicaOverrideTelemetryConfigurationOutput{})
+	pulumi.RegisterOutputType(GetReplicaReplicaOverrideTelemetryConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicaReplicaOverrideTelemetryConfigurationLogOutput{})
+	pulumi.RegisterOutputType(GetReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput{})
+	pulumi.RegisterOutputType(GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicaSecureConnectionOutput{})
 	pulumi.RegisterOutputType(GetReplicaSecureConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicaTelemetryConfigurationOutput{})
+	pulumi.RegisterOutputType(GetReplicaTelemetryConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicaTelemetryConfigurationLogOutput{})
+	pulumi.RegisterOutputType(GetReplicaTelemetryConfigurationLogArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicaTelemetryConfigurationLogDestinationConfigurationOutput{})
+	pulumi.RegisterOutputType(GetReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicasFilterOutput{})
 	pulumi.RegisterOutputType(GetReplicasFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicasReplicaOutput{})
@@ -29214,8 +33087,20 @@ func init() {
 	pulumi.RegisterOutputType(GetReplicasReplicaEncryptDataArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicasReplicaReplicaOverrideOutput{})
 	pulumi.RegisterOutputType(GetReplicasReplicaReplicaOverrideArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaReplicaOverrideTelemetryConfigurationOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaReplicaOverrideTelemetryConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicasReplicaSecureConnectionOutput{})
 	pulumi.RegisterOutputType(GetReplicasReplicaSecureConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaTelemetryConfigurationOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaTelemetryConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaTelemetryConfigurationLogOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaTelemetryConfigurationLogArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetShapesFilterOutput{})
 	pulumi.RegisterOutputType(GetShapesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetShapesShapeOutput{})

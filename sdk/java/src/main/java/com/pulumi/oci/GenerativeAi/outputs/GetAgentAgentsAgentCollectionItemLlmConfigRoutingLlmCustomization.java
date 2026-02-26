@@ -5,7 +5,10 @@ package com.pulumi.oci.GenerativeAi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationLlmSelection;
 import java.lang.String;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -15,6 +18,16 @@ public final class GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomiza
      * 
      */
     private String instruction;
+    /**
+     * @return Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+     * 
+     */
+    private Map<String,String> llmHyperParameters;
+    /**
+     * @return LLM selection configuration - either DEFAULT or CUSTOM.
+     * 
+     */
+    private List<GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationLlmSelection> llmSelections;
 
     private GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization() {}
     /**
@@ -23,6 +36,20 @@ public final class GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomiza
      */
     public String instruction() {
         return this.instruction;
+    }
+    /**
+     * @return Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+     * 
+     */
+    public Map<String,String> llmHyperParameters() {
+        return this.llmHyperParameters;
+    }
+    /**
+     * @return LLM selection configuration - either DEFAULT or CUSTOM.
+     * 
+     */
+    public List<GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationLlmSelection> llmSelections() {
+        return this.llmSelections;
     }
 
     public static Builder builder() {
@@ -35,10 +62,14 @@ public final class GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomiza
     @CustomType.Builder
     public static final class Builder {
         private String instruction;
+        private Map<String,String> llmHyperParameters;
+        private List<GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationLlmSelection> llmSelections;
         public Builder() {}
         public Builder(GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.instruction = defaults.instruction;
+    	      this.llmHyperParameters = defaults.llmHyperParameters;
+    	      this.llmSelections = defaults.llmSelections;
         }
 
         @CustomType.Setter
@@ -49,9 +80,30 @@ public final class GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomiza
             this.instruction = instruction;
             return this;
         }
+        @CustomType.Setter
+        public Builder llmHyperParameters(Map<String,String> llmHyperParameters) {
+            if (llmHyperParameters == null) {
+              throw new MissingRequiredPropertyException("GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization", "llmHyperParameters");
+            }
+            this.llmHyperParameters = llmHyperParameters;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder llmSelections(List<GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationLlmSelection> llmSelections) {
+            if (llmSelections == null) {
+              throw new MissingRequiredPropertyException("GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization", "llmSelections");
+            }
+            this.llmSelections = llmSelections;
+            return this;
+        }
+        public Builder llmSelections(GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationLlmSelection... llmSelections) {
+            return llmSelections(List.of(llmSelections));
+        }
         public GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization build() {
             final var _resultValue = new GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization();
             _resultValue.instruction = instruction;
+            _resultValue.llmHyperParameters = llmHyperParameters;
+            _resultValue.llmSelections = llmSelections;
             return _resultValue;
         }
     }

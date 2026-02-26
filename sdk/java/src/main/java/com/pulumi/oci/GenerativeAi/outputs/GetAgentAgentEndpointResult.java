@@ -9,6 +9,7 @@ import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentEndpointContentModeratio
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentEndpointGuardrailConfig;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentEndpointHumanInputConfig;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentEndpointOutputConfig;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentEndpointProvisionedCapacityConfig;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentEndpointSessionConfig;
 import java.lang.Boolean;
 import java.lang.String;
@@ -84,6 +85,11 @@ public final class GetAgentAgentEndpointResult {
      * 
      */
     private List<GetAgentAgentEndpointOutputConfig> outputConfigs;
+    /**
+     * @return The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
+     * 
+     */
+    private List<GetAgentAgentEndpointProvisionedCapacityConfig> provisionedCapacityConfigs;
     /**
      * @return Session Configuration on AgentEndpoint.
      * 
@@ -226,6 +232,13 @@ public final class GetAgentAgentEndpointResult {
         return this.outputConfigs;
     }
     /**
+     * @return The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
+     * 
+     */
+    public List<GetAgentAgentEndpointProvisionedCapacityConfig> provisionedCapacityConfigs() {
+        return this.provisionedCapacityConfigs;
+    }
+    /**
      * @return Session Configuration on AgentEndpoint.
      * 
      */
@@ -312,6 +325,7 @@ public final class GetAgentAgentEndpointResult {
         private String lifecycleDetails;
         private Map<String,String> metadata;
         private List<GetAgentAgentEndpointOutputConfig> outputConfigs;
+        private List<GetAgentAgentEndpointProvisionedCapacityConfig> provisionedCapacityConfigs;
         private List<GetAgentAgentEndpointSessionConfig> sessionConfigs;
         private Boolean shouldEnableCitation;
         private Boolean shouldEnableMultiLanguage;
@@ -338,6 +352,7 @@ public final class GetAgentAgentEndpointResult {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.metadata = defaults.metadata;
     	      this.outputConfigs = defaults.outputConfigs;
+    	      this.provisionedCapacityConfigs = defaults.provisionedCapacityConfigs;
     	      this.sessionConfigs = defaults.sessionConfigs;
     	      this.shouldEnableCitation = defaults.shouldEnableCitation;
     	      this.shouldEnableMultiLanguage = defaults.shouldEnableMultiLanguage;
@@ -474,6 +489,17 @@ public final class GetAgentAgentEndpointResult {
             return outputConfigs(List.of(outputConfigs));
         }
         @CustomType.Setter
+        public Builder provisionedCapacityConfigs(List<GetAgentAgentEndpointProvisionedCapacityConfig> provisionedCapacityConfigs) {
+            if (provisionedCapacityConfigs == null) {
+              throw new MissingRequiredPropertyException("GetAgentAgentEndpointResult", "provisionedCapacityConfigs");
+            }
+            this.provisionedCapacityConfigs = provisionedCapacityConfigs;
+            return this;
+        }
+        public Builder provisionedCapacityConfigs(GetAgentAgentEndpointProvisionedCapacityConfig... provisionedCapacityConfigs) {
+            return provisionedCapacityConfigs(List.of(provisionedCapacityConfigs));
+        }
+        @CustomType.Setter
         public Builder sessionConfigs(List<GetAgentAgentEndpointSessionConfig> sessionConfigs) {
             if (sessionConfigs == null) {
               throw new MissingRequiredPropertyException("GetAgentAgentEndpointResult", "sessionConfigs");
@@ -564,6 +590,7 @@ public final class GetAgentAgentEndpointResult {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.metadata = metadata;
             _resultValue.outputConfigs = outputConfigs;
+            _resultValue.provisionedCapacityConfigs = provisionedCapacityConfigs;
             _resultValue.sessionConfigs = sessionConfigs;
             _resultValue.shouldEnableCitation = shouldEnableCitation;
             _resultValue.shouldEnableMultiLanguage = shouldEnableMultiLanguage;

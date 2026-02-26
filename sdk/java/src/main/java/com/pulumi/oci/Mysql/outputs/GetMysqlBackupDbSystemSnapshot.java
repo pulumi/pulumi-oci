@@ -15,6 +15,7 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotMaintenance;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotReadEndpoint;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotRest;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotSecureConnection;
+import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotTelemetryConfiguration;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -194,6 +195,11 @@ public final class GetMysqlBackupDbSystemSnapshot {
      * 
      */
     private String subnetId;
+    /**
+     * @return Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    private List<GetMysqlBackupDbSystemSnapshotTelemetryConfiguration> telemetryConfigurations;
 
     private GetMysqlBackupDbSystemSnapshot() {}
     /**
@@ -434,6 +440,13 @@ public final class GetMysqlBackupDbSystemSnapshot {
     public String subnetId() {
         return this.subnetId;
     }
+    /**
+     * @return Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    public List<GetMysqlBackupDbSystemSnapshotTelemetryConfiguration> telemetryConfigurations() {
+        return this.telemetryConfigurations;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -478,6 +491,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
         private Map<String,String> securityAttributes;
         private String shapeName;
         private String subnetId;
+        private List<GetMysqlBackupDbSystemSnapshotTelemetryConfiguration> telemetryConfigurations;
         public Builder() {}
         public Builder(GetMysqlBackupDbSystemSnapshot defaults) {
     	      Objects.requireNonNull(defaults);
@@ -515,6 +529,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.shapeName = defaults.shapeName;
     	      this.subnetId = defaults.subnetId;
+    	      this.telemetryConfigurations = defaults.telemetryConfigurations;
         }
 
         @CustomType.Setter
@@ -822,6 +837,17 @@ public final class GetMysqlBackupDbSystemSnapshot {
             this.subnetId = subnetId;
             return this;
         }
+        @CustomType.Setter
+        public Builder telemetryConfigurations(List<GetMysqlBackupDbSystemSnapshotTelemetryConfiguration> telemetryConfigurations) {
+            if (telemetryConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "telemetryConfigurations");
+            }
+            this.telemetryConfigurations = telemetryConfigurations;
+            return this;
+        }
+        public Builder telemetryConfigurations(GetMysqlBackupDbSystemSnapshotTelemetryConfiguration... telemetryConfigurations) {
+            return telemetryConfigurations(List.of(telemetryConfigurations));
+        }
         public GetMysqlBackupDbSystemSnapshot build() {
             final var _resultValue = new GetMysqlBackupDbSystemSnapshot();
             _resultValue.adminUsername = adminUsername;
@@ -858,6 +884,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.shapeName = shapeName;
             _resultValue.subnetId = subnetId;
+            _resultValue.telemetryConfigurations = telemetryConfigurations;
             return _resultValue;
         }
     }

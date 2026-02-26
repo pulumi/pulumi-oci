@@ -4,7 +4,9 @@
 package com.pulumi.oci.GenerativeAi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.GenerativeAi.outputs.AgentAgentLlmConfigRoutingLlmCustomizationLlmSelection;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -16,6 +18,16 @@ public final class AgentAgentLlmConfigRoutingLlmCustomization {
      * 
      */
     private @Nullable String instruction;
+    /**
+     * @return (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+     * 
+     */
+    private @Nullable Map<String,String> llmHyperParameters;
+    /**
+     * @return (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
+     * 
+     */
+    private @Nullable AgentAgentLlmConfigRoutingLlmCustomizationLlmSelection llmSelection;
 
     private AgentAgentLlmConfigRoutingLlmCustomization() {}
     /**
@@ -24,6 +36,20 @@ public final class AgentAgentLlmConfigRoutingLlmCustomization {
      */
     public Optional<String> instruction() {
         return Optional.ofNullable(this.instruction);
+    }
+    /**
+     * @return (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+     * 
+     */
+    public Map<String,String> llmHyperParameters() {
+        return this.llmHyperParameters == null ? Map.of() : this.llmHyperParameters;
+    }
+    /**
+     * @return (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
+     * 
+     */
+    public Optional<AgentAgentLlmConfigRoutingLlmCustomizationLlmSelection> llmSelection() {
+        return Optional.ofNullable(this.llmSelection);
     }
 
     public static Builder builder() {
@@ -36,10 +62,14 @@ public final class AgentAgentLlmConfigRoutingLlmCustomization {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String instruction;
+        private @Nullable Map<String,String> llmHyperParameters;
+        private @Nullable AgentAgentLlmConfigRoutingLlmCustomizationLlmSelection llmSelection;
         public Builder() {}
         public Builder(AgentAgentLlmConfigRoutingLlmCustomization defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.instruction = defaults.instruction;
+    	      this.llmHyperParameters = defaults.llmHyperParameters;
+    	      this.llmSelection = defaults.llmSelection;
         }
 
         @CustomType.Setter
@@ -48,9 +78,23 @@ public final class AgentAgentLlmConfigRoutingLlmCustomization {
             this.instruction = instruction;
             return this;
         }
+        @CustomType.Setter
+        public Builder llmHyperParameters(@Nullable Map<String,String> llmHyperParameters) {
+
+            this.llmHyperParameters = llmHyperParameters;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder llmSelection(@Nullable AgentAgentLlmConfigRoutingLlmCustomizationLlmSelection llmSelection) {
+
+            this.llmSelection = llmSelection;
+            return this;
+        }
         public AgentAgentLlmConfigRoutingLlmCustomization build() {
             final var _resultValue = new AgentAgentLlmConfigRoutingLlmCustomization();
             _resultValue.instruction = instruction;
+            _resultValue.llmHyperParameters = llmHyperParameters;
+            _resultValue.llmSelection = llmSelection;
             return _resultValue;
         }
     }

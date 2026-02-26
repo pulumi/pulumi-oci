@@ -137,6 +137,10 @@ export interface GetReplicaResult {
      */
     readonly state: string;
     /**
+     * Telemetry configuration details of a DB System or a read replica.
+     */
+    readonly telemetryConfigurations: outputs.Mysql.GetReplicaTelemetryConfiguration[];
+    /**
      * The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
     readonly timeCreated: string;

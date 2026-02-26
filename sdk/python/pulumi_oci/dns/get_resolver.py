@@ -169,7 +169,7 @@ class GetResolverResult:
     @pulumi.getter
     def rules(self) -> Sequence['outputs.GetResolverRuleResult']:
         """
-        Rules for the resolver. Rules are evaluated in order.
+        Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
         """
         return pulumi.get(self, "rules")
 
@@ -259,7 +259,7 @@ def get_resolver(resolver_id: Optional[_builtins.str] = None,
 
 
     :param _builtins.str resolver_id: The OCID of the target resolver.
-    :param _builtins.str scope: Value must be `PRIVATE` when listing private name resolvers.
+    :param _builtins.str scope: Value must be `PRIVATE` when listing private resolvers.
     """
     __args__ = dict()
     __args__['resolverId'] = resolver_id
@@ -308,7 +308,7 @@ def get_resolver_output(resolver_id: Optional[pulumi.Input[_builtins.str]] = Non
 
 
     :param _builtins.str resolver_id: The OCID of the target resolver.
-    :param _builtins.str scope: Value must be `PRIVATE` when listing private name resolvers.
+    :param _builtins.str scope: Value must be `PRIVATE` when listing private resolvers.
     """
     __args__ = dict()
     __args__['resolverId'] = resolver_id

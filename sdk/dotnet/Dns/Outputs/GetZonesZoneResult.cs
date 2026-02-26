@@ -29,13 +29,7 @@ namespace Pulumi.Oci.Dns.Outputs
         /// Search for zones that have the given `DnssecState`.
         /// </summary>
         public readonly string DnssecState;
-        /// <summary>
-        /// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `Scope` is `PRIVATE`.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetZonesZoneExternalDownstreamResult> ExternalDownstreams;
-        /// <summary>
-        /// External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetZonesZoneExternalMasterResult> ExternalMasters;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -53,10 +47,11 @@ namespace Pulumi.Oci.Dns.Outputs
         /// A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
         /// </summary>
         public readonly string Name;
-        /// <summary>
-        /// The authoritative nameservers for the zone.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetZonesZoneNameserverResult> Nameservers;
+        /// <summary>
+        /// The resolution mode of a zone defines behavior related to how query responses can be handled.
+        /// </summary>
+        public readonly string ResolutionMode;
         /// <summary>
         /// Specifies to operate only on resources that have a matching DNS scope.
         /// </summary>
@@ -85,9 +80,6 @@ namespace Pulumi.Oci.Dns.Outputs
         /// The OCID of the view the resource is associated with.
         /// </summary>
         public readonly string ViewId;
-        /// <summary>
-        /// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetZonesZoneZoneTransferServerResult> ZoneTransferServers;
         /// <summary>
         /// Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
@@ -118,6 +110,8 @@ namespace Pulumi.Oci.Dns.Outputs
 
             ImmutableArray<Outputs.GetZonesZoneNameserverResult> nameservers,
 
+            string resolutionMode,
+
             string scope,
 
             string self,
@@ -147,6 +141,7 @@ namespace Pulumi.Oci.Dns.Outputs
             IsProtected = isProtected;
             Name = name;
             Nameservers = nameservers;
+            ResolutionMode = resolutionMode;
             Scope = scope;
             Self = self;
             Serial = serial;

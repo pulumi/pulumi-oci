@@ -150,7 +150,7 @@ namespace Pulumi.Oci.Dns
         public string? Id { get; set; }
 
         /// <summary>
-        /// Value must be `PRIVATE` when listing private name resolvers.
+        /// Value must be `PRIVATE` when listing private resolvers.
         /// </summary>
         [Input("scope", required: true)]
         public string Scope { get; set; } = null!;
@@ -196,7 +196,7 @@ namespace Pulumi.Oci.Dns
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// Value must be `PRIVATE` when listing private name resolvers.
+        /// Value must be `PRIVATE` when listing private resolvers.
         /// </summary>
         [Input("scope", required: true)]
         public Input<string> Scope { get; set; } = null!;

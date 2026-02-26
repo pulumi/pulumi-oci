@@ -9,6 +9,7 @@ import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentEndpointsAgentEndpointCo
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfig;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfig;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfig;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemProvisionedCapacityConfig;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfig;
 import java.lang.Boolean;
 import java.lang.String;
@@ -83,6 +84,11 @@ public final class GetAgentAgentEndpointsAgentEndpointCollectionItem {
      * 
      */
     private List<GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfig> outputConfigs;
+    /**
+     * @return The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
+     * 
+     */
+    private List<GetAgentAgentEndpointsAgentEndpointCollectionItemProvisionedCapacityConfig> provisionedCapacityConfigs;
     /**
      * @return Session Configuration on AgentEndpoint.
      * 
@@ -222,6 +228,13 @@ public final class GetAgentAgentEndpointsAgentEndpointCollectionItem {
         return this.outputConfigs;
     }
     /**
+     * @return The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
+     * 
+     */
+    public List<GetAgentAgentEndpointsAgentEndpointCollectionItemProvisionedCapacityConfig> provisionedCapacityConfigs() {
+        return this.provisionedCapacityConfigs;
+    }
+    /**
      * @return Session Configuration on AgentEndpoint.
      * 
      */
@@ -307,6 +320,7 @@ public final class GetAgentAgentEndpointsAgentEndpointCollectionItem {
         private String lifecycleDetails;
         private Map<String,String> metadata;
         private List<GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfig> outputConfigs;
+        private List<GetAgentAgentEndpointsAgentEndpointCollectionItemProvisionedCapacityConfig> provisionedCapacityConfigs;
         private List<GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfig> sessionConfigs;
         private Boolean shouldEnableCitation;
         private Boolean shouldEnableMultiLanguage;
@@ -332,6 +346,7 @@ public final class GetAgentAgentEndpointsAgentEndpointCollectionItem {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.metadata = defaults.metadata;
     	      this.outputConfigs = defaults.outputConfigs;
+    	      this.provisionedCapacityConfigs = defaults.provisionedCapacityConfigs;
     	      this.sessionConfigs = defaults.sessionConfigs;
     	      this.shouldEnableCitation = defaults.shouldEnableCitation;
     	      this.shouldEnableMultiLanguage = defaults.shouldEnableMultiLanguage;
@@ -460,6 +475,17 @@ public final class GetAgentAgentEndpointsAgentEndpointCollectionItem {
             return outputConfigs(List.of(outputConfigs));
         }
         @CustomType.Setter
+        public Builder provisionedCapacityConfigs(List<GetAgentAgentEndpointsAgentEndpointCollectionItemProvisionedCapacityConfig> provisionedCapacityConfigs) {
+            if (provisionedCapacityConfigs == null) {
+              throw new MissingRequiredPropertyException("GetAgentAgentEndpointsAgentEndpointCollectionItem", "provisionedCapacityConfigs");
+            }
+            this.provisionedCapacityConfigs = provisionedCapacityConfigs;
+            return this;
+        }
+        public Builder provisionedCapacityConfigs(GetAgentAgentEndpointsAgentEndpointCollectionItemProvisionedCapacityConfig... provisionedCapacityConfigs) {
+            return provisionedCapacityConfigs(List.of(provisionedCapacityConfigs));
+        }
+        @CustomType.Setter
         public Builder sessionConfigs(List<GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfig> sessionConfigs) {
             if (sessionConfigs == null) {
               throw new MissingRequiredPropertyException("GetAgentAgentEndpointsAgentEndpointCollectionItem", "sessionConfigs");
@@ -549,6 +575,7 @@ public final class GetAgentAgentEndpointsAgentEndpointCollectionItem {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.metadata = metadata;
             _resultValue.outputConfigs = outputConfigs;
+            _resultValue.provisionedCapacityConfigs = provisionedCapacityConfigs;
             _resultValue.sessionConfigs = sessionConfigs;
             _resultValue.shouldEnableCitation = shouldEnableCitation;
             _resultValue.shouldEnableMultiLanguage = shouldEnableMultiLanguage;

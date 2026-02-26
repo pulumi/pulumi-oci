@@ -97,6 +97,10 @@ export interface GetAgentAgentEndpointResult {
      */
     readonly outputConfigs: outputs.GenerativeAi.GetAgentAgentEndpointOutputConfig[];
     /**
+     * The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
+     */
+    readonly provisionedCapacityConfigs: outputs.GenerativeAi.GetAgentAgentEndpointProvisionedCapacityConfig[];
+    /**
      * Session Configuration on AgentEndpoint.
      */
     readonly sessionConfigs: outputs.GenerativeAi.GetAgentAgentEndpointSessionConfig[];

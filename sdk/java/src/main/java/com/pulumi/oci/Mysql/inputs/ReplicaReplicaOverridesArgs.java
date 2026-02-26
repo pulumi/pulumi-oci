@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Mysql.inputs.ReplicaReplicaOverridesTelemetryConfigurationArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -80,9 +81,6 @@ public final class ReplicaReplicaOverridesArgs extends com.pulumi.resources.Reso
     /**
      * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="shapeName")
     private @Nullable Output<String> shapeName;
@@ -90,12 +88,24 @@ public final class ReplicaReplicaOverridesArgs extends com.pulumi.resources.Reso
     /**
      * @return (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Optional<Output<String>> shapeName() {
         return Optional.ofNullable(this.shapeName);
+    }
+
+    /**
+     * (Updatable) Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    @Import(name="telemetryConfiguration")
+    private @Nullable Output<ReplicaReplicaOverridesTelemetryConfigurationArgs> telemetryConfiguration;
+
+    /**
+     * @return (Updatable) Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    public Optional<Output<ReplicaReplicaOverridesTelemetryConfigurationArgs>> telemetryConfiguration() {
+        return Optional.ofNullable(this.telemetryConfiguration);
     }
 
     private ReplicaReplicaOverridesArgs() {}
@@ -106,6 +116,7 @@ public final class ReplicaReplicaOverridesArgs extends com.pulumi.resources.Reso
         this.nsgIds = $.nsgIds;
         this.securityAttributes = $.securityAttributes;
         this.shapeName = $.shapeName;
+        this.telemetryConfiguration = $.telemetryConfiguration;
     }
 
     public static Builder builder() {
@@ -223,9 +234,6 @@ public final class ReplicaReplicaOverridesArgs extends com.pulumi.resources.Reso
         /**
          * @param shapeName (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -237,14 +245,32 @@ public final class ReplicaReplicaOverridesArgs extends com.pulumi.resources.Reso
         /**
          * @param shapeName (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
         public Builder shapeName(String shapeName) {
             return shapeName(Output.of(shapeName));
+        }
+
+        /**
+         * @param telemetryConfiguration (Updatable) Telemetry configuration details of a DB System or a read replica.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder telemetryConfiguration(@Nullable Output<ReplicaReplicaOverridesTelemetryConfigurationArgs> telemetryConfiguration) {
+            $.telemetryConfiguration = telemetryConfiguration;
+            return this;
+        }
+
+        /**
+         * @param telemetryConfiguration (Updatable) Telemetry configuration details of a DB System or a read replica.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder telemetryConfiguration(ReplicaReplicaOverridesTelemetryConfigurationArgs telemetryConfiguration) {
+            return telemetryConfiguration(Output.of(telemetryConfiguration));
         }
 
         public ReplicaReplicaOverridesArgs build() {

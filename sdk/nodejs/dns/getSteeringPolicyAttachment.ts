@@ -79,7 +79,7 @@ export interface GetSteeringPolicyAttachmentResult {
      */
     readonly timeCreated: string;
     /**
-     * The OCID of the attached zone.
+     * The OCID of the attached zone. Must be a public zone.
      */
     readonly zoneId: string;
 }

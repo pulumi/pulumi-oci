@@ -31,6 +31,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AgentDataSource{}
 	case "oci:GenerativeAi/agentKnowledgeBase:AgentKnowledgeBase":
 		r = &AgentKnowledgeBase{}
+	case "oci:GenerativeAi/agentProvisionedCapacity:AgentProvisionedCapacity":
+		r = &AgentProvisionedCapacity{}
 	case "oci:GenerativeAi/agentTool:AgentTool":
 		r = &AgentTool{}
 	case "oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster":
@@ -79,6 +81,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"GenerativeAi/agentKnowledgeBase",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"GenerativeAi/agentProvisionedCapacity",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

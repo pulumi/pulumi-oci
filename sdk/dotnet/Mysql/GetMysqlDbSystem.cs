@@ -311,6 +311,10 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
+        /// Telemetry configuration details of a DB System or a read replica.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlDbSystemTelemetryConfigurationResult> TelemetryConfigurations;
+        /// <summary>
         /// The date and time the DB System was created.
         /// </summary>
         public readonly string TimeCreated;
@@ -417,6 +421,8 @@ namespace Pulumi.Oci.Mysql
 
             ImmutableDictionary<string, string> systemTags,
 
+            ImmutableArray<Outputs.GetMysqlDbSystemTelemetryConfigurationResult> telemetryConfigurations,
+
             string timeCreated,
 
             string timeUpdated)
@@ -469,6 +475,7 @@ namespace Pulumi.Oci.Mysql
             State = state;
             SubnetId = subnetId;
             SystemTags = systemTags;
+            TelemetryConfigurations = telemetryConfigurations;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

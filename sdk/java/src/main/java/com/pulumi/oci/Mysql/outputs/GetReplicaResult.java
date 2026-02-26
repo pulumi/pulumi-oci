@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetReplicaEncryptData;
 import com.pulumi.oci.Mysql.outputs.GetReplicaReplicaOverride;
 import com.pulumi.oci.Mysql.outputs.GetReplicaSecureConnection;
+import com.pulumi.oci.Mysql.outputs.GetReplicaTelemetryConfiguration;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -133,6 +134,11 @@ public final class GetReplicaResult {
      * 
      */
     private String state;
+    /**
+     * @return Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    private List<GetReplicaTelemetryConfiguration> telemetryConfigurations;
     /**
      * @return The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
@@ -310,6 +316,13 @@ public final class GetReplicaResult {
         return this.state;
     }
     /**
+     * @return Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    public List<GetReplicaTelemetryConfiguration> telemetryConfigurations() {
+        return this.telemetryConfigurations;
+    }
+    /**
      * @return The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
@@ -357,6 +370,7 @@ public final class GetReplicaResult {
         private Map<String,String> securityAttributes;
         private String shapeName;
         private String state;
+        private List<GetReplicaTelemetryConfiguration> telemetryConfigurations;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -386,6 +400,7 @@ public final class GetReplicaResult {
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.shapeName = defaults.shapeName;
     	      this.state = defaults.state;
+    	      this.telemetryConfigurations = defaults.telemetryConfigurations;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -595,6 +610,17 @@ public final class GetReplicaResult {
             return this;
         }
         @CustomType.Setter
+        public Builder telemetryConfigurations(List<GetReplicaTelemetryConfiguration> telemetryConfigurations) {
+            if (telemetryConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetReplicaResult", "telemetryConfigurations");
+            }
+            this.telemetryConfigurations = telemetryConfigurations;
+            return this;
+        }
+        public Builder telemetryConfigurations(GetReplicaTelemetryConfiguration... telemetryConfigurations) {
+            return telemetryConfigurations(List.of(telemetryConfigurations));
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetReplicaResult", "timeCreated");
@@ -636,6 +662,7 @@ public final class GetReplicaResult {
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.shapeName = shapeName;
             _resultValue.state = state;
+            _resultValue.telemetryConfigurations = telemetryConfigurations;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

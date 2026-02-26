@@ -16,10 +16,16 @@ import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCycleArgs;
 import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCyclePlainArgs;
 import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCyclesArgs;
 import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCyclesPlainArgs;
+import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessCheckArgs;
+import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessCheckPlainArgs;
+import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessChecksArgs;
+import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessChecksPlainArgs;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCollectionResult;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCollectionsResult;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCycleResult;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCyclesResult;
+import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuReadinessCheckResult;
+import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuReadinessChecksResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -903,5 +909,445 @@ public final class FleetSoftwareUpdateFunctions {
      */
     public static CompletableFuture<GetFsuCyclesResult> getFsuCyclesPlain(GetFsuCyclesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:FleetSoftwareUpdate/getFsuCycles:getFsuCycles", TypeShape.of(GetFsuCyclesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fsu Readiness Check resource in Oracle Cloud Infrastructure Fleet Software Update service.
+     * 
+     * Gets a Exadata Fleet Update Readiness Check by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
+     * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessCheckArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFsuReadinessCheck = FleetSoftwareUpdateFunctions.getFsuReadinessCheck(GetFsuReadinessCheckArgs.builder()
+     *             .fsuReadinessCheckId(testFsuReadinessCheckOciFleetSoftwareUpdateFsuReadinessCheck.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFsuReadinessCheckResult> getFsuReadinessCheck(GetFsuReadinessCheckArgs args) {
+        return getFsuReadinessCheck(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Fsu Readiness Check resource in Oracle Cloud Infrastructure Fleet Software Update service.
+     * 
+     * Gets a Exadata Fleet Update Readiness Check by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
+     * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessCheckArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFsuReadinessCheck = FleetSoftwareUpdateFunctions.getFsuReadinessCheck(GetFsuReadinessCheckArgs.builder()
+     *             .fsuReadinessCheckId(testFsuReadinessCheckOciFleetSoftwareUpdateFsuReadinessCheck.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFsuReadinessCheckResult> getFsuReadinessCheckPlain(GetFsuReadinessCheckPlainArgs args) {
+        return getFsuReadinessCheckPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Fsu Readiness Check resource in Oracle Cloud Infrastructure Fleet Software Update service.
+     * 
+     * Gets a Exadata Fleet Update Readiness Check by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
+     * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessCheckArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFsuReadinessCheck = FleetSoftwareUpdateFunctions.getFsuReadinessCheck(GetFsuReadinessCheckArgs.builder()
+     *             .fsuReadinessCheckId(testFsuReadinessCheckOciFleetSoftwareUpdateFsuReadinessCheck.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFsuReadinessCheckResult> getFsuReadinessCheck(GetFsuReadinessCheckArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetSoftwareUpdate/getFsuReadinessCheck:getFsuReadinessCheck", TypeShape.of(GetFsuReadinessCheckResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fsu Readiness Check resource in Oracle Cloud Infrastructure Fleet Software Update service.
+     * 
+     * Gets a Exadata Fleet Update Readiness Check by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
+     * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessCheckArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFsuReadinessCheck = FleetSoftwareUpdateFunctions.getFsuReadinessCheck(GetFsuReadinessCheckArgs.builder()
+     *             .fsuReadinessCheckId(testFsuReadinessCheckOciFleetSoftwareUpdateFsuReadinessCheck.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFsuReadinessCheckResult> getFsuReadinessCheck(GetFsuReadinessCheckArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetSoftwareUpdate/getFsuReadinessCheck:getFsuReadinessCheck", TypeShape.of(GetFsuReadinessCheckResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fsu Readiness Check resource in Oracle Cloud Infrastructure Fleet Software Update service.
+     * 
+     * Gets a Exadata Fleet Update Readiness Check by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
+     * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessCheckArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFsuReadinessCheck = FleetSoftwareUpdateFunctions.getFsuReadinessCheck(GetFsuReadinessCheckArgs.builder()
+     *             .fsuReadinessCheckId(testFsuReadinessCheckOciFleetSoftwareUpdateFsuReadinessCheck.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFsuReadinessCheckResult> getFsuReadinessCheckPlain(GetFsuReadinessCheckPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FleetSoftwareUpdate/getFsuReadinessCheck:getFsuReadinessCheck", TypeShape.of(GetFsuReadinessCheckResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fsu Readiness Checks in Oracle Cloud Infrastructure Fleet Software Update service.
+     * 
+     * Returns a list of Exadata Fleet Update Readiness Checks resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
+     * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFsuReadinessChecks = FleetSoftwareUpdateFunctions.getFsuReadinessChecks(GetFsuReadinessChecksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(fsuReadinessCheckDisplayName)
+     *             .resourceId(testResource.id())
+     *             .state(fsuReadinessCheckState)
+     *             .type(fsuReadinessCheckType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFsuReadinessChecksResult> getFsuReadinessChecks(GetFsuReadinessChecksArgs args) {
+        return getFsuReadinessChecks(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fsu Readiness Checks in Oracle Cloud Infrastructure Fleet Software Update service.
+     * 
+     * Returns a list of Exadata Fleet Update Readiness Checks resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
+     * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFsuReadinessChecks = FleetSoftwareUpdateFunctions.getFsuReadinessChecks(GetFsuReadinessChecksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(fsuReadinessCheckDisplayName)
+     *             .resourceId(testResource.id())
+     *             .state(fsuReadinessCheckState)
+     *             .type(fsuReadinessCheckType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFsuReadinessChecksResult> getFsuReadinessChecksPlain(GetFsuReadinessChecksPlainArgs args) {
+        return getFsuReadinessChecksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fsu Readiness Checks in Oracle Cloud Infrastructure Fleet Software Update service.
+     * 
+     * Returns a list of Exadata Fleet Update Readiness Checks resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
+     * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFsuReadinessChecks = FleetSoftwareUpdateFunctions.getFsuReadinessChecks(GetFsuReadinessChecksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(fsuReadinessCheckDisplayName)
+     *             .resourceId(testResource.id())
+     *             .state(fsuReadinessCheckState)
+     *             .type(fsuReadinessCheckType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFsuReadinessChecksResult> getFsuReadinessChecks(GetFsuReadinessChecksArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetSoftwareUpdate/getFsuReadinessChecks:getFsuReadinessChecks", TypeShape.of(GetFsuReadinessChecksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fsu Readiness Checks in Oracle Cloud Infrastructure Fleet Software Update service.
+     * 
+     * Returns a list of Exadata Fleet Update Readiness Checks resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
+     * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFsuReadinessChecks = FleetSoftwareUpdateFunctions.getFsuReadinessChecks(GetFsuReadinessChecksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(fsuReadinessCheckDisplayName)
+     *             .resourceId(testResource.id())
+     *             .state(fsuReadinessCheckState)
+     *             .type(fsuReadinessCheckType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFsuReadinessChecksResult> getFsuReadinessChecks(GetFsuReadinessChecksArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:FleetSoftwareUpdate/getFsuReadinessChecks:getFsuReadinessChecks", TypeShape.of(GetFsuReadinessChecksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fsu Readiness Checks in Oracle Cloud Infrastructure Fleet Software Update service.
+     * 
+     * Returns a list of Exadata Fleet Update Readiness Checks resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
+     * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFsuReadinessChecks = FleetSoftwareUpdateFunctions.getFsuReadinessChecks(GetFsuReadinessChecksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(fsuReadinessCheckDisplayName)
+     *             .resourceId(testResource.id())
+     *             .state(fsuReadinessCheckState)
+     *             .type(fsuReadinessCheckType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFsuReadinessChecksResult> getFsuReadinessChecksPlain(GetFsuReadinessChecksPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FleetSoftwareUpdate/getFsuReadinessChecks:getFsuReadinessChecks", TypeShape.of(GetFsuReadinessChecksResult.class), args, Utilities.withVersion(options));
     }
 }

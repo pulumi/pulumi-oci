@@ -405,6 +405,15 @@ class AgentTool(pulumi.CustomResource):
                     "prefix": tool_tool_config_database_schema_prefix,
                 },
                 "dialect": tool_tool_config_dialect,
+                "embedding_llm_customization": {
+                    "instruction": tool_tool_config_embedding_llm_customization_instruction,
+                    "llm_hyper_parameters": tool_tool_config_embedding_llm_customization_llm_hyper_parameters,
+                    "llm_selection": {
+                        "llm_selection_type": tool_tool_config_embedding_llm_customization_llm_selection_llm_selection_type,
+                        "endpoint_id": test_endpoint["id"],
+                        "model_id": test_model["id"],
+                    },
+                },
                 "function": {
                     "description": tool_tool_config_function_description,
                     "name": tool_tool_config_function_name,
@@ -412,6 +421,12 @@ class AgentTool(pulumi.CustomResource):
                 },
                 "generation_llm_customization": {
                     "instruction": tool_tool_config_generation_llm_customization_instruction,
+                    "llm_hyper_parameters": tool_tool_config_generation_llm_customization_llm_hyper_parameters,
+                    "llm_selection": {
+                        "llm_selection_type": tool_tool_config_generation_llm_customization_llm_selection_llm_selection_type,
+                        "endpoint_id": test_endpoint["id"],
+                        "model_id": test_model["id"],
+                    },
                 },
                 "http_endpoint_auth_config": {
                     "http_endpoint_auth_sources": [{
@@ -438,6 +453,25 @@ class AgentTool(pulumi.CustomResource):
                     "knowledge_base_id": test_knowledge_base["id"],
                 }],
                 "model_size": tool_tool_config_model_size,
+                "reasoning_llm_customization": {
+                    "instruction": tool_tool_config_reasoning_llm_customization_instruction,
+                    "llm_hyper_parameters": tool_tool_config_reasoning_llm_customization_llm_hyper_parameters,
+                    "llm_selection": {
+                        "llm_selection_type": tool_tool_config_reasoning_llm_customization_llm_selection_llm_selection_type,
+                        "endpoint_id": test_endpoint["id"],
+                        "model_id": test_model["id"],
+                    },
+                },
+                "reranking_llm_customization": {
+                    "instruction": tool_tool_config_reranking_llm_customization_instruction,
+                    "llm_hyper_parameters": tool_tool_config_reranking_llm_customization_llm_hyper_parameters,
+                    "llm_selection": {
+                        "llm_selection_type": tool_tool_config_reranking_llm_customization_llm_selection_llm_selection_type,
+                        "endpoint_id": test_endpoint["id"],
+                        "model_id": test_model["id"],
+                    },
+                },
+                "runtime_version": tool_tool_config_runtime_version,
                 "should_enable_self_correction": tool_tool_config_should_enable_self_correction,
                 "should_enable_sql_execution": tool_tool_config_should_enable_sql_execution,
                 "subnet_id": test_subnet["id"],
@@ -524,6 +558,15 @@ class AgentTool(pulumi.CustomResource):
                     "prefix": tool_tool_config_database_schema_prefix,
                 },
                 "dialect": tool_tool_config_dialect,
+                "embedding_llm_customization": {
+                    "instruction": tool_tool_config_embedding_llm_customization_instruction,
+                    "llm_hyper_parameters": tool_tool_config_embedding_llm_customization_llm_hyper_parameters,
+                    "llm_selection": {
+                        "llm_selection_type": tool_tool_config_embedding_llm_customization_llm_selection_llm_selection_type,
+                        "endpoint_id": test_endpoint["id"],
+                        "model_id": test_model["id"],
+                    },
+                },
                 "function": {
                     "description": tool_tool_config_function_description,
                     "name": tool_tool_config_function_name,
@@ -531,6 +574,12 @@ class AgentTool(pulumi.CustomResource):
                 },
                 "generation_llm_customization": {
                     "instruction": tool_tool_config_generation_llm_customization_instruction,
+                    "llm_hyper_parameters": tool_tool_config_generation_llm_customization_llm_hyper_parameters,
+                    "llm_selection": {
+                        "llm_selection_type": tool_tool_config_generation_llm_customization_llm_selection_llm_selection_type,
+                        "endpoint_id": test_endpoint["id"],
+                        "model_id": test_model["id"],
+                    },
                 },
                 "http_endpoint_auth_config": {
                     "http_endpoint_auth_sources": [{
@@ -557,6 +606,25 @@ class AgentTool(pulumi.CustomResource):
                     "knowledge_base_id": test_knowledge_base["id"],
                 }],
                 "model_size": tool_tool_config_model_size,
+                "reasoning_llm_customization": {
+                    "instruction": tool_tool_config_reasoning_llm_customization_instruction,
+                    "llm_hyper_parameters": tool_tool_config_reasoning_llm_customization_llm_hyper_parameters,
+                    "llm_selection": {
+                        "llm_selection_type": tool_tool_config_reasoning_llm_customization_llm_selection_llm_selection_type,
+                        "endpoint_id": test_endpoint["id"],
+                        "model_id": test_model["id"],
+                    },
+                },
+                "reranking_llm_customization": {
+                    "instruction": tool_tool_config_reranking_llm_customization_instruction,
+                    "llm_hyper_parameters": tool_tool_config_reranking_llm_customization_llm_hyper_parameters,
+                    "llm_selection": {
+                        "llm_selection_type": tool_tool_config_reranking_llm_customization_llm_selection_llm_selection_type,
+                        "endpoint_id": test_endpoint["id"],
+                        "model_id": test_model["id"],
+                    },
+                },
+                "runtime_version": tool_tool_config_runtime_version,
                 "should_enable_self_correction": tool_tool_config_should_enable_self_correction,
                 "should_enable_sql_execution": tool_tool_config_should_enable_sql_execution,
                 "subnet_id": test_subnet["id"],

@@ -8,11 +8,14 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolsToolCollectionItemToolConfigApiSchema;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolsToolCollectionItemToolConfigDatabaseConnection;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolsToolCollectionItemToolConfigDatabaseSchema;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolsToolCollectionItemToolConfigEmbeddingLlmCustomization;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolsToolCollectionItemToolConfigFunction;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomization;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfig;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolsToolCollectionItemToolConfigIclExample;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfig;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolsToolCollectionItemToolConfigReasoningLlmCustomization;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolsToolCollectionItemToolConfigRerankingLlmCustomization;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescription;
 import java.lang.Boolean;
 import java.lang.String;
@@ -47,6 +50,11 @@ public final class GetAgentToolsToolCollectionItemToolConfig {
      */
     private String dialect;
     /**
+     * @return Configuration to customize LLM.
+     * 
+     */
+    private List<GetAgentToolsToolCollectionItemToolConfigEmbeddingLlmCustomization> embeddingLlmCustomizations;
+    /**
      * @return Details of Function for Function calling tool.
      * 
      */
@@ -76,6 +84,21 @@ public final class GetAgentToolsToolCollectionItemToolConfig {
      * 
      */
     private String modelSize;
+    /**
+     * @return Configuration to customize LLM.
+     * 
+     */
+    private List<GetAgentToolsToolCollectionItemToolConfigReasoningLlmCustomization> reasoningLlmCustomizations;
+    /**
+     * @return Configuration to customize LLM.
+     * 
+     */
+    private List<GetAgentToolsToolCollectionItemToolConfigRerankingLlmCustomization> rerankingLlmCustomizations;
+    /**
+     * @return The runtimeVersion of the system prompt.
+     * 
+     */
+    private String runtimeVersion;
     /**
      * @return To enable/disable self correction.
      * 
@@ -142,6 +165,13 @@ public final class GetAgentToolsToolCollectionItemToolConfig {
         return this.dialect;
     }
     /**
+     * @return Configuration to customize LLM.
+     * 
+     */
+    public List<GetAgentToolsToolCollectionItemToolConfigEmbeddingLlmCustomization> embeddingLlmCustomizations() {
+        return this.embeddingLlmCustomizations;
+    }
+    /**
      * @return Details of Function for Function calling tool.
      * 
      */
@@ -182,6 +212,27 @@ public final class GetAgentToolsToolCollectionItemToolConfig {
      */
     public String modelSize() {
         return this.modelSize;
+    }
+    /**
+     * @return Configuration to customize LLM.
+     * 
+     */
+    public List<GetAgentToolsToolCollectionItemToolConfigReasoningLlmCustomization> reasoningLlmCustomizations() {
+        return this.reasoningLlmCustomizations;
+    }
+    /**
+     * @return Configuration to customize LLM.
+     * 
+     */
+    public List<GetAgentToolsToolCollectionItemToolConfigRerankingLlmCustomization> rerankingLlmCustomizations() {
+        return this.rerankingLlmCustomizations;
+    }
+    /**
+     * @return The runtimeVersion of the system prompt.
+     * 
+     */
+    public String runtimeVersion() {
+        return this.runtimeVersion;
     }
     /**
      * @return To enable/disable self correction.
@@ -236,12 +287,16 @@ public final class GetAgentToolsToolCollectionItemToolConfig {
         private List<GetAgentToolsToolCollectionItemToolConfigDatabaseConnection> databaseConnections;
         private List<GetAgentToolsToolCollectionItemToolConfigDatabaseSchema> databaseSchemas;
         private String dialect;
+        private List<GetAgentToolsToolCollectionItemToolConfigEmbeddingLlmCustomization> embeddingLlmCustomizations;
         private List<GetAgentToolsToolCollectionItemToolConfigFunction> functions;
         private List<GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomization> generationLlmCustomizations;
         private List<GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfig> httpEndpointAuthConfigs;
         private List<GetAgentToolsToolCollectionItemToolConfigIclExample> iclExamples;
         private List<GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfig> knowledgeBaseConfigs;
         private String modelSize;
+        private List<GetAgentToolsToolCollectionItemToolConfigReasoningLlmCustomization> reasoningLlmCustomizations;
+        private List<GetAgentToolsToolCollectionItemToolConfigRerankingLlmCustomization> rerankingLlmCustomizations;
+        private String runtimeVersion;
         private Boolean shouldEnableSelfCorrection;
         private Boolean shouldEnableSqlExecution;
         private String subnetId;
@@ -255,12 +310,16 @@ public final class GetAgentToolsToolCollectionItemToolConfig {
     	      this.databaseConnections = defaults.databaseConnections;
     	      this.databaseSchemas = defaults.databaseSchemas;
     	      this.dialect = defaults.dialect;
+    	      this.embeddingLlmCustomizations = defaults.embeddingLlmCustomizations;
     	      this.functions = defaults.functions;
     	      this.generationLlmCustomizations = defaults.generationLlmCustomizations;
     	      this.httpEndpointAuthConfigs = defaults.httpEndpointAuthConfigs;
     	      this.iclExamples = defaults.iclExamples;
     	      this.knowledgeBaseConfigs = defaults.knowledgeBaseConfigs;
     	      this.modelSize = defaults.modelSize;
+    	      this.reasoningLlmCustomizations = defaults.reasoningLlmCustomizations;
+    	      this.rerankingLlmCustomizations = defaults.rerankingLlmCustomizations;
+    	      this.runtimeVersion = defaults.runtimeVersion;
     	      this.shouldEnableSelfCorrection = defaults.shouldEnableSelfCorrection;
     	      this.shouldEnableSqlExecution = defaults.shouldEnableSqlExecution;
     	      this.subnetId = defaults.subnetId;
@@ -316,6 +375,17 @@ public final class GetAgentToolsToolCollectionItemToolConfig {
             }
             this.dialect = dialect;
             return this;
+        }
+        @CustomType.Setter
+        public Builder embeddingLlmCustomizations(List<GetAgentToolsToolCollectionItemToolConfigEmbeddingLlmCustomization> embeddingLlmCustomizations) {
+            if (embeddingLlmCustomizations == null) {
+              throw new MissingRequiredPropertyException("GetAgentToolsToolCollectionItemToolConfig", "embeddingLlmCustomizations");
+            }
+            this.embeddingLlmCustomizations = embeddingLlmCustomizations;
+            return this;
+        }
+        public Builder embeddingLlmCustomizations(GetAgentToolsToolCollectionItemToolConfigEmbeddingLlmCustomization... embeddingLlmCustomizations) {
+            return embeddingLlmCustomizations(List.of(embeddingLlmCustomizations));
         }
         @CustomType.Setter
         public Builder functions(List<GetAgentToolsToolCollectionItemToolConfigFunction> functions) {
@@ -381,6 +451,36 @@ public final class GetAgentToolsToolCollectionItemToolConfig {
             return this;
         }
         @CustomType.Setter
+        public Builder reasoningLlmCustomizations(List<GetAgentToolsToolCollectionItemToolConfigReasoningLlmCustomization> reasoningLlmCustomizations) {
+            if (reasoningLlmCustomizations == null) {
+              throw new MissingRequiredPropertyException("GetAgentToolsToolCollectionItemToolConfig", "reasoningLlmCustomizations");
+            }
+            this.reasoningLlmCustomizations = reasoningLlmCustomizations;
+            return this;
+        }
+        public Builder reasoningLlmCustomizations(GetAgentToolsToolCollectionItemToolConfigReasoningLlmCustomization... reasoningLlmCustomizations) {
+            return reasoningLlmCustomizations(List.of(reasoningLlmCustomizations));
+        }
+        @CustomType.Setter
+        public Builder rerankingLlmCustomizations(List<GetAgentToolsToolCollectionItemToolConfigRerankingLlmCustomization> rerankingLlmCustomizations) {
+            if (rerankingLlmCustomizations == null) {
+              throw new MissingRequiredPropertyException("GetAgentToolsToolCollectionItemToolConfig", "rerankingLlmCustomizations");
+            }
+            this.rerankingLlmCustomizations = rerankingLlmCustomizations;
+            return this;
+        }
+        public Builder rerankingLlmCustomizations(GetAgentToolsToolCollectionItemToolConfigRerankingLlmCustomization... rerankingLlmCustomizations) {
+            return rerankingLlmCustomizations(List.of(rerankingLlmCustomizations));
+        }
+        @CustomType.Setter
+        public Builder runtimeVersion(String runtimeVersion) {
+            if (runtimeVersion == null) {
+              throw new MissingRequiredPropertyException("GetAgentToolsToolCollectionItemToolConfig", "runtimeVersion");
+            }
+            this.runtimeVersion = runtimeVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shouldEnableSelfCorrection(Boolean shouldEnableSelfCorrection) {
             if (shouldEnableSelfCorrection == null) {
               throw new MissingRequiredPropertyException("GetAgentToolsToolCollectionItemToolConfig", "shouldEnableSelfCorrection");
@@ -430,12 +530,16 @@ public final class GetAgentToolsToolCollectionItemToolConfig {
             _resultValue.databaseConnections = databaseConnections;
             _resultValue.databaseSchemas = databaseSchemas;
             _resultValue.dialect = dialect;
+            _resultValue.embeddingLlmCustomizations = embeddingLlmCustomizations;
             _resultValue.functions = functions;
             _resultValue.generationLlmCustomizations = generationLlmCustomizations;
             _resultValue.httpEndpointAuthConfigs = httpEndpointAuthConfigs;
             _resultValue.iclExamples = iclExamples;
             _resultValue.knowledgeBaseConfigs = knowledgeBaseConfigs;
             _resultValue.modelSize = modelSize;
+            _resultValue.reasoningLlmCustomizations = reasoningLlmCustomizations;
+            _resultValue.rerankingLlmCustomizations = rerankingLlmCustomizations;
+            _resultValue.runtimeVersion = runtimeVersion;
             _resultValue.shouldEnableSelfCorrection = shouldEnableSelfCorrection;
             _resultValue.shouldEnableSqlExecution = shouldEnableSqlExecution;
             _resultValue.subnetId = subnetId;

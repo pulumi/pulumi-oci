@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string? Type;
         /// <summary>
-        /// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1-&gt;db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        /// Value of the destination configuration variable.
         /// </summary>
         public readonly string? Value;
 

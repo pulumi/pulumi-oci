@@ -30,6 +30,11 @@ export type AgentKnowledgeBase = import("./agentKnowledgeBase").AgentKnowledgeBa
 export const AgentKnowledgeBase: typeof import("./agentKnowledgeBase").AgentKnowledgeBase = null as any;
 utilities.lazyLoad(exports, ["AgentKnowledgeBase"], () => require("./agentKnowledgeBase"));
 
+export { AgentProvisionedCapacityArgs, AgentProvisionedCapacityState } from "./agentProvisionedCapacity";
+export type AgentProvisionedCapacity = import("./agentProvisionedCapacity").AgentProvisionedCapacity;
+export const AgentProvisionedCapacity: typeof import("./agentProvisionedCapacity").AgentProvisionedCapacity = null as any;
+utilities.lazyLoad(exports, ["AgentProvisionedCapacity"], () => require("./agentProvisionedCapacity"));
+
 export { AgentToolArgs, AgentToolState } from "./agentTool";
 export type AgentTool = import("./agentTool").AgentTool;
 export const AgentTool: typeof import("./agentTool").AgentTool = null as any;
@@ -104,6 +109,16 @@ export { GetAgentKnowledgeBasesArgs, GetAgentKnowledgeBasesResult, GetAgentKnowl
 export const getAgentKnowledgeBases: typeof import("./getAgentKnowledgeBases").getAgentKnowledgeBases = null as any;
 export const getAgentKnowledgeBasesOutput: typeof import("./getAgentKnowledgeBases").getAgentKnowledgeBasesOutput = null as any;
 utilities.lazyLoad(exports, ["getAgentKnowledgeBases","getAgentKnowledgeBasesOutput"], () => require("./getAgentKnowledgeBases"));
+
+export { GetAgentProvisionedCapacitiesArgs, GetAgentProvisionedCapacitiesResult, GetAgentProvisionedCapacitiesOutputArgs } from "./getAgentProvisionedCapacities";
+export const getAgentProvisionedCapacities: typeof import("./getAgentProvisionedCapacities").getAgentProvisionedCapacities = null as any;
+export const getAgentProvisionedCapacitiesOutput: typeof import("./getAgentProvisionedCapacities").getAgentProvisionedCapacitiesOutput = null as any;
+utilities.lazyLoad(exports, ["getAgentProvisionedCapacities","getAgentProvisionedCapacitiesOutput"], () => require("./getAgentProvisionedCapacities"));
+
+export { GetAgentProvisionedCapacityArgs, GetAgentProvisionedCapacityResult, GetAgentProvisionedCapacityOutputArgs } from "./getAgentProvisionedCapacity";
+export const getAgentProvisionedCapacity: typeof import("./getAgentProvisionedCapacity").getAgentProvisionedCapacity = null as any;
+export const getAgentProvisionedCapacityOutput: typeof import("./getAgentProvisionedCapacity").getAgentProvisionedCapacityOutput = null as any;
+utilities.lazyLoad(exports, ["getAgentProvisionedCapacity","getAgentProvisionedCapacityOutput"], () => require("./getAgentProvisionedCapacity"));
 
 export { GetAgentToolArgs, GetAgentToolResult, GetAgentToolOutputArgs } from "./getAgentTool";
 export const getAgentTool: typeof import("./getAgentTool").getAgentTool = null as any;
@@ -190,6 +205,8 @@ const _module = {
                 return new AgentDataSource(name, <any>undefined, { urn })
             case "oci:GenerativeAi/agentKnowledgeBase:AgentKnowledgeBase":
                 return new AgentKnowledgeBase(name, <any>undefined, { urn })
+            case "oci:GenerativeAi/agentProvisionedCapacity:AgentProvisionedCapacity":
+                return new AgentProvisionedCapacity(name, <any>undefined, { urn })
             case "oci:GenerativeAi/agentTool:AgentTool":
                 return new AgentTool(name, <any>undefined, { urn })
             case "oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster":
@@ -212,6 +229,7 @@ pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentAgentEndpoint", 
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentDataIngestionJob", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentDataSource", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentKnowledgeBase", _module)
+pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentProvisionedCapacity", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentTool", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/dedicatedAiCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/endpoint", _module)

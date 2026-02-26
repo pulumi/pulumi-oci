@@ -28,8 +28,12 @@ import javax.annotation.Nullable;
  * 
  * Updates the specified resolver with your new information.
  * 
- * Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until created VCN&#39;s state shows as Available in OCI console before updating DNS resolver properties.
- * Also a VCN cannot be deleted while its resolver has resolver endpoints. Additionally a resolver endpoint cannot be deleted if it is referenced in the resolver&#39;s rules. To remove the rules from a resolver user needs to update the resolver resource. Since DNS Resolver gets deleted when VCN is deleted there is no support for Delete for DNS Resolver.
+ * Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until the created VCN&#39;s state shows as Available in the OCI Console before updating DNS resolver properties.
+ * A VCN cannot be deleted while its resolver has resolver endpoints. Additionally, a resolver endpoint cannot be deleted if it is referenced in the resolver&#39;s rules. To remove rules from a resolver, update the resolver resource.
+ * 
+ * Destroy behavior: This resource does not delete the underlying DNS Resolver. The resolver itself is deleted only when the attached VCN is deleted. When this Terraform resource is destroyed, managed properties on the resolver (for example, attached views and rules) are cleared so the VCN can be deleted.
+ * 
+ * Default view behavior on VCN delete: If the resolver&#39;s default view contains customer-created zones, deleting the VCN (which deletes the resolver) can convert that default view into a non-protected regular view. That view may persist even if it was never imported into Terraform state. To avoid orphaned resources, either delete the zones from the default view before deleting the VCN, or plan to clean up the resulting view afterward.
  * 
  * ## Import
  * 
@@ -191,14 +195,14 @@ public class Resolver extends com.pulumi.resources.CustomResource {
         return this.resolverId;
     }
     /**
-     * (Updatable) Rules for the resolver. Rules are evaluated in order.
+     * (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
      * 
      */
     @Export(name="rules", refs={List.class,ResolverRule.class}, tree="[0,1]")
     private Output</* @Nullable */ List<ResolverRule>> rules;
 
     /**
-     * @return (Updatable) Rules for the resolver. Rules are evaluated in order.
+     * @return (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
      * 
      */
     public Output<Optional<List<ResolverRule>>> rules() {
@@ -207,18 +211,12 @@ public class Resolver extends com.pulumi.resources.CustomResource {
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="scope", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> scope;
 
     /**
      * @return Specifies to operate only on resources that have a matching DNS scope.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Optional<String>> scope() {

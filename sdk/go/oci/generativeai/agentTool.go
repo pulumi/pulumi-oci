@@ -59,13 +59,28 @@ import (
 //						Prefix:            pulumi.Any(toolToolConfigDatabaseSchemaPrefix),
 //					},
 //					Dialect: pulumi.Any(toolToolConfigDialect),
+//					EmbeddingLlmCustomization: &generativeai.AgentToolToolConfigEmbeddingLlmCustomizationArgs{
+//						Instruction:        pulumi.Any(toolToolConfigEmbeddingLlmCustomizationInstruction),
+//						LlmHyperParameters: pulumi.Any(toolToolConfigEmbeddingLlmCustomizationLlmHyperParameters),
+//						LlmSelection: &generativeai.AgentToolToolConfigEmbeddingLlmCustomizationLlmSelectionArgs{
+//							LlmSelectionType: pulumi.Any(toolToolConfigEmbeddingLlmCustomizationLlmSelectionLlmSelectionType),
+//							EndpointId:       pulumi.Any(testEndpoint.Id),
+//							ModelId:          pulumi.Any(testModel.Id),
+//						},
+//					},
 //					Function: &generativeai.AgentToolToolConfigFunctionArgs{
 //						Description: pulumi.Any(toolToolConfigFunctionDescription),
 //						Name:        pulumi.Any(toolToolConfigFunctionName),
 //						Parameters:  pulumi.Any(toolToolConfigFunctionParameters),
 //					},
 //					GenerationLlmCustomization: &generativeai.AgentToolToolConfigGenerationLlmCustomizationArgs{
-//						Instruction: pulumi.Any(toolToolConfigGenerationLlmCustomizationInstruction),
+//						Instruction:        pulumi.Any(toolToolConfigGenerationLlmCustomizationInstruction),
+//						LlmHyperParameters: pulumi.Any(toolToolConfigGenerationLlmCustomizationLlmHyperParameters),
+//						LlmSelection: &generativeai.AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs{
+//							LlmSelectionType: pulumi.Any(toolToolConfigGenerationLlmCustomizationLlmSelectionLlmSelectionType),
+//							EndpointId:       pulumi.Any(testEndpoint.Id),
+//							ModelId:          pulumi.Any(testModel.Id),
+//						},
 //					},
 //					HttpEndpointAuthConfig: &generativeai.AgentToolToolConfigHttpEndpointAuthConfigArgs{
 //						HttpEndpointAuthSources: generativeai.AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray{
@@ -95,7 +110,26 @@ import (
 //							KnowledgeBaseId: pulumi.Any(testKnowledgeBase.Id),
 //						},
 //					},
-//					ModelSize:                  pulumi.Any(toolToolConfigModelSize),
+//					ModelSize: pulumi.Any(toolToolConfigModelSize),
+//					ReasoningLlmCustomization: &generativeai.AgentToolToolConfigReasoningLlmCustomizationArgs{
+//						Instruction:        pulumi.Any(toolToolConfigReasoningLlmCustomizationInstruction),
+//						LlmHyperParameters: pulumi.Any(toolToolConfigReasoningLlmCustomizationLlmHyperParameters),
+//						LlmSelection: &generativeai.AgentToolToolConfigReasoningLlmCustomizationLlmSelectionArgs{
+//							LlmSelectionType: pulumi.Any(toolToolConfigReasoningLlmCustomizationLlmSelectionLlmSelectionType),
+//							EndpointId:       pulumi.Any(testEndpoint.Id),
+//							ModelId:          pulumi.Any(testModel.Id),
+//						},
+//					},
+//					RerankingLlmCustomization: &generativeai.AgentToolToolConfigRerankingLlmCustomizationArgs{
+//						Instruction:        pulumi.Any(toolToolConfigRerankingLlmCustomizationInstruction),
+//						LlmHyperParameters: pulumi.Any(toolToolConfigRerankingLlmCustomizationLlmHyperParameters),
+//						LlmSelection: &generativeai.AgentToolToolConfigRerankingLlmCustomizationLlmSelectionArgs{
+//							LlmSelectionType: pulumi.Any(toolToolConfigRerankingLlmCustomizationLlmSelectionLlmSelectionType),
+//							EndpointId:       pulumi.Any(testEndpoint.Id),
+//							ModelId:          pulumi.Any(testModel.Id),
+//						},
+//					},
+//					RuntimeVersion:             pulumi.Any(toolToolConfigRuntimeVersion),
 //					ShouldEnableSelfCorrection: pulumi.Any(toolToolConfigShouldEnableSelfCorrection),
 //					ShouldEnableSqlExecution:   pulumi.Any(toolToolConfigShouldEnableSqlExecution),
 //					SubnetId:                   pulumi.Any(testSubnet.Id),

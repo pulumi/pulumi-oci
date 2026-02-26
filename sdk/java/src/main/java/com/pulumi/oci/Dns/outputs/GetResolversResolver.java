@@ -61,7 +61,7 @@ public final class GetResolversResolver {
     private String resolverId;
     private List<GetResolversResolverRule> rules;
     /**
-     * @return Value must be `PRIVATE` when listing private name resolvers.
+     * @return Value must be `PRIVATE` when listing private resolvers.
      * 
      */
     private String scope;
@@ -156,7 +156,7 @@ public final class GetResolversResolver {
         return this.rules;
     }
     /**
-     * @return Value must be `PRIVATE` when listing private name resolvers.
+     * @return Value must be `PRIVATE` when listing private resolvers.
      * 
      */
     public String scope() {

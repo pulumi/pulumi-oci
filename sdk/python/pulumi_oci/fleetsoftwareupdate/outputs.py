@@ -33,6 +33,8 @@ __all__ = [
     'FsuCycleNextActionToExecute',
     'FsuCycleStageActionSchedule',
     'FsuCycleUpgradeDetails',
+    'FsuReadinessCheckIssue',
+    'FsuReadinessCheckTarget',
     'GetFsuCollectionActiveFsuCycleResult',
     'GetFsuCollectionComponentResult',
     'GetFsuCollectionComponentFleetDiscoveryResult',
@@ -73,6 +75,13 @@ __all__ = [
     'GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteResult',
     'GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleResult',
     'GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailResult',
+    'GetFsuReadinessCheckIssueResult',
+    'GetFsuReadinessCheckTargetResult',
+    'GetFsuReadinessChecksFilterResult',
+    'GetFsuReadinessChecksFsuReadinessCheckCollectionResult',
+    'GetFsuReadinessChecksFsuReadinessCheckCollectionItemResult',
+    'GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueResult',
+    'GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetResult',
 ]
 
 @pulumi.output_type
@@ -1289,6 +1298,128 @@ class FsuCycleUpgradeDetails(dict):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "max_drain_timeout_in_seconds")
+
+
+@pulumi.output_type
+class FsuReadinessCheckIssue(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "impactedResourceId":
+            suggest = "impacted_resource_id"
+        elif key == "recommendedAction":
+            suggest = "recommended_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FsuReadinessCheckIssue. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FsuReadinessCheckIssue.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FsuReadinessCheckIssue.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[_builtins.str] = None,
+                 impacted_resource_id: Optional[_builtins.str] = None,
+                 name: Optional[_builtins.str] = None,
+                 recommended_action: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str description: Description of the patching issue.
+        :param _builtins.str impacted_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+        :param _builtins.str name: Name of the patching issue.
+        :param _builtins.str recommended_action: Recommended action to perform to address or further triage the patching issue.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if impacted_resource_id is not None:
+            pulumi.set(__self__, "impacted_resource_id", impacted_resource_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if recommended_action is not None:
+            pulumi.set(__self__, "recommended_action", recommended_action)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        Description of the patching issue.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="impactedResourceId")
+    def impacted_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+        """
+        return pulumi.get(self, "impacted_resource_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        Name of the patching issue.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="recommendedAction")
+    def recommended_action(self) -> Optional[_builtins.str]:
+        """
+        Recommended action to perform to address or further triage the patching issue.
+        """
+        return pulumi.get(self, "recommended_action")
+
+
+@pulumi.output_type
+class FsuReadinessCheckTarget(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "entityId":
+            suggest = "entity_id"
+        elif key == "entityType":
+            suggest = "entity_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FsuReadinessCheckTarget. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FsuReadinessCheckTarget.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FsuReadinessCheckTarget.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 entity_id: _builtins.str,
+                 entity_type: _builtins.str):
+        """
+        :param _builtins.str entity_id: Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param _builtins.str entity_type: Resource entity type
+        """
+        pulumi.set(__self__, "entity_id", entity_id)
+        pulumi.set(__self__, "entity_type", entity_type)
+
+    @_builtins.property
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> _builtins.str:
+        """
+        Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        """
+        return pulumi.get(self, "entity_id")
+
+    @_builtins.property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> _builtins.str:
+        """
+        Resource entity type
+        """
+        return pulumi.get(self, "entity_type")
 
 
 @pulumi.output_type
@@ -3632,5 +3763,382 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailResult(dict):
         Service drain timeout specified in seconds.
         """
         return pulumi.get(self, "max_drain_timeout_in_seconds")
+
+
+@pulumi.output_type
+class GetFsuReadinessCheckIssueResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 impacted_resource_id: _builtins.str,
+                 name: _builtins.str,
+                 recommended_action: _builtins.str):
+        """
+        :param _builtins.str description: Description of the patching issue.
+        :param _builtins.str impacted_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+        :param _builtins.str name: Name of the patching issue.
+        :param _builtins.str recommended_action: Recommended action to perform to address or further triage the patching issue.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "impacted_resource_id", impacted_resource_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "recommended_action", recommended_action)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of the patching issue.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="impactedResourceId")
+    def impacted_resource_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+        """
+        return pulumi.get(self, "impacted_resource_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the patching issue.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="recommendedAction")
+    def recommended_action(self) -> _builtins.str:
+        """
+        Recommended action to perform to address or further triage the patching issue.
+        """
+        return pulumi.get(self, "recommended_action")
+
+
+@pulumi.output_type
+class GetFsuReadinessCheckTargetResult(dict):
+    def __init__(__self__, *,
+                 entity_id: _builtins.str,
+                 entity_type: _builtins.str):
+        """
+        :param _builtins.str entity_id: Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param _builtins.str entity_type: Resource entity type
+        """
+        pulumi.set(__self__, "entity_id", entity_id)
+        pulumi.set(__self__, "entity_type", entity_type)
+
+    @_builtins.property
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> _builtins.str:
+        """
+        Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        """
+        return pulumi.get(self, "entity_id")
+
+    @_builtins.property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> _builtins.str:
+        """
+        Resource entity type
+        """
+        return pulumi.get(self, "entity_type")
+
+
+@pulumi.output_type
+class GetFsuReadinessChecksFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of the patching issue.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the patching issue.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFsuReadinessChecksFsuReadinessCheckCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFsuReadinessChecksFsuReadinessCheckCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFsuReadinessChecksFsuReadinessCheckCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFsuReadinessChecksFsuReadinessCheckCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 issue_count: _builtins.int,
+                 issues: Sequence['outputs.GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueResult'],
+                 lifecycle_details: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 targets: Sequence['outputs.GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetResult'],
+                 time_created: _builtins.str,
+                 time_finished: _builtins.str,
+                 time_updated: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Readiness Check.
+        :param _builtins.int issue_count: Number of issues found during the Exadata Fleet Update Readiness Check run.
+        :param Sequence['GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueArgs'] issues: Issues found during the Exadata Fleet Update Readiness Check run.
+        :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param _builtins.str state: A filter to return only resources whose lifecycleState matches the specified lifecycleState.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Sequence['GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetArgs'] targets: List of targets that will run the Exadata Fleet Update Readiness Check. The targets have to be of the same entity type.
+        :param _builtins.str time_created: The date and time the Exadata Fleet Update Readiness Check was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+        :param _builtins.str time_finished: The date and time the Exadata Fleet Update Readiness Check was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_updated: The date and time the Exadata Fleet Update Readiness Check was updated, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+        :param _builtins.str type: A filter to return only resources whose type matches the specified type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "issue_count", issue_count)
+        pulumi.set(__self__, "issues", issues)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "targets", targets)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Readiness Check.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="issueCount")
+    def issue_count(self) -> _builtins.int:
+        """
+        Number of issues found during the Exadata Fleet Update Readiness Check run.
+        """
+        return pulumi.get(self, "issue_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def issues(self) -> Sequence['outputs.GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueResult']:
+        """
+        Issues found during the Exadata Fleet Update Readiness Check run.
+        """
+        return pulumi.get(self, "issues")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources whose lifecycleState matches the specified lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Sequence['outputs.GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetResult']:
+        """
+        List of targets that will run the Exadata Fleet Update Readiness Check. The targets have to be of the same entity type.
+        """
+        return pulumi.get(self, "targets")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the Exadata Fleet Update Readiness Check was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> _builtins.str:
+        """
+        The date and time the Exadata Fleet Update Readiness Check was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the Exadata Fleet Update Readiness Check was updated, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        A filter to return only resources whose type matches the specified type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetFsuReadinessChecksFsuReadinessCheckCollectionItemIssueResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 impacted_resource_id: _builtins.str,
+                 name: _builtins.str,
+                 recommended_action: _builtins.str):
+        """
+        :param _builtins.str description: Description of the patching issue.
+        :param _builtins.str impacted_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+        :param _builtins.str name: Name of the patching issue.
+        :param _builtins.str recommended_action: Recommended action to perform to address or further triage the patching issue.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "impacted_resource_id", impacted_resource_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "recommended_action", recommended_action)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of the patching issue.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="impactedResourceId")
+    def impacted_resource_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource impacted by the patching issue.
+        """
+        return pulumi.get(self, "impacted_resource_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the patching issue.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="recommendedAction")
+    def recommended_action(self) -> _builtins.str:
+        """
+        Recommended action to perform to address or further triage the patching issue.
+        """
+        return pulumi.get(self, "recommended_action")
+
+
+@pulumi.output_type
+class GetFsuReadinessChecksFsuReadinessCheckCollectionItemTargetResult(dict):
+    def __init__(__self__, *,
+                 entity_id: _builtins.str,
+                 entity_type: _builtins.str):
+        """
+        :param _builtins.str entity_id: Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param _builtins.str entity_type: Resource entity type
+        """
+        pulumi.set(__self__, "entity_id", entity_id)
+        pulumi.set(__self__, "entity_type", entity_type)
+
+    @_builtins.property
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> _builtins.str:
+        """
+        Resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        """
+        return pulumi.get(self, "entity_id")
+
+    @_builtins.property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> _builtins.str:
+        """
+        Resource entity type
+        """
+        return pulumi.get(self, "entity_type")
 
 

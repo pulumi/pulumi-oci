@@ -21,6 +21,7 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemReadEndpoint;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemRest;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemSecureConnection;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemSource;
+import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemTelemetryConfiguration;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -262,6 +263,11 @@ public final class GetMysqlDbSystemResult {
      * 
      */
     private Map<String,String> systemTags;
+    /**
+     * @return Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    private List<GetMysqlDbSystemTelemetryConfiguration> telemetryConfigurations;
     /**
      * @return The date and time the DB System was created.
      * 
@@ -603,6 +609,13 @@ public final class GetMysqlDbSystemResult {
         return this.systemTags;
     }
     /**
+     * @return Telemetry configuration details of a DB System or a read replica.
+     * 
+     */
+    public List<GetMysqlDbSystemTelemetryConfiguration> telemetryConfigurations() {
+        return this.telemetryConfigurations;
+    }
+    /**
      * @return The date and time the DB System was created.
      * 
      */
@@ -674,6 +687,7 @@ public final class GetMysqlDbSystemResult {
         private String state;
         private String subnetId;
         private Map<String,String> systemTags;
+        private List<GetMysqlDbSystemTelemetryConfiguration> telemetryConfigurations;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -727,6 +741,7 @@ public final class GetMysqlDbSystemResult {
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.systemTags = defaults.systemTags;
+    	      this.telemetryConfigurations = defaults.telemetryConfigurations;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -1167,6 +1182,17 @@ public final class GetMysqlDbSystemResult {
             return this;
         }
         @CustomType.Setter
+        public Builder telemetryConfigurations(List<GetMysqlDbSystemTelemetryConfiguration> telemetryConfigurations) {
+            if (telemetryConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "telemetryConfigurations");
+            }
+            this.telemetryConfigurations = telemetryConfigurations;
+            return this;
+        }
+        public Builder telemetryConfigurations(GetMysqlDbSystemTelemetryConfiguration... telemetryConfigurations) {
+            return telemetryConfigurations(List.of(telemetryConfigurations));
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "timeCreated");
@@ -1232,6 +1258,7 @@ public final class GetMysqlDbSystemResult {
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.systemTags = systemTags;
+            _resultValue.telemetryConfigurations = telemetryConfigurations;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

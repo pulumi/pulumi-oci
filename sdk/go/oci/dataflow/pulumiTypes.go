@@ -9733,7 +9733,11 @@ type GetSqlEndpointsSqlEndpointCollectionItem struct {
 	// The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
 	JdbcEndpointUrl string `pulumi:"jdbcEndpointUrl"`
 	// The OCID of Oracle Cloud Infrastructure Lake.
-	LakeId string `pulumi:"lakeId"`
+	LakeId               string `pulumi:"lakeId"`
+	LogCompartmentId     string `pulumi:"logCompartmentId"`
+	LogDisplayName       string `pulumi:"logDisplayName"`
+	LogGroupId           string `pulumi:"logGroupId"`
+	LogRetentionDuration int    `pulumi:"logRetentionDuration"`
 	// The maximum number of executors.
 	MaxExecutorCount int `pulumi:"maxExecutorCount"`
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
@@ -9795,7 +9799,11 @@ type GetSqlEndpointsSqlEndpointCollectionItemArgs struct {
 	// The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
 	JdbcEndpointUrl pulumi.StringInput `pulumi:"jdbcEndpointUrl"`
 	// The OCID of Oracle Cloud Infrastructure Lake.
-	LakeId pulumi.StringInput `pulumi:"lakeId"`
+	LakeId               pulumi.StringInput `pulumi:"lakeId"`
+	LogCompartmentId     pulumi.StringInput `pulumi:"logCompartmentId"`
+	LogDisplayName       pulumi.StringInput `pulumi:"logDisplayName"`
+	LogGroupId           pulumi.StringInput `pulumi:"logGroupId"`
+	LogRetentionDuration pulumi.IntInput    `pulumi:"logRetentionDuration"`
 	// The maximum number of executors.
 	MaxExecutorCount pulumi.IntInput `pulumi:"maxExecutorCount"`
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
@@ -9935,6 +9943,22 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) JdbcEndpointUrl() pulumi
 // The OCID of Oracle Cloud Infrastructure Lake.
 func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) LakeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.LakeId }).(pulumi.StringOutput)
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) LogCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.LogCompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) LogDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.LogDisplayName }).(pulumi.StringOutput)
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.LogGroupId }).(pulumi.StringOutput)
+}
+
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) LogRetentionDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) int { return v.LogRetentionDuration }).(pulumi.IntOutput)
 }
 
 // The maximum number of executors.

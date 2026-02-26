@@ -18,7 +18,7 @@ public final class GetResolverRule {
      */
     private String action;
     /**
-     * @return A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+     * @return A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
      * 
      */
     private List<String> clientAddressConditions;
@@ -28,7 +28,7 @@ public final class GetResolverRule {
      */
     private List<String> destinationAddresses;
     /**
-     * @return A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+     * @return A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
      * 
      */
     private List<String> qnameCoverConditions;
@@ -48,7 +48,7 @@ public final class GetResolverRule {
         return this.action;
     }
     /**
-     * @return A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+     * @return A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
      * 
      */
     public List<String> clientAddressConditions() {
@@ -62,7 +62,7 @@ public final class GetResolverRule {
         return this.destinationAddresses;
     }
     /**
-     * @return A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+     * @return A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
      * 
      */
     public List<String> qnameCoverConditions() {

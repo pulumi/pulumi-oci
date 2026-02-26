@@ -64,6 +64,10 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     logCompartmentId: testCompartment.id,
+ *     logDisplayName: sqlEndpointLogDisplayName,
+ *     logGroupId: testLogGroup.id,
+ *     logRetentionDuration: sqlEndpointLogRetentionDuration,
  *     sparkAdvancedConfigurations: sqlEndpointSparkAdvancedConfigurations,
  * });
  * ```
@@ -149,6 +153,22 @@ export class SqlEndpoint extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly lakeId: pulumi.Output<string>;
     /**
+     * (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+     */
+    declare public readonly logCompartmentId: pulumi.Output<string>;
+    /**
+     * (Updatable) The friendly name of the log object used with the SQL Endpoint.
+     */
+    declare public readonly logDisplayName: pulumi.Output<string>;
+    /**
+     * (Updatable) The identifier of the log group used with the SQL Endpoint.
+     */
+    declare public readonly logGroupId: pulumi.Output<string>;
+    /**
+     * (Updatable) Log retention duration in days
+     */
+    declare public readonly logRetentionDuration: pulumi.Output<number>;
+    /**
      * (Updatable) The maximum number of executors.
      */
     declare public readonly maxExecutorCount: pulumi.Output<number>;
@@ -225,6 +245,10 @@ export class SqlEndpoint extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["jdbcEndpointUrl"] = state?.jdbcEndpointUrl;
             resourceInputs["lakeId"] = state?.lakeId;
+            resourceInputs["logCompartmentId"] = state?.logCompartmentId;
+            resourceInputs["logDisplayName"] = state?.logDisplayName;
+            resourceInputs["logGroupId"] = state?.logGroupId;
+            resourceInputs["logRetentionDuration"] = state?.logRetentionDuration;
             resourceInputs["maxExecutorCount"] = state?.maxExecutorCount;
             resourceInputs["metastoreId"] = state?.metastoreId;
             resourceInputs["minExecutorCount"] = state?.minExecutorCount;
@@ -275,6 +299,10 @@ export class SqlEndpoint extends pulumi.CustomResource {
             resourceInputs["executorShape"] = args?.executorShape;
             resourceInputs["executorShapeConfig"] = args?.executorShapeConfig;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["logCompartmentId"] = args?.logCompartmentId;
+            resourceInputs["logDisplayName"] = args?.logDisplayName;
+            resourceInputs["logGroupId"] = args?.logGroupId;
+            resourceInputs["logRetentionDuration"] = args?.logRetentionDuration;
             resourceInputs["maxExecutorCount"] = args?.maxExecutorCount;
             resourceInputs["metastoreId"] = args?.metastoreId;
             resourceInputs["minExecutorCount"] = args?.minExecutorCount;
@@ -343,6 +371,22 @@ export interface SqlEndpointState {
      * Oracle Cloud Infrastructure lake OCID
      */
     lakeId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+     */
+    logCompartmentId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The friendly name of the log object used with the SQL Endpoint.
+     */
+    logDisplayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) The identifier of the log group used with the SQL Endpoint.
+     */
+    logGroupId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Log retention duration in days
+     */
+    logRetentionDuration?: pulumi.Input<number>;
     /**
      * (Updatable) The maximum number of executors.
      */
@@ -437,6 +481,22 @@ export interface SqlEndpointArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+     */
+    logCompartmentId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The friendly name of the log object used with the SQL Endpoint.
+     */
+    logDisplayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) The identifier of the log group used with the SQL Endpoint.
+     */
+    logGroupId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Log retention duration in days
+     */
+    logRetentionDuration?: pulumi.Input<number>;
     /**
      * (Updatable) The maximum number of executors.
      */

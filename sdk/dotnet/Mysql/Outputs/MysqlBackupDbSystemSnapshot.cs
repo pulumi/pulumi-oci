@@ -149,6 +149,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// The OCID of the subnet the DB System is associated with.
         /// </summary>
         public readonly string? SubnetId;
+        /// <summary>
+        /// Telemetry configuration details of a DB System or a read replica.
+        /// </summary>
+        public readonly Outputs.MysqlBackupDbSystemSnapshotTelemetryConfiguration? TelemetryConfiguration;
 
         [OutputConstructor]
         private MysqlBackupDbSystemSnapshot(
@@ -218,7 +222,9 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string? shapeName,
 
-            string? subnetId)
+            string? subnetId,
+
+            Outputs.MysqlBackupDbSystemSnapshotTelemetryConfiguration? telemetryConfiguration)
         {
             AdminUsername = adminUsername;
             AvailabilityDomain = availabilityDomain;
@@ -254,6 +260,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             SecurityAttributes = securityAttributes;
             ShapeName = shapeName;
             SubnetId = subnetId;
+            TelemetryConfiguration = telemetryConfiguration;
         }
     }
 }

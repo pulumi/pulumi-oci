@@ -76,6 +76,10 @@ public final class GetSqlEndpointResult {
      * 
      */
     private String lakeId;
+    private String logCompartmentId;
+    private String logDisplayName;
+    private String logGroupId;
+    private Integer logRetentionDuration;
     /**
      * @return The maximum number of executors.
      * 
@@ -223,6 +227,18 @@ public final class GetSqlEndpointResult {
     public String lakeId() {
         return this.lakeId;
     }
+    public String logCompartmentId() {
+        return this.logCompartmentId;
+    }
+    public String logDisplayName() {
+        return this.logDisplayName;
+    }
+    public String logGroupId() {
+        return this.logGroupId;
+    }
+    public Integer logRetentionDuration() {
+        return this.logRetentionDuration;
+    }
     /**
      * @return The maximum number of executors.
      * 
@@ -332,6 +348,10 @@ public final class GetSqlEndpointResult {
         private String id;
         private String jdbcEndpointUrl;
         private String lakeId;
+        private String logCompartmentId;
+        private String logDisplayName;
+        private String logGroupId;
+        private Integer logRetentionDuration;
         private Integer maxExecutorCount;
         private String metastoreId;
         private Integer minExecutorCount;
@@ -360,6 +380,10 @@ public final class GetSqlEndpointResult {
     	      this.id = defaults.id;
     	      this.jdbcEndpointUrl = defaults.jdbcEndpointUrl;
     	      this.lakeId = defaults.lakeId;
+    	      this.logCompartmentId = defaults.logCompartmentId;
+    	      this.logDisplayName = defaults.logDisplayName;
+    	      this.logGroupId = defaults.logGroupId;
+    	      this.logRetentionDuration = defaults.logRetentionDuration;
     	      this.maxExecutorCount = defaults.maxExecutorCount;
     	      this.metastoreId = defaults.metastoreId;
     	      this.minExecutorCount = defaults.minExecutorCount;
@@ -475,6 +499,38 @@ public final class GetSqlEndpointResult {
               throw new MissingRequiredPropertyException("GetSqlEndpointResult", "lakeId");
             }
             this.lakeId = lakeId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder logCompartmentId(String logCompartmentId) {
+            if (logCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "logCompartmentId");
+            }
+            this.logCompartmentId = logCompartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder logDisplayName(String logDisplayName) {
+            if (logDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "logDisplayName");
+            }
+            this.logDisplayName = logDisplayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder logGroupId(String logGroupId) {
+            if (logGroupId == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "logGroupId");
+            }
+            this.logGroupId = logGroupId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder logRetentionDuration(Integer logRetentionDuration) {
+            if (logRetentionDuration == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "logRetentionDuration");
+            }
+            this.logRetentionDuration = logRetentionDuration;
             return this;
         }
         @CustomType.Setter
@@ -598,6 +654,10 @@ public final class GetSqlEndpointResult {
             _resultValue.id = id;
             _resultValue.jdbcEndpointUrl = jdbcEndpointUrl;
             _resultValue.lakeId = lakeId;
+            _resultValue.logCompartmentId = logCompartmentId;
+            _resultValue.logDisplayName = logDisplayName;
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logRetentionDuration = logRetentionDuration;
             _resultValue.maxExecutorCount = maxExecutorCount;
             _resultValue.metastoreId = metastoreId;
             _resultValue.minExecutorCount = minExecutorCount;

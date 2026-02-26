@@ -114,8 +114,7 @@ type GetZonesResult struct {
 	State                           *string `pulumi:"state"`
 	TimeCreatedGreaterThanOrEqualTo *string `pulumi:"timeCreatedGreaterThanOrEqualTo"`
 	TimeCreatedLessThan             *string `pulumi:"timeCreatedLessThan"`
-	// The OCID of the TSIG key.
-	TsigKeyId *string `pulumi:"tsigKeyId"`
+	TsigKeyId                       *string `pulumi:"tsigKeyId"`
 	// The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
 	ViewId *string `pulumi:"viewId"`
 	// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
@@ -237,7 +236,6 @@ func (o GetZonesResultOutput) TimeCreatedLessThan() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetZonesResult) *string { return v.TimeCreatedLessThan }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the TSIG key.
 func (o GetZonesResultOutput) TsigKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetZonesResult) *string { return v.TsigKeyId }).(pulumi.StringPtrOutput)
 }

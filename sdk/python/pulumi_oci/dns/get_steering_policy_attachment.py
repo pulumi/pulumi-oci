@@ -142,7 +142,7 @@ class GetSteeringPolicyAttachmentResult:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> _builtins.str:
         """
-        The OCID of the attached zone.
+        The OCID of the attached zone. Must be a public zone.
         """
         return pulumi.get(self, "zone_id")
 

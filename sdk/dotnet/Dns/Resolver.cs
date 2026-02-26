@@ -17,8 +17,12 @@ namespace Pulumi.Oci.Dns
     /// 
     /// Updates the specified resolver with your new information.
     /// 
-    /// Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until created VCN's state shows as Available in OCI console before updating DNS resolver properties.
-    /// Also a VCN cannot be deleted while its resolver has resolver endpoints. Additionally a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove the rules from a resolver user needs to update the resolver resource. Since DNS Resolver gets deleted when VCN is deleted there is no support for Delete for DNS Resolver.
+    /// Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until the created VCN's state shows as Available in the OCI Console before updating DNS resolver properties.
+    /// A VCN cannot be deleted while its resolver has resolver endpoints. Additionally, a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove rules from a resolver, update the resolver resource.
+    /// 
+    /// Destroy behavior: This resource does not delete the underlying DNS Resolver. The resolver itself is deleted only when the attached VCN is deleted. When this Terraform resource is destroyed, managed properties on the resolver (for example, attached views and rules) are cleared so the VCN can be deleted.
+    /// 
+    /// Default view behavior on VCN delete: If the resolver's default view contains customer-created zones, deleting the VCN (which deletes the resolver) can convert that default view into a non-protected regular view. That view may persist even if it was never imported into Terraform state. To avoid orphaned resources, either delete the zones from the default view before deleting the VCN, or plan to clean up the resulting view afterward.
     /// 
     /// ## Import
     /// 
@@ -96,17 +100,13 @@ namespace Pulumi.Oci.Dns
         public Output<string> ResolverId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Rules for the resolver. Rules are evaluated in order.
+        /// (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
         /// </summary>
         [Output("rules")]
         public Output<ImmutableArray<Outputs.ResolverRule>> Rules { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// Specifies to operate only on resources that have a matching DNS scope.
         /// </summary>
         [Output("scope")]
         public Output<string?> Scope { get; private set; } = null!;
@@ -243,7 +243,7 @@ namespace Pulumi.Oci.Dns
         private InputList<Inputs.ResolverRuleArgs>? _rules;
 
         /// <summary>
-        /// (Updatable) Rules for the resolver. Rules are evaluated in order.
+        /// (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
         /// </summary>
         public InputList<Inputs.ResolverRuleArgs> Rules
         {
@@ -252,11 +252,7 @@ namespace Pulumi.Oci.Dns
         }
 
         /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// Specifies to operate only on resources that have a matching DNS scope.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
@@ -361,7 +357,7 @@ namespace Pulumi.Oci.Dns
         private InputList<Inputs.ResolverRuleGetArgs>? _rules;
 
         /// <summary>
-        /// (Updatable) Rules for the resolver. Rules are evaluated in order.
+        /// (Updatable) Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
         /// </summary>
         public InputList<Inputs.ResolverRuleGetArgs> Rules
         {
@@ -370,11 +366,7 @@ namespace Pulumi.Oci.Dns
         }
 
         /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// Specifies to operate only on resources that have a matching DNS scope.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }

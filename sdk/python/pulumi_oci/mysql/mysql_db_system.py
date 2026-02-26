@@ -58,7 +58,8 @@ class MysqlDbSystemArgs:
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shutdown_type: Optional[pulumi.Input[_builtins.str]] = None,
                  source: Optional[pulumi.Input['MysqlDbSystemSourceArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 telemetry_configuration: Optional[pulumi.Input['MysqlDbSystemTelemetryConfigurationArgs']] = None):
         """
         The set of arguments for constructing a MysqlDbSystem resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -121,6 +122,7 @@ class MysqlDbSystemArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['MysqlDbSystemSourceArgs'] source: Parameters detailing how to provision the initial data of the system.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
+        :param pulumi.Input['MysqlDbSystemTelemetryConfigurationArgs'] telemetry_configuration: (Updatable) Details required to configure how MySQL telemetry should be exposed.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -194,6 +196,8 @@ class MysqlDbSystemArgs:
             pulumi.set(__self__, "source", source)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if telemetry_configuration is not None:
+            pulumi.set(__self__, "telemetry_configuration", telemetry_configuration)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -673,6 +677,18 @@ class MysqlDbSystemArgs:
     def state(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "state", value)
 
+    @_builtins.property
+    @pulumi.getter(name="telemetryConfiguration")
+    def telemetry_configuration(self) -> Optional[pulumi.Input['MysqlDbSystemTelemetryConfigurationArgs']]:
+        """
+        (Updatable) Details required to configure how MySQL telemetry should be exposed.
+        """
+        return pulumi.get(self, "telemetry_configuration")
+
+    @telemetry_configuration.setter
+    def telemetry_configuration(self, value: Optional[pulumi.Input['MysqlDbSystemTelemetryConfigurationArgs']]):
+        pulumi.set(self, "telemetry_configuration", value)
+
 
 @pulumi.input_type
 class _MysqlDbSystemState:
@@ -723,6 +739,7 @@ class _MysqlDbSystemState:
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 telemetry_configuration: Optional[pulumi.Input['MysqlDbSystemTelemetryConfigurationArgs']] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
@@ -795,6 +812,7 @@ class _MysqlDbSystemState:
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet the DB System is associated with.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input['MysqlDbSystemTelemetryConfigurationArgs'] telemetry_configuration: (Updatable) Details required to configure how MySQL telemetry should be exposed.
         :param pulumi.Input[_builtins.str] time_created: The date and time the DB System was created.
         :param pulumi.Input[_builtins.str] time_updated: The time the DB System was last updated.
         """
@@ -890,6 +908,8 @@ class _MysqlDbSystemState:
             pulumi.set(__self__, "subnet_id", subnet_id)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if telemetry_configuration is not None:
+            pulumi.set(__self__, "telemetry_configuration", telemetry_configuration)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -1470,6 +1490,18 @@ class _MysqlDbSystemState:
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="telemetryConfiguration")
+    def telemetry_configuration(self) -> Optional[pulumi.Input['MysqlDbSystemTelemetryConfigurationArgs']]:
+        """
+        (Updatable) Details required to configure how MySQL telemetry should be exposed.
+        """
+        return pulumi.get(self, "telemetry_configuration")
+
+    @telemetry_configuration.setter
+    def telemetry_configuration(self, value: Optional[pulumi.Input['MysqlDbSystemTelemetryConfigurationArgs']]):
+        pulumi.set(self, "telemetry_configuration", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1538,6 +1570,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                  source: Optional[pulumi.Input[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 telemetry_configuration: Optional[pulumi.Input[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -1648,6 +1681,16 @@ class MysqlDbSystem(pulumi.CustomResource):
             source={
                 "source_type": mysql_db_system_source_source_type,
                 "backup_id": test_backup["id"],
+            },
+            telemetry_configuration={
+                "logs": [{
+                    "destination": mysql_db_system_telemetry_configuration_logs_destination,
+                    "destination_configurations": [{
+                        "key": mysql_db_system_telemetry_configuration_logs_destination_configurations_key,
+                        "value": mysql_db_system_telemetry_configuration_logs_destination_configurations_value,
+                    }],
+                    "log_types": mysql_db_system_telemetry_configuration_logs_log_types,
+                }],
             })
         ```
 
@@ -1721,6 +1764,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']] source: Parameters detailing how to provision the initial data of the system.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet the DB System is associated with.
+        :param pulumi.Input[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict']] telemetry_configuration: (Updatable) Details required to configure how MySQL telemetry should be exposed.
         """
         ...
     @overload
@@ -1837,6 +1881,16 @@ class MysqlDbSystem(pulumi.CustomResource):
             source={
                 "source_type": mysql_db_system_source_source_type,
                 "backup_id": test_backup["id"],
+            },
+            telemetry_configuration={
+                "logs": [{
+                    "destination": mysql_db_system_telemetry_configuration_logs_destination,
+                    "destination_configurations": [{
+                        "key": mysql_db_system_telemetry_configuration_logs_destination_configurations_key,
+                        "value": mysql_db_system_telemetry_configuration_logs_destination_configurations_value,
+                    }],
+                    "log_types": mysql_db_system_telemetry_configuration_logs_log_types,
+                }],
             })
         ```
 
@@ -1901,6 +1955,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                  source: Optional[pulumi.Input[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 telemetry_configuration: Optional[pulumi.Input[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1956,6 +2011,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
+            __props__.__dict__["telemetry_configuration"] = telemetry_configuration
             __props__.__dict__["channels"] = None
             __props__.__dict__["current_placements"] = None
             __props__.__dict__["endpoints"] = None
@@ -2024,6 +2080,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             state: Optional[pulumi.Input[_builtins.str]] = None,
             subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            telemetry_configuration: Optional[pulumi.Input[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict']]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'MysqlDbSystem':
         """
@@ -2101,6 +2158,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet the DB System is associated with.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict']] telemetry_configuration: (Updatable) Details required to configure how MySQL telemetry should be exposed.
         :param pulumi.Input[_builtins.str] time_created: The date and time the DB System was created.
         :param pulumi.Input[_builtins.str] time_updated: The time the DB System was last updated.
         """
@@ -2154,6 +2212,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["system_tags"] = system_tags
+        __props__.__dict__["telemetry_configuration"] = telemetry_configuration
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return MysqlDbSystem(resource_name, opts=opts, __props__=__props__)
@@ -2547,6 +2606,14 @@ class MysqlDbSystem(pulumi.CustomResource):
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="telemetryConfiguration")
+    def telemetry_configuration(self) -> pulumi.Output['outputs.MysqlDbSystemTelemetryConfiguration']:
+        """
+        (Updatable) Details required to configure how MySQL telemetry should be exposed.
+        """
+        return pulumi.get(self, "telemetry_configuration")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

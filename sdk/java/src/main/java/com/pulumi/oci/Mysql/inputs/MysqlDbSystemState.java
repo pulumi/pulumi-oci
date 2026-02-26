@@ -21,6 +21,7 @@ import com.pulumi.oci.Mysql.inputs.MysqlDbSystemReadEndpointArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemRestArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSecureConnectionsArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSourceArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlDbSystemTelemetryConfigurationArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -770,6 +771,21 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * (Updatable) Details required to configure how MySQL telemetry should be exposed.
+     * 
+     */
+    @Import(name="telemetryConfiguration")
+    private @Nullable Output<MysqlDbSystemTelemetryConfigurationArgs> telemetryConfiguration;
+
+    /**
+     * @return (Updatable) Details required to configure how MySQL telemetry should be exposed.
+     * 
+     */
+    public Optional<Output<MysqlDbSystemTelemetryConfigurationArgs>> telemetryConfiguration() {
+        return Optional.ofNullable(this.telemetryConfiguration);
+    }
+
+    /**
      * The date and time the DB System was created.
      * 
      */
@@ -848,6 +864,7 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
         this.state = $.state;
         this.subnetId = $.subnetId;
         this.systemTags = $.systemTags;
+        this.telemetryConfiguration = $.telemetryConfiguration;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
     }
@@ -1958,6 +1975,27 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder systemTags(Map<String,String> systemTags) {
             return systemTags(Output.of(systemTags));
+        }
+
+        /**
+         * @param telemetryConfiguration (Updatable) Details required to configure how MySQL telemetry should be exposed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder telemetryConfiguration(@Nullable Output<MysqlDbSystemTelemetryConfigurationArgs> telemetryConfiguration) {
+            $.telemetryConfiguration = telemetryConfiguration;
+            return this;
+        }
+
+        /**
+         * @param telemetryConfiguration (Updatable) Details required to configure how MySQL telemetry should be exposed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder telemetryConfiguration(MysqlDbSystemTelemetryConfigurationArgs telemetryConfiguration) {
+            return telemetryConfiguration(Output.of(telemetryConfiguration));
         }
 
         /**

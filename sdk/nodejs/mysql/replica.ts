@@ -37,6 +37,16 @@ import * as utilities from "../utilities";
  *         nsgIds: replicaReplicaOverridesNsgIds,
  *         securityAttributes: replicaReplicaOverridesSecurityAttributes,
  *         shapeName: testShape.name,
+ *         telemetryConfiguration: {
+ *             logs: [{
+ *                 destination: replicaReplicaOverridesTelemetryConfigurationLogsDestination,
+ *                 destinationConfigurations: [{
+ *                     key: replicaReplicaOverridesTelemetryConfigurationLogsDestinationConfigurationsKey,
+ *                     value: replicaReplicaOverridesTelemetryConfigurationLogsDestinationConfigurationsValue,
+ *                 }],
+ *                 logTypes: replicaReplicaOverridesTelemetryConfigurationLogsLogTypes,
+ *             }],
+ *         },
  *     },
  * });
  * ```
@@ -166,6 +176,10 @@ export class Replica extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
+     * Telemetry configuration details of a DB System or a read replica.
+     */
+    declare public /*out*/ readonly telemetryConfigurations: pulumi.Output<outputs.Mysql.ReplicaTelemetryConfiguration[]>;
+    /**
      * The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
@@ -209,6 +223,7 @@ export class Replica extends pulumi.CustomResource {
             resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["shapeName"] = state?.shapeName;
             resourceInputs["state"] = state?.state;
+            resourceInputs["telemetryConfigurations"] = state?.telemetryConfigurations;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
@@ -238,6 +253,7 @@ export class Replica extends pulumi.CustomResource {
             resourceInputs["securityAttributes"] = undefined /*out*/;
             resourceInputs["shapeName"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["telemetryConfigurations"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -338,6 +354,10 @@ export interface ReplicaState {
      * The state of the read replica.
      */
     state?: pulumi.Input<string>;
+    /**
+     * Telemetry configuration details of a DB System or a read replica.
+     */
+    telemetryConfigurations?: pulumi.Input<pulumi.Input<inputs.Mysql.ReplicaTelemetryConfiguration>[]>;
     /**
      * The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */

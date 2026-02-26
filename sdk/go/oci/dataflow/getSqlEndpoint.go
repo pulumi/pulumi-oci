@@ -81,7 +81,11 @@ type LookupSqlEndpointResult struct {
 	// The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
 	JdbcEndpointUrl string `pulumi:"jdbcEndpointUrl"`
 	// The OCID of Oracle Cloud Infrastructure Lake.
-	LakeId string `pulumi:"lakeId"`
+	LakeId               string `pulumi:"lakeId"`
+	LogCompartmentId     string `pulumi:"logCompartmentId"`
+	LogDisplayName       string `pulumi:"logDisplayName"`
+	LogGroupId           string `pulumi:"logGroupId"`
+	LogRetentionDuration int    `pulumi:"logRetentionDuration"`
 	// The maximum number of executors.
 	MaxExecutorCount int `pulumi:"maxExecutorCount"`
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
@@ -201,6 +205,22 @@ func (o LookupSqlEndpointResultOutput) JdbcEndpointUrl() pulumi.StringOutput {
 // The OCID of Oracle Cloud Infrastructure Lake.
 func (o LookupSqlEndpointResultOutput) LakeId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSqlEndpointResult) string { return v.LakeId }).(pulumi.StringOutput)
+}
+
+func (o LookupSqlEndpointResultOutput) LogCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSqlEndpointResult) string { return v.LogCompartmentId }).(pulumi.StringOutput)
+}
+
+func (o LookupSqlEndpointResultOutput) LogDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSqlEndpointResult) string { return v.LogDisplayName }).(pulumi.StringOutput)
+}
+
+func (o LookupSqlEndpointResultOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSqlEndpointResult) string { return v.LogGroupId }).(pulumi.StringOutput)
+}
+
+func (o LookupSqlEndpointResultOutput) LogRetentionDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupSqlEndpointResult) int { return v.LogRetentionDuration }).(pulumi.IntOutput)
 }
 
 // The maximum number of executors.

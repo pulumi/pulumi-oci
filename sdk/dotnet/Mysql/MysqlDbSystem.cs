@@ -154,6 +154,25 @@ namespace Pulumi.Oci.Mysql
     ///             SourceType = mysqlDbSystemSourceSourceType,
     ///             BackupId = testBackup.Id,
     ///         },
+    ///         TelemetryConfiguration = new Oci.Mysql.Inputs.MysqlDbSystemTelemetryConfigurationArgs
+    ///         {
+    ///             Logs = new[]
+    ///             {
+    ///                 new Oci.Mysql.Inputs.MysqlDbSystemTelemetryConfigurationLogArgs
+    ///                 {
+    ///                     Destination = mysqlDbSystemTelemetryConfigurationLogsDestination,
+    ///                     DestinationConfigurations = new[]
+    ///                     {
+    ///                         new Oci.Mysql.Inputs.MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs
+    ///                         {
+    ///                             Key = mysqlDbSystemTelemetryConfigurationLogsDestinationConfigurationsKey,
+    ///                             Value = mysqlDbSystemTelemetryConfigurationLogsDestinationConfigurationsValue,
+    ///                         },
+    ///                     },
+    ///                     LogTypes = mysqlDbSystemTelemetryConfigurationLogsLogTypes,
+    ///                 },
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -467,6 +486,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Details required to configure how MySQL telemetry should be exposed.
+        /// </summary>
+        [Output("telemetryConfiguration")]
+        public Output<Outputs.MysqlDbSystemTelemetryConfiguration> TelemetryConfiguration { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the DB System was created.
@@ -825,6 +850,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Details required to configure how MySQL telemetry should be exposed.
+        /// </summary>
+        [Input("telemetryConfiguration")]
+        public Input<Inputs.MysqlDbSystemTelemetryConfigurationArgs>? TelemetryConfiguration { get; set; }
 
         public MysqlDbSystemArgs()
         {
@@ -1213,6 +1244,12 @@ namespace Pulumi.Oci.Mysql
             get => _systemTags ?? (_systemTags = new InputMap<string>());
             set => _systemTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) Details required to configure how MySQL telemetry should be exposed.
+        /// </summary>
+        [Input("telemetryConfiguration")]
+        public Input<Inputs.MysqlDbSystemTelemetryConfigurationGetArgs>? TelemetryConfiguration { get; set; }
 
         /// <summary>
         /// The date and time the DB System was created.

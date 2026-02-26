@@ -16,7 +16,7 @@ public final class GetMysqlDbSystemChannelTargetFilter {
      */
     private String type;
     /**
-     * @return The body of the filter rule. This can represent a database, a table, or a database pair (represented as &#34;db1-&gt;db2&#34;). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+     * @return Value of the destination configuration variable.
      * 
      */
     private String value;
@@ -30,7 +30,7 @@ public final class GetMysqlDbSystemChannelTargetFilter {
         return this.type;
     }
     /**
-     * @return The body of the filter rule. This can represent a database, a table, or a database pair (represented as &#34;db1-&gt;db2&#34;). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+     * @return Value of the destination configuration variable.
      * 
      */
     public String value() {

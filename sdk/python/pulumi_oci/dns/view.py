@@ -546,7 +546,7 @@ class View(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def scope(self) -> pulumi.Output[_builtins.str]:
         """
         If specified, must be `PRIVATE` when creating a view for private zones.
 

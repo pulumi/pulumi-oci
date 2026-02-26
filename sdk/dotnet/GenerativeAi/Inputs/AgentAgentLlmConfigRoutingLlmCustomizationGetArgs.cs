@@ -18,6 +18,24 @@ namespace Pulumi.Oci.GenerativeAi.Inputs
         [Input("instruction")]
         public Input<string>? Instruction { get; set; }
 
+        [Input("llmHyperParameters")]
+        private InputMap<string>? _llmHyperParameters;
+
+        /// <summary>
+        /// (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+        /// </summary>
+        public InputMap<string> LlmHyperParameters
+        {
+            get => _llmHyperParameters ?? (_llmHyperParameters = new InputMap<string>());
+            set => _llmHyperParameters = value;
+        }
+
+        /// <summary>
+        /// (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
+        /// </summary>
+        [Input("llmSelection")]
+        public Input<Inputs.AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionGetArgs>? LlmSelection { get; set; }
+
         public AgentAgentLlmConfigRoutingLlmCustomizationGetArgs()
         {
         }

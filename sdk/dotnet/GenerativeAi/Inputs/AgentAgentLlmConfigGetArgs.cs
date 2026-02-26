@@ -18,6 +18,12 @@ namespace Pulumi.Oci.GenerativeAi.Inputs
         [Input("routingLlmCustomization")]
         public Input<Inputs.AgentAgentLlmConfigRoutingLlmCustomizationGetArgs>? RoutingLlmCustomization { get; set; }
 
+        /// <summary>
+        /// (Updatable) The runtimeVersion of the system prompt.
+        /// </summary>
+        [Input("runtimeVersion")]
+        public Input<string>? RuntimeVersion { get; set; }
+
         public AgentAgentLlmConfigGetArgs()
         {
         }

@@ -34,6 +34,10 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly string Dialect;
         /// <summary>
+        /// Configuration to customize LLM.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAgentToolToolConfigEmbeddingLlmCustomizationResult> EmbeddingLlmCustomizations;
+        /// <summary>
         /// Details of Function for Function calling tool.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAgentToolToolConfigFunctionResult> Functions;
@@ -57,6 +61,18 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// Size of the model.
         /// </summary>
         public readonly string ModelSize;
+        /// <summary>
+        /// Configuration to customize LLM.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAgentToolToolConfigReasoningLlmCustomizationResult> ReasoningLlmCustomizations;
+        /// <summary>
+        /// Configuration to customize LLM.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAgentToolToolConfigRerankingLlmCustomizationResult> RerankingLlmCustomizations;
+        /// <summary>
+        /// The runtimeVersion of the system prompt.
+        /// </summary>
+        public readonly string RuntimeVersion;
         /// <summary>
         /// To enable/disable self correction.
         /// </summary>
@@ -93,6 +109,8 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
 
             string dialect,
 
+            ImmutableArray<Outputs.GetAgentToolToolConfigEmbeddingLlmCustomizationResult> embeddingLlmCustomizations,
+
             ImmutableArray<Outputs.GetAgentToolToolConfigFunctionResult> functions,
 
             ImmutableArray<Outputs.GetAgentToolToolConfigGenerationLlmCustomizationResult> generationLlmCustomizations,
@@ -104,6 +122,12 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
             ImmutableArray<Outputs.GetAgentToolToolConfigKnowledgeBaseConfigResult> knowledgeBaseConfigs,
 
             string modelSize,
+
+            ImmutableArray<Outputs.GetAgentToolToolConfigReasoningLlmCustomizationResult> reasoningLlmCustomizations,
+
+            ImmutableArray<Outputs.GetAgentToolToolConfigRerankingLlmCustomizationResult> rerankingLlmCustomizations,
+
+            string runtimeVersion,
 
             bool shouldEnableSelfCorrection,
 
@@ -120,12 +144,16 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
             DatabaseConnections = databaseConnections;
             DatabaseSchemas = databaseSchemas;
             Dialect = dialect;
+            EmbeddingLlmCustomizations = embeddingLlmCustomizations;
             Functions = functions;
             GenerationLlmCustomizations = generationLlmCustomizations;
             HttpEndpointAuthConfigs = httpEndpointAuthConfigs;
             IclExamples = iclExamples;
             KnowledgeBaseConfigs = knowledgeBaseConfigs;
             ModelSize = modelSize;
+            ReasoningLlmCustomizations = reasoningLlmCustomizations;
+            RerankingLlmCustomizations = rerankingLlmCustomizations;
+            RuntimeVersion = runtimeVersion;
             ShouldEnableSelfCorrection = shouldEnableSelfCorrection;
             ShouldEnableSqlExecution = shouldEnableSqlExecution;
             SubnetId = subnetId;

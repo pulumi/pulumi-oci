@@ -180,6 +180,10 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAgentAgentEndpointOutputConfigResult> OutputConfigs;
         /// <summary>
+        /// The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAgentAgentEndpointProvisionedCapacityConfigResult> ProvisionedCapacityConfigs;
+        /// <summary>
         /// Session Configuration on AgentEndpoint.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAgentAgentEndpointSessionConfigResult> SessionConfigs;
@@ -246,6 +250,8 @@ namespace Pulumi.Oci.GenerativeAi
 
             ImmutableArray<Outputs.GetAgentAgentEndpointOutputConfigResult> outputConfigs,
 
+            ImmutableArray<Outputs.GetAgentAgentEndpointProvisionedCapacityConfigResult> provisionedCapacityConfigs,
+
             ImmutableArray<Outputs.GetAgentAgentEndpointSessionConfigResult> sessionConfigs,
 
             bool shouldEnableCitation,
@@ -278,6 +284,7 @@ namespace Pulumi.Oci.GenerativeAi
             LifecycleDetails = lifecycleDetails;
             Metadata = metadata;
             OutputConfigs = outputConfigs;
+            ProvisionedCapacityConfigs = provisionedCapacityConfigs;
             SessionConfigs = sessionConfigs;
             ShouldEnableCitation = shouldEnableCitation;
             ShouldEnableMultiLanguage = shouldEnableMultiLanguage;

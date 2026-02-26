@@ -77,6 +77,7 @@ import javax.annotation.Nullable;
  *                 .tsigKeyId(testTsigKey.id())
  *                 .build())
  *             .freeformTags(zoneFreeformTags)
+ *             .resolutionMode(zoneResolutionMode)
  *             .scope(zoneScope)
  *             .viewId(testView.id())
  *             .build());
@@ -255,23 +256,28 @@ public class Zone extends com.pulumi.resources.CustomResource {
     public Output<String> name() {
         return this.name;
     }
-    /**
-     * The authoritative nameservers for the zone.
-     * 
-     */
     @Export(name="nameservers", refs={List.class,ZoneNameserver.class}, tree="[0,1]")
     private Output<List<ZoneNameserver>> nameservers;
 
-    /**
-     * @return The authoritative nameservers for the zone.
-     * 
-     */
     public Output<List<ZoneNameserver>> nameservers() {
         return this.nameservers;
     }
     /**
+     * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+     * 
+     */
+    @Export(name="resolutionMode", refs={String.class}, tree="[0]")
+    private Output<String> resolutionMode;
+
+    /**
+     * @return (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+     * 
+     */
+    public Output<String> resolutionMode() {
+        return this.resolutionMode;
+    }
+    /**
      * Specifies to operate only on resources that have a matching DNS scope.
-     * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
      * 
      */
     @Export(name="scope", refs={String.class}, tree="[0]")
@@ -279,7 +285,6 @@ public class Zone extends com.pulumi.resources.CustomResource {
 
     /**
      * @return Specifies to operate only on resources that have a matching DNS scope.
-     * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
      * 
      */
     public Output<String> scope() {
@@ -389,6 +394,8 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
+     * When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
+     * 
      */
     @Export(name="zoneType", refs={String.class}, tree="[0]")
     private Output<String> zoneType;
@@ -398,6 +405,8 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     * When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
      * 
      */
     public Output<String> zoneType() {

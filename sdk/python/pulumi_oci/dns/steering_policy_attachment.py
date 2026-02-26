@@ -27,7 +27,7 @@ class SteeringPolicyAttachmentArgs:
         The set of arguments for constructing a SteeringPolicyAttachment resource.
         :param pulumi.Input[_builtins.str] domain_name: The attached domain within the attached zone. `domain_name` is case insensitive.
         :param pulumi.Input[_builtins.str] steering_policy_id: The OCID of the attached steering policy.
-        :param pulumi.Input[_builtins.str] zone_id: The OCID of the attached zone.
+        :param pulumi.Input[_builtins.str] zone_id: The OCID of the attached zone. Must be a public zone.
                
                
                ** IMPORTANT **
@@ -68,7 +68,7 @@ class SteeringPolicyAttachmentArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The OCID of the attached zone.
+        The OCID of the attached zone. Must be a public zone.
 
 
         ** IMPORTANT **
@@ -115,7 +115,7 @@ class _SteeringPolicyAttachmentState:
         :param pulumi.Input[_builtins.str] state: The current state of the resource.
         :param pulumi.Input[_builtins.str] steering_policy_id: The OCID of the attached steering policy.
         :param pulumi.Input[_builtins.str] time_created: The date and time the resource was created, expressed in RFC 3339 timestamp format.
-        :param pulumi.Input[_builtins.str] zone_id: The OCID of the attached zone.
+        :param pulumi.Input[_builtins.str] zone_id: The OCID of the attached zone. Must be a public zone.
                
                
                ** IMPORTANT **
@@ -240,7 +240,7 @@ class _SteeringPolicyAttachmentState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the attached zone.
+        The OCID of the attached zone. Must be a public zone.
 
 
         ** IMPORTANT **
@@ -277,6 +277,8 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
         For the purposes of access control, the attachment is automatically placed
         into the same compartment as the domain's zone.
 
+        Attachments cannot be created for private zones.
+
         ## Example Usage
 
         ```python
@@ -303,7 +305,7 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] domain_name: The attached domain within the attached zone. `domain_name` is case insensitive.
         :param pulumi.Input[_builtins.str] steering_policy_id: The OCID of the attached steering policy.
-        :param pulumi.Input[_builtins.str] zone_id: The OCID of the attached zone.
+        :param pulumi.Input[_builtins.str] zone_id: The OCID of the attached zone. Must be a public zone.
                
                
                ** IMPORTANT **
@@ -327,6 +329,8 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
 
         For the purposes of access control, the attachment is automatically placed
         into the same compartment as the domain's zone.
+
+        Attachments cannot be created for private zones.
 
         ## Example Usage
 
@@ -426,7 +430,7 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the resource.
         :param pulumi.Input[_builtins.str] steering_policy_id: The OCID of the attached steering policy.
         :param pulumi.Input[_builtins.str] time_created: The date and time the resource was created, expressed in RFC 3339 timestamp format.
-        :param pulumi.Input[_builtins.str] zone_id: The OCID of the attached zone.
+        :param pulumi.Input[_builtins.str] zone_id: The OCID of the attached zone. Must be a public zone.
                
                
                ** IMPORTANT **
@@ -515,7 +519,7 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The OCID of the attached zone.
+        The OCID of the attached zone. Must be a public zone.
 
 
         ** IMPORTANT **

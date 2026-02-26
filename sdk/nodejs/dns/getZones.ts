@@ -148,9 +148,6 @@ export interface GetZonesResult {
     readonly state?: string;
     readonly timeCreatedGreaterThanOrEqualTo?: string;
     readonly timeCreatedLessThan?: string;
-    /**
-     * The OCID of the TSIG key.
-     */
     readonly tsigKeyId?: string;
     /**
      * The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.

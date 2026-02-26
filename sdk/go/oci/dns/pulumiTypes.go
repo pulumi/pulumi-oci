@@ -1319,11 +1319,11 @@ type ResolverRule struct {
 	// (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
 	// * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
 	Action string `pulumi:"action"`
-	// (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+	// (Updatable) A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
 	ClientAddressConditions []string `pulumi:"clientAddressConditions"`
 	// (Updatable) IP addresses to which queries should be forwarded. Currently limited to a single address.
 	DestinationAddresses []string `pulumi:"destinationAddresses"`
-	// (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+	// (Updatable) A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
 	QnameCoverConditions []string `pulumi:"qnameCoverConditions"`
 	// (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
 	SourceEndpointName string `pulumi:"sourceEndpointName"`
@@ -1344,11 +1344,11 @@ type ResolverRuleArgs struct {
 	// (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
 	// * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
 	Action pulumi.StringInput `pulumi:"action"`
-	// (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+	// (Updatable) A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
 	ClientAddressConditions pulumi.StringArrayInput `pulumi:"clientAddressConditions"`
 	// (Updatable) IP addresses to which queries should be forwarded. Currently limited to a single address.
 	DestinationAddresses pulumi.StringArrayInput `pulumi:"destinationAddresses"`
-	// (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+	// (Updatable) A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
 	QnameCoverConditions pulumi.StringArrayInput `pulumi:"qnameCoverConditions"`
 	// (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
 	SourceEndpointName pulumi.StringInput `pulumi:"sourceEndpointName"`
@@ -1411,7 +1411,7 @@ func (o ResolverRuleOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v ResolverRule) string { return v.Action }).(pulumi.StringOutput)
 }
 
-// (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+// (Updatable) A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
 func (o ResolverRuleOutput) ClientAddressConditions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ResolverRule) []string { return v.ClientAddressConditions }).(pulumi.StringArrayOutput)
 }
@@ -1421,7 +1421,7 @@ func (o ResolverRuleOutput) DestinationAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ResolverRule) []string { return v.DestinationAddresses }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+// (Updatable) A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
 func (o ResolverRuleOutput) QnameCoverConditions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ResolverRule) []string { return v.QnameCoverConditions }).(pulumi.StringArrayOutput)
 }
@@ -3092,7 +3092,6 @@ func (o ZoneExternalMasterArrayOutput) Index(i pulumi.IntInput) ZoneExternalMast
 }
 
 type ZoneNameserver struct {
-	// The hostname of the nameserver.
 	Hostname *string `pulumi:"hostname"`
 }
 
@@ -3108,7 +3107,6 @@ type ZoneNameserverInput interface {
 }
 
 type ZoneNameserverArgs struct {
-	// The hostname of the nameserver.
 	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 }
 
@@ -3163,7 +3161,6 @@ func (o ZoneNameserverOutput) ToZoneNameserverOutputWithContext(ctx context.Cont
 	return o
 }
 
-// The hostname of the nameserver.
 func (o ZoneNameserverOutput) Hostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZoneNameserver) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
@@ -4240,11 +4237,11 @@ type GetResolverRule struct {
 	// The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
 	// * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
 	Action string `pulumi:"action"`
-	// A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+	// A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
 	ClientAddressConditions []string `pulumi:"clientAddressConditions"`
 	// IP addresses to which queries should be forwarded. Currently limited to a single address.
 	DestinationAddresses []string `pulumi:"destinationAddresses"`
-	// A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+	// A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
 	QnameCoverConditions []string `pulumi:"qnameCoverConditions"`
 	// Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
 	SourceEndpointName string `pulumi:"sourceEndpointName"`
@@ -4265,11 +4262,11 @@ type GetResolverRuleArgs struct {
 	// The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
 	// * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
 	Action pulumi.StringInput `pulumi:"action"`
-	// A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+	// A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
 	ClientAddressConditions pulumi.StringArrayInput `pulumi:"clientAddressConditions"`
 	// IP addresses to which queries should be forwarded. Currently limited to a single address.
 	DestinationAddresses pulumi.StringArrayInput `pulumi:"destinationAddresses"`
-	// A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+	// A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
 	QnameCoverConditions pulumi.StringArrayInput `pulumi:"qnameCoverConditions"`
 	// Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
 	SourceEndpointName pulumi.StringInput `pulumi:"sourceEndpointName"`
@@ -4332,7 +4329,7 @@ func (o GetResolverRuleOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverRule) string { return v.Action }).(pulumi.StringOutput)
 }
 
-// A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+// A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
 func (o GetResolverRuleOutput) ClientAddressConditions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetResolverRule) []string { return v.ClientAddressConditions }).(pulumi.StringArrayOutput)
 }
@@ -4342,7 +4339,7 @@ func (o GetResolverRuleOutput) DestinationAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetResolverRule) []string { return v.DestinationAddresses }).(pulumi.StringArrayOutput)
 }
 
-// A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+// A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
 func (o GetResolverRuleOutput) QnameCoverConditions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetResolverRule) []string { return v.QnameCoverConditions }).(pulumi.StringArrayOutput)
 }
@@ -4499,7 +4496,7 @@ type GetResolversResolver struct {
 	IsProtected bool                       `pulumi:"isProtected"`
 	ResolverId  string                     `pulumi:"resolverId"`
 	Rules       []GetResolversResolverRule `pulumi:"rules"`
-	// Value must be `PRIVATE` when listing private name resolvers.
+	// Value must be `PRIVATE` when listing private resolvers.
 	Scope string `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self string `pulumi:"self"`
@@ -4543,7 +4540,7 @@ type GetResolversResolverArgs struct {
 	IsProtected pulumi.BoolInput                   `pulumi:"isProtected"`
 	ResolverId  pulumi.StringInput                 `pulumi:"resolverId"`
 	Rules       GetResolversResolverRuleArrayInput `pulumi:"rules"`
-	// Value must be `PRIVATE` when listing private name resolvers.
+	// Value must be `PRIVATE` when listing private resolvers.
 	Scope pulumi.StringInput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringInput `pulumi:"self"`
@@ -4662,7 +4659,7 @@ func (o GetResolversResolverOutput) Rules() GetResolversResolverRuleArrayOutput 
 	return o.ApplyT(func(v GetResolversResolver) []GetResolversResolverRule { return v.Rules }).(GetResolversResolverRuleArrayOutput)
 }
 
-// Value must be `PRIVATE` when listing private name resolvers.
+// Value must be `PRIVATE` when listing private resolvers.
 func (o GetResolversResolverOutput) Scope() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolversResolver) string { return v.Scope }).(pulumi.StringOutput)
 }
@@ -8059,6 +8056,1090 @@ func (o GetViewsViewArrayOutput) Index(i pulumi.IntInput) GetViewsViewOutput {
 	}).(GetViewsViewOutput)
 }
 
+type GetZoneDnssecConfig struct {
+	// A read-only array of key signing key (KSK) versions.
+	KskDnssecKeyVersions []GetZoneDnssecConfigKskDnssecKeyVersion `pulumi:"kskDnssecKeyVersions"`
+	// A read-only array of zone signing key (ZSK) versions.
+	ZskDnssecKeyVersions []GetZoneDnssecConfigZskDnssecKeyVersion `pulumi:"zskDnssecKeyVersions"`
+}
+
+// GetZoneDnssecConfigInput is an input type that accepts GetZoneDnssecConfigArgs and GetZoneDnssecConfigOutput values.
+// You can construct a concrete instance of `GetZoneDnssecConfigInput` via:
+//
+//	GetZoneDnssecConfigArgs{...}
+type GetZoneDnssecConfigInput interface {
+	pulumi.Input
+
+	ToGetZoneDnssecConfigOutput() GetZoneDnssecConfigOutput
+	ToGetZoneDnssecConfigOutputWithContext(context.Context) GetZoneDnssecConfigOutput
+}
+
+type GetZoneDnssecConfigArgs struct {
+	// A read-only array of key signing key (KSK) versions.
+	KskDnssecKeyVersions GetZoneDnssecConfigKskDnssecKeyVersionArrayInput `pulumi:"kskDnssecKeyVersions"`
+	// A read-only array of zone signing key (ZSK) versions.
+	ZskDnssecKeyVersions GetZoneDnssecConfigZskDnssecKeyVersionArrayInput `pulumi:"zskDnssecKeyVersions"`
+}
+
+func (GetZoneDnssecConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZoneDnssecConfig)(nil)).Elem()
+}
+
+func (i GetZoneDnssecConfigArgs) ToGetZoneDnssecConfigOutput() GetZoneDnssecConfigOutput {
+	return i.ToGetZoneDnssecConfigOutputWithContext(context.Background())
+}
+
+func (i GetZoneDnssecConfigArgs) ToGetZoneDnssecConfigOutputWithContext(ctx context.Context) GetZoneDnssecConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZoneDnssecConfigOutput)
+}
+
+// GetZoneDnssecConfigArrayInput is an input type that accepts GetZoneDnssecConfigArray and GetZoneDnssecConfigArrayOutput values.
+// You can construct a concrete instance of `GetZoneDnssecConfigArrayInput` via:
+//
+//	GetZoneDnssecConfigArray{ GetZoneDnssecConfigArgs{...} }
+type GetZoneDnssecConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetZoneDnssecConfigArrayOutput() GetZoneDnssecConfigArrayOutput
+	ToGetZoneDnssecConfigArrayOutputWithContext(context.Context) GetZoneDnssecConfigArrayOutput
+}
+
+type GetZoneDnssecConfigArray []GetZoneDnssecConfigInput
+
+func (GetZoneDnssecConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZoneDnssecConfig)(nil)).Elem()
+}
+
+func (i GetZoneDnssecConfigArray) ToGetZoneDnssecConfigArrayOutput() GetZoneDnssecConfigArrayOutput {
+	return i.ToGetZoneDnssecConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetZoneDnssecConfigArray) ToGetZoneDnssecConfigArrayOutputWithContext(ctx context.Context) GetZoneDnssecConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZoneDnssecConfigArrayOutput)
+}
+
+type GetZoneDnssecConfigOutput struct{ *pulumi.OutputState }
+
+func (GetZoneDnssecConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZoneDnssecConfig)(nil)).Elem()
+}
+
+func (o GetZoneDnssecConfigOutput) ToGetZoneDnssecConfigOutput() GetZoneDnssecConfigOutput {
+	return o
+}
+
+func (o GetZoneDnssecConfigOutput) ToGetZoneDnssecConfigOutputWithContext(ctx context.Context) GetZoneDnssecConfigOutput {
+	return o
+}
+
+// A read-only array of key signing key (KSK) versions.
+func (o GetZoneDnssecConfigOutput) KskDnssecKeyVersions() GetZoneDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfig) []GetZoneDnssecConfigKskDnssecKeyVersion { return v.KskDnssecKeyVersions }).(GetZoneDnssecConfigKskDnssecKeyVersionArrayOutput)
+}
+
+// A read-only array of zone signing key (ZSK) versions.
+func (o GetZoneDnssecConfigOutput) ZskDnssecKeyVersions() GetZoneDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfig) []GetZoneDnssecConfigZskDnssecKeyVersion { return v.ZskDnssecKeyVersions }).(GetZoneDnssecConfigZskDnssecKeyVersionArrayOutput)
+}
+
+type GetZoneDnssecConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetZoneDnssecConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZoneDnssecConfig)(nil)).Elem()
+}
+
+func (o GetZoneDnssecConfigArrayOutput) ToGetZoneDnssecConfigArrayOutput() GetZoneDnssecConfigArrayOutput {
+	return o
+}
+
+func (o GetZoneDnssecConfigArrayOutput) ToGetZoneDnssecConfigArrayOutputWithContext(ctx context.Context) GetZoneDnssecConfigArrayOutput {
+	return o
+}
+
+func (o GetZoneDnssecConfigArrayOutput) Index(i pulumi.IntInput) GetZoneDnssecConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZoneDnssecConfig {
+		return vs[0].([]GetZoneDnssecConfig)[vs[1].(int)]
+	}).(GetZoneDnssecConfigOutput)
+}
+
+type GetZoneDnssecConfigKskDnssecKeyVersion struct {
+	// The signing algorithm used for the key.
+	Algorithm string `pulumi:"algorithm"`
+	// An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
+	DsDatas []GetZoneDnssecConfigKskDnssecKeyVersionDsData `pulumi:"dsDatas"`
+	// The key tag associated with the `DnssecKeyVersion`.
+	KeyTag int `pulumi:"keyTag"`
+	// The length of the corresponding private key in bytes.
+	LengthInBytes int `pulumi:"lengthInBytes"`
+	// UUID of the key version this will replace or has replaced.
+	PredecessorDnssecKeyVersionUuid string `pulumi:"predecessorDnssecKeyVersionUuid"`
+	// UUID of the key version that will replace or has replaced this key version.
+	SuccessorDnssecKeyVersionUuid string `pulumi:"successorDnssecKeyVersionUuid"`
+	// RFC 3339 timestamp when the key version went or will go active.
+	TimeActivated string `pulumi:"timeActivated"`
+	// The RFC 3339 timestamp when the zone was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// RFC 3339 timestamp for end of recommended lifetime.
+	TimeExpired string `pulumi:"timeExpired"`
+	// RFC 3339 timestamp when the key version went or will go inactive.
+	TimeInactivated string `pulumi:"timeInactivated"`
+	// RFC 3339 timestamp when the key version was promoted.
+	TimePromoted string `pulumi:"timePromoted"`
+	// RFC 3339 timestamp when the zone contents include a DNSKEY for the key material.
+	TimePublished string `pulumi:"timePublished"`
+	// RFC 3339 timestamp when the DNSKEY is removed from the zone contents.
+	TimeUnpublished string `pulumi:"timeUnpublished"`
+	// The UUID of the `DnssecKeyVersion`.
+	Uuid string `pulumi:"uuid"`
+}
+
+// GetZoneDnssecConfigKskDnssecKeyVersionInput is an input type that accepts GetZoneDnssecConfigKskDnssecKeyVersionArgs and GetZoneDnssecConfigKskDnssecKeyVersionOutput values.
+// You can construct a concrete instance of `GetZoneDnssecConfigKskDnssecKeyVersionInput` via:
+//
+//	GetZoneDnssecConfigKskDnssecKeyVersionArgs{...}
+type GetZoneDnssecConfigKskDnssecKeyVersionInput interface {
+	pulumi.Input
+
+	ToGetZoneDnssecConfigKskDnssecKeyVersionOutput() GetZoneDnssecConfigKskDnssecKeyVersionOutput
+	ToGetZoneDnssecConfigKskDnssecKeyVersionOutputWithContext(context.Context) GetZoneDnssecConfigKskDnssecKeyVersionOutput
+}
+
+type GetZoneDnssecConfigKskDnssecKeyVersionArgs struct {
+	// The signing algorithm used for the key.
+	Algorithm pulumi.StringInput `pulumi:"algorithm"`
+	// An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
+	DsDatas GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayInput `pulumi:"dsDatas"`
+	// The key tag associated with the `DnssecKeyVersion`.
+	KeyTag pulumi.IntInput `pulumi:"keyTag"`
+	// The length of the corresponding private key in bytes.
+	LengthInBytes pulumi.IntInput `pulumi:"lengthInBytes"`
+	// UUID of the key version this will replace or has replaced.
+	PredecessorDnssecKeyVersionUuid pulumi.StringInput `pulumi:"predecessorDnssecKeyVersionUuid"`
+	// UUID of the key version that will replace or has replaced this key version.
+	SuccessorDnssecKeyVersionUuid pulumi.StringInput `pulumi:"successorDnssecKeyVersionUuid"`
+	// RFC 3339 timestamp when the key version went or will go active.
+	TimeActivated pulumi.StringInput `pulumi:"timeActivated"`
+	// The RFC 3339 timestamp when the zone was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// RFC 3339 timestamp for end of recommended lifetime.
+	TimeExpired pulumi.StringInput `pulumi:"timeExpired"`
+	// RFC 3339 timestamp when the key version went or will go inactive.
+	TimeInactivated pulumi.StringInput `pulumi:"timeInactivated"`
+	// RFC 3339 timestamp when the key version was promoted.
+	TimePromoted pulumi.StringInput `pulumi:"timePromoted"`
+	// RFC 3339 timestamp when the zone contents include a DNSKEY for the key material.
+	TimePublished pulumi.StringInput `pulumi:"timePublished"`
+	// RFC 3339 timestamp when the DNSKEY is removed from the zone contents.
+	TimeUnpublished pulumi.StringInput `pulumi:"timeUnpublished"`
+	// The UUID of the `DnssecKeyVersion`.
+	Uuid pulumi.StringInput `pulumi:"uuid"`
+}
+
+func (GetZoneDnssecConfigKskDnssecKeyVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZoneDnssecConfigKskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (i GetZoneDnssecConfigKskDnssecKeyVersionArgs) ToGetZoneDnssecConfigKskDnssecKeyVersionOutput() GetZoneDnssecConfigKskDnssecKeyVersionOutput {
+	return i.ToGetZoneDnssecConfigKskDnssecKeyVersionOutputWithContext(context.Background())
+}
+
+func (i GetZoneDnssecConfigKskDnssecKeyVersionArgs) ToGetZoneDnssecConfigKskDnssecKeyVersionOutputWithContext(ctx context.Context) GetZoneDnssecConfigKskDnssecKeyVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZoneDnssecConfigKskDnssecKeyVersionOutput)
+}
+
+// GetZoneDnssecConfigKskDnssecKeyVersionArrayInput is an input type that accepts GetZoneDnssecConfigKskDnssecKeyVersionArray and GetZoneDnssecConfigKskDnssecKeyVersionArrayOutput values.
+// You can construct a concrete instance of `GetZoneDnssecConfigKskDnssecKeyVersionArrayInput` via:
+//
+//	GetZoneDnssecConfigKskDnssecKeyVersionArray{ GetZoneDnssecConfigKskDnssecKeyVersionArgs{...} }
+type GetZoneDnssecConfigKskDnssecKeyVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetZoneDnssecConfigKskDnssecKeyVersionArrayOutput() GetZoneDnssecConfigKskDnssecKeyVersionArrayOutput
+	ToGetZoneDnssecConfigKskDnssecKeyVersionArrayOutputWithContext(context.Context) GetZoneDnssecConfigKskDnssecKeyVersionArrayOutput
+}
+
+type GetZoneDnssecConfigKskDnssecKeyVersionArray []GetZoneDnssecConfigKskDnssecKeyVersionInput
+
+func (GetZoneDnssecConfigKskDnssecKeyVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZoneDnssecConfigKskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (i GetZoneDnssecConfigKskDnssecKeyVersionArray) ToGetZoneDnssecConfigKskDnssecKeyVersionArrayOutput() GetZoneDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return i.ToGetZoneDnssecConfigKskDnssecKeyVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetZoneDnssecConfigKskDnssecKeyVersionArray) ToGetZoneDnssecConfigKskDnssecKeyVersionArrayOutputWithContext(ctx context.Context) GetZoneDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZoneDnssecConfigKskDnssecKeyVersionArrayOutput)
+}
+
+type GetZoneDnssecConfigKskDnssecKeyVersionOutput struct{ *pulumi.OutputState }
+
+func (GetZoneDnssecConfigKskDnssecKeyVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZoneDnssecConfigKskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (o GetZoneDnssecConfigKskDnssecKeyVersionOutput) ToGetZoneDnssecConfigKskDnssecKeyVersionOutput() GetZoneDnssecConfigKskDnssecKeyVersionOutput {
+	return o
+}
+
+func (o GetZoneDnssecConfigKskDnssecKeyVersionOutput) ToGetZoneDnssecConfigKskDnssecKeyVersionOutputWithContext(ctx context.Context) GetZoneDnssecConfigKskDnssecKeyVersionOutput {
+	return o
+}
+
+// The signing algorithm used for the key.
+func (o GetZoneDnssecConfigKskDnssecKeyVersionOutput) Algorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigKskDnssecKeyVersion) string { return v.Algorithm }).(pulumi.StringOutput)
+}
+
+// An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
+func (o GetZoneDnssecConfigKskDnssecKeyVersionOutput) DsDatas() GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigKskDnssecKeyVersion) []GetZoneDnssecConfigKskDnssecKeyVersionDsData {
+		return v.DsDatas
+	}).(GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput)
+}
+
+// The key tag associated with the `DnssecKeyVersion`.
+func (o GetZoneDnssecConfigKskDnssecKeyVersionOutput) KeyTag() pulumi.IntOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigKskDnssecKeyVersion) int { return v.KeyTag }).(pulumi.IntOutput)
+}
+
+// The length of the corresponding private key in bytes.
+func (o GetZoneDnssecConfigKskDnssecKeyVersionOutput) LengthInBytes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigKskDnssecKeyVersion) int { return v.LengthInBytes }).(pulumi.IntOutput)
+}
+
+// UUID of the key version this will replace or has replaced.
+func (o GetZoneDnssecConfigKskDnssecKeyVersionOutput) PredecessorDnssecKeyVersionUuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigKskDnssecKeyVersion) string { return v.PredecessorDnssecKeyVersionUuid }).(pulumi.StringOutput)
+}
+
+// UUID of the key version that will replace or has replaced this key version.
+func (o GetZoneDnssecConfigKskDnssecKeyVersionOutput) SuccessorDnssecKeyVersionUuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigKskDnssecKeyVersion) string { return v.SuccessorDnssecKeyVersionUuid }).(pulumi.StringOutput)
+}
+
+// RFC 3339 timestamp when the key version went or will go active.
+func (o GetZoneDnssecConfigKskDnssecKeyVersionOutput) TimeActivated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigKskDnssecKeyVersion) string { return v.TimeActivated }).(pulumi.StringOutput)
+}
+
+// The RFC 3339 timestamp when the zone was created.
+func (o GetZoneDnssecConfigKskDnssecKeyVersionOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigKskDnssecKeyVersion) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// RFC 3339 timestamp for end of recommended lifetime.
+func (o GetZoneDnssecConfigKskDnssecKeyVersionOutput) TimeExpired() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigKskDnssecKeyVersion) string { return v.TimeExpired }).(pulumi.StringOutput)
+}
+
+// RFC 3339 timestamp when the key version went or will go inactive.
+func (o GetZoneDnssecConfigKskDnssecKeyVersionOutput) TimeInactivated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigKskDnssecKeyVersion) string { return v.TimeInactivated }).(pulumi.StringOutput)
+}
+
+// RFC 3339 timestamp when the key version was promoted.
+func (o GetZoneDnssecConfigKskDnssecKeyVersionOutput) TimePromoted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigKskDnssecKeyVersion) string { return v.TimePromoted }).(pulumi.StringOutput)
+}
+
+// RFC 3339 timestamp when the zone contents include a DNSKEY for the key material.
+func (o GetZoneDnssecConfigKskDnssecKeyVersionOutput) TimePublished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigKskDnssecKeyVersion) string { return v.TimePublished }).(pulumi.StringOutput)
+}
+
+// RFC 3339 timestamp when the DNSKEY is removed from the zone contents.
+func (o GetZoneDnssecConfigKskDnssecKeyVersionOutput) TimeUnpublished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigKskDnssecKeyVersion) string { return v.TimeUnpublished }).(pulumi.StringOutput)
+}
+
+// The UUID of the `DnssecKeyVersion`.
+func (o GetZoneDnssecConfigKskDnssecKeyVersionOutput) Uuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigKskDnssecKeyVersion) string { return v.Uuid }).(pulumi.StringOutput)
+}
+
+type GetZoneDnssecConfigKskDnssecKeyVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetZoneDnssecConfigKskDnssecKeyVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZoneDnssecConfigKskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (o GetZoneDnssecConfigKskDnssecKeyVersionArrayOutput) ToGetZoneDnssecConfigKskDnssecKeyVersionArrayOutput() GetZoneDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return o
+}
+
+func (o GetZoneDnssecConfigKskDnssecKeyVersionArrayOutput) ToGetZoneDnssecConfigKskDnssecKeyVersionArrayOutputWithContext(ctx context.Context) GetZoneDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return o
+}
+
+func (o GetZoneDnssecConfigKskDnssecKeyVersionArrayOutput) Index(i pulumi.IntInput) GetZoneDnssecConfigKskDnssecKeyVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZoneDnssecConfigKskDnssecKeyVersion {
+		return vs[0].([]GetZoneDnssecConfigKskDnssecKeyVersion)[vs[1].(int)]
+	}).(GetZoneDnssecConfigKskDnssecKeyVersionOutput)
+}
+
+type GetZoneDnssecConfigKskDnssecKeyVersionDsData struct {
+	// The type of the digest associated with the rdata.
+	DigestType string `pulumi:"digestType"`
+	// Presentation-format DS record data that must be added to the parent zone.
+	Rdata string `pulumi:"rdata"`
+}
+
+// GetZoneDnssecConfigKskDnssecKeyVersionDsDataInput is an input type that accepts GetZoneDnssecConfigKskDnssecKeyVersionDsDataArgs and GetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput values.
+// You can construct a concrete instance of `GetZoneDnssecConfigKskDnssecKeyVersionDsDataInput` via:
+//
+//	GetZoneDnssecConfigKskDnssecKeyVersionDsDataArgs{...}
+type GetZoneDnssecConfigKskDnssecKeyVersionDsDataInput interface {
+	pulumi.Input
+
+	ToGetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput() GetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput
+	ToGetZoneDnssecConfigKskDnssecKeyVersionDsDataOutputWithContext(context.Context) GetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput
+}
+
+type GetZoneDnssecConfigKskDnssecKeyVersionDsDataArgs struct {
+	// The type of the digest associated with the rdata.
+	DigestType pulumi.StringInput `pulumi:"digestType"`
+	// Presentation-format DS record data that must be added to the parent zone.
+	Rdata pulumi.StringInput `pulumi:"rdata"`
+}
+
+func (GetZoneDnssecConfigKskDnssecKeyVersionDsDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZoneDnssecConfigKskDnssecKeyVersionDsData)(nil)).Elem()
+}
+
+func (i GetZoneDnssecConfigKskDnssecKeyVersionDsDataArgs) ToGetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput() GetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return i.ToGetZoneDnssecConfigKskDnssecKeyVersionDsDataOutputWithContext(context.Background())
+}
+
+func (i GetZoneDnssecConfigKskDnssecKeyVersionDsDataArgs) ToGetZoneDnssecConfigKskDnssecKeyVersionDsDataOutputWithContext(ctx context.Context) GetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput)
+}
+
+// GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayInput is an input type that accepts GetZoneDnssecConfigKskDnssecKeyVersionDsDataArray and GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput values.
+// You can construct a concrete instance of `GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayInput` via:
+//
+//	GetZoneDnssecConfigKskDnssecKeyVersionDsDataArray{ GetZoneDnssecConfigKskDnssecKeyVersionDsDataArgs{...} }
+type GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayInput interface {
+	pulumi.Input
+
+	ToGetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput() GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput
+	ToGetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutputWithContext(context.Context) GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput
+}
+
+type GetZoneDnssecConfigKskDnssecKeyVersionDsDataArray []GetZoneDnssecConfigKskDnssecKeyVersionDsDataInput
+
+func (GetZoneDnssecConfigKskDnssecKeyVersionDsDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZoneDnssecConfigKskDnssecKeyVersionDsData)(nil)).Elem()
+}
+
+func (i GetZoneDnssecConfigKskDnssecKeyVersionDsDataArray) ToGetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput() GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return i.ToGetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetZoneDnssecConfigKskDnssecKeyVersionDsDataArray) ToGetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutputWithContext(ctx context.Context) GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput)
+}
+
+type GetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput struct{ *pulumi.OutputState }
+
+func (GetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZoneDnssecConfigKskDnssecKeyVersionDsData)(nil)).Elem()
+}
+
+func (o GetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput) ToGetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput() GetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return o
+}
+
+func (o GetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput) ToGetZoneDnssecConfigKskDnssecKeyVersionDsDataOutputWithContext(ctx context.Context) GetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return o
+}
+
+// The type of the digest associated with the rdata.
+func (o GetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput) DigestType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigKskDnssecKeyVersionDsData) string { return v.DigestType }).(pulumi.StringOutput)
+}
+
+// Presentation-format DS record data that must be added to the parent zone.
+func (o GetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput) Rdata() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigKskDnssecKeyVersionDsData) string { return v.Rdata }).(pulumi.StringOutput)
+}
+
+type GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZoneDnssecConfigKskDnssecKeyVersionDsData)(nil)).Elem()
+}
+
+func (o GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput) ToGetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput() GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return o
+}
+
+func (o GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput) ToGetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutputWithContext(ctx context.Context) GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return o
+}
+
+func (o GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput) Index(i pulumi.IntInput) GetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZoneDnssecConfigKskDnssecKeyVersionDsData {
+		return vs[0].([]GetZoneDnssecConfigKskDnssecKeyVersionDsData)[vs[1].(int)]
+	}).(GetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput)
+}
+
+type GetZoneDnssecConfigZskDnssecKeyVersion struct {
+	// The signing algorithm used for the key.
+	Algorithm string `pulumi:"algorithm"`
+	// The key tag associated with the `DnssecKeyVersion`.
+	KeyTag int `pulumi:"keyTag"`
+	// The length of the corresponding private key in bytes.
+	LengthInBytes int `pulumi:"lengthInBytes"`
+	// UUID of the key version this will replace or has replaced.
+	PredecessorDnssecKeyVersionUuid string `pulumi:"predecessorDnssecKeyVersionUuid"`
+	// UUID of the key version that will replace or has replaced this key version.
+	SuccessorDnssecKeyVersionUuid string `pulumi:"successorDnssecKeyVersionUuid"`
+	// RFC 3339 timestamp when the key version went or will go active.
+	TimeActivated string `pulumi:"timeActivated"`
+	// The RFC 3339 timestamp when the zone was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// RFC 3339 timestamp for end of recommended lifetime.
+	TimeExpired string `pulumi:"timeExpired"`
+	// RFC 3339 timestamp when the key version went or will go inactive.
+	TimeInactivated string `pulumi:"timeInactivated"`
+	// RFC 3339 timestamp when the key version was promoted.
+	TimePromoted string `pulumi:"timePromoted"`
+	// RFC 3339 timestamp when the zone contents include a DNSKEY for the key material.
+	TimePublished string `pulumi:"timePublished"`
+	// RFC 3339 timestamp when the DNSKEY is removed from the zone contents.
+	TimeUnpublished string `pulumi:"timeUnpublished"`
+	// The UUID of the `DnssecKeyVersion`.
+	Uuid string `pulumi:"uuid"`
+}
+
+// GetZoneDnssecConfigZskDnssecKeyVersionInput is an input type that accepts GetZoneDnssecConfigZskDnssecKeyVersionArgs and GetZoneDnssecConfigZskDnssecKeyVersionOutput values.
+// You can construct a concrete instance of `GetZoneDnssecConfigZskDnssecKeyVersionInput` via:
+//
+//	GetZoneDnssecConfigZskDnssecKeyVersionArgs{...}
+type GetZoneDnssecConfigZskDnssecKeyVersionInput interface {
+	pulumi.Input
+
+	ToGetZoneDnssecConfigZskDnssecKeyVersionOutput() GetZoneDnssecConfigZskDnssecKeyVersionOutput
+	ToGetZoneDnssecConfigZskDnssecKeyVersionOutputWithContext(context.Context) GetZoneDnssecConfigZskDnssecKeyVersionOutput
+}
+
+type GetZoneDnssecConfigZskDnssecKeyVersionArgs struct {
+	// The signing algorithm used for the key.
+	Algorithm pulumi.StringInput `pulumi:"algorithm"`
+	// The key tag associated with the `DnssecKeyVersion`.
+	KeyTag pulumi.IntInput `pulumi:"keyTag"`
+	// The length of the corresponding private key in bytes.
+	LengthInBytes pulumi.IntInput `pulumi:"lengthInBytes"`
+	// UUID of the key version this will replace or has replaced.
+	PredecessorDnssecKeyVersionUuid pulumi.StringInput `pulumi:"predecessorDnssecKeyVersionUuid"`
+	// UUID of the key version that will replace or has replaced this key version.
+	SuccessorDnssecKeyVersionUuid pulumi.StringInput `pulumi:"successorDnssecKeyVersionUuid"`
+	// RFC 3339 timestamp when the key version went or will go active.
+	TimeActivated pulumi.StringInput `pulumi:"timeActivated"`
+	// The RFC 3339 timestamp when the zone was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// RFC 3339 timestamp for end of recommended lifetime.
+	TimeExpired pulumi.StringInput `pulumi:"timeExpired"`
+	// RFC 3339 timestamp when the key version went or will go inactive.
+	TimeInactivated pulumi.StringInput `pulumi:"timeInactivated"`
+	// RFC 3339 timestamp when the key version was promoted.
+	TimePromoted pulumi.StringInput `pulumi:"timePromoted"`
+	// RFC 3339 timestamp when the zone contents include a DNSKEY for the key material.
+	TimePublished pulumi.StringInput `pulumi:"timePublished"`
+	// RFC 3339 timestamp when the DNSKEY is removed from the zone contents.
+	TimeUnpublished pulumi.StringInput `pulumi:"timeUnpublished"`
+	// The UUID of the `DnssecKeyVersion`.
+	Uuid pulumi.StringInput `pulumi:"uuid"`
+}
+
+func (GetZoneDnssecConfigZskDnssecKeyVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZoneDnssecConfigZskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (i GetZoneDnssecConfigZskDnssecKeyVersionArgs) ToGetZoneDnssecConfigZskDnssecKeyVersionOutput() GetZoneDnssecConfigZskDnssecKeyVersionOutput {
+	return i.ToGetZoneDnssecConfigZskDnssecKeyVersionOutputWithContext(context.Background())
+}
+
+func (i GetZoneDnssecConfigZskDnssecKeyVersionArgs) ToGetZoneDnssecConfigZskDnssecKeyVersionOutputWithContext(ctx context.Context) GetZoneDnssecConfigZskDnssecKeyVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZoneDnssecConfigZskDnssecKeyVersionOutput)
+}
+
+// GetZoneDnssecConfigZskDnssecKeyVersionArrayInput is an input type that accepts GetZoneDnssecConfigZskDnssecKeyVersionArray and GetZoneDnssecConfigZskDnssecKeyVersionArrayOutput values.
+// You can construct a concrete instance of `GetZoneDnssecConfigZskDnssecKeyVersionArrayInput` via:
+//
+//	GetZoneDnssecConfigZskDnssecKeyVersionArray{ GetZoneDnssecConfigZskDnssecKeyVersionArgs{...} }
+type GetZoneDnssecConfigZskDnssecKeyVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetZoneDnssecConfigZskDnssecKeyVersionArrayOutput() GetZoneDnssecConfigZskDnssecKeyVersionArrayOutput
+	ToGetZoneDnssecConfigZskDnssecKeyVersionArrayOutputWithContext(context.Context) GetZoneDnssecConfigZskDnssecKeyVersionArrayOutput
+}
+
+type GetZoneDnssecConfigZskDnssecKeyVersionArray []GetZoneDnssecConfigZskDnssecKeyVersionInput
+
+func (GetZoneDnssecConfigZskDnssecKeyVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZoneDnssecConfigZskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (i GetZoneDnssecConfigZskDnssecKeyVersionArray) ToGetZoneDnssecConfigZskDnssecKeyVersionArrayOutput() GetZoneDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return i.ToGetZoneDnssecConfigZskDnssecKeyVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetZoneDnssecConfigZskDnssecKeyVersionArray) ToGetZoneDnssecConfigZskDnssecKeyVersionArrayOutputWithContext(ctx context.Context) GetZoneDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZoneDnssecConfigZskDnssecKeyVersionArrayOutput)
+}
+
+type GetZoneDnssecConfigZskDnssecKeyVersionOutput struct{ *pulumi.OutputState }
+
+func (GetZoneDnssecConfigZskDnssecKeyVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZoneDnssecConfigZskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (o GetZoneDnssecConfigZskDnssecKeyVersionOutput) ToGetZoneDnssecConfigZskDnssecKeyVersionOutput() GetZoneDnssecConfigZskDnssecKeyVersionOutput {
+	return o
+}
+
+func (o GetZoneDnssecConfigZskDnssecKeyVersionOutput) ToGetZoneDnssecConfigZskDnssecKeyVersionOutputWithContext(ctx context.Context) GetZoneDnssecConfigZskDnssecKeyVersionOutput {
+	return o
+}
+
+// The signing algorithm used for the key.
+func (o GetZoneDnssecConfigZskDnssecKeyVersionOutput) Algorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigZskDnssecKeyVersion) string { return v.Algorithm }).(pulumi.StringOutput)
+}
+
+// The key tag associated with the `DnssecKeyVersion`.
+func (o GetZoneDnssecConfigZskDnssecKeyVersionOutput) KeyTag() pulumi.IntOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigZskDnssecKeyVersion) int { return v.KeyTag }).(pulumi.IntOutput)
+}
+
+// The length of the corresponding private key in bytes.
+func (o GetZoneDnssecConfigZskDnssecKeyVersionOutput) LengthInBytes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigZskDnssecKeyVersion) int { return v.LengthInBytes }).(pulumi.IntOutput)
+}
+
+// UUID of the key version this will replace or has replaced.
+func (o GetZoneDnssecConfigZskDnssecKeyVersionOutput) PredecessorDnssecKeyVersionUuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigZskDnssecKeyVersion) string { return v.PredecessorDnssecKeyVersionUuid }).(pulumi.StringOutput)
+}
+
+// UUID of the key version that will replace or has replaced this key version.
+func (o GetZoneDnssecConfigZskDnssecKeyVersionOutput) SuccessorDnssecKeyVersionUuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigZskDnssecKeyVersion) string { return v.SuccessorDnssecKeyVersionUuid }).(pulumi.StringOutput)
+}
+
+// RFC 3339 timestamp when the key version went or will go active.
+func (o GetZoneDnssecConfigZskDnssecKeyVersionOutput) TimeActivated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigZskDnssecKeyVersion) string { return v.TimeActivated }).(pulumi.StringOutput)
+}
+
+// The RFC 3339 timestamp when the zone was created.
+func (o GetZoneDnssecConfigZskDnssecKeyVersionOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigZskDnssecKeyVersion) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// RFC 3339 timestamp for end of recommended lifetime.
+func (o GetZoneDnssecConfigZskDnssecKeyVersionOutput) TimeExpired() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigZskDnssecKeyVersion) string { return v.TimeExpired }).(pulumi.StringOutput)
+}
+
+// RFC 3339 timestamp when the key version went or will go inactive.
+func (o GetZoneDnssecConfigZskDnssecKeyVersionOutput) TimeInactivated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigZskDnssecKeyVersion) string { return v.TimeInactivated }).(pulumi.StringOutput)
+}
+
+// RFC 3339 timestamp when the key version was promoted.
+func (o GetZoneDnssecConfigZskDnssecKeyVersionOutput) TimePromoted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigZskDnssecKeyVersion) string { return v.TimePromoted }).(pulumi.StringOutput)
+}
+
+// RFC 3339 timestamp when the zone contents include a DNSKEY for the key material.
+func (o GetZoneDnssecConfigZskDnssecKeyVersionOutput) TimePublished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigZskDnssecKeyVersion) string { return v.TimePublished }).(pulumi.StringOutput)
+}
+
+// RFC 3339 timestamp when the DNSKEY is removed from the zone contents.
+func (o GetZoneDnssecConfigZskDnssecKeyVersionOutput) TimeUnpublished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigZskDnssecKeyVersion) string { return v.TimeUnpublished }).(pulumi.StringOutput)
+}
+
+// The UUID of the `DnssecKeyVersion`.
+func (o GetZoneDnssecConfigZskDnssecKeyVersionOutput) Uuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneDnssecConfigZskDnssecKeyVersion) string { return v.Uuid }).(pulumi.StringOutput)
+}
+
+type GetZoneDnssecConfigZskDnssecKeyVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetZoneDnssecConfigZskDnssecKeyVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZoneDnssecConfigZskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (o GetZoneDnssecConfigZskDnssecKeyVersionArrayOutput) ToGetZoneDnssecConfigZskDnssecKeyVersionArrayOutput() GetZoneDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return o
+}
+
+func (o GetZoneDnssecConfigZskDnssecKeyVersionArrayOutput) ToGetZoneDnssecConfigZskDnssecKeyVersionArrayOutputWithContext(ctx context.Context) GetZoneDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return o
+}
+
+func (o GetZoneDnssecConfigZskDnssecKeyVersionArrayOutput) Index(i pulumi.IntInput) GetZoneDnssecConfigZskDnssecKeyVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZoneDnssecConfigZskDnssecKeyVersion {
+		return vs[0].([]GetZoneDnssecConfigZskDnssecKeyVersion)[vs[1].(int)]
+	}).(GetZoneDnssecConfigZskDnssecKeyVersionOutput)
+}
+
+type GetZoneExternalDownstream struct {
+	// The server's IP address (IPv4 or IPv6).
+	Address string `pulumi:"address"`
+	// The server's port.
+	Port int `pulumi:"port"`
+	// The OCID of the TSIG key.
+	TsigKeyId string `pulumi:"tsigKeyId"`
+}
+
+// GetZoneExternalDownstreamInput is an input type that accepts GetZoneExternalDownstreamArgs and GetZoneExternalDownstreamOutput values.
+// You can construct a concrete instance of `GetZoneExternalDownstreamInput` via:
+//
+//	GetZoneExternalDownstreamArgs{...}
+type GetZoneExternalDownstreamInput interface {
+	pulumi.Input
+
+	ToGetZoneExternalDownstreamOutput() GetZoneExternalDownstreamOutput
+	ToGetZoneExternalDownstreamOutputWithContext(context.Context) GetZoneExternalDownstreamOutput
+}
+
+type GetZoneExternalDownstreamArgs struct {
+	// The server's IP address (IPv4 or IPv6).
+	Address pulumi.StringInput `pulumi:"address"`
+	// The server's port.
+	Port pulumi.IntInput `pulumi:"port"`
+	// The OCID of the TSIG key.
+	TsigKeyId pulumi.StringInput `pulumi:"tsigKeyId"`
+}
+
+func (GetZoneExternalDownstreamArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZoneExternalDownstream)(nil)).Elem()
+}
+
+func (i GetZoneExternalDownstreamArgs) ToGetZoneExternalDownstreamOutput() GetZoneExternalDownstreamOutput {
+	return i.ToGetZoneExternalDownstreamOutputWithContext(context.Background())
+}
+
+func (i GetZoneExternalDownstreamArgs) ToGetZoneExternalDownstreamOutputWithContext(ctx context.Context) GetZoneExternalDownstreamOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZoneExternalDownstreamOutput)
+}
+
+// GetZoneExternalDownstreamArrayInput is an input type that accepts GetZoneExternalDownstreamArray and GetZoneExternalDownstreamArrayOutput values.
+// You can construct a concrete instance of `GetZoneExternalDownstreamArrayInput` via:
+//
+//	GetZoneExternalDownstreamArray{ GetZoneExternalDownstreamArgs{...} }
+type GetZoneExternalDownstreamArrayInput interface {
+	pulumi.Input
+
+	ToGetZoneExternalDownstreamArrayOutput() GetZoneExternalDownstreamArrayOutput
+	ToGetZoneExternalDownstreamArrayOutputWithContext(context.Context) GetZoneExternalDownstreamArrayOutput
+}
+
+type GetZoneExternalDownstreamArray []GetZoneExternalDownstreamInput
+
+func (GetZoneExternalDownstreamArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZoneExternalDownstream)(nil)).Elem()
+}
+
+func (i GetZoneExternalDownstreamArray) ToGetZoneExternalDownstreamArrayOutput() GetZoneExternalDownstreamArrayOutput {
+	return i.ToGetZoneExternalDownstreamArrayOutputWithContext(context.Background())
+}
+
+func (i GetZoneExternalDownstreamArray) ToGetZoneExternalDownstreamArrayOutputWithContext(ctx context.Context) GetZoneExternalDownstreamArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZoneExternalDownstreamArrayOutput)
+}
+
+type GetZoneExternalDownstreamOutput struct{ *pulumi.OutputState }
+
+func (GetZoneExternalDownstreamOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZoneExternalDownstream)(nil)).Elem()
+}
+
+func (o GetZoneExternalDownstreamOutput) ToGetZoneExternalDownstreamOutput() GetZoneExternalDownstreamOutput {
+	return o
+}
+
+func (o GetZoneExternalDownstreamOutput) ToGetZoneExternalDownstreamOutputWithContext(ctx context.Context) GetZoneExternalDownstreamOutput {
+	return o
+}
+
+// The server's IP address (IPv4 or IPv6).
+func (o GetZoneExternalDownstreamOutput) Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneExternalDownstream) string { return v.Address }).(pulumi.StringOutput)
+}
+
+// The server's port.
+func (o GetZoneExternalDownstreamOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetZoneExternalDownstream) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// The OCID of the TSIG key.
+func (o GetZoneExternalDownstreamOutput) TsigKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneExternalDownstream) string { return v.TsigKeyId }).(pulumi.StringOutput)
+}
+
+type GetZoneExternalDownstreamArrayOutput struct{ *pulumi.OutputState }
+
+func (GetZoneExternalDownstreamArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZoneExternalDownstream)(nil)).Elem()
+}
+
+func (o GetZoneExternalDownstreamArrayOutput) ToGetZoneExternalDownstreamArrayOutput() GetZoneExternalDownstreamArrayOutput {
+	return o
+}
+
+func (o GetZoneExternalDownstreamArrayOutput) ToGetZoneExternalDownstreamArrayOutputWithContext(ctx context.Context) GetZoneExternalDownstreamArrayOutput {
+	return o
+}
+
+func (o GetZoneExternalDownstreamArrayOutput) Index(i pulumi.IntInput) GetZoneExternalDownstreamOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZoneExternalDownstream {
+		return vs[0].([]GetZoneExternalDownstream)[vs[1].(int)]
+	}).(GetZoneExternalDownstreamOutput)
+}
+
+type GetZoneExternalMaster struct {
+	// The server's IP address (IPv4 or IPv6).
+	Address string `pulumi:"address"`
+	// The server's port.
+	Port int `pulumi:"port"`
+	// The OCID of the TSIG key.
+	TsigKeyId string `pulumi:"tsigKeyId"`
+}
+
+// GetZoneExternalMasterInput is an input type that accepts GetZoneExternalMasterArgs and GetZoneExternalMasterOutput values.
+// You can construct a concrete instance of `GetZoneExternalMasterInput` via:
+//
+//	GetZoneExternalMasterArgs{...}
+type GetZoneExternalMasterInput interface {
+	pulumi.Input
+
+	ToGetZoneExternalMasterOutput() GetZoneExternalMasterOutput
+	ToGetZoneExternalMasterOutputWithContext(context.Context) GetZoneExternalMasterOutput
+}
+
+type GetZoneExternalMasterArgs struct {
+	// The server's IP address (IPv4 or IPv6).
+	Address pulumi.StringInput `pulumi:"address"`
+	// The server's port.
+	Port pulumi.IntInput `pulumi:"port"`
+	// The OCID of the TSIG key.
+	TsigKeyId pulumi.StringInput `pulumi:"tsigKeyId"`
+}
+
+func (GetZoneExternalMasterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZoneExternalMaster)(nil)).Elem()
+}
+
+func (i GetZoneExternalMasterArgs) ToGetZoneExternalMasterOutput() GetZoneExternalMasterOutput {
+	return i.ToGetZoneExternalMasterOutputWithContext(context.Background())
+}
+
+func (i GetZoneExternalMasterArgs) ToGetZoneExternalMasterOutputWithContext(ctx context.Context) GetZoneExternalMasterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZoneExternalMasterOutput)
+}
+
+// GetZoneExternalMasterArrayInput is an input type that accepts GetZoneExternalMasterArray and GetZoneExternalMasterArrayOutput values.
+// You can construct a concrete instance of `GetZoneExternalMasterArrayInput` via:
+//
+//	GetZoneExternalMasterArray{ GetZoneExternalMasterArgs{...} }
+type GetZoneExternalMasterArrayInput interface {
+	pulumi.Input
+
+	ToGetZoneExternalMasterArrayOutput() GetZoneExternalMasterArrayOutput
+	ToGetZoneExternalMasterArrayOutputWithContext(context.Context) GetZoneExternalMasterArrayOutput
+}
+
+type GetZoneExternalMasterArray []GetZoneExternalMasterInput
+
+func (GetZoneExternalMasterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZoneExternalMaster)(nil)).Elem()
+}
+
+func (i GetZoneExternalMasterArray) ToGetZoneExternalMasterArrayOutput() GetZoneExternalMasterArrayOutput {
+	return i.ToGetZoneExternalMasterArrayOutputWithContext(context.Background())
+}
+
+func (i GetZoneExternalMasterArray) ToGetZoneExternalMasterArrayOutputWithContext(ctx context.Context) GetZoneExternalMasterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZoneExternalMasterArrayOutput)
+}
+
+type GetZoneExternalMasterOutput struct{ *pulumi.OutputState }
+
+func (GetZoneExternalMasterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZoneExternalMaster)(nil)).Elem()
+}
+
+func (o GetZoneExternalMasterOutput) ToGetZoneExternalMasterOutput() GetZoneExternalMasterOutput {
+	return o
+}
+
+func (o GetZoneExternalMasterOutput) ToGetZoneExternalMasterOutputWithContext(ctx context.Context) GetZoneExternalMasterOutput {
+	return o
+}
+
+// The server's IP address (IPv4 or IPv6).
+func (o GetZoneExternalMasterOutput) Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneExternalMaster) string { return v.Address }).(pulumi.StringOutput)
+}
+
+// The server's port.
+func (o GetZoneExternalMasterOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetZoneExternalMaster) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// The OCID of the TSIG key.
+func (o GetZoneExternalMasterOutput) TsigKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneExternalMaster) string { return v.TsigKeyId }).(pulumi.StringOutput)
+}
+
+type GetZoneExternalMasterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetZoneExternalMasterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZoneExternalMaster)(nil)).Elem()
+}
+
+func (o GetZoneExternalMasterArrayOutput) ToGetZoneExternalMasterArrayOutput() GetZoneExternalMasterArrayOutput {
+	return o
+}
+
+func (o GetZoneExternalMasterArrayOutput) ToGetZoneExternalMasterArrayOutputWithContext(ctx context.Context) GetZoneExternalMasterArrayOutput {
+	return o
+}
+
+func (o GetZoneExternalMasterArrayOutput) Index(i pulumi.IntInput) GetZoneExternalMasterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZoneExternalMaster {
+		return vs[0].([]GetZoneExternalMaster)[vs[1].(int)]
+	}).(GetZoneExternalMasterOutput)
+}
+
+type GetZoneNameserver struct {
+	// Hostname of the nameserver.
+	Hostname string `pulumi:"hostname"`
+}
+
+// GetZoneNameserverInput is an input type that accepts GetZoneNameserverArgs and GetZoneNameserverOutput values.
+// You can construct a concrete instance of `GetZoneNameserverInput` via:
+//
+//	GetZoneNameserverArgs{...}
+type GetZoneNameserverInput interface {
+	pulumi.Input
+
+	ToGetZoneNameserverOutput() GetZoneNameserverOutput
+	ToGetZoneNameserverOutputWithContext(context.Context) GetZoneNameserverOutput
+}
+
+type GetZoneNameserverArgs struct {
+	// Hostname of the nameserver.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+}
+
+func (GetZoneNameserverArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZoneNameserver)(nil)).Elem()
+}
+
+func (i GetZoneNameserverArgs) ToGetZoneNameserverOutput() GetZoneNameserverOutput {
+	return i.ToGetZoneNameserverOutputWithContext(context.Background())
+}
+
+func (i GetZoneNameserverArgs) ToGetZoneNameserverOutputWithContext(ctx context.Context) GetZoneNameserverOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZoneNameserverOutput)
+}
+
+// GetZoneNameserverArrayInput is an input type that accepts GetZoneNameserverArray and GetZoneNameserverArrayOutput values.
+// You can construct a concrete instance of `GetZoneNameserverArrayInput` via:
+//
+//	GetZoneNameserverArray{ GetZoneNameserverArgs{...} }
+type GetZoneNameserverArrayInput interface {
+	pulumi.Input
+
+	ToGetZoneNameserverArrayOutput() GetZoneNameserverArrayOutput
+	ToGetZoneNameserverArrayOutputWithContext(context.Context) GetZoneNameserverArrayOutput
+}
+
+type GetZoneNameserverArray []GetZoneNameserverInput
+
+func (GetZoneNameserverArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZoneNameserver)(nil)).Elem()
+}
+
+func (i GetZoneNameserverArray) ToGetZoneNameserverArrayOutput() GetZoneNameserverArrayOutput {
+	return i.ToGetZoneNameserverArrayOutputWithContext(context.Background())
+}
+
+func (i GetZoneNameserverArray) ToGetZoneNameserverArrayOutputWithContext(ctx context.Context) GetZoneNameserverArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZoneNameserverArrayOutput)
+}
+
+type GetZoneNameserverOutput struct{ *pulumi.OutputState }
+
+func (GetZoneNameserverOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZoneNameserver)(nil)).Elem()
+}
+
+func (o GetZoneNameserverOutput) ToGetZoneNameserverOutput() GetZoneNameserverOutput {
+	return o
+}
+
+func (o GetZoneNameserverOutput) ToGetZoneNameserverOutputWithContext(ctx context.Context) GetZoneNameserverOutput {
+	return o
+}
+
+// Hostname of the nameserver.
+func (o GetZoneNameserverOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneNameserver) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+type GetZoneNameserverArrayOutput struct{ *pulumi.OutputState }
+
+func (GetZoneNameserverArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZoneNameserver)(nil)).Elem()
+}
+
+func (o GetZoneNameserverArrayOutput) ToGetZoneNameserverArrayOutput() GetZoneNameserverArrayOutput {
+	return o
+}
+
+func (o GetZoneNameserverArrayOutput) ToGetZoneNameserverArrayOutputWithContext(ctx context.Context) GetZoneNameserverArrayOutput {
+	return o
+}
+
+func (o GetZoneNameserverArrayOutput) Index(i pulumi.IntInput) GetZoneNameserverOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZoneNameserver {
+		return vs[0].([]GetZoneNameserver)[vs[1].(int)]
+	}).(GetZoneNameserverOutput)
+}
+
+type GetZoneZoneTransferServer struct {
+	// The server's IP address (IPv4 or IPv6).
+	Address string `pulumi:"address"`
+	// Whether the server is a zone data transfer destination.
+	IsTransferDestination bool `pulumi:"isTransferDestination"`
+	// Whether the server is a zone data transfer source.
+	IsTransferSource bool `pulumi:"isTransferSource"`
+	// The server's port.
+	Port int `pulumi:"port"`
+}
+
+// GetZoneZoneTransferServerInput is an input type that accepts GetZoneZoneTransferServerArgs and GetZoneZoneTransferServerOutput values.
+// You can construct a concrete instance of `GetZoneZoneTransferServerInput` via:
+//
+//	GetZoneZoneTransferServerArgs{...}
+type GetZoneZoneTransferServerInput interface {
+	pulumi.Input
+
+	ToGetZoneZoneTransferServerOutput() GetZoneZoneTransferServerOutput
+	ToGetZoneZoneTransferServerOutputWithContext(context.Context) GetZoneZoneTransferServerOutput
+}
+
+type GetZoneZoneTransferServerArgs struct {
+	// The server's IP address (IPv4 or IPv6).
+	Address pulumi.StringInput `pulumi:"address"`
+	// Whether the server is a zone data transfer destination.
+	IsTransferDestination pulumi.BoolInput `pulumi:"isTransferDestination"`
+	// Whether the server is a zone data transfer source.
+	IsTransferSource pulumi.BoolInput `pulumi:"isTransferSource"`
+	// The server's port.
+	Port pulumi.IntInput `pulumi:"port"`
+}
+
+func (GetZoneZoneTransferServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZoneZoneTransferServer)(nil)).Elem()
+}
+
+func (i GetZoneZoneTransferServerArgs) ToGetZoneZoneTransferServerOutput() GetZoneZoneTransferServerOutput {
+	return i.ToGetZoneZoneTransferServerOutputWithContext(context.Background())
+}
+
+func (i GetZoneZoneTransferServerArgs) ToGetZoneZoneTransferServerOutputWithContext(ctx context.Context) GetZoneZoneTransferServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZoneZoneTransferServerOutput)
+}
+
+// GetZoneZoneTransferServerArrayInput is an input type that accepts GetZoneZoneTransferServerArray and GetZoneZoneTransferServerArrayOutput values.
+// You can construct a concrete instance of `GetZoneZoneTransferServerArrayInput` via:
+//
+//	GetZoneZoneTransferServerArray{ GetZoneZoneTransferServerArgs{...} }
+type GetZoneZoneTransferServerArrayInput interface {
+	pulumi.Input
+
+	ToGetZoneZoneTransferServerArrayOutput() GetZoneZoneTransferServerArrayOutput
+	ToGetZoneZoneTransferServerArrayOutputWithContext(context.Context) GetZoneZoneTransferServerArrayOutput
+}
+
+type GetZoneZoneTransferServerArray []GetZoneZoneTransferServerInput
+
+func (GetZoneZoneTransferServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZoneZoneTransferServer)(nil)).Elem()
+}
+
+func (i GetZoneZoneTransferServerArray) ToGetZoneZoneTransferServerArrayOutput() GetZoneZoneTransferServerArrayOutput {
+	return i.ToGetZoneZoneTransferServerArrayOutputWithContext(context.Background())
+}
+
+func (i GetZoneZoneTransferServerArray) ToGetZoneZoneTransferServerArrayOutputWithContext(ctx context.Context) GetZoneZoneTransferServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZoneZoneTransferServerArrayOutput)
+}
+
+type GetZoneZoneTransferServerOutput struct{ *pulumi.OutputState }
+
+func (GetZoneZoneTransferServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZoneZoneTransferServer)(nil)).Elem()
+}
+
+func (o GetZoneZoneTransferServerOutput) ToGetZoneZoneTransferServerOutput() GetZoneZoneTransferServerOutput {
+	return o
+}
+
+func (o GetZoneZoneTransferServerOutput) ToGetZoneZoneTransferServerOutputWithContext(ctx context.Context) GetZoneZoneTransferServerOutput {
+	return o
+}
+
+// The server's IP address (IPv4 or IPv6).
+func (o GetZoneZoneTransferServerOutput) Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZoneZoneTransferServer) string { return v.Address }).(pulumi.StringOutput)
+}
+
+// Whether the server is a zone data transfer destination.
+func (o GetZoneZoneTransferServerOutput) IsTransferDestination() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetZoneZoneTransferServer) bool { return v.IsTransferDestination }).(pulumi.BoolOutput)
+}
+
+// Whether the server is a zone data transfer source.
+func (o GetZoneZoneTransferServerOutput) IsTransferSource() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetZoneZoneTransferServer) bool { return v.IsTransferSource }).(pulumi.BoolOutput)
+}
+
+// The server's port.
+func (o GetZoneZoneTransferServerOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetZoneZoneTransferServer) int { return v.Port }).(pulumi.IntOutput)
+}
+
+type GetZoneZoneTransferServerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetZoneZoneTransferServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZoneZoneTransferServer)(nil)).Elem()
+}
+
+func (o GetZoneZoneTransferServerArrayOutput) ToGetZoneZoneTransferServerArrayOutput() GetZoneZoneTransferServerArrayOutput {
+	return o
+}
+
+func (o GetZoneZoneTransferServerArrayOutput) ToGetZoneZoneTransferServerArrayOutputWithContext(ctx context.Context) GetZoneZoneTransferServerArrayOutput {
+	return o
+}
+
+func (o GetZoneZoneTransferServerArrayOutput) Index(i pulumi.IntInput) GetZoneZoneTransferServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZoneZoneTransferServer {
+		return vs[0].([]GetZoneZoneTransferServer)[vs[1].(int)]
+	}).(GetZoneZoneTransferServerOutput)
+}
+
 type GetZonesFilter struct {
 	// A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
 	Name   string   `pulumi:"name"`
@@ -8176,11 +9257,9 @@ type GetZonesZone struct {
 	// DNSSEC configuration data.
 	DnssecConfigs []GetZonesZoneDnssecConfig `pulumi:"dnssecConfigs"`
 	// Search for zones that have the given `DnssecState`.
-	DnssecState string `pulumi:"dnssecState"`
-	// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+	DnssecState         string                           `pulumi:"dnssecState"`
 	ExternalDownstreams []GetZonesZoneExternalDownstream `pulumi:"externalDownstreams"`
-	// External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
-	ExternalMasters []GetZonesZoneExternalMaster `pulumi:"externalMasters"`
+	ExternalMasters     []GetZonesZoneExternalMaster     `pulumi:"externalMasters"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the zone.
@@ -8188,9 +9267,10 @@ type GetZonesZone struct {
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected bool `pulumi:"isProtected"`
 	// A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
-	Name string `pulumi:"name"`
-	// The authoritative nameservers for the zone.
+	Name        string                   `pulumi:"name"`
 	Nameservers []GetZonesZoneNameserver `pulumi:"nameservers"`
+	// The resolution mode of a zone defines behavior related to how query responses can be handled.
+	ResolutionMode string `pulumi:"resolutionMode"`
 	// Specifies to operate only on resources that have a matching DNS scope.
 	Scope string `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
@@ -8204,8 +9284,7 @@ type GetZonesZone struct {
 	// Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
 	Version string `pulumi:"version"`
 	// The OCID of the view the resource is associated with.
-	ViewId string `pulumi:"viewId"`
-	// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+	ViewId              string                           `pulumi:"viewId"`
 	ZoneTransferServers []GetZonesZoneZoneTransferServer `pulumi:"zoneTransferServers"`
 	// Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
 	ZoneType string `pulumi:"zoneType"`
@@ -8230,11 +9309,9 @@ type GetZonesZoneArgs struct {
 	// DNSSEC configuration data.
 	DnssecConfigs GetZonesZoneDnssecConfigArrayInput `pulumi:"dnssecConfigs"`
 	// Search for zones that have the given `DnssecState`.
-	DnssecState pulumi.StringInput `pulumi:"dnssecState"`
-	// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+	DnssecState         pulumi.StringInput                       `pulumi:"dnssecState"`
 	ExternalDownstreams GetZonesZoneExternalDownstreamArrayInput `pulumi:"externalDownstreams"`
-	// External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
-	ExternalMasters GetZonesZoneExternalMasterArrayInput `pulumi:"externalMasters"`
+	ExternalMasters     GetZonesZoneExternalMasterArrayInput     `pulumi:"externalMasters"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the zone.
@@ -8242,9 +9319,10 @@ type GetZonesZoneArgs struct {
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected pulumi.BoolInput `pulumi:"isProtected"`
 	// A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
-	Name pulumi.StringInput `pulumi:"name"`
-	// The authoritative nameservers for the zone.
+	Name        pulumi.StringInput               `pulumi:"name"`
 	Nameservers GetZonesZoneNameserverArrayInput `pulumi:"nameservers"`
+	// The resolution mode of a zone defines behavior related to how query responses can be handled.
+	ResolutionMode pulumi.StringInput `pulumi:"resolutionMode"`
 	// Specifies to operate only on resources that have a matching DNS scope.
 	Scope pulumi.StringInput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
@@ -8258,8 +9336,7 @@ type GetZonesZoneArgs struct {
 	// Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
 	Version pulumi.StringInput `pulumi:"version"`
 	// The OCID of the view the resource is associated with.
-	ViewId pulumi.StringInput `pulumi:"viewId"`
-	// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+	ViewId              pulumi.StringInput                       `pulumi:"viewId"`
 	ZoneTransferServers GetZonesZoneZoneTransferServerArrayInput `pulumi:"zoneTransferServers"`
 	// Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
 	ZoneType pulumi.StringInput `pulumi:"zoneType"`
@@ -8336,12 +9413,10 @@ func (o GetZonesZoneOutput) DnssecState() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZonesZone) string { return v.DnssecState }).(pulumi.StringOutput)
 }
 
-// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 func (o GetZonesZoneOutput) ExternalDownstreams() GetZonesZoneExternalDownstreamArrayOutput {
 	return o.ApplyT(func(v GetZonesZone) []GetZonesZoneExternalDownstream { return v.ExternalDownstreams }).(GetZonesZoneExternalDownstreamArrayOutput)
 }
 
-// External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
 func (o GetZonesZoneOutput) ExternalMasters() GetZonesZoneExternalMasterArrayOutput {
 	return o.ApplyT(func(v GetZonesZone) []GetZonesZoneExternalMaster { return v.ExternalMasters }).(GetZonesZoneExternalMasterArrayOutput)
 }
@@ -8366,9 +9441,13 @@ func (o GetZonesZoneOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZonesZone) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// The authoritative nameservers for the zone.
 func (o GetZonesZoneOutput) Nameservers() GetZonesZoneNameserverArrayOutput {
 	return o.ApplyT(func(v GetZonesZone) []GetZonesZoneNameserver { return v.Nameservers }).(GetZonesZoneNameserverArrayOutput)
+}
+
+// The resolution mode of a zone defines behavior related to how query responses can be handled.
+func (o GetZonesZoneOutput) ResolutionMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZone) string { return v.ResolutionMode }).(pulumi.StringOutput)
 }
 
 // Specifies to operate only on resources that have a matching DNS scope.
@@ -8406,7 +9485,6 @@ func (o GetZonesZoneOutput) ViewId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZonesZone) string { return v.ViewId }).(pulumi.StringOutput)
 }
 
-// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
 func (o GetZonesZoneOutput) ZoneTransferServers() GetZonesZoneZoneTransferServerArrayOutput {
 	return o.ApplyT(func(v GetZonesZone) []GetZonesZoneZoneTransferServer { return v.ZoneTransferServers }).(GetZonesZoneZoneTransferServerArrayOutput)
 }
@@ -9074,10 +10152,8 @@ func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput) Index(i pulumi.I
 }
 
 type GetZonesZoneExternalDownstream struct {
-	// The server's IP address (IPv4 or IPv6).
 	Address string `pulumi:"address"`
-	// The server's port. Port value must be a value of 53, otherwise omit the port value.
-	Port int `pulumi:"port"`
+	Port    int    `pulumi:"port"`
 	// Search for zones that are associated with a TSIG key.
 	TsigKeyId string `pulumi:"tsigKeyId"`
 }
@@ -9094,10 +10170,8 @@ type GetZonesZoneExternalDownstreamInput interface {
 }
 
 type GetZonesZoneExternalDownstreamArgs struct {
-	// The server's IP address (IPv4 or IPv6).
 	Address pulumi.StringInput `pulumi:"address"`
-	// The server's port. Port value must be a value of 53, otherwise omit the port value.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port    pulumi.IntInput    `pulumi:"port"`
 	// Search for zones that are associated with a TSIG key.
 	TsigKeyId pulumi.StringInput `pulumi:"tsigKeyId"`
 }
@@ -9153,12 +10227,10 @@ func (o GetZonesZoneExternalDownstreamOutput) ToGetZonesZoneExternalDownstreamOu
 	return o
 }
 
-// The server's IP address (IPv4 or IPv6).
 func (o GetZonesZoneExternalDownstreamOutput) Address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZonesZoneExternalDownstream) string { return v.Address }).(pulumi.StringOutput)
 }
 
-// The server's port. Port value must be a value of 53, otherwise omit the port value.
 func (o GetZonesZoneExternalDownstreamOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetZonesZoneExternalDownstream) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -9189,10 +10261,8 @@ func (o GetZonesZoneExternalDownstreamArrayOutput) Index(i pulumi.IntInput) GetZ
 }
 
 type GetZonesZoneExternalMaster struct {
-	// The server's IP address (IPv4 or IPv6).
 	Address string `pulumi:"address"`
-	// The server's port. Port value must be a value of 53, otherwise omit the port value.
-	Port int `pulumi:"port"`
+	Port    int    `pulumi:"port"`
 	// Search for zones that are associated with a TSIG key.
 	TsigKeyId string `pulumi:"tsigKeyId"`
 }
@@ -9209,10 +10279,8 @@ type GetZonesZoneExternalMasterInput interface {
 }
 
 type GetZonesZoneExternalMasterArgs struct {
-	// The server's IP address (IPv4 or IPv6).
 	Address pulumi.StringInput `pulumi:"address"`
-	// The server's port. Port value must be a value of 53, otherwise omit the port value.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port    pulumi.IntInput    `pulumi:"port"`
 	// Search for zones that are associated with a TSIG key.
 	TsigKeyId pulumi.StringInput `pulumi:"tsigKeyId"`
 }
@@ -9268,12 +10336,10 @@ func (o GetZonesZoneExternalMasterOutput) ToGetZonesZoneExternalMasterOutputWith
 	return o
 }
 
-// The server's IP address (IPv4 or IPv6).
 func (o GetZonesZoneExternalMasterOutput) Address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZonesZoneExternalMaster) string { return v.Address }).(pulumi.StringOutput)
 }
 
-// The server's port. Port value must be a value of 53, otherwise omit the port value.
 func (o GetZonesZoneExternalMasterOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetZonesZoneExternalMaster) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -9304,7 +10370,6 @@ func (o GetZonesZoneExternalMasterArrayOutput) Index(i pulumi.IntInput) GetZones
 }
 
 type GetZonesZoneNameserver struct {
-	// The hostname of the nameserver.
 	Hostname string `pulumi:"hostname"`
 }
 
@@ -9320,7 +10385,6 @@ type GetZonesZoneNameserverInput interface {
 }
 
 type GetZonesZoneNameserverArgs struct {
-	// The hostname of the nameserver.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 }
 
@@ -9375,7 +10439,6 @@ func (o GetZonesZoneNameserverOutput) ToGetZonesZoneNameserverOutputWithContext(
 	return o
 }
 
-// The hostname of the nameserver.
 func (o GetZonesZoneNameserverOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZonesZoneNameserver) string { return v.Hostname }).(pulumi.StringOutput)
 }
@@ -9401,14 +10464,10 @@ func (o GetZonesZoneNameserverArrayOutput) Index(i pulumi.IntInput) GetZonesZone
 }
 
 type GetZonesZoneZoneTransferServer struct {
-	// The server's IP address (IPv4 or IPv6).
-	Address string `pulumi:"address"`
-	// A Boolean flag indicating whether or not the server is a zone data transfer destination.
-	IsTransferDestination bool `pulumi:"isTransferDestination"`
-	// A Boolean flag indicating whether or not the server is a zone data transfer source.
-	IsTransferSource bool `pulumi:"isTransferSource"`
-	// The server's port. Port value must be a value of 53, otherwise omit the port value.
-	Port int `pulumi:"port"`
+	Address               string `pulumi:"address"`
+	IsTransferDestination bool   `pulumi:"isTransferDestination"`
+	IsTransferSource      bool   `pulumi:"isTransferSource"`
+	Port                  int    `pulumi:"port"`
 }
 
 // GetZonesZoneZoneTransferServerInput is an input type that accepts GetZonesZoneZoneTransferServerArgs and GetZonesZoneZoneTransferServerOutput values.
@@ -9423,14 +10482,10 @@ type GetZonesZoneZoneTransferServerInput interface {
 }
 
 type GetZonesZoneZoneTransferServerArgs struct {
-	// The server's IP address (IPv4 or IPv6).
-	Address pulumi.StringInput `pulumi:"address"`
-	// A Boolean flag indicating whether or not the server is a zone data transfer destination.
-	IsTransferDestination pulumi.BoolInput `pulumi:"isTransferDestination"`
-	// A Boolean flag indicating whether or not the server is a zone data transfer source.
-	IsTransferSource pulumi.BoolInput `pulumi:"isTransferSource"`
-	// The server's port. Port value must be a value of 53, otherwise omit the port value.
-	Port pulumi.IntInput `pulumi:"port"`
+	Address               pulumi.StringInput `pulumi:"address"`
+	IsTransferDestination pulumi.BoolInput   `pulumi:"isTransferDestination"`
+	IsTransferSource      pulumi.BoolInput   `pulumi:"isTransferSource"`
+	Port                  pulumi.IntInput    `pulumi:"port"`
 }
 
 func (GetZonesZoneZoneTransferServerArgs) ElementType() reflect.Type {
@@ -9484,22 +10539,18 @@ func (o GetZonesZoneZoneTransferServerOutput) ToGetZonesZoneZoneTransferServerOu
 	return o
 }
 
-// The server's IP address (IPv4 or IPv6).
 func (o GetZonesZoneZoneTransferServerOutput) Address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZonesZoneZoneTransferServer) string { return v.Address }).(pulumi.StringOutput)
 }
 
-// A Boolean flag indicating whether or not the server is a zone data transfer destination.
 func (o GetZonesZoneZoneTransferServerOutput) IsTransferDestination() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZonesZoneZoneTransferServer) bool { return v.IsTransferDestination }).(pulumi.BoolOutput)
 }
 
-// A Boolean flag indicating whether or not the server is a zone data transfer source.
 func (o GetZonesZoneZoneTransferServerOutput) IsTransferSource() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetZonesZoneZoneTransferServer) bool { return v.IsTransferSource }).(pulumi.BoolOutput)
 }
 
-// The server's port. Port value must be a value of 53, otherwise omit the port value.
 func (o GetZonesZoneZoneTransferServerOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetZonesZoneZoneTransferServer) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -9643,6 +10694,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetViewsFilterArrayInput)(nil)).Elem(), GetViewsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetViewsViewInput)(nil)).Elem(), GetViewsViewArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetViewsViewArrayInput)(nil)).Elem(), GetViewsViewArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneDnssecConfigInput)(nil)).Elem(), GetZoneDnssecConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneDnssecConfigArrayInput)(nil)).Elem(), GetZoneDnssecConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneDnssecConfigKskDnssecKeyVersionInput)(nil)).Elem(), GetZoneDnssecConfigKskDnssecKeyVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneDnssecConfigKskDnssecKeyVersionArrayInput)(nil)).Elem(), GetZoneDnssecConfigKskDnssecKeyVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneDnssecConfigKskDnssecKeyVersionDsDataInput)(nil)).Elem(), GetZoneDnssecConfigKskDnssecKeyVersionDsDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayInput)(nil)).Elem(), GetZoneDnssecConfigKskDnssecKeyVersionDsDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneDnssecConfigZskDnssecKeyVersionInput)(nil)).Elem(), GetZoneDnssecConfigZskDnssecKeyVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneDnssecConfigZskDnssecKeyVersionArrayInput)(nil)).Elem(), GetZoneDnssecConfigZskDnssecKeyVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneExternalDownstreamInput)(nil)).Elem(), GetZoneExternalDownstreamArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneExternalDownstreamArrayInput)(nil)).Elem(), GetZoneExternalDownstreamArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneExternalMasterInput)(nil)).Elem(), GetZoneExternalMasterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneExternalMasterArrayInput)(nil)).Elem(), GetZoneExternalMasterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneNameserverInput)(nil)).Elem(), GetZoneNameserverArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneNameserverArrayInput)(nil)).Elem(), GetZoneNameserverArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneZoneTransferServerInput)(nil)).Elem(), GetZoneZoneTransferServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZoneZoneTransferServerArrayInput)(nil)).Elem(), GetZoneZoneTransferServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesFilterInput)(nil)).Elem(), GetZonesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesFilterArrayInput)(nil)).Elem(), GetZonesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneInput)(nil)).Elem(), GetZonesZoneArgs{})
@@ -9781,6 +10848,22 @@ func init() {
 	pulumi.RegisterOutputType(GetViewsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetViewsViewOutput{})
 	pulumi.RegisterOutputType(GetViewsViewArrayOutput{})
+	pulumi.RegisterOutputType(GetZoneDnssecConfigOutput{})
+	pulumi.RegisterOutputType(GetZoneDnssecConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetZoneDnssecConfigKskDnssecKeyVersionOutput{})
+	pulumi.RegisterOutputType(GetZoneDnssecConfigKskDnssecKeyVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetZoneDnssecConfigKskDnssecKeyVersionDsDataOutput{})
+	pulumi.RegisterOutputType(GetZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput{})
+	pulumi.RegisterOutputType(GetZoneDnssecConfigZskDnssecKeyVersionOutput{})
+	pulumi.RegisterOutputType(GetZoneDnssecConfigZskDnssecKeyVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetZoneExternalDownstreamOutput{})
+	pulumi.RegisterOutputType(GetZoneExternalDownstreamArrayOutput{})
+	pulumi.RegisterOutputType(GetZoneExternalMasterOutput{})
+	pulumi.RegisterOutputType(GetZoneExternalMasterArrayOutput{})
+	pulumi.RegisterOutputType(GetZoneNameserverOutput{})
+	pulumi.RegisterOutputType(GetZoneNameserverArrayOutput{})
+	pulumi.RegisterOutputType(GetZoneZoneTransferServerOutput{})
+	pulumi.RegisterOutputType(GetZoneZoneTransferServerArrayOutput{})
 	pulumi.RegisterOutputType(GetZonesFilterOutput{})
 	pulumi.RegisterOutputType(GetZonesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetZonesZoneOutput{})

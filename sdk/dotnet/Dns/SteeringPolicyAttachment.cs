@@ -22,6 +22,8 @@ namespace Pulumi.Oci.Dns
     /// For the purposes of access control, the attachment is automatically placed
     /// into the same compartment as the domain's zone.
     /// 
+    /// Attachments cannot be created for private zones.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -103,7 +105,7 @@ namespace Pulumi.Oci.Dns
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the attached zone.
+        /// The OCID of the attached zone. Must be a public zone.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -177,7 +179,7 @@ namespace Pulumi.Oci.Dns
         public Input<string> SteeringPolicyId { get; set; } = null!;
 
         /// <summary>
-        /// The OCID of the attached zone.
+        /// The OCID of the attached zone. Must be a public zone.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -249,7 +251,7 @@ namespace Pulumi.Oci.Dns
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The OCID of the attached zone.
+        /// The OCID of the attached zone. Must be a public zone.
         /// 
         /// 
         /// ** IMPORTANT **

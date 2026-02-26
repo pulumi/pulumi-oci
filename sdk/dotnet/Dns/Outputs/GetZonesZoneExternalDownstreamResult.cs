@@ -13,13 +13,7 @@ namespace Pulumi.Oci.Dns.Outputs
     [OutputType]
     public sealed class GetZonesZoneExternalDownstreamResult
     {
-        /// <summary>
-        /// The server's IP address (IPv4 or IPv6).
-        /// </summary>
         public readonly string Address;
-        /// <summary>
-        /// The server's port. Port value must be a value of 53, otherwise omit the port value.
-        /// </summary>
         public readonly int Port;
         /// <summary>
         /// Search for zones that are associated with a TSIG key.

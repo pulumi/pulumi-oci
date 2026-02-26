@@ -75,6 +75,14 @@ __all__ = [
     'GetTsigKeysTsigKeyResult',
     'GetViewsFilterResult',
     'GetViewsViewResult',
+    'GetZoneDnssecConfigResult',
+    'GetZoneDnssecConfigKskDnssecKeyVersionResult',
+    'GetZoneDnssecConfigKskDnssecKeyVersionDsDataResult',
+    'GetZoneDnssecConfigZskDnssecKeyVersionResult',
+    'GetZoneExternalDownstreamResult',
+    'GetZoneExternalMasterResult',
+    'GetZoneNameserverResult',
+    'GetZoneZoneTransferServerResult',
     'GetZonesFilterResult',
     'GetZonesZoneResult',
     'GetZonesZoneDnssecConfigResult',
@@ -947,8 +955,8 @@ class ResolverRule(dict):
                * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
         :param Sequence[_builtins.str] destination_addresses: (Updatable) IP addresses to which queries should be forwarded. Currently limited to a single address.
         :param _builtins.str source_endpoint_name: (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
-        :param Sequence[_builtins.str] client_address_conditions: (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
-        :param Sequence[_builtins.str] qname_cover_conditions: (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+        :param Sequence[_builtins.str] client_address_conditions: (Updatable) A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
+        :param Sequence[_builtins.str] qname_cover_conditions: (Updatable) A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
         """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "destination_addresses", destination_addresses)
@@ -987,7 +995,7 @@ class ResolverRule(dict):
     @pulumi.getter(name="clientAddressConditions")
     def client_address_conditions(self) -> Optional[Sequence[_builtins.str]]:
         """
-        (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+        (Updatable) A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
         """
         return pulumi.get(self, "client_address_conditions")
 
@@ -995,7 +1003,7 @@ class ResolverRule(dict):
     @pulumi.getter(name="qnameCoverConditions")
     def qname_cover_conditions(self) -> Optional[Sequence[_builtins.str]]:
         """
-        (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+        (Updatable) A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
         """
         return pulumi.get(self, "qname_cover_conditions")
 
@@ -2106,18 +2114,12 @@ class ZoneExternalMaster(dict):
 class ZoneNameserver(dict):
     def __init__(__self__, *,
                  hostname: Optional[_builtins.str] = None):
-        """
-        :param _builtins.str hostname: The hostname of the nameserver.
-        """
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
 
     @_builtins.property
     @pulumi.getter
     def hostname(self) -> Optional[_builtins.str]:
-        """
-        The hostname of the nameserver.
-        """
         return pulumi.get(self, "hostname")
 
 
@@ -2713,9 +2715,9 @@ class GetResolverRuleResult(dict):
         """
         :param _builtins.str action: The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
                * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
-        :param Sequence[_builtins.str] client_address_conditions: A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+        :param Sequence[_builtins.str] client_address_conditions: A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
         :param Sequence[_builtins.str] destination_addresses: IP addresses to which queries should be forwarded. Currently limited to a single address.
-        :param Sequence[_builtins.str] qname_cover_conditions: A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+        :param Sequence[_builtins.str] qname_cover_conditions: A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
         :param _builtins.str source_endpoint_name: Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
         """
         pulumi.set(__self__, "action", action)
@@ -2737,7 +2739,7 @@ class GetResolverRuleResult(dict):
     @pulumi.getter(name="clientAddressConditions")
     def client_address_conditions(self) -> Sequence[_builtins.str]:
         """
-        A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+        A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of the CIDR blocks.
         """
         return pulumi.get(self, "client_address_conditions")
 
@@ -2753,7 +2755,7 @@ class GetResolverRuleResult(dict):
     @pulumi.getter(name="qnameCoverConditions")
     def qname_cover_conditions(self) -> Sequence[_builtins.str]:
         """
-        A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+        A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain of one of the listed domains.
         """
         return pulumi.get(self, "qname_cover_conditions")
 
@@ -2822,7 +2824,7 @@ class GetResolversResolverResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str id: The OCID of a resource.
         :param _builtins.bool is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        :param _builtins.str scope: Value must be `PRIVATE` when listing private name resolvers.
+        :param _builtins.str scope: Value must be `PRIVATE` when listing private resolvers.
         :param _builtins.str self: The canonical absolute URL of the resource.
         :param _builtins.str state: The state of a resource.
         :param _builtins.str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
@@ -2934,7 +2936,7 @@ class GetResolversResolverResult(dict):
     @pulumi.getter
     def scope(self) -> _builtins.str:
         """
-        Value must be `PRIVATE` when listing private name resolvers.
+        Value must be `PRIVATE` when listing private resolvers.
         """
         return pulumi.get(self, "scope")
 
@@ -4517,6 +4519,524 @@ class GetViewsViewResult(dict):
 
 
 @pulumi.output_type
+class GetZoneDnssecConfigResult(dict):
+    def __init__(__self__, *,
+                 ksk_dnssec_key_versions: Sequence['outputs.GetZoneDnssecConfigKskDnssecKeyVersionResult'],
+                 zsk_dnssec_key_versions: Sequence['outputs.GetZoneDnssecConfigZskDnssecKeyVersionResult']):
+        """
+        :param Sequence['GetZoneDnssecConfigKskDnssecKeyVersionArgs'] ksk_dnssec_key_versions: A read-only array of key signing key (KSK) versions.
+        :param Sequence['GetZoneDnssecConfigZskDnssecKeyVersionArgs'] zsk_dnssec_key_versions: A read-only array of zone signing key (ZSK) versions.
+        """
+        pulumi.set(__self__, "ksk_dnssec_key_versions", ksk_dnssec_key_versions)
+        pulumi.set(__self__, "zsk_dnssec_key_versions", zsk_dnssec_key_versions)
+
+    @_builtins.property
+    @pulumi.getter(name="kskDnssecKeyVersions")
+    def ksk_dnssec_key_versions(self) -> Sequence['outputs.GetZoneDnssecConfigKskDnssecKeyVersionResult']:
+        """
+        A read-only array of key signing key (KSK) versions.
+        """
+        return pulumi.get(self, "ksk_dnssec_key_versions")
+
+    @_builtins.property
+    @pulumi.getter(name="zskDnssecKeyVersions")
+    def zsk_dnssec_key_versions(self) -> Sequence['outputs.GetZoneDnssecConfigZskDnssecKeyVersionResult']:
+        """
+        A read-only array of zone signing key (ZSK) versions.
+        """
+        return pulumi.get(self, "zsk_dnssec_key_versions")
+
+
+@pulumi.output_type
+class GetZoneDnssecConfigKskDnssecKeyVersionResult(dict):
+    def __init__(__self__, *,
+                 algorithm: _builtins.str,
+                 ds_datas: Sequence['outputs.GetZoneDnssecConfigKskDnssecKeyVersionDsDataResult'],
+                 key_tag: _builtins.int,
+                 length_in_bytes: _builtins.int,
+                 predecessor_dnssec_key_version_uuid: _builtins.str,
+                 successor_dnssec_key_version_uuid: _builtins.str,
+                 time_activated: _builtins.str,
+                 time_created: _builtins.str,
+                 time_expired: _builtins.str,
+                 time_inactivated: _builtins.str,
+                 time_promoted: _builtins.str,
+                 time_published: _builtins.str,
+                 time_unpublished: _builtins.str,
+                 uuid: _builtins.str):
+        """
+        :param _builtins.str algorithm: The signing algorithm used for the key.
+        :param Sequence['GetZoneDnssecConfigKskDnssecKeyVersionDsDataArgs'] ds_datas: An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
+        :param _builtins.int key_tag: The key tag associated with the `DnssecKeyVersion`.
+        :param _builtins.int length_in_bytes: The length of the corresponding private key in bytes.
+        :param _builtins.str predecessor_dnssec_key_version_uuid: UUID of the key version this will replace or has replaced.
+        :param _builtins.str successor_dnssec_key_version_uuid: UUID of the key version that will replace or has replaced this key version.
+        :param _builtins.str time_activated: RFC 3339 timestamp when the key version went or will go active.
+        :param _builtins.str time_created: The RFC 3339 timestamp when the zone was created.
+        :param _builtins.str time_expired: RFC 3339 timestamp for end of recommended lifetime.
+        :param _builtins.str time_inactivated: RFC 3339 timestamp when the key version went or will go inactive.
+        :param _builtins.str time_promoted: RFC 3339 timestamp when the key version was promoted.
+        :param _builtins.str time_published: RFC 3339 timestamp when the zone contents include a DNSKEY for the key material.
+        :param _builtins.str time_unpublished: RFC 3339 timestamp when the DNSKEY is removed from the zone contents.
+        :param _builtins.str uuid: The UUID of the `DnssecKeyVersion`.
+        """
+        pulumi.set(__self__, "algorithm", algorithm)
+        pulumi.set(__self__, "ds_datas", ds_datas)
+        pulumi.set(__self__, "key_tag", key_tag)
+        pulumi.set(__self__, "length_in_bytes", length_in_bytes)
+        pulumi.set(__self__, "predecessor_dnssec_key_version_uuid", predecessor_dnssec_key_version_uuid)
+        pulumi.set(__self__, "successor_dnssec_key_version_uuid", successor_dnssec_key_version_uuid)
+        pulumi.set(__self__, "time_activated", time_activated)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_expired", time_expired)
+        pulumi.set(__self__, "time_inactivated", time_inactivated)
+        pulumi.set(__self__, "time_promoted", time_promoted)
+        pulumi.set(__self__, "time_published", time_published)
+        pulumi.set(__self__, "time_unpublished", time_unpublished)
+        pulumi.set(__self__, "uuid", uuid)
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithm(self) -> _builtins.str:
+        """
+        The signing algorithm used for the key.
+        """
+        return pulumi.get(self, "algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="dsDatas")
+    def ds_datas(self) -> Sequence['outputs.GetZoneDnssecConfigKskDnssecKeyVersionDsDataResult']:
+        """
+        An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
+        """
+        return pulumi.get(self, "ds_datas")
+
+    @_builtins.property
+    @pulumi.getter(name="keyTag")
+    def key_tag(self) -> _builtins.int:
+        """
+        The key tag associated with the `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "key_tag")
+
+    @_builtins.property
+    @pulumi.getter(name="lengthInBytes")
+    def length_in_bytes(self) -> _builtins.int:
+        """
+        The length of the corresponding private key in bytes.
+        """
+        return pulumi.get(self, "length_in_bytes")
+
+    @_builtins.property
+    @pulumi.getter(name="predecessorDnssecKeyVersionUuid")
+    def predecessor_dnssec_key_version_uuid(self) -> _builtins.str:
+        """
+        UUID of the key version this will replace or has replaced.
+        """
+        return pulumi.get(self, "predecessor_dnssec_key_version_uuid")
+
+    @_builtins.property
+    @pulumi.getter(name="successorDnssecKeyVersionUuid")
+    def successor_dnssec_key_version_uuid(self) -> _builtins.str:
+        """
+        UUID of the key version that will replace or has replaced this key version.
+        """
+        return pulumi.get(self, "successor_dnssec_key_version_uuid")
+
+    @_builtins.property
+    @pulumi.getter(name="timeActivated")
+    def time_activated(self) -> _builtins.str:
+        """
+        RFC 3339 timestamp when the key version went or will go active.
+        """
+        return pulumi.get(self, "time_activated")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The RFC 3339 timestamp when the zone was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeExpired")
+    def time_expired(self) -> _builtins.str:
+        """
+        RFC 3339 timestamp for end of recommended lifetime.
+        """
+        return pulumi.get(self, "time_expired")
+
+    @_builtins.property
+    @pulumi.getter(name="timeInactivated")
+    def time_inactivated(self) -> _builtins.str:
+        """
+        RFC 3339 timestamp when the key version went or will go inactive.
+        """
+        return pulumi.get(self, "time_inactivated")
+
+    @_builtins.property
+    @pulumi.getter(name="timePromoted")
+    def time_promoted(self) -> _builtins.str:
+        """
+        RFC 3339 timestamp when the key version was promoted.
+        """
+        return pulumi.get(self, "time_promoted")
+
+    @_builtins.property
+    @pulumi.getter(name="timePublished")
+    def time_published(self) -> _builtins.str:
+        """
+        RFC 3339 timestamp when the zone contents include a DNSKEY for the key material.
+        """
+        return pulumi.get(self, "time_published")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUnpublished")
+    def time_unpublished(self) -> _builtins.str:
+        """
+        RFC 3339 timestamp when the DNSKEY is removed from the zone contents.
+        """
+        return pulumi.get(self, "time_unpublished")
+
+    @_builtins.property
+    @pulumi.getter
+    def uuid(self) -> _builtins.str:
+        """
+        The UUID of the `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "uuid")
+
+
+@pulumi.output_type
+class GetZoneDnssecConfigKskDnssecKeyVersionDsDataResult(dict):
+    def __init__(__self__, *,
+                 digest_type: _builtins.str,
+                 rdata: _builtins.str):
+        """
+        :param _builtins.str digest_type: The type of the digest associated with the rdata.
+        :param _builtins.str rdata: Presentation-format DS record data that must be added to the parent zone.
+        """
+        pulumi.set(__self__, "digest_type", digest_type)
+        pulumi.set(__self__, "rdata", rdata)
+
+    @_builtins.property
+    @pulumi.getter(name="digestType")
+    def digest_type(self) -> _builtins.str:
+        """
+        The type of the digest associated with the rdata.
+        """
+        return pulumi.get(self, "digest_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def rdata(self) -> _builtins.str:
+        """
+        Presentation-format DS record data that must be added to the parent zone.
+        """
+        return pulumi.get(self, "rdata")
+
+
+@pulumi.output_type
+class GetZoneDnssecConfigZskDnssecKeyVersionResult(dict):
+    def __init__(__self__, *,
+                 algorithm: _builtins.str,
+                 key_tag: _builtins.int,
+                 length_in_bytes: _builtins.int,
+                 predecessor_dnssec_key_version_uuid: _builtins.str,
+                 successor_dnssec_key_version_uuid: _builtins.str,
+                 time_activated: _builtins.str,
+                 time_created: _builtins.str,
+                 time_expired: _builtins.str,
+                 time_inactivated: _builtins.str,
+                 time_promoted: _builtins.str,
+                 time_published: _builtins.str,
+                 time_unpublished: _builtins.str,
+                 uuid: _builtins.str):
+        """
+        :param _builtins.str algorithm: The signing algorithm used for the key.
+        :param _builtins.int key_tag: The key tag associated with the `DnssecKeyVersion`.
+        :param _builtins.int length_in_bytes: The length of the corresponding private key in bytes.
+        :param _builtins.str predecessor_dnssec_key_version_uuid: UUID of the key version this will replace or has replaced.
+        :param _builtins.str successor_dnssec_key_version_uuid: UUID of the key version that will replace or has replaced this key version.
+        :param _builtins.str time_activated: RFC 3339 timestamp when the key version went or will go active.
+        :param _builtins.str time_created: The RFC 3339 timestamp when the zone was created.
+        :param _builtins.str time_expired: RFC 3339 timestamp for end of recommended lifetime.
+        :param _builtins.str time_inactivated: RFC 3339 timestamp when the key version went or will go inactive.
+        :param _builtins.str time_promoted: RFC 3339 timestamp when the key version was promoted.
+        :param _builtins.str time_published: RFC 3339 timestamp when the zone contents include a DNSKEY for the key material.
+        :param _builtins.str time_unpublished: RFC 3339 timestamp when the DNSKEY is removed from the zone contents.
+        :param _builtins.str uuid: The UUID of the `DnssecKeyVersion`.
+        """
+        pulumi.set(__self__, "algorithm", algorithm)
+        pulumi.set(__self__, "key_tag", key_tag)
+        pulumi.set(__self__, "length_in_bytes", length_in_bytes)
+        pulumi.set(__self__, "predecessor_dnssec_key_version_uuid", predecessor_dnssec_key_version_uuid)
+        pulumi.set(__self__, "successor_dnssec_key_version_uuid", successor_dnssec_key_version_uuid)
+        pulumi.set(__self__, "time_activated", time_activated)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_expired", time_expired)
+        pulumi.set(__self__, "time_inactivated", time_inactivated)
+        pulumi.set(__self__, "time_promoted", time_promoted)
+        pulumi.set(__self__, "time_published", time_published)
+        pulumi.set(__self__, "time_unpublished", time_unpublished)
+        pulumi.set(__self__, "uuid", uuid)
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithm(self) -> _builtins.str:
+        """
+        The signing algorithm used for the key.
+        """
+        return pulumi.get(self, "algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="keyTag")
+    def key_tag(self) -> _builtins.int:
+        """
+        The key tag associated with the `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "key_tag")
+
+    @_builtins.property
+    @pulumi.getter(name="lengthInBytes")
+    def length_in_bytes(self) -> _builtins.int:
+        """
+        The length of the corresponding private key in bytes.
+        """
+        return pulumi.get(self, "length_in_bytes")
+
+    @_builtins.property
+    @pulumi.getter(name="predecessorDnssecKeyVersionUuid")
+    def predecessor_dnssec_key_version_uuid(self) -> _builtins.str:
+        """
+        UUID of the key version this will replace or has replaced.
+        """
+        return pulumi.get(self, "predecessor_dnssec_key_version_uuid")
+
+    @_builtins.property
+    @pulumi.getter(name="successorDnssecKeyVersionUuid")
+    def successor_dnssec_key_version_uuid(self) -> _builtins.str:
+        """
+        UUID of the key version that will replace or has replaced this key version.
+        """
+        return pulumi.get(self, "successor_dnssec_key_version_uuid")
+
+    @_builtins.property
+    @pulumi.getter(name="timeActivated")
+    def time_activated(self) -> _builtins.str:
+        """
+        RFC 3339 timestamp when the key version went or will go active.
+        """
+        return pulumi.get(self, "time_activated")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The RFC 3339 timestamp when the zone was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeExpired")
+    def time_expired(self) -> _builtins.str:
+        """
+        RFC 3339 timestamp for end of recommended lifetime.
+        """
+        return pulumi.get(self, "time_expired")
+
+    @_builtins.property
+    @pulumi.getter(name="timeInactivated")
+    def time_inactivated(self) -> _builtins.str:
+        """
+        RFC 3339 timestamp when the key version went or will go inactive.
+        """
+        return pulumi.get(self, "time_inactivated")
+
+    @_builtins.property
+    @pulumi.getter(name="timePromoted")
+    def time_promoted(self) -> _builtins.str:
+        """
+        RFC 3339 timestamp when the key version was promoted.
+        """
+        return pulumi.get(self, "time_promoted")
+
+    @_builtins.property
+    @pulumi.getter(name="timePublished")
+    def time_published(self) -> _builtins.str:
+        """
+        RFC 3339 timestamp when the zone contents include a DNSKEY for the key material.
+        """
+        return pulumi.get(self, "time_published")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUnpublished")
+    def time_unpublished(self) -> _builtins.str:
+        """
+        RFC 3339 timestamp when the DNSKEY is removed from the zone contents.
+        """
+        return pulumi.get(self, "time_unpublished")
+
+    @_builtins.property
+    @pulumi.getter
+    def uuid(self) -> _builtins.str:
+        """
+        The UUID of the `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "uuid")
+
+
+@pulumi.output_type
+class GetZoneExternalDownstreamResult(dict):
+    def __init__(__self__, *,
+                 address: _builtins.str,
+                 port: _builtins.int,
+                 tsig_key_id: _builtins.str):
+        """
+        :param _builtins.str address: The server's IP address (IPv4 or IPv6).
+        :param _builtins.int port: The server's port.
+        :param _builtins.str tsig_key_id: The OCID of the TSIG key.
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "tsig_key_id", tsig_key_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def address(self) -> _builtins.str:
+        """
+        The server's IP address (IPv4 or IPv6).
+        """
+        return pulumi.get(self, "address")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The server's port.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter(name="tsigKeyId")
+    def tsig_key_id(self) -> _builtins.str:
+        """
+        The OCID of the TSIG key.
+        """
+        return pulumi.get(self, "tsig_key_id")
+
+
+@pulumi.output_type
+class GetZoneExternalMasterResult(dict):
+    def __init__(__self__, *,
+                 address: _builtins.str,
+                 port: _builtins.int,
+                 tsig_key_id: _builtins.str):
+        """
+        :param _builtins.str address: The server's IP address (IPv4 or IPv6).
+        :param _builtins.int port: The server's port.
+        :param _builtins.str tsig_key_id: The OCID of the TSIG key.
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "tsig_key_id", tsig_key_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def address(self) -> _builtins.str:
+        """
+        The server's IP address (IPv4 or IPv6).
+        """
+        return pulumi.get(self, "address")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The server's port.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter(name="tsigKeyId")
+    def tsig_key_id(self) -> _builtins.str:
+        """
+        The OCID of the TSIG key.
+        """
+        return pulumi.get(self, "tsig_key_id")
+
+
+@pulumi.output_type
+class GetZoneNameserverResult(dict):
+    def __init__(__self__, *,
+                 hostname: _builtins.str):
+        """
+        :param _builtins.str hostname: Hostname of the nameserver.
+        """
+        pulumi.set(__self__, "hostname", hostname)
+
+    @_builtins.property
+    @pulumi.getter
+    def hostname(self) -> _builtins.str:
+        """
+        Hostname of the nameserver.
+        """
+        return pulumi.get(self, "hostname")
+
+
+@pulumi.output_type
+class GetZoneZoneTransferServerResult(dict):
+    def __init__(__self__, *,
+                 address: _builtins.str,
+                 is_transfer_destination: _builtins.bool,
+                 is_transfer_source: _builtins.bool,
+                 port: _builtins.int):
+        """
+        :param _builtins.str address: The server's IP address (IPv4 or IPv6).
+        :param _builtins.bool is_transfer_destination: Whether the server is a zone data transfer destination.
+        :param _builtins.bool is_transfer_source: Whether the server is a zone data transfer source.
+        :param _builtins.int port: The server's port.
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "is_transfer_destination", is_transfer_destination)
+        pulumi.set(__self__, "is_transfer_source", is_transfer_source)
+        pulumi.set(__self__, "port", port)
+
+    @_builtins.property
+    @pulumi.getter
+    def address(self) -> _builtins.str:
+        """
+        The server's IP address (IPv4 or IPv6).
+        """
+        return pulumi.get(self, "address")
+
+    @_builtins.property
+    @pulumi.getter(name="isTransferDestination")
+    def is_transfer_destination(self) -> _builtins.bool:
+        """
+        Whether the server is a zone data transfer destination.
+        """
+        return pulumi.get(self, "is_transfer_destination")
+
+    @_builtins.property
+    @pulumi.getter(name="isTransferSource")
+    def is_transfer_source(self) -> _builtins.bool:
+        """
+        Whether the server is a zone data transfer source.
+        """
+        return pulumi.get(self, "is_transfer_source")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The server's port.
+        """
+        return pulumi.get(self, "port")
+
+
+@pulumi.output_type
 class GetZonesFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -4563,6 +5083,7 @@ class GetZonesZoneResult(dict):
                  is_protected: _builtins.bool,
                  name: _builtins.str,
                  nameservers: Sequence['outputs.GetZonesZoneNameserverResult'],
+                 resolution_mode: _builtins.str,
                  scope: _builtins.str,
                  self: _builtins.str,
                  serial: _builtins.int,
@@ -4577,13 +5098,11 @@ class GetZonesZoneResult(dict):
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param Sequence['GetZonesZoneDnssecConfigArgs'] dnssec_configs: DNSSEC configuration data.
         :param _builtins.str dnssec_state: Search for zones that have the given `DnssecState`.
-        :param Sequence['GetZonesZoneExternalDownstreamArgs'] external_downstreams: External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
-        :param Sequence['GetZonesZoneExternalMasterArgs'] external_masters: External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str id: The OCID of the zone.
         :param _builtins.bool is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param _builtins.str name: A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
-        :param Sequence['GetZonesZoneNameserverArgs'] nameservers: The authoritative nameservers for the zone.
+        :param _builtins.str resolution_mode: The resolution mode of a zone defines behavior related to how query responses can be handled.
         :param _builtins.str scope: Specifies to operate only on resources that have a matching DNS scope.
         :param _builtins.str self: The canonical absolute URL of the resource.
         :param _builtins.int serial: The current serial of the zone. As seen in the zone's SOA record.
@@ -4591,7 +5110,6 @@ class GetZonesZoneResult(dict):
         :param _builtins.str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         :param _builtins.str version: Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
         :param _builtins.str view_id: The OCID of the view the resource is associated with.
-        :param Sequence['GetZonesZoneZoneTransferServerArgs'] zone_transfer_servers: The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
         :param _builtins.str zone_type: Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -4605,6 +5123,7 @@ class GetZonesZoneResult(dict):
         pulumi.set(__self__, "is_protected", is_protected)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "nameservers", nameservers)
+        pulumi.set(__self__, "resolution_mode", resolution_mode)
         pulumi.set(__self__, "scope", scope)
         pulumi.set(__self__, "self", self)
         pulumi.set(__self__, "serial", serial)
@@ -4650,17 +5169,11 @@ class GetZonesZoneResult(dict):
     @_builtins.property
     @pulumi.getter(name="externalDownstreams")
     def external_downstreams(self) -> Sequence['outputs.GetZonesZoneExternalDownstreamResult']:
-        """
-        External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
-        """
         return pulumi.get(self, "external_downstreams")
 
     @_builtins.property
     @pulumi.getter(name="externalMasters")
     def external_masters(self) -> Sequence['outputs.GetZonesZoneExternalMasterResult']:
-        """
-        External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
-        """
         return pulumi.get(self, "external_masters")
 
     @_builtins.property
@@ -4698,10 +5211,15 @@ class GetZonesZoneResult(dict):
     @_builtins.property
     @pulumi.getter
     def nameservers(self) -> Sequence['outputs.GetZonesZoneNameserverResult']:
-        """
-        The authoritative nameservers for the zone.
-        """
         return pulumi.get(self, "nameservers")
+
+    @_builtins.property
+    @pulumi.getter(name="resolutionMode")
+    def resolution_mode(self) -> _builtins.str:
+        """
+        The resolution mode of a zone defines behavior related to how query responses can be handled.
+        """
+        return pulumi.get(self, "resolution_mode")
 
     @_builtins.property
     @pulumi.getter
@@ -4762,9 +5280,6 @@ class GetZonesZoneResult(dict):
     @_builtins.property
     @pulumi.getter(name="zoneTransferServers")
     def zone_transfer_servers(self) -> Sequence['outputs.GetZonesZoneZoneTransferServerResult']:
-        """
-        The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
-        """
         return pulumi.get(self, "zone_transfer_servers")
 
     @_builtins.property
@@ -5152,8 +5667,6 @@ class GetZonesZoneExternalDownstreamResult(dict):
                  port: _builtins.int,
                  tsig_key_id: _builtins.str):
         """
-        :param _builtins.str address: The server's IP address (IPv4 or IPv6).
-        :param _builtins.int port: The server's port. Port value must be a value of 53, otherwise omit the port value.
         :param _builtins.str tsig_key_id: Search for zones that are associated with a TSIG key.
         """
         pulumi.set(__self__, "address", address)
@@ -5163,17 +5676,11 @@ class GetZonesZoneExternalDownstreamResult(dict):
     @_builtins.property
     @pulumi.getter
     def address(self) -> _builtins.str:
-        """
-        The server's IP address (IPv4 or IPv6).
-        """
         return pulumi.get(self, "address")
 
     @_builtins.property
     @pulumi.getter
     def port(self) -> _builtins.int:
-        """
-        The server's port. Port value must be a value of 53, otherwise omit the port value.
-        """
         return pulumi.get(self, "port")
 
     @_builtins.property
@@ -5192,8 +5699,6 @@ class GetZonesZoneExternalMasterResult(dict):
                  port: _builtins.int,
                  tsig_key_id: _builtins.str):
         """
-        :param _builtins.str address: The server's IP address (IPv4 or IPv6).
-        :param _builtins.int port: The server's port. Port value must be a value of 53, otherwise omit the port value.
         :param _builtins.str tsig_key_id: Search for zones that are associated with a TSIG key.
         """
         pulumi.set(__self__, "address", address)
@@ -5203,17 +5708,11 @@ class GetZonesZoneExternalMasterResult(dict):
     @_builtins.property
     @pulumi.getter
     def address(self) -> _builtins.str:
-        """
-        The server's IP address (IPv4 or IPv6).
-        """
         return pulumi.get(self, "address")
 
     @_builtins.property
     @pulumi.getter
     def port(self) -> _builtins.int:
-        """
-        The server's port. Port value must be a value of 53, otherwise omit the port value.
-        """
         return pulumi.get(self, "port")
 
     @_builtins.property
@@ -5229,17 +5728,11 @@ class GetZonesZoneExternalMasterResult(dict):
 class GetZonesZoneNameserverResult(dict):
     def __init__(__self__, *,
                  hostname: _builtins.str):
-        """
-        :param _builtins.str hostname: The hostname of the nameserver.
-        """
         pulumi.set(__self__, "hostname", hostname)
 
     @_builtins.property
     @pulumi.getter
     def hostname(self) -> _builtins.str:
-        """
-        The hostname of the nameserver.
-        """
         return pulumi.get(self, "hostname")
 
 
@@ -5250,12 +5743,6 @@ class GetZonesZoneZoneTransferServerResult(dict):
                  is_transfer_destination: _builtins.bool,
                  is_transfer_source: _builtins.bool,
                  port: _builtins.int):
-        """
-        :param _builtins.str address: The server's IP address (IPv4 or IPv6).
-        :param _builtins.bool is_transfer_destination: A Boolean flag indicating whether or not the server is a zone data transfer destination.
-        :param _builtins.bool is_transfer_source: A Boolean flag indicating whether or not the server is a zone data transfer source.
-        :param _builtins.int port: The server's port. Port value must be a value of 53, otherwise omit the port value.
-        """
         pulumi.set(__self__, "address", address)
         pulumi.set(__self__, "is_transfer_destination", is_transfer_destination)
         pulumi.set(__self__, "is_transfer_source", is_transfer_source)
@@ -5264,33 +5751,21 @@ class GetZonesZoneZoneTransferServerResult(dict):
     @_builtins.property
     @pulumi.getter
     def address(self) -> _builtins.str:
-        """
-        The server's IP address (IPv4 or IPv6).
-        """
         return pulumi.get(self, "address")
 
     @_builtins.property
     @pulumi.getter(name="isTransferDestination")
     def is_transfer_destination(self) -> _builtins.bool:
-        """
-        A Boolean flag indicating whether or not the server is a zone data transfer destination.
-        """
         return pulumi.get(self, "is_transfer_destination")
 
     @_builtins.property
     @pulumi.getter(name="isTransferSource")
     def is_transfer_source(self) -> _builtins.bool:
-        """
-        A Boolean flag indicating whether or not the server is a zone data transfer source.
-        """
         return pulumi.get(self, "is_transfer_source")
 
     @_builtins.property
     @pulumi.getter
     def port(self) -> _builtins.int:
-        """
-        The server's port. Port value must be a value of 53, otherwise omit the port value.
-        """
         return pulumi.get(self, "port")
 
 

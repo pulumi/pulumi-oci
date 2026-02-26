@@ -56,6 +56,7 @@ namespace Pulumi.Oci.Dns
     ///             },
     ///         },
     ///         FreeformTags = zoneFreeformTags,
+    ///         ResolutionMode = zoneResolutionMode,
     ///         Scope = zoneScope,
     ///         ViewId = testView.Id,
     ///     });
@@ -144,15 +145,17 @@ namespace Pulumi.Oci.Dns
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
-        /// <summary>
-        /// The authoritative nameservers for the zone.
-        /// </summary>
         [Output("nameservers")]
         public Output<ImmutableArray<Outputs.ZoneNameserver>> Nameservers { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope. 
-        /// This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
+        /// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        /// </summary>
+        [Output("resolutionMode")]
+        public Output<string> ResolutionMode { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies to operate only on resources that have a matching DNS scope.
         /// </summary>
         [Output("scope")]
         public Output<string> Scope { get; private set; } = null!;
@@ -205,6 +208,8 @@ namespace Pulumi.Oci.Dns
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// 
+        /// When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
         /// </summary>
         [Output("zoneType")]
         public Output<string> ZoneType { get; private set; } = null!;
@@ -338,8 +343,13 @@ namespace Pulumi.Oci.Dns
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope. 
-        /// This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
+        /// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        /// </summary>
+        [Input("resolutionMode")]
+        public Input<string>? ResolutionMode { get; set; }
+
+        /// <summary>
+        /// Specifies to operate only on resources that have a matching DNS scope.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
@@ -356,6 +366,8 @@ namespace Pulumi.Oci.Dns
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// 
+        /// When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
         /// </summary>
         [Input("zoneType", required: true)]
         public Input<string> ZoneType { get; set; } = null!;
@@ -470,10 +482,6 @@ namespace Pulumi.Oci.Dns
 
         [Input("nameservers")]
         private InputList<Inputs.ZoneNameserverGetArgs>? _nameservers;
-
-        /// <summary>
-        /// The authoritative nameservers for the zone.
-        /// </summary>
         public InputList<Inputs.ZoneNameserverGetArgs> Nameservers
         {
             get => _nameservers ?? (_nameservers = new InputList<Inputs.ZoneNameserverGetArgs>());
@@ -481,8 +489,13 @@ namespace Pulumi.Oci.Dns
         }
 
         /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope. 
-        /// This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
+        /// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        /// </summary>
+        [Input("resolutionMode")]
+        public Input<string>? ResolutionMode { get; set; }
+
+        /// <summary>
+        /// Specifies to operate only on resources that have a matching DNS scope.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
@@ -541,6 +554,8 @@ namespace Pulumi.Oci.Dns
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// 
+        /// When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
         /// </summary>
         [Input("zoneType")]
         public Input<string>? ZoneType { get; set; }

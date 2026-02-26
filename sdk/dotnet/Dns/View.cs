@@ -92,7 +92,7 @@ namespace Pulumi.Oci.Dns
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("scope")]
-        public Output<string?> Scope { get; private set; } = null!;
+        public Output<string> Scope { get; private set; } = null!;
 
         /// <summary>
         /// The canonical absolute URL of the resource.

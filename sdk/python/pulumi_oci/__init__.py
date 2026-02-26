@@ -4503,6 +4503,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "FleetSoftwareUpdate/fsuReadinessCheck",
+  "fqn": "pulumi_oci.fleetsoftwareupdate",
+  "classes": {
+   "oci:FleetSoftwareUpdate/fsuReadinessCheck:FsuReadinessCheck": "FsuReadinessCheck"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Functions/application",
   "fqn": "pulumi_oci.functions",
   "classes": {
@@ -4611,6 +4619,14 @@ _utilities.register(
   "fqn": "pulumi_oci.generativeai",
   "classes": {
    "oci:GenerativeAi/agentKnowledgeBase:AgentKnowledgeBase": "AgentKnowledgeBase"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GenerativeAi/agentProvisionedCapacity",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/agentProvisionedCapacity:AgentProvisionedCapacity": "AgentProvisionedCapacity"
   }
  },
  {

@@ -39,6 +39,9 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotRest',
     'MysqlBackupDbSystemSnapshotSecureConnection',
     'MysqlBackupDbSystemSnapshotSummary',
+    'MysqlBackupDbSystemSnapshotTelemetryConfiguration',
+    'MysqlBackupDbSystemSnapshotTelemetryConfigurationLog',
+    'MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration',
     'MysqlBackupEncryptData',
     'MysqlBackupSourceDetails',
     'MysqlBackupValidateBackupDetail',
@@ -69,9 +72,18 @@ __all__ = [
     'MysqlDbSystemRest',
     'MysqlDbSystemSecureConnections',
     'MysqlDbSystemSource',
+    'MysqlDbSystemTelemetryConfiguration',
+    'MysqlDbSystemTelemetryConfigurationLog',
+    'MysqlDbSystemTelemetryConfigurationLogDestinationConfiguration',
     'ReplicaEncryptData',
     'ReplicaReplicaOverrides',
+    'ReplicaReplicaOverridesTelemetryConfiguration',
+    'ReplicaReplicaOverridesTelemetryConfigurationLog',
+    'ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfiguration',
     'ReplicaSecureConnection',
+    'ReplicaTelemetryConfiguration',
+    'ReplicaTelemetryConfigurationLog',
+    'ReplicaTelemetryConfigurationLogDestinationConfiguration',
     'GetChannelSourceResult',
     'GetChannelSourceAnonymousTransactionsHandlingResult',
     'GetChannelSourceSslCaCertificateResult',
@@ -104,6 +116,9 @@ __all__ = [
     'GetMysqlBackupDbSystemSnapshotRestResult',
     'GetMysqlBackupDbSystemSnapshotSecureConnectionResult',
     'GetMysqlBackupDbSystemSnapshotSummaryResult',
+    'GetMysqlBackupDbSystemSnapshotTelemetryConfigurationResult',
+    'GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogResult',
+    'GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationResult',
     'GetMysqlBackupEncryptDataResult',
     'GetMysqlBackupSourceDetailResult',
     'GetMysqlBackupValidateBackupDetailResult',
@@ -143,6 +158,9 @@ __all__ = [
     'GetMysqlDbSystemRestResult',
     'GetMysqlDbSystemSecureConnectionResult',
     'GetMysqlDbSystemSourceResult',
+    'GetMysqlDbSystemTelemetryConfigurationResult',
+    'GetMysqlDbSystemTelemetryConfigurationLogResult',
+    'GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationResult',
     'GetMysqlDbSystemsDbSystemResult',
     'GetMysqlDbSystemsDbSystemBackupPolicyResult',
     'GetMysqlDbSystemsDbSystemBackupPolicyCopyPolicyResult',
@@ -168,18 +186,33 @@ __all__ = [
     'GetMysqlDbSystemsDbSystemRestResult',
     'GetMysqlDbSystemsDbSystemSecureConnectionResult',
     'GetMysqlDbSystemsDbSystemSourceResult',
+    'GetMysqlDbSystemsDbSystemTelemetryConfigurationResult',
+    'GetMysqlDbSystemsDbSystemTelemetryConfigurationLogResult',
+    'GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationResult',
     'GetMysqlDbSystemsFilterResult',
     'GetMysqlVersionFilterResult',
     'GetMysqlVersionVersionResult',
     'GetMysqlVersionVersionVersionResult',
     'GetReplicaEncryptDataResult',
     'GetReplicaReplicaOverrideResult',
+    'GetReplicaReplicaOverrideTelemetryConfigurationResult',
+    'GetReplicaReplicaOverrideTelemetryConfigurationLogResult',
+    'GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationResult',
     'GetReplicaSecureConnectionResult',
+    'GetReplicaTelemetryConfigurationResult',
+    'GetReplicaTelemetryConfigurationLogResult',
+    'GetReplicaTelemetryConfigurationLogDestinationConfigurationResult',
     'GetReplicasFilterResult',
     'GetReplicasReplicaResult',
     'GetReplicasReplicaEncryptDataResult',
     'GetReplicasReplicaReplicaOverrideResult',
+    'GetReplicasReplicaReplicaOverrideTelemetryConfigurationResult',
+    'GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogResult',
+    'GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationResult',
     'GetReplicasReplicaSecureConnectionResult',
+    'GetReplicasReplicaTelemetryConfigurationResult',
+    'GetReplicasReplicaTelemetryConfigurationLogResult',
+    'GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationResult',
     'GetShapesFilterResult',
     'GetShapesShapeResult',
 ]
@@ -878,6 +911,8 @@ class MysqlBackupDbSystemSnapshot(dict):
             suggest = "shape_name"
         elif key == "subnetId":
             suggest = "subnet_id"
+        elif key == "telemetryConfiguration":
+            suggest = "telemetry_configuration"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in MysqlBackupDbSystemSnapshot. Access the value via the '{suggest}' property getter instead.")
@@ -924,7 +959,8 @@ class MysqlBackupDbSystemSnapshot(dict):
                  secure_connections: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotSecureConnection']] = None,
                  security_attributes: Optional[Mapping[str, _builtins.str]] = None,
                  shape_name: Optional[_builtins.str] = None,
-                 subnet_id: Optional[_builtins.str] = None):
+                 subnet_id: Optional[_builtins.str] = None,
+                 telemetry_configuration: Optional['outputs.MysqlBackupDbSystemSnapshotTelemetryConfiguration'] = None):
         """
         :param _builtins.str admin_username: The username for the administrative user.
         :param _builtins.str availability_domain: The Availability Domain where the primary DB System should be located.
@@ -960,6 +996,7 @@ class MysqlBackupDbSystemSnapshot(dict):
         :param Mapping[str, _builtins.str] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param _builtins.str shape_name: The shape of the DB System instance used for backup.
         :param _builtins.str subnet_id: The OCID of the subnet the DB System is associated with.
+        :param 'MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs' telemetry_configuration: Telemetry configuration details of a DB System or a read replica.
         """
         if admin_username is not None:
             pulumi.set(__self__, "admin_username", admin_username)
@@ -1029,6 +1066,8 @@ class MysqlBackupDbSystemSnapshot(dict):
             pulumi.set(__self__, "shape_name", shape_name)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if telemetry_configuration is not None:
+            pulumi.set(__self__, "telemetry_configuration", telemetry_configuration)
 
     @_builtins.property
     @pulumi.getter(name="adminUsername")
@@ -1301,6 +1340,14 @@ class MysqlBackupDbSystemSnapshot(dict):
         The OCID of the subnet the DB System is associated with.
         """
         return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="telemetryConfiguration")
+    def telemetry_configuration(self) -> Optional['outputs.MysqlBackupDbSystemSnapshotTelemetryConfiguration']:
+        """
+        Telemetry configuration details of a DB System or a read replica.
+        """
+        return pulumi.get(self, "telemetry_configuration")
 
 
 @pulumi.output_type
@@ -2287,6 +2334,113 @@ class MysqlBackupDbSystemSnapshotSummary(dict):
         The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "region")
+
+
+@pulumi.output_type
+class MysqlBackupDbSystemSnapshotTelemetryConfiguration(dict):
+    def __init__(__self__, *,
+                 logs: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotTelemetryConfigurationLog']] = None):
+        """
+        :param Sequence['MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs'] logs: Telemetry configuration details for logging.
+        """
+        if logs is not None:
+            pulumi.set(__self__, "logs", logs)
+
+    @_builtins.property
+    @pulumi.getter
+    def logs(self) -> Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotTelemetryConfigurationLog']]:
+        """
+        Telemetry configuration details for logging.
+        """
+        return pulumi.get(self, "logs")
+
+
+@pulumi.output_type
+class MysqlBackupDbSystemSnapshotTelemetryConfigurationLog(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "destinationConfigurations":
+            suggest = "destination_configurations"
+        elif key == "logTypes":
+            suggest = "log_types"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MysqlBackupDbSystemSnapshotTelemetryConfigurationLog. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MysqlBackupDbSystemSnapshotTelemetryConfigurationLog.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MysqlBackupDbSystemSnapshotTelemetryConfigurationLog.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 destination: _builtins.str,
+                 destination_configurations: Sequence['outputs.MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration'],
+                 log_types: Sequence[_builtins.str]):
+        """
+        :param _builtins.str destination: Type of destination where MySQL telemetry is exposed to.
+        :param Sequence['MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArgs'] destination_configurations: List of configuration variables for a given destination type.
+        :param Sequence[_builtins.str] log_types: List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        pulumi.set(__self__, "destination", destination)
+        pulumi.set(__self__, "destination_configurations", destination_configurations)
+        pulumi.set(__self__, "log_types", log_types)
+
+    @_builtins.property
+    @pulumi.getter
+    def destination(self) -> _builtins.str:
+        """
+        Type of destination where MySQL telemetry is exposed to.
+        """
+        return pulumi.get(self, "destination")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationConfigurations")
+    def destination_configurations(self) -> Sequence['outputs.MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration']:
+        """
+        List of configuration variables for a given destination type.
+        """
+        return pulumi.get(self, "destination_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="logTypes")
+    def log_types(self) -> Sequence[_builtins.str]:
+        """
+        List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        return pulumi.get(self, "log_types")
+
+
+@pulumi.output_type
+class MysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfiguration(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Name of the destination configuration variable.
+        :param _builtins.str value: Value of the destination configuration variable.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Name of the destination configuration variable.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the destination configuration variable.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -5361,7 +5515,7 @@ class MysqlDbSystemChannelTargetFilter(dict):
                  value: Optional[_builtins.str] = None):
         """
         :param _builtins.str type: The type of the filter rule.
-        :param _builtins.str value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        :param _builtins.str value: Value of the destination configuration variable.
         """
         if type is not None:
             pulumi.set(__self__, "type", type)
@@ -5380,7 +5534,7 @@ class MysqlDbSystemChannelTargetFilter(dict):
     @pulumi.getter
     def value(self) -> Optional[_builtins.str]:
         """
-        The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        Value of the destination configuration variable.
         """
         return pulumi.get(self, "value")
 
@@ -6452,6 +6606,113 @@ class MysqlDbSystemSource(dict):
 
 
 @pulumi.output_type
+class MysqlDbSystemTelemetryConfiguration(dict):
+    def __init__(__self__, *,
+                 logs: Optional[Sequence['outputs.MysqlDbSystemTelemetryConfigurationLog']] = None):
+        """
+        :param Sequence['MysqlDbSystemTelemetryConfigurationLogArgs'] logs: (Updatable) Telemetry configuration details for logging.
+        """
+        if logs is not None:
+            pulumi.set(__self__, "logs", logs)
+
+    @_builtins.property
+    @pulumi.getter
+    def logs(self) -> Optional[Sequence['outputs.MysqlDbSystemTelemetryConfigurationLog']]:
+        """
+        (Updatable) Telemetry configuration details for logging.
+        """
+        return pulumi.get(self, "logs")
+
+
+@pulumi.output_type
+class MysqlDbSystemTelemetryConfigurationLog(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "destinationConfigurations":
+            suggest = "destination_configurations"
+        elif key == "logTypes":
+            suggest = "log_types"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MysqlDbSystemTelemetryConfigurationLog. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MysqlDbSystemTelemetryConfigurationLog.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MysqlDbSystemTelemetryConfigurationLog.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 destination: _builtins.str,
+                 destination_configurations: Sequence['outputs.MysqlDbSystemTelemetryConfigurationLogDestinationConfiguration'],
+                 log_types: Sequence[_builtins.str]):
+        """
+        :param _builtins.str destination: (Updatable) Type of destination where MySQL telemetry is exposed to. Use `LOG_ANALYTICS` to send logs to OCI Log Analytics.
+        :param Sequence['MysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs'] destination_configurations: (Updatable) List of configuration variables for a given destination type.
+        :param Sequence[_builtins.str] log_types: (Updatable) List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        pulumi.set(__self__, "destination", destination)
+        pulumi.set(__self__, "destination_configurations", destination_configurations)
+        pulumi.set(__self__, "log_types", log_types)
+
+    @_builtins.property
+    @pulumi.getter
+    def destination(self) -> _builtins.str:
+        """
+        (Updatable) Type of destination where MySQL telemetry is exposed to. Use `LOG_ANALYTICS` to send logs to OCI Log Analytics.
+        """
+        return pulumi.get(self, "destination")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationConfigurations")
+    def destination_configurations(self) -> Sequence['outputs.MysqlDbSystemTelemetryConfigurationLogDestinationConfiguration']:
+        """
+        (Updatable) List of configuration variables for a given destination type.
+        """
+        return pulumi.get(self, "destination_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="logTypes")
+    def log_types(self) -> Sequence[_builtins.str]:
+        """
+        (Updatable) List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        return pulumi.get(self, "log_types")
+
+
+@pulumi.output_type
+class MysqlDbSystemTelemetryConfigurationLogDestinationConfiguration(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: (Updatable) Name of the destination configuration variable. Use `log-group-id` to  specify Log Analytics Log Group OCID. Also specify `log-set` when using the Log Partitioning feature of Log Analytics.
+        :param _builtins.str value: (Updatable) Value of the destination configuration variable.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        (Updatable) Name of the destination configuration variable. Use `log-group-id` to  specify Log Analytics Log Group OCID. Also specify `log-set` when using the Log Partitioning feature of Log Analytics.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        (Updatable) Value of the destination configuration variable.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class ReplicaEncryptData(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -6516,6 +6777,8 @@ class ReplicaReplicaOverrides(dict):
             suggest = "security_attributes"
         elif key == "shapeName":
             suggest = "shape_name"
+        elif key == "telemetryConfiguration":
+            suggest = "telemetry_configuration"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in ReplicaReplicaOverrides. Access the value via the '{suggest}' property getter instead.")
@@ -6533,17 +6796,15 @@ class ReplicaReplicaOverrides(dict):
                  mysql_version: Optional[_builtins.str] = None,
                  nsg_ids: Optional[Sequence[_builtins.str]] = None,
                  security_attributes: Optional[Mapping[str, _builtins.str]] = None,
-                 shape_name: Optional[_builtins.str] = None):
+                 shape_name: Optional[_builtins.str] = None,
+                 telemetry_configuration: Optional['outputs.ReplicaReplicaOverridesTelemetryConfiguration'] = None):
         """
         :param _builtins.str configuration_id: (Updatable) The OCID of the Configuration to be used by the read replica.
         :param _builtins.str mysql_version: (Updatable) The MySQL version to be used by the read replica.
         :param Sequence[_builtins.str] nsg_ids: (Updatable) Network Security Group OCIDs used for the VNIC attachment.
         :param Mapping[str, _builtins.str] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
-        :param _builtins.str shape_name: (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param _builtins.str shape_name: (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+        :param 'ReplicaReplicaOverridesTelemetryConfigurationArgs' telemetry_configuration: (Updatable) Telemetry configuration details of a DB System or a read replica.
         """
         if configuration_id is not None:
             pulumi.set(__self__, "configuration_id", configuration_id)
@@ -6555,6 +6816,8 @@ class ReplicaReplicaOverrides(dict):
             pulumi.set(__self__, "security_attributes", security_attributes)
         if shape_name is not None:
             pulumi.set(__self__, "shape_name", shape_name)
+        if telemetry_configuration is not None:
+            pulumi.set(__self__, "telemetry_configuration", telemetry_configuration)
 
     @_builtins.property
     @pulumi.getter(name="configurationId")
@@ -6592,13 +6855,124 @@ class ReplicaReplicaOverrides(dict):
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         """
         return pulumi.get(self, "shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="telemetryConfiguration")
+    def telemetry_configuration(self) -> Optional['outputs.ReplicaReplicaOverridesTelemetryConfiguration']:
+        """
+        (Updatable) Telemetry configuration details of a DB System or a read replica.
+        """
+        return pulumi.get(self, "telemetry_configuration")
+
+
+@pulumi.output_type
+class ReplicaReplicaOverridesTelemetryConfiguration(dict):
+    def __init__(__self__, *,
+                 logs: Optional[Sequence['outputs.ReplicaReplicaOverridesTelemetryConfigurationLog']] = None):
+        """
+        :param Sequence['ReplicaReplicaOverridesTelemetryConfigurationLogArgs'] logs: (Updatable) Telemetry configuration details for logging.
+        """
+        if logs is not None:
+            pulumi.set(__self__, "logs", logs)
+
+    @_builtins.property
+    @pulumi.getter
+    def logs(self) -> Optional[Sequence['outputs.ReplicaReplicaOverridesTelemetryConfigurationLog']]:
+        """
+        (Updatable) Telemetry configuration details for logging.
+        """
+        return pulumi.get(self, "logs")
+
+
+@pulumi.output_type
+class ReplicaReplicaOverridesTelemetryConfigurationLog(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "destinationConfigurations":
+            suggest = "destination_configurations"
+        elif key == "logTypes":
+            suggest = "log_types"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ReplicaReplicaOverridesTelemetryConfigurationLog. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ReplicaReplicaOverridesTelemetryConfigurationLog.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ReplicaReplicaOverridesTelemetryConfigurationLog.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 destination: _builtins.str,
+                 destination_configurations: Sequence['outputs.ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfiguration'],
+                 log_types: Sequence[_builtins.str]):
+        """
+        :param _builtins.str destination: Type of destination where MySQL telemetry is exposed to.
+        :param Sequence['ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArgs'] destination_configurations: List of configuration variables for a given destination type.
+        :param Sequence[_builtins.str] log_types: List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        pulumi.set(__self__, "destination", destination)
+        pulumi.set(__self__, "destination_configurations", destination_configurations)
+        pulumi.set(__self__, "log_types", log_types)
+
+    @_builtins.property
+    @pulumi.getter
+    def destination(self) -> _builtins.str:
+        """
+        Type of destination where MySQL telemetry is exposed to.
+        """
+        return pulumi.get(self, "destination")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationConfigurations")
+    def destination_configurations(self) -> Sequence['outputs.ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfiguration']:
+        """
+        List of configuration variables for a given destination type.
+        """
+        return pulumi.get(self, "destination_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="logTypes")
+    def log_types(self) -> Sequence[_builtins.str]:
+        """
+        List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        return pulumi.get(self, "log_types")
+
+
+@pulumi.output_type
+class ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfiguration(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Name of the destination configuration variable.
+        :param _builtins.str value: Value of the destination configuration variable.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Name of the destination configuration variable.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the destination configuration variable.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -6649,6 +7023,118 @@ class ReplicaSecureConnection(dict):
         The OCID of the certificate to use.
         """
         return pulumi.get(self, "certificate_id")
+
+
+@pulumi.output_type
+class ReplicaTelemetryConfiguration(dict):
+    def __init__(__self__, *,
+                 logs: Optional[Sequence['outputs.ReplicaTelemetryConfigurationLog']] = None):
+        """
+        :param Sequence['ReplicaTelemetryConfigurationLogArgs'] logs: Telemetry configuration details for logging.
+        """
+        if logs is not None:
+            pulumi.set(__self__, "logs", logs)
+
+    @_builtins.property
+    @pulumi.getter
+    def logs(self) -> Optional[Sequence['outputs.ReplicaTelemetryConfigurationLog']]:
+        """
+        Telemetry configuration details for logging.
+        """
+        return pulumi.get(self, "logs")
+
+
+@pulumi.output_type
+class ReplicaTelemetryConfigurationLog(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "destinationConfigurations":
+            suggest = "destination_configurations"
+        elif key == "logTypes":
+            suggest = "log_types"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ReplicaTelemetryConfigurationLog. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ReplicaTelemetryConfigurationLog.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ReplicaTelemetryConfigurationLog.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 destination: Optional[_builtins.str] = None,
+                 destination_configurations: Optional[Sequence['outputs.ReplicaTelemetryConfigurationLogDestinationConfiguration']] = None,
+                 log_types: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str destination: Type of destination where MySQL telemetry is exposed to.
+        :param Sequence['ReplicaTelemetryConfigurationLogDestinationConfigurationArgs'] destination_configurations: List of configuration variables for a given destination type.
+        :param Sequence[_builtins.str] log_types: List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        if destination is not None:
+            pulumi.set(__self__, "destination", destination)
+        if destination_configurations is not None:
+            pulumi.set(__self__, "destination_configurations", destination_configurations)
+        if log_types is not None:
+            pulumi.set(__self__, "log_types", log_types)
+
+    @_builtins.property
+    @pulumi.getter
+    def destination(self) -> Optional[_builtins.str]:
+        """
+        Type of destination where MySQL telemetry is exposed to.
+        """
+        return pulumi.get(self, "destination")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationConfigurations")
+    def destination_configurations(self) -> Optional[Sequence['outputs.ReplicaTelemetryConfigurationLogDestinationConfiguration']]:
+        """
+        List of configuration variables for a given destination type.
+        """
+        return pulumi.get(self, "destination_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="logTypes")
+    def log_types(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        return pulumi.get(self, "log_types")
+
+
+@pulumi.output_type
+class ReplicaTelemetryConfigurationLogDestinationConfiguration(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: Name of the destination configuration variable.
+        :param _builtins.str value: Value of the destination configuration variable.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Name of the destination configuration variable.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Value of the destination configuration variable.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -7780,7 +8266,8 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
                  secure_connections: Sequence['outputs.GetMysqlBackupDbSystemSnapshotSecureConnectionResult'],
                  security_attributes: Mapping[str, _builtins.str],
                  shape_name: _builtins.str,
-                 subnet_id: _builtins.str):
+                 subnet_id: _builtins.str,
+                 telemetry_configurations: Sequence['outputs.GetMysqlBackupDbSystemSnapshotTelemetryConfigurationResult']):
         """
         :param _builtins.str admin_username: The username for the administrative user.
         :param _builtins.str availability_domain: The Availability Domain where the primary DB System should be located.
@@ -7816,6 +8303,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         :param Mapping[str, _builtins.str] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param _builtins.str shape_name: The shape of the DB System instance used for backup.
         :param _builtins.str subnet_id: The OCID of the subnet the DB System is associated with.
+        :param Sequence['GetMysqlBackupDbSystemSnapshotTelemetryConfigurationArgs'] telemetry_configurations: Telemetry configuration details of a DB System or a read replica.
         """
         pulumi.set(__self__, "admin_username", admin_username)
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -7851,6 +8339,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "telemetry_configurations", telemetry_configurations)
 
     @_builtins.property
     @pulumi.getter(name="adminUsername")
@@ -8123,6 +8612,14 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         The OCID of the subnet the DB System is associated with.
         """
         return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="telemetryConfigurations")
+    def telemetry_configurations(self) -> Sequence['outputs.GetMysqlBackupDbSystemSnapshotTelemetryConfigurationResult']:
+        """
+        Telemetry configuration details of a DB System or a read replica.
+        """
+        return pulumi.get(self, "telemetry_configurations")
 
 
 @pulumi.output_type
@@ -8793,6 +9290,93 @@ class GetMysqlBackupDbSystemSnapshotSummaryResult(dict):
         The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "region")
+
+
+@pulumi.output_type
+class GetMysqlBackupDbSystemSnapshotTelemetryConfigurationResult(dict):
+    def __init__(__self__, *,
+                 logs: Sequence['outputs.GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogResult']):
+        """
+        :param Sequence['GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs'] logs: Telemetry configuration details for logging.
+        """
+        pulumi.set(__self__, "logs", logs)
+
+    @_builtins.property
+    @pulumi.getter
+    def logs(self) -> Sequence['outputs.GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogResult']:
+        """
+        Telemetry configuration details for logging.
+        """
+        return pulumi.get(self, "logs")
+
+
+@pulumi.output_type
+class GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogResult(dict):
+    def __init__(__self__, *,
+                 destination: _builtins.str,
+                 destination_configurations: Sequence['outputs.GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationResult'],
+                 log_types: Sequence[_builtins.str]):
+        """
+        :param _builtins.str destination: Type of destination where MySQL telemetry is exposed to.
+        :param Sequence['GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationArgs'] destination_configurations: List of configuration variables for a given destination type.
+        :param Sequence[_builtins.str] log_types: List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        pulumi.set(__self__, "destination", destination)
+        pulumi.set(__self__, "destination_configurations", destination_configurations)
+        pulumi.set(__self__, "log_types", log_types)
+
+    @_builtins.property
+    @pulumi.getter
+    def destination(self) -> _builtins.str:
+        """
+        Type of destination where MySQL telemetry is exposed to.
+        """
+        return pulumi.get(self, "destination")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationConfigurations")
+    def destination_configurations(self) -> Sequence['outputs.GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationResult']:
+        """
+        List of configuration variables for a given destination type.
+        """
+        return pulumi.get(self, "destination_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="logTypes")
+    def log_types(self) -> Sequence[_builtins.str]:
+        """
+        List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        return pulumi.get(self, "log_types")
+
+
+@pulumi.output_type
+class GetMysqlBackupDbSystemSnapshotTelemetryConfigurationLogDestinationConfigurationResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Name of the destination configuration variable.
+        :param _builtins.str value: Value of the destination configuration variable.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Name of the destination configuration variable.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the destination configuration variable.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -12766,7 +13350,7 @@ class GetMysqlDbSystemChannelTargetFilterResult(dict):
                  value: _builtins.str):
         """
         :param _builtins.str type: The type of the filter rule.
-        :param _builtins.str value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        :param _builtins.str value: Value of the destination configuration variable.
         """
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "value", value)
@@ -12783,7 +13367,7 @@ class GetMysqlDbSystemChannelTargetFilterResult(dict):
     @pulumi.getter
     def value(self) -> _builtins.str:
         """
-        The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        Value of the destination configuration variable.
         """
         return pulumi.get(self, "value")
 
@@ -13484,6 +14068,93 @@ class GetMysqlDbSystemSourceResult(dict):
 
 
 @pulumi.output_type
+class GetMysqlDbSystemTelemetryConfigurationResult(dict):
+    def __init__(__self__, *,
+                 logs: Sequence['outputs.GetMysqlDbSystemTelemetryConfigurationLogResult']):
+        """
+        :param Sequence['GetMysqlDbSystemTelemetryConfigurationLogArgs'] logs: Telemetry configuration details for logging.
+        """
+        pulumi.set(__self__, "logs", logs)
+
+    @_builtins.property
+    @pulumi.getter
+    def logs(self) -> Sequence['outputs.GetMysqlDbSystemTelemetryConfigurationLogResult']:
+        """
+        Telemetry configuration details for logging.
+        """
+        return pulumi.get(self, "logs")
+
+
+@pulumi.output_type
+class GetMysqlDbSystemTelemetryConfigurationLogResult(dict):
+    def __init__(__self__, *,
+                 destination: _builtins.str,
+                 destination_configurations: Sequence['outputs.GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationResult'],
+                 log_types: Sequence[_builtins.str]):
+        """
+        :param _builtins.str destination: Type of destination where MySQL telemetry is exposed to.
+        :param Sequence['GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationArgs'] destination_configurations: List of configuration variables for a given destination type.
+        :param Sequence[_builtins.str] log_types: List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        pulumi.set(__self__, "destination", destination)
+        pulumi.set(__self__, "destination_configurations", destination_configurations)
+        pulumi.set(__self__, "log_types", log_types)
+
+    @_builtins.property
+    @pulumi.getter
+    def destination(self) -> _builtins.str:
+        """
+        Type of destination where MySQL telemetry is exposed to.
+        """
+        return pulumi.get(self, "destination")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationConfigurations")
+    def destination_configurations(self) -> Sequence['outputs.GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationResult']:
+        """
+        List of configuration variables for a given destination type.
+        """
+        return pulumi.get(self, "destination_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="logTypes")
+    def log_types(self) -> Sequence[_builtins.str]:
+        """
+        List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        return pulumi.get(self, "log_types")
+
+
+@pulumi.output_type
+class GetMysqlDbSystemTelemetryConfigurationLogDestinationConfigurationResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Name of the destination configuration variable.
+        :param _builtins.str value: Value of the destination configuration variable.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Name of the destination configuration variable.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the destination configuration variable.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetMysqlDbSystemsDbSystemResult(dict):
     def __init__(__self__, *,
                  access_mode: _builtins.str,
@@ -13533,6 +14204,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
                  state: _builtins.str,
                  subnet_id: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
+                 telemetry_configurations: Sequence['outputs.GetMysqlDbSystemsDbSystemTelemetryConfigurationResult'],
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
         """
@@ -13584,6 +14256,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         :param _builtins.str state: DbSystem Lifecycle State
         :param _builtins.str subnet_id: The OCID of the subnet the DB System is associated with.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Sequence['GetMysqlDbSystemsDbSystemTelemetryConfigurationArgs'] telemetry_configurations: Telemetry configuration details of a DB System or a read replica.
         :param _builtins.str time_created: The date and time the DB System was created.
         :param _builtins.str time_updated: The time the DB System was last updated.
         """
@@ -13634,6 +14307,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "telemetry_configurations", telemetry_configurations)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -14007,6 +14681,14 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="telemetryConfigurations")
+    def telemetry_configurations(self) -> Sequence['outputs.GetMysqlDbSystemsDbSystemTelemetryConfigurationResult']:
+        """
+        Telemetry configuration details of a DB System or a read replica.
+        """
+        return pulumi.get(self, "telemetry_configurations")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -14572,7 +15254,7 @@ class GetMysqlDbSystemsDbSystemChannelTargetFilterResult(dict):
                  value: _builtins.str):
         """
         :param _builtins.str type: The type of the filter rule.
-        :param _builtins.str value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        :param _builtins.str value: Value of the destination configuration variable.
         """
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "value", value)
@@ -14589,7 +15271,7 @@ class GetMysqlDbSystemsDbSystemChannelTargetFilterResult(dict):
     @pulumi.getter
     def value(self) -> _builtins.str:
         """
-        The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        Value of the destination configuration variable.
         """
         return pulumi.get(self, "value")
 
@@ -15290,6 +15972,93 @@ class GetMysqlDbSystemsDbSystemSourceResult(dict):
 
 
 @pulumi.output_type
+class GetMysqlDbSystemsDbSystemTelemetryConfigurationResult(dict):
+    def __init__(__self__, *,
+                 logs: Sequence['outputs.GetMysqlDbSystemsDbSystemTelemetryConfigurationLogResult']):
+        """
+        :param Sequence['GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArgs'] logs: Telemetry configuration details for logging.
+        """
+        pulumi.set(__self__, "logs", logs)
+
+    @_builtins.property
+    @pulumi.getter
+    def logs(self) -> Sequence['outputs.GetMysqlDbSystemsDbSystemTelemetryConfigurationLogResult']:
+        """
+        Telemetry configuration details for logging.
+        """
+        return pulumi.get(self, "logs")
+
+
+@pulumi.output_type
+class GetMysqlDbSystemsDbSystemTelemetryConfigurationLogResult(dict):
+    def __init__(__self__, *,
+                 destination: _builtins.str,
+                 destination_configurations: Sequence['outputs.GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationResult'],
+                 log_types: Sequence[_builtins.str]):
+        """
+        :param _builtins.str destination: Type of destination where MySQL telemetry is exposed to.
+        :param Sequence['GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationArgs'] destination_configurations: List of configuration variables for a given destination type.
+        :param Sequence[_builtins.str] log_types: List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        pulumi.set(__self__, "destination", destination)
+        pulumi.set(__self__, "destination_configurations", destination_configurations)
+        pulumi.set(__self__, "log_types", log_types)
+
+    @_builtins.property
+    @pulumi.getter
+    def destination(self) -> _builtins.str:
+        """
+        Type of destination where MySQL telemetry is exposed to.
+        """
+        return pulumi.get(self, "destination")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationConfigurations")
+    def destination_configurations(self) -> Sequence['outputs.GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationResult']:
+        """
+        List of configuration variables for a given destination type.
+        """
+        return pulumi.get(self, "destination_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="logTypes")
+    def log_types(self) -> Sequence[_builtins.str]:
+        """
+        List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        return pulumi.get(self, "log_types")
+
+
+@pulumi.output_type
+class GetMysqlDbSystemsDbSystemTelemetryConfigurationLogDestinationConfigurationResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Name of the destination configuration variable.
+        :param _builtins.str value: Value of the destination configuration variable.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Name of the destination configuration variable.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the destination configuration variable.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetMysqlDbSystemsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -15437,19 +16206,22 @@ class GetReplicaReplicaOverrideResult(dict):
                  mysql_version: _builtins.str,
                  nsg_ids: Sequence[_builtins.str],
                  security_attributes: Mapping[str, _builtins.str],
-                 shape_name: _builtins.str):
+                 shape_name: _builtins.str,
+                 telemetry_configurations: Sequence['outputs.GetReplicaReplicaOverrideTelemetryConfigurationResult']):
         """
         :param _builtins.str configuration_id: The OCID of the Configuration to be used by the read replica.
         :param _builtins.str mysql_version: The MySQL version to be used by the read replica.
         :param Sequence[_builtins.str] nsg_ids: Network Security Group OCIDs used for the VNIC attachment.
         :param Mapping[str, _builtins.str] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param _builtins.str shape_name: The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+        :param Sequence['GetReplicaReplicaOverrideTelemetryConfigurationArgs'] telemetry_configurations: Telemetry configuration details of a DB System or a read replica.
         """
         pulumi.set(__self__, "configuration_id", configuration_id)
         pulumi.set(__self__, "mysql_version", mysql_version)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape_name", shape_name)
+        pulumi.set(__self__, "telemetry_configurations", telemetry_configurations)
 
     @_builtins.property
     @pulumi.getter(name="configurationId")
@@ -15491,6 +16263,101 @@ class GetReplicaReplicaOverrideResult(dict):
         """
         return pulumi.get(self, "shape_name")
 
+    @_builtins.property
+    @pulumi.getter(name="telemetryConfigurations")
+    def telemetry_configurations(self) -> Sequence['outputs.GetReplicaReplicaOverrideTelemetryConfigurationResult']:
+        """
+        Telemetry configuration details of a DB System or a read replica.
+        """
+        return pulumi.get(self, "telemetry_configurations")
+
+
+@pulumi.output_type
+class GetReplicaReplicaOverrideTelemetryConfigurationResult(dict):
+    def __init__(__self__, *,
+                 logs: Sequence['outputs.GetReplicaReplicaOverrideTelemetryConfigurationLogResult']):
+        """
+        :param Sequence['GetReplicaReplicaOverrideTelemetryConfigurationLogArgs'] logs: Telemetry configuration details for logging.
+        """
+        pulumi.set(__self__, "logs", logs)
+
+    @_builtins.property
+    @pulumi.getter
+    def logs(self) -> Sequence['outputs.GetReplicaReplicaOverrideTelemetryConfigurationLogResult']:
+        """
+        Telemetry configuration details for logging.
+        """
+        return pulumi.get(self, "logs")
+
+
+@pulumi.output_type
+class GetReplicaReplicaOverrideTelemetryConfigurationLogResult(dict):
+    def __init__(__self__, *,
+                 destination: _builtins.str,
+                 destination_configurations: Sequence['outputs.GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationResult'],
+                 log_types: Sequence[_builtins.str]):
+        """
+        :param _builtins.str destination: Type of destination where MySQL telemetry is exposed to.
+        :param Sequence['GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArgs'] destination_configurations: List of configuration variables for a given destination type.
+        :param Sequence[_builtins.str] log_types: List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        pulumi.set(__self__, "destination", destination)
+        pulumi.set(__self__, "destination_configurations", destination_configurations)
+        pulumi.set(__self__, "log_types", log_types)
+
+    @_builtins.property
+    @pulumi.getter
+    def destination(self) -> _builtins.str:
+        """
+        Type of destination where MySQL telemetry is exposed to.
+        """
+        return pulumi.get(self, "destination")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationConfigurations")
+    def destination_configurations(self) -> Sequence['outputs.GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationResult']:
+        """
+        List of configuration variables for a given destination type.
+        """
+        return pulumi.get(self, "destination_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="logTypes")
+    def log_types(self) -> Sequence[_builtins.str]:
+        """
+        List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        return pulumi.get(self, "log_types")
+
+
+@pulumi.output_type
+class GetReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Name of the destination configuration variable.
+        :param _builtins.str value: Value of the destination configuration variable.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Name of the destination configuration variable.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the destination configuration variable.
+        """
+        return pulumi.get(self, "value")
+
 
 @pulumi.output_type
 class GetReplicaSecureConnectionResult(dict):
@@ -15519,6 +16386,93 @@ class GetReplicaSecureConnectionResult(dict):
         The OCID of the certificate to use.
         """
         return pulumi.get(self, "certificate_id")
+
+
+@pulumi.output_type
+class GetReplicaTelemetryConfigurationResult(dict):
+    def __init__(__self__, *,
+                 logs: Sequence['outputs.GetReplicaTelemetryConfigurationLogResult']):
+        """
+        :param Sequence['GetReplicaTelemetryConfigurationLogArgs'] logs: Telemetry configuration details for logging.
+        """
+        pulumi.set(__self__, "logs", logs)
+
+    @_builtins.property
+    @pulumi.getter
+    def logs(self) -> Sequence['outputs.GetReplicaTelemetryConfigurationLogResult']:
+        """
+        Telemetry configuration details for logging.
+        """
+        return pulumi.get(self, "logs")
+
+
+@pulumi.output_type
+class GetReplicaTelemetryConfigurationLogResult(dict):
+    def __init__(__self__, *,
+                 destination: _builtins.str,
+                 destination_configurations: Sequence['outputs.GetReplicaTelemetryConfigurationLogDestinationConfigurationResult'],
+                 log_types: Sequence[_builtins.str]):
+        """
+        :param _builtins.str destination: Type of destination where MySQL telemetry is exposed to.
+        :param Sequence['GetReplicaTelemetryConfigurationLogDestinationConfigurationArgs'] destination_configurations: List of configuration variables for a given destination type.
+        :param Sequence[_builtins.str] log_types: List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        pulumi.set(__self__, "destination", destination)
+        pulumi.set(__self__, "destination_configurations", destination_configurations)
+        pulumi.set(__self__, "log_types", log_types)
+
+    @_builtins.property
+    @pulumi.getter
+    def destination(self) -> _builtins.str:
+        """
+        Type of destination where MySQL telemetry is exposed to.
+        """
+        return pulumi.get(self, "destination")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationConfigurations")
+    def destination_configurations(self) -> Sequence['outputs.GetReplicaTelemetryConfigurationLogDestinationConfigurationResult']:
+        """
+        List of configuration variables for a given destination type.
+        """
+        return pulumi.get(self, "destination_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="logTypes")
+    def log_types(self) -> Sequence[_builtins.str]:
+        """
+        List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        return pulumi.get(self, "log_types")
+
+
+@pulumi.output_type
+class GetReplicaTelemetryConfigurationLogDestinationConfigurationResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Name of the destination configuration variable.
+        :param _builtins.str value: Value of the destination configuration variable.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Name of the destination configuration variable.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the destination configuration variable.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -15574,6 +16528,7 @@ class GetReplicasReplicaResult(dict):
                  security_attributes: Mapping[str, _builtins.str],
                  shape_name: _builtins.str,
                  state: _builtins.str,
+                 telemetry_configurations: Sequence['outputs.GetReplicasReplicaTelemetryConfigurationResult'],
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
         """
@@ -15600,6 +16555,7 @@ class GetReplicasReplicaResult(dict):
         :param Mapping[str, _builtins.str] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param _builtins.str shape_name: The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param _builtins.str state: The LifecycleState of the read replica.
+        :param Sequence['GetReplicasReplicaTelemetryConfigurationArgs'] telemetry_configurations: Telemetry configuration details of a DB System or a read replica.
         :param _builtins.str time_created: The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param _builtins.str time_updated: The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
@@ -15626,6 +16582,7 @@ class GetReplicasReplicaResult(dict):
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "telemetry_configurations", telemetry_configurations)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -15814,6 +16771,14 @@ class GetReplicasReplicaResult(dict):
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="telemetryConfigurations")
+    def telemetry_configurations(self) -> Sequence['outputs.GetReplicasReplicaTelemetryConfigurationResult']:
+        """
+        Telemetry configuration details of a DB System or a read replica.
+        """
+        return pulumi.get(self, "telemetry_configurations")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
@@ -15866,19 +16831,22 @@ class GetReplicasReplicaReplicaOverrideResult(dict):
                  mysql_version: _builtins.str,
                  nsg_ids: Sequence[_builtins.str],
                  security_attributes: Mapping[str, _builtins.str],
-                 shape_name: _builtins.str):
+                 shape_name: _builtins.str,
+                 telemetry_configurations: Sequence['outputs.GetReplicasReplicaReplicaOverrideTelemetryConfigurationResult']):
         """
         :param _builtins.str configuration_id: The requested Configuration instance.
         :param _builtins.str mysql_version: The MySQL version to be used by the read replica.
         :param Sequence[_builtins.str] nsg_ids: Network Security Group OCIDs used for the VNIC attachment.
         :param Mapping[str, _builtins.str] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param _builtins.str shape_name: The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+        :param Sequence['GetReplicasReplicaReplicaOverrideTelemetryConfigurationArgs'] telemetry_configurations: Telemetry configuration details of a DB System or a read replica.
         """
         pulumi.set(__self__, "configuration_id", configuration_id)
         pulumi.set(__self__, "mysql_version", mysql_version)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape_name", shape_name)
+        pulumi.set(__self__, "telemetry_configurations", telemetry_configurations)
 
     @_builtins.property
     @pulumi.getter(name="configurationId")
@@ -15920,6 +16888,101 @@ class GetReplicasReplicaReplicaOverrideResult(dict):
         """
         return pulumi.get(self, "shape_name")
 
+    @_builtins.property
+    @pulumi.getter(name="telemetryConfigurations")
+    def telemetry_configurations(self) -> Sequence['outputs.GetReplicasReplicaReplicaOverrideTelemetryConfigurationResult']:
+        """
+        Telemetry configuration details of a DB System or a read replica.
+        """
+        return pulumi.get(self, "telemetry_configurations")
+
+
+@pulumi.output_type
+class GetReplicasReplicaReplicaOverrideTelemetryConfigurationResult(dict):
+    def __init__(__self__, *,
+                 logs: Sequence['outputs.GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogResult']):
+        """
+        :param Sequence['GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogArgs'] logs: Telemetry configuration details for logging.
+        """
+        pulumi.set(__self__, "logs", logs)
+
+    @_builtins.property
+    @pulumi.getter
+    def logs(self) -> Sequence['outputs.GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogResult']:
+        """
+        Telemetry configuration details for logging.
+        """
+        return pulumi.get(self, "logs")
+
+
+@pulumi.output_type
+class GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogResult(dict):
+    def __init__(__self__, *,
+                 destination: _builtins.str,
+                 destination_configurations: Sequence['outputs.GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationResult'],
+                 log_types: Sequence[_builtins.str]):
+        """
+        :param _builtins.str destination: Type of destination where MySQL telemetry is exposed to.
+        :param Sequence['GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationArgs'] destination_configurations: List of configuration variables for a given destination type.
+        :param Sequence[_builtins.str] log_types: List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        pulumi.set(__self__, "destination", destination)
+        pulumi.set(__self__, "destination_configurations", destination_configurations)
+        pulumi.set(__self__, "log_types", log_types)
+
+    @_builtins.property
+    @pulumi.getter
+    def destination(self) -> _builtins.str:
+        """
+        Type of destination where MySQL telemetry is exposed to.
+        """
+        return pulumi.get(self, "destination")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationConfigurations")
+    def destination_configurations(self) -> Sequence['outputs.GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationResult']:
+        """
+        List of configuration variables for a given destination type.
+        """
+        return pulumi.get(self, "destination_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="logTypes")
+    def log_types(self) -> Sequence[_builtins.str]:
+        """
+        List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        return pulumi.get(self, "log_types")
+
+
+@pulumi.output_type
+class GetReplicasReplicaReplicaOverrideTelemetryConfigurationLogDestinationConfigurationResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Name of the destination configuration variable.
+        :param _builtins.str value: Value of the destination configuration variable.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Name of the destination configuration variable.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the destination configuration variable.
+        """
+        return pulumi.get(self, "value")
+
 
 @pulumi.output_type
 class GetReplicasReplicaSecureConnectionResult(dict):
@@ -15948,6 +17011,93 @@ class GetReplicasReplicaSecureConnectionResult(dict):
         The OCID of the certificate to use.
         """
         return pulumi.get(self, "certificate_id")
+
+
+@pulumi.output_type
+class GetReplicasReplicaTelemetryConfigurationResult(dict):
+    def __init__(__self__, *,
+                 logs: Sequence['outputs.GetReplicasReplicaTelemetryConfigurationLogResult']):
+        """
+        :param Sequence['GetReplicasReplicaTelemetryConfigurationLogArgs'] logs: Telemetry configuration details for logging.
+        """
+        pulumi.set(__self__, "logs", logs)
+
+    @_builtins.property
+    @pulumi.getter
+    def logs(self) -> Sequence['outputs.GetReplicasReplicaTelemetryConfigurationLogResult']:
+        """
+        Telemetry configuration details for logging.
+        """
+        return pulumi.get(self, "logs")
+
+
+@pulumi.output_type
+class GetReplicasReplicaTelemetryConfigurationLogResult(dict):
+    def __init__(__self__, *,
+                 destination: _builtins.str,
+                 destination_configurations: Sequence['outputs.GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationResult'],
+                 log_types: Sequence[_builtins.str]):
+        """
+        :param _builtins.str destination: Type of destination where MySQL telemetry is exposed to.
+        :param Sequence['GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationArgs'] destination_configurations: List of configuration variables for a given destination type.
+        :param Sequence[_builtins.str] log_types: List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        pulumi.set(__self__, "destination", destination)
+        pulumi.set(__self__, "destination_configurations", destination_configurations)
+        pulumi.set(__self__, "log_types", log_types)
+
+    @_builtins.property
+    @pulumi.getter
+    def destination(self) -> _builtins.str:
+        """
+        Type of destination where MySQL telemetry is exposed to.
+        """
+        return pulumi.get(self, "destination")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationConfigurations")
+    def destination_configurations(self) -> Sequence['outputs.GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationResult']:
+        """
+        List of configuration variables for a given destination type.
+        """
+        return pulumi.get(self, "destination_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="logTypes")
+    def log_types(self) -> Sequence[_builtins.str]:
+        """
+        List of MySQL telemetry types that can be exposed on a telemetry destination
+        """
+        return pulumi.get(self, "log_types")
+
+
+@pulumi.output_type
+class GetReplicasReplicaTelemetryConfigurationLogDestinationConfigurationResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Name of the destination configuration variable.
+        :param _builtins.str value: Value of the destination configuration variable.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Name of the destination configuration variable.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the destination configuration variable.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type

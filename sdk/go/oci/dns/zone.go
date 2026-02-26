@@ -56,9 +56,10 @@ import (
 //						TsigKeyId: pulumi.Any(testTsigKey.Id),
 //					},
 //				},
-//				FreeformTags: pulumi.Any(zoneFreeformTags),
-//				Scope:        pulumi.Any(zoneScope),
-//				ViewId:       pulumi.Any(testView.Id),
+//				FreeformTags:   pulumi.Any(zoneFreeformTags),
+//				ResolutionMode: pulumi.Any(zoneResolutionMode),
+//				Scope:          pulumi.Any(zoneScope),
+//				ViewId:         pulumi.Any(testView.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -112,11 +113,11 @@ type Zone struct {
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected pulumi.BoolOutput `pulumi:"isProtected"`
 	// The name of the zone.
-	Name pulumi.StringOutput `pulumi:"name"`
-	// The authoritative nameservers for the zone.
+	Name        pulumi.StringOutput       `pulumi:"name"`
 	Nameservers ZoneNameserverArrayOutput `pulumi:"nameservers"`
+	// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+	ResolutionMode pulumi.StringOutput `pulumi:"resolutionMode"`
 	// Specifies to operate only on resources that have a matching DNS scope.
-	// This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
 	Scope pulumi.StringOutput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringOutput `pulumi:"self"`
@@ -136,6 +137,8 @@ type Zone struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	//
+	// When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
 	ZoneType pulumi.StringOutput `pulumi:"zoneType"`
 }
 
@@ -208,11 +211,11 @@ type zoneState struct {
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected *bool `pulumi:"isProtected"`
 	// The name of the zone.
-	Name *string `pulumi:"name"`
-	// The authoritative nameservers for the zone.
+	Name        *string          `pulumi:"name"`
 	Nameservers []ZoneNameserver `pulumi:"nameservers"`
+	// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+	ResolutionMode *string `pulumi:"resolutionMode"`
 	// Specifies to operate only on resources that have a matching DNS scope.
-	// This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
 	Scope *string `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self *string `pulumi:"self"`
@@ -232,6 +235,8 @@ type zoneState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	//
+	// When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
 	ZoneType *string `pulumi:"zoneType"`
 }
 
@@ -269,11 +274,11 @@ type ZoneState struct {
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected pulumi.BoolPtrInput
 	// The name of the zone.
-	Name pulumi.StringPtrInput
-	// The authoritative nameservers for the zone.
+	Name        pulumi.StringPtrInput
 	Nameservers ZoneNameserverArrayInput
+	// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+	ResolutionMode pulumi.StringPtrInput
 	// Specifies to operate only on resources that have a matching DNS scope.
-	// This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
 	Scope pulumi.StringPtrInput
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringPtrInput
@@ -293,6 +298,8 @@ type ZoneState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	//
+	// When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
 	ZoneType pulumi.StringPtrInput
 }
 
@@ -331,8 +338,9 @@ type zoneArgs struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The name of the zone.
 	Name *string `pulumi:"name"`
+	// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+	ResolutionMode *string `pulumi:"resolutionMode"`
 	// Specifies to operate only on resources that have a matching DNS scope.
-	// This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
 	Scope *string `pulumi:"scope"`
 	// The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
 	ViewId *string `pulumi:"viewId"`
@@ -340,6 +348,8 @@ type zoneArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	//
+	// When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
 	ZoneType string `pulumi:"zoneType"`
 }
 
@@ -375,8 +385,9 @@ type ZoneArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// The name of the zone.
 	Name pulumi.StringPtrInput
+	// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+	ResolutionMode pulumi.StringPtrInput
 	// Specifies to operate only on resources that have a matching DNS scope.
-	// This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
 	Scope pulumi.StringPtrInput
 	// The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
 	ViewId pulumi.StringPtrInput
@@ -384,6 +395,8 @@ type ZoneArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	//
+	// When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
 	ZoneType pulumi.StringInput
 }
 
@@ -535,13 +548,16 @@ func (o ZoneOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Zone) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// The authoritative nameservers for the zone.
 func (o ZoneOutput) Nameservers() ZoneNameserverArrayOutput {
 	return o.ApplyT(func(v *Zone) ZoneNameserverArrayOutput { return v.Nameservers }).(ZoneNameserverArrayOutput)
 }
 
+// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+func (o ZoneOutput) ResolutionMode() pulumi.StringOutput {
+	return o.ApplyT(func(v *Zone) pulumi.StringOutput { return v.ResolutionMode }).(pulumi.StringOutput)
+}
+
 // Specifies to operate only on resources that have a matching DNS scope.
-// This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
 func (o ZoneOutput) Scope() pulumi.StringOutput {
 	return o.ApplyT(func(v *Zone) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
 }
@@ -585,6 +601,8 @@ func (o ZoneOutput) ZoneTransferServers() ZoneZoneTransferServerArrayOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+//
+// When the zone is re-created, all DNS records managed for this zone via Terraform will also be re-created on the new zone
 func (o ZoneOutput) ZoneType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Zone) pulumi.StringOutput { return v.ZoneType }).(pulumi.StringOutput)
 }

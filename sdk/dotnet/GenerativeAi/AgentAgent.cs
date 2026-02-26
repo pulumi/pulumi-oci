@@ -46,7 +46,15 @@ namespace Pulumi.Oci.GenerativeAi
     ///             RoutingLlmCustomization = new Oci.GenerativeAi.Inputs.AgentAgentLlmConfigRoutingLlmCustomizationArgs
     ///             {
     ///                 Instruction = agentLlmConfigRoutingLlmCustomizationInstruction,
+    ///                 LlmHyperParameters = agentLlmConfigRoutingLlmCustomizationLlmHyperParameters,
+    ///                 LlmSelection = new Oci.GenerativeAi.Inputs.AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionArgs
+    ///                 {
+    ///                     LlmSelectionType = agentLlmConfigRoutingLlmCustomizationLlmSelectionLlmSelectionType,
+    ///                     EndpointId = testEndpoint.Id,
+    ///                     ModelId = testModel.Id,
+    ///                 },
     ///             },
+    ///             RuntimeVersion = agentLlmConfigRuntimeVersion,
     ///         },
     ///         WelcomeMessage = agentWelcomeMessage,
     ///     });

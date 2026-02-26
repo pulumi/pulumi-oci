@@ -58,6 +58,17 @@ namespace Pulumi.Oci.GenerativeAi
     ///                 Prefix = toolToolConfigDatabaseSchemaPrefix,
     ///             },
     ///             Dialect = toolToolConfigDialect,
+    ///             EmbeddingLlmCustomization = new Oci.GenerativeAi.Inputs.AgentToolToolConfigEmbeddingLlmCustomizationArgs
+    ///             {
+    ///                 Instruction = toolToolConfigEmbeddingLlmCustomizationInstruction,
+    ///                 LlmHyperParameters = toolToolConfigEmbeddingLlmCustomizationLlmHyperParameters,
+    ///                 LlmSelection = new Oci.GenerativeAi.Inputs.AgentToolToolConfigEmbeddingLlmCustomizationLlmSelectionArgs
+    ///                 {
+    ///                     LlmSelectionType = toolToolConfigEmbeddingLlmCustomizationLlmSelectionLlmSelectionType,
+    ///                     EndpointId = testEndpoint.Id,
+    ///                     ModelId = testModel.Id,
+    ///                 },
+    ///             },
     ///             Function = new Oci.GenerativeAi.Inputs.AgentToolToolConfigFunctionArgs
     ///             {
     ///                 Description = toolToolConfigFunctionDescription,
@@ -67,6 +78,13 @@ namespace Pulumi.Oci.GenerativeAi
     ///             GenerationLlmCustomization = new Oci.GenerativeAi.Inputs.AgentToolToolConfigGenerationLlmCustomizationArgs
     ///             {
     ///                 Instruction = toolToolConfigGenerationLlmCustomizationInstruction,
+    ///                 LlmHyperParameters = toolToolConfigGenerationLlmCustomizationLlmHyperParameters,
+    ///                 LlmSelection = new Oci.GenerativeAi.Inputs.AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs
+    ///                 {
+    ///                     LlmSelectionType = toolToolConfigGenerationLlmCustomizationLlmSelectionLlmSelectionType,
+    ///                     EndpointId = testEndpoint.Id,
+    ///                     ModelId = testModel.Id,
+    ///                 },
     ///             },
     ///             HttpEndpointAuthConfig = new Oci.GenerativeAi.Inputs.AgentToolToolConfigHttpEndpointAuthConfigArgs
     ///             {
@@ -104,6 +122,29 @@ namespace Pulumi.Oci.GenerativeAi
     ///                 },
     ///             },
     ///             ModelSize = toolToolConfigModelSize,
+    ///             ReasoningLlmCustomization = new Oci.GenerativeAi.Inputs.AgentToolToolConfigReasoningLlmCustomizationArgs
+    ///             {
+    ///                 Instruction = toolToolConfigReasoningLlmCustomizationInstruction,
+    ///                 LlmHyperParameters = toolToolConfigReasoningLlmCustomizationLlmHyperParameters,
+    ///                 LlmSelection = new Oci.GenerativeAi.Inputs.AgentToolToolConfigReasoningLlmCustomizationLlmSelectionArgs
+    ///                 {
+    ///                     LlmSelectionType = toolToolConfigReasoningLlmCustomizationLlmSelectionLlmSelectionType,
+    ///                     EndpointId = testEndpoint.Id,
+    ///                     ModelId = testModel.Id,
+    ///                 },
+    ///             },
+    ///             RerankingLlmCustomization = new Oci.GenerativeAi.Inputs.AgentToolToolConfigRerankingLlmCustomizationArgs
+    ///             {
+    ///                 Instruction = toolToolConfigRerankingLlmCustomizationInstruction,
+    ///                 LlmHyperParameters = toolToolConfigRerankingLlmCustomizationLlmHyperParameters,
+    ///                 LlmSelection = new Oci.GenerativeAi.Inputs.AgentToolToolConfigRerankingLlmCustomizationLlmSelectionArgs
+    ///                 {
+    ///                     LlmSelectionType = toolToolConfigRerankingLlmCustomizationLlmSelectionLlmSelectionType,
+    ///                     EndpointId = testEndpoint.Id,
+    ///                     ModelId = testModel.Id,
+    ///                 },
+    ///             },
+    ///             RuntimeVersion = toolToolConfigRuntimeVersion,
     ///             ShouldEnableSelfCorrection = toolToolConfigShouldEnableSelfCorrection,
     ///             ShouldEnableSqlExecution = toolToolConfigShouldEnableSqlExecution,
     ///             SubnetId = testSubnet.Id,

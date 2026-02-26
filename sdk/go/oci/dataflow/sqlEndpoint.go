@@ -79,6 +79,10 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				LogCompartmentId:            pulumi.Any(testCompartment.Id),
+//				LogDisplayName:              pulumi.Any(sqlEndpointLogDisplayName),
+//				LogGroupId:                  pulumi.Any(testLogGroup.Id),
+//				LogRetentionDuration:        pulumi.Any(sqlEndpointLogRetentionDuration),
 //				SparkAdvancedConfigurations: pulumi.Any(sqlEndpointSparkAdvancedConfigurations),
 //			})
 //			if err != nil {
@@ -122,6 +126,14 @@ type SqlEndpoint struct {
 	JdbcEndpointUrl pulumi.StringOutput `pulumi:"jdbcEndpointUrl"`
 	// Oracle Cloud Infrastructure lake OCID
 	LakeId pulumi.StringOutput `pulumi:"lakeId"`
+	// (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+	LogCompartmentId pulumi.StringOutput `pulumi:"logCompartmentId"`
+	// (Updatable) The friendly name of the log object used with the SQL Endpoint.
+	LogDisplayName pulumi.StringOutput `pulumi:"logDisplayName"`
+	// (Updatable) The identifier of the log group used with the SQL Endpoint.
+	LogGroupId pulumi.StringOutput `pulumi:"logGroupId"`
+	// (Updatable) Log retention duration in days
+	LogRetentionDuration pulumi.IntOutput `pulumi:"logRetentionDuration"`
 	// (Updatable) The maximum number of executors.
 	MaxExecutorCount pulumi.IntOutput `pulumi:"maxExecutorCount"`
 	// Metastore OCID
@@ -230,6 +242,14 @@ type sqlEndpointState struct {
 	JdbcEndpointUrl *string `pulumi:"jdbcEndpointUrl"`
 	// Oracle Cloud Infrastructure lake OCID
 	LakeId *string `pulumi:"lakeId"`
+	// (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+	LogCompartmentId *string `pulumi:"logCompartmentId"`
+	// (Updatable) The friendly name of the log object used with the SQL Endpoint.
+	LogDisplayName *string `pulumi:"logDisplayName"`
+	// (Updatable) The identifier of the log group used with the SQL Endpoint.
+	LogGroupId *string `pulumi:"logGroupId"`
+	// (Updatable) Log retention duration in days
+	LogRetentionDuration *int `pulumi:"logRetentionDuration"`
 	// (Updatable) The maximum number of executors.
 	MaxExecutorCount *int `pulumi:"maxExecutorCount"`
 	// Metastore OCID
@@ -282,6 +302,14 @@ type SqlEndpointState struct {
 	JdbcEndpointUrl pulumi.StringPtrInput
 	// Oracle Cloud Infrastructure lake OCID
 	LakeId pulumi.StringPtrInput
+	// (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+	LogCompartmentId pulumi.StringPtrInput
+	// (Updatable) The friendly name of the log object used with the SQL Endpoint.
+	LogDisplayName pulumi.StringPtrInput
+	// (Updatable) The identifier of the log group used with the SQL Endpoint.
+	LogGroupId pulumi.StringPtrInput
+	// (Updatable) Log retention duration in days
+	LogRetentionDuration pulumi.IntPtrInput
 	// (Updatable) The maximum number of executors.
 	MaxExecutorCount pulumi.IntPtrInput
 	// Metastore OCID
@@ -334,6 +362,14 @@ type sqlEndpointArgs struct {
 	ExecutorShapeConfig *SqlEndpointExecutorShapeConfig `pulumi:"executorShapeConfig"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+	LogCompartmentId *string `pulumi:"logCompartmentId"`
+	// (Updatable) The friendly name of the log object used with the SQL Endpoint.
+	LogDisplayName *string `pulumi:"logDisplayName"`
+	// (Updatable) The identifier of the log group used with the SQL Endpoint.
+	LogGroupId *string `pulumi:"logGroupId"`
+	// (Updatable) Log retention duration in days
+	LogRetentionDuration *int `pulumi:"logRetentionDuration"`
 	// (Updatable) The maximum number of executors.
 	MaxExecutorCount int `pulumi:"maxExecutorCount"`
 	// Metastore OCID
@@ -373,6 +409,14 @@ type SqlEndpointArgs struct {
 	ExecutorShapeConfig SqlEndpointExecutorShapeConfigPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+	LogCompartmentId pulumi.StringPtrInput
+	// (Updatable) The friendly name of the log object used with the SQL Endpoint.
+	LogDisplayName pulumi.StringPtrInput
+	// (Updatable) The identifier of the log group used with the SQL Endpoint.
+	LogGroupId pulumi.StringPtrInput
+	// (Updatable) Log retention duration in days
+	LogRetentionDuration pulumi.IntPtrInput
 	// (Updatable) The maximum number of executors.
 	MaxExecutorCount pulumi.IntInput
 	// Metastore OCID
@@ -532,6 +576,26 @@ func (o SqlEndpointOutput) JdbcEndpointUrl() pulumi.StringOutput {
 // Oracle Cloud Infrastructure lake OCID
 func (o SqlEndpointOutput) LakeId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.LakeId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The identifier of the log group compartment used with the SQL Endpoint.
+func (o SqlEndpointOutput) LogCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.LogCompartmentId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The friendly name of the log object used with the SQL Endpoint.
+func (o SqlEndpointOutput) LogDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.LogDisplayName }).(pulumi.StringOutput)
+}
+
+// (Updatable) The identifier of the log group used with the SQL Endpoint.
+func (o SqlEndpointOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.LogGroupId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Log retention duration in days
+func (o SqlEndpointOutput) LogRetentionDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v *SqlEndpoint) pulumi.IntOutput { return v.LogRetentionDuration }).(pulumi.IntOutput)
 }
 
 // (Updatable) The maximum number of executors.

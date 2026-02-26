@@ -37,6 +37,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.GenerativeAi.AgentAgentArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentLlmConfigArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentLlmConfigRoutingLlmCustomizationArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -60,7 +61,14 @@ import javax.annotation.Nullable;
  *             .llmConfig(AgentAgentLlmConfigArgs.builder()
  *                 .routingLlmCustomization(AgentAgentLlmConfigRoutingLlmCustomizationArgs.builder()
  *                     .instruction(agentLlmConfigRoutingLlmCustomizationInstruction)
+ *                     .llmHyperParameters(agentLlmConfigRoutingLlmCustomizationLlmHyperParameters)
+ *                     .llmSelection(AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionArgs.builder()
+ *                         .llmSelectionType(agentLlmConfigRoutingLlmCustomizationLlmSelectionLlmSelectionType)
+ *                         .endpointId(testEndpoint.id())
+ *                         .modelId(testModel.id())
+ *                         .build())
  *                     .build())
+ *                 .runtimeVersion(agentLlmConfigRuntimeVersion)
  *                 .build())
  *             .welcomeMessage(agentWelcomeMessage)
  *             .build());

@@ -46,6 +46,15 @@ import * as utilities from "../utilities";
  *             prefix: toolToolConfigDatabaseSchemaPrefix,
  *         },
  *         dialect: toolToolConfigDialect,
+ *         embeddingLlmCustomization: {
+ *             instruction: toolToolConfigEmbeddingLlmCustomizationInstruction,
+ *             llmHyperParameters: toolToolConfigEmbeddingLlmCustomizationLlmHyperParameters,
+ *             llmSelection: {
+ *                 llmSelectionType: toolToolConfigEmbeddingLlmCustomizationLlmSelectionLlmSelectionType,
+ *                 endpointId: testEndpoint.id,
+ *                 modelId: testModel.id,
+ *             },
+ *         },
  *         "function": {
  *             description: toolToolConfigFunctionDescription,
  *             name: toolToolConfigFunctionName,
@@ -53,6 +62,12 @@ import * as utilities from "../utilities";
  *         },
  *         generationLlmCustomization: {
  *             instruction: toolToolConfigGenerationLlmCustomizationInstruction,
+ *             llmHyperParameters: toolToolConfigGenerationLlmCustomizationLlmHyperParameters,
+ *             llmSelection: {
+ *                 llmSelectionType: toolToolConfigGenerationLlmCustomizationLlmSelectionLlmSelectionType,
+ *                 endpointId: testEndpoint.id,
+ *                 modelId: testModel.id,
+ *             },
  *         },
  *         httpEndpointAuthConfig: {
  *             httpEndpointAuthSources: [{
@@ -79,6 +94,25 @@ import * as utilities from "../utilities";
  *             knowledgeBaseId: testKnowledgeBase.id,
  *         }],
  *         modelSize: toolToolConfigModelSize,
+ *         reasoningLlmCustomization: {
+ *             instruction: toolToolConfigReasoningLlmCustomizationInstruction,
+ *             llmHyperParameters: toolToolConfigReasoningLlmCustomizationLlmHyperParameters,
+ *             llmSelection: {
+ *                 llmSelectionType: toolToolConfigReasoningLlmCustomizationLlmSelectionLlmSelectionType,
+ *                 endpointId: testEndpoint.id,
+ *                 modelId: testModel.id,
+ *             },
+ *         },
+ *         rerankingLlmCustomization: {
+ *             instruction: toolToolConfigRerankingLlmCustomizationInstruction,
+ *             llmHyperParameters: toolToolConfigRerankingLlmCustomizationLlmHyperParameters,
+ *             llmSelection: {
+ *                 llmSelectionType: toolToolConfigRerankingLlmCustomizationLlmSelectionLlmSelectionType,
+ *                 endpointId: testEndpoint.id,
+ *                 modelId: testModel.id,
+ *             },
+ *         },
+ *         runtimeVersion: toolToolConfigRuntimeVersion,
  *         shouldEnableSelfCorrection: toolToolConfigShouldEnableSelfCorrection,
  *         shouldEnableSqlExecution: toolToolConfigShouldEnableSqlExecution,
  *         subnetId: testSubnet.id,

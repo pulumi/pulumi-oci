@@ -48,6 +48,25 @@ namespace Pulumi.Oci.Mysql
     ///             NsgIds = replicaReplicaOverridesNsgIds,
     ///             SecurityAttributes = replicaReplicaOverridesSecurityAttributes,
     ///             ShapeName = testShape.Name,
+    ///             TelemetryConfiguration = new Oci.Mysql.Inputs.ReplicaReplicaOverridesTelemetryConfigurationArgs
+    ///             {
+    ///                 Logs = new[]
+    ///                 {
+    ///                     new Oci.Mysql.Inputs.ReplicaReplicaOverridesTelemetryConfigurationLogArgs
+    ///                     {
+    ///                         Destination = replicaReplicaOverridesTelemetryConfigurationLogsDestination,
+    ///                         DestinationConfigurations = new[]
+    ///                         {
+    ///                             new Oci.Mysql.Inputs.ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArgs
+    ///                             {
+    ///                                 Key = replicaReplicaOverridesTelemetryConfigurationLogsDestinationConfigurationsKey,
+    ///                                 Value = replicaReplicaOverridesTelemetryConfigurationLogsDestinationConfigurationsValue,
+    ///                             },
+    ///                         },
+    ///                         LogTypes = replicaReplicaOverridesTelemetryConfigurationLogsLogTypes,
+    ///                     },
+    ///                 },
+    ///             },
     ///         },
     ///     });
     /// 
@@ -196,6 +215,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// Telemetry configuration details of a DB System or a read replica.
+        /// </summary>
+        [Output("telemetryConfigurations")]
+        public Output<ImmutableArray<Outputs.ReplicaTelemetryConfiguration>> TelemetryConfigurations { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -484,6 +509,18 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("telemetryConfigurations")]
+        private InputList<Inputs.ReplicaTelemetryConfigurationGetArgs>? _telemetryConfigurations;
+
+        /// <summary>
+        /// Telemetry configuration details of a DB System or a read replica.
+        /// </summary>
+        public InputList<Inputs.ReplicaTelemetryConfigurationGetArgs> TelemetryConfigurations
+        {
+            get => _telemetryConfigurations ?? (_telemetryConfigurations = new InputList<Inputs.ReplicaTelemetryConfigurationGetArgs>());
+            set => _telemetryConfigurations = value;
+        }
 
         /// <summary>
         /// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).

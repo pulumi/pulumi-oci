@@ -27,7 +27,7 @@ class GetReplicaResult:
     """
     A collection of values returned by getReplica.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, configuration_id=None, db_system_id=None, defined_tags=None, description=None, display_name=None, encrypt_datas=None, fault_domain=None, freeform_tags=None, id=None, ip_address=None, is_delete_protected=None, lifecycle_details=None, mysql_version=None, nsg_ids=None, port=None, port_x=None, replica_id=None, replica_overrides=None, secure_connections=None, security_attributes=None, shape_name=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, configuration_id=None, db_system_id=None, defined_tags=None, description=None, display_name=None, encrypt_datas=None, fault_domain=None, freeform_tags=None, id=None, ip_address=None, is_delete_protected=None, lifecycle_details=None, mysql_version=None, nsg_ids=None, port=None, port_x=None, replica_id=None, replica_overrides=None, secure_connections=None, security_attributes=None, shape_name=None, state=None, telemetry_configurations=None, time_created=None, time_updated=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -100,6 +100,9 @@ class GetReplicaResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if telemetry_configurations and not isinstance(telemetry_configurations, list):
+            raise TypeError("Expected argument 'telemetry_configurations' to be a list")
+        pulumi.set(__self__, "telemetry_configurations", telemetry_configurations)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -297,6 +300,14 @@ class GetReplicaResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="telemetryConfigurations")
+    def telemetry_configurations(self) -> Sequence['outputs.GetReplicaTelemetryConfigurationResult']:
+        """
+        Telemetry configuration details of a DB System or a read replica.
+        """
+        return pulumi.get(self, "telemetry_configurations")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
@@ -343,6 +354,7 @@ class AwaitableGetReplicaResult(GetReplicaResult):
             security_attributes=self.security_attributes,
             shape_name=self.shape_name,
             state=self.state,
+            telemetry_configurations=self.telemetry_configurations,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -396,6 +408,7 @@ def get_replica(replica_id: Optional[_builtins.str] = None,
         security_attributes=pulumi.get(__ret__, 'security_attributes'),
         shape_name=pulumi.get(__ret__, 'shape_name'),
         state=pulumi.get(__ret__, 'state'),
+        telemetry_configurations=pulumi.get(__ret__, 'telemetry_configurations'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_replica_output(replica_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -446,5 +459,6 @@ def get_replica_output(replica_id: Optional[pulumi.Input[_builtins.str]] = None,
         security_attributes=pulumi.get(__response__, 'security_attributes'),
         shape_name=pulumi.get(__response__, 'shape_name'),
         state=pulumi.get(__response__, 'state'),
+        telemetry_configurations=pulumi.get(__response__, 'telemetry_configurations'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

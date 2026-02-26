@@ -355,9 +355,6 @@ namespace Pulumi.Oci.Dns
         public readonly string? State;
         public readonly string? TimeCreatedGreaterThanOrEqualTo;
         public readonly string? TimeCreatedLessThan;
-        /// <summary>
-        /// The OCID of the TSIG key.
-        /// </summary>
         public readonly string? TsigKeyId;
         /// <summary>
         /// The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.

@@ -70,7 +70,7 @@ public final class GetResolverResult {
     private Boolean isProtected;
     private String resolverId;
     /**
-     * @return Rules for the resolver. Rules are evaluated in order.
+     * @return Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
      * 
      */
     private List<GetResolverRule> rules;
@@ -171,7 +171,7 @@ public final class GetResolverResult {
         return this.resolverId;
     }
     /**
-     * @return Rules for the resolver. Rules are evaluated in order.
+     * @return Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
      * 
      */
     public List<GetResolverRule> rules() {

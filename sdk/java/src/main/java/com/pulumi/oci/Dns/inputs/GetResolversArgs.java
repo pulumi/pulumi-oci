@@ -71,14 +71,14 @@ public final class GetResolversArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Value must be `PRIVATE` when listing private name resolvers.
+     * Value must be `PRIVATE` when listing private resolvers.
      * 
      */
     @Import(name="scope", required=true)
     private Output<String> scope;
 
     /**
-     * @return Value must be `PRIVATE` when listing private name resolvers.
+     * @return Value must be `PRIVATE` when listing private resolvers.
      * 
      */
     public Output<String> scope() {
@@ -206,7 +206,7 @@ public final class GetResolversArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param scope Value must be `PRIVATE` when listing private name resolvers.
+         * @param scope Value must be `PRIVATE` when listing private resolvers.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class GetResolversArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param scope Value must be `PRIVATE` when listing private name resolvers.
+         * @param scope Value must be `PRIVATE` when listing private resolvers.
          * 
          * @return builder
          * 

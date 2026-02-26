@@ -159,9 +159,6 @@ class GetZonesResult:
     @_builtins.property
     @pulumi.getter(name="tsigKeyId")
     def tsig_key_id(self) -> Optional[_builtins.str]:
-        """
-        The OCID of the TSIG key.
-        """
         return pulumi.get(self, "tsig_key_id")
 
     @_builtins.property

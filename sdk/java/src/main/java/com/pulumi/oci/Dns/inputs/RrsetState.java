@@ -18,6 +18,10 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
     public static final RrsetState Empty = new RrsetState();
 
     /**
+     * (Updatable) The OCID of the compartment the zone belongs to.
+     * 
+     * This parameter is deprecated and should be omitted.
+     * 
      * @deprecated
      * Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
      * 
@@ -27,6 +31,10 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> compartmentId;
 
     /**
+     * @return (Updatable) The OCID of the compartment the zone belongs to.
+     * 
+     * This parameter is deprecated and should be omitted.
+     * 
      * @deprecated
      * Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
      * 
@@ -53,6 +61,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * (Updatable)
+     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      * 
      */
     @Import(name="items")
@@ -60,6 +69,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return (Updatable)
+     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      * 
      */
     public Optional<Output<List<RrsetItemArgs>>> items() {
@@ -82,6 +92,8 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     * 
      * @deprecated
      * Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
      * 
@@ -91,6 +103,8 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> scope;
 
     /**
+     * @return Specifies to operate only on resources that have a matching DNS scope.
+     * 
      * @deprecated
      * Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
      * 
@@ -167,6 +181,10 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param compartmentId (Updatable) The OCID of the compartment the zone belongs to.
+         * 
+         * This parameter is deprecated and should be omitted.
+         * 
          * @return builder
          * 
          * @deprecated
@@ -180,6 +198,10 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param compartmentId (Updatable) The OCID of the compartment the zone belongs to.
+         * 
+         * This parameter is deprecated and should be omitted.
+         * 
          * @return builder
          * 
          * @deprecated
@@ -214,6 +236,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param items (Updatable)
+         * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
          * 
          * @return builder
          * 
@@ -225,6 +248,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param items (Updatable)
+         * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
          * 
          * @return builder
          * 
@@ -235,6 +259,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param items (Updatable)
+         * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
          * 
          * @return builder
          * 
@@ -265,6 +290,8 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param scope Specifies to operate only on resources that have a matching DNS scope.
+         * 
          * @return builder
          * 
          * @deprecated
@@ -278,6 +305,8 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param scope Specifies to operate only on resources that have a matching DNS scope.
+         * 
          * @return builder
          * 
          * @deprecated

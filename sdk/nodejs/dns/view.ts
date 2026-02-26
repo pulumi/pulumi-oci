@@ -94,7 +94,7 @@ export class View extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    declare public readonly scope: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string>;
     /**
      * The canonical absolute URL of the resource.
      */

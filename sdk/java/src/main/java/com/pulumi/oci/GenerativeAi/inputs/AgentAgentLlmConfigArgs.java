@@ -6,6 +6,7 @@ package com.pulumi.oci.GenerativeAi.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.GenerativeAi.inputs.AgentAgentLlmConfigRoutingLlmCustomizationArgs;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -30,10 +31,26 @@ public final class AgentAgentLlmConfigArgs extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.routingLlmCustomization);
     }
 
+    /**
+     * (Updatable) The runtimeVersion of the system prompt.
+     * 
+     */
+    @Import(name="runtimeVersion")
+    private @Nullable Output<String> runtimeVersion;
+
+    /**
+     * @return (Updatable) The runtimeVersion of the system prompt.
+     * 
+     */
+    public Optional<Output<String>> runtimeVersion() {
+        return Optional.ofNullable(this.runtimeVersion);
+    }
+
     private AgentAgentLlmConfigArgs() {}
 
     private AgentAgentLlmConfigArgs(AgentAgentLlmConfigArgs $) {
         this.routingLlmCustomization = $.routingLlmCustomization;
+        this.runtimeVersion = $.runtimeVersion;
     }
 
     public static Builder builder() {
@@ -73,6 +90,27 @@ public final class AgentAgentLlmConfigArgs extends com.pulumi.resources.Resource
          */
         public Builder routingLlmCustomization(AgentAgentLlmConfigRoutingLlmCustomizationArgs routingLlmCustomization) {
             return routingLlmCustomization(Output.of(routingLlmCustomization));
+        }
+
+        /**
+         * @param runtimeVersion (Updatable) The runtimeVersion of the system prompt.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeVersion(@Nullable Output<String> runtimeVersion) {
+            $.runtimeVersion = runtimeVersion;
+            return this;
+        }
+
+        /**
+         * @param runtimeVersion (Updatable) The runtimeVersion of the system prompt.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeVersion(String runtimeVersion) {
+            return runtimeVersion(Output.of(runtimeVersion));
         }
 
         public AgentAgentLlmConfigArgs build() {
